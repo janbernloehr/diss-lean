@@ -187,6 +187,7 @@ modules+=(NLS/KdV/HillActionSourceStationarity NLS/ComplexAnalysis/ActionPhaseSo
 modules+=(NLS/KdV/HillDirichletHamiltonianSources NLS/KdV/HillNormingSourceVariations NLS/KdV/HillRealSourceCompleteness NLS/KdV/HillRegularTerminalDensity)
 modules+=(NLS/FunctionalAnalysis/ClosedUnitCurveContinuity NLS/ComplexAnalysis/CompactFiberIntegralContinuity NLS/ComplexAnalysis/NonrealCircleIntegralVectorComparison NLS/KdV/HillClosedCurveCoefficientContinuity NLS/KdV/HillMovingContourSourceNeighborhood NLS/KdV/HillHamiltonianSourceContinuity NLS/KdV/HillCartesianActionSourceVariations)
 modules+=(NLS/KdV/HillDirichletTraceCotangent NLS/KdV/HillIndexedDiscriminantSources NLS/KdV/HillIndexedDirichletVariations NLS/KdV/HillDiscriminantMeanShift NLS/KdV/HillDirichletTraceCotangentRefined NLS/KdV/HillIndexedNormingVariations NLS/KdV/HillRealClosedCurveSources NLS/KdV/HillIndexedSheetVariations)
+modules+=(NLS/FunctionalAnalysis/ClosedUnitCurveLinearRealization NLS/KdV/HillCurveRealizationCLM NLS/KdV/HillEnergyStateShift NLS/KdV/HillFrequencyStateAnalytic NLS/KdV/HillEnergyStateAnalytic NLS/KdV/HillEnergyGradientAnalytic NLS/KdV/HillIndexedSourceAnalytic)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

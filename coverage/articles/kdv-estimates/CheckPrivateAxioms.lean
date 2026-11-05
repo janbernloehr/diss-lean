@@ -1002,6 +1002,13 @@ import NLS.KdV.HillDirichletTraceCotangentRefined
 import NLS.KdV.HillIndexedNormingVariations
 import NLS.KdV.HillRealClosedCurveSources
 import NLS.KdV.HillIndexedSheetVariations
+import NLS.FunctionalAnalysis.ClosedUnitCurveLinearRealization
+import NLS.KdV.HillCurveRealizationCLM
+import NLS.KdV.HillEnergyStateShift
+import NLS.KdV.HillFrequencyStateAnalytic
+import NLS.KdV.HillEnergyStateAnalytic
+import NLS.KdV.HillEnergyGradientAnalytic
+import NLS.KdV.HillIndexedSourceAnalytic
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1586,7 +1593,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.continuous_integral_of_continuous_compact_fibers,
     ``NLS.ComplexAnalysis.continuous_circleIntegral_of_compact_spectral_fibers,
     ``NLS.ComplexAnalysis.continuous_circleIntegral_of_continuous_moving_section,
-    ``NLS.ComplexAnalysis.circleIntegral_eq_of_eq_on_nonreal_vector]
+    ``NLS.ComplexAnalysis.circleIntegral_eq_of_eq_on_nonreal_vector,
+    ``NLS.FunctionalAnalysis.closedUnitCurveSubmodule,
+    ``NLS.FunctionalAnalysis.closedUnitCurvePeriodTwoCLM,
+    ``NLS.FunctionalAnalysis.closedUnitCurveProjectionCLM,
+    ``NLS.FunctionalAnalysis.closedUnitCurveProjectionCLM_fixed]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
