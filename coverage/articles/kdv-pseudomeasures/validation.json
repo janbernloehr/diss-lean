@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Actual physical H1 KdV frequencies equal free cubic minus twelve times the exact moment series at every open mode of every actual finite-gap source.",
+  "phase": "Actual physical H1 KdV frequency equals free cubic minus twelve exact moments at ALL H1 sources and ALL modes; local sums agree across different Miura/product patches at every common real rough source.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1834,13 +1834,18 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillFixedQuarticActionCurve.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalEnergyReality.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapPhysicalFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeCurve.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapClosedFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1PhysicalFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapH1Realization.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillMomentPatchGluing.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7557,
-  "definitions": 1408,
+  "proved_theorems": 7570,
+  "definitions": 1409,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 8965,
+    "declarations": 8979,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3226,8 +3231,8 @@
     "OriginalHillSpectralDarboux exports the SAMEoriginal physical potential, actual multipliers and local logarithmic normalization; their literal unit-period physical Gardner integral is zero, their closed-mean-zero cotangent bracket is intrinsic, and the full local spectral matrix holds at every original potential.",
     "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
   ],
-  "source_correspondence": "Actual physical H1 KdV frequencies equal free cubic minus twelve times the exact moment series at every open mode of every actual finite-gap source. Extend the NOW PROVED actual finite-gap physical frequency formula from OPEN selected modes to CLOSED selected modes using an actual finite-gap-preserving selected-coordinate opening curve and continuity of actual H1 frequencies and the same local exact moment sum. The existing selected ACTION curve is constant at a closed selected mode and cannot open it. Extend the actual physical frequency formula to ALL H1 sources by the verified genuine strong finite-gap approximation and continuity of actual H1 frequencies and the SAME local moment series. Glue ALREADY weighted-Banach-analytic local rough moment sums across DIFFERENT Miura/product patches using genuine dense H1 agreement. Actual rough KdV frequencies remain UNPROVED. Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1822 baseline non-audit registered sources byte-identical to19edef8. All 6 new modules (11 theorems+0 definitions), 1 canonical-byte-identical modules, 6 unchanged private dependencies and EXACT 8965-declaration standard-axiom audit freshly compiled privately. Fixed contour identity on genuine finite-gap action-curve germ and complex physical energy reality justify derivative comparison, proving ACTUAL physical H1 frequency=free cubic-12*exact moment series at EVERY OPEN mode of EVERY actual finite-gap source. Closed selected modes/ALL H1/rough frequencies remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1829-module build.",
+  "source_correspondence": "Actual physical H1 KdV frequency equals free cubic minus twelve exact moments at ALL H1 sources and ALL modes; local sums agree across different Miura/product patches at every common real rough source. Construct the globally defined actual rough KdV frequency extension from the NOW PROVED cross-Miura/product-independent local raw moment SUMS. Prove exact local expressions, real analyticity, literal weighted target bounds for every p>1 including infinity, and agreement with the ACTUAL physical H1 frequency. All H1/ALL selected mode physical identities and rough local SUM gluing are now COMPLETE. Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for Main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1828 baseline non-audit registered sources byte-identical to07b4614. All 5 new modules (13 theorems+1 definitions), 0 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 8979-declaration standard-axiom audit freshly compiled privately. ACTUAL physical H1 frequency=free cubic-12*exact moments at EVERY H1 source and EVERY mode, including ALL collapsed modes. Actual local moment SUMS agree across DIFFERENT Miura/product patches at EVERY common real rough source, via genuine H1 representatives of actual finite-gap approximations. Globally defined rough frequency assembly and dynamics remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1834-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -5060,7 +5065,12 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillActionCurveGapSupport.lean": "ce1c27eeb0104eb6b8fa0de7dd953f9adaf07b4229936f2230c29258f12c7844",
     "NLS/Articles/KdVPseudomeasures/OriginalHillFixedQuarticActionCurve.lean": "8945037de2ce6f7aadde637df32f7d22f9e623ffa86a05d83e9cfc55d42fdea9",
     "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalEnergyReality.lean": "b3fe413c3d12ea79a99b8c37b058e2920d8b07133743b07094201408750f9d95",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapPhysicalFrequency.lean": "91ea39862e9c42ad8599668db90232c6834979a8185ba8c3b046fb6a74d522f6"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapPhysicalFrequency.lean": "91ea39862e9c42ad8599668db90232c6834979a8185ba8c3b046fb6a74d522f6",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeCurve.lean": "a6015b27b14d0cdbbece7341fcfbaebc2ede3da343f6a51d635aca5a31a196d3",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapClosedFrequency.lean": "52d8a27b9ac0731558a89044d295baa3fc61da77500a4e2a3f4edc863b03dc26",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1PhysicalFrequency.lean": "f12a1086f5861c49831b0d35ed73413b30874a93f7f626e6de31f5ae912d10e0",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapH1Realization.lean": "3d8b2d2f31d13b6d29fa35aa1a84699e0cf37b69db1c0697dc581a009da938c4",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillMomentPatchGluing.lean": "7e7a256d33e2154270f4bd57c131b7f64b8e21add8e1097bdf619f49d60b5352"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -5068,11 +5078,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 8954,
-    "newly_checked_declarations_this_continuation": 11,
-    "new_theorems": 11,
-    "new_definitions": 0,
-    "total_checked_declarations": 8965
+    "previous_checked_declarations": 8965,
+    "newly_checked_declarations_this_continuation": 14,
+    "new_theorems": 13,
+    "new_definitions": 1,
+    "total_checked_declarations": 8979
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -5101,7 +5111,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-fixed-quartic-action-contour.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-h1-physical-frequency.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5474,13 +5484,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1801 baseline non-audit registered sources byte-identical to486eb9e. All 8 new modules (20 theorems+2 definitions), 3 canonical-byte-identical modules, 6 unchanged private dependencies and EXACT 8916-declaration standard-axiom audit freshly compiled privately. ACTUAL finite-gap cubic outer contour equals exact free cubic minus12 actual positive weighted moment series; central zero, negative-gap doubling and closed-gap filling proved. ONE threshold BEFORE ALL open original selected modes; sphere root-domain condition retained. Physical Hamiltonian differentiation remains OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1810-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1809 baseline non-audit registered sources byte-identical to3df4d1c. All 7 new modules (13 theorems+3 definitions), 1 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 8932-declaration standard-axiom audit freshly compiled privately. ACTUAL primitive phase variation and quartic energy-CONTOUR bracket equal exact normalized cubic contour/free-minus12 actual moment series. SAME original finite-gap H1 patch has physical complex energy VALUE and actual contour phase BRACKET with one threshold before all open modes. Physical energy derivative/action-curve comparison and frequency identification remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1817-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1816 baseline non-audit registered sources byte-identical to30c3d3c. All 6 new modules (20 theorems+2 definitions), 0 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 8954-declaration standard-axiom audit freshly compiled privately. ACTUAL selected canonical-phase Hamiltonian vector equals the genuine analytic H1 inverse action-curve tangent; all signed native velocities including other CLOSED modes proved. Curve preserves genuine finite-gap membership for EVERY real parameter and actual physical energy derivative equals actual frequency. COMMON exterior-radius energy identity along this curve and physical frequency-to-moment identification remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1823-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1822 baseline non-audit registered sources byte-identical to19edef8. All 6 new modules (11 theorems+0 definitions), 1 canonical-byte-identical modules, 6 unchanged private dependencies and EXACT 8965-declaration standard-axiom audit freshly compiled privately. Fixed contour identity on genuine finite-gap action-curve germ and complex physical energy reality justify derivative comparison, proving ACTUAL physical H1 frequency=free cubic-12*exact moment series at EVERY OPEN mode of EVERY actual finite-gap source. Closed selected modes/ALL H1/rough frequencies remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1829-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1822 baseline non-audit registered sources byte-identical to19edef8. All 6 new modules (11 theorems+0 definitions), 1 canonical-byte-identical modules, 6 unchanged private dependencies and EXACT 8965-declaration standard-axiom audit freshly compiled privately. Fixed contour identity on genuine finite-gap action-curve germ and complex physical energy reality justify derivative comparison, proving ACTUAL physical H1 frequency=free cubic-12*exact moment series at EVERY OPEN mode of EVERY actual finite-gap source. Closed selected modes/ALL H1/rough frequencies remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1829-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1828 baseline non-audit registered sources byte-identical to07b4614. All 5 new modules (13 theorems+1 definitions), 0 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 8979-declaration standard-axiom audit freshly compiled privately. ACTUAL physical H1 frequency=free cubic-12*exact moments at EVERY H1 source and EVERY mode, including ALL collapsed modes. Actual local moment SUMS agree across DIFFERENT Miura/product patches at EVERY common real rough source, via genuine H1 representatives of actual finite-gap approximations. Globally defined rough frequency assembly and dynamics remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1834-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-fixed-quartic-action-contour-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-physical-frequency-map.json",
   "baseline_validated_snapshot": {
-    "commit": "19edef8a19f59bbd1e9fa8984852a2975911583d",
-    "modules": 1823,
-    "audited_declarations": 8954,
+    "commit": "07b461402d50b3d4bb4da33db41a919c77b587ff",
+    "modules": 1829,
+    "audited_declarations": 8965,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -8758,6 +8769,26 @@
     "ALL_H1_physical_frequency_formula_PROVED": false,
     "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_H1_physical_frequency": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-physical-frequency-map.json",
+    "actual_H1_mode_opening_curve_and_finiteGap_preservation_PROVED": true,
+    "finiteGap_CLOSED_mode_physical_frequency_formula_PROVED": true,
+    "ALL_H1_ALL_modes_physical_frequency_formula_PROVED": true,
+    "same_actual_moment_patch_BEFORE_ALL_H1_sources_and_modes_PROVED": true,
+    "genuine_H1_representative_of_every_actual_rough_finiteGap_source_PROVED": true,
+    "denseRange_genuine_H1_inclusion_in_original_rough_source_PROVED": true,
+    "independence_of_SUMS_across_DIFFERENT_Miura_product_patches_at_real_rough_sources_PROVED": true,
+    "individual_moment_cross_patch_identity_PROVED": false,
+    "globally_defined_actual_KdV_rough_frequency_map_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [

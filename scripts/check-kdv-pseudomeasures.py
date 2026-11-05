@@ -1860,6 +1860,11 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillFixedQuarticActionCurve',
     'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalEnergyReality',
     'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapPhysicalFrequency',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeCurve',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapClosedFrequency',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1PhysicalFrequency',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapH1Realization',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillMomentPatchGluing',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

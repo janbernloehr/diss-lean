@@ -1826,6 +1826,11 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillActionCurveGapSupport
 import NLS.Articles.KdVPseudomeasures.OriginalHillFixedQuarticActionCurve
 import NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalEnergyReality
 import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapPhysicalFrequency
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeCurve
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapClosedFrequency
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1PhysicalFrequency
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapH1Realization
+import NLS.Articles.KdVPseudomeasures.OriginalHillMomentPatchGluing
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10794,3 +10799,17 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapPhysicalFrequency
 #print axioms NLS.Articles.KdVPseudomeasures.exists_quarticEnergyContour_phase_bracket_eq_physical_frequency
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1_finiteGap_physical_frequency_eq_moment_series
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_open_physical_frequency_formula
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ModeCurve
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ModeCurve_zero
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1ModeCurve
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ModeCurve_native_image
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ModeCurve_finiteGap
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ModeCurve_opens_closed_gap
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_finiteGap_open_frequency_eq_moment_series
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_finiteGap_ALL_frequency_eq_moment_series
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_physical_frequency_eq_moment_series
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_physical_H1_frequency_moment_neighborhood
+#print axioms NLS.Articles.KdVPseudomeasures.hillReal_has_H1_representative_of_mem_sobolev
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_has_H1_representative
+#print axioms NLS.Articles.KdVPseudomeasures.denseRange_hillIntegerSourceInclusion_one
+#print axioms NLS.Articles.KdVPseudomeasures.hillReal_centeredSecondMomentSeries_independent_product_patch
