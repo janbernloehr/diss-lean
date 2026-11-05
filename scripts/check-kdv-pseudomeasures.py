@@ -1573,6 +1573,10 @@ modules = [
     'NLS.KdV.HillDiracSpectralTerminal',
     'NLS.KdV.HillRotatedDiracSource',
     'NLS.Articles.KdVPseudomeasures.OriginalHillDiracSpectralCore',
+    'NLS.ZakharovShabat.SourceDirichletOmittedInverseSequence',
+    'NLS.ZakharovShabat.SourceDirichletTerminalSequence',
+    'NLS.ZakharovShabat.SourceDirichletTerminalDifferential',
+    'NLS.ZakharovShabat.SourceDirichletTerminalJacobianCompact',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
