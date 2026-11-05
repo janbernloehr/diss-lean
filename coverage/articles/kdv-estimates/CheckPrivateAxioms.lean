@@ -1412,6 +1412,11 @@ import NLS.KdV.HillHminusOriginalAllGapCartesianGerms
 import NLS.KdV.HillOriginalOwnFactorConjugation
 import NLS.KdV.HillHminusOriginalAllGapConjugateGerms
 import NLS.KdV.HillOriginalAllGapCartesianGardner
+import NLS.KdV.HillDirichletHamiltonianRealDirection
+import NLS.KdV.HillMeanZeroNormingPerturbations
+import NLS.KdV.HillMeanZeroOpenGapDensity
+import NLS.KdV.HillOriginalAllGapCartesianMatrix
+import NLS.KdV.HillOriginalCartesianGardnerFamily
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
