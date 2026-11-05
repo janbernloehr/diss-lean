@@ -3145,6 +3145,54 @@
         "NLS.Articles.KdVPseudomeasures.tendsto_physical_H1_frequency_of_rough_convergence"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-global-rough-frequency-map.json"
+    },
+    {
+      "label": "Rough actual action-fiber frequency invariance and global canonical rough group/trajectories",
+      "status": "Genuine rough frequencies are constant on actual action fibers; the SAME native inverse yields a global isospectral canonical group with joint rough-norm continuity, uniform compact-time dependence and precompact full orbits. Smooth PDE identification remains open. Physical PDE identification and endpoint dynamics remain open; four main theorems unproved.",
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.bijective_hillRealSignedMap",
+        "NLS.Articles.KdVPseudomeasures.hillNativeHomeomorph",
+        "NLS.Articles.KdVPseudomeasures.hillNativeHomeomorph_apply",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_hillNativeHomeomorph_symm",
+        "NLS.Articles.KdVPseudomeasures.hillRoughFiniteGapApproximation",
+        "NLS.Articles.KdVPseudomeasures.hillRoughFiniteGapApproximation_native",
+        "NLS.Articles.KdVPseudomeasures.hillRoughFiniteGapApproximation_tendsto",
+        "NLS.Articles.KdVPseudomeasures.hillRoughFiniteGapApproximation_mem",
+        "NLS.Articles.KdVPseudomeasures.hillRoughFiniteGapApproximation_products",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_of_native_products",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_of_discriminant_eq",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_of_original_isospectral",
+        "NLS.WeightedCoeff.fourierRealZeroPhaseFlow",
+        "NLS.WeightedCoeff.fourierRealZeroPhaseFlow_apply",
+        "NLS.WeightedCoeff.fourierRealZeroPhaseFlow_zero",
+        "NLS.WeightedCoeff.fourierRealZeroPhaseFlow_add",
+        "NLS.WeightedCoeff.norm_fourierRealZeroPhaseFlow",
+        "NLS.WeightedCoeff.fourierRealZeroPhaseFlow_products",
+        "NLS.WeightedCoeff.continuous_fourierRealZeroPhaseFlow_family",
+        "NLS.LpSequence.oddPositiveFrequency",
+        "NLS.LpSequence.oddPositiveFrequency_zero",
+        "NLS.LpSequence.oddPositiveFrequency_neg",
+        "NLS.LpSequence.oddPositiveFrequency_positive",
+        "NLS.LpSequence.continuous_oddPositiveFrequency_family",
+        "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow",
+        "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_native",
+        "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_positive_coordinate",
+        "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_zero",
+        "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_products",
+        "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_frequency",
+        "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_isospectral",
+        "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_add",
+        "NLS.Articles.KdVPseudomeasures.continuous_hillRoughCanonicalKdVFlow",
+        "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVTimeHomeomorph",
+        "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVTrajectory",
+        "NLS.Articles.KdVPseudomeasures.continuous_hillRoughCanonicalKdVTrajectory",
+        "NLS.Articles.KdVPseudomeasures.tendsto_hillRoughCanonicalKdVTrajectory",
+        "NLS.Articles.KdVPseudomeasures.tendstoUniformlyOn_hillRoughCanonicalKdVFlow",
+        "NLS.Articles.KdVPseudomeasures.exists_compact_hillRoughCanonicalKdV_orbit_container",
+        "NLS.Articles.KdVPseudomeasures.isCompact_closure_range_hillRoughCanonicalKdVFlow",
+        "NLS.Articles.KdVPseudomeasures.isBounded_range_hillRoughCanonicalKdVFlow"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-canonical-flow-map.json"
     }
   ],
   "reuse_map": [
@@ -3224,7 +3272,8 @@
     }
   ],
   "remaining_obligations": [
-    "Construct ACTUAL original rough KdV evolution from the NOW DEFINED genuine rough frequencies and the verified actual native global inverse. Prove rough frequency invariance on action fibers (H1 physical action-fiber invariance and actual matched finite-gap approximations are available), actual flow group properties and smooth physical PDE identification. Prove convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for Main1.1,1.3,5.9. Genuine scalar rough frequencies, their uniqueness/H1 agreement, full complex free-minus12moments formula and EVERY p>1 including infinity weighted Banach analytic renormalization are NOW COMPLETE.",
+    "Identify the NOW CONSTRUCTED genuine canonical rough frequency flow with ACTUAL smooth physical KdV PDE solutions. Prove preservation of all actual strong integer Sobolev strata, differentiate the actual strong canonical inverse/rotation and identify its Hamiltonian vector with the literal Gardner KdV field. The actual H1 physical Hamiltonian frequency identity, genuine full canonicality and strong native equivalences are already verified. Canonical trajectory convergence from EVERY rough-convergent source family is NOW PROVED, but must not be called smooth-PDE approximation until this identification is complete.",
+    "Establish required bounded-endpoint weak-star CANONICAL trajectory continuity and analyticity/compact-time properties using the genuine rough frequency map, actual endpoint canonical homeomorphism/Main1.4 and literal native weighted dynamics. Verify the source Main1.1,1.3,5.9 domains, topology and every-smooth-PDE-approximation quantifier after physical identification.",
     "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "workspace": {
@@ -7164,6 +7213,35 @@
     "actual_KdV_evolution_PROVED": false,
     "physical_smooth_PDE_flow_identification_PROVED": false,
     "universal_smooth_approximation_TRAJECTORY_convergence_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_rough_canonical_flow": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-canonical-flow-map.json",
+    "SAME_actual_rough_native_global_homeomorphism_and_real_analytic_inverse_PROVED": true,
+    "genuine_global_rough_finiteGap_approximations_EVERY_index_PROVED": true,
+    "matched_actual_action_products_preserved_under_rough_approximation_PROVED": true,
+    "genuine_rough_frequency_invariance_ENTIRE_native_action_fibers_PROVED": true,
+    "genuine_rough_frequency_invariance_FULL_original_isospectral_sets_PROVED": true,
+    "shared_physical_real_zero_mean_odd_frequency_rotation_PROVED": true,
+    "existing_generic_continuous_phaseFlow_family_REUSED": true,
+    "genuine_canonical_rough_frequency_flow_constructed_PROVED": true,
+    "exact_positive_native_coordinates_exp_i_time_actual_frequency_PROVED": true,
+    "canonical_flow_preserves_ALL_actions_frequencies_and_FULL_original_spectrum_PROVED": true,
+    "true_nonlinear_canonical_group_law_PROVED": true,
+    "joint_original_rough_norm_time_source_continuity_PROVED": true,
+    "canonical_time_slices_homeomorphisms_PROVED": true,
+    "canonical_compact_time_UNIFORM_trajectory_continuity_PROVED": true,
+    "canonical_trajectory_convergence_for_EVERY_rough_norm_convergent_source_family_PROVED": true,
+    "full_all_time_canonical_orbit_closure_COMPACT_in_original_rough_norm_PROVED": true,
+    "physical_smooth_PDE_flow_identification_PROVED": false,
+    "universal_smooth_PDE_approximation_TRAJECTORY_convergence_PROVED": false,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
       "1.1",

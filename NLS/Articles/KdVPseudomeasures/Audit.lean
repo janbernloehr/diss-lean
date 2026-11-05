@@ -1835,6 +1835,13 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillRoughKdVFrequency
 import NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyReality
 import NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencySequence
 import NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyExtension
+import NLS.Articles.KdVPseudomeasures.OriginalHillGlobalNativeInverse
+import NLS.Articles.KdVPseudomeasures.OriginalHillRoughActionTruncation
+import NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyActionFibers
+import NLS.SequenceSpaces.FourierRealPhaseFlow
+import NLS.SequenceSpaces.OddPositiveFrequency
+import NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalFlow
+import NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalTrajectories
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10835,3 +10842,44 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyExtension
 #print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_unique_continuous_extension
 #print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_zero
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_physical_H1_frequency_of_rough_convergence
+#print axioms NLS.Articles.KdVPseudomeasures.bijective_hillRealSignedMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillNativeHomeomorph
+#print axioms NLS.Articles.KdVPseudomeasures.hillNativeHomeomorph_apply
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillNativeHomeomorph_symm
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughFiniteGapApproximation
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughFiniteGapApproximation_native
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughFiniteGapApproximation_tendsto
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughFiniteGapApproximation_mem
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughFiniteGapApproximation_products
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_of_native_products
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_of_discriminant_eq
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_of_original_isospectral
+#print axioms NLS.WeightedCoeff.fourierRealZeroPhaseFlow
+#print axioms NLS.WeightedCoeff.fourierRealZeroPhaseFlow_apply
+#print axioms NLS.WeightedCoeff.fourierRealZeroPhaseFlow_zero
+#print axioms NLS.WeightedCoeff.fourierRealZeroPhaseFlow_add
+#print axioms NLS.WeightedCoeff.norm_fourierRealZeroPhaseFlow
+#print axioms NLS.WeightedCoeff.fourierRealZeroPhaseFlow_products
+#print axioms NLS.WeightedCoeff.continuous_fourierRealZeroPhaseFlow_family
+#print axioms NLS.LpSequence.oddPositiveFrequency
+#print axioms NLS.LpSequence.oddPositiveFrequency_zero
+#print axioms NLS.LpSequence.oddPositiveFrequency_neg
+#print axioms NLS.LpSequence.oddPositiveFrequency_positive
+#print axioms NLS.LpSequence.continuous_oddPositiveFrequency_family
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_native
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_positive_coordinate
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_products
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_frequency
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_add
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillRoughCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVTimeHomeomorph
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillRoughCanonicalKdVTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_hillRoughCanonicalKdVTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformlyOn_hillRoughCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.exists_compact_hillRoughCanonicalKdV_orbit_container
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_closure_range_hillRoughCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.isBounded_range_hillRoughCanonicalKdVFlow

@@ -1869,6 +1869,13 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyReality',
     'NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencySequence',
     'NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyExtension',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillGlobalNativeInverse',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillRoughActionTruncation',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyActionFibers',
+    'NLS.SequenceSpaces.FourierRealPhaseFlow',
+    'NLS.SequenceSpaces.OddPositiveFrequency',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalFlow',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalTrajectories',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

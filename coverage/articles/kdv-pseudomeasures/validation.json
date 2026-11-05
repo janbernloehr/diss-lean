@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Globally defined genuine rough KdV frequencies are real analytic, uniquely extend the actual physical H1 frequencies, and have an analytic renormalized sequence in the literal inverse-index weighted lp target for EVERY p>1 including infinity.",
+  "phase": "Genuine rough frequencies are constant on actual action fibers; the SAME native inverse yields a global isospectral canonical group with joint rough-norm continuity, uniform compact-time dependence and precompact full orbits. Smooth PDE identification remains open.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1843,13 +1843,20 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyReality.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencySequence.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyExtension.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillGlobalNativeInverse.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughActionTruncation.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyActionFibers.lean",
+    "NLS/SequenceSpaces/FourierRealPhaseFlow.lean",
+    "NLS/SequenceSpaces/OddPositiveFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughCanonicalFlow.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughCanonicalTrajectories.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7584,
-  "definitions": 1413,
+  "proved_theorems": 7618,
+  "definitions": 1420,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 8997,
+    "declarations": 9038,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3235,8 +3242,8 @@
     "OriginalHillSpectralDarboux exports the SAMEoriginal physical potential, actual multipliers and local logarithmic normalization; their literal unit-period physical Gardner integral is zero, their closed-mean-zero cotangent bracket is intrinsic, and the full local spectral matrix holds at every original potential.",
     "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
   ],
-  "source_correspondence": "Globally defined genuine rough KdV frequencies are real analytic, uniquely extend the actual physical H1 frequencies, and have an analytic renormalized sequence in the literal inverse-index weighted lp target for EVERY p>1 including infinity. Construct ACTUAL original rough KdV evolution from the NOW DEFINED genuine rough frequencies and the verified actual native global inverse. Prove rough frequency invariance on action fibers (H1 physical action-fiber invariance and actual matched finite-gap approximations are available), actual flow group properties and smooth physical PDE identification. Prove convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for Main1.1,1.3,5.9. Genuine scalar rough frequencies, their uniqueness/H1 agreement, full complex free-minus12moments formula and EVERY p>1 including infinity weighted Banach analytic renormalization are NOW COMPLETE. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1833 baseline non-audit registered sources byte-identical to1a3db11. All 4 new modules (14 theorems+4 definitions), 0 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 8997-declaration standard-axiom audit freshly compiled privately. Genuine globally defined rough KdV frequencies, every-mode real analyticity, FULL complex free-minus12moments local identity, unique physical H1 continuous extension and frequency convergence for EVERY rough-convergent H1 family COMPLETE. Renormalized sequence membership, literal coefficients, local norm bounds and FULL weighted Banach analytic output for EVERY p>1 incl infinity COMPLETE. Actual KdV evolution/PDE/trajectory/weak-star dynamics remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1838-module build.",
+  "source_correspondence": "Genuine rough frequencies are constant on actual action fibers; the SAME native inverse yields a global isospectral canonical group with joint rough-norm continuity, uniform compact-time dependence and precompact full orbits. Smooth PDE identification remains open. Identify the NOW CONSTRUCTED genuine canonical rough frequency flow with ACTUAL smooth physical KdV PDE solutions. Prove preservation of all actual strong integer Sobolev strata, differentiate the actual strong canonical inverse/rotation and identify its Hamiltonian vector with the literal Gardner KdV field. The actual H1 physical Hamiltonian frequency identity, genuine full canonicality and strong native equivalences are already verified. Canonical trajectory convergence from EVERY rough-convergent source family is NOW PROVED, but must not be called smooth-PDE approximation until this identification is complete. Establish required bounded-endpoint weak-star CANONICAL trajectory continuity and analyticity/compact-time properties using the genuine rough frequency map, actual endpoint canonical homeomorphism/Main1.4 and literal native weighted dynamics. Verify the source Main1.1,1.3,5.9 domains, topology and every-smooth-PDE-approximation quantifier after physical identification. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1837 baseline non-audit registered sources byte-identical toc396163. All 7 new modules (34 theorems+7 definitions), 0 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9038-declaration standard-axiom audit freshly compiled privately. Rough action-fiber frequency invariance and global canonical isospectral group with joint rough-norm continuity, uniform compact-time dependence and compact full orbit closure COMPLETE. Physical smooth KdV PDE identification, universal smooth-PDE trajectory approximation and endpoint weak-star trajectory results remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1845-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -5078,7 +5085,14 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillRoughKdVFrequency.lean": "1acb7e3b1c230da51858bab2f158cf6a884388c6e49de68831a4f9ce97c87ea6",
     "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyReality.lean": "f5f77754cfef13f41367f4e308dc7939dc6d671c72c62ff30cb81bf488a19a86",
     "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencySequence.lean": "641eb83b7c114aab89dab11ac9beab3181dbc9e1c4e6bd46b90072f0d7a29b2c",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyExtension.lean": "4cf52df35d0db76aac84aa4bf75a41dae6ceb4554026f97ddbcbf0f4fc06f261"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyExtension.lean": "4cf52df35d0db76aac84aa4bf75a41dae6ceb4554026f97ddbcbf0f4fc06f261",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillGlobalNativeInverse.lean": "51f97989acd7bfabcb033c1a0b64406c33580944d4712e546cb3c02ab095b8c3",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughActionTruncation.lean": "ee5feff1e1b4a3e86eb5efe35734e82e94c3220c8535d28fdffba6d718fbdb75",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyActionFibers.lean": "66fbd6e05d203a145a4a37e21e96962eb63b4c4be95d2880b5d76df1a2267de3",
+    "NLS/SequenceSpaces/FourierRealPhaseFlow.lean": "d24aeea3122553102cc4ecdb685eea981c8781ee1b90f175fcd8634bbef7cfe0",
+    "NLS/SequenceSpaces/OddPositiveFrequency.lean": "5346c485bd46289aef4b4c5ae15bd79594f402ac10ace4c7237a87a56a01c3ea",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughCanonicalFlow.lean": "48d9f10f3b793840034876aa5a5314f9bc479103caef6e4c2aa6d2e9e2214dfe",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughCanonicalTrajectories.lean": "bf8cd516275950ea0d5aa99d6f58bdb4a38255bd926665ca2b86f67dbd481e61"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -5086,11 +5100,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 8979,
-    "newly_checked_declarations_this_continuation": 18,
-    "new_theorems": 14,
-    "new_definitions": 4,
-    "total_checked_declarations": 8997
+    "previous_checked_declarations": 8997,
+    "newly_checked_declarations_this_continuation": 41,
+    "new_theorems": 34,
+    "new_definitions": 7,
+    "total_checked_declarations": 9038
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -5119,7 +5133,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-global-rough-frequency.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-rough-canonical-flow.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5494,13 +5508,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1816 baseline non-audit registered sources byte-identical to30c3d3c. All 6 new modules (20 theorems+2 definitions), 0 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 8954-declaration standard-axiom audit freshly compiled privately. ACTUAL selected canonical-phase Hamiltonian vector equals the genuine analytic H1 inverse action-curve tangent; all signed native velocities including other CLOSED modes proved. Curve preserves genuine finite-gap membership for EVERY real parameter and actual physical energy derivative equals actual frequency. COMMON exterior-radius energy identity along this curve and physical frequency-to-moment identification remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1823-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1822 baseline non-audit registered sources byte-identical to19edef8. All 6 new modules (11 theorems+0 definitions), 1 canonical-byte-identical modules, 6 unchanged private dependencies and EXACT 8965-declaration standard-axiom audit freshly compiled privately. Fixed contour identity on genuine finite-gap action-curve germ and complex physical energy reality justify derivative comparison, proving ACTUAL physical H1 frequency=free cubic-12*exact moment series at EVERY OPEN mode of EVERY actual finite-gap source. Closed selected modes/ALL H1/rough frequencies remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1829-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1828 baseline non-audit registered sources byte-identical to07b4614. All 5 new modules (13 theorems+1 definitions), 0 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 8979-declaration standard-axiom audit freshly compiled privately. ACTUAL physical H1 frequency=free cubic-12*exact moments at EVERY H1 source and EVERY mode, including ALL collapsed modes. Actual local moment SUMS agree across DIFFERENT Miura/product patches at EVERY common real rough source, via genuine H1 representatives of actual finite-gap approximations. Globally defined rough frequency assembly and dynamics remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1834-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1833 baseline non-audit registered sources byte-identical to1a3db11. All 4 new modules (14 theorems+4 definitions), 0 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 8997-declaration standard-axiom audit freshly compiled privately. Genuine globally defined rough KdV frequencies, every-mode real analyticity, FULL complex free-minus12moments local identity, unique physical H1 continuous extension and frequency convergence for EVERY rough-convergent H1 family COMPLETE. Renormalized sequence membership, literal coefficients, local norm bounds and FULL weighted Banach analytic output for EVERY p>1 incl infinity COMPLETE. Actual KdV evolution/PDE/trajectory/weak-star dynamics remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1838-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1833 baseline non-audit registered sources byte-identical to1a3db11. All 4 new modules (14 theorems+4 definitions), 0 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 8997-declaration standard-axiom audit freshly compiled privately. Genuine globally defined rough KdV frequencies, every-mode real analyticity, FULL complex free-minus12moments local identity, unique physical H1 continuous extension and frequency convergence for EVERY rough-convergent H1 family COMPLETE. Renormalized sequence membership, literal coefficients, local norm bounds and FULL weighted Banach analytic output for EVERY p>1 incl infinity COMPLETE. Actual KdV evolution/PDE/trajectory/weak-star dynamics remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1838-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1837 baseline non-audit registered sources byte-identical toc396163. All 7 new modules (34 theorems+7 definitions), 0 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9038-declaration standard-axiom audit freshly compiled privately. Rough action-fiber frequency invariance and global canonical isospectral group with joint rough-norm continuity, uniform compact-time dependence and compact full orbit closure COMPLETE. Physical smooth KdV PDE identification, universal smooth-PDE trajectory approximation and endpoint weak-star trajectory results remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1845-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-global-rough-frequency-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-canonical-flow-map.json",
   "baseline_validated_snapshot": {
-    "commit": "1a3db115c320262b1c2f2b9164cb8e6223165fb2",
-    "modules": 1834,
-    "audited_declarations": 8979,
+    "commit": "c3961635d6257b94016abdc8a03da565f5ad28fc",
+    "modules": 1838,
+    "audited_declarations": 8997,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -8825,6 +8840,35 @@
     "actual_KdV_evolution_PROVED": false,
     "physical_smooth_PDE_flow_identification_PROVED": false,
     "universal_smooth_approximation_TRAJECTORY_convergence_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_rough_canonical_flow": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-canonical-flow-map.json",
+    "SAME_actual_rough_native_global_homeomorphism_and_real_analytic_inverse_PROVED": true,
+    "genuine_global_rough_finiteGap_approximations_EVERY_index_PROVED": true,
+    "matched_actual_action_products_preserved_under_rough_approximation_PROVED": true,
+    "genuine_rough_frequency_invariance_ENTIRE_native_action_fibers_PROVED": true,
+    "genuine_rough_frequency_invariance_FULL_original_isospectral_sets_PROVED": true,
+    "shared_physical_real_zero_mean_odd_frequency_rotation_PROVED": true,
+    "existing_generic_continuous_phaseFlow_family_REUSED": true,
+    "genuine_canonical_rough_frequency_flow_constructed_PROVED": true,
+    "exact_positive_native_coordinates_exp_i_time_actual_frequency_PROVED": true,
+    "canonical_flow_preserves_ALL_actions_frequencies_and_FULL_original_spectrum_PROVED": true,
+    "true_nonlinear_canonical_group_law_PROVED": true,
+    "joint_original_rough_norm_time_source_continuity_PROVED": true,
+    "canonical_time_slices_homeomorphisms_PROVED": true,
+    "canonical_compact_time_UNIFORM_trajectory_continuity_PROVED": true,
+    "canonical_trajectory_convergence_for_EVERY_rough_norm_convergent_source_family_PROVED": true,
+    "full_all_time_canonical_orbit_closure_COMPACT_in_original_rough_norm_PROVED": true,
+    "physical_smooth_PDE_flow_identification_PROVED": false,
+    "universal_smooth_PDE_approximation_TRAJECTORY_convergence_PROVED": false,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
       "1.1",
