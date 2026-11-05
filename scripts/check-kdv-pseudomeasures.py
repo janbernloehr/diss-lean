@@ -1827,6 +1827,12 @@ modules = [
     'NLS.KdV.HillMiuraFiniteGapHamiltonianSymmetry',
     'NLS.KdV.HillMiuraWeightedQuarticContour',
     'NLS.Articles.KdVPseudomeasures.OriginalHillQuarticEnergyContour',
+    'NLS.ZakharovShabat.SourceFilledGapQuotientComplex',
+    'NLS.ZakharovShabat.SourceOddWeightedMomentCircle',
+    'NLS.ComplexAnalysis.ShiftedCubicWeightedCircle',
+    'NLS.KdV.HillOddCenteredPrimitiveMoments',
+    'NLS.KdV.HillCubicPrimitiveMomentReduction',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillOddMomentCancellation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

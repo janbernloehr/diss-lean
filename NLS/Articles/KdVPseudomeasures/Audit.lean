@@ -1793,6 +1793,12 @@ import NLS.ComplexAnalysis.WeightedQuarticInversionContour
 import NLS.KdV.HillMiuraFiniteGapHamiltonianSymmetry
 import NLS.KdV.HillMiuraWeightedQuarticContour
 import NLS.Articles.KdVPseudomeasures.OriginalHillQuarticEnergyContour
+import NLS.ZakharovShabat.SourceFilledGapQuotientComplex
+import NLS.ZakharovShabat.SourceOddWeightedMomentCircle
+import NLS.ComplexAnalysis.ShiftedCubicWeightedCircle
+import NLS.KdV.HillOddCenteredPrimitiveMoments
+import NLS.KdV.HillCubicPrimitiveMomentReduction
+import NLS.Articles.KdVPseudomeasures.OriginalHillOddMomentCancellation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10682,3 +10688,11 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillQuarticEnergyContour
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1_finiteGap_Miura_weighted_quartic_energy_contour
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_real_quartic_contour
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_quartic_energy_contour
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.filledGapQuotient_analytic_complex
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.odd_primitive_div_root_eq_filled
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.odd_weighted_moment_circle_eq_zero
+#print axioms NLS.ComplexAnalysis.circleIntegral_shifted_cube_of_odd_moments_zero
+#print axioms NLS.KdV.HillProductEquationPatch.odd_centeredMoment_eq_zero
+#print axioms NLS.KdV.HillProductEquationPatch.cubic_primitive_contour_eq_centeredMoment
+#print axioms NLS.KdV.HillProductEquationPatch.normalized_cubic_primitive_contour
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_odd_moment_cancellation
