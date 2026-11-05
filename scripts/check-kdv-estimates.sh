@@ -180,6 +180,7 @@ modules+=(NLS/KdV/HillFreeDirichletCentralCount NLS/ComplexAnalysis/SimpleZeroCo
 modules+=(NLS/FunctionalAnalysis/ClosedUnitCurvePeriodic NLS/KdV/HillIsospectralGradientContours NLS/ComplexAnalysis/TraceRootIsospectralDerivative NLS/KdV/HillClosedCurveDirections NLS/ComplexAnalysis/ImplicitRootIsospectralDerivative NLS/KdV/HillContourHamiltonianSources NLS/KdV/HillIsospectralAbelianPeriods NLS/KdV/HillIsospectralMixedPeriods NLS/KdV/HillIsospectralImplicitRoots NLS/KdV/HillIsospectralNormalizedDifferentials)
 modules+=(NLS/KdV/HillHamiltonianDirichletSourceFlows)
 modules+=(NLS/KdV/HillIsospectralPhysicalDifferentials)
+modules+=(NLS/ComplexAnalysis/SquareRootSourceStationarity NLS/ComplexAnalysis/CircleSourceStationarity NLS/ComplexAnalysis/LogarithmicMomentSourceStationarity NLS/ComplexAnalysis/CauchyTransformSourceStationarity NLS/KdV/HillIsospectralGapInvariants NLS/ComplexAnalysis/PrimitiveSourceStationarity NLS/KdV/HillIsospectralGapUnits NLS/KdV/HillIsospectralJointDifferentials NLS/ComplexAnalysis/CosineSourceStationarity NLS/KdV/HillIsospectralDeflatedDifferentials NLS/KdV/HillIsospectralCosinePrimitives NLS/KdV/HillIsospectralDirichletPrimitives)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

@@ -945,6 +945,18 @@ import NLS.KdV.HillIsospectralImplicitRoots
 import NLS.KdV.HillIsospectralNormalizedDifferentials
 import NLS.KdV.HillHamiltonianDirichletSourceFlows
 import NLS.KdV.HillIsospectralPhysicalDifferentials
+import NLS.ComplexAnalysis.SquareRootSourceStationarity
+import NLS.ComplexAnalysis.CircleSourceStationarity
+import NLS.ComplexAnalysis.LogarithmicMomentSourceStationarity
+import NLS.ComplexAnalysis.CauchyTransformSourceStationarity
+import NLS.KdV.HillIsospectralGapInvariants
+import NLS.ComplexAnalysis.PrimitiveSourceStationarity
+import NLS.KdV.HillIsospectralGapUnits
+import NLS.KdV.HillIsospectralJointDifferentials
+import NLS.ComplexAnalysis.CosineSourceStationarity
+import NLS.KdV.HillIsospectralDeflatedDifferentials
+import NLS.KdV.HillIsospectralCosinePrimitives
+import NLS.KdV.HillIsospectralDirichletPrimitives
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1500,7 +1512,16 @@ run_cmd do
     ``NLS.FunctionalAnalysis.periodic_closedUnitCurvePeriodTwo,
     ``NLS.ComplexAnalysis.traceRoot_fderiv_eq_zero_of_trace_kernel,
     ``NLS.ComplexAnalysis.implicitRoot_fderiv_eq_zero_of_parameter_kernel,
-    ``NLS.ComplexAnalysis.joint_fderiv_eq_parameter_of_state_kernel]
+    ``NLS.ComplexAnalysis.joint_fderiv_eq_parameter_of_state_kernel,
+    ``NLS.ComplexAnalysis.squareRoot_source_fderiv_eq_zero,
+    ``NLS.ComplexAnalysis.circleIntegral_source_fderiv_eq_zero,
+    ``NLS.ComplexAnalysis.logarithmicCircleMoment_source_fderiv_eq_zero,
+    ``NLS.ComplexAnalysis.parametricCircleCauchyTransform_source_fderiv_eq_zero,
+    ``NLS.ComplexAnalysis.normalizedPrimitive_source_fderiv_eq_zero,
+    ``NLS.ComplexAnalysis.parametricConvexPrimitive_source_fderiv_eq_zero,
+    ``NLS.ComplexAnalysis.parametricConvexPrimitive_moving_terminal_fderiv_of_source_kernel,
+    ``NLS.ComplexAnalysis.parametricCosineNumerator_source_fderiv_eq_zero,
+    ``NLS.ComplexAnalysis.parametricCosinePrimitive_source_fderiv_eq_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
