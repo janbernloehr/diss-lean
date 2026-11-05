@@ -968,6 +968,17 @@ import NLS.KdV.HillPrimitivePartialSumVariations
 import NLS.ComplexAnalysis.RealLineGermDerivative
 import NLS.KdV.HillRealSourceDecomposition
 import NLS.KdV.HillPhysicalGermDerivativeUniqueness
+import NLS.ComplexAnalysis.NormalSeriesDerivatives
+import NLS.SequenceSpaces.CoefficientRestriction
+import NLS.SequenceSpaces.WeightedRestriction
+import NLS.SequenceSpaces.FiniteHeadSeries
+import NLS.KdV.HillPrimitiveCorrectionMatching
+import NLS.KdV.HillPeriodOneRestriction
+import NLS.KdV.HillPhaseFiniteHead
+import NLS.KdV.HillPhaseSeriesDerivativeAssembly
+import NLS.KdV.HillPhaseSeriesPhysicalMatching
+import NLS.KdV.HillProjectedKernelCharts
+import NLS.KdV.HillFullRegularPhaseVariation
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1534,7 +1545,18 @@ run_cmd do
     ``NLS.ComplexAnalysis.parametricCosineNumerator_source_fderiv_eq_zero,
     ``NLS.ComplexAnalysis.parametricCosinePrimitive_source_fderiv_eq_zero,
     ``NLS.ComplexAnalysis.cosineTerminal_fderiv_of_stationary_gap,
-    ``NLS.ComplexAnalysis.fderiv_eq_of_eventuallyEq_real_affine_line]
+    ``NLS.ComplexAnalysis.fderiv_eq_of_eventuallyEq_real_affine_line,
+    ``NLS.ComplexAnalysis.tendsto_fderiv_sum_range_of_summable_uniform_bound,
+    ``NLS.ComplexAnalysis.fderiv_tsum_apply_eq_of_partial_sum_limit,
+    ``NLS.Coeff.restrictIndices,
+    ``NLS.Coeff.norm_restrictIndices_le,
+    ``NLS.Coeff.restrictIndicesCLM,
+    ``NLS.WeightedCoeff.restrictIndicesCLM,
+    ``NLS.WeightedCoeff.restrictIndicesCLM_apply,
+    ``NLS.WeightedCoeff.norm_restrictIndicesCLM_le,
+    ``NLS.ComplexAnalysis.tendsto_fderiv_add_sum_range_of_summable_uniform_bound,
+    ``NLS.sum_head_add_sum_range_of_zero_on_head,
+    ``NLS.sum_finite_head_add_tsum_complement]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

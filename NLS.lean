@@ -5891,3 +5891,14 @@ import NLS.KdV.HillPrimitivePartialSumVariations
 import NLS.ComplexAnalysis.RealLineGermDerivative
 import NLS.KdV.HillRealSourceDecomposition
 import NLS.KdV.HillPhysicalGermDerivativeUniqueness
+import NLS.ComplexAnalysis.NormalSeriesDerivatives
+import NLS.SequenceSpaces.CoefficientRestriction
+import NLS.SequenceSpaces.WeightedRestriction
+import NLS.SequenceSpaces.FiniteHeadSeries
+import NLS.KdV.HillPrimitiveCorrectionMatching
+import NLS.KdV.HillPeriodOneRestriction
+import NLS.KdV.HillPhaseFiniteHead
+import NLS.KdV.HillPhaseSeriesDerivativeAssembly
+import NLS.KdV.HillPhaseSeriesPhysicalMatching
+import NLS.KdV.HillProjectedKernelCharts
+import NLS.KdV.HillFullRegularPhaseVariation
