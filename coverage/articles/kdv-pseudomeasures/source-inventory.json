@@ -2876,6 +2876,23 @@
         "NLS.Articles.KdVPseudomeasures.originalHill_exists_frequency_moment_neighborhood"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-centered-frequency-moments-map.json"
+    },
+    {
+      "label": "Actual original rough Hill weighted centered second-moment absolute convergence on one common complex neighborhood before all rows",
+      "status": "proved actual local spectral series convergence; infinite sum analyticity and physical frequency equality remain unproved; four main theorems remain unproved",
+      "declarations": [
+        "NLS.ZakharovShabat.exists_sourceFullAbelian_local_uniform_square_gap_bound",
+        "NLS.Coeff.summable_norm_positive_weighted_of_squared_gap_tail",
+        "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_cosine_average",
+        "NLS.KdV.HillProductEquationPatch.norm_normalized_centeredMoment_le",
+        "NLS.KdV.HillProductEquationPatch.norm_normalized_centeredSecondMoment_le",
+        "NLS.KdV.HillProductEquationPatch.norm_abelianGapNumerator_le_of_circle_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_uniform_abelianGapNumerator_gap_tail_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_uniform_centeredSecondMoment_tail_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_open_centeredSecondMoment_absolute_summability",
+        "NLS.Articles.KdVPseudomeasures.originalHill_exists_absolutely_summable_frequency_moments"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-absolute-convergence-map.json"
     }
   ],
   "reuse_map": [
@@ -2955,9 +2972,9 @@
     }
   ],
   "remaining_obligations": [
-    "Use the NOW CONSTRUCTED ACTUAL original rough centered second moments to prove the frequency representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for genuine finite-gap H1 inputs, and pass it to all H1 by the verified strong finite-gap approximation. Prove independence across different Miura/product patches and local absolute sequence bounds/analytic assembly of the weighted moment series on the rough Hminus domain. Current moment values are actual local contour integrals, analytic on one common neighborhood and vanish at every original collapsed gap/action; these proved facts must not be replaced by assumed moment data.",
-    "Prove the SAME genuine frequencies extend to the original rough signed H^(-1/2) domain with required estimates, then ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity, establishing main1.1,1.3,5.9. ENTIRE-domain H1 real analyticity including collapse, FULL literal action-gradient normalization, action-fiber invariance and exact freefrequency(2*pi*n)^3 remain PROVED. An arbitrary frequency flow or indexed action flow is not physical KdV.",
-    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms remain necessary dependencies, not substitutes. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+    "Use the NOW PROVED actual weighted second-moment absolute convergence on ONE common complex rough-source neighborhood to prove locally bounded Banach sequence assembly and full analyticity of each infinite row sum, then the required weighted all-row estimates. Absolute convergence alone is not an analyticity certificate. The actual full-l2 gap square and signed reciprocal-index tail estimate are PROVED, including complex/collapsed gaps.",
+    "Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. Glue local rough sums by genuine H1 agreement/density, or prove cross-Miura/product-patch independence directly. Exact free H1 frequency, global H1 analyticity including collapse, original contour normalization/sheets and exact local moments remain PROVED. No actual rough frequency extension has yet been identified.",
+    "Prove ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -6593,6 +6610,29 @@
     "global_moment_independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
     "absolute_convergent_analytic_infinite_weighted_second_moment_series_PROVED": false,
     "actual_H1_Hamiltonian_frequency_eq_weighted_moment_series_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_weighted_moment_absolute_convergence": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-absolute-convergence-map.json",
+    "exact_actual_complex_cosine_formula_ALL_even_moments_PROVED": true,
+    "normalized_supremum_bound_on_ACTUAL_moving_complex_gap_PROVED": true,
+    "one_complex_neighborhood_uniform_filled_square_bound_by_gap_squared_PROVED": true,
+    "actual_off_diagonal_reciprocal_numerator_bound_on_ENTIRE_tail_gap_PROVED": true,
+    "actual_second_moment_squared_gap_signed_reciprocal_tail_bound_PROVED": true,
+    "actual_weighted_second_moment_rows_ABSOLUTELY_CONVERGENT_PROVED": true,
+    "ONE_common_open_complex_source_neighborhood_BEFORE_ALL_rows_PROVED": true,
+    "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
+    "infinite_row_sum_analyticity_PROVED": false,
+    "weighted_ALL_row_sequence_bound_PROVED": false,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,

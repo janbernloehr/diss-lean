@@ -263,7 +263,17 @@
       "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_zero_of_original_action_zero",
       "NLS.KdV.HillProductEquationPatch.centeredEnergySquare",
       "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_original_energy_contour",
-      "NLS.Articles.KdVPseudomeasures.originalHill_exists_frequency_moment_neighborhood"
+      "NLS.Articles.KdVPseudomeasures.originalHill_exists_frequency_moment_neighborhood",
+      "NLS.ZakharovShabat.exists_sourceFullAbelian_local_uniform_square_gap_bound",
+      "NLS.Coeff.summable_norm_positive_weighted_of_squared_gap_tail",
+      "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_cosine_average",
+      "NLS.KdV.HillProductEquationPatch.norm_normalized_centeredMoment_le",
+      "NLS.KdV.HillProductEquationPatch.norm_normalized_centeredSecondMoment_le",
+      "NLS.KdV.HillProductEquationPatch.norm_abelianGapNumerator_le_of_circle_bound",
+      "NLS.KdV.HillProductEquationPatch.exists_local_uniform_abelianGapNumerator_gap_tail_bound",
+      "NLS.KdV.HillProductEquationPatch.exists_local_uniform_centeredSecondMoment_tail_bound",
+      "NLS.KdV.HillProductEquationPatch.exists_open_centeredSecondMoment_absolute_summability",
+      "NLS.Articles.KdVPseudomeasures.originalHill_exists_absolutely_summable_frequency_moments"
     ],
     "1.3": [
       "isEmbedding_lowerWeakStarTrajectory",
@@ -525,7 +535,17 @@
       "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_zero_of_original_action_zero",
       "NLS.KdV.HillProductEquationPatch.centeredEnergySquare",
       "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_original_energy_contour",
-      "NLS.Articles.KdVPseudomeasures.originalHill_exists_frequency_moment_neighborhood"
+      "NLS.Articles.KdVPseudomeasures.originalHill_exists_frequency_moment_neighborhood",
+      "NLS.ZakharovShabat.exists_sourceFullAbelian_local_uniform_square_gap_bound",
+      "NLS.Coeff.summable_norm_positive_weighted_of_squared_gap_tail",
+      "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_cosine_average",
+      "NLS.KdV.HillProductEquationPatch.norm_normalized_centeredMoment_le",
+      "NLS.KdV.HillProductEquationPatch.norm_normalized_centeredSecondMoment_le",
+      "NLS.KdV.HillProductEquationPatch.norm_abelianGapNumerator_le_of_circle_bound",
+      "NLS.KdV.HillProductEquationPatch.exists_local_uniform_abelianGapNumerator_gap_tail_bound",
+      "NLS.KdV.HillProductEquationPatch.exists_local_uniform_centeredSecondMoment_tail_bound",
+      "NLS.KdV.HillProductEquationPatch.exists_open_centeredSecondMoment_absolute_summability",
+      "NLS.Articles.KdVPseudomeasures.originalHill_exists_absolutely_summable_frequency_moments"
     ],
     "1.4": [
       "sourceLemma2_4_physical_identification",
@@ -5641,13 +5661,23 @@
       "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_zero_of_original_action_zero",
       "NLS.KdV.HillProductEquationPatch.centeredEnergySquare",
       "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_original_energy_contour",
-      "NLS.Articles.KdVPseudomeasures.originalHill_exists_frequency_moment_neighborhood"
+      "NLS.Articles.KdVPseudomeasures.originalHill_exists_frequency_moment_neighborhood",
+      "NLS.ZakharovShabat.exists_sourceFullAbelian_local_uniform_square_gap_bound",
+      "NLS.Coeff.summable_norm_positive_weighted_of_squared_gap_tail",
+      "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_cosine_average",
+      "NLS.KdV.HillProductEquationPatch.norm_normalized_centeredMoment_le",
+      "NLS.KdV.HillProductEquationPatch.norm_normalized_centeredSecondMoment_le",
+      "NLS.KdV.HillProductEquationPatch.norm_abelianGapNumerator_le_of_circle_bound",
+      "NLS.KdV.HillProductEquationPatch.exists_local_uniform_abelianGapNumerator_gap_tail_bound",
+      "NLS.KdV.HillProductEquationPatch.exists_local_uniform_centeredSecondMoment_tail_bound",
+      "NLS.KdV.HillProductEquationPatch.exists_open_centeredSecondMoment_absolute_summability",
+      "NLS.Articles.KdVPseudomeasures.originalHill_exists_absolutely_summable_frequency_moments"
     ]
   },
   "essential_open_obligations": [
-    "Use the NOW CONSTRUCTED ACTUAL original rough centered second moments to prove the frequency representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for genuine finite-gap H1 inputs, and pass it to all H1 by the verified strong finite-gap approximation. Prove independence across different Miura/product patches and local absolute sequence bounds/analytic assembly of the weighted moment series on the rough Hminus domain. Current moment values are actual local contour integrals, analytic on one common neighborhood and vanish at every original collapsed gap/action; these proved facts must not be replaced by assumed moment data.",
-    "Prove the SAME genuine frequencies extend to the original rough signed H^(-1/2) domain with required estimates, then ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity, establishing main1.1,1.3,5.9. ENTIRE-domain H1 real analyticity including collapse, FULL literal action-gradient normalization, action-fiber invariance and exact freefrequency(2*pi*n)^3 remain PROVED. An arbitrary frequency flow or indexed action flow is not physical KdV.",
-    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms remain necessary dependencies, not substitutes. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+    "Use the NOW PROVED actual weighted second-moment absolute convergence on ONE common complex rough-source neighborhood to prove locally bounded Banach sequence assembly and full analyticity of each infinite row sum, then the required weighted all-row estimates. Absolute convergence alone is not an analyticity certificate. The actual full-l2 gap square and signed reciprocal-index tail estimate are PROVED, including complex/collapsed gaps.",
+    "Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. Glue local rough sums by genuine H1 agreement/density, or prove cross-Miura/product-patch independence directly. Exact free H1 frequency, global H1 analyticity including collapse, original contour normalization/sheets and exact local moments remain PROVED. No actual rough frequency extension has yet been identified.",
+    "Prove ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
   "shared_module_moves": {
@@ -7283,7 +7313,13 @@
     "HillPrimitiveMomentsEnergyContour proves the moments are LITERAL integrals over the EXISTING ORIGINAL Hill energy loops, using the canonical normalized energy differential. The quadratic change E=z^2-c retains its EXACT2*z Jacobian on the ENTIRE contour, including its real band points. This reuses the actual energy-sheet pullback and is not an approximate or replacement contour identity.",
     "HillPrimitiveMomentsClosedGap proves EVERY positive even-order moment vanishes when the actual selected Miura gap collapses, including the diagonal n=m row, by the actual filled-square zero and exact standard-root cosine-average formula. For real original rough sources it proves the SAME zero conclusion directly from vanishing of the ORIGINAL canonical Hill gap square or ORIGINAL canonical Hill action. The original-to-Miura collapse implication is proved using the genuine full gap-label identity and strict positivity of the positive Dirac endpoints; no extra collapse assumption is retained.",
     "OriginalHillFrequencyMoments exports the common-neighborhood existence theorem at EVERY actual original real mean-zero rough Fourier source, with one neighborhood before ALL rows/gaps/even orders. These are verified spectral ingredients for the rough KdV frequency extension. GLOBAL independence between different Miura/product patches, absolute convergence and analytic assembly of the infinite weighted second-moment series, and equality of that series with the genuine H1 Hamiltonian frequency remain OPEN. No rough frequency extension or original KdV evolution is claimed.",
-    "Main1.4 remains PROVED and freshly recompiled. Main1.1,1.3,5.1,5.9 remain UNPROVED. Actual globally real-analytic H1 frequencies including collapse and their exact free normalization remain proved. Rough frequency series/identification, ACTUAL original KdV evolution/every-smooth-approximation convergence, literal Wiener ell-one spectral estimates and universal actual numerator scalar remain OPEN. Appendix B B.1(i)-(iv) remains COMPLETE. Goal ACTIVE."
+    "Main1.4 remains PROVED and freshly recompiled. Main1.1,1.3,5.1,5.9 remain UNPROVED. Actual globally real-analytic H1 frequencies including collapse and their exact free normalization remain proved. Rough frequency series/identification, ACTUAL original KdV evolution/every-smooth-approximation convergence, literal Wiener ell-one spectral estimates and universal actual numerator scalar remain OPEN. Appendix B B.1(i)-(iv) remains COMPLETE. Goal ACTIVE.",
+    "HillPrimitiveMomentsCosineBound proves the EXACT cosine-average identity for the ACTUAL rough centered even moments on every existing momentSource C, for ALL rows, selected gaps and even orders, including complex and collapsed gaps. The coefficient is exactly -2*pi*i. Consequently the norm of moment/(2*pi) is bounded by the supremum of its actual regular numerator on the actual moving gap. The second-moment specialization bounds it by the product of the actual filled-square and actual regular gap-numerator bounds.",
+    "SourceFullAbelianSquareUniformGapBound constructs one genuine complex source neighborhood around EVERY real diagonal source, BEFORE ALL signed gap indices and gap points, on which the ACTUAL filled primitive square is bounded by one positive constant times the squared ACTUAL complex Dirac gap. It derives this from the verified mixed-sequence square-error factory and the exact selected-polynomial gap bound. No positive lower bound on the gap is required.",
+    "HillMomentGapNumeratorTail transfers the existing actual signed reciprocal-index numerator estimate from fixed tail circles to the ENTIRE moving complex gap by local maximum modulus. One open original rough-source neighborhood, tail threshold and constant work BEFORE ALL numerator/selected indices. The estimate retains BOTH 1/abs(n-m) and 1/(n+m), with no universal numerator scalar assumption.",
+    "HillPrimitiveMomentTailBound combines the actual square and numerator factories on ONE common native complex neighborhood, chosen before ALL rows and selected gaps. It proves norm(Omega_nm^(2)/(2*pi)) <= B*norm(delta_m)^2*(1/abs(n-m)+1/(n+m)) on the off-diagonal tail. The diagonal and finite low terms remain the actual analytic contour moments and require no summability estimate.",
+    "PositiveSquaredGapMomentSummability proves that this actual squared-full-l2-gap bound implies ABSOLUTE convergence of every gap-index-weighted row. The proof uses the literal full-l2 gap sequence and m*(1/abs(n-m)+1/(n+m))<=3 when m>2*n, leaving finitely many low/diagonal terms unrestricted. HillPrimitiveMomentAbsoluteSummability applies it to the ACTUAL contour moments, removing the 2*pi normalization exactly. OriginalHillMomentAbsoluteSummability constructs such a patch from the verified family factory at EVERY ORIGINAL real mean-zero rough Fourier source: ONE open complex neighborhood works BEFORE ALL rows, and EVERY scalar moment remains Banach-source analytic there.",
+    "This milestone proves ABSOLUTE convergence of the actual weighted second-moment rows; it does NOT yet prove local Banach norm bounds/analyticity for their infinite sums or identify those sums with the genuine H1 Hamiltonian frequencies. Different-Miura-patch moment independence remains unproved; local frequency sums may instead be glued by genuine dense H1 agreement. Main1.4 and Appendix B remain COMPLETE; Main1.1,1.3,5.1,5.9 remain UNPROVED and goalACTIVE."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -12315,6 +12351,29 @@
     "global_moment_independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
     "absolute_convergent_analytic_infinite_weighted_second_moment_series_PROVED": false,
     "actual_H1_Hamiltonian_frequency_eq_weighted_moment_series_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "verified_actual_Hill_weighted_moment_absolute_convergence": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-absolute-convergence-map.json",
+    "exact_actual_complex_cosine_formula_ALL_even_moments_PROVED": true,
+    "normalized_supremum_bound_on_ACTUAL_moving_complex_gap_PROVED": true,
+    "one_complex_neighborhood_uniform_filled_square_bound_by_gap_squared_PROVED": true,
+    "actual_off_diagonal_reciprocal_numerator_bound_on_ENTIRE_tail_gap_PROVED": true,
+    "actual_second_moment_squared_gap_signed_reciprocal_tail_bound_PROVED": true,
+    "actual_weighted_second_moment_rows_ABSOLUTELY_CONVERGENT_PROVED": true,
+    "ONE_common_open_complex_source_neighborhood_BEFORE_ALL_rows_PROVED": true,
+    "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
+    "infinite_row_sum_analyticity_PROVED": false,
+    "weighted_ALL_row_sequence_bound_PROVED": false,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,

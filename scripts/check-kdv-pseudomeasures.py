@@ -1794,6 +1794,13 @@ modules = [
     'NLS.KdV.HillPrimitiveMomentsClosedGap',
     'NLS.KdV.HillPrimitiveMomentsEnergyContour',
     'NLS.Articles.KdVPseudomeasures.OriginalHillFrequencyMoments',
+    'NLS.ZakharovShabat.SourceFullAbelianSquareUniformGapBound',
+    'NLS.SequenceSpaces.PositiveSquaredGapMomentSummability',
+    'NLS.KdV.HillPrimitiveMomentsCosineBound',
+    'NLS.KdV.HillMomentGapNumeratorTail',
+    'NLS.KdV.HillPrimitiveMomentTailBound',
+    'NLS.KdV.HillPrimitiveMomentAbsoluteSummability',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillMomentAbsoluteSummability',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

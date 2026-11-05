@@ -1760,6 +1760,13 @@ import NLS.KdV.HillPrimitiveMomentsPhysical
 import NLS.KdV.HillPrimitiveMomentsClosedGap
 import NLS.KdV.HillPrimitiveMomentsEnergyContour
 import NLS.Articles.KdVPseudomeasures.OriginalHillFrequencyMoments
+import NLS.ZakharovShabat.SourceFullAbelianSquareUniformGapBound
+import NLS.SequenceSpaces.PositiveSquaredGapMomentSummability
+import NLS.KdV.HillPrimitiveMomentsCosineBound
+import NLS.KdV.HillMomentGapNumeratorTail
+import NLS.KdV.HillPrimitiveMomentTailBound
+import NLS.KdV.HillPrimitiveMomentAbsoluteSummability
+import NLS.Articles.KdVPseudomeasures.OriginalHillMomentAbsoluteSummability
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10575,3 +10582,13 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFrequencyMoments
 #print axioms NLS.KdV.HillProductEquationPatch.centeredEnergySquare
 #print axioms NLS.KdV.HillProductEquationPatch.centeredMoment_eq_original_energy_contour
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_frequency_moment_neighborhood
+#print axioms NLS.ZakharovShabat.exists_sourceFullAbelian_local_uniform_square_gap_bound
+#print axioms NLS.Coeff.summable_norm_positive_weighted_of_squared_gap_tail
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMoment_eq_cosine_average
+#print axioms NLS.KdV.HillProductEquationPatch.norm_normalized_centeredMoment_le
+#print axioms NLS.KdV.HillProductEquationPatch.norm_normalized_centeredSecondMoment_le
+#print axioms NLS.KdV.HillProductEquationPatch.norm_abelianGapNumerator_le_of_circle_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_abelianGapNumerator_gap_tail_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_centeredSecondMoment_tail_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_open_centeredSecondMoment_absolute_summability
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_absolutely_summable_frequency_moments
