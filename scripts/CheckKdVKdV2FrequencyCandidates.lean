@@ -1,3 +1,12 @@
+import NLS.Articles.KdVKdV2Frequencies.AllRegularCorrections
+import NLS.KdV.HillRegularTerminalPhysicalComparison
+import NLS.KdV.HillAllRegularTerminalData
+import NLS.KdV.HillLocalRegularTerminalData
+import NLS.KdV.HillAllNativeRegularTerminal
+import NLS.KdV.HillAllDirichletTerminals
+import NLS.KdV.HillAllDirichletCharts
+import NLS.KdV.HillLocalDirichletChart
+import NLS.SequenceSpaces.UnitSpectralWeightNorm
 import NLS.Articles.KdVKdV2Frequencies.AllRegularGapSolutions
 import NLS.KdV.HillAllNativeQuadraticSolutions
 import NLS.KdV.HillAllNativeRegularGapNumerators
@@ -1511,7 +1520,16 @@ run_cmd do
     `NLS.KdV.HillAllRadiusRootProduct,
     `NLS.KdV.HillAllNativeRegularGapNumerators,
     `NLS.KdV.HillAllNativeQuadraticSolutions,
-    `NLS.Articles.KdVKdV2Frequencies.AllRegularGapSolutions
+    `NLS.Articles.KdVKdV2Frequencies.AllRegularGapSolutions,
+    `NLS.SequenceSpaces.UnitSpectralWeightNorm,
+    `NLS.KdV.HillLocalDirichletChart,
+    `NLS.KdV.HillAllDirichletCharts,
+    `NLS.KdV.HillAllDirichletTerminals,
+    `NLS.KdV.HillAllNativeRegularTerminal,
+    `NLS.KdV.HillLocalRegularTerminalData,
+    `NLS.KdV.HillAllRegularTerminalData,
+    `NLS.KdV.HillRegularTerminalPhysicalComparison,
+    `NLS.Articles.KdVKdV2Frequencies.AllRegularCorrections
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

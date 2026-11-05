@@ -1197,6 +1197,15 @@ modules=(
   NLS/KdV/HillAllNativeRegularGapNumerators
   NLS/KdV/HillAllNativeQuadraticSolutions
   NLS/Articles/KdVKdV2Frequencies/AllRegularGapSolutions
+  NLS/SequenceSpaces/UnitSpectralWeightNorm
+  NLS/KdV/HillLocalDirichletChart
+  NLS/KdV/HillAllDirichletCharts
+  NLS/KdV/HillAllDirichletTerminals
+  NLS/KdV/HillAllNativeRegularTerminal
+  NLS/KdV/HillLocalRegularTerminalData
+  NLS/KdV/HillAllRegularTerminalData
+  NLS/KdV/HillRegularTerminalPhysicalComparison
+  NLS/Articles/KdVKdV2Frequencies/AllRegularCorrections
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
