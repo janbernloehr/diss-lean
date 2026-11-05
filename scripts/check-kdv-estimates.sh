@@ -205,6 +205,7 @@ modules+=(NLS/MKdV/MiuraClassicalSolution NLS/MKdV/SobolevMiuraPotential NLS/Fun
 modules+=(NLS/KdV/HillHminusSpectralDifferentials NLS/KdV/HillHminusSpectralInvolution NLS/KdV/HillHminusDirichletCharts)
 modules+=(NLS/KdV/HillL2DirichletTerminal NLS/MKdV/QuasiHillL2PhysicalSource NLS/ZakharovShabat/L2InitialValueACUniqueness NLS/MKdV/QuasiHillL2WeakSolution NLS/MKdV/QuasiHillL2InitialValue NLS/MKdV/QuasiHillL2DirichletCriterion NLS/MKdV/QuasiHillL2LagrangeIdentity NLS/MKdV/MiuraL2DirichletTerminal NLS/MKdV/QuasiHillL2NormingTrace NLS/KdV/HillHminusNormingCharts NLS/KdV/HillHminusLogNorming NLS/KdV/HillHminusLogNormingCotangent NLS/KdV/HillHminusLogNormingGardner)
 modules+=(NLS/KdV/HillHminusDirichletCotangent NLS/KdV/HillHminusDirichletGardner NLS/KdV/HillHminusSpectralGardnerMatrix)
+modules+=(NLS/ComplexAnalysis/ShiftedSquareRootBounds NLS/KdV/HillFreeEnergyShift NLS/KdV/HillHminusOneDiscAsymptotics NLS/KdV/HillHminusOneTraceControl NLS/KdV/HillHminusOneSourcePrimitive NLS/KdV/HillHminusOnePrimitiveStrip NLS/KdV/HillHminusOneWholeGapSquares NLS/KdV/HillHminusOneFreeSquareComparison NLS/ComplexAnalysis/QuadraticClusterCount NLS/KdV/HillHminusOneHighGapPairs)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

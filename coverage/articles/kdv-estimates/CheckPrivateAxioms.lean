@@ -1151,6 +1151,16 @@ import NLS.KdV.HillHminusLogNormingGardner
 import NLS.KdV.HillHminusDirichletCotangent
 import NLS.KdV.HillHminusDirichletGardner
 import NLS.KdV.HillHminusSpectralGardnerMatrix
+import NLS.ComplexAnalysis.ShiftedSquareRootBounds
+import NLS.KdV.HillFreeEnergyShift
+import NLS.KdV.HillHminusOneDiscAsymptotics
+import NLS.KdV.HillHminusOneTraceControl
+import NLS.KdV.HillHminusOneSourcePrimitive
+import NLS.KdV.HillHminusOnePrimitiveStrip
+import NLS.KdV.HillHminusOneWholeGapSquares
+import NLS.KdV.HillHminusOneFreeSquareComparison
+import NLS.ComplexAnalysis.QuadraticClusterCount
+import NLS.KdV.HillHminusOneHighGapPairs
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2050,7 +2060,14 @@ run_cmd do
     ``NLS.MKdV.quasiHillL2_fundamental_determinant,
     ``NLS.MKdV.quasiHillL2_lagrange_identity,
     ``NLS.MKdV.unitL2Synthesis_single_zero,
-    ``NLS.ZakharovShabat.l2SolutionCurve_unique_of_ac]
+    ``NLS.ZakharovShabat.l2SolutionCurve_unique_of_ac,
+    ``NLS.ComplexAnalysis.analyticZeroCount_eq_two_of_quadratic_model,
+    ``NLS.ComplexAnalysis.analyticZeroCount_nonzero_const_mul,
+    ``NLS.ComplexAnalysis.exists_high_disc_sqrt_shift_small,
+    ``NLS.ComplexAnalysis.exists_two_zeros_of_quadratic_model,
+    ``NLS.ComplexAnalysis.norm_sqrt_sq_add_sub_le,
+    ``NLS.ComplexAnalysis.quadratic_model_boundary_ne_zero,
+    ``NLS.ComplexAnalysis.re_sqrt_nonneg]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

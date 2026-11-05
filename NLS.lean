@@ -6074,3 +6074,13 @@ import NLS.KdV.HillHminusLogNormingGardner
 import NLS.KdV.HillHminusDirichletCotangent
 import NLS.KdV.HillHminusDirichletGardner
 import NLS.KdV.HillHminusSpectralGardnerMatrix
+import NLS.ComplexAnalysis.ShiftedSquareRootBounds
+import NLS.KdV.HillFreeEnergyShift
+import NLS.KdV.HillHminusOneDiscAsymptotics
+import NLS.KdV.HillHminusOneTraceControl
+import NLS.KdV.HillHminusOneSourcePrimitive
+import NLS.KdV.HillHminusOnePrimitiveStrip
+import NLS.KdV.HillHminusOneWholeGapSquares
+import NLS.KdV.HillHminusOneFreeSquareComparison
+import NLS.ComplexAnalysis.QuadraticClusterCount
+import NLS.KdV.HillHminusOneHighGapPairs
