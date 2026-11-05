@@ -5996,3 +5996,12 @@ import NLS.KdV.HillEndpointSheetFacts
 import NLS.KdV.HillEndpointReachability
 import NLS.KdV.HillSingleEndpointTransport
 import NLS.KdV.HillFiniteEndpointTransport
+import NLS.Fourier.UnitIntervalACWaveDecay
+import NLS.KdV.HillDiscriminantCotangentModes
+import NLS.SequenceSpaces.DifferentiableCoefficientLimits
+import NLS.KdV.HillDiscriminantCotangentDecay
+import NLS.KdV.HillDiscriminantCoefficientContinuity
+import NLS.KdV.HillIsospectralData
+import NLS.SequenceSpaces.WeightedCoefficientCompactness
+import NLS.KdV.HillMeanZeroIsospectralCompactness
+import NLS.KdV.HillAllPeriodicIsospectralSource

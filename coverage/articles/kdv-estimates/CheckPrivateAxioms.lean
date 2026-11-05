@@ -1073,6 +1073,15 @@ import NLS.KdV.HillEndpointSheetFacts
 import NLS.KdV.HillEndpointReachability
 import NLS.KdV.HillSingleEndpointTransport
 import NLS.KdV.HillFiniteEndpointTransport
+import NLS.Fourier.UnitIntervalACWaveDecay
+import NLS.KdV.HillDiscriminantCotangentModes
+import NLS.SequenceSpaces.DifferentiableCoefficientLimits
+import NLS.KdV.HillDiscriminantCotangentDecay
+import NLS.KdV.HillDiscriminantCoefficientContinuity
+import NLS.KdV.HillIsospectralData
+import NLS.SequenceSpaces.WeightedCoefficientCompactness
+import NLS.KdV.HillMeanZeroIsospectralCompactness
+import NLS.KdV.HillAllPeriodicIsospectralSource
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1677,7 +1686,11 @@ run_cmd do
     ``NLS.FunctionalAnalysis.AutonomousEndpointExtensions,
     ``NLS.FunctionalAnalysis.autonomousTrajectoryTimeDomain_eq_univ_of_extensions,
     ``NLS.FunctionalAnalysis.exists_global_autonomousTrajectory_of_endpointExtensions,
-    ``NLS.FunctionalAnalysis.exists_zero_velocity_of_bounded_sheetODE]
+    ``NLS.FunctionalAnalysis.exists_zero_velocity_of_bounded_sheetODE,
+    ``NLS.Fourier.norm_unitIntegral_mul_wave_le_bracket_of_ac,
+    ``NLS.Coeff.eventually_norm_differentiable_sub_lt_of_bounded_coefficientwise,
+    ``NLS.WeightedCoeff.exists_coefficientwise_tendsto_subseq_of_bounded,
+    ``NLS.WeightedCoeff.tendsto_of_coefficientwise_of_norm_sq]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
