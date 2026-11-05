@@ -1,0 +1,166 @@
+{
+  "source": "arXiv:1610.00278v1 Appendix B.1(i)-(iv) applications; sourceCorollary3.8 inverse-topology foundation at the ACTUAL endpoint zero fiber",
+  "status": "Prove actual endpoint zero-fiber inverse weak-star stability, finite output control and uniform lower-norm recovery on every specified original endpoint norm ball. Global native/endpoint bijectivity, full Corollary3.8, actualKdV and ALL FIVE MAIN THEOREMS remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/endpoint-zero-weakstar-map.json",
+    "compact_singleton_fiber_inverse_neighborhood_and_ALL_filters_PROVED": true,
+    "compact_singleton_fiber_finite_coordinate_control_PROVED": true,
+    "literal_physical_REAL_Wiener_pairing_separates_ENTIRE_target_PROVED": true,
+    "literal_physical_REAL_weakStar_IMPLIES_ALL_raw_coefficients_EVERY_filter_NO_bound_PROVED": true,
+    "ACTUAL_endpoint_zero_output_IFF_ENTIRE_original_distribution_zero_PROVED": true,
+    "ACTUAL_endpoint_LITERAL_real_Wiener_weakStar_zero_fiber_singleton_PROVED": true,
+    "ACTUAL_endpoint_ZERO_fiber_inverse_weakStar_continuity_on_EVERY_original_norm_ball_PROVED": true,
+    "ACTUAL_endpoint_forward_weakStar_for_EVENTUALLY_bounded_nets_PROVED": true,
+    "ACTUAL_endpoint_output_zero_weakStar_IFF_input_zero_weakStar_EVENTUALLY_bounded_nets_PROVED": true,
+    "SAME_net_converges_in_EVERY_admissible_original_lower_norm_PROVED": true,
+    "SAME_original_HminusOne_distributions_tend_to_LITERAL_zero_PROVED": true,
+    "FINITELY_MANY_actual_output_coefficients_UNIFORMLY_control_original_lower_norm_at_zero_PROVED": true,
+    "uniform_actual_output_coefficient_zero_IMPLIES_uniform_same_original_lower_norm_zero_PROVED": true,
+    "scope": "Every0<=r<1/2; exact original real mean-zero physically period-one endpoint source; literal article1+abs(n) target with physical REAL opposite-order Wiener predual; arbitrary filters/nets with specified eventual original endpoint bounds. Every finite p>=1 with(-r-t)*p.toReal>1. Finite tests and one tolerance selected before inputs. Uniform families have arbitrary parameter sets and need no continuity.",
+    "original_Appendix_B1_i_through_iv_complete_before_this_milestone": true,
+    "no_bound_assumed_for_unbounded_weakStar_nets": false,
+    "endpoint_infinity_norm_convergence_claimed": false,
+    "actual_native_closed_map_PROVED": false,
+    "actual_native_properness_PROVED": false,
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "actual_endpoint_global_injectivity_PROVED": false,
+    "actual_endpoint_global_surjectivity_PROVED": false,
+    "full_bounded_set_weak_star_homeomorphism_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "CompactSingletonFiber proves inverse continuity at a singleton fiber of a continuous map restricted to a compact set, without assuming injectivity at other fibers. It applies to every eventually compact net and every target neighborhood. Its finite-coordinate version chooses finitely many continuous metric-valued tests and one positive tolerance before the source point, using a compact finite subcover of the complement of an observable neighborhood.",
+    "PhysicalSobolevWienerSeparation constructs genuine physical REAL mean-zero opposite-order Wiener tests at every nonzero signed pair. Their EXACT scalar action is2*Re(conj(c)*a_n). Cosine and sine tests recover BOTH parts of EVERY nonzero raw complex coefficient; zero mean gives the remaining coefficient. The literal physicalSobolevWeakStar realization is INJECTIVE on the entire physical target. Actual physical real weak-star convergence implies raw coefficient convergence for EVERY filter, with NO norm-bound hypothesis. The literal1+abs(n) bracket is retained.",
+    "EndpointZeroFiberWeakStar.articleEndpointCoordinates_eq_zero_iff proves ACTUAL endpoint zero output IFF the ENTIRE ORIGINAL endpoint input distribution is zero. The actual native singleton zero fiber is transported through the proved coefficient-preserving inclusions; equality is exported in the original distribution domain. The actual endpoint map into the LITERAL opposite-order PHYSICAL REAL Wiener weak dual also has the exact singleton zero fiber.",
+    "exists_output_nhds_control_source_zero proves inverse weak-star continuity at zero uniformly over EVERY specified ORIGINAL endpoint norm ball. tendsto_source_zero_of_output_weakStar and tendsto_output_zero_iff_source_zero give two-way actual output/source weak-star convergence for EVERY net with an EVENTUAL specified original endpoint bound. The forward direction is separately extended from bounded families to eventual bounds. No injectivity at nonzero fibers is assumed.",
+    "tendsto_sourceLower_zero_of_output_weakStar gives convergence of the SAME net in EVERY admissible ORIGINAL lower finite-p norm. tendsto_originalHminusOne_zero_of_output_weakStar exports convergence of the IDENTICAL original physical Hminus-one distributions to literal zero. No subsequence is selected and no endpoint infinity-norm convergence is asserted.",
+    "exists_finite_output_control_sourceLower_zero proves FINITELY MANY ACTUAL output coefficients and one positive tolerance control ANY specified admissible ORIGINAL lower norm near zero, uniformly over the entire prescribed endpoint norm ball. tendstoUniformly_sourceLower_zero_of_output_coefficients proves uniform recovery for families on ANY parameter set and ANY filter under only an eventual common original endpoint bound. No time continuity is required.",
+    "All source Appendix B.1(i)-(iv) clauses were already proved; this milestone applies their compactness and topology to the ACTUAL endpoint Birkhoff map. It proves bounded-set inverse stability at the ZERO fiber. Actual global native or endpoint injectivity/surjectivity, variable-action properness/closedness, sourceLemma3.4 onto, full bounded-set weak-star homeomorphism, actual KdV evolution and ALL FIVE MAIN THEOREMS remain UNPROVED."
+  ],
+  "declarations": [
+    "NLS.Topology.exists_nhds_of_compact_singleton_fiber",
+    "NLS.Topology.tendsto_of_compact_singleton_fiber",
+    "NLS.Topology.exists_finite_coordinate_control_at_singleton",
+    "NLS.WeightedCoeff.physicalSobolevWienerPair",
+    "NLS.WeightedCoeff.physicalSobolevWeakStar_pair",
+    "NLS.WeightedCoeff.physicalSobolevWeakStar_injective",
+    "NLS.WeightedCoeff.tendsto_coefficients_of_physicalSobolevWeakStar",
+    "NLS.Articles.KdVPseudomeasures.endpointWeakStarZero",
+    "NLS.Articles.KdVPseudomeasures.endpointWeakStarZero_val",
+    "NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_eq_zero_iff",
+    "NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_zero_fiber",
+    "NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarCoordinates_zero_fiber",
+    "NLS.Articles.KdVPseudomeasures.exists_output_nhds_control_source_zero",
+    "NLS.Articles.KdVPseudomeasures.tendsto_source_zero_of_output_weakStar",
+    "NLS.Articles.KdVPseudomeasures.tendsto_sourceLower_zero_of_output_weakStar",
+    "NLS.Articles.KdVPseudomeasures.tendsto_articleEndpointWeakStarCoordinates_of_eventually_normBound",
+    "NLS.Articles.KdVPseudomeasures.tendsto_output_zero_iff_source_zero",
+    "NLS.Articles.KdVPseudomeasures.tendsto_originalHminusOne_zero_of_output_weakStar",
+    "NLS.Articles.KdVPseudomeasures.exists_finite_output_control_sourceLower_zero",
+    "NLS.Articles.KdVPseudomeasures.tendstoUniformly_sourceLower_zero_of_output_coefficients"
+  ],
+  "files": [
+    "NLS/Topology/CompactSingletonFiber.lean",
+    "NLS/SequenceSpaces/PhysicalSobolevWienerSeparation.lean",
+    "NLS/Articles/KdVPseudomeasures/EndpointZeroFiberWeakStar.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "8a01fef8f4ced3cb39bd022e7e9c3bb02e1ee774",
+    "baseline_modules": 1595,
+    "baseline_non_audit_sources_verified_unchanged": 1594,
+    "new_modules_compiled": 3,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.SobolevBilinearPairing",
+        "source": "NLS/SequenceSpaces/SobolevBilinearPairing.lean",
+        "source_sha256": "14c47d68626207bcaa760b3ab7cfaf339f2446895c151ed3adc251fb17ba659b"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology",
+        "source": "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean",
+        "source_sha256": "1b0ea267b508e2342e9d4914221fde4f7d21818a6dc9f1a4ead9f17fd24023f8",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.SourceWeakStarLimits",
+        "source": "NLS/Articles/KdVPseudomeasures/SourceWeakStarLimits.lean",
+        "source_sha256": "e15159ff276dd52d5f4b38f79d80c8492f82842fd1d41fc1bc1b97ec5c6cf5df",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.SourceWeakStarNets",
+        "source": "NLS/Articles/KdVPseudomeasures/SourceWeakStarNets.lean",
+        "source_sha256": "54a8737fbc72d9c281373f630ffa4f00e8d27117140cace8f1e01cb35da0040e",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.SourceWeakStarCompactSets",
+        "source": "NLS/Articles/KdVPseudomeasures/SourceWeakStarCompactSets.lean",
+        "source_sha256": "7cfd48dfbd06e3503bb57e5dd5f03fb0ae762333b04aaa8e288b17fb2de31332",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.ArticleEndpointWeakStarContinuity",
+        "source": "NLS/Articles/KdVPseudomeasures/ArticleEndpointWeakStarContinuity.lean",
+        "source_sha256": "929f4acf39e7a1ad2dcff60b85fb7b98dc25330b1d3ac2750bcfa37934b670d4",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.ArticleEndpointTargetNorm",
+        "source": "NLS/Articles/KdVPseudomeasures/ArticleEndpointTargetNorm.lean",
+        "source_sha256": "859761917384a1efca8d51f3bf745eba177230e05a824b1bc2e0c598e466d459",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeZeroFiber",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeZeroFiber.lean",
+        "source_sha256": "0892249b05e1d4f0cc9460d43ac46c55034cf95f4797056931ed011b95f04a85",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.EndpointPhysicalNativeInclusions",
+        "source": "NLS/Articles/KdVPseudomeasures/EndpointPhysicalNativeInclusions.lean",
+        "source_sha256": "7bb46704c293e3cb0874e68afb5a9fab3d827cce595c146613d480365dc660ca",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PhysicalSobolevWienerWeakStar",
+        "source": "NLS/SequenceSpaces/PhysicalSobolevWienerWeakStar.lean",
+        "source_sha256": "4165eaa8aff7d5b8dc2ddfe33473194b39d5e967aa43e6e6150c349bfeaa6807",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1598,
+    "audited_declarations": 8143,
+    "theorems": 6844,
+    "definitions": 1299,
+    "new_theorems": 18,
+    "new_definitions": 2,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-endpoint-zero-weakstar.log",
+    "log_sha256": "2bfc14ec2bef385d0f9ac10d73b598a75fbede4a7398df26f5044d7e9007c84d"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED actual full real Hminus-one Hill BORG potential constancy for ALL canonical gaps closed, zero-mean uniqueness and EXACT singleton ACTUAL native zero fiber. Proof uses unconditional ACTUAL Dirac central-gap constancy from physical momentum/spatial translation+ACTUAL Dirac Jacobian injectivity, genuine all-index Miura gap comparison/reflection and SAME actual distributional Miura lift. GLOBAL actual native bijectivity IFF ACTUAL native map closedness now PROVED, using actual local homeomorphism+singletonzero. Actual closedness/properness/globalbijection, L2/smooth nativeinjectivity/arbitrary action realization and allmain still OPEN. Prior actual finite-gap smoothness/L2 reduction and full endpoint3.5i/ii/literalnorm/localinverse/forwardweakstar remain PROVED.",
+    "Complete source3.1/main1.4: actual native global bijectivity is now EXACTLY actual native CLOSEDNESS, since all-source local homeomorphism and genuine Borg/singletonzero fiber are PROVED. Actual closedness/properness or alternative actual L2/smooth injectivity and arbitrary action realization remain OPEN. Then endpoint3.4 onto/inverse/full bounded-set weak-star homeomorphism, remaining nonlinear scales and actualKdV still required. ALL main statements remain UNPROVED; no global bijection inferred from singletonzero/localinverse alone. NOW additionally PROVED actual endpoint ZERO-fiber inverse weak-star stability on EVERY specified original endpoint norm ball, all eventually bounded nets, every original lower norm and uniform families. This does NOT prove nonzero-fiber injectivity, unbounded-source properness or full Cor3.8.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}

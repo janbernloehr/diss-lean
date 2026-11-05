@@ -1592,6 +1592,9 @@ import NLS.ZakharovShabat.SourceCentralGapSpatialStationarity
 import NLS.ZakharovShabat.SourceCentralGapConstant
 import NLS.KdV.HillClosedGapRigidity
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeZeroFiber
+import NLS.Topology.CompactSingletonFiber
+import NLS.SequenceSpaces.PhysicalSobolevWienerSeparation
+import NLS.Articles.KdVPseudomeasures.EndpointZeroFiberWeakStar
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9718,3 +9721,23 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeZeroFiber
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_eq_zero_of_all_gapSquares_zero
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_zero_implies_zero
 #print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNative_bijective_iff_isClosedMap
+#print axioms NLS.Topology.exists_nhds_of_compact_singleton_fiber
+#print axioms NLS.Topology.tendsto_of_compact_singleton_fiber
+#print axioms NLS.Topology.exists_finite_coordinate_control_at_singleton
+#print axioms NLS.WeightedCoeff.physicalSobolevWienerPair
+#print axioms NLS.WeightedCoeff.physicalSobolevWeakStar_pair
+#print axioms NLS.WeightedCoeff.physicalSobolevWeakStar_injective
+#print axioms NLS.WeightedCoeff.tendsto_coefficients_of_physicalSobolevWeakStar
+#print axioms NLS.Articles.KdVPseudomeasures.endpointWeakStarZero
+#print axioms NLS.Articles.KdVPseudomeasures.endpointWeakStarZero_val
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_eq_zero_iff
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_zero_fiber
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarCoordinates_zero_fiber
+#print axioms NLS.Articles.KdVPseudomeasures.exists_output_nhds_control_source_zero
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_zero_of_output_weakStar
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceLower_zero_of_output_weakStar
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_articleEndpointWeakStarCoordinates_of_eventually_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_output_zero_iff_source_zero
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_originalHminusOne_zero_of_output_weakStar
+#print axioms NLS.Articles.KdVPseudomeasures.exists_finite_output_control_sourceLower_zero
+#print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformly_sourceLower_zero_of_output_coefficients

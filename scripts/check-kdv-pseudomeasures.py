@@ -1626,6 +1626,9 @@ modules = [
     'NLS.ZakharovShabat.SourceCentralGapConstant',
     'NLS.KdV.HillClosedGapRigidity',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeZeroFiber',
+    'NLS.Topology.CompactSingletonFiber',
+    'NLS.SequenceSpaces.PhysicalSobolevWienerSeparation',
+    'NLS.Articles.KdVPseudomeasures.EndpointZeroFiberWeakStar',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
