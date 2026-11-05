@@ -1922,6 +1922,12 @@ import NLS.KdV.HillL2OnIndexCorrectionBound
 import NLS.KdV.HillL2OnIndexSobolevExponent
 import NLS.KdV.HillL2OnIndexOneSmoothingNeighborhood
 import NLS.KdV.HillL2OnIndexExponentialSmoothing
+import NLS.SequenceSpaces.WeightedInfinityPointwiseProduct
+import NLS.SequenceSpaces.SignedOrderLinearInclusions
+import NLS.KdV.HillRetainedSpectralCoreDiracIdentity
+import NLS.KdV.HillRetainedL2CoreOnIndexData
+import NLS.KdV.HillL2IntrinsicDiagonalOneSmoothing
+import NLS.KdV.HillL2IntrinsicFourierRemainder
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11316,3 +11322,31 @@ import NLS.KdV.HillL2OnIndexExponentialSmoothing
 #print axioms NLS.KdV.exists_hillL2OnIndex_one_smoothing_neighborhood
 #print axioms NLS.KdV.HillProductEquationPatch.l2OnIndexExponentialRemainder
 #print axioms NLS.KdV.exists_hillL2OnIndex_exponential_one_smoothing
+#print axioms NLS.WeightedCoeff.weightedInfinityPointwiseProduct
+#print axioms NLS.WeightedCoeff.weightedInfinityPointwiseProduct_apply
+#print axioms NLS.WeightedCoeff.analyticAt_weightedInfinityPointwiseProduct
+#print axioms NLS.WeightedCoeff.signedSobolevInfinityProduct
+#print axioms NLS.WeightedCoeff.signedSobolevInfinityProduct_apply
+#print axioms NLS.WeightedCoeff.analyticAt_signedSobolevInfinityProduct
+#print axioms NLS.WeightedCoeff.signedOrderInclusion
+#print axioms NLS.WeightedCoeff.signedOrderInclusion_apply
+#print axioms NLS.WeightedCoeff.l2FreeHalfFourier
+#print axioms NLS.WeightedCoeff.l2FreeHalfFourier_apply
+#print axioms NLS.KdV.HillProductEquationPatch.exists_retained_core_Dirac_identity_neighborhood
+#print axioms NLS.KdV.HillProductEquationPatch.exists_retained_l2Core_smoothing
+#print axioms NLS.KdV.HillProductEquationPatch.exists_retained_l2Core_onIndex_data
+#print axioms NLS.KdV.HillProductEquationPatch.l2StrongSpectralCore
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_l2StrongSpectralCore
+#print axioms NLS.KdV.HillProductEquationPatch.l2StrongSpectralCore_apply_of_remainder
+#print axioms NLS.KdV.HillProductEquationPatch.intrinsicDiagonalMap_from_physicalCore
+#print axioms NLS.KdV.HillProductEquationPatch.l2IntrinsicDiagonalFourierRemainder
+#print axioms NLS.KdV.HillProductEquationPatch.exists_retained_l2IntrinsicDiagonal_one_smoothing
+#print axioms NLS.KdV.exists_hillL2IntrinsicDiagonal_one_smoothing
+#print axioms NLS.KdV.hillL2IntrinsicFourierRemainder
+#print axioms NLS.KdV.analyticAt_hillL2IntrinsicFourierRemainder
+#print axioms NLS.KdV.eventually_hillL2IntrinsicFourierRemainder_apply
+#print axioms NLS.KdV.hillL2IntrinsicFourierRemainder_apply
+#print axioms NLS.KdV.hillL2StrongIntrinsicDiagonal
+#print axioms NLS.KdV.analyticAt_hillL2StrongIntrinsicDiagonal
+#print axioms NLS.KdV.eventually_hillL2StrongIntrinsicDiagonal_apply
+#print axioms NLS.KdV.hillL2StrongIntrinsicDiagonal_apply

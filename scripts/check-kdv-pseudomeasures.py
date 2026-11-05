@@ -1956,6 +1956,12 @@ modules = [
     'NLS.KdV.HillL2OnIndexSobolevExponent',
     'NLS.KdV.HillL2OnIndexOneSmoothingNeighborhood',
     'NLS.KdV.HillL2OnIndexExponentialSmoothing',
+    'NLS.SequenceSpaces.WeightedInfinityPointwiseProduct',
+    'NLS.SequenceSpaces.SignedOrderLinearInclusions',
+    'NLS.KdV.HillRetainedSpectralCoreDiracIdentity',
+    'NLS.KdV.HillRetainedL2CoreOnIndexData',
+    'NLS.KdV.HillL2IntrinsicDiagonalOneSmoothing',
+    'NLS.KdV.HillL2IntrinsicFourierRemainder',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
