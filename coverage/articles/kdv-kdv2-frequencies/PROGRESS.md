@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest native rough normalized Dirichlet terminal
+## Latest actual rough phase and full Abelian scalar germs
+
+ONE complex Hminus-one ball now supports the ORIGINAL off-index regular correction as a native ell-infinity analytic map B. It vanishes at zero, satisfies norm(B(q))<=C*norm(q), and has zero nonpositive components. At EVERY original real L2 source in that WHOLE rough ball, every positive component equals the ORIGINAL physical off-index correction. First/closed gaps, endpoint terminals and nonzero means are included, without physical L2 smallness. This common packet excludes the selected own-index regular term.
+
+The COMPLETE summed regular correction, including the selected own-index term, has a complex rough analytic physical germ at zero for EVERY fixed positive index. Combining it with the actual common amplitudes and native normalized terminals gives an actual scalar rough analytic germ of the ORIGINAL sqrt(action)-normalized Abelian coordinate, vanishing at zero and matching the original physical real germ. The scalar radius may depend on the index. See `ROUGH_PHASE_AND_ABELIAN_GERMS.md`.
+
+Prior strict evidence retained for all 1515 unchanged selected baseline sources; all 252 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1767 selected modules. The new selections are 116 incoming sources, seven own proof modules and 129 unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1807 frozen source/checker/provenance/Mathlib-source hashes, 36 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 252 selections. No full 1767-module rebuild is claimed.
+
+Fresh audit: 14943 selected and 37013 imported NLS declarations; permitted axioms only. The common native negative-half rough Abelian map, canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier native rough normalized Dirichlet terminal
 
 ONE complex Hminus-one ball now supports a genuine native ell2 analytic map Z with Z(0)=0, norm(Z(q))<=C*norm(q), and zero nonpositive components. At EVERY original real L2 source whose literal rough inclusion lies in this whole ball, Z_n equals the ORIGINAL `hillDirichletAbelianTerminalFactor` divided by n. The first gap, every closed gap and nonzero means are included, with no small physical L2 norm assumption.
 

@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest native rough normalized Dirichlet terminal
+## Latest actual rough phase and full Abelian scalar germs
+
+ONE complex Hminus-one ball now supports the ORIGINAL off-index regular correction as a native ell-infinity analytic map B. It vanishes at zero, satisfies norm(B(q))<=C*norm(q), and has zero nonpositive components. At EVERY original real L2 source in that WHOLE rough ball, every positive component equals the ORIGINAL physical off-index correction. First/closed gaps, endpoint terminals and nonzero means are included, without physical L2 smallness. This common packet excludes the selected own-index regular term.
+
+The COMPLETE summed regular correction, including the selected own-index term, has a complex rough analytic physical germ at zero for EVERY fixed positive index. Combining it with the actual common amplitudes and native normalized terminals gives an actual scalar rough analytic germ of the ORIGINAL sqrt(action)-normalized Abelian coordinate, vanishing at zero and matching the original physical real germ. The scalar radius may depend on the index. See `ROUGH_PHASE_AND_ABELIAN_GERMS.md`.
+
+Prior strict evidence retained for all 1515 unchanged selected baseline sources; all 252 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1767 selected modules. The new selections are 116 incoming sources, seven own proof modules and 129 unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1807 frozen source/checker/provenance/Mathlib-source hashes, 36 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 252 selections. No full 1767-module rebuild is claimed.
+
+Fresh audit: 14943 selected and 37013 imported NLS declarations; permitted axioms only. The common native negative-half rough Abelian map, canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier native rough normalized Dirichlet terminal
 
 ONE complex Hminus-one ball now supports a genuine native ell2 analytic map Z with Z(0)=0, norm(Z(q))<=C*norm(q), and zero nonpositive components. At EVERY original real L2 source whose literal rough inclusion lies in this whole ball, Z_n equals the ORIGINAL `hillDirichletAbelianTerminalFactor` divided by n. The first gap, every closed gap and nonzero means are included, with no small physical L2 norm assumption.
 
@@ -566,7 +576,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1515 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1767 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1635,7 +1645,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1515 selected modules (including generated and private declarations)
+the 1767 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -3386,4 +3396,262 @@ PASS NLS/KdV/HillHminusHighDirichletRootInverse
 PASS NLS/KdV/HillHminusDirichletInverseSequence
 PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughTerminalPacket
 Axiom audit passed: 13014 candidate declarations; 35084 declarations total.
+```
+
+Latest actual rough phase and Abelian scalar germ strict checks and fresh combined audit:
+
+```text
+PASS NLS/ComplexAnalysis/CanonicalRootPathExtension
+PASS NLS/ComplexAnalysis/CircleIntegralReflection
+PASS NLS/ComplexAnalysis/CloseShiftedFrequency
+PASS NLS/ComplexAnalysis/HorizontalSegmentIntegral
+PASS NLS/ComplexAnalysis/ParametricDSlope
+PASS NLS/ComplexAnalysis/JointOddSquareDescent
+PASS NLS/ComplexAnalysis/OddSquareDescentCongruence
+PASS NLS/ComplexAnalysis/PiecewiseLoopPullback
+PASS NLS/ComplexAnalysis/QuadraticBezierAdmissible
+PASS NLS/ComplexAnalysis/QuadraticEnergyLoop
+PASS NLS/ComplexAnalysis/QuadraticCircleHomotopyGeometry
+PASS NLS/ComplexAnalysis/QuadraticCirclePeriodTransfer
+PASS NLS/ComplexAnalysis/QuadraticCosinePathIntegrability
+PASS NLS/ComplexAnalysis/QuadraticEnergyPath
+PASS NLS/ComplexAnalysis/QuadraticEnergySheet
+PASS NLS/ComplexAnalysis/RealCosineArc
+PASS NLS/ComplexAnalysis/RealPositiveEnergyLift
+PASS NLS/ComplexAnalysis/TwoEndpointSquareRootIntegrability
+PASS NLS/KdV/HillGlobalDifferentialUniqueness
+PASS NLS/KdV/HminusOneMiuraDirichlet
+PASS NLS/ZakharovShabat/AuxiliaryPeriodOneBoundaryInterlacing
+PASS NLS/ZakharovShabat/ClassicalTriangularPotential
+PASS NLS/ZakharovShabat/SourceBoundaryOverview
+PASS NLS/ZakharovShabat/TriangularFourierBoundary
+PASS NLS/ZakharovShabat/SourceLemma9_1
+PASS NLS/ZakharovShabat/SourceLemma9_1Auxiliary
+PASS NLS/ZakharovShabat/SourceAuxiliaryCharacteristicNormalization
+PASS NLS/KdV/MiuraL2DirichletAuxiliary
+PASS NLS/KdV/HillHminusAuxiliaryDirichlet
+PASS NLS/KdV/HillHminusOneNLSMovingSheets
+PASS NLS/SequenceSpaces/PeriodOneMiuraRealLift
+PASS NLS/SequenceSpaces/PeriodOneMiuraRealCharts
+PASS NLS/SequenceSpaces/PeriodOneMiuraReality
+PASS NLS/KdV/HillHminusOneMiuraSheets
+PASS NLS/KdV/HillHminusOneMiuraContour
+PASS NLS/KdV/HillHminusOriginalLabels
+PASS NLS/SequenceSpaces/OrderedPairedL2Enumeration
+PASS NLS/SequenceSpaces/OrderedPairedReflection
+PASS NLS/KdV/MiuraPeriodicReflection
+PASS NLS/ZakharovShabat/SourceCanonicalRootReflection
+PASS NLS/KdV/MiuraCanonicalRootReflection
+PASS NLS/ZakharovShabat/SourcePsiReflectionPeriods
+PASS NLS/KdV/MiuraHillPsiNumerators
+PASS NLS/ZakharovShabat/Section7EntirePeriodUniqueness
+PASS NLS/ZakharovShabat/SourceSection7PsiProduct
+PASS NLS/ZakharovShabat/Section7PsiPeriodUniqueness
+PASS NLS/ZakharovShabat/SourcePsiOddGrowth
+PASS NLS/KdV/MiuraHillPsiGrowth
+PASS NLS/SequenceSpaces/CoordinateNormSup
+PASS NLS/SequenceSpaces/DeletedFiniteRankApproximation
+PASS NLS/SequenceSpaces/DeletedOperatorNormDifference
+PASS NLS/SequenceSpaces/DeletedRealEquiv
+PASS NLS/SequenceSpaces/DeletedRealInverse
+PASS NLS/SequenceSpaces/ReciprocalMatrixConvergence
+PASS NLS/SequenceSpaces/SingleCoordinateCompact
+PASS NLS/SequenceSpaces/ThreeSequenceMajorant
+PASS NLS/SequenceSpaces/WeightQuotient
+PASS NLS/ZakharovShabat/SourceAbelianMomentRealCosine
+PASS NLS/ZakharovShabat/SourceAbelianMomentComplexCosine
+PASS NLS/ZakharovShabat/SourceAbelianMomentUniformCosine
+PASS NLS/ZakharovShabat/SourceGapCosineMeanBound
+PASS NLS/ZakharovShabat/SourceAbelianMomentCosineNeighborhood
+PASS NLS/ZakharovShabat/SourceAbelianMomentGapRegularity
+PASS NLS/ZakharovShabat/SourceStandardRootGapSidePolynomial
+PASS NLS/ZakharovShabat/SourceGapCosinePolynomial
+PASS NLS/ZakharovShabat/SourceGapCosineError
+PASS NLS/ZakharovShabat/SourceAbelianMomentErrorDomain
+PASS NLS/ZakharovShabat/SourceMomentRegularFactorization
+PASS NLS/ZakharovShabat/SourceAbelianMomentSecondError
+PASS NLS/ZakharovShabat/SourceAbelianMomentSquaredOffsetError
+PASS NLS/ZakharovShabat/SourceAngularBetaAdmissiblePath
+PASS NLS/ZakharovShabat/SourceGapFunctional
+PASS NLS/ZakharovShabat/SourceStandardRootGapSideSourceImproper
+PASS NLS/ZakharovShabat/SourceStandardRootGapSideEndpoint
+PASS NLS/ZakharovShabat/SourceStandardRootLocalEllipseEstimates
+PASS NLS/ZakharovShabat/SourceStandardRootLocalEllipses
+PASS NLS/ZakharovShabat/SourceStandardRootOriginalLocalPeriod
+PASS NLS/ZakharovShabat/SourceStandardRootLocalContours
+PASS NLS/ZakharovShabat/SourceLemma12_3
+PASS NLS/ZakharovShabat/SourcePsiOriginalQuotientBound
+PASS NLS/ZakharovShabat/SourcePsiOriginalCoordinateBound
+PASS NLS/ZakharovShabat/SourcePsiOriginalSequenceBound
+PASS NLS/ZakharovShabat/SourcePsiOriginalEquation
+PASS NLS/ZakharovShabat/SourcePsiOriginalEquationAnalytic
+PASS NLS/ZakharovShabat/SourceLemma12_4
+PASS NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct
+PASS NLS/ZakharovShabat/SourcePsiOriginalQuotientError
+PASS NLS/ZakharovShabat/SourcePsiOriginalRatioEstimate
+PASS NLS/ZakharovShabat/SourcePsiOriginalZetaAsymptotic
+PASS NLS/ZakharovShabat/SourceEquation2_26
+PASS NLS/ZakharovShabat/SourceGapFunctionalZeros
+PASS NLS/ZakharovShabat/SourcePsiOriginalEquationSup
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobian
+PASS NLS/ZakharovShabat/SourcePsiOriginalOmega
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobianContour
+PASS NLS/ZakharovShabat/SourcePsiOriginalZetaRegular
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobianNonzero
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobianDiagonal
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobianOffDiagonal
+PASS NLS/ZakharovShabat/SourceLemma12_5
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobianDecomposition
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobianFiniteRank
+PASS NLS/ZakharovShabat/SourceLemma12_6
+PASS NLS/ZakharovShabat/SourcePsiOriginalGapInterpolation
+PASS NLS/ZakharovShabat/SourcePsiOriginalKernelContour
+PASS NLS/ZakharovShabat/SourcePsiOriginalOuterCircles
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobianInjective
+PASS NLS/ZakharovShabat/SourceLemma12_7
+PASS NLS/ZakharovShabat/SourcePsiOriginalRealEquation
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobianInverse
+PASS NLS/ZakharovShabat/SourceCorollary12_8
+PASS NLS/ZakharovShabat/SourcePsiOriginalDeletedOmega
+PASS NLS/ZakharovShabat/SourcePsiOriginalRealRoot
+PASS NLS/ZakharovShabat/SourcePsiOriginalSolutionGap
+PASS NLS/ZakharovShabat/SourcePsiOriginalRealSolution
+PASS NLS/ZakharovShabat/SourcePsiOriginalImplicit
+PASS NLS/ZakharovShabat/SourceProposition12_9
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobianComparison
+PASS NLS/ZakharovShabat/SourcePsiOriginalJacobianScalarLimit
+PASS NLS/ZakharovShabat/SourcePsiOriginalLimitOperator
+PASS NLS/ZakharovShabat/SourcePsiOriginalLimitCanonical
+PASS NLS/ZakharovShabat/SourcePsiOriginalLimitContinuity
+PASS NLS/ZakharovShabat/SourcePsiOriginalLimitEntries
+PASS NLS/ZakharovShabat/SourcePsiOriginalLimitDiagonal
+PASS NLS/ZakharovShabat/SourceEquation2_29
+PASS NLS/ZakharovShabat/SourcePsiOriginalNormLimit
+PASS NLS/ZakharovShabat/SourcePsiOriginalComplexJacobianCharts
+PASS NLS/ZakharovShabat/SourcePsiOriginalLimitInjectivity
+PASS NLS/ZakharovShabat/SourcePsiOriginalInverseLimit
+PASS NLS/ZakharovShabat/SourcePsiOriginalComplexInverseBounds
+PASS NLS/ZakharovShabat/SourceLemma12_10InverseBounds
+PASS NLS/ZakharovShabat/SourcePsiOriginalAtlasPlacement
+PASS NLS/ZakharovShabat/SourceLemma12_10
+PASS NLS/ZakharovShabat/SourcePsiOriginalFiniteGeometry
+PASS NLS/ZakharovShabat/SourcePsiOriginalNormalization
+PASS NLS/ZakharovShabat/SourcePsiOriginalOuterProduct
+PASS NLS/ZakharovShabat/SourceLemma12_11
+PASS NLS/ZakharovShabat/SourcePsiOriginalChi
+PASS NLS/ZakharovShabat/SourcePsiOriginalRootFamily
+PASS NLS/ZakharovShabat/SourcePsiOriginalFamilyQuotient
+PASS NLS/ZakharovShabat/SourcePsiOriginalIndexRatio
+PASS NLS/ZakharovShabat/SourcePsiOriginalChiMajorant
+PASS NLS/ZakharovShabat/SourcePsiOriginalChiCauchy
+PASS NLS/ZakharovShabat/SourcePsiOriginalRootOffset
+PASS NLS/ZakharovShabat/SourcePsiOriginalRootBootstrap
+PASS NLS/ZakharovShabat/SourceLemma12_12
+PASS NLS/ZakharovShabat/SourceAngularOriginalDomain
+PASS NLS/ZakharovShabat/SourceAngularOriginalPrimitives
+PASS NLS/ZakharovShabat/SourceAngularOriginalCollapsedPrimitive
+PASS NLS/ZakharovShabat/SourceAngularOriginalBetaPaths
+PASS NLS/ZakharovShabat/SourceAngularOriginalEtaPaths
+PASS NLS/ZakharovShabat/SourceSection13OriginalDomain
+PASS NLS/ZakharovShabat/SourceAngularOriginalBetaValues
+PASS NLS/ZakharovShabat/SourceAngularOriginalAnnulus
+PASS NLS/ZakharovShabat/SourceAngularOriginalBetaSelectedBound
+PASS NLS/KdV/MiuraHillPsiOriginalEstimates
+PASS NLS/KdV/HillHminusPsiCharts
+PASS NLS/KdV/HminusOneMiuraHighPairs
+PASS NLS/SequenceSpaces/PeriodOneMiuraRealFormCharts
+PASS NLS/KdV/HillHminusRealPsiCharts
+PASS NLS/KdV/MiuraHillPsiRetainedZeros
+PASS NLS/KdV/HillHminusPhysicalPsiZeros
+PASS NLS/KdV/MiuraHillPsiEnergyRoot
+PASS NLS/KdV/HillHminusPhysicalDifferentials
+PASS NLS/KdV/HillMiuraPeriodCircleGeometry
+PASS NLS/KdV/HillMiuraOriginalContourGeometry
+PASS NLS/KdV/HillHminusEnergyPeriods
+PASS NLS/KdV/HillIntrinsicCircleEndpoints
+PASS NLS/KdV/HillHminusIntrinsicPeriods
+PASS NLS/KdV/HillHminusNumeratorReality
+PASS NLS/KdV/HillHminusPhysicalNumeratorIdentification
+PASS NLS/ZakharovShabat/ShiftedSineExteriorBounds
+PASS NLS/ZakharovShabat/SourcePsiSeparatedGrowth
+PASS NLS/KdV/HillHminusNumeratorDecay
+PASS NLS/KdV/HillHminusFixedPhysicalNumerators
+PASS NLS/KdV/MiuraDirichletCoordinates
+PASS NLS/KdV/HillHminusOriginalDirichletSourceAdapter
+PASS NLS/KdV/HillHminusDirichletCoordinateCharts
+PASS NLS/SequenceSpaces/UniformPositiveFrequencyNonzero
+PASS NLS/KdV/HillHminusCommonDirichletFamily
+PASS NLS/KdV/HillHminusDirichletCharts
+PASS NLS/MKdV/QuasiHillL2NormingTrace
+PASS NLS/KdV/HillHminusNormingCharts
+PASS NLS/KdV/HillHminusCommonDirichletSheets
+PASS NLS/ZakharovShabat/SourcePhaseHilbertMonodromy
+PASS NLS/KdV/MiuraDirichletSourcePhase
+PASS NLS/KdV/HillHminusDirichletSourcePhase
+PASS NLS/ZakharovShabat/SourcePhaseCanonicalRoots
+PASS NLS/KdV/HillHminusPrescribedSheets
+PASS NLS/SequenceSpaces/OrderedSignedSimpleEnumeration
+PASS NLS/KdV/MiuraDirichletSignedSymmetry
+PASS NLS/KdV/HillHminusDirichletSignedReflection
+PASS NLS/KdV/HillPrescribedCosineSheet
+PASS NLS/KdV/HillPhysicalCosinePath
+PASS NLS/KdV/HillPhysicalCosineFrequencyPath
+PASS NLS/KdV/HillHminusOriginalCosineLift
+PASS NLS/KdV/HillCosineSourceGap
+PASS NLS/KdV/HillSelectedCosineArc
+PASS NLS/KdV/HillCosineSourceSheet
+PASS NLS/KdV/HillCosineSourceIntegrability
+PASS NLS/ZakharovShabat/SourcePsiPhaseCompatibility
+PASS NLS/KdV/HillHminusPhaseNumeratorCompatibility
+PASS NLS/ZakharovShabat/SourceAngularAdmissiblePathConstruction
+PASS NLS/ZakharovShabat/SourceAngularOriginalAnnulusTail
+PASS NLS/ZakharovShabat/SourceAngularOriginalBetaBound
+PASS NLS/ZakharovShabat/SourceAngularTransversePathIntegrability
+PASS NLS/ZakharovShabat/SourceAngularOriginalEndpointIntegrals
+PASS NLS/ZakharovShabat/SourceAngularOriginalEtaAnalytic
+PASS NLS/ZakharovShabat/SourceAngularOriginalBetaSeries
+PASS NLS/KdV/HillHminusDirichletSourceBetaSeries
+PASS NLS/ZakharovShabat/SourceAngularRightEndpointPath
+PASS NLS/ZakharovShabat/SourceAngularPairedPathBeta
+PASS NLS/ZakharovShabat/SourceAngularPairedPrimitives
+PASS NLS/KdV/HillCosineSourceBeta
+PASS NLS/SequenceSpaces/PairedPositiveOffIndexSeries
+PASS NLS/KdV/HillHminusPairedSourceCorrection
+PASS NLS/KdV/HillHminusPrescribedPhasePullback
+PASS NLS/KdV/HillHminusPhysicalPhasePaths
+PASS NLS/KdV/HillOriginalTerminalBeta
+PASS NLS/KdV/HillZeroTerminalCorrection
+PASS NLS/ZakharovShabat/SourceBetaZeroSheet
+PASS NLS/KdV/HillOriginalPairedBeta
+PASS NLS/KdV/HillOriginalOffIndexSourceSeries
+PASS NLS/KdV/HillCharacteristicLogSheet
+PASS NLS/KdV/HillDirichletCirclePhase
+PASS NLS/KdV/HillGlobalRegularContinuity
+PASS NLS/KdV/HillHminusRelativeRoot
+PASS NLS/KdV/HillHminusRelativeAction
+PASS NLS/KdV/HillHminusIntrinsicGapPairs
+PASS NLS/KdV/HillHminusIntrinsicGapSymmetricData
+PASS NLS/KdV/HillHminusIntrinsicGapUnit
+PASS NLS/KdV/HillHminusIntrinsicDeflatedRoot
+PASS NLS/KdV/HillHminusDeflatedPhysicalDifferential
+PASS NLS/KdV/HillHminusDeflatedDifferentialMean
+PASS NLS/KdV/HillHminusClosedGapQuadraticChart
+PASS NLS/KdV/HillHminusLogNorming
+PASS NLS/KdV/HillHminusOriginalDirichletSheetGerm
+PASS NLS/KdV/HillLocalHilbertRepresentation
+PASS NLS/KdV/HillUniformContourBound
+PASS NLS/KdV/HillUniformCorrectionDecay
+PASS NLS/KdV/HillRegularSumContinuity
+PASS NLS/KdV/HillSpectralCartesian
+PASS NLS/KdV/HillOwnGapFactor
+PASS NLS/KdV/HillHminusOriginalOwnGapFactor
+PASS NLS/KdV/HillHminusClosedGapRegularCorrection
+PASS NLS/SequenceSpaces/PositiveBoundedAnalyticFamily
+PASS NLS/ZakharovShabat/SourceAngularOriginalBetaUniformNorm
+PASS NLS/KdV/HillHminusPairedCorrectionBound
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughOffIndexPhase
+PASS NLS/KdV/HillOwnSeriesAssembly
+PASS NLS/KdV/HillHminusRegularPhaseGerms
+PASS NLS/Articles/KdVKdV2Frequencies/RoughAbelianScalarGerms
+Axiom audit passed: 14943 candidate declarations; 37013 declarations total.
 ```
