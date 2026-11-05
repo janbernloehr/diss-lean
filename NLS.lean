@@ -5963,3 +5963,6 @@ import NLS.KdV.HillOpenRegularEndpointCotangents
 import NLS.KdV.HillNormingTransversePairing
 import NLS.KdV.HillAllEndpointRegularCotangents
 import NLS.KdV.HillAllEndpointNormingFamily
+import NLS.KdV.HillQuadraticEndpointCotangentBound
+import NLS.KdV.HillCommonEndpointCotangentTail
+import NLS.KdV.HillSummableEndpointCotangents

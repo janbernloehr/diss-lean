@@ -1040,6 +1040,9 @@ import NLS.KdV.HillOpenRegularEndpointCotangents
 import NLS.KdV.HillNormingTransversePairing
 import NLS.KdV.HillAllEndpointRegularCotangents
 import NLS.KdV.HillAllEndpointNormingFamily
+import NLS.KdV.HillQuadraticEndpointCotangentBound
+import NLS.KdV.HillCommonEndpointCotangentTail
+import NLS.KdV.HillSummableEndpointCotangents
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
