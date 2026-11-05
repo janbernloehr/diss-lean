@@ -1633,6 +1633,10 @@ modules = [
     'NLS.KdV.HillNativeInverseGapTail',
     'NLS.Articles.KdVPseudomeasures.EndpointNativeInverseRegularity',
     'NLS.Articles.KdVPseudomeasures.MainTheorem14Reduction',
+    'NLS.SequenceSpaces.WeightedSpatialTranslationDerivative',
+    'NLS.SequenceSpaces.PeriodOneMiuraSpatialTranslation',
+    'NLS.KdV.HillSpatialTranslationDiscriminant',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpatialStationarity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

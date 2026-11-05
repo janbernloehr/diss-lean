@@ -1599,6 +1599,10 @@ import NLS.Topology.CompactClosureEmbedding
 import NLS.KdV.HillNativeInverseGapTail
 import NLS.Articles.KdVPseudomeasures.EndpointNativeInverseRegularity
 import NLS.Articles.KdVPseudomeasures.MainTheorem14Reduction
+import NLS.SequenceSpaces.WeightedSpatialTranslationDerivative
+import NLS.SequenceSpaces.PeriodOneMiuraSpatialTranslation
+import NLS.KdV.HillSpatialTranslationDiscriminant
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialStationarity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9758,3 +9762,28 @@ import NLS.Articles.KdVPseudomeasures.MainTheorem14Reduction
 #print axioms NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarHomeomorphRangeOfNativeInjective_apply
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_4Statement
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_4_of_native_isClosedMap
+#print axioms NLS.WeightedCoeff.spatialTranslation_zero
+#print axioms NLS.WeightedCoeff.spatialTranslation_add
+#print axioms NLS.WeightedCoeff.continuous_spatialTranslation
+#print axioms NLS.WeightedCoeff.spatialTranslation_real
+#print axioms NLS.WeightedCoeff.hasDerivAt_spatialTranslation
+#print axioms NLS.periodOneL2SpatialDerivative
+#print axioms NLS.periodOneL2SpatialDerivative_apply
+#print axioms NLS.periodOneL2Inclusion_spatialTranslation
+#print axioms NLS.periodOneL2Constant_spatialTranslation
+#print axioms NLS.periodOneMiuraProduct_spatialTranslation
+#print axioms NLS.periodOneMiura_spatialTranslation
+#print axioms NLS.hasDerivAt_periodOneL2Inclusion_spatialTranslation
+#print axioms NLS.KdV.hillMiuraDiagonal_spatialTranslation
+#print axioms NLS.KdV.hillHminusDiscriminant_spatialTranslation_real
+#print axioms NLS.KdV.hillHminusDiscriminant_spatialTranslation
+#print axioms NLS.KdV.hillHminusDiscriminant_spatial_derivative_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillSpatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillSpatialTranslation_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillSpatialTranslation_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillSpatialTranslation_add
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillSpatialTranslation_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_spatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGapValues_spatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_spatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_spatial_derivative_zero
