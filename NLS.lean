@@ -5946,3 +5946,12 @@ import NLS.KdV.HillIndexedCartesian
 import NLS.KdV.HillIndexedFlowCartesianDynamics
 import NLS.KdV.HillOwnDirichletNumerator
 import NLS.KdV.HillNonstationaryIndexedFlows
+import NLS.KdV.HillCharacteristicLogSheet
+import NLS.KdV.HillPrescribedCharacteristicAngle
+import NLS.ComplexAnalysis.SineNormingEndpoint
+import NLS.KdV.HillEndpointBaseAngles
+import NLS.KdV.HillEndpointAngleCotangent
+import NLS.KdV.HillEndpointPrimitiveParameters
+import NLS.KdV.HillEndpointDirichletPrimitives
+import NLS.KdV.HillFiniteNormingGradients
+import NLS.KdV.HillFiniteEndpointPrimitives

@@ -1023,6 +1023,15 @@ import NLS.KdV.HillIndexedCartesian
 import NLS.KdV.HillIndexedFlowCartesianDynamics
 import NLS.KdV.HillOwnDirichletNumerator
 import NLS.KdV.HillNonstationaryIndexedFlows
+import NLS.KdV.HillCharacteristicLogSheet
+import NLS.KdV.HillPrescribedCharacteristicAngle
+import NLS.ComplexAnalysis.SineNormingEndpoint
+import NLS.KdV.HillEndpointBaseAngles
+import NLS.KdV.HillEndpointAngleCotangent
+import NLS.KdV.HillEndpointPrimitiveParameters
+import NLS.KdV.HillEndpointDirichletPrimitives
+import NLS.KdV.HillFiniteNormingGradients
+import NLS.KdV.HillFiniteEndpointPrimitives
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1611,7 +1620,8 @@ run_cmd do
     ``NLS.FunctionalAnalysis.closedUnitCurveSubmodule,
     ``NLS.FunctionalAnalysis.closedUnitCurvePeriodTwoCLM,
     ``NLS.FunctionalAnalysis.closedUnitCurveProjectionCLM,
-    ``NLS.FunctionalAnalysis.closedUnitCurveProjectionCLM_fixed]
+    ``NLS.FunctionalAnalysis.closedUnitCurveProjectionCLM_fixed,
+    ``NLS.ComplexAnalysis.sineTerminal_fderiv_eq_norming_of_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

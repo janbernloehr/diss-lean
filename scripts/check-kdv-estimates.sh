@@ -191,6 +191,7 @@ modules+=(NLS/FunctionalAnalysis/ClosedUnitCurveLinearRealization NLS/KdV/HillCu
 modules+=(NLS/KdV/HillRealSourceSubmodule NLS/KdV/HillRealIndexedField NLS/KdV/HillIndexedLocalFlow NLS/KdV/HillIndexedFlowTerminalDynamics)
 modules+=(NLS/KdV/HillPhaseDirectionAssembly NLS/KdV/HillRegularIndexedPrimitives NLS/KdV/HillIndexedPrimitivePartialSums NLS/KdV/HillIsospectralActions NLS/KdV/HillFullIndexedPhase NLS/KdV/HillRegularIndexedCartesian NLS/KdV/HillIndexedCartesian NLS/KdV/HillIndexedFlowCartesianDynamics)
 modules+=(NLS/KdV/HillOwnDirichletNumerator NLS/KdV/HillNonstationaryIndexedFlows)
+modules+=(NLS/KdV/HillCharacteristicLogSheet NLS/KdV/HillPrescribedCharacteristicAngle NLS/ComplexAnalysis/SineNormingEndpoint NLS/KdV/HillEndpointBaseAngles NLS/KdV/HillEndpointAngleCotangent NLS/KdV/HillEndpointPrimitiveParameters NLS/KdV/HillEndpointDirichletPrimitives NLS/KdV/HillFiniteNormingGradients NLS/KdV/HillFiniteEndpointPrimitives)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
