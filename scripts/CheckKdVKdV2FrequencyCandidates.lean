@@ -1,3 +1,19 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeGapMidpointCoordinates
+import NLS.KdV.HillNativeDirichletMidpointCoordinates
+import NLS.KdV.HillNativeGapMidpointRemainder
+import NLS.KdV.HillAllMidpointAnalytic
+import NLS.KdV.HillGapMidpointQuadraticBound
+import NLS.KdV.HillConstantGapMidpoint
+import NLS.KdV.HillRadiusMidpointMoments
+import NLS.ComplexAnalysis.CenteredCircleMomentComparison
+import NLS.KdV.HillL2AnnularSeparation
+import NLS.KdV.HillL2LogDerivativeComparison
+import NLS.ComplexAnalysis.AnnulusDerivativeBounds
+import NLS.ComplexAnalysis.LogDerivativeComparison
+import NLS.KdV.HillL2AnnularRadicandComparison
+import NLS.KdV.HillL2TraceMeanRemainder
+import NLS.KdV.FreeEnergyAnnulusFrequencyBounds
+import NLS.KdV.ClassicalHillTraceBorn
 import NLS.Articles.KdVKdV2Frequencies.NativeDirichletEnergyCoordinates
 import NLS.KdV.HillNativeDirichletEnergyCoordinates
 import NLS.KdV.HillNativeDirichletEnergyRemainder
@@ -1577,7 +1593,23 @@ run_cmd do
     `NLS.KdV.HillDirichletEnergyFourierBound,
     `NLS.KdV.HillNativeDirichletEnergyRemainder,
     `NLS.KdV.HillNativeDirichletEnergyCoordinates,
-    `NLS.Articles.KdVKdV2Frequencies.NativeDirichletEnergyCoordinates
+    `NLS.Articles.KdVKdV2Frequencies.NativeDirichletEnergyCoordinates,
+    `NLS.KdV.ClassicalHillTraceBorn,
+    `NLS.KdV.FreeEnergyAnnulusFrequencyBounds,
+    `NLS.KdV.HillL2TraceMeanRemainder,
+    `NLS.ComplexAnalysis.LogDerivativeComparison,
+    `NLS.KdV.HillL2AnnularRadicandComparison,
+    `NLS.ComplexAnalysis.AnnulusDerivativeBounds,
+    `NLS.KdV.HillL2AnnularSeparation,
+    `NLS.KdV.HillL2LogDerivativeComparison,
+    `NLS.ComplexAnalysis.CenteredCircleMomentComparison,
+    `NLS.KdV.HillRadiusMidpointMoments,
+    `NLS.KdV.HillConstantGapMidpoint,
+    `NLS.KdV.HillGapMidpointQuadraticBound,
+    `NLS.KdV.HillAllMidpointAnalytic,
+    `NLS.KdV.HillNativeGapMidpointRemainder,
+    `NLS.KdV.HillNativeDirichletMidpointCoordinates,
+    `NLS.Articles.KdVKdV2Frequencies.NativeGapMidpointCoordinates
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest native actual Dirichlet energy coordinates
+## Latest native actual gap midpoint coordinates
+
+The actual symmetric midpoint minus free energy minus u(0) now forms one native Hilbert-analytic sequence R on a common complex period-one L2 ball before all positive gaps and physical sources. Its full norm is <=K*||u||^2, value and derivative at zero vanish, and nonpositive coefficients vanish. The actual Dirichlet-minus-midpoint sequence A is native Hilbert analytic with exact cosine Fourier derivative L(u)(k)=-(u(k)+u(-k))/2, norm<=||u||+K*||u||^2 and nonlinear norm error<=K*||u||^2. Every positive component at every physical real source in the same ball matches the actual physical quantities, including first/closed gaps and nonzero means.
+
+See `NATIVE_GAP_MIDPOINTS.md`. The proof uses exact trace Born cancellation at equal means, full complex energy annuli, actual root separation, centered logarithmic moments and the exact constant-potential midpoint. Native unscaled terminals, summed regular phase and Dirichlet energies remain proved. Uniform analytic amplitude prefactors and weighted coordinate assembly are next; all main Birkhoff/Hamiltonian conclusions remain open.
+
+Prior strict evidence for all 1221 unchanged selected baseline sources; strict dependency-order compilation of sixteen new proof modules; then a fresh combined transitive axiom audit of all 1237 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1269 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the sixteen new modules. No repeated full 1237-module rebuild is claimed.
+
+Fresh audit: 10894 selected and 33027 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier native actual Dirichlet energy coordinates
 
 Actual mean-subtracted Dirichlet energies now form one native Hilbert-analytic map on a common complex period-one L2 ball before every physical source and positive gap. Every positive real-source component is the actual physical Dirichlet energy minus free energy minus u(0); all nonpositive complex coefficients vanish. The map vanishes at zero, has exact cosine Fourier derivative -(u(k)+u(-k))/2 and full norm <=||u||+K*||u||^2. Its native analytic nonlinear remainder has norm <=K*||u||^2 and zero derivative at the origin. The proof derives an actual complex L2 Born/Fourier estimate with inverse-index quadratic error. First and collapsed gaps and nonzero means are included.
 

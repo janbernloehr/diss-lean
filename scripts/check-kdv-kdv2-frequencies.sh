@@ -1230,6 +1230,22 @@ modules=(
   NLS/KdV/HillNativeDirichletEnergyRemainder
   NLS/KdV/HillNativeDirichletEnergyCoordinates
   NLS/Articles/KdVKdV2Frequencies/NativeDirichletEnergyCoordinates
+  NLS/KdV/ClassicalHillTraceBorn
+  NLS/KdV/FreeEnergyAnnulusFrequencyBounds
+  NLS/KdV/HillL2TraceMeanRemainder
+  NLS/ComplexAnalysis/LogDerivativeComparison
+  NLS/KdV/HillL2AnnularRadicandComparison
+  NLS/ComplexAnalysis/AnnulusDerivativeBounds
+  NLS/KdV/HillL2AnnularSeparation
+  NLS/KdV/HillL2LogDerivativeComparison
+  NLS/ComplexAnalysis/CenteredCircleMomentComparison
+  NLS/KdV/HillRadiusMidpointMoments
+  NLS/KdV/HillConstantGapMidpoint
+  NLS/KdV/HillGapMidpointQuadraticBound
+  NLS/KdV/HillAllMidpointAnalytic
+  NLS/KdV/HillNativeGapMidpointRemainder
+  NLS/KdV/HillNativeDirichletMidpointCoordinates
+  NLS/Articles/KdVKdV2Frequencies/NativeGapMidpointCoordinates
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

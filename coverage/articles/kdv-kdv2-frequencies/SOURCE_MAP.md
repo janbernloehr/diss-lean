@@ -1114,3 +1114,14 @@ See `NATIVE_DIRICHLET_ENERGIES.md`. The native summed regular phase remains prov
 Prior strict evidence for all 1211 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules; then a fresh combined transitive axiom audit of all 1221 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1253 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1221-module rebuild is claimed.
 
 Fresh audit: 10834 selected and 32967 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest native actual gap midpoint coordinates
+
+The actual symmetric midpoint minus free energy minus u(0) now forms one native Hilbert-analytic sequence R on a common complex period-one L2 ball before all positive gaps and physical sources. Its full norm is <=K*||u||^2, value and derivative at zero vanish, and nonpositive coefficients vanish. The actual Dirichlet-minus-midpoint sequence A is native Hilbert analytic with exact cosine Fourier derivative L(u)(k)=-(u(k)+u(-k))/2, norm<=||u||+K*||u||^2 and nonlinear norm error<=K*||u||^2. Every positive component at every physical real source in the same ball matches the actual physical quantities, including first/closed gaps and nonzero means.
+
+See `NATIVE_GAP_MIDPOINTS.md`. The proof uses exact trace Born cancellation at equal means, full complex energy annuli, actual root separation, centered logarithmic moments and the exact constant-potential midpoint. Native unscaled terminals, summed regular phase and Dirichlet energies remain proved. Uniform analytic amplitude prefactors and weighted coordinate assembly are next; all main Birkhoff/Hamiltonian conclusions remain open.
+
+Prior strict evidence for all 1221 unchanged selected baseline sources; strict dependency-order compilation of sixteen new proof modules; then a fresh combined transitive axiom audit of all 1237 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1269 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the sixteen new modules. No repeated full 1237-module rebuild is claimed.
+
+Fresh audit: 10894 selected and 33027 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
