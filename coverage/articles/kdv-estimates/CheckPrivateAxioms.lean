@@ -1467,6 +1467,13 @@ import NLS.FunctionalAnalysis.NormPreservingCompactDerivativeDefect
 import NLS.KdV.HillOriginalDerivativeCompactDefect
 import NLS.FunctionalAnalysis.ClosedRangeCompactNormal
 import NLS.KdV.HillOriginalDerivativeSurjectivity
+import NLS.FunctionalAnalysis.HilbertSurjectiveRightInverse
+import NLS.FunctionalAnalysis.NeumannCompositionBoundGeneral
+import NLS.FunctionalAnalysis.SurjectiveKernelPersistence
+import NLS.FunctionalAnalysis.SurjectiveOperatorConnectedFamily
+import NLS.KdV.HillOriginalDerivativeBijectivity
+import NLS.KdV.HillOriginalLocalInverse
+import NLS.KdV.HillOriginalGlobalInverse
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2692,7 +2699,14 @@ run_cmd do
     ``NLS.FunctionalAnalysis.secondDerivative_pairing_of_norm_map,
     ``NLS.SequenceSpaces.denseRange_natL2_of_single_preimages,
     ``NLS.SequenceSpaces.isCompactOperator_secondDerivative_natL2_inner,
-    ``NLS.FunctionalAnalysis.isClosed_range_of_compact_normal_defect]
+    ``NLS.FunctionalAnalysis.isClosed_range_of_compact_normal_defect,
+    ``NLS.FunctionalAnalysis.bijective_connected_family_of_surjective,
+    ``NLS.FunctionalAnalysis.eventually_bijective_of_bijective,
+    ``NLS.FunctionalAnalysis.eventually_not_injective_of_rightInverse,
+    ``NLS.FunctionalAnalysis.eventually_not_injective_of_surjective,
+    ``NLS.FunctionalAnalysis.exists_hilbert_rightInverse_of_surjective,
+    ``NLS.FunctionalAnalysis.exists_inverse_norm_le_two_mul_of_composition_near,
+    ``NLS.FunctionalAnalysis.inverse_norm_le_two_mul_of_composition_near]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -6390,3 +6390,10 @@ import NLS.FunctionalAnalysis.NormPreservingCompactDerivativeDefect
 import NLS.KdV.HillOriginalDerivativeCompactDefect
 import NLS.FunctionalAnalysis.ClosedRangeCompactNormal
 import NLS.KdV.HillOriginalDerivativeSurjectivity
+import NLS.FunctionalAnalysis.HilbertSurjectiveRightInverse
+import NLS.FunctionalAnalysis.NeumannCompositionBoundGeneral
+import NLS.FunctionalAnalysis.SurjectiveKernelPersistence
+import NLS.FunctionalAnalysis.SurjectiveOperatorConnectedFamily
+import NLS.KdV.HillOriginalDerivativeBijectivity
+import NLS.KdV.HillOriginalLocalInverse
+import NLS.KdV.HillOriginalGlobalInverse
