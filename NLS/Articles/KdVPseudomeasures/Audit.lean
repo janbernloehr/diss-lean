@@ -1842,6 +1842,14 @@ import NLS.SequenceSpaces.FourierRealPhaseFlow
 import NLS.SequenceSpaces.OddPositiveFrequency
 import NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalFlow
 import NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalTrajectories
+import NLS.Articles.KdVPseudomeasures.OriginalHillIntegerCanonicalFlow
+import NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyGrowth
+import NLS.SequenceSpaces.FourierRealPhaseDerivative
+import NLS.SequenceSpaces.SignedSobolevOrderInclusion
+import NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalFrequencyGenerator
+import NLS.Articles.KdVPseudomeasures.OriginalHillIntegerOrderInclusion
+import NLS.Articles.KdVPseudomeasures.OriginalHillIntegerCanonicalDerivative
+import NLS.Articles.KdVPseudomeasures.OriginalHillIntegerCanonicalTimeDerivative
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10883,3 +10891,43 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalTrajectories
 #print axioms NLS.Articles.KdVPseudomeasures.exists_compact_hillRoughCanonicalKdV_orbit_container
 #print axioms NLS.Articles.KdVPseudomeasures.isCompact_closure_range_hillRoughCanonicalKdVFlow
 #print axioms NLS.Articles.KdVPseudomeasures.isBounded_range_hillRoughCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerTargetInclusion_phaseFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_native
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_add
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_frequency
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillIntegerCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequencyGrowthConstant
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequencyGrowthConstant_pos
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_remainder_bound
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_cubic_bound
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVSignedFrequency_cubic_bound
+#print axioms NLS.WeightedCoeff.hasDerivAt_weightedPhaseFlow
+#print axioms NLS.WeightedCoeff.fourierRealZeroPhaseFlow_eq_projection
+#print axioms NLS.WeightedCoeff.hasDerivAt_fourierRealZeroPhaseFlow
+#print axioms NLS.WeightedCoeff.signedRealOrderInclusion
+#print axioms NLS.WeightedCoeff.signedRealOrderInclusion_apply
+#print axioms NLS.WeightedCoeff.signedRealOrderInclusion_injective
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_multiplier_bound
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_multiplier_real
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequencyGenerator
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequencyGenerator_apply
+#print axioms NLS.Articles.KdVPseudomeasures.norm_hillRoughKdVFrequencyGenerator_le
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSourceOrderInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerTargetOrderInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSourceOrderInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerTargetOrderInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSourceOrderInclusion_rough
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerTargetOrderInclusion_rough
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_order_compatibility
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_order_compatibility
+#print axioms NLS.Articles.KdVPseudomeasures.exists_actual_frequency_generator_at_orders
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalNativeVelocity
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalNativeVelocity_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_hillIntegerCanonicalFlow_native_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVVector
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_hillIntegerCanonicalKdVFlow_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_hillIntegerCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVVector_nativeJacobian

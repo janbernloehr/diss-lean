@@ -1876,6 +1876,14 @@ modules = [
     'NLS.SequenceSpaces.OddPositiveFrequency',
     'NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalFlow',
     'NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalTrajectories',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerCanonicalFlow',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyGrowth',
+    'NLS.SequenceSpaces.FourierRealPhaseDerivative',
+    'NLS.SequenceSpaces.SignedSobolevOrderInclusion',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalFrequencyGenerator',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerOrderInclusion',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerCanonicalDerivative',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerCanonicalTimeDerivative',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
