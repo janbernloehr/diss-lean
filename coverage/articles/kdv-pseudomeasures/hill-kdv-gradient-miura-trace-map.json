@@ -1,0 +1,162 @@
+{
+  "source": "arXiv:1610.00278v1 actual canonical map/Hamiltonian dependencies for remaining main1.1,1.3,5.1,5.9",
+  "status": "Actual physical KdV gradient/Gardner field, exact centered Miura energy trace normalization, and all-order actual finite-gap NLS Hamiltonian discriminant invariance.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-kdv-gradient-miura-trace-map.json",
+    "actual_KdV_H1_smooth_gradient_PROVED": true,
+    "exact_Gardner_KdV_vector_field_PROVED": true,
+    "scalar_Hill_fourth_Riccati_KdV_density_identity_PROVED": true,
+    "actual_Miura_K3_eq_physical_KdV_energy_PROVED": true,
+    "actual_Miura_K2_eq_HALF_square_potential_mean_PROVED": true,
+    "actual_centered_Miura_KdV_NLS_H5_half_minus_3cH3_plus_2c_cubed_PROVED": true,
+    "ALL_finiteGap_NLS_Hamiltonians_discriminant_invariants_PROVED": true,
+    "actual_original_KdV_Hamiltonian_action_dependence_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "PeriodOneHamiltonianGradient identifies the ACTUAL variational gradient -q_xx+3*q^2 of the original H1 KdV energy on smooth physical unit-period representatives and arbitrary smooth H1 variations. The derivative of this gradient is EXACTLY -q_xxx+6*q*q_x. No arbitrary frequency or evolution is substituted.",
+    "ScalarHillLowRiccati proves the second, third and fourth coefficients of the independently seeded scalar Hill recurrence over EVERY commutative differential algebra. Its fourth coefficient obeys -rho4=(Dq)^2+2*q^3+D(D^3q-6*q*Dq). The twice-energy normalization and the full total derivative are verified algebraically.",
+    "MiuraKdVHamiltonian transfers the exact scalar recurrence identity to actual smooth complex unit-period Miura potentials r=u_x+u^2. The independently constructed scalar Hill order-three Hamiltonian equals ORIGINAL KdV energy H(r)=integral(r_x^2/2+r^3). Its order-two Hamiltonian is EXACTLY ONE HALF of integral(r^2); this half-factor is proved, not inferred from convention.",
+    "ClassicalHamiltonianShift proves the full physical constant-shift energy polynomial. CenteredMiuraKdVHamiltonian proves integral(r)=integral(u^2), hence at c=integral(u^2), H(r-c)=K3-6*c*K2+2*c^3=H_NLS,5/2-3*c*H_NLS,3+2*c^3. The correction coefficient is SIX in scalar Hill normalization and THREE in NLS normalization. All identities hold for arbitrary smooth complex period-one profiles.",
+    "SourceFiniteGapHamiltonianIsospectral proves that ALL actual finite-gap physical NLS Hamiltonians, at EVERY finite source exponent greater than one and EVERY hierarchy index including zero, are fixed by the actual entire discriminant and therefore by full original signed Dirac isospectrality. The analytic inversion phase and complete physical Taylor jet are proved dependencies; factorials, powers of two and the original imaginary scalar are cancelled with verified nonvanishing.",
+    "Main1.4 remains PROVED and freshly recompiled. Main1.1,1.3,5.1,5.9 remain UNPROVED. The actual physical KdV gradient/vector field and centered Miura energy trace normalization are NOW PROVED. Still needed: transfer these actual identities through rough Miura Fourier representatives, prove native KdV Hamiltonian spectral/action dependence, construct/extend the normalized KdV frequencies and evolution, and prove convergence from EVERY smooth approximation. Goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_two",
+    "NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_three",
+    "NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_four",
+    "NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_four_KdV",
+    "NLS.KdV.classicalKdVGradient",
+    "NLS.KdV.classicalKdVVectorField",
+    "NLS.KdV.hasDerivAt_classicalKdVGradient",
+    "NLS.KdV.deriv_classicalKdVGradient",
+    "NLS.KdV.classicalKdVGradient_periodic",
+    "NLS.KdV.hasDerivAt_periodOneKdVHamiltonian_gradient",
+    "NLS.KdV.classicalKdVHamiltonian",
+    "NLS.KdV.periodOneKdVHamiltonian_eq_classical",
+    "NLS.KdV.classicalKdVHamiltonian_sub_const",
+    "NLS.KdV.classicalKdVHamiltonian_sub_mean",
+    "NLS.MKdV.evaluate_miuraHillPotentialPolynomial",
+    "NLS.MKdV.classicalMiuraHillHamiltonian_three_eq_KdV",
+    "NLS.MKdV.classicalMiuraHillHamiltonian_two_eq_square_miura",
+    "NLS.MKdV.integral_miuraPotential",
+    "NLS.MKdV.classicalKdVHamiltonian_centered_miura",
+    "NLS.MKdV.classicalKdVHamiltonian_centered_miura_NLS",
+    "NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_discriminant",
+    "NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_isospectral"
+  ],
+  "files": [
+    "NLS/DifferentialPolynomial/ScalarHillLowRiccati.lean",
+    "NLS/KdV/PeriodOneHamiltonianGradient.lean",
+    "NLS/KdV/ClassicalHamiltonian.lean",
+    "NLS/KdV/ClassicalHamiltonianShift.lean",
+    "NLS/MKdV/MiuraKdVHamiltonian.lean",
+    "NLS/MKdV/CenteredMiuraKdVHamiltonian.lean",
+    "NLS/ZakharovShabat/SourceFiniteGapHamiltonianIsospectral.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "2677cce2fa56305bc61b1517404fc8bb948b98ca",
+    "baseline_modules": 1718,
+    "baseline_non_audit_sources_verified_unchanged": 1717,
+    "new_modules_compiled": 7,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.DifferentialPolynomial.PeriodicEvaluation",
+        "source": "NLS/DifferentialPolynomial/PeriodicEvaluation.lean",
+        "source_sha256": "fafe3e36a07b94ee33cd9f0e5c29558bcd05d4862f7554b25ef755049d6d1218"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianHamiltonianInversion",
+        "source": "NLS/ZakharovShabat/SourceFullAbelianHamiltonianInversion.lean",
+        "source_sha256": "b2e9ec961c91ca503aed193f55daa47bce3c02a645219ce5da6a32a5d87dd333"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceAbelianPrimitiveIsospectral",
+        "source": "NLS/ZakharovShabat/SourceAbelianPrimitiveIsospectral.lean",
+        "source_sha256": "c194de635b4651c127fcfbc97380aca3ed37089175d054fd8ce44fc79361aea9"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.DifferentialPolynomial.DifferentialRiccati",
+        "source": "NLS/DifferentialPolynomial/DifferentialRiccati.lean",
+        "source_sha256": "4b1b37cebff45cc01e6f8f8a30fe53cbaf75af757794f52f40cc26b48e8e57ed",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.FunctionalAnalysis.PeriodicIntegrationByParts",
+        "source": "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean",
+        "source_sha256": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.MKdV.MiuraHierarchyHamiltonians",
+        "source": "NLS/MKdV/MiuraHierarchyHamiltonians.lean",
+        "source_sha256": "867e05e2e2941464e1f5da8d022ab1eac8c6e15e4c4e12e4684ef0fd30670d22",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.PeriodOneHamiltonianVariation",
+        "source": "NLS/KdV/PeriodOneHamiltonianVariation.lean",
+        "source_sha256": "5c0395001621063a757c80bcce194e316954bce4b3e5cf503f0ca346adfacb78",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1Hamiltonian",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1Hamiltonian.lean",
+        "source_sha256": "69f87502c7b4a845d9bae75acea4e26b8bfe6a5e4fc10df78f8f3fa14f5ad69e",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1725,
+    "audited_declarations": 8647,
+    "theorems": 7284,
+    "definitions": 1363,
+    "new_theorems": 19,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-kdv-gradient-miura-trace.log",
+    "log_sha256": "2282a4bfa46a4eed5d946bb7e090d2e1c876f079fc88b3c343713958fbee4229"
+  },
+  "remaining_obligations": [
+    "Connect the actual smooth centered Miura KdV identity to finite-gap original Fourier sources, then prove original KdV Hamiltonian isospectral/action dependence. Use ONE common exterior Miura shift and ONE Dirac isospectral set from OriginalIsospectralMiura; all finite-gap NLS hierarchy Hamiltonians are NOW PROVED discriminant invariants. No need to identify the mean-zero shift with the lowest energy. The normalized identity is H_KdV(r-c)=H_NLS,5/2-3*c*H_NLS,3+2*c^3.",
+    "Construct the ACTUAL normalized KdV frequency map from the genuine canonical physical Hamiltonian; prove its rough extension and original KdV evolution with convergence from EVERY smooth approximation. The actual H1 energy, full first variation, smooth gradient and exact Gardner vector field -q_xxx+6*q*q_x are NOW PROVED; these do not alone supply evolution or global frequency regularity.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and full global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. All integer Hilbert scales/strong finite-gap approximants remain proved dependencies, not substitutes for ell-one estimates. Universal actual Hill numerator scalar2/(pi*n) remains OPEN.",
+    "Prove remaining main1.1,1.3,5.9 from the actual original KdV evolution with the required topologies/analyticity. Main1.4 is complete. FOUR main theorems remain UNPROVED; goalACTIVE."
+  ]
+}

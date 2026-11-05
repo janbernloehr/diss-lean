@@ -1749,6 +1749,13 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1Hamiltonian',
     'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerFiniteGapApproximation',
     'NLS.KdV.PeriodOneHamiltonianVariation',
+    'NLS.DifferentialPolynomial.ScalarHillLowRiccati',
+    'NLS.KdV.PeriodOneHamiltonianGradient',
+    'NLS.KdV.ClassicalHamiltonian',
+    'NLS.KdV.ClassicalHamiltonianShift',
+    'NLS.MKdV.MiuraKdVHamiltonian',
+    'NLS.MKdV.CenteredMiuraKdVHamiltonian',
+    'NLS.ZakharovShabat.SourceFiniteGapHamiltonianIsospectral',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

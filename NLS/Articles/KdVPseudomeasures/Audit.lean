@@ -1715,6 +1715,13 @@ import NLS.KdV.PeriodOneHamiltonian
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1Hamiltonian
 import NLS.Articles.KdVPseudomeasures.OriginalHillIntegerFiniteGapApproximation
 import NLS.KdV.PeriodOneHamiltonianVariation
+import NLS.DifferentialPolynomial.ScalarHillLowRiccati
+import NLS.KdV.PeriodOneHamiltonianGradient
+import NLS.KdV.ClassicalHamiltonian
+import NLS.KdV.ClassicalHamiltonianShift
+import NLS.MKdV.MiuraKdVHamiltonian
+import NLS.MKdV.CenteredMiuraKdVHamiltonian
+import NLS.ZakharovShabat.SourceFiniteGapHamiltonianIsospectral
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10343,3 +10350,25 @@ import NLS.KdV.PeriodOneHamiltonianVariation
 #print axioms NLS.Articles.KdVPseudomeasures.dense_hillIntegerFiniteGapLocus
 #print axioms NLS.KdV.periodOneKdVHamiltonian_variation_eq_integral
 #print axioms NLS.KdV.hasDerivAt_periodOneKdVHamiltonian_integral
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_two
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_three
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_four
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_four_KdV
+#print axioms NLS.KdV.classicalKdVGradient
+#print axioms NLS.KdV.classicalKdVVectorField
+#print axioms NLS.KdV.hasDerivAt_classicalKdVGradient
+#print axioms NLS.KdV.deriv_classicalKdVGradient
+#print axioms NLS.KdV.classicalKdVGradient_periodic
+#print axioms NLS.KdV.hasDerivAt_periodOneKdVHamiltonian_gradient
+#print axioms NLS.KdV.classicalKdVHamiltonian
+#print axioms NLS.KdV.periodOneKdVHamiltonian_eq_classical
+#print axioms NLS.KdV.classicalKdVHamiltonian_sub_const
+#print axioms NLS.KdV.classicalKdVHamiltonian_sub_mean
+#print axioms NLS.MKdV.evaluate_miuraHillPotentialPolynomial
+#print axioms NLS.MKdV.classicalMiuraHillHamiltonian_three_eq_KdV
+#print axioms NLS.MKdV.classicalMiuraHillHamiltonian_two_eq_square_miura
+#print axioms NLS.MKdV.integral_miuraPotential
+#print axioms NLS.MKdV.classicalKdVHamiltonian_centered_miura
+#print axioms NLS.MKdV.classicalKdVHamiltonian_centered_miura_NLS
+#print axioms NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_discriminant
+#print axioms NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_isospectral

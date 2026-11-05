@@ -2640,6 +2640,35 @@
         "NLS.KdV.hasDerivAt_periodOneKdVHamiltonian_integral"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-integer-sobolev-hamiltonian-map.json"
+    },
+    {
+      "label": "Actual KdV gradient, centered Miura energy normalization and finite-gap hierarchy spectral invariance",
+      "status": "proved dependencies; four remaining main theorems still unproved",
+      "declarations": [
+        "NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_two",
+        "NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_three",
+        "NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_four",
+        "NLS.DifferentialPolynomial.differentialRiccatiSequence_scalar_four_KdV",
+        "NLS.KdV.classicalKdVGradient",
+        "NLS.KdV.classicalKdVVectorField",
+        "NLS.KdV.hasDerivAt_classicalKdVGradient",
+        "NLS.KdV.deriv_classicalKdVGradient",
+        "NLS.KdV.classicalKdVGradient_periodic",
+        "NLS.KdV.hasDerivAt_periodOneKdVHamiltonian_gradient",
+        "NLS.KdV.classicalKdVHamiltonian",
+        "NLS.KdV.periodOneKdVHamiltonian_eq_classical",
+        "NLS.KdV.classicalKdVHamiltonian_sub_const",
+        "NLS.KdV.classicalKdVHamiltonian_sub_mean",
+        "NLS.MKdV.evaluate_miuraHillPotentialPolynomial",
+        "NLS.MKdV.classicalMiuraHillHamiltonian_three_eq_KdV",
+        "NLS.MKdV.classicalMiuraHillHamiltonian_two_eq_square_miura",
+        "NLS.MKdV.integral_miuraPotential",
+        "NLS.MKdV.classicalKdVHamiltonian_centered_miura",
+        "NLS.MKdV.classicalKdVHamiltonian_centered_miura_NLS",
+        "NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_discriminant",
+        "NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_isospectral"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-kdv-gradient-miura-trace-map.json"
     }
   ],
   "reuse_map": [
@@ -2719,10 +2748,10 @@
     }
   ],
   "remaining_obligations": [
-    "Prove isospectral/action dependence of the ACTUAL transformed physical H1 KdV Hamiltonian. Identify its normalized gradients/frequencies, extend the ACTUAL frequencies to the original rough domain, and construct KdV evolution with convergence from EVERY smooth approximation. The genuine physical energy H=integral(q_x^2/2+q^3), its full H1 first variation and its analytic canonical H^(3/2) transform are NOW PROVED.",
-    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), preserving all original domains/labels/roots/normalization. Existing scalar uniqueness/analyticity and actual numerator zero/product/period results do not determine that constant.",
-    "Prove the literal weighted ell-one forward/inverse spectral regularity and full global real analytic Wiener diffeomorphism/Birkhoff conclusion of main5.1 for EVERY N>=0. Newly proved ALL-integer Hilbert Sobolev global analytic equivalences and actual finite-gap approximation are dependencies, not a substitute for ell-one estimates.",
-    "Prove main1.1,1.3,5.9 from the actual original KdV evolution with the required topologies and analyticity. Main1.4 is complete; FOUR main theorems remain UNPROVED and goal ACTIVE."
+    "Connect the actual smooth centered Miura KdV identity to finite-gap original Fourier sources, then prove original KdV Hamiltonian isospectral/action dependence. Use ONE common exterior Miura shift and ONE Dirac isospectral set from OriginalIsospectralMiura; all finite-gap NLS hierarchy Hamiltonians are NOW PROVED discriminant invariants. No need to identify the mean-zero shift with the lowest energy. The normalized identity is H_KdV(r-c)=H_NLS,5/2-3*c*H_NLS,3+2*c^3.",
+    "Construct the ACTUAL normalized KdV frequency map from the genuine canonical physical Hamiltonian; prove its rough extension and original KdV evolution with convergence from EVERY smooth approximation. The actual H1 energy, full first variation, smooth gradient and exact Gardner vector field -q_xxx+6*q*q_x are NOW PROVED; these do not alone supply evolution or global frequency regularity.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and full global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. All integer Hilbert scales/strong finite-gap approximants remain proved dependencies, not substitutes for ell-one estimates. Universal actual Hill numerator scalar2/(pi*n) remains OPEN.",
+    "Prove remaining main1.1,1.3,5.9 from the actual original KdV evolution with the required topologies/analyticity. Main1.4 is complete. FOUR main theorems remain UNPROVED; goalACTIVE."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -6204,6 +6233,26 @@
     "actual_KdV_rough_frequencies_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
     "literal_Wiener_ellOne_main5_1_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_KdV_gradient_Miura_trace": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-kdv-gradient-miura-trace-map.json",
+    "actual_KdV_H1_smooth_gradient_PROVED": true,
+    "exact_Gardner_KdV_vector_field_PROVED": true,
+    "scalar_Hill_fourth_Riccati_KdV_density_identity_PROVED": true,
+    "actual_Miura_K3_eq_physical_KdV_energy_PROVED": true,
+    "actual_Miura_K2_eq_HALF_square_potential_mean_PROVED": true,
+    "actual_centered_Miura_KdV_NLS_H5_half_minus_3cH3_plus_2c_cubed_PROVED": true,
+    "ALL_finiteGap_NLS_Hamiltonians_discriminant_invariants_PROVED": true,
+    "actual_original_KdV_Hamiltonian_action_dependence_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
       "1.1",
