@@ -1639,6 +1639,18 @@ import NLS.KdV.HillNativeL2Models
 import NLS.Articles.KdVPseudomeasures.OriginalHillL2NativeAnalytic
 import NLS.Articles.KdVPseudomeasures.OriginalHillL2NativeInverse
 import NLS.Articles.KdVPseudomeasures.OriginalHillL2FiniteGapApproximation
+import NLS.FunctionalAnalysis.RealBilinearQuadratic
+import NLS.FunctionalAnalysis.ComplexRealPullbackDerivative
+import NLS.FunctionalAnalysis.AnalyticDenseDerivativeIdentity
+import NLS.SequenceSpaces.PhysicalAnalyticIdentity
+import NLS.SequenceSpaces.PhysicalHilbertQuadratic
+import NLS.SequenceSpaces.SignedHalfHilbertPairing
+import NLS.KdV.HillNativeRealCoordinateDerivative
+import NLS.Poisson.GardnerCotangentKernel
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMomentumVector
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMomentumDifferential
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2MomentumFunctionals
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2MomentumTrace
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9979,3 +9991,58 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillL2FiniteGapApproximation
 #print axioms NLS.Articles.KdVPseudomeasures.exists_hillL2NativeMap_localInverse
 #print axioms NLS.Articles.KdVPseudomeasures.hillL2FiniteGap_approximation
 #print axioms NLS.Articles.KdVPseudomeasures.dense_hillL2FiniteGapLocus
+#print axioms NLS.FunctionalAnalysis.realBilinearPullback
+#print axioms NLS.FunctionalAnalysis.analyticAt_real_bilinear_quadratic_comp
+#print axioms NLS.FunctionalAnalysis.fderiv_real_bilinear_quadratic_comp_apply
+#print axioms NLS.FunctionalAnalysis.fderiv_real_linear_product_comp_apply
+#print axioms NLS.FunctionalAnalysis.fderiv_complex_real_pullback_apply
+#print axioms NLS.FunctionalAnalysis.fderiv_eq_of_analytic_dense_fderiv_eq
+#print axioms NLS.FunctionalAnalysis.eq_of_analytic_dense_fderiv_eq
+#print axioms NLS.WeightedCoeff.fourierRealZero_fderiv_eq_of_analytic_dense_fderiv_eq
+#print axioms NLS.WeightedCoeff.fourierRealZero_eq_of_analytic_dense_fderiv_eq
+#print axioms NLS.Coeff.oppositeHilbertPairing
+#print axioms NLS.Coeff.oppositeHilbertPairing_apply
+#print axioms NLS.Coeff.oppositeHilbertPairing_symm
+#print axioms NLS.Coeff.oppositeHilbertPairing_self_eq_norm_sq
+#print axioms NLS.Coeff.summable_norm_oppositeHilbertPairing
+#print axioms NLS.WeightedCoeff.fourierRealZeroWeightedCoefficients
+#print axioms NLS.WeightedCoeff.fourierRealZeroWeightedCoefficients_apply
+#print axioms NLS.WeightedCoeff.norm_fourierRealZeroWeightedCoefficients
+#print axioms NLS.WeightedCoeff.fourierRealZeroHilbertPairing
+#print axioms NLS.WeightedCoeff.fourierRealZeroHilbertPairing_apply
+#print axioms NLS.WeightedCoeff.fourierRealZeroHilbertPairing_symm
+#print axioms NLS.WeightedCoeff.fourierRealZeroHilbertPairing_self_eq_norm_sq
+#print axioms NLS.WeightedCoeff.summable_norm_fourierRealZeroHilbertPairing
+#print axioms NLS.WeightedCoeff.fourierRealZeroHilbertPairing_signed_zero_apply
+#print axioms NLS.WeightedCoeff.fourierRealZeroHilbertPairing_signed_half_apply
+#print axioms NLS.WeightedCoeff.summable_norm_fourierRealZeroHilbertPairing_signed_half
+#print axioms NLS.WeightedCoeff.fourierRealZeroHilbertPairing_signed_half_finite
+#print axioms NLS.WeightedCoeff.hasSum_positive_signedHalf_energy
+#print axioms NLS.KdV.fderiv_hillRealSignedMap_coordinate
+#print axioms NLS.Poisson.gardnerDerivative_eq_implies_nonzero_coordinates
+#print axioms NLS.Poisson.sobolevBilinearPairing_eq_of_gardnerDerivative_eq
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillRealSignedMap_action_field
+#print axioms NLS.Articles.KdVPseudomeasures.hillReal_spatialGenerator_eq_finite_action_fields
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillL2_finite_action_spatialGenerator
+#print axioms NLS.Articles.KdVPseudomeasures.finite_action_differential_eq_sobolev_pairing
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillL2_finite_action_momentum_differential
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2Momentum
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2ActionEnergy
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2CanonicalAction
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2Momentum_eq_half_norm_sq
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2ActionEnergy_eq_pi_norm_sq
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillL2Momentum
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillL2ActionEnergy
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillL2Momentum_apply
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillL2ActionEnergy_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2CanonicalAction_eq_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillL2CanonicalAction_complex_apply
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillL2CanonicalAction_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.hasSum_hillL2CanonicalAction_energy
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillL2ActionEnergy_eq_momentum_of_finiteGap
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2ActionEnergy_zero_eq_momentum
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillL2ActionEnergy_eq_momentum
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2ActionEnergy_eq_momentum
+#print axioms NLS.Articles.KdVPseudomeasures.hasSum_hillL2CanonicalAction_momentum
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sq_hillL2NativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sq_hillL2SourceCoefficients

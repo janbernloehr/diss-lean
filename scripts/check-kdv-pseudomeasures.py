@@ -1673,6 +1673,18 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillL2NativeAnalytic',
     'NLS.Articles.KdVPseudomeasures.OriginalHillL2NativeInverse',
     'NLS.Articles.KdVPseudomeasures.OriginalHillL2FiniteGapApproximation',
+    'NLS.FunctionalAnalysis.RealBilinearQuadratic',
+    'NLS.FunctionalAnalysis.ComplexRealPullbackDerivative',
+    'NLS.FunctionalAnalysis.AnalyticDenseDerivativeIdentity',
+    'NLS.SequenceSpaces.PhysicalAnalyticIdentity',
+    'NLS.SequenceSpaces.PhysicalHilbertQuadratic',
+    'NLS.SequenceSpaces.SignedHalfHilbertPairing',
+    'NLS.KdV.HillNativeRealCoordinateDerivative',
+    'NLS.Poisson.GardnerCotangentKernel',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMomentumVector',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMomentumDifferential',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2MomentumFunctionals',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2MomentumTrace',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
