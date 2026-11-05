@@ -1,0 +1,187 @@
+{
+  "source": "arXiv:1610.00278v1 Section5 Main5.9 dependencies: actual uniformly Banach analytic signed coordinate trajectories and same original physical Wiener flow",
+  "status": "Actual original signed Wiener Birkhoff phase trajectories BANACH REAL ANALYTIC in UNIFORM compact-time ell-one norm at EVERY integer order. Same original physical KdV flow preserves every Wiener source, is a global group and has strong-norm CONTINUOUS compact-time trajectories. Analytic inverse superposition in the uniform trajectory norm remains OPEN. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.1",
+    "1.3",
+    "1.4",
+    "5.1"
+  ],
+  "unproved_main_theorems": [
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "ACTUAL_signed_original_frequency_correction_UNWEIGHTED_analytic_PROVED": true,
+    "ACTUAL_original_Birkhoff_phase_trajectories_UNIFORM_compact_time_Wiener_Banach_analytic_PROVED": true,
+    "ALL_signed_original_coefficients_and_cubic_normalization_preserved": true,
+    "SAME_original_physical_KdV_flow_preserves_ALL_Wiener_orders_PROVED": true,
+    "SAME_entire_original_physical_distribution_flow_equality_PROVED": true,
+    "global_Wiener_group_law_PROVED": true,
+    "UNIFORM_strong_Wiener_trajectory_CONTINUITY_PROVED": true,
+    "UNIFORM_nonlinear_Wiener_inverse_superposition_ANALYTIC_PROVED": false,
+    "Main5_9_PROVED": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-compact-phase-flow-map.json"
+  },
+  "results": [
+    "PositiveOddFrequencyCorrection proves exact reflection-subtraction of a positive zero extension equals the literal signed odd real frequency, including zero. It proves equality of odd functions from all positive indices, compatibility with subtraction and the exact signed cubic identity at EVERY integer index. No sign or factor in the original cubic normalization is changed.",
+    "WeightedAnalyticPhaseTrajectory transports the existing entire bounded-correction/free-unbounded-phase trajectory through the actual weighted coefficient isometry. It proves complex Banach analyticity into C(K, WeightedCoeff w p) for EVERY finite Banach exponent and arbitrary compact parameter space, with EVERY exact raw exponential coefficient.",
+    "FourierRealAnalyticPhaseTrajectory projects the complex trajectory by the verified bounded real linear full Fourier real mean-zero projection. It is real analytic in the UNIFORM trajectory norm of the actual real mean-zero weighted space. When the bounded correction plus the free frequency is the actual signed odd real frequency, the projection fixes the ENTIRE original isometric phase evolution exactly.",
+    "OriginalHillWienerSignedFrequency constructs the actual signed original correction by reflection subtraction in UNWEIGHTED ell-infinity. It is real analytic on EVERY original physical Wiener source. ALL signed raw coefficients equal the SAME actual odd original KdV frequency minus (2*pi*k)^3, including the central zero and negative modes.",
+    "OriginalHillWienerPhaseTrajectory proves originalWienerKdVCoordinateTrajectory is real analytic into the actual UNIFORM compact-time ordinary weighted ell-one real mean-zero target at EVERY nonnegative integer order. It uses the SAME Main5.1 Birkhoff coordinates and SAME original signed KdV frequencies. Every original signed phase coefficient is retained exactly and each time slice preserves the original target norm.",
+    "OriginalHillWienerCanonicalFlow restricts the SAME original physical KdV flow to EVERY original physical integer-order Wiener source. Native equality implies equality of the ENTIRE original rough physical distribution. The physical inclusion is injective, so zero-time and global group identities hold in the ORIGINAL strong Wiener space. originalWienerKdVTrajectory is a continuous compact-time path, agrees pointwise with that SAME original physical flow, and depends CONTINUOUSLY on initial data in the UNIFORM strong Wiener trajectory norm. This is not yet analyticity after the nonlinear inverse: that final uniform Banach analytic superposition obligation is explicitly OPEN."
+  ],
+  "declarations": [
+    "NLS.LpSequence.positiveScalarExtension_nonpos",
+    "NLS.LpSequence.eq_of_odd_positive",
+    "NLS.LpSequence.positiveScalarExtension_sub_reflection",
+    "NLS.LpSequence.oddPositiveFrequency_sub",
+    "NLS.LpSequence.oddPositiveFrequency_cubic",
+    "NLS.LpSequence.positive_cubic_correction_sub_reflection",
+    "NLS.WeightedCoeff.analyticPhaseTrajectory",
+    "NLS.WeightedCoeff.analyticAt_analyticPhaseTrajectory",
+    "NLS.WeightedCoeff.analyticPhaseTrajectory_apply",
+    "NLS.WeightedCoeff.fourierRealAnalyticPhaseTrajectory",
+    "NLS.WeightedCoeff.analyticAt_fourierRealAnalyticPhaseTrajectory",
+    "NLS.WeightedCoeff.fourierRealAnalyticPhaseTrajectory_apply",
+    "NLS.Articles.KdVPseudomeasures.originalWienerSignedKdVFrequency",
+    "NLS.Articles.KdVPseudomeasures.originalWienerSignedKdVFrequency_neg",
+    "NLS.Articles.KdVPseudomeasures.originalWienerSignedFrequencyCorrection",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerSignedFrequencyCorrection",
+    "NLS.Articles.KdVPseudomeasures.originalWienerSignedFrequencyCorrection_apply",
+    "NLS.Articles.KdVPseudomeasures.originalWienerSignedFrequencyCorrection_free",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVCoordinateTrajectory",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVCoordinateTrajectory",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVCoordinateTrajectory_phase",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVCoordinateTrajectory_apply",
+    "NLS.Articles.KdVPseudomeasures.norm_originalWienerKdVCoordinateTrajectory_apply",
+    "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow",
+    "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_native",
+    "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_original",
+    "NLS.Articles.KdVPseudomeasures.originalWienerOriginalPotential_injective",
+    "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_zero",
+    "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_add",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory_apply",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory_original",
+    "NLS.Articles.KdVPseudomeasures.continuous_originalWienerKdVTrajectory"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/PositiveOddFrequencyCorrection.lean",
+    "NLS/SequenceSpaces/WeightedAnalyticPhaseTrajectory.lean",
+    "NLS/SequenceSpaces/FourierRealAnalyticPhaseTrajectory.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerSignedFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerPhaseTrajectory.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerCanonicalFlow.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "32f3306bcaa78788c77d2a91f33cada03f7ea7b4",
+    "baseline_modules": 1961,
+    "baseline_non_audit_sources_verified_unchanged": 1960,
+    "new_modules_compiled": 6,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.AnalyticPhaseTrajectory",
+        "source": "NLS/SequenceSpaces/AnalyticPhaseTrajectory.lean",
+        "source_sha256": "fd796faa572912b756686b51a013acbe469ad628c34697fcaf7f77bada12fbc4"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.ContinuousMapSuperposition",
+        "source": "NLS/ComplexAnalysis/ContinuousMapSuperposition.lean",
+        "source_sha256": "8f38c6d264d917dea2429403a070aaa86d03d3bace998b3b5d187ceacaaf2af8"
+      },
+      {
+        "module": "NLS.SequenceSpaces.Reflection",
+        "source": "NLS/SequenceSpaces/Reflection.lean",
+        "source_sha256": "c26f7430ea57dd0fb147fe3f4c84c03ec0bea0d6bde3ec6a6030b547b06a57ef"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem11",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
+        "source_sha256": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem13",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
+        "source_sha256": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem51",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem51.lean",
+        "source_sha256": "d3a7393f833deeebbb45163ef6ab574c40d20ed7dad062e982372209332d265c",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillWienerFrequencySequence",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillWienerFrequencySequence.lean",
+        "source_sha256": "1f4608c4d8115169691eef4e1e8a87de889889902c8c85f7a56bc6ca5ad98eb7",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhysicalModels",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillWienerPhysicalModels.lean",
+        "source_sha256": "3c860c735855b0fe4749121dc5f2a7c9ff013932873fa0dfbce8df6230e1b041",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.FourierRealPhaseFlow",
+        "source": "NLS/SequenceSpaces/FourierRealPhaseFlow.lean",
+        "source_sha256": "d24aeea3122553102cc4ecdb685eea981c8781ee1b90f175fcd8634bbef7cfe0",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.FourierRealZeroSpatialGenerator",
+        "source": "NLS/SequenceSpaces/FourierRealZeroSpatialGenerator.lean",
+        "source_sha256": "505f69eb6110935356b2701198b24dedac5d861ece582bac6bf43eba5b4bf476",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.OddPositiveFrequency",
+        "source": "NLS/SequenceSpaces/OddPositiveFrequency.lean",
+        "source_sha256": "5346c485bd46289aef4b4c5ae15bd79594f402ac10ace4c7237a87a56a01c3ea",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalRoughFlow",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalRoughFlow.lean",
+        "source_sha256": "060e556a757767c15ae87063c1fa759d31be4688717188b7227f6e860b3edde2",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1967,
+    "audited_declarations": 9565,
+    "theorems": 8019,
+    "definitions": 1546,
+    "new_theorems": 26,
+    "new_definitions": 7,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-Wiener-compact-phase-flow.log",
+    "log_sha256": "6f28dded538fe29221059890ff89d5a962f10b12588697a7acbd4a23fcadad4d"
+  },
+  "remaining_obligations": [
+    "Main5.9: ONLY the nonlinear inverse compact-time ANALYTIC superposition and final precise main statement remain. The SAME original signed Birkhoff coordinate trajectory is now proved real analytic in the actual uniform C(K, ordinary weighted ell-one real mean-zero target) norm. The SAME original physical Wiener KdV flow is global, preserves every order, satisfies group identities and is continuous into the original strong C(K, FL^(N,1)) norm. Do not substitute pointwise-in-time analyticity for the remaining uniform Banach analyticity.",
+    "Prove a real analytic compact-range superposition theorem for the actual Wiener inverse. Existing ContractiveAnalyticExtension gives holomorphic extensions of arbitrary real analytic germs on contractive real forms; FourierRealContractiveComplexification supplies the actual source and target real forms at exponent1. A viable global route: choose complex balls at every real center with full real agreement, prove two germs equal on intersecting balls by ContinuousRealFormIdentity (the contractive real projection places a real point in every overlap), glue them on their open union, and apply ContinuousMapSuperposition there. Preserve source and target weights and complete Banach topologies. An equivalent verified finite compact cover argument is also valid.",
+    "Then use the now-proved originalWienerKdVTrajectory_original for SAME-flow physical identification, specialize K to [-T,T] with its compact uniform norm for EVERY N>=0 and T>0, and formulate/prove sourceTheorem5_9Statement/sourceTheorem5_9 matching the article. Check all main theorem source correspondences and transitive axioms. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 UNPROVED; goal ACTIVE. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged."
+  ]
+}

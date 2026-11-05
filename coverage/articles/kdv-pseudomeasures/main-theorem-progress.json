@@ -7418,15 +7418,48 @@
       "NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence",
       "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVRenormalizedFrequencySequence",
       "NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence_coefficients",
-      "NLS.Articles.KdVPseudomeasures.originalWienerKdVFrequency_remainder_bound"
+      "NLS.Articles.KdVPseudomeasures.originalWienerKdVFrequency_remainder_bound",
+      "NLS.LpSequence.positiveScalarExtension_nonpos",
+      "NLS.LpSequence.eq_of_odd_positive",
+      "NLS.LpSequence.positiveScalarExtension_sub_reflection",
+      "NLS.LpSequence.oddPositiveFrequency_sub",
+      "NLS.LpSequence.oddPositiveFrequency_cubic",
+      "NLS.LpSequence.positive_cubic_correction_sub_reflection",
+      "NLS.WeightedCoeff.analyticPhaseTrajectory",
+      "NLS.WeightedCoeff.analyticAt_analyticPhaseTrajectory",
+      "NLS.WeightedCoeff.analyticPhaseTrajectory_apply",
+      "NLS.WeightedCoeff.fourierRealAnalyticPhaseTrajectory",
+      "NLS.WeightedCoeff.analyticAt_fourierRealAnalyticPhaseTrajectory",
+      "NLS.WeightedCoeff.fourierRealAnalyticPhaseTrajectory_apply",
+      "NLS.Articles.KdVPseudomeasures.originalWienerSignedKdVFrequency",
+      "NLS.Articles.KdVPseudomeasures.originalWienerSignedKdVFrequency_neg",
+      "NLS.Articles.KdVPseudomeasures.originalWienerSignedFrequencyCorrection",
+      "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerSignedFrequencyCorrection",
+      "NLS.Articles.KdVPseudomeasures.originalWienerSignedFrequencyCorrection_apply",
+      "NLS.Articles.KdVPseudomeasures.originalWienerSignedFrequencyCorrection_free",
+      "NLS.Articles.KdVPseudomeasures.originalWienerKdVCoordinateTrajectory",
+      "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVCoordinateTrajectory",
+      "NLS.Articles.KdVPseudomeasures.originalWienerKdVCoordinateTrajectory_phase",
+      "NLS.Articles.KdVPseudomeasures.originalWienerKdVCoordinateTrajectory_apply",
+      "NLS.Articles.KdVPseudomeasures.norm_originalWienerKdVCoordinateTrajectory_apply",
+      "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_native",
+      "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_original",
+      "NLS.Articles.KdVPseudomeasures.originalWienerOriginalPotential_injective",
+      "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_zero",
+      "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_add",
+      "NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory",
+      "NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory_apply",
+      "NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory_original",
+      "NLS.Articles.KdVPseudomeasures.continuous_originalWienerKdVTrajectory"
     ]
   },
   "essential_open_obligations": [
-    "Main5.9 frequency control COMPLETE: OriginalHillL2FrequencySequence and OriginalHillWienerFrequencySequence prove actual omega_n-(2*pi*n)^3 is unweighted ell-infinity Banach analytic at EVERY real L2 and physical Wiener source, with exact original frequencies and common complex neighborhoods before ALL n. Next form its literal signed odd extension (reflection subtraction of the positive zero extension), retain the original signed phase normalization, and apply the existing finite-p analytic phase trajectory to the actual weighted ell-one Birkhoff amplitudes.",
-    "Main5.9: prove the compact-time trajectory map analytic in the Banach C([-T,T], FL^(N,1)) norm for EVERY N>=0 and T>0 after applying the actual Wiener inverse. Pointwise-in-time real analyticity is insufficient. Existing NLS.ComplexAnalysis.ContinuousMapSuperposition and ContinuousMapAnalyticInverse cover uniform compact-time COMPLEX analytic maps/inverse lifts; supply the required actual complex Wiener germs or a verified real analytic compact-range superposition result, preserving the exact real source and target.",
-    "Main5.9: identify the resulting trajectory with the SAME actual original KdV flow, transport through the now-proved Main5.1 physical distribution equivalences, and formulate/prove the precise final source theorem. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 is the only open main statement. No claim of the stronger nonmain Lemma5.7 ell^r estimate. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged."
+    "Main5.9: ONLY the nonlinear inverse compact-time ANALYTIC superposition and final precise main statement remain. The SAME original signed Birkhoff coordinate trajectory is now proved real analytic in the actual uniform C(K, ordinary weighted ell-one real mean-zero target) norm. The SAME original physical Wiener KdV flow is global, preserves every order, satisfies group identities and is continuous into the original strong C(K, FL^(N,1)) norm. Do not substitute pointwise-in-time analyticity for the remaining uniform Banach analyticity.",
+    "Prove a real analytic compact-range superposition theorem for the actual Wiener inverse. Existing ContractiveAnalyticExtension gives holomorphic extensions of arbitrary real analytic germs on contractive real forms; FourierRealContractiveComplexification supplies the actual source and target real forms at exponent1. A viable global route: choose complex balls at every real center with full real agreement, prove two germs equal on intersecting balls by ContinuousRealFormIdentity (the contractive real projection places a real point in every overlap), glue them on their open union, and apply ContinuousMapSuperposition there. Preserve source and target weights and complete Banach topologies. An equivalent verified finite compact cover argument is also valid.",
+    "Then use the now-proved originalWienerKdVTrajectory_original for SAME-flow physical identification, specialize K to [-T,T] with its compact uniform norm for EVERY N>=0 and T>0, and formulate/prove sourceTheorem5_9Statement/sourceTheorem5_9 matching the article. Check all main theorem source correspondences and transitive axioms. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 UNPROVED; goal ACTIVE. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged."
   ],
-  "no_completion_claim": "Main1.1,1.3,1.4,5.1 PROVED. Main5.9 UNPROVED. Actual UNWEIGHTED bounded analytic frequency correction now proved on L2 and ALL physical Wiener sources. Compact-time analytic trajectories, actual inverse composition and final same-flow physical theorem remain. Goal ACTIVE.",
+  "no_completion_claim": "Main1.1,1.3,1.4,5.1 PROVED. Main5.9 UNPROVED. SAME actual signed coordinate trajectories uniformly Banach analytic; SAME original physical Wiener flow globally defined with strong uniform trajectory continuity. Uniform ANALYTIC nonlinear inverse superposition and final source5.9 statement remain. Goal ACTIVE.",
   "shared_module_moves": {
     "WeakStarEndpoint": "NLS/SequenceSpaces/WienerWeakStar.lean",
     "WeightedWeakStarEndpoint": "NLS/SequenceSpaces/WeightedWienerWeakStar.lean",
@@ -9261,7 +9294,13 @@
     "HillL2MomentSeriesBound combines the SAME retained original all-index complex centered-moment bound with the SAME physical L2-to-H1 Miura lift and weighted Hilbert gap majorants. It proves the ENTIRE actual centered second-moment series uniformly bounded on ONE complex L2 neighborhood BEFORE ALL positive frequency indices, including low and collapsed gaps. The original product patch and primitive neighborhood are retained.",
     "HillL2MomentSequenceAnalytic realizes the ENTIRE original moment-sum sequence in UNWEIGHTED ell-infinity and proves complex Banach analyticity on ONE complex L2 neighborhood. It retains EVERY actual original moment-series coefficient and a common uniform norm bound. Actual original scalar moment analyticity is transported through the original bounded L2 inclusion.",
     "OriginalHillL2FrequencySequence proves hillL2KdVRenormalizedFrequencySequence is real analytic into UNWEIGHTED ell-infinity on the ENTIRE actual real mean-zero L2 Banach source. Every positive coordinate is EXACTLY the SAME original hillRoughKdVFrequency minus (2*pi*n)^3, by the proved cross-patch original physical frequency/moment identity. The full complex local spectral sequence precedes ALL indices. The actual correction now has a UNIFORM index-independent norm bound; the older merely linear rough-space bound is no longer the best estimate on L2.",
-    "OriginalHillWienerFrequencySequence proves a bounded coefficient-preserving L2 inclusion for EVERY ORIGINAL physical FL^(N,1) source. Its rough inclusion is EXACTLY the original physical potential already used in Main5.1, with the SAME entire distribution. originalWienerKdVRenormalizedFrequencySequence is UNWEIGHTED ell-infinity real analytic for EVERY N>=0, preserves ALL original positive frequency corrections with the exact cubic normalization, and uniformly bounds every positive correction. Main5.9 frequency-control obligation is CLOSED; signed phase trajectories, compact-time analytic inverse composition and final same-flow physical theorem remain OPEN."
+    "OriginalHillWienerFrequencySequence proves a bounded coefficient-preserving L2 inclusion for EVERY ORIGINAL physical FL^(N,1) source. Its rough inclusion is EXACTLY the original physical potential already used in Main5.1, with the SAME entire distribution. originalWienerKdVRenormalizedFrequencySequence is UNWEIGHTED ell-infinity real analytic for EVERY N>=0, preserves ALL original positive frequency corrections with the exact cubic normalization, and uniformly bounds every positive correction. Main5.9 frequency-control obligation is CLOSED; signed phase trajectories, compact-time analytic inverse composition and final same-flow physical theorem remain OPEN.",
+    "PositiveOddFrequencyCorrection proves exact reflection-subtraction of a positive zero extension equals the literal signed odd real frequency, including zero. It proves equality of odd functions from all positive indices, compatibility with subtraction and the exact signed cubic identity at EVERY integer index. No sign or factor in the original cubic normalization is changed.",
+    "WeightedAnalyticPhaseTrajectory transports the existing entire bounded-correction/free-unbounded-phase trajectory through the actual weighted coefficient isometry. It proves complex Banach analyticity into C(K, WeightedCoeff w p) for EVERY finite Banach exponent and arbitrary compact parameter space, with EVERY exact raw exponential coefficient.",
+    "FourierRealAnalyticPhaseTrajectory projects the complex trajectory by the verified bounded real linear full Fourier real mean-zero projection. It is real analytic in the UNIFORM trajectory norm of the actual real mean-zero weighted space. When the bounded correction plus the free frequency is the actual signed odd real frequency, the projection fixes the ENTIRE original isometric phase evolution exactly.",
+    "OriginalHillWienerSignedFrequency constructs the actual signed original correction by reflection subtraction in UNWEIGHTED ell-infinity. It is real analytic on EVERY original physical Wiener source. ALL signed raw coefficients equal the SAME actual odd original KdV frequency minus (2*pi*k)^3, including the central zero and negative modes.",
+    "OriginalHillWienerPhaseTrajectory proves originalWienerKdVCoordinateTrajectory is real analytic into the actual UNIFORM compact-time ordinary weighted ell-one real mean-zero target at EVERY nonnegative integer order. It uses the SAME Main5.1 Birkhoff coordinates and SAME original signed KdV frequencies. Every original signed phase coefficient is retained exactly and each time slice preserves the original target norm.",
+    "OriginalHillWienerCanonicalFlow restricts the SAME original physical KdV flow to EVERY original physical integer-order Wiener source. Native equality implies equality of the ENTIRE original rough physical distribution. The physical inclusion is injective, so zero-time and global group identities hold in the ORIGINAL strong Wiener space. originalWienerKdVTrajectory is a continuous compact-time path, agrees pointwise with that SAME original physical flow, and depends CONTINUOUSLY on initial data in the UNIFORM strong Wiener trajectory norm. This is not yet analyticity after the nonlinear inverse: that final uniform Banach analytic superposition obligation is explicitly OPEN."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -15076,5 +15115,17 @@
     "Main5_9_PROVED": false,
     "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Wiener-bounded-frequency-map.json"
+  },
+  "verified_actual_uniform_Wiener_phase_trajectories_and_physical_flow": {
+    "ACTUAL_signed_original_frequency_correction_UNWEIGHTED_analytic_PROVED": true,
+    "ACTUAL_original_Birkhoff_phase_trajectories_UNIFORM_compact_time_Wiener_Banach_analytic_PROVED": true,
+    "ALL_signed_original_coefficients_and_cubic_normalization_preserved": true,
+    "SAME_original_physical_KdV_flow_preserves_ALL_Wiener_orders_PROVED": true,
+    "SAME_entire_original_physical_distribution_flow_equality_PROVED": true,
+    "global_Wiener_group_law_PROVED": true,
+    "UNIFORM_strong_Wiener_trajectory_CONTINUITY_PROVED": true,
+    "UNIFORM_nonlinear_Wiener_inverse_superposition_ANALYTIC_PROVED": false,
+    "Main5_9_PROVED": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-compact-phase-flow-map.json"
   }
 }

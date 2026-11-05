@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "ACTUAL original KdV frequency correction omega_n-(2*pi*n)^3 UNWEIGHTED ell-infinity Banach analytic on the ENTIRE real mean-zero L2 source and EVERY original physical integer-order Wiener space. SAME distribution, actual frequencies and exact cubic normalization retained. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE.",
+  "phase": "Actual original signed Wiener Birkhoff phase trajectories BANACH REAL ANALYTIC in UNIFORM compact-time ell-one norm at EVERY integer order. Same original physical KdV flow preserves every Wiener source, is a global group and has strong-norm CONTINUOUS compact-time trajectories. Analytic inverse superposition in the uniform trajectory norm remains OPEN. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1966,13 +1966,19 @@
     "NLS/KdV/HillL2MomentSequenceAnalytic.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillL2FrequencySequence.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillWienerFrequencySequence.lean",
+    "NLS/SequenceSpaces/PositiveOddFrequencyCorrection.lean",
+    "NLS/SequenceSpaces/WeightedAnalyticPhaseTrajectory.lean",
+    "NLS/SequenceSpaces/FourierRealAnalyticPhaseTrajectory.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerSignedFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerPhaseTrajectory.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerCanonicalFlow.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7993,
-  "definitions": 1539,
+  "proved_theorems": 8019,
+  "definitions": 1546,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 9532,
+    "declarations": 9565,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3438,10 +3444,16 @@
     "HillL2MomentSeriesBound combines the SAME retained original all-index complex centered-moment bound with the SAME physical L2-to-H1 Miura lift and weighted Hilbert gap majorants. It proves the ENTIRE actual centered second-moment series uniformly bounded on ONE complex L2 neighborhood BEFORE ALL positive frequency indices, including low and collapsed gaps. The original product patch and primitive neighborhood are retained.",
     "HillL2MomentSequenceAnalytic realizes the ENTIRE original moment-sum sequence in UNWEIGHTED ell-infinity and proves complex Banach analyticity on ONE complex L2 neighborhood. It retains EVERY actual original moment-series coefficient and a common uniform norm bound. Actual original scalar moment analyticity is transported through the original bounded L2 inclusion.",
     "OriginalHillL2FrequencySequence proves hillL2KdVRenormalizedFrequencySequence is real analytic into UNWEIGHTED ell-infinity on the ENTIRE actual real mean-zero L2 Banach source. Every positive coordinate is EXACTLY the SAME original hillRoughKdVFrequency minus (2*pi*n)^3, by the proved cross-patch original physical frequency/moment identity. The full complex local spectral sequence precedes ALL indices. The actual correction now has a UNIFORM index-independent norm bound; the older merely linear rough-space bound is no longer the best estimate on L2.",
-    "OriginalHillWienerFrequencySequence proves a bounded coefficient-preserving L2 inclusion for EVERY ORIGINAL physical FL^(N,1) source. Its rough inclusion is EXACTLY the original physical potential already used in Main5.1, with the SAME entire distribution. originalWienerKdVRenormalizedFrequencySequence is UNWEIGHTED ell-infinity real analytic for EVERY N>=0, preserves ALL original positive frequency corrections with the exact cubic normalization, and uniformly bounds every positive correction. Main5.9 frequency-control obligation is CLOSED; signed phase trajectories, compact-time analytic inverse composition and final same-flow physical theorem remain OPEN."
+    "OriginalHillWienerFrequencySequence proves a bounded coefficient-preserving L2 inclusion for EVERY ORIGINAL physical FL^(N,1) source. Its rough inclusion is EXACTLY the original physical potential already used in Main5.1, with the SAME entire distribution. originalWienerKdVRenormalizedFrequencySequence is UNWEIGHTED ell-infinity real analytic for EVERY N>=0, preserves ALL original positive frequency corrections with the exact cubic normalization, and uniformly bounds every positive correction. Main5.9 frequency-control obligation is CLOSED; signed phase trajectories, compact-time analytic inverse composition and final same-flow physical theorem remain OPEN.",
+    "PositiveOddFrequencyCorrection proves exact reflection-subtraction of a positive zero extension equals the literal signed odd real frequency, including zero. It proves equality of odd functions from all positive indices, compatibility with subtraction and the exact signed cubic identity at EVERY integer index. No sign or factor in the original cubic normalization is changed.",
+    "WeightedAnalyticPhaseTrajectory transports the existing entire bounded-correction/free-unbounded-phase trajectory through the actual weighted coefficient isometry. It proves complex Banach analyticity into C(K, WeightedCoeff w p) for EVERY finite Banach exponent and arbitrary compact parameter space, with EVERY exact raw exponential coefficient.",
+    "FourierRealAnalyticPhaseTrajectory projects the complex trajectory by the verified bounded real linear full Fourier real mean-zero projection. It is real analytic in the UNIFORM trajectory norm of the actual real mean-zero weighted space. When the bounded correction plus the free frequency is the actual signed odd real frequency, the projection fixes the ENTIRE original isometric phase evolution exactly.",
+    "OriginalHillWienerSignedFrequency constructs the actual signed original correction by reflection subtraction in UNWEIGHTED ell-infinity. It is real analytic on EVERY original physical Wiener source. ALL signed raw coefficients equal the SAME actual odd original KdV frequency minus (2*pi*k)^3, including the central zero and negative modes.",
+    "OriginalHillWienerPhaseTrajectory proves originalWienerKdVCoordinateTrajectory is real analytic into the actual UNIFORM compact-time ordinary weighted ell-one real mean-zero target at EVERY nonnegative integer order. It uses the SAME Main5.1 Birkhoff coordinates and SAME original signed KdV frequencies. Every original signed phase coefficient is retained exactly and each time slice preserves the original target norm.",
+    "OriginalHillWienerCanonicalFlow restricts the SAME original physical KdV flow to EVERY original physical integer-order Wiener source. Native equality implies equality of the ENTIRE original rough physical distribution. The physical inclusion is injective, so zero-time and global group identities hold in the ORIGINAL strong Wiener space. originalWienerKdVTrajectory is a continuous compact-time path, agrees pointwise with that SAME original physical flow, and depends CONTINUOUSLY on initial data in the UNIFORM strong Wiener trajectory norm. This is not yet analyticity after the nonlinear inverse: that final uniform Banach analytic superposition obligation is explicitly OPEN."
   ],
-  "source_correspondence": "ACTUAL original KdV frequency correction omega_n-(2*pi*n)^3 UNWEIGHTED ell-infinity Banach analytic on the ENTIRE real mean-zero L2 source and EVERY original physical integer-order Wiener space. SAME distribution, actual frequencies and exact cubic normalization retained. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE. Main5.9 frequency control COMPLETE: OriginalHillL2FrequencySequence and OriginalHillWienerFrequencySequence prove actual omega_n-(2*pi*n)^3 is unweighted ell-infinity Banach analytic at EVERY real L2 and physical Wiener source, with exact original frequencies and common complex neighborhoods before ALL n. Next form its literal signed odd extension (reflection subtraction of the positive zero extension), retain the original signed phase normalization, and apply the existing finite-p analytic phase trajectory to the actual weighted ell-one Birkhoff amplitudes. Main5.9: prove the compact-time trajectory map analytic in the Banach C([-T,T], FL^(N,1)) norm for EVERY N>=0 and T>0 after applying the actual Wiener inverse. Pointwise-in-time real analyticity is insufficient. Existing NLS.ComplexAnalysis.ContinuousMapSuperposition and ContinuousMapAnalyticInverse cover uniform compact-time COMPLEX analytic maps/inverse lifts; supply the required actual complex Wiener germs or a verified real analytic compact-range superposition result, preserving the exact real source and target. Main5.9: identify the resulting trajectory with the SAME actual original KdV flow, transport through the now-proved Main5.1 physical distribution equivalences, and formulate/prove the precise final source theorem. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 is the only open main statement. No claim of the stronger nonmain Lemma5.7 ell^r estimate. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1954 baseline non-audit registered Lean sources byte-identical tod4db0a0. All 6 new modules (14 theorems+4 definitions), 1 canonical-byte-identical modules, 12 unchanged private dependencies and EXACT 9532-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1961-module build.",
+  "source_correspondence": "Actual original signed Wiener Birkhoff phase trajectories BANACH REAL ANALYTIC in UNIFORM compact-time ell-one norm at EVERY integer order. Same original physical KdV flow preserves every Wiener source, is a global group and has strong-norm CONTINUOUS compact-time trajectories. Analytic inverse superposition in the uniform trajectory norm remains OPEN. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE. Main5.9: ONLY the nonlinear inverse compact-time ANALYTIC superposition and final precise main statement remain. The SAME original signed Birkhoff coordinate trajectory is now proved real analytic in the actual uniform C(K, ordinary weighted ell-one real mean-zero target) norm. The SAME original physical Wiener KdV flow is global, preserves every order, satisfies group identities and is continuous into the original strong C(K, FL^(N,1)) norm. Do not substitute pointwise-in-time analyticity for the remaining uniform Banach analyticity. Prove a real analytic compact-range superposition theorem for the actual Wiener inverse. Existing ContractiveAnalyticExtension gives holomorphic extensions of arbitrary real analytic germs on contractive real forms; FourierRealContractiveComplexification supplies the actual source and target real forms at exponent1. A viable global route: choose complex balls at every real center with full real agreement, prove two germs equal on intersecting balls by ContinuousRealFormIdentity (the contractive real projection places a real point in every overlap), glue them on their open union, and apply ContinuousMapSuperposition there. Preserve source and target weights and complete Banach topologies. An equivalent verified finite compact cover argument is also valid. Then use the now-proved originalWienerKdVTrajectory_original for SAME-flow physical identification, specialize K to [-T,T] with its compact uniform norm for EVERY N>=0 and T>0, and formulate/prove sourceTheorem5_9Statement/sourceTheorem5_9 matching the article. Check all main theorem source correspondences and transitive axioms. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 UNPROVED; goal ACTIVE. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1960 baseline non-audit registered Lean sources byte-identical to32f3306. All 6 new modules (26 theorems+7 definitions), 3 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9565-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1967-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -5406,7 +5418,13 @@
     "NLS/KdV/HillL2MomentSeriesBound.lean": "545f99ec929794b484f5e116499ec0ae57ce5f740c3b02f412f383ddd0986c57",
     "NLS/KdV/HillL2MomentSequenceAnalytic.lean": "9545860a82e4d3c4a99e6fecce4dd1b546c77a13d3f1b13d023f13913cee807f",
     "NLS/Articles/KdVPseudomeasures/OriginalHillL2FrequencySequence.lean": "4a0882a91d626cca1dea911b970b2d553ded90d1c210bf77b0dbe33a4778c29b",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerFrequencySequence.lean": "1f4608c4d8115169691eef4e1e8a87de889889902c8c85f7a56bc6ca5ad98eb7"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerFrequencySequence.lean": "1f4608c4d8115169691eef4e1e8a87de889889902c8c85f7a56bc6ca5ad98eb7",
+    "NLS/SequenceSpaces/PositiveOddFrequencyCorrection.lean": "24839c12227a1c2c2bc26050763f070dd84fbcb8604e5cf18a8297649c4d090e",
+    "NLS/SequenceSpaces/WeightedAnalyticPhaseTrajectory.lean": "3dead88721430b7c9a8bd393af810fedcb2c4f7476b79e2542da6bc4628ac3f7",
+    "NLS/SequenceSpaces/FourierRealAnalyticPhaseTrajectory.lean": "44b6f075d93222d883b5cfa6d0e3c2d6922934de631049e22b51f26b43988050",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerSignedFrequency.lean": "c0198931045965d6a74ecfa311c7816e0e7a3b115de236da8aa8c9d272a4fbbd",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerPhaseTrajectory.lean": "148de3598856a6889f001e1d5896c53921d28e4f803d9f69c2439c4087fdb09a",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerCanonicalFlow.lean": "2085f399b40477995f9e6491562a5ca4c0b5416357751eb5791da8837cb4bf04"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -5414,11 +5432,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 9514,
-    "newly_checked_declarations_this_continuation": 18,
-    "new_theorems": 14,
-    "new_definitions": 4,
-    "total_checked_declarations": 9532
+    "previous_checked_declarations": 9532,
+    "newly_checked_declarations_this_continuation": 33,
+    "new_theorems": 26,
+    "new_definitions": 7,
+    "total_checked_declarations": 9565
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -5447,7 +5465,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-Wiener-bounded-frequency.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-Wiener-compact-phase-flow.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5840,13 +5858,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1935 baseline non-audit registered Lean sources byte-identical to 65832cc. All 5 new modules (14 theorems+3 definitions), 1 canonical-byte-identical modules, 12 unchanged private dependencies and EXACT 9446-declaration standard-axiom audit freshly compiled privately. ACTUAL GLOBAL normalized ACTION amplitude-minus1 is analytic in one-order weighted infinity norm near EVERY real L2 source. The actual native DIAGONAL map has a patch-independent analytic H3/2 Fourier remainder and H1/2 realization with ALL original coefficients on ONE complex neighborhood. Actual OFF-index phase one-order estimate, full native smoothing and Main5.1/5.9 remain OPEN. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1941-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1940 baseline non-audit registered Lean sources byte-identical to a58f1c6. All 7 new modules (15 theorems+3 definitions), 0 canonical-byte-identical modules, 13 unchanged private dependencies and EXACT 9464-declaration standard-axiom audit freshly compiled privately. FULL ACTUAL native L2 one-smoothing and ALL-order signed Wiener analytic equivalences UNCONDITIONALLY PROVED. Actual complete infinite OFF-index exponent/exponential-minus1 analytic in one-order weighted infinity norm; every original native Fourier coefficient retained. Final original physical-distribution Main5.1 transport/statement and actual bounded-frequency/Wiener-flow Main5.9 remain OPEN. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1948-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1947 baseline non-audit registered Lean sources byte-identical to396021c. All 7 new modules (33 theorems+17 definitions), 2 canonical-byte-identical modules, 11 unchanged private dependencies and EXACT 9514-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1955-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1954 baseline non-audit registered Lean sources byte-identical tod4db0a0. All 6 new modules (14 theorems+4 definitions), 1 canonical-byte-identical modules, 12 unchanged private dependencies and EXACT 9532-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1961-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1954 baseline non-audit registered Lean sources byte-identical tod4db0a0. All 6 new modules (14 theorems+4 definitions), 1 canonical-byte-identical modules, 12 unchanged private dependencies and EXACT 9532-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1961-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1960 baseline non-audit registered Lean sources byte-identical to32f3306. All 6 new modules (26 theorems+7 definitions), 3 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9565-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1967-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Wiener-bounded-frequency-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-compact-phase-flow-map.json",
   "baseline_validated_snapshot": {
-    "commit": "d4db0a0f0123cdc29b3685edd63d55a69f101fb7",
-    "modules": 1955,
-    "audited_declarations": 9514,
+    "commit": "32f3306bcaa78788c77d2a91f33cada03f7ea7b4",
+    "modules": 1961,
+    "audited_declarations": 9532,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -9636,5 +9655,17 @@
     "Main5_9_PROVED": false,
     "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Wiener-bounded-frequency-map.json"
+  },
+  "actual_uniform_Wiener_phase_trajectories_and_physical_flow": {
+    "ACTUAL_signed_original_frequency_correction_UNWEIGHTED_analytic_PROVED": true,
+    "ACTUAL_original_Birkhoff_phase_trajectories_UNIFORM_compact_time_Wiener_Banach_analytic_PROVED": true,
+    "ALL_signed_original_coefficients_and_cubic_normalization_preserved": true,
+    "SAME_original_physical_KdV_flow_preserves_ALL_Wiener_orders_PROVED": true,
+    "SAME_entire_original_physical_distribution_flow_equality_PROVED": true,
+    "global_Wiener_group_law_PROVED": true,
+    "UNIFORM_strong_Wiener_trajectory_CONTINUITY_PROVED": true,
+    "UNIFORM_nonlinear_Wiener_inverse_superposition_ANALYTIC_PROVED": false,
+    "Main5_9_PROVED": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-compact-phase-flow-map.json"
   }
 }

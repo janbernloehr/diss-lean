@@ -1958,6 +1958,12 @@ import NLS.KdV.HillL2MomentSeriesBound
 import NLS.KdV.HillL2MomentSequenceAnalytic
 import NLS.Articles.KdVPseudomeasures.OriginalHillL2FrequencySequence
 import NLS.Articles.KdVPseudomeasures.OriginalHillWienerFrequencySequence
+import NLS.SequenceSpaces.PositiveOddFrequencyCorrection
+import NLS.SequenceSpaces.WeightedAnalyticPhaseTrajectory
+import NLS.SequenceSpaces.FourierRealAnalyticPhaseTrajectory
+import NLS.Articles.KdVPseudomeasures.OriginalHillWienerSignedFrequency
+import NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhaseTrajectory
+import NLS.Articles.KdVPseudomeasures.OriginalHillWienerCanonicalFlow
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11493,3 +11499,36 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillWienerFrequencySequence
 #print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVRenormalizedFrequencySequence
 #print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence_coefficients
 #print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVFrequency_remainder_bound
+#print axioms NLS.LpSequence.positiveScalarExtension_nonpos
+#print axioms NLS.LpSequence.eq_of_odd_positive
+#print axioms NLS.LpSequence.positiveScalarExtension_sub_reflection
+#print axioms NLS.LpSequence.oddPositiveFrequency_sub
+#print axioms NLS.LpSequence.oddPositiveFrequency_cubic
+#print axioms NLS.LpSequence.positive_cubic_correction_sub_reflection
+#print axioms NLS.WeightedCoeff.analyticPhaseTrajectory
+#print axioms NLS.WeightedCoeff.analyticAt_analyticPhaseTrajectory
+#print axioms NLS.WeightedCoeff.analyticPhaseTrajectory_apply
+#print axioms NLS.WeightedCoeff.fourierRealAnalyticPhaseTrajectory
+#print axioms NLS.WeightedCoeff.analyticAt_fourierRealAnalyticPhaseTrajectory
+#print axioms NLS.WeightedCoeff.fourierRealAnalyticPhaseTrajectory_apply
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerSignedKdVFrequency
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerSignedKdVFrequency_neg
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerSignedFrequencyCorrection
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerSignedFrequencyCorrection
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerSignedFrequencyCorrection_apply
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerSignedFrequencyCorrection_free
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVCoordinateTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVCoordinateTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVCoordinateTrajectory_phase
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVCoordinateTrajectory_apply
+#print axioms NLS.Articles.KdVPseudomeasures.norm_originalWienerKdVCoordinateTrajectory_apply
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_native
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_original
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerOriginalPotential_injective
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerCanonicalKdVFlow_add
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory_apply
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory_original
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalWienerKdVTrajectory

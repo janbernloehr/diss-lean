@@ -1992,6 +1992,12 @@ modules = [
     'NLS.KdV.HillL2MomentSequenceAnalytic',
     'NLS.Articles.KdVPseudomeasures.OriginalHillL2FrequencySequence',
     'NLS.Articles.KdVPseudomeasures.OriginalHillWienerFrequencySequence',
+    'NLS.SequenceSpaces.PositiveOddFrequencyCorrection',
+    'NLS.SequenceSpaces.WeightedAnalyticPhaseTrajectory',
+    'NLS.SequenceSpaces.FourierRealAnalyticPhaseTrajectory',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillWienerSignedFrequency',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhaseTrajectory',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillWienerCanonicalFlow',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
