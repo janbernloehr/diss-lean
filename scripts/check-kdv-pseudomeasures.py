@@ -1907,6 +1907,9 @@ modules = [
     'NLS.Fourier.SmoothRealPeriodOneCurve',
     'NLS.Articles.KdVPseudomeasures.OriginalHillClassicalSolutionAdapter',
     'NLS.Articles.KdVPseudomeasures.OriginalHillClassicalApproximation',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalRoughFlow',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillEndpointCanonicalFlow',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillEndpointCanonicalTrajectories',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

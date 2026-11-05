@@ -618,7 +618,31 @@
       "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve_eq_canonicalFlow",
       "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolution_physical_eq_canonicalFlow",
       "NLS.Articles.KdVPseudomeasures.tendstoUniformlyOn_hillClassicalSmoothSolutions",
-      "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolutions_eq_of_initial_eq"
+      "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolutions_eq_of_initial_eq",
+      "NLS.Articles.KdVPseudomeasures.continuous_originalHillPotentialOfRealSource",
+      "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow_zero",
+      "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow_add",
+      "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow_isospectral",
+      "NLS.Articles.KdVPseudomeasures.continuous_hillOriginalCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.continuous_hillOriginalCanonicalKdVFlow_val_time",
+      "NLS.Articles.KdVPseudomeasures.sourceOriginalPotential_injective",
+      "NLS.Articles.KdVPseudomeasures.exists_endpoint_hillOriginalCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_original",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_zero",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_add",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_isospectral",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_norm_bound_hillEndpointCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointWeakStarKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointWeakStarKdVFlow_lower",
+      "NLS.Articles.KdVPseudomeasures.potentialNormBounded_range_hillEndpointWeakStarKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.continuous_hillEndpointWeakStarKdVFlow_time",
+      "NLS.Articles.KdVPseudomeasures.HillEndpointKdVInvariant",
+      "NLS.Articles.KdVPseudomeasures.continuous_sourceOriginalPotential_on_bounded",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointWeakStarKdVTrajectoryOn",
+      "NLS.Articles.KdVPseudomeasures.continuous_hillEndpointWeakStarKdVTrajectoryOn",
+      "NLS.Articles.KdVPseudomeasures.isCompact_closure_range_hillEndpointWeakStarKdVFlow"
     ],
     "1.3": [
       "isEmbedding_lowerWeakStarTrajectory",
@@ -1235,7 +1259,31 @@
       "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve_eq_canonicalFlow",
       "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolution_physical_eq_canonicalFlow",
       "NLS.Articles.KdVPseudomeasures.tendstoUniformlyOn_hillClassicalSmoothSolutions",
-      "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolutions_eq_of_initial_eq"
+      "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolutions_eq_of_initial_eq",
+      "NLS.Articles.KdVPseudomeasures.continuous_originalHillPotentialOfRealSource",
+      "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow_zero",
+      "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow_add",
+      "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow_isospectral",
+      "NLS.Articles.KdVPseudomeasures.continuous_hillOriginalCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.continuous_hillOriginalCanonicalKdVFlow_val_time",
+      "NLS.Articles.KdVPseudomeasures.sourceOriginalPotential_injective",
+      "NLS.Articles.KdVPseudomeasures.exists_endpoint_hillOriginalCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_original",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_zero",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_add",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_isospectral",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_norm_bound_hillEndpointCanonicalKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointWeakStarKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointWeakStarKdVFlow_lower",
+      "NLS.Articles.KdVPseudomeasures.potentialNormBounded_range_hillEndpointWeakStarKdVFlow",
+      "NLS.Articles.KdVPseudomeasures.continuous_hillEndpointWeakStarKdVFlow_time",
+      "NLS.Articles.KdVPseudomeasures.HillEndpointKdVInvariant",
+      "NLS.Articles.KdVPseudomeasures.continuous_sourceOriginalPotential_on_bounded",
+      "NLS.Articles.KdVPseudomeasures.hillEndpointWeakStarKdVTrajectoryOn",
+      "NLS.Articles.KdVPseudomeasures.continuous_hillEndpointWeakStarKdVTrajectoryOn",
+      "NLS.Articles.KdVPseudomeasures.isCompact_closure_range_hillEndpointWeakStarKdVFlow"
     ],
     "1.4": [
       "sourceLemma2_4_physical_identification",
@@ -6710,9 +6758,9 @@
     ]
   },
   "essential_open_obligations": [
-    "Finish the precise source-level rough solution characterization for the original EVERY-smooth-initial-approximation definition. The arbitrary jointly smooth classical-to-H4/H1 adapter, uniqueness and EVERY-family uniform compact-time convergence are NOW PROVED. The existing nonvacuous rough uniqueness characterization quantifies actual spatially smooth H4/H1 strong pointwise PDE solutions. Formally relate this class and the original classical smooth-solution formulation, supplying joint space-time smoothness/existence of canonical approximants if that formulation requires it.",
-    "Prove actual endpoint invariance, ALL-time boundedness and weak-star orbit continuity in F-ell-zero^(s,infinity), -1/2<s<=0, for source Main1.1; prove exact weak-star compact-time trajectory continuity on bounded invariant subsets for source Main1.3. Use the SAME verified endpoint native homeomorphism, genuine rough frequencies and literal bounded endpoint models.",
-    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY integer N>=0 and the corresponding Wiener analytic compact-time trajectory map Main5.9. Integer Hilbert diffeomorphisms do not substitute. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 complete; FOUR mains UNPROVED; goalACTIVE."
+    "Finish exact source-level identification of the actual canonical rough flow with the original EVERY-smooth-initial-approximation solution definition. Arbitrary jointly smooth classical solutions automatically embed in the genuine H4/H1 model, equal the canonical flow, are unique and satisfy EVERY-family uniform compact-time rough convergence. Existing nonvacuous rough uniqueness uses spatially smooth H4/H1 strong pointwise PDE solutions. Formally relate the exact original class and this class; if necessary prove joint space-time smoothness of constructed canonical approximants.",
+    "Give precise final Lean main statements for source Main1.1 and Main1.3 with the original solution object and source order -1/2<s<=0. The required actual canonical endpoint membership, global endpoint norm bound, weak-star orbit continuity and compact-open weak-star dependence on EVERY bounded invariant subset are NOW PROVED; original solution-definition identification remains the essential source-fidelity qualification.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY integer N>=0, and Wiener real analytic compact-time trajectory Main5.9 with precise final source-level statements. Integer Hilbert diffeomorphisms do not substitute. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 complete; FOUR mains UNPROVED; goalACTIVE."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
   "shared_module_moves": {
@@ -8461,7 +8509,13 @@
     "Shared SmoothRealMeanZeroPeriodOneData constructs the genuine real zero-mode signed Sobolev representative at EVERY nonnegative real order from arbitrary smooth real mean-zero period-one physical data. SmoothRealPeriodOneCurve proves time norm differentiability in genuine H1 from joint smoothness using the continuous mixed partial and bounded recovery. NO assumed Sobolev time derivative or coordinate ODE.",
     "OriginalHillClassicalSolutionAdapter constructs the actual H4 Fourier trajectory for ANY jointly smooth real mean-zero unit-period space-time field, proves pointwise synthesis equals the original field, and derives HillSmoothStrongKdVSolution from the literal pointwise classical KdV PDE. Thus EVERY such classical solution is the SAME genuine canonical flow, with automatic H1 time differentiability.",
     "OriginalHillClassicalApproximation proves uniqueness of arbitrary jointly smooth classical solutions with the SAME physical initial function. For EVERY index type/filter and EVERY family of such classical PDE solutions, convergence of their initial ORIGINAL rough representatives implies UNIFORM convergence of their actual rough trajectories on EVERY compact time interval. No selected approximation or extra boundedness hypothesis.",
-    "The arbitrary jointly smooth classical-to-strong adapter obligation is CLOSED. Formal equivalence of the original rough approximation definition, including any required jointly smooth existence/nonvacuity interface, remains separately tracked. No endpoint weak-star dynamics or literal Wiener conclusion is inferred. Main1.4 is the only proved main theorem; Main1.1,1.3,5.1,5.9 remain UNPROVED."
+    "The arbitrary jointly smooth classical-to-strong adapter obligation is CLOSED. Formal equivalence of the original rough approximation definition, including any required jointly smooth existence/nonvacuity interface, remains separately tracked. No endpoint weak-star dynamics or literal Wiener conclusion is inferred. Main1.4 is the only proved main theorem; Main1.1,1.3,5.1,5.9 remain UNPROVED.",
+    "OriginalHillPhysicalRoughFlow transports the SAME genuine rough canonical KdV flow to the original H-minus-one physical distribution domain. It proves the actual zero/group laws, full physical isospectrality, joint original rough norm continuity and time-continuous original distributions, without changing any Fourier normalization.",
+    "OriginalHillEndpointCanonicalFlow proves existence of the IDENTICAL original endpoint representative of every actual evolved rough potential using verified full original isospectral endpoint regularity. Its endpoint flow retains the entire original physical distribution, has actual zero/group laws and remains in the full original isospectral endpoint set.",
+    "The verified original isospectral endpoint bound gives ONE nonnegative original endpoint norm bound for ALL real times. No time-local bound, supplied invariant endpoint ball or native inverse boundedness assumption is used.",
+    "The endpoint weak-star wrapper carries the literal original Wiener predual topology. Its lower H-minus-one representative is EXACTLY the actual original physical rough flow. Appendix B on the norm-bounded entire orbit and actual lower norm continuity prove weak-star time continuity on ALL of the real line.",
+    "OriginalHillEndpointCanonicalTrajectories defines invariance for the ACTUAL endpoint flow and its continuous compact-time trajectories valued in the invariant set itself. For EVERY norm-bounded invariant subset, including nonclosed subsets, the map into the full compact-open physical weak-star trajectory space is continuous. The proof uses Appendix B lower-distribution trajectory embeddings and the genuine jointly continuous rough physical flow.",
+    "The full endpoint orbit closure is compact in the original physical weak-star topology. All canonical endpoint analytic/topological conclusions required by Main1.1 and Main1.3 are now proved. Their precise source-level main statements and identification with the original EVERY-smooth-approximation solution formulation remain tracked; Main1.1 and Main1.3 are not prematurely marked proved. Main1.4 remains proved, Main1.1,1.3,5.1,5.9 remain UNPROVED."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -13899,7 +13953,7 @@
     "unique_rough_solution_by_EVERY_smooth_strong_model_PDE_approximation_PROVED": true,
     "arbitrary_jointly_smooth_classical_space_time_to_strong_model_adapter_PROVED": true,
     "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
-    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": false,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
     "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
@@ -13909,7 +13963,9 @@
       "5.9"
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-smooth-PDE-uniqueness-map.json",
-    "adapter_completed_in": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json"
+    "adapter_completed_in": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json",
+    "canonical_endpoint_results_completed_in": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json",
+    "original_solution_identification_still_required": true
   },
   "verified_actual_Hill_classical_solution_adapter": {
     "compact_continuous_map_Banach_derivative_from_pointwise_velocity_PROVED": true,
@@ -13923,7 +13979,7 @@
     "EVERY_index_filter_classical_PDE_family_rough_UNIFORM_compact_time_approximation_PROVED": true,
     "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
     "joint_space_time_smoothness_of_constructed_canonical_approximants_PROVED": false,
-    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": false,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
     "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
@@ -13932,6 +13988,31 @@
       "5.1",
       "5.9"
     ],
-    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json"
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json",
+    "canonical_endpoint_results_completed_in": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json",
+    "original_solution_identification_still_required": true
+  },
+  "verified_actual_Hill_endpoint_canonical_dynamics": {
+    "same_actual_canonical_flow_on_original_physical_rough_distributions_PROVED": true,
+    "original_physical_rough_flow_joint_continuity_and_group_laws_PROVED": true,
+    "original_endpoint_invariance_of_actual_canonical_flow_PROVED": true,
+    "original_endpoint_norm_bound_uniform_over_ALL_real_times_PROVED": true,
+    "literal_Wiener_weak_star_endpoint_orbit_time_continuity_PROVED": true,
+    "EVERY_bounded_invariant_endpoint_set_compact_open_weak_star_trajectory_continuity_PROVED": true,
+    "nonclosed_bounded_invariant_sets_included": true,
+    "weak_star_compact_full_endpoint_orbit_closure_PROVED": true,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
+    "arbitrary_jointly_smooth_classical_space_time_to_strong_model_adapter_PROVED": true,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
+    "precise_final_source_main_1_1_1_3_solution_identification_COMPLETE": false,
+    "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json"
   }
 }

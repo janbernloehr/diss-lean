@@ -1873,6 +1873,9 @@ import NLS.Fourier.SmoothRealMeanZeroPeriodOneData
 import NLS.Fourier.SmoothRealPeriodOneCurve
 import NLS.Articles.KdVPseudomeasures.OriginalHillClassicalSolutionAdapter
 import NLS.Articles.KdVPseudomeasures.OriginalHillClassicalApproximation
+import NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalRoughFlow
+import NLS.Articles.KdVPseudomeasures.OriginalHillEndpointCanonicalFlow
+import NLS.Articles.KdVPseudomeasures.OriginalHillEndpointCanonicalTrajectories
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11043,3 +11046,27 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillClassicalApproximation
 #print axioms NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolution_physical_eq_canonicalFlow
 #print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformlyOn_hillClassicalSmoothSolutions
 #print axioms NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolutions_eq_of_initial_eq
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillPotentialOfRealSource
+#print axioms NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow_add
+#print axioms NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalKdVFlow_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillOriginalCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillOriginalCanonicalKdVFlow_val_time
+#print axioms NLS.Articles.KdVPseudomeasures.sourceOriginalPotential_injective
+#print axioms NLS.Articles.KdVPseudomeasures.exists_endpoint_hillOriginalCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_original
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_add
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointCanonicalKdVFlow_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_norm_bound_hillEndpointCanonicalKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointWeakStarKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointWeakStarKdVFlow_lower
+#print axioms NLS.Articles.KdVPseudomeasures.potentialNormBounded_range_hillEndpointWeakStarKdVFlow
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillEndpointWeakStarKdVFlow_time
+#print axioms NLS.Articles.KdVPseudomeasures.HillEndpointKdVInvariant
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceOriginalPotential_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointWeakStarKdVTrajectoryOn
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillEndpointWeakStarKdVTrajectoryOn
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_closure_range_hillEndpointWeakStarKdVFlow
