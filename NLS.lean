@@ -6071,3 +6071,6 @@ import NLS.KdV.HillHminusNormingCharts
 import NLS.KdV.HillHminusLogNorming
 import NLS.KdV.HillHminusLogNormingCotangent
 import NLS.KdV.HillHminusLogNormingGardner
+import NLS.KdV.HillHminusDirichletCotangent
+import NLS.KdV.HillHminusDirichletGardner
+import NLS.KdV.HillHminusSpectralGardnerMatrix

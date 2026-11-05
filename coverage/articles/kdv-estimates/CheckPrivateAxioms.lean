@@ -1148,6 +1148,9 @@ import NLS.KdV.HillHminusNormingCharts
 import NLS.KdV.HillHminusLogNorming
 import NLS.KdV.HillHminusLogNormingCotangent
 import NLS.KdV.HillHminusLogNormingGardner
+import NLS.KdV.HillHminusDirichletCotangent
+import NLS.KdV.HillHminusDirichletGardner
+import NLS.KdV.HillHminusSpectralGardnerMatrix
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
