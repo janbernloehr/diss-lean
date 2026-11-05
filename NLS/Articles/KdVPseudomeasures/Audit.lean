@@ -1670,6 +1670,9 @@ import NLS.KdV.HillMiuraCentralLowerBound
 import NLS.Articles.KdVPseudomeasures.OriginalHillBoundedActionCompactness
 import NLS.Articles.KdVPseudomeasures.OriginalHillActionSequentialCompactness
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeBoundedLimits
+import NLS.ZakharovShabat.ClassicalDiagonalZeroTrace
+import NLS.KdV.HillMiuraZeroFrequencyTrace
+import NLS.KdV.HillMiuraCentralMean
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10126,3 +10129,18 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeBoundedLimits
 #print axioms NLS.Articles.KdVPseudomeasures.exists_hillReal_source_limit_of_bounded_nativeMap_tendsto
 #print axioms NLS.Articles.KdVPseudomeasures.isProperMap_hillRealSignedMap_iff_bounded_compact_preimages
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_4_of_bounded_compact_native_preimages
+#print axioms NLS.ZakharovShabat.diagonalZeroSolution
+#print axioms NLS.ZakharovShabat.hasDerivAt_diagonalZeroSolution
+#print axioms NLS.ZakharovShabat.classicalSolution_diagonal_zero
+#print axioms NLS.ZakharovShabat.classicalDiscriminant_diagonal_zero
+#print axioms NLS.KdV.hillMiuraDiagonal_ofFinsupp
+#print axioms NLS.KdV.hillMiuraFrequencyTrace_zero_ofFinsupp
+#print axioms NLS.KdV.hillMiuraFrequencyTrace_zero
+#print axioms NLS.KdV.hillMiuraL2Discriminant_zero
+#print axioms NLS.KdV.periodOneRealL2_zero_eq_re
+#print axioms NLS.KdV.hillMiuraFrequencyTrace_zero_real
+#print axioms NLS.KdV.hillMiura_zero_mem_spectrum_iff_mean_zero
+#print axioms NLS.KdV.hillMiura_central_right_zero_of_mem_spectrum
+#print axioms NLS.KdV.hillMiura_central_right_zero_iff_mean_zero
+#print axioms NLS.KdV.hillMiura_central_gap_collapsed_iff_mean_zero
+#print axioms NLS.KdV.hillMiura_central_right_pos_iff_mean_ne_zero

@@ -1704,6 +1704,9 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillBoundedActionCompactness',
     'NLS.Articles.KdVPseudomeasures.OriginalHillActionSequentialCompactness',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeBoundedLimits',
+    'NLS.ZakharovShabat.ClassicalDiagonalZeroTrace',
+    'NLS.KdV.HillMiuraZeroFrequencyTrace',
+    'NLS.KdV.HillMiuraCentralMean',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
