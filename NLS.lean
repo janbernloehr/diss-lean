@@ -6352,3 +6352,10 @@ import NLS.KdV.HillOriginalMeanZeroSpectralDerivative
 import NLS.KdV.HillFreeStateCurves
 import NLS.KdV.HillFreeDirichletEnergyDerivatives
 import NLS.KdV.HillFreeDirichletGradientNormalization
+import NLS.Fourier.UnitFourierTrigonometricProfiles
+import NLS.KdV.HillFreeGradientFourierCoefficients
+import NLS.KdV.HillFreeDirichletFourierDifferentials
+import NLS.KdV.HillFreeHminusFourierDifferentials
+import NLS.KdV.HillFreeDirichletSheetDifferential
+import NLS.KdV.HillFreeDeflatedRootValue
+import NLS.KdV.HillFreeScaledDirichletSheetDifferential

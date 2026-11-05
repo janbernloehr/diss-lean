@@ -230,6 +230,7 @@ modules+=(NLS/KdV/HillHminusIntrinsicGapPairs NLS/KdV/HillHminusIntrinsicGapSymm
 modules+=(NLS/KdV/HillDirichletHamiltonianRealDirection NLS/KdV/HillMeanZeroNormingPerturbations NLS/KdV/HillMeanZeroOpenGapDensity NLS/KdV/HillOriginalAllGapCartesianMatrix NLS/KdV/HillOriginalCartesianGardnerFamily)
 modules+=(NLS/KdV/HillOriginalCartesianGermContinuation NLS/KdV/HillOriginalHminusCompactness NLS/KdV/HillOriginalBaseSpectralSequence NLS/KdV/HillOriginalSpectralSequentialProperness NLS/KdV/HillOriginalSpectralCompactPreimages)
 modules+=(NLS/FunctionalAnalysis/NormPreservingDerivative NLS/KdV/HillOriginalRealSpectralAnalytic NLS/KdV/HillOriginalSequencePhysicalDifferential NLS/KdV/HillOriginalMeanZeroSpectralDerivative NLS/KdV/HillFreeStateCurves NLS/KdV/HillFreeDirichletEnergyDerivatives NLS/KdV/HillFreeDirichletGradientNormalization)
+modules+=(NLS/Fourier/UnitFourierTrigonometricProfiles NLS/KdV/HillFreeGradientFourierCoefficients NLS/KdV/HillFreeDirichletFourierDifferentials NLS/KdV/HillFreeHminusFourierDifferentials NLS/KdV/HillFreeDirichletSheetDifferential NLS/KdV/HillFreeDeflatedRootValue NLS/KdV/HillFreeScaledDirichletSheetDifferential)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

@@ -1429,6 +1429,13 @@ import NLS.KdV.HillOriginalMeanZeroSpectralDerivative
 import NLS.KdV.HillFreeStateCurves
 import NLS.KdV.HillFreeDirichletEnergyDerivatives
 import NLS.KdV.HillFreeDirichletGradientNormalization
+import NLS.Fourier.UnitFourierTrigonometricProfiles
+import NLS.KdV.HillFreeGradientFourierCoefficients
+import NLS.KdV.HillFreeDirichletFourierDifferentials
+import NLS.KdV.HillFreeHminusFourierDifferentials
+import NLS.KdV.HillFreeDirichletSheetDifferential
+import NLS.KdV.HillFreeDeflatedRootValue
+import NLS.KdV.HillFreeScaledDirichletSheetDifferential
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2628,7 +2635,15 @@ run_cmd do
     ``NLS.Poisson.gardnerHilbertDerivative_weight_bound,
     ``NLS.ComplexAnalysis.parametricCircleCauchyTransform.eq_1,
     ``NLS.FunctionalAnalysis.derivativeZeroLinearIsometry,
-    ``NLS.FunctionalAnalysis.norm_derivative_zero_of_norm_map]
+    ``NLS.FunctionalAnalysis.norm_derivative_zero_of_norm_map,
+    ``NLS.Fourier.cos_mul_sin_eq_waves,
+    ``NLS.Fourier.twice_sin_sq_eq_waves,
+    ``NLS.Fourier.unitFourierCoefficient_const_mul,
+    ``NLS.Fourier.unitFourierCoefficient_cos_mul_sin_div,
+    ``NLS.Fourier.unitFourierCoefficient_sub,
+    ``NLS.Fourier.unitFourierCoefficient_twice_sin_sq,
+    ``NLS.Fourier.unitFourierCoefficient_wave,
+    ``NLS.Poisson.hminusScalarGradient.eq_1]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
