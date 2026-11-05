@@ -1964,6 +1964,11 @@ import NLS.SequenceSpaces.FourierRealAnalyticPhaseTrajectory
 import NLS.Articles.KdVPseudomeasures.OriginalHillWienerSignedFrequency
 import NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhaseTrajectory
 import NLS.Articles.KdVPseudomeasures.OriginalHillWienerCanonicalFlow
+import NLS.ComplexAnalysis.RealAnalyticNeighborhoodExtension
+import NLS.ComplexAnalysis.RealContinuousMapSuperposition
+import NLS.FunctionalAnalysis.ContinuousMapLinearEquivalenceTransport
+import NLS.Articles.KdVPseudomeasures.OriginalHillWienerAnalyticTrajectories
+import NLS.Articles.KdVPseudomeasures.MainTheorem59
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11532,3 +11537,15 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillWienerCanonicalFlow
 #print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory_apply
 #print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory_original
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_originalWienerKdVTrajectory
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_ball
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_neighborhood
+#print axioms NLS.ComplexAnalysis.analyticAt_real_superposition
+#print axioms NLS.FunctionalAnalysis.analyticAt_superposition_of_linearEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerInverse_superposition
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerCanonicalFlow_is_solutionByClassicalApproximation
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVSolutionByClassicalApproximation_unique
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVCompactTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVCompactTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_9Statement
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_9

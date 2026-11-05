@@ -1,0 +1,169 @@
+{
+  "source": "arXiv:1610.00278v1 MainTheorems1.1,1.3,1.4,5.1,5.9; Main5.9 global physical Wiener C-omega wellposedness with actual UNIFORM Banach trajectory analyticity",
+  "status": "ALL FIVE MAIN THEOREMS1.1/1.3/1.4/5.1/5.9 PROVED. Main5.9: SAME original physical KdV flow globally C-omega wellposed on EVERY integer-order physical real mean-zero Wiener space; EVERY T>0 initial-data map real analytic in the UNIFORM strong C([-T,T],FL^(N,1)) norm. Classical-approximation existence/uniqueness and entire original physical distribution retained. Source1.4 codomain correction s+1/2 remains documented. Goal ACTIVE pending authorized publication/integration readiness.",
+  "main_theorems_verified": true,
+  "verified_main_theorems": [
+    "1.1",
+    "1.3",
+    "1.4",
+    "5.1",
+    "5.9"
+  ],
+  "unproved_main_theorems": [],
+  "goal_status": "active",
+  "flags": {
+    "ALL_FIVE_ASSIGNED_MAIN_THEOREMS_PROVED": true,
+    "Main1_1_PROVED": true,
+    "Main1_3_PROVED": true,
+    "Main1_4_PROVED": true,
+    "Main5_1_PROVED": true,
+    "Main5_9_PROVED": true,
+    "Main1_4_source_codomain_correction_s_plus_half_documented": true,
+    "REAL_analytic_compact_range_superposition_in_UNIFORM_Banach_norm_PROVED": true,
+    "ACTUAL_original_Wiener_inverse_UNIFORM_compact_time_Banach_analytic_PROVED": true,
+    "SAME_original_physical_KdV_flow_and_classical_approximation_uniqueness_preserved": true,
+    "EVERY_nonnegative_integer_order_and_EVERY_positive_time_horizon": true,
+    "no_remaining_assigned_main_theorem_Lean_obligation": true,
+    "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
+    "complete_payload_pushed": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-9-all-main-proofs-map.json"
+  },
+  "results": [
+    "RealAnalyticNeighborhoodExtension proves any globally real analytic map on an isometrically included contractive real form extends holomorphically to an OPEN NEIGHBORHOOD OF THE ENTIRE REAL FORM. Every real germ first extends on a complex ball with full real agreement. The contractive real projection places a real point in EVERY nonempty intersection of two such balls. Convex connected overlap and the proved real-form identity principle make the extensions agree on that entire overlap. The actual chosen extensions therefore glue analytically on their open union, with exact agreement at EVERY real point.",
+    "RealContinuousMapSuperposition proves a globally real analytic map between contractive real forms acts real analytically on C(K,source) into C(K,target) for EVERY compact parameter space, in the actual UNIFORM Banach norm. The open holomorphic neighborhood above contains the entire real included compact range. Existing complex continuous-map superposition, real linear trajectory inclusion and real projection prove uniform Banach analyticity; pointwise analytic evaluations are not substituted for this conclusion.",
+    "ContinuousMapLinearEquivalenceTransport proves real Banach analytic superposition transports through a continuous real linear equivalence of the target spaces. The pointwise inverse fixes every entire continuous trajectory, so the topology and norm are the original uniform Banach trajectory topology.",
+    "OriginalHillWienerAnalyticTrajectories applies the generic theorem to the actual ordinary ell-one real mean-zero Wiener target and actual signed source coefficient real form at exponent1. It proves analyticAt_originalHillWienerInverse_superposition for the SAME actual Main5.1 inverse, and transports its output back to the ORIGINAL physical FL^(N,1) distribution space by the proved continuous real linear equivalence. analyticAt_originalWienerKdVTrajectory is UNCONDITIONAL at EVERY physical Wiener initial potential and EVERY compact time parameter space, retaining the same original physical KdV flow and UNIFORM strong Wiener norm.",
+    "MainTheorem59 constructs the compact-time trajectory on the LITERAL interval[-T,T] and proves analyticAt_originalWienerKdVCompactTrajectory for EVERY N>=0, EVERY real T and EVERY initial potential. It transfers the existing original physical KdV classical-approximation solution existence and uniqueness through the INJECTIVE entire-distribution Wiener inclusion. sourceTheorem5_9 proves sourceTheorem5_9Statement with a GLOBAL group, exact SAME physical solution for ALL time, original classical-approximation existence/uniqueness and EVERY T>0 real analytic initial-data map into the ACTUAL strong UNIFORM C([-T,T],FL^(N,1)) Banach norm.",
+    "ALL five assigned main source statements are now PROVED with their actual domains, quantifiers, topology and normalization. Main1.4 retains the explicitly documented printed-codomain correction froms tos+1/2. The stronger nonmain Lemma5.7 ell^r asymptotic is not claimed or required: the independently proved actual bounded Banach analytic frequency correction suffices. No Lean proof obligation remains for the assigned main statements. The full user goal remains ACTIVE until the complete validated private payload is authorized for export and pushed to the existing article branch, with the canonical checkout/shared metadata still read-only."
+  ],
+  "declarations": [
+    "NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_ball",
+    "NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_neighborhood",
+    "NLS.ComplexAnalysis.analyticAt_real_superposition",
+    "NLS.FunctionalAnalysis.analyticAt_superposition_of_linearEquiv",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerInverse_superposition",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVTrajectory",
+    "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalFlow_is_solutionByClassicalApproximation",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVSolutionByClassicalApproximation_unique",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVCompactTrajectory",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVCompactTrajectory",
+    "NLS.Articles.KdVPseudomeasures.sourceTheorem5_9Statement",
+    "NLS.Articles.KdVPseudomeasures.sourceTheorem5_9"
+  ],
+  "files": [
+    "NLS/ComplexAnalysis/RealAnalyticNeighborhoodExtension.lean",
+    "NLS/ComplexAnalysis/RealContinuousMapSuperposition.lean",
+    "NLS/FunctionalAnalysis/ContinuousMapLinearEquivalenceTransport.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerAnalyticTrajectories.lean",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem59.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "019fee88295440b1f6ef91f2b45c34477c50443c",
+    "baseline_modules": 1967,
+    "baseline_non_audit_sources_verified_unchanged": 1966,
+    "new_modules_compiled": 5,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ComplexAnalysis.ContinuousRealFormIdentity",
+        "source": "NLS/ComplexAnalysis/ContinuousRealFormIdentity.lean",
+        "source_sha256": "2cfbde66aad3945a94a5bcdbbd6d9e5470ef67dba4d8dd8babcd4d6e310d2c60"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.ContinuousMapSuperposition",
+        "source": "NLS/ComplexAnalysis/ContinuousMapSuperposition.lean",
+        "source_sha256": "8f38c6d264d917dea2429403a070aaa86d03d3bace998b3b5d187ceacaaf2af8"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem11",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
+        "source_sha256": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem13",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
+        "source_sha256": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem51",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem51.lean",
+        "source_sha256": "d3a7393f833deeebbb45163ef6ab574c40d20ed7dad062e982372209332d265c",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalClassicalRoughSolution",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalClassicalRoughSolution.lean",
+        "source_sha256": "0249c477db358de90da5382f01365af1707b864654e66155e2e2113d2a4aeabc",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillWienerCanonicalFlow",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillWienerCanonicalFlow.lean",
+        "source_sha256": "2085f399b40477995f9e6491562a5ca4c0b5416357751eb5791da8837cb4bf04",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhaseTrajectory",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillWienerPhaseTrajectory.lean",
+        "source_sha256": "148de3598856a6889f001e1d5896c53921d28e4f803d9f69c2439c4087fdb09a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhysicalModels",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillWienerPhysicalModels.lean",
+        "source_sha256": "3c860c735855b0fe4749121dc5f2a7c9ff013932873fa0dfbce8df6230e1b041",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.ContractiveAnalyticExtension",
+        "source": "NLS/ComplexAnalysis/ContractiveAnalyticExtension.lean",
+        "source_sha256": "9c30a91a188f8aec66381ed9747f741eb288e0d44c1c473fb1f2537042329db4",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.FourierRealContractiveComplexification",
+        "source": "NLS/SequenceSpaces/FourierRealContractiveComplexification.lean",
+        "source_sha256": "fe1241838c37dc81e89fe491d63d6b4cabcf5ee087d919cb1b8a2d5b888a1709",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillL2FrequencySequence",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillL2FrequencySequence.lean",
+        "source_sha256": "4a0882a91d626cca1dea911b970b2d553ded90d1c210bf77b0dbe33a4778c29b",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1972,
+    "audited_declarations": 9577,
+    "theorems": 8029,
+    "definitions": 1548,
+    "new_theorems": 10,
+    "new_definitions": 2,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-main-5-9-all-main-proofs.log",
+    "log_sha256": "36c6e08a0c929b583a19a2732b1f5d3fff6652dca14d2e20c626eb6a322c111c"
+  },
+  "remaining_obligations": [
+    "PUBLICATION ONLY: obtain explicit approval for the FINAL validated private commit payload to janbernloehr/diss-lean -> articles/kdv-pseudomeasures, then push exactly that immutable commit and verify the remote branch head. Earlier approval covered exact ecbdc5a only; the earlier automatic approval review rejected newer payload export as outside that specific approval. Existing pending exact b198 approval remains historical and unchanged. Do not push a newer HEAD on the basis of a generic continuation.",
+    "After the approved final push, verify the local private commit, remote branch head, exact coverage maps and validation receipts are identical to the validated payload, and confirm all five main theorem declarations/statement correspondences and standard-axiom reports. Preserve canonical read-only status and the source1.4 codomain correction. Only then mark the full goal complete."
+  ]
+}

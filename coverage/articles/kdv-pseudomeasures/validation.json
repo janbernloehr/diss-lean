@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
-  "article_main_theorems_verified": false,
-  "phase": "Actual original signed Wiener Birkhoff phase trajectories BANACH REAL ANALYTIC in UNIFORM compact-time ell-one norm at EVERY integer order. Same original physical KdV flow preserves every Wiener source, is a global group and has strong-norm CONTINUOUS compact-time trajectories. Analytic inverse superposition in the uniform trajectory norm remains OPEN. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE.",
+  "article_main_theorems_verified": true,
+  "phase": "ALL FIVE MAIN THEOREMS1.1/1.3/1.4/5.1/5.9 PROVED. Main5.9: SAME original physical KdV flow globally C-omega wellposed on EVERY integer-order physical real mean-zero Wiener space; EVERY T>0 initial-data map real analytic in the UNIFORM strong C([-T,T],FL^(N,1)) norm. Classical-approximation existence/uniqueness and entire original physical distribution retained. Source1.4 codomain correction s+1/2 remains documented. Goal ACTIVE pending authorized publication/integration readiness.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1972,13 +1972,18 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillWienerSignedFrequency.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillWienerPhaseTrajectory.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillWienerCanonicalFlow.lean",
+    "NLS/ComplexAnalysis/RealAnalyticNeighborhoodExtension.lean",
+    "NLS/ComplexAnalysis/RealContinuousMapSuperposition.lean",
+    "NLS/FunctionalAnalysis/ContinuousMapLinearEquivalenceTransport.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerAnalyticTrajectories.lean",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem59.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 8019,
-  "definitions": 1546,
+  "proved_theorems": 8029,
+  "definitions": 1548,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 9565,
+    "declarations": 9577,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3450,10 +3455,16 @@
     "FourierRealAnalyticPhaseTrajectory projects the complex trajectory by the verified bounded real linear full Fourier real mean-zero projection. It is real analytic in the UNIFORM trajectory norm of the actual real mean-zero weighted space. When the bounded correction plus the free frequency is the actual signed odd real frequency, the projection fixes the ENTIRE original isometric phase evolution exactly.",
     "OriginalHillWienerSignedFrequency constructs the actual signed original correction by reflection subtraction in UNWEIGHTED ell-infinity. It is real analytic on EVERY original physical Wiener source. ALL signed raw coefficients equal the SAME actual odd original KdV frequency minus (2*pi*k)^3, including the central zero and negative modes.",
     "OriginalHillWienerPhaseTrajectory proves originalWienerKdVCoordinateTrajectory is real analytic into the actual UNIFORM compact-time ordinary weighted ell-one real mean-zero target at EVERY nonnegative integer order. It uses the SAME Main5.1 Birkhoff coordinates and SAME original signed KdV frequencies. Every original signed phase coefficient is retained exactly and each time slice preserves the original target norm.",
-    "OriginalHillWienerCanonicalFlow restricts the SAME original physical KdV flow to EVERY original physical integer-order Wiener source. Native equality implies equality of the ENTIRE original rough physical distribution. The physical inclusion is injective, so zero-time and global group identities hold in the ORIGINAL strong Wiener space. originalWienerKdVTrajectory is a continuous compact-time path, agrees pointwise with that SAME original physical flow, and depends CONTINUOUSLY on initial data in the UNIFORM strong Wiener trajectory norm. This is not yet analyticity after the nonlinear inverse: that final uniform Banach analytic superposition obligation is explicitly OPEN."
+    "OriginalHillWienerCanonicalFlow restricts the SAME original physical KdV flow to EVERY original physical integer-order Wiener source. Native equality implies equality of the ENTIRE original rough physical distribution. The physical inclusion is injective, so zero-time and global group identities hold in the ORIGINAL strong Wiener space. originalWienerKdVTrajectory is a continuous compact-time path, agrees pointwise with that SAME original physical flow, and depends CONTINUOUSLY on initial data in the UNIFORM strong Wiener trajectory norm. This is not yet analyticity after the nonlinear inverse: that final uniform Banach analytic superposition obligation is explicitly OPEN.",
+    "RealAnalyticNeighborhoodExtension proves any globally real analytic map on an isometrically included contractive real form extends holomorphically to an OPEN NEIGHBORHOOD OF THE ENTIRE REAL FORM. Every real germ first extends on a complex ball with full real agreement. The contractive real projection places a real point in EVERY nonempty intersection of two such balls. Convex connected overlap and the proved real-form identity principle make the extensions agree on that entire overlap. The actual chosen extensions therefore glue analytically on their open union, with exact agreement at EVERY real point.",
+    "RealContinuousMapSuperposition proves a globally real analytic map between contractive real forms acts real analytically on C(K,source) into C(K,target) for EVERY compact parameter space, in the actual UNIFORM Banach norm. The open holomorphic neighborhood above contains the entire real included compact range. Existing complex continuous-map superposition, real linear trajectory inclusion and real projection prove uniform Banach analyticity; pointwise analytic evaluations are not substituted for this conclusion.",
+    "ContinuousMapLinearEquivalenceTransport proves real Banach analytic superposition transports through a continuous real linear equivalence of the target spaces. The pointwise inverse fixes every entire continuous trajectory, so the topology and norm are the original uniform Banach trajectory topology.",
+    "OriginalHillWienerAnalyticTrajectories applies the generic theorem to the actual ordinary ell-one real mean-zero Wiener target and actual signed source coefficient real form at exponent1. It proves analyticAt_originalHillWienerInverse_superposition for the SAME actual Main5.1 inverse, and transports its output back to the ORIGINAL physical FL^(N,1) distribution space by the proved continuous real linear equivalence. analyticAt_originalWienerKdVTrajectory is UNCONDITIONAL at EVERY physical Wiener initial potential and EVERY compact time parameter space, retaining the same original physical KdV flow and UNIFORM strong Wiener norm.",
+    "MainTheorem59 constructs the compact-time trajectory on the LITERAL interval[-T,T] and proves analyticAt_originalWienerKdVCompactTrajectory for EVERY N>=0, EVERY real T and EVERY initial potential. It transfers the existing original physical KdV classical-approximation solution existence and uniqueness through the INJECTIVE entire-distribution Wiener inclusion. sourceTheorem5_9 proves sourceTheorem5_9Statement with a GLOBAL group, exact SAME physical solution for ALL time, original classical-approximation existence/uniqueness and EVERY T>0 real analytic initial-data map into the ACTUAL strong UNIFORM C([-T,T],FL^(N,1)) Banach norm.",
+    "ALL five assigned main source statements are now PROVED with their actual domains, quantifiers, topology and normalization. Main1.4 retains the explicitly documented printed-codomain correction froms tos+1/2. The stronger nonmain Lemma5.7 ell^r asymptotic is not claimed or required: the independently proved actual bounded Banach analytic frequency correction suffices. No Lean proof obligation remains for the assigned main statements. The full user goal remains ACTIVE until the complete validated private payload is authorized for export and pushed to the existing article branch, with the canonical checkout/shared metadata still read-only."
   ],
-  "source_correspondence": "Actual original signed Wiener Birkhoff phase trajectories BANACH REAL ANALYTIC in UNIFORM compact-time ell-one norm at EVERY integer order. Same original physical KdV flow preserves every Wiener source, is a global group and has strong-norm CONTINUOUS compact-time trajectories. Analytic inverse superposition in the uniform trajectory norm remains OPEN. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE. Main5.9: ONLY the nonlinear inverse compact-time ANALYTIC superposition and final precise main statement remain. The SAME original signed Birkhoff coordinate trajectory is now proved real analytic in the actual uniform C(K, ordinary weighted ell-one real mean-zero target) norm. The SAME original physical Wiener KdV flow is global, preserves every order, satisfies group identities and is continuous into the original strong C(K, FL^(N,1)) norm. Do not substitute pointwise-in-time analyticity for the remaining uniform Banach analyticity. Prove a real analytic compact-range superposition theorem for the actual Wiener inverse. Existing ContractiveAnalyticExtension gives holomorphic extensions of arbitrary real analytic germs on contractive real forms; FourierRealContractiveComplexification supplies the actual source and target real forms at exponent1. A viable global route: choose complex balls at every real center with full real agreement, prove two germs equal on intersecting balls by ContinuousRealFormIdentity (the contractive real projection places a real point in every overlap), glue them on their open union, and apply ContinuousMapSuperposition there. Preserve source and target weights and complete Banach topologies. An equivalent verified finite compact cover argument is also valid. Then use the now-proved originalWienerKdVTrajectory_original for SAME-flow physical identification, specialize K to [-T,T] with its compact uniform norm for EVERY N>=0 and T>0, and formulate/prove sourceTheorem5_9Statement/sourceTheorem5_9 matching the article. Check all main theorem source correspondences and transitive axioms. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 UNPROVED; goal ACTIVE. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1960 baseline non-audit registered Lean sources byte-identical to32f3306. All 6 new modules (26 theorems+7 definitions), 3 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9565-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1967-module build.",
+  "source_correspondence": "ALL FIVE MAIN THEOREMS1.1/1.3/1.4/5.1/5.9 PROVED. Main5.9: SAME original physical KdV flow globally C-omega wellposed on EVERY integer-order physical real mean-zero Wiener space; EVERY T>0 initial-data map real analytic in the UNIFORM strong C([-T,T],FL^(N,1)) norm. Classical-approximation existence/uniqueness and entire original physical distribution retained. Source1.4 codomain correction s+1/2 remains documented. Goal ACTIVE pending authorized publication/integration readiness. PUBLICATION ONLY: obtain explicit approval for the FINAL validated private commit payload to janbernloehr/diss-lean -> articles/kdv-pseudomeasures, then push exactly that immutable commit and verify the remote branch head. Earlier approval covered exact ecbdc5a only; the earlier automatic approval review rejected newer payload export as outside that specific approval. Existing pending exact b198 approval remains historical and unchanged. Do not push a newer HEAD on the basis of a generic continuation. After the approved final push, verify the local private commit, remote branch head, exact coverage maps and validation receipts are identical to the validated payload, and confirm all five main theorem declarations/statement correspondences and standard-axiom reports. Preserve canonical read-only status and the source1.4 codomain correction. Only then mark the full goal complete.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1966 baseline non-audit registered Lean sources byte-identical to019fee8. All 5 new modules (10 theorems+2 definitions), 2 canonical-byte-identical modules, 11 unchanged private dependencies and EXACT 9577-declaration standard-axiom audit freshly compiled privately. ALL five assigned main theorems PROVED; complete-payload publication remains pending. No resource changes, suppressions or extra axioms. Not a full fresh 1972-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -5424,7 +5435,12 @@
     "NLS/SequenceSpaces/FourierRealAnalyticPhaseTrajectory.lean": "44b6f075d93222d883b5cfa6d0e3c2d6922934de631049e22b51f26b43988050",
     "NLS/Articles/KdVPseudomeasures/OriginalHillWienerSignedFrequency.lean": "c0198931045965d6a74ecfa311c7816e0e7a3b115de236da8aa8c9d272a4fbbd",
     "NLS/Articles/KdVPseudomeasures/OriginalHillWienerPhaseTrajectory.lean": "148de3598856a6889f001e1d5896c53921d28e4f803d9f69c2439c4087fdb09a",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerCanonicalFlow.lean": "2085f399b40477995f9e6491562a5ca4c0b5416357751eb5791da8837cb4bf04"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerCanonicalFlow.lean": "2085f399b40477995f9e6491562a5ca4c0b5416357751eb5791da8837cb4bf04",
+    "NLS/ComplexAnalysis/RealAnalyticNeighborhoodExtension.lean": "e9a9c94f2c352de039be01422bc69a7447401d6f1b93f5a5dd712ff6d7c41b27",
+    "NLS/ComplexAnalysis/RealContinuousMapSuperposition.lean": "4208195758bbce0cb321fd4458a3095bb1c2807558fdb9e6e8c237d9f0ad8128",
+    "NLS/FunctionalAnalysis/ContinuousMapLinearEquivalenceTransport.lean": "c16383be97a4fa02cd95557f1192d281489fb546a84470a5f55114663565bb1c",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerAnalyticTrajectories.lean": "2ee6673c139b78497b6f9a125258f8a25e3f072acfe6d21c80c692ed8ce1104f",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem59.lean": "9abc7c108928adf1dbfff58b8fa736a1241251615d90421a6b5aca0ba238394e"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -5432,11 +5448,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 9532,
-    "newly_checked_declarations_this_continuation": 33,
-    "new_theorems": 26,
-    "new_definitions": 7,
-    "total_checked_declarations": 9565
+    "previous_checked_declarations": 9565,
+    "newly_checked_declarations_this_continuation": 12,
+    "new_theorems": 10,
+    "new_definitions": 2,
+    "total_checked_declarations": 9577
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -5465,7 +5481,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-Wiener-compact-phase-flow.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-main-5-9-all-main-proofs.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5859,13 +5875,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1940 baseline non-audit registered Lean sources byte-identical to a58f1c6. All 7 new modules (15 theorems+3 definitions), 0 canonical-byte-identical modules, 13 unchanged private dependencies and EXACT 9464-declaration standard-axiom audit freshly compiled privately. FULL ACTUAL native L2 one-smoothing and ALL-order signed Wiener analytic equivalences UNCONDITIONALLY PROVED. Actual complete infinite OFF-index exponent/exponential-minus1 analytic in one-order weighted infinity norm; every original native Fourier coefficient retained. Final original physical-distribution Main5.1 transport/statement and actual bounded-frequency/Wiener-flow Main5.9 remain OPEN. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1948-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1947 baseline non-audit registered Lean sources byte-identical to396021c. All 7 new modules (33 theorems+17 definitions), 2 canonical-byte-identical modules, 11 unchanged private dependencies and EXACT 9514-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1955-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1954 baseline non-audit registered Lean sources byte-identical tod4db0a0. All 6 new modules (14 theorems+4 definitions), 1 canonical-byte-identical modules, 12 unchanged private dependencies and EXACT 9532-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1961-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1960 baseline non-audit registered Lean sources byte-identical to32f3306. All 6 new modules (26 theorems+7 definitions), 3 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9565-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1967-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1960 baseline non-audit registered Lean sources byte-identical to32f3306. All 6 new modules (26 theorems+7 definitions), 3 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9565-declaration standard-axiom audit freshly compiled privately. Main1.1,1.3,1.4,5.1 PROVED; Main5.9 remains UNPROVED. No resource changes, suppressions or extra axioms. Not a full fresh 1967-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1966 baseline non-audit registered Lean sources byte-identical to019fee8. All 5 new modules (10 theorems+2 definitions), 2 canonical-byte-identical modules, 11 unchanged private dependencies and EXACT 9577-declaration standard-axiom audit freshly compiled privately. ALL five assigned main theorems PROVED; complete-payload publication remains pending. No resource changes, suppressions or extra axioms. Not a full fresh 1972-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-compact-phase-flow-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-9-all-main-proofs-map.json",
   "baseline_validated_snapshot": {
-    "commit": "32f3306bcaa78788c77d2a91f33cada03f7ea7b4",
-    "modules": 1961,
-    "audited_declarations": 9532,
+    "commit": "019fee88295440b1f6ef91f2b45c34477c50443c",
+    "modules": 1967,
+    "audited_declarations": 9565,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -8698,11 +8715,10 @@
     "1.1",
     "1.3",
     "1.4",
-    "5.1"
-  ],
-  "unproved_main_theorems": [
+    "5.1",
     "5.9"
   ],
+  "unproved_main_theorems": [],
   "actual_Hill_inverse_action_coercivity": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-inverse-action-coercivity-map.json",
     "actual_inverse_primitive_real_boundary_PROVED": true,
@@ -9667,5 +9683,27 @@
     "UNIFORM_nonlinear_Wiener_inverse_superposition_ANALYTIC_PROVED": false,
     "Main5_9_PROVED": false,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-compact-phase-flow-map.json"
+  },
+  "assigned_main_Lean_obligations_remaining": [],
+  "publication_obligations": [
+    "PUBLICATION ONLY: obtain explicit approval for the FINAL validated private commit payload to janbernloehr/diss-lean -> articles/kdv-pseudomeasures, then push exactly that immutable commit and verify the remote branch head. Earlier approval covered exact ecbdc5a only; the earlier automatic approval review rejected newer payload export as outside that specific approval. Existing pending exact b198 approval remains historical and unchanged. Do not push a newer HEAD on the basis of a generic continuation.",
+    "After the approved final push, verify the local private commit, remote branch head, exact coverage maps and validation receipts are identical to the validated payload, and confirm all five main theorem declarations/statement correspondences and standard-axiom reports. Preserve canonical read-only status and the source1.4 codomain correction. Only then mark the full goal complete."
+  ],
+  "all_five_main_theorems_and_uniform_analytic_Wiener_flow": {
+    "ALL_FIVE_ASSIGNED_MAIN_THEOREMS_PROVED": true,
+    "Main1_1_PROVED": true,
+    "Main1_3_PROVED": true,
+    "Main1_4_PROVED": true,
+    "Main5_1_PROVED": true,
+    "Main5_9_PROVED": true,
+    "Main1_4_source_codomain_correction_s_plus_half_documented": true,
+    "REAL_analytic_compact_range_superposition_in_UNIFORM_Banach_norm_PROVED": true,
+    "ACTUAL_original_Wiener_inverse_UNIFORM_compact_time_Banach_analytic_PROVED": true,
+    "SAME_original_physical_KdV_flow_and_classical_approximation_uniqueness_preserved": true,
+    "EVERY_nonnegative_integer_order_and_EVERY_positive_time_horizon": true,
+    "no_remaining_assigned_main_theorem_Lean_obligation": true,
+    "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
+    "complete_payload_pushed": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-9-all-main-proofs-map.json"
   }
 }

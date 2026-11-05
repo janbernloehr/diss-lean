@@ -529,7 +529,7 @@
       "conclusions": [
         "The global KdV solution map FL_0^(N,1) -> C([-T,T],FL_0^(N,1)) is real analytic in the norm Banach spaces."
       ],
-      "status": "unproved",
+      "status": "proved",
       "proved_dependencies": [
         "NLS.WeightedCoeff.isCompactOperator_holderProduct_fixed",
         "NLS.WeightedCoeff.weightedHilbertWienerInclusion",
@@ -868,9 +868,24 @@
         "NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory",
         "NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory_apply",
         "NLS.Articles.KdVPseudomeasures.originalWienerKdVTrajectory_original",
-        "NLS.Articles.KdVPseudomeasures.continuous_originalWienerKdVTrajectory"
+        "NLS.Articles.KdVPseudomeasures.continuous_originalWienerKdVTrajectory",
+        "NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_ball",
+        "NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_neighborhood",
+        "NLS.ComplexAnalysis.analyticAt_real_superposition",
+        "NLS.FunctionalAnalysis.analyticAt_superposition_of_linearEquiv",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerInverse_superposition",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVTrajectory",
+        "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalFlow_is_solutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.originalWienerKdVSolutionByClassicalApproximation_unique",
+        "NLS.Articles.KdVPseudomeasures.originalWienerKdVCompactTrajectory",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVCompactTrajectory",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_9Statement",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_9"
       ],
-      "qualification": "UNPROVED. SAME original signed Birkhoff coordinate trajectories now Banach real analytic in UNIFORM compact-time ordinary weighted ell-one norm for EVERY order. SAME original physical KdV flow preserves all physical Wiener sources, is a global group, and depends continuously on initial data in the original strong uniform trajectory norm. ANALYTIC nonlinear Wiener inverse superposition in that uniform norm and final precise physical statement remain."
+      "qualification": "PROVED. EVERY nonnegative integer order and EVERY positive time horizon. SAME original real mean-zero period-one physical Wiener distributions and SAME original physical KdV flow; global group, classical-approximation existence/uniqueness and real analyticity into the ACTUAL UNIFORM strong C([-T,T],FL^(N,1)) Banach norm. Uniform nonlinear Wiener inverse superposition is proved, not assumed; all original coefficients and cubic normalization retained.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceTheorem5_9",
+      "statement": "NLS.Articles.KdVPseudomeasures.sourceTheorem5_9Statement",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-9-all-main-proofs-map.json"
     }
   ],
   "needed_source_dependencies": [
@@ -4559,6 +4574,25 @@
         "NLS.Articles.KdVPseudomeasures.continuous_originalWienerKdVTrajectory"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-compact-phase-flow-map.json"
+    },
+    {
+      "label": "Main5.9 complete original physical global C-omega Wiener wellposedness; all five main theorems proved",
+      "status": "ALL FIVE MAIN THEOREMS1.1/1.3/1.4/5.1/5.9 PROVED. Main5.9: SAME original physical KdV flow globally C-omega wellposed on EVERY integer-order physical real mean-zero Wiener space; EVERY T>0 initial-data map real analytic in the UNIFORM strong C([-T,T],FL^(N,1)) norm. Classical-approximation existence/uniqueness and entire original physical distribution retained. Source1.4 codomain correction s+1/2 remains documented. Goal ACTIVE pending authorized publication/integration readiness.",
+      "declarations": [
+        "NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_ball",
+        "NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_neighborhood",
+        "NLS.ComplexAnalysis.analyticAt_real_superposition",
+        "NLS.FunctionalAnalysis.analyticAt_superposition_of_linearEquiv",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerInverse_superposition",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVTrajectory",
+        "NLS.Articles.KdVPseudomeasures.originalWienerCanonicalFlow_is_solutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.originalWienerKdVSolutionByClassicalApproximation_unique",
+        "NLS.Articles.KdVPseudomeasures.originalWienerKdVCompactTrajectory",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVCompactTrajectory",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_9Statement",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_9"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-9-all-main-proofs-map.json"
     }
   ],
   "reuse_map": [
@@ -4637,11 +4671,7 @@
       "reuse": "Copied byte-identically and used directly for the actual endpoint determinant perturbation bound; the existing Rouche/ZeroCountComparison library supplies the scalar two-zero count."
     }
   ],
-  "remaining_obligations": [
-    "Main5.9: ONLY the nonlinear inverse compact-time ANALYTIC superposition and final precise main statement remain. The SAME original signed Birkhoff coordinate trajectory is now proved real analytic in the actual uniform C(K, ordinary weighted ell-one real mean-zero target) norm. The SAME original physical Wiener KdV flow is global, preserves every order, satisfies group identities and is continuous into the original strong C(K, FL^(N,1)) norm. Do not substitute pointwise-in-time analyticity for the remaining uniform Banach analyticity.",
-    "Prove a real analytic compact-range superposition theorem for the actual Wiener inverse. Existing ContractiveAnalyticExtension gives holomorphic extensions of arbitrary real analytic germs on contractive real forms; FourierRealContractiveComplexification supplies the actual source and target real forms at exponent1. A viable global route: choose complex balls at every real center with full real agreement, prove two germs equal on intersecting balls by ContinuousRealFormIdentity (the contractive real projection places a real point in every overlap), glue them on their open union, and apply ContinuousMapSuperposition there. Preserve source and target weights and complete Banach topologies. An equivalent verified finite compact cover argument is also valid.",
-    "Then use the now-proved originalWienerKdVTrajectory_original for SAME-flow physical identification, specialize K to [-T,T] with its compact uniform norm for EVERY N>=0 and T>0, and formulate/prove sourceTheorem5_9Statement/sourceTheorem5_9 matching the article. Check all main theorem source correspondences and transitive axioms. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 UNPROVED; goal ACTIVE. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged."
-  ],
+  "remaining_obligations": [],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
     "branch": "articles/kdv-pseudomeasures",
@@ -4649,9 +4679,12 @@
     "approval": "Separate ordinary Git worktree authorized through coordinating chat; canonical tracked source and build outputs unchanged."
   },
   "completion_followup": {
-    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json",
-    "full_source_Theorem2_2_proved": true,
-    "main_theorems_verified": false
+    "all_five_main_theorems_proved": true,
+    "publication_pending": [
+      "PUBLICATION ONLY: obtain explicit approval for the FINAL validated private commit payload to janbernloehr/diss-lean -> articles/kdv-pseudomeasures, then push exactly that immutable commit and verify the remote branch head. Earlier approval covered exact ecbdc5a only; the earlier automatic approval review rejected newer payload export as outside that specific approval. Existing pending exact b198 approval remains historical and unchanged. Do not push a newer HEAD on the basis of a generic continuation.",
+      "After the approved final push, verify the local private commit, remote branch head, exact coverage maps and validation receipts are identical to the validated payload, and confirm all five main theorem declarations/statement correspondences and standard-axiom reports. Preserve canonical read-only status and the source1.4 codomain correction. Only then mark the full goal complete."
+    ],
+    "source_correction": "Main1.4 printed first codomain corrected to s+1/2 as documented"
   },
   "Dirichlet_characteristic_followup": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-dirichlet-map.json",
@@ -9056,5 +9089,22 @@
     "UNIFORM_nonlinear_Wiener_inverse_superposition_ANALYTIC_PROVED": false,
     "Main5_9_PROVED": false,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-compact-phase-flow-map.json"
+  },
+  "all_five_main_theorems_and_uniform_analytic_Wiener_flow": {
+    "ALL_FIVE_ASSIGNED_MAIN_THEOREMS_PROVED": true,
+    "Main1_1_PROVED": true,
+    "Main1_3_PROVED": true,
+    "Main1_4_PROVED": true,
+    "Main5_1_PROVED": true,
+    "Main5_9_PROVED": true,
+    "Main1_4_source_codomain_correction_s_plus_half_documented": true,
+    "REAL_analytic_compact_range_superposition_in_UNIFORM_Banach_norm_PROVED": true,
+    "ACTUAL_original_Wiener_inverse_UNIFORM_compact_time_Banach_analytic_PROVED": true,
+    "SAME_original_physical_KdV_flow_and_classical_approximation_uniqueness_preserved": true,
+    "EVERY_nonnegative_integer_order_and_EVERY_positive_time_horizon": true,
+    "no_remaining_assigned_main_theorem_Lean_obligation": true,
+    "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
+    "complete_payload_pushed": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-9-all-main-proofs-map.json"
   }
 }

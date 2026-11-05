@@ -1998,6 +1998,11 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillWienerSignedFrequency',
     'NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhaseTrajectory',
     'NLS.Articles.KdVPseudomeasures.OriginalHillWienerCanonicalFlow',
+    'NLS.ComplexAnalysis.RealAnalyticNeighborhoodExtension',
+    'NLS.ComplexAnalysis.RealContinuousMapSuperposition',
+    'NLS.FunctionalAnalysis.ContinuousMapLinearEquivalenceTransport',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillWienerAnalyticTrajectories',
+    'NLS.Articles.KdVPseudomeasures.MainTheorem59',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
