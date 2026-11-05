@@ -2605,6 +2605,67 @@ mirrors mathlib imports with read-only file links and refuses writes
 through linked output directories. All canonical sources and build
 products remain untouched.
 
+## Intrinsic H1 graph analyticity and Dirichlet energy differentials
+
+`IntervalCurveL2.lean` constructs joint bounded multiplication of a
+continuous curve with an actual physical L2 class. The position derivative
+of the rough Hill IVP is the actual class `u*y+w`.
+`L2QuasiHillDerivativeClass.lean` proves it jointly analytic;
+`HillHminusOneDirichletH1Analytic.lean` identifies it with the derivative
+of the intrinsic normalized scalar column in every Miura chart. The full
+continuous/L2 **H1 graph** is jointly entire in complex energy and the
+original complex H^-1 potential, independently of all chart choices.
+
+`PeriodOneMassPhysical.lean` realizes the Fourier operator
+`m+1+2*pi*i*k` as the actual physical derivative plus mass on H1 inputs.
+`HillHminusOneMassPotentialPairing.lean` proves, for matching-endpoint
+H1 products, the literal resolvent formula
+
+```text
+q=(d/dx+m+1)U  =>  <q,g>=integral U*((m+1)*g-gprime).
+```
+
+Physical integration by parts and density in the original H^-1 norm
+remove the Riccati lift. `IntervalH1ProductGraph.lean` gives polynomial
+product and derivative formulas on the H1 graph. Together these make
+the potential pairing jointly analytic in the graph variables actually
+used by the spectral solutions.
+
+`HillHminusOneDirichletPerturbation.lean` proves the intrinsic identity
+for arbitrary complex potentials and actual Dirichlet roots:
+
+```text
+(mu-lambda)*integral Y(q,lambda)*Y(p,mu)
+  = <p-q,Y(q,lambda)*Y(p,mu)>.
+```
+
+No common Miura chart or open-gap hypothesis is needed. Differentiating
+this identity in `HillHminusOneDirichletDifferential.lean` gives the full
+complex H^-1 Frechet differential of every analytic root branch:
+
+```text
+da(q)[h]*integral Y(q,a(q))^2 = <h,Y(q,a(q))^2>.
+```
+
+At every real input the actual unconjugated square mass is nonzero.
+Every actual positive label therefore has the quotient formula,
+including central modes and collapsed gaps.
+`DirichletCoordinateDifferential.lean` proves the exact differential
+of the already constructed global analytic ell2 energy map:
+
+```text
+dE_n(q)[h] = <h,Y_n(q)^2>/((1+n)*integral Y_n(q)^2).
+```
+
+The coordinate weight is retained exactly. These are actual spectral
+Banach derivatives. Explicit free Fourier linearization, the full
+Cartesian inverse, canonical action identities and the positive-ell2
+extension of Theorem 1.1 remain unproved. The inherited import closure
+contains 2294 sources outside the 507-module baseline, all byte-identical
+to the read-only compiled reference; hashes and scope are recorded in
+`dirichlet-differential-library-reuse.json`. Those cached imports were
+not rebuilt in this incremental validation.
+
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
@@ -2670,13 +2731,13 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `b4f4688` contains 499 source modules, whose
-source hashes remain unchanged. Eight authored modules pass Lean
+The validated baseline at `ba0cf42` contains 507 source modules, whose
+source hashes remain unchanged. Nine authored modules pass Lean
 4.33.1/mathlib v4.33.1 with `warningAsError=true`; the complete
-reproduction script lists 507 NLS modules and one private pinned mathlib
-compilation. The positive-index example, cumulative transitive axiom
-audit and 1210 coverage-declaration checks pass. This is incremental
-validation, not a full repository rebuild.
+reproduction script lists 516 NLS modules and the preceding private
+pinned mathlib compilation. The positive-index example, cumulative
+transitive axiom audit and 1250 coverage-declaration checks pass. This
+is incremental validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
