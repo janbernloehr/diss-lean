@@ -1755,6 +1755,11 @@ import NLS.SequenceSpaces.HalfFourierInverseNormalization
 import NLS.KdV.PeriodOneKineticModePair
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1CanonicalPotential
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAtZero
+import NLS.KdV.HillCenteredPrimitiveMoments
+import NLS.KdV.HillPrimitiveMomentsPhysical
+import NLS.KdV.HillPrimitiveMomentsClosedGap
+import NLS.KdV.HillPrimitiveMomentsEnergyContour
+import NLS.Articles.KdVPseudomeasures.OriginalHillFrequencyMoments
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10551,3 +10556,22 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAtZero
 #print axioms NLS.Articles.KdVPseudomeasures.periodOneSobolevKinetic_hillH1PhysicalModeCurve_zero
 #print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1Canonical_mode_energy
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_zero
+#print axioms NLS.KdV.HillProductEquationPatch.momentSource
+#print axioms NLS.KdV.HillProductEquationPatch.momentSource_open
+#print axioms NLS.KdV.HillProductEquationPatch.momentJointDomain
+#print axioms NLS.KdV.HillProductEquationPatch.momentJointDomain_open
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMomentIntegrand
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMoment
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_centeredMomentIntegrand
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_centeredMoment
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMoment_zero_order
+#print axioms NLS.KdV.HillProductEquationPatch.exists_centeredMoment_neighborhood
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMoment_independent_primitive_neighborhood
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMomentIntegrand_eq_physical
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMoment_eq_square_contour
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMoment_eq_zero_of_selected_gap_zero
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMoment_eq_zero_of_original_gapSquare_zero
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMoment_eq_zero_of_original_action_zero
+#print axioms NLS.KdV.HillProductEquationPatch.centeredEnergySquare
+#print axioms NLS.KdV.HillProductEquationPatch.centeredMoment_eq_original_energy_contour
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_frequency_moment_neighborhood

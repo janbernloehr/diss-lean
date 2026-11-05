@@ -1789,6 +1789,11 @@ modules = [
     'NLS.KdV.PeriodOneKineticModePair',
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1CanonicalPotential',
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAtZero',
+    'NLS.KdV.HillCenteredPrimitiveMoments',
+    'NLS.KdV.HillPrimitiveMomentsPhysical',
+    'NLS.KdV.HillPrimitiveMomentsClosedGap',
+    'NLS.KdV.HillPrimitiveMomentsEnergyContour',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFrequencyMoments',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
