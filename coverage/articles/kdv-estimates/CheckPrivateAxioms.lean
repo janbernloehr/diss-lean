@@ -1422,6 +1422,13 @@ import NLS.KdV.HillOriginalHminusCompactness
 import NLS.KdV.HillOriginalBaseSpectralSequence
 import NLS.KdV.HillOriginalSpectralSequentialProperness
 import NLS.KdV.HillOriginalSpectralCompactPreimages
+import NLS.FunctionalAnalysis.NormPreservingDerivative
+import NLS.KdV.HillOriginalRealSpectralAnalytic
+import NLS.KdV.HillOriginalSequencePhysicalDifferential
+import NLS.KdV.HillOriginalMeanZeroSpectralDerivative
+import NLS.KdV.HillFreeStateCurves
+import NLS.KdV.HillFreeDirichletEnergyDerivatives
+import NLS.KdV.HillFreeDirichletGradientNormalization
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2619,7 +2626,9 @@ run_cmd do
     ``NLS.Poisson.gardnerHilbertDerivative,
     ``NLS.Poisson.gardnerHilbertDerivative_apply,
     ``NLS.Poisson.gardnerHilbertDerivative_weight_bound,
-    ``NLS.ComplexAnalysis.parametricCircleCauchyTransform.eq_1]
+    ``NLS.ComplexAnalysis.parametricCircleCauchyTransform.eq_1,
+    ``NLS.FunctionalAnalysis.derivativeZeroLinearIsometry,
+    ``NLS.FunctionalAnalysis.norm_derivative_zero_of_norm_map]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
