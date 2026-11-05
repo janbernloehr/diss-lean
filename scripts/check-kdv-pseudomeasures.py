@@ -1815,6 +1815,12 @@ modules = [
     'NLS.KdV.HillPrimitiveMomentAllIndexBound',
     'NLS.SequenceSpaces.PositiveWeightedMomentKernel',
     'NLS.Articles.KdVPseudomeasures.OriginalHillMomentAllIndexBounds',
+    'NLS.SequenceSpaces.SquaredGapMomentMajorant',
+    'NLS.SequenceSpaces.WeightedMomentRowBound',
+    'NLS.SequenceSpaces.WeightedMomentSeriesRealization',
+    'NLS.KdV.HillMomentWeightedSeriesBounds',
+    'NLS.KdV.HillMomentWeightedSeriesAnalytic',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillWeightedMomentSeries',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -2940,6 +2940,29 @@
         "NLS.Articles.KdVPseudomeasures.originalHill_exists_all_index_frequency_moment_bounds"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-all-index-bounds-map.json"
+    },
+    {
+      "label": "Actual positive rough Hill moment-sum sequence in inverse-index weighted lp: exact raw coefficients, norm estimates and full Banach-source analyticity on one common complex neighborhood for every p>1",
+      "status": "proved actual local weighted analytic spectral moment sequence; physical Hamiltonian-frequency identification and cross-patch gluing remain unproved; four main theorems remain unproved",
+      "declarations": [
+        "NLS.Coeff.squaredGapMagnitude",
+        "NLS.Coeff.squaredGapMagnitude_apply",
+        "NLS.Coeff.norm_squaredGapMagnitude",
+        "NLS.Coeff.squaredGapMomentMajorant",
+        "NLS.Coeff.norm_squaredGapMomentMajorant_apply",
+        "NLS.Coeff.norm_squaredGapMomentMajorant_le",
+        "NLS.Coeff.norm_puncturedLattice_positive_difference",
+        "NLS.Coeff.norm_weighted_positive_moment_row_le",
+        "NLS.Coeff.signed_inverse_weight_positive",
+        "NLS.Coeff.exists_weighted_positive_moment_series",
+        "NLS.KdV.HillProductEquationPatch.centeredSecondMomentSequence",
+        "NLS.KdV.HillProductEquationPatch.exists_weighted_centeredSecondMomentSeries",
+        "NLS.KdV.HillProductEquationPatch.centeredSecondMomentSequence_bound_and_coefficients",
+        "NLS.KdV.HillProductEquationPatch.analytic_positive_centeredSecondMomentSeries",
+        "NLS.KdV.HillProductEquationPatch.analytic_centeredSecondMomentSequence",
+        "NLS.Articles.KdVPseudomeasures.originalHill_exists_analytic_weighted_moment_series"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-weighted-moment-series-map.json"
     }
   ],
   "reuse_map": [
@@ -3019,9 +3042,9 @@
     }
   ],
   "remaining_obligations": [
-    "Apply the NOW PROVED all-index actual squared-gap second-moment bound and exact inverse-row-index kernel inequality to prove WEIGHTED ALL-row ell(-1,r) membership and locally uniform norm bounds for EVERY r>1, then full Banach analytic assembly in that target. Actual diagonal gap numerator bounds and finite low-gap ALL-row bounds are now COMPLETE and must not be treated as missing. Use squared-gap ell1, punctured reciprocal lattice ellr and Young convolution, with exact diagonal and inverse-n rank-one terms.",
-    "Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. Glue the already analytic local rough sums by genuine H1 agreement/density, or prove cross-Miura/product-patch independence directly. Exact free H1 frequency, global H1 analyticity including collapse, actual original contour/sheet normalization, local moment and infinite-row-sum analyticity, same-product-patch ambient independence and compact uniform partial-sum convergence remain PROVED. Actual rough KdV frequencies have NOT yet been identified.",
-    "Prove ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+    "Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. The ACTUAL local moment sums are now FULL Banach analytic in the literal positive-index ell(-1,p) target for EVERY p>1 on ONE common complex neighborhood before all p and all rows, with explicit norm bounds and exact raw coefficients. Their physical frequency identification is still unproved; do not substitute an arbitrary action-frequency map or ordinary NLS frequency.",
+    "Glue the NOW WEIGHTED-BANACH-ANALYTIC local rough spectral sums across DIFFERENT Miura/product patches via genuine dense H1 agreement after proving the physical formula, or prove cross-patch independence directly. Same-product-patch primitive-ambient independence is already proved. Establish the resulting actual rough KdV frequency estimates and ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -6679,7 +6702,7 @@
     "ONE_common_open_complex_source_neighborhood_BEFORE_ALL_rows_PROVED": true,
     "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
     "infinite_row_sum_analyticity_PROVED": true,
-    "weighted_ALL_row_sequence_bound_PROVED": false,
+    "weighted_ALL_row_sequence_bound_PROVED": true,
     "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
@@ -6690,7 +6713,8 @@
       "5.1",
       "5.9"
     ],
-    "analytic_series_followup_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-series-analytic-map.json"
+    "analytic_series_followup_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-series-analytic-map.json",
+    "weighted_series_followup_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-weighted-moment-series-map.json"
   },
   "actual_Hill_weighted_moment_series_analytic": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-series-analytic-map.json",
@@ -6704,7 +6728,7 @@
     "same_product_patch_primitive_ambient_independence_of_series_PROVED": true,
     "ACTUAL_partial_sums_uniformly_converge_on_EVERY_COMPACT_source_subset_PROVED": true,
     "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
-    "weighted_ALL_row_sequence_bound_PROVED": false,
+    "weighted_ALL_row_sequence_bound_PROVED": true,
     "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
     "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,
@@ -6715,7 +6739,8 @@
       "1.3",
       "5.1",
       "5.9"
-    ]
+    ],
+    "weighted_series_followup_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-weighted-moment-series-map.json"
   },
   "actual_Hill_moment_ALL_index_bounds": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-all-index-bounds-map.json",
@@ -6728,8 +6753,34 @@
     "genuine_MomentSeriesNeighborhood_factory_retains_ALL_scalar_series_analyticity_PROVED": true,
     "EXACT_inverse_row_index_kernel_le_punctured_reciprocal_plus_two_over_n_PROVED": true,
     "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
-    "weighted_ALL_row_ell_minus_one_r_membership_and_norm_bound_PROVED": false,
-    "weighted_ALL_row_Banach_analyticity_PROVED": false,
+    "weighted_ALL_row_ell_minus_one_r_membership_and_norm_bound_PROVED": true,
+    "weighted_ALL_row_Banach_analyticity_PROVED": true,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ],
+    "weighted_series_followup_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-weighted-moment-series-map.json"
+  },
+  "actual_Hill_weighted_moment_sequence": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-weighted-moment-series-map.json",
+    "ACTUAL_squared_gap_ell_one_sequence_with_EXACT_norm_PROVED": true,
+    "ACTUAL_all_row_lp_majorant_and_Young_norm_bound_EVERY_p_gt_one_PROVED": true,
+    "ACTUAL_infinite_inverse_row_index_sum_bound_PROVED": true,
+    "literal_positive_raw_moment_sum_weighted_ell_minus_one_p_membership_PROVED": true,
+    "EXACT_positive_inverse_index_weight_and_raw_coefficients_PROVED": true,
+    "EXACT_two_pi_normalization_in_raw_weighted_series_bound_PROVED": true,
+    "weighted_ALL_row_locally_uniform_norm_bound_PROVED": true,
+    "FULL_Banach_source_analyticity_of_ACTUAL_weighted_moment_sequence_PROVED": true,
+    "ONE_common_complex_source_neighborhood_BEFORE_ALL_p_gt_one_and_rows_PROVED": true,
+    "infinity_exponent_INCLUDED": true,
+    "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
     "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
     "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,

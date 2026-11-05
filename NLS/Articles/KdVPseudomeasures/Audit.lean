@@ -1781,6 +1781,12 @@ import NLS.KdV.HillMomentAllGapNumeratorBounds
 import NLS.KdV.HillPrimitiveMomentAllIndexBound
 import NLS.SequenceSpaces.PositiveWeightedMomentKernel
 import NLS.Articles.KdVPseudomeasures.OriginalHillMomentAllIndexBounds
+import NLS.SequenceSpaces.SquaredGapMomentMajorant
+import NLS.SequenceSpaces.WeightedMomentRowBound
+import NLS.SequenceSpaces.WeightedMomentSeriesRealization
+import NLS.KdV.HillMomentWeightedSeriesBounds
+import NLS.KdV.HillMomentWeightedSeriesAnalytic
+import NLS.Articles.KdVPseudomeasures.OriginalHillWeightedMomentSeries
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10639,3 +10645,19 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillMomentAllIndexBounds
 #print axioms NLS.KdV.HillProductEquationPatch.exists_momentSeriesNeighborhood_all_index_bound
 #print axioms NLS.Coeff.positive_weighted_moment_kernel_le
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_all_index_frequency_moment_bounds
+#print axioms NLS.Coeff.squaredGapMagnitude
+#print axioms NLS.Coeff.squaredGapMagnitude_apply
+#print axioms NLS.Coeff.norm_squaredGapMagnitude
+#print axioms NLS.Coeff.squaredGapMomentMajorant
+#print axioms NLS.Coeff.norm_squaredGapMomentMajorant_apply
+#print axioms NLS.Coeff.norm_squaredGapMomentMajorant_le
+#print axioms NLS.Coeff.norm_puncturedLattice_positive_difference
+#print axioms NLS.Coeff.norm_weighted_positive_moment_row_le
+#print axioms NLS.Coeff.signed_inverse_weight_positive
+#print axioms NLS.Coeff.exists_weighted_positive_moment_series
+#print axioms NLS.KdV.HillProductEquationPatch.centeredSecondMomentSequence
+#print axioms NLS.KdV.HillProductEquationPatch.exists_weighted_centeredSecondMomentSeries
+#print axioms NLS.KdV.HillProductEquationPatch.centeredSecondMomentSequence_bound_and_coefficients
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_positive_centeredSecondMomentSeries
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_centeredSecondMomentSequence
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_analytic_weighted_moment_series

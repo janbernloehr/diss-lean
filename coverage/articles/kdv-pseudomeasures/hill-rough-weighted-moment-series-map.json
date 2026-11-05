@@ -1,0 +1,158 @@
+{
+  "source": "arXiv:1610.00278v1 Lemma3.9/5.7 frequency dependencies for main1.1,1.3,5.9; actual moment-series weighted estimates for arXiv:1605.06690v1 Section3.1, with physical Hamiltonian-frequency identification still unproved",
+  "reference": "https://arxiv.org/html/1605.06690v1#S3.SS1",
+  "status": "Actual positive weighted rough Hill moment-sum sequence belongs to the literal inverse-index weighted lp target and is FULL Banach-source analytic for EVERY p>1 on ONE common complex source neighborhood.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-weighted-moment-series-map.json",
+    "ACTUAL_squared_gap_ell_one_sequence_with_EXACT_norm_PROVED": true,
+    "ACTUAL_all_row_lp_majorant_and_Young_norm_bound_EVERY_p_gt_one_PROVED": true,
+    "ACTUAL_infinite_inverse_row_index_sum_bound_PROVED": true,
+    "literal_positive_raw_moment_sum_weighted_ell_minus_one_p_membership_PROVED": true,
+    "EXACT_positive_inverse_index_weight_and_raw_coefficients_PROVED": true,
+    "EXACT_two_pi_normalization_in_raw_weighted_series_bound_PROVED": true,
+    "weighted_ALL_row_locally_uniform_norm_bound_PROVED": true,
+    "FULL_Banach_source_analyticity_of_ACTUAL_weighted_moment_sequence_PROVED": true,
+    "ONE_common_complex_source_neighborhood_BEFORE_ALL_p_gt_one_and_rows_PROVED": true,
+    "infinity_exponent_INCLUDED": true,
+    "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "SquaredGapMomentMajorant constructs the ACTUAL summable squared-gap magnitude b_k=norm(g_k)^2 from g:Coeff2, with EXACT norm(b)=norm(g)^2. For EVERY p>1, including infinity, it constructs an ACTUAL Coeffp majorant containing the diagonal term, convolution with the punctured reciprocal lattice kappa_p, and the inverse-index rank-one term. Its coefficient norm is exactly the sum of those nonnegative contributions, and its lp norm is at most(1+3*norm(kappa_p))*norm(g)^2 by verified Young convolution and contractive exponent inclusion.",
+    "WeightedMomentRowBound proves the full infinite weighted row inequality from the verified squared-gap matrix estimate: norm(n^-1*sum_m m*u_nm)<=B*norm(majorant_n) at EVERY positive row index. It proves all scalar series used in comparison are summable, treats the diagonal exactly, retains the2/n term from the verified signed-kernel inequality, and bounds positive-index subset sums by their actual full integer-lattice sums. No finite support or noncollapsed-gap assumption is introduced.",
+    "WeightedMomentSeriesRealization constructs an ACTUAL WeightedCoeff(Weight.signedSobolev(-1),p) sequence with RAW coefficients equal to the literal positive-index moment sum, zero extended outside the positive lattice. The weight at positive n is proved to be EXACTLY n^-1. Its norm is bounded by B*(1+3*norm(kappa_p))*norm(g)^2. Membership follows from the actual Coeffp majorant; no assumed sequence realization remains.",
+    "HillMomentWeightedSeriesBounds defines the actual total weighted realization of the LITERAL original Hill second-moment sums. On the common actual MomentSeriesNeighborhood with the PROVED full matrix bound, the zero fallback is ruled out and EVERY raw coefficient is exactly positiveScalarExtension(n -> sum_m m*P.centeredMoment W n m1q). The norm is at most(2*pi*D.constant)*(1+3*norm(kappa_p))*norm(actualMiuraDiracGapSequence)^2. The conversion from normalized moments to raw moments retains the EXACT2*pi factor.",
+    "HillMomentWeightedSeriesAnalytic proves FULL complex Banach-source analyticity of this ACTUAL weighted lp sequence map for EVERY p>1, including infinity, on D.source. Every raw coefficient is the already verified analytic literal scalar series; actual gap-sequence local norm bounds at EVERY COMPLEX source provide locally uniform weighted target norm bounds, and the verified weighted analytic realization theorem assembles the actual Banach map. This proves weighted ALL-row membership, norm estimates and Banach analyticity, beyond scalar row analyticity.",
+    "OriginalHillWeightedMomentSeries constructs the actual retained spectral family and full-bound neighborhood at EVERY ORIGINAL real mean-zero rough Fourier source. ONE open complex neighborhood is chosen BEFORE EVERY exponent p>1 and BEFORE ALL rows, and supports the weighted Banach analytic moment-sum map, exact raw coefficients and explicit norm bound for all such p. These are actual local spectral series. Equality with the genuine H1 Hamiltonian frequencies and gluing across DIFFERENT Miura/product patches remain OPEN; no actual rough KdV frequency or evolution theorem is claimed. Main1.4 and Appendix B remain COMPLETE; Main1.1,1.3,5.1,5.9 remain UNPROVED, goalACTIVE."
+  ],
+  "declarations": [
+    "NLS.Coeff.squaredGapMagnitude",
+    "NLS.Coeff.squaredGapMagnitude_apply",
+    "NLS.Coeff.norm_squaredGapMagnitude",
+    "NLS.Coeff.squaredGapMomentMajorant",
+    "NLS.Coeff.norm_squaredGapMomentMajorant_apply",
+    "NLS.Coeff.norm_squaredGapMomentMajorant_le",
+    "NLS.Coeff.norm_puncturedLattice_positive_difference",
+    "NLS.Coeff.norm_weighted_positive_moment_row_le",
+    "NLS.Coeff.signed_inverse_weight_positive",
+    "NLS.Coeff.exists_weighted_positive_moment_series",
+    "NLS.KdV.HillProductEquationPatch.centeredSecondMomentSequence",
+    "NLS.KdV.HillProductEquationPatch.exists_weighted_centeredSecondMomentSeries",
+    "NLS.KdV.HillProductEquationPatch.centeredSecondMomentSequence_bound_and_coefficients",
+    "NLS.KdV.HillProductEquationPatch.analytic_positive_centeredSecondMomentSeries",
+    "NLS.KdV.HillProductEquationPatch.analytic_centeredSecondMomentSequence",
+    "NLS.Articles.KdVPseudomeasures.originalHill_exists_analytic_weighted_moment_series"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/SquaredGapMomentMajorant.lean",
+    "NLS/SequenceSpaces/WeightedMomentRowBound.lean",
+    "NLS/SequenceSpaces/WeightedMomentSeriesRealization.lean",
+    "NLS/KdV/HillMomentWeightedSeriesBounds.lean",
+    "NLS/KdV/HillMomentWeightedSeriesAnalytic.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWeightedMomentSeries.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "126b52ddbc145af40499441a5d705d3d1edd10a5",
+    "baseline_modules": 1784,
+    "baseline_non_audit_sources_verified_unchanged": 1783,
+    "new_modules_compiled": 6,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.DoublingProduct",
+        "source": "NLS/SequenceSpaces/DoublingProduct.lean",
+        "source_sha256": "3396fd55dda572946db95de35e650016b1613c6e439aa75b20f1f416ab6bae3c"
+      },
+      {
+        "module": "NLS.SequenceSpaces.ConvolutionMajorants",
+        "source": "NLS/SequenceSpaces/ConvolutionMajorants.lean",
+        "source_sha256": "830bcf06266ee68d26c100a01cea6b5732bd07cf3f564d693acd855b9f602514"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PuncturedLattice",
+        "source": "NLS/SequenceSpaces/PuncturedLattice.lean",
+        "source_sha256": "dd7910dc04ab5f23fc841db7aa6f0b063b821970b0e03e48a54b2df1cdad03a2"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedAnalyticRealization",
+        "source": "NLS/SequenceSpaces/WeightedAnalyticRealization.lean",
+        "source_sha256": "3b4d11f15e039314f34709b46608f9909d0deddd14c3e9bff965b432ca2481b8"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourcePeriodicGapTails",
+        "source": "NLS/ZakharovShabat/SourcePeriodicGapTails.lean",
+        "source_sha256": "5b4bb4209434fb49a849946fb909cca4064f1320d0e289f532be5cd4076e72bc"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.WeightedRawDomination",
+        "source": "NLS/SequenceSpaces/WeightedRawDomination.lean",
+        "source_sha256": "fdb34f6c5f54c3600b3e984e9a3644c4661a1d4820c3d9ece6cd5fb8ea84c908",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillPrimitiveMomentAllIndexBound",
+        "source": "NLS/KdV/HillPrimitiveMomentAllIndexBound.lean",
+        "source_sha256": "f4928552a5e4a798d62ef65976e20b9960d402c753c56e6d305d1292811836bb",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillPrimitiveMomentSeriesAnalytic",
+        "source": "NLS/KdV/HillPrimitiveMomentSeriesAnalytic.lean",
+        "source_sha256": "52cc56a8e1e6fd585a658c1e392fc4210511fdbbec1476be7404bab1a406d6be",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1790,
+    "audited_declarations": 8871,
+    "theorems": 7471,
+    "definitions": 1400,
+    "new_theorems": 13,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-rough-weighted-moment-series.log",
+    "log_sha256": "2be9297521401e73015283feefc6f3c3dbb0fa3c5d24d56f559002bd9859844c"
+  },
+  "remaining_obligations": [
+    "Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. The ACTUAL local moment sums are now FULL Banach analytic in the literal positive-index ell(-1,p) target for EVERY p>1 on ONE common complex neighborhood before all p and all rows, with explicit norm bounds and exact raw coefficients. Their physical frequency identification is still unproved; do not substitute an arbitrary action-frequency map or ordinary NLS frequency.",
+    "Glue the NOW WEIGHTED-BANACH-ANALYTIC local rough spectral sums across DIFFERENT Miura/product patches via genuine dense H1 agreement after proving the physical formula, or prove cross-patch independence directly. Same-product-patch primitive-ambient independence is already proved. Establish the resulting actual rough KdV frequency estimates and ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}
