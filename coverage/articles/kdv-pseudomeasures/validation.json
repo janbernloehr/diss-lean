@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Prove the actual original period-one KdV momentum/action trace on the genuine physical L2 Banach space.",
+  "phase": "Prove actual L2 global analytic inverse, full native Hminus injectivity, endpoint weak-star inverse topology and commuting periodic actual action flows.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1659,13 +1659,24 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapMomentumDifferential.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillL2MomentumFunctionals.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillL2MomentumTrace.lean",
+    "NLS/FunctionalAnalysis/InverseGermDerivative.lean",
+    "NLS/SequenceSpaces/PhysicalCoefficientCompactness.lean",
+    "NLS/SequenceSpaces/CoeffLowerTopology.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillL2LocalHomeomorph.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillL2Compactness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillL2Properness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillL2GlobalInverse.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeInjectivity.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillInjectiveRestrictions.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionFlowTorus.lean",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem14WeakStar.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7065,
-  "definitions": 1327,
+  "proved_theorems": 7104,
+  "definitions": 1332,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 8392,
+    "declarations": 8436,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3051,8 +3062,8 @@
     "OriginalHillSpectralDarboux exports the SAMEoriginal physical potential, actual multipliers and local logarithmic normalization; their literal unit-period physical Gardner integral is zero, their closed-mean-zero cotangent bracket is intrinsic, and the full local spectral matrix holds at every original potential.",
     "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
   ],
-  "source_correspondence": "Prove the actual original period-one KdV momentum/action trace on the genuine physical L2 Banach space. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NOW PROVED actual full native Jacobian Banach equivalence, two-sided analytic local inverses, singleton zero fiber, native bijectivity iff closed map, and native injectivity iff actual L2/smooth/finite-gap injectivity. Genuine L2-to-signed-positive-half actual native map is FULLY real analytic with two-sided analytic local inverses and actual finite-gap density in TRUE L2 norm. NOW PROVED ACTUAL original KdV momentum/action trace for EVERY physical mean-zero L2 input: HasSum of (2*pi*n)*actual canonical I_n to 1/2*norm(original L2)^2; hence exact norm(original L2)^2=2*pi*norm(actual signed-positive-half output)^2. Next establish L2 local homeomorphism/DF equivalence explicitly and use compact L2-to-Hminus inclusion plus trace to prove L2 closedness/properness/globalbijection, then transfer L2 injection to native injection. NativeHminus onto/closedness STILL needs genuine varying-action bounds; fixed-isoset compactness is insufficient. Actual KdV evolution and ALL FIVE MAIN remain UNPROVED; goal ACTIVE. FULL precise sourceTheorem1.4 is NOW declared as sourceTheorem1_4Statement and PROVED CONDITIONAL ONLY on IsClosedMap hillRealSignedMap by sourceTheorem1_4_of_native_isClosedMap. Actual endpoint inverse regularity is unconditional for ANY actual native preimage of endpoint output. Native onto/injectivity transfer to endpoints; native injectivity supplies full weak-star homeomorphism on EVERY bounded subset, including nonclosed subsets. Actual native CLOSEDNESS/PROPERNESS/GLOBALBIJECTION remains UNPROVED, so sourceTheorem1.4 remains UNPROVED. Actual native globalbijectionIFFactualclosedmap is already proved via actual localhomeomorphism+genuine singletonzero. Other nonlinear scales and actualKdV still required; ALL MAIN statements remain UNPROVED. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. ALL1641 baseline non-audit registered sources byte-identical to b6b9db2. All12 new modules (48theorems+7definitions), 2 canonical-byte-identical shared modules, 5 unchanged PRIVATE dependencies and EXACT8392-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL original KdV momentum/action trace and norm(original L2)^2=2*pi*norm(actual positive-half output)^2 PROVED. L2/native global inverse/closedness/properness, actualKdV and ALL MAIN remain unproved. No new heartbeat settings or suppressions. Not a full fresh1654-module build.",
+  "source_correspondence": "Prove actual L2 global analytic inverse, full native Hminus injectivity, endpoint weak-star inverse topology and commuting periodic actual action flows. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NOW PROVED ACTUAL genuine physical mean-zero L2-to-signed-positive-half map is a GLOBAL REAL-ANALYTIC HOMEOMORPHISM, with analytic inverse EVERYWHERE. Exact KdV momentum trace, original L2 coefficient compactness, strong native Hminus continuity and no-norm-loss give actual L2 properness/closedness; true stronger-norm derivative equivalence and local homeomorphism plus original Borg singleton-zero and connected target give global L2 bijection. EXACT inverse norm squared=2*pi*target norm squared. The actual finite-gap collision reduction NOW transfers this to FULL native Hminus GLOBAL INJECTIVITY and OPEN EMBEDDING. ENTIRE original distributions and all endpoint sources have ACTUAL coordinate uniqueness. Native Hminus SURJECTIVITY/CLOSEDNESS/PROPERNESS remain OPEN and require genuine VARYING-ACTION bounds or another valid continuation argument. Fixed-isoset compactness, L2 trace and open dense image alone do NOT supply rough native onto. All FIVE MAIN/actualKdV remain OPEN; goal ACTIVE. FULL sourceTheorem1.4 remains UNPROVED because actual native SURJECTIVITY is OPEN. NEW sourceTheorem1_4_of_native_surjective proves the FULL precise statement CONDITIONAL ONLY on actual native onto; injectivity is NOW UNCONDITIONAL on full native/original endpoint sources. The FULL literal physical REAL Wiener weak-star inverse topology is NOW UNCONDITIONALLY PROVED on EVERY bounded original endpoint subset, including nonclosed subsets, and on full original isospectral endpoint sets: actual homeomorphism onto EXACT image. Forward analytic mapping, local analytic inverse at zero, original norm bounds, full-original-isoset bounds and inverse endpoint regularity for ANY native preimage remain proved. Do NOT mark the entire main theorem complete until actual endpoint/global native onto and all required clauses are verified. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. ALL1653 baseline non-audit registered sources byte-identical to85bd38a. All11 new modules (39theorems+5definitions), 2 canonical-byte-identical shared modules, 12 unchanged PRIVATE dependencies and EXACT8436-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL L2 global analytic homeomorphism/properness, FULL native/endpoint/original-distribution injectivity, unconditional bounded literal Wiener weak-star homeomorphism onto exact image and commuting2*pi-periodic actual action flows PROVED. Native Hminus onto/closedness/properness, actualKdV and ALL MAIN remain unproved. No new heartbeat settings or suppressions. Not a full fresh1665-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -4710,7 +4721,18 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapMomentumVector.lean": "13fd6a7a59f10f8086f5d7db8bc740481908e5dc2fa25273dbaacf1940ff0ab1",
     "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapMomentumDifferential.lean": "e003a3f27dfb818378f9f7487ea7e96dcea7ec6dea69eca0904eb7d1014d48cd",
     "NLS/Articles/KdVPseudomeasures/OriginalHillL2MomentumFunctionals.lean": "d5f59a422ba9b9f19a3585cf46f31701219851688ff31659239263e297171b50",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillL2MomentumTrace.lean": "f78a89f89a1247618dc10b534d937418e84c8f1c92ab805cb0fb77e355ea8a17"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillL2MomentumTrace.lean": "f78a89f89a1247618dc10b534d937418e84c8f1c92ab805cb0fb77e355ea8a17",
+    "NLS/FunctionalAnalysis/InverseGermDerivative.lean": "0860c63ff89a0573ccee257533858e4f656fbfa0b5b80ea3660592ba10f8c2f7",
+    "NLS/SequenceSpaces/PhysicalCoefficientCompactness.lean": "9b2ecfba8e859667714b1feb9e9da3019525dc52c23e24d9c47bcda9d1e98e5f",
+    "NLS/SequenceSpaces/CoeffLowerTopology.lean": "bfae2c8a7e0aa04b645c6b276e6e0554f6b6b34e19ed56ad1238cad3e9196a93",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillL2LocalHomeomorph.lean": "83c5844f4081746ca5372d417c45f12ecb72de1c88207bfe66a9b254de55c705",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillL2Compactness.lean": "de7bfe0601abec77bc7c8ab31465cef25326a1f8af70b22b9fa456053a6d1b26",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillL2Properness.lean": "bd27116c75ccd800f79c9dc67c2537f6ccb4270952f635d26b51af25944c90ad",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillL2GlobalInverse.lean": "da2dbee73d8b07884ca031e45d63d5e17d02ec314def0fb94456a72965ce5d3b",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeInjectivity.lean": "bd0622d8798566fbefb40a16bcc96ef235e0fbdfefb3d70a7dfd93d8645a7d31",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillInjectiveRestrictions.lean": "58cc35d07e0f18342515717bc6d39b546bb595cf45f063ee0b9402a3e545f83e",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionFlowTorus.lean": "88266f7c8f8b4be7f899315b23f52c723c30533ce364a19cdb254e10cca5deb3",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem14WeakStar.lean": "4e761f0d5a6eacd028ddf3ca42467bd03888442ccdad937e7d4709c476963b33"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -4718,11 +4740,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 8337,
-    "newly_checked_declarations_this_continuation": 55,
-    "new_theorems": 48,
-    "new_definitions": 7,
-    "total_checked_declarations": 8392
+    "previous_checked_declarations": 8392,
+    "newly_checked_declarations_this_continuation": 44,
+    "new_theorems": 39,
+    "new_definitions": 5,
+    "total_checked_declarations": 8436
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -4751,7 +4773,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-momentum-trace.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-global-native-injection.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5099,13 +5121,14 @@
     "All writes private; canonical checkout/shared metadata read-only. ALL1623 baseline non-audit registered sources byte-identical to2161fa3. All4 new modules (9theorems+0definitions), 2 canonical-byte-identical shared modules, 4 unchanged PRIVATE dependencies and EXACT8264-declaration transitive standard-axiom audit freshly compiled privately. Actual FULL native DF spatial-generator identity, full-order signed generator gain and UNCONDITIONAL positive-half native output regularity of EVERY original L2 source proved. Inverse L2 regularity, momentum trace, native global inverse/closedness/properness, actualKdV and ALL MAIN remain unproved. No new heartbeat settings. Not a full fresh1628-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata read-only. ALL1627 baseline non-audit registered sources byte-identical to37f8fb1. All5 new modules (16theorems+3definitions), 1 canonical-byte-identical shared modules, 7 unchanged PRIVATE dependencies and EXACT8283-declaration transitive standard-axiom audit freshly compiled privately. Full signed physical generator operators/strong derivatives, exact original Hminus generator-domain L2 characterization and EXACT original L2/source IFF actual native signed positive-half/output regularity proved. True analytic L2 mapping/local inversion, momentum trace, native global inverse/closedness/properness, actualKdV and ALL MAIN remain unproved. No new heartbeat settings. Not a full fresh1633-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata read-only. ALL1632 baseline non-audit registered sources byte-identical toea2ca7e. All9 new modules (43theorems+11definitions), 1 canonical-byte-identical shared modules, 8 unchanged PRIVATE dependencies and EXACT8337-declaration transitive standard-axiom audit freshly compiled privately. GENUINE original L2 and signedpositivehalf Banach models; SAME actual map fully REAL ANALYTIC via bounded generator recovery; TWO-SIDED analytic local inverses; quantitative pointwise Jacobian norm bounds; ACTUAL finite-gap density in TRUE L2 norm proved. Momentum trace, L2/native global inverse/closedness/properness, actualKdV and ALL MAIN remain unproved. No new heartbeat settings or suppressions. Not a full fresh1642-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata read-only. ALL1641 baseline non-audit registered sources byte-identical to b6b9db2. All12 new modules (48theorems+7definitions), 2 canonical-byte-identical shared modules, 5 unchanged PRIVATE dependencies and EXACT8392-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL original KdV momentum/action trace and norm(original L2)^2=2*pi*norm(actual positive-half output)^2 PROVED. L2/native global inverse/closedness/properness, actualKdV and ALL MAIN remain unproved. No new heartbeat settings or suppressions. Not a full fresh1654-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata read-only. ALL1641 baseline non-audit registered sources byte-identical to b6b9db2. All12 new modules (48theorems+7definitions), 2 canonical-byte-identical shared modules, 5 unchanged PRIVATE dependencies and EXACT8392-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL original KdV momentum/action trace and norm(original L2)^2=2*pi*norm(actual positive-half output)^2 PROVED. L2/native global inverse/closedness/properness, actualKdV and ALL MAIN remain unproved. No new heartbeat settings or suppressions. Not a full fresh1654-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata read-only. ALL1653 baseline non-audit registered sources byte-identical to85bd38a. All11 new modules (39theorems+5definitions), 2 canonical-byte-identical shared modules, 12 unchanged PRIVATE dependencies and EXACT8436-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL L2 global analytic homeomorphism/properness, FULL native/endpoint/original-distribution injectivity, unconditional bounded literal Wiener weak-star homeomorphism onto exact image and commuting2*pi-periodic actual action flows PROVED. Native Hminus onto/closedness/properness, actualKdV and ALL MAIN remain unproved. No new heartbeat settings or suppressions. Not a full fresh1665-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-momentum-trace-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-global-native-injection-map.json",
   "baseline_validated_snapshot": {
-    "commit": "b6b9db23a8fcfbcca729c5b180d2c5d910fc6b34",
-    "modules": 1642,
-    "audited_declarations": 8337,
+    "commit": "85bd38a1d0a896c53b65d1de5a111c8f3b6786ed",
+    "modules": 1654,
+    "audited_declarations": 8392,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -7810,6 +7833,30 @@
     "actual_native_global_surjectivity_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "actual_Hill_L2_global_native_injection": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-global-native-injection-map.json",
+    "actual_L2_DF_Banach_equivalence_and_local_homeomorphism_PROVED": true,
+    "actual_L2_scale_properness_and_closedness_PROVED": true,
+    "actual_L2_scale_global_injectivity_PROVED": true,
+    "actual_L2_scale_global_surjectivity_PROVED": true,
+    "actual_L2_scale_global_REAL_ANALYTIC_homeomorphism_and_inverse_PROVED": true,
+    "exact_original_L2_inverse_norm_squared_eq_2_pi_target_norm_squared_PROVED": true,
+    "actual_native_global_injectivity_PROVED": true,
+    "actual_native_open_embedding_PROVED": true,
+    "ENTIRE_original_Hminus_distribution_uniqueness_from_ACTUAL_coordinates_PROVED": true,
+    "actual_endpoint_global_injectivity_literal_article_target_PROVED": true,
+    "EVERY_bounded_source_subset_FULL_LITERAL_Wiener_weak_star_homeomorphism_onto_EXACT_IMAGE_PROVED": true,
+    "FULL_original_isospectral_endpoint_weak_star_homeomorphism_onto_image_PROVED": true,
+    "ACTUAL_indexed_action_flows_SOURCE_2_pi_periodicity_and_commutation_PROVED": true,
+    "full_sourceTheorem1_4_CONDITIONAL_ONLY_native_surjectivity_PROVED": true,
+    "actual_native_closed_map_PROVED": false,
+    "actual_native_properness_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "universal_actual_numerator_scalar_PROVED": false,
     "global_Birkhoff_theorem_PROVED": false
   }
 }

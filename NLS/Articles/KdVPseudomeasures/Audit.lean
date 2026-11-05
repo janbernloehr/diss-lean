@@ -1651,6 +1651,17 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMomentumVector
 import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMomentumDifferential
 import NLS.Articles.KdVPseudomeasures.OriginalHillL2MomentumFunctionals
 import NLS.Articles.KdVPseudomeasures.OriginalHillL2MomentumTrace
+import NLS.FunctionalAnalysis.InverseGermDerivative
+import NLS.SequenceSpaces.PhysicalCoefficientCompactness
+import NLS.SequenceSpaces.CoeffLowerTopology
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2LocalHomeomorph
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2Compactness
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2Properness
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2GlobalInverse
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeInjectivity
+import NLS.Articles.KdVPseudomeasures.OriginalHillInjectiveRestrictions
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionFlowTorus
+import NLS.Articles.KdVPseudomeasures.MainTheorem14WeakStar
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10046,3 +10057,47 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillL2MomentumTrace
 #print axioms NLS.Articles.KdVPseudomeasures.hasSum_hillL2CanonicalAction_momentum
 #print axioms NLS.Articles.KdVPseudomeasures.norm_sq_hillL2NativeMap
 #print axioms NLS.Articles.KdVPseudomeasures.norm_sq_hillL2SourceCoefficients
+#print axioms NLS.FunctionalAnalysis.fderiv_comp_eq_id_of_inverse_germs
+#print axioms NLS.FunctionalAnalysis.exists_fderiv_equiv_of_inverse_germs
+#print axioms NLS.WeightedCoeff.exists_fourierRealZero_coefficientwise_subseq
+#print axioms NLS.WeightedCoeff.tendsto_fourierRealZero_of_coefficientwise_of_norm_sq
+#print axioms NLS.WeightedCoeff.endpointOfCoefficients
+#print axioms NLS.WeightedCoeff.endpointOfCoefficients_apply
+#print axioms NLS.WeightedCoeff.norm_endpointOfCoefficients_le
+#print axioms NLS.WeightedCoeff.lowerOfCoefficients
+#print axioms NLS.WeightedCoeff.lowerOfCoefficients_apply
+#print axioms NLS.WeightedCoeff.tendsto_lowerOfCoefficients_of_bounded_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillL2NativeMap_derivative_equiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeJacobianEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeJacobianEquiv_toContinuousLinearMap
+#print axioms NLS.Articles.KdVPseudomeasures.isLocalHomeomorph_hillL2NativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.isOpenMap_hillL2NativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2SourceInclusion_lowerCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_hillL2SourceInclusion_of_bounded_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2_source_bounded_of_nativeMap_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_hillL2_of_coefficients_of_nativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.isProperMap_hillL2NativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.isClosedMap_hillL2NativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeMap_eq_zero_iff
+#print axioms NLS.Articles.KdVPseudomeasures.bijective_hillL2NativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeHomeomorph
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeHomeomorph_apply
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillL2NativeHomeomorph_symm
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sq_hillL2NativeHomeomorph_symm
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillL2Source_representative_of_mem_L2Locus
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSignedMap_injOn_L2
+#print axioms NLS.Articles.KdVPseudomeasures.injective_hillRealSignedMap
+#print axioms NLS.Articles.KdVPseudomeasures.isOpenEmbedding_hillRealSignedMap
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_coordinates_injective
+#print axioms NLS.Articles.KdVPseudomeasures.endpointPhysicalNativeSourceInclusion_injective
+#print axioms NLS.Articles.KdVPseudomeasures.injective_hillEndpointRealSignedMap
+#print axioms NLS.Articles.KdVPseudomeasures.injective_articleEndpointPhysicalMap
+#print axioms NLS.Articles.KdVPseudomeasures.injective_articleEndpointCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_periodic
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_commute
+#print axioms NLS.Articles.KdVPseudomeasures.injective_articleEndpointWeakStarCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.isEmbedding_articleEndpointWeakStarCoordinates_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarHomeomorphRange
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarHomeomorphRange_apply
+#print axioms NLS.Articles.KdVPseudomeasures.isEmbedding_articleEndpointWeakStarCoordinates_on_full_isospectral_set
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_4_of_native_surjective

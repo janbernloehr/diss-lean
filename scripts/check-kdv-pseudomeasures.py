@@ -1685,6 +1685,17 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMomentumDifferential',
     'NLS.Articles.KdVPseudomeasures.OriginalHillL2MomentumFunctionals',
     'NLS.Articles.KdVPseudomeasures.OriginalHillL2MomentumTrace',
+    'NLS.FunctionalAnalysis.InverseGermDerivative',
+    'NLS.SequenceSpaces.PhysicalCoefficientCompactness',
+    'NLS.SequenceSpaces.CoeffLowerTopology',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2LocalHomeomorph',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2Compactness',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2Properness',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2GlobalInverse',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeInjectivity',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillInjectiveRestrictions',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillActionFlowTorus',
+    'NLS.Articles.KdVPseudomeasures.MainTheorem14WeakStar',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
