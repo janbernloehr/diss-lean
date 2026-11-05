@@ -6259,3 +6259,10 @@ import NLS.KdV.HillFullPhaseSquare
 import NLS.KdV.HillPhaseSquareEndpoints
 import NLS.KdV.HillPhaseOpenGap
 import NLS.KdV.HillPhaseLocalSign
+import NLS.KdV.HillHminusRelativeRoot
+import NLS.KdV.HillHminusRelativeAction
+import NLS.KdV.HillFixedPhysicalAction
+import NLS.KdV.HillHminusRelativeActionMatching
+import NLS.KdV.HillHminusIsospectralActionGerms
+import NLS.KdV.HillHminusRelativeAmplitude
+import NLS.KdV.HillHminusCartesianGerms
