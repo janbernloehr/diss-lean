@@ -1137,6 +1137,11 @@ modules=(
   NLS/KdV/HillMiuraNumeratorExterior
   NLS/KdV/HillMiuraPhysicalProductDecay
   NLS/Articles/KdVKdV2Frequencies/NativePhysicalNumeratorDecay
+  NLS/ComplexAnalysis/CircleSquaredBandHomotopy
+  NLS/KdV/HillFrequencyContourPhysicalBands
+  NLS/KdV/HillFrequencyPhysicalPeriodTransfer
+  NLS/ComplexAnalysis/AnalyticLinearSourcePullback
+  NLS/Articles/KdVKdV2Frequencies/PhysicalNormalizedFamilyIdentification
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

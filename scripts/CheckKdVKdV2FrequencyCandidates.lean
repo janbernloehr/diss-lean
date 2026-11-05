@@ -1,3 +1,4 @@
+import NLS.Articles.KdVKdV2Frequencies.PhysicalNormalizedFamilyIdentification
 import NLS.Articles.KdVKdV2Frequencies.NativePhysicalNumeratorDecay
 import NLS.SequenceSpaces.HilbertMatrixTransposeAnalytic
 import NLS.KdV.HillHminusOneNormalizedNumeratorSequence
@@ -1395,7 +1396,12 @@ run_cmd do
     `NLS.ComplexAnalysis.SquareRootExteriorShift,
     `NLS.KdV.HillMiuraNumeratorExterior,
     `NLS.KdV.HillMiuraPhysicalProductDecay,
-    `NLS.Articles.KdVKdV2Frequencies.NativePhysicalNumeratorDecay
+    `NLS.Articles.KdVKdV2Frequencies.NativePhysicalNumeratorDecay,
+    `NLS.ComplexAnalysis.CircleSquaredBandHomotopy,
+    `NLS.KdV.HillFrequencyContourPhysicalBands,
+    `NLS.KdV.HillFrequencyPhysicalPeriodTransfer,
+    `NLS.ComplexAnalysis.AnalyticLinearSourcePullback,
+    `NLS.Articles.KdVKdV2Frequencies.PhysicalNormalizedFamilyIdentification
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest physical gap-product decay of actual normalized numerators
+## Latest common native physical normalized differential family
+
+There is now one jointly complex analytic native output-index Hilbert numerator family on all energies times a common complex period-one L2 source ball. At EVERY real physical source in that ball, EVERY positive index and EVERY energy, the literal component equals the existing globally selected physical normalized numerator. Exact free components, nonpositive zero extension and native Bochner Kronecker periods remain on the same complex ball. Actual rough frequency periods transfer to physical intrinsic gap periods with their exact sheet, orientation and2z Jacobian, including own/closed gaps and the first mode. The proved exterior uniqueness criterion gives physical identification with no remaining period assumption for this family near zero.
+
+See `PHYSICAL_NORMALIZED_FAMILY.md`. This is the physical differential NUMERATOR family. Uniform moving-contour/regular-phase bounds and the native physical Abelian COORDINATE map, full Sobolev scale, canonicality/global inverse and Hamiltonian/action-frequency conclusions remain open.
+
+Prior strict evidence for all 1128 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1133 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1163 frozen source/checker/provenance hashes, all 28 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1133-module rebuild is claimed.
+
+Fresh audit: 10429 selected and 32597 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier physical gap-product decay of actual normalized numerators
 
 The actual Miura energy numerator/discriminant-derivative quotient now has a32/R_k bound over every sufficiently large complete energy circle, retaining the fixed complex energy translation and both square-root signs. The actual physical derivative/full-gap-product quotient is bounded by4. Consequently the actual common-ball native Hilbert numerator family satisfies the full physical gap-product exterior decay at every physical L2 source in that ball. The globally selected physical numerator has the same decay, and equality of these actual numerators is now equivalent to physical intrinsic Kronecker periods.
 

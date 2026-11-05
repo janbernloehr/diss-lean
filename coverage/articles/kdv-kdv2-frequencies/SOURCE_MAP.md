@@ -1004,3 +1004,14 @@ See `PHYSICAL_NUMERATOR_PRODUCT_DECAY.md`. Physical intrinsic period transfer is
 Prior strict evidence for all 1124 unchanged selected baseline sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 1128 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1158 frozen source/checker/provenance hashes, all 28 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1128-module rebuild is claimed.
 
 Fresh audit: 10409 selected and 32577 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest common native physical normalized differential family
+
+There is now one jointly complex analytic native output-index Hilbert numerator family on all energies times a common complex period-one L2 source ball. At EVERY real physical source in that ball, EVERY positive index and EVERY energy, the literal component equals the existing globally selected physical normalized numerator. Exact free components, nonpositive zero extension and native Bochner Kronecker periods remain on the same complex ball. Actual rough frequency periods transfer to physical intrinsic gap periods with their exact sheet, orientation and2z Jacobian, including own/closed gaps and the first mode. The proved exterior uniqueness criterion gives physical identification with no remaining period assumption for this family near zero.
+
+See `PHYSICAL_NORMALIZED_FAMILY.md`. This is the physical differential NUMERATOR family. Uniform moving-contour/regular-phase bounds and the native physical Abelian COORDINATE map, full Sobolev scale, canonicality/global inverse and Hamiltonian/action-frequency conclusions remain open.
+
+Prior strict evidence for all 1128 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1133 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1163 frozen source/checker/provenance hashes, all 28 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1133-module rebuild is claimed.
+
+Fresh audit: 10429 selected and 32597 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
