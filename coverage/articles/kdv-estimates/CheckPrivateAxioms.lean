@@ -1311,6 +1311,17 @@ import NLS.ZakharovShabat.SourceAngularPairedPrimitives
 import NLS.ComplexAnalysis.RealPositiveEnergyLift
 import NLS.KdV.HillPhysicalCosineFrequencyPath
 import NLS.KdV.HillHminusOriginalCosineLift
+import NLS.ComplexAnalysis.QuadraticCosinePathIntegrability
+import NLS.KdV.HillCosineSourceGap
+import NLS.KdV.HillSelectedCosineArc
+import NLS.KdV.HillCosineSourceSheet
+import NLS.KdV.HillCosineSourceIntegrability
+import NLS.KdV.HillCosineSourceBeta
+import NLS.KdV.HillOriginalTerminalBeta
+import NLS.KdV.HillZeroTerminalCorrection
+import NLS.ZakharovShabat.SourceBetaZeroSheet
+import NLS.KdV.HillOriginalPairedBeta
+import NLS.KdV.HillOriginalOffIndexSourceSeries
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2484,7 +2495,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.positiveRealEnergyLift_eq_of_sq,
     ``NLS.ComplexAnalysis.positiveRealEnergyLift_re_pos,
     ``NLS.ComplexAnalysis.positiveRealEnergyLift_sq,
-    ``NLS.ComplexAnalysis.quadraticEnergyPath_positiveRealEnergyLiftPath]
+    ``NLS.ComplexAnalysis.quadraticEnergyPath_positiveRealEnergyLiftPath,
+    ``NLS.ComplexAnalysis.curveIntegrable_of_quadratic_cosine_resolution,
+    ``NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_eq_zero_of_sheet_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -6234,3 +6234,14 @@ import NLS.ZakharovShabat.SourceAngularPairedPrimitives
 import NLS.ComplexAnalysis.RealPositiveEnergyLift
 import NLS.KdV.HillPhysicalCosineFrequencyPath
 import NLS.KdV.HillHminusOriginalCosineLift
+import NLS.ComplexAnalysis.QuadraticCosinePathIntegrability
+import NLS.KdV.HillCosineSourceGap
+import NLS.KdV.HillSelectedCosineArc
+import NLS.KdV.HillCosineSourceSheet
+import NLS.KdV.HillCosineSourceIntegrability
+import NLS.KdV.HillCosineSourceBeta
+import NLS.KdV.HillOriginalTerminalBeta
+import NLS.KdV.HillZeroTerminalCorrection
+import NLS.ZakharovShabat.SourceBetaZeroSheet
+import NLS.KdV.HillOriginalPairedBeta
+import NLS.KdV.HillOriginalOffIndexSourceSeries
