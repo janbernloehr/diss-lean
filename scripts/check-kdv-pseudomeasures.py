@@ -1720,6 +1720,13 @@ modules = [
     'NLS.KdV.HillMiuraRealLocalInverse',
     'NLS.KdV.HillRiccatiMeanZeroLift',
     'NLS.Articles.KdVPseudomeasures.OriginalHillMeanZeroMiuraLift',
+    'NLS.ComplexAnalysis.InverseSquareMassContour',
+    'NLS.ComplexAnalysis.FilledSquareOverZero',
+    'NLS.ComplexAnalysis.ShiftedSquareWeightedCircle',
+    'NLS.ZakharovShabat.SourceFullAbelianInverseMassContour',
+    'NLS.ZakharovShabat.SourceFullAbelianInverseGapCircle',
+    'NLS.ZakharovShabat.SourceFiniteGapInverseMoment',
+    'NLS.KdV.HillMiuraInverseMoment',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

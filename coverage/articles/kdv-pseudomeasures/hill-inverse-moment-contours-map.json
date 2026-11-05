@@ -1,0 +1,141 @@
+{
+  "source": "arXiv:1610.00278v1 actual rough Hill/Miura dependency; inverse-frequency finite-gap physical moment contour proof",
+  "status": "Actual finite-gap inverse-frequency primitive moment balance, with physical mass coefficient and central pole filled before finite-hole contour decomposition. Real boundary conversion/action Cauchy-Schwarz/global rough coercivity and ALL FIVE MAIN remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-inverse-moment-contours-map.json",
+    "ACTUAL_finiteGap_inverse_square_outer_contour_eq_two_pi_i_physical_mass_PROVED": true,
+    "central_pole_analytic_filling_BEFORE_contour_decomposition_PROVED": true,
+    "actual_full_primitive_central_zero_value_and_open_domain_PROVED": true,
+    "ACTUAL_local_inverse_square_circle_eq_minus_two_i_pi_n_inverse_primitive_PROVED": true,
+    "EVERY_noncentral_selected_isolating_disc_EXCLUDES_zero_PROVED": true,
+    "ACTUAL_finiteGap_full_signed_inverse_contour_moment_balance_PROVED": true,
+    "physical_mean_zero_Miura_inverse_contour_moment_eq_ORIGINAL_L2_norm_sq_PROVED": true,
+    "global_mean_zero_Riccati_lift_existence_ENTIRE_original_domain_PROVED": true,
+    "local_inverse_primitive_contours_eq_real_inverse_gap_integrals_PROVED": false,
+    "finiteGap_inverse_action_Cauchy_Schwarz_lift_bound_PROVED": false,
+    "global_inverse_action_mean_zero_lift_bound_PROVED": false,
+    "actual_native_varying_action_norm_coercivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false
+  },
+  "results": [
+    "InverseSquareMassContour proves directly from the ACTUAL convergent inverse-frequency phase and its first Taylor coefficient that the circle integral of (-i*z+A(1/z))^2/z equals EXACTLY2*pi*i*physicalMass. An analytic function g(w)=-2*i*A(w)+w*A(w)^2 extracts the genuine first Taylor coefficient through the verified inversion-circle theorem; no formal residue assumption or unverified infinity asymptotic is substituted.",
+    "FilledSquareOverZero constructs z*(dslope(F,0,z))^2. It is analytic on the ENTIRE original open domain containing0 whenever F is analytic there, equals F(z)^2/z at every nonzero point IF F(0)=0, and has exact value0 at0. Thus the central singularity is removed BEFORE any contour decomposition, rather than silently ignoring a central residue.",
+    "SourceFullAbelianInverseMassContour transfers the inverse-square mass coefficient to the ACTUAL original full Abelian primitive at EVERY real finite-gap source, every original finite Banach exponent and every retained uniform Cauchy family. A collapsed central endpoint at0 supplies its EXACT normalized value F_0(0)=0 and membership in the original open-gap complement. The filled inverse square is analytic on that ENTIRE complement, including0.",
+    "ShiftedSquareWeightedCircle proves that a holomorphic weight annihilates the filled square and constant terms of a shifted square. SourceFullAbelianInverseGapCircle applies this to the ACTUAL indexed primitive with literal weight1/z on EVERY selected circle whose WHOLE filled disc excludes0. It proves EXACTLY integral(F_0^2/z)=(-2*i*pi*n)*integral(F_n/z), retaining original signed index n and normalization. The filled selected square, root-domain circle and analytic inverse weight are all VERIFIED.",
+    "SourceFiniteGapInverseMoment proves the ACTUAL finite-gap contour moment balance: physicalMass = -sum_over_original_open_signed_gaps n*integral(F_n(z)/z). The selected radii are the genuine intermediate uniform isolating radii. A central collapsed gap at0 is omitted because it is closed; the original disjoint isolating discs prove0 is outside EVERY other selected disc. Finite-hole Cauchy decomposition is applied to the analytic FILLED inverse square, and the verified outer physical mass and local circle identities give the exact finite sum. No contour hypothesis or missing pole is hidden in the conclusion.",
+    "HillMiuraInverseMoment verifies the central zero endpoint/collapse data for EVERY physical real MEAN-ZERO L2 lift and proves its actual full primitive value0 and whole-domain filled inverse-square analyticity. At EVERY genuine finite-gap such lift, the COMPLETE original signed inverse contour moment is EXACTLY the ORIGINAL lift L2 squared norm. The mass identification uses the physical opposite-index Hilbert pairing, not a generic NLS action or differently normalized trace.",
+    "The actual finite-gap CONTOUR moment balance is NOW PROVED. Still OPEN: convert its local inverse primitive contours to literal real inverse gap integrals; prove the resulting Cauchy-Schwarz action bound; transfer that genuine estimate to arbitrary rough sources through verified finite-gap approximation. Global mean-zero Riccati lift existence, source polynomial bound from a lift and exact inverse-action/native norm identity remain PROVED. Native coercivity/onto/properness, actualKdV and ALL FIVE MAIN remain UNPROVED; goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.ComplexAnalysis.exists_phase_inverse_square_mass_contour",
+    "NLS.ComplexAnalysis.filledSquareOverZero",
+    "NLS.ComplexAnalysis.filledSquareOverZero_zero",
+    "NLS.ComplexAnalysis.filledSquareOverZero_eq_div",
+    "NLS.ComplexAnalysis.analyticOnNhd_filledSquareOverZero",
+    "NLS.ComplexAnalysis.circleIntegral_shifted_square_weight",
+    "NLS.ZakharovShabat.exists_sourceFullAbelian_finiteGap_inverse_mass_contour",
+    "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.central_zero_value_and_mem",
+    "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.analytic_filled_inverse_square_of_central_zero",
+    "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.inverse_square_circle_eq_inverse_primitive",
+    "NLS.ZakharovShabat.sourceFiniteGap_inverse_moment_balance",
+    "NLS.KdV.hillMiura_mean_zero_central_data",
+    "NLS.KdV.hillMiura_fullPrimitive_zero_of_mean_zero",
+    "NLS.KdV.analytic_hillMiura_filled_inverse_square",
+    "NLS.KdV.hillMiura_finiteGap_inverse_moment_norm_sq"
+  ],
+  "files": [
+    "NLS/ComplexAnalysis/InverseSquareMassContour.lean",
+    "NLS/ComplexAnalysis/FilledSquareOverZero.lean",
+    "NLS/ComplexAnalysis/ShiftedSquareWeightedCircle.lean",
+    "NLS/ZakharovShabat/SourceFullAbelianInverseMassContour.lean",
+    "NLS/ZakharovShabat/SourceFullAbelianInverseGapCircle.lean",
+    "NLS/ZakharovShabat/SourceFiniteGapInverseMoment.lean",
+    "NLS/KdV/HillMiuraInverseMoment.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "97c1c0027c7edf2fd1ec44948a87251c4a2aebf3",
+    "baseline_modules": 1689,
+    "baseline_non_audit_sources_verified_unchanged": 1688,
+    "new_modules_compiled": 7,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ComplexAnalysis.InversionCircleCoefficients",
+        "source": "NLS/ComplexAnalysis/InversionCircleCoefficients.lean",
+        "source_sha256": "ffc80bc1be3552cca130f642a6bfa098d4872e87c5d40a3e9788141568687c7d"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianMassCoefficient",
+        "source": "NLS/ZakharovShabat/SourceFullAbelianMassCoefficient.lean",
+        "source_sha256": "ec92d2eabd67f794609941cd9196edee7db415998c2dca35e75de84f5d88156f"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianUniformEndpoints",
+        "source": "NLS/ZakharovShabat/SourceFullAbelianUniformEndpoints.lean",
+        "source_sha256": "1104d42137a6185991e07a0954e62d83dfff57fd8ca882741987e7d710ea936d"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianCauchySquare",
+        "source": "NLS/ZakharovShabat/SourceFullAbelianCauchySquare.lean",
+        "source_sha256": "c9230cb16cd40edd0c6a321db474f3618bd10b92baa955c7c92e211ed1f52069"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFiniteGapContourDecomposition",
+        "source": "NLS/ZakharovShabat/SourceFiniteGapContourDecomposition.lean",
+        "source_sha256": "f86d60de2b004e3c1b62481b5c91d60b5be9db7175cc18d4005229b6ec1bb676"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceAbelianMomentCircleVanishing",
+        "source": "NLS/ZakharovShabat/SourceAbelianMomentCircleVanishing.lean",
+        "source_sha256": "94829661319f682213882b5d0a3d2a81cc4ebff49b999c4a918f395cb5e041ae"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.KdV.HillMiuraCentralMean",
+        "source": "NLS/KdV/HillMiuraCentralMean.lean",
+        "source_sha256": "819743c6e237cfc1837327074baab844975f935329cf3def5a04b33ed564d9dd",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PhysicalHilbertQuadratic",
+        "source": "NLS/SequenceSpaces/PhysicalHilbertQuadratic.lean",
+        "source_sha256": "156eedbf14bab4a68a3bda392c263cdd63f7e16f445f7678fc05e1be438f4772",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1696,
+    "audited_declarations": 8533,
+    "theorems": 7192,
+    "definitions": 1341,
+    "new_theorems": 14,
+    "new_definitions": 1,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-inverse-moment-contours.log",
+    "log_sha256": "c1faf7a3e79b3d39cb2cb94fa5f83d6cebd6f065bac67f07e888bbfbf32b8194"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED actual L2 global REAL-ANALYTIC homeomorphism/properness, FULL native Hminus/original/endpoint injectivity and bounded literal Wiener weak-star inverse topology. NEW actual bounded-source action compactness on ENTIRE original distribution domain: ONE source realizes simultaneous limits of ALL indexed actual actions along ONE subsequence. Uniform shifted real Miura lifts, all-level Dirac higher-action coefficient continuity, central spectral separation and explicit mean normalization are VERIFIED. NEW bounded-source convergent FULL native outputs have actual preimages and the WHOLE source sequence converges STRONGLY Hminus. Native properness IFF norm-bounded preimages of EVERY compact target set is NOW PROVED. That varying-action NORM BOUND remains OPEN. Extended reference Lemma8.3 supplies it using universal action-gap min estimate + actual Hminus norm-vs-gap coercivity (Theorem2.3); BOTH estimates still require faithful Lean proofs. Native onto/closedness/properness, actual KdV and ALL FIVE MAIN remain OPEN; goal ACTIVE.",
+    "FULL sourceTheorem1.4 remains UNPROVED because actual native SURJECTIVITY and equivalent native compact-preimage norm bound remain OPEN. NEW sourceTheorem1_4_of_bounded_compact_native_preimages proves the FULL precise main conclusion CONDITIONAL on that PURE NORM obligation; sourceTheorem1_4_of_native_surjective remains proved. Full native/original/endpoint INJECTIVITY and literal physical REAL Wiener weak-star homeomorphism onto EXACT IMAGE on EVERY bounded endpoint subset (including nonclosed) and full original isospectral endpoint sets are UNCONDITIONAL. Forward analytic mapping, original norm bounds, full-isoset bounds and inverse endpoint regularity for ANY actual native preimage remain proved. Do NOT promote conditional norm-bound/surjectivity reductions to completed main statements.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+    "NOW PROVED exact zero-frequency Dirac trace/mean criterion, actual Hill/Miura action comparison INCLUDING central collapse, exact inverse-frequency native action normalization, universal original Hminus source bound from a lift, and GLOBAL genuine MEAN-ZERO real L2 Riccati lift existence for EVERY original rough source. Remaining direct coercivity obligation: actual inverse-frequency quasimomentum/action estimate for the mean-zero lift L2 norm. Native varying-action source coercivity/onto/properness and ALL FIVE MAIN remain UNPROVED.",
+    "NOW PROVED exact zero-frequency Dirac trace/mean criterion, actual Hill/Miura action comparison INCLUDING central collapse, exact inverse-frequency native action normalization, universal original Hminus source bound from a lift, and GLOBAL genuine MEAN-ZERO real L2 Riccati lift existence for EVERY original rough source. Remaining direct coercivity obligation: actual inverse-frequency quasimomentum/action estimate for the mean-zero lift L2 norm. Native varying-action source coercivity/onto/properness and ALL FIVE MAIN remain UNPROVED.",
+    "NEW global mean-zero real Riccati lift existence is PROVED on the ENTIRE original distribution domain. Strong compactness of bounded actual lift families, attained global minimum energy, actual nonzero-mean Miura derivative inverse, real-preserving genuine two-sided analytic inverse and energy-lowering contradiction are VERIFIED. SAME lift retains ALL actual Hill actions and inverse-frequency sum, and its removed energy is an actual original periodic spectral point. The actual quasimomentum/action mass bound for its L2 norm remains OPEN; no native global Birkhoff surjectivity or main theorem completion follows yet.",
+    "NEW ACTUAL finite-gap inverse-frequency CONTOUR moment balance PROVED: physicalMass=-sum_signed_open_gaps n*integral(F_n/z), and for every mean-zero real diagonal finite-gap lift this mass is EXACT original L2 squared norm. The outer 2*pi*i mass coefficient, analytic central pole filling, exclusion of0 from other selected discs, actual local shifted-square identity and finite-hole decomposition are VERIFIED. Remaining actual norm estimate still needs inverse gap-boundary integral conversion and Cauchy-Schwarz, followed by finite-gap approximation to general rough sources. Native onto/properness/ALL FIVE MAIN remain UNPROVED."
+  ]
+}

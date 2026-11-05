@@ -1686,6 +1686,13 @@ import NLS.KdV.HillMiuraLinearizationKernel
 import NLS.KdV.HillMiuraRealLocalInverse
 import NLS.KdV.HillRiccatiMeanZeroLift
 import NLS.Articles.KdVPseudomeasures.OriginalHillMeanZeroMiuraLift
+import NLS.ComplexAnalysis.InverseSquareMassContour
+import NLS.ComplexAnalysis.FilledSquareOverZero
+import NLS.ComplexAnalysis.ShiftedSquareWeightedCircle
+import NLS.ZakharovShabat.SourceFullAbelianInverseMassContour
+import NLS.ZakharovShabat.SourceFullAbelianInverseGapCircle
+import NLS.ZakharovShabat.SourceFiniteGapInverseMoment
+import NLS.KdV.HillMiuraInverseMoment
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10207,3 +10214,18 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillMeanZeroMiuraLift
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_mean_zero_real_Miura_lift
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_mean_zero_Miura_action_lift
 #print axioms NLS.Articles.KdVPseudomeasures.original_mean_zero_Miura_shift_mem_spectrum
+#print axioms NLS.ComplexAnalysis.exists_phase_inverse_square_mass_contour
+#print axioms NLS.ComplexAnalysis.filledSquareOverZero
+#print axioms NLS.ComplexAnalysis.filledSquareOverZero_zero
+#print axioms NLS.ComplexAnalysis.filledSquareOverZero_eq_div
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_filledSquareOverZero
+#print axioms NLS.ComplexAnalysis.circleIntegral_shifted_square_weight
+#print axioms NLS.ZakharovShabat.exists_sourceFullAbelian_finiteGap_inverse_mass_contour
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.central_zero_value_and_mem
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.analytic_filled_inverse_square_of_central_zero
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.inverse_square_circle_eq_inverse_primitive
+#print axioms NLS.ZakharovShabat.sourceFiniteGap_inverse_moment_balance
+#print axioms NLS.KdV.hillMiura_mean_zero_central_data
+#print axioms NLS.KdV.hillMiura_fullPrimitive_zero_of_mean_zero
+#print axioms NLS.KdV.analytic_hillMiura_filled_inverse_square
+#print axioms NLS.KdV.hillMiura_finiteGap_inverse_moment_norm_sq
