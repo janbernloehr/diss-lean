@@ -1,3 +1,17 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeSummedRegularCorrections
+import NLS.Articles.KdVKdV2Frequencies.NativeCorrectionHilbertControl
+import NLS.SequenceSpaces.HilbertControlledAnalyticSeries
+import NLS.KdV.HillNativeDirichletTerminalSequence
+import NLS.SequenceSpaces.PositiveFourierInverseMajorant
+import NLS.KdV.HillDirichletSheetFourierBound
+import NLS.KdV.HillNativeFilledRootInverseBound
+import NLS.KdV.HillL2SheetRootFourierEstimate
+import NLS.ComplexAnalysis.SineFourierIntegral
+import NLS.KdV.ClassicalHillSheetRootFrequency
+import NLS.KdV.HillDirichletFrequencyDisplacement
+import NLS.ComplexAnalysis.SineNormEstimates
+import NLS.KdV.ClassicalHillSheetRootBorn
+import NLS.KdV.ClassicalHillPositionFreeError
 import NLS.Articles.KdVKdV2Frequencies.AllRegularCorrections
 import NLS.KdV.HillRegularTerminalPhysicalComparison
 import NLS.KdV.HillAllRegularTerminalData
@@ -1529,7 +1543,21 @@ run_cmd do
     `NLS.KdV.HillLocalRegularTerminalData,
     `NLS.KdV.HillAllRegularTerminalData,
     `NLS.KdV.HillRegularTerminalPhysicalComparison,
-    `NLS.Articles.KdVKdV2Frequencies.AllRegularCorrections
+    `NLS.Articles.KdVKdV2Frequencies.AllRegularCorrections,
+    `NLS.KdV.ClassicalHillPositionFreeError,
+    `NLS.KdV.ClassicalHillSheetRootBorn,
+    `NLS.ComplexAnalysis.SineNormEstimates,
+    `NLS.KdV.HillDirichletFrequencyDisplacement,
+    `NLS.ComplexAnalysis.SineFourierIntegral,
+    `NLS.KdV.ClassicalHillSheetRootFrequency,
+    `NLS.KdV.HillL2SheetRootFourierEstimate,
+    `NLS.KdV.HillNativeFilledRootInverseBound,
+    `NLS.KdV.HillDirichletSheetFourierBound,
+    `NLS.SequenceSpaces.PositiveFourierInverseMajorant,
+    `NLS.KdV.HillNativeDirichletTerminalSequence,
+    `NLS.SequenceSpaces.HilbertControlledAnalyticSeries,
+    `NLS.Articles.KdVKdV2Frequencies.NativeCorrectionHilbertControl,
+    `NLS.Articles.KdVKdV2Frequencies.NativeSummedRegularCorrections
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

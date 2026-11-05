@@ -1092,3 +1092,14 @@ See `NATIVE_ALL_REGULAR_CORRECTIONS.md`. Genuine complex spectral/divisor/amplit
 Prior strict evidence for all 1188 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1197 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1229 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1197-module rebuild is claimed.
 
 Fresh audit: 10713 selected and 32844 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest native actual summed regular phase
+
+The actual unscaled Dirichlet terminals now form a native Hilbert-analytic sequence on one complex period-one L2 ball, with full norm <=K*(||u||+||u||^2). Genuine complex Fourier leading terms and inverse-index quadratic remainders supply the sequence estimate. Actual regular correction vectors satisfy full norm <=A*||terminal_k||/k and sum absolutely as a Bochner series. The sum is native Hilbert analytic on ONE common complex source ball; every positive component at every real source in that same ball equals the existing physical summed regular correction. All nonpositive complex outputs vanish. First gaps, own modes, collapsed gaps and means are included.
+
+See `NATIVE_SUMMED_PHASE.md`. Native physical Abelian coordinates in weighted half-shift Hilbert norm still require genuine complex amplitude/Dirichlet/symmetric spectral sequence estimates. The near-zero summed regular phase is now proved; all main Birkhoff/Hamiltonian conclusions remain open.
+
+Prior strict evidence for all 1197 unchanged selected baseline sources; strict dependency-order compilation of fourteen new proof modules; then a fresh combined transitive axiom audit of all 1211 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1243 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1211-module rebuild is claimed.
+
+Fresh audit: 10778 selected and 32909 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
