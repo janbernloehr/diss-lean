@@ -1343,6 +1343,14 @@ import NLS.KdV.HillHminusRelativeActionMatching
 import NLS.KdV.HillHminusIsospectralActionGerms
 import NLS.KdV.HillHminusRelativeAmplitude
 import NLS.KdV.HillHminusCartesianGerms
+import NLS.KdV.HillHminusPhysicalGermDifferentials
+import NLS.KdV.HillHminusPhysicalGermBrackets
+import NLS.KdV.HillHminusPhysicalGermCotangent
+import NLS.KdV.HillHminusEndpointPhaseCotangent
+import NLS.KdV.HillHminusEndpointPhaseGardner
+import NLS.KdV.HillHminusCartesianGardnerLimits
+import NLS.KdV.HillHminusConjugateCartesianGerms
+import NLS.KdV.HillHminusSignedCartesianGardnerLimits
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
