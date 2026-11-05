@@ -1417,6 +1417,11 @@ import NLS.KdV.HillMeanZeroNormingPerturbations
 import NLS.KdV.HillMeanZeroOpenGapDensity
 import NLS.KdV.HillOriginalAllGapCartesianMatrix
 import NLS.KdV.HillOriginalCartesianGardnerFamily
+import NLS.KdV.HillOriginalCartesianGermContinuation
+import NLS.KdV.HillOriginalHminusCompactness
+import NLS.KdV.HillOriginalBaseSpectralSequence
+import NLS.KdV.HillOriginalSpectralSequentialProperness
+import NLS.KdV.HillOriginalSpectralCompactPreimages
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
