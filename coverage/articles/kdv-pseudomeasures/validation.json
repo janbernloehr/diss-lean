@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Prove actual Hill finite-gap Miura transfer, all-order original Sobolev regularity, real smooth physical representatives and reduction of global actual native injectivity to ordinary physical L2 injectivity.",
+  "phase": "Prove actual Dirac central-gap constancy, full original real Hminus-one Hill Borg rigidity and the EXACT singleton zero fiber of the actual native physical real map; reduce global bijectivity to closedness.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1595,13 +1595,18 @@
     "NLS/KdV/PeriodOneOriginalPositiveRegularity.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapMiura.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapRegularity.lean",
+    "NLS/ZakharovShabat/SourceActionSpatialStationarity.lean",
+    "NLS/ZakharovShabat/SourceCentralGapSpatialStationarity.lean",
+    "NLS/ZakharovShabat/SourceCentralGapConstant.lean",
+    "NLS/KdV/HillClosedGapRigidity.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeZeroFiber.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 6810,
+  "proved_theorems": 6826,
   "definitions": 1297,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 8107,
+    "declarations": 8123,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -2987,8 +2992,8 @@
     "OriginalHillSpectralDarboux exports the SAMEoriginal physical potential, actual multipliers and local logarithmic normalization; their literal unit-period physical Gardner integral is zero, their closed-mean-zero cotangent bracket is intrinsic, and the full local spectral matrix holds at every original potential.",
     "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
   ],
-  "source_correspondence": "Prove actual Hill finite-gap Miura transfer, all-order original Sobolev regularity, real smooth physical representatives and reduction of global actual native injectivity to ordinary physical L2 injectivity. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NOW ALSO PROVED: ACTUAL native Hill finite-gap data imply ACTUAL signed Dirac finite-gap data for EVERY genuine real Miura lift; the SAME lift and actual original Hill potential have ALL Sobolev orders. Every actual finite-gap source has an EXACT real C-infinity period-one representative, and every original positive-order realization keeps the ENTIRE physical distribution. Global ACTUAL native injectivity is now IFF injectivity of the SAME actual map on ordinary physical L2 or smooth sources, by actual finite-gap collision reduction+PROVED regularity. L2/smooth injectivity, arbitrary-action realization/global onto, allmain remain OPEN. Prior actual all-source complex/real local inverse, complete action flows/torusimage, endpoint3.5i/ii, literalnorm/localinverse/boundedness/forwardweakstar remain PROVED. Complete source3.1/main1.4: genuine actual native/endpoint global bijection, remaining nonlinear scales and inverse/full bounded-set weak-star homeomorphism. NEW ACTUAL finite-gap smooth regularity and rigorous globalinjectivityIFFordinaryphysicalL2injectivity now bridge the reference classical-to-rough step; actual L2 injectivity itself still OPEN. Arbitrary action realization/global onto/source3.4, source3.5iii, actualKdV and ALL main statements remain OPEN. Preserve SAME native map and original distributions; do not substitute NLS injectivity or infer connected scalar-diagonal slices from connected full Dirac fibers. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. ALL1585 baseline non-audit registered sources byte-identical tod8082d9. All4 new modules (15theorems+2definitions), 4 canonical-byte-identical shared modules, 5 unchanged PRIVATE dependencies and EXACT8107-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL finite-gap Miura/Dirac transfer, all-order original regularity, exact real smooth representatives and globalinjectivityIFFsameactualordinaryL2injectivity NOW PROVED. Actual L2 injectivity/global bijection/actual KdV/main remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1590-module build.",
+  "source_correspondence": "Prove actual Dirac central-gap constancy, full original real Hminus-one Hill Borg rigidity and the EXACT singleton zero fiber of the actual native physical real map; reduce global bijectivity to closedness. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NOW PROVED actual full real Hminus-one Hill BORG potential constancy for ALL canonical gaps closed, zero-mean uniqueness and EXACT singleton ACTUAL native zero fiber. Proof uses unconditional ACTUAL Dirac central-gap constancy from physical momentum/spatial translation+ACTUAL Dirac Jacobian injectivity, genuine all-index Miura gap comparison/reflection and SAME actual distributional Miura lift. GLOBAL actual native bijectivity IFF ACTUAL native map closedness now PROVED, using actual local homeomorphism+singletonzero. Actual closedness/properness/globalbijection, L2/smooth nativeinjectivity/arbitrary action realization and allmain still OPEN. Prior actual finite-gap smoothness/L2 reduction and full endpoint3.5i/ii/literalnorm/localinverse/forwardweakstar remain PROVED. Complete source3.1/main1.4: actual native global bijectivity is now EXACTLY actual native CLOSEDNESS, since all-source local homeomorphism and genuine Borg/singletonzero fiber are PROVED. Actual closedness/properness or alternative actual L2/smooth injectivity and arbitrary action realization remain OPEN. Then endpoint3.4 onto/inverse/full bounded-set weak-star homeomorphism, remaining nonlinear scales and actualKdV still required. ALL main statements remain UNPROVED; no global bijection inferred from singletonzero/localinverse alone. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. ALL1589 baseline non-audit registered sources byte-identical tocc60661. All5 new modules (16theorems+0definitions), 8 canonical-byte-identical shared modules, 4 unchanged PRIVATE dependencies and EXACT8123-declaration transitive standard-axiom audit freshly compiled privately. Actual unconditional Dirac central-gap constancy, FULL original real Hminus-one Hill Borg rigidity, exact ACTUAL native singleton zero fiber and globalbijectionIFFactualclosedmap NOW PROVED. Actual closedness/properness/globalbijection/actual KdV/main remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1595-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -4582,7 +4587,12 @@
     "NLS/SequenceSpaces/PeriodOneMiuraSobolevRegularity.lean": "b890b4e01973fdac87181f98957bff13ccc76cf10709c1ae575423aba068b9bc",
     "NLS/KdV/PeriodOneOriginalPositiveRegularity.lean": "29986a619dcaa3f84af6637ba091b55179a3968432429312f904fb98c8ac59aa",
     "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapMiura.lean": "c30dfffdb1bf7b60c0ebca466c1ab90892629fad4cfda981c18ae455572eae63",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapRegularity.lean": "a4df36416775cb26a4630eb3dd81d0d88dbc88a3129aa495f04f391599518cd2"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapRegularity.lean": "a4df36416775cb26a4630eb3dd81d0d88dbc88a3129aa495f04f391599518cd2",
+    "NLS/ZakharovShabat/SourceActionSpatialStationarity.lean": "123d050432738a0205ee214885bcf38b54ade2b1e7c25ed50b4163468f135bc5",
+    "NLS/ZakharovShabat/SourceCentralGapSpatialStationarity.lean": "7024d7c71136585e5a4fdd88334cd9b5a2ffada44c7b7e64c5a2c6234a35feaf",
+    "NLS/ZakharovShabat/SourceCentralGapConstant.lean": "6d59c2cb04bcab43ad1715698de384e4a6b87973898404de25897787c43914a2",
+    "NLS/KdV/HillClosedGapRigidity.lean": "6ab228c417d67b3b564ab93e1d2c8e6af71ad7c7ee5d2de227dde7d2be8ff4b4",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeZeroFiber.lean": "0892249b05e1d4f0cc9460d43ac46c55034cf95f4797056931ed011b95f04a85"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -4590,11 +4600,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 8090,
-    "newly_checked_declarations_this_continuation": 17,
-    "new_theorems": 15,
-    "new_definitions": 2,
-    "total_checked_declarations": 8107
+    "previous_checked_declarations": 8107,
+    "newly_checked_declarations_this_continuation": 16,
+    "new_theorems": 16,
+    "new_definitions": 0,
+    "total_checked_declarations": 8123
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -4623,7 +4633,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-native-finite-gap-smooth-regularity.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-native-borg-zero-fiber.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -4959,13 +4969,14 @@
     "All writes private; canonical checkout/shared metadata read-only. ALL1568 baseline non-audit registered sources byte-identical toba31b01. All4 new modules (12theorems+5definitions), 2 canonical-byte-identical shared modules, 6 unchanged PRIVATE dependencies and EXACT8003-declaration transitive standard-axiom audit freshly compiled privately. Actual sourceLemma3.7 full sequential weak-star preservation and forward arbitrary-filter bounded-set weak-star continuity NOW PROVED with exact signed physical Wiener predual. Full homeomorphism/global bijection/main theorems remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1573-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata read-only. ALL1572 baseline non-audit registered sources byte-identical tod6665e5. All7 new modules (27theorems+6definitions), 1 canonical-byte-identical shared modules, 7 unchanged PRIVATE dependencies and EXACT8036-declaration transitive standard-axiom audit freshly compiled privately. Actual complete canonical-action flows, exact native unit-speed rotations and full native isospectral-image/action-torus equality NOW PROVED, without global inverse premise. Global bijection/arbitrary actions/actual KdV/main remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1580-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata read-only. ALL1579 baseline non-audit registered sources byte-identical to8a0c3e3. All6 new modules (39theorems+15definitions), 1 canonical-byte-identical shared modules, 9 unchanged PRIVATE dependencies and EXACT8090-declaration transitive standard-axiom audit freshly compiled privately. Full original endpoint3.5(i)-(ii) and literal article norm/predual exports NOW PROVED, without global inverse. Global bijection/actual KdV/main remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1586-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata read-only. ALL1585 baseline non-audit registered sources byte-identical tod8082d9. All4 new modules (15theorems+2definitions), 4 canonical-byte-identical shared modules, 5 unchanged PRIVATE dependencies and EXACT8107-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL finite-gap Miura/Dirac transfer, all-order original regularity, exact real smooth representatives and globalinjectivityIFFsameactualordinaryL2injectivity NOW PROVED. Actual L2 injectivity/global bijection/actual KdV/main remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1590-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata read-only. ALL1585 baseline non-audit registered sources byte-identical tod8082d9. All4 new modules (15theorems+2definitions), 4 canonical-byte-identical shared modules, 5 unchanged PRIVATE dependencies and EXACT8107-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL finite-gap Miura/Dirac transfer, all-order original regularity, exact real smooth representatives and globalinjectivityIFFsameactualordinaryL2injectivity NOW PROVED. Actual L2 injectivity/global bijection/actual KdV/main remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1590-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata read-only. ALL1589 baseline non-audit registered sources byte-identical tocc60661. All5 new modules (16theorems+0definitions), 8 canonical-byte-identical shared modules, 4 unchanged PRIVATE dependencies and EXACT8123-declaration transitive standard-axiom audit freshly compiled privately. Actual unconditional Dirac central-gap constancy, FULL original real Hminus-one Hill Borg rigidity, exact ACTUAL native singleton zero fiber and globalbijectionIFFactualclosedmap NOW PROVED. Actual closedness/properness/globalbijection/actual KdV/main remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1595-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/native-finite-gap-smooth-regularity-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/native-borg-zero-fiber-map.json",
   "baseline_validated_snapshot": {
-    "commit": "d8082d9f20a6d6d67e072f644611155ec1dcb1ff",
-    "modules": 1586,
-    "audited_declarations": 8090,
+    "commit": "cc606611cc2742d5d0375208d867ab97b5617380",
+    "modules": 1590,
+    "audited_declarations": 8107,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -7369,8 +7380,32 @@
     "scope": "Every ACTUAL physical Fourier-real zero-mean Hminus-one source with eventual vanishing of the ACTUAL original canonical gap squares, arbitrary actual low/central/collapsed gaps retained. EVERY actual scalar real Miura lift at any genuine real shift has actual signed Dirac finite-gap data. SAME full original coefficient/distribution, EVERY nonnegative Sobolev order, actual real C-infinity period-one representative. L2/smooth/global injectivity reduction concerns the SAME actual native map.",
     "ordinary_physical_L2_native_injectivity_PROVED": false,
     "actual_smooth_native_injectivity_PROVED": false,
-    "Borg_zero_potential_uniqueness_PROVED": false,
+    "Borg_zero_potential_uniqueness_PROVED": true,
     "connectedness_scalar_diagonal_Dirac_isospectral_slice_inferred_from_full_Dirac_connectedness": false,
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "full_bounded_set_weak_star_homeomorphism_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "actual_native_Borg_zero_fiber": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-borg-zero-fiber-map.json",
+    "actual_Dirac_actions_spatial_translation_invariant_and_spatial_derivative_zero_PROVED": true,
+    "actual_Dirac_Birkhoff_closed_coordinate_spatial_velocity_zero_PROVED": true,
+    "actual_central_only_Dirac_Birkhoff_spatial_velocity_zero_PROVED": true,
+    "actual_central_only_Dirac_spatial_derivative_zero_by_ACTUAL_Jacobian_injectivity_PROVED": true,
+    "unconditional_actual_REAL_Dirac_only_central_gap_open_IMPLIES_same_source_constant_PROVED": true,
+    "ALL_original_Hill_closed_gaps_IMPLIES_ALL_noncentral_Miura_Dirac_gaps_closed_PROVED": true,
+    "actual_REAL_HminusOne_Hill_ALL_closed_gaps_IMPLIES_same_potential_constant_PROVED": true,
+    "Borg_zero_potential_uniqueness_PROVED": true,
+    "actual_native_physical_REAL_zero_output_IFF_same_source_zero_PROVED": true,
+    "actual_native_physical_REAL_ZERO_FIBER_exact_singleton_PROVED": true,
+    "ENTIRE_original_physical_distribution_zero_fiber_exports_PROVED": true,
+    "actual_native_GLOBAL_bijectivity_IFF_ACTUAL_isClosedMap_PROVED": true,
+    "scope": "ENTIRE actual physical REAL Hminus-one Hill domain; actual mean-zero source for zero conclusion and actual native zero fiber. Actual original all-index canonical gap squares, genuine outside-spectrum real Miura lift, actual full signed original Dirac spectra and actual physical momentum normalization. Dirac central constancy is unconditional on every physical real Hilbert source with noncentral gaps closed, central gap allowed open/closed. Full original distribution and every raw coefficient retained.",
+    "actual_native_closed_map_PROVED": false,
+    "actual_native_properness_PROVED": false,
+    "ordinary_physical_L2_native_injectivity_PROVED": false,
     "actual_native_global_injectivity_PROVED": false,
     "actual_native_global_surjectivity_PROVED": false,
     "full_bounded_set_weak_star_homeomorphism_PROVED": false,

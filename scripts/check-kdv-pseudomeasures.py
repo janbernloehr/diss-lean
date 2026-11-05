@@ -1621,6 +1621,11 @@ modules = [
     'NLS.KdV.PeriodOneOriginalPositiveRegularity',
     'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMiura',
     'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapRegularity',
+    'NLS.ZakharovShabat.SourceActionSpatialStationarity',
+    'NLS.ZakharovShabat.SourceCentralGapSpatialStationarity',
+    'NLS.ZakharovShabat.SourceCentralGapConstant',
+    'NLS.KdV.HillClosedGapRigidity',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeZeroFiber',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

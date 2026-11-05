@@ -1587,6 +1587,11 @@ import NLS.SequenceSpaces.PeriodOneMiuraSobolevRegularity
 import NLS.KdV.PeriodOneOriginalPositiveRegularity
 import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMiura
 import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapRegularity
+import NLS.ZakharovShabat.SourceActionSpatialStationarity
+import NLS.ZakharovShabat.SourceCentralGapSpatialStationarity
+import NLS.ZakharovShabat.SourceCentralGapConstant
+import NLS.KdV.HillClosedGapRigidity
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeZeroFiber
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9697,3 +9702,19 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapRegularity
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealL2Locus
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_subset_L2
 #print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNative_injective_iff_injOn_L2
+#print axioms NLS.ZakharovShabat.sourceComplexAction_spatialTranslation
+#print axioms NLS.ZakharovShabat.sourceComplexAction_spatial_derivative_zero
+#print axioms NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_spatial_closed_coordinate
+#print axioms NLS.ZakharovShabat.SourceSection20Data.jacobian_spatial_eq_zero_of_noncentral_gaps_closed
+#print axioms NLS.ZakharovShabat.SourceSection20Data.spatialDerivative_eq_zero_of_noncentral_gaps_closed
+#print axioms NLS.ZakharovShabat.source_nonzero_coefficients_eq_zero_of_noncentral_gaps_closed
+#print axioms NLS.ZakharovShabat.source_eq_constant_of_noncentral_gaps_closed
+#print axioms NLS.KdV.periodOneMiura_constant
+#print axioms NLS.KdV.hillMiura_noncentral_gaps_closed_of_Hill_gapSquares_zero
+#print axioms NLS.KdV.hillHminus_constant_of_all_gapSquares_zero
+#print axioms NLS.KdV.hillHminus_eq_zero_of_mean_zero_all_gapSquares_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSignedMap_eq_zero_iff
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSignedMap_zero_fiber
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_eq_zero_of_all_gapSquares_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_zero_implies_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNative_bijective_iff_isClosedMap
