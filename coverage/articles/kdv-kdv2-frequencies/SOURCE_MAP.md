@@ -1125,3 +1125,14 @@ See `NATIVE_GAP_MIDPOINTS.md`. The proof uses exact trace Born cancellation at e
 Prior strict evidence for all 1221 unchanged selected baseline sources; strict dependency-order compilation of sixteen new proof modules; then a fresh combined transitive axiom audit of all 1237 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1269 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the sixteen new modules. No repeated full 1237-module rebuild is claimed.
 
 Fresh audit: 10894 selected and 33027 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest native weighted actual Abelian map
+
+One common complex period-one L2 ball now supports a native holomorphic map Z into the actual full signed weighted half-shift target. At EVERY real source in that same ball, Z equals the existing full physical Abelian map as a weighted Hilbert-space value. It vanishes at zero, has zero output mode and full norm<=K*(||u||+||u||^2). Its actual native Frechet derivative, on every complex zero-mean direction h, has every signed component h(j)/sqrt(2*|j|*pi). First/closed gaps and nonzero source means are included in the map construction.
+
+See `NATIVE_WEIGHTED_ABELIAN_MAP.md`. The proof supplies genuine uniform complex analytic action ratios, a common right-half-plane square-root branch, physical amplitudes with exact sqrt(1+k) bound, weighted positive assembly and simultaneous source/target conjugate completion. Actual physical real germs identify the native derivative with the already proved Fourier germs. Local invertibility, canonicality, the full regularity scale and arbitrary-base/global Birkhoff/Hamiltonian results remain open.
+
+Prior strict evidence for all 1237 unchanged selected baseline sources; strict dependency-order compilation of twenty-one new proof modules; then a fresh combined transitive axiom audit of all 1258 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1290 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the twenty-one new modules. No repeated full 1258-module rebuild is claimed.
+
+Fresh audit: 10998 selected and 33131 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

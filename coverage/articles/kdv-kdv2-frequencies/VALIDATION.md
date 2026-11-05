@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest native actual gap midpoint coordinates
+## Latest native weighted actual Abelian map
+
+One common complex period-one L2 ball now supports a native holomorphic map Z into the actual full signed weighted half-shift target. At EVERY real source in that same ball, Z equals the existing full physical Abelian map as a weighted Hilbert-space value. It vanishes at zero, has zero output mode and full norm<=K*(||u||+||u||^2). Its actual native Frechet derivative, on every complex zero-mean direction h, has every signed component h(j)/sqrt(2*|j|*pi). First/closed gaps and nonzero source means are included in the map construction.
+
+See `NATIVE_WEIGHTED_ABELIAN_MAP.md`. The proof supplies genuine uniform complex analytic action ratios, a common right-half-plane square-root branch, physical amplitudes with exact sqrt(1+k) bound, weighted positive assembly and simultaneous source/target conjugate completion. Actual physical real germs identify the native derivative with the already proved Fourier germs. Local invertibility, canonicality, the full regularity scale and arbitrary-base/global Birkhoff/Hamiltonian results remain open.
+
+Prior strict evidence for all 1237 unchanged selected baseline sources; strict dependency-order compilation of twenty-one new proof modules; then a fresh combined transitive axiom audit of all 1258 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1290 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the twenty-one new modules. No repeated full 1258-module rebuild is claimed.
+
+Fresh audit: 10998 selected and 33131 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier native actual gap midpoint coordinates
 
 The actual symmetric midpoint minus free energy minus u(0) now forms one native Hilbert-analytic sequence R on a common complex period-one L2 ball before all positive gaps and physical sources. Its full norm is <=K*||u||^2, value and derivative at zero vanish, and nonpositive coefficients vanish. The actual Dirichlet-minus-midpoint sequence A is native Hilbert analytic with exact cosine Fourier derivative L(u)(k)=-(u(k)+u(-k))/2, norm<=||u||+K*||u||^2 and nonlinear norm error<=K*||u||^2. Every positive component at every physical real source in the same ball matches the actual physical quantities, including first/closed gaps and nonzero means.
 
@@ -466,7 +476,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1237 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1258 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1535,7 +1545,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1237 selected modules (including generated and private declarations)
+the 1258 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -3059,4 +3069,31 @@ PASS NLS/KdV/HillNativeGapMidpointRemainder
 PASS NLS/KdV/HillNativeDirichletMidpointCoordinates
 PASS NLS/Articles/KdVKdV2Frequencies/NativeGapMidpointCoordinates
 Axiom audit passed: 10894 candidate declarations; 33027 declarations total.
+```
+
+Latest native weighted actual Abelian map strict additions and fresh combined audit:
+
+```text
+PASS NLS/ComplexAnalysis/AnalyticDiscDerivativeBounds
+PASS NLS/KdV/HillL2EnergyDiscTraceBounds
+PASS NLS/KdV/HillNativeTraceNumerator
+PASS NLS/ComplexAnalysis/TwoRootSymmetricBounds
+PASS NLS/KdV/HillAllSymmetricGapCharts
+PASS NLS/ComplexAnalysis/QuadraticGapActionRatioBounds
+PASS NLS/KdV/HillNativeActionGapRatio
+PASS NLS/KdV/HillNativeActionRatioPhysical
+PASS NLS/ComplexAnalysis/UniformAnalyticBallVariation
+PASS NLS/KdV/HillNativeActionRatioFree
+PASS NLS/ComplexAnalysis/UniformPositiveAnalyticFamily
+PASS NLS/KdV/HillNativeActionRatioPositive
+PASS NLS/KdV/HillNativeAmplitudePrefactor
+PASS NLS/SequenceSpaces/PositiveAnalyticWeightedProduct
+PASS NLS/KdV/HillNativeAmplitudePhysical
+PASS NLS/KdV/HillNativePositiveAbelianCoordinates
+PASS NLS/Articles/KdVKdV2Frequencies/NativePositiveAbelianCoordinates
+PASS NLS/SequenceSpaces/SignedHolomorphicCompletion
+PASS NLS/Articles/KdVKdV2Frequencies/NativeSignedAbelianCoordinates
+PASS NLS/KdV/HillUnitRealSourceJetUniqueness
+PASS NLS/Articles/KdVKdV2Frequencies/NativeFourierAbelianMap
+Axiom audit passed: 10998 candidate declarations; 33131 declarations total.
 ```

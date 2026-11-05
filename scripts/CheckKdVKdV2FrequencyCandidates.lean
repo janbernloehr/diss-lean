@@ -1,3 +1,24 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeFourierAbelianMap
+import NLS.KdV.HillUnitRealSourceJetUniqueness
+import NLS.Articles.KdVKdV2Frequencies.NativeSignedAbelianCoordinates
+import NLS.SequenceSpaces.SignedHolomorphicCompletion
+import NLS.Articles.KdVKdV2Frequencies.NativePositiveAbelianCoordinates
+import NLS.KdV.HillNativePositiveAbelianCoordinates
+import NLS.KdV.HillNativeAmplitudePhysical
+import NLS.SequenceSpaces.PositiveAnalyticWeightedProduct
+import NLS.KdV.HillNativeAmplitudePrefactor
+import NLS.KdV.HillNativeActionRatioPositive
+import NLS.ComplexAnalysis.UniformPositiveAnalyticFamily
+import NLS.KdV.HillNativeActionRatioFree
+import NLS.ComplexAnalysis.UniformAnalyticBallVariation
+import NLS.KdV.HillNativeActionRatioPhysical
+import NLS.KdV.HillNativeActionGapRatio
+import NLS.ComplexAnalysis.QuadraticGapActionRatioBounds
+import NLS.ComplexAnalysis.TwoRootSymmetricBounds
+import NLS.KdV.HillAllSymmetricGapCharts
+import NLS.KdV.HillNativeTraceNumerator
+import NLS.ComplexAnalysis.AnalyticDiscDerivativeBounds
+import NLS.KdV.HillL2EnergyDiscTraceBounds
 import NLS.Articles.KdVKdV2Frequencies.NativeGapMidpointCoordinates
 import NLS.KdV.HillNativeDirichletMidpointCoordinates
 import NLS.KdV.HillNativeGapMidpointRemainder
@@ -1609,7 +1630,28 @@ run_cmd do
     `NLS.KdV.HillAllMidpointAnalytic,
     `NLS.KdV.HillNativeGapMidpointRemainder,
     `NLS.KdV.HillNativeDirichletMidpointCoordinates,
-    `NLS.Articles.KdVKdV2Frequencies.NativeGapMidpointCoordinates
+    `NLS.Articles.KdVKdV2Frequencies.NativeGapMidpointCoordinates,
+    `NLS.ComplexAnalysis.AnalyticDiscDerivativeBounds,
+    `NLS.KdV.HillL2EnergyDiscTraceBounds,
+    `NLS.KdV.HillNativeTraceNumerator,
+    `NLS.ComplexAnalysis.TwoRootSymmetricBounds,
+    `NLS.KdV.HillAllSymmetricGapCharts,
+    `NLS.ComplexAnalysis.QuadraticGapActionRatioBounds,
+    `NLS.KdV.HillNativeActionGapRatio,
+    `NLS.KdV.HillNativeActionRatioPhysical,
+    `NLS.ComplexAnalysis.UniformAnalyticBallVariation,
+    `NLS.KdV.HillNativeActionRatioFree,
+    `NLS.ComplexAnalysis.UniformPositiveAnalyticFamily,
+    `NLS.KdV.HillNativeActionRatioPositive,
+    `NLS.KdV.HillNativeAmplitudePrefactor,
+    `NLS.SequenceSpaces.PositiveAnalyticWeightedProduct,
+    `NLS.KdV.HillNativeAmplitudePhysical,
+    `NLS.KdV.HillNativePositiveAbelianCoordinates,
+    `NLS.Articles.KdVKdV2Frequencies.NativePositiveAbelianCoordinates,
+    `NLS.SequenceSpaces.SignedHolomorphicCompletion,
+    `NLS.Articles.KdVKdV2Frequencies.NativeSignedAbelianCoordinates,
+    `NLS.KdV.HillUnitRealSourceJetUniqueness,
+    `NLS.Articles.KdVKdV2Frequencies.NativeFourierAbelianMap
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

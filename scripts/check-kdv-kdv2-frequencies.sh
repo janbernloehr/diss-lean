@@ -1246,6 +1246,27 @@ modules=(
   NLS/KdV/HillNativeGapMidpointRemainder
   NLS/KdV/HillNativeDirichletMidpointCoordinates
   NLS/Articles/KdVKdV2Frequencies/NativeGapMidpointCoordinates
+  NLS/ComplexAnalysis/AnalyticDiscDerivativeBounds
+  NLS/KdV/HillL2EnergyDiscTraceBounds
+  NLS/KdV/HillNativeTraceNumerator
+  NLS/ComplexAnalysis/TwoRootSymmetricBounds
+  NLS/KdV/HillAllSymmetricGapCharts
+  NLS/ComplexAnalysis/QuadraticGapActionRatioBounds
+  NLS/KdV/HillNativeActionGapRatio
+  NLS/KdV/HillNativeActionRatioPhysical
+  NLS/ComplexAnalysis/UniformAnalyticBallVariation
+  NLS/KdV/HillNativeActionRatioFree
+  NLS/ComplexAnalysis/UniformPositiveAnalyticFamily
+  NLS/KdV/HillNativeActionRatioPositive
+  NLS/KdV/HillNativeAmplitudePrefactor
+  NLS/SequenceSpaces/PositiveAnalyticWeightedProduct
+  NLS/KdV/HillNativeAmplitudePhysical
+  NLS/KdV/HillNativePositiveAbelianCoordinates
+  NLS/Articles/KdVKdV2Frequencies/NativePositiveAbelianCoordinates
+  NLS/SequenceSpaces/SignedHolomorphicCompletion
+  NLS/Articles/KdVKdV2Frequencies/NativeSignedAbelianCoordinates
+  NLS/KdV/HillUnitRealSourceJetUniqueness
+  NLS/Articles/KdVKdV2Frequencies/NativeFourierAbelianMap
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

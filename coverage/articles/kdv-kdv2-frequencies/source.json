@@ -107,6 +107,11 @@
           "source_clause": "Native Hilbert analyticity and Fourier linearization of actual Dirichlet displacement from the symmetric midpoint near zero in L2",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillPhysical_native_dirichlet_midpoint_coordinates",
           "qualification": "Two unconditional physical existence results on common complex period-one L2 balls: native symmetric midpoint-minus-free-minus-mean with quadratic Hilbert bound and zero derivative, and native physical Dirichlet-minus-midpoint with exact cosine Fourier derivative and quadratic nonlinear norm error. Every real source and positive gap, including first/closed gaps and nonzero means. Weighted amplitudes/Birkhoff/Hamiltonian main theorems remain open."
+        },
+        {
+          "source_clause": "Native holomorphic actual full signed weighted Abelian map near zero in L2 with exact normalized Fourier derivative on mean-zero directions",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillPhysical_native_fourier_abelian_map",
+          "qualification": "One native holomorphic map Z from a common complex period-one L2 ball to the exact full signed weighted target equals the full existing physical Abelian map at every real source in that ball. Z0=0, zero output mode, full norm<=K*(||u||+||u||^2). For every complex zero-mean direction h and every integer j, ((fderiv Z0)h)_j=h_j/sqrt(2*|j|*pi). Local inverse/canonicality/global/full-regularity/Birkhoff/Hamiltonian main theorems remain open."
         }
       ]
     },
@@ -17754,12 +17759,264 @@
       "scope": "Two unconditional physical existence results on common complex period-one L2 balls: native symmetric midpoint-minus-free-minus-mean with quadratic Hilbert bound and zero derivative, and native physical Dirichlet-minus-midpoint with exact cosine Fourier derivative and quadratic nonlinear norm error. Every real source and positive gap, including first/closed gaps and nonzero means. Weighted amplitudes/Birkhoff/Hamiltonian main theorems remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "83ccb7a3d3ca0789e25cfcec5a9ba47093b9f22397ca34bfcca8eb92bfcd3dea"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticDiscDerivativeBounds.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A local Cauchy estimate from AnalyticOnNhd on a closed disc, with derivative bound B/(R-r) on a smaller disc; no global entire-function hypothesis.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "042ab9216186259c5e30f774acafdfa36d6abc2db21529641148c1912888edad"
+    },
+    {
+      "path": "NLS/KdV/HillL2EnergyDiscTraceBounds.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The actual complex period-one L2 Hill trace is uniformly bounded on closed free-energy discs of radius2k, and its energy derivative is <=C/k on radius-k discs, from full annular radicand bounds and Cauchy.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1aa7176f926b99404b0daa7e23834ea8125a6c251aedcc3b56f94ee3df8ee241"
+    },
+    {
+      "path": "NLS/KdV/HillNativeTraceNumerator.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The actual filled trace numerator D_prime/U is jointly analytic on all radius-k discs on one source ball, uniformly bounded there, and its energy derivative is <=C/k on half-radius discs. Includes all positive gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e1f0d9af4dd4e92c82b2f0bad2f6a86e9dfe99d301c7b03db24e877b93fcb9c2"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TwoRootSymmetricBounds.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Reusable complex midpoint and principal square-root half-gap bounds from two roots in a common closed disc.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e158cd7974d022caf88e0f2f728dafd3396c68cbff6b35e497732033a7bc8a1d"
+    },
+    {
+      "path": "NLS/KdV/HillAllSymmetricGapCharts.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One complex source ball supports analyticity of all literal midpoint and squared-gap charts. Actual midpoint displacement and principal half-gap norm are <=k/16, including the finite head, from actual pairs.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "136c01421992e7fd5d06eb41bcaedf7b44191cd48b5cda91ac83df50201defd4"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticGapActionRatioBounds.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The sine-squared cosine definition of the gap-division-free action ratio has norm<=2B from a derivative bound B on its actual complete cosine path.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "90b8b82e4d6a609574db94467edab5cd0ca0436ef374341819b0ebec09ca6714"
+    },
+    {
+      "path": "NLS/KdV/HillNativeActionGapRatio.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One common complex period-one L2 ball before all k supports native scalar action-to-gap ratio analyticity and the genuine complex bound ||ratio_k||<=C/k. Uses the filled actual trace numerator and analytic symmetric gap data.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3daff454695ec616dfa60db11636abd04b242f1520d5d5d016e3c27ce311de40"
+    },
+    {
+      "path": "NLS/KdV/HillNativeActionRatioPhysical.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The original all-gap physical terminal packet unconditionally identifies every native action ratio with the actual physical ratio on one common real source ball, including collapsed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f5ad83f4a1ab679dbfea3d47a0f33a9c219ea4cf954e9f1ee4467d6ca21a337c"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UniformAnalyticBallVariation.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Uniform bounded holomorphic Banach-ball families have variation <=4M/R times displacement on the half-radius ball, by the shared derivative Cauchy bound and convex mean-value inequality.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b8280854480554d8653804818c9b683861c3a64e0dafd8e4f791072f19edb2b0"
+    },
+    {
+      "path": "NLS/KdV/HillNativeActionRatioFree.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Exact original free native action ratio (2*k*pi)^-1 and normalized value k*ratio=(2*pi)^-1, from actual physical matching and the previously proved free physical normalization.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a7a086ec277a6284711ba87f0454aa9a92317a1195832c22c730fbaeeeb077f2"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UniformPositiveAnalyticFamily.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A uniformly bounded holomorphic family with common positive-real-part free value has one source ball on which every member retains positive real part. Quantitative Banach Cauchy variation; no infinite neighborhood intersection.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b32e6fbfda610911c796f3a4c57406e6b2a5c32ed5610232ba62c7c959c976e4"
+    },
+    {
+      "path": "NLS/KdV/HillNativeActionRatioPositive.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The normalized family k*ratio_k is uniformly analytic and bounded with common free value1/(2*pi). One common complex L2 ball keeps all actual ratios in the right half-plane, retaining inverse-index bounds.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d683731747b5f2cae6a2c0c7a3d2496aa2bba4af4cefb5828b8a26192ac133e0"
+    },
+    {
+      "path": "NLS/KdV/HillNativeAmplitudePrefactor.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Native sqrt(2*ratio)/sqrt2 amplitudes are analytic on one common complex ball and satisfy sqrt(1+k)*||amplitude_k||<=C. Exact norm-square equals ||ratio||; free value1/sqrt(2*k*pi); exact physical equality from ratio matching.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e1c140c8a90807e2c6a34279490ebab514c7b2726a04b9a0be9ce08faba2d7d8"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveAnalyticWeightedProduct.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A positive scalar multiplier family uniformly bounded in an actual target weight acts on native analytic Hilbert sequences to give native weighted analytic products, exact raw positive coefficients/nonpositive zero and full norm<=2C*||a||.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "519e6ee82d9f41da017ca8f8c3b0bfd756d7a3fb3a56ab1211879e3510bca171"
+    },
+    {
+      "path": "NLS/KdV/HillNativeAmplitudePhysical.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One common actual real source neighborhood identifies all native Abelian amplitude prefactors with their original physical factors, including first and closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "509a353d40be7edc5472446f27ef9894fb404e0da82c20926d59f47d6004ad77"
+    },
+    {
+      "path": "NLS/KdV/HillNativePositiveAbelianCoordinates.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The gap-division-free amplitude times native terminal-minus-midpoint displacement times exp(i*phase) is a native analytic map into the exact weighted half-shift target. One common complex ball, value zero, full norm<=K*(||u||+||u||^2), exact literal positive coefficients/nonpositive zero.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a4c6a2612dbc146275874017862027d4329c3f3608375b645bc5b5f74e945cd4"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativePositiveAbelianCoordinates.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unconditional physical existence: one native weighted holomorphic positive coordinate map on one common complex period-one L2 ball matches every actual physical Abelian coordinate at every real source and positive index, including first/closed gaps/nonzero means.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "644febb9f7a58978e0c51bfedca0bafde9a304cc602149a0d95ab44516cfa55d"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SignedHolomorphicCompletion.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Simultaneous source and target conjugate reflections complete a positive weighted map holomorphically. Exact raw signed coefficient identity, full norm bound and value zero; no antiholomorphic output-only extension.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d7709a129811f0ea70cc1b141e118aefb1f630f5d5d51fa53ba7a8e6098dcf91"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeSignedAbelianCoordinates.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One native holomorphic map into the actual full signed weighted half-shift space has exact equality of every integer coefficient with the existing physical raw Abelian sequence on one real source ball; full weighted norm<=K*(||u||+||u||^2), zero mode/value zero.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0eb4aea26a8066f0b06b84641009e004363e802587ed9c104bc4e78c39427774"
+    },
+    {
+      "path": "NLS/KdV/HillUnitRealSourceJetUniqueness.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Agreement on an actual unit-period real physical source neighborhood determines the complete complex L2 scalar Frechet derivative at zero. Genuine real source curves and conjugate Fourier real/imaginary decomposition; no even-support restriction needed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c969b295dbbd5d587cfe2f1cc5ea134098f89e4de4b76571a9f659bb8bbf07fa"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeFourierAbelianMap.lean",
+      "source_labels": [
+        "Native weighted actual Abelian map and Fourier derivative supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One native holomorphic map Z from a common complex period-one L2 ball to the exact full signed weighted target equals the full existing physical Abelian map at every real source in that ball. Z0=0, zero output mode, full norm<=K*(||u||+||u||^2). For every complex zero-mean direction h and every integer j, ((fderiv Z0)h)_j=h_j/sqrt(2*|j|*pi). Local inverse/canonicality/global/full-regularity/Birkhoff/Hamiltonian main theorems remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5741b48f644505a44cd73c179a4cb086f7b42ed571fa5463ccd6216e828c508b"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "Near zero in L2, actual native normalized numerators/periods, all-gap filling/physical terminals, genuine complex unscaled terminal ell2 and native summed regular phase are proved. Native actual mean-subtracted Dirichlet energies, symmetric midpoint remainders and Dirichlet-minus-midpoint displacements are NOW proved on ONE common complex source ball before all gaps, with quadratic Hilbert remainders and exact Fourier derivatives. NEXT prove uniform analytic action/amplitude prefactors, physical matching and actual weighted half-shift coordinate assembly. Full s>=-1 scale, arbitrary-base/global neighborhoods, canonicality/global inverse and Hamiltonian action frequencies remain essential.",
+    "Near zero in L2, native actual unscaled terminals, summed regular phase, Dirichlet/midpoint displacement and uniform analytic half-shift amplitudes are proved. NOW one native holomorphic map into the exact full signed weighted Abelian target equals the actual physical map on one common real source ball and has the exact normalized Fourier derivative on all mean-zero directions. NEXT prove local inverse on mean-zero source/target, canonicality, full s>=-1 scale and arbitrary-base/global neighborhoods; then actual Hamiltonian action-frequency identities and the remaining spectral/PDE main conclusions.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -17785,15 +18042,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 10894,
-    "total_declarations_audited": 33027,
+    "candidate_declarations_audited": 10998,
+    "total_declarations_audited": 33131,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1237,
+    "selected_modules": 1258,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -17851,7 +18108,8 @@
     "native_all_regular_corrections_validation_sequence": "Prior strict evidence for all 1188 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1197 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1229 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1197-module rebuild is claimed.",
     "native_summed_phase_validation_sequence": "Prior strict evidence for all 1197 unchanged selected baseline sources; strict dependency-order compilation of fourteen new proof modules; then a fresh combined transitive axiom audit of all 1211 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1243 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1211-module rebuild is claimed.",
     "native_dirichlet_energy_validation_sequence": "Prior strict evidence for all 1211 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules; then a fresh combined transitive axiom audit of all 1221 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1253 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1221-module rebuild is claimed.",
-    "native_gap_midpoint_validation_sequence": "Prior strict evidence for all 1221 unchanged selected baseline sources; strict dependency-order compilation of sixteen new proof modules; then a fresh combined transitive axiom audit of all 1237 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1269 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the sixteen new modules. No repeated full 1237-module rebuild is claimed."
+    "native_gap_midpoint_validation_sequence": "Prior strict evidence for all 1221 unchanged selected baseline sources; strict dependency-order compilation of sixteen new proof modules; then a fresh combined transitive axiom audit of all 1237 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1269 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the sixteen new modules. No repeated full 1237-module rebuild is claimed.",
+    "native_weighted_abelian_validation_sequence": "Prior strict evidence for all 1237 unchanged selected baseline sources; strict dependency-order compilation of twenty-one new proof modules; then a fresh combined transitive axiom audit of all 1258 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1290 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the twenty-one new modules. No repeated full 1258-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -18337,6 +18595,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "ceb47d2076161872a1c0dacb083d617b760e4eb9",
+      "description": "Prior native actual symmetric midpoint and Dirichlet displacement; now full actual weighted Abelian map is natively holomorphic near zero in L2 with exact Fourier derivative.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "Near zero in L2, actual native normalized numerators/periods, all-gap filling/physical terminals, genuine complex unscaled terminal ell2 and native summed regular phase are proved. Native actual mean-subtracted Dirichlet energies, symmetric midpoint remainders and Dirichlet-minus-midpoint displacements are NOW proved on ONE common complex source ball before all gaps, with quadratic Hilbert remainders and exact Fourier derivatives. NEXT prove uniform analytic action/amplitude prefactors, physical matching and actual weighted half-shift coordinate assembly. Full s>=-1 scale, arbitrary-base/global neighborhoods, canonicality/global inverse and Hamiltonian action frequencies remain essential.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -18358,5 +18628,6 @@
   "native_all_regular_corrections_record": "NATIVE_ALL_REGULAR_CORRECTIONS.md",
   "native_summed_phase_record": "NATIVE_SUMMED_PHASE.md",
   "native_dirichlet_energy_record": "NATIVE_DIRICHLET_ENERGIES.md",
-  "native_gap_midpoint_record": "NATIVE_GAP_MIDPOINTS.md"
+  "native_gap_midpoint_record": "NATIVE_GAP_MIDPOINTS.md",
+  "native_weighted_abelian_record": "NATIVE_WEIGHTED_ABELIAN_MAP.md"
 }
