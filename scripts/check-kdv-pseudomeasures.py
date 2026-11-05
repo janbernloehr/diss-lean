@@ -1884,6 +1884,16 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerOrderInclusion',
     'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerCanonicalDerivative',
     'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerCanonicalTimeDerivative',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeModeVector',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeTangent',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeEnergyVariation',
+    'NLS.Poisson.HminusGradientPairing',
+    'NLS.KdV.PeriodOneSmoothEnergyCotangent',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillEnergyCotangentNativeVelocity',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalRoughTangent',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalCanonicalVector',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalSmoothness',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalSmoothPDE',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
