@@ -6194,3 +6194,8 @@ import NLS.ComplexAnalysis.QuadraticCirclePeriodTransfer
 import NLS.KdV.HillHminusIntrinsicPeriods
 import NLS.KdV.HillHminusNumeratorReality
 import NLS.KdV.HillHminusPhysicalNumeratorIdentification
+import NLS.ZakharovShabat.SourcePsiSeparatedGrowth
+import NLS.ComplexAnalysis.CloseShiftedFrequency
+import NLS.ZakharovShabat.ShiftedSineExteriorBounds
+import NLS.KdV.HillHminusNumeratorDecay
+import NLS.KdV.HillHminusFixedPhysicalNumerators

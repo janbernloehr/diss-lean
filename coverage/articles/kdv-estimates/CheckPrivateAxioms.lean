@@ -1271,6 +1271,11 @@ import NLS.ComplexAnalysis.QuadraticCirclePeriodTransfer
 import NLS.KdV.HillHminusIntrinsicPeriods
 import NLS.KdV.HillHminusNumeratorReality
 import NLS.KdV.HillHminusPhysicalNumeratorIdentification
+import NLS.ZakharovShabat.SourcePsiSeparatedGrowth
+import NLS.ComplexAnalysis.CloseShiftedFrequency
+import NLS.ZakharovShabat.ShiftedSineExteriorBounds
+import NLS.KdV.HillHminusNumeratorDecay
+import NLS.KdV.HillHminusFixedPhysicalNumerators
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2363,7 +2368,16 @@ run_cmd do
     ``NLS.ComplexAnalysis.integral_quadraticEnergyCircle_eq_circleIntegral,
     ``NLS.ComplexAnalysis.integral_quadraticEnergyCircle_eq_curveIntegral,
     ``NLS.ComplexAnalysis.quadraticCirclePath,
-    ``NLS.ComplexAnalysis.quadraticCirclePath_contDiffOn]
+    ``NLS.ComplexAnalysis.quadraticCirclePath_contDiffOn,
+    ``NLS.ComplexAnalysis.closeShiftedFrequency,
+    ``NLS.ComplexAnalysis.closeShiftedFrequency.eq_1,
+    ``NLS.ComplexAnalysis.closeShiftedFrequency_sq,
+    ``NLS.ComplexAnalysis.exists_closeShiftedFrequency_central_bounds,
+    ``NLS.ComplexAnalysis.norm_closeShiftedFrequency_sub_le,
+    ``NLS.ZakharovShabat.exists_bound_sine_quotient_near_separated,
+    ``NLS.ZakharovShabat.exists_threshold_free_div_entireSingleSpectralProduct_le_two,
+    ``NLS.ZakharovShabat.exists_threshold_sourceOddPsiCandidate_sub_sine,
+    ``NLS.ZakharovShabat.exists_threshold_sourcePsiCandidate_sub_sine]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
