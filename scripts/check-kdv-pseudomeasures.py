@@ -1899,6 +1899,14 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillSmoothPDEUniqueness',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSmoothPhysicalSolutions',
     'NLS.Articles.KdVPseudomeasures.OriginalHillRoughSmoothApproximationSolutions',
+    'NLS.FunctionalAnalysis.ContinuousMapCurveDerivative',
+    'NLS.FunctionalAnalysis.PeriodicContinuousCurveDerivative',
+    'NLS.FunctionalAnalysis.SmoothSpaceTimePartials',
+    'NLS.Fourier.PeriodOneContinuousRecovery',
+    'NLS.Fourier.SmoothRealMeanZeroPeriodOneData',
+    'NLS.Fourier.SmoothRealPeriodOneCurve',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillClassicalSolutionAdapter',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillClassicalApproximation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

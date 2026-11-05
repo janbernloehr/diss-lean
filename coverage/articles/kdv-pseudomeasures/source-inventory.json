@@ -3311,6 +3311,45 @@
         "NLS.Articles.KdVPseudomeasures.existsUnique_hillRoughSolutionBySmoothApproximation"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-smooth-PDE-uniqueness-map.json"
+    },
+    {
+      "label": "Arbitrary jointly smooth classical adapter, uniqueness and universal rough approximation",
+      "status": "Arbitrary jointly smooth real mean-zero unit-period classical KdV space-time solutions automatically define genuine H4/H1 strong solutions, equal the actual canonical flow, are unique for their initial physical functions, and satisfy universal rough uniform compact-time approximation. Adapter complete. Original rough approximation-class equivalence and endpoint/Wiener conclusions remain open; four main theorems unproved.",
+      "declarations": [
+        "NLS.FunctionalAnalysis.hasDerivAt_continuousMap_of_pointwise",
+        "NLS.FunctionalAnalysis.periodicContinuousCircle",
+        "NLS.FunctionalAnalysis.periodicContinuousCircle_coe",
+        "NLS.FunctionalAnalysis.continuous_periodicContinuousCircle",
+        "NLS.FunctionalAnalysis.hasDerivAt_periodicContinuousCircle",
+        "NLS.FunctionalAnalysis.spacePartial",
+        "NLS.FunctionalAnalysis.timePartial",
+        "NLS.FunctionalAnalysis.contDiff_spacePartial",
+        "NLS.FunctionalAnalysis.contDiff_timePartial",
+        "NLS.FunctionalAnalysis.hasDerivAt_spacePartial",
+        "NLS.FunctionalAnalysis.hasDerivAt_timePartial",
+        "NLS.FunctionalAnalysis.spacePartial_eq_deriv",
+        "NLS.FunctionalAnalysis.periodic_spacePartial",
+        "NLS.FunctionalAnalysis.periodic_timePartial",
+        "NLS.Fourier.periodOneContinuousCoefficients",
+        "NLS.Fourier.periodOneContinuousCoefficients_apply",
+        "NLS.Fourier.periodOneContinuousRealZero",
+        "NLS.Fourier.periodOneContinuousRecovery",
+        "NLS.Fourier.periodOneContinuousRecovery_deriv",
+        "NLS.Fourier.periodOneCoefficient_zero_of_mean_zero",
+        "NLS.Fourier.periodOneCoefficient_reflection_of_real",
+        "NLS.Fourier.smoothRealMeanZeroPeriodOneData",
+        "NLS.Fourier.smoothRealMeanZeroPeriodOneData_apply",
+        "NLS.Fourier.differentiableAt_realPeriodOneCurve_of_smoothSpaceTime",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve_coefficients",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve_physical",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve_is_strong",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve_eq_canonicalFlow",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolution_physical_eq_canonicalFlow",
+        "NLS.Articles.KdVPseudomeasures.tendstoUniformlyOn_hillClassicalSmoothSolutions",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolutions_eq_of_initial_eq"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json"
     }
   ],
   "reuse_map": [
@@ -3390,9 +3429,9 @@
     }
   ],
   "remaining_obligations": [
-    "Prove the source-fidelity adapter from an arbitrary jointly smooth, real, mean-zero, period-one classical space-time KdV function to its GENUINE H4-valued Fourier coefficient trajectory with H1 Banach time derivative. Current uniqueness/existence/universal PDE approximation is COMPLETE in the explicit genuine H4/H1 strong physical model, with the literal POINTWISE PDE and NO assumed coordinate equation. A route to the adapter: reconstruct the H1 source from the L2 coefficients of the classical spatial derivative via the existing actual signedRealSpatialRecovery; smooth joint space-time regularity gives a Banach derivative for the continuous-circle representative of the spatial derivative, and bounded Fourier/recovery maps transport it to H1. Original all-order smooth Fourier membership supplies the pointwise H4 representative. Preserve reality, original mean and the exact entire coefficient sequence.",
-    "After the arbitrary classical smooth space-time adapter, identify HillRoughSolutionBySmoothApproximation with the original EVERY-smooth-initial-approximation solution definition. Universal strong-model smooth-PDE compact-time approximation and NONVACUOUS unique rough characterization are NOW PROVED. Establish exact bounded endpoint weak-star evolution, boundedness and compact-time trajectory continuity for source Main1.1 and Main1.3 using the verified actual endpoint native homeomorphism, genuine rough frequencies and literal bounded endpoint models.",
-    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0, and the corresponding Wiener analytic compact-time trajectory map for Main5.9. Integer Hilbert diffeomorphisms do not substitute for these. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 complete; FOUR main theorems UNPROVED; goalACTIVE."
+    "Finish the precise source-level rough solution characterization for the original EVERY-smooth-initial-approximation definition. The arbitrary jointly smooth classical-to-H4/H1 adapter, uniqueness and EVERY-family uniform compact-time convergence are NOW PROVED. The existing nonvacuous rough uniqueness characterization quantifies actual spatially smooth H4/H1 strong pointwise PDE solutions. Formally relate this class and the original classical smooth-solution formulation, supplying joint space-time smoothness/existence of canonical approximants if that formulation requires it.",
+    "Prove actual endpoint invariance, ALL-time boundedness and weak-star orbit continuity in F-ell-zero^(s,infinity), -1/2<s<=0, for source Main1.1; prove exact weak-star compact-time trajectory continuity on bounded invariant subsets for source Main1.3. Use the SAME verified endpoint native homeomorphism, genuine rough frequencies and literal bounded endpoint models.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY integer N>=0 and the corresponding Wiener analytic compact-time trajectory map Main5.9. Integer Hilbert diffeomorphisms do not substitute. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 complete; FOUR mains UNPROVED; goalACTIVE."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -7432,7 +7471,7 @@
     "EVERY_rough_source_has_CONSTRUCTED_smooth_strong_PDE_approximating_solutions_PROVED": true,
     "universal_smooth_strong_PDE_approximation_characterization_NONVACUOUS_PROVED": true,
     "unique_rough_solution_by_EVERY_smooth_strong_model_PDE_approximation_PROVED": true,
-    "arbitrary_jointly_smooth_classical_space_time_to_strong_model_adapter_PROVED": false,
+    "arbitrary_jointly_smooth_classical_space_time_to_strong_model_adapter_PROVED": true,
     "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
     "required_bounded_endpoint_weak_star_trajectory_results_PROVED": false,
     "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
@@ -7443,6 +7482,30 @@
       "5.1",
       "5.9"
     ],
-    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-smooth-PDE-uniqueness-map.json"
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-smooth-PDE-uniqueness-map.json",
+    "adapter_completed_in": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json"
+  },
+  "actual_Hill_classical_solution_adapter": {
+    "compact_continuous_map_Banach_derivative_from_pointwise_velocity_PROVED": true,
+    "joint_periodic_scalar_field_uniform_norm_derivative_PROVED": true,
+    "actual_original_Fourier_H1_recovery_from_spatial_derivative_PROVED": true,
+    "all_nonnegative_real_order_smooth_real_mean_zero_original_Fourier_representatives_PROVED": true,
+    "H1_Banach_time_derivative_from_joint_smoothness_PROVED": true,
+    "arbitrary_jointly_smooth_classical_space_time_to_strong_model_adapter_PROVED": true,
+    "arbitrary_classical_literal_pointwise_PDE_solution_eq_actual_canonical_flow_PROVED": true,
+    "arbitrary_classical_solutions_unique_for_initial_physical_function_PROVED": true,
+    "EVERY_index_filter_classical_PDE_family_rough_UNIFORM_compact_time_approximation_PROVED": true,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
+    "joint_space_time_smoothness_of_constructed_canonical_approximants_PROVED": false,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": false,
+    "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json"
   }
 }

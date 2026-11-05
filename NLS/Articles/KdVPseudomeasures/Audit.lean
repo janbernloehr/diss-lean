@@ -1865,6 +1865,14 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeODEUniqueness
 import NLS.Articles.KdVPseudomeasures.OriginalHillSmoothPDEUniqueness
 import NLS.Articles.KdVPseudomeasures.OriginalHillSmoothPhysicalSolutions
 import NLS.Articles.KdVPseudomeasures.OriginalHillRoughSmoothApproximationSolutions
+import NLS.FunctionalAnalysis.ContinuousMapCurveDerivative
+import NLS.FunctionalAnalysis.PeriodicContinuousCurveDerivative
+import NLS.FunctionalAnalysis.SmoothSpaceTimePartials
+import NLS.Fourier.PeriodOneContinuousRecovery
+import NLS.Fourier.SmoothRealMeanZeroPeriodOneData
+import NLS.Fourier.SmoothRealPeriodOneCurve
+import NLS.Articles.KdVPseudomeasures.OriginalHillClassicalSolutionAdapter
+import NLS.Articles.KdVPseudomeasures.OriginalHillClassicalApproximation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11003,3 +11011,35 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillRoughSmoothApproximationSoluti
 #print axioms NLS.Articles.KdVPseudomeasures.hillCanonicalFlow_is_roughSolutionBySmoothApproximation
 #print axioms NLS.Articles.KdVPseudomeasures.hillRoughSolutionBySmoothApproximation_unique
 #print axioms NLS.Articles.KdVPseudomeasures.existsUnique_hillRoughSolutionBySmoothApproximation
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_continuousMap_of_pointwise
+#print axioms NLS.FunctionalAnalysis.periodicContinuousCircle
+#print axioms NLS.FunctionalAnalysis.periodicContinuousCircle_coe
+#print axioms NLS.FunctionalAnalysis.continuous_periodicContinuousCircle
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_periodicContinuousCircle
+#print axioms NLS.FunctionalAnalysis.spacePartial
+#print axioms NLS.FunctionalAnalysis.timePartial
+#print axioms NLS.FunctionalAnalysis.contDiff_spacePartial
+#print axioms NLS.FunctionalAnalysis.contDiff_timePartial
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_spacePartial
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_timePartial
+#print axioms NLS.FunctionalAnalysis.spacePartial_eq_deriv
+#print axioms NLS.FunctionalAnalysis.periodic_spacePartial
+#print axioms NLS.FunctionalAnalysis.periodic_timePartial
+#print axioms NLS.Fourier.periodOneContinuousCoefficients
+#print axioms NLS.Fourier.periodOneContinuousCoefficients_apply
+#print axioms NLS.Fourier.periodOneContinuousRealZero
+#print axioms NLS.Fourier.periodOneContinuousRecovery
+#print axioms NLS.Fourier.periodOneContinuousRecovery_deriv
+#print axioms NLS.Fourier.periodOneCoefficient_zero_of_mean_zero
+#print axioms NLS.Fourier.periodOneCoefficient_reflection_of_real
+#print axioms NLS.Fourier.smoothRealMeanZeroPeriodOneData
+#print axioms NLS.Fourier.smoothRealMeanZeroPeriodOneData_apply
+#print axioms NLS.Fourier.differentiableAt_realPeriodOneCurve_of_smoothSpaceTime
+#print axioms NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve
+#print axioms NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve_physical
+#print axioms NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve_is_strong
+#print axioms NLS.Articles.KdVPseudomeasures.hillClassicalSmoothCurve_eq_canonicalFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolution_physical_eq_canonicalFlow
+#print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformlyOn_hillClassicalSmoothSolutions
+#print axioms NLS.Articles.KdVPseudomeasures.hillClassicalSmoothSolutions_eq_of_initial_eq
