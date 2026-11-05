@@ -1600,6 +1600,10 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.NativeEndpointBallLocalBound',
     'NLS.Articles.KdVPseudomeasures.NativeEndpointBallCompactImage',
     'NLS.Articles.KdVPseudomeasures.NativeEndpointBallBound',
+    'NLS.SequenceSpaces.SignedSobolevBilinearPairing',
+    'NLS.SequenceSpaces.SignedSobolevWienerWeakStar',
+    'NLS.SequenceSpaces.PhysicalSignedWienerWeakStar',
+    'NLS.Articles.KdVPseudomeasures.EndpointWeakStarContinuity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -1566,6 +1566,10 @@ import NLS.Topology.CompactLiftedLocalBound
 import NLS.Articles.KdVPseudomeasures.NativeEndpointBallLocalBound
 import NLS.Articles.KdVPseudomeasures.NativeEndpointBallCompactImage
 import NLS.Articles.KdVPseudomeasures.NativeEndpointBallBound
+import NLS.SequenceSpaces.SignedSobolevBilinearPairing
+import NLS.SequenceSpaces.SignedSobolevWienerWeakStar
+import NLS.SequenceSpaces.PhysicalSignedWienerWeakStar
+import NLS.Articles.KdVPseudomeasures.EndpointWeakStarContinuity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9555,3 +9559,20 @@ import NLS.Articles.KdVPseudomeasures.NativeEndpointBallBound
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_endpoint_ball_native_neighborhood
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_hillEndpointRealSignedMap_bound
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_6
+#print axioms NLS.WeightedCoeff.signedSobolevBilinearPairing
+#print axioms NLS.WeightedCoeff.signedSobolevBilinearPairing_apply
+#print axioms NLS.WeightedCoeff.summable_norm_signedSobolevBilinearPairing
+#print axioms NLS.WeightedCoeff.norm_signedSobolevBilinearPairing_le
+#print axioms NLS.WeightedCoeff.signedSobolevWeakStar
+#print axioms NLS.WeightedCoeff.signedSobolevWeakStar_apply
+#print axioms NLS.WeightedCoeff.tendsto_signedSobolevWeakStar_of_bounded_coefficients
+#print axioms NLS.WeightedCoeff.tendsto_signedSobolevWeakStar_truncate
+#print axioms NLS.WeightedCoeff.physicalSignedWienerFunctional
+#print axioms NLS.WeightedCoeff.physicalSignedWeakStar
+#print axioms NLS.WeightedCoeff.physicalSignedWeakStar_apply
+#print axioms NLS.WeightedCoeff.tendsto_physicalSignedWeakStar_of_bounded_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointWeakStarCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_originalEndpoint_coordinates_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_originalEndpointWeakStarCoordinates_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_7
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalEndpointWeakStarCoordinates_on_bounded
