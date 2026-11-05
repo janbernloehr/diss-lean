@@ -1629,6 +1629,10 @@ modules = [
     'NLS.Topology.CompactSingletonFiber',
     'NLS.SequenceSpaces.PhysicalSobolevWienerSeparation',
     'NLS.Articles.KdVPseudomeasures.EndpointZeroFiberWeakStar',
+    'NLS.Topology.CompactClosureEmbedding',
+    'NLS.KdV.HillNativeInverseGapTail',
+    'NLS.Articles.KdVPseudomeasures.EndpointNativeInverseRegularity',
+    'NLS.Articles.KdVPseudomeasures.MainTheorem14Reduction',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

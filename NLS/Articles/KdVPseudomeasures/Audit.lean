@@ -1595,6 +1595,10 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeZeroFiber
 import NLS.Topology.CompactSingletonFiber
 import NLS.SequenceSpaces.PhysicalSobolevWienerSeparation
 import NLS.Articles.KdVPseudomeasures.EndpointZeroFiberWeakStar
+import NLS.Topology.CompactClosureEmbedding
+import NLS.KdV.HillNativeInverseGapTail
+import NLS.Articles.KdVPseudomeasures.EndpointNativeInverseRegularity
+import NLS.Articles.KdVPseudomeasures.MainTheorem14Reduction
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9741,3 +9745,16 @@ import NLS.Articles.KdVPseudomeasures.EndpointZeroFiberWeakStar
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_originalHminusOne_zero_of_output_weakStar
 #print axioms NLS.Articles.KdVPseudomeasures.exists_finite_output_control_sourceLower_zero
 #print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformly_sourceLower_zero_of_output_coefficients
+#print axioms NLS.Topology.isEmbedding_restriction_of_compact_closure
+#print axioms NLS.KdV.hillHminus_gapSquare_norm_le_action
+#print axioms NLS.KdV.exists_hillReal_native_inverse_gap_tail
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGaps_mem_of_native_endpoint_output
+#print axioms NLS.Articles.KdVPseudomeasures.exists_endpoint_preimage_of_native_endpoint_output
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_surjective_of_native_surjective
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_injective_of_native_injective
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarCoordinates_injective_of_native_injective
+#print axioms NLS.Articles.KdVPseudomeasures.isEmbedding_articleEndpointWeakStarCoordinates_on_bounded_of_native_injective
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarHomeomorphRangeOfNativeInjective
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarHomeomorphRangeOfNativeInjective_apply
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_4Statement
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_4_of_native_isClosedMap

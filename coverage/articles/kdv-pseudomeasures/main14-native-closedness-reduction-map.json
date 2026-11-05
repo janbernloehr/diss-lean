@@ -1,0 +1,169 @@
+{
+  "source": "arXiv:1610.00278v1 Theorem1.4, all clauses; sourceLemma3.4 and Corollary3.8; literal corrected target exponent s+1/2",
+  "status": "State the FULL original Theorem1.4 conclusion and prove it CONDITIONAL ONLY on actual native closedness; prove actual native-to-endpoint inverse regularity and full bounded-set inverse weak-star topology conditional only on native injectivity. ACTUAL native closedness is UNPROVED; Theorem1.4 and all other main statements remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/main14-native-closedness-reduction-map.json",
+    "ACTUAL_high_gap_action_bound_exact_16_pi_n_PROVED": true,
+    "ACTUAL_BOTH_signed_gap_tails_controlled_by_SAME_inverse_free_output_PROVED": true,
+    "cutoff_depends_on_source": true,
+    "ACTUAL_native_endpoint_output_IMPLIES_original_endpoint_gap_regularity_NO_global_premise_PROVED": true,
+    "SAME_ENTIRE_native_preimage_endpoint_regular_with_EXACT_output_PROVED": true,
+    "native_surjectivity_IMPLIES_FULL_actual_endpoint_surjectivity_PROVED": true,
+    "native_injectivity_IMPLIES_FULL_actual_endpoint_injectivity_PROVED": true,
+    "native_injectivity_IMPLIES_full_weakStar_homeomorphism_on_EVERY_bounded_subset_NONCLOSED_allowed_PROVED": true,
+    "actual_weakStar_homeomorphism_onto_exact_range_CONDITIONAL_native_injectivity_constructed": true,
+    "FULL_sourceTheorem1_4_precise_Lean_statement_declared": true,
+    "full_statement": "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4Statement",
+    "conditional_full_statement_theorem": "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4_of_native_isClosedMap",
+    "SINGLE_remaining_hypothesis_of_full_Theorem1_4_reduction": "IsClosedMap NLS.KdV.hillRealSignedMap",
+    "all_other_full_Theorem1_4_clauses_discharged_given_native_closedness": true,
+    "actual_native_closed_map_PROVED": false,
+    "actual_native_properness_PROVED": false,
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "actual_endpoint_global_injectivity_PROVED": false,
+    "actual_endpoint_global_surjectivity_PROVED": false,
+    "full_bounded_set_weak_star_homeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "HillNativeInverseGapTail.hillHminus_gapSquare_norm_le_action proves the exact high-gap lower-action consequence of the actual8*pi*n normalization: if the filled normalized ratio differs from1 by at most1/2, actual squared-gap norm is at most16*pi*n times the actual action norm. exists_hillReal_native_inverse_gap_tail applies locally uniform high normalization at EVERY actual physical Hminus-one source and bounds BOTH signed actual gap tails by3 times the raw inverse-free-half-Fourier transform of the SAME actual native output. Physical conjugacy and the EXACT sqrt(2*pi*n) inverse symbol are retained. The cutoff DEPENDS on the source, so this is NOT a varying-source properness estimate.",
+    "EndpointNativeInverseRegularity.originalCanonicalGaps_mem_of_native_endpoint_output proves that ANY actual original native preimage of an endpoint output has ACTUAL original endpoint gap regularity. The proof compares the actual inverse-free-Fourier output with the endpoint inverse Fourier equivalence coefficient by coefficient, uses BOTH signed tail bounds and finite-modification membership, keeping every low/central gap. It assumes NO native injectivity or surjectivity.",
+    "exists_endpoint_preimage_of_native_endpoint_output proves that the SAME entire original native preimage is an original endpoint potential and has EXACTLY the supplied endpoint output. Actual Theorem2.2 bootstrap supplies regularity; coefficient-preserving native inclusion supplies exact output equality. articleEndpointCoordinates_surjective_of_native_surjective therefore transfers actual native onto-ness to every endpoint with NO extra inverse-regularity premise. articleEndpointCoordinates_injective_of_native_injective transfers actual native injectivity to ENTIRE original endpoint distributions. Native injectivity/surjectivity themselves remain UNPROVED.",
+    "CompactClosureEmbedding proves a shared compact-closure restriction theorem, without heartbeat increases: a map continuous and injective on the compact closure is an embedding on the original possibly NONCLOSED subset. MainTheorem14Reduction applies it to the ACTUAL endpoint physical real Wiener weak-star map. isEmbedding_articleEndpointWeakStarCoordinates_on_bounded_of_native_injective proves full inverse/forward weak-star topology on EVERY norm-bounded source subset, conditional ONLY on actual native injectivity. The subset need NOT be closed and no separate image-bound or inverse-continuity premise is supplied. A genuine homeomorphism onto the EXACT actual image is constructed.",
+    "sourceTheorem1_4Statement is now a precise Lean Prop for ALL source Theorem1.4 clauses: every0<=r<1/2 (s=-r); the SAME actual restriction; literal corrected target1/2-r with1+abs(n) weight; bijection; ORIGINAL distribution norm boundedness; actual Banach-model real analyticity; true analytic local inverse germs at0 and true inverse Fourier derivative; weak-star homeomorphism onto the exact image of EVERY original bounded subset; membership and one ORIGINAL endpoint norm bound for the ENTIRE original Hminus-one isospectral family including ALL algebraic multiplicities; and its exact physical weak-star homeomorphism. The verified original physical distribution Banach equivalence retains source normalization.",
+    "sourceTheorem1_4_of_native_isClosedMap proves the FULL sourceTheorem1_4Statement under the SINGLE EXPLICIT hypothesis IsClosedMap hillRealSignedMap. Actual singleton zero fiber and all-source physical real local homeomorphism give native bijectivity from that hypothesis; the new inverse-regularity and bounded-set topology proofs discharge the remaining endpoint clauses. This is a CONDITIONAL reduction, NOT an unconditional proof of Theorem1.4. Actual native closedness/properness, actual global bijectivity, actualKdV and ALL FIVE MAIN THEOREMS remain UNPROVED."
+  ],
+  "declarations": [
+    "NLS.Topology.isEmbedding_restriction_of_compact_closure",
+    "NLS.KdV.hillHminus_gapSquare_norm_le_action",
+    "NLS.KdV.exists_hillReal_native_inverse_gap_tail",
+    "NLS.Articles.KdVPseudomeasures.originalCanonicalGaps_mem_of_native_endpoint_output",
+    "NLS.Articles.KdVPseudomeasures.exists_endpoint_preimage_of_native_endpoint_output",
+    "NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_surjective_of_native_surjective",
+    "NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_injective_of_native_injective",
+    "NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarCoordinates_injective_of_native_injective",
+    "NLS.Articles.KdVPseudomeasures.isEmbedding_articleEndpointWeakStarCoordinates_on_bounded_of_native_injective",
+    "NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarHomeomorphRangeOfNativeInjective",
+    "NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarHomeomorphRangeOfNativeInjective_apply",
+    "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4Statement",
+    "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4_of_native_isClosedMap"
+  ],
+  "files": [
+    "NLS/Topology/CompactClosureEmbedding.lean",
+    "NLS/KdV/HillNativeInverseGapTail.lean",
+    "NLS/Articles/KdVPseudomeasures/EndpointNativeInverseRegularity.lean",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem14Reduction.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "6f63d7b382a4ba302dfaec8f6952eec077fded0a",
+    "baseline_modules": 1598,
+    "baseline_non_audit_sources_verified_unchanged": 1597,
+    "new_modules_compiled": 4,
+    "reused_canonical_modules_freshly_compiled": [],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.KdV.HillHminusOneCanonicalQuotients",
+        "source": "NLS/KdV/HillHminusOneCanonicalQuotients.lean",
+        "source_sha256": "66115fb23b70014e81b75055614ab392c9b8184fdb187c25d02ce54dd772b38b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.RealMeanZeroHalfFourierEquiv",
+        "source": "NLS/SequenceSpaces/RealMeanZeroHalfFourierEquiv.lean",
+        "source_sha256": "40351fcb4142245afaea3e3380f8602199a86b9b63929944486980cfbd5487cc",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.RealNegativeOrderHalfFourierEquiv",
+        "source": "NLS/SequenceSpaces/RealNegativeOrderHalfFourierEquiv.lean",
+        "source_sha256": "cc407ee0a19bf5ac8c99e7b45c7dc62d2deecfe4634d72773c23164fbf5850cd",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.FiniteTailDomination",
+        "source": "NLS/SequenceSpaces/FiniteTailDomination.lean",
+        "source_sha256": "4f38d3a8f6522705a8690e54f23b787ec42b862bd2b33d7556266093867d1363",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.ArticleEndpointTargetNorm",
+        "source": "NLS/Articles/KdVPseudomeasures/ArticleEndpointTargetNorm.lean",
+        "source_sha256": "859761917384a1efca8d51f3bf745eba177230e05a824b1bc2e0c598e466d459",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalEndpointMembership",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalEndpointMembership.lean",
+        "source_sha256": "e67f81d986f89e0e02325dba17f6758f1b9bce95d9ac98531f7bc7890711f64d",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.EndpointPhysicalNativeInclusions",
+        "source": "NLS/Articles/KdVPseudomeasures/EndpointPhysicalNativeInclusions.lean",
+        "source_sha256": "7bb46704c293e3cb0874e68afb5a9fab3d827cce595c146613d480365dc660ca",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.ArticleEndpointWeakStarContinuity",
+        "source": "NLS/Articles/KdVPseudomeasures/ArticleEndpointWeakStarContinuity.lean",
+        "source_sha256": "929f4acf39e7a1ad2dcff60b85fb7b98dc25330b1d3ac2750bcfa37934b670d4",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.EndpointZeroFiberWeakStar",
+        "source": "NLS/Articles/KdVPseudomeasures/EndpointZeroFiberWeakStar.lean",
+        "source_sha256": "3f724787db8d91154cf052f5f2e84d890a83f2ef049b141e13d669edbee71ace",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeZeroFiber",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeZeroFiber.lean",
+        "source_sha256": "0892249b05e1d4f0cc9460d43ac46c55034cf95f4797056931ed011b95f04a85",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PhysicalSobolevWienerSeparation",
+        "source": "NLS/SequenceSpaces/PhysicalSobolevWienerSeparation.lean",
+        "source_sha256": "c825392140b71f0ca21fca5354e072a4a264441e40b4991ca1d9b300c8e767c7",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.SourceWeakStarCompactSets",
+        "source": "NLS/Articles/KdVPseudomeasures/SourceWeakStarCompactSets.lean",
+        "source_sha256": "7cfd48dfbd06e3503bb57e5dd5f03fb0ae762333b04aaa8e288b17fb2de31332",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1602,
+    "audited_declarations": 8156,
+    "theorems": 6855,
+    "definitions": 1301,
+    "new_theorems": 11,
+    "new_definitions": 2,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-main14-native-closedness-reduction.log",
+    "log_sha256": "56f9a7c0b324a6cffa609ddb03f876a7109a5fd276c79b6262c5650280f578fe"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED actual full real Hminus-one Hill BORG potential constancy for ALL canonical gaps closed, zero-mean uniqueness and EXACT singleton ACTUAL native zero fiber. Proof uses unconditional ACTUAL Dirac central-gap constancy from physical momentum/spatial translation+ACTUAL Dirac Jacobian injectivity, genuine all-index Miura gap comparison/reflection and SAME actual distributional Miura lift. GLOBAL actual native bijectivity IFF ACTUAL native map closedness now PROVED, using actual local homeomorphism+singletonzero. Actual closedness/properness/globalbijection, L2/smooth nativeinjectivity/arbitrary action realization and allmain still OPEN. Prior actual finite-gap smoothness/L2 reduction and full endpoint3.5i/ii/literalnorm/localinverse/forwardweakstar remain PROVED.",
+    "FULL precise sourceTheorem1.4 is NOW declared as sourceTheorem1_4Statement and PROVED CONDITIONAL ONLY on IsClosedMap hillRealSignedMap by sourceTheorem1_4_of_native_isClosedMap. Actual endpoint inverse regularity is unconditional for ANY actual native preimage of endpoint output. Native onto/injectivity transfer to endpoints; native injectivity supplies full weak-star homeomorphism on EVERY bounded subset, including nonclosed subsets. Actual native CLOSEDNESS/PROPERNESS/GLOBALBIJECTION remains UNPROVED, so sourceTheorem1.4 remains UNPROVED. Actual native globalbijectionIFFactualclosedmap is already proved via actual localhomeomorphism+genuine singletonzero. Other nonlinear scales and actualKdV still required; ALL MAIN statements remain UNPROVED.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}
