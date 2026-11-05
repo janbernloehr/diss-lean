@@ -218,6 +218,7 @@ modules+=(NLS/SequenceSpaces/OrderedSignedSimpleEnumeration NLS/KdV/MiuraDirichl
 modules+=(NLS/ZakharovShabat/SourceAngularPairedPathBeta NLS/KdV/HillPrescribedCosineSheet NLS/ComplexAnalysis/RealCosineArc NLS/KdV/HillPhysicalCosinePath NLS/ZakharovShabat/SourceAngularPairedPrimitives)
 modules+=(NLS/ComplexAnalysis/RealPositiveEnergyLift NLS/KdV/HillPhysicalCosineFrequencyPath NLS/KdV/HillHminusOriginalCosineLift)
 modules+=(NLS/ComplexAnalysis/QuadraticCosinePathIntegrability NLS/KdV/HillCosineSourceGap NLS/KdV/HillSelectedCosineArc NLS/KdV/HillCosineSourceSheet NLS/KdV/HillCosineSourceIntegrability NLS/KdV/HillCosineSourceBeta NLS/KdV/HillOriginalTerminalBeta NLS/KdV/HillZeroTerminalCorrection NLS/ZakharovShabat/SourceBetaZeroSheet NLS/KdV/HillOriginalPairedBeta NLS/KdV/HillOriginalOffIndexSourceSeries)
+modules+=(NLS/KdV/HillOwnCosineEnergy NLS/ZakharovShabat/SourceNegativePathBeta NLS/KdV/HillOwnNegativeBeta NLS/KdV/HillOwnSeriesAssembly NLS/KdV/HillOwnPhysicalPullback NLS/KdV/HillFullSourceCartesian)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

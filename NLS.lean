@@ -6245,3 +6245,9 @@ import NLS.KdV.HillZeroTerminalCorrection
 import NLS.ZakharovShabat.SourceBetaZeroSheet
 import NLS.KdV.HillOriginalPairedBeta
 import NLS.KdV.HillOriginalOffIndexSourceSeries
+import NLS.KdV.HillOwnCosineEnergy
+import NLS.ZakharovShabat.SourceNegativePathBeta
+import NLS.KdV.HillOwnNegativeBeta
+import NLS.KdV.HillOwnSeriesAssembly
+import NLS.KdV.HillOwnPhysicalPullback
+import NLS.KdV.HillFullSourceCartesian

@@ -1322,6 +1322,12 @@ import NLS.KdV.HillZeroTerminalCorrection
 import NLS.ZakharovShabat.SourceBetaZeroSheet
 import NLS.KdV.HillOriginalPairedBeta
 import NLS.KdV.HillOriginalOffIndexSourceSeries
+import NLS.KdV.HillOwnCosineEnergy
+import NLS.ZakharovShabat.SourceNegativePathBeta
+import NLS.KdV.HillOwnNegativeBeta
+import NLS.KdV.HillOwnSeriesAssembly
+import NLS.KdV.HillOwnPhysicalPullback
+import NLS.KdV.HillFullSourceCartesian
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2497,7 +2503,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.positiveRealEnergyLift_sq,
     ``NLS.ComplexAnalysis.quadraticEnergyPath_positiveRealEnergyLiftPath,
     ``NLS.ComplexAnalysis.curveIntegrable_of_quadratic_cosine_resolution,
-    ``NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_eq_zero_of_sheet_zero]
+    ``NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_eq_zero_of_sheet_zero,
+    ``NLS.ZakharovShabat.sourceAngular_negative_pathIntegral_eq_beta]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
