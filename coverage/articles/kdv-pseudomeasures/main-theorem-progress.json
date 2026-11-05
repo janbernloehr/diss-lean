@@ -7400,15 +7400,33 @@
       "NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerEquiv",
       "NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerEquiv_symm",
       "NLS.Articles.KdVPseudomeasures.sourceTheorem5_1Statement",
-      "NLS.Articles.KdVPseudomeasures.sourceTheorem5_1"
+      "NLS.Articles.KdVPseudomeasures.sourceTheorem5_1",
+      "NLS.Coeff.positive_moment_kernel_uniform_bound",
+      "NLS.Coeff.norm_positive_moment_series_le_of_Hilbert_majorant",
+      "NLS.Coeff.analytic_infty_realization_of_bound",
+      "NLS.KdV.HillProductEquationPatch.exists_local_l2CenteredSecondMomentSeries_bound",
+      "NLS.KdV.HillProductEquationPatch.l2CenteredSecondMomentSequence",
+      "NLS.KdV.HillProductEquationPatch.exists_local_l2CenteredSecondMomentSequence_analytic",
+      "NLS.Articles.KdVPseudomeasures.hillL2KdVRenormalizedFrequencySequence",
+      "NLS.Articles.KdVPseudomeasures.originalHill_exists_bounded_l2_frequency_neighborhood",
+      "NLS.Articles.KdVPseudomeasures.analyticAt_hillL2KdVRenormalizedFrequencySequence",
+      "NLS.Articles.KdVPseudomeasures.hillL2KdVRenormalizedFrequencySequence_coefficients",
+      "NLS.Articles.KdVPseudomeasures.hillL2KdVFrequency_remainder_bound",
+      "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion",
+      "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion_apply",
+      "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion_native",
+      "NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence",
+      "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVRenormalizedFrequencySequence",
+      "NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence_coefficients",
+      "NLS.Articles.KdVPseudomeasures.originalWienerKdVFrequency_remainder_bound"
     ]
   },
   "essential_open_obligations": [
-    "Main5.9: prove genuine unweighted bounded analytic correction to the actual frequency omega_n-8*pi^3*n^3 near every real L2/Wiener source. The existing rough signed order -1 infinity control is insufficient. Retain the SAME original frequencies, complex neighborhood before ALL n, and actual normalization. The stronger source Lemma5.7 ell^r statement need only be included if proved; a sufficient verified bounded analytic correction is enough for the main flow theorem.",
-    "Main5.9: use the bounded analytic correction with the existing analytic phase trajectory in finite weighted ell-one spaces, then prove analytic composition of the actual Wiener inverse with compact-time trajectories in the Banach C([-T,T], FL^(N,1)) norm for EVERY N>=0 and T>0. Pointwise-in-time analyticity alone does not prove this mapping property.",
-    "Main5.9: identify the resulting trajectory with the SAME actual KdV flow, transport to the original physical period-one real mean-zero Fourier-Lebesgue spaces using the now-proved Main5.1 equivalences, and formulate/prove the precise final source statement. Main1.1/1.3/1.4/5.1 are complete; only Main5.9 remains open. Canonical checkout/shared metadata read-only; preserve pending exact publication approval."
+    "Main5.9 frequency control COMPLETE: OriginalHillL2FrequencySequence and OriginalHillWienerFrequencySequence prove actual omega_n-(2*pi*n)^3 is unweighted ell-infinity Banach analytic at EVERY real L2 and physical Wiener source, with exact original frequencies and common complex neighborhoods before ALL n. Next form its literal signed odd extension (reflection subtraction of the positive zero extension), retain the original signed phase normalization, and apply the existing finite-p analytic phase trajectory to the actual weighted ell-one Birkhoff amplitudes.",
+    "Main5.9: prove the compact-time trajectory map analytic in the Banach C([-T,T], FL^(N,1)) norm for EVERY N>=0 and T>0 after applying the actual Wiener inverse. Pointwise-in-time real analyticity is insufficient. Existing NLS.ComplexAnalysis.ContinuousMapSuperposition and ContinuousMapAnalyticInverse cover uniform compact-time COMPLEX analytic maps/inverse lifts; supply the required actual complex Wiener germs or a verified real analytic compact-range superposition result, preserving the exact real source and target.",
+    "Main5.9: identify the resulting trajectory with the SAME actual original KdV flow, transport through the now-proved Main5.1 physical distribution equivalences, and formulate/prove the precise final source theorem. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 is the only open main statement. No claim of the stronger nonmain Lemma5.7 ell^r estimate. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged."
   ],
-  "no_completion_claim": "Main1.1,1.3,1.4,5.1 PROVED. Main5.9 UNPROVED. Actual bounded-frequency and compact-time analytic Wiener KdV flow obligations remain. Goal ACTIVE.",
+  "no_completion_claim": "Main1.1,1.3,1.4,5.1 PROVED. Main5.9 UNPROVED. Actual UNWEIGHTED bounded analytic frequency correction now proved on L2 and ALL physical Wiener sources. Compact-time analytic trajectories, actual inverse composition and final same-flow physical theorem remain. Goal ACTIVE.",
   "shared_module_moves": {
     "WeakStarEndpoint": "NLS/SequenceSpaces/WienerWeakStar.lean",
     "WeightedWeakStarEndpoint": "NLS/SequenceSpaces/WeightedWienerWeakStar.lean",
@@ -9237,7 +9255,13 @@
     "RealPeriodOneSobolevSpace realizes the actual original period-two Fourier-Lebesgue distributions with physical period-one, real and mean-zero constraints as a CLOSED complete real subspace in the ORIGINAL Sobolev norm. RealPeriodOneSobolevCoefficients proves the continuous real linear equivalence with the even pulled-back coefficient space. Both inverse identities hold, including equality of the ENTIRE original smooth-test distribution, not just selected coordinates.",
     "OriginalHillWienerPhysicalModels retains the original physical FL^(N,1) source and ordinary ell_0^(N+1/2,1) target. Exact coefficient-preserving equivalences transport these actual norm topologies to the previously proved native signed Wiener models. The actual original rough potential has the SAME entire original physical distribution; its native source has EVERY original physical mode -2n coefficient.",
     "MainTheorem51.originalHillWienerEquiv is a GLOBAL equivalence for EVERY nonnegative integer order, with EVERY actual original native Birkhoff coefficient. The generic AnalyticLinearEquivalenceTransport theorem transports the unconditional native Wiener forward and inverse analyticity through the proved continuous real linear physical equivalences.",
-    "MainTheorem51.sourceTheorem5_1 proves the precise final sourceTheorem5_1Statement: EVERY N>=0, actual original physical distribution preservation, ALL actual native coordinate identities, forward/inverse real analyticity on the full ordinary weighted ell-one spaces, and the original signed Gardner canonical matrix for ALL signed indices. Source Main5.1 now PROVED; Main1.1/1.3/1.4 remain PROVED. Main5.9 remains UNPROVED and goal ACTIVE."
+    "MainTheorem51.sourceTheorem5_1 proves the precise final sourceTheorem5_1Statement: EVERY N>=0, actual original physical distribution preservation, ALL actual native coordinate identities, forward/inverse real analyticity on the full ordinary weighted ell-one spaces, and the original signed Gardner canonical matrix for ALL signed indices. Source Main5.1 now PROVED; Main1.1/1.3/1.4 remain PROVED. Main5.9 remains UNPROVED and goal ACTIVE.",
+    "BoundedPositiveMomentSeries proves the positive reciprocal moment kernel is uniformly bounded in BOTH indices by1+the fixed punctured-lattice Hilbert norm. A Hilbert majorant after ONE input index derivative makes the ENTIRE absolute weighted moment row summable and bounds its full complex sum uniformly in EVERY row index. The proof bounds the full series by an actual squared-gap ell-one majorant; no finite cutoff or diagonal omission remains.",
+    "InfinityAnalyticRealization proves uniform scalar bounds and coordinate analyticity give an analytic map into actual UNWEIGHTED ell-infinity with EVERY coefficient preserved. The total sequence constructor is identified by proved membership and exact coordinates on the original open domain.",
+    "HillL2MomentSeriesBound combines the SAME retained original all-index complex centered-moment bound with the SAME physical L2-to-H1 Miura lift and weighted Hilbert gap majorants. It proves the ENTIRE actual centered second-moment series uniformly bounded on ONE complex L2 neighborhood BEFORE ALL positive frequency indices, including low and collapsed gaps. The original product patch and primitive neighborhood are retained.",
+    "HillL2MomentSequenceAnalytic realizes the ENTIRE original moment-sum sequence in UNWEIGHTED ell-infinity and proves complex Banach analyticity on ONE complex L2 neighborhood. It retains EVERY actual original moment-series coefficient and a common uniform norm bound. Actual original scalar moment analyticity is transported through the original bounded L2 inclusion.",
+    "OriginalHillL2FrequencySequence proves hillL2KdVRenormalizedFrequencySequence is real analytic into UNWEIGHTED ell-infinity on the ENTIRE actual real mean-zero L2 Banach source. Every positive coordinate is EXACTLY the SAME original hillRoughKdVFrequency minus (2*pi*n)^3, by the proved cross-patch original physical frequency/moment identity. The full complex local spectral sequence precedes ALL indices. The actual correction now has a UNIFORM index-independent norm bound; the older merely linear rough-space bound is no longer the best estimate on L2.",
+    "OriginalHillWienerFrequencySequence proves a bounded coefficient-preserving L2 inclusion for EVERY ORIGINAL physical FL^(N,1) source. Its rough inclusion is EXACTLY the original physical potential already used in Main5.1, with the SAME entire distribution. originalWienerKdVRenormalizedFrequencySequence is UNWEIGHTED ell-infinity real analytic for EVERY N>=0, preserves ALL original positive frequency corrections with the exact cubic normalization, and uniformly bounds every positive correction. Main5.9 frequency-control obligation is CLOSED; signed phase trajectories, compact-time analytic inverse composition and final same-flow physical theorem remain OPEN."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -15041,5 +15065,16 @@
     "actual_signed_Gardner_canonical_matrix_PROVED": true,
     "Main5_9_PROVED": false,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-1-physical-wiener-map.json"
+  },
+  "verified_actual_unweighted_L2_Wiener_frequency_correction": {
+    "ACTUAL_original_KdV_frequency_correction_UNWEIGHTED_ell_infinity_analytic_L2_PROVED": true,
+    "ACTUAL_original_KdV_frequency_correction_UNWEIGHTED_ell_infinity_analytic_ALL_physical_Wiener_orders_PROVED": true,
+    "actual_original_frequencies_and_cubic_normalization_preserved": true,
+    "ONE_complex_L2_neighborhood_BEFORE_ALL_positive_frequency_indices": true,
+    "entire_original_physical_distribution_preserved": true,
+    "Main5_1_PROVED": true,
+    "Main5_9_PROVED": false,
+    "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Wiener-bounded-frequency-map.json"
   }
 }

@@ -1,0 +1,173 @@
+{
+  "source": "arXiv:1610.00278v1 Section5, Main5.9 necessary frequency control: actual unweighted bounded analytic correction on L2 and all physical Wiener orders",
+  "status": "ACTUAL original KdV frequency correction omega_n-(2*pi*n)^3 UNWEIGHTED ell-infinity Banach analytic on the ENTIRE real mean-zero L2 source and EVERY original physical integer-order Wiener space. SAME distribution, actual frequencies and exact cubic normalization retained. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.1",
+    "1.3",
+    "1.4",
+    "5.1"
+  ],
+  "unproved_main_theorems": [
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "ACTUAL_original_KdV_frequency_correction_UNWEIGHTED_ell_infinity_analytic_L2_PROVED": true,
+    "ACTUAL_original_KdV_frequency_correction_UNWEIGHTED_ell_infinity_analytic_ALL_physical_Wiener_orders_PROVED": true,
+    "actual_original_frequencies_and_cubic_normalization_preserved": true,
+    "ONE_complex_L2_neighborhood_BEFORE_ALL_positive_frequency_indices": true,
+    "entire_original_physical_distribution_preserved": true,
+    "Main5_1_PROVED": true,
+    "Main5_9_PROVED": false,
+    "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Wiener-bounded-frequency-map.json"
+  },
+  "results": [
+    "BoundedPositiveMomentSeries proves the positive reciprocal moment kernel is uniformly bounded in BOTH indices by1+the fixed punctured-lattice Hilbert norm. A Hilbert majorant after ONE input index derivative makes the ENTIRE absolute weighted moment row summable and bounds its full complex sum uniformly in EVERY row index. The proof bounds the full series by an actual squared-gap ell-one majorant; no finite cutoff or diagonal omission remains.",
+    "InfinityAnalyticRealization proves uniform scalar bounds and coordinate analyticity give an analytic map into actual UNWEIGHTED ell-infinity with EVERY coefficient preserved. The total sequence constructor is identified by proved membership and exact coordinates on the original open domain.",
+    "HillL2MomentSeriesBound combines the SAME retained original all-index complex centered-moment bound with the SAME physical L2-to-H1 Miura lift and weighted Hilbert gap majorants. It proves the ENTIRE actual centered second-moment series uniformly bounded on ONE complex L2 neighborhood BEFORE ALL positive frequency indices, including low and collapsed gaps. The original product patch and primitive neighborhood are retained.",
+    "HillL2MomentSequenceAnalytic realizes the ENTIRE original moment-sum sequence in UNWEIGHTED ell-infinity and proves complex Banach analyticity on ONE complex L2 neighborhood. It retains EVERY actual original moment-series coefficient and a common uniform norm bound. Actual original scalar moment analyticity is transported through the original bounded L2 inclusion.",
+    "OriginalHillL2FrequencySequence proves hillL2KdVRenormalizedFrequencySequence is real analytic into UNWEIGHTED ell-infinity on the ENTIRE actual real mean-zero L2 Banach source. Every positive coordinate is EXACTLY the SAME original hillRoughKdVFrequency minus (2*pi*n)^3, by the proved cross-patch original physical frequency/moment identity. The full complex local spectral sequence precedes ALL indices. The actual correction now has a UNIFORM index-independent norm bound; the older merely linear rough-space bound is no longer the best estimate on L2.",
+    "OriginalHillWienerFrequencySequence proves a bounded coefficient-preserving L2 inclusion for EVERY ORIGINAL physical FL^(N,1) source. Its rough inclusion is EXACTLY the original physical potential already used in Main5.1, with the SAME entire distribution. originalWienerKdVRenormalizedFrequencySequence is UNWEIGHTED ell-infinity real analytic for EVERY N>=0, preserves ALL original positive frequency corrections with the exact cubic normalization, and uniformly bounds every positive correction. Main5.9 frequency-control obligation is CLOSED; signed phase trajectories, compact-time analytic inverse composition and final same-flow physical theorem remain OPEN."
+  ],
+  "declarations": [
+    "NLS.Coeff.positive_moment_kernel_uniform_bound",
+    "NLS.Coeff.norm_positive_moment_series_le_of_Hilbert_majorant",
+    "NLS.Coeff.analytic_infty_realization_of_bound",
+    "NLS.KdV.HillProductEquationPatch.exists_local_l2CenteredSecondMomentSeries_bound",
+    "NLS.KdV.HillProductEquationPatch.l2CenteredSecondMomentSequence",
+    "NLS.KdV.HillProductEquationPatch.exists_local_l2CenteredSecondMomentSequence_analytic",
+    "NLS.Articles.KdVPseudomeasures.hillL2KdVRenormalizedFrequencySequence",
+    "NLS.Articles.KdVPseudomeasures.originalHill_exists_bounded_l2_frequency_neighborhood",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillL2KdVRenormalizedFrequencySequence",
+    "NLS.Articles.KdVPseudomeasures.hillL2KdVRenormalizedFrequencySequence_coefficients",
+    "NLS.Articles.KdVPseudomeasures.hillL2KdVFrequency_remainder_bound",
+    "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion",
+    "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion_apply",
+    "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion_native",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVRenormalizedFrequencySequence",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence_coefficients",
+    "NLS.Articles.KdVPseudomeasures.originalWienerKdVFrequency_remainder_bound"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/BoundedPositiveMomentSeries.lean",
+    "NLS/SequenceSpaces/InfinityAnalyticRealization.lean",
+    "NLS/KdV/HillL2MomentSeriesBound.lean",
+    "NLS/KdV/HillL2MomentSequenceAnalytic.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillL2FrequencySequence.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerFrequencySequence.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "d4db0a0f0123cdc29b3685edd63d55a69f101fb7",
+    "baseline_modules": 1955,
+    "baseline_non_audit_sources_verified_unchanged": 1954,
+    "new_modules_compiled": 6,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.LocallyBoundedRealization",
+        "source": "NLS/SequenceSpaces/LocallyBoundedRealization.lean",
+        "source_sha256": "0f57395af182636a2841237f97a3e0501cd5abbc9a7ed89fa646f4b441213456"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem11",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
+        "source_sha256": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem13",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
+        "source_sha256": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem51",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem51.lean",
+        "source_sha256": "d3a7393f833deeebbb45163ef6ab574c40d20ed7dad062e982372209332d265c",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillMomentAllIndexBounds",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillMomentAllIndexBounds.lean",
+        "source_sha256": "de3a2af4b44931dfb3418146a47a51ac80d49c7274fd7086f708f339a942e20d",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyReality",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyReality.lean",
+        "source_sha256": "f5f77754cfef13f41367f4e308dc7939dc6d671c72c62ff30cb81bf488a19a86",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillNativeL2Models",
+        "source": "NLS/KdV/HillNativeL2Models.lean",
+        "source_sha256": "61b3bb94374fca56e90e2aebd7a2e74b0a784f6612b2997cea3c363fb961b2f1",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillL2AbelianHilbertWeights",
+        "source": "NLS/KdV/HillL2AbelianHilbertWeights.lean",
+        "source_sha256": "84e66d5cc4176d1366d2ae7463c273407eed0865c97ee366651773b436347242",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMomentWeightedSeriesBounds",
+        "source": "NLS/KdV/HillMomentWeightedSeriesBounds.lean",
+        "source_sha256": "ed19dffd62f7854b3c988396c9de642acc7c48aebd9b7025904f46e19454d33e",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMomentWeightedSeriesAnalytic",
+        "source": "NLS/KdV/HillMomentWeightedSeriesAnalytic.lean",
+        "source_sha256": "61ed6549761d21d4e21e4f49d02c3913a225070edac10b7f507fadd33eb2a640",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedMomentRowBound",
+        "source": "NLS/SequenceSpaces/WeightedMomentRowBound.lean",
+        "source_sha256": "d83d428c33a1699ee7ecd5dc327deed8db0671290478a4ac3a44156228a908ff",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.SquaredGapMomentMajorant",
+        "source": "NLS/SequenceSpaces/SquaredGapMomentMajorant.lean",
+        "source_sha256": "b606ae0fd64a35ee83708c6148ee9c565bd99008cb94b35e71d288b6e69edb43",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1961,
+    "audited_declarations": 9532,
+    "theorems": 7993,
+    "definitions": 1539,
+    "new_theorems": 14,
+    "new_definitions": 4,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-Wiener-bounded-frequency.log",
+    "log_sha256": "260be7b4e0f3bcdecbe26209e8fc40b5827f1b0a4be8f1f4af01a7bfcc0d93ad"
+  },
+  "remaining_obligations": [
+    "Main5.9 frequency control COMPLETE: OriginalHillL2FrequencySequence and OriginalHillWienerFrequencySequence prove actual omega_n-(2*pi*n)^3 is unweighted ell-infinity Banach analytic at EVERY real L2 and physical Wiener source, with exact original frequencies and common complex neighborhoods before ALL n. Next form its literal signed odd extension (reflection subtraction of the positive zero extension), retain the original signed phase normalization, and apply the existing finite-p analytic phase trajectory to the actual weighted ell-one Birkhoff amplitudes.",
+    "Main5.9: prove the compact-time trajectory map analytic in the Banach C([-T,T], FL^(N,1)) norm for EVERY N>=0 and T>0 after applying the actual Wiener inverse. Pointwise-in-time real analyticity is insufficient. Existing NLS.ComplexAnalysis.ContinuousMapSuperposition and ContinuousMapAnalyticInverse cover uniform compact-time COMPLEX analytic maps/inverse lifts; supply the required actual complex Wiener germs or a verified real analytic compact-range superposition result, preserving the exact real source and target.",
+    "Main5.9: identify the resulting trajectory with the SAME actual original KdV flow, transport through the now-proved Main5.1 physical distribution equivalences, and formulate/prove the precise final source theorem. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 is the only open main statement. No claim of the stronger nonmain Lemma5.7 ell^r estimate. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged."
+  ]
+}

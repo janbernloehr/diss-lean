@@ -1986,6 +1986,12 @@ modules = [
     'NLS.FunctionalAnalysis.AnalyticLinearEquivalenceTransport',
     'NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhysicalModels',
     'NLS.Articles.KdVPseudomeasures.MainTheorem51',
+    'NLS.SequenceSpaces.BoundedPositiveMomentSeries',
+    'NLS.SequenceSpaces.InfinityAnalyticRealization',
+    'NLS.KdV.HillL2MomentSeriesBound',
+    'NLS.KdV.HillL2MomentSequenceAnalytic',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2FrequencySequence',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillWienerFrequencySequence',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

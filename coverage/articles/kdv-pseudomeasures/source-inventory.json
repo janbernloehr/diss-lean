@@ -817,9 +817,27 @@
         "NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerEquiv",
         "NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerEquiv_symm",
         "NLS.Articles.KdVPseudomeasures.sourceTheorem5_1Statement",
-        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_1"
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_1",
+        "NLS.Coeff.positive_moment_kernel_uniform_bound",
+        "NLS.Coeff.norm_positive_moment_series_le_of_Hilbert_majorant",
+        "NLS.Coeff.analytic_infty_realization_of_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2CenteredSecondMomentSeries_bound",
+        "NLS.KdV.HillProductEquationPatch.l2CenteredSecondMomentSequence",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2CenteredSecondMomentSequence_analytic",
+        "NLS.Articles.KdVPseudomeasures.hillL2KdVRenormalizedFrequencySequence",
+        "NLS.Articles.KdVPseudomeasures.originalHill_exists_bounded_l2_frequency_neighborhood",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_hillL2KdVRenormalizedFrequencySequence",
+        "NLS.Articles.KdVPseudomeasures.hillL2KdVRenormalizedFrequencySequence_coefficients",
+        "NLS.Articles.KdVPseudomeasures.hillL2KdVFrequency_remainder_bound",
+        "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion",
+        "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion_apply",
+        "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion_native",
+        "NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVRenormalizedFrequencySequence",
+        "NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence_coefficients",
+        "NLS.Articles.KdVPseudomeasures.originalWienerKdVFrequency_remainder_bound"
       ],
-      "qualification": "UNPROVED. Main5.1 physical Wiener equivalences now proved. Actual unweighted bounded analytic frequency correction, uniform compact-time analytic Wiener inverse composition, same original KdV flow identification and final physical source statement remain."
+      "qualification": "UNPROVED. Actual UNWEIGHTED ell-infinity Banach analytic correction omega_n-(2*pi*n)^3 now PROVED on the entire real mean-zero L2 source and EVERY original physical FL^(N,1) Wiener source, with exact original frequencies/distribution. Main5.1 physical Wiener analytic equivalences proved. Signed phase trajectories, uniform compact-time analytic Wiener inverse composition, same original KdV flow identification and final physical source statement remain."
     }
   ],
   "needed_source_dependencies": [
@@ -4443,6 +4461,31 @@
         "NLS.Articles.KdVPseudomeasures.sourceTheorem5_1"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-1-physical-wiener-map.json"
+    },
+    {
+      "label": "Actual unweighted bounded analytic KdV frequency correction on L2 and all physical Wiener orders",
+      "status": "ACTUAL original KdV frequency correction omega_n-(2*pi*n)^3 UNWEIGHTED ell-infinity Banach analytic on the ENTIRE real mean-zero L2 source and EVERY original physical integer-order Wiener space. SAME distribution, actual frequencies and exact cubic normalization retained. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE.",
+      "declarations": [
+        "NLS.Coeff.positive_moment_kernel_uniform_bound",
+        "NLS.Coeff.norm_positive_moment_series_le_of_Hilbert_majorant",
+        "NLS.Coeff.analytic_infty_realization_of_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2CenteredSecondMomentSeries_bound",
+        "NLS.KdV.HillProductEquationPatch.l2CenteredSecondMomentSequence",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2CenteredSecondMomentSequence_analytic",
+        "NLS.Articles.KdVPseudomeasures.hillL2KdVRenormalizedFrequencySequence",
+        "NLS.Articles.KdVPseudomeasures.originalHill_exists_bounded_l2_frequency_neighborhood",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_hillL2KdVRenormalizedFrequencySequence",
+        "NLS.Articles.KdVPseudomeasures.hillL2KdVRenormalizedFrequencySequence_coefficients",
+        "NLS.Articles.KdVPseudomeasures.hillL2KdVFrequency_remainder_bound",
+        "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion",
+        "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion_apply",
+        "NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion_native",
+        "NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVRenormalizedFrequencySequence",
+        "NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence_coefficients",
+        "NLS.Articles.KdVPseudomeasures.originalWienerKdVFrequency_remainder_bound"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Wiener-bounded-frequency-map.json"
     }
   ],
   "reuse_map": [
@@ -4522,9 +4565,9 @@
     }
   ],
   "remaining_obligations": [
-    "Main5.9: prove genuine unweighted bounded analytic correction to the actual frequency omega_n-8*pi^3*n^3 near every real L2/Wiener source. The existing rough signed order -1 infinity control is insufficient. Retain the SAME original frequencies, complex neighborhood before ALL n, and actual normalization. The stronger source Lemma5.7 ell^r statement need only be included if proved; a sufficient verified bounded analytic correction is enough for the main flow theorem.",
-    "Main5.9: use the bounded analytic correction with the existing analytic phase trajectory in finite weighted ell-one spaces, then prove analytic composition of the actual Wiener inverse with compact-time trajectories in the Banach C([-T,T], FL^(N,1)) norm for EVERY N>=0 and T>0. Pointwise-in-time analyticity alone does not prove this mapping property.",
-    "Main5.9: identify the resulting trajectory with the SAME actual KdV flow, transport to the original physical period-one real mean-zero Fourier-Lebesgue spaces using the now-proved Main5.1 equivalences, and formulate/prove the precise final source statement. Main1.1/1.3/1.4/5.1 are complete; only Main5.9 remains open. Canonical checkout/shared metadata read-only; preserve pending exact publication approval."
+    "Main5.9 frequency control COMPLETE: OriginalHillL2FrequencySequence and OriginalHillWienerFrequencySequence prove actual omega_n-(2*pi*n)^3 is unweighted ell-infinity Banach analytic at EVERY real L2 and physical Wiener source, with exact original frequencies and common complex neighborhoods before ALL n. Next form its literal signed odd extension (reflection subtraction of the positive zero extension), retain the original signed phase normalization, and apply the existing finite-p analytic phase trajectory to the actual weighted ell-one Birkhoff amplitudes.",
+    "Main5.9: prove the compact-time trajectory map analytic in the Banach C([-T,T], FL^(N,1)) norm for EVERY N>=0 and T>0 after applying the actual Wiener inverse. Pointwise-in-time real analyticity is insufficient. Existing NLS.ComplexAnalysis.ContinuousMapSuperposition and ContinuousMapAnalyticInverse cover uniform compact-time COMPLEX analytic maps/inverse lifts; supply the required actual complex Wiener germs or a verified real analytic compact-range superposition result, preserving the exact real source and target.",
+    "Main5.9: identify the resulting trajectory with the SAME actual original KdV flow, transport through the now-proved Main5.1 physical distribution equivalences, and formulate/prove the precise final source theorem. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 is the only open main statement. No claim of the stronger nonmain Lemma5.7 ell^r estimate. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -8917,5 +8960,16 @@
     "actual_signed_Gardner_canonical_matrix_PROVED": true,
     "Main5_9_PROVED": false,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-1-physical-wiener-map.json"
+  },
+  "actual_unweighted_L2_Wiener_frequency_correction": {
+    "ACTUAL_original_KdV_frequency_correction_UNWEIGHTED_ell_infinity_analytic_L2_PROVED": true,
+    "ACTUAL_original_KdV_frequency_correction_UNWEIGHTED_ell_infinity_analytic_ALL_physical_Wiener_orders_PROVED": true,
+    "actual_original_frequencies_and_cubic_normalization_preserved": true,
+    "ONE_complex_L2_neighborhood_BEFORE_ALL_positive_frequency_indices": true,
+    "entire_original_physical_distribution_preserved": true,
+    "Main5_1_PROVED": true,
+    "Main5_9_PROVED": false,
+    "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Wiener-bounded-frequency-map.json"
   }
 }

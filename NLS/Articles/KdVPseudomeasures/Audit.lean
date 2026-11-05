@@ -1952,6 +1952,12 @@ import NLS.Fourier.RealPeriodOneSobolevCoefficients
 import NLS.FunctionalAnalysis.AnalyticLinearEquivalenceTransport
 import NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhysicalModels
 import NLS.Articles.KdVPseudomeasures.MainTheorem51
+import NLS.SequenceSpaces.BoundedPositiveMomentSeries
+import NLS.SequenceSpaces.InfinityAnalyticRealization
+import NLS.KdV.HillL2MomentSeriesBound
+import NLS.KdV.HillL2MomentSequenceAnalytic
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2FrequencySequence
+import NLS.Articles.KdVPseudomeasures.OriginalHillWienerFrequencySequence
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11469,3 +11475,21 @@ import NLS.Articles.KdVPseudomeasures.MainTheorem51
 #print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerEquiv_symm
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_1Statement
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_1
+#print axioms NLS.Coeff.positive_moment_kernel_uniform_bound
+#print axioms NLS.Coeff.norm_positive_moment_series_le_of_Hilbert_majorant
+#print axioms NLS.Coeff.analytic_infty_realization_of_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_l2CenteredSecondMomentSeries_bound
+#print axioms NLS.KdV.HillProductEquationPatch.l2CenteredSecondMomentSequence
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_l2CenteredSecondMomentSequence_analytic
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2KdVRenormalizedFrequencySequence
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_bounded_l2_frequency_neighborhood
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillL2KdVRenormalizedFrequencySequence
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2KdVRenormalizedFrequencySequence_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2KdVFrequency_remainder_bound
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerL2Inclusion_native
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVRenormalizedFrequencySequence
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVRenormalizedFrequencySequence_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVFrequency_remainder_bound
