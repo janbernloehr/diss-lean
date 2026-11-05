@@ -1292,6 +1292,13 @@ import NLS.ComplexAnalysis.OddSquareDescentCongruence
 import NLS.ZakharovShabat.SourcePsiPhaseCompatibility
 import NLS.KdV.HillHminusPhaseNumeratorCompatibility
 import NLS.KdV.HillHminusDirichletSourceBetaSeries
+import NLS.ZakharovShabat.SourcePhaseCanonicalRoots
+import NLS.ComplexAnalysis.QuadraticEnergyPath
+import NLS.KdV.HillHminusPrescribedSheets
+import NLS.KdV.HillHminusPrescribedPhasePullback
+import NLS.KdV.HillHminusPhysicalPhasePaths
+import NLS.SequenceSpaces.PairedPositiveOffIndexSeries
+import NLS.KdV.HillHminusPairedSourceCorrection
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2404,7 +2411,24 @@ run_cmd do
     ``NLS.ZakharovShabat.sourcePhase_mem_sourceIsospectralSet,
     ``NLS.ZakharovShabat.sourcePhase_ofFinsupp,
     ``NLS.ZakharovShabat.sourcePsiDeletedCandidate.eq_1,
-    ``NLS.ZakharovShabat.sourceSelectedPsiNumerator.eq_1]
+    ``NLS.ZakharovShabat.sourceSelectedPsiNumerator.eq_1,
+    ``NLS.ComplexAnalysis.quadraticEnergyPath,
+    ``NLS.ComplexAnalysis.quadraticEnergyPath_integral_and_integrability,
+    ``NLS.ComplexAnalysis.quadraticEnergyPath_integral_eq_signed_pair,
+    ``NLS.SequenceSpaces.pairedPositiveOffIndexTerm,
+    ``NLS.SequenceSpaces.pairedPositiveOffIndexTerm.eq_1,
+    ``NLS.SequenceSpaces.sum_pairedPositiveOffIndexTerm,
+    ``NLS.SequenceSpaces.summable_norm_pairedPositiveOffIndexTerm,
+    ``NLS.SequenceSpaces.tendstoUniformlyOn_pairedPositiveOffIndexTerm,
+    ``NLS.SequenceSpaces.tsum_pairedPositiveOffIndexTerm,
+    ``NLS.ZakharovShabat.SourcePeriodicReflection.sourcePhase,
+    ``NLS.ZakharovShabat.canonicalPeriodicEndpoints_sourcePhase,
+    ``NLS.ZakharovShabat.sourceCanonicalRootDomain.eq_1,
+    ``NLS.ZakharovShabat.sourceCanonicalRootDomain_sourcePhase,
+    ``NLS.ZakharovShabat.sourceCanonicalRoot_sourcePhase,
+    ``NLS.ZakharovShabat.sourcePeriodicSegment_sourcePhase,
+    ``NLS.ZakharovShabat.sourceStandardRootOmittedProduct_sourcePhase,
+    ``NLS.ZakharovShabat.sourceStandardRoot_sourcePhase]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

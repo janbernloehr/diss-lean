@@ -6215,3 +6215,10 @@ import NLS.ComplexAnalysis.OddSquareDescentCongruence
 import NLS.ZakharovShabat.SourcePsiPhaseCompatibility
 import NLS.KdV.HillHminusPhaseNumeratorCompatibility
 import NLS.KdV.HillHminusDirichletSourceBetaSeries
+import NLS.ZakharovShabat.SourcePhaseCanonicalRoots
+import NLS.ComplexAnalysis.QuadraticEnergyPath
+import NLS.KdV.HillHminusPrescribedSheets
+import NLS.KdV.HillHminusPrescribedPhasePullback
+import NLS.KdV.HillHminusPhysicalPhasePaths
+import NLS.SequenceSpaces.PairedPositiveOffIndexSeries
+import NLS.KdV.HillHminusPairedSourceCorrection
