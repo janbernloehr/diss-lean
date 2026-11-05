@@ -1756,6 +1756,13 @@ modules = [
     'NLS.MKdV.MiuraKdVHamiltonian',
     'NLS.MKdV.CenteredMiuraKdVHamiltonian',
     'NLS.ZakharovShabat.SourceFiniteGapHamiltonianIsospectral',
+    'NLS.KdV.HillMiuraFiniteGapProfile',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapEnergyTrace',
+    'NLS.ZakharovShabat.SourceFiniteGapIsospectral',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapEnergyIsospectral',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeActionFibers',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerActionTruncation',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionHamiltonian',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -2669,6 +2669,33 @@
         "NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_isospectral"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-kdv-gradient-miura-trace-map.json"
+    },
+    {
+      "label": "Actual physical H1 KdV Hamiltonian action dependence via original Fourier trace and strong finite-gap isospectral approximation",
+      "status": "proved dependencies; four remaining main theorems still unproved",
+      "declarations": [
+        "NLS.KdV.hillMiuraFiniteGapProfile",
+        "NLS.KdV.sourceFiniteGapPhysicalPair_hillMiura",
+        "NLS.KdV.contDiff_hillMiuraFiniteGapProfile",
+        "NLS.KdV.periodic_hillMiuraFiniteGapProfile",
+        "NLS.KdV.periodOneCoefficient_hillMiuraFiniteGapProfile",
+        "NLS.KdV.sourceFiniteGapNLSHamiltonian_hillMiura_eq_classical",
+        "NLS.KdV.integral_sq_hillMiuraFiniteGapProfile",
+        "NLS.KdV.periodOneCoefficient_miura_hillMiuraFiniteGapProfile",
+        "NLS.Articles.KdVPseudomeasures.hillH1_synthesis_eq_centered_finiteGap_Miura",
+        "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_finiteGap_Miura_trace",
+        "NLS.ZakharovShabat.sourceFiniteGap_of_isospectral",
+        "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_finiteGap_isospectral",
+        "NLS.Articles.KdVPseudomeasures.hillRealDiscriminantData_eq_of_native_actionTorus",
+        "NLS.Articles.KdVPseudomeasures.hillRealDiscriminantData_eq_iff_native_products",
+        "NLS.Articles.KdVPseudomeasures.originalHillPotentialOfRealSource_isospectral_of_native_products",
+        "NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_native_apply",
+        "NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_isospectral_of_products",
+        "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_native_products",
+        "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_eq_of_products",
+        "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_original_isospectral"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-physical-action-hamiltonian-map.json"
     }
   ],
   "reuse_map": [
@@ -2748,10 +2775,9 @@
     }
   ],
   "remaining_obligations": [
-    "Connect the actual smooth centered Miura KdV identity to finite-gap original Fourier sources, then prove original KdV Hamiltonian isospectral/action dependence. Use ONE common exterior Miura shift and ONE Dirac isospectral set from OriginalIsospectralMiura; all finite-gap NLS hierarchy Hamiltonians are NOW PROVED discriminant invariants. No need to identify the mean-zero shift with the lowest energy. The normalized identity is H_KdV(r-c)=H_NLS,5/2-3*c*H_NLS,3+2*c^3.",
-    "Construct the ACTUAL normalized KdV frequency map from the genuine canonical physical Hamiltonian; prove its rough extension and original KdV evolution with convergence from EVERY smooth approximation. The actual H1 energy, full first variation, smooth gradient and exact Gardner vector field -q_xxx+6*q*q_x are NOW PROVED; these do not alone supply evolution or global frequency regularity.",
-    "Prove literal weighted ell-one forward/inverse spectral regularity and full global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. All integer Hilbert scales/strong finite-gap approximants remain proved dependencies, not substitutes for ell-one estimates. Universal actual Hill numerator scalar2/(pi*n) remains OPEN.",
-    "Prove remaining main1.1,1.3,5.9 from the actual original KdV evolution with the required topologies/analyticity. Main1.4 is complete. FOUR main theorems remain UNPROVED; goalACTIVE."
+    "Construct the ACTUAL normalized KdV frequencies from the NOW PROVED globally real-analytic action-dependent canonical physical H1 Hamiltonian on signed H^(3/2), including analytic treatment at collapsed modes. Prove their rough extension to the original Hminus domain and original KdV evolution with convergence from EVERY smooth approximation. Do not substitute arbitrary frequencies or indexed action flows.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and the full global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. All integer Hilbert scales/strong finite-gap approximants remain proved dependencies, not substitutes for ell-one estimates. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN.",
+    "Prove remaining main1.1,1.3,5.9 from the ACTUAL original KdV evolution and its required topologies/analyticity. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -6251,6 +6277,27 @@
     "actual_centered_Miura_KdV_NLS_H5_half_minus_3cH3_plus_2c_cubed_PROVED": true,
     "ALL_finiteGap_NLS_Hamiltonians_discriminant_invariants_PROVED": true,
     "actual_original_KdV_Hamiltonian_action_dependence_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_H1_physical_action_Hamiltonian": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-physical-action-hamiltonian-map.json",
+    "same_original_finiteGap_Miura_profile_and_full_coefficients_PROVED": true,
+    "actual_original_H1_source_eq_centered_Miura_profile_PROVED": true,
+    "actual_original_finiteGap_KdV_H5_half_minus_3cH3_plus_2c_cubed_trace_PROVED": true,
+    "actual_original_finiteGap_KdV_energy_isospectral_PROVED": true,
+    "actual_native_action_fibers_eq_entire_discriminant_fibers_PROVED": true,
+    "all_integer_strong_finiteGap_truncations_preserve_equal_actions_and_spectrum_PROVED": true,
+    "ENTIRE_H1_physical_KdV_energy_action_dependence_PROVED": true,
+    "ENTIRE_signed_Hthreehalves_canonical_physical_KdV_Hamiltonian_action_dependence_PROVED": true,
+    "actual_KdV_normalized_frequencies_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,

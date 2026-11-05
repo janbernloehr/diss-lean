@@ -1722,6 +1722,13 @@ import NLS.KdV.ClassicalHamiltonianShift
 import NLS.MKdV.MiuraKdVHamiltonian
 import NLS.MKdV.CenteredMiuraKdVHamiltonian
 import NLS.ZakharovShabat.SourceFiniteGapHamiltonianIsospectral
+import NLS.KdV.HillMiuraFiniteGapProfile
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapEnergyTrace
+import NLS.ZakharovShabat.SourceFiniteGapIsospectral
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapEnergyIsospectral
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeActionFibers
+import NLS.Articles.KdVPseudomeasures.OriginalHillIntegerActionTruncation
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionHamiltonian
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10372,3 +10379,23 @@ import NLS.ZakharovShabat.SourceFiniteGapHamiltonianIsospectral
 #print axioms NLS.MKdV.classicalKdVHamiltonian_centered_miura_NLS
 #print axioms NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_discriminant
 #print axioms NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_isospectral
+#print axioms NLS.KdV.hillMiuraFiniteGapProfile
+#print axioms NLS.KdV.sourceFiniteGapPhysicalPair_hillMiura
+#print axioms NLS.KdV.contDiff_hillMiuraFiniteGapProfile
+#print axioms NLS.KdV.periodic_hillMiuraFiniteGapProfile
+#print axioms NLS.KdV.periodOneCoefficient_hillMiuraFiniteGapProfile
+#print axioms NLS.KdV.sourceFiniteGapNLSHamiltonian_hillMiura_eq_classical
+#print axioms NLS.KdV.integral_sq_hillMiuraFiniteGapProfile
+#print axioms NLS.KdV.periodOneCoefficient_miura_hillMiuraFiniteGapProfile
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_synthesis_eq_centered_finiteGap_Miura
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_finiteGap_Miura_trace
+#print axioms NLS.ZakharovShabat.sourceFiniteGap_of_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_finiteGap_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealDiscriminantData_eq_of_native_actionTorus
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealDiscriminantData_eq_iff_native_products
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillPotentialOfRealSource_isospectral_of_native_products
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_native_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_isospectral_of_products
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_native_products
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_eq_of_products
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_original_isospectral

@@ -1,0 +1,163 @@
+{
+  "source": "arXiv:1610.00278v1 actual canonical map/Hamiltonian dependencies for remaining main1.1,1.3,5.1,5.9",
+  "status": "Actual physical KdV Hamiltonian depends only on canonical actions on the ENTIRE H1 domain, including collapsed modes, via original Fourier Miura trace and strong finite-gap isospectral approximation.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-physical-action-hamiltonian-map.json",
+    "same_original_finiteGap_Miura_profile_and_full_coefficients_PROVED": true,
+    "actual_original_H1_source_eq_centered_Miura_profile_PROVED": true,
+    "actual_original_finiteGap_KdV_H5_half_minus_3cH3_plus_2c_cubed_trace_PROVED": true,
+    "actual_original_finiteGap_KdV_energy_isospectral_PROVED": true,
+    "actual_native_action_fibers_eq_entire_discriminant_fibers_PROVED": true,
+    "all_integer_strong_finiteGap_truncations_preserve_equal_actions_and_spectrum_PROVED": true,
+    "ENTIRE_H1_physical_KdV_energy_action_dependence_PROVED": true,
+    "ENTIRE_signed_Hthreehalves_canonical_physical_KdV_Hamiltonian_action_dependence_PROVED": true,
+    "actual_KdV_normalized_frequencies_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "HillMiuraFiniteGapProfile constructs the ACTUAL smooth unit-period Fourier profile of EVERY genuine finite-gap real scalar lift. The two original Dirac components are proved identical, every physical Fourier coefficient is the original scalar coefficient, its square integral is EXACT original lift L2 squared norm, and the Fourier coefficients of u_x+u^2 are EXACT periodOneMiura of the SAME lift. All physical hierarchy Hamiltonians agree with this same diagonal profile.",
+    "SourceFiniteGapIsospectral transports genuine finite-gap membership through the FULL original signed Dirac spectrum using actual canonical endpoint equality, including the central gap and every signed label.",
+    "OriginalHillFiniteGapEnergyTrace proves that the H1 synthesis of the original source q is EXACTLY the centered physical Miura profile u_x+u^2-c, at EVERY Fourier index and therefore pointwise on the entire real line. Its ACTUAL KdV energy is Re(H_NLS,5/2-3*c*H_NLS,3+2*c^3) of the SAME original finite-gap lift. The original mean-zero Fourier condition proves c=norm(u)^2; no extra physical realization or energy assumption is supplied.",
+    "OriginalHillFiniteGapEnergyIsospectral proves ACTUAL original finite-gap H1 KdV energy invariance under the FULL original periodic spectrum. The already verified common exterior shift and one genuine Dirac isospectral set provide both scalar lifts. The all-order finite-gap physical hierarchy invariants at3 and5 and the exact common-shift energy formula yield equality. No mean-zero-lift ground-state identification is needed.",
+    "OriginalHillNativeActionFibers identifies ACTUAL entire Hill discriminant fibers with native canonical action-product fibers, using the verified full original isospectral torus image and global native injectivity. OriginalHillIntegerActionTruncation proves the strong genuine finite-gap approximants at EVERY integer Hilbert order preserve ALL equal action products and the FULL original spectrum at every shared cutoff.",
+    "OriginalHillH1ActionHamiltonian passes physical energy equality through the actual strong H1 finite-gap approximants. On the ENTIRE physical real H1 mean-zero domain, equal actual canonical action products give equal original KdV Hamiltonian. The SAME real-analytic canonical H1 inverse therefore transforms the actual physical KdV energy into an action-dependent function on ALL real signed H^(3/2), including collapsed gaps. Every H1 member of the full original isospectral set has the same actual energy; no finite-gap hypothesis remains.",
+    "Main1.4 remains PROVED and freshly recompiled. FOUR main1.1,1.3,5.1,5.9 remain UNPROVED. ACTUAL H1 physical KdV Hamiltonian action dependence is NOW PROVED. Normalized frequency construction and rough extension, actual original KdV evolution with convergence from EVERY smooth approximation, literal Wiener ell-one scales and universal actual numerator scalar remain OPEN. Goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.KdV.hillMiuraFiniteGapProfile",
+    "NLS.KdV.sourceFiniteGapPhysicalPair_hillMiura",
+    "NLS.KdV.contDiff_hillMiuraFiniteGapProfile",
+    "NLS.KdV.periodic_hillMiuraFiniteGapProfile",
+    "NLS.KdV.periodOneCoefficient_hillMiuraFiniteGapProfile",
+    "NLS.KdV.sourceFiniteGapNLSHamiltonian_hillMiura_eq_classical",
+    "NLS.KdV.integral_sq_hillMiuraFiniteGapProfile",
+    "NLS.KdV.periodOneCoefficient_miura_hillMiuraFiniteGapProfile",
+    "NLS.Articles.KdVPseudomeasures.hillH1_synthesis_eq_centered_finiteGap_Miura",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_finiteGap_Miura_trace",
+    "NLS.ZakharovShabat.sourceFiniteGap_of_isospectral",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_finiteGap_isospectral",
+    "NLS.Articles.KdVPseudomeasures.hillRealDiscriminantData_eq_of_native_actionTorus",
+    "NLS.Articles.KdVPseudomeasures.hillRealDiscriminantData_eq_iff_native_products",
+    "NLS.Articles.KdVPseudomeasures.originalHillPotentialOfRealSource_isospectral_of_native_products",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_native_apply",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_isospectral_of_products",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_native_products",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_eq_of_products",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_original_isospectral"
+  ],
+  "files": [
+    "NLS/KdV/HillMiuraFiniteGapProfile.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapEnergyTrace.lean",
+    "NLS/ZakharovShabat/SourceFiniteGapIsospectral.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapEnergyIsospectral.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeActionFibers.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerActionTruncation.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ActionHamiltonian.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "cc6ff8fc9e841aa260cd058a4805d17f07d29152",
+    "baseline_modules": 1725,
+    "baseline_non_audit_sources_verified_unchanged": 1724,
+    "new_modules_compiled": 7,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceFiniteGapNLSHamiltonians",
+        "source": "NLS/ZakharovShabat/SourceFiniteGapNLSHamiltonians.lean",
+        "source_sha256": "c7a0a55040dca2d8cca9a8ea94b49cbc513959a53ea3df6ced8005bf4a5b9635"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceFiniteGapHamiltonianIsospectral",
+        "source": "NLS/ZakharovShabat/SourceFiniteGapHamiltonianIsospectral.lean",
+        "source_sha256": "f08071a43496fcba20cada0bcfb2f729b229a81a950fb4834927f8d390a08e3f",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.MKdV.CenteredMiuraKdVHamiltonian",
+        "source": "NLS/MKdV/CenteredMiuraKdVHamiltonian.lean",
+        "source_sha256": "a8924dd97364d60b4c42ac80f7168c6ff3d59a29e4240bedaba3670ed52ca7cf",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalIsospectralMiura",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean",
+        "source_sha256": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMiura",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapMiura.lean",
+        "source_sha256": "c30dfffdb1bf7b60c0ebca466c1ab90892629fad4cfda981c18ae455572eae63",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillIntegerFiniteGapApproximation",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerFiniteGapApproximation.lean",
+        "source_sha256": "023f9bd57f8b0a921e5b82bd2378c56d7f4557a3e1b2fd8a6c4a19c5bb0938a4",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1Hamiltonian",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1Hamiltonian.lean",
+        "source_sha256": "69f87502c7b4a845d9bae75acea4e26b8bfe6a5e4fc10df78f8f3fa14f5ad69e",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeTorusImage",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeTorusImage.lean",
+        "source_sha256": "8367dff3e88f962f47fb28f0ea6ac856ab0a4d69adc96636f45e61620bd1a58f",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1732,
+    "audited_declarations": 8667,
+    "theorems": 7303,
+    "definitions": 1364,
+    "new_theorems": 19,
+    "new_definitions": 1,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-h1-physical-action-hamiltonian.log",
+    "log_sha256": "f09ebf17ae5eac407dfaf2b4bca9d969b7dfc1da9ad9a710e0d43b0b685e9768"
+  },
+  "remaining_obligations": [
+    "Construct the ACTUAL normalized KdV frequencies from the NOW PROVED globally real-analytic action-dependent canonical physical H1 Hamiltonian on signed H^(3/2), including analytic treatment at collapsed modes. Prove their rough extension to the original Hminus domain and original KdV evolution with convergence from EVERY smooth approximation. Do not substitute arbitrary frequencies or indexed action flows.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and the full global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. All integer Hilbert scales/strong finite-gap approximants remain proved dependencies, not substitutes for ell-one estimates. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN.",
+    "Prove remaining main1.1,1.3,5.9 from the ACTUAL original KdV evolution and its required topologies/analyticity. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}
