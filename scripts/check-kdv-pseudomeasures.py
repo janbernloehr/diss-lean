@@ -1972,6 +1972,13 @@ modules = [
     'NLS.KdV.HillL2CanonicalActionRatioBound',
     'NLS.KdV.HillL2AmplitudeOneSmoothing',
     'NLS.KdV.HillL2NativeDiagonalOneSmoothing',
+    'NLS.SequenceSpaces.WeightedPositiveReciprocalSumBound',
+    'NLS.ZakharovShabat.SourceH1DirichletGapHilbertMajorants',
+    'NLS.KdV.HillL2AbelianHilbertWeights',
+    'NLS.KdV.HillL2OffIndexWeightedCorrection',
+    'NLS.KdV.HillL2OffIndexOneSmoothing',
+    'NLS.KdV.HillL2NativeComplexOneSmoothing',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2OneSmoothing',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -445,9 +445,27 @@
         "NLS.KdV.hillL2StrongNativeDiagonal",
         "NLS.KdV.analyticAt_hillL2StrongNativeDiagonal",
         "NLS.KdV.eventually_hillL2StrongNativeDiagonal_apply",
-        "NLS.KdV.hillL2StrongNativeDiagonal_apply"
+        "NLS.KdV.hillL2StrongNativeDiagonal_apply",
+        "NLS.Coeff.weighted_positive_reciprocal_kernel_le",
+        "NLS.Coeff.weighted_norm_positive_sum_le_of_reciprocal_bound",
+        "NLS.ZakharovShabat.exists_local_sourceH1Dirichlet_gap_Hilbert_majorants",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2Abelian_Hilbert_weight_majorants",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OffIndex_weighted_correction_bound",
+        "NLS.KdV.exists_local_hillL2OffIndexCorrection_weighted_bound",
+        "NLS.KdV.hillL2OffIndexSobolevExponent",
+        "NLS.KdV.exists_local_hillL2OffIndexSobolevExponent_data",
+        "NLS.KdV.hillL2OffIndexExponentialRemainder",
+        "NLS.KdV.analyticAt_hillL2OffIndexExponentialRemainder",
+        "NLS.KdV.eventually_hillL2OffIndexExponentialRemainder_apply",
+        "NLS.KdV.hillL2NativeComplexFourierRemainder",
+        "NLS.KdV.analyticAt_hillL2NativeComplexFourierRemainder",
+        "NLS.KdV.eventually_hillL2NativeComplexFourierRemainder_apply",
+        "NLS.KdV.hillL2NativeComplexFourierRemainder_apply",
+        "NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_zero",
+        "NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_all",
+        "NLS.Articles.KdVPseudomeasures.hillWienerBirkhoffDiffeomorphism_all"
       ],
-      "qualification": "UNPROVED. Actual GLOBAL normalized ACTION amplitude-minus1 one-order weighted-norm analyticity and patch-independent actual native DIAGONAL L2 one-smoothing are proved. Actual signed OFF-index phase one-order weighted norm, full native base smoothing, physical Wiener transport and final main statement remain required."
+      "qualification": "UNPROVED final physical statement. FULL actual native L2 one-smoothing, all-integer-order native one-smoothing, and literal signed ell-one Wiener equivalences with analytic inverse are now UNCONDITIONALLY PROVED. Original physical periodic-distribution Wiener realization, coefficient-preserving transport and precise final main statement remain required."
     },
     {
       "label": "5.9",
@@ -678,7 +696,25 @@
         "NLS.KdV.hillL2StrongNativeDiagonal",
         "NLS.KdV.analyticAt_hillL2StrongNativeDiagonal",
         "NLS.KdV.eventually_hillL2StrongNativeDiagonal_apply",
-        "NLS.KdV.hillL2StrongNativeDiagonal_apply"
+        "NLS.KdV.hillL2StrongNativeDiagonal_apply",
+        "NLS.Coeff.weighted_positive_reciprocal_kernel_le",
+        "NLS.Coeff.weighted_norm_positive_sum_le_of_reciprocal_bound",
+        "NLS.ZakharovShabat.exists_local_sourceH1Dirichlet_gap_Hilbert_majorants",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2Abelian_Hilbert_weight_majorants",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OffIndex_weighted_correction_bound",
+        "NLS.KdV.exists_local_hillL2OffIndexCorrection_weighted_bound",
+        "NLS.KdV.hillL2OffIndexSobolevExponent",
+        "NLS.KdV.exists_local_hillL2OffIndexSobolevExponent_data",
+        "NLS.KdV.hillL2OffIndexExponentialRemainder",
+        "NLS.KdV.analyticAt_hillL2OffIndexExponentialRemainder",
+        "NLS.KdV.eventually_hillL2OffIndexExponentialRemainder_apply",
+        "NLS.KdV.hillL2NativeComplexFourierRemainder",
+        "NLS.KdV.analyticAt_hillL2NativeComplexFourierRemainder",
+        "NLS.KdV.eventually_hillL2NativeComplexFourierRemainder_apply",
+        "NLS.KdV.hillL2NativeComplexFourierRemainder_apply",
+        "NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_zero",
+        "NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_all",
+        "NLS.Articles.KdVPseudomeasures.hillWienerBirkhoffDiffeomorphism_all"
       ]
     }
   ],
@@ -4221,6 +4257,31 @@
         "NLS.KdV.hillL2StrongNativeDiagonal_apply"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-action-amplitude-smoothing-map.json"
+    },
+    {
+      "label": "FULL actual native L2 smoothing, all-order native smoothing and unconditional signed Wiener analytic equivalences",
+      "status": "FULL ACTUAL native L2 one-smoothing and ALL-order signed Wiener analytic equivalences UNCONDITIONALLY PROVED. Actual complete infinite OFF-index exponent/exponential-minus1 analytic in one-order weighted infinity norm; every original native Fourier coefficient retained. Final original physical-distribution Main5.1 transport/statement and actual bounded-frequency/Wiener-flow Main5.9 remain OPEN.",
+      "declarations": [
+        "NLS.Coeff.weighted_positive_reciprocal_kernel_le",
+        "NLS.Coeff.weighted_norm_positive_sum_le_of_reciprocal_bound",
+        "NLS.ZakharovShabat.exists_local_sourceH1Dirichlet_gap_Hilbert_majorants",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2Abelian_Hilbert_weight_majorants",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OffIndex_weighted_correction_bound",
+        "NLS.KdV.exists_local_hillL2OffIndexCorrection_weighted_bound",
+        "NLS.KdV.hillL2OffIndexSobolevExponent",
+        "NLS.KdV.exists_local_hillL2OffIndexSobolevExponent_data",
+        "NLS.KdV.hillL2OffIndexExponentialRemainder",
+        "NLS.KdV.analyticAt_hillL2OffIndexExponentialRemainder",
+        "NLS.KdV.eventually_hillL2OffIndexExponentialRemainder_apply",
+        "NLS.KdV.hillL2NativeComplexFourierRemainder",
+        "NLS.KdV.analyticAt_hillL2NativeComplexFourierRemainder",
+        "NLS.KdV.eventually_hillL2NativeComplexFourierRemainder_apply",
+        "NLS.KdV.hillL2NativeComplexFourierRemainder_apply",
+        "NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_zero",
+        "NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_all",
+        "NLS.Articles.KdVPseudomeasures.hillWienerBirkhoffDiffeomorphism_all"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-full-native-smoothing-map.json"
     }
   ],
   "reuse_map": [
@@ -4300,8 +4361,8 @@
     }
   ],
   "remaining_obligations": [
-    "Prove ACTUAL HillIntegerNativeOneSmoothing0 with SAME original e0 and halfFourierSymbol at EVERY signed mode. ALREADY PROVED: actual hillL2NativeDiagonalFourierRemainder is complex analytic into native H3/2 near EVERY real L2 source, with analytic H1/2 realization hillL2StrongNativeDiagonal and ALL ORIGINAL native diagonal coefficients on ONE complex neighborhood. This includes SAME-patch core/on-index assembly and now ACTUAL GLOBAL normalized ACTION amplitude-minus1 one-order WEIGHTED-INFINITY norm analyticity. NEXT prove ACTUAL hillHminusSignedOffIndexExponent and exp(exponent)-1 one-order weighted infinity norm estimates on complex L2 neighborhoods. Existing rough bounded/unit-tail/compact assertions do NOT imply these stronger estimates. Use exact nativeComplex=exp(signedOffIndex)*nativeDiagonal, then Rfull=Rdiag+(exp(offIndex)-1)*strongDiagonal via WeightedInfinityPointwiseProduct. Preserve original native/real coefficient adapters and all signed/central modes. Once actual base R0 is proved, reuse OriginalHillWienerBaseSmoothing to lift all integer orders and then complete original physical Wiener transport/Main5.1.",
-    "Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates.",
+    "Complete source Main5.1 in its ORIGINAL physical periodic-distribution Wiener spaces and formulate/prove its precise final statement for EVERY N>=0, retaining SAME original native coordinates, Fourier normalization, mean-zero real locus, topology and analytic inverse. The analytic one-smoothing obligation is NOW FULLY CLOSED: OriginalHillL2OneSmoothing.hillIntegerNativeOneSmoothing_zero, hillIntegerNativeOneSmoothing_all, and hillWienerBirkhoffDiffeomorphism_all are UNCONDITIONAL, with exact original coefficients and literal signed ell-one source/target. All actual phase/amplitude estimates and global patch assembly are proved; do not reintroduce smoothing or inverse-regularity premises. Supply coefficient-preserving physical distribution realizations and their Banach equivalences, then transport the proved Wiener equivalence and record the final source theorem correspondence. Do not replace the ell-one statement by integer Hilbert strata or the infinity endpoint.",
+    "For Main5.1 physical transport, reuse the actual original rough periodic-distribution realization and source/target Fourier adapters already used by Main1.1/1.3/1.4, and restrict them to the literal weighted ell-one Wiener source. Verify every signed coefficient, central zero, reality and the N / N+1/2 orders. The new all-order Wiener equivalence already supplies BOTH forward and inverse analyticity in coefficient norms; no separate analytic inverse premise remains.",
     "For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement.",
     "Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE."
   ],
@@ -8638,5 +8699,51 @@
     "GLOBAL_patch_independent_native_diagonal_Fourier_remainder_Hthreehalves_analytic_PROVED": true,
     "GLOBAL_actual_native_diagonal_Hhalf_analytic_realization_PROVED": true,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-action-amplitude-smoothing-map.json"
+  },
+  "actual_Hill_L2_FULL_native_one_smoothing_and_Wiener_equivalences": {
+    "actual_positive_H1_Dirichlet_midpoint_and_gap_common_weight_bounds_PROVED": true,
+    "SAME_Hill_auxiliary_divisor_and_phase_rotated_Dirichlet_midpoint_identity_PROVED": true,
+    "actual_on_index_correction_FULL_head_and_tail_one_order_bound_PROVED": true,
+    "ACTUAL_on_index_signed_exponent_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "ACTUAL_on_index_exponential_factor_minus_one_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "actual_on_index_patch_and_original_family_estimates_FACTORY_UNCONDITIONAL": true,
+    "original_signed_coefficients_central_zero_and_complex_collapsed_gaps_retained_PROVED": true,
+    "generic_weighted_infinity_exponential_remainder_analytic_PROVED": true,
+    "ACTUAL_physical_Hill_spectral_core_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "SAME_patch_core_on_index_assembly_COMPLETE": true,
+    "ACTUAL_native_normalized_ACTION_amplitude_one_order_estimate_PROVED": true,
+    "ACTUAL_native_off_index_exponent_one_order_estimate_PROVED": true,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": true,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "ACTUAL_intrinsic_diagonal_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "GLOBAL_patch_independent_intrinsic_Fourier_remainder_Hthreehalves_analytic_PROVED": true,
+    "GLOBAL_actual_intrinsic_diagonal_Hhalf_analytic_realization_PROVED": true,
+    "ALL_original_intrinsic_coefficients_on_ONE_complex_neighborhood_PROVED": true,
+    "generic_weighted_infinity_Hilbert_signed_order_product_PROVED": true,
+    "ACTUAL_first_higher_action_common_free_circle_complex_agreement_PROVED": true,
+    "ACTUAL_filled_first_higher_action_centered_moment_uniform_tail_bound_PROVED": true,
+    "ACTUAL_local_Miura_normalized_action_ratio_complex_H1_one_order_scalar_TAIL_PROVED": true,
+    "ACTUAL_retained_Miura_gap_ball_ratio_complex_L2_one_order_scalar_TAIL_PROVED": true,
+    "ACTUAL_GLOBAL_action_amplitude_minus_one_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "GLOBAL_canonical_ratio_Miura_formula_OR_IDENTICALLY_CLOSED_CONVENTION_on_ONE_native_neighborhood_before_ALL_high_n_PROVED": true,
+    "GLOBAL_canonical_action_ratio_FULL_one_order_scalar_bound_PROVED": true,
+    "ACTUAL_native_DIAGONAL_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "GLOBAL_patch_independent_native_diagonal_Fourier_remainder_Hthreehalves_analytic_PROVED": true,
+    "GLOBAL_actual_native_diagonal_Hhalf_analytic_realization_PROVED": true,
+    "ACTUAL_GLOBAL_off_index_exponent_and_exponential_minus_one_WEIGHTED_NORM_analytic_PROVED": true,
+    "ACTUAL_complete_off_index_absolute_series_one_order_bound_PROVED": true,
+    "ACTUAL_GLOBAL_FULL_native_complex_Fourier_remainder_Hthreehalves_analytic_PROVED": true,
+    "ACTUAL_original_real_mean_zero_L2_native_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "ACTUAL_original_integer_native_one_smoothing_ALL_orders_UNCONDITIONALLY_PROVED": true,
+    "literal_signed_ell_one_Wiener_equivalence_ALL_orders_forward_AND_inverse_analytic_PROVED": true,
+    "final_original_physical_distribution_Main5_1_statement_PROVED": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-full-native-smoothing-map.json"
   }
 }

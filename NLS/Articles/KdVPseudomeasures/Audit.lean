@@ -1938,6 +1938,13 @@ import NLS.KdV.HillCommonMiuraRatioIdentity
 import NLS.KdV.HillL2CanonicalActionRatioBound
 import NLS.KdV.HillL2AmplitudeOneSmoothing
 import NLS.KdV.HillL2NativeDiagonalOneSmoothing
+import NLS.SequenceSpaces.WeightedPositiveReciprocalSumBound
+import NLS.ZakharovShabat.SourceH1DirichletGapHilbertMajorants
+import NLS.KdV.HillL2AbelianHilbertWeights
+import NLS.KdV.HillL2OffIndexWeightedCorrection
+import NLS.KdV.HillL2OffIndexOneSmoothing
+import NLS.KdV.HillL2NativeComplexOneSmoothing
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2OneSmoothing
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11387,3 +11394,21 @@ import NLS.KdV.HillL2NativeDiagonalOneSmoothing
 #print axioms NLS.KdV.analyticAt_hillL2StrongNativeDiagonal
 #print axioms NLS.KdV.eventually_hillL2StrongNativeDiagonal_apply
 #print axioms NLS.KdV.hillL2StrongNativeDiagonal_apply
+#print axioms NLS.Coeff.weighted_positive_reciprocal_kernel_le
+#print axioms NLS.Coeff.weighted_norm_positive_sum_le_of_reciprocal_bound
+#print axioms NLS.ZakharovShabat.exists_local_sourceH1Dirichlet_gap_Hilbert_majorants
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_l2Abelian_Hilbert_weight_majorants
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_l2OffIndex_weighted_correction_bound
+#print axioms NLS.KdV.exists_local_hillL2OffIndexCorrection_weighted_bound
+#print axioms NLS.KdV.hillL2OffIndexSobolevExponent
+#print axioms NLS.KdV.exists_local_hillL2OffIndexSobolevExponent_data
+#print axioms NLS.KdV.hillL2OffIndexExponentialRemainder
+#print axioms NLS.KdV.analyticAt_hillL2OffIndexExponentialRemainder
+#print axioms NLS.KdV.eventually_hillL2OffIndexExponentialRemainder_apply
+#print axioms NLS.KdV.hillL2NativeComplexFourierRemainder
+#print axioms NLS.KdV.analyticAt_hillL2NativeComplexFourierRemainder
+#print axioms NLS.KdV.eventually_hillL2NativeComplexFourierRemainder_apply
+#print axioms NLS.KdV.hillL2NativeComplexFourierRemainder_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_all
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerBirkhoffDiffeomorphism_all
