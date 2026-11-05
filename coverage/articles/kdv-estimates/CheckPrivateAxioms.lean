@@ -1450,6 +1450,21 @@ import NLS.KdV.HillFreeSpectralCosineDerivative
 import NLS.KdV.HillOriginalFourierDerivative
 import NLS.KdV.HillOriginalFourierSurjectivity
 import NLS.KdV.HillOriginalFreeLocalInverse
+import NLS.KdV.HillMeanZeroSequencePhysicalDifferential
+import NLS.KdV.HillMeanZeroComplexDecomposition
+import NLS.KdV.HillOriginalCartesianBasisDirections
+import NLS.SequenceSpaces.NatL2DenseRange
+import NLS.KdV.HillOriginalSequenceBasisDirections
+import NLS.KdV.HillOriginalDerivativeDenseRange
+import NLS.KdV.HillOriginalHminusCompactOperator
+import NLS.FunctionalAnalysis.CompactGermSecondDerivative
+import NLS.KdV.HillOriginalCoordinateCompactHessian
+import NLS.FunctionalAnalysis.SecondDerivativePostcomposition
+import NLS.SequenceSpaces.NatL2CompactScalarHessian
+import NLS.KdV.HillOriginalSourceHilbertStructure
+import NLS.KdV.HillOriginalScalarCompactHessian
+import NLS.FunctionalAnalysis.NormPreservingCompactDerivativeDefect
+import NLS.KdV.HillOriginalDerivativeCompactDefect
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2665,7 +2680,16 @@ run_cmd do
     ``NLS.Poisson.gardnerHamiltonianDirection_of_antisymmetric_fourier,
     ``NLS.Poisson.hminusCosineMode,
     ``NLS.Poisson.hminusCosineMode.eq_1,
-    ``NLS.Poisson.hminusCosineMode_apply]
+    ``NLS.Poisson.hminusCosineMode_apply,
+    ``NLS.FunctionalAnalysis.fderiv_fderiv_clm_comp,
+    ``NLS.FunctionalAnalysis.isCompactOperator_fderiv_fderiv_of_compact_germ,
+    ``NLS.FunctionalAnalysis.isCompactOperator_id_sub_adjoint_comp_fderiv_of_norm_map,
+    ``NLS.FunctionalAnalysis.isCompactOperator_secondDerivative_clm_comp,
+    ``NLS.FunctionalAnalysis.isCompactOperator_secondDerivative_clm_sum,
+    ``NLS.FunctionalAnalysis.isCompactOperator_secondDerivative_of_dual_limit,
+    ``NLS.FunctionalAnalysis.secondDerivative_pairing_of_norm_map,
+    ``NLS.SequenceSpaces.denseRange_natL2_of_single_preimages,
+    ``NLS.SequenceSpaces.isCompactOperator_secondDerivative_natL2_inner]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
