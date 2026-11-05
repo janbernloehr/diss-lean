@@ -1082,6 +1082,20 @@ import NLS.KdV.HillIsospectralData
 import NLS.SequenceSpaces.WeightedCoefficientCompactness
 import NLS.KdV.HillMeanZeroIsospectralCompactness
 import NLS.KdV.HillAllPeriodicIsospectralSource
+import NLS.Poisson.GardnerBivector
+import NLS.Poisson.HminusGardnerBracket
+import NLS.Poisson.GardnerHamiltonianDirection
+import NLS.Poisson.GardnerBracketJacobi
+import NLS.Poisson.GardnerHamiltonianZeroMode
+import NLS.Fourier.UnitIntervalWeakDerivative
+import NLS.Poisson.ConstantOperatorJacobi
+import NLS.Poisson.GardnerHamiltonianTransport
+import NLS.Fourier.ACPeriodicUnitCoefficients
+import NLS.KdV.HillInfiniteNativeCotangents
+import NLS.Poisson.HminusGardnerHilbertRestriction
+import NLS.SequenceSpaces.InsertionSingle
+import NLS.KdV.HillNativeCotangentExtension
+import NLS.KdV.HillFullEndpointNativeCotangent
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1690,7 +1704,67 @@ run_cmd do
     ``NLS.Fourier.norm_unitIntegral_mul_wave_le_bracket_of_ac,
     ``NLS.Coeff.eventually_norm_differentiable_sub_lt_of_bounded_coefficientwise,
     ``NLS.WeightedCoeff.exists_coefficientwise_tendsto_subseq_of_bounded,
-    ``NLS.WeightedCoeff.tendsto_of_coefficientwise_of_norm_sq]
+    ``NLS.WeightedCoeff.tendsto_of_coefficientwise_of_norm_sq,
+    ``NLS.Poisson.gardnerDerivative_weight_bound,
+    ``NLS.Poisson.gardnerDerivative,
+    ``NLS.Poisson.gardnerDerivative_apply,
+    ``NLS.Poisson.norm_gardnerDerivative_le,
+    ``NLS.Poisson.gardnerBivector,
+    ``NLS.Poisson.gardnerBivector_eq_tsum,
+    ``NLS.Poisson.summable_norm_gardnerBivector,
+    ``NLS.Poisson.norm_gardnerBivector_le,
+    ``NLS.Poisson.gardnerBivector_antisymm,
+    ``NLS.Poisson.gardnerBivector_self,
+    ``NLS.Poisson.analyticOnNhd_gardnerBivector,
+    ``NLS.Poisson.hminusCotangentCLM,
+    ``NLS.Poisson.hminusCotangentCLM_apply,
+    ``NLS.Poisson.norm_hminusCotangentCLM,
+    ``NLS.Poisson.hminusCotangentCLM_represents,
+    ``NLS.Poisson.hminusScalarGradient,
+    ``NLS.Poisson.hminusScalarGradient_apply,
+    ``NLS.Poisson.hminusScalarGradient_represents,
+    ``NLS.Poisson.norm_hminusScalarGradient,
+    ``NLS.Poisson.analyticOnNhd_hminusScalarGradient,
+    ``NLS.Poisson.hminusGardnerBracket,
+    ``NLS.Poisson.hminusGardnerBracket_antisymm,
+    ``NLS.Poisson.hminusGardnerBracket_self,
+    ``NLS.Poisson.norm_hminusGardnerBracket_le,
+    ``NLS.Poisson.analyticOnNhd_hminusGardnerBracket,
+    ``NLS.Fourier.unitFourierCoefficient_deriv_of_ac,
+    ``NLS.Fourier.unitFourierCoefficient_eq_intervalFourierCoefficient,
+    ``NLS.Fourier.unitFourierCoefficient_congr_ae,
+    ``NLS.Fourier.unitFourierCoefficient_const,
+    ``NLS.Fourier.unitFourierCoefficient_add,
+    ``NLS.Fourier.unitFourierCoefficient_add_const,
+    ``NLS.Fourier.exists_ac_unitInterval_representative_of_fourier_equation,
+    ``NLS.Poisson.constantOperatorBracket,
+    ``NLS.Poisson.fderiv_constantOperatorBracket_apply,
+    ``NLS.Poisson.constantOperatorBracket_jacobi,
+    ``NLS.Fourier.unitFourierCoefficient_ac_periodic_prescribed_derivative,
+    ``NLS.Fourier.memlp_sobolev_one_unitFourierCoefficient_of_ac,
+    ``NLS.Fourier.acPeriodicUnitCoefficients,
+    ``NLS.Fourier.gardnerBivector_eq_integral_of_ac_coefficients,
+    ``NLS.Poisson.hilbertToHminus,
+    ``NLS.Poisson.hilbertToHminus_apply,
+    ``NLS.Poisson.hminusCotangentCLM_pairing,
+    ``NLS.Poisson.hilbertDifferential_eq_hminusRestriction_of_modes,
+    ``NLS.Coeff.insert_single,
+    ``NLS.Poisson.constantOperatorBracket_hamiltonian_derivative,
+    ``NLS.Poisson.gardnerCotangentBivector,
+    ``NLS.Poisson.gardnerCotangentBivector_antisymm,
+    ``NLS.Poisson.gardnerHamiltonianDirection,
+    ``NLS.Poisson.apply_gardnerHamiltonianDirection,
+    ``NLS.Poisson.norm_gardnerHamiltonianDirection_le,
+    ``NLS.Poisson.gardnerHamiltonianVector,
+    ``NLS.Poisson.fderiv_apply_gardnerHamiltonianVector,
+    ``NLS.Poisson.gardnerHamiltonianVector_apply,
+    ``NLS.Poisson.analyticOnNhd_gardnerHamiltonianVector,
+    ``NLS.Poisson.fderiv_hminusGardnerBracket_apply,
+    ``NLS.Poisson.hminusGardnerBracket_jacobi,
+    ``NLS.Poisson.gardnerHamiltonianDirection_zero_mode,
+    ``NLS.Poisson.gardnerHamiltonianDirection_skew,
+    ``NLS.Poisson.hminusGardnerBracket_eq_constantOperatorBracket,
+    ``NLS.Poisson.hminusGardnerBracket_hamiltonian_derivative]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
