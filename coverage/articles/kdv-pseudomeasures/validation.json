@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Prove source Lemma3.7 and forward bounded-set weak-star continuity for the actual original endpoint restriction, with the exact signed-weight physical Wiener predual.",
+  "phase": "Prove complete actual canonical-action Hamiltonian flows, exact unit-speed signed native coordinate rotations, and surjectivity of every actual native isospectral fiber onto its entire action torus.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1578,13 +1578,20 @@
     "NLS/SequenceSpaces/SignedSobolevWienerWeakStar.lean",
     "NLS/SequenceSpaces/PhysicalSignedWienerWeakStar.lean",
     "NLS/Articles/KdVPseudomeasures/EndpointWeakStarContinuity.lean",
+    "NLS/KdV/HillActionHamiltonianField.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionGlobalFlow.lean",
+    "NLS/ComplexAnalysis/ScalarExponentialUniqueness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionRotation.lean",
+    "NLS/Topology/CompactCoordinateMatching.lean",
+    "NLS/ComplexAnalysis/EqualNormRotation.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeTorusImage.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 6729,
-  "definitions": 1274,
+  "proved_theorems": 6756,
+  "definitions": 1280,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 8003,
+    "declarations": 8036,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -2970,8 +2977,8 @@
     "OriginalHillSpectralDarboux exports the SAMEoriginal physical potential, actual multipliers and local logarithmic normalization; their literal unit-period physical Gardner integral is zero, their closed-mean-zero cotangent bracket is intrinsic, and the full local spectral matrix holds at every original potential.",
     "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
   ],
-  "source_correspondence": "Prove source Lemma3.7 and forward bounded-set weak-star continuity for the actual original endpoint restriction, with the exact signed-weight physical Wiener predual. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NOW PROVED: actual complex AND physical real all-source native Jacobian/local inverse, native local homeomorphism/open map, direct actual finite-gap density/collision reduction, actual endpoint analyticity/free derivative/local inverse, sourceLemma3.6 full norm-ball boundedness. NOW ALSO PROVED sourceLemma3.7 full sequential weak-star preservation with no boundedness premise, and forward bounded-set weak-star continuity for EVERY filter with exact signed physical real Wiener predual. Global finite-gap/native injectivity and surjectivity, remaining nonlinear scales, full bounded-set weak-star homeomorphism, actual flow and all main theorems remain OPEN. Complete source3.1/main1.4 for the ACTUAL original KdV Birkhoff map: genuine global bijectivity, remaining nonlinear source/target scales and inverse/full bounded-set weak-star homeomorphism. Actual endpoint analyticity/exact derivative/local inverse, sourceLemma3.6 norm-ball boundedness and sourceLemma3.7/full forward bounded-set weak-star continuity NOW PROVED with original weights and exact physical signed Wiener predual. Global finite-gap/native injectivity and surjectivity remain OPEN. Preserve actual coordinates, physical Fourier real forms and full infinity-exponent spaces. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. ALL1568 baseline non-audit registered sources byte-identical toba31b01. All4 new modules (12theorems+5definitions), 2 canonical-byte-identical shared modules, 6 unchanged PRIVATE dependencies and EXACT8003-declaration transitive standard-axiom audit freshly compiled privately. Actual sourceLemma3.7 full sequential weak-star preservation and forward arbitrary-filter bounded-set weak-star continuity NOW PROVED with exact signed physical Wiener predual. Full homeomorphism/global bijection/main theorems remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1573-module build.",
+  "source_correspondence": "Prove complete actual canonical-action Hamiltonian flows, exact unit-speed signed native coordinate rotations, and surjectivity of every actual native isospectral fiber onto its entire action torus. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NOW PROVED: actual complex/physical-real all-source Jacobian/local inverse, native local homeomorphism/open map, direct finite-gap density/collision reduction, endpoint analyticity/local inverse/boundedness, sourceLemma3.7 and full forward bounded-set weak-star continuity. NOW ALSO actual indexed canonical-action Hamiltonian fields COMPLETE, exact native signed unit-speed rotations and ENTIRE actual native isospectral image EQUALS ENTIRE action torus, by actual compact fibers without global inverse. Global finite-gap/native injectivity and surjectivity (arbitrary action realization), remaining nonlinear scales, full weak-star homeomorphism, actual KdV evolution and all main theorems remain OPEN. Complete source3.1/main1.4 for the ACTUAL original KdV Birkhoff map: global bijectivity, remaining nonlinear scales and inverse/full bounded-set weak-star homeomorphism. Native ENTIRE isospectral-image/action-torus equality NOW PROVED without global inverse. Endpoint transfer of sourceLemma3.5(ii) still required; source3.4 onto, global native injectivity and arbitrary prescribed action realization remain OPEN. Endpoint analyticity/exact derivative/local inverse, source3.6 norm-ball boundedness, source3.7 full sequential preservation and full forward bounded-set continuity already PROVED with exact physical signed Wiener predual. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. ALL1572 baseline non-audit registered sources byte-identical tod6665e5. All7 new modules (27theorems+6definitions), 1 canonical-byte-identical shared modules, 7 unchanged PRIVATE dependencies and EXACT8036-declaration transitive standard-axiom audit freshly compiled privately. Actual complete canonical-action flows, exact native unit-speed rotations and full native isospectral-image/action-torus equality NOW PROVED, without global inverse premise. Global bijection/arbitrary actions/actual KdV/main remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1580-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -4548,7 +4555,14 @@
     "NLS/SequenceSpaces/SignedSobolevBilinearPairing.lean": "c99694c97016b884b8a54319921cf5c7486a045f7a8da5432ad38a47e0726c45",
     "NLS/SequenceSpaces/SignedSobolevWienerWeakStar.lean": "e112397356d1d75c0ec8270d59de06988c51c80b8537b5ab938caed1c61ce49e",
     "NLS/SequenceSpaces/PhysicalSignedWienerWeakStar.lean": "d5ba337cfddf2793686ff5d1915aa0cd8c345845d950df6784a50999014643b1",
-    "NLS/Articles/KdVPseudomeasures/EndpointWeakStarContinuity.lean": "0da0a18093e737222d8fc0b0ffe760a71b00f65843b741013c991c249fad0fcf"
+    "NLS/Articles/KdVPseudomeasures/EndpointWeakStarContinuity.lean": "0da0a18093e737222d8fc0b0ffe760a71b00f65843b741013c991c249fad0fcf",
+    "NLS/KdV/HillActionHamiltonianField.lean": "dc228a0b061b777e55eae408c1941222b9ed2042cecb6daeee3ca9d3aae452b7",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionGlobalFlow.lean": "db02396ab4ce99db28c71ad3aafebe84a019a7ed0e83bc8de1eb574ce12fd33d",
+    "NLS/ComplexAnalysis/ScalarExponentialUniqueness.lean": "366c8111a6a422ee22b1aca3f040e9c905d48f4af95d3d58e7367151f643b714",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionRotation.lean": "725dad295dc885c80d3ce9c9d9ab34220e23aefa98bcfb0c45baf684070898cd",
+    "NLS/Topology/CompactCoordinateMatching.lean": "2e2e3397eab2e83015c3d8ab0ee7050f3ea222d9dd2a5eab9c36a125de029f20",
+    "NLS/ComplexAnalysis/EqualNormRotation.lean": "692e78b55afb9f11e083a04173166b07d14d29ff13b225776d58e8fb1e70bd0e",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeTorusImage.lean": "8367dff3e88f962f47fb28f0ea6ac856ab0a4d69adc96636f45e61620bd1a58f"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -4556,11 +4570,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 7986,
-    "newly_checked_declarations_this_continuation": 17,
-    "new_theorems": 12,
-    "new_definitions": 5,
-    "total_checked_declarations": 8003
+    "previous_checked_declarations": 8003,
+    "newly_checked_declarations_this_continuation": 33,
+    "new_theorems": 27,
+    "new_definitions": 6,
+    "total_checked_declarations": 8036
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -4589,7 +4603,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-endpoint-weakstar-continuity.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-native-action-flow-torus-image.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -4922,13 +4936,14 @@
     "All writes private; canonical checkout/shared metadata read-only. ALL1545 baseline non-audit registered sources byte-identical to8421b75. All10 new modules (32theorems+14definitions), 1 canonical-byte-identical shared modules, 12 unchanged PRIVATE dependencies and EXACT7947-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL nativeweightedcoretransfer/exactFourierprincipal/complexnativeDFBanachequivalence andgenuinecomplexlocalinverse EVERYphysicalsource NOWPROVED. PhysicalREALrestriction/globalmap/mainremainUNPROVED. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1556-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata read-only. ALL1555 baseline non-audit registered sources byte-identical to659bde2. All9 new modules (26theorems+4definitions), 1 canonical-byte-identical shared modules, 6 unchanged PRIVATE dependencies and EXACT7977-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL correctPHYSICALREALallsourceDFBanachequivalence/localinverse, actualrealopen/localhomeomorphism, DIRECTnativefinitegapdensity andcollisionreductionNOWPROVED. Genuineglobalbijection/scales/flow/mainremainUNPROVED. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1565-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata read-only. ALL1564 baseline non-audit registered sources byte-identical to2db5e7d. All4 new modules (8theorems+1definitions), 0 canonical-byte-identical shared modules, 6 unchanged PRIVATE dependencies and EXACT7986-declaration transitive standard-axiom audit freshly compiled privately. Actual sourceLemma3.6 original full endpoint norm-ball boundedness NOW PROVED. All main theorems remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1569-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata read-only. ALL1568 baseline non-audit registered sources byte-identical toba31b01. All4 new modules (12theorems+5definitions), 2 canonical-byte-identical shared modules, 6 unchanged PRIVATE dependencies and EXACT8003-declaration transitive standard-axiom audit freshly compiled privately. Actual sourceLemma3.7 full sequential weak-star preservation and forward arbitrary-filter bounded-set weak-star continuity NOW PROVED with exact signed physical Wiener predual. Full homeomorphism/global bijection/main theorems remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1573-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata read-only. ALL1568 baseline non-audit registered sources byte-identical toba31b01. All4 new modules (12theorems+5definitions), 2 canonical-byte-identical shared modules, 6 unchanged PRIVATE dependencies and EXACT8003-declaration transitive standard-axiom audit freshly compiled privately. Actual sourceLemma3.7 full sequential weak-star preservation and forward arbitrary-filter bounded-set weak-star continuity NOW PROVED with exact signed physical Wiener predual. Full homeomorphism/global bijection/main theorems remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1573-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata read-only. ALL1572 baseline non-audit registered sources byte-identical tod6665e5. All7 new modules (27theorems+6definitions), 1 canonical-byte-identical shared modules, 7 unchanged PRIVATE dependencies and EXACT8036-declaration transitive standard-axiom audit freshly compiled privately. Actual complete canonical-action flows, exact native unit-speed rotations and full native isospectral-image/action-torus equality NOW PROVED, without global inverse premise. Global bijection/arbitrary actions/actual KdV/main remain unproved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1580-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/endpoint-weakstar-continuity-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/native-action-flow-torus-image-map.json",
   "baseline_validated_snapshot": {
-    "commit": "ba31b01243a8df3b6f7618a9f5b90d5bbb8e503a",
-    "modules": 1569,
-    "audited_declarations": 7986,
+    "commit": "d6665e5e066a6fa5664adfe605835f2c125a3e95",
+    "modules": 1573,
+    "audited_declarations": 8003,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -7262,6 +7277,29 @@
     "actual_native_global_injectivity_PROVED": false,
     "actual_native_global_surjectivity_PROVED": false,
     "full_bounded_set_weak_star_homeomorphism_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "actual_native_action_flow_torus_image": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-action-flow-torus-image-map.json",
+    "actual_original_canonical_action_Hamiltonian_fields_real_zero_mean_analytic_PROVED": true,
+    "actual_canonical_action_fields_complete_from_actual_isospectral_compactness_PROVED": true,
+    "actual_action_global_flow_addition_and_full_discriminant_conservation_PROVED": true,
+    "actual_native_signed_coordinate_action_velocity_with_unit_speed_and_exact_signs_PROVED": true,
+    "actual_native_coordinate_global_action_flow_EXACT_exponential_rotation_PROVED": true,
+    "reusable_compact_coordinate_matching_ANY_index_set_PROVED": true,
+    "actual_canonical_actions_constant_on_actual_discriminant_fibers_PROVED": true,
+    "actual_native_entire_isospectral_image_EQ_entire_actual_action_torus_PROVED": true,
+    "actual_original_physical_isospectral_preimage_for_EVERY_native_torus_point_PROVED": true,
+    "entire_native_action_torus_compact_ORIGINAL_target_norm_PROVED": true,
+    "scope": "Every physical Fourier-real zero-mean Hminus-one source, including arbitrary collapsed gaps and zero. Actual original canonical-action Gardner fields, actual signedSob(-1/2) Hilbert target. Entire original discriminant/isospectral fiber maps ONTO its full actual action torus without a global inverse premise.",
+    "arbitrary_prescribed_actions_realized_PROVED": false,
+    "full_endpoint_source_Lemma3_5_ii_transfer_PROVED": false,
+    "source_action_flow_period_2pi_PROVED": false,
+    "global_source_action_flow_commutation_PROVED": false,
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "full_bounded_set_weak_star_homeomorphism_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
     "global_Birkhoff_theorem_PROVED": false
   }
 }

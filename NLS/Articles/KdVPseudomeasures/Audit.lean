@@ -1570,6 +1570,13 @@ import NLS.SequenceSpaces.SignedSobolevBilinearPairing
 import NLS.SequenceSpaces.SignedSobolevWienerWeakStar
 import NLS.SequenceSpaces.PhysicalSignedWienerWeakStar
 import NLS.Articles.KdVPseudomeasures.EndpointWeakStarContinuity
+import NLS.KdV.HillActionHamiltonianField
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionGlobalFlow
+import NLS.ComplexAnalysis.ScalarExponentialUniqueness
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionRotation
+import NLS.Topology.CompactCoordinateMatching
+import NLS.ComplexAnalysis.EqualNormRotation
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeTorusImage
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9576,3 +9583,36 @@ import NLS.Articles.KdVPseudomeasures.EndpointWeakStarContinuity
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_originalEndpointWeakStarCoordinates_of_bounded
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_7
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_originalEndpointWeakStarCoordinates_on_bounded
+#print axioms NLS.KdV.hillHminusActionHamiltonianVector
+#print axioms NLS.KdV.analyticOnNhd_hillHminusActionHamiltonianVector
+#print axioms NLS.KdV.hillHminusActionHamiltonianVector_real
+#print axioms NLS.KdV.hillHminusActionHamiltonianVector_zero_mode
+#print axioms NLS.KdV.hillRealActionHamiltonianVector
+#print axioms NLS.KdV.hillRealActionHamiltonianVector_inclusion
+#print axioms NLS.KdV.contDiff_hillRealActionHamiltonianVector
+#print axioms NLS.KdV.hillRealDiscriminantData_eq_on_action_integralCurve
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillActionHamiltonianSystem
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_originalHillNativeActionFlow
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_add
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_conserved
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_originalHillNativeActionFlow_inclusion
+#print axioms NLS.ComplexAnalysis.eq_exp_mul_of_hasDerivAt
+#print axioms NLS.Articles.KdVPseudomeasures.hillActionRotationRate
+#print axioms NLS.Articles.KdVPseudomeasures.hillHminusActionHamiltonianVector_eq_coordinate_product
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeCoordinate_action_velocity
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_originalHillNativeActionFlow_coordinate
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_coordinate
+#print axioms NLS.Topology.exists_finite_coordinate_match
+#print axioms NLS.Topology.exists_compact_coordinate_match
+#print axioms NLS.ComplexAnalysis.exists_exp_I_mul_eq_of_norm_eq
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSignedMap_coordinate
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillRealNativeCoordinate
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealCanonicalAction_eq_of_discriminant_eq
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeActionTorus
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSignedMap_mem_actionTorus_of_discriminant_eq
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillReal_isospectral_preimage_of_mem_actionTorus
+#print axioms NLS.Articles.KdVPseudomeasures.image_hillRealDiscriminant_fiber_eq_actionTorus
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_hillRealNativeActionTorus
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_isospectral_preimage

@@ -1604,6 +1604,13 @@ modules = [
     'NLS.SequenceSpaces.SignedSobolevWienerWeakStar',
     'NLS.SequenceSpaces.PhysicalSignedWienerWeakStar',
     'NLS.Articles.KdVPseudomeasures.EndpointWeakStarContinuity',
+    'NLS.KdV.HillActionHamiltonianField',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillActionGlobalFlow',
+    'NLS.ComplexAnalysis.ScalarExponentialUniqueness',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillActionRotation',
+    'NLS.Topology.CompactCoordinateMatching',
+    'NLS.ComplexAnalysis.EqualNormRotation',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeTorusImage',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
