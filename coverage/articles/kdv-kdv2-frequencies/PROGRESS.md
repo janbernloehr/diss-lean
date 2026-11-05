@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual native filled-gap quadratic solutions
+## Latest actual native physical regular corrections
+
+One common complex period-one L2 ball now supports all actual high-gap regular corrections in a strongly analytic native output Hilbert family. Exact moving Dirichlet evaluation and the own-unit scalar comparison identify every positive component with the physical regular Abelian correction at every real source in the same ball, including own high modes, collapsed gaps and means. All nonpositive output components vanish. One cutoff precedes every output; no k>=2*n restriction or countable output-neighborhood intersection occurs. A full uniform Hilbert bound is proved.
+
+See `NATIVE_REGULAR_CORRECTIONS.md`. This completes physical terminal matching for the high native regular family. The coarse bound gives no gap-index decay or summability. Finite-head completion, genuine complex spectral/divisor/amplitude sequence and summable phase estimates, native physical coordinate analyticity and full Birkhoff/Hamiltonian conclusions remain open.
+
+Prior strict evidence for all 1172 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1178 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1210 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1178-module rebuild is claimed.
+
+Fresh audit: 10645 selected and 32776 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier actual native filled-gap quadratic solutions
 
 One common complex period-one L2 ball now supports actual regular differential solutions in the native output Hilbert space, jointly analytic on filled high-gap radius3k/4 energy discs. The actual symmetric gap equation retains the own unit subtraction. One full Hilbert bound18*pi*M/k holds throughout closed radiusk/4 inner discs. Exact globally selected physical numerator and regular-right-side matching is retained at every real source, including high own modes, collapsed pairs and means.
 

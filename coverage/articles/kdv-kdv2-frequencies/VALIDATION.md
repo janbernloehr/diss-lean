@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual native filled-gap quadratic solutions
+## Latest actual native physical regular corrections
+
+One common complex period-one L2 ball now supports all actual high-gap regular corrections in a strongly analytic native output Hilbert family. Exact moving Dirichlet evaluation and the own-unit scalar comparison identify every positive component with the physical regular Abelian correction at every real source in the same ball, including own high modes, collapsed gaps and means. All nonpositive output components vanish. One cutoff precedes every output; no k>=2*n restriction or countable output-neighborhood intersection occurs. A full uniform Hilbert bound is proved.
+
+See `NATIVE_REGULAR_CORRECTIONS.md`. This completes physical terminal matching for the high native regular family. The coarse bound gives no gap-index decay or summability. Finite-head completion, genuine complex spectral/divisor/amplitude sequence and summable phase estimates, native physical coordinate analyticity and full Birkhoff/Hamiltonian conclusions remain open.
+
+Prior strict evidence for all 1172 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1178 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1210 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1178-module rebuild is claimed.
+
+Fresh audit: 10645 selected and 32776 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier actual native filled-gap quadratic solutions
 
 One common complex period-one L2 ball now supports actual regular differential solutions in the native output Hilbert space, jointly analytic on filled high-gap radius3k/4 energy discs. The actual symmetric gap equation retains the own unit subtraction. One full Hilbert bound18*pi*M/k holds throughout closed radiusk/4 inner discs. Exact globally selected physical numerator and regular-right-side matching is retained at every real source, including high own modes, collapsed pairs and means.
 
@@ -406,7 +416,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1172 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1178 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1475,7 +1485,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1172 selected modules (including generated and private declarations)
+the 1178 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2898,4 +2908,16 @@ PASS NLS/ComplexAnalysis/NativeBoundedQuadraticSolution
 PASS NLS/KdV/HillNativeQuadraticSolution
 PASS NLS/Articles/KdVKdV2Frequencies/NativeRegularGapSolutions
 Axiom audit passed: 10601 candidate declarations; 32732 declarations total.
+```
+
+Latest actual native regular correction strict additions and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillPhysicalRegularQuadraticTerminal
+PASS NLS/KdV/HillScaledComplexDirichletTerminal
+PASS NLS/KdV/HillNativeRegularTerminal
+PASS NLS/KdV/HillNativeTerminalPhysical
+PASS NLS/SequenceSpaces/PositiveDeletedProjectionBounds
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRegularCorrections
+Axiom audit passed: 10645 candidate declarations; 32776 declarations total.
 ```

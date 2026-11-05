@@ -1,3 +1,9 @@
+import NLS.SequenceSpaces.PositiveDeletedProjectionBounds
+import NLS.Articles.KdVKdV2Frequencies.NativeRegularCorrections
+import NLS.KdV.HillNativeTerminalPhysical
+import NLS.KdV.HillNativeRegularTerminal
+import NLS.KdV.HillScaledComplexDirichletTerminal
+import NLS.KdV.HillPhysicalRegularQuadraticTerminal
 import NLS.Articles.KdVKdV2Frequencies.NativeRegularGapSolutions
 import NLS.KdV.HillNativeQuadraticSolution
 import NLS.ComplexAnalysis.NativeBoundedQuadraticSolution
@@ -1479,7 +1485,13 @@ run_cmd do
     `NLS.ComplexAnalysis.NativeQuadraticCauchyEquation,
     `NLS.ComplexAnalysis.NativeBoundedQuadraticSolution,
     `NLS.KdV.HillNativeQuadraticSolution,
-    `NLS.Articles.KdVKdV2Frequencies.NativeRegularGapSolutions
+    `NLS.Articles.KdVKdV2Frequencies.NativeRegularGapSolutions,
+    `NLS.KdV.HillPhysicalRegularQuadraticTerminal,
+    `NLS.KdV.HillScaledComplexDirichletTerminal,
+    `NLS.KdV.HillNativeRegularTerminal,
+    `NLS.KdV.HillNativeTerminalPhysical,
+    `NLS.SequenceSpaces.PositiveDeletedProjectionBounds,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRegularCorrections
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
