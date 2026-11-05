@@ -1933,6 +1933,11 @@ import NLS.ZakharovShabat.SourceCenteredActionCircleBound
 import NLS.ZakharovShabat.SourceHigherActionOneCenteredTail
 import NLS.ZakharovShabat.SourceHigherActionOneSobolevRatio
 import NLS.KdV.HillL2MiuraActionRatioTail
+import NLS.ZakharovShabat.SourceHigherActionOneCommonAnalytic
+import NLS.KdV.HillCommonMiuraRatioIdentity
+import NLS.KdV.HillL2CanonicalActionRatioBound
+import NLS.KdV.HillL2AmplitudeOneSmoothing
+import NLS.KdV.HillL2NativeDiagonalOneSmoothing
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11365,3 +11370,20 @@ import NLS.KdV.HillL2MiuraActionRatioTail
 #print axioms NLS.KdV.HillHminusMiuraActionBall.analytic_l2DiracLift
 #print axioms NLS.KdV.HillHminusMiuraActionBall.sobolevSourceInclusion_l2DiracLift
 #print axioms NLS.KdV.HillHminusMiuraGapBall.exists_local_l2Miura_normalizedRatio_tail_bound
+#print axioms NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_common_analytic
+#print axioms NLS.KdV.HillHminusMiuraGapBall.exists_local_normalizedRatio_common_analytic
+#print axioms NLS.KdV.HillHminusMiuraGapBall.exists_local_canonicalRatio_Miura_alternative
+#print axioms NLS.KdV.exists_local_hillL2CanonicalActionRatio_weighted_bound
+#print axioms NLS.KdV.hillL2AmplitudeSobolevRemainder
+#print axioms NLS.KdV.exists_local_hillL2Amplitude_one_smoothing
+#print axioms NLS.KdV.analyticAt_hillL2AmplitudeSobolevRemainder
+#print axioms NLS.KdV.eventually_hillL2AmplitudeSobolevRemainder_apply
+#print axioms NLS.KdV.hillL2AmplitudeSobolevRemainder_apply
+#print axioms NLS.KdV.hillL2NativeDiagonalFourierRemainder
+#print axioms NLS.KdV.analyticAt_hillL2NativeDiagonalFourierRemainder
+#print axioms NLS.KdV.eventually_hillL2NativeDiagonalFourierRemainder_apply
+#print axioms NLS.KdV.hillL2NativeDiagonalFourierRemainder_apply
+#print axioms NLS.KdV.hillL2StrongNativeDiagonal
+#print axioms NLS.KdV.analyticAt_hillL2StrongNativeDiagonal
+#print axioms NLS.KdV.eventually_hillL2StrongNativeDiagonal_apply
+#print axioms NLS.KdV.hillL2StrongNativeDiagonal_apply

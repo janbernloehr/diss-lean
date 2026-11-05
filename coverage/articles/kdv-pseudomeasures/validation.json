@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "ACTUAL local Miura normalized action ratio has one-order weighted scalar TAIL decay on ONE complex L2 neighborhood for ANY retained Miura gap ball at EVERY real source. Original first higher-action contour and filled complex collapsed-gap values retained. Canonical global ratio identification, finite head, amplitude weighted-norm analyticity, OFF-index phase, Main5.1/5.9 remain OPEN.",
+  "phase": "ACTUAL GLOBAL normalized ACTION amplitude-minus1 is analytic in one-order weighted infinity norm near EVERY real L2 source. The actual native DIAGONAL map has a patch-independent analytic H3/2 Fourier remainder and H1/2 realization with ALL original coefficients on ONE complex neighborhood. Actual OFF-index phase one-order estimate, full native smoothing and Main5.1/5.9 remain OPEN.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1941,13 +1941,18 @@
     "NLS/ZakharovShabat/SourceHigherActionOneCenteredTail.lean",
     "NLS/ZakharovShabat/SourceHigherActionOneSobolevRatio.lean",
     "NLS/KdV/HillL2MiuraActionRatioTail.lean",
+    "NLS/ZakharovShabat/SourceHigherActionOneCommonAnalytic.lean",
+    "NLS/KdV/HillCommonMiuraRatioIdentity.lean",
+    "NLS/KdV/HillL2CanonicalActionRatioBound.lean",
+    "NLS/KdV/HillL2AmplitudeOneSmoothing.lean",
+    "NLS/KdV/HillL2NativeDiagonalOneSmoothing.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7917,
-  "definitions": 1512,
+  "proved_theorems": 7931,
+  "definitions": 1515,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 9429,
+    "declarations": 9446,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3388,10 +3393,16 @@
     "SourceHigherActionOneCenteredTail proves UNCONDITIONALLY near EVERY real original Dirac L2 source that the ACTUAL filled first higher-action quotient minus ACTUAL periodic midpoint times ACTUAL normalized ordinary action is uniformly bounded BEFORE ALL distant signed labels on ONE complex neighborhood. The proof retains exact original contours, quotient periods and complex collapsed-gap normalization, using no analytic choice of a real mean-value spectral sample.",
     "SourceHigherActionOneSobolevRatio combines this centered moment bound, the verified ordinary normalized-action complex H1 decay and original periodic midpoint geometry. On ONE complex normalized H1 source neighborhood BEFORE ALL high positive n it proves (1+n)*norm(4*pi*n*sourceHigherActionOneNormalized_n/midpoint_n^2 -1) <= C. This is exactly the scalar formula underlying the local Miura normalized Hill action ratio, with no stronger norm analyticity inferred from the scalar bound.",
     "HillL2MiuraActionRatioTail constructs a complex analytic H1 representative of the SAME original diagonal Miura source from the actual L2 lift, including every raw coefficient. Its exists_local_l2Miura_normalizedRatio_tail_bound proves for ANY retained actual Miura gap ball B and EVERY real L2 source in B.source that ONE complex L2 neighborhood and constants precede ALL high positive n, with (1+n)*norm(B.normalizedRatio_n(L2r)-1)<=C. The exact original 16*pi*n first-higher-action divided by diracSum^2 formula is retained.",
-    "This closes the quantitative local Miura action-ratio TAIL estimate. It does NOT yet identify that formula with the GLOBAL canonical Hill ratio on a SINGLE complex L2 neighborhood BEFORE ALL n, control the finite head there, or construct a weighted-infinity analytic normalized ACTION amplitude. Those steps and the actual OFF-index phase one-order estimate remain required for full native smoothing. Main1.1/1.3/1.4 proved; Main5.1/5.9 unproved; goal ACTIVE."
+    "This closes the quantitative local Miura action-ratio TAIL estimate. It does NOT yet identify that formula with the GLOBAL canonical Hill ratio on a SINGLE complex L2 neighborhood BEFORE ALL n, control the finite head there, or construct a weighted-infinity analytic normalized ACTION amplitude. Those steps and the actual OFF-index phase one-order estimate remain required for full native smoothing. Main1.1/1.3/1.4 proved; Main5.1/5.9 unproved; goal ACTIVE.",
+    "SourceHigherActionOneCommonAnalytic proves the ACTUAL filled first higher-action quotient is analytic on ONE complex source neighborhood BEFORE ALL sufficiently high signed indices. It multiplies the already-verified common rationalized integrand by the original z+critical weight and differentiates the actual contour integral; the common-circle identity retains complex collapsed gaps.",
+    "HillCommonMiuraRatioIdentity proves the local Miura normalized action ratio analytic on ONE native Hminus complex neighborhood BEFORE ALL high positive indices. Its denominator is nonzero there by the actual free-circle midpoint geometry. A fixed-index canonical/Miura germ is continued on one connected native ball to identify every high GLOBAL canonical ratio with the SAME local Miura formula, except the explicit globally identically closed-gap convention where the global ratio is exactly1. The convention is handled directly, without a density assumption or gap division.",
+    "HillL2CanonicalActionRatioBound combines that common native comparison with the actual local L2 Miura one-order tail. The finite head uses the verified locally uniform principal square-root bound. On ONE complex L2 neighborhood of EVERY real source, (1+n)*norm(hillHminusCanonicalActionRatio_n-1) is uniformly bounded BEFORE ALL positive n, including closed gaps and the globally trivial convention.",
+    "HillL2AmplitudeOneSmoothing uses the principal-square-root deviation inequality, actual even signed amplitude coefficients and exact unit central mode to bound EVERY original normalized ACTION amplitude-minus1 coefficient in Sobolev1 weighted infinity norm. The verified weighted analytic realization yields hillL2AmplitudeSobolevRemainder complex analytic in that STRONGER norm, with uniform bound and ALL original raw coefficients on ONE complex L2 neighborhood of EVERY real source. This is the actual action amplitude, not the distinct Dirac midpoint factor.",
+    "HillL2NativeDiagonalOneSmoothing restores the ACTUAL action amplitude on the already-proved global intrinsic strong map. Its patch-independent hillL2NativeDiagonalFourierRemainder is complex analytic into native H3/2 near EVERY real L2 source and equals ORIGINAL hillHminusNativeDiagonalMap minus ORIGINAL halfFourierSymbol*q at EVERY signed raw mode on ONE complex neighborhood. hillL2StrongNativeDiagonal is analytic into native H1/2 with ALL actual native diagonal coefficients. The proof uses the exact original amplitude reconstruction and weighted infinity/Hilbert product.",
+    "ACTUAL normalized ACTION amplitude one-order WEIGHTED-NORM analyticity and ACTUAL native DIAGONAL L2 one-smoothing are now PROVED. Full nativeComplex one-smoothing still requires the ACTUAL signed OFF-index exponent/exponential-minus1 one-order weighted norm estimate. Main1.1/1.3/1.4 proved; Main5.1/5.9 unproved; goal ACTIVE."
   ],
-  "source_correspondence": "ACTUAL local Miura normalized action ratio has one-order weighted scalar TAIL decay on ONE complex L2 neighborhood for ANY retained Miura gap ball at EVERY real source. Original first higher-action contour and filled complex collapsed-gap values retained. Canonical global ratio identification, finite head, amplitude weighted-norm analyticity, OFF-index phase, Main5.1/5.9 remain OPEN. Prove ACTUAL HillIntegerNativeOneSmoothing0 with SAME original native e0 and halfFourierSymbol at EVERY signed mode. ALREADY PROVED: patch-independent actual intrinsic diagonal H3/2 Fourier remainder and H1/2 analytic realization; SAME-patch core/on-index assembly. NEW: exact local Miura normalized action ratio B.normalizedRatio has (1+n)-weighted TAIL bound on ONE complex L2 neighborhood for ANY retained actual B at EVERY real source. SourceHigherActionOneUniformCircle and CenteredTail retain original filled higher actions and complex collapsed-gap values; SourceHigherActionOneSobolevRatio supplies quantitative scalar H1 tail. NEXT identify the GLOBAL hillHminusCanonicalActionRatio with the local Miura formula on ONE complex L2 neighborhood BEFORE ALL high n, handle the possible globally identically collapsed-gap convention, add finite-head bounds, then use principal sqrt and weighted-infinity analytic realization to prove hillHminusNormalizedAmplitudeSymbol minus1 one-order WEIGHTED-NORM analyticity. Do not infer this from the local scalar tail alone. ALSO prove actual hillHminusSignedOffIndexExponent / exponential-minus1 one-order weighted norm estimates. Combine both actual factors with hillL2StrongIntrinsicDiagonal using WeightedInfinityPointwiseProduct and exact original native/real coefficient adapters. The normalized ACTION amplitude differs from the already-handled Dirac MIDPOINT symbol. Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates. For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1930 baseline non-audit registered Lean sources byte-identical to 99292ac. All 5 new modules (9 theorems+1 definitions), 4 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9429-declaration standard-axiom audit freshly compiled privately. ACTUAL local Miura normalized action ratio has one-order weighted scalar TAIL decay on ONE complex L2 neighborhood for ANY retained Miura gap ball at EVERY real source. Original first higher-action contour and filled complex collapsed-gap values retained. Canonical global ratio identification, finite head, amplitude weighted-norm analyticity, OFF-index phase, Main5.1/5.9 remain OPEN. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1936-module build.",
+  "source_correspondence": "ACTUAL GLOBAL normalized ACTION amplitude-minus1 is analytic in one-order weighted infinity norm near EVERY real L2 source. The actual native DIAGONAL map has a patch-independent analytic H3/2 Fourier remainder and H1/2 realization with ALL original coefficients on ONE complex neighborhood. Actual OFF-index phase one-order estimate, full native smoothing and Main5.1/5.9 remain OPEN. Prove ACTUAL HillIntegerNativeOneSmoothing0 with SAME original e0 and halfFourierSymbol at EVERY signed mode. ALREADY PROVED: actual hillL2NativeDiagonalFourierRemainder is complex analytic into native H3/2 near EVERY real L2 source, with analytic H1/2 realization hillL2StrongNativeDiagonal and ALL ORIGINAL native diagonal coefficients on ONE complex neighborhood. This includes SAME-patch core/on-index assembly and now ACTUAL GLOBAL normalized ACTION amplitude-minus1 one-order WEIGHTED-INFINITY norm analyticity. NEXT prove ACTUAL hillHminusSignedOffIndexExponent and exp(exponent)-1 one-order weighted infinity norm estimates on complex L2 neighborhoods. Existing rough bounded/unit-tail/compact assertions do NOT imply these stronger estimates. Use exact nativeComplex=exp(signedOffIndex)*nativeDiagonal, then Rfull=Rdiag+(exp(offIndex)-1)*strongDiagonal via WeightedInfinityPointwiseProduct. Preserve original native/real coefficient adapters and all signed/central modes. Once actual base R0 is proved, reuse OriginalHillWienerBaseSmoothing to lift all integer orders and then complete original physical Wiener transport/Main5.1. Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates. For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1935 baseline non-audit registered Lean sources byte-identical to 65832cc. All 5 new modules (14 theorems+3 definitions), 1 canonical-byte-identical modules, 12 unchanged private dependencies and EXACT 9446-declaration standard-axiom audit freshly compiled privately. ACTUAL GLOBAL normalized ACTION amplitude-minus1 is analytic in one-order weighted infinity norm near EVERY real L2 source. The actual native DIAGONAL map has a patch-independent analytic H3/2 Fourier remainder and H1/2 realization with ALL original coefficients on ONE complex neighborhood. Actual OFF-index phase one-order estimate, full native smoothing and Main5.1/5.9 remain OPEN. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1941-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -5331,7 +5342,12 @@
     "NLS/ZakharovShabat/SourceCenteredActionCircleBound.lean": "a8e9c16d8e9c1b110c30fc250f3d803baf32330fd4da9ec67f04b391bb818fe5",
     "NLS/ZakharovShabat/SourceHigherActionOneCenteredTail.lean": "fd40ff2b415432c9841d8a6f97c2cf63ac0b1a515996c89e501d380a9d9da3f2",
     "NLS/ZakharovShabat/SourceHigherActionOneSobolevRatio.lean": "9c10953cb2734c249e0682dc41260e2d4b632a5d26728e66598a44301b0d32eb",
-    "NLS/KdV/HillL2MiuraActionRatioTail.lean": "e42d26a41279d5f72f83e5d25fa3064a3b00259500f175360d524bd119fc426a"
+    "NLS/KdV/HillL2MiuraActionRatioTail.lean": "e42d26a41279d5f72f83e5d25fa3064a3b00259500f175360d524bd119fc426a",
+    "NLS/ZakharovShabat/SourceHigherActionOneCommonAnalytic.lean": "7642dec28b7add46881c84a3b674f5586838199103725b5908559c8936edd36e",
+    "NLS/KdV/HillCommonMiuraRatioIdentity.lean": "5c0fc6e533d33f733a4766b81049f7e89fbc67f10e48c60e4bb2985d9350e5de",
+    "NLS/KdV/HillL2CanonicalActionRatioBound.lean": "2ebd7e8aa3ab04b8a87ea5dd86a08793a2b284386052757a5c6f10b4a61f8b61",
+    "NLS/KdV/HillL2AmplitudeOneSmoothing.lean": "086350f79222b7e63429a37dc28f6f390c56e2bb6cdc2342da969188f62d631d",
+    "NLS/KdV/HillL2NativeDiagonalOneSmoothing.lean": "aae4041f95d93aa4071a8ee3d542a5d9b34064fe264b76455cc49136e15d7347"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -5339,11 +5355,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 9419,
-    "newly_checked_declarations_this_continuation": 10,
-    "new_theorems": 9,
-    "new_definitions": 1,
-    "total_checked_declarations": 9429
+    "previous_checked_declarations": 9429,
+    "newly_checked_declarations_this_continuation": 17,
+    "new_theorems": 14,
+    "new_definitions": 3,
+    "total_checked_declarations": 9446
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -5372,7 +5388,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-Miura-action-ratio-tail.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-action-amplitude-smoothing.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5761,13 +5777,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1908 baseline non-audit registered Lean sources byte-identical to 1f4f360. All 8 new modules (19 theorems+10 definitions), 2 canonical-byte-identical modules, 11 unchanged private dependencies and EXACT 9373-declaration standard-axiom audit freshly compiled privately. ACTUAL physical Hill spectral-core L2-to-native-H3/2 one-smoothing proved, including original massive principal and nonlinear Miura/midpoint/terminal contributions. Full native amplitude and phase factors remain open. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1917-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1916 baseline non-audit registered Lean sources byte-identical to de6b540. All 8 new modules (14 theorems+4 definitions), 3 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9391-declaration standard-axiom audit freshly compiled privately. ACTUAL signed on-index exponent AND exp(exponent)-1 analytic one-order weighted infinity decay proved on common complex L2 neighborhoods, with original patch/estimates constructed. Physical core one-smoothing remains proved; actual action amplitude and off-index phase estimates remain open. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1925-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1924 baseline non-audit registered Lean sources byte-identical to d48414b. All 6 new modules (20 theorems+8 definitions), 0 canonical-byte-identical modules, 12 unchanged private dependencies and EXACT 9419-declaration standard-axiom audit freshly compiled privately. ACTUAL intrinsic diagonal L2-to-native-H3/2 Fourier remainder and native-H1/2 realization are complex analytic near EVERY real L2 source, independent of patch choice. Physical core and actual on-index exponential are assembled on the SAME retained P/H patch. Actual normalized ACTION amplitude and OFF-index phase estimates, and Main5.1/5.9, remain OPEN. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1931-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1930 baseline non-audit registered Lean sources byte-identical to 99292ac. All 5 new modules (9 theorems+1 definitions), 4 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9429-declaration standard-axiom audit freshly compiled privately. ACTUAL local Miura normalized action ratio has one-order weighted scalar TAIL decay on ONE complex L2 neighborhood for ANY retained Miura gap ball at EVERY real source. Original first higher-action contour and filled complex collapsed-gap values retained. Canonical global ratio identification, finite head, amplitude weighted-norm analyticity, OFF-index phase, Main5.1/5.9 remain OPEN. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1936-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1930 baseline non-audit registered Lean sources byte-identical to 99292ac. All 5 new modules (9 theorems+1 definitions), 4 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9429-declaration standard-axiom audit freshly compiled privately. ACTUAL local Miura normalized action ratio has one-order weighted scalar TAIL decay on ONE complex L2 neighborhood for ANY retained Miura gap ball at EVERY real source. Original first higher-action contour and filled complex collapsed-gap values retained. Canonical global ratio identification, finite head, amplitude weighted-norm analyticity, OFF-index phase, Main5.1/5.9 remain OPEN. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1936-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1935 baseline non-audit registered Lean sources byte-identical to 65832cc. All 5 new modules (14 theorems+3 definitions), 1 canonical-byte-identical modules, 12 unchanged private dependencies and EXACT 9446-declaration standard-axiom audit freshly compiled privately. ACTUAL GLOBAL normalized ACTION amplitude-minus1 is analytic in one-order weighted infinity norm near EVERY real L2 source. The actual native DIAGONAL map has a patch-independent analytic H3/2 Fourier remainder and H1/2 realization with ALL original coefficients on ONE complex neighborhood. Actual OFF-index phase one-order estimate, full native smoothing and Main5.1/5.9 remain OPEN. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1941-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Miura-action-ratio-tail-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-action-amplitude-smoothing-map.json",
   "baseline_validated_snapshot": {
-    "commit": "99292acf5f9b1f76a40a2378cc06c1b6499f9710",
-    "modules": 1931,
-    "audited_declarations": 9419,
+    "commit": "65832ccfacac987954bc3ba545dc38f7f69770e7",
+    "modules": 1936,
+    "audited_declarations": 9429,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -9449,5 +9466,44 @@
     "GLOBAL_canonical_ratio_equals_local_Miura_formula_on_ONE_complex_L2_neighborhood_before_ALL_high_n_PROVED": false,
     "GLOBAL_canonical_action_ratio_FULL_one_order_weighted_norm_analytic_PROVED": false,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Miura-action-ratio-tail-map.json"
+  },
+  "actual_Hill_L2_ACTION_amplitude_and_native_diagonal_one_smoothing": {
+    "actual_positive_H1_Dirichlet_midpoint_and_gap_common_weight_bounds_PROVED": true,
+    "SAME_Hill_auxiliary_divisor_and_phase_rotated_Dirichlet_midpoint_identity_PROVED": true,
+    "actual_on_index_correction_FULL_head_and_tail_one_order_bound_PROVED": true,
+    "ACTUAL_on_index_signed_exponent_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "ACTUAL_on_index_exponential_factor_minus_one_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "actual_on_index_patch_and_original_family_estimates_FACTORY_UNCONDITIONAL": true,
+    "original_signed_coefficients_central_zero_and_complex_collapsed_gaps_retained_PROVED": true,
+    "generic_weighted_infinity_exponential_remainder_analytic_PROVED": true,
+    "ACTUAL_physical_Hill_spectral_core_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "SAME_patch_core_on_index_assembly_COMPLETE": true,
+    "ACTUAL_native_normalized_ACTION_amplitude_one_order_estimate_PROVED": true,
+    "ACTUAL_native_off_index_exponent_one_order_estimate_PROVED": false,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "ACTUAL_intrinsic_diagonal_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "GLOBAL_patch_independent_intrinsic_Fourier_remainder_Hthreehalves_analytic_PROVED": true,
+    "GLOBAL_actual_intrinsic_diagonal_Hhalf_analytic_realization_PROVED": true,
+    "ALL_original_intrinsic_coefficients_on_ONE_complex_neighborhood_PROVED": true,
+    "generic_weighted_infinity_Hilbert_signed_order_product_PROVED": true,
+    "ACTUAL_first_higher_action_common_free_circle_complex_agreement_PROVED": true,
+    "ACTUAL_filled_first_higher_action_centered_moment_uniform_tail_bound_PROVED": true,
+    "ACTUAL_local_Miura_normalized_action_ratio_complex_H1_one_order_scalar_TAIL_PROVED": true,
+    "ACTUAL_retained_Miura_gap_ball_ratio_complex_L2_one_order_scalar_TAIL_PROVED": true,
+    "ACTUAL_GLOBAL_action_amplitude_minus_one_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "GLOBAL_canonical_ratio_Miura_formula_OR_IDENTICALLY_CLOSED_CONVENTION_on_ONE_native_neighborhood_before_ALL_high_n_PROVED": true,
+    "GLOBAL_canonical_action_ratio_FULL_one_order_scalar_bound_PROVED": true,
+    "ACTUAL_native_DIAGONAL_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "GLOBAL_patch_independent_native_diagonal_Fourier_remainder_Hthreehalves_analytic_PROVED": true,
+    "GLOBAL_actual_native_diagonal_Hhalf_analytic_realization_PROVED": true,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-action-amplitude-smoothing-map.json"
   }
 }

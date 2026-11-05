@@ -1967,6 +1967,11 @@ modules = [
     'NLS.ZakharovShabat.SourceHigherActionOneCenteredTail',
     'NLS.ZakharovShabat.SourceHigherActionOneSobolevRatio',
     'NLS.KdV.HillL2MiuraActionRatioTail',
+    'NLS.ZakharovShabat.SourceHigherActionOneCommonAnalytic',
+    'NLS.KdV.HillCommonMiuraRatioIdentity',
+    'NLS.KdV.HillL2CanonicalActionRatioBound',
+    'NLS.KdV.HillL2AmplitudeOneSmoothing',
+    'NLS.KdV.HillL2NativeDiagonalOneSmoothing',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
