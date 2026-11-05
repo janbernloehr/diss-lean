@@ -979,6 +979,10 @@ import NLS.KdV.HillPhaseSeriesDerivativeAssembly
 import NLS.KdV.HillPhaseSeriesPhysicalMatching
 import NLS.KdV.HillProjectedKernelCharts
 import NLS.KdV.HillFullRegularPhaseVariation
+import NLS.KdV.HillActionSourceStationarity
+import NLS.ComplexAnalysis.ActionPhaseSourceVariation
+import NLS.KdV.HillActionAmplitudeSources
+import NLS.KdV.HillRegularCartesianSourceVariations
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1556,7 +1560,8 @@ run_cmd do
     ``NLS.WeightedCoeff.norm_restrictIndicesCLM_le,
     ``NLS.ComplexAnalysis.tendsto_fderiv_add_sum_range_of_summable_uniform_bound,
     ``NLS.sum_head_add_sum_range_of_zero_on_head,
-    ``NLS.sum_finite_head_add_tsum_complement]
+    ``NLS.sum_finite_head_add_tsum_complement,
+    ``NLS.ComplexAnalysis.actionPhase_fderiv_of_stationary_amplitude]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

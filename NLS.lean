@@ -5902,3 +5902,7 @@ import NLS.KdV.HillPhaseSeriesDerivativeAssembly
 import NLS.KdV.HillPhaseSeriesPhysicalMatching
 import NLS.KdV.HillProjectedKernelCharts
 import NLS.KdV.HillFullRegularPhaseVariation
+import NLS.KdV.HillActionSourceStationarity
+import NLS.ComplexAnalysis.ActionPhaseSourceVariation
+import NLS.KdV.HillActionAmplitudeSources
+import NLS.KdV.HillRegularCartesianSourceVariations
