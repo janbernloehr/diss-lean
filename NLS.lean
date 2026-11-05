@@ -5966,3 +5966,12 @@ import NLS.KdV.HillAllEndpointNormingFamily
 import NLS.KdV.HillQuadraticEndpointCotangentBound
 import NLS.KdV.HillCommonEndpointCotangentTail
 import NLS.KdV.HillSummableEndpointCotangents
+import NLS.KdV.ClassicalHillStateErrors
+import NLS.ComplexAnalysis.SineApproximationMass
+import NLS.KdV.HillRoughStateErrors
+import NLS.KdV.HillRealFrequencyStateBounds
+import NLS.KdV.HillHighDirichletFrequency
+import NLS.KdV.HillUniformNormingGradients
+import NLS.KdV.HillInfiniteNormingGradients
+import NLS.KdV.HillInfiniteNormingGardner
+import NLS.KdV.HillInfiniteEndpointCorrectionCotangent

@@ -1043,6 +1043,15 @@ import NLS.KdV.HillAllEndpointNormingFamily
 import NLS.KdV.HillQuadraticEndpointCotangentBound
 import NLS.KdV.HillCommonEndpointCotangentTail
 import NLS.KdV.HillSummableEndpointCotangents
+import NLS.KdV.ClassicalHillStateErrors
+import NLS.ComplexAnalysis.SineApproximationMass
+import NLS.KdV.HillRoughStateErrors
+import NLS.KdV.HillRealFrequencyStateBounds
+import NLS.KdV.HillHighDirichletFrequency
+import NLS.KdV.HillUniformNormingGradients
+import NLS.KdV.HillInfiniteNormingGradients
+import NLS.KdV.HillInfiniteNormingGardner
+import NLS.KdV.HillInfiniteEndpointCorrectionCotangent
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1632,7 +1641,8 @@ run_cmd do
     ``NLS.FunctionalAnalysis.closedUnitCurvePeriodTwoCLM,
     ``NLS.FunctionalAnalysis.closedUnitCurveProjectionCLM,
     ``NLS.FunctionalAnalysis.closedUnitCurveProjectionCLM_fixed,
-    ``NLS.ComplexAnalysis.sineTerminal_fderiv_eq_norming_of_zero]
+    ``NLS.ComplexAnalysis.sineTerminal_fderiv_eq_norming_of_zero,
+    ``NLS.ComplexAnalysis.scalarStateMass_lower_of_sine_approx]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
