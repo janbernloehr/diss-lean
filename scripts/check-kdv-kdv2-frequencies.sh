@@ -9,6 +9,7 @@ export MATHLIB_CACHE_DIR="${MATHLIB_CACHE_DIR:-/home/janbernloehr/Documents/Code
 article_build="$article_root/.lake/build/lib/lean"
 article_imports="$article_root/.lake/article-imports"
 modules=(
+  NLS/ComplexAnalysis/DiscBounds
   NLS/SequenceSpaces/Basic
   NLS/SequenceSpaces/Truncation
   NLS/SequenceSpaces/UniformTailContinuity
@@ -1142,6 +1143,14 @@ modules=(
   NLS/KdV/HillFrequencyPhysicalPeriodTransfer
   NLS/ComplexAnalysis/AnalyticLinearSourcePullback
   NLS/Articles/KdVKdV2Frequencies/PhysicalNormalizedFamilyIdentification
+  NLS/KdV/HillHminusOneUniformSmallTrace
+  NLS/KdV/HillUniformFrequencySine
+  NLS/KdV/HillHminusOneInnerRootBound
+  NLS/KdV/HillHminusOneInnerDifferentialBound
+  NLS/KdV/InnerFrequencyCircleResolvent
+  NLS/KdV/HillHminusOneUniformNormalizedDensity
+  NLS/Articles/KdVKdV2Frequencies/NativeNormalizedDensity
+  NLS/Articles/KdVKdV2Frequencies/PhysicalNormalizedDensity
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest common native physical normalized differential family
+## Latest uniform full Hilbert normalized density bound
+
+One native jointly complex analytic output-index Hilbert family on all energies times a common complex period-one L2 source ball now has density norm at most K/k on every squared inner frequency circle |z-k*pi|=pi/8. The same ball precedes all complex sources, contour/output indices and points; actual source-root coverage is proved there. Every positive component equals the globally selected physical normalized numerator at every real source in the ball and every energy. Exact free/zero components and genuine Bochner Kronecker periods on the original pi/4 circles are retained. Includes first/own/closed modes and means.
+
+See `UNIFORM_NORMALIZED_DENSITY.md`. This is a quantitative differential dependency near zero. Uniform regular phase filling, genuine complex divisor/amplitude bounds, native physical Abelian-coordinate analyticity, the full Sobolev scale, canonicality/global inverse and Hamiltonian/action-frequency conclusions remain open.
+
+Prior strict evidence for all 1133 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules and one unchanged explicitly selected canonical Cauchy helper; then a fresh combined transitive axiom audit of all 1142 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1173 frozen source/checker/provenance hashes, 28 unchanged provenance records and one new verified canonical reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1142-module rebuild is claimed.
+
+Fresh audit: 10465 selected and 32629 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier common native physical normalized differential family
 
 There is now one jointly complex analytic native output-index Hilbert numerator family on all energies times a common complex period-one L2 source ball. At EVERY real physical source in that ball, EVERY positive index and EVERY energy, the literal component equals the existing globally selected physical normalized numerator. Exact free components, nonpositive zero extension and native Bochner Kronecker periods remain on the same complex ball. Actual rough frequency periods transfer to physical intrinsic gap periods with their exact sheet, orientation and2z Jacobian, including own/closed gaps and the first mode. The proved exterior uniqueness criterion gives physical identification with no remaining period assumption for this family near zero.
 
@@ -366,7 +376,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1133 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1142 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1435,7 +1445,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1133 selected modules (including generated and private declarations)
+the 1142 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2795,4 +2805,19 @@ PASS NLS/KdV/HillFrequencyPhysicalPeriodTransfer
 PASS NLS/ComplexAnalysis/AnalyticLinearSourcePullback
 PASS NLS/Articles/KdVKdV2Frequencies/PhysicalNormalizedFamilyIdentification
 Axiom audit passed: 10429 candidate declarations; 32597 declarations total.
+```
+
+Latest uniform normalized density strict additions and fresh combined audit:
+
+```text
+PASS NLS/ComplexAnalysis/DiscBounds
+PASS NLS/KdV/HillHminusOneUniformSmallTrace
+PASS NLS/KdV/HillUniformFrequencySine
+PASS NLS/KdV/HillHminusOneInnerRootBound
+PASS NLS/KdV/HillHminusOneInnerDifferentialBound
+PASS NLS/KdV/InnerFrequencyCircleResolvent
+PASS NLS/KdV/HillHminusOneUniformNormalizedDensity
+PASS NLS/Articles/KdVKdV2Frequencies/NativeNormalizedDensity
+PASS NLS/Articles/KdVKdV2Frequencies/PhysicalNormalizedDensity
+Axiom audit passed: 10465 candidate declarations; 32629 declarations total.
 ```

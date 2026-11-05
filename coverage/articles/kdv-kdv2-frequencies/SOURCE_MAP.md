@@ -1015,3 +1015,14 @@ See `PHYSICAL_NORMALIZED_FAMILY.md`. This is the physical differential NUMERATOR
 Prior strict evidence for all 1128 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1133 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1163 frozen source/checker/provenance hashes, all 28 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1133-module rebuild is claimed.
 
 Fresh audit: 10429 selected and 32597 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest uniform full Hilbert normalized density bound
+
+One native jointly complex analytic output-index Hilbert family on all energies times a common complex period-one L2 source ball now has density norm at most K/k on every squared inner frequency circle |z-k*pi|=pi/8. The same ball precedes all complex sources, contour/output indices and points; actual source-root coverage is proved there. Every positive component equals the globally selected physical normalized numerator at every real source in the ball and every energy. Exact free/zero components and genuine Bochner Kronecker periods on the original pi/4 circles are retained. Includes first/own/closed modes and means.
+
+See `UNIFORM_NORMALIZED_DENSITY.md`. This is a quantitative differential dependency near zero. Uniform regular phase filling, genuine complex divisor/amplitude bounds, native physical Abelian-coordinate analyticity, the full Sobolev scale, canonicality/global inverse and Hamiltonian/action-frequency conclusions remain open.
+
+Prior strict evidence for all 1133 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules and one unchanged explicitly selected canonical Cauchy helper; then a fresh combined transitive axiom audit of all 1142 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1173 frozen source/checker/provenance hashes, 28 unchanged provenance records and one new verified canonical reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1142-module rebuild is claimed.
+
+Fresh audit: 10465 selected and 32629 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

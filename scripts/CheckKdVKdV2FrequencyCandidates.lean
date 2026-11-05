@@ -1,3 +1,12 @@
+import NLS.ComplexAnalysis.DiscBounds
+import NLS.Articles.KdVKdV2Frequencies.PhysicalNormalizedDensity
+import NLS.Articles.KdVKdV2Frequencies.NativeNormalizedDensity
+import NLS.KdV.HillHminusOneUniformNormalizedDensity
+import NLS.KdV.InnerFrequencyCircleResolvent
+import NLS.KdV.HillHminusOneInnerDifferentialBound
+import NLS.KdV.HillHminusOneInnerRootBound
+import NLS.KdV.HillHminusOneUniformSmallTrace
+import NLS.KdV.HillUniformFrequencySine
 import NLS.Articles.KdVKdV2Frequencies.PhysicalNormalizedFamilyIdentification
 import NLS.Articles.KdVKdV2Frequencies.NativePhysicalNumeratorDecay
 import NLS.SequenceSpaces.HilbertMatrixTransposeAnalytic
@@ -269,6 +278,7 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let modules := #[
+    `NLS.ComplexAnalysis.DiscBounds,
     `NLS.SequenceSpaces.Basic,
     `NLS.SequenceSpaces.Truncation,
     `NLS.SequenceSpaces.UniformTailContinuity,
@@ -1401,7 +1411,15 @@ run_cmd do
     `NLS.KdV.HillFrequencyContourPhysicalBands,
     `NLS.KdV.HillFrequencyPhysicalPeriodTransfer,
     `NLS.ComplexAnalysis.AnalyticLinearSourcePullback,
-    `NLS.Articles.KdVKdV2Frequencies.PhysicalNormalizedFamilyIdentification
+    `NLS.Articles.KdVKdV2Frequencies.PhysicalNormalizedFamilyIdentification,
+    `NLS.KdV.HillHminusOneUniformSmallTrace,
+    `NLS.KdV.HillUniformFrequencySine,
+    `NLS.KdV.HillHminusOneInnerRootBound,
+    `NLS.KdV.HillHminusOneInnerDifferentialBound,
+    `NLS.KdV.InnerFrequencyCircleResolvent,
+    `NLS.KdV.HillHminusOneUniformNormalizedDensity,
+    `NLS.Articles.KdVKdV2Frequencies.NativeNormalizedDensity,
+    `NLS.Articles.KdVKdV2Frequencies.PhysicalNormalizedDensity
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

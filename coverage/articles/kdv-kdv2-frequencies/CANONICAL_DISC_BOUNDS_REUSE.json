@@ -1,0 +1,13 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "source_branch": "main",
+  "purpose": "Canonical value and Cauchy derivative estimates, now explicitly selected and strictly compiled for the uniform actual rough Hill trace differential bound on all inner contours.",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/DiscBounds.lean",
+      "source_sha256": "7f046cffdc1fcfd927bfe9d63000ac404a6e5e083d43878d3c3ac4e56bfed050",
+      "local_sha256": "7f046cffdc1fcfd927bfe9d63000ac404a6e5e083d43878d3c3ac4e56bfed050",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}
