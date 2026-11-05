@@ -6058,3 +6058,16 @@ import NLS.KdV.HillHminusOriginalSource
 import NLS.KdV.HillHminusSpectralDifferentials
 import NLS.KdV.HillHminusSpectralInvolution
 import NLS.KdV.HillHminusDirichletCharts
+import NLS.KdV.HillL2DirichletTerminal
+import NLS.MKdV.QuasiHillL2PhysicalSource
+import NLS.ZakharovShabat.L2InitialValueACUniqueness
+import NLS.MKdV.QuasiHillL2WeakSolution
+import NLS.MKdV.QuasiHillL2InitialValue
+import NLS.MKdV.QuasiHillL2DirichletCriterion
+import NLS.MKdV.QuasiHillL2LagrangeIdentity
+import NLS.MKdV.MiuraL2DirichletTerminal
+import NLS.MKdV.QuasiHillL2NormingTrace
+import NLS.KdV.HillHminusNormingCharts
+import NLS.KdV.HillHminusLogNorming
+import NLS.KdV.HillHminusLogNormingCotangent
+import NLS.KdV.HillHminusLogNormingGardner

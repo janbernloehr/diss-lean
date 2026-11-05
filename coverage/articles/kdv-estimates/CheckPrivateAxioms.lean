@@ -1135,6 +1135,19 @@ import NLS.KdV.HillHminusOriginalSource
 import NLS.KdV.HillHminusSpectralDifferentials
 import NLS.KdV.HillHminusSpectralInvolution
 import NLS.KdV.HillHminusDirichletCharts
+import NLS.KdV.HillL2DirichletTerminal
+import NLS.MKdV.QuasiHillL2PhysicalSource
+import NLS.ZakharovShabat.L2InitialValueACUniqueness
+import NLS.MKdV.QuasiHillL2WeakSolution
+import NLS.MKdV.QuasiHillL2InitialValue
+import NLS.MKdV.QuasiHillL2DirichletCriterion
+import NLS.MKdV.QuasiHillL2LagrangeIdentity
+import NLS.MKdV.MiuraL2DirichletTerminal
+import NLS.MKdV.QuasiHillL2NormingTrace
+import NLS.KdV.HillHminusNormingCharts
+import NLS.KdV.HillHminusLogNorming
+import NLS.KdV.HillHminusLogNormingCotangent
+import NLS.KdV.HillHminusLogNormingGardner
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1990,7 +2003,51 @@ run_cmd do
     ``NLS.periodOneShiftedMiura.eq_1,
     ``NLS.periodOneShiftedMiura_apply,
     ``NLS.tendsto_periodOneMassKernel_zero,
-    ``NLS.youngRelation_two_two_top]
+    ``NLS.youngRelation_two_two_top,
+    ``NLS.MKdV.IsQuasiHillL2DirichletState,
+    ``NLS.MKdV.IsQuasiHillL2Solution,
+    ``NLS.MKdV.absolutelyContinuousOnInterval_quasiHillL2SolutionCurve,
+    ``NLS.MKdV.ae_hasDerivAt_quasiHillL2SolutionCurve,
+    ``NLS.MKdV.analyticOnNhd_quasiHillL2DirichletTerminal_joint,
+    ``NLS.MKdV.hillL2DirichletTerminal_miura,
+    ``NLS.MKdV.hillL2DirichletTerminal_miura_smooth,
+    ``NLS.MKdV.hillMiuraL2Discriminant_eq_quasiHillL2_trace,
+    ``NLS.MKdV.hillMiuraL2Discriminant_of_dirichlet_root,
+    ``NLS.MKdV.isQuasiHillL2DirichletState_iff_scalar,
+    ``NLS.MKdV.isQuasiHillL2Solution_iff_initial,
+    ``NLS.MKdV.isQuasiHillL2Solution_solutionCurve,
+    ``NLS.MKdV.miuraHillProfileCurve.congr_simp,
+    ``NLS.MKdV.miuraProfileCurve.congr_simp,
+    ``NLS.MKdV.quasiHillEnergyInitialVector_stateMap,
+    ``NLS.MKdV.quasiHillEnergyInverseStateMap,
+    ``NLS.MKdV.quasiHillEnergyInverseStateMap_apply,
+    ``NLS.MKdV.quasiHillEnergyInverseStateMap_ode,
+    ``NLS.MKdV.quasiHillEnergySource_representative,
+    ``NLS.MKdV.quasiHillL2Dirichlet.eq_1,
+    ``NLS.MKdV.quasiHillL2DirichletSheet,
+    ``NLS.MKdV.quasiHillL2DirichletSheet.eq_1,
+    ``NLS.MKdV.quasiHillL2DirichletSheet_of_root,
+    ``NLS.MKdV.quasiHillL2DirichletSheet_sq,
+    ``NLS.MKdV.quasiHillL2DirichletTerminal,
+    ``NLS.MKdV.quasiHillL2DirichletTerminal.eq_1,
+    ``NLS.MKdV.quasiHillL2DirichletTerminal_eq_hillL2_of_root,
+    ``NLS.MKdV.quasiHillL2DirichletTerminal_eq_hillL2_of_shifted_root,
+    ``NLS.MKdV.quasiHillL2DirichletTerminal_ne_zero,
+    ``NLS.MKdV.quasiHillL2Dirichlet_eq_zero_iff_exists_state,
+    ``NLS.MKdV.quasiHillL2Dirichlet_first_diagonal_of_root,
+    ``NLS.MKdV.quasiHillL2Dirichlet_state_ne_zero,
+    ``NLS.MKdV.quasiHillL2Dirichlet_terminal_snd_ne_zero,
+    ``NLS.MKdV.quasiHillL2InitialMap,
+    ``NLS.MKdV.quasiHillL2InitialMap_apply,
+    ``NLS.MKdV.quasiHillL2SolutionCurve_add,
+    ``NLS.MKdV.quasiHillL2SolutionCurve_injective,
+    ``NLS.MKdV.quasiHillL2SolutionCurve_smul,
+    ``NLS.MKdV.quasiHillL2SolutionCurve_unique_of_ac,
+    ``NLS.MKdV.quasiHillL2SolutionCurve_zero_initial,
+    ``NLS.MKdV.quasiHillL2_fundamental_determinant,
+    ``NLS.MKdV.quasiHillL2_lagrange_identity,
+    ``NLS.MKdV.unitL2Synthesis_single_zero,
+    ``NLS.ZakharovShabat.l2SolutionCurve_unique_of_ac]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
