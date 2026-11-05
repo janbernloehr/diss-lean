@@ -1351,6 +1351,18 @@ import NLS.KdV.HillHminusEndpointPhaseGardner
 import NLS.KdV.HillHminusCartesianGardnerLimits
 import NLS.KdV.HillHminusConjugateCartesianGerms
 import NLS.KdV.HillHminusSignedCartesianGardnerLimits
+import NLS.KdV.HillClosedCurveSourceCoefficients
+import NLS.KdV.HillHminusActionCotangent
+import NLS.KdV.HillHminusActionHamiltonianVector
+import NLS.KdV.HillHminusActionGardner
+import NLS.Poisson.HminusGardnerAlgebra
+import NLS.ComplexAnalysis.SquareRootDifferential
+import NLS.KdV.HillHminusActionAmplitudeDifferentials
+import NLS.Poisson.HminusGardnerAmplitudeProducts
+import NLS.KdV.HillHminusEndpointCartesianCommutation
+import NLS.KdV.HillHminusEndpointCartesianMixed
+import NLS.KdV.HillHminusEndpointConjugateCommutation
+import NLS.KdV.HillHminusEndpointCartesianMatrix
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2531,7 +2543,14 @@ run_cmd do
     ``NLS.ZakharovShabat.SourceAngularEtaAnalyticChartData.exp_two_I_prescribed_pathIntegral_eq_phase,
     ``NLS.ZakharovShabat.SourceAngularEtaAnalyticChartData.prescribed_pathIntegral_sub_representative_eq_int_pi,
     ``NLS.ZakharovShabat.sourceAngularEtaModelSheetIntegrand.congr_simp,
-    ``NLS.ZakharovShabat.sourceAngularEta_prescribed_model_sub_angle_eq_int_pi]
+    ``NLS.ZakharovShabat.sourceAngularEta_prescribed_model_sub_angle_eq_int_pi,
+    ``NLS.ComplexAnalysis.fderiv_squareRoot_twice_of_sq_eq,
+    ``NLS.Poisson.hminusGardnerBracket_amplitude_products_zero,
+    ``NLS.Poisson.hminusGardnerBracket_mul_left,
+    ``NLS.Poisson.hminusGardnerBracket_mul_right,
+    ``NLS.Poisson.hminusGardnerBracket_of_fderiv_smul_left,
+    ``NLS.Poisson.hminusGardnerBracket_of_fderiv_smul_right,
+    ``NLS.Poisson.hminusGardnerBracket_products_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
