@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest native actual summed regular phase
+## Latest native actual Dirichlet energy coordinates
+
+Actual mean-subtracted Dirichlet energies now form one native Hilbert-analytic map on a common complex period-one L2 ball before every physical source and positive gap. Every positive real-source component is the actual physical Dirichlet energy minus free energy minus u(0); all nonpositive complex coefficients vanish. The map vanishes at zero, has exact cosine Fourier derivative -(u(k)+u(-k))/2 and full norm <=||u||+K*||u||^2. Its native analytic nonlinear remainder has norm <=K*||u||^2 and zero derivative at the origin. The proof derives an actual complex L2 Born/Fourier estimate with inverse-index quadratic error. First and collapsed gaps and nonzero means are included.
+
+See `NATIVE_DIRICHLET_ENERGIES.md`. The native summed regular phase remains proved. Complex symmetric midpoint estimates, uniform analytic amplitude prefactors and the actual weighted coordinate map remain essential, as do all main Birkhoff/Hamiltonian conclusions.
+
+Prior strict evidence for all 1211 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules; then a fresh combined transitive axiom audit of all 1221 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1253 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1221-module rebuild is claimed.
+
+Fresh audit: 10834 selected and 32967 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier native actual summed regular phase
 
 The actual unscaled Dirichlet terminals now form a native Hilbert-analytic sequence on one complex period-one L2 ball, with full norm <=K*(||u||+||u||^2). Genuine complex Fourier leading terms and inverse-index quadratic remainders supply the sequence estimate. Actual regular correction vectors satisfy full norm <=A*||terminal_k||/k and sum absolutely as a Bochner series. The sum is native Hilbert analytic on ONE common complex source ball; every positive component at every real source in that same ball equals the existing physical summed regular correction. All nonpositive complex outputs vanish. First gaps, own modes, collapsed gaps and means are included.
 

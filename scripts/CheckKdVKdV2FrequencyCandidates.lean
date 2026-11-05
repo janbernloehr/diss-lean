@@ -1,3 +1,13 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeDirichletEnergyCoordinates
+import NLS.KdV.HillNativeDirichletEnergyCoordinates
+import NLS.KdV.HillNativeDirichletEnergyRemainder
+import NLS.KdV.HillDirichletEnergyFourierBound
+import NLS.ComplexAnalysis.SineEnergyReconstruction
+import NLS.KdV.HillL2DirichletFourierEstimate
+import NLS.KdV.ClassicalHillDirichletFrequency
+import NLS.ComplexAnalysis.CosineFourierIntegral
+import NLS.KdV.ClassicalHillDirichletBorn
+import NLS.ComplexAnalysis.CosineNormEstimates
 import NLS.Articles.KdVKdV2Frequencies.NativeSummedRegularCorrections
 import NLS.Articles.KdVKdV2Frequencies.NativeCorrectionHilbertControl
 import NLS.SequenceSpaces.HilbertControlledAnalyticSeries
@@ -1557,7 +1567,17 @@ run_cmd do
     `NLS.KdV.HillNativeDirichletTerminalSequence,
     `NLS.SequenceSpaces.HilbertControlledAnalyticSeries,
     `NLS.Articles.KdVKdV2Frequencies.NativeCorrectionHilbertControl,
-    `NLS.Articles.KdVKdV2Frequencies.NativeSummedRegularCorrections
+    `NLS.Articles.KdVKdV2Frequencies.NativeSummedRegularCorrections,
+    `NLS.ComplexAnalysis.CosineNormEstimates,
+    `NLS.KdV.ClassicalHillDirichletBorn,
+    `NLS.ComplexAnalysis.CosineFourierIntegral,
+    `NLS.KdV.ClassicalHillDirichletFrequency,
+    `NLS.KdV.HillL2DirichletFourierEstimate,
+    `NLS.ComplexAnalysis.SineEnergyReconstruction,
+    `NLS.KdV.HillDirichletEnergyFourierBound,
+    `NLS.KdV.HillNativeDirichletEnergyRemainder,
+    `NLS.KdV.HillNativeDirichletEnergyCoordinates,
+    `NLS.Articles.KdVKdV2Frequencies.NativeDirichletEnergyCoordinates
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

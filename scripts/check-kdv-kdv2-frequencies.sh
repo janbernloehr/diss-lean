@@ -1220,6 +1220,16 @@ modules=(
   NLS/SequenceSpaces/HilbertControlledAnalyticSeries
   NLS/Articles/KdVKdV2Frequencies/NativeCorrectionHilbertControl
   NLS/Articles/KdVKdV2Frequencies/NativeSummedRegularCorrections
+  NLS/ComplexAnalysis/CosineNormEstimates
+  NLS/KdV/ClassicalHillDirichletBorn
+  NLS/ComplexAnalysis/CosineFourierIntegral
+  NLS/KdV/ClassicalHillDirichletFrequency
+  NLS/KdV/HillL2DirichletFourierEstimate
+  NLS/ComplexAnalysis/SineEnergyReconstruction
+  NLS/KdV/HillDirichletEnergyFourierBound
+  NLS/KdV/HillNativeDirichletEnergyRemainder
+  NLS/KdV/HillNativeDirichletEnergyCoordinates
+  NLS/Articles/KdVKdV2Frequencies/NativeDirichletEnergyCoordinates
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
