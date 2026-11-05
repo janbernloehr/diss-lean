@@ -987,6 +987,13 @@ import NLS.KdV.HillDirichletHamiltonianSources
 import NLS.KdV.HillNormingSourceVariations
 import NLS.KdV.HillRealSourceCompleteness
 import NLS.KdV.HillRegularTerminalDensity
+import NLS.FunctionalAnalysis.ClosedUnitCurveContinuity
+import NLS.ComplexAnalysis.CompactFiberIntegralContinuity
+import NLS.ComplexAnalysis.NonrealCircleIntegralVectorComparison
+import NLS.KdV.HillClosedCurveCoefficientContinuity
+import NLS.KdV.HillMovingContourSourceNeighborhood
+import NLS.KdV.HillHamiltonianSourceContinuity
+import NLS.KdV.HillCartesianActionSourceVariations
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1565,7 +1572,13 @@ run_cmd do
     ``NLS.ComplexAnalysis.tendsto_fderiv_add_sum_range_of_summable_uniform_bound,
     ``NLS.sum_head_add_sum_range_of_zero_on_head,
     ``NLS.sum_finite_head_add_tsum_complement,
-    ``NLS.ComplexAnalysis.actionPhase_fderiv_of_stationary_amplitude]
+    ``NLS.ComplexAnalysis.actionPhase_fderiv_of_stationary_amplitude,
+    ``NLS.FunctionalAnalysis.norm_closedUnitCurvePeriodTwo_sub_le,
+    ``NLS.FunctionalAnalysis.continuous_closedUnitCurvePeriodTwo_family,
+    ``NLS.ComplexAnalysis.continuous_integral_of_continuous_compact_fibers,
+    ``NLS.ComplexAnalysis.continuous_circleIntegral_of_compact_spectral_fibers,
+    ``NLS.ComplexAnalysis.continuous_circleIntegral_of_continuous_moving_section,
+    ``NLS.ComplexAnalysis.circleIntegral_eq_of_eq_on_nonreal_vector]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -5910,3 +5910,10 @@ import NLS.KdV.HillDirichletHamiltonianSources
 import NLS.KdV.HillNormingSourceVariations
 import NLS.KdV.HillRealSourceCompleteness
 import NLS.KdV.HillRegularTerminalDensity
+import NLS.FunctionalAnalysis.ClosedUnitCurveContinuity
+import NLS.ComplexAnalysis.CompactFiberIntegralContinuity
+import NLS.ComplexAnalysis.NonrealCircleIntegralVectorComparison
+import NLS.KdV.HillClosedCurveCoefficientContinuity
+import NLS.KdV.HillMovingContourSourceNeighborhood
+import NLS.KdV.HillHamiltonianSourceContinuity
+import NLS.KdV.HillCartesianActionSourceVariations
