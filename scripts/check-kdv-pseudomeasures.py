@@ -1596,6 +1596,10 @@ modules = [
     'NLS.FunctionalAnalysis.AnalyticLocalHomeomorph',
     'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalLocalHomeomorph',
     'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapApproximation',
+    'NLS.Topology.CompactLiftedLocalBound',
+    'NLS.Articles.KdVPseudomeasures.NativeEndpointBallLocalBound',
+    'NLS.Articles.KdVPseudomeasures.NativeEndpointBallCompactImage',
+    'NLS.Articles.KdVPseudomeasures.NativeEndpointBallBound',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

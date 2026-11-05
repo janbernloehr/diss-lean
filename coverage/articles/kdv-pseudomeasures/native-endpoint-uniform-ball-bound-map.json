@@ -1,0 +1,117 @@
+{
+  "source": "arXiv:1610.00278v1 Lemma3.6 endpoint norm-ball boundedness dependency for mainTheorem1.4",
+  "status": "Prove source Lemma 3.6: the actual endpoint Birkhoff restriction is bounded on every full physical real endpoint norm ball. Global bijectivity, bounded-set weak-star homeomorphism, remaining nonlinear scales, flow and ALL FIVE MAIN THEOREMS remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-endpoint-uniform-ball-bound-map.json",
+    "reusable_compact_lifted_local_bound_PROVED": true,
+    "actual_endpoint_ball_native_neighborhood_bound_at_arbitrary_real_center_PROVED": true,
+    "actual_physical_endpoint_ball_compact_native_real_envelope_PROVED": true,
+    "actual_raw_native_all_signed_coordinate_bound_before_endpoint_membership_PROVED": true,
+    "actual_endpoint_uniform_complex_native_neighborhood_of_entire_real_ball_envelope_PROVED": true,
+    "actual_physical_endpoint_map_bounded_on_every_full_norm_ball_PROVED": true,
+    "source_Lemma3_6_original_physical_endpoint_ball_boundedness_PROVED": true,
+    "scope": "Every admissible0<=r<1/2, actual original physical real mean-zero period-one potentials in EVERY prescribed original norm ball, actual signedSob(1/2-r) infinity output; full endpoint tails retained. A common complex native Hminus-one neighborhood controls actual complex endpoint vectors in the ball near its compact real envelope.",
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "bounded_set_weak_star_homeomorphism_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "CompactLiftedLocalBound proves a reusable finite-subcover theorem. A family constrained by an arbitrary set S, lifted to a compact parameter set, has one uniform bound on one open neighborhood of that entire compact set when each point has a local nonnegative bound. No continuity of the bounded quantity is assumed.",
+    "NativeEndpointBallLocalBound gives a native complex Hminus-one neighborhood of ANY physical real native center and one bound controlling EVERY complex endpoint source in a prescribed full endpoint norm ball whose native image lies in that neighborhood. The center need not have endpoint regularity. Verified local uniform canonical endpoint weights and actual action-angle factors control ALL actual signed raw native coefficients at once. Actual endpoint target membership and equality with the actual native coordinates are proved, so the total endpoint constructor cannot conceal missing membership by a zero fallback.",
+    "NativeEndpointBallCompactImage constructs a NORM-COMPACT physical real mean-zero Hminus-one envelope containing the actual native image of EVERY physical real endpoint source in the prescribed norm ball. The actual endpoint inclusion equals the verified compact lower inclusion, and the actual bounded native physical real projection gives the compact envelope. Every envelope point is physically real. The full weighted infinity space is retained; no vanishing-tail or infinity-norm density assumption is used.",
+    "NativeEndpointBallBound uses the compact-envelope finite subcover with indexed objects (endpoint source, signed integer). It bounds the ACTUAL weighted native raw coordinate, before constructing its actual endpoint sequence. One common complex native neighborhood of the entire envelope and one endpoint target norm bound precede EVERY complex endpoint source in the prescribed ball and EVERY signed coordinate. Both actual endpoint target membership and literal native coefficient equality are proved on that neighborhood.",
+    "exists_uniform_hillEndpointRealSignedMap_bound proves the actual physical Fourier-real, mean-zero endpoint map is bounded on EVERY full coefficient endpoint norm ball, for every admissible 0<=r<1/2. sourceLemma3_6 proves source Lemma3.6 for the ACTUAL ORIGINAL physical potential restriction and its signedSob(1/2-r) infinity target, retaining the verified factor2^r between the original distribution norm and the actual coefficient source norm. The bound has the required quantifier order: for every R there is B>=0 before every original potential of norm<=R.",
+    "This completes actual original endpoint norm-ball boundedness. Endpoint analyticity, exact free derivative and endpoint local inverse were proved in earlier modules and are reused without a new claim of authorship. Global native injectivity/surjectivity, remaining nonlinear scales, bounded-set weak-star homeomorphism, universal actual numerator scalar2/(pi*n), actual KdV flow and ALL FIVE MAIN THEOREMS remain UNPROVED."
+  ],
+  "declarations": [
+    "NLS.Topology.exists_open_uniform_lifted_bound",
+    "NLS.Articles.KdVPseudomeasures.exists_native_neighborhood_endpoint_ball_bound",
+    "NLS.Articles.KdVPseudomeasures.endpointRealBallNativeEnvelope",
+    "NLS.Articles.KdVPseudomeasures.isCompact_endpointRealBallNativeEnvelope",
+    "NLS.Articles.KdVPseudomeasures.endpointRealBallNativeEnvelope_real",
+    "NLS.Articles.KdVPseudomeasures.endpointNativeInclusion_mem_realBallEnvelope",
+    "NLS.Articles.KdVPseudomeasures.exists_uniform_endpoint_ball_native_neighborhood",
+    "NLS.Articles.KdVPseudomeasures.exists_uniform_hillEndpointRealSignedMap_bound",
+    "NLS.Articles.KdVPseudomeasures.sourceLemma3_6"
+  ],
+  "files": [
+    "NLS/Topology/CompactLiftedLocalBound.lean",
+    "NLS/Articles/KdVPseudomeasures/NativeEndpointBallLocalBound.lean",
+    "NLS/Articles/KdVPseudomeasures/NativeEndpointBallCompactImage.lean",
+    "NLS/Articles/KdVPseudomeasures/NativeEndpointBallBound.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "2db5e7dd54b48eaf7c6d43a015b866a9bcf2e05a",
+    "baseline_modules": 1565,
+    "baseline_non_audit_sources_verified_unchanged": 1564,
+    "new_modules_compiled": 4,
+    "reused_canonical_modules_freshly_compiled": [],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.EndpointCompactInclusion",
+        "source": "NLS/SequenceSpaces/EndpointCompactInclusion.lean",
+        "source_sha256": "dc548023a9917395921f454ac82e90451c3260e10e36288f37d5dca05d27bac2",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillSignedEndpointBound",
+        "source": "NLS/KdV/HillSignedEndpointBound.lean",
+        "source_sha256": "ed5ac78ac519b7a4151e676156680f8f530ca2009014d0dcd37879eb164eab07",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalCanonicalEndpointWeightBound",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalCanonicalEndpointWeightBound.lean",
+        "source_sha256": "cdd0ba790482edbcb0c96ad9999065ba43217da4e0cc407df3c73c919c731cd1",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalEndpointRealCoordinates",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalEndpointRealCoordinates.lean",
+        "source_sha256": "c892482f6d716cf1aca6d749d0e64823fc1a180b6cc75f6ffaf424c5280b79fe",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.NativeEndpointAnalyticCoordinates",
+        "source": "NLS/Articles/KdVPseudomeasures/NativeEndpointAnalyticCoordinates.lean",
+        "source_sha256": "d67ce78c0df7abafc41038d56f8117dea848b9d6eb1c9b38119887cf1b0664bc",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillDirichletSpectralLocalFlow",
+        "source": "NLS/KdV/HillDirichletSpectralLocalFlow.lean",
+        "source_sha256": "721b982fb64adb3a685027cdce64483d7d619dd4deeb8f1e02a5e3e3551901e8",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1569,
+    "audited_declarations": 7986,
+    "theorems": 6717,
+    "definitions": 1269,
+    "new_theorems": 8,
+    "new_definitions": 1,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-native-endpoint-uniform-ball-bound.log",
+    "log_sha256": "d670e72b6bf4f5699f4814c7f857eec06273e2979cf3cb79021a5daedd61b656"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED: actual complex AND physical real native Jacobian Banach equivalence/local inverse at EVERY physical source, native open/local homeomorphism, direct actual finite-gap density and collision reduction. NOW ALSO PROVED sourceLemma3.6: actual original endpoint restriction bounded on EVERY full physical real endpoint norm ball, via a compact native real envelope and one complex native neighborhood before all ball sources/modes. Global finite-gap/native injectivity and surjectivity, remaining nonlinear scales, bounded-set weak-star homeomorphism and all main theorems remain OPEN. Compact fixed isospectral sets/local inverses/finite-gap density alone do not prove global bijection.",
+    "Complete source3.1/main1.4 for the ACTUAL original KdV Birkhoff map: genuine global bijectivity, remaining nonlinear source/target scales and bounded-set weak-star homeomorphism. Actual endpoint analyticity/exact derivative/local inverse were already proved; actual sourceLemma3.6 full original endpoint norm-ball boundedness NOW PROVED. Actual global native finite-gap injectivity and surjectivity remain OPEN. Preserve original weights, native coordinates, physical Fourier real forms and full infinity-exponent spaces.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}

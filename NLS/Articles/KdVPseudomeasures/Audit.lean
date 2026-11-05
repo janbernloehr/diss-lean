@@ -1562,6 +1562,10 @@ import NLS.KdV.HillNativeFiniteGap
 import NLS.FunctionalAnalysis.AnalyticLocalHomeomorph
 import NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalLocalHomeomorph
 import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapApproximation
+import NLS.Topology.CompactLiftedLocalBound
+import NLS.Articles.KdVPseudomeasures.NativeEndpointBallLocalBound
+import NLS.Articles.KdVPseudomeasures.NativeEndpointBallCompactImage
+import NLS.Articles.KdVPseudomeasures.NativeEndpointBallBound
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9542,3 +9546,12 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapApproximation
 #print axioms NLS.Articles.KdVPseudomeasures.dense_hillRealFiniteGapLocus
 #print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNative_finiteGap_collision_mem_open
 #print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNative_injective_iff_injOn_finiteGap
+#print axioms NLS.Topology.exists_open_uniform_lifted_bound
+#print axioms NLS.Articles.KdVPseudomeasures.exists_native_neighborhood_endpoint_ball_bound
+#print axioms NLS.Articles.KdVPseudomeasures.endpointRealBallNativeEnvelope
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_endpointRealBallNativeEnvelope
+#print axioms NLS.Articles.KdVPseudomeasures.endpointRealBallNativeEnvelope_real
+#print axioms NLS.Articles.KdVPseudomeasures.endpointNativeInclusion_mem_realBallEnvelope
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_endpoint_ball_native_neighborhood
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_hillEndpointRealSignedMap_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_6
