@@ -1253,6 +1253,18 @@ import NLS.KdV.HillMiuraPositiveEnumeration
 import NLS.KdV.HillMiuraSquaredEnumeration
 import NLS.KdV.HillHminusOneMiuraAllLabels
 import NLS.KdV.HillHminusPhysicalPsiZeros
+import NLS.KdV.HillHminusOneNLSMovingSheets
+import NLS.SequenceSpaces.PeriodOneMiuraReality
+import NLS.KdV.HillHminusOneMiuraSheets
+import NLS.ComplexAnalysis.PiecewiseLoopPullback
+import NLS.ComplexAnalysis.QuadraticEnergyLoop
+import NLS.KdV.HillHminusOneMiuraContour
+import NLS.ComplexAnalysis.QuadraticEnergySheet
+import NLS.KdV.MiuraHillPsiEnergyRoot
+import NLS.KdV.HillMiuraPeriodCircleGeometry
+import NLS.KdV.HillMiuraOriginalContourGeometry
+import NLS.KdV.HillHminusPhysicalDifferentials
+import NLS.KdV.HillHminusEnergyPeriods
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2323,7 +2335,24 @@ run_cmd do
     ``NLS.singletonPairedEnumeration_mem_pair,
     ``NLS.singletonPairedEnumeration_right,
     ``NLS.singletonPairedEnumeration_slot,
-    ``NLS.singletonPairedEnumeration_zero]
+    ``NLS.singletonPairedEnumeration_zero,
+    ``NLS.ComplexAnalysis.PiecewiseC1Loop.inside_map_iff,
+    ``NLS.ComplexAnalysis.PiecewiseC1Loop.integral_map_of_holomorphic_pullback,
+    ``NLS.ComplexAnalysis.PiecewiseC1Loop.map,
+    ``NLS.ComplexAnalysis.integral_quadraticEnergyLoop,
+    ``NLS.ComplexAnalysis.quadraticEnergyLoop,
+    ``NLS.ComplexAnalysis.quadraticEnergyMap,
+    ``NLS.ComplexAnalysis.quadraticEnergyMap.eq_1,
+    ``NLS.ComplexAnalysis.quadraticEnergyMap_injOn_right,
+    ``NLS.ComplexAnalysis.sq_mem_slitPlane_of_re_pos,
+    ``NLS.ComplexAnalysis.sqrt_sq_of_re_pos,
+    ``NLS.ComplexAnalysis.windingIntegral_circle_eq_zero_of_not_mem_closedBall,
+    ``NLS.ComplexAnalysis.windingIntegral_quadraticEnergyCircle_one,
+    ``NLS.ComplexAnalysis.windingIntegral_quadraticEnergyLoop,
+    ``NLS.IsRealPeriodOneHminusOne.sub,
+    ``NLS.periodOneL2Inclusion_single_zero_real,
+    ``NLS.periodOneMiura.eq_1,
+    ``NLS.periodOneMiura_real]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
