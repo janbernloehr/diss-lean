@@ -1647,6 +1647,10 @@ modules = [
     'NLS.FunctionalAnalysis.CompactInvariantCurveContinuity',
     'NLS.Articles.KdVPseudomeasures.OriginalHillActionShortArc',
     'NLS.Articles.KdVPseudomeasures.OriginalHillLocalIsospectralInverse',
+    'NLS.Topology.LocalConstancyAlong',
+    'NLS.KdV.HillRealSpatialTranslationContinuity',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillActionInvariantTopology',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpatialCharacter',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

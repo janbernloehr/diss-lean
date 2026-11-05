@@ -1613,6 +1613,10 @@ import NLS.SequenceSpaces.FourierRealZeroReplacement
 import NLS.FunctionalAnalysis.CompactInvariantCurveContinuity
 import NLS.Articles.KdVPseudomeasures.OriginalHillActionShortArc
 import NLS.Articles.KdVPseudomeasures.OriginalHillLocalIsospectralInverse
+import NLS.Topology.LocalConstancyAlong
+import NLS.KdV.HillRealSpatialTranslationContinuity
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionInvariantTopology
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialCharacter
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9840,3 +9844,21 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillLocalIsospectralInverse
 #print axioms NLS.Articles.KdVPseudomeasures.exists_isospectral_local_inverse_finite_replacement
 #print axioms NLS.Articles.KdVPseudomeasures.hillNative_local_inverse_isospectral
 #print axioms NLS.Articles.KdVPseudomeasures.exists_open_action_level_eq_isospectral
+#print axioms NLS.Topology.eq_along_continuous_of_relative_local_constancy
+#print axioms NLS.KdV.continuous_hillRealSpatialTranslation
+#print axioms NLS.KdV.continuous_hillRealSpatialTranslation_orbit
+#print axioms NLS.Articles.KdVPseudomeasures.exists_action_invariant_finite_replacement
+#print axioms NLS.Articles.KdVPseudomeasures.hillNative_local_inverse_mem_closed_action_invariant
+#print axioms NLS.Articles.KdVPseudomeasures.exists_open_isospectral_subset_closed_action_invariant
+#print axioms NLS.Articles.KdVPseudomeasures.exists_open_action_invariant_locally_constant_on_isoset
+#print axioms NLS.Articles.KdVPseudomeasures.action_invariant_eq_along_isospectral_family
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSpatialCoordinateRatio
+#print axioms NLS.Articles.KdVPseudomeasures.hillNativeCoordinate_ne_zero_on_isoset
+#print axioms NLS.Articles.KdVPseudomeasures.continuousOn_hillRealSpatialCoordinateRatio_on_isoset
+#print axioms NLS.Articles.KdVPseudomeasures.exists_open_hillRealSpatialCoordinateRatio_eq_on_isoset
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealDiscriminantData_spatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSpatialCoordinateRatio_spatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillRealSpatialCoordinateRatio
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSpatialCoordinateRatio_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSpatialCoordinateRatio_add
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSpatialCoordinateRatio_periodic
