@@ -1948,6 +1948,14 @@ modules = [
     'NLS.KdV.HillMiuraH2TerminalFourier',
     'NLS.KdV.HillL2TerminalModelOneSmoothing',
     'NLS.KdV.HillL2SpectralCoreOneSmoothing',
+    'NLS.SequenceSpaces.WeightedInfinityAnalyticRealization',
+    'NLS.SequenceSpaces.WeightedInfinityExponentialRemainder',
+    'NLS.ZakharovShabat.SourceH1DirichletGapWeights',
+    'NLS.KdV.HillL2OnIndexWeights',
+    'NLS.KdV.HillL2OnIndexCorrectionBound',
+    'NLS.KdV.HillL2OnIndexSobolevExponent',
+    'NLS.KdV.HillL2OnIndexOneSmoothingNeighborhood',
+    'NLS.KdV.HillL2OnIndexExponentialSmoothing',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -372,9 +372,27 @@
         "NLS.KdV.HillProductEquationPatch.analytic_l2TerminalModelFourierRemainder",
         "NLS.KdV.HillProductEquationPatch.eventually_l2TerminalModelFourierRemainder_data",
         "NLS.KdV.HillProductEquationPatch.eventually_l2TerminalModelFourierRemainder_apply",
-        "NLS.KdV.exists_hillL2SpectralCore_one_smoothing"
+        "NLS.KdV.exists_hillL2SpectralCore_one_smoothing",
+        "NLS.WeightedCoeff.analytic_infty_realization_of_weighted_bound",
+        "NLS.WeightedCoeff.weightedExpRemainder",
+        "NLS.WeightedCoeff.analyticAt_weightedExpRemainder",
+        "NLS.WeightedCoeff.weightedExpRemainder_apply",
+        "NLS.WeightedCoeff.norm_weightedExpRemainder_le",
+        "NLS.ZakharovShabat.sourcePositiveDirichletMidpointH1",
+        "NLS.ZakharovShabat.exists_local_sourceH1Dirichlet_gap_weight_bound",
+        "NLS.KdV.HillProductEquationPatch.physicalAbelianMidpointDisplacement_eq_rotated",
+        "NLS.KdV.HillProductEquationPatch.sourcePeriodicGapDisplacement_rotated",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndex_weight_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndex_correction_weighted_bound",
+        "NLS.KdV.HillProductEquationPatch.l2OnIndexSobolevExponent",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndexSobolevExponent_data",
+        "NLS.KdV.HillProductEquationPatch.analytic_l2OnIndexSobolevExponent",
+        "NLS.KdV.HillProductEquationPatch.l2OnIndexSobolevExponent_apply",
+        "NLS.KdV.exists_hillL2OnIndex_one_smoothing_neighborhood",
+        "NLS.KdV.HillProductEquationPatch.l2OnIndexExponentialRemainder",
+        "NLS.KdV.exists_hillL2OnIndex_exponential_one_smoothing"
       ],
-      "qualification": "UNPROVED. Actual physical spectral-core-minus-original-free-Fourier defect is analytic L2 to native signed H3/2 on common complex neighborhoods, with every raw coefficient identified. Full native coordinate map still requires stronger estimates for actual normalized ACTION amplitude and on/off-index exponents. Final original physical Wiener transport and main statement remain required."
+      "qualification": "UNPROVED. Actual physical spectral-core L2 one-smoothing and actual ON-index exponent/exponential one-order weighted-norm analyticity are proved on common complex L2 neighborhoods. Joint same-patch assembly and stronger estimates for normalized ACTION amplitude and OFF-index phase remain required. Final original physical Wiener transport and main statement remain required."
     },
     {
       "label": "5.9",
@@ -532,7 +550,25 @@
         "NLS.KdV.HillProductEquationPatch.analytic_l2TerminalModelFourierRemainder",
         "NLS.KdV.HillProductEquationPatch.eventually_l2TerminalModelFourierRemainder_data",
         "NLS.KdV.HillProductEquationPatch.eventually_l2TerminalModelFourierRemainder_apply",
-        "NLS.KdV.exists_hillL2SpectralCore_one_smoothing"
+        "NLS.KdV.exists_hillL2SpectralCore_one_smoothing",
+        "NLS.WeightedCoeff.analytic_infty_realization_of_weighted_bound",
+        "NLS.WeightedCoeff.weightedExpRemainder",
+        "NLS.WeightedCoeff.analyticAt_weightedExpRemainder",
+        "NLS.WeightedCoeff.weightedExpRemainder_apply",
+        "NLS.WeightedCoeff.norm_weightedExpRemainder_le",
+        "NLS.ZakharovShabat.sourcePositiveDirichletMidpointH1",
+        "NLS.ZakharovShabat.exists_local_sourceH1Dirichlet_gap_weight_bound",
+        "NLS.KdV.HillProductEquationPatch.physicalAbelianMidpointDisplacement_eq_rotated",
+        "NLS.KdV.HillProductEquationPatch.sourcePeriodicGapDisplacement_rotated",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndex_weight_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndex_correction_weighted_bound",
+        "NLS.KdV.HillProductEquationPatch.l2OnIndexSobolevExponent",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndexSobolevExponent_data",
+        "NLS.KdV.HillProductEquationPatch.analytic_l2OnIndexSobolevExponent",
+        "NLS.KdV.HillProductEquationPatch.l2OnIndexSobolevExponent_apply",
+        "NLS.KdV.exists_hillL2OnIndex_one_smoothing_neighborhood",
+        "NLS.KdV.HillProductEquationPatch.l2OnIndexExponentialRemainder",
+        "NLS.KdV.exists_hillL2OnIndex_exponential_one_smoothing"
       ]
     }
   ],
@@ -3974,6 +4010,31 @@
         "NLS.KdV.exists_hillL2SpectralCore_one_smoothing"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-spectral-core-smoothing-map.json"
+    },
+    {
+      "label": "ACTUAL signed ON-index phase and its exponential one-order analytic norm estimates; exact original divisor and unconditional retained-patch construction",
+      "status": "ACTUAL on-index signed exponent AND its exponential factor minus1 have analytic one-order decay in the weighted infinity norm on a common complex L2 neighborhood of EVERY real source. The actual patch, original family estimates and ALL signed coefficients are constructed unconditionally. Physical spectral-core one-smoothing remains proved. Full native normalized action amplitude and off-index phase estimates, and Main5.1/5.9, remain OPEN.",
+      "declarations": [
+        "NLS.WeightedCoeff.analytic_infty_realization_of_weighted_bound",
+        "NLS.WeightedCoeff.weightedExpRemainder",
+        "NLS.WeightedCoeff.analyticAt_weightedExpRemainder",
+        "NLS.WeightedCoeff.weightedExpRemainder_apply",
+        "NLS.WeightedCoeff.norm_weightedExpRemainder_le",
+        "NLS.ZakharovShabat.sourcePositiveDirichletMidpointH1",
+        "NLS.ZakharovShabat.exists_local_sourceH1Dirichlet_gap_weight_bound",
+        "NLS.KdV.HillProductEquationPatch.physicalAbelianMidpointDisplacement_eq_rotated",
+        "NLS.KdV.HillProductEquationPatch.sourcePeriodicGapDisplacement_rotated",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndex_weight_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndex_correction_weighted_bound",
+        "NLS.KdV.HillProductEquationPatch.l2OnIndexSobolevExponent",
+        "NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndexSobolevExponent_data",
+        "NLS.KdV.HillProductEquationPatch.analytic_l2OnIndexSobolevExponent",
+        "NLS.KdV.HillProductEquationPatch.l2OnIndexSobolevExponent_apply",
+        "NLS.KdV.exists_hillL2OnIndex_one_smoothing_neighborhood",
+        "NLS.KdV.HillProductEquationPatch.l2OnIndexExponentialRemainder",
+        "NLS.KdV.exists_hillL2OnIndex_exponential_one_smoothing"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-on-index-phase-smoothing-map.json"
     }
   ],
   "reuse_map": [
@@ -4053,7 +4114,7 @@
     }
   ],
   "remaining_obligations": [
-    "Prove ACTUAL HillIntegerNativeOneSmoothing0: the ENTIRE actual real zero-mean L2 native Fourier defect is real analytic into actual signed H3/2, with EVERY raw coefficient equal to SAME e0(q)_k-halfFourierSymbol(k)*q_k. ACTUAL PHYSICAL SPECTRAL CORE STEP NOW COMPLETE: HillL2SpectralCoreOneSmoothing.exists_hillL2SpectralCore_one_smoothing gives common complex L2 neighborhoods, exact original free normalization and full strong-target coefficient identity. NEXT establish stronger one-order norm control for THREE actual factors and combine their exact identities: (1) P.physicalOnIndexSignedExponent in HillSpectralCoreSequence, recovering hillHminusIntrinsicDiagonalMap from physicalSpectralCoreMap; (2) hillHminusNormalizedAmplitudeSymbol minus1 in HillIntrinsicDiagonalSequence.hillHminusNativeDiagonalMap_from_intrinsic; (3) hillHminusSignedOffIndexExponent in HillNativeDiagonalGauge.hillHminusNativeComplexMap_from_diagonal. Existing rough bounded/unit-tail/compact assertions do NOT imply these estimates. The current source chain has been inspected: OriginalHillSobolevDiffeomorph.hillIntegerSobolevEquiv_apply retains hillRealSignedMap coefficients; HillNativeRealSignedMap.hillRealSignedMap_coe and HillNativeMeanZeroComplexMap.hillMeanZeroComplexMap_coe retain SAME hillHminusNativeComplexMap coefficients on the physical real mean-zero source. Use these proved adapters when transporting the completed stronger defect. No distinct NLS Birkhoff map substitution.",
+    "Prove ACTUAL HillIntegerNativeOneSmoothing0: the ENTIRE actual real zero-mean L2 native Fourier defect is real analytic into actual signed H3/2 with SAME original e0 and halfFourierSymbol at EVERY raw mode. ALREADY PROVED: ACTUAL physical spectral-core L2 one-smoothing (de6b540) AND ACTUAL on-index signed exponent plus exp(exponent)-1 analytic in one-order weighted infinity norm on common complex L2 neighborhoods, unconditionally constructed at EVERY real source. NEXT integrate these on the SAME retained P/H patch to recover hillHminusIntrinsicDiagonalMap using physicalSpectralCoreMap=removeExponential(P.physicalOnIndexSignedExponent,intrinsicDiagonal). Prove the remaining TWO actual factor estimates: hillHminusNormalizedAmplitudeSymbol minus1 (normalized ACTION amplitude, DIFFERENT from Dirac midpoint symbol) and hillHminusSignedOffIndexExponent / its exponential factor minus1. Their rough bounded/unit-tail/compact assertions do NOT imply one-order estimates. Exact identities: nativeDiagonal=actionAmplitude*intrinsicDiagonal; nativeComplex=exp(signedOffIndex)*nativeDiagonal. Preserve the verified actual integer/native real coefficient adapters; no distinct NLS Birkhoff substitution.",
     "Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates.",
     "For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement.",
     "Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE."
@@ -8264,5 +8325,29 @@
       "NLS.KdV.hillMeanZeroComplexMap_coe"
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-spectral-core-smoothing-map.json"
+  },
+  "actual_Hill_L2_on_index_phase_one_smoothing": {
+    "actual_positive_H1_Dirichlet_midpoint_and_gap_common_weight_bounds_PROVED": true,
+    "SAME_Hill_auxiliary_divisor_and_phase_rotated_Dirichlet_midpoint_identity_PROVED": true,
+    "actual_on_index_correction_FULL_head_and_tail_one_order_bound_PROVED": true,
+    "ACTUAL_on_index_signed_exponent_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "ACTUAL_on_index_exponential_factor_minus_one_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "actual_on_index_patch_and_original_family_estimates_FACTORY_UNCONDITIONAL": true,
+    "original_signed_coefficients_central_zero_and_complex_collapsed_gaps_retained_PROVED": true,
+    "generic_weighted_infinity_exponential_remainder_analytic_PROVED": true,
+    "ACTUAL_physical_Hill_spectral_core_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "SAME_patch_core_on_index_assembly_COMPLETE": false,
+    "ACTUAL_native_normalized_ACTION_amplitude_one_order_estimate_PROVED": false,
+    "ACTUAL_native_off_index_exponent_one_order_estimate_PROVED": false,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-on-index-phase-smoothing-map.json"
   }
 }

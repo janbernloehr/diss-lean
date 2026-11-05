@@ -1914,6 +1914,14 @@ import NLS.KdV.HillL2MassivePrincipalSmoothing
 import NLS.KdV.HillMiuraH2TerminalFourier
 import NLS.KdV.HillL2TerminalModelOneSmoothing
 import NLS.KdV.HillL2SpectralCoreOneSmoothing
+import NLS.SequenceSpaces.WeightedInfinityAnalyticRealization
+import NLS.SequenceSpaces.WeightedInfinityExponentialRemainder
+import NLS.ZakharovShabat.SourceH1DirichletGapWeights
+import NLS.KdV.HillL2OnIndexWeights
+import NLS.KdV.HillL2OnIndexCorrectionBound
+import NLS.KdV.HillL2OnIndexSobolevExponent
+import NLS.KdV.HillL2OnIndexOneSmoothingNeighborhood
+import NLS.KdV.HillL2OnIndexExponentialSmoothing
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11290,3 +11298,21 @@ import NLS.KdV.HillL2SpectralCoreOneSmoothing
 #print axioms NLS.KdV.HillProductEquationPatch.eventually_l2TerminalModelFourierRemainder_data
 #print axioms NLS.KdV.HillProductEquationPatch.eventually_l2TerminalModelFourierRemainder_apply
 #print axioms NLS.KdV.exists_hillL2SpectralCore_one_smoothing
+#print axioms NLS.WeightedCoeff.analytic_infty_realization_of_weighted_bound
+#print axioms NLS.WeightedCoeff.weightedExpRemainder
+#print axioms NLS.WeightedCoeff.analyticAt_weightedExpRemainder
+#print axioms NLS.WeightedCoeff.weightedExpRemainder_apply
+#print axioms NLS.WeightedCoeff.norm_weightedExpRemainder_le
+#print axioms NLS.ZakharovShabat.sourcePositiveDirichletMidpointH1
+#print axioms NLS.ZakharovShabat.exists_local_sourceH1Dirichlet_gap_weight_bound
+#print axioms NLS.KdV.HillProductEquationPatch.physicalAbelianMidpointDisplacement_eq_rotated
+#print axioms NLS.KdV.HillProductEquationPatch.sourcePeriodicGapDisplacement_rotated
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndex_weight_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndex_correction_weighted_bound
+#print axioms NLS.KdV.HillProductEquationPatch.l2OnIndexSobolevExponent
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_l2OnIndexSobolevExponent_data
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_l2OnIndexSobolevExponent
+#print axioms NLS.KdV.HillProductEquationPatch.l2OnIndexSobolevExponent_apply
+#print axioms NLS.KdV.exists_hillL2OnIndex_one_smoothing_neighborhood
+#print axioms NLS.KdV.HillProductEquationPatch.l2OnIndexExponentialRemainder
+#print axioms NLS.KdV.exists_hillL2OnIndex_exponential_one_smoothing

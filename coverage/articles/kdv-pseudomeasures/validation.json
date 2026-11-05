@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Actual physical Hill spectral-core-minus-original-free-Fourier one-smoothing is PROVED on a common complex L2 neighborhood of EVERY real source, analytic into native signed H3/2 with EVERY raw coefficient identified. Exact massive principal correction and both nonlinear terminal/Miura terms are retained. Full native action amplitude and phase multipliers still require stronger estimates. Main5.1/5.9 remain OPEN.",
+  "phase": "ACTUAL on-index signed exponent AND its exponential factor minus1 have analytic one-order decay in the weighted infinity norm on a common complex L2 neighborhood of EVERY real source. The actual patch, original family estimates and ALL signed coefficients are constructed unconditionally. Physical spectral-core one-smoothing remains proved. Full native normalized action amplitude and off-index phase estimates, and Main5.1/5.9, remain OPEN.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1922,13 +1922,21 @@
     "NLS/KdV/HillMiuraH2TerminalFourier.lean",
     "NLS/KdV/HillL2TerminalModelOneSmoothing.lean",
     "NLS/KdV/HillL2SpectralCoreOneSmoothing.lean",
+    "NLS/SequenceSpaces/WeightedInfinityAnalyticRealization.lean",
+    "NLS/SequenceSpaces/WeightedInfinityExponentialRemainder.lean",
+    "NLS/ZakharovShabat/SourceH1DirichletGapWeights.lean",
+    "NLS/KdV/HillL2OnIndexWeights.lean",
+    "NLS/KdV/HillL2OnIndexCorrectionBound.lean",
+    "NLS/KdV/HillL2OnIndexSobolevExponent.lean",
+    "NLS/KdV/HillL2OnIndexOneSmoothingNeighborhood.lean",
+    "NLS/KdV/HillL2OnIndexExponentialSmoothing.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7874,
-  "definitions": 1499,
+  "proved_theorems": 7888,
+  "definitions": 1503,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 9373,
+    "declarations": 9391,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3349,10 +3357,18 @@
     "HillMiuraH2TerminalFourier sends the actual scalar H2 nonlinear Miura remainder to native signed H3/2 by the SAME phase-diagonal signed Fourier map. Equality under EVERY nonzero raw coefficient is enough because the central signed Fourier mode vanishes. Thus the ORIGINAL fixed Miura energy shift contributes nothing; no shift or scalar is silently changed.",
     "HillL2TerminalModelOneSmoothing combines exactly THREE stronger-target terms: spectral terminal defect, actual Miura H2 remainder and exact massive principal correction. At EVERY real L2 source in an actual patch, l2TerminalModelFourierRemainder is analytic into native signed H3/2. On ONE common complex L2 neighborhood, EVERY raw coefficient is SAME sourceHillTerminalModel(P.rotatedDiracSource(L2q)) minus original halfFourierSymbol(k)*q_k.",
     "HillL2SpectralCoreOneSmoothing.exists_hillL2SpectralCore_one_smoothing is UNCONDITIONAL. At EVERY original real L2 source it constructs P and ONE complex open L2 neighborhood U inside original physical Dirichlet/native domains. The SAME l2TerminalModelFourierRemainder is analytic U -> actual native signed H3/2, and EVERY raw coefficient equals actual P.physicalSpectralCoreMap(L2q)_k-halfFourierSymbol(k)*q_k throughout U. This is norm one-smoothing of the ACTUAL physical spectral core, not merely a compact derivative assertion.",
-    "Full HillIntegerNativeOneSmoothing0 is STILL OPEN: the physical core must be multiplied by actual on-index exponent, actual normalized action amplitude and actual signed off-index exponent to recover the original native coordinates. Their stronger one-order norm estimates are NOT supplied by rough boundedness/unit tails or compact derivative facts. Main1.1/1.3/1.4 remain proved; Main5.1/5.9 remain OPEN; goal ACTIVE."
+    "Full HillIntegerNativeOneSmoothing0 is STILL OPEN: the physical core must be multiplied by actual on-index exponent, actual normalized action amplitude and actual signed off-index exponent to recover the original native coordinates. Their stronger one-order norm estimates are NOT supplied by rough boundedness/unit tails or compact derivative facts. Main1.1/1.3/1.4 remain proved; Main5.1/5.9 remain OPEN; goal ACTIVE.",
+    "SourceH1DirichletGapWeights recovers the positive ordinary Dirichlet-to-midpoint displacement from BOTH literal signed terminals in H1. Together with the existing actual weighted periodic gap bound, it proves a SINGLE complex H1 neighborhood of EVERY real source where (1+n)*(norm(actualDirichletMidpoint_n)+norm(actualGap_n)) is uniformly bounded BEFORE ALL positive labels. The ordered gap itself is only bounded; no analytic ordering of complex endpoints is inferred.",
+    "HillL2OnIndexWeights identifies the SAME physical Hill auxiliary-divisor displacement with the ordinary Dirichlet-midpoint displacement at SAME phase-rotated source, and the periodic gap with its phase-invariant original value. The actual analytic L2-to-H1 Miura source then proves one-order norm bounds for the EXACT weights in the original Hill on-index estimate on common complex L2 neighborhoods.",
+    "HillL2OnIndexCorrectionBound combines the already-proved ORIGINAL weighted tail inequality with the actual L2 spectral weight bound. Its finite head is handled by the ORIGINAL locally uniform analytic all-index bound. The ENTIRE actual physicalOnIndexAbelianCorrection has a common (1+n)-weighted bound near EVERY real L2 physical source, without dividing by a gap or terminal sheet.",
+    "WeightedInfinityAnalyticRealization supplies exact weighted-infinity analytic realization from uniform weighted scalar bounds and analytic coordinates. HillL2OnIndexSobolevExponent applies it to the SAME original physicalOnIndexSignedExponent, including BOTH signed tails, fixed +/-i factors and central zero. The stronger norm analyticity is proved from common bounds, not inferred from pointwise decay.",
+    "HillL2OnIndexOneSmoothingNeighborhood.exists_hillL2OnIndex_one_smoothing_neighborhood is UNCONDITIONAL: at EVERY real original L2 source it constructs the actual patch from the verified original family WITH retained SourceLemma12_12Data, enters the actual physical divisor domain, and constructs ONE complex open L2 neighborhood on which the SAME signed exponent is analytic in Sobolev-order1 infinity norm, with EVERY original raw coefficient and a uniform norm bound.",
+    "WeightedInfinityExponentialRemainder proves for EVERY positive weight w>=1 that exp(b)-1 is analytic in the SAME weighted infinity space, with its literal scalar coefficients and norm bound norm(b)*exp(norm(b)). It uses the verified scalar exponential bound and common weighted analytic realization. No Banach-algebra instance or resource-option change is introduced.",
+    "HillL2OnIndexExponentialSmoothing.exists_hillL2OnIndex_exponential_one_smoothing is UNCONDITIONAL: at EVERY real L2 source it constructs ONE original patch and complex L2 neighborhood with actual exp(physicalOnIndexSignedExponent)-1 analytic in order1 weighted infinity norm. EVERY signed coefficient is the ORIGINAL on-index phase factor minus1; central mode and signs are unchanged.",
+    "The actual physical spectral core and actual on-index phase factor one-order estimates are now PROVED. Full HillIntegerNativeOneSmoothing0 remains OPEN until these are assembled on the SAME retained patch and the actual normalized ACTION amplitude-minus1 and signed OFF-index phase one-order estimates are proved. The normalized Dirac MIDPOINT factor is already handled and is DIFFERENT from action amplitude. Main1.1/1.3/1.4 remain proved; Main5.1/5.9 remain OPEN; goal ACTIVE."
   ],
-  "source_correspondence": "Actual physical Hill spectral-core-minus-original-free-Fourier one-smoothing is PROVED on a common complex L2 neighborhood of EVERY real source, analytic into native signed H3/2 with EVERY raw coefficient identified. Exact massive principal correction and both nonlinear terminal/Miura terms are retained. Full native action amplitude and phase multipliers still require stronger estimates. Main5.1/5.9 remain OPEN. Prove ACTUAL HillIntegerNativeOneSmoothing0: the ENTIRE actual real zero-mean L2 native Fourier defect is real analytic into actual signed H3/2, with EVERY raw coefficient equal to SAME e0(q)_k-halfFourierSymbol(k)*q_k. ACTUAL PHYSICAL SPECTRAL CORE STEP NOW COMPLETE: HillL2SpectralCoreOneSmoothing.exists_hillL2SpectralCore_one_smoothing gives common complex L2 neighborhoods, exact original free normalization and full strong-target coefficient identity. NEXT establish stronger one-order norm control for THREE actual factors and combine their exact identities: (1) P.physicalOnIndexSignedExponent in HillSpectralCoreSequence, recovering hillHminusIntrinsicDiagonalMap from physicalSpectralCoreMap; (2) hillHminusNormalizedAmplitudeSymbol minus1 in HillIntrinsicDiagonalSequence.hillHminusNativeDiagonalMap_from_intrinsic; (3) hillHminusSignedOffIndexExponent in HillNativeDiagonalGauge.hillHminusNativeComplexMap_from_diagonal. Existing rough bounded/unit-tail/compact assertions do NOT imply these estimates. The current source chain has been inspected: OriginalHillSobolevDiffeomorph.hillIntegerSobolevEquiv_apply retains hillRealSignedMap coefficients; HillNativeRealSignedMap.hillRealSignedMap_coe and HillNativeMeanZeroComplexMap.hillMeanZeroComplexMap_coe retain SAME hillHminusNativeComplexMap coefficients on the physical real mean-zero source. Use these proved adapters when transporting the completed stronger defect. No distinct NLS Birkhoff map substitution. Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates. For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1908 baseline non-audit registered Lean sources byte-identical to 1f4f360. All 8 new modules (19 theorems+10 definitions), 2 canonical-byte-identical modules, 11 unchanged private dependencies and EXACT 9373-declaration standard-axiom audit freshly compiled privately. ACTUAL physical Hill spectral-core L2-to-native-H3/2 one-smoothing proved, including original massive principal and nonlinear Miura/midpoint/terminal contributions. Full native amplitude and phase factors remain open. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1917-module build.",
+  "source_correspondence": "ACTUAL on-index signed exponent AND its exponential factor minus1 have analytic one-order decay in the weighted infinity norm on a common complex L2 neighborhood of EVERY real source. The actual patch, original family estimates and ALL signed coefficients are constructed unconditionally. Physical spectral-core one-smoothing remains proved. Full native normalized action amplitude and off-index phase estimates, and Main5.1/5.9, remain OPEN. Prove ACTUAL HillIntegerNativeOneSmoothing0: the ENTIRE actual real zero-mean L2 native Fourier defect is real analytic into actual signed H3/2 with SAME original e0 and halfFourierSymbol at EVERY raw mode. ALREADY PROVED: ACTUAL physical spectral-core L2 one-smoothing (de6b540) AND ACTUAL on-index signed exponent plus exp(exponent)-1 analytic in one-order weighted infinity norm on common complex L2 neighborhoods, unconditionally constructed at EVERY real source. NEXT integrate these on the SAME retained P/H patch to recover hillHminusIntrinsicDiagonalMap using physicalSpectralCoreMap=removeExponential(P.physicalOnIndexSignedExponent,intrinsicDiagonal). Prove the remaining TWO actual factor estimates: hillHminusNormalizedAmplitudeSymbol minus1 (normalized ACTION amplitude, DIFFERENT from Dirac midpoint symbol) and hillHminusSignedOffIndexExponent / its exponential factor minus1. Their rough bounded/unit-tail/compact assertions do NOT imply one-order estimates. Exact identities: nativeDiagonal=actionAmplitude*intrinsicDiagonal; nativeComplex=exp(signedOffIndex)*nativeDiagonal. Preserve the verified actual integer/native real coefficient adapters; no distinct NLS Birkhoff substitution. Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates. For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1916 baseline non-audit registered Lean sources byte-identical to de6b540. All 8 new modules (14 theorems+4 definitions), 3 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9391-declaration standard-axiom audit freshly compiled privately. ACTUAL signed on-index exponent AND exp(exponent)-1 analytic one-order weighted infinity decay proved on common complex L2 neighborhoods, with original patch/estimates constructed. Physical core one-smoothing remains proved; actual action amplitude and off-index phase estimates remain open. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1925-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -5273,7 +5289,15 @@
     "NLS/KdV/HillL2MassivePrincipalSmoothing.lean": "9ba8c513f603448a7d9fa57dd6559097b4e14694192b92399b39faa89a99a9d5",
     "NLS/KdV/HillMiuraH2TerminalFourier.lean": "dbd5055c279b818ea79e82551dcd0f22a30060787a3c0fdeae0206580706cbd4",
     "NLS/KdV/HillL2TerminalModelOneSmoothing.lean": "82d06cb71604baafe38a5fcb3db290a8660f93d82b058fc52fa498d9661ce91a",
-    "NLS/KdV/HillL2SpectralCoreOneSmoothing.lean": "40500050319af974ecd4411bf7eed4c7183b5ff812c2cd993d4d8baf592c14e9"
+    "NLS/KdV/HillL2SpectralCoreOneSmoothing.lean": "40500050319af974ecd4411bf7eed4c7183b5ff812c2cd993d4d8baf592c14e9",
+    "NLS/SequenceSpaces/WeightedInfinityAnalyticRealization.lean": "d357c2ef5c81368a795fa64061f476004bd430938203e57044087cd95db31ab6",
+    "NLS/SequenceSpaces/WeightedInfinityExponentialRemainder.lean": "7b4df5dd9103bc5323d02b9304094f0adda8525a3a0b744d88a3bb399f8abd85",
+    "NLS/ZakharovShabat/SourceH1DirichletGapWeights.lean": "f7a803778624dfabd5374b2cf2a6f6ac72b72952ab7a26e1ae5bb5deef6bce8a",
+    "NLS/KdV/HillL2OnIndexWeights.lean": "b15d77ddd912e2b830f3157af057ef3fb2b48a923d652a246a5c1432c2b19389",
+    "NLS/KdV/HillL2OnIndexCorrectionBound.lean": "25572ce0cb0663d6f43f6bbfae89ab13afd1a60a43795567200d280a4dbe3a6b",
+    "NLS/KdV/HillL2OnIndexSobolevExponent.lean": "b29b6f34aa06c6d6eeefd1cc5efef8070b642e287a16a58664d078b64ccd5c0e",
+    "NLS/KdV/HillL2OnIndexOneSmoothingNeighborhood.lean": "e16bd23ed4ce73a8e234f102b916d29bafcc5e1749366235611faf06b7ff4042",
+    "NLS/KdV/HillL2OnIndexExponentialSmoothing.lean": "d9c59afdd503f2cda47354d865bd92c700b8d806bc48c2f66ba9a061c1de62b4"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -5281,11 +5305,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 9344,
-    "newly_checked_declarations_this_continuation": 29,
-    "new_theorems": 19,
-    "new_definitions": 10,
-    "total_checked_declarations": 9373
+    "previous_checked_declarations": 9373,
+    "newly_checked_declarations_this_continuation": 18,
+    "new_theorems": 14,
+    "new_definitions": 4,
+    "total_checked_declarations": 9391
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -5314,7 +5338,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-spectral-core-smoothing.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-on-index-phase-smoothing.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5700,13 +5724,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1887 baseline non-audit registered Lean sources byte-identical to eae16ab. All 9 new modules (44 theorems+17 definitions), 2 canonical-byte-identical modules, 8 unchanged private dependencies and EXACT 9288-declaration standard-axiom audit freshly compiled privately. Actual literal Wiener inclusions, compact one-order Hilbert-to-Wiener embedding and exact free Fourier equivalences at p=1 proved. Analytic inverse restriction and ALL-integer actual Wiener diffeomorphism reduced to explicit actual L2 base one-smoothing hypothesis. Base hypothesis NOT proved; no unconditional Main5.1 claim. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1897-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1896 baseline non-audit registered Lean sources byte-identical to 8333bb8. All 6 new modules (26 theorems+9 definitions), 2 canonical-byte-identical modules, 9 unchanged private dependencies and EXACT 9323-declaration standard-axiom audit freshly compiled privately. Actual complex analytic L2-to-H1 Miura/rotated Dirac source and H2 massive-linear remainder proved. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1903-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1902 baseline non-audit registered Lean sources byte-identical to c625d0b. All 6 new modules (14 theorems+7 definitions), 4 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9344-declaration standard-axiom audit freshly compiled privately. Actual all-positive-order terminal Fourier smoothing, SAME actual Hill rotated L2 terminal H2 defect and normalized midpoint H1 remainder proved. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1909-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1908 baseline non-audit registered Lean sources byte-identical to 1f4f360. All 8 new modules (19 theorems+10 definitions), 2 canonical-byte-identical modules, 11 unchanged private dependencies and EXACT 9373-declaration standard-axiom audit freshly compiled privately. ACTUAL physical Hill spectral-core L2-to-native-H3/2 one-smoothing proved, including original massive principal and nonlinear Miura/midpoint/terminal contributions. Full native amplitude and phase factors remain open. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1917-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1908 baseline non-audit registered Lean sources byte-identical to 1f4f360. All 8 new modules (19 theorems+10 definitions), 2 canonical-byte-identical modules, 11 unchanged private dependencies and EXACT 9373-declaration standard-axiom audit freshly compiled privately. ACTUAL physical Hill spectral-core L2-to-native-H3/2 one-smoothing proved, including original massive principal and nonlinear Miura/midpoint/terminal contributions. Full native amplitude and phase factors remain open. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1917-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1916 baseline non-audit registered Lean sources byte-identical to de6b540. All 8 new modules (14 theorems+4 definitions), 3 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9391-declaration standard-axiom audit freshly compiled privately. ACTUAL signed on-index exponent AND exp(exponent)-1 analytic one-order weighted infinity decay proved on common complex L2 neighborhoods, with original patch/estimates constructed. Physical core one-smoothing remains proved; actual action amplitude and off-index phase estimates remain open. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1925-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-spectral-core-smoothing-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-on-index-phase-smoothing-map.json",
   "baseline_validated_snapshot": {
-    "commit": "1f4f360dc8c0ef210b1fff77c70dde7b07e31624",
-    "modules": 1909,
-    "audited_declarations": 9344,
+    "commit": "de6b5400293cd5db087aa0a342694213a145d6cc",
+    "modules": 1917,
+    "audited_declarations": 9373,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -9300,5 +9325,29 @@
       "NLS.KdV.hillMeanZeroComplexMap_coe"
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-spectral-core-smoothing-map.json"
+  },
+  "actual_Hill_L2_on_index_phase_one_smoothing": {
+    "actual_positive_H1_Dirichlet_midpoint_and_gap_common_weight_bounds_PROVED": true,
+    "SAME_Hill_auxiliary_divisor_and_phase_rotated_Dirichlet_midpoint_identity_PROVED": true,
+    "actual_on_index_correction_FULL_head_and_tail_one_order_bound_PROVED": true,
+    "ACTUAL_on_index_signed_exponent_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "ACTUAL_on_index_exponential_factor_minus_one_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "actual_on_index_patch_and_original_family_estimates_FACTORY_UNCONDITIONAL": true,
+    "original_signed_coefficients_central_zero_and_complex_collapsed_gaps_retained_PROVED": true,
+    "generic_weighted_infinity_exponential_remainder_analytic_PROVED": true,
+    "ACTUAL_physical_Hill_spectral_core_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "SAME_patch_core_on_index_assembly_COMPLETE": false,
+    "ACTUAL_native_normalized_ACTION_amplitude_one_order_estimate_PROVED": false,
+    "ACTUAL_native_off_index_exponent_one_order_estimate_PROVED": false,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-on-index-phase-smoothing-map.json"
   }
 }
