@@ -2924,6 +2924,22 @@
         "NLS.Articles.KdVPseudomeasures.originalHill_exists_analytic_frequency_moment_series"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-series-analytic-map.json"
+    },
+    {
+      "label": "Actual original rough Hill squared-gap second-moment estimates on ALL rows/gaps with exact inverse-row-index kernel bound",
+      "status": "proved actual all-index local spectral moment estimates; weighted all-row sequence assembly and physical frequency equality remain unproved; four main theorems remain unproved",
+      "declarations": [
+        "NLS.ComplexAnalysis.exists_common_open_finite_majorant",
+        "NLS.KdV.HillProductEquationPatch.exists_local_selected_abelianGapNumerator_gap_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_selected_diagonal_abelianGapNumerator_gap_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_uniform_diagonal_abelianGapNumerator_gap_tail_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_uniform_abelianGapNumerator_all_gap_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_local_uniform_diagonal_abelianGapNumerator_all_gap_bound",
+        "NLS.KdV.HillProductEquationPatch.exists_momentSeriesNeighborhood_all_index_bound",
+        "NLS.Coeff.positive_weighted_moment_kernel_le",
+        "NLS.Articles.KdVPseudomeasures.originalHill_exists_all_index_frequency_moment_bounds"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-all-index-bounds-map.json"
     }
   ],
   "reuse_map": [
@@ -3003,8 +3019,8 @@
     }
   ],
   "remaining_obligations": [
-    "Prove the required WEIGHTED ALL-row sequence bounds for the NOW ANALYTIC actual moment series, e.g. rough correction in ell(-1,r), r>1. Each gap-index-weighted row is already absolutely convergent and FULL Banach-source analytic on ONE common complex neighborhood before all rows, and actual partial sums converge uniformly on compact source sets. These completed facts must not be reproved or treated as assumptions. For all-row bounds, obtain actual diagonal gap numerator bounds and finite low-gap all-row bounds, then apply squared-gap ell1 and signed reciprocal convolution estimates.",
-    "Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. Glue the NOW ANALYTIC local rough sums by genuine H1 agreement/density, or prove cross-Miura/product-patch independence directly. Exact free H1 frequency, global H1 analyticity including collapse, actual original contour/sheet normalization, scalar moment analyticity and same-product-patch ambient independence remain PROVED. The analytic moment sums have NOT yet been identified as actual rough KdV frequencies.",
+    "Apply the NOW PROVED all-index actual squared-gap second-moment bound and exact inverse-row-index kernel inequality to prove WEIGHTED ALL-row ell(-1,r) membership and locally uniform norm bounds for EVERY r>1, then full Banach analytic assembly in that target. Actual diagonal gap numerator bounds and finite low-gap ALL-row bounds are now COMPLETE and must not be treated as missing. Use squared-gap ell1, punctured reciprocal lattice ellr and Young convolution, with exact diagonal and inverse-n rank-one terms.",
+    "Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. Glue the already analytic local rough sums by genuine H1 agreement/density, or prove cross-Miura/product-patch independence directly. Exact free H1 frequency, global H1 analyticity including collapse, actual original contour/sheet normalization, local moment and infinite-row-sum analyticity, same-product-patch ambient independence and compact uniform partial-sum convergence remain PROVED. Actual rough KdV frequencies have NOT yet been identified.",
     "Prove ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "workspace": {
@@ -6689,6 +6705,31 @@
     "ACTUAL_partial_sums_uniformly_converge_on_EVERY_COMPACT_source_subset_PROVED": true,
     "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
     "weighted_ALL_row_sequence_bound_PROVED": false,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_moment_ALL_index_bounds": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-all-index-bounds-map.json",
+    "ACTUAL_off_diagonal_numerator_bound_on_EVERY_gap_before_ALL_rows_PROVED": true,
+    "ACTUAL_diagonal_numerator_bound_on_EVERY_gap_before_ALL_indices_PROVED": true,
+    "finite_LOW_gap_uniform_numerator_row_bounds_PROVED": true,
+    "ALL_low_diagonal_complex_collapsed_gaps_INCLUDED": true,
+    "ACTUAL_normalized_second_moment_squared_gap_signed_reciprocal_bound_ALL_n_m_PROVED": true,
+    "ONE_common_open_complex_neighborhood_BEFORE_ALL_rows_and_gaps_PROVED": true,
+    "genuine_MomentSeriesNeighborhood_factory_retains_ALL_scalar_series_analyticity_PROVED": true,
+    "EXACT_inverse_row_index_kernel_le_punctured_reciprocal_plus_two_over_n_PROVED": true,
+    "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
+    "weighted_ALL_row_ell_minus_one_r_membership_and_norm_bound_PROVED": false,
+    "weighted_ALL_row_Banach_analyticity_PROVED": false,
     "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
     "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,

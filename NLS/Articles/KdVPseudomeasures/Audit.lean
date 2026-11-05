@@ -1774,6 +1774,13 @@ import NLS.KdV.HillPrimitiveMomentSeriesLocalBound
 import NLS.KdV.HillPrimitiveMomentSeriesAnalytic
 import NLS.KdV.HillPrimitiveMomentSeriesCompactConvergence
 import NLS.Articles.KdVPseudomeasures.OriginalHillMomentSeriesAnalytic
+import NLS.ComplexAnalysis.FiniteLocalMajorants
+import NLS.KdV.HillMomentSelectedNumeratorBound
+import NLS.KdV.HillMomentDiagonalNumeratorBound
+import NLS.KdV.HillMomentAllGapNumeratorBounds
+import NLS.KdV.HillPrimitiveMomentAllIndexBound
+import NLS.SequenceSpaces.PositiveWeightedMomentKernel
+import NLS.Articles.KdVPseudomeasures.OriginalHillMomentAllIndexBounds
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10623,3 +10630,12 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillMomentSeriesAnalytic
 #print axioms NLS.KdV.HillProductEquationPatch.centeredSecondMomentPartialSum_eq_row_sum
 #print axioms NLS.KdV.HillProductEquationPatch.tendstoUniformlyOn_centeredSecondMomentPartialSum_of_isCompact
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_analytic_frequency_moment_series
+#print axioms NLS.ComplexAnalysis.exists_common_open_finite_majorant
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_selected_abelianGapNumerator_gap_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_selected_diagonal_abelianGapNumerator_gap_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_diagonal_abelianGapNumerator_gap_tail_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_abelianGapNumerator_all_gap_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_diagonal_abelianGapNumerator_all_gap_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_momentSeriesNeighborhood_all_index_bound
+#print axioms NLS.Coeff.positive_weighted_moment_kernel_le
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_all_index_frequency_moment_bounds
