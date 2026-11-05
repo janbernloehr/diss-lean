@@ -1821,6 +1821,12 @@ modules = [
     'NLS.KdV.HillMomentWeightedSeriesBounds',
     'NLS.KdV.HillMomentWeightedSeriesAnalytic',
     'NLS.Articles.KdVPseudomeasures.OriginalHillWeightedMomentSeries',
+    'NLS.ComplexAnalysis.ScalarTaylorCoefficient',
+    'NLS.ComplexAnalysis.QuarticInversionCoefficient',
+    'NLS.ComplexAnalysis.WeightedQuarticInversionContour',
+    'NLS.KdV.HillMiuraFiniteGapHamiltonianSymmetry',
+    'NLS.KdV.HillMiuraWeightedQuarticContour',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillQuarticEnergyContour',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

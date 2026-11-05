@@ -2963,6 +2963,28 @@
         "NLS.Articles.KdVPseudomeasures.originalHill_exists_analytic_weighted_moment_series"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-weighted-moment-series-map.json"
+    },
+    {
+      "label": "Exact original finite-gap physical H1 Hamiltonian from the actual weighted quartic Miura-frequency primitive contour, with genuine lift/chart factory",
+      "status": "proved physical energy contour dependency; actual physical frequency variation and moment formula remain unproved; four main theorems remain unproved",
+      "declarations": [
+        "NLS.ComplexAnalysis.scalarTaylorCoefficient",
+        "NLS.ComplexAnalysis.scalarTaylorCoefficient_eq_series",
+        "NLS.ComplexAnalysis.scalarTaylorCoefficient_mul",
+        "NLS.ComplexAnalysis.scalarTaylorCoefficient_const_add_succ",
+        "NLS.ComplexAnalysis.scalarTaylorCoefficient_quartic_phase",
+        "NLS.ComplexAnalysis.circleIntegral_pow_mul_comp_inv_eq_scalarTaylorCoefficient",
+        "NLS.ComplexAnalysis.weighted_quartic_inversion_identity",
+        "NLS.ComplexAnalysis.exists_phase_weighted_quartic_contour",
+        "NLS.KdV.sourceFiniteGapNLSHamiltonian_hillMiura_one",
+        "NLS.KdV.sourceFiniteGapNLSHamiltonian_hillMiura_even",
+        "NLS.KdV.hillMiura_finiteGap_weighted_quartic_contour",
+        "NLS.Articles.KdVPseudomeasures.hillH1_complexHamiltonian_finiteGap_Miura_trace",
+        "NLS.Articles.KdVPseudomeasures.hillH1_finiteGap_Miura_weighted_quartic_energy_contour",
+        "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_real_quartic_contour",
+        "NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_quartic_energy_contour"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-physical-quartic-energy-contour-map.json"
     }
   ],
   "reuse_map": [
@@ -3042,9 +3064,9 @@
     }
   ],
   "remaining_obligations": [
-    "Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. The ACTUAL local moment sums are now FULL Banach analytic in the literal positive-index ell(-1,p) target for EVERY p>1 on ONE common complex neighborhood before all p and all rows, with explicit norm bounds and exact raw coefficients. Their physical frequency identification is still unproved; do not substitute an arbitrary action-frequency map or ordinary NLS frequency.",
-    "Glue the NOW WEIGHTED-BANACH-ANALYTIC local rough spectral sums across DIFFERENT Miura/product patches via genuine dense H1 agreement after proving the physical formula, or prove cross-patch independence directly. Same-product-patch primitive-ambient independence is already proved. Establish the resulting actual rough KdV frequency estimates and ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9.",
-    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+    "Use the NOW PROVED EXACT physical finite-gap H1 weighted quartic primitive energy contour to prove the genuine Hamiltonian-frequency representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2). Prove required FIRST/THIRD odd centered-moment cancellation for actual Hill numerator/contours; transfer the normalized phase-discriminant bracket to the actual primitive, justify energy differentiation along genuine finite-gap canonical action directions, and deform the outer frequency contour to actual gap contours retaining central/negative-gap factors. The finite-gap energy contour identity alone is NOT an ambient rough-source Frechet identity and cannot simply be differentiated on Hminus or along arbitrary H1 perturbations opening new high gaps.",
+    "After genuine finite-gap physical frequency identification, pass to ALL H1 via the verified strong finite-gap approximation, then glue the ALREADY weighted-Banach-analytic local rough sums across DIFFERENT Miura/product patches by genuine dense H1 agreement, or prove cross-patch independence directly. Same-product-patch primitive-ambient independence, exact free H1 frequencies, ALL collapsed-mode H1 analyticity, actual moment convergence and Banach analyticity in literal positive ell(-1,p) for EVERY p>1 are already COMPLETE. Actual rough KdV frequencies have NOT yet been identified.",
+    "Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -6781,6 +6803,35 @@
     "ONE_common_complex_source_neighborhood_BEFORE_ALL_p_gt_one_and_rows_PROVED": true,
     "infinity_exponent_INCLUDED": true,
     "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_physical_quartic_energy_contour": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-physical-quartic-energy-contour-map.json",
+    "actual_factorial_normalized_Taylor_product_and_shift_algebra_PROVED": true,
+    "EXACT_quartic_sixth_coefficient_physical_hierarchy_combination_PROVED": true,
+    "unrestricted_fourth_remainder_jet_cancels_PROVED": true,
+    "EXACT_generic_weighted_quartic_exterior_contour_PROVED": true,
+    "ACTUAL_finite_gap_diagonal_first_NLS_Hamiltonian_equals_original_lift_L2_norm_squared_PROVED": true,
+    "ACTUAL_positive_even_diagonal_hierarchy_Hamiltonians_ZERO_PROVED": true,
+    "ACTUAL_full_primitive_weighted_quartic_contour_BEFORE_ALL_normalization_indices_PROVED": true,
+    "ORIGINAL_complex_physical_H1_energy_trace_before_real_part_PROVED": true,
+    "ORIGINAL_real_H1_energy_recovered_by_EXACT_two_i_over_pi_contour_PROVED": true,
+    "genuine_lift_and_Cauchy_chart_factory_at_EVERY_original_finite_gap_H1_source_PROVED": true,
+    "contour_variable_is_ACTUAL_Miura_frequency_z": true,
+    "original_energy_plane_outer_contour_transport_PROVED": false,
+    "actual_Hill_FIRST_and_THIRD_centered_moments_ZERO_PROVED": false,
+    "finite_gap_physical_energy_phase_bracket_differentiation_PROVED": false,
+    "outer_contour_gap_deformation_for_actual_frequency_integrand_PROVED": false,
     "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
     "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,

@@ -1787,6 +1787,12 @@ import NLS.SequenceSpaces.WeightedMomentSeriesRealization
 import NLS.KdV.HillMomentWeightedSeriesBounds
 import NLS.KdV.HillMomentWeightedSeriesAnalytic
 import NLS.Articles.KdVPseudomeasures.OriginalHillWeightedMomentSeries
+import NLS.ComplexAnalysis.ScalarTaylorCoefficient
+import NLS.ComplexAnalysis.QuarticInversionCoefficient
+import NLS.ComplexAnalysis.WeightedQuarticInversionContour
+import NLS.KdV.HillMiuraFiniteGapHamiltonianSymmetry
+import NLS.KdV.HillMiuraWeightedQuarticContour
+import NLS.Articles.KdVPseudomeasures.OriginalHillQuarticEnergyContour
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10661,3 +10667,18 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillWeightedMomentSeries
 #print axioms NLS.KdV.HillProductEquationPatch.analytic_positive_centeredSecondMomentSeries
 #print axioms NLS.KdV.HillProductEquationPatch.analytic_centeredSecondMomentSequence
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_analytic_weighted_moment_series
+#print axioms NLS.ComplexAnalysis.scalarTaylorCoefficient
+#print axioms NLS.ComplexAnalysis.scalarTaylorCoefficient_eq_series
+#print axioms NLS.ComplexAnalysis.scalarTaylorCoefficient_mul
+#print axioms NLS.ComplexAnalysis.scalarTaylorCoefficient_const_add_succ
+#print axioms NLS.ComplexAnalysis.scalarTaylorCoefficient_quartic_phase
+#print axioms NLS.ComplexAnalysis.circleIntegral_pow_mul_comp_inv_eq_scalarTaylorCoefficient
+#print axioms NLS.ComplexAnalysis.weighted_quartic_inversion_identity
+#print axioms NLS.ComplexAnalysis.exists_phase_weighted_quartic_contour
+#print axioms NLS.KdV.sourceFiniteGapNLSHamiltonian_hillMiura_one
+#print axioms NLS.KdV.sourceFiniteGapNLSHamiltonian_hillMiura_even
+#print axioms NLS.KdV.hillMiura_finiteGap_weighted_quartic_contour
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_complexHamiltonian_finiteGap_Miura_trace
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_finiteGap_Miura_weighted_quartic_energy_contour
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_real_quartic_contour
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_quartic_energy_contour
