@@ -110,6 +110,8 @@ modules=(
   NLS/KdV/ClassicalContourMoments
   NLS/KdV/ClassicalHighContourMoments
   NLS/ComplexAnalysis/AnalyticSquareDescent
+  NLS/ComplexAnalysis/AnalyticUnitDerivativeInverse
+  NLS/ComplexAnalysis/AnalyticOpenInverse
   NLS/KdV/ClassicalBranchPrimitive
   NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
   NLS/KdV/FrequencySeriesBounds
@@ -153,6 +155,7 @@ modules=(
   NLS/KdV/ClassicalTwoWeightedNormalizedCoefficients
   NLS/KdV/ClassicalNormalizedResidues
   NLS/KdV/ClassicalCandidateZeros
+  NLS/SequenceSpaces/DeletedCoordinate
   NLS/SequenceSpaces/CompactPuncturedKernel
   NLS/KdV/ClassicalCandidateResolvents
   NLS/KdV/ClassicalNormalizedZeroMap
@@ -262,6 +265,7 @@ modules=(
   NLS/ComplexAnalysis/SourceDiscriminantPrimitive
   NLS/ComplexAnalysis/LocalRealAxisDerivative
   NLS/ComplexAnalysis/BanachHolomorphicC1
+  NLS/SequenceSpaces/DeletedDiagonal
   NLS/ZakharovShabat/ContinuousPotentialSource
   NLS/ZakharovShabat/SourceCanonicalRootRealBand
   NLS/MKdV/QuasiHillSourcePrimitive
@@ -1267,6 +1271,16 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/NativeSignedAbelianCoordinates
   NLS/KdV/HillUnitRealSourceJetUniqueness
   NLS/Articles/KdVKdV2Frequencies/NativeFourierAbelianMap
+  NLS/KdV/HillAbelianFourierSymbol
+  NLS/SequenceSpaces/MeanZeroWeightedCoordinates
+  NLS/KdV/HillMeanZeroAbelianDerivative
+  NLS/Articles/KdVKdV2Frequencies/NativeMeanZeroAbelianInverse
+  NLS/SequenceSpaces/PeriodOneL2RealFormIdentity
+  NLS/SequenceSpaces/DeletedRealConjugation
+  NLS/KdV/HillUnitRealSourceCoordinates
+  NLS/KdV/HillNativeAbelianRealEquivariance
+  NLS/SequenceSpaces/DeletedRealLocalInverse
+  NLS/Articles/KdVKdV2Frequencies/NativeRealAbelianInverse
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

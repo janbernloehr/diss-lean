@@ -1,0 +1,31 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "scope": "Canonical omitted-coordinate Banach spaces, invertible diagonal multipliers and analytic inverse branches on explicit open sets, reused for the actual mean-zero Hill Abelian map. The four unchanged source files are newly selected, strictly compiled privately at default heartbeats and transitively audited. No canonical modification or branch merge.",
+  "files": [
+    {
+      "path": "NLS/SequenceSpaces/DeletedCoordinate.lean",
+      "source_sha256": "ba402aa72f451e80885a8145cd6d9e7ef4748c9785c9e140bb0da22dcb4f0632",
+      "local_sha256": "ba402aa72f451e80885a8145cd6d9e7ef4748c9785c9e140bb0da22dcb4f0632",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/DeletedDiagonal.lean",
+      "source_sha256": "b3ed8c72a12bde85f3032bfb972317d0b391de58083bfaa778d889a4827a2d9b",
+      "local_sha256": "b3ed8c72a12bde85f3032bfb972317d0b391de58083bfaa778d889a4827a2d9b",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticUnitDerivativeInverse.lean",
+      "source_sha256": "c7a7a97f7064a002da575f4df2d86039b2b12daa2320932662320482cd74dff1",
+      "local_sha256": "c7a7a97f7064a002da575f4df2d86039b2b12daa2320932662320482cd74dff1",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticOpenInverse.lean",
+      "source_sha256": "81bae69d1bb0fe99647ac9789b1b66a7924ac68f925960a4b5e7b97884100941",
+      "local_sha256": "81bae69d1bb0fe99647ac9789b1b66a7924ac68f925960a4b5e7b97884100941",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

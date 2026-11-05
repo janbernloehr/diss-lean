@@ -1136,3 +1136,14 @@ See `NATIVE_WEIGHTED_ABELIAN_MAP.md`. The proof supplies genuine uniform complex
 Prior strict evidence for all 1237 unchanged selected baseline sources; strict dependency-order compilation of twenty-one new proof modules; then a fresh combined transitive axiom audit of all 1258 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1290 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the twenty-one new modules. No repeated full 1258-module rebuild is claimed.
 
 Fresh audit: 10998 selected and 33131 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest actual local real Abelian inverse
+
+The actual mean-zero L2 Abelian map at zero now has an analytic two-sided inverse between explicit complex open neighborhoods in its exact half-shift weighted target chart. Its actual weighted Fourier derivative is a proved linear equivalence. The inverse preserves physical conjugate Fourier reality. Every sufficiently small real target has a constructed actual mean-zero real physical potential whose existing Abelian map equals the exact weighted target lift, and the inverse recovers the original physical source coefficients.
+
+See `NATIVE_REAL_ABELIAN_INVERSE.md`. Global bijectivity, canonicality, arbitrary-base inverse neighborhoods, the full s>=-1 regularity scale and Hamiltonian/frequency/PDE main conclusions remain open.
+
+Prior strict evidence for all 1258 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules and four unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1272 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1305 frozen source/checker/provenance hashes, 30 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the ten new proof modules; the four canonical helpers were already in the imported closure. No repeated full 1272-module rebuild is claimed.
+
+Fresh audit: 11104 selected and 33199 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

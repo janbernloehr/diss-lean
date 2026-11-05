@@ -112,6 +112,11 @@
           "source_clause": "Native holomorphic actual full signed weighted Abelian map near zero in L2 with exact normalized Fourier derivative on mean-zero directions",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillPhysical_native_fourier_abelian_map",
           "qualification": "One native holomorphic map Z from a common complex period-one L2 ball to the exact full signed weighted target equals the full existing physical Abelian map at every real source in that ball. Z0=0, zero output mode, full norm<=K*(||u||+||u||^2). For every complex zero-mean direction h and every integer j, ((fderiv Z0)h)_j=h_j/sqrt(2*|j|*pi). Local inverse/canonicality/global/full-regularity/Birkhoff/Hamiltonian main theorems remain open."
+        },
+        {
+          "source_clause": "Local analytic inverse at zero on mean-zero L2 and the actual half-shift target, with physical real preservation and exact real preimages",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillPhysical_native_real_abelian_inverse",
+          "qualification": "Actual local inverse at zero on mean-zero L2 and the exact half-shift weighted target, with complex analytic two-sided inverse on open neighborhoods. Every sufficiently small real target has a constructed mean-zero actual real physical potential mapping to its exact weighted lift. The inverse recovers actual physical source Fourier coefficients. No global, canonical, arbitrary-base, rough-scale or main frequency theorem is claimed."
         }
       ]
     },
@@ -18011,12 +18016,180 @@
       "scope": "One native holomorphic map Z from a common complex period-one L2 ball to the exact full signed weighted target equals the full existing physical Abelian map at every real source in that ball. Z0=0, zero output mode, full norm<=K*(||u||+||u||^2). For every complex zero-mean direction h and every integer j, ((fderiv Z0)h)_j=h_j/sqrt(2*|j|*pi). Local inverse/canonicality/global/full-regularity/Birkhoff/Hamiltonian main theorems remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "5741b48f644505a44cd73c179a4cb086f7b42ed571fa5463ccd6216e828c508b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticUnitDerivativeInverse.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical local analytic inverse for an analytic Banach map with unit Frechet derivative; newly strictly selected.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c7a7a97f7064a002da575f4df2d86039b2b12daa2320932662320482cd74dff1"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticOpenInverse.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical analytic inverse on explicit open domain/image neighborhoods; newly strictly selected.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "81bae69d1bb0fe99647ac9789b1b66a7924ac68f925960a4b5e7b97884100941"
+    },
+    {
+      "path": "NLS/SequenceSpaces/DeletedCoordinate.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical closed kernel of coordinate evaluation with Banach structure, exact deletion projection and insertion maps; newly strictly selected for the mean-zero inverse.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ba402aa72f451e80885a8145cd6d9e7ef4748c9785c9e140bb0da22dcb4f0632"
+    },
+    {
+      "path": "NLS/SequenceSpaces/DeletedDiagonal.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical diagonal multiplier equivalence on a deleted-coordinate space from a uniform lower bound; newly strictly selected.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b3ed8c72a12bde85f3032bfb972317d0b391de58083bfaa778d889a4827a2d9b"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianFourierSymbol.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual weighted mean-zero Fourier symbol sqrt(1+|j|)/sqrt(2|j|pi) has norm between 1/4 and 1 off zero and gives a continuous linear equivalence of the deleted L2 spaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e52f815ccd28aa065230155c9f381f22135b5153a398d0f97ce19732ba451345"
+    },
+    {
+      "path": "NLS/SequenceSpaces/MeanZeroWeightedCoordinates.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Exact mean-zero weighted target chart and inverse lift, their inverse identities and isometry, analytic map restriction and derivative composition.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "de4aecc5abb537f6d2eace740bcdc1e7dc8dc646a741ffdb5ae1fa6faf2022bf"
+    },
+    {
+      "path": "NLS/KdV/HillMeanZeroAbelianDerivative.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The actual native mean-zero Abelian derivative equals the normalized weighted Fourier equivalence and is a unit, with no caller invertibility assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f607f7d9a9e827785434344bc2f13851dc3cd008c269287841be40ad43cecdb5"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeMeanZeroAbelianInverse.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Existence of one actual native mean-zero L2 Abelian map with an analytic two-sided inverse on explicit complex open neighborhoods at zero, exact original weighted target lift and equality with the existing physical map.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dd4e5dcdcf67eda26d8b1c6caa7af6fb4e33a979898cf96d73c7eb93e4b0b7ea"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneL2RealFormIdentity.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Reusable continuous physical real-form decomposition and analytic uniqueness on connected complex L2 open sets, plus analyticity of simultaneous source/target physical conjugation.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4c4c0ce60af7e652d4a1e8fa408ddcac4d3c14908591c9447e4c3176bf184ffe"
+    },
+    {
+      "path": "NLS/SequenceSpaces/DeletedRealConjugation.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Physical conjugate Fourier reflection on the mean-zero closed L2 kernel: exact involution, norm preservation, fixed form and commutation with deletion.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d836724ce492982a9870ceb81fdb78b92e53ee5aae5ea93926ca65c8e2a7ba83"
+    },
+    {
+      "path": "NLS/KdV/HillUnitRealSourceCoordinates.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Exact isometric unit-weight source lift and construction of an actual real physical weighted potential from every conjugate-reflection-fixed L2 sequence.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ce70815ea453ce7c23716f9339810f47828193296c681c992f32434b029395fe"
+    },
+    {
+      "path": "NLS/KdV/HillNativeAbelianRealEquivariance.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Agreement of the native Abelian germ with the actual physical real map forces conjugation equivariance throughout its common complex L2 ball, in the exact weighted and mean-zero target charts.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "062b55d22bf56f5355d64ea4608eab9ece812485a1f4312bf792843df6ce0574"
+    },
+    {
+      "path": "NLS/SequenceSpaces/DeletedRealLocalInverse.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Local injectivity and norm-preserving physical conjugation give a smaller open inverse neighborhood on which the actual inverse preserves the real form.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f36b7dd530f8c24480bab3313308bec0c86e889fb3d410a83cba5865a3e14914"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeRealAbelianInverse.lean",
+      "source_labels": [
+        "Local analytic inverse of the actual physical real Abelian map at zero supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual local inverse at zero on mean-zero L2 and the exact half-shift weighted target, with complex analytic two-sided inverse on open neighborhoods. Every sufficiently small real target has a constructed mean-zero actual real physical potential mapping to its exact weighted lift. The inverse recovers actual physical source Fourier coefficients. No global, canonical, arbitrary-base, rough-scale or main frequency theorem is claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6cc8ce03c628ee50173e925b7a15acf747bbfc44925905217fd1aa768a262f75"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "Near zero in L2, native actual unscaled terminals, summed regular phase, Dirichlet/midpoint displacement and uniform analytic half-shift amplitudes are proved. NOW one native holomorphic map into the exact full signed weighted Abelian target equals the actual physical map on one common real source ball and has the exact normalized Fourier derivative on all mean-zero directions. NEXT prove local inverse on mean-zero source/target, canonicality, full s>=-1 scale and arbitrary-base/global neighborhoods; then actual Hamiltonian action-frequency identities and the remaining spectral/PDE main conclusions.",
+    "Near zero in L2, the native actual full signed weighted Abelian map and exact normalized Fourier derivative are proved. NOW its mean-zero restriction has an analytic two-sided local inverse on explicit complex open neighborhoods, preserving physical conjugate Fourier reality; every sufficiently small real half-shift target has a constructed actual mean-zero real physical source mapping exactly to it. NEXT prove actual canonicality, arbitrary-base derivative invertibility, global inverse and the full s>=-1 scale; then actual Hamiltonian action-frequency identities and remaining spectral/PDE main conclusions.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -18042,15 +18215,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 10998,
-    "total_declarations_audited": 33131,
+    "candidate_declarations_audited": 11104,
+    "total_declarations_audited": 33199,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1258,
+    "selected_modules": 1272,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -18109,7 +18282,8 @@
     "native_summed_phase_validation_sequence": "Prior strict evidence for all 1197 unchanged selected baseline sources; strict dependency-order compilation of fourteen new proof modules; then a fresh combined transitive axiom audit of all 1211 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1243 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1211-module rebuild is claimed.",
     "native_dirichlet_energy_validation_sequence": "Prior strict evidence for all 1211 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules; then a fresh combined transitive axiom audit of all 1221 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1253 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1221-module rebuild is claimed.",
     "native_gap_midpoint_validation_sequence": "Prior strict evidence for all 1221 unchanged selected baseline sources; strict dependency-order compilation of sixteen new proof modules; then a fresh combined transitive axiom audit of all 1237 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1269 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the sixteen new modules. No repeated full 1237-module rebuild is claimed.",
-    "native_weighted_abelian_validation_sequence": "Prior strict evidence for all 1237 unchanged selected baseline sources; strict dependency-order compilation of twenty-one new proof modules; then a fresh combined transitive axiom audit of all 1258 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1290 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the twenty-one new modules. No repeated full 1258-module rebuild is claimed."
+    "native_weighted_abelian_validation_sequence": "Prior strict evidence for all 1237 unchanged selected baseline sources; strict dependency-order compilation of twenty-one new proof modules; then a fresh combined transitive axiom audit of all 1258 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1290 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the twenty-one new modules. No repeated full 1258-module rebuild is claimed.",
+    "native_real_inverse_validation_sequence": "Prior strict evidence for all 1258 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules and four unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1272 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1305 frozen source/checker/provenance hashes, 30 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the ten new proof modules; the four canonical helpers were already in the imported closure. No repeated full 1272-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -18607,6 +18781,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "511ee7c1049ec93af0bee68a2138c617a3bb2c30",
+      "description": "Prior native full weighted actual Abelian map and Fourier derivative; now actual local complex analytic inverse with physical real preservation and actual real target preimages at zero.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "Near zero in L2, native actual unscaled terminals, summed regular phase, Dirichlet/midpoint displacement and uniform analytic half-shift amplitudes are proved. NOW one native holomorphic map into the exact full signed weighted Abelian target equals the actual physical map on one common real source ball and has the exact normalized Fourier derivative on all mean-zero directions. NEXT prove local inverse on mean-zero source/target, canonicality, full s>=-1 scale and arbitrary-base/global neighborhoods; then actual Hamiltonian action-frequency identities and the remaining spectral/PDE main conclusions.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -18629,5 +18815,6 @@
   "native_summed_phase_record": "NATIVE_SUMMED_PHASE.md",
   "native_dirichlet_energy_record": "NATIVE_DIRICHLET_ENERGIES.md",
   "native_gap_midpoint_record": "NATIVE_GAP_MIDPOINTS.md",
-  "native_weighted_abelian_record": "NATIVE_WEIGHTED_ABELIAN_MAP.md"
+  "native_weighted_abelian_record": "NATIVE_WEIGHTED_ABELIAN_MAP.md",
+  "native_real_inverse_record": "NATIVE_REAL_ABELIAN_INVERSE.md"
 }

@@ -1,3 +1,17 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeRealAbelianInverse
+import NLS.KdV.HillNativeAbelianRealEquivariance
+import NLS.SequenceSpaces.DeletedRealLocalInverse
+import NLS.SequenceSpaces.DeletedRealConjugation
+import NLS.KdV.HillUnitRealSourceCoordinates
+import NLS.SequenceSpaces.PeriodOneL2RealFormIdentity
+import NLS.Articles.KdVKdV2Frequencies.NativeMeanZeroAbelianInverse
+import NLS.KdV.HillMeanZeroAbelianDerivative
+import NLS.SequenceSpaces.MeanZeroWeightedCoordinates
+import NLS.KdV.HillAbelianFourierSymbol
+import NLS.SequenceSpaces.DeletedCoordinate
+import NLS.SequenceSpaces.DeletedDiagonal
+import NLS.ComplexAnalysis.AnalyticUnitDerivativeInverse
+import NLS.ComplexAnalysis.AnalyticOpenInverse
 import NLS.Articles.KdVKdV2Frequencies.NativeFourierAbelianMap
 import NLS.KdV.HillUnitRealSourceJetUniqueness
 import NLS.Articles.KdVKdV2Frequencies.NativeSignedAbelianCoordinates
@@ -495,6 +509,8 @@ run_cmd do
     `NLS.KdV.ClassicalContourMoments,
     `NLS.KdV.ClassicalHighContourMoments,
     `NLS.ComplexAnalysis.AnalyticSquareDescent,
+    `NLS.ComplexAnalysis.AnalyticUnitDerivativeInverse,
+    `NLS.ComplexAnalysis.AnalyticOpenInverse,
     `NLS.KdV.ClassicalBranchPrimitive,
     `NLS.SequenceSpaces.LocallyBoundedAnalyticSummation,
     `NLS.KdV.FrequencySeriesBounds,
@@ -538,6 +554,7 @@ run_cmd do
     `NLS.KdV.ClassicalTwoWeightedNormalizedCoefficients,
     `NLS.KdV.ClassicalNormalizedResidues,
     `NLS.KdV.ClassicalCandidateZeros,
+    `NLS.SequenceSpaces.DeletedCoordinate,
     `NLS.SequenceSpaces.CompactPuncturedKernel,
     `NLS.KdV.ClassicalCandidateResolvents,
     `NLS.KdV.ClassicalNormalizedZeroMap,
@@ -647,6 +664,7 @@ run_cmd do
     `NLS.ComplexAnalysis.SourceDiscriminantPrimitive,
     `NLS.ComplexAnalysis.LocalRealAxisDerivative,
     `NLS.ComplexAnalysis.BanachHolomorphicC1,
+    `NLS.SequenceSpaces.DeletedDiagonal,
     `NLS.ZakharovShabat.ContinuousPotentialSource,
     `NLS.ZakharovShabat.SourceCanonicalRootRealBand,
     `NLS.MKdV.QuasiHillSourcePrimitive,
@@ -1651,7 +1669,17 @@ run_cmd do
     `NLS.SequenceSpaces.SignedHolomorphicCompletion,
     `NLS.Articles.KdVKdV2Frequencies.NativeSignedAbelianCoordinates,
     `NLS.KdV.HillUnitRealSourceJetUniqueness,
-    `NLS.Articles.KdVKdV2Frequencies.NativeFourierAbelianMap
+    `NLS.Articles.KdVKdV2Frequencies.NativeFourierAbelianMap,
+    `NLS.KdV.HillAbelianFourierSymbol,
+    `NLS.SequenceSpaces.MeanZeroWeightedCoordinates,
+    `NLS.KdV.HillMeanZeroAbelianDerivative,
+    `NLS.Articles.KdVKdV2Frequencies.NativeMeanZeroAbelianInverse,
+    `NLS.SequenceSpaces.PeriodOneL2RealFormIdentity,
+    `NLS.SequenceSpaces.DeletedRealConjugation,
+    `NLS.KdV.HillUnitRealSourceCoordinates,
+    `NLS.KdV.HillNativeAbelianRealEquivariance,
+    `NLS.SequenceSpaces.DeletedRealLocalInverse,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRealAbelianInverse
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

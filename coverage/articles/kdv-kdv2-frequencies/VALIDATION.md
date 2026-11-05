@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest native weighted actual Abelian map
+## Latest actual local real Abelian inverse
+
+The actual mean-zero L2 Abelian map at zero now has an analytic two-sided inverse between explicit complex open neighborhoods in its exact half-shift weighted target chart. Its actual weighted Fourier derivative is a proved linear equivalence. The inverse preserves physical conjugate Fourier reality. Every sufficiently small real target has a constructed actual mean-zero real physical potential whose existing Abelian map equals the exact weighted target lift, and the inverse recovers the original physical source coefficients.
+
+See `NATIVE_REAL_ABELIAN_INVERSE.md`. Global bijectivity, canonicality, arbitrary-base inverse neighborhoods, the full s>=-1 regularity scale and Hamiltonian/frequency/PDE main conclusions remain open.
+
+Prior strict evidence for all 1258 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules and four unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1272 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1305 frozen source/checker/provenance hashes, 30 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the ten new proof modules; the four canonical helpers were already in the imported closure. No repeated full 1272-module rebuild is claimed.
+
+Fresh audit: 11104 selected and 33199 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier native weighted actual Abelian map
 
 One common complex period-one L2 ball now supports a native holomorphic map Z into the actual full signed weighted half-shift target. At EVERY real source in that same ball, Z equals the existing full physical Abelian map as a weighted Hilbert-space value. It vanishes at zero, has zero output mode and full norm<=K*(||u||+||u||^2). Its actual native Frechet derivative, on every complex zero-mean direction h, has every signed component h(j)/sqrt(2*|j|*pi). First/closed gaps and nonzero source means are included in the map construction.
 
@@ -476,7 +486,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1258 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1272 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1545,7 +1555,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1258 selected modules (including generated and private declarations)
+the 1272 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -3096,4 +3106,24 @@ PASS NLS/Articles/KdVKdV2Frequencies/NativeSignedAbelianCoordinates
 PASS NLS/KdV/HillUnitRealSourceJetUniqueness
 PASS NLS/Articles/KdVKdV2Frequencies/NativeFourierAbelianMap
 Axiom audit passed: 10998 candidate declarations; 33131 declarations total.
+```
+
+Latest actual local real inverse strict additions and fresh combined audit:
+
+```text
+PASS NLS/ComplexAnalysis/AnalyticUnitDerivativeInverse
+PASS NLS/ComplexAnalysis/AnalyticOpenInverse
+PASS NLS/SequenceSpaces/DeletedCoordinate
+PASS NLS/SequenceSpaces/DeletedDiagonal
+PASS NLS/KdV/HillAbelianFourierSymbol
+PASS NLS/SequenceSpaces/MeanZeroWeightedCoordinates
+PASS NLS/KdV/HillMeanZeroAbelianDerivative
+PASS NLS/Articles/KdVKdV2Frequencies/NativeMeanZeroAbelianInverse
+PASS NLS/SequenceSpaces/PeriodOneL2RealFormIdentity
+PASS NLS/SequenceSpaces/DeletedRealConjugation
+PASS NLS/KdV/HillUnitRealSourceCoordinates
+PASS NLS/KdV/HillNativeAbelianRealEquivariance
+PASS NLS/SequenceSpaces/DeletedRealLocalInverse
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRealAbelianInverse
+Axiom audit passed: 11104 candidate declarations; 33199 declarations total.
 ```

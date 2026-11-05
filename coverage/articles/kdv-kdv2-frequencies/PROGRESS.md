@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest native weighted actual Abelian map
+## Latest actual local real Abelian inverse
+
+The actual mean-zero L2 Abelian map at zero now has an analytic two-sided inverse between explicit complex open neighborhoods in its exact half-shift weighted target chart. Its actual weighted Fourier derivative is a proved linear equivalence. The inverse preserves physical conjugate Fourier reality. Every sufficiently small real target has a constructed actual mean-zero real physical potential whose existing Abelian map equals the exact weighted target lift, and the inverse recovers the original physical source coefficients.
+
+See `NATIVE_REAL_ABELIAN_INVERSE.md`. Global bijectivity, canonicality, arbitrary-base inverse neighborhoods, the full s>=-1 regularity scale and Hamiltonian/frequency/PDE main conclusions remain open.
+
+Prior strict evidence for all 1258 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules and four unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1272 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1305 frozen source/checker/provenance hashes, 30 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the ten new proof modules; the four canonical helpers were already in the imported closure. No repeated full 1272-module rebuild is claimed.
+
+Fresh audit: 11104 selected and 33199 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier native weighted actual Abelian map
 
 One common complex period-one L2 ball now supports a native holomorphic map Z into the actual full signed weighted half-shift target. At EVERY real source in that same ball, Z equals the existing full physical Abelian map as a weighted Hilbert-space value. It vanishes at zero, has zero output mode and full norm<=K*(||u||+||u||^2). Its actual native Frechet derivative, on every complex zero-mean direction h, has every signed component h(j)/sqrt(2*|j|*pi). First/closed gaps and nonzero source means are included in the map construction.
 
