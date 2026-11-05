@@ -192,6 +192,7 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
   NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction
   NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
+  NLS/SequenceSpaces/WeightedFiniteCoefficients
   NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
   NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
   NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
@@ -308,6 +309,7 @@ modules=(
   NLS/MKdV/MiuraHierarchyFlowRestriction
   NLS/DifferentialPolynomial/EulerOrderBounds
   NLS/ZakharovShabat/SobolevPolynomialL2
+  NLS/Fourier/PeriodTwoRestriction
   NLS/Fourier/CircleUnitCoefficients
   NLS/ZakharovShabat/SobolevPolynomialVariation
   NLS/ZakharovShabat/SobolevSourceCotangent
@@ -1281,6 +1283,14 @@ modules=(
   NLS/KdV/HillNativeAbelianRealEquivariance
   NLS/SequenceSpaces/DeletedRealLocalInverse
   NLS/Articles/KdVKdV2Frequencies/NativeRealAbelianInverse
+  NLS/KdV/HillUnitRealSourceUnembed
+  NLS/KdV/HillNativeAbelianScalarTransport
+  NLS/SequenceSpaces/WeightedSignedModeGenerator
+  NLS/KdV/HillUnitActionDirections
+  NLS/KdV/HillNativeAbelianActionDerivative
+  NLS/ComplexAnalysis/AnalyticInverseVectorFields
+  NLS/KdV/HillNativeAbelianActionVector
+  NLS/Articles/KdVKdV2Frequencies/NativeActionHamiltonianFields
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

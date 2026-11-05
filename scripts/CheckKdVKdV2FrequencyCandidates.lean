@@ -1,3 +1,13 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeActionHamiltonianFields
+import NLS.KdV.HillNativeAbelianActionVector
+import NLS.ComplexAnalysis.AnalyticInverseVectorFields
+import NLS.KdV.HillNativeAbelianActionDerivative
+import NLS.KdV.HillUnitActionDirections
+import NLS.SequenceSpaces.WeightedSignedModeGenerator
+import NLS.KdV.HillNativeAbelianScalarTransport
+import NLS.KdV.HillUnitRealSourceUnembed
+import NLS.Fourier.PeriodTwoRestriction
+import NLS.SequenceSpaces.WeightedFiniteCoefficients
 import NLS.Articles.KdVKdV2Frequencies.NativeRealAbelianInverse
 import NLS.KdV.HillNativeAbelianRealEquivariance
 import NLS.SequenceSpaces.DeletedRealLocalInverse
@@ -591,6 +601,7 @@ run_cmd do
     `NLS.Articles.KdVKdV2Frequencies.SignedPhaseFlow,
     `NLS.Articles.KdVKdV2Frequencies.MassPhaseObstruction,
     `NLS.Articles.KdVKdV2Frequencies.SmoothKdVIdentities,
+    `NLS.SequenceSpaces.WeightedFiniteCoefficients,
     `NLS.Articles.KdVKdV2Frequencies.SignedMassDivergence,
     `NLS.Articles.KdVKdV2Frequencies.SignedMassInsertion,
     `NLS.Articles.KdVKdV2Frequencies.FixedTimeNonextension,
@@ -707,6 +718,7 @@ run_cmd do
     `NLS.MKdV.MiuraHierarchyFlowRestriction,
     `NLS.DifferentialPolynomial.EulerOrderBounds,
     `NLS.ZakharovShabat.SobolevPolynomialL2,
+    `NLS.Fourier.PeriodTwoRestriction,
     `NLS.Fourier.CircleUnitCoefficients,
     `NLS.ZakharovShabat.SobolevPolynomialVariation,
     `NLS.ZakharovShabat.SobolevSourceCotangent,
@@ -1679,7 +1691,15 @@ run_cmd do
     `NLS.KdV.HillUnitRealSourceCoordinates,
     `NLS.KdV.HillNativeAbelianRealEquivariance,
     `NLS.SequenceSpaces.DeletedRealLocalInverse,
-    `NLS.Articles.KdVKdV2Frequencies.NativeRealAbelianInverse
+    `NLS.Articles.KdVKdV2Frequencies.NativeRealAbelianInverse,
+    `NLS.KdV.HillUnitRealSourceUnembed,
+    `NLS.KdV.HillNativeAbelianScalarTransport,
+    `NLS.SequenceSpaces.WeightedSignedModeGenerator,
+    `NLS.KdV.HillUnitActionDirections,
+    `NLS.KdV.HillNativeAbelianActionDerivative,
+    `NLS.ComplexAnalysis.AnalyticInverseVectorFields,
+    `NLS.KdV.HillNativeAbelianActionVector,
+    `NLS.Articles.KdVKdV2Frequencies.NativeActionHamiltonianFields
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

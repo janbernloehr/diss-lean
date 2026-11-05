@@ -1147,3 +1147,14 @@ See `NATIVE_REAL_ABELIAN_INVERSE.md`. Global bijectivity, canonicality, arbitrar
 Prior strict evidence for all 1258 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules and four unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1272 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1305 frozen source/checker/provenance hashes, 30 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the ten new proof modules; the four canonical helpers were already in the imported closure. No repeated full 1272-module rebuild is claimed.
 
 Fresh audit: 11104 selected and 33199 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest native physical action Hamiltonian fields
+
+One common complex mean-zero L2 Abelian inverse chart now supports analytic vector fields for EVERY positive action index. The actual native weighted derivative sends each field to its exact signed coordinate rotation, +i at the positive mode and -i at its negative partner. At EVERY actual real source in the chart, these fields are the original physical action Hamiltonian directions, including sources with closed gaps. The map, inverse and neighborhoods precede all action and output indices.
+
+See `NATIVE_ACTION_HAMILTONIAN_FIELDS.md`. Complete coordinate-coordinate canonical brackets, global bijectivity/canonicality, arbitrary-base inverse neighborhoods, the full s>=-1 scale and Hamiltonian/frequency/PDE main conclusions remain open.
+
+Prior strict evidence for all 1272 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules and two unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1282 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1316 frozen source/checker/provenance hashes, 31 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the eight new proof modules; both canonical helpers were already in the imported closure. No repeated full 1282-module rebuild is claimed.
+
+Fresh audit: 11197 selected and 33265 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

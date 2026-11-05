@@ -1,0 +1,19 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "scope": "Canonical parity sampling and raw weighted coefficient evaluation, reused to connect the actual native weighted Abelian derivative and its local inverse to the original physical action Hamiltonian directions. Both unchanged source files are newly selected, strictly compiled privately at default heartbeats and transitively audited. No canonical modification or branch merge.",
+  "files": [
+    {
+      "path": "NLS/Fourier/PeriodTwoRestriction.lean",
+      "source_sha256": "21bfd684a375e0e6035d8e649a722bd49c5db2284d8fc3b67ae04a7d32e956e8",
+      "local_sha256": "21bfd684a375e0e6035d8e649a722bd49c5db2284d8fc3b67ae04a7d32e956e8",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedFiniteCoefficients.lean",
+      "source_sha256": "0e2f288406c36fe93b5882aa13a5cf081871bd8ecf75c1214e7586b4f2c244d9",
+      "local_sha256": "0e2f288406c36fe93b5882aa13a5cf081871bd8ecf75c1214e7586b4f2c244d9",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}
