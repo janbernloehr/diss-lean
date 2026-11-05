@@ -6222,3 +6222,7 @@ import NLS.KdV.HillHminusPrescribedPhasePullback
 import NLS.KdV.HillHminusPhysicalPhasePaths
 import NLS.SequenceSpaces.PairedPositiveOffIndexSeries
 import NLS.KdV.HillHminusPairedSourceCorrection
+import NLS.SequenceSpaces.OrderedSignedSimpleEnumeration
+import NLS.KdV.MiuraDirichletSignedSymmetry
+import NLS.KdV.HillHminusDirichletSignedReflection
+import NLS.ZakharovShabat.SourceAngularRightEndpointPath

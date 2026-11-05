@@ -1299,6 +1299,10 @@ import NLS.KdV.HillHminusPrescribedPhasePullback
 import NLS.KdV.HillHminusPhysicalPhasePaths
 import NLS.SequenceSpaces.PairedPositiveOffIndexSeries
 import NLS.KdV.HillHminusPairedSourceCorrection
+import NLS.SequenceSpaces.OrderedSignedSimpleEnumeration
+import NLS.KdV.MiuraDirichletSignedSymmetry
+import NLS.KdV.HillHminusDirichletSignedReflection
+import NLS.ZakharovShabat.SourceAngularRightEndpointPath
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2428,7 +2432,12 @@ run_cmd do
     ``NLS.ZakharovShabat.sourceCanonicalRoot_sourcePhase,
     ``NLS.ZakharovShabat.sourcePeriodicSegment_sourcePhase,
     ``NLS.ZakharovShabat.sourceStandardRootOmittedProduct_sourcePhase,
-    ``NLS.ZakharovShabat.sourceStandardRoot_sourcePhase]
+    ``NLS.ZakharovShabat.sourceStandardRoot_sourcePhase,
+    ``NLS.ZakharovShabat.SourceAngularDirichletPrimitiveData.right_pathIntegral_eq_beta,
+    ``NLS.ZakharovShabat.SourceAngularDirichletPrimitiveData.right_pathIntegral_eq_terminal,
+    ``NLS.ZakharovShabat.SourceAngularSheetPrimitiveData.right_endpoint_pathIntegral_eq_value,
+    ``NLS.finsum_double_singleton_count_of_injective,
+    ``NLS.ordered_signed_simple_unique_of_l2]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
