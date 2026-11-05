@@ -1900,6 +1900,12 @@ import NLS.SequenceSpaces.AnalyticMiuraH1Recovery
 import NLS.SequenceSpaces.AnalyticMiuraSmoothingRemainder
 import NLS.KdV.HillMiuraL2AnalyticRegularity
 import NLS.KdV.HillRotatedDiracL2Regularity
+import NLS.SequenceSpaces.WeightedSignedPositiveSplice
+import NLS.SequenceSpaces.SobolevEvenReciprocal
+import NLS.ZakharovShabat.SourceDirichletTerminalFourierSmoothing
+import NLS.ZakharovShabat.SourceSignedTerminalOneSmoothing
+import NLS.ZakharovShabat.SourceNormalizedMidpointOneSmoothing
+import NLS.KdV.HillRotatedDiracTerminalSmoothing
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11226,3 +11232,24 @@ import NLS.KdV.HillRotatedDiracL2Regularity
 #print axioms NLS.KdV.HillProductEquationPatch.rotatedDiracL2Lift
 #print axioms NLS.KdV.HillProductEquationPatch.analytic_rotatedDiracL2Lift
 #print axioms NLS.KdV.HillProductEquationPatch.sobolevSourceInclusion_rotatedDiracL2Lift
+#print axioms NLS.WeightedCoeff.signedPositiveSplice
+#print axioms NLS.WeightedCoeff.signedPositiveSplice_positive
+#print axioms NLS.WeightedCoeff.signedPositiveSplice_negative
+#print axioms NLS.WeightedCoeff.signedPositiveSplice_zero
+#print axioms NLS.Coeff.evenReciprocalSymbol
+#print axioms NLS.Coeff.evenReciprocalSymbol_weight_bound
+#print axioms NLS.Coeff.sobolevEvenReciprocal
+#print axioms NLS.Coeff.sobolevEvenReciprocal_apply
+#print axioms NLS.ZakharovShabat.sourceGapWeightedEtaTerminal_fourier_decomposition
+#print axioms NLS.ZakharovShabat.sourceTerminalFourierRemainder
+#print axioms NLS.ZakharovShabat.exists_local_sourceTerminalFourierRemainder_analytic
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalFourier_zero
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalFourierRemainder
+#print axioms NLS.ZakharovShabat.exists_local_sourceSignedTerminalFourierRemainder_analytic
+#print axioms NLS.ZakharovShabat.sourcePositiveNormalizedMidpoint_sub_one_eq_displacement
+#print axioms NLS.ZakharovShabat.sourceNormalizedMidpointSobolevRemainder
+#print axioms NLS.ZakharovShabat.SourceLemma12_12Data.normalized_midpoint_one_smoothing
+#print axioms NLS.ZakharovShabat.exists_sourceNormalizedMidpoint_one_smoothing_domain
+#print axioms NLS.KdV.HillProductEquationPatch.l2TerminalFourierRemainder
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_l2TerminalFourierRemainder
+#print axioms NLS.KdV.HillProductEquationPatch.eventually_l2TerminalFourierRemainder_apply

@@ -1934,6 +1934,12 @@ modules = [
     'NLS.SequenceSpaces.AnalyticMiuraSmoothingRemainder',
     'NLS.KdV.HillMiuraL2AnalyticRegularity',
     'NLS.KdV.HillRotatedDiracL2Regularity',
+    'NLS.SequenceSpaces.WeightedSignedPositiveSplice',
+    'NLS.SequenceSpaces.SobolevEvenReciprocal',
+    'NLS.ZakharovShabat.SourceDirichletTerminalFourierSmoothing',
+    'NLS.ZakharovShabat.SourceSignedTerminalOneSmoothing',
+    'NLS.ZakharovShabat.SourceNormalizedMidpointOneSmoothing',
+    'NLS.KdV.HillRotatedDiracTerminalSmoothing',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -322,9 +322,30 @@
         "NLS.KdV.HillProductEquationPatch.l2Source_open",
         "NLS.KdV.HillProductEquationPatch.rotatedDiracL2Lift",
         "NLS.KdV.HillProductEquationPatch.analytic_rotatedDiracL2Lift",
-        "NLS.KdV.HillProductEquationPatch.sobolevSourceInclusion_rotatedDiracL2Lift"
+        "NLS.KdV.HillProductEquationPatch.sobolevSourceInclusion_rotatedDiracL2Lift",
+        "NLS.WeightedCoeff.signedPositiveSplice",
+        "NLS.WeightedCoeff.signedPositiveSplice_positive",
+        "NLS.WeightedCoeff.signedPositiveSplice_negative",
+        "NLS.WeightedCoeff.signedPositiveSplice_zero",
+        "NLS.Coeff.evenReciprocalSymbol",
+        "NLS.Coeff.evenReciprocalSymbol_weight_bound",
+        "NLS.Coeff.sobolevEvenReciprocal",
+        "NLS.Coeff.sobolevEvenReciprocal_apply",
+        "NLS.ZakharovShabat.sourceGapWeightedEtaTerminal_fourier_decomposition",
+        "NLS.ZakharovShabat.sourceTerminalFourierRemainder",
+        "NLS.ZakharovShabat.exists_local_sourceTerminalFourierRemainder_analytic",
+        "NLS.ZakharovShabat.sourceSignedTerminalFourier_zero",
+        "NLS.ZakharovShabat.sourceSignedTerminalFourierRemainder",
+        "NLS.ZakharovShabat.exists_local_sourceSignedTerminalFourierRemainder_analytic",
+        "NLS.ZakharovShabat.sourcePositiveNormalizedMidpoint_sub_one_eq_displacement",
+        "NLS.ZakharovShabat.sourceNormalizedMidpointSobolevRemainder",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.normalized_midpoint_one_smoothing",
+        "NLS.ZakharovShabat.exists_sourceNormalizedMidpoint_one_smoothing_domain",
+        "NLS.KdV.HillProductEquationPatch.l2TerminalFourierRemainder",
+        "NLS.KdV.HillProductEquationPatch.analytic_l2TerminalFourierRemainder",
+        "NLS.KdV.HillProductEquationPatch.eventually_l2TerminalFourierRemainder_apply"
       ],
-      "qualification": "UNPROVED. Actual complex L2 Miura and SAME rotated Dirac source analytically take values in H1; exact massive-linear Miura remainder is analytic in H2. The actual native coordinate H3/2 defect is still open, including actual terminal, normalized amplitude and off-index phase estimates. Final original Wiener distribution transport and main statement remain required."
+      "qualification": "UNPROVED. Actual Miura H1 and H2 massive-linear remainder, SAME signed terminal H2 Fourier defect and actual normalized midpoint H1 remainder are proved. Actual native coordinate H3/2 defect still needs product/half-weight transport, principal comparison and signed off-index phase regularity. Final original physical Wiener transport and main statement remain required."
     },
     {
       "label": "5.9",
@@ -432,7 +453,28 @@
         "NLS.KdV.HillProductEquationPatch.l2Source_open",
         "NLS.KdV.HillProductEquationPatch.rotatedDiracL2Lift",
         "NLS.KdV.HillProductEquationPatch.analytic_rotatedDiracL2Lift",
-        "NLS.KdV.HillProductEquationPatch.sobolevSourceInclusion_rotatedDiracL2Lift"
+        "NLS.KdV.HillProductEquationPatch.sobolevSourceInclusion_rotatedDiracL2Lift",
+        "NLS.WeightedCoeff.signedPositiveSplice",
+        "NLS.WeightedCoeff.signedPositiveSplice_positive",
+        "NLS.WeightedCoeff.signedPositiveSplice_negative",
+        "NLS.WeightedCoeff.signedPositiveSplice_zero",
+        "NLS.Coeff.evenReciprocalSymbol",
+        "NLS.Coeff.evenReciprocalSymbol_weight_bound",
+        "NLS.Coeff.sobolevEvenReciprocal",
+        "NLS.Coeff.sobolevEvenReciprocal_apply",
+        "NLS.ZakharovShabat.sourceGapWeightedEtaTerminal_fourier_decomposition",
+        "NLS.ZakharovShabat.sourceTerminalFourierRemainder",
+        "NLS.ZakharovShabat.exists_local_sourceTerminalFourierRemainder_analytic",
+        "NLS.ZakharovShabat.sourceSignedTerminalFourier_zero",
+        "NLS.ZakharovShabat.sourceSignedTerminalFourierRemainder",
+        "NLS.ZakharovShabat.exists_local_sourceSignedTerminalFourierRemainder_analytic",
+        "NLS.ZakharovShabat.sourcePositiveNormalizedMidpoint_sub_one_eq_displacement",
+        "NLS.ZakharovShabat.sourceNormalizedMidpointSobolevRemainder",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.normalized_midpoint_one_smoothing",
+        "NLS.ZakharovShabat.exists_sourceNormalizedMidpoint_one_smoothing_domain",
+        "NLS.KdV.HillProductEquationPatch.l2TerminalFourierRemainder",
+        "NLS.KdV.HillProductEquationPatch.analytic_l2TerminalFourierRemainder",
+        "NLS.KdV.HillProductEquationPatch.eventually_l2TerminalFourierRemainder_apply"
       ]
     }
   ],
@@ -3810,6 +3852,34 @@
         "NLS.KdV.HillProductEquationPatch.sobolevSourceInclusion_rotatedDiracL2Lift"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-miura-l2-regularity-map.json"
+    },
+    {
+      "label": "Actual literal terminal one-smoothing at all positive integer orders; same Hill L2 terminal H2 defect and original normalized midpoint H1 remainder",
+      "status": "Literal terminal-minus-Fourier one-smoothing is proved at every positive integer Sobolev order, directly from the actual midpoint/sine errors. The SAME actual Hill rotated L2 source has an analytic H2 terminal defect. The actual normalized midpoint minus one is analytic in H1 already on its complex rough Dirac L2 domain. Actual native base one-smoothing and Main5.1/5.9 remain open.",
+      "declarations": [
+        "NLS.WeightedCoeff.signedPositiveSplice",
+        "NLS.WeightedCoeff.signedPositiveSplice_positive",
+        "NLS.WeightedCoeff.signedPositiveSplice_negative",
+        "NLS.WeightedCoeff.signedPositiveSplice_zero",
+        "NLS.Coeff.evenReciprocalSymbol",
+        "NLS.Coeff.evenReciprocalSymbol_weight_bound",
+        "NLS.Coeff.sobolevEvenReciprocal",
+        "NLS.Coeff.sobolevEvenReciprocal_apply",
+        "NLS.ZakharovShabat.sourceGapWeightedEtaTerminal_fourier_decomposition",
+        "NLS.ZakharovShabat.sourceTerminalFourierRemainder",
+        "NLS.ZakharovShabat.exists_local_sourceTerminalFourierRemainder_analytic",
+        "NLS.ZakharovShabat.sourceSignedTerminalFourier_zero",
+        "NLS.ZakharovShabat.sourceSignedTerminalFourierRemainder",
+        "NLS.ZakharovShabat.exists_local_sourceSignedTerminalFourierRemainder_analytic",
+        "NLS.ZakharovShabat.sourcePositiveNormalizedMidpoint_sub_one_eq_displacement",
+        "NLS.ZakharovShabat.sourceNormalizedMidpointSobolevRemainder",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.normalized_midpoint_one_smoothing",
+        "NLS.ZakharovShabat.exists_sourceNormalizedMidpoint_one_smoothing_domain",
+        "NLS.KdV.HillProductEquationPatch.l2TerminalFourierRemainder",
+        "NLS.KdV.HillProductEquationPatch.analytic_l2TerminalFourierRemainder",
+        "NLS.KdV.HillProductEquationPatch.eventually_l2TerminalFourierRemainder_apply"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-terminal-one-smoothing-map.json"
     }
   ],
   "reuse_map": [
@@ -3889,7 +3959,7 @@
     }
   ],
   "remaining_obligations": [
-    "Prove the ACTUAL base estimate HillIntegerNativeOneSmoothing0: a real analytic map R from genuine physical real zero-mean L2 to genuine signed H^(3/2), with EVERY raw coefficient R(q)_k equal to the SAME actual hillIntegerSobolevEquiv0(q)_k minus halfFourierSymbol(k)*q_k. The all-integer lift and literal Wiener diffeomorphism/inverse consequences are now proved CONDITIONALLY. Existing rough compact Jacobian results do not imply this one-order smoothing estimate. The actual L2-to-H1 analytic Miura lift, its H2 massive-linear remainder and the SAME rotated Dirac H1 source are now proved. Next upgrade the actual sourceHillTerminalModel, normalized midpoint amplitude and signed off-index phase defects; do not substitute the distinct NLS Birkhoff map. A concrete possible terminal route is to COMBINE the proved NLS Birkhoff-minus-Fourier H2 remainder (SourceBirkhoffNativeRealRemainders / SourceSobolevNativeProjection) with the EXACT Birkhoff-minus-terminal H2 identity (SourceBirkhoffComplexSpectralTerminalAnalytic); subtracting those actual coefficient identities could prove terminal-minus-Fourier H2 without identifying the two Birkhoff maps. Check signed rectangular-coordinate conversion and all source adapters explicitly. This deduction has NOT yet been proved.",
+    "Prove ACTUAL HillIntegerNativeOneSmoothing0: real analytic native Fourier defect from the ENTIRE actual real zero-mean L2 source to actual signed H^(3/2), EVERY raw coefficient equal to SAME e0(q)_k-halfFourierSymbol(k)*q_k. INPUTS NOW PROVED: actual complex analytic Miura H1 lift and H2 massive-linear remainder; SAME rotated source H1 lift; its actual signed terminal-minus-Fourier H2 defect; actual normalized midpoint-minus-one H1 sequence on complex original Dirac L2 domain. NEXT combine pointwise weighted products, actual native half-weight transport and exact massive-principal/free-Fourier comparison for the actual physical spectral core. Then prove needed one-order regularity for actual signed off-index phase/native diagonal gauge; rough bounded/compact derivative facts are insufficient. Do not substitute the distinct NLS Birkhoff map. Concrete next formula to VERIFY, not yet proved: the original massive principal sourceHillTerminalFourier(sourcePhase(hillMiuraDiagonal(periodOneMassL2ToH1(0,q) under scalar inclusion))) should have raw halfFourierSymbol(k)*(1-periodOneMassSymbol(0,k)^-1)*q_k at every signed mode, including zero. The expected principal-minus-free error is therefore -halfFourierSymbol(k)*periodOneMassSymbol(0,k)^-1*q_k, an explicit L2-to-native-H3/2 CLM via the proved massive resolvent and order-one half-Fourier equivalence. For the model nonlinear defect, form analytic H1 terminal = weighted free signed source plus inclusion of the proved H2 terminal defect, multiply by the actual H1 midpoint defect to get H2 pointwise product, and transport H2 by the original signed-minus-half inverse weight to H3/2. These deductions still require Lean proofs and exact constant checks.",
     "Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates.",
     "For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement.",
     "Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE."
@@ -8053,5 +8123,24 @@
       "5.9"
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-miura-l2-regularity-map.json"
+  },
+  "actual_Hill_terminal_one_smoothing": {
+    "actual_literal_terminal_Fourier_decomposition_ALL_complex_signs_PROVED": true,
+    "actual_terminal_one_smoothing_ALL_positive_integer_source_orders_PROVED": true,
+    "SAME_actual_signed_terminal_one_smoothing_ALL_positive_orders_PROVED": true,
+    "SAME_actual_Hill_L2_rotated_terminal_defect_H2_analytic_PROVED": true,
+    "SAME_actual_Hill_terminal_defect_ENTIRE_complex_local_coefficient_identity_PROVED": true,
+    "actual_normalized_midpoint_minus_one_H1_analytic_on_rough_Dirac_L2_domain_PROVED": true,
+    "exact_original_pi_n_and_signed_zero_mode_retained_PROVED": true,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-terminal-one-smoothing-map.json"
   }
 }

@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Actual complex L2 Hill Miura lifts analytically take values in H1; their exact massive-linear remainder is analytic in H2. The SAME rotated Dirac source has an analytic H1 representative. Native base one-smoothing and Main5.1/5.9 remain open.",
+  "phase": "Literal terminal-minus-Fourier one-smoothing is proved at every positive integer Sobolev order, directly from the actual midpoint/sine errors. The SAME actual Hill rotated L2 source has an analytic H2 terminal defect. The actual normalized midpoint minus one is analytic in H1 already on its complex rough Dirac L2 domain. Actual native base one-smoothing and Main5.1/5.9 remain open.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1908,13 +1908,19 @@
     "NLS/SequenceSpaces/AnalyticMiuraSmoothingRemainder.lean",
     "NLS/KdV/HillMiuraL2AnalyticRegularity.lean",
     "NLS/KdV/HillRotatedDiracL2Regularity.lean",
+    "NLS/SequenceSpaces/WeightedSignedPositiveSplice.lean",
+    "NLS/SequenceSpaces/SobolevEvenReciprocal.lean",
+    "NLS/ZakharovShabat/SourceDirichletTerminalFourierSmoothing.lean",
+    "NLS/ZakharovShabat/SourceSignedTerminalOneSmoothing.lean",
+    "NLS/ZakharovShabat/SourceNormalizedMidpointOneSmoothing.lean",
+    "NLS/KdV/HillRotatedDiracTerminalSmoothing.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7841,
-  "definitions": 1482,
+  "proved_theorems": 7855,
+  "definitions": 1489,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 9323,
+    "declarations": 9344,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3321,10 +3327,16 @@
     "AnalyticMiuraSmoothingRemainder constructs the analytic H2 polynomial M^-1(u-u*u) for H1 lifts. Under the original weak equation its ENTIRE raw sequence is u_k - M(k)^-1*q_k. H1 convolution is the existing actual bounded Sobolev algebra product.",
     "HillMiuraL2AnalyticRegularity applies the explicit recovery to EVERY actual Hill Miura action ball on its complex L2 source preimage. Its H1 lift is analytic and equals the SAME original rough lift in every coefficient. The H2 remainder after M^-1 times q plus the ORIGINAL fixed energy shift is analytic, with exact raw identity.",
     "HillRotatedDiracL2Regularity proves that the SAME phase-rotated Dirac source used by the actual Hill spectral-core bridge has an analytic H1 representative on the actual complex L2 patch preimage. The original Sobolev inclusion yields the entire original two-component source, with phases +i and -i unchanged.",
-    "This closes the actual analytic Miura/rotated-source H1 input obligation for the L2 native smoothing route. It does NOT prove terminal-coordinate, normalized-amplitude or signed off-index one-smoothing. Actual native base smoothing and Main5.1/5.9 remain OPEN; Main1.1/1.3/1.4 remain proved."
+    "This closes the actual analytic Miura/rotated-source H1 input obligation for the L2 native smoothing route. It does NOT prove terminal-coordinate, normalized-amplitude or signed off-index one-smoothing. Actual native base smoothing and Main5.1/5.9 remain OPEN; Main1.1/1.3/1.4 remain proved.",
+    "WeightedSignedPositiveSplice gives a bounded linear splice on EVERY even weighted Banach sequence space, retaining exact positive/negative labels and central zero. SobolevEvenReciprocal gives an exact all-exponent one-order Sobolev gain from even positive sampling divided by the ORIGINAL pi*n, with zero central coefficient.",
+    "SourceDirichletTerminalFourierSmoothing proves the exact identity T(sign)-F(sign)=-2*A-2*sign*i*B at EVERY complex source, index and sign. A and B are the original midpoint and sine Fourier errors. Their PROVED analytic one-order estimates yield actual terminal-minus-Fourier analyticity in H^(m+1) at EVERY integer m>=1 on complex neighborhoods of EVERY real Hm source, including collapsed gaps. No identification of different Birkhoff maps is used.",
+    "SourceSignedTerminalOneSmoothing proves a SINGLE actual signed terminal Fourier defect in H^(m+1), analytic on a complex Hm neighborhood of EVERY real source, at EVERY integer m>=1. Every raw coefficient is SAME sourceSignedTerminalSequence minus sourceSignedTerminalFourier; both chosen positive labels and central zero are retained.",
+    "HillRotatedDiracTerminalSmoothing composes the SAME actual rotated Dirac H1 lift with the coefficient-preserving higherSobolevSourceOneEquiv. At EVERY real L2 source in the original patch, l2TerminalFourierRemainder is complex analytic in H2 and its ENTIRE raw sequence equals the SAME actual rotated source terminal minus its exact signed free Fourier map on a complex neighborhood.",
+    "SourceNormalizedMidpointOneSmoothing proves that the actual normalized midpoint symbol minus one is analytic into H1 on a single complex original Dirac L2 domain containing the ENTIRE real locus. The exact raw identity includes both signed tails and zero. It uses the actual periodic midpoint displacement sequence divided by ORIGINAL pi*n. This supplies stronger norm analyticity, not only an O(1/n) pointwise assertion.",
+    "The actual terminal H2 and normalized-midpoint H1 input estimates are now closed. Native half-weight transport/product estimates, the actual massive-principal/free-Fourier comparison and signed off-index phase regularity still have to be combined to prove HillIntegerNativeOneSmoothing0. Main1.1/1.3/1.4 remain proved; Main5.1/5.9 remain OPEN; goal ACTIVE."
   ],
-  "source_correspondence": "Actual complex L2 Hill Miura lifts analytically take values in H1; their exact massive-linear remainder is analytic in H2. The SAME rotated Dirac source has an analytic H1 representative. Native base one-smoothing and Main5.1/5.9 remain open. Prove the ACTUAL base estimate HillIntegerNativeOneSmoothing0: a real analytic map R from genuine physical real zero-mean L2 to genuine signed H^(3/2), with EVERY raw coefficient R(q)_k equal to the SAME actual hillIntegerSobolevEquiv0(q)_k minus halfFourierSymbol(k)*q_k. The all-integer lift and literal Wiener diffeomorphism/inverse consequences are now proved CONDITIONALLY. Existing rough compact Jacobian results do not imply this one-order smoothing estimate. The actual L2-to-H1 analytic Miura lift, its H2 massive-linear remainder and the SAME rotated Dirac H1 source are now proved. Next upgrade the actual sourceHillTerminalModel, normalized midpoint amplitude and signed off-index phase defects; do not substitute the distinct NLS Birkhoff map. A concrete possible terminal route is to COMBINE the proved NLS Birkhoff-minus-Fourier H2 remainder (SourceBirkhoffNativeRealRemainders / SourceSobolevNativeProjection) with the EXACT Birkhoff-minus-terminal H2 identity (SourceBirkhoffComplexSpectralTerminalAnalytic); subtracting those actual coefficient identities could prove terminal-minus-Fourier H2 without identifying the two Birkhoff maps. Check signed rectangular-coordinate conversion and all source adapters explicitly. This deduction has NOT yet been proved. Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates. For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1896 baseline non-audit registered Lean sources byte-identical to 8333bb8. All 6 new modules (26 theorems+9 definitions), 2 canonical-byte-identical modules, 9 unchanged private dependencies and EXACT 9323-declaration standard-axiom audit freshly compiled privately. Actual complex analytic L2-to-H1 Miura/rotated Dirac source and H2 massive-linear remainder proved. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1903-module build.",
+  "source_correspondence": "Literal terminal-minus-Fourier one-smoothing is proved at every positive integer Sobolev order, directly from the actual midpoint/sine errors. The SAME actual Hill rotated L2 source has an analytic H2 terminal defect. The actual normalized midpoint minus one is analytic in H1 already on its complex rough Dirac L2 domain. Actual native base one-smoothing and Main5.1/5.9 remain open. Prove ACTUAL HillIntegerNativeOneSmoothing0: real analytic native Fourier defect from the ENTIRE actual real zero-mean L2 source to actual signed H^(3/2), EVERY raw coefficient equal to SAME e0(q)_k-halfFourierSymbol(k)*q_k. INPUTS NOW PROVED: actual complex analytic Miura H1 lift and H2 massive-linear remainder; SAME rotated source H1 lift; its actual signed terminal-minus-Fourier H2 defect; actual normalized midpoint-minus-one H1 sequence on complex original Dirac L2 domain. NEXT combine pointwise weighted products, actual native half-weight transport and exact massive-principal/free-Fourier comparison for the actual physical spectral core. Then prove needed one-order regularity for actual signed off-index phase/native diagonal gauge; rough bounded/compact derivative facts are insufficient. Do not substitute the distinct NLS Birkhoff map. Concrete next formula to VERIFY, not yet proved: the original massive principal sourceHillTerminalFourier(sourcePhase(hillMiuraDiagonal(periodOneMassL2ToH1(0,q) under scalar inclusion))) should have raw halfFourierSymbol(k)*(1-periodOneMassSymbol(0,k)^-1)*q_k at every signed mode, including zero. The expected principal-minus-free error is therefore -halfFourierSymbol(k)*periodOneMassSymbol(0,k)^-1*q_k, an explicit L2-to-native-H3/2 CLM via the proved massive resolvent and order-one half-Fourier equivalence. For the model nonlinear defect, form analytic H1 terminal = weighted free signed source plus inclusion of the proved H2 terminal defect, multiply by the actual H1 midpoint defect to get H2 pointwise product, and transport H2 by the original signed-minus-half inverse weight to H3/2. These deductions still require Lean proofs and exact constant checks. Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates. For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1902 baseline non-audit registered Lean sources byte-identical to c625d0b. All 6 new modules (14 theorems+7 definitions), 4 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9344-declaration standard-axiom audit freshly compiled privately. Actual all-positive-order terminal Fourier smoothing, SAME actual Hill rotated L2 terminal H2 defect and normalized midpoint H1 remainder proved. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1909-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -5231,7 +5243,13 @@
     "NLS/SequenceSpaces/AnalyticMiuraH1Recovery.lean": "95bbfbbd70af691b12a46576c449d9b0d2c738e2c242db9c1615c587c04557b9",
     "NLS/SequenceSpaces/AnalyticMiuraSmoothingRemainder.lean": "23767b85210059a74e13db1fa4e98b167b43658a34f9b461e0d62b91fa802dd7",
     "NLS/KdV/HillMiuraL2AnalyticRegularity.lean": "2c7010c104e2cb5de6f188c1ff7f27b6e82fa34c9a73715e252bc89954fa435b",
-    "NLS/KdV/HillRotatedDiracL2Regularity.lean": "707e6ef51335fd96f75c6a9027426eab97151f770ded3a0bef9e03d56d3f0316"
+    "NLS/KdV/HillRotatedDiracL2Regularity.lean": "707e6ef51335fd96f75c6a9027426eab97151f770ded3a0bef9e03d56d3f0316",
+    "NLS/SequenceSpaces/WeightedSignedPositiveSplice.lean": "f8f968c3e01b2a6105f349de44c6bcb2daf3cca24b00104b8c264ca8d11a4720",
+    "NLS/SequenceSpaces/SobolevEvenReciprocal.lean": "2805a41d2a2f4b472b6265924715c4361543aa955517276e25c130e4281d76d2",
+    "NLS/ZakharovShabat/SourceDirichletTerminalFourierSmoothing.lean": "b1640d8dba19a6af9e41c8458785fe038cb25000f297663a2a7a02a54ba65488",
+    "NLS/ZakharovShabat/SourceSignedTerminalOneSmoothing.lean": "f2304037b1fe7de635ecd0b809c30916865a5c7a89c30a6ad761a7543c4147b2",
+    "NLS/ZakharovShabat/SourceNormalizedMidpointOneSmoothing.lean": "1cee65f692787699aaaf9fbbe8d0a636665e3c2f89952bd6bb7c7e0650c7e44a",
+    "NLS/KdV/HillRotatedDiracTerminalSmoothing.lean": "238c0ab2fc17a8494a19dd4e59649254c6b5407df90c6a905a8cf37639655ad5"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -5239,11 +5257,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 9288,
-    "newly_checked_declarations_this_continuation": 35,
-    "new_theorems": 26,
-    "new_definitions": 9,
-    "total_checked_declarations": 9323
+    "previous_checked_declarations": 9323,
+    "newly_checked_declarations_this_continuation": 21,
+    "new_theorems": 14,
+    "new_definitions": 7,
+    "total_checked_declarations": 9344
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -5272,7 +5290,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-miura-l2-regularity.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-terminal-one-smoothing.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5656,13 +5674,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1875 baseline non-audit registered Lean sources byte-identical to b391edc. All 3 new modules (19 theorems+5 definitions), 0 canonical-byte-identical modules, 8 unchanged private dependencies and EXACT 9191-declaration standard-axiom audit freshly compiled privately. SAME actual original physical rough flow restricts to every endpoint, retains the entire distribution and has global endpoint norm-bounded weak-star continuous orbits. Every bounded invariant set has a continuous compact-open weak-star trajectory map; no closedness assumption. Main1.1/1.3 canonical endpoint conclusions proved; precise final source main statements and original rough-solution-definition identification remain open. Main1.4 freshly recompiled; FOUR other mains UNPROVED. Literal Wiener conclusions remain open. No new resource limits, suppressions or extra axioms. Not a full fresh 1879-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1878 baseline non-audit registered Lean sources byte-identical to f342d98. All 9 new modules (28 theorems+8 definitions), 0 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9227-declaration standard-axiom audit freshly compiled privately. Constructed jointly smooth classical PDE approximants for EVERY rough source; exact EVERY-classical-family rough solution is NONVACUOUS and UNIQUE in the original physical distribution space. Complete precise source Main1.1 and Main1.3 proved in original endpoint norm/Wiener weak-star topologies and full compact-open trajectory topology. Main1.4 freshly recompiled. ONLY Main5.1 and Main5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1888-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1887 baseline non-audit registered Lean sources byte-identical to eae16ab. All 9 new modules (44 theorems+17 definitions), 2 canonical-byte-identical modules, 8 unchanged private dependencies and EXACT 9288-declaration standard-axiom audit freshly compiled privately. Actual literal Wiener inclusions, compact one-order Hilbert-to-Wiener embedding and exact free Fourier equivalences at p=1 proved. Analytic inverse restriction and ALL-integer actual Wiener diffeomorphism reduced to explicit actual L2 base one-smoothing hypothesis. Base hypothesis NOT proved; no unconditional Main5.1 claim. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1897-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1896 baseline non-audit registered Lean sources byte-identical to 8333bb8. All 6 new modules (26 theorems+9 definitions), 2 canonical-byte-identical modules, 9 unchanged private dependencies and EXACT 9323-declaration standard-axiom audit freshly compiled privately. Actual complex analytic L2-to-H1 Miura/rotated Dirac source and H2 massive-linear remainder proved. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1903-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1896 baseline non-audit registered Lean sources byte-identical to 8333bb8. All 6 new modules (26 theorems+9 definitions), 2 canonical-byte-identical modules, 9 unchanged private dependencies and EXACT 9323-declaration standard-axiom audit freshly compiled privately. Actual complex analytic L2-to-H1 Miura/rotated Dirac source and H2 massive-linear remainder proved. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1903-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1902 baseline non-audit registered Lean sources byte-identical to c625d0b. All 6 new modules (14 theorems+7 definitions), 4 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9344-declaration standard-axiom audit freshly compiled privately. Actual all-positive-order terminal Fourier smoothing, SAME actual Hill rotated L2 terminal H2 defect and normalized midpoint H1 remainder proved. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1909-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-miura-l2-regularity-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-terminal-one-smoothing-map.json",
   "baseline_validated_snapshot": {
-    "commit": "8333bb8c2acaa0e76d507ea07f1c7f9b12848256",
-    "modules": 1897,
-    "audited_declarations": 9288,
+    "commit": "c625d0b8734ec2defa359c14c263e1f8da2f36ee",
+    "modules": 1903,
+    "audited_declarations": 9323,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -9209,5 +9228,24 @@
       "5.9"
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-miura-l2-regularity-map.json"
+  },
+  "actual_Hill_terminal_one_smoothing": {
+    "actual_literal_terminal_Fourier_decomposition_ALL_complex_signs_PROVED": true,
+    "actual_terminal_one_smoothing_ALL_positive_integer_source_orders_PROVED": true,
+    "SAME_actual_signed_terminal_one_smoothing_ALL_positive_orders_PROVED": true,
+    "SAME_actual_Hill_L2_rotated_terminal_defect_H2_analytic_PROVED": true,
+    "SAME_actual_Hill_terminal_defect_ENTIRE_complex_local_coefficient_identity_PROVED": true,
+    "actual_normalized_midpoint_minus_one_H1_analytic_on_rough_Dirac_L2_domain_PROVED": true,
+    "exact_original_pi_n_and_signed_zero_mode_retained_PROVED": true,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-terminal-one-smoothing-map.json"
   }
 }
