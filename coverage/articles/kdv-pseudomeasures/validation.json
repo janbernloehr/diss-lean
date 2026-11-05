@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "The SAME actual physical canonical rough KdV flow preserves every admissible original endpoint space, has globally norm-bounded weak-star continuous endpoint orbits, and has a continuous compact-open weak-star trajectory map on EVERY bounded invariant endpoint subset.",
+  "phase": "Source Main1.1 and Main1.3 are proved with the exact original physical endpoint spaces and Wiener weak-star topologies. The original rough solution is characterized nonvacuously and uniquely by EVERY jointly smooth classical PDE approximation; Main1.4 remains proved. Main5.1 and Main5.9 remain unproved.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1884,13 +1884,22 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalRoughFlow.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillEndpointCanonicalFlow.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillEndpointCanonicalTrajectories.lean",
+    "NLS/SequenceSpaces/FinitePhaseSpaceTimeSmooth.lean",
+    "NLS/Fourier/PeriodOneSynthesisPhysicalReality.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalSpatialSynthesis.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteNativeSpaceTimeSmooth.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillClassicalApproximationDefinition.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillClassicalRoughSolution.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalClassicalRoughSolution.lean",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7743,
-  "definitions": 1448,
+  "proved_theorems": 7771,
+  "definitions": 1456,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 9191,
+    "declarations": 9227,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3274,10 +3283,18 @@
     "HillNormingGardnerCommutation proves ACTUAL multiplier/multiplier Gardner commutation on the ENTIREunchanged common complex Dirichlet domain, before ALLpositive indices. The actual native H1 kernels transfer by bilinear Fourier Parseval and verified Wiener density on the open domain. Closed periodic gaps are included, with no division by the periodic gap or the vanishing sheet.",
     "HillLocalSpectralDarboux scales the actual multiplier cotangents by the already verified local logarithm derivative. Logarithm/logarithm brackets vanish wherever the fixed-base logarithms are analytic, even with independent base sources. At EVERYcomplex base source the FULLlocal separated spectral matrix is now proved: {lambda_n,lambda_m}=0, {lambda_n,kappa_m}=delta_nm, {kappa_n,kappa_m}=0, for kappa=-2*log(rho/rho_base), ALLpositive indices and all closed periodic gaps. This is NOT a global Banach sequence chart or the article Abelian angle/Birkhoff canonicality.",
     "OriginalHillSpectralDarboux exports the SAMEoriginal physical potential, actual multipliers and local logarithmic normalization; their literal unit-period physical Gardner integral is zero, their closed-mean-zero cotangent bracket is intrinsic, and the full local spectral matrix holds at every original potential.",
-    "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
+    "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE.",
+    "Shared FinitePhaseSpaceTimeSmooth proves joint real C-infinity smoothness of finite-support time/spatial rotations at arbitrary weighted Banach exponent, without any frequency growth hypothesis. Physical spatial phases retain the exact 2*pi convention.",
+    "Shared PeriodOneSynthesisPhysicalReality gives the literal original Fourier mean and reality of conjugate-reflected unit-period series. OriginalHillPhysicalSpatialSynthesis proves genuine H1/H4 physical mean zero and reality, exact original H4 Fourier coefficients, and literal physical spatial translation of H1 synthesis.",
+    "OriginalHillFiniteNativeSpaceTimeSmooth proves joint C-infinity space-time regularity of actual canonical solutions from finite native data. The jointly smooth finite native phase map passes through the SAME actual strong analytic inverse; verified spatial covariance identifies evaluation at zero with the physical field. This derives joint smoothness rather than inferring it from separate regularity.",
+    "OriginalHillClassicalApproximationDefinition explicitly defines jointly smooth real mean-zero unit-period literal classical KdV fields and their original rough Fourier realizations. OriginalHillClassicalRoughSolution constructs such classical approximating fields for EVERY original rough source using actual finite native truncations and genuine H4 representatives. The universal EVERY-classical-family approximation property is therefore NONVACUOUS; the actual rough canonical curve satisfies it and is its UNIQUE solution. It is equivalent to the earlier strong-model rough approximation property.",
+    "OriginalHillPhysicalClassicalRoughSolution transfers that exact EVERY-classical-family approximation formulation to the original physical H-minus-one distributions. Norm continuity, the prescribed initial potential and convergence for EVERY classical family determine the SAME actual original canonical flow uniquely. Original approximating families are constructed for EVERY original rough potential.",
+    "MainTheorem11.sourceTheorem1_1 proves the complete explicit sourceTheorem1_1Statement for EVERY -1/2<s<=0 and EVERY original real mean-zero period-one endpoint potential: its UNIQUE original classical-approximation KdV solution evolves in the identical original endpoint space, has ONE original endpoint norm bound for ALL real times and is continuous in the literal Wiener weak-star topology. The statement includes the actual original solution property and exact equality of every evolved original distribution.",
+    "MainTheorem13.sourceTheorem1_3 proves the complete sourceTheorem1_3Statement for EVERY admissible source s, EVERY original endpoint norm-bounded KdV-invariant V, and EVERY T>0. The actual solution map is continuous V_weakstar -> C([-T,T],V_weakstar) in the full compact-open topology. V need not be closed.",
+    "Source Main1.1,1.3,1.4 are proved. Literal weighted ell-one Wiener Main5.1 and Main5.9, including their precise final main statements, remain OPEN. No integer Hilbert theorem is substituted for a Wiener conclusion. Universal ACTUAL Hill numerator scalar2/(pi*n) remains open. Goal ACTIVE."
   ],
-  "source_correspondence": "The SAME actual physical canonical rough KdV flow preserves every admissible original endpoint space, has globally norm-bounded weak-star continuous endpoint orbits, and has a continuous compact-open weak-star trajectory map on EVERY bounded invariant endpoint subset. Finish exact source-level identification of the actual canonical rough flow with the original EVERY-smooth-initial-approximation solution definition. Arbitrary jointly smooth classical solutions automatically embed in the genuine H4/H1 model, equal the canonical flow, are unique and satisfy EVERY-family uniform compact-time rough convergence. Existing nonvacuous rough uniqueness uses spatially smooth H4/H1 strong pointwise PDE solutions. Formally relate the exact original class and this class; if necessary prove joint space-time smoothness of constructed canonical approximants. Give precise final Lean main statements for source Main1.1 and Main1.3 with the original solution object and source order -1/2<s<=0. The required actual canonical endpoint membership, global endpoint norm bound, weak-star orbit continuity and compact-open weak-star dependence on EVERY bounded invariant subset are NOW PROVED; original solution-definition identification remains the essential source-fidelity qualification. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY integer N>=0, and Wiener real analytic compact-time trajectory Main5.9 with precise final source-level statements. Integer Hilbert diffeomorphisms do not substitute. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 complete; FOUR mains UNPROVED; goalACTIVE.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1875 baseline non-audit registered Lean sources byte-identical to b391edc. All 3 new modules (19 theorems+5 definitions), 0 canonical-byte-identical modules, 8 unchanged private dependencies and EXACT 9191-declaration standard-axiom audit freshly compiled privately. SAME actual original physical rough flow restricts to every endpoint, retains the entire distribution and has global endpoint norm-bounded weak-star continuous orbits. Every bounded invariant set has a continuous compact-open weak-star trajectory map; no closedness assumption. Main1.1/1.3 canonical endpoint conclusions proved; precise final source main statements and original rough-solution-definition identification remain open. Main1.4 freshly recompiled; FOUR other mains UNPROVED. Literal Wiener conclusions remain open. No new resource limits, suppressions or extra axioms. Not a full fresh 1879-module build.",
+  "source_correspondence": "Source Main1.1 and Main1.3 are proved with the exact original physical endpoint spaces and Wiener weak-star topologies. The original rough solution is characterized nonvacuously and uniquely by EVERY jointly smooth classical PDE approximation; Main1.4 remains proved. Main5.1 and Main5.9 remain unproved. Prove literal weighted ell-one forward/inverse spectral regularity and the global real analytic Wiener/Birkhoff diffeomorphism of source Main5.1 for EVERY integer N>=0, with exact final source and target ell-one weights and native normalization. Current all-integer Hilbert diffeomorphisms do not substitute. Prove the source Main5.9 Wiener real analytic solution/compact-time trajectory map for EVERY integer N>=0 and EVERY T>0 with its precise final Lean statement. Use the now identified genuine physical KdV solution and actual frequencies, together with literal Wiener spectral regularity. Close the remaining universal ACTUAL Hill numerator normalization scalar2/(pi*n) obligation wherever required by the Wiener proof. Main1.1,1.3,1.4 are PROVED; Main5.1,5.9 UNPROVED; goalACTIVE.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1878 baseline non-audit registered Lean sources byte-identical to f342d98. All 9 new modules (28 theorems+8 definitions), 0 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9227-declaration standard-axiom audit freshly compiled privately. Constructed jointly smooth classical PDE approximants for EVERY rough source; exact EVERY-classical-family rough solution is NONVACUOUS and UNIQUE in the original physical distribution space. Complete precise source Main1.1 and Main1.3 proved in original endpoint norm/Wiener weak-star topologies and full compact-open trajectory topology. Main1.4 freshly recompiled. ONLY Main5.1 and Main5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1888-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -5160,7 +5177,16 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillClassicalApproximation.lean": "d913d8f789bbb7e4f988ff7eaa92a54850bc498dd55a85cac5c830426a7cdab5",
     "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalRoughFlow.lean": "060e556a757767c15ae87063c1fa759d31be4688717188b7227f6e860b3edde2",
     "NLS/Articles/KdVPseudomeasures/OriginalHillEndpointCanonicalFlow.lean": "9b461f08ec06c840383c6cd68e035f5e6cbd7c5769c468147f41500aa02bd4d1",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillEndpointCanonicalTrajectories.lean": "886d9f55f54184396a49d363e310c0a019a17e9437870274eab7f83775d599ce"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillEndpointCanonicalTrajectories.lean": "886d9f55f54184396a49d363e310c0a019a17e9437870274eab7f83775d599ce",
+    "NLS/SequenceSpaces/FinitePhaseSpaceTimeSmooth.lean": "40feb8c1218c7e3a38316e0380937f2cf9f77f2d7f180bd2b6f6628f37443005",
+    "NLS/Fourier/PeriodOneSynthesisPhysicalReality.lean": "1cd307bc971588aecb74a02f1f1bbf977ff9d1cb6773ef7d4a628f56a89d8f09",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalSpatialSynthesis.lean": "6750d2736df8c95197ddb64ebccf6e7dceb99059b9356f8def17e7a430880aec",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteNativeSpaceTimeSmooth.lean": "1b54ebe1f87eaa506b1246b1dc5a69cf40b38c73cd47b3405ea4888723231edf",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillClassicalApproximationDefinition.lean": "9a0e1f7bfee528827f95023a76ab4254ac2c630cbb1d9b56e4e13ab14c039849",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillClassicalRoughSolution.lean": "85d5969c4dc9f35d74fc2be7462a6b3f1489ea0df05d0a8622cf1ea971e94fb4",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalClassicalRoughSolution.lean": "0249c477db358de90da5382f01365af1707b864654e66155e2e2113d2a4aeabc",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -5168,11 +5194,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 9167,
-    "newly_checked_declarations_this_continuation": 24,
-    "new_theorems": 19,
-    "new_definitions": 5,
-    "total_checked_declarations": 9191
+    "previous_checked_declarations": 9191,
+    "newly_checked_declarations_this_continuation": 36,
+    "new_theorems": 28,
+    "new_definitions": 8,
+    "total_checked_declarations": 9227
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -5201,7 +5227,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-endpoint-canonical-dynamics.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-main-11-13-classical.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5582,13 +5608,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1852 baseline non-audit registered sources byte-identical to8941839. All 10 new modules (32 theorems+4 definitions), 1 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9114-declaration standard-axiom audit freshly compiled privately. ACTUAL smooth physical gradient/cotangent CONSTRUCTED; actual native-mode H1 tangent and physical energy variation give ALL signed canonical velocities; actual full Jacobian injectivity identifies canonical source tangent with the literal physical KdV vector. SAME canonical flow preserves actual spatial smoothness and solves q_t=-q_xxx+6*q*q_x at EVERY time and point from EVERY smooth H4 source. Arbitrary smooth-PDE trajectory uniqueness, original every-smooth-PDE approximation quantifier, bounded endpoint weak-star dynamics and literal Wiener statements remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1863-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1862 baseline non-audit registered sources byte-identical to1a0ee5b. All 5 new modules (18 theorems+3 definitions), 0 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9135-declaration standard-axiom audit freshly compiled privately. Actual native ODE uniqueness DERIVES action/frequency conservation. Literal pointwise physical PDE solutions in the genuine H4/H1 strong model have global existence/uniqueness and EVERY-family uniform compact-time approximation in the original rough norm. Smooth strong-model PDE approximations CONSTRUCTED for EVERY rough source, making the unique EVERY-approximation rough solution characterization NONVACUOUS. Arbitrary jointly smooth classical space-time adapter/source-fidelity, endpoint weak-star dynamics and literal Wiener results remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1868-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1867 baseline non-audit registered sources byte-identical to ad75b63. All 8 new modules (24 theorems+8 definitions), 1 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9167-declaration standard-axiom audit freshly compiled privately. Arbitrary jointly smooth real mean-zero periodic classical space-time KdV solutions automatically have genuine H1 Banach time derivatives and actual H4 Fourier representatives; actual pointwise physical synthesis equals the given field. Every such classical solution equals the SAME actual canonical flow; physical initial-function uniqueness and EVERY-family uniform rough compact-time approximation PROVED. Original rough approximation-class equivalence including joint smooth existence interface, endpoint weak-star dynamics and literal Wiener conclusions remain OPEN. Main1.4 freshly recompiled; FOUR other mains UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1876-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1875 baseline non-audit registered Lean sources byte-identical to b391edc. All 3 new modules (19 theorems+5 definitions), 0 canonical-byte-identical modules, 8 unchanged private dependencies and EXACT 9191-declaration standard-axiom audit freshly compiled privately. SAME actual original physical rough flow restricts to every endpoint, retains the entire distribution and has global endpoint norm-bounded weak-star continuous orbits. Every bounded invariant set has a continuous compact-open weak-star trajectory map; no closedness assumption. Main1.1/1.3 canonical endpoint conclusions proved; precise final source main statements and original rough-solution-definition identification remain open. Main1.4 freshly recompiled; FOUR other mains UNPROVED. Literal Wiener conclusions remain open. No new resource limits, suppressions or extra axioms. Not a full fresh 1879-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1875 baseline non-audit registered Lean sources byte-identical to b391edc. All 3 new modules (19 theorems+5 definitions), 0 canonical-byte-identical modules, 8 unchanged private dependencies and EXACT 9191-declaration standard-axiom audit freshly compiled privately. SAME actual original physical rough flow restricts to every endpoint, retains the entire distribution and has global endpoint norm-bounded weak-star continuous orbits. Every bounded invariant set has a continuous compact-open weak-star trajectory map; no closedness assumption. Main1.1/1.3 canonical endpoint conclusions proved; precise final source main statements and original rough-solution-definition identification remain open. Main1.4 freshly recompiled; FOUR other mains UNPROVED. Literal Wiener conclusions remain open. No new resource limits, suppressions or extra axioms. Not a full fresh 1879-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1878 baseline non-audit registered Lean sources byte-identical to f342d98. All 9 new modules (28 theorems+8 definitions), 0 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9227-declaration standard-axiom audit freshly compiled privately. Constructed jointly smooth classical PDE approximants for EVERY rough source; exact EVERY-classical-family rough solution is NONVACUOUS and UNIQUE in the original physical distribution space. Complete precise source Main1.1 and Main1.3 proved in original endpoint norm/Wiener weak-star topologies and full compact-open trajectory topology. Main1.4 freshly recompiled. ONLY Main5.1 and Main5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1888-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json",
   "baseline_validated_snapshot": {
-    "commit": "b391edc6e69c61525ea21fef9cf916c9ee41f4ea",
-    "modules": 1876,
-    "audited_declarations": 9167,
+    "commit": "f342d98480151c484ad305e2968feb4d32bcdc6b",
+    "modules": 1879,
+    "audited_declarations": 9191,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -8418,11 +8445,11 @@
     "actual_KdV_evolution_PROVED": false
   },
   "verified_main_theorems": [
+    "1.1",
+    "1.3",
     "1.4"
   ],
   "unproved_main_theorems": [
-    "1.1",
-    "1.3",
     "5.1",
     "5.9"
   ],
@@ -9015,20 +9042,19 @@
     "universal_smooth_strong_PDE_approximation_characterization_NONVACUOUS_PROVED": true,
     "unique_rough_solution_by_EVERY_smooth_strong_model_PDE_approximation_PROVED": true,
     "arbitrary_jointly_smooth_classical_space_time_to_strong_model_adapter_PROVED": true,
-    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": true,
     "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
     "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
-      "1.1",
-      "1.3",
       "5.1",
       "5.9"
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-smooth-PDE-uniqueness-map.json",
     "adapter_completed_in": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json",
     "canonical_endpoint_results_completed_in": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json",
-    "original_solution_identification_still_required": true
+    "original_solution_identification_still_required": false,
+    "classical_solution_and_endpoint_mains_completed_in": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
   },
   "actual_Hill_classical_solution_adapter": {
     "compact_continuous_map_Banach_derivative_from_pointwise_velocity_PROVED": true,
@@ -9040,20 +9066,19 @@
     "arbitrary_classical_literal_pointwise_PDE_solution_eq_actual_canonical_flow_PROVED": true,
     "arbitrary_classical_solutions_unique_for_initial_physical_function_PROVED": true,
     "EVERY_index_filter_classical_PDE_family_rough_UNIFORM_compact_time_approximation_PROVED": true,
-    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
-    "joint_space_time_smoothness_of_constructed_canonical_approximants_PROVED": false,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": true,
+    "joint_space_time_smoothness_of_constructed_canonical_approximants_PROVED": true,
     "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
     "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
-      "1.1",
-      "1.3",
       "5.1",
       "5.9"
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json",
     "canonical_endpoint_results_completed_in": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json",
-    "original_solution_identification_still_required": true
+    "original_solution_identification_still_required": false,
+    "classical_solution_and_endpoint_mains_completed_in": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
   },
   "actual_Hill_endpoint_canonical_dynamics": {
     "same_actual_canonical_flow_on_original_physical_rough_distributions_PROVED": true,
@@ -9066,16 +9091,36 @@
     "weak_star_compact_full_endpoint_orbit_closure_PROVED": true,
     "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
     "arbitrary_jointly_smooth_classical_space_time_to_strong_model_adapter_PROVED": true,
-    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
-    "precise_final_source_main_1_1_1_3_solution_identification_COMPLETE": false,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": true,
+    "precise_final_source_main_1_1_1_3_solution_identification_COMPLETE": true,
     "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
-      "1.1",
-      "1.3",
       "5.1",
       "5.9"
     ],
-    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json"
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json",
+    "classical_solution_and_endpoint_mains_completed_in": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
+  },
+  "original_classical_rough_solution_and_Main1_1_Main1_3": {
+    "joint_space_time_smoothness_of_finite_native_canonical_fields_PROVED": true,
+    "EVERY_rough_source_has_CONSTRUCTED_jointly_smooth_classical_PDE_approximants_PROVED": true,
+    "EVERY_classical_approximation_rough_solution_characterization_NONVACUOUS_PROVED": true,
+    "unique_rough_solution_by_EVERY_classical_smooth_PDE_approximation_PROVED": true,
+    "classical_and_strong_rough_approximation_characterizations_equivalent_PROVED": true,
+    "original_physical_distribution_EVERY_classical_approximation_solution_characterization_PROVED": true,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": true,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
+    "source_order_exact_range_minus_half_lt_s_le_zero": true,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json",
+    "classical_solution_and_endpoint_mains_completed_in": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
   }
 }

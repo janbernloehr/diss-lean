@@ -1910,6 +1910,15 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalRoughFlow',
     'NLS.Articles.KdVPseudomeasures.OriginalHillEndpointCanonicalFlow',
     'NLS.Articles.KdVPseudomeasures.OriginalHillEndpointCanonicalTrajectories',
+    'NLS.SequenceSpaces.FinitePhaseSpaceTimeSmooth',
+    'NLS.Fourier.PeriodOneSynthesisPhysicalReality',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalSpatialSynthesis',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteNativeSpaceTimeSmooth',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillClassicalApproximationDefinition',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillClassicalRoughSolution',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalClassicalRoughSolution',
+    'NLS.Articles.KdVPseudomeasures.MainTheorem11',
+    'NLS.Articles.KdVPseudomeasures.MainTheorem13',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

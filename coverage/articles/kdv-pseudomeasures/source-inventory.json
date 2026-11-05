@@ -38,15 +38,55 @@
         "sup over all real t of norm S(t,q) is finite.",
         "t maps to S(t,q) is weak-star continuous."
       ],
-      "status": "unproved",
+      "status": "proved",
       "proved_dependencies": [
         "NLS.Fourier.PeriodicFourierLebesgue.continuous_sobolevPseudomeasureWeakStar_of_bounded_coefficients",
         "NLS.WeightedCoeff.continuous_weakStarActionPhaseFlow_orbit",
         "NLS.WeightedCoeff.norm_weakStarActionPhaseFlow",
         "NLS.Articles.KdVPseudomeasures.potentialCoordinateEquiv",
         "NLS.Articles.KdVPseudomeasures.isEmbedding_originalRealWienerEvaluations_on_bounded",
-        "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val"
-      ]
+        "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val",
+        "NLS.WeightedCoeff.contDiff_finite_phase_space_time",
+        "NLS.Fourier.periodOneCoefficient_zero_eq_integral",
+        "NLS.Fourier.periodOneSynthesis_conj_of_reflection",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_coefficients",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis_real",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis_mean_zero",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis_spatialTranslation",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_periodic",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_real",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_mean_zero",
+        "NLS.Articles.KdVPseudomeasures.contDiff_hillFiniteNative_H1_space_time",
+        "NLS.Articles.KdVPseudomeasures.contDiff_hillFiniteNative_H4_space_time",
+        "NLS.Articles.KdVPseudomeasures.HillClassicalSpaceTimeKdVSolution",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve_coefficients",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve_eq_canonicalFlow",
+        "NLS.Articles.KdVPseudomeasures.hillFiniteNative_is_classicalSpaceTimeSolution",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve_of_physicalStrongCurve",
+        "NLS.Articles.KdVPseudomeasures.HillRoughSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.exists_hillClassical_approximating_solutions",
+        "NLS.Articles.KdVPseudomeasures.hillCanonicalFlow_is_roughSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.hillRoughSolutionByClassicalApproximation_unique",
+        "NLS.Articles.KdVPseudomeasures.existsUnique_hillRoughSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.hillRoughSolutionByClassicalApproximation_iff_strongApproximation",
+        "NLS.Articles.KdVPseudomeasures.originalClassicalKdVCurve",
+        "NLS.Articles.KdVPseudomeasures.OriginalKdVSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.exists_originalClassical_approximating_solutions",
+        "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalFlow_is_solutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.originalKdVSolutionByClassicalApproximation_unique",
+        "NLS.Articles.KdVPseudomeasures.existsUnique_originalKdVSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.admissiblePredualOrder_neg_of_sourceRange",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_1Statement",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_1",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_3Statement",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_3"
+      ],
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceTheorem1_1",
+      "statement": "NLS.Articles.KdVPseudomeasures.sourceTheorem1_1Statement",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json",
+      "qualification": "Complete original physical solution statement. The rough flow is uniquely characterized by EVERY sequence of jointly smooth real mean-zero unit-period classical KdV fields whose actual original initial distributions converge; a jointly smooth approximating family is constructed for EVERY rough initial potential. Source parameter s is literal with -1/2<s<=0; internal predual order is r=-s."
     },
     {
       "label": "1.3",
@@ -58,7 +98,7 @@
       "conclusions": [
         "The restriction q maps to (t maps to S(t,q)) is continuous V_weakstar -> C([-T,T],V_weakstar)."
       ],
-      "status": "unproved",
+      "status": "proved",
       "proved_dependencies": [
         "NLS.Articles.KdVPseudomeasures.continuous_trajectory_iff_hminusOne",
         "NLS.WeightedCoeff.continuous_weakStarInvariantActionTrajectory",
@@ -68,9 +108,48 @@
         "NLS.Articles.KdVPseudomeasures.isEmbedding_sourceLowerDistributionTrajectory",
         "NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_lowerDistribution",
         "NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_uniform_originalHminusOne",
-        "NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_seq_uniform_lower"
+        "NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_seq_uniform_lower",
+        "NLS.WeightedCoeff.contDiff_finite_phase_space_time",
+        "NLS.Fourier.periodOneCoefficient_zero_eq_integral",
+        "NLS.Fourier.periodOneSynthesis_conj_of_reflection",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_coefficients",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis_real",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis_mean_zero",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis_spatialTranslation",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_periodic",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_real",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_mean_zero",
+        "NLS.Articles.KdVPseudomeasures.contDiff_hillFiniteNative_H1_space_time",
+        "NLS.Articles.KdVPseudomeasures.contDiff_hillFiniteNative_H4_space_time",
+        "NLS.Articles.KdVPseudomeasures.HillClassicalSpaceTimeKdVSolution",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve_coefficients",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve_eq_canonicalFlow",
+        "NLS.Articles.KdVPseudomeasures.hillFiniteNative_is_classicalSpaceTimeSolution",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve_of_physicalStrongCurve",
+        "NLS.Articles.KdVPseudomeasures.HillRoughSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.exists_hillClassical_approximating_solutions",
+        "NLS.Articles.KdVPseudomeasures.hillCanonicalFlow_is_roughSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.hillRoughSolutionByClassicalApproximation_unique",
+        "NLS.Articles.KdVPseudomeasures.existsUnique_hillRoughSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.hillRoughSolutionByClassicalApproximation_iff_strongApproximation",
+        "NLS.Articles.KdVPseudomeasures.originalClassicalKdVCurve",
+        "NLS.Articles.KdVPseudomeasures.OriginalKdVSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.exists_originalClassical_approximating_solutions",
+        "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalFlow_is_solutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.originalKdVSolutionByClassicalApproximation_unique",
+        "NLS.Articles.KdVPseudomeasures.existsUnique_originalKdVSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.admissiblePredualOrder_neg_of_sourceRange",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_1Statement",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_1",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_3Statement",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_3"
       ],
-      "qualification": "These are proved topology/generic flow dependencies, not the physical KdV main theorem."
+      "qualification": "Complete original physical solution statement. The rough flow is uniquely characterized by EVERY sequence of jointly smooth real mean-zero unit-period classical KdV fields whose actual original initial distributions converge; a jointly smooth approximating family is constructed for EVERY rough initial potential. Source parameter s is literal with -1/2<s<=0; internal predual order is r=-s.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceTheorem1_3",
+      "statement": "NLS.Articles.KdVPseudomeasures.sourceTheorem1_3Statement",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
     },
     {
       "label": "1.4",
@@ -3381,6 +3460,49 @@
         "NLS.Articles.KdVPseudomeasures.isCompact_closure_range_hillEndpointWeakStarKdVFlow"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json"
+    },
+    {
+      "label": "Jointly smooth classical approximation nonvacuity, original rough solution uniqueness and complete source Main1.1/Main1.3",
+      "status": "Source Main1.1 and Main1.3 are proved with the exact original physical endpoint spaces and Wiener weak-star topologies. The original rough solution is characterized nonvacuously and uniquely by EVERY jointly smooth classical PDE approximation; Main1.4 remains proved. Main5.1 and Main5.9 remain unproved.",
+      "declarations": [
+        "NLS.WeightedCoeff.contDiff_finite_phase_space_time",
+        "NLS.Fourier.periodOneCoefficient_zero_eq_integral",
+        "NLS.Fourier.periodOneSynthesis_conj_of_reflection",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_coefficients",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis_real",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis_mean_zero",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH1Synthesis_spatialTranslation",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_periodic",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_real",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis_mean_zero",
+        "NLS.Articles.KdVPseudomeasures.contDiff_hillFiniteNative_H1_space_time",
+        "NLS.Articles.KdVPseudomeasures.contDiff_hillFiniteNative_H4_space_time",
+        "NLS.Articles.KdVPseudomeasures.HillClassicalSpaceTimeKdVSolution",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve_coefficients",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve_eq_canonicalFlow",
+        "NLS.Articles.KdVPseudomeasures.hillFiniteNative_is_classicalSpaceTimeSolution",
+        "NLS.Articles.KdVPseudomeasures.hillClassicalSolutionRoughCurve_of_physicalStrongCurve",
+        "NLS.Articles.KdVPseudomeasures.HillRoughSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.exists_hillClassical_approximating_solutions",
+        "NLS.Articles.KdVPseudomeasures.hillCanonicalFlow_is_roughSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.hillRoughSolutionByClassicalApproximation_unique",
+        "NLS.Articles.KdVPseudomeasures.existsUnique_hillRoughSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.hillRoughSolutionByClassicalApproximation_iff_strongApproximation",
+        "NLS.Articles.KdVPseudomeasures.originalClassicalKdVCurve",
+        "NLS.Articles.KdVPseudomeasures.OriginalKdVSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.exists_originalClassical_approximating_solutions",
+        "NLS.Articles.KdVPseudomeasures.hillOriginalCanonicalFlow_is_solutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.originalKdVSolutionByClassicalApproximation_unique",
+        "NLS.Articles.KdVPseudomeasures.existsUnique_originalKdVSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.admissiblePredualOrder_neg_of_sourceRange",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_1Statement",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_1",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_3Statement",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_3"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
     }
   ],
   "reuse_map": [
@@ -3460,9 +3582,9 @@
     }
   ],
   "remaining_obligations": [
-    "Finish exact source-level identification of the actual canonical rough flow with the original EVERY-smooth-initial-approximation solution definition. Arbitrary jointly smooth classical solutions automatically embed in the genuine H4/H1 model, equal the canonical flow, are unique and satisfy EVERY-family uniform compact-time rough convergence. Existing nonvacuous rough uniqueness uses spatially smooth H4/H1 strong pointwise PDE solutions. Formally relate the exact original class and this class; if necessary prove joint space-time smoothness of constructed canonical approximants.",
-    "Give precise final Lean main statements for source Main1.1 and Main1.3 with the original solution object and source order -1/2<s<=0. The required actual canonical endpoint membership, global endpoint norm bound, weak-star orbit continuity and compact-open weak-star dependence on EVERY bounded invariant subset are NOW PROVED; original solution-definition identification remains the essential source-fidelity qualification.",
-    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY integer N>=0, and Wiener real analytic compact-time trajectory Main5.9 with precise final source-level statements. Integer Hilbert diffeomorphisms do not substitute. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 complete; FOUR mains UNPROVED; goalACTIVE."
+    "Prove literal weighted ell-one forward/inverse spectral regularity and the global real analytic Wiener/Birkhoff diffeomorphism of source Main5.1 for EVERY integer N>=0, with exact final source and target ell-one weights and native normalization. Current all-integer Hilbert diffeomorphisms do not substitute.",
+    "Prove the source Main5.9 Wiener real analytic solution/compact-time trajectory map for EVERY integer N>=0 and EVERY T>0 with its precise final Lean statement. Use the now identified genuine physical KdV solution and actual frequencies, together with literal Wiener spectral regularity.",
+    "Close the remaining universal ACTUAL Hill numerator normalization scalar2/(pi*n) obligation wherever required by the Wiener proof. Main1.1,1.3,1.4 are PROVED; Main5.1,5.9 UNPROVED; goalACTIVE."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -7503,20 +7625,19 @@
     "universal_smooth_strong_PDE_approximation_characterization_NONVACUOUS_PROVED": true,
     "unique_rough_solution_by_EVERY_smooth_strong_model_PDE_approximation_PROVED": true,
     "arbitrary_jointly_smooth_classical_space_time_to_strong_model_adapter_PROVED": true,
-    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": true,
     "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
     "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
-      "1.1",
-      "1.3",
       "5.1",
       "5.9"
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-smooth-PDE-uniqueness-map.json",
     "adapter_completed_in": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json",
     "canonical_endpoint_results_completed_in": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json",
-    "original_solution_identification_still_required": true
+    "original_solution_identification_still_required": false,
+    "classical_solution_and_endpoint_mains_completed_in": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
   },
   "actual_Hill_classical_solution_adapter": {
     "compact_continuous_map_Banach_derivative_from_pointwise_velocity_PROVED": true,
@@ -7528,20 +7649,19 @@
     "arbitrary_classical_literal_pointwise_PDE_solution_eq_actual_canonical_flow_PROVED": true,
     "arbitrary_classical_solutions_unique_for_initial_physical_function_PROVED": true,
     "EVERY_index_filter_classical_PDE_family_rough_UNIFORM_compact_time_approximation_PROVED": true,
-    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
-    "joint_space_time_smoothness_of_constructed_canonical_approximants_PROVED": false,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": true,
+    "joint_space_time_smoothness_of_constructed_canonical_approximants_PROVED": true,
     "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
     "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
-      "1.1",
-      "1.3",
       "5.1",
       "5.9"
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-classical-solution-adapter-map.json",
     "canonical_endpoint_results_completed_in": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json",
-    "original_solution_identification_still_required": true
+    "original_solution_identification_still_required": false,
+    "classical_solution_and_endpoint_mains_completed_in": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
   },
   "actual_Hill_endpoint_canonical_dynamics": {
     "same_actual_canonical_flow_on_original_physical_rough_distributions_PROVED": true,
@@ -7554,16 +7674,36 @@
     "weak_star_compact_full_endpoint_orbit_closure_PROVED": true,
     "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
     "arbitrary_jointly_smooth_classical_space_time_to_strong_model_adapter_PROVED": true,
-    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
-    "precise_final_source_main_1_1_1_3_solution_identification_COMPLETE": false,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": true,
+    "precise_final_source_main_1_1_1_3_solution_identification_COMPLETE": true,
     "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
-      "1.1",
-      "1.3",
       "5.1",
       "5.9"
     ],
-    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json"
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-canonical-dynamics-map.json",
+    "classical_solution_and_endpoint_mains_completed_in": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
+  },
+  "original_classical_rough_solution_and_Main1_1_Main1_3": {
+    "joint_space_time_smoothness_of_finite_native_canonical_fields_PROVED": true,
+    "EVERY_rough_source_has_CONSTRUCTED_jointly_smooth_classical_PDE_approximants_PROVED": true,
+    "EVERY_classical_approximation_rough_solution_characterization_NONVACUOUS_PROVED": true,
+    "unique_rough_solution_by_EVERY_classical_smooth_PDE_approximation_PROVED": true,
+    "classical_and_strong_rough_approximation_characterizations_equivalent_PROVED": true,
+    "original_physical_distribution_EVERY_classical_approximation_solution_characterization_PROVED": true,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": true,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": true,
+    "source_order_exact_range_minus_half_lt_s_le_zero": true,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json",
+    "classical_solution_and_endpoint_mains_completed_in": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
   }
 }
