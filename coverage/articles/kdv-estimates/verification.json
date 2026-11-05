@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 9030,
+    "declarations": 9067,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -1192,10 +1192,19 @@
       "NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.rec",
       "NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.recOn",
       "NLS.ZakharovShabat.SourceLemma12_12Data.nonempty_pairedDirichletPrimitives",
-      "NLS.ZakharovShabat.sourceAngular_signed_pair_pathIntegral_eq_beta"
+      "NLS.ZakharovShabat.sourceAngular_signed_pair_pathIntegral_eq_beta",
+      "NLS.ComplexAnalysis.contDiffOn_positiveRealEnergyLiftPath",
+      "NLS.ComplexAnalysis.continuous_positiveRealEnergyLift",
+      "NLS.ComplexAnalysis.positiveRealEnergyLift",
+      "NLS.ComplexAnalysis.positiveRealEnergyLift.eq_1",
+      "NLS.ComplexAnalysis.positiveRealEnergyLiftPath",
+      "NLS.ComplexAnalysis.positiveRealEnergyLift_eq_of_sq",
+      "NLS.ComplexAnalysis.positiveRealEnergyLift_re_pos",
+      "NLS.ComplexAnalysis.positiveRealEnergyLift_sq",
+      "NLS.ComplexAnalysis.quadraticEnergyPath_positiveRealEnergyLiftPath"
     ]
   },
-  "full_repository_validation": "All 1309 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1304-module base has strict validation recorded at commit 0e31cb836fb1851b8dd951f0574cf943b4bcf74b (complete 583-module strict focused run plus 721 isolated additions, all 1304 source hashes unchanged, 8972-declaration audit and successful aggregate), and all 5 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9030-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1309-module focused script, full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 1312 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1309-module base has strict validation recorded at commit 39266bba7801f89094062dd4827bc14bfb2d9bd5 (complete 583-module strict focused run plus 726 isolated additions, all 1309 source hashes unchanged, 9030-declaration audit and successful aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9067-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1312-module focused script, full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -2506,10 +2515,13 @@
     "NLS/KdV/HillPrescribedCosineSheet.lean": "8924c0745fd417383ed487d8535592c0e2c37adb1648c5ad011f5a4efccb611e",
     "NLS/ComplexAnalysis/RealCosineArc.lean": "ba6242e34a3744e5f0882c4883a51365c4066509a854ce014c68bc8da4e51bce",
     "NLS/KdV/HillPhysicalCosinePath.lean": "2aa0f632c4f720344b7f7d4038c85036c1daf8197a1175e2a33ca0aac6c7ef50",
-    "NLS/ZakharovShabat/SourceAngularPairedPrimitives.lean": "609a87c45984f5e7eb85aa1d7f496a44e12323e86abe57a2e8d479129c092e5d"
+    "NLS/ZakharovShabat/SourceAngularPairedPrimitives.lean": "609a87c45984f5e7eb85aa1d7f496a44e12323e86abe57a2e8d479129c092e5d",
+    "NLS/ComplexAnalysis/RealPositiveEnergyLift.lean": "cf4da2bc93e03e33de7c86af71113a03c5656a8105d96bcbb507de4270c16d01",
+    "NLS/KdV/HillPhysicalCosineFrequencyPath.lean": "72473c024229807d82ccee47e9fb9cb24beb47a8ceaa963a164ad70b67105af1",
+    "NLS/KdV/HillHminusOriginalCosineLift.lean": "c9407910fae5564c665a33cefe805539e91f8cd45fc03fcd8d462be0886ca072"
   },
-  "remaining": "The actual signed Dirichlet labels, opposite periodic endpoints and SAME physical T-minus-inverse-T sheet at both signed terminals are proved. The ORIGINAL scalar normalized off-index cosine terminal correction now equals its actual prescribed-sheet cosine ENERGY path integral, with integrability proved from the original cosine differential; negative selected angles use the minus-pi anchor and the proved zero off-index period. Both actual ordinary-source Dirichlet primitives are constructed from the SAME verified original psi family at regular opposite terminals, and the signed source path pair evaluates to beta(n,m)+beta(n,-m). Still required: construct the actual square-root FREQUENCY lift of the original physical cosine path, discharge source regular-disc and integrability conditions and identify its quadratic energy image with that ORIGINAL path. This will identify the original terminal correction with the paired source beta, including endpoint and collapsed conventions. Then handle own-index and central finite phase terms; prove convergence and analyticity of the COMPLETE original phase, full phase Gardner matrix transport and strong-limit invariance, global Cartesian Gardner identities, mean-zero global inverse and fixed physical KdV Birkhoff-map identification. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-  "milestone": "Original physical cosine terminal path and paired source primitive construction",
+  "remaining": "The ORIGINAL off-index scalar cosine terminal correction is proved to equal its actual prescribed-sheet cosine ENERGY integral, with integrability proved from the original differential and negative angles anchored at minus pi. The actual positive real square-root FREQUENCY lift is now constructed and C1, squares back to the literal ORIGINAL energy path including endpoints, and has the EXACT canonical ordinary-source periodic-left and Dirichlet endpoint labels at every positive index. Positivity of the original shifted gap is DISCHARGED by the actual Miura chart, without high cutoff or an extra positive-gap assumption. The quadratic image integral of the constructed lift equals the ORIGINAL terminal correction with proved integrability. Actual paired source primitives and signed source path beta evaluation are also proved. Still required: discharge both actual source regular-sheet-disc and individual curve integrability conditions along the CONSTRUCTED frequency lift; combine the proved physical pullback and paired beta evaluation to identify the original scalar terminal correction with beta(n,m)+beta(n,-m), including endpoint and collapsed conventions. Then handle own-index and central finite phase terms; prove convergence and analyticity of the COMPLETE original phase, full phase Gardner matrix transport and strong-limit invariance, global Cartesian Gardner identities, mean-zero global inverse and fixed physical KdV Birkhoff-map identification. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+  "milestone": "Constructed original physical cosine frequency lift with exact canonical source endpoints",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -3821,7 +3833,10 @@
     "NLS.KdV.HillPrescribedCosineSheet",
     "NLS.ComplexAnalysis.RealCosineArc",
     "NLS.KdV.HillPhysicalCosinePath",
-    "NLS.ZakharovShabat.SourceAngularPairedPrimitives"
+    "NLS.ZakharovShabat.SourceAngularPairedPrimitives",
+    "NLS.ComplexAnalysis.RealPositiveEnergyLift",
+    "NLS.KdV.HillPhysicalCosineFrequencyPath",
+    "NLS.KdV.HillHminusOriginalCosineLift"
   ],
   "proof_commits": [
     {
@@ -4743,6 +4758,11 @@
       "commit": "0e31cb836fb1851b8dd951f0574cf943b4bcf74b",
       "scope": "Four strictly checked actual signed Dirichlet reflection and right-endpoint beta modules; 8972-declaration audit and successful 1304-module aggregate.",
       "pushed": false
+    },
+    {
+      "commit": "39266bba7801f89094062dd4827bc14bfb2d9bd5",
+      "scope": "Five strictly checked original physical cosine terminal path and paired source primitive modules; 9030-declaration audit and successful 1309-module aggregate.",
+      "pushed": false
     }
   ],
   "aggregate_check": {
@@ -4759,46 +4779,42 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "1309 focused modules covered by the unchanged 1304-module strictly validated base plus 5 isolated strict module checks; no fresh complete focused-script run is claimed.",
+    "focused_modules": "1312 focused modules covered by the unchanged 1309-module strictly validated base plus 3 isolated strict module checks; no fresh complete focused-script run is claimed.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 9030 declarations. Every new module-origin declaration and its transitive axioms: prescribed physical root sign, original cosine differential pullback, actual signed real arcs, original off-index terminal energy-path value with proved integrability, actual paired primitive data construction and signed path beta evaluation.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 9067 declarations. Every new module-origin declaration and its transitive axioms: positive real energy lift, C1 and exact quadratic path recovery, original Hill cosine frequency lift and terminal integral, actual chart shifted-gap positivity and exact canonical source endpoint labels.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 1309 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1304-module base has strict validation recorded at commit 0e31cb836fb1851b8dd951f0574cf943b4bcf74b (complete 583-module strict focused run plus 721 isolated additions, all 1304 source hashes unchanged, 8972-declaration audit and successful aggregate), and all 5 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9030-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1309-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 1312 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1309-module base has strict validation recorded at commit 39266bba7801f89094062dd4827bc14bfb2d9bd5 (complete 583-module strict focused run plus 726 isolated additions, all 1309 source hashes unchanged, 9030-declaration audit and successful aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9067-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1312-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified. The existing ParametricTrigonometricTerminal, ParametricSineTerminal, ParametricCosineTerminal, ParametricCosineChart, ParametricCosinePrimitive and LocalAnalyticSquareRoot sources were read and reused with bytes equal to the pinned prebuilt reference; their actual uses are covered transitively by the new Hill declaration audit. The endpoint-root continuity and arbitrary real-angle cosine-chart results are new shared proofs with explicit audit seeds. Generic parametric annular primitives, quadratic Cauchy projection and root primitives, quadratic cosine primitives and the segment-only analytic cosine mean were read and reused unchanged from the pinned prebuilt reference. Their SHA256 values are recorded in the analytic_regular_hill_abelian_corrections_through_closed_gaps source-map section. The actual uses are covered transitively by the expanded audit.",
-    "mathematical_scope": "Fix the sign of the ORIGINAL prescribed physical square root on each connected regular real cosine arc by equality of squares and the actual Dirichlet terminal Y=T-minus-inverse-T. Prove prescribedRoot(cosine(theta))=-I*halfGap*sin(theta)*deflatedCanonicalRoot(cosine(theta)), retaining its exact terminal sign and original radicand. The resulting normalized differential pullback is exactly the original cosine differential. Construct the regular signed real arc containing the ACTUAL chosen original Dirichlet angle, anchored at pi for positive angles and minus pi for negative angles. Prove the original off-index primitive is zero at either anchor by its actual 2*pi period. Integrability of the ORIGINAL prescribed physical energy-path differential and its integral equal to the ORIGINAL scalar regular terminal correction then follow from the continuous original cosine differential and path pullback, without supplied primitive or integrability hypotheses. Independently construct actual paired positive/negative source Dirichlet primitive data from the SAME checked original psi family, and prove the sum of an actual positive left-start path and its canonically cast negative right-start path is the sum of the two actual chosen source beta values, on the SAME terminal-prescribed source sheet.",
-    "scope": "All 1309 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1304-module base has strict validation recorded at commit 0e31cb836fb1851b8dd951f0574cf943b4bcf74b (complete 583-module strict focused run plus 721 isolated additions, all 1304 source hashes unchanged, 8972-declaration audit and successful aggregate), and all 5 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9030-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1309-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Construct the positive real frequency lift of an actual real energy path by the globally continuous real-square-root map on its shifted real part. Prove C1 regularity wherever the shifted energies are positive, uniqueness at every nonnegative real square root, and literal quadratic recovery of the complete path with endpoint casts. Apply this to the ORIGINAL signed cosine energy path: prove its C1 regularity, actual real gap containment and positivity after the scalar shift, then prove its constructed frequency path is C1 and squares back pointwise at every real path parameter. The ORIGINAL regular scalar terminal correction equals the actual integral over the quadratic image of this CONSTRUCTED frequency path, with integrability inherited from the checked original physical cosine integral. In the actual H-minus-one Miura chart, use exact original energy-label identification, strict positivity of EVERY positive Miura gap left endpoint and real Dirichlet interlacing to discharge the shifted-gap positivity hypothesis. Prove the positive square-root endpoints are EXACTLY the canonical ordinary-source periodic-left and Dirichlet labels. Construct originalCosineFrequencyPath with these actual source endpoint types, prove it is C1 and prove its square at the ACTUAL chart energyShift equals the ORIGINAL physical signed cosine energy path, including the singular initial endpoint.",
+    "scope": "All 1312 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1309-module base has strict validation recorded at commit 39266bba7801f89094062dd4827bc14bfb2d9bd5 (complete 583-module strict focused run plus 726 isolated additions, all 1309 source hashes unchanged, 9030-declaration audit and successful aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9067-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1312-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "b3ce38266e87cbb17c64094bf64990c39bce0e61a39f72bd46967b6c3939d2e2",
-      "scripts/check-kdv-estimates.sh": "4fe2c06364e977ea497fce9f8cb3cc8988c6e95e951cd8f7875806dc1fa6cfec",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "9b7510f5231dcfd03bc44bf24d9c299cef2a548a3ad33615f491970931d5ec40"
+      "NLS.lean": "4c1929cbb65ef1fdebe6b115961afe1eec1244bbc7d8479dc5433ee3d7b0e60e",
+      "scripts/check-kdv-estimates.sh": "27f496ed4273fce0bc89e9e8983cbaeec77b0be77d2d6f88d33e96f2ea73f043",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "27155a060af05ee4c070cc1a10a43568232aa3e04dd82b7b417fb0fa383b7a95"
     },
     "focused_build_execution": {
       "mode": "strict_delta",
-      "base_commit": "0e31cb836fb1851b8dd951f0574cf943b4bcf74b",
-      "base_focused_modules": 1304,
-      "base_verification_sha256": "2074fc6ae452fc81acd9a68cac4027006ada15a46c026683bad201a47a771993",
+      "base_commit": "39266bba7801f89094062dd4827bc14bfb2d9bd5",
+      "base_focused_modules": 1309,
+      "base_verification_sha256": "6da70237290513b4373437b4be3d9134e4312e565981b239bdb645d19a5afcc1",
       "base_sources_unchanged": true,
-      "base_validation_description": "complete 583-module strict focused run plus 721 isolated additions, all 1304 source hashes unchanged, 8972-declaration audit and successful aggregate",
+      "base_validation_description": "complete 583-module strict focused run plus 726 isolated additions, all 1309 source hashes unchanged, 9030-declaration audit and successful aggregate",
       "new_modules": [
-        "NLS/ZakharovShabat/SourceAngularPairedPathBeta.lean",
-        "NLS/KdV/HillPrescribedCosineSheet.lean",
-        "NLS/ComplexAnalysis/RealCosineArc.lean",
-        "NLS/KdV/HillPhysicalCosinePath.lean",
-        "NLS/ZakharovShabat/SourceAngularPairedPrimitives.lean"
+        "NLS/ComplexAnalysis/RealPositiveEnergyLift.lean",
+        "NLS/KdV/HillPhysicalCosineFrequencyPath.lean",
+        "NLS/KdV/HillHminusOriginalCosineLift.lean"
       ],
       "new_source_sha256": {
-        "NLS/ZakharovShabat/SourceAngularPairedPathBeta.lean": "8f7543a44ff2fc551240d6e0e90b69632a477decf758505ba67b1e3c6340d845",
-        "NLS/KdV/HillPrescribedCosineSheet.lean": "8924c0745fd417383ed487d8535592c0e2c37adb1648c5ad011f5a4efccb611e",
-        "NLS/ComplexAnalysis/RealCosineArc.lean": "ba6242e34a3744e5f0882c4883a51365c4066509a854ce014c68bc8da4e51bce",
-        "NLS/KdV/HillPhysicalCosinePath.lean": "2aa0f632c4f720344b7f7d4038c85036c1daf8197a1175e2a33ca0aac6c7ef50",
-        "NLS/ZakharovShabat/SourceAngularPairedPrimitives.lean": "609a87c45984f5e7eb85aa1d7f496a44e12323e86abe57a2e8d479129c092e5d"
+        "NLS/ComplexAnalysis/RealPositiveEnergyLift.lean": "cf4da2bc93e03e33de7c86af71113a03c5656a8105d96bcbb507de4270c16d01",
+        "NLS/KdV/HillPhysicalCosineFrequencyPath.lean": "72473c024229807d82ccee47e9fb9cb24beb47a8ceaa963a164ad70b67105af1",
+        "NLS/KdV/HillHminusOriginalCosineLift.lean": "c9407910fae5564c665a33cefe805539e91f8cd45fc03fcd8d462be0886ca072"
       },
       "isolated_stage_exit_code": 0,
       "isolated_stage_source_matches_integrated": true,
       "expanded_axiom_audit_exit_code": 0,
-      "transitive_axiom_audit_declarations": 9030,
+      "transitive_axiom_audit_declarations": 9067,
       "complete_current_focused_script_rerun": false
     },
     "additional_shared_source_checks": [
@@ -5129,9 +5145,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Original physical cosine terminal path and paired source primitive construction",
-    "focused_modules": 1309,
-    "scope": "All 1309 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1304-module base has strict validation recorded at commit 0e31cb836fb1851b8dd951f0574cf943b4bcf74b (complete 583-module strict focused run plus 721 isolated additions, all 1304 source hashes unchanged, 8972-declaration audit and successful aggregate), and all 5 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9030-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1309-module focused script, full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Constructed original physical cosine frequency lift with exact canonical source endpoints",
+    "focused_modules": 1312,
+    "scope": "All 1312 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1309-module base has strict validation recorded at commit 39266bba7801f89094062dd4827bc14bfb2d9bd5 (complete 583-module strict focused run plus 726 isolated additions, all 1309 source hashes unchanged, 9030-declaration audit and successful aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9067-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1312-module focused script, full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
@@ -5725,6 +5741,12 @@
       "milestone": "Exact signed Dirichlet reflection and right-endpoint beta normalization",
       "focused_modules": 1304,
       "scope": "All 1304 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1300-module base has strict validation recorded at commit a7c87af2f06a53d2f48d1853a0316de98dc319af (complete 583-module strict focused run plus 717 isolated additions, all 1300 source hashes unchanged, 8954-declaration audit and successful aggregate), and all 4 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 8972-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1304-module focused script, full Lake rebuild and full repository examples were not rerun."
+    },
+    {
+      "status": "passed",
+      "milestone": "Original physical cosine terminal path and paired source primitive construction",
+      "focused_modules": 1309,
+      "scope": "All 1309 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1304-module base has strict validation recorded at commit 0e31cb836fb1851b8dd951f0574cf943b4bcf74b (complete 583-module strict focused run plus 721 isolated additions, all 1304 source hashes unchanged, 8972-declaration audit and successful aggregate), and all 5 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9030-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1309-module focused script, full Lake rebuild and full repository examples were not rerun."
     }
   ]
 }

@@ -1308,6 +1308,9 @@ import NLS.KdV.HillPrescribedCosineSheet
 import NLS.ComplexAnalysis.RealCosineArc
 import NLS.KdV.HillPhysicalCosinePath
 import NLS.ZakharovShabat.SourceAngularPairedPrimitives
+import NLS.ComplexAnalysis.RealPositiveEnergyLift
+import NLS.KdV.HillPhysicalCosineFrequencyPath
+import NLS.KdV.HillHminusOriginalCosineLift
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2472,7 +2475,16 @@ run_cmd do
     ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.rec,
     ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.recOn,
     ``NLS.ZakharovShabat.SourceLemma12_12Data.nonempty_pairedDirichletPrimitives,
-    ``NLS.ZakharovShabat.sourceAngular_signed_pair_pathIntegral_eq_beta]
+    ``NLS.ZakharovShabat.sourceAngular_signed_pair_pathIntegral_eq_beta,
+    ``NLS.ComplexAnalysis.contDiffOn_positiveRealEnergyLiftPath,
+    ``NLS.ComplexAnalysis.continuous_positiveRealEnergyLift,
+    ``NLS.ComplexAnalysis.positiveRealEnergyLift,
+    ``NLS.ComplexAnalysis.positiveRealEnergyLift.eq_1,
+    ``NLS.ComplexAnalysis.positiveRealEnergyLiftPath,
+    ``NLS.ComplexAnalysis.positiveRealEnergyLift_eq_of_sq,
+    ``NLS.ComplexAnalysis.positiveRealEnergyLift_re_pos,
+    ``NLS.ComplexAnalysis.positiveRealEnergyLift_sq,
+    ``NLS.ComplexAnalysis.quadraticEnergyPath_positiveRealEnergyLiftPath]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

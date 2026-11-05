@@ -6231,3 +6231,6 @@ import NLS.KdV.HillPrescribedCosineSheet
 import NLS.ComplexAnalysis.RealCosineArc
 import NLS.KdV.HillPhysicalCosinePath
 import NLS.ZakharovShabat.SourceAngularPairedPrimitives
+import NLS.ComplexAnalysis.RealPositiveEnergyLift
+import NLS.KdV.HillPhysicalCosineFrequencyPath
+import NLS.KdV.HillHminusOriginalCosineLift
