@@ -1894,6 +1894,11 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalCanonicalVector',
     'NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalSmoothness',
     'NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalSmoothPDE',
+    'NLS.KdV.HillNativeRealCoordinateValue',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeODEUniqueness',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSmoothPDEUniqueness',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSmoothPhysicalSolutions',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillRoughSmoothApproximationSolutions',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

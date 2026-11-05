@@ -1,0 +1,155 @@
+{
+  "source": "arXiv:1610.00278v1 Main1.1,1.3,5.9 dependencies: literal smooth PDE uniqueness in the genuine H4/H1 strong model and universal approximation solution characterization; arbitrary classical space-time adapter and endpoint/Wiener conclusions remain unproved",
+  "status": "Literal smooth physical KdV solutions in the genuine H4/H1 strong model are globally unique; EVERY rough-convergent family of these PDE solutions converges uniformly on compact time intervals, and a nonvacuous EVERY-smooth-strong-approximation characterization determines a unique rough curve.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "actual_state_dependent_native_ODE_uniqueness_PROVED": true,
+    "ALL_action_product_conservation_DERIVED_from_native_ODE_PROVED": true,
+    "ALL_frequency_constancy_DERIVED_without_assumed_isospectrality_PROVED": true,
+    "ALL_signed_coordinates_recovered_by_constant_rate_scalar_ODE_PROVED": true,
+    "smooth_PDE_trajectory_uniqueness_in_genuine_H4_H1_strong_model_PROVED": true,
+    "literal_POINTWISE_physical_PDE_interface_PROVED": true,
+    "Fourier_velocity_DERIVED_from_pointwise_PDE_and_genuine_time_derivative_PROVED": true,
+    "unique_global_literal_physical_PDE_solution_in_H4_H1_model_for_EVERY_smooth_initial_source_PROVED": true,
+    "EVERY_index_filter_rough_convergent_family_of_strong_model_PDE_solutions_UNIFORM_compact_time_approximation_PROVED": true,
+    "EVERY_rough_source_has_CONSTRUCTED_smooth_strong_PDE_approximating_solutions_PROVED": true,
+    "universal_smooth_strong_PDE_approximation_characterization_NONVACUOUS_PROVED": true,
+    "unique_rough_solution_by_EVERY_smooth_strong_model_PDE_approximation_PROVED": true,
+    "arbitrary_jointly_smooth_classical_space_time_to_strong_model_adapter_PROVED": false,
+    "original_unrestricted_classical_smooth_approximation_source_fidelity_COMPLETE": false,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": false,
+    "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-smooth-PDE-uniqueness-map.json"
+  },
+  "results": [
+    "Shared HillNativeRealCoordinateValue identifies the literal raw signed coefficients of the ACTUAL physical real native map with the SAME ambient complex native-coordinate functions. No independent coordinate map is used.",
+    "OriginalHillNativeODEUniqueness proves uniqueness of the genuine state-dependent native ODE WITHOUT assuming isospectrality or frequency constancy. The exact positive/negative ODE gives zero derivative of EVERY native action product. Global zero-derivative constancy makes all products time-independent; VERIFIED actual rough action-fiber frequency invariance then makes ALL frequencies constant. Existing scalar exponential uniqueness gives EVERY signed coordinate, including zero and collapsed modes. Actual global injectivity identifies the entire original rough source curve with the SAME canonical flow.",
+    "OriginalHillSmoothPDEUniqueness proves that ANY spatially smooth H4-valued trajectory with a genuine H1 time derivative and the literal physical KdV Fourier velocity satisfies the ACTUAL full signed native ODE. The physical coefficient velocity first identifies the source derivative with the ALREADY PROVED genuine canonical source vector. The actual rough analytic native-coordinate chain rule gives the exact ODE. Thus EVERY such physical PDE trajectory is the SAME actual canonical strong trajectory, with no supplied action conservation or spectral invariance.",
+    "OriginalHillSmoothPhysicalSolutions defines the actual physical H4 synthesis and HillSmoothStrongKdVSolution: spatially smooth physical representatives at EVERY time, existence of a genuine H1 Banach time derivative, and the LITERAL pointwise PDE at EVERY time and spatial point. It DERIVES the physical Fourier velocity from the pointwise PDE by bounded physical evaluation, uniqueness of the pointwise time derivative and actual Fourier coefficients. The final uniqueness theorem therefore assumes NO Fourier-coordinate ODE. The actual canonical flow is a solution and EVERY smooth H4 initial source has exactly ONE global solution in this precise strong physical model.",
+    "OriginalHillSmoothPhysicalSolutions also proves universal compact-time approximation for EVERY index type/filter and EVERY family of these literal smooth physical PDE solutions whose initial ORIGINAL rough sources converge. Their included physical trajectories converge uniformly on EVERY compact real time interval to the genuine rough canonical flow. No selected approximation or extra bound on the approximating solutions is assumed.",
+    "OriginalHillRoughSmoothApproximationSolutions gives the explicit HillRoughSolutionBySmoothApproximation property: a continuous original rough curve with the correct initial value, obtained at every time from EVERY sequence of these literal smooth strong-model PDE solutions whose initial ORIGINAL rough sources converge. It CONSTRUCTS such approximating smooth PDE solutions for EVERY rough initial source using actual global finite-gap approximations, GENUINE H4 representatives and the verified spatial smoothness of actual finite-gap sources. Thus the universal quantifier is NONVACUOUS. The actual canonical rough curve satisfies the property and is its UNIQUE solution.",
+    "The adapter from arbitrary jointly smooth classical space-time functions to the genuine H4/H1 strong solution model remains an EXPLICIT source-fidelity obligation. The current approximation characterization is not silently claimed to have completed this adapter or the original unrestricted classical formulation. Bounded endpoint weak-star dynamics and literal weighted Wiener ell-one regularity/analyticity remain OPEN. Appendix B/Main1.4 complete; Main1.1,1.3,5.1,5.9 UNPROVED; goalACTIVE."
+  ],
+  "declarations": [
+    "NLS.KdV.hillRealSignedMap_apply_nativeCoordinate",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillNativeProduct_zero_of_nativeODE",
+    "NLS.Articles.KdVPseudomeasures.hillNativeProducts_constant_of_nativeODE",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_constant_of_nativeODE",
+    "NLS.Articles.KdVPseudomeasures.hillNativeCoordinate_exp_of_nativeODE",
+    "NLS.Articles.KdVPseudomeasures.hillRealCurve_eq_canonicalFlow_of_nativeODE",
+    "NLS.Articles.KdVPseudomeasures.hillH1_vector_eq_canonical_of_physical_coefficients",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillNativeCoordinate_of_smooth_PDE",
+    "NLS.Articles.KdVPseudomeasures.hillSmoothPDECurve_eq_canonicalFlow",
+    "NLS.Articles.KdVPseudomeasures.hillPhysicalH4Synthesis",
+    "NLS.Articles.KdVPseudomeasures.HillSmoothStrongKdVSolution",
+    "NLS.Articles.KdVPseudomeasures.hillSmoothPhysicalDerivative_coefficients",
+    "NLS.Articles.KdVPseudomeasures.hillCanonicalFlow_is_smoothStrongKdVSolution",
+    "NLS.Articles.KdVPseudomeasures.hillSmoothStrongKdVSolution_eq_canonicalFlow",
+    "NLS.Articles.KdVPseudomeasures.existsUnique_hillSmoothStrongKdVSolution",
+    "NLS.Articles.KdVPseudomeasures.tendstoUniformlyOn_hillSmoothStrongKdVSolution_of_rough_initial_convergence",
+    "NLS.Articles.KdVPseudomeasures.HillRoughSolutionBySmoothApproximation",
+    "NLS.Articles.KdVPseudomeasures.exists_hillSmoothStrong_approximating_solutions",
+    "NLS.Articles.KdVPseudomeasures.hillCanonicalFlow_is_roughSolutionBySmoothApproximation",
+    "NLS.Articles.KdVPseudomeasures.hillRoughSolutionBySmoothApproximation_unique",
+    "NLS.Articles.KdVPseudomeasures.existsUnique_hillRoughSolutionBySmoothApproximation"
+  ],
+  "files": [
+    "NLS/KdV/HillNativeRealCoordinateValue.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeODEUniqueness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSmoothPDEUniqueness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSmoothPhysicalSolutions.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughSmoothApproximationSolutions.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "1a0ee5b2246decadeb7a84da5d8ed6d3704cffe7",
+    "baseline_modules": 1863,
+    "baseline_non_audit_sources_verified_unchanged": 1862,
+    "new_modules_compiled": 5,
+    "reused_canonical_modules_freshly_compiled": [],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalCanonicalVector",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalCanonicalVector.lean",
+        "source_sha256": "a72c56749d81b356750128b544c8a30597bc1aaaf20e4befdab2009177543112",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalSmoothPDE",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillCanonicalSmoothPDE.lean",
+        "source_sha256": "440e23ba17f08e2dbf99af065d2f77031c08e35b7ab8eb3eb8171aa69d569dba",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyActionFibers",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyActionFibers.lean",
+        "source_sha256": "66fbd6e05d203a145a4a37e21e96962eb63b4c4be95d2880b5d76df1a2267de3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalTrajectories",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillRoughCanonicalTrajectories.lean",
+        "source_sha256": "bf8cd516275950ea0d5aa99d6f58bdb4a38255bd926665ca2b86f67dbd481e61",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalSmoothness",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillCanonicalSmoothness.lean",
+        "source_sha256": "f9d3f87ba1b9fa306283698c0eb18b7b602b0d9bef2b6305313e34255e38d16d",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.ScalarExponentialUniqueness",
+        "source": "NLS/ComplexAnalysis/ScalarExponentialUniqueness.lean",
+        "source_sha256": "366c8111a6a422ee22b1aca3f040e9c905d48f4af95d3d58e7367151f643b714",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1868,
+    "audited_declarations": 9135,
+    "theorems": 7700,
+    "definitions": 1435,
+    "new_theorems": 18,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-smooth-PDE-uniqueness.log",
+    "log_sha256": "ff30483278c54b29a0cb930407f6e4890b7db5726d1e9a21c2440a81356bef8a"
+  },
+  "remaining_obligations": [
+    "Prove the source-fidelity adapter from an arbitrary jointly smooth, real, mean-zero, period-one classical space-time KdV function to its GENUINE H4-valued Fourier coefficient trajectory with H1 Banach time derivative. Current uniqueness/existence/universal PDE approximation is COMPLETE in the explicit genuine H4/H1 strong physical model, with the literal POINTWISE PDE and NO assumed coordinate equation. A route to the adapter: reconstruct the H1 source from the L2 coefficients of the classical spatial derivative via the existing actual signedRealSpatialRecovery; smooth joint space-time regularity gives a Banach derivative for the continuous-circle representative of the spatial derivative, and bounded Fourier/recovery maps transport it to H1. Original all-order smooth Fourier membership supplies the pointwise H4 representative. Preserve reality, original mean and the exact entire coefficient sequence.",
+    "After the arbitrary classical smooth space-time adapter, identify HillRoughSolutionBySmoothApproximation with the original EVERY-smooth-initial-approximation solution definition. Universal strong-model smooth-PDE compact-time approximation and NONVACUOUS unique rough characterization are NOW PROVED. Establish exact bounded endpoint weak-star evolution, boundedness and compact-time trajectory continuity for source Main1.1 and Main1.3 using the verified actual endpoint native homeomorphism, genuine rough frequencies and literal bounded endpoint models.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0, and the corresponding Wiener analytic compact-time trajectory map for Main5.9. Integer Hilbert diffeomorphisms do not substitute for these. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 complete; FOUR main theorems UNPROVED; goalACTIVE."
+  ]
+}
