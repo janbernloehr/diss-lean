@@ -1,3 +1,12 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughRealAbelianInverse
+import NLS.SequenceSpaces.WeightedSourceRealEquivariance
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughMeanZeroAbelianInverse
+import NLS.KdV.HillHminusAbelianDerivative
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughFourierAbelianMap
+import NLS.SequenceSpaces.PeriodOneHminusOneMeanZeroDensity
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedAbelianCoordinates
+import NLS.SequenceSpaces.SobolevHalfWeights
+import NLS.SequenceSpaces.WeightedSourceSignedCompletion
 import NLS.KdV.HillPhysicalAbelianRoughContinuation
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughAbelianPacket
 import NLS.KdV.HillPhysicalSheetRegularGermIdentity
@@ -2747,7 +2756,16 @@ run_cmd do
     `NLS.KdV.HillPhysicalSheetRegularGermIdentity,
     `NLS.Articles.KdVKdV2Frequencies.RoughAbelianNativeGerms,
     `NLS.KdV.HillPhysicalAbelianRoughContinuation,
-    `NLS.Articles.KdVKdV2Frequencies.NativeRoughAbelianPacket
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughAbelianPacket,
+    `NLS.SequenceSpaces.WeightedSourceSignedCompletion,
+    `NLS.SequenceSpaces.SobolevHalfWeights,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedAbelianCoordinates,
+    `NLS.SequenceSpaces.PeriodOneHminusOneMeanZeroDensity,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughFourierAbelianMap,
+    `NLS.KdV.HillHminusAbelianDerivative,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughMeanZeroAbelianInverse,
+    `NLS.SequenceSpaces.WeightedSourceRealEquivariance,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughRealAbelianInverse
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

@@ -1815,6 +1815,15 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/RoughAbelianNativeGerms
   NLS/KdV/HillPhysicalAbelianRoughContinuation
   NLS/Articles/KdVKdV2Frequencies/NativeRoughAbelianPacket
+  NLS/SequenceSpaces/WeightedSourceSignedCompletion
+  NLS/SequenceSpaces/SobolevHalfWeights
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughSignedAbelianCoordinates
+  NLS/SequenceSpaces/PeriodOneHminusOneMeanZeroDensity
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughFourierAbelianMap
+  NLS/KdV/HillHminusAbelianDerivative
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughMeanZeroAbelianInverse
+  NLS/SequenceSpaces/WeightedSourceRealEquivariance
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughRealAbelianInverse
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual native rough Abelian packet
+## Latest actual signed rough Abelian map and real local inverse
+
+The ORIGINAL signed Abelian coordinates now have a native complex H-minus-one -> H-minus-one-half analytic extension on ONE rough ball, zero at zero with a linear norm bound and central slot zero. Every original real L2 source in the WHOLE rough ball is recovered, including first/closed gaps, zero endpoint sheets and nonzero means, without physical L2 smallness. The entire rough physical real form is preserved.
+
+Its actual Fourier Frechet derivative h_j/sqrt(2*pi*abs(j)) is proved for EVERY mean-zero H-minus-one direction and EVERY signed output. The source/target weight isometries turn this into the EXISTING invertible Fourier operator. An ACTUAL two-sided complex analytic local inverse at zero follows on explicit open mean-zero source/image neighborhoods. After shrinking the target, the inverse preserves physical reality: EVERY real nearby negative-half target has a genuine mean-zero real H-minus-one preimage, without L2 membership. See `NATIVE_ROUGH_REAL_INVERSE.md`.
+
+Prior strict evidence retained for all 1806 unchanged selected baseline sources; all nine new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 1815 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1856 frozen source/checker/provenance/Mathlib-source hashes, all 38 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these nine selections. No full 1815-module rebuild is claimed.
+
+Fresh audit: 15143 selected and 37213 imported NLS declarations; permitted axioms only. Arbitrary-base/global rough inversion, full canonicality, full s>=-1 regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual native rough Abelian packet
 
 ONE complex H-minus-one ball now supports a native ell-two analytic Z, zero at zero, with norm(Z(q))<=C*norm(q) and zero nonpositive entries. At EVERY original real L2 source p in that WHOLE rough ball and EVERY positive n:
 
