@@ -6313,3 +6313,9 @@ import NLS.KdV.HillHminusActionTraceStationarity
 import NLS.KdV.HillHminusNormalizedIndexedStationarity
 import NLS.KdV.HillIntrinsicCartesianGardnerBracket
 import NLS.KdV.HillIntrinsicCartesianIndexedTransport
+import NLS.KdV.HillCartesianEndpointInvariant
+import NLS.KdV.HillCartesianFiniteInvariant
+import NLS.KdV.HillIntrinsicCartesianBracketContinuity
+import NLS.KdV.HillCartesianAllPeriodicInvariant
+import NLS.KdV.HillCartesianMatrixNormalization
+import NLS.KdV.HillHminusOriginalOpenCartesianMatrix

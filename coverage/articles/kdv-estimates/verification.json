@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 9344,
+    "declarations": 9352,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -1227,7 +1227,7 @@
       "NLS.Poisson.gardnerHilbertDerivative_weight_bound"
     ]
   },
-  "full_repository_validation": "All 1391 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1375-module base has strict validation recorded at commit 10da8ab9538d4b55725ac2645ea8110f4fd1fc6e (complete 583-module strict focused run plus 792 isolated additions, all 1375 source hashes unchanged, 9272-declaration audit and successful aggregate), and all 16 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9344-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1391-module focused script, full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 1397 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1391-module base has strict validation recorded at commit 7856caa393122e49d1073e1516d96d9811cb6b40 (complete 583-module strict focused run plus 808 isolated additions, all 1391 source hashes unchanged, 9344-declaration audit and successful aggregate), and all 6 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9352-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1397-module focused script, full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -2620,10 +2620,16 @@
     "NLS/KdV/HillHminusActionTraceStationarity.lean": "0e9a15acb0a9f3b1fd1f45b83f8fc0448fe821d5458e335815237920a0597079",
     "NLS/KdV/HillHminusNormalizedIndexedStationarity.lean": "6f5f0749d6b46f7783f376e55f5105ce4687ae07368e14184094824bb79ed0a6",
     "NLS/KdV/HillIntrinsicCartesianGardnerBracket.lean": "d3542491294ac7852a81685176cd561483fbeaa76f4c9c6cee4ab8b92aaca349",
-    "NLS/KdV/HillIntrinsicCartesianIndexedTransport.lean": "f5665ea7b3477113715a6edcc95f539fabc0f27ed8f921ffed773e87b1bdac80"
+    "NLS/KdV/HillIntrinsicCartesianIndexedTransport.lean": "f5665ea7b3477113715a6edcc95f539fabc0f27ed8f921ffed773e87b1bdac80",
+    "NLS/KdV/HillCartesianEndpointInvariant.lean": "1fb6a718883715ca14dbd8c71febf06658c6a2c9a7ab391b01d3364c0352dd45",
+    "NLS/KdV/HillCartesianFiniteInvariant.lean": "0a5f241a971a4a98d80a4285ea04cafc3b48dc1acff48fc9bd51f59cdb046b60",
+    "NLS/KdV/HillIntrinsicCartesianBracketContinuity.lean": "1f409a82c14246a7238169079eb7fca70c52b881b540ac527ec74624399250a5",
+    "NLS/KdV/HillCartesianAllPeriodicInvariant.lean": "3c68c5ac2152e48eeb89649451e03fa0dd5754bb1cc5e61bb229f27abec905d5",
+    "NLS/KdV/HillCartesianMatrixNormalization.lean": "476d1f8dab6fd722e793e49aedc2d706d7500bf07da278449e3e78a43f00bde1",
+    "NLS/KdV/HillHminusOriginalOpenCartesianMatrix.lean": "30292caf5bc546dcbac983976e5f2534c017b9367e9a7f994bf717b2ee5ff614"
   },
-  "remaining": "The action-kernel-to-trace-kernel criterion is now proved for every mean-zero ORIGINAL even complex L2 direction. The true Gardner vector has a literal mean-zero ORIGINAL L2 lift. ALL FOUR normalized ORIGINAL Cartesian brackets are stationary under every fixed-energy trace Hamiltonian and actual indexed source; their representative-independent intrinsic values are constant on every complete original indexed trajectory with open selected gaps. The exact full endpoint matrix and all-four-entry strong H-minus-one isospectral limits remain available. Still required: carry the intrinsic normalized invariant through finite endpoint transports and the all-periodic strong limit to obtain the arbitrary-source Cartesian matrix; close the required closed-selected-gap/global Cartesian cases; prove the mean-zero global inverse and identify the FIXED original physical KdV Birkhoff map with checked real/imaginary orientation. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-  "milestone": "Mean-zero Hill trace kernel and intrinsic normalized Cartesian indexed transport",
+  "remaining": "The FULL FOUR-ENTRY ORIGINAL complex Cartesian Gardner matrix is now proved at EVERY original mean-zero real L2 source with the two selected gaps open, for EVERY analytic H-minus-one representative matching the ORIGINAL real L2 germ. No endpoint, finite-gap or proposed invariance premise remains. The proof uses actual indexed normalized-bracket constancy, actual single and finite endpoint transports preserving this invariant, ORIGINAL strong L2 isospectral compactness, local intrinsic-bracket continuity and the proved all-periodic endpoint matrix. The only nonzero normalized matrix entries use the exact ORIGINAL twice-action coordinate product, proved isospectral. Still required: close the necessary closed-selected-gap/global Cartesian cases; prove the mean-zero global inverse and identify the FIXED original physical KdV Birkhoff map with checked real/imaginary orientation. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+  "milestone": "Full original open-gap Cartesian Gardner matrix by actual endpoint transport",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -4017,7 +4023,13 @@
     "NLS.KdV.HillHminusActionTraceStationarity",
     "NLS.KdV.HillHminusNormalizedIndexedStationarity",
     "NLS.KdV.HillIntrinsicCartesianGardnerBracket",
-    "NLS.KdV.HillIntrinsicCartesianIndexedTransport"
+    "NLS.KdV.HillIntrinsicCartesianIndexedTransport",
+    "NLS.KdV.HillCartesianEndpointInvariant",
+    "NLS.KdV.HillCartesianFiniteInvariant",
+    "NLS.KdV.HillIntrinsicCartesianBracketContinuity",
+    "NLS.KdV.HillCartesianAllPeriodicInvariant",
+    "NLS.KdV.HillCartesianMatrixNormalization",
+    "NLS.KdV.HillHminusOriginalOpenCartesianMatrix"
   ],
   "proof_commits": [
     {
@@ -4984,6 +4996,11 @@
       "commit": "10da8ab9538d4b55725ac2645ea8110f4fd1fc6e",
       "scope": "Eleven strictly checked actual signed Cartesian/action/indexed Gardner evolution modules; 9272-declaration audit and successful 1375-module aggregate.",
       "pushed": false
+    },
+    {
+      "commit": "7856caa393122e49d1073e1516d96d9811cb6b40",
+      "scope": "Sixteen strictly checked mean-zero trace kernel and intrinsic indexed normalized Cartesian transport modules; 9344-declaration audit and successful 1391-module aggregate.",
+      "pushed": false
     }
   ],
   "aggregate_check": {
@@ -5000,68 +5017,48 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "1391 focused modules covered by the unchanged 1375-module strictly validated base plus 16 isolated strict module checks; no fresh complete focused-script run is claimed.",
+    "focused_modules": "1397 focused modules covered by the unchanged 1391-module strictly validated base plus 6 isolated strict module checks; no fresh complete focused-script run is claimed.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 9344 declarations. Every new module-origin declaration and transitive axioms, including the shared Gardner L2 lift and weighted cosine Duhamel estimate; original action/period identity; exact first-mean trace remainder, sharp weighted and L2 bounds; mean-zero Cauchy variation, product decay and entire kernel criterion; actual action-to-trace Gardner stationarity; all-four normalized indexed stationarity; choice-independent intrinsic physical bracket and its complete-trajectory transport.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 9352 declarations. Every new module-origin declaration and its transitive axioms: actual single/finite endpoint normalized-bracket invariance, ORIGINAL L2 intrinsic normalized-bracket continuity and all-periodic limiting invariant, exact opposite-sign twice-action product and isospectral denominator cancellation, full intrinsic and arbitrary-physical-germ ORIGINAL open selected-gap Cartesian matrix.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 1391 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1375-module base has strict validation recorded at commit 10da8ab9538d4b55725ac2645ea8110f4fd1fc6e (complete 583-module strict focused run plus 792 isolated additions, all 1375 source hashes unchanged, 9272-declaration audit and successful aggregate), and all 16 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9344-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1391-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 1397 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1391-module base has strict validation recorded at commit 7856caa393122e49d1073e1516d96d9811cb6b40 (complete 583-module strict focused run plus 808 isolated additions, all 1391 source hashes unchanged, 9344-declaration audit and successful aggregate), and all 6 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9352-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1397-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified. The existing ParametricTrigonometricTerminal, ParametricSineTerminal, ParametricCosineTerminal, ParametricCosineChart, ParametricCosinePrimitive and LocalAnalyticSquareRoot sources were read and reused with bytes equal to the pinned prebuilt reference; their actual uses are covered transitively by the new Hill declaration audit. The endpoint-root continuity and arbitrary real-angle cosine-chart results are new shared proofs with explicit audit seeds. Generic parametric annular primitives, quadratic Cauchy projection and root primitives, quadratic cosine primitives and the segment-only analytic cosine mean were read and reused unchanged from the pinned prebuilt reference. Their SHA256 values are recorded in the analytic_regular_hill_abelian_corrections_through_closed_gaps source-map section. The actual uses are covered transitively by the expanded audit.",
-    "mathematical_scope": "Realize the true Gardner Hamiltonian vector as a bounded literal native L2 direction and lift it to the ORIGINAL complex even weighted L2 source with exactly zero mean. Identify every ORIGINAL action differential as minus twice the intrinsic gap period of the actual entire trace variation, including low and closed gaps. Prove an exact first-order trace expansion from the actual Duhamel equations with PLUS mean term sin(z)/z times mean(q). Bound the continuous-potential remainder by 4 exp(|Im z|) M(q)^2/|z|^2, and extend it by actual L2 density to the native unit-period source with bound 16 exp(|Im z|) norm(p)^2/|z|^2. Subtract the entire first mean term before applying the source Cauchy estimate: every mean-zero directional trace variation gains an inverse frequency without losing exponential type. Bound the reciprocal free factor by every actual full gap product on large central energy circles. The mean-zero trace variation divided by each such product tends uniformly to zero. Actual complex entire-period interpolation then proves that zero differentials of ALL ORIGINAL actions force zero trace variation at EVERY complex energy, for every ORIGINAL even mean-zero complex L2 direction. Apply this to the true Gardner vector of the normalized physical Cartesian bracket. Gardner antisymmetry converts the already verified action-source stationarity to stationarity under every trace Hamiltonian and actual physical trace source, hence under the actual indexed source with its energy frozen at the basepoint Dirichlet label. Define a representative-independent intrinsic bracket from genuine ORIGINAL physical germs, prove its local analytic formula, and chain it along actual original indexed trajectories. Its normalized intrinsic value has zero derivative and is constant on every complete indexed trajectory with the selected gaps open at one time.",
-    "scope": "All 1391 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1375-module base has strict validation recorded at commit 10da8ab9538d4b55725ac2645ea8110f4fd1fc6e (complete 583-module strict focused run plus 792 isolated additions, all 1375 source hashes unchanged, 9272-declaration audit and successful aggregate), and all 16 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9344-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1391-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Extend the ACTUAL single indexed endpoint transport to preserve the representative-independent normalized ORIGINAL Cartesian bracket, using its proved constancy on EVERY complete indexed trajectory. Induct through finite endpoint transports retaining the exact original mean, norm, all-energy discriminant, all labelled periodic endpoints, selected terminal data, unselected Dirichlet energies/log multipliers and the actual normalized bracket. Prove local continuity of the intrinsic normalized bracket in the ORIGINAL L2 topology from genuine ORIGINAL physical H-minus-one germs. Apply the already verified ORIGINAL strong L2 isospectral subsequence compactness to actual finite transports; prove the resulting all-periodic source has exactly the initial normalized intrinsic bracket. The actual ORIGINAL opposite signed coordinate product is twice the physical action in either order; therefore every nonzero endpoint matrix entry times its coordinate denominator is exactly isospectral. Combine this with the proved full all-periodic endpoint matrix and nonzero selected physical coordinates to recover the FULL FOUR-ENTRY ORIGINAL Cartesian Gardner matrix at EVERY mean-zero real L2 source with the selected two gaps open. Finally remove every choice of germ: every analytic H-minus-one representative matching the ORIGINAL real L2 neighborhoods has the same actual matrix, with exact positive-2i mixed normalization.",
+    "scope": "All 1397 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1391-module base has strict validation recorded at commit 7856caa393122e49d1073e1516d96d9811cb6b40 (complete 583-module strict focused run plus 808 isolated additions, all 1391 source hashes unchanged, 9344-declaration audit and successful aggregate), and all 6 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9352-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1397-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "d4ed060b74b012218977ee7593e8350dae0f3e303bab48793012c9aa8a71488f",
-      "scripts/check-kdv-estimates.sh": "5982b912367ed3178b36734d08ee2bdf9fe4072136aacfec7307a30b1a6ae00a",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "43de3d85d4be3e79fefe63dcbb39b71b16287416ff48554f4ec245bbc119e1ac"
+      "NLS.lean": "c20fc87d88e39cb131f1d9b34201397ea1414df3e4466cd703c7b861a817ad8d",
+      "scripts/check-kdv-estimates.sh": "bc78b5ec2af12bac2bbe4f2c85b1f6f7199219ad37d7e30f645ad7ab9f297e96",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "d74b6a59b5adbc550ede99bbd0a89951e31b9af36d7293c7b8ad3fed83198efc"
     },
     "focused_build_execution": {
       "mode": "strict_delta",
-      "base_commit": "10da8ab9538d4b55725ac2645ea8110f4fd1fc6e",
-      "base_focused_modules": 1375,
-      "base_verification_sha256": "0eda4da1c168fdd0e529dce41d11e8348dcbe9d67200e714999b044aec7c6508",
+      "base_commit": "7856caa393122e49d1073e1516d96d9811cb6b40",
+      "base_focused_modules": 1391,
+      "base_verification_sha256": "6530ab18365eff193ea65e8767d58fcf57c49b44624ba10b5dcd800a15ce6fd5",
       "base_sources_unchanged": true,
-      "base_validation_description": "complete 583-module strict focused run plus 792 isolated additions, all 1375 source hashes unchanged, 9272-declaration audit and successful aggregate",
+      "base_validation_description": "complete 583-module strict focused run plus 808 isolated additions, all 1391 source hashes unchanged, 9344-declaration audit and successful aggregate",
       "new_modules": [
-        "NLS/Poisson/GardnerHamiltonianHilbert.lean",
-        "NLS/KdV/HillGardnerOriginalHilbertDirection.lean",
-        "NLS/KdV/HillActionVariationPeriods.lean",
-        "NLS/ComplexAnalysis/WeightedCosineDuhamelBounds.lean",
-        "NLS/KdV/ClassicalHillWeightedStateError.lean",
-        "NLS/KdV/ClassicalHillTraceFirstRemainder.lean",
-        "NLS/KdV/ClassicalHillWeightedTraceRemainder.lean",
-        "NLS/KdV/HillL2WeightedTraceRemainder.lean",
-        "NLS/KdV/HillMeanZeroTraceVariationBound.lean",
-        "NLS/KdV/HillGapProductInverseFreeBound.lean",
-        "NLS/KdV/HillMeanZeroTraceProductDecay.lean",
-        "NLS/KdV/HillMeanZeroActionTraceKernel.lean",
-        "NLS/KdV/HillHminusActionTraceStationarity.lean",
-        "NLS/KdV/HillHminusNormalizedIndexedStationarity.lean",
-        "NLS/KdV/HillIntrinsicCartesianGardnerBracket.lean",
-        "NLS/KdV/HillIntrinsicCartesianIndexedTransport.lean"
+        "NLS/KdV/HillCartesianEndpointInvariant.lean",
+        "NLS/KdV/HillCartesianFiniteInvariant.lean",
+        "NLS/KdV/HillIntrinsicCartesianBracketContinuity.lean",
+        "NLS/KdV/HillCartesianAllPeriodicInvariant.lean",
+        "NLS/KdV/HillCartesianMatrixNormalization.lean",
+        "NLS/KdV/HillHminusOriginalOpenCartesianMatrix.lean"
       ],
       "new_source_sha256": {
-        "NLS/Poisson/GardnerHamiltonianHilbert.lean": "98c85960c187e3f740dfb20e46f9115589bc0393b7f8f659a913634011ba302f",
-        "NLS/KdV/HillGardnerOriginalHilbertDirection.lean": "4d5b5c7d67bd034658b23785012b89d87385cd52023a2d9b62800997b655428d",
-        "NLS/KdV/HillActionVariationPeriods.lean": "ad75598723cd381fe7a94cb911ee800dc4f4813de261e422fae89e7259d0ca2b",
-        "NLS/ComplexAnalysis/WeightedCosineDuhamelBounds.lean": "b65a032aeaef10dbd308375856e795ec7aa91bd6206c496651bbada53427c8b2",
-        "NLS/KdV/ClassicalHillWeightedStateError.lean": "3fb310e14074ae21d3b04c842877c622b43b7d0cb3213f5af18d4f4e31169812",
-        "NLS/KdV/ClassicalHillTraceFirstRemainder.lean": "ec35862c98c98d974cbee07e2e570a7451dd8177a6a75ca36ad4bc25024bad88",
-        "NLS/KdV/ClassicalHillWeightedTraceRemainder.lean": "eb59c8c6cd5ba7f74aab89d1f4fd220bf4e0ed320fbc7437380a975ebe87c896",
-        "NLS/KdV/HillL2WeightedTraceRemainder.lean": "d52f9da58929c90bea5cc1c6f36030fb2f039aa0962d4a1b4a2419a04b800cb2",
-        "NLS/KdV/HillMeanZeroTraceVariationBound.lean": "474e71521d4322e25d4a775c0f6c1e68c17eceeeb79a9dcdd10da8daa42ba3cf",
-        "NLS/KdV/HillGapProductInverseFreeBound.lean": "4256b0da9ca83fb3974f7f3ac954c897ce73b946e69d0117887e7e01e6e4b2fb",
-        "NLS/KdV/HillMeanZeroTraceProductDecay.lean": "073618c28f239a1123a5df6c788fb8bc29ea3f54d6399e0ddd211237924a03c1",
-        "NLS/KdV/HillMeanZeroActionTraceKernel.lean": "e5aee437df809f2a1239ad95211ca6f7d792979ced931ff6449e0ccc3745e41e",
-        "NLS/KdV/HillHminusActionTraceStationarity.lean": "0e9a15acb0a9f3b1fd1f45b83f8fc0448fe821d5458e335815237920a0597079",
-        "NLS/KdV/HillHminusNormalizedIndexedStationarity.lean": "6f5f0749d6b46f7783f376e55f5105ce4687ae07368e14184094824bb79ed0a6",
-        "NLS/KdV/HillIntrinsicCartesianGardnerBracket.lean": "d3542491294ac7852a81685176cd561483fbeaa76f4c9c6cee4ab8b92aaca349",
-        "NLS/KdV/HillIntrinsicCartesianIndexedTransport.lean": "f5665ea7b3477113715a6edcc95f539fabc0f27ed8f921ffed773e87b1bdac80"
+        "NLS/KdV/HillCartesianEndpointInvariant.lean": "1fb6a718883715ca14dbd8c71febf06658c6a2c9a7ab391b01d3364c0352dd45",
+        "NLS/KdV/HillCartesianFiniteInvariant.lean": "0a5f241a971a4a98d80a4285ea04cafc3b48dc1acff48fc9bd51f59cdb046b60",
+        "NLS/KdV/HillIntrinsicCartesianBracketContinuity.lean": "1f409a82c14246a7238169079eb7fca70c52b881b540ac527ec74624399250a5",
+        "NLS/KdV/HillCartesianAllPeriodicInvariant.lean": "3c68c5ac2152e48eeb89649451e03fa0dd5754bb1cc5e61bb229f27abec905d5",
+        "NLS/KdV/HillCartesianMatrixNormalization.lean": "476d1f8dab6fd722e793e49aedc2d706d7500bf07da278449e3e78a43f00bde1",
+        "NLS/KdV/HillHminusOriginalOpenCartesianMatrix.lean": "30292caf5bc546dcbac983976e5f2534c017b9367e9a7f994bf717b2ee5ff614"
       },
       "isolated_stage_exit_code": 0,
       "isolated_stage_source_matches_integrated": true,
       "expanded_axiom_audit_exit_code": 0,
-      "transitive_axiom_audit_declarations": 9344,
+      "transitive_axiom_audit_declarations": 9352,
       "complete_current_focused_script_rerun": false
     },
     "additional_shared_source_checks": [
@@ -5392,9 +5389,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Mean-zero Hill trace kernel and intrinsic normalized Cartesian indexed transport",
-    "focused_modules": 1391,
-    "scope": "All 1391 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1375-module base has strict validation recorded at commit 10da8ab9538d4b55725ac2645ea8110f4fd1fc6e (complete 583-module strict focused run plus 792 isolated additions, all 1375 source hashes unchanged, 9272-declaration audit and successful aggregate), and all 16 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9344-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1391-module focused script, full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Full original open-gap Cartesian Gardner matrix by actual endpoint transport",
+    "focused_modules": 1397,
+    "scope": "All 1397 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1391-module base has strict validation recorded at commit 7856caa393122e49d1073e1516d96d9811cb6b40 (complete 583-module strict focused run plus 808 isolated additions, all 1391 source hashes unchanged, 9344-declaration audit and successful aggregate), and all 6 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9352-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1397-module focused script, full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
@@ -6042,6 +6039,12 @@
       "milestone": "Actual signed Cartesian bracket and matrix-defect evolution with the indexed Jacobi equation",
       "focused_modules": 1375,
       "scope": "All 1375 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1364-module base has strict validation recorded at commit a7938fd5ab34d5302b5b9051acee9c753e6ae4a0 (complete 583-module strict focused run plus 781 isolated additions, all 1364 source hashes unchanged, 9250-declaration audit and successful aggregate), and all 11 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9272-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1375-module focused script, full Lake rebuild and full repository examples were not rerun."
+    },
+    {
+      "status": "passed",
+      "milestone": "Mean-zero Hill trace kernel and intrinsic normalized Cartesian indexed transport",
+      "focused_modules": 1391,
+      "scope": "All 1391 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1375-module base has strict validation recorded at commit 10da8ab9538d4b55725ac2645ea8110f4fd1fc6e (complete 583-module strict focused run plus 792 isolated additions, all 1375 source hashes unchanged, 9272-declaration audit and successful aggregate), and all 16 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9344-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1391-module focused script, full Lake rebuild and full repository examples were not rerun."
     }
   ]
 }
