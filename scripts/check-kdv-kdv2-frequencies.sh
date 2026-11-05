@@ -1416,6 +1416,17 @@ modules=(
   NLS/ComplexAnalysis/AnalyticZeroLinearBound
   NLS/KdV/HillHminusNormingSinhIdentity
   NLS/Articles/KdVKdV2Frequencies/NativeRoughDirichletPacket
+  NLS/KdV/HillL2DirichletTerminal
+  NLS/MKdV/QuasiHillL2PhysicalSource
+  NLS/ZakharovShabat/L2InitialValueACUniqueness
+  NLS/MKdV/QuasiHillL2WeakSolution
+  NLS/MKdV/QuasiHillL2InitialValue
+  NLS/MKdV/QuasiHillL2DirichletCriterion
+  NLS/MKdV/QuasiHillL2LagrangeIdentity
+  NLS/MKdV/MiuraL2DirichletTerminal
+  NLS/KdV/HillHminusPhysicalDirichletLabels
+  NLS/KdV/HillHminusPhysicalDirichletNorming
+  NLS/Articles/KdVKdV2Frequencies/NativePhysicalDirichletPacket
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

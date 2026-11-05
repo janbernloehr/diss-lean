@@ -1,3 +1,14 @@
+import NLS.Articles.KdVKdV2Frequencies.NativePhysicalDirichletPacket
+import NLS.KdV.HillHminusPhysicalDirichletNorming
+import NLS.KdV.HillL2DirichletTerminal
+import NLS.MKdV.QuasiHillL2PhysicalSource
+import NLS.ZakharovShabat.L2InitialValueACUniqueness
+import NLS.MKdV.QuasiHillL2WeakSolution
+import NLS.MKdV.QuasiHillL2InitialValue
+import NLS.MKdV.QuasiHillL2DirichletCriterion
+import NLS.MKdV.QuasiHillL2LagrangeIdentity
+import NLS.MKdV.MiuraL2DirichletTerminal
+import NLS.KdV.HillHminusPhysicalDirichletLabels
 import NLS.ZakharovShabat.FloquetQuadratic
 import NLS.ZakharovShabat.SourceAntiDiscriminantCentralLp
 import NLS.ZakharovShabat.SourceLemma9_2
@@ -1949,7 +1960,18 @@ run_cmd do
     `NLS.KdV.HillHminusDirichletNormingSequence,
     `NLS.ComplexAnalysis.AnalyticZeroLinearBound,
     `NLS.KdV.HillHminusNormingSinhIdentity,
-    `NLS.Articles.KdVKdV2Frequencies.NativeRoughDirichletPacket
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughDirichletPacket,
+    `NLS.KdV.HillL2DirichletTerminal,
+    `NLS.MKdV.QuasiHillL2PhysicalSource,
+    `NLS.ZakharovShabat.L2InitialValueACUniqueness,
+    `NLS.MKdV.QuasiHillL2WeakSolution,
+    `NLS.MKdV.QuasiHillL2InitialValue,
+    `NLS.MKdV.QuasiHillL2DirichletCriterion,
+    `NLS.MKdV.QuasiHillL2LagrangeIdentity,
+    `NLS.MKdV.MiuraL2DirichletTerminal,
+    `NLS.KdV.HillHminusPhysicalDirichletLabels,
+    `NLS.KdV.HillHminusPhysicalDirichletNorming,
+    `NLS.Articles.KdVKdV2Frequencies.NativePhysicalDirichletPacket
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

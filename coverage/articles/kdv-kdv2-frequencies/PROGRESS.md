@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual rough Dirichlet Hilbert packet
+## Latest physical normalization of the rough Dirichlet packet
+
+Every intrinsic rough Dirichlet energy and endpoint/log norming now agrees with its ORIGINAL physical L2 definition at every real source and positive index. The comparison includes first and collapsed gaps and nonzero means. It uses the literal unit-period Fourier inclusion and the actual derivative-one IVP, with no relabeling hypothesis supplied by the caller.
+
+The article result now gives D,K,S on one common complex Hminus-one ball with native Hilbert analyticity, vanishing at zero, joint linear norm bound, exact complex characteristic zeros and S=sinh K. On that SAME ball they recover the original physical L2 labelled energies, logarithmic multipliers and their sinh at every positive index. See `PHYSICAL_DIRICHLET_MATCHING.md` and `SHARED_DIRICHLET_TERMINAL_IMPORT.json`.
+
+Prior strict evidence retained for all 1407 unchanged selected baseline sources; all 11 new modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1418 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1455 frozen source/checker/provenance/Mathlib-source hashes, 33 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 11 selections. Eight shared sources are byte-identical imports and thirteen local API variants are retained unchanged. No full 1418-module rebuild is claimed.
+
+Fresh audit: 12321 selected and 34391 imported NLS declarations; permitted axioms only. Rough Abelian symmetric midpoints/amplitudes/regular phase/full map, full canonicality, global inverse, full regularity and the frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual rough Dirichlet Hilbert packet
 
 One complex ball in the original period-one Hminus-one source now supports native Hilbert analytic normalized Dirichlet energies D, log normings K and signed anti-discriminant samples S. All vanish at zero and satisfy the joint bound norm(Dq)+norm(Kq)+norm(Sq)<=C*norm(q). Before every positive index: the actual entire Dirichlet characteristic vanishes at (pi*n)^2+n*D_n, and at every real source the components recover the intrinsic actual labelled energy displacement divided by n, logarithmic norming and its sinh. Nonpositive outputs vanish, and S_j=sinh(K_j) holds throughout the same complex ball. First/closed gaps and nonzero means are included.
 

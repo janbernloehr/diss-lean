@@ -127,6 +127,11 @@
           "source_clause": "Actual intrinsic rough Dirichlet spectral packet on one common complex Hminus-one ball, with native Hilbert analyticity and linear norm control",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_dirichlet_packet",
           "qualification": "One common complex original Hminus-one ball before all positive Dirichlet indices supports actual normalized energy, log-norming and sinh maps into ell2, zero at zero, zero nonpositive outputs, joint norm<=C*norm(q), exact complex characteristic zeros and all-real intrinsic spectral recovery. Complex S=sinh K holds on that same ball. This is rough spectral input, not the full Abelian map, canonicality, global inverse or any complete main theorem."
+        },
+        {
+          "source_clause": "Global equality of intrinsic rough Dirichlet labels/normings with original physical L2 data, and exact physical recovery on a common native Hminus-one Hilbert analytic ball",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_physical_dirichlet_packet",
+          "qualification": "One common complex original Hminus-one ball before all indices supports native Hilbert analytic D,K,S vanishing at zero with joint linear norm bound, exact complex Dirichlet zeros, zero nonpositive components and S=sinh K. At every original real L2 source whose literal Hminus-one inclusion is in that same ball, the positive components equal the ORIGINAL physical Dirichlet energy displacement divided by n, logarithmic multiplier and its sinh. This is exact physical matching of rough spectral input, not the full rough Abelian map or a complete main theorem."
         }
       ]
     },
@@ -19814,12 +19819,144 @@
       "scope": "One common complex original Hminus-one ball before all positive Dirichlet indices supports actual normalized energy, log-norming and sinh maps into ell2, zero at zero, zero nonpositive outputs, joint norm<=C*norm(q), exact complex characteristic zeros and all-real intrinsic spectral recovery. Complex S=sinh K holds on that same ball. This is rough spectral input, not the full Abelian map, canonicality, global inverse or any complete main theorem.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "55a349f3d232846e4c1981e5a4758b6fca4a0ac9882774b522e865249d5bb5d1"
+    },
+    {
+      "path": "NLS/KdV/HillL2DirichletTerminal.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual physical Dirichlet terminal dependency: HillL2DirichletTerminal. Byte-identical source from articles/kdv-estimates; exact hashes and retained original local APIs in SHARED_DIRICHLET_TERMINAL_IMPORT.json. Strictly checked with the combined article dependencies; no complete main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b66facba48175b3bcf773e907307c80381c8604103ca51e0204a1e3edcee1830"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillL2PhysicalSource.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual physical Dirichlet terminal dependency: QuasiHillL2PhysicalSource. Byte-identical source from articles/kdv-estimates; exact hashes and retained original local APIs in SHARED_DIRICHLET_TERMINAL_IMPORT.json. Strictly checked with the combined article dependencies; no complete main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6e4a9c4b9b057fd75710366c2c89ae0771a99d889ed68f265f542db4b9bbca22"
+    },
+    {
+      "path": "NLS/ZakharovShabat/L2InitialValueACUniqueness.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual physical Dirichlet terminal dependency: L2InitialValueACUniqueness. Byte-identical source from articles/kdv-estimates; exact hashes and retained original local APIs in SHARED_DIRICHLET_TERMINAL_IMPORT.json. Strictly checked with the combined article dependencies; no complete main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f468e5e6163cc6eaa4eae30c437792242403bc15e9c03c657333ac5b63603c07"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillL2WeakSolution.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual physical Dirichlet terminal dependency: QuasiHillL2WeakSolution. Byte-identical source from articles/kdv-estimates; exact hashes and retained original local APIs in SHARED_DIRICHLET_TERMINAL_IMPORT.json. Strictly checked with the combined article dependencies; no complete main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ba983edd991f63ca4f442aff41ef11f6b918abb76bf6a9d2867024995561e46d"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillL2InitialValue.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual physical Dirichlet terminal dependency: QuasiHillL2InitialValue. Byte-identical source from articles/kdv-estimates; exact hashes and retained original local APIs in SHARED_DIRICHLET_TERMINAL_IMPORT.json. Strictly checked with the combined article dependencies; no complete main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7c863303c4136e4bd7618e05f0e444b10a5b7f21fb00810bd00c58faa1b952f2"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillL2DirichletCriterion.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual physical Dirichlet terminal dependency: QuasiHillL2DirichletCriterion. Byte-identical source from articles/kdv-estimates; exact hashes and retained original local APIs in SHARED_DIRICHLET_TERMINAL_IMPORT.json. Strictly checked with the combined article dependencies; no complete main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5ff285bf4fa70bba01425ced6c6e5d95f78c6c6d0adb8a60a45ced468a759590"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillL2LagrangeIdentity.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual physical Dirichlet terminal dependency: QuasiHillL2LagrangeIdentity. Byte-identical source from articles/kdv-estimates; exact hashes and retained original local APIs in SHARED_DIRICHLET_TERMINAL_IMPORT.json. Strictly checked with the combined article dependencies; no complete main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2ccd8ec7e58b3b8629b90098c506acda07d29e1fffb0b210a162301bccbea7a8"
+    },
+    {
+      "path": "NLS/MKdV/MiuraL2DirichletTerminal.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual physical Dirichlet terminal dependency: MiuraL2DirichletTerminal. Byte-identical source from articles/kdv-estimates; exact hashes and retained original local APIs in SHARED_DIRICHLET_TERMINAL_IMPORT.json. Strictly checked with the combined article dependencies; no complete main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6cec277260dd1c73c9c4a7d7155d3bb424f8582162d70e5953127e25f95f42fa"
+    },
+    {
+      "path": "NLS/KdV/HillHminusPhysicalDirichletLabels.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Literal continuous even-index physical L2 to original unit-period Hminus-one inclusion; all-complex-energy characteristic equality and global equality of every positive intrinsic Dirichlet energy with the original physical labelled energy, by continuous local root uniqueness along the real segment from zero. No norm, mean or open-gap restriction.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e1987b3ccf8cbbee71ff880a15bed161d0d8f545a8493ce515979a100fcc522a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusPhysicalDirichletNorming.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual chart terminal physical momentum equals the coefficient quasi-Hill terminal at every complex source and energy. At every complex L2 Dirichlet root it equals the original physical derivative. Consequently all intrinsic real Hminus-one Dirichlet normings and signed logarithms restrict globally to the original L2 slope and log multiplier, at every positive index including collapsed gaps and nonzero means.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0c4b914a4b688428a9245e420548f5c37f0c0a78456bb6803c9ad5a71df249c8"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativePhysicalDirichletPacket.lean",
+      "source_labels": [
+        "Physical normalization of rough Dirichlet spectral data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One common complex original Hminus-one ball before all indices supports native Hilbert analytic D,K,S vanishing at zero with joint linear norm bound, exact complex Dirichlet zeros, zero nonpositive components and S=sinh K. At every original real L2 source whose literal Hminus-one inclusion is in that same ball, the positive components equal the ORIGINAL physical Dirichlet energy displacement divided by n, logarithmic multiplier and its sinh. This is exact physical matching of rough spectral input, not the full rough Abelian map or a complete main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "84b6bfaf2aa7643f208d0527ee8450d3c7b60b72c4b691a3004e535adf775e48"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The actual near-zero L2 weighted Abelian map, real-preserving local inverse and simultaneous analytic physical action fields are proved. NOW one common complex original Hminus-one ball supports actual intrinsic normalized Dirichlet energies, log normings and sinh in ell2, with exact characteristic zeros, real spectral recovery and joint linear norm bound. NEXT construct rough symmetric midpoints/filled roots/amplitudes and regular phase, assemble the negative-half target map and identify all physical components; then full coordinate-coordinate canonical brackets, arbitrary-base/global inverse, full s>=-1 scale, Hamiltonian action-frequency identities and remaining spectral/PDE main conclusions.",
+    "The actual native near-zero L2 Abelian map, real local inverse and simultaneous action Hamiltonian fields are proved. The native rough Dirichlet Hilbert packet now matches the ORIGINAL physical L2 labelled energies and logarithmic multipliers at all positive indices on its same Hminus-one ball; the shared label and norming comparisons are global in the real L2 source, with no mean/open-gap restriction. NEXT build rough symmetric midpoints, filled roots, action/gap amplitudes and regular phase, assemble the negative-half target map; then full coordinate-coordinate canonical brackets, arbitrary-base/global inverse, full s>=-1 scale and actual Hamiltonian action-frequency/PDE main theorems.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -19845,15 +19982,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 12222,
-    "total_declarations_audited": 34293,
+    "candidate_declarations_audited": 12321,
+    "total_declarations_audited": 34391,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1407,
+    "selected_modules": 1418,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -19915,7 +20052,8 @@
     "native_weighted_abelian_validation_sequence": "Prior strict evidence for all 1237 unchanged selected baseline sources; strict dependency-order compilation of twenty-one new proof modules; then a fresh combined transitive axiom audit of all 1258 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1290 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the twenty-one new modules. No repeated full 1258-module rebuild is claimed.",
     "native_real_inverse_validation_sequence": "Prior strict evidence for all 1258 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules and four unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1272 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1305 frozen source/checker/provenance hashes, 30 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the ten new proof modules; the four canonical helpers were already in the imported closure. No repeated full 1272-module rebuild is claimed.",
     "native_action_fields_validation_sequence": "Prior strict evidence for all 1272 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules and two unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1282 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1316 frozen source/checker/provenance hashes, 31 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the eight new proof modules; both canonical helpers were already in the imported closure. No repeated full 1282-module rebuild is claimed.",
-    "native_rough_dirichlet_validation_sequence": "Prior strict evidence for all 1282 unchanged selected baseline sources; 125 new selections strictly checked: 114 incoming source files, eight new or extracted compatibility/proof modules, and three unchanged canonical helpers. A retained 112-module integrated source-check prefix is completed by 13 strict selections after the needed private canonical helper outputs are prepared, followed by a fresh combined transitive axiom audit of all 1407 selected modules. The original interrupted prefix log is retained: its sole error is a missing private SourceLemma9_2.olean; the final log contains the successful helper and consumer builds and no error or warning. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 1443 frozen source/checker/provenance/Mathlib-source hashes, 32 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS imported source closure adds exactly the 125 new selections. Pinned Mathlib Arsinh is compiled privately with warningAsError at default heartbeats. No full 1407-module rebuild is claimed."
+    "native_rough_dirichlet_validation_sequence": "Prior strict evidence for all 1282 unchanged selected baseline sources; 125 new selections strictly checked: 114 incoming source files, eight new or extracted compatibility/proof modules, and three unchanged canonical helpers. A retained 112-module integrated source-check prefix is completed by 13 strict selections after the needed private canonical helper outputs are prepared, followed by a fresh combined transitive axiom audit of all 1407 selected modules. The original interrupted prefix log is retained: its sole error is a missing private SourceLemma9_2.olean; the final log contains the successful helper and consumer builds and no error or warning. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 1443 frozen source/checker/provenance/Mathlib-source hashes, 32 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS imported source closure adds exactly the 125 new selections. Pinned Mathlib Arsinh is compiled privately with warningAsError at default heartbeats. No full 1407-module rebuild is claimed.",
+    "physical_dirichlet_validation_sequence": "Prior strict evidence retained for all 1407 unchanged selected baseline sources; all 11 new modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1418 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1455 frozen source/checker/provenance/Mathlib-source hashes, 33 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 11 selections. Eight shared sources are byte-identical imports and thirteen local API variants are retained unchanged. No full 1418-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -19963,7 +20101,7 @@
   "primitive_continuation_record": "PRIMITIVE_CONTINUATION.md",
   "shared_developments_imported": {
     "articles/kdv-convexity": "ba0cf42ee4f2e37acfc7a239af566e11b9e583f2",
-    "articles/kdv-estimates": "e36a0443e127c72527458d1970ad66ecbef091f2"
+    "articles/kdv-estimates": "91e0789978eb013d13e9c974ba362eef29eac4dd"
   },
   "shared_integration_recheck": {
     "command": "env ELAN_HOME=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/tooling/elan NLS_REFERENCE_CHECKOUT=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls bash scripts/check-kdv-convexity.sh",
@@ -20449,6 +20587,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "de6c69c8e4515d10356af96f8bcc8737c0439d22",
+      "description": "Prior common native rough Dirichlet packet; now global equality with original physical Dirichlet energies and endpoint/log normings, and exact all-index physical recovery on the same rough analytic ball.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The actual near-zero L2 weighted Abelian map, real-preserving local inverse and simultaneous analytic physical action fields are proved. NOW one common complex original Hminus-one ball supports actual intrinsic normalized Dirichlet energies, log normings and sinh in ell2, with exact characteristic zeros, real spectral recovery and joint linear norm bound. NEXT construct rough symmetric midpoints/filled roots/amplitudes and regular phase, assemble the negative-half target map and identify all physical components; then full coordinate-coordinate canonical brackets, arbitrary-base/global inverse, full s>=-1 scale, Hamiltonian action-frequency identities and remaining spectral/PDE main conclusions.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -20474,5 +20624,6 @@
   "native_weighted_abelian_record": "NATIVE_WEIGHTED_ABELIAN_MAP.md",
   "native_real_inverse_record": "NATIVE_REAL_ABELIAN_INVERSE.md",
   "native_action_fields_record": "NATIVE_ACTION_HAMILTONIAN_FIELDS.md",
-  "native_rough_dirichlet_record": "NATIVE_ROUGH_DIRICHLET_PACKET.md"
+  "native_rough_dirichlet_record": "NATIVE_ROUGH_DIRICHLET_PACKET.md",
+  "physical_dirichlet_record": "PHYSICAL_DIRICHLET_MATCHING.md"
 }

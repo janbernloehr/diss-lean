@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual rough Dirichlet Hilbert packet
+## Latest physical normalization of the rough Dirichlet packet
+
+Every intrinsic rough Dirichlet energy and endpoint/log norming now agrees with its ORIGINAL physical L2 definition at every real source and positive index. The comparison includes first and collapsed gaps and nonzero means. It uses the literal unit-period Fourier inclusion and the actual derivative-one IVP, with no relabeling hypothesis supplied by the caller.
+
+The article result now gives D,K,S on one common complex Hminus-one ball with native Hilbert analyticity, vanishing at zero, joint linear norm bound, exact complex characteristic zeros and S=sinh K. On that SAME ball they recover the original physical L2 labelled energies, logarithmic multipliers and their sinh at every positive index. See `PHYSICAL_DIRICHLET_MATCHING.md` and `SHARED_DIRICHLET_TERMINAL_IMPORT.json`.
+
+Prior strict evidence retained for all 1407 unchanged selected baseline sources; all 11 new modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1418 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1455 frozen source/checker/provenance/Mathlib-source hashes, 33 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 11 selections. Eight shared sources are byte-identical imports and thirteen local API variants are retained unchanged. No full 1418-module rebuild is claimed.
+
+Fresh audit: 12321 selected and 34391 imported NLS declarations; permitted axioms only. Rough Abelian symmetric midpoints/amplitudes/regular phase/full map, full canonicality, global inverse, full regularity and the frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual rough Dirichlet Hilbert packet
 
 One complex ball in the original period-one Hminus-one source now supports native Hilbert analytic normalized Dirichlet energies D, log normings K and signed anti-discriminant samples S. All vanish at zero and satisfy the joint bound norm(Dq)+norm(Kq)+norm(Sq)<=C*norm(q). Before every positive index: the actual entire Dirichlet characteristic vanishes at (pi*n)^2+n*D_n, and at every real source the components recover the intrinsic actual labelled energy displacement divided by n, logarithmic norming and its sinh. Nonpositive outputs vanish, and S_j=sinh(K_j) holds throughout the same complex ball. First/closed gaps and nonzero means are included.
 
@@ -506,7 +516,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1407 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1418 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1575,7 +1585,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1407 selected modules (including generated and private declarations)
+the 1418 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -3182,4 +3192,21 @@ PASS NLS/ComplexAnalysis/AnalyticZeroLinearBound
 PASS NLS/KdV/HillHminusNormingSinhIdentity
 PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughDirichletPacket
 Axiom audit passed: 12222 candidate declarations; 34293 declarations total.
+```
+
+Latest physical Dirichlet matching strict checks and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillL2DirichletTerminal
+PASS NLS/MKdV/QuasiHillL2PhysicalSource
+PASS NLS/ZakharovShabat/L2InitialValueACUniqueness
+PASS NLS/MKdV/QuasiHillL2WeakSolution
+PASS NLS/MKdV/QuasiHillL2InitialValue
+PASS NLS/MKdV/QuasiHillL2DirichletCriterion
+PASS NLS/MKdV/QuasiHillL2LagrangeIdentity
+PASS NLS/MKdV/MiuraL2DirichletTerminal
+PASS NLS/KdV/HillHminusPhysicalDirichletLabels
+PASS NLS/KdV/HillHminusPhysicalDirichletNorming
+PASS NLS/Articles/KdVKdV2Frequencies/NativePhysicalDirichletPacket
+Axiom audit passed: 12321 candidate declarations; 34391 declarations total.
 ```
