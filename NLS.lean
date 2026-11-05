@@ -5932,3 +5932,7 @@ import NLS.KdV.HillFrequencyStateAnalytic
 import NLS.KdV.HillEnergyStateAnalytic
 import NLS.KdV.HillEnergyGradientAnalytic
 import NLS.KdV.HillIndexedSourceAnalytic
+import NLS.KdV.HillRealSourceSubmodule
+import NLS.KdV.HillRealIndexedField
+import NLS.KdV.HillIndexedLocalFlow
+import NLS.KdV.HillIndexedFlowTerminalDynamics
