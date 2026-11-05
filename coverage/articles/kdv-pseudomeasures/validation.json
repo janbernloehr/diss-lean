@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Source Main1.1 and Main1.3 are proved with the exact original physical endpoint spaces and Wiener weak-star topologies. The original rough solution is characterized nonvacuously and uniquely by EVERY jointly smooth classical PDE approximation; Main1.4 remains proved. Main5.1 and Main5.9 remain unproved.",
+  "phase": "Literal signed Wiener models, compact Hilbert-to-Wiener embeddings and exact all-order free Fourier equivalences are proved. The actual all-integer Wiener Birkhoff diffeomorphism reduces to one explicit L2 analytic one-smoothing estimate for the SAME native map; that base estimate is NOT proved. Main1.1,1.3,1.4 remain proved; Main5.1,5.9 remain unproved.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1893,13 +1893,22 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalClassicalRoughSolution.lean",
     "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
     "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
+    "NLS/SequenceSpaces/CompactHolderMultiplier.lean",
+    "NLS/SequenceSpaces/SignedHilbertWienerInclusion.lean",
+    "NLS/SequenceSpaces/SignedOrderHalfFourierEquiv.lean",
+    "NLS/SequenceSpaces/FourierRealExponentInclusion.lean",
+    "NLS/FunctionalAnalysis/AnalyticSmoothingRestriction.lean",
+    "NLS/SequenceSpaces/SignedSpatialAnalyticMapLadder.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerModels.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerSmoothingReduction.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7771,
-  "definitions": 1456,
+  "proved_theorems": 7815,
+  "definitions": 1473,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 9227,
+    "declarations": 9288,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3291,10 +3300,18 @@
     "OriginalHillPhysicalClassicalRoughSolution transfers that exact EVERY-classical-family approximation formulation to the original physical H-minus-one distributions. Norm continuity, the prescribed initial potential and convergence for EVERY classical family determine the SAME actual original canonical flow uniquely. Original approximating families are constructed for EVERY original rough potential.",
     "MainTheorem11.sourceTheorem1_1 proves the complete explicit sourceTheorem1_1Statement for EVERY -1/2<s<=0 and EVERY original real mean-zero period-one endpoint potential: its UNIQUE original classical-approximation KdV solution evolves in the identical original endpoint space, has ONE original endpoint norm bound for ALL real times and is continuous in the literal Wiener weak-star topology. The statement includes the actual original solution property and exact equality of every evolved original distribution.",
     "MainTheorem13.sourceTheorem1_3 proves the complete sourceTheorem1_3Statement for EVERY admissible source s, EVERY original endpoint norm-bounded KdV-invariant V, and EVERY T>0. The actual solution map is continuous V_weakstar -> C([-T,T],V_weakstar) in the full compact-open topology. V need not be closed.",
-    "Source Main1.1,1.3,1.4 are proved. Literal weighted ell-one Wiener Main5.1 and Main5.9, including their precise final main statements, remain OPEN. No integer Hilbert theorem is substituted for a Wiener conclusion. Universal ACTUAL Hill numerator scalar2/(pi*n) remains open. Goal ACTIVE."
+    "Source Main1.1,1.3,1.4 are proved. Literal weighted ell-one Wiener Main5.1 and Main5.9, including their precise final main statements, remain OPEN. No integer Hilbert theorem is substituted for a Wiener conclusion. Universal ACTUAL Hill numerator scalar2/(pi*n) remains open. Goal ACTIVE.",
+    "Shared CompactHolderMultiplier proves that a finite-conjugate-exponent symbol gives a COMPACT Holder multiplier into literal ell-one, by norm approximation with finite-output maps. A square-summable ratio of target/source weights therefore gives a compact coefficient-preserving Hilbert-to-Wiener inclusion.",
+    "Shared SignedHilbertWienerInclusion proves the exact compact embedding signed H^(s+1) -> signed ell^(s,one) at EVERY real s. Its real zero-mode restriction is a real continuous linear compact map retaining EVERY raw coefficient and physical reality/zero mean. This is the actual compact inclusion used by the source Lemma5.6 mechanism, rather than an endpoint infinity surrogate.",
+    "Shared SignedOrderHalfFourierEquiv proves the original half-Fourier transform and bounded inverse at EVERY real signed Sobolev order and EVERY Banach exponent, including p=1. The exact signed multiplier is 1/(sqrt(2*pi)*sqrt(max(1,abs(k)))); its inverse and the physical real mean-zero equivalence retain the original normalization.",
+    "Shared FourierRealExponentInclusion constructs injective coefficient-preserving real zero-mode exponent inclusions. OriginalHillWienerModels supplies literal actual Wiener source/target inclusions into the SAME integer Hilbert and rough models, and compatibility of the exact free Fourier equivalences at p=1 and p=2.",
+    "Shared AnalyticSmoothingRestriction constructs a stronger-space analytic equivalence and its analytic inverse from an ambient analytic equivalence, compatible principal linear equivalences and one analytic smoothing defect. The inverse formula is derived from the ambient inverse and the SAME forward defect, so stronger inverse regularity is NOT an extra hypothesis. Compactness of the smoothing map also gives the compact derivative-minus-principal operator.",
+    "OriginalHillWienerSmoothingReduction defines the EXPLICIT actual HillIntegerNativeOneSmoothing N obligation: the actual integer native map minus its original free Fourier multiplier is analytic into the actual native target with ONE extra Hilbert order. Given that premise, it constructs a genuine real analytic diffeomorphism on the ENTIRE literal signed Wiener source/target with all output coefficients equal to the SAME actual rough native map. This theorem remains CONDITIONAL; it is not Main5.1.",
+    "Shared SignedSpatialAnalyticMapLadder lifts arbitrary analytic spatially covariant maps through ALL integer orders, without assuming bijectivity, retaining the entire original output. OriginalHillWienerBaseSmoothing DERIVES spatial covariance of the actual native Fourier defect and proves that HillIntegerNativeOneSmoothing0 implies it at EVERY integer N. Therefore ONE actual real L2 -> native H^(3/2) analytic defect estimate implies all the actual Wiener coefficient-model diffeomorphisms, including inverse analyticity.",
+    "The actual base one-smoothing estimate, final original-distribution Wiener transport/main statement, and Wiener analytic compact-time KdV solution theorem remain OPEN. Main1.1,1.3,1.4 remain proved; Main5.1,5.9 remain UNPROVED; goalACTIVE."
   ],
-  "source_correspondence": "Source Main1.1 and Main1.3 are proved with the exact original physical endpoint spaces and Wiener weak-star topologies. The original rough solution is characterized nonvacuously and uniquely by EVERY jointly smooth classical PDE approximation; Main1.4 remains proved. Main5.1 and Main5.9 remain unproved. Prove literal weighted ell-one forward/inverse spectral regularity and the global real analytic Wiener/Birkhoff diffeomorphism of source Main5.1 for EVERY integer N>=0, with exact final source and target ell-one weights and native normalization. Current all-integer Hilbert diffeomorphisms do not substitute. Prove the source Main5.9 Wiener real analytic solution/compact-time trajectory map for EVERY integer N>=0 and EVERY T>0 with its precise final Lean statement. Use the now identified genuine physical KdV solution and actual frequencies, together with literal Wiener spectral regularity. Close the remaining universal ACTUAL Hill numerator normalization scalar2/(pi*n) obligation wherever required by the Wiener proof. Main1.1,1.3,1.4 are PROVED; Main5.1,5.9 UNPROVED; goalACTIVE.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1878 baseline non-audit registered Lean sources byte-identical to f342d98. All 9 new modules (28 theorems+8 definitions), 0 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9227-declaration standard-axiom audit freshly compiled privately. Constructed jointly smooth classical PDE approximants for EVERY rough source; exact EVERY-classical-family rough solution is NONVACUOUS and UNIQUE in the original physical distribution space. Complete precise source Main1.1 and Main1.3 proved in original endpoint norm/Wiener weak-star topologies and full compact-open trajectory topology. Main1.4 freshly recompiled. ONLY Main5.1 and Main5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1888-module build.",
+  "source_correspondence": "Literal signed Wiener models, compact Hilbert-to-Wiener embeddings and exact all-order free Fourier equivalences are proved. The actual all-integer Wiener Birkhoff diffeomorphism reduces to one explicit L2 analytic one-smoothing estimate for the SAME native map; that base estimate is NOT proved. Main1.1,1.3,1.4 remain proved; Main5.1,5.9 remain unproved. Prove the ACTUAL base estimate HillIntegerNativeOneSmoothing0: a real analytic map R from genuine physical real zero-mean L2 to genuine signed H^(3/2), with EVERY raw coefficient R(q)_k equal to the SAME actual hillIntegerSobolevEquiv0(q)_k minus halfFourierSymbol(k)*q_k. The all-integer lift and literal Wiener diffeomorphism/inverse consequences are now proved CONDITIONALLY. Existing rough compact Jacobian results do not imply this one-order smoothing estimate. Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates. For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1887 baseline non-audit registered Lean sources byte-identical to eae16ab. All 9 new modules (44 theorems+17 definitions), 2 canonical-byte-identical modules, 8 unchanged private dependencies and EXACT 9288-declaration standard-axiom audit freshly compiled privately. Actual literal Wiener inclusions, compact one-order Hilbert-to-Wiener embedding and exact free Fourier equivalences at p=1 proved. Analytic inverse restriction and ALL-integer actual Wiener diffeomorphism reduced to explicit actual L2 base one-smoothing hypothesis. Base hypothesis NOT proved; no unconditional Main5.1 claim. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1897-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -5186,7 +5203,16 @@
     "NLS/Articles/KdVPseudomeasures/OriginalHillClassicalRoughSolution.lean": "85d5969c4dc9f35d74fc2be7462a6b3f1489ea0df05d0a8622cf1ea971e94fb4",
     "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalClassicalRoughSolution.lean": "0249c477db358de90da5382f01365af1707b864654e66155e2e2113d2a4aeabc",
     "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9",
-    "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3"
+    "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3",
+    "NLS/SequenceSpaces/CompactHolderMultiplier.lean": "71a18962c3cdfd070bbde9b78238d401e9a0a63c6014823234c6579764095e04",
+    "NLS/SequenceSpaces/SignedHilbertWienerInclusion.lean": "fe297afc28e02c7c0a9dbbedb0d9ac0d7592af1155206e04b38e9d76d76227e4",
+    "NLS/SequenceSpaces/SignedOrderHalfFourierEquiv.lean": "2b8fe3af93b9ca05b358432c63db3e2d4ff4c313b053cfdf91bb90967c375294",
+    "NLS/SequenceSpaces/FourierRealExponentInclusion.lean": "564892d1792704eb0fe7a3d9160f143ed44a5425e90bddca5c412f7dae6b5dd6",
+    "NLS/FunctionalAnalysis/AnalyticSmoothingRestriction.lean": "00cbd61ae9ccaa323f6f66cbe1b97d972bdc92773d4bb2848dc97edc56813c34",
+    "NLS/SequenceSpaces/SignedSpatialAnalyticMapLadder.lean": "904ff1aa086e7be9843ce663080016952f98ff032512a1911659086072b57bf0",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerModels.lean": "35efa23d5b56650c79f24922d9481cdd89556cc0803424d32b50a36c45273838",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerSmoothingReduction.lean": "3d984a8ab8b634d1339fd436abae8d4919f4d0f6ac7891a30d1ed495ffd8a527",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean": "d71f57ecc07f97cdace2b5a73951cf8aa46213457d66e0aa55f4482b681bce7c"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -5194,11 +5220,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 9191,
-    "newly_checked_declarations_this_continuation": 36,
-    "new_theorems": 28,
-    "new_definitions": 8,
-    "total_checked_declarations": 9227
+    "previous_checked_declarations": 9227,
+    "newly_checked_declarations_this_continuation": 61,
+    "new_theorems": 44,
+    "new_definitions": 17,
+    "total_checked_declarations": 9288
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -5227,7 +5253,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-main-11-13-classical.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-Wiener-smoothing-reduction.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5609,13 +5635,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1862 baseline non-audit registered sources byte-identical to1a0ee5b. All 5 new modules (18 theorems+3 definitions), 0 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9135-declaration standard-axiom audit freshly compiled privately. Actual native ODE uniqueness DERIVES action/frequency conservation. Literal pointwise physical PDE solutions in the genuine H4/H1 strong model have global existence/uniqueness and EVERY-family uniform compact-time approximation in the original rough norm. Smooth strong-model PDE approximations CONSTRUCTED for EVERY rough source, making the unique EVERY-approximation rough solution characterization NONVACUOUS. Arbitrary jointly smooth classical space-time adapter/source-fidelity, endpoint weak-star dynamics and literal Wiener results remain OPEN. Main1.4 freshly recompiled; FOUR others UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1868-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1867 baseline non-audit registered sources byte-identical to ad75b63. All 8 new modules (24 theorems+8 definitions), 1 canonical-byte-identical modules, 7 unchanged private dependencies and EXACT 9167-declaration standard-axiom audit freshly compiled privately. Arbitrary jointly smooth real mean-zero periodic classical space-time KdV solutions automatically have genuine H1 Banach time derivatives and actual H4 Fourier representatives; actual pointwise physical synthesis equals the given field. Every such classical solution equals the SAME actual canonical flow; physical initial-function uniqueness and EVERY-family uniform rough compact-time approximation PROVED. Original rough approximation-class equivalence including joint smooth existence interface, endpoint weak-star dynamics and literal Wiener conclusions remain OPEN. Main1.4 freshly recompiled; FOUR other mains UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1876-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1875 baseline non-audit registered Lean sources byte-identical to b391edc. All 3 new modules (19 theorems+5 definitions), 0 canonical-byte-identical modules, 8 unchanged private dependencies and EXACT 9191-declaration standard-axiom audit freshly compiled privately. SAME actual original physical rough flow restricts to every endpoint, retains the entire distribution and has global endpoint norm-bounded weak-star continuous orbits. Every bounded invariant set has a continuous compact-open weak-star trajectory map; no closedness assumption. Main1.1/1.3 canonical endpoint conclusions proved; precise final source main statements and original rough-solution-definition identification remain open. Main1.4 freshly recompiled; FOUR other mains UNPROVED. Literal Wiener conclusions remain open. No new resource limits, suppressions or extra axioms. Not a full fresh 1879-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1878 baseline non-audit registered Lean sources byte-identical to f342d98. All 9 new modules (28 theorems+8 definitions), 0 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9227-declaration standard-axiom audit freshly compiled privately. Constructed jointly smooth classical PDE approximants for EVERY rough source; exact EVERY-classical-family rough solution is NONVACUOUS and UNIQUE in the original physical distribution space. Complete precise source Main1.1 and Main1.3 proved in original endpoint norm/Wiener weak-star topologies and full compact-open trajectory topology. Main1.4 freshly recompiled. ONLY Main5.1 and Main5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1888-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1878 baseline non-audit registered Lean sources byte-identical to f342d98. All 9 new modules (28 theorems+8 definitions), 0 canonical-byte-identical modules, 10 unchanged private dependencies and EXACT 9227-declaration standard-axiom audit freshly compiled privately. Constructed jointly smooth classical PDE approximants for EVERY rough source; exact EVERY-classical-family rough solution is NONVACUOUS and UNIQUE in the original physical distribution space. Complete precise source Main1.1 and Main1.3 proved in original endpoint norm/Wiener weak-star topologies and full compact-open trajectory topology. Main1.4 freshly recompiled. ONLY Main5.1 and Main5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1888-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1887 baseline non-audit registered Lean sources byte-identical to eae16ab. All 9 new modules (44 theorems+17 definitions), 2 canonical-byte-identical modules, 8 unchanged private dependencies and EXACT 9288-declaration standard-axiom audit freshly compiled privately. Actual literal Wiener inclusions, compact one-order Hilbert-to-Wiener embedding and exact free Fourier equivalences at p=1 proved. Analytic inverse restriction and ALL-integer actual Wiener diffeomorphism reduced to explicit actual L2 base one-smoothing hypothesis. Base hypothesis NOT proved; no unconditional Main5.1 claim. Main1.1,1.3,1.4 freshly recompiled; Main5.1,5.9 remain UNPROVED. No new resource limits, suppressions or extra axioms. Not a full fresh 1897-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-smoothing-reduction-map.json",
   "baseline_validated_snapshot": {
-    "commit": "f342d98480151c484ad305e2968feb4d32bcdc6b",
-    "modules": 1879,
-    "audited_declarations": 9191,
+    "commit": "eae16aba3a6b0cab1108092b3c80c8e4b6336659",
+    "modules": 1888,
+    "audited_declarations": 9227,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -9122,5 +9149,28 @@
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json",
     "classical_solution_and_endpoint_mains_completed_in": "coverage/articles/kdv-pseudomeasures/main-11-13-classical-map.json"
+  },
+  "actual_Hill_Wiener_smoothing_reduction": {
+    "compact_Holder_multiplier_into_literal_ell_one_PROVED": true,
+    "compact_signed_Hilbert_to_Wiener_inclusion_EVERY_real_order_PROVED": true,
+    "literal_real_zero_mode_Wiener_models_and_same_actual_rough_inclusions_PROVED": true,
+    "exact_free_Fourier_equivalence_EVERY_order_and_exponent_including_one_PROVED": true,
+    "analytic_smoothing_restriction_and_constructed_analytic_inverse_PROVED": true,
+    "compact_derivative_minus_principal_from_smoothing_PROVED": true,
+    "arbitrary_spatial_analytic_map_ALL_integer_lift_PROVED": true,
+    "actual_native_defect_spatial_covariance_DERIVED_PROVED": true,
+    "ALL_integer_Wiener_native_diffeomorphism_REDUCTION_to_L2_base_smoothing_PROVED": true,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_ell_one_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "original_physical_Wiener_distribution_main_statement_transport_COMPLETE": false,
+    "literal_Wiener_analytic_compact_time_solution_theorem_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-smoothing-reduction-map.json"
   }
 }

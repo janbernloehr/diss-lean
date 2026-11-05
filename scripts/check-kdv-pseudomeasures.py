@@ -1919,6 +1919,15 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalClassicalRoughSolution',
     'NLS.Articles.KdVPseudomeasures.MainTheorem11',
     'NLS.Articles.KdVPseudomeasures.MainTheorem13',
+    'NLS.SequenceSpaces.CompactHolderMultiplier',
+    'NLS.SequenceSpaces.SignedHilbertWienerInclusion',
+    'NLS.SequenceSpaces.SignedOrderHalfFourierEquiv',
+    'NLS.SequenceSpaces.FourierRealExponentInclusion',
+    'NLS.FunctionalAnalysis.AnalyticSmoothingRestriction',
+    'NLS.SequenceSpaces.SignedSpatialAnalyticMapLadder',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillWienerModels',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillWienerSmoothingReduction',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillWienerBaseSmoothing',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

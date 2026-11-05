@@ -1885,6 +1885,15 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillClassicalRoughSolution
 import NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalClassicalRoughSolution
 import NLS.Articles.KdVPseudomeasures.MainTheorem11
 import NLS.Articles.KdVPseudomeasures.MainTheorem13
+import NLS.SequenceSpaces.CompactHolderMultiplier
+import NLS.SequenceSpaces.SignedHilbertWienerInclusion
+import NLS.SequenceSpaces.SignedOrderHalfFourierEquiv
+import NLS.SequenceSpaces.FourierRealExponentInclusion
+import NLS.FunctionalAnalysis.AnalyticSmoothingRestriction
+import NLS.SequenceSpaces.SignedSpatialAnalyticMapLadder
+import NLS.Articles.KdVPseudomeasures.OriginalHillWienerModels
+import NLS.Articles.KdVPseudomeasures.OriginalHillWienerSmoothingReduction
+import NLS.Articles.KdVPseudomeasures.OriginalHillWienerBaseSmoothing
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11115,3 +11124,64 @@ import NLS.Articles.KdVPseudomeasures.MainTheorem13
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_1
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_3Statement
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_3
+#print axioms NLS.WeightedCoeff.isCompactOperator_holderProduct_fixed
+#print axioms NLS.WeightedCoeff.weightedHilbertWienerInclusion
+#print axioms NLS.WeightedCoeff.weightedHilbertWienerInclusion_apply
+#print axioms NLS.WeightedCoeff.isCompactOperator_weightedHilbertWienerInclusion
+#print axioms NLS.Weight.signedSobolev_ratio_succ
+#print axioms NLS.Weight.norm_signedSobolev_ratio_succ_le
+#print axioms NLS.Weight.memlp_signedSobolev_ratio_succ
+#print axioms NLS.WeightedCoeff.signedHilbertWienerInclusion
+#print axioms NLS.WeightedCoeff.signedHilbertWienerInclusion_apply
+#print axioms NLS.WeightedCoeff.isCompactOperator_signedHilbertWienerInclusion
+#print axioms NLS.WeightedCoeff.signedRealHilbertWienerInclusion
+#print axioms NLS.WeightedCoeff.signedRealHilbertWienerInclusion_apply
+#print axioms NLS.WeightedCoeff.isCompactOperator_signedRealHilbertWienerInclusion
+#print axioms NLS.Weight.signedSobolev_add_half
+#print axioms NLS.WeightedCoeff.halfFourierSymbol_signed_order_bound
+#print axioms NLS.WeightedCoeff.halfFourierInverseSymbol_signed_order_bound
+#print axioms NLS.WeightedCoeff.signedOrderHalfFourierEquiv
+#print axioms NLS.WeightedCoeff.signedOrderHalfFourierEquiv_apply
+#print axioms NLS.WeightedCoeff.signedOrderHalfFourierEquiv_symm_apply
+#print axioms NLS.WeightedCoeff.signedRealOrderHalfFourierEquiv
+#print axioms NLS.WeightedCoeff.signedRealOrderHalfFourierEquiv_apply
+#print axioms NLS.WeightedCoeff.signedRealOrderHalfFourierEquiv_symm_apply
+#print axioms NLS.WeightedCoeff.signedRealOrderHalfFourierEquivOfEq
+#print axioms NLS.WeightedCoeff.signedRealOrderHalfFourierEquivOfEq_apply
+#print axioms NLS.WeightedCoeff.signedRealOrderHalfFourierEquivOfEq_symm_apply
+#print axioms NLS.WeightedCoeff.fourierRealExponentInclusion
+#print axioms NLS.WeightedCoeff.fourierRealExponentInclusion_apply
+#print axioms NLS.WeightedCoeff.fourierRealExponentInclusion_injective
+#print axioms NLS.FunctionalAnalysis.smoothingRestrictionForward
+#print axioms NLS.FunctionalAnalysis.smoothingRestrictionInverse
+#print axioms NLS.FunctionalAnalysis.smoothingRestrictionForward_inclusion
+#print axioms NLS.FunctionalAnalysis.smoothingRestrictionInverse_inclusion
+#print axioms NLS.FunctionalAnalysis.smoothingRestrictionEquiv
+#print axioms NLS.FunctionalAnalysis.analyticAt_smoothingRestrictionForward
+#print axioms NLS.FunctionalAnalysis.analyticAt_smoothingRestrictionInverse
+#print axioms NLS.FunctionalAnalysis.exists_analytic_smoothingRestrictionEquiv
+#print axioms NLS.FunctionalAnalysis.isCompactOperator_smoothingRestriction_fderiv_sub_linear
+#print axioms NLS.WeightedCoeff.signedRealInclusion_spatialTranslation
+#print axioms NLS.WeightedCoeff.signedSpatialLift_spatial
+#print axioms NLS.WeightedCoeff.signedAnalyticMapIterate
+#print axioms NLS.WeightedCoeff.analyticAt_signedAnalyticMapIterate
+#print axioms NLS.WeightedCoeff.signedAnalyticMapIterate_spatial
+#print axioms NLS.WeightedCoeff.signedAnalyticMapIterate_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerSourceHilbertInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerTargetHilbertInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerSourceHilbertInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerTargetHilbertInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerSourceHilbertInclusion_injective
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerTargetHilbertInclusion_injective
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerSourceInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerSourceInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolev_half_order
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerFreeFourierEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerFreeFourierEquiv_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerFreeFourierEquiv_symm_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerFreeFourierEquiv_Wiener_compatibility
+#print axioms NLS.Articles.KdVPseudomeasures.HillIntegerNativeOneSmoothing
+#print axioms NLS.Articles.KdVPseudomeasures.HillWienerBirkhoffDiffeomorphism
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerBirkhoffDiffeomorphism_of_oneSmoothing
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_all_of_base
+#print axioms NLS.Articles.KdVPseudomeasures.hillWienerBirkhoffDiffeomorphism_all_of_baseSmoothing
