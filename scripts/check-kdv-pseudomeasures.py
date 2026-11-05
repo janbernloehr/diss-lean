@@ -1659,6 +1659,11 @@ modules = [
     'NLS.SequenceSpaces.SignedSobolevGeneratorRegularity',
     'NLS.KdV.HillRealSpatialGenerator',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpatialGenerator',
+    'NLS.FunctionalAnalysis.NormedLinearBound',
+    'NLS.SequenceSpaces.SignedSobolevSpatialGenerator',
+    'NLS.SequenceSpaces.FourierRealZeroSpatialGenerator',
+    'NLS.KdV.HillRealSpatialGeneratorL2',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeL2Regularity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

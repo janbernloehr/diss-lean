@@ -1625,6 +1625,11 @@ import NLS.FunctionalAnalysis.LinearCurveDerivative
 import NLS.SequenceSpaces.SignedSobolevGeneratorRegularity
 import NLS.KdV.HillRealSpatialGenerator
 import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialGenerator
+import NLS.FunctionalAnalysis.NormedLinearBound
+import NLS.SequenceSpaces.SignedSobolevSpatialGenerator
+import NLS.SequenceSpaces.FourierRealZeroSpatialGenerator
+import NLS.KdV.HillRealSpatialGeneratorL2
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeL2Regularity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9892,3 +9897,22 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialGenerator
 #print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillRealSignedMap_spatialGenerator
 #print axioms NLS.Articles.KdVPseudomeasures.exists_native_signed_half_of_spatialGenerator
 #print axioms NLS.Articles.KdVPseudomeasures.exists_native_signed_half_of_L2_source
+#print axioms NLS.FunctionalAnalysis.norm_clm_apply_le_of_norm_le
+#print axioms NLS.Weight.signedSobolev_spatialGenerator_bound
+#print axioms NLS.WeightedCoeff.signedSpatialGenerator
+#print axioms NLS.WeightedCoeff.signedSpatialGenerator_apply
+#print axioms NLS.WeightedCoeff.norm_signedSpatialGenerator_le
+#print axioms NLS.WeightedCoeff.fourierRealZeroFullProjection
+#print axioms NLS.WeightedCoeff.fourierRealZeroFullProjection_inclusion
+#print axioms NLS.WeightedCoeff.fourierRealZeroSignedSpatialGenerator
+#print axioms NLS.WeightedCoeff.fourierRealZeroSignedSpatialGenerator_apply
+#print axioms NLS.WeightedCoeff.norm_fourierRealZeroSignedSpatialGenerator_le
+#print axioms NLS.WeightedCoeff.hasDerivAt_fourierRealZero_spatialCurve
+#print axioms NLS.WeightedCoeff.exists_fourierRealZeroSignedSpatialGenerator
+#print axioms NLS.WeightedCoeff.fourierRealZero_spatialGenerator_of_hasDerivAt
+#print axioms NLS.KdV.exists_L2_of_hillRealSpatialGenerator
+#print axioms NLS.KdV.hillReal_source_L2_iff_spatialGenerator
+#print axioms NLS.Articles.KdVPseudomeasures.exists_source_spatialGenerator_of_native_signed_half
+#print axioms NLS.Articles.KdVPseudomeasures.exists_L2_source_of_native_signed_half
+#print axioms NLS.Articles.KdVPseudomeasures.hillReal_source_L2_iff_native_signed_half
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_L2_iff_native_signed_half
