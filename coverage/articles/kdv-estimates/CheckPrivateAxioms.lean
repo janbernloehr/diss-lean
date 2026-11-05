@@ -1265,6 +1265,12 @@ import NLS.KdV.HillMiuraPeriodCircleGeometry
 import NLS.KdV.HillMiuraOriginalContourGeometry
 import NLS.KdV.HillHminusPhysicalDifferentials
 import NLS.KdV.HillHminusEnergyPeriods
+import NLS.ComplexAnalysis.QuadraticCircleHomotopyGeometry
+import NLS.KdV.HillIntrinsicCircleEndpoints
+import NLS.ComplexAnalysis.QuadraticCirclePeriodTransfer
+import NLS.KdV.HillHminusIntrinsicPeriods
+import NLS.KdV.HillHminusNumeratorReality
+import NLS.KdV.HillHminusPhysicalNumeratorIdentification
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2352,7 +2358,12 @@ run_cmd do
     ``NLS.IsRealPeriodOneHminusOne.sub,
     ``NLS.periodOneL2Inclusion_single_zero_real,
     ``NLS.periodOneMiura.eq_1,
-    ``NLS.periodOneMiura_real]
+    ``NLS.periodOneMiura_real,
+    ``NLS.ComplexAnalysis.affine_quadratic_circle_mem_bands,
+    ``NLS.ComplexAnalysis.integral_quadraticEnergyCircle_eq_circleIntegral,
+    ``NLS.ComplexAnalysis.integral_quadraticEnergyCircle_eq_curveIntegral,
+    ``NLS.ComplexAnalysis.quadraticCirclePath,
+    ``NLS.ComplexAnalysis.quadraticCirclePath_contDiffOn]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -6188,3 +6188,9 @@ import NLS.KdV.HillMiuraPeriodCircleGeometry
 import NLS.KdV.HillMiuraOriginalContourGeometry
 import NLS.KdV.HillHminusPhysicalDifferentials
 import NLS.KdV.HillHminusEnergyPeriods
+import NLS.ComplexAnalysis.QuadraticCircleHomotopyGeometry
+import NLS.KdV.HillIntrinsicCircleEndpoints
+import NLS.ComplexAnalysis.QuadraticCirclePeriodTransfer
+import NLS.KdV.HillHminusIntrinsicPeriods
+import NLS.KdV.HillHminusNumeratorReality
+import NLS.KdV.HillHminusPhysicalNumeratorIdentification
