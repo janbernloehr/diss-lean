@@ -1621,6 +1621,10 @@ import NLS.ComplexAnalysis.PeriodicCharacterAveraging
 import NLS.FunctionalAnalysis.LinearSourceDerivative
 import NLS.KdV.HillNativeSpatialLinearization
 import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialNormalization
+import NLS.FunctionalAnalysis.LinearCurveDerivative
+import NLS.SequenceSpaces.SignedSobolevGeneratorRegularity
+import NLS.KdV.HillRealSpatialGenerator
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialGenerator
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9879,3 +9883,12 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialNormalization
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealSignedMap_spatialTranslation_apply
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealSignedMap_spatialTranslation
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_spatialTranslation
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_clm_comp
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_differentiable_comp
+#print axioms NLS.WeightedCoeff.signedSobolev_generator_norm_identity
+#print axioms NLS.WeightedCoeff.exists_signedSobolev_succ_of_spatialGenerator
+#print axioms NLS.KdV.hasDerivAt_hillRealSpatialTranslation
+#print axioms NLS.KdV.exists_hillRealSpatialGenerator_of_L2
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillRealSignedMap_spatialGenerator
+#print axioms NLS.Articles.KdVPseudomeasures.exists_native_signed_half_of_spatialGenerator
+#print axioms NLS.Articles.KdVPseudomeasures.exists_native_signed_half_of_L2_source

@@ -1655,6 +1655,10 @@ modules = [
     'NLS.FunctionalAnalysis.LinearSourceDerivative',
     'NLS.KdV.HillNativeSpatialLinearization',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpatialNormalization',
+    'NLS.FunctionalAnalysis.LinearCurveDerivative',
+    'NLS.SequenceSpaces.SignedSobolevGeneratorRegularity',
+    'NLS.KdV.HillRealSpatialGenerator',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpatialGenerator',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
