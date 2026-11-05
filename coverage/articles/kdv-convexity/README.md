@@ -2666,6 +2666,49 @@ to the read-only compiled reference; hashes and scope are recorded in
 `dirichlet-differential-library-reuse.json`. Those cached imports were
 not rebuilt in this incremental validation.
 
+## Exact free Fourier linearization of the actual Dirichlet energies
+
+`L2QuasiHillFreeSolution.lean` identifies the actual zero-profile rough
+IVP with the ordinary classical free Hill IVP, for every complex energy
+and initial state. `HillHminusOneFreeDirichletColumn.lean` uses weak
+reconstruction and the endpoint test to identify the intrinsic free
+column. This does not assume that the selected Miura chart has zero
+lift or zero energy shift at zero potential. The exact result is
+`Y(0,z^2)(x)=sin(z*x)/z` for nonzero complex frequency.
+
+`SineSquarePairing.lean` proves the literal unit-interval Fourier
+sine-square pairing with both signed frequencies. The free column mass
+is exactly `1/(2*(n*pi)^2)`. The potential pairing in
+`HillHminusOneFreeDirichletPairing.lean` equals
+`(2*h_0-h_n-h_-n)/(4*(n*pi)^2)`, first by the actual L2 integral and
+then by density in the original complex H^-1 norm.
+
+`HillHminusOneFreeDirichletDifferential.lean` consequently proves
+
+```text
+dmu_n(0)[h] = h_0-(h_n+h_-n)/2.
+```
+
+This is the full complex Banach derivative, for all H^-1 directions.
+For real mean-zero directions it is exactly `-Re(h_n)`.
+`FreeDirichletLinearization.lean` constructs a bounded H^-1-to-ell2
+operator using the exact Sobolev weight, positive-index sampling,
+reflection and the rank-one mean term. Its coordinates are
+
+```text
+L(h)_n = (h_0-(h_n+h_-n)/2)/(1+n).
+```
+
+The actual global analytic normalized Dirichlet energy map has this
+**entire bounded operator** as its derivative at zero. No finite-mode
+restriction or unproved passage from modewise derivatives is used.
+The corresponding logarithmic norming derivative, combined mean-zero
+inverse, full Cartesian KdV coordinates and action identities remain
+required for Theorem 1.1. The inherited import closure contains 2294
+byte-identical cached sources outside the 516-module baseline; these
+were not rebuilt. Its hashes and audit scope are recorded in
+`free-dirichlet-linearization-library-reuse.json`.
+
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
@@ -2731,12 +2774,12 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `ba0cf42` contains 507 source modules, whose
-source hashes remain unchanged. Nine authored modules pass Lean
+The validated baseline at `3843c5f` contains 516 source modules, whose
+source hashes remain unchanged. Six authored modules pass Lean
 4.33.1/mathlib v4.33.1 with `warningAsError=true`; the complete
-reproduction script lists 516 NLS modules and the preceding private
+reproduction script lists 522 NLS modules and the preceding private
 pinned mathlib compilation. The positive-index example, cumulative
-transitive axiom audit and 1250 coverage-declaration checks pass. This
+transitive axiom audit and 1273 coverage-declaration checks pass. This
 is incremental validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
