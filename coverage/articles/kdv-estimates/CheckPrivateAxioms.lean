@@ -1374,6 +1374,22 @@ import NLS.KdV.HillHminusIndexedBracketDerivative
 import NLS.KdV.HillHminusIndexedBracketCurve
 import NLS.KdV.HillHminusCartesianDefectEvolution
 import NLS.KdV.HillHminusActionDefectCurve
+import NLS.Poisson.GardnerHamiltonianHilbert
+import NLS.KdV.HillGardnerOriginalHilbertDirection
+import NLS.KdV.HillActionVariationPeriods
+import NLS.ComplexAnalysis.WeightedCosineDuhamelBounds
+import NLS.KdV.ClassicalHillWeightedStateError
+import NLS.KdV.ClassicalHillTraceFirstRemainder
+import NLS.KdV.ClassicalHillWeightedTraceRemainder
+import NLS.KdV.HillL2WeightedTraceRemainder
+import NLS.KdV.HillMeanZeroTraceVariationBound
+import NLS.KdV.HillGapProductInverseFreeBound
+import NLS.KdV.HillMeanZeroTraceProductDecay
+import NLS.KdV.HillMeanZeroActionTraceKernel
+import NLS.KdV.HillHminusActionTraceStationarity
+import NLS.KdV.HillHminusNormalizedIndexedStationarity
+import NLS.KdV.HillIntrinsicCartesianGardnerBracket
+import NLS.KdV.HillIntrinsicCartesianIndexedTransport
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2563,7 +2579,14 @@ run_cmd do
     ``NLS.Poisson.hminusGardnerBracket_of_fderiv_smul_right,
     ``NLS.Poisson.hminusGardnerBracket_products_zero,
     ``NLS.Poisson.hminusGardnerBracket_normalized_hamiltonian_derivative_zero,
-    ``NLS.Poisson.hminusGardnerBracket_weighted_hamiltonian_derivative]
+    ``NLS.Poisson.hminusGardnerBracket_weighted_hamiltonian_derivative,
+    ``NLS.ComplexAnalysis.norm_cosine_duhamel_integral_le_weighted,
+    ``NLS.Poisson.gardnerHamiltonianHilbertDirection,
+    ``NLS.Poisson.gardnerHamiltonianHilbertDirection_inclusion,
+    ``NLS.Poisson.gardnerHamiltonianHilbertDirection_zero_mode,
+    ``NLS.Poisson.gardnerHilbertDerivative,
+    ``NLS.Poisson.gardnerHilbertDerivative_apply,
+    ``NLS.Poisson.gardnerHilbertDerivative_weight_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
