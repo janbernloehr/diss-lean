@@ -1013,6 +1013,14 @@ import NLS.KdV.HillRealSourceSubmodule
 import NLS.KdV.HillRealIndexedField
 import NLS.KdV.HillIndexedLocalFlow
 import NLS.KdV.HillIndexedFlowTerminalDynamics
+import NLS.KdV.HillPhaseDirectionAssembly
+import NLS.KdV.HillRegularIndexedPrimitives
+import NLS.KdV.HillIndexedPrimitivePartialSums
+import NLS.KdV.HillIsospectralActions
+import NLS.KdV.HillFullIndexedPhase
+import NLS.KdV.HillRegularIndexedCartesian
+import NLS.KdV.HillIndexedCartesian
+import NLS.KdV.HillIndexedFlowCartesianDynamics
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
