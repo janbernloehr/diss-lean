@@ -2757,6 +2757,8 @@ modules=(
   NLS/SequenceSpaces/HminusMeanZeroProjection
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianComplexCanonical
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianOrigin
+  NLS/ComplexAnalysis/RealAnalyticInverseChart
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInverseMatching
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

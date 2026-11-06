@@ -1,3 +1,5 @@
+import NLS.ComplexAnalysis.RealAnalyticInverseChart
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseMatching
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianOrigin
 import NLS.SequenceSpaces.HminusMeanZeroProjection
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianComplexCanonical
@@ -4691,7 +4693,9 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInjective,
   `NLS.SequenceSpaces.HminusMeanZeroProjection,
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianComplexCanonical,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianOrigin
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianOrigin,
+  `NLS.ComplexAnalysis.RealAnalyticInverseChart,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseMatching
 ]
 
 open Lean in

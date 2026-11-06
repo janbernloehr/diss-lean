@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest common complex canonical neighborhood and exact origin
+## Latest ONE weak inverse before ALL native orders
+
+At EVERY real mean-zero rough base, ONE actual two-sided analytic weak inverse chart is now chosen BEFORE ALL native Sobolev orders and ALL eligible real native bases in its source. It preserves physical reality on its ENTIRE target. Each eligible native analytic inverse agrees with THIS SAME weak branch on an OPEN COMPLEX target neighborhood, under both normalized inclusions and full literal source recovery. Exact full native/signed right identities, central zero, exact base value and real strong inverse germs are retained. See `GLOBAL_ROUGH_INVERSE_MATCHING.md`.
+
+This closes arbitrary-base LOCAL cross-order inverse matching. Global SURJECTIVITY, ONE global inverse/all-order global diffeomorphisms, global action-Hamiltonian identifications and frequency/PDE conclusions remain open. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2748 unchanged selected baseline sources. Both newly selected own modules strictly rebuilt in dependency order after freezing 2796 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2750 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact two-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2750-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2750-module rebuild is claimed.
+
+Fresh audit: 21413 selected and 43483 imported NLS declarations; permitted axioms only. Two new own modules contain 5 explicit theorems.
+
+## Earlier common complex canonical neighborhood and exact origin
 
 The SAME global signed map now has the FULL original Gardner matrix on the COMPLEX mean-zero slice of ONE OPEN neighborhood containing the ENTIRE real mean-zero rough source space, including NON-L2 sources and closed gaps. This neighborhood is chosen before ALL coordinate indices. The exact Abelian normalization gives {z_n,z_-m}=i delta_nm and zero same-sign brackets. Every original physical local extension near zero agrees with this global map on a genuine complex ball; D.signed(0)=0 and its full mean-zero rough Fourier differential has exactly the paper factor (2*|j|*pi)^(-1/2). See `GLOBAL_ROUGH_COMPLEX_CANONICAL_ORIGIN.md`.
 
