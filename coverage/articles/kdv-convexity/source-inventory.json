@@ -2944,7 +2944,7 @@
       "topology": "Fourier-Lebesgue and weighted sequence Banach norm topologies; not weak-star endpoints.",
       "status": "not_verified",
       "remaining": [
-        "Prove real analyticity of the SAME actual physical Birkhoff restriction and its SAME fixed inverse in both original Fourier-Lebesgue norms, and derive the actual restricted derivative inverse identities. These are the remaining fields of Theorem12PhysicalData."
+        "Prove native real analyticity of the SAME fixed inverse in every original Fourier-Lebesgue norm. Establish bounded invertibility of the actual restricted derivative (injectivity follows from the fixed weak diagram; surjectivity needs the native compact Fourier-principal argument). This is the remaining analytic_inverse field of Theorem12PhysicalData."
       ],
       "checked_preparation": [
         "NLS.ComplexAnalysis.quadratic_resolvent_properties_preimage",
@@ -3016,11 +3016,37 @@
         "NLS.KdV.HillHminusPsiChart.exists_fourierLebesgue_native_Miura_lift",
         "NLS.Articles.KdVConvexity.Theorem12PhysicalData",
         "NLS.Articles.KdVConvexity.theorem_1_2_bijection_and_fixed_inverse",
-        "NLS.Articles.KdVConvexity.exists_actual_physical_fourierLebesgue_miura_lift"
+        "NLS.Articles.KdVConvexity.exists_actual_physical_fourierLebesgue_miura_lift",
+        "NLS.ComplexAnalysis.analytic_germ_pullback_properties",
+        "NLS.ComplexAnalysis.analytic_bilinear_preimage_germ_properties",
+        "NLS.ComplexAnalysis.analytic_real_linear_germ_transport",
+        "NLS.KdV.hillMiuraExponentDiagonal",
+        "NLS.KdV.hillMiuraExponentDiagonal_fst",
+        "NLS.KdV.hillMiuraExponentDiagonal_snd",
+        "NLS.KdV.hillMiuraNormalizedFourierLebesgueDirichletSource",
+        "NLS.KdV.hillMiuraNormalizedFourierLebesgueDirichletSource_fst",
+        "NLS.KdV.hillMiuraNormalizedFourierLebesgueDirichletSource_snd",
+        "NLS.KdV.normalizedWeightedSource_hillMiuraFourierLebesgue",
+        "NLS.KdV.isRealType_hillMiuraNormalizedFourierLebesgueDirichletSource",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.gapWeightedEta_real_exponent",
+        "NLS.KdV.exists_hillMiuraFourierLebesgueEta_germ",
+        "NLS.KdV.HillHminusPsiChart.exists_native_fourierLebesgue_eta_germ",
+        "NLS.Articles.KdVKdV2Frequencies.PhysicallyOrientedRoughPacketAt.exists_fourierLebesgue_positive_germ",
+        "NLS.Coeff.physicalPositiveCompletion",
+        "NLS.Coeff.physicalPositiveCompletion_apply",
+        "NLS.WeightedCoeff.physicalPositiveLift",
+        "NLS.WeightedCoeff.physicalPositiveLift_apply",
+        "NLS.WeightedCoeff.physicalPositiveLift_real",
+        "NLS.WeightedCoeff.physicalPositiveRealLift",
+        "NLS.WeightedCoeff.physicalPositiveRealLift_apply",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueForward_analytic_of_two_lt",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueForward_two_analytic",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueForward_analytic",
+        "NLS.Articles.KdVConvexity.theorem_1_2_native_forward_analytic"
       ],
       "statement_record": "NLS.Articles.KdVConvexity.Theorem12PhysicalData",
       "verified_bijection_declaration": "NLS.Articles.KdVConvexity.theorem_1_2_bijection_and_fixed_inverse",
-      "partial_status": "global_bijection_and_fixed_inverse_proved_native_analyticity_open",
+      "partial_status": "native_forward_analytic_global_bijection_and_fixed_inverse_proved_native_inverse_analyticity_open",
       "verified_statement_components": [
         {
           "assertion": "Exact Fourier-Lebesgue criterion, entire native target bijection and fixed inverse compatibility",
@@ -3028,11 +3054,18 @@
           "declaration": "NLS.Articles.KdVConvexity.theorem_1_2_bijection_and_fixed_inverse"
         },
         {
-          "assertion": "Native real analytic diffeomorphism in both original norms",
+          "assertion": "Native real analyticity of the SAME physical forward restriction in both original norms",
+          "result": "proved",
+          "declaration": "NLS.Articles.KdVConvexity.theorem_1_2_native_forward_analytic"
+        },
+        {
+          "assertion": "Native real analyticity of the SAME fixed inverse",
           "result": "not_verified",
-          "statement_record": "NLS.Articles.KdVConvexity.Theorem12PhysicalData"
+          "statement_record": "NLS.Articles.KdVConvexity.Theorem12PhysicalData",
+          "remaining_field": "analytic_inverse"
         }
-      ]
+      ],
+      "verified_native_forward_declaration": "NLS.Articles.KdVConvexity.theorem_1_2_native_forward_analytic"
     },
     {
       "label": "Theorem 1.3",
@@ -6242,6 +6275,50 @@
     "main_Theorem_1_3_complete": false,
     "remaining": [
       "Prove real analyticity of the SAME actual physical Birkhoff restriction and its SAME fixed inverse in both original Fourier-Lebesgue norms, and derive the actual restricted derivative inverse identities. These are the remaining fields of Theorem12PhysicalData.",
+      "Prove Theorem 1.3 physical KdV global C0 well-posedness, including approximation, uniqueness and agreement with the referenced Hminus1 solution theory."
+    ],
+    "remaining_forward_claim_superseded_by": "fourier_Lebesgue_native_forward_progress"
+  },
+  "fourier_Lebesgue_native_forward_progress": {
+    "status": "same_physical_native_Fourier_Lebesgue_forward_analyticity_proved",
+    "article_forward_declaration": "NLS.Articles.KdVConvexity.theorem_1_2_native_forward_analytic",
+    "full_remaining_statement_record": "NLS.Articles.KdVConvexity.Theorem12PhysicalData",
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.AnalyticGermPullback",
+      "NLS.KdV.HillMiuraFourierLebesgueNormalizedSource",
+      "NLS.ZakharovShabat.SourceGapWeightedEtaRealExponent",
+      "NLS.KdV.HillMiuraFourierLebesgueEtaGerms",
+      "NLS.KdV.HillHminusFourierLebesgueEtaGerms",
+      "NLS.KdV.HillRoughFourierLebesguePositiveGerms",
+      "NLS.SequenceSpaces.PhysicalPositiveCompletionExponent",
+      "NLS.KdV.HillRoughFourierLebesgueForwardAnalytic",
+      "NLS.KdV.HillRoughFourierLebesgueForwardAllExponents",
+      "NLS.Articles.KdVConvexity.MainTheorem12Forward"
+    ],
+    "baseline_commit": "f05fa2ba0f4c3dddba8026bce9bcaafddc4d14a7",
+    "baseline_proof_sources_preserved": 2559,
+    "native_analyticity": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueForward_analytic",
+    "same_actual_physical_signed_map_retained": true,
+    "same_fixed_global_rough_inverse_retained": true,
+    "all_finite_exponents_p_ge_two": true,
+    "endpoint_p_two_covered_by_proved_same_map_Hilbert_diffeomorphism": true,
+    "orders": "Native forward analyticity holds for every s>=-1/2; the article declaration retains exactly -1/2<=s<=0.",
+    "original_real_mean_zero_weighted_lp_source_and_target_norms": true,
+    "exact_half_order_shift_and_period_one_phase_normalization": true,
+    "cross_exponent_eta_values_agree_at_every_real_source_and_all_closed_gaps": true,
+    "native_complex_weighted_eta_and_positive_packet_germs_bounded": true,
+    "native_analytic_lift_of_actual_chosen_chart_used": true,
+    "bounded_real_linear_full_signed_completion_proved_for_every_Banach_exponent": true,
+    "native_forward_Birkhoff_analyticity_proved": true,
+    "native_inverse_Birkhoff_analyticity_proved": false,
+    "entire_stronger_target_bijection_preserved": true,
+    "infinite_support_all_signed_modes_and_zero_slot_included": true,
+    "authored_heartbeat_linter_or_instance_overrides": false,
+    "main_Theorem_1_1_corrected_complete": true,
+    "main_Theorem_1_2_complete": false,
+    "main_Theorem_1_3_complete": false,
+    "remaining": [
+      "Prove native real analyticity of the SAME fixed inverse in every original Fourier-Lebesgue norm. Establish bounded invertibility of the actual restricted derivative (injectivity follows from the fixed weak diagram; surjectivity needs the native compact Fourier-principal argument). This is the remaining analytic_inverse field of Theorem12PhysicalData.",
       "Prove Theorem 1.3 physical KdV global C0 well-posedness, including approximation, uniqueness and agreement with the referenced Hminus1 solution theory."
     ]
   }

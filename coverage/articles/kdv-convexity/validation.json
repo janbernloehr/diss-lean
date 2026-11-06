@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-06",
-  "milestone": "Exact physical Fourier-Lebesgue Birkhoff criterion, global native bijection and compatibility with the fixed rough inverse",
+  "milestone": "Native real analyticity of the SAME physical Fourier-Lebesgue Birkhoff forward restriction at every finite exponent p>=2",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": true,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -2576,11 +2576,21 @@
     "NLS.KdV.HillRoughFourierLebesgueInverseCompatibility",
     "NLS.ComplexAnalysis.AnalyticAffineQuadraticResolvent",
     "NLS.KdV.HillHminusRetainedFourierLebesgueMiuraGerms",
-    "NLS.Articles.KdVConvexity.MainTheorem12Preparation"
+    "NLS.Articles.KdVConvexity.MainTheorem12Preparation",
+    "NLS.ComplexAnalysis.AnalyticGermPullback",
+    "NLS.KdV.HillMiuraFourierLebesgueNormalizedSource",
+    "NLS.ZakharovShabat.SourceGapWeightedEtaRealExponent",
+    "NLS.KdV.HillMiuraFourierLebesgueEtaGerms",
+    "NLS.KdV.HillHminusFourierLebesgueEtaGerms",
+    "NLS.KdV.HillRoughFourierLebesguePositiveGerms",
+    "NLS.SequenceSpaces.PhysicalPositiveCompletionExponent",
+    "NLS.KdV.HillRoughFourierLebesgueForwardAnalytic",
+    "NLS.KdV.HillRoughFourierLebesgueForwardAllExponents",
+    "NLS.Articles.KdVConvexity.MainTheorem12Forward"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 19913,
+    "declarations": 19955,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -2621,6 +2631,9 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.ComplexAnalysis.AnalyticGermPullback",
+      "NLS.ZakharovShabat.SourceGapWeightedEtaRealExponent",
+      "NLS.SequenceSpaces.PhysicalPositiveCompletionExponent",
       "NLS.ComplexAnalysis.AnalyticAffineQuadraticResolvent",
       "NLS.SequenceSpaces.PositiveReciprocalExponentMembership",
       "NLS.SequenceSpaces.FiniteFourierLebesgueWeakInclusion",
@@ -3600,6 +3613,7 @@
     "NLS/Articles/KdVConvexity/LocalSpectralPairCharts.lean": "0fc7f64cb086533b08b20b08a4b4804586347eab353e0d9a15aaf3eca78131c9",
     "NLS/Articles/KdVConvexity/LogNormingSequenceCoordinates.lean": "0c6c3ea91d02de3e015bffc439b7ec7a64897d32429cb890a05efa3b617379ad",
     "NLS/Articles/KdVConvexity/MainTheorem11.lean": "540806f6aa300c2e64c7bfc0344b6185bbe5507c0bc4c994c0efb3de7a5812a4",
+    "NLS/Articles/KdVConvexity/MainTheorem12Forward.lean": "4508b3916feafd416afcee466892a489ef9f470f85b2c7da7666950de20de336",
     "NLS/Articles/KdVConvexity/MainTheorem12Preparation.lean": "141baabc470db9471176d8148f3361d4d404ff13a32282e27e5ba97c93e8b52a",
     "NLS/Articles/KdVConvexity/NativeFiniteGapApproximation.lean": "08ed38233f03f05bcbcc82390878748e67df7e2b97ef0ad388a29481efbc7fde",
     "NLS/Articles/KdVConvexity/NativeH1PhysicalCompatibility.lean": "173c6641c930191fefa8c0d9a6ed1a188f6a5fdd021b7ffd85b87f1734728732",
@@ -3743,6 +3757,7 @@
     "NLS/ComplexAnalysis/AnalyticDiscSquareRoot.lean": "6caedff129a0d76dcf71c274c904c32e86949ec6b623a5047d2a86bf5ff7a52b",
     "NLS/ComplexAnalysis/AnalyticEquivDerivativeInverse.lean": "366631dfe357fa0acdefd11b7c4107d833149f10015d4a611b41f56ec50b93ee",
     "NLS/ComplexAnalysis/AnalyticGermCancellation.lean": "910ecd921986b0e709c610f9c9d667997dac14eb42e9a3a27fca8c8221b54d53",
+    "NLS/ComplexAnalysis/AnalyticGermPullback.lean": "d69ff11cda6c775efc701792c7985bb7d4d8d2cc73c90f98f2298f147fee0347",
     "NLS/ComplexAnalysis/AnalyticGermSign.lean": "1de6b778de8a4176c0e8426f1e0f0ad25a2787c28e6fa00d2710f71f1c202e88",
     "NLS/ComplexAnalysis/AnalyticImplicitBanachRoot.lean": "d8267efd906bdf007cc30a8a83318fc20dc8d6e0ec9d34480818ab8f32cdc7c7",
     "NLS/ComplexAnalysis/AnalyticImplicitRoot.lean": "c2d1d9eae5186698af3c0066f7d509ffb1556efd72f4d4f8b6df76bbb7552aeb",
@@ -4811,6 +4826,7 @@
     "NLS/KdV/HillHminusFiniteGapSmooth.lean": "50b03abf2c3df55e7b71b382fc117856ac669f4ee88bcdf0c77e6300c8894841",
     "NLS/KdV/HillHminusFiniteGapSobolev.lean": "a636d72b81b10a8f2d229bf860924cb39d662d66cc9fdf0cab361602f9f051b8",
     "NLS/KdV/HillHminusFixedPhysicalNumerators.lean": "6d7c8b783e7066910305625838de9a087abac4b46f7f189d89f13e0abe92981a",
+    "NLS/KdV/HillHminusFourierLebesgueEtaGerms.lean": "02acc5bc378b447171573f2bb59d5c321d57e41513546f446f5a5b77c37a2d72",
     "NLS/KdV/HillHminusFourierLebesgueMiuraCharts.lean": "d2f82e5a7266038939c19aae4a1429c6dc1a8d40475f1049b29d6406a88d465b",
     "NLS/KdV/HillHminusGapMidpointSequence.lean": "476ece957be5792e4317ecb724daaae05a1d12fdaee8ac3a3e0157a2e234ddfc",
     "NLS/KdV/HillHminusGapSquareSequence.lean": "600fb70fcb2e4c82056906a0d1ab427b1f7ba1caa3b8787ae3a59c794702156d",
@@ -5260,6 +5276,8 @@
     "NLS/KdV/HillMiuraEndpointSumBounds.lean": "a62bd930c40eb3ff0d8dbbb182fb1fff414627a43828d8931625cbe4e3bbac49",
     "NLS/KdV/HillMiuraFiniteGapEnergyBound.lean": "789965a00e025e968d45a3abcecae813a4a25920bd028e684d4875f318fde937",
     "NLS/KdV/HillMiuraFiniteSupportCompactness.lean": "6f8eec903f1bbbf625ae47c18ab3984244249b8d416fdf309a4182fc27893096",
+    "NLS/KdV/HillMiuraFourierLebesgueEtaGerms.lean": "e115379b51978f042c2f281ad7c7669830064dd3dea846e519e435c4fd1286a2",
+    "NLS/KdV/HillMiuraFourierLebesgueNormalizedSource.lean": "bee80f0a8eebf4567c2a6048c36b703bdefdc642f9e55360d396c696fbe78014",
     "NLS/KdV/HillMiuraGroundActions.lean": "25f201d790610140b4ab1bc30e6bf5b15a8d093eb425b0f27f82bfb5578d427f",
     "NLS/KdV/HillMiuraGroundEnergy.lean": "881ac9bb5503a5f4c67224048774fbe37292afb9b8fd70349eb8f6f83809c8b4",
     "NLS/KdV/HillMiuraGroundEnumeration.lean": "296b48f832bf0042edaf47774dd692487554c93f0a188f2161c36a52fdbc06f4",
@@ -5501,7 +5519,10 @@
     "NLS/KdV/HillRoughActionFibers.lean": "2c8cb7826d257d1976a04d39c6f861660c9902dc55d4fc811c186f88bc7196b1",
     "NLS/KdV/HillRoughFinitePairRegularity.lean": "b1e3be37ad2f027e9c74be450e742351384abe64aef4c27d7130b89ffe9fe7b5",
     "NLS/KdV/HillRoughFourierLebesgueBijection.lean": "005e40bedc7fee24be089bb38bf1939a498693dd8ca7ace0ccf24c1639db17b8",
+    "NLS/KdV/HillRoughFourierLebesgueForwardAllExponents.lean": "5964405da34c1e431cc00bdd87a6d556a4fcff688790e889ec4895feaec860b0",
+    "NLS/KdV/HillRoughFourierLebesgueForwardAnalytic.lean": "1f161ec8881467801c1d08fec7477f9654d14ad904b846b4c27a681617e85601",
     "NLS/KdV/HillRoughFourierLebesgueInverseCompatibility.lean": "f1d127befe516a488ac48800e47dbedeb5884578f2f862525c4db5875f714471",
+    "NLS/KdV/HillRoughFourierLebesguePositiveGerms.lean": "66551cb35a775787cd60a36449503ccd8191a6a971116836cdae4df22cb88069",
     "NLS/KdV/HillRoughGlobalFourierLebesgueRegularity.lean": "a2fb45722dc9f87bfdd3c49e399907e73c1dde2285db18733a6493f54e8afca2",
     "NLS/KdV/HillRoughPacketFourierLebesgueRegularity.lean": "2aabb2c84d669c59b6660fe6b954c78243d0a9ecf4d0d26d367caec51cf81943",
     "NLS/KdV/HillRoughPairInverse.lean": "24bf097cc0e2bbd0cc30ab92a25f364836da382948a4ca7bb23b38ef96078477",
@@ -5918,6 +5939,7 @@
     "NLS/SequenceSpaces/PeriodOneRealScaling.lean": "3c9e325fa58677ca42291233d5b8e25c3bb8181ccb41c3042c10b65577c6b982",
     "NLS/SequenceSpaces/PeriodOneSobolevMiuraInverse.lean": "884faa9319ee0756dc49ad2dcf215a0bcd81945ca11cadb0bd811daa1d207174",
     "NLS/SequenceSpaces/PeriodOneSobolevMiuraMap.lean": "2bb15ad78149b68730ed647cae3c2ff12114db9b4992811a2cd1892548702e02",
+    "NLS/SequenceSpaces/PhysicalPositiveCompletionExponent.lean": "3b28e46a11bb8fb5fc0708c7e02152df8b5b28163b7612be1b7082d78ed5a1ba",
     "NLS/SequenceSpaces/PhysicalRealDeletedHilbert.lean": "0edfee15358c0ef6947842c28c2df81ec73e14e60fbdcd81a27a1978f7d7ebae",
     "NLS/SequenceSpaces/PhysicalRealImag.lean": "5445748fc87a95eaaeb8b7883b42e5760f11fc60f46ded06646d2e6f59fa83db",
     "NLS/SequenceSpaces/PhysicalRealMeanZeroComplexSpan.lean": "1103f9288480c687fa8a06f01f3358a9396277c41aa5e741a3917c54991a45de",
@@ -6077,6 +6099,7 @@
     "NLS/ZakharovShabat/SourceFullAbelianInverseMomentReal.lean": "a75395d68769772805a6b2768084cdda5ebbedcd0eeb26127df557e7e918ef4e",
     "NLS/ZakharovShabat/SourceFullAbelianMassContour.lean": "c4538d08a14ca4b76119689807c58635ccb53d4b6cff4314b90bd81771d44c07",
     "NLS/ZakharovShabat/SourceFullAbelianZeroMass.lean": "29e7bcba472fe2eef06f4734700d2b601557741587ae5542c21f9ea2a1701600",
+    "NLS/ZakharovShabat/SourceGapWeightedEtaRealExponent.lean": "2f58c7341b1f7e8382a465999d64e7916b62457f0c7129e133285f2e2ea50994",
     "NLS/ZakharovShabat/SourceGapWeightedEtaRealNorm.lean": "072a79fe779a052de6e5442a96fd12dd79f6ea334eb205db8db92280cb62ccca",
     "NLS/ZakharovShabat/SourceGapWeightedEtaSquare.lean": "9e70b08f87d6fc67139b97db61cdee1c30aba607e3a5454322b603b0b6ba478e",
     "NLS/ZakharovShabat/SourceHigherActionCoefficientContinuity.lean": "119ea8e49b4059432153eb97e1217d6139fa7b9b699272d813617644df0bc7f1",
@@ -6108,7 +6131,7 @@
     "NLS/ZakharovShabat/SpectralModulation.lean": "796f8382a49703dd1a3139dfd7b799d762217d71a2134f13d56ff9787e53be0e",
     "SOURCE_ERRATA.md": "c02f42ab011aaf7d1100ffb55af859ecdb448a1d8dc6db5f0b0326ebe6ad06e9",
     "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md": "cdf1e80388bb3e0824a36caac1289a95048c5660c5245b76f45f4802cf6b893b",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "096734a4c90a0775991e7947fb64ca02e5c2c025063c0607c5c59571bcb98109",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "240aead6149ccb0c590616d64899db6473d56e2603638a21df0bd2a0c9718546",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/action-sequence-library-reuse.json": "9126c713dd2dbd5eb3b1d902df1cea7bdd35cbbd75a6ee13e21fd9d7fd49827e",
@@ -6126,6 +6149,7 @@
     "coverage/articles/kdv-convexity/dirichlet-shared-imports.json": "69e1c7df945527a159731d5cd8e520d8f6487c0311b60a6f765dbb3de1277613",
     "coverage/articles/kdv-convexity/endpoint-shared-imports.json": "778c8d2856fdae5d4d08b2ac267d2c4abb029cc4fc246cb0f88824d73be3e8d8",
     "coverage/articles/kdv-convexity/fourier-lebesgue-bijection-library-reuse.json": "99e9f8525865c804a922e84984c4449ef3a5e31f5e922da1c074368c831eff65",
+    "coverage/articles/kdv-convexity/fourier-lebesgue-forward-library-reuse.json": "bd68383b3b5326c0dd30ab8c48d67a0d6e9379eef4b6bed740d6f39131af3333",
     "coverage/articles/kdv-convexity/fourier-lebesgue-miura-library-reuse.json": "ac29e4b9d79e1564a5cc38ef9eefd64543f2a06029f9c6f68269d152ee39a479",
     "coverage/articles/kdv-convexity/free-dirichlet-linearization-library-reuse.json": "a2704beae438361e504b375899883202f3318e546657916470b0713319862aaf",
     "coverage/articles/kdv-convexity/global-ground-library-reuse.json": "5fecbfb7e905b3be5fe6b8951fd282d37cd6797390e00602aff0857427f797a0",
@@ -6148,10 +6172,10 @@
     "coverage/articles/kdv-convexity/sobolev-energy-library-reuse.json": "a5a808fd7bbc87f3979d3c913affabdb3f9550a4c3d997d63b578ef57aa7f4c7",
     "coverage/articles/kdv-convexity/theorem11-library-reuse.json": "c9b9d87827af9a6bdd4a8462fcd25d60b4c5a890071445f5deb3e708db6dc0c3",
     "coverage/articles/kdv-convexity/weighted-moment-library-reuse.json": "7b806d2adc490c00a195c620583f8c723ae6469c3a8b614fa356d0c8b81f3605",
-    "scripts/check-kdv-convexity.sh": "39bad73e2a37d2c03a51c1895a3da7f6b3caf657f902c3449bd95326ddadce4c"
+    "scripts/check-kdv-convexity.sh": "3f609237ef1ebb7f7bcc5e18af9a4a0055e5401605d96cb519ad0c3d25ae7e15"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-audit.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-audit.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -6167,11 +6191,11 @@
   },
   "limits": [
     "Corrected Theorem 1.1 is verified. The source preamble equation (1.7), interpreted as a locally uniform O(1) bound on one common complex base neighborhood, is mathematically incompatible with the actual physical -6 normalization and is proved false. The corrected theorem retains common-domain coordinatewise analyticity and exact physical recovery.",
-    "Prove real analyticity of the SAME actual physical Birkhoff restriction and its SAME fixed inverse in both original Fourier-Lebesgue norms, and derive the actual restricted derivative inverse identities. These are the remaining fields of Theorem12PhysicalData.",
+    "Prove native real analyticity of the SAME fixed inverse in every original Fourier-Lebesgue norm. Establish bounded invertibility of the actual restricted derivative (injectivity follows from the fixed weak diagram; surjectivity needs the native compact Fourier-principal argument). This is the remaining analytic_inverse field of Theorem12PhysicalData.",
     "Prove Theorem 1.3 physical KdV global C0 well-posedness, including approximation, uniqueness and agreement with the referenced Hminus1 solution theory.",
-    "Incremental validation preserves all 2547 baseline proof-source hashes and strictly checks 12 new authored modules. The 2852 remaining reference imports are byte-identical and were not rebuilt. No full repository build or replacement of dissertation validation is claimed."
+    "Incremental validation preserves all 2559 baseline proof-source hashes and strictly checks 10 new authored modules. The 2852 remaining reference imports are byte-identical and were not rebuilt. No full repository build or replacement of dissertation validation is claimed."
   ],
-  "previous_progress_commit": "4111102f006bc5c90f44ea5fe6b9d8f5c134a5d2",
+  "previous_progress_commit": "f05fa2ba0f4c3dddba8026bce9bcaafddc4d14a7",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -6664,7 +6688,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation against 4111102: all 2547 baseline proof-source hashes unchanged. Strict Lean 4.33.1/mathlib v4.33.1 compilation validates 12 authored modules with default proof limits and no authored linter or instance-priority overrides. Actual canonical Dirac gap compatibility across exponents and the exact Miura criterion prove the Fourier-Lebesgue source/packet/signed-map criterion for the SAME physical global map, for every s>=-1/2 and finite p>=2. The inherited original real mean-zero weighted lp spaces are closed and complete. The SAME global physical map restricts bijectively onto the ENTIRE stronger target. Both weak normalization diagrams commute globally, and its inverse is exactly the restriction of the ALREADY-FIXED global rough inverse. Every raw signed target coefficient is recovered, including infinite support and closed coordinates. ANY retained physical chart has native analytic Miura lift germs; the original chart is not replaced. The article declaration proves the global bijection and fixed inverse on the exact Theorem 1.2 range. Theorem12PhysicalData precisely states its remaining forward/inverse native real analyticity fields; their existence is NOT claimed. Corrected Theorem 1.1 remains complete. Theorems 1.2-1.3 remain open. Reproduction lists 2559 modules. Positive-index example, combined audit of 19913 declarations, 2885 coverage names and 921 additional module origins pass. The 2852 byte-identical reference imports were not rebuilt; no full repository rebuild is claimed.",
+  "focused_validation_scope": "Incremental validation against f05fa2b: all 2559 baseline proof-source hashes unchanged. Strict Lean 4.33.1/mathlib v4.33.1 compilation validates 10 authored modules with default proof limits and no authored linter or instance-priority overrides. Exact actual gap-weighted eta values agree across exponents on every real source, including all closed gaps. The native normalized Miura Dirichlet source keeps the literal period-one phase and half-scale weight. Bounded analytic weighted p-eta germs compose with the ACTUAL retained native lift and recover the original Hilbert chart on the ENTIRE real slice. The actual bounded packet symbol and SAME fixed signs give native analytic positive packet germs. Bounded real-linear physical signed completion maps every Banach exponent to the original closed real mean-zero weighted lp target. Exact weight conversion and the original physical positive-coordinate identity identify its real restriction with the SAME globally fixed physical map. The p=2 case is identified with the proved raw native Hilbert diffeomorphism; every finite p>2 is covered by the native weighted germs. Thus native REAL forward analyticity holds at every s>=-1/2 and finite p>=2. The article declaration keeps exactly -1/2<=s<=0, jointly with the proved entire stronger bijection and SAME fixed inverse compatibility. Only native inverse analyticity remains in Theorem12PhysicalData; no inhabitant is claimed. Corrected Theorem 1.1 remains complete and Theorems 1.2-1.3 remain incomplete. Reproduction lists 2569 modules. Positive-index example, combined audit of 19955 declarations, 2911 coverage names and 924 additional module origins pass. The 2852 byte-identical reference imports were not rebuilt; no full repository rebuild is claimed.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -6974,9 +6998,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 2885,
-    "audit_modules_present": 921,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/FourierLebesgueBijectionCoverageNames.log"
+    "declarations": 2911,
+    "audit_modules_present": 924,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/FourierLebesgueForwardCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -7065,154 +7089,131 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "4111102f006bc5c90f44ea5fe6b9d8f5c134a5d2",
-    "baseline_modules": 2547,
+    "baseline_commit": "f05fa2ba0f4c3dddba8026bce9bcaafddc4d14a7",
+    "baseline_modules": 2559,
     "baseline_source_hashes_unchanged": true,
-    "newly_checked_authored_modules": 12,
+    "newly_checked_authored_modules": 10,
     "completed_module_checks": [
       {
-        "module": "NLS.SequenceSpaces.PositiveReciprocalExponentMembership",
-        "source_sha256": "a913b1eb5714b29e4e8ee0ca1a4157167a59291040d0b2211b4942fa212db0e1",
-        "olean_sha256": "5cd941739e210f87cc49c12365a927a98d6dbed73dc847b220d0b8cdff512278",
+        "module": "NLS.ComplexAnalysis.AnalyticGermPullback",
+        "source_sha256": "d69ff11cda6c775efc701792c7985bb7d4d8d2cc73c90f98f2298f147fee0347",
+        "olean_sha256": "b3234efb237fce94c58169fb8a07590deba8044ef5f9e145a1178a6d72667a0a",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.SequenceSpaces.PositiveReciprocalExponentMembership.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-NLS.ComplexAnalysis.AnalyticGermPullback.log",
         "authored_here": true
       },
       {
-        "module": "NLS.KdV.HillHminusMiuraFourierLebesgueRegularity",
-        "source_sha256": "f5af951c757a2a1668946a6569a1e805d8f2ae0ec468e585aeaf59e4a96ccb2a",
-        "olean_sha256": "785126ae03d2143683838024290b81b2bc667723ed51e680fd35574a8f63665e",
+        "module": "NLS.KdV.HillMiuraFourierLebesgueNormalizedSource",
+        "source_sha256": "bee80f0a8eebf4567c2a6048c36b703bdefdc642f9e55360d396c696fbe78014",
+        "olean_sha256": "2681f930c231f7a30324ac1c3105bbf9a04454e5ec2a593a27b9836613cd186e",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.KdV.HillHminusMiuraFourierLebesgueRegularity.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-NLS.KdV.HillMiuraFourierLebesgueNormalizedSource.log",
         "authored_here": true
       },
       {
-        "module": "NLS.KdV.HillHminusEtaFourierLebesgueRegularity",
-        "source_sha256": "b31a227b235860c6c61a476c74b4ecb18e5548390a1083d048d7c5e9d5459ac2",
-        "olean_sha256": "0241abd71ec11f8891282c7bdfc23bf1c9bfb698689b7ea16c2c8f70262f5159",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillHminusMiuraFourierLebesgueRegularity": "785126ae03d2143683838024290b81b2bc667723ed51e680fd35574a8f63665e"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.KdV.HillHminusEtaFourierLebesgueRegularity.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillRoughPacketFourierLebesgueRegularity",
-        "source_sha256": "2aabb2c84d669c59b6660fe6b954c78243d0a9ecf4d0d26d367caec51cf81943",
-        "olean_sha256": "99cb51cdb64c6ad03f0c585ca0aee8a50c4d72eb077c33baa2888815e0592e35",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.PositiveReciprocalExponentMembership": "5cd941739e210f87cc49c12365a927a98d6dbed73dc847b220d0b8cdff512278",
-          "NLS.KdV.HillHminusEtaFourierLebesgueRegularity": "0241abd71ec11f8891282c7bdfc23bf1c9bfb698689b7ea16c2c8f70262f5159"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.KdV.HillRoughPacketFourierLebesgueRegularity.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillRoughGlobalFourierLebesgueRegularity",
-        "source_sha256": "a2fb45722dc9f87bfdd3c49e399907e73c1dde2285db18733a6493f54e8afca2",
-        "olean_sha256": "4cd42041b49a988e07d66d8edd4c90ab7b9f46282cefcdb5c6f7bb57bca0cbcc",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillRoughPacketFourierLebesgueRegularity": "99cb51cdb64c6ad03f0c585ca0aee8a50c4d72eb077c33baa2888815e0592e35"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.KdV.HillRoughGlobalFourierLebesgueRegularity.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.SequenceSpaces.FiniteFourierLebesgueWeakInclusion",
-        "source_sha256": "a5b76db3984de3f54cbdabbd45aaa2faba2e122c2eb69360883a7111eadad082",
-        "olean_sha256": "d630750fee95ec81899b9d1fda50cea7557a5060b89ff483448bfb2fb78cd343",
+        "module": "NLS.ZakharovShabat.SourceGapWeightedEtaRealExponent",
+        "source_sha256": "2f58c7341b1f7e8382a465999d64e7916b62457f0c7129e133285f2e2ea50994",
+        "olean_sha256": "b5d27568732da98f49d2fe85a2ca0a0a2be7135852f14bdbb729e1f5d6ac12ac",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.SequenceSpaces.FiniteFourierLebesgueWeakInclusion.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-NLS.ZakharovShabat.SourceGapWeightedEtaRealExponent.log",
         "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedExponent",
-        "source_sha256": "eab5f24bcf37510189983230276e5bea7603efb2f760fe13ca36e2b354bbd889",
-        "olean_sha256": "6a9989d4de87c999152e72863ac513272074f418609c401ce9151a1989c9113c",
+        "module": "NLS.KdV.HillMiuraFourierLebesgueEtaGerms",
+        "source_sha256": "e115379b51978f042c2f281ad7c7669830064dd3dea846e519e435c4fd1286a2",
+        "olean_sha256": "57b4c3badb95a8701f0901ba6eeb5f98a5a1bce4a7540714418e78b0b6c2aa2a",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.KdV.HillMiuraFourierLebesgueNormalizedSource": "2681f930c231f7a30324ac1c3105bbf9a04454e5ec2a593a27b9836613cd186e",
+          "NLS.ZakharovShabat.SourceGapWeightedEtaRealExponent": "b5d27568732da98f49d2fe85a2ca0a0a2be7135852f14bdbb729e1f5d6ac12ac"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-NLS.KdV.HillMiuraFourierLebesgueEtaGerms.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.KdV.HillHminusFourierLebesgueEtaGerms",
+        "source_sha256": "02acc5bc378b447171573f2bb59d5c321d57e41513546f446f5a5b77c37a2d72",
+        "olean_sha256": "b4de886d6ad07389967b23355176e41be651211a22da86e322ddf76546652461",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.ComplexAnalysis.AnalyticGermPullback": "b3234efb237fce94c58169fb8a07590deba8044ef5f9e145a1178a6d72667a0a",
+          "NLS.KdV.HillMiuraFourierLebesgueEtaGerms": "57b4c3badb95a8701f0901ba6eeb5f98a5a1bce4a7540714418e78b0b6c2aa2a"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-NLS.KdV.HillHminusFourierLebesgueEtaGerms.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.KdV.HillRoughFourierLebesguePositiveGerms",
+        "source_sha256": "66551cb35a775787cd60a36449503ccd8191a6a971116836cdae4df22cb88069",
+        "olean_sha256": "fe929ddbb00ed60460fed1048514b6d103ae0a9d5ef7535bb9404893ee019eff",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.KdV.HillHminusFourierLebesgueEtaGerms": "b4de886d6ad07389967b23355176e41be651211a22da86e322ddf76546652461"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-NLS.KdV.HillRoughFourierLebesguePositiveGerms.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.SequenceSpaces.PhysicalPositiveCompletionExponent",
+        "source_sha256": "3b28e46a11bb8fb5fc0708c7e02152df8b5b28163b7612be1b7082d78ed5a1ba",
+        "olean_sha256": "abfeeac746a502b93d4c9a4cf19d557e75d7ffa14aeb0e29f8145499fde7c157",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedExponent.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-NLS.SequenceSpaces.PhysicalPositiveCompletionExponent.log",
         "authored_here": true
       },
       {
-        "module": "NLS.KdV.HillRoughFourierLebesgueBijection",
-        "source_sha256": "005e40bedc7fee24be089bb38bf1939a498693dd8ca7ace0ccf24c1639db17b8",
-        "olean_sha256": "9086850f5ab61ec5774b8269eb3555484ff9acd7c40dbdd9f7ff78b4dfa8f570",
+        "module": "NLS.KdV.HillRoughFourierLebesgueForwardAnalytic",
+        "source_sha256": "1f161ec8881467801c1d08fec7477f9654d14ad904b846b4c27a681617e85601",
+        "olean_sha256": "5914e49c5809098fa001fe4e4e348777afc4bfd8596b0eb9b8d7aed92a844d3e",
         "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillRoughGlobalFourierLebesgueRegularity": "4cd42041b49a988e07d66d8edd4c90ab7b9f46282cefcdb5c6f7bb57bca0cbcc",
-          "NLS.SequenceSpaces.FiniteFourierLebesgueWeakInclusion": "d630750fee95ec81899b9d1fda50cea7557a5060b89ff483448bfb2fb78cd343",
-          "NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedExponent": "6a9989d4de87c999152e72863ac513272074f418609c401ce9151a1989c9113c"
+          "NLS.KdV.HillRoughFourierLebesguePositiveGerms": "fe929ddbb00ed60460fed1048514b6d103ae0a9d5ef7535bb9404893ee019eff",
+          "NLS.SequenceSpaces.PhysicalPositiveCompletionExponent": "abfeeac746a502b93d4c9a4cf19d557e75d7ffa14aeb0e29f8145499fde7c157"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.KdV.HillRoughFourierLebesgueBijection.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-NLS.KdV.HillRoughFourierLebesgueForwardAnalytic.log",
         "authored_here": true
       },
       {
-        "module": "NLS.KdV.HillRoughFourierLebesgueInverseCompatibility",
-        "source_sha256": "f1d127befe516a488ac48800e47dbedeb5884578f2f862525c4db5875f714471",
-        "olean_sha256": "664ce70df37463835f488dca17c4b7e1ac8648bbc3b395f2d0945e9a4214535f",
+        "module": "NLS.KdV.HillRoughFourierLebesgueForwardAllExponents",
+        "source_sha256": "5964405da34c1e431cc00bdd87a6d556a4fcff688790e889ec4895feaec860b0",
+        "olean_sha256": "ad1b00ca2270069c39f4b132d43778e619dcd95be24525b6929c69f3d3b84f97",
         "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillRoughFourierLebesgueBijection": "9086850f5ab61ec5774b8269eb3555484ff9acd7c40dbdd9f7ff78b4dfa8f570"
+          "NLS.KdV.HillRoughFourierLebesgueForwardAnalytic": "5914e49c5809098fa001fe4e4e348777afc4bfd8596b0eb9b8d7aed92a844d3e"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.KdV.HillRoughFourierLebesgueInverseCompatibility.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-NLS.KdV.HillRoughFourierLebesgueForwardAllExponents.log",
         "authored_here": true
       },
       {
-        "module": "NLS.ComplexAnalysis.AnalyticAffineQuadraticResolvent",
-        "source_sha256": "cdc7f2c4943ac3b14e224957a374c2fa42f481c82c07f18f2bc8fb61d99dde16",
-        "olean_sha256": "b761cf7e743ee233241ac0e7154bace5ab12d4cb20e9ed10bb8ec354b7478dc3",
-        "selected_direct_dependency_object_hashes": {},
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.ComplexAnalysis.AnalyticAffineQuadraticResolvent.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillHminusRetainedFourierLebesgueMiuraGerms",
-        "source_sha256": "05a4461a867d0ccd481ec00d8e7a4ea772acb58bb7afcb895af2ec8a1213eae9",
-        "olean_sha256": "c1a10b8ec13085eaf6eec23e8a88a7f2c093e505e3cd8300e5c77c4db851b33d",
+        "module": "NLS.Articles.KdVConvexity.MainTheorem12Forward",
+        "source_sha256": "4508b3916feafd416afcee466892a489ef9f470f85b2c7da7666950de20de336",
+        "olean_sha256": "56610ddafd51fed57a76c6b031d0207aa1aa7e39bd0047db8738e0c7588b5393",
         "selected_direct_dependency_object_hashes": {
-          "NLS.ComplexAnalysis.AnalyticAffineQuadraticResolvent": "b761cf7e743ee233241ac0e7154bace5ab12d4cb20e9ed10bb8ec354b7478dc3"
+          "NLS.KdV.HillRoughFourierLebesgueForwardAllExponents": "ad1b00ca2270069c39f4b132d43778e619dcd95be24525b6929c69f3d3b84f97"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.KdV.HillHminusRetainedFourierLebesgueMiuraGerms.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.MainTheorem12Preparation",
-        "source_sha256": "141baabc470db9471176d8148f3361d4d404ff13a32282e27e5ba97c93e8b52a",
-        "olean_sha256": "1dec6498a3d1ffea2c21be2e791ee5921c08ffb149dd5a1ffcf0e5ba8bdf163f",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillRoughFourierLebesgueInverseCompatibility": "664ce70df37463835f488dca17c4b7e1ac8648bbc3b395f2d0945e9a4214535f",
-          "NLS.KdV.HillHminusRetainedFourierLebesgueMiuraGerms": "c1a10b8ec13085eaf6eec23e8a88a7f2c093e505e3cd8300e5c77c4db851b33d"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-NLS.Articles.KdVConvexity.MainTheorem12Preparation.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-NLS.Articles.KdVConvexity.MainTheorem12Forward.log",
         "authored_here": true
       }
     ],
-    "combined_build_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-build.log",
-    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-bijection-audit.log",
+    "combined_build_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-build.log",
+    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-forward-audit.log",
     "baseline_build_receipts_preserved_in_parent_commit": true,
-    "reference_import_source_manifest": "coverage/articles/kdv-convexity/fourier-lebesgue-bijection-library-reuse.json",
+    "reference_import_source_manifest": "coverage/articles/kdv-convexity/fourier-lebesgue-forward-library-reuse.json",
     "inherited_reference_import_closure_rebuilt": false
   },
   "Hminus1_real_spectral_progress": {
@@ -9569,9 +9570,55 @@
     "remaining": [
       "Prove real analyticity of the SAME actual physical Birkhoff restriction and its SAME fixed inverse in both original Fourier-Lebesgue norms, and derive the actual restricted derivative inverse identities. These are the remaining fields of Theorem12PhysicalData.",
       "Prove Theorem 1.3 physical KdV global C0 well-posedness, including approximation, uniqueness and agreement with the referenced Hminus1 solution theory."
-    ]
+    ],
+    "remaining_forward_claim_superseded_by": "fourier_Lebesgue_native_forward_progress"
   },
   "theorem_1_2_global_bijection_verified": true,
   "fixed_rough_inverse_restriction_verified": true,
-  "theorem_1_2_verified": false
+  "theorem_1_2_verified": false,
+  "fourier_Lebesgue_native_forward_progress": {
+    "status": "same_physical_native_Fourier_Lebesgue_forward_analyticity_proved",
+    "article_forward_declaration": "NLS.Articles.KdVConvexity.theorem_1_2_native_forward_analytic",
+    "full_remaining_statement_record": "NLS.Articles.KdVConvexity.Theorem12PhysicalData",
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.AnalyticGermPullback",
+      "NLS.KdV.HillMiuraFourierLebesgueNormalizedSource",
+      "NLS.ZakharovShabat.SourceGapWeightedEtaRealExponent",
+      "NLS.KdV.HillMiuraFourierLebesgueEtaGerms",
+      "NLS.KdV.HillHminusFourierLebesgueEtaGerms",
+      "NLS.KdV.HillRoughFourierLebesguePositiveGerms",
+      "NLS.SequenceSpaces.PhysicalPositiveCompletionExponent",
+      "NLS.KdV.HillRoughFourierLebesgueForwardAnalytic",
+      "NLS.KdV.HillRoughFourierLebesgueForwardAllExponents",
+      "NLS.Articles.KdVConvexity.MainTheorem12Forward"
+    ],
+    "baseline_commit": "f05fa2ba0f4c3dddba8026bce9bcaafddc4d14a7",
+    "baseline_proof_sources_preserved": 2559,
+    "native_analyticity": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueForward_analytic",
+    "same_actual_physical_signed_map_retained": true,
+    "same_fixed_global_rough_inverse_retained": true,
+    "all_finite_exponents_p_ge_two": true,
+    "endpoint_p_two_covered_by_proved_same_map_Hilbert_diffeomorphism": true,
+    "orders": "Native forward analyticity holds for every s>=-1/2; the article declaration retains exactly -1/2<=s<=0.",
+    "original_real_mean_zero_weighted_lp_source_and_target_norms": true,
+    "exact_half_order_shift_and_period_one_phase_normalization": true,
+    "cross_exponent_eta_values_agree_at_every_real_source_and_all_closed_gaps": true,
+    "native_complex_weighted_eta_and_positive_packet_germs_bounded": true,
+    "native_analytic_lift_of_actual_chosen_chart_used": true,
+    "bounded_real_linear_full_signed_completion_proved_for_every_Banach_exponent": true,
+    "native_forward_Birkhoff_analyticity_proved": true,
+    "native_inverse_Birkhoff_analyticity_proved": false,
+    "entire_stronger_target_bijection_preserved": true,
+    "infinite_support_all_signed_modes_and_zero_slot_included": true,
+    "authored_heartbeat_linter_or_instance_overrides": false,
+    "main_Theorem_1_1_corrected_complete": true,
+    "main_Theorem_1_2_complete": false,
+    "main_Theorem_1_3_complete": false,
+    "remaining": [
+      "Prove native real analyticity of the SAME fixed inverse in every original Fourier-Lebesgue norm. Establish bounded invertibility of the actual restricted derivative (injectivity follows from the fixed weak diagram; surjectivity needs the native compact Fourier-principal argument). This is the remaining analytic_inverse field of Theorem12PhysicalData.",
+      "Prove Theorem 1.3 physical KdV global C0 well-posedness, including approximation, uniqueness and agreement with the referenced Hminus1 solution theory."
+    ]
+  },
+  "theorem_1_2_native_forward_analytic_verified": true,
+  "theorem_1_2_native_inverse_analytic_verified": false
 }

@@ -95,7 +95,7 @@ See `source-inventory.json` for statement domains, quantifiers and pages.
 | Statement | Required content | Status |
 | --- | --- | --- |
 | Theorem 1.1, pp. 3–4 | A complex open extension around the entire nonnegative ell2 action quadrant; physical energy/frequency identities; gradient zero and full derivative -6*Id; analytic local inverse; one-radius Hessian bound for every real ell2 direction. | **Verified with explicit source correction** by `theorem_1_1_corrected` / `Theorem11PhysicalData`. All components hold jointly for the same physical extension. The preamble uniform O(1) estimate (1.7) is refuted and excluded. |
-| Theorem 1.2, p. 4 | For each -1/2<=s<=0 and finite p>=2, the same global H^-1 physical KdV Birkhoff map restricts to a real analytic diffeomorphism L_0^(s,p) -> ell_0^(s+1/2,p). | Partially verified: the exact physical Fourier-Lebesgue criterion, global native bijection and restriction of the fixed rough inverse are proved by `theorem_1_2_bijection_and_fixed_inverse`. `Theorem12PhysicalData` precisely retains the unproved native forward/inverse analyticity; Theorem 1.2 remains incomplete. |
+| Theorem 1.2, p. 4 | For each -1/2<=s<=0 and finite p>=2, the same global H^-1 physical KdV Birkhoff map restricts to a real analytic diffeomorphism L_0^(s,p) -> ell_0^(s+1/2,p). | Partially verified: exact physical Fourier-Lebesgue regularity, global native bijection and SAME fixed inverse are proved. `theorem_1_2_native_forward_analytic` now proves native forward real analyticity on the whole article range. Native inverse analyticity remains the unproved `analytic_inverse` field of `Theorem12PhysicalData`. |
 | Theorem 1.3, p. 5 | Global C0 well-posedness of physical KdV on every such real Fourier-Lebesgue space, with the solution notion referenced by the paper. | Not verified. Sequence phase-flow results alone do not establish this PDE assertion. |
 
 For 1.1 the complex domain must contain every nonnegative ell2 action, not
@@ -3653,9 +3653,36 @@ complex analytic lift germs of the ACTUAL chosen chart of the fixed map,
 rather than selecting a replacement chart. This is an essential input
 toward the remaining native Birkhoff analyticity.
 
-Corrected Theorem 1.1 remains complete. Theorem 1.2 still needs native
-analyticity in BOTH directions and the resulting restricted derivative
-inverse identities. Theorem 1.3 remains open.
+Corrected Theorem 1.1 remains complete. Native forward analyticity is
+proved in the subsequent milestone below. Native inverse analyticity and
+the resulting restricted derivative inverse identities remain open.
+Theorem 1.3 remains open.
+
+## Native physical Fourier-Lebesgue forward analyticity
+
+`fourierLebesgueForward_analytic` proves REAL analyticity of the SAME
+actual physical forward restriction in BOTH original native norms, for
+EVERY finite p>=2 and every s>=-1/2. The endpoint p=2 is identified with
+the already-proved actual raw Hilbert diffeomorphism. For p>2, bounded
+native weighted Dirac eta germs compose with the ACTUAL retained Miura
+lift, with exact original period-one phase and half-scale spectral weight.
+
+`gapWeightedEta_real_exponent` recovers the SAME original Hilbert eta
+family on the ENTIRE real slice, including every closed gap. The actual
+bounded packet symbol and fixed physical signs give native analytic
+positive packet germs. `physicalPositiveRealLift` completes them through
+a bounded REAL-linear map into the ORIGINAL real mean-zero weighted lp
+target. The exact half-order weight identity and actual physical signed
+coordinate formula identify this real restriction with the fixed global
+KdV Birkhoff map, on every signed mode including zero and infinite support.
+
+`theorem_1_2_native_forward_analytic` jointly proves native forward
+analyticity, the full stronger bijection and compatibility with the SAME
+fixed rough inverse on the precise article range -1/2<=s<=0, finite p>=2.
+The `analytic_forward` field of `Theorem12PhysicalData` is now proved.
+Its `analytic_inverse` field remains open, together with the native
+restricted derivative surjectivity required for that inverse. Theorem 1.3
+remains open. Corrected Theorem 1.1 is unchanged.
 
 ## Remaining essential KdV work
 
@@ -3721,19 +3748,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `4111102` contains 2547 proof sources, whose
-hashes remain unchanged. All 12 new authored modules pass strict Lean
+The validated baseline at `f05fa2b` contains 2559 proof sources, whose
+hashes remain unchanged. All 10 new authored modules pass strict Lean
 compilation with default proof limits and no linter or instance-priority
-overrides. Reproduction lists 2559 modules. The positive-index example,
-combined transitive audit and 2885 coverage-name checks pass.
+overrides. Reproduction lists 2569 modules. The positive-index example,
+combined transitive audit and 2911 coverage-name checks pass.
 All 2852 remaining reference imports agree byte-for-byte and were not
 rebuilt. Earlier receipts remain in the parent commit. This is incremental
 validation, not a full repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 921 additional shared modules:
-19913 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 924 additional shared modules:
+19955 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

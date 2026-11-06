@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.MainTheorem12Forward
 import NLS.Articles.KdVConvexity.MainTheorem12Preparation
 import NLS.Articles.KdVConvexity.FourierLebesgueMiuraPreparation
 import NLS.Articles.KdVConvexity.MainTheorem11
@@ -116,6 +117,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.ComplexAnalysis.AnalyticGermPullback,
+    `NLS.ZakharovShabat.SourceGapWeightedEtaRealExponent,
+    `NLS.SequenceSpaces.PhysicalPositiveCompletionExponent,
+
     `NLS.ComplexAnalysis.AnalyticAffineQuadraticResolvent,
 
     `NLS.SequenceSpaces.PositiveReciprocalExponentMembership,
