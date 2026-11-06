@@ -22,7 +22,7 @@ private theorem cumulative_hasDerivAt (u : Curve ℂ) (x : ℝ) :
 
 /-- The actual ZS initial-value solution at zero frequency for diagonal
 continuous potentials, expressed through its physical integral. -/
-theorem classicalSolution_diagonal_zero (u : Curve ℂ) (φ : Curve (ℂ × ℂ))
+theorem classicalSolution_diagonal_zero_of_curve (u : Curve ℂ) (φ : Curve (ℂ × ℂ))
     (hφ : ∀ t, φ t = (u t,u t)) (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
     classicalSolution φ 0 v t =
       (cosh (∫ s in (0 : ℝ)..t.val, extend u s)*v.1+
@@ -59,12 +59,12 @@ theorem classicalSolution_diagonal_zero (u : Curve ℂ) (φ : Curve (ℂ × ℂ)
   exact (he t.property).symm
 
 /-- The physical monodromy trace, not a formal spectral surrogate. -/
-theorem classicalDiscriminant_diagonal_zero (u : Curve ℂ) (φ : Curve (ℂ × ℂ))
+theorem classicalDiscriminant_diagonal_zero_of_curve (u : Curve ℂ) (φ : Curve (ℂ × ℂ))
     (hφ : ∀ t, φ t = (u t,u t)) :
     classicalDiscriminant φ 0 = 2*cosh (unitIntervalMean u) := by
   change (classicalFundamentalMatrix φ 0 1).trace = _
-  have h1 := classicalSolution_diagonal_zero u φ hφ (1,0) ⟨1,by constructor <;> norm_num⟩
-  have h2 := classicalSolution_diagonal_zero u φ hφ (0,1) ⟨1,by constructor <;> norm_num⟩
+  have h1 := classicalSolution_diagonal_zero_of_curve u φ hφ (1,0) ⟨1,by constructor <;> norm_num⟩
+  have h2 := classicalSolution_diagonal_zero_of_curve u φ hφ (0,1) ⟨1,by constructor <;> norm_num⟩
   simp only [classicalFundamentalMatrix,Matrix.trace_fin_two_of]
   rw [h1,h2]
   simp only [unitIntervalMean_apply,mul_one,mul_zero,add_zero,zero_add]

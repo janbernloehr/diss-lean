@@ -1,3 +1,4 @@
+import NLS.ComplexAnalysis.TwoRootCircleMoments
 import NLS.ComplexAnalysis.JointSpectralDerivativeAnalytic
 import NLS.ComplexAnalysis.WeightedArgumentPrinciple
 import NLS.ComplexAnalysis.ZeroMultiset
@@ -13,10 +14,7 @@ namespace NLS.ComplexAnalysis
 
 variable {A : Type} [NormedAddCommGroup A] [NormedSpace ℂ A]
 
-def logarithmicCircleMoment (F : ℂ × A → ℂ) (c : ℂ) (R : ℝ) (j : ℕ) (p : A) : ℂ :=
-  (2 * Real.pi * I)⁻¹ * ∮ z in C(c,R), z^j * logDeriv (fun w => F (w,p)) z
-
-theorem analyticOnNhd_logarithmicCircleMoment
+theorem analyticOnNhd_logarithmicCircleMoment_of_isOpen
     (F : ℂ × A → ℂ) (hF : AnalyticOnNhd ℂ F univ)
     (c : ℂ) (R : ℝ) (hR : 0 ≤ R) (j : ℕ) {V : Set A} (hV : IsOpen V)
     (hb : ∀ p ∈ V, ∀ z ∈ sphere c R, F (z,p) ≠ 0) :

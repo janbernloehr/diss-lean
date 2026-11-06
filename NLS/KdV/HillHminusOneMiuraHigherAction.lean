@@ -1,3 +1,4 @@
+import NLS.ZakharovShabat.SourceHigherActionPiecewiseContour
 import NLS.KdV.HillHminusOneMiuraContour
 import NLS.ZakharovShabat.SourceCriticalRootPiecewiseZeroPeriod
 

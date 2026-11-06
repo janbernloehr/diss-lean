@@ -1970,7 +1970,7 @@ import NLS.FunctionalAnalysis.ContinuousMapLinearEquivalenceTransport
 import NLS.Articles.KdVPseudomeasures.OriginalHillWienerAnalyticTrajectories
 import NLS.Articles.KdVPseudomeasures.MainTheorem59
 
-/-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
+/-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
 #print axioms NLS.WeightedCoeff.ofFinsupp
 #print axioms NLS.WeightedCoeff.ofFinsupp_apply
@@ -7371,6 +7371,13 @@ import NLS.Articles.KdVPseudomeasures.MainTheorem59
 #print axioms NLS.KdV.norm_hillFreePeriodEquation_sub_id_le
 #print axioms NLS.KdV.hillFreePeriodEquation_zero
 #print axioms NLS.KdV.analyticAt_hillFreePeriodEquation
+#print axioms NLS.KdV.hillFreeScaledPeriodCoordinate
+#print axioms NLS.KdV.norm_hillFreeScaledPeriodCoordinate_le
+#print axioms NLS.KdV.hillFreeScaledPeriodSequence
+#print axioms NLS.KdV.hillFreeScaledPeriodSequence_apply
+#print axioms NLS.KdV.norm_hillFreeScaledPeriodSequence_le
+#print axioms NLS.KdV.analyticOnNhd_hillFreeScaledPeriod_coordinate
+#print axioms NLS.KdV.analyticOnNhd_hillFreeScaledPeriodSequence
 #print axioms NLS.KdV.fderiv_hillFreePeriodEquation_zero
 #print axioms NLS.KdV.hasFDerivAt_hillFreePeriodEquation_zero
 #print axioms NLS.KdV.hasStrictFDerivAt_hillFreePeriodEquation_zero
@@ -9264,6 +9271,7 @@ import NLS.Articles.KdVPseudomeasures.MainTheorem59
 #print axioms NLS.KdV.hillHminus_resonant_discriminant_Dirichlet_Gardner
 #print axioms NLS.KdV.hillHminus_discriminant_at_Dirichlet_Gardner_matrix
 #print axioms NLS.ComplexAnalysis.analytic_eqOn_of_mul_sub_eq_zero
+#print axioms NLS.ComplexAnalysis.eq_zero_of_analytic_mul_eq_zero
 #print axioms NLS.KdV.exists_hillHminusDirichletSheet_ne_zero
 #print axioms NLS.Poisson.hminusGardnerBracket_moving_spectral_right
 #print axioms NLS.Poisson.hminusGardnerBracket_inv_add_right
@@ -10619,6 +10627,7 @@ import NLS.Articles.KdVPseudomeasures.MainTheorem59
 #print axioms NLS.MKdV.classicalKdVHamiltonian_centered_miura_NLS
 #print axioms NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_discriminant
 #print axioms NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_isospectral
+#print axioms NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_actions
 #print axioms NLS.KdV.hillMiuraFiniteGapProfile
 #print axioms NLS.KdV.sourceFiniteGapPhysicalPair_hillMiura
 #print axioms NLS.KdV.contDiff_hillMiuraFiniteGapProfile
@@ -11549,3 +11558,24 @@ import NLS.Articles.KdVPseudomeasures.MainTheorem59
 #print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalWienerKdVCompactTrajectory
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_9Statement
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_9
+#print axioms NLS.KdV.index_lt_freeHillValue_gap
+#print axioms NLS.KdV.hillHminusRadicand_ne_zero_of_not_mem_singularHillSpectrum
+#print axioms NLS.KdV.hillL2Dirichlet_eq_characteristic
+#print axioms NLS.KdV.hillMiuraSquaredLabels_roots_iff_of_radicand_ne_zero
+#print axioms NLS.KdV.hillMiuraSquaredLabels_global_multiplicity_of_radicand_ne_zero
+#print axioms NLS.KdV.hillHminusLabels_eq_squared_miuraDirac_of_radicand_ne_zero
+#print axioms NLS.KdV.hillHminusLabels_bottom_eq_squared_miuraDirac_of_radicand_ne_zero
+#print axioms NLS.KdV.hillHminusLabels_pair_eq_squared_miuraDirac_of_radicand_ne_zero
+#print axioms NLS.KdV.hillHminusLabels_bottom_lt_first_of_radicand_ne_zero
+#print axioms NLS.KdV.hillHminusLabels_bottom_multiplicity_one_of_radicand_ne_zero
+#print axioms NLS.KdV.hillL2DirichletTerminal_eq_slope
+#print axioms NLS.KdV.fderiv_hillFullProductPhysicalPeriod_eq_intrinsic_variation
+#print axioms NLS.KdV.hillFullProductRootVariation_eq_zero_of_periods
+#print axioms NLS.KdV.hillFullProduct_positive_period_kernel_eq_zero
+#print axioms NLS.KdV.hillAbelianFullProductPeriod_root_derivative_kernel_eq_zero
+#print axioms NLS.KdV.hillDiscriminantGardnerBracket
+#print axioms NLS.KdV.hillDiscriminantGardnerBracket_eq_curveIntegral
+#print axioms NLS.KdV.hillDiscriminantGardnerBracket_eq_zero_of_energy_ne
+#print axioms NLS.KdV.continuous_hillDiscriminantGradientSpatialCurve_spectral
+#print axioms NLS.KdV.continuous_hillDiscriminantGardnerBracket_right
+#print axioms NLS.KdV.hillDiscriminantGardnerBracket_eq_zero

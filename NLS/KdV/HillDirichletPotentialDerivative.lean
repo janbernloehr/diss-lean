@@ -31,7 +31,7 @@ def hillL2DirichletDirectionKernel (q h : Coeff 2) (z : ℂ) : ℂ :=
     z (0,I) ⟨1,by norm_num⟩).1
 
 theorem fderiv_hillL2FrequencyDirichlet_potential (q h : Coeff 2) (z : ℂ) :
-    (fderiv ℂ (fun p : Coeff 2 => hillL2FrequencyDirichlet p z) q) h=
+    (fderiv ℂ (fun p : Coeff 2 => hillL2FrequencyStateDirichlet p z) q) h=
       hillL2DirichletDirectionKernel q h z := by
   let u := physicalRestrictionL2 (hillFirstOrderPotential q)
   let U (p : Coeff 2) := physicalRestrictionL2 (hillFirstOrderPotential p)
@@ -43,10 +43,10 @@ theorem fderiv_hillL2FrequencyDirichlet_potential (q h : Coeff 2) (z : ℂ) :
   let E : Curve (ℂ × ℂ) →L[ℂ] ℂ :=
     (ContinuousLinearMap.fst ℂ ℂ ℂ).comp (ContinuousMap.evalCLM ℂ ⟨1,by norm_num⟩)
   have heval := E.hasFDerivAt.comp q hcomp
-  have heq : (fun p : Coeff 2 => E (S (U p)))=(fun p : Coeff 2 => hillL2FrequencyDirichlet p z) := by
+  have heq : (fun p : Coeff 2 => E (S (U p)))=(fun p : Coeff 2 => hillL2FrequencyStateDirichlet p z) := by
     funext p
     simp only [E,S,U,ContinuousLinearMap.comp_apply,ContinuousLinearMap.coe_fst',
-      ContinuousMap.evalCLM_apply,hillL2FrequencyDirichlet,constantUpperStateMap_apply,
+      ContinuousMap.evalCLM_apply,hillL2FrequencyStateDirichlet,constantUpperStateMap_apply,
       constantUpperInitialVector,mul_zero,mul_one,sub_zero]
   have he := congrArg (fun L : Coeff 2 →L[ℂ] ℂ => L h) heval.fderiv
   change (fderiv ℂ (fun p : Coeff 2 => E (S (U p))) q) h=

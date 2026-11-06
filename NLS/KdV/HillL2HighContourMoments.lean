@@ -28,7 +28,7 @@ theorem analyticAt_hillL2HighContourMoment
     AnalyticAt ℂ (hillL2HighContourMoment n m) (SpectralWeight.one.toCoeff q) := by
   obtain ⟨V,_,hqV,ha⟩ := hillL2SourceFamily.exists_analytic_contourMoment
     (freeHillValue n : ℂ) (n : ℝ) (by positivity) (SpectralWeight.one.toCoeff q)
-    (mem_hillL2ContinuationDomain_high_sphere q hq n hn hcut) m
+    (mem_hillL2ContinuationDomain_high_sphere q hq n hn (by linarith [norm_nonneg q])) m
   exact ha _ hqV
 
 @[simp] theorem hillL2HighContourMoment_zero (n m : ℕ) (hn : 1 ≤ n) :
@@ -46,7 +46,7 @@ theorem hillL2HighContourMoment_arnold_level
         z^(m+1)*deriv (hillL2Discriminant (SpectralWeight.one.toCoeff q)) z /
           hillL2ContinuedRoot (z,SpectralWeight.one.toCoeff q) :=
   hillL2SourceFamily.contourMoment_arnold (freeHillValue n : ℂ) (n : ℝ) (by positivity)
-    (SpectralWeight.one.toCoeff q) (mem_hillL2ContinuationDomain_high_sphere q hq n hn hcut) m
+    (SpectralWeight.one.toCoeff q) (mem_hillL2ContinuationDomain_high_sphere q hq n hn (by linarith [norm_nonneg q])) m
 
 /-- The primitive moment has exactly the source's level-zero Arnold
 integrand and normalization on the whole checked high circle. -/

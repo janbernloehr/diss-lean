@@ -94,7 +94,7 @@ theorem HillRealHighGapPair.exists_source_normalized_cut_root
       linarith
   have hsource (z : ℂ) (hz : z ∈ sphere (freeHillValue n : ℂ) (3*(n : ℝ)/4)) :
       (z,SpectralWeight.one.toCoeff q) ∈ hillL2ContinuationDomain := by
-    apply mem_hillL2ContinuationDomain_of_high_distance q hq n hn hcut z
+    apply mem_hillL2ContinuationDomain_of_high_distance q hq n hn (by linarith [norm_nonneg q]) z
       (ball_subset_closedBall (hcircle z hz).1)
     have he : ‖z-(freeHillValue n : ℂ)‖ = 3*(n : ℝ)/4 := by
       simpa only [mem_sphere,dist_eq_norm] using hz

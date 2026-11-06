@@ -1,3 +1,4 @@
+import NLS.Fourier.UnitIntervalFourierLinear
 import NLS.Fourier.UnitIntervalWeakDerivative
 
 noncomputable section
@@ -42,7 +43,7 @@ theorem twice_sin_sq_eq_waves (n : ℤ) (x : ℝ) :
   linear_combination hc + 2*hs
 
 /-- Complex constants commute with the actual unit Fourier integral. -/
-theorem unitFourierCoefficient_const_mul (c : ℂ) (f : ℝ → ℂ) (k : ℤ) :
+theorem unitFourierCoefficient_const_mul_left (c : ℂ) (f : ℝ → ℂ) (k : ℤ) :
     unitFourierCoefficient (fun x => c*f x) k = c*unitFourierCoefficient f k := by
   unfold unitFourierCoefficient
   simp only [mul_assoc]
@@ -58,8 +59,8 @@ theorem unitFourierCoefficient_twice_sin_sq (n k : ℤ) :
     rw [twice_sin_sq_eq_waves,show 2*(-n) = -(2*n) by ring]
     ring
   rw [he,unitFourierCoefficient_add,unitFourierCoefficient_add,
-    unitFourierCoefficient_const,unitFourierCoefficient_const_mul,
-    unitFourierCoefficient_const_mul,unitFourierCoefficient_wave,unitFourierCoefficient_wave]
+    unitFourierCoefficient_const,unitFourierCoefficient_const_mul_left,
+    unitFourierCoefficient_const_mul_left,unitFourierCoefficient_wave,unitFourierCoefficient_wave]
   · ring
   · exact continuous_const.intervalIntegrable 0 1
   · exact ((continuous_wave _).const_mul _).intervalIntegrable 0 1
@@ -88,17 +89,6 @@ theorem cos_mul_sin_eq_waves (n : ℤ) (x : ℝ) :
   field_simp
   ring
 
-/-- Actual unit Fourier integrals are subtractive on interval L1 inputs. -/
-theorem unitFourierCoefficient_sub (f g : ℝ → ℂ)
-    (hf : IntervalIntegrable f volume 0 1) (hg : IntervalIntegrable g volume 0 1) (k : ℤ) :
-    unitFourierCoefficient (fun x => f x-g x) k =
-      unitFourierCoefficient f k-unitFourierCoefficient g k := by
-  unfold unitFourierCoefficient
-  simp only [sub_mul]
-  exact intervalIntegral.integral_sub
-    (hf.mul_continuousOn (continuous_wave _).continuousOn)
-    (hg.mul_continuousOn (continuous_wave _).continuousOn)
-
 /-- Exact signed Fourier coefficients of the free norming-gradient profile,
 with any constant divisor (including zero). -/
 theorem unitFourierCoefficient_cos_mul_sin_div (n k : ℤ) (c : ℂ) :
@@ -109,7 +99,7 @@ theorem unitFourierCoefficient_cos_mul_sin_div (n k : ℤ) (c : ℂ) :
     funext x
     rw [cos_mul_sin_eq_waves,show 2*(-n) = -(2*n) by ring,div_div]
     ring
-  rw [he,unitFourierCoefficient_const_mul,unitFourierCoefficient_sub,
+  rw [he,unitFourierCoefficient_const_mul_left,unitFourierCoefficient_sub,
     unitFourierCoefficient_wave,unitFourierCoefficient_wave]
   · ring
   · exact (continuous_wave _).intervalIntegrable 0 1

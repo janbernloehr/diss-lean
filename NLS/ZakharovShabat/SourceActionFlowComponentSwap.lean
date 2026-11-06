@@ -1,3 +1,4 @@
+import NLS.ZakharovShabat.SourceComponentSwapRealTopology
 import NLS.ZakharovShabat.SourcePairedActionFlowDiagonal
 
 /-! # Component exchange conjugates each complete action flow
@@ -14,9 +15,6 @@ theorem analyticAt_sourceActionHamiltonianVector (k : ℤ) (φ : realTypeSourceS
     AnalyticAt ℂ (sourceHamiltonianVector le_rfl (sourceComplexAction (by simp) (by norm_num) k)) φ.val := by
   have hk := analyticAt_sourceComplexAction_of_realType (by simp) (by norm_num) k φ.val φ.property
   exact ((sourceHamiltonianDirection le_rfl).analyticAt _).comp hk.fderiv
-
-theorem continuous_realSourceComponentSwap : Continuous (realSourceComponentSwap (p := 2)) := by
-  exact (sourceComponentSwap.continuous.comp continuous_subtype_val).subtype_mk _
 
 namespace SourceBirkhoffMapComplexData
 variable {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}

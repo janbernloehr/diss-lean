@@ -1,3 +1,4 @@
+import NLS.KdV.MiuraRealSource
 import NLS.KdV.HminusOneMiuraHighPairs
 import NLS.KdV.HminusOnePhysicalCharacteristic
 import NLS.ZakharovShabat.SourceIsospectralSet
@@ -14,36 +15,26 @@ noncomputable section
 open Set Complex
 open scoped ENNReal ComplexConjugate
 namespace NLS.KdV
+
+/-- Physical spectral exclusion implies the exact scalar radicand exclusion. -/
+theorem hillHminusRadicand_ne_zero_of_not_mem_singularHillSpectrum
+    (q : PeriodOneHminusOne) (E : ℂ)
+    (hE : E ∉ singularHillSpectrum (periodOneOriginal q)) :
+    hillHminusRadicand q E ≠ 0 := by
+  intro hz
+  apply hE
+  apply (singularHillSpectrum_periodOne_iff_discriminant q E).mpr
+  exact sub_eq_zero.mp hz
+
 open NLS.ZakharovShabat
 
-/-- A real scalar L2 lift determines the actual original real diagonal
-Dirac source, with the original unit-period source convention. -/
-def hillMiuraRealSource (u : PeriodOneRealL2) : realTypeSourceSubmodule 2 :=
-  ⟨hillMiuraDiagonal u.val,by
-    intro n
-    change (hillMiuraDiagonal u.val).snd n = conj ((hillMiuraDiagonal u.val).fst (-n))
-    rw [hillMiuraDiagonal_snd,hillMiuraDiagonal_fst]
-    simpa only [neg_neg] using u.property (-n)⟩
-
-/-- The exact shifted trace excludes zero Dirac frequency whenever its
-physical Hill energy is outside the full original spectrum. -/
+/-- Compatibility with the original physical outside-spectrum hypothesis. -/
 theorem zero_not_mem_periodicSpectrum_of_shifted_miura
     (q : PeriodOneHminusOne) (u : Coeff 2) (c : ℂ)
     (himage : periodOneMiura u = q+periodOneL2Inclusion (lp.single 2 0 c))
     (hc : -c ∉ singularHillSpectrum (periodOneOriginal q)) :
     (0:ℂ) ∉ periodicSpectrum (by norm_num) (periodOnePotential (hillMiuraDiagonal u)) := by
-  intro hz
-  have hd := (canonicalDiscriminant_sq_eq_four_iff
-    (periodOnePotential (hillMiuraDiagonal u)) (periodOnePotential_mem _) 0).mpr hz
-  have ht := hillHminusDiscriminant_eq_miura_of_shifted_image q u c (-c) himage
-  have ht' : hillHminusDiscriminant q (-c) =
-      canonicalDiscriminant (by norm_num) (periodOnePotential (hillMiuraDiagonal u)) 0 := by
-    simpa only [neg_add_cancel,hillMiuraL2Discriminant,Complex.sqrt_zero,
-      hillMiuraFrequencyTrace] using ht
-  apply hc
-  apply (singularHillSpectrum_periodOne_iff_discriminant q (-c)).mpr
-  rw [ht']
-  exact hd
+  exact zero_not_mem_periodicSpectrum_of_shifted_miura_of_radicand_ne_zero q u c himage (hillHminusRadicand_ne_zero_of_not_mem_singularHillSpectrum q (-c) hc)
 
 /-- Outside-spectrum shift energy removes the zero-frequency exception
 from the actual rough Miura algebraic multiplicity identity. -/

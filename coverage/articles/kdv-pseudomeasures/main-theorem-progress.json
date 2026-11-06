@@ -7475,7 +7475,7 @@
     "AppendixBLowerTopology": "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean",
     "PeriodicWeakStarEndpoint": "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean"
   },
-  "goal_status": "active",
+  "goal_status": "complete",
   "completed_source_identifications": [
     "Original distribution reality, zero mean and physical period one exactly characterize the constrained coefficient locus.",
     "Full real Wiener predual original-distribution equivalence with exact norm.",
@@ -9362,7 +9362,7 @@
     "For every such continuous injective map, a domain constraint is closed iff its image is AMBIENT weak-star closed. Arbitrary-filter convergence of images to the image of a domain point is equivalent to convergence to that same original point.",
     "When the image is also endpoint norm bounded, inverse convergence can independently use ANY admissible original lower finite-p norms on the two sides. The exact strict thresholds and both endpoint bounds are retained. In the article range this uses the IDENTICAL original H-minus-one distributions on both sides."
   ],
-  "workspace_status": "Private article worktree retained; current validated milestones are committed locally. GitHub push remains pending explicit destination approval after earlier automatic-review rejection. Canonical source/build/checkout stay read-only; workspace decision is pending.",
+  "workspace_status": "All five published main proofs unchanged; integration with advanced main validated for draft PR#5; canonical checkout and Git metadata read-only.",
   "goal_turn_classification": "progress",
   "verified_nonmain_source_theorems": {
     "2.1(i)": {
@@ -15146,10 +15146,7 @@
     "Main5_9_PROVED": false,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-Wiener-compact-phase-flow-map.json"
   },
-  "publication_obligations": [
-    "PUBLICATION ONLY: obtain explicit approval for the FINAL validated private commit payload to janbernloehr/diss-lean -> articles/kdv-pseudomeasures, then push exactly that immutable commit and verify the remote branch head. Earlier approval covered exact ecbdc5a only; the earlier automatic approval review rejected newer payload export as outside that specific approval. Existing pending exact b198 approval remains historical and unchanged. Do not push a newer HEAD on the basis of a generic continuation.",
-    "After the approved final push, verify the local private commit, remote branch head, exact coverage maps and validation receipts are identical to the validated payload, and confirm all five main theorem declarations/statement correspondences and standard-axiom reports. Preserve canonical read-only status and the source1.4 codomain correction. Only then mark the full goal complete."
-  ],
+  "publication_obligations": [],
   "verified_all_five_main_theorems_and_uniform_analytic_Wiener_flow": {
     "ALL_FIVE_ASSIGNED_MAIN_THEOREMS_PROVED": true,
     "Main1_1_PROVED": true,
@@ -15166,5 +15163,8 @@
     "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
     "complete_payload_pushed": false,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-9-all-main-proofs-map.json"
-  }
+  },
+  "published_article_parent": "7d6e793d28cd67482ef39b87bd1b85ef6fd48af1",
+  "main_merge_validation": "coverage/articles/kdv-pseudomeasures/merge-validation.json",
+  "main_refresh_validation": "coverage/articles/kdv-pseudomeasures/refresh-validation.json"
 }

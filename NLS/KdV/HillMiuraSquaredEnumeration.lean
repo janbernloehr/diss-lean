@@ -1,3 +1,4 @@
+import NLS.KdV.HminusOneMiuraIsospectral
 import NLS.KdV.HillMiuraPositiveEnumeration
 import NLS.ComplexAnalysis.ShiftedSquareRootBounds
 
@@ -46,12 +47,12 @@ theorem hillMiuraSquaredLabels_finite_fiber (u : PeriodOneRealL2) (c x : ℝ) :
     rw [he]
     exact finite_empty
 
-theorem hillMiuraSquaredLabels_roots_iff
+theorem hillMiuraSquaredLabels_roots_iff_of_radicand_ne_zero
     (q : PeriodOneHminusOne) (u : PeriodOneRealL2) (c : ℝ)
     (himage : periodOneMiura u.val = q+periodOneL2Inclusion (lp.single 2 0 (c : ℂ)))
     (hc : hillHminusRadicand q (-(c : ℂ)) ≠ 0) (E : ℂ) :
     hillHminusRadicand q E = 0 ↔ ∃ j : ℕ, E = (hillMiuraSquaredLabels u.val c j : ℂ) := by
-  have hzero := zero_not_mem_periodicSpectrum_of_shifted_miura q u.val (c : ℂ) himage hc
+  have hzero := zero_not_mem_periodicSpectrum_of_shifted_miura_of_radicand_ne_zero q u.val (c : ℂ) himage hc
   have hcrit (z : ℂ) := canonicalDiscriminant_sq_eq_four_iff_finite
     (by simp) (by norm_num) (periodOnePotential (hillMiuraDiagonal u.val)) (periodOnePotential_mem _) z
   constructor
@@ -91,14 +92,14 @@ theorem hillMiuraSquaredLabels_roots_iff
         simp only [hillMiuraSquaredLabels,ofReal_sub,ofReal_pow],htrace]
     exact sub_eq_zero.mpr ((hcrit _).mpr hs)
 
-theorem hillMiuraSquaredLabels_global_multiplicity
+theorem hillMiuraSquaredLabels_global_multiplicity_of_radicand_ne_zero
     (q : PeriodOneHminusOne) (_hq : IsRealPeriodOneHminusOne q)
     (u : PeriodOneRealL2) (c : ℝ)
     (himage : periodOneMiura u.val = q+periodOneL2Inclusion (lp.single 2 0 (c : ℂ)))
     (hc : hillHminusRadicand q (-(c : ℂ)) ≠ 0) (x : ℝ) :
     (∑ᶠ j : ℕ, if hillMiuraSquaredLabels u.val c j = x then (1 : ℕ) else 0) =
       analyticOrderNatAt (hillHminusRadicand q) (x : ℂ) := by
-  have hzero := zero_not_mem_periodicSpectrum_of_shifted_miura q u.val (c : ℂ) himage hc
+  have hzero := zero_not_mem_periodicSpectrum_of_shifted_miura_of_radicand_ne_zero q u.val (c : ℂ) himage hc
   by_cases hx : ∃ j : ℕ, hillMiuraSquaredLabels u.val c j = x
   · obtain ⟨j,hj⟩ := hx
     let z : ℝ := hillMiuraPositiveFrequencies u.val j
@@ -123,7 +124,25 @@ theorem hillMiuraSquaredLabels_global_multiplicity
     symm
     by_contra hne
     have hr := apply_eq_zero_of_analyticOrderNatAt_ne_zero hne
-    obtain ⟨j,hj⟩ := (hillMiuraSquaredLabels_roots_iff q u c himage hc (x : ℂ)).mp hr
+    obtain ⟨j,hj⟩ := (hillMiuraSquaredLabels_roots_iff_of_radicand_ne_zero q u c himage hc (x : ℂ)).mp hr
     exact hx ⟨j,(Complex.ofReal_injective hj).symm⟩
+
+/-- Compatibility with the original physical outside-spectrum hypothesis. -/
+theorem hillMiuraSquaredLabels_roots_iff
+    (q : PeriodOneHminusOne) (u : PeriodOneRealL2) (c : ℝ)
+    (himage : periodOneMiura u.val = q+periodOneL2Inclusion (lp.single 2 0 (c : ℂ)))
+    (hc : -(c : ℂ) ∉ singularHillSpectrum (periodOneOriginal q)) (E : ℂ) :
+    hillHminusRadicand q E = 0 ↔ ∃ j : ℕ, E = (hillMiuraSquaredLabels u.val c j : ℂ) := by
+  exact hillMiuraSquaredLabels_roots_iff_of_radicand_ne_zero q u c himage (hillHminusRadicand_ne_zero_of_not_mem_singularHillSpectrum q (-(c : ℂ)) hc) E
+
+/-- Compatibility with the original physical outside-spectrum hypothesis. -/
+theorem hillMiuraSquaredLabels_global_multiplicity
+    (q : PeriodOneHminusOne) (hq : IsRealPeriodOneHminusOne q)
+    (u : PeriodOneRealL2) (c : ℝ)
+    (himage : periodOneMiura u.val = q+periodOneL2Inclusion (lp.single 2 0 (c : ℂ)))
+    (hc : -(c : ℂ) ∉ singularHillSpectrum (periodOneOriginal q)) (x : ℝ) :
+    (∑ᶠ j : ℕ, if hillMiuraSquaredLabels u.val c j = x then (1 : ℕ) else 0) =
+      analyticOrderNatAt (hillHminusRadicand q) (x : ℂ) := by
+  exact hillMiuraSquaredLabels_global_multiplicity_of_radicand_ne_zero q hq u c himage (hillHminusRadicand_ne_zero_of_not_mem_singularHillSpectrum q (-(c : ℂ)) hc) x
 
 end NLS.KdV

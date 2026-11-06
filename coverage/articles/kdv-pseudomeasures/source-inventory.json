@@ -4676,7 +4676,7 @@
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
     "branch": "articles/kdv-pseudomeasures",
     "canonical_checkout_read_only": true,
-    "approval": "Separate ordinary Git worktree authorized through coordinating chat; canonical tracked source and build outputs unchanged."
+    "approval": "Private checkout and independent Git store used for PR#5 integration; canonical sources, build outputs and Git metadata kept read-only."
   },
   "completion_followup": {
     "all_five_main_theorems_proved": true,
@@ -9106,5 +9106,7 @@
     "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
     "complete_payload_pushed": false,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-9-all-main-proofs-map.json"
-  }
+  },
+  "main_merge_validation": "coverage/articles/kdv-pseudomeasures/merge-validation.json",
+  "main_refresh_validation": "coverage/articles/kdv-pseudomeasures/refresh-validation.json"
 }

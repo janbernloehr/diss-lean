@@ -35,7 +35,7 @@ theorem integral_hillDirichletGradient_productSpatial_energy
       hillDirichletStateCurve,hillL2FrequencyStateCurve_zero]
   have hA1 : (extend A 1).1 = 0 := by
     simpa only [NLS.LinearVolterra.extend,projIcc_of_mem _ (show (1 : ℝ) ∈ Icc 0 1 by norm_num),
-      A,hillDirichletStateCurve,hillL2DirichletCharacteristic,hillL2FrequencyDirichlet,hillL2FrequencyStateCurve_apply] using
+      A,hillDirichletStateCurve,hillL2DirichletCharacteristic,hillL2FrequencyStateDirichlet,hillL2FrequencyStateCurve_apply] using
       (hillDirichletEnergy_zero q.val q.property.1 q.property.2 n hn)
   have hi := integral_scalarHill_squared_product_derivative (hillIntervalPotential r) mu E A B C
     (absolutelyContinuousOnInterval_hillStateCurve r (Complex.sqrt mu) (0,1))

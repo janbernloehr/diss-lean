@@ -17,7 +17,7 @@ namespace NLS.ZakharovShabat
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
 /-- Actual indexed actions are invariant under the physical spatial group. -/
-theorem sourceComplexAction_spatialTranslation (hp : p ≠ ⊤) (hp1 : 1 < p)
+theorem sourceComplexAction_spatialTranslation_finite_exponent (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : realTypeSourceSubmodule p) (t : ℝ) (n : ℤ) :
     sourceComplexAction hp hp1 n (sourceSpatialTranslation t φ.val) =
       sourceComplexAction hp hp1 n φ.val := by
@@ -38,7 +38,7 @@ theorem sourceActionDifferential_spatial_eq_zero
   exact sourceBivector_momentum_eq_zero_of_translation_invariant a.val _
     (analyticAt_sourceComplexAction_of_realType (by simp) (by norm_num) n
       (sobolevSourceInclusion a.val) a.property).differentiableAt
-    (sourceComplexAction_spatialTranslation (by simp) (by norm_num)
+    (sourceComplexAction_spatialTranslation_finite_exponent (by simp) (by norm_num)
       ⟨sobolevSourceInclusion a.val,a.property⟩ · n)
 
 namespace SourceBirkhoffMapComplexData

@@ -2,14 +2,13 @@ import NLS.SequenceSpaces.SobolevBilinearPairing
 import NLS.SequenceSpaces.WeightedMultiplier
 import Mathlib.Analysis.Calculus.FDeriv.Analytic
 
+/-! The scalar unit-period Gardner pairing on actual H1 cotangents.
+The frequency is 2*pi*k, the Fourier pairing reverses indices, and all
+series converge absolutely. This is distinct from the two-field NLS bracket. -/
 noncomputable section
-set_option autoImplicit false
 open Complex
 open scoped ENNReal
-
 namespace NLS.Poisson
-
-
 
 theorem gardnerDerivative_weight_bound (k : ℤ) :
     Weight.sobolev (-1) k*‖(2*Real.pi:ℂ)*I*k‖ ≤ (2*Real.pi)*Weight.sobolev 1 k := by

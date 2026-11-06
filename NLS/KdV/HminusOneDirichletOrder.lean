@@ -1,3 +1,4 @@
+import NLS.KdV.MiuraDirichletSignedSymmetry
 import NLS.KdV.HminusOneDirichletAuxiliary
 
 /-! Analytic multiplicities of the full rough Dirichlet characteristic
@@ -6,16 +7,6 @@ at every nonzero frequency, and the factor z there has analytic order zero. -/
 noncomputable section
 open Set Complex NLS.ZakharovShabat
 namespace NLS.KdV
-
-/-- The actual auxiliary Dirichlet characteristic of a diagonal source
-is odd, including the zero-frequency normalization. -/
-theorem auxiliaryDirichlet_hillMiuraDiagonal_neg (u : Coeff 2) (z : ℂ) :
-    auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) .dirichlet
-      (hillMiuraDiagonal u) (-z) =
-      -auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) .dirichlet
-        (hillMiuraDiagonal u) z := by
-  rw [auxiliaryDirichlet_eq_mul_quasiHillL2Dirichlet,
-    auxiliaryDirichlet_eq_mul_quasiHillL2Dirichlet,neg_sq,neg_mul]
 
 /-- Every nonzero square-root frequency retains the exact actual auxiliary
 operator algebraic multiplicity as scalar Dirichlet analytic order. This

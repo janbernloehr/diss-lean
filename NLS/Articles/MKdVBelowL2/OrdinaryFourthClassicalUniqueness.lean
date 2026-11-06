@@ -30,7 +30,7 @@ theorem hasDerivAt_ordinaryFourthClassicalPhysicalFlow_fst (a : FourthClassicalS
     intro r x
     induction x using QuotientAddGroup.induction_on with
     | H x => exact (hasDerivAt_ordinaryFourthClassicalPhysicalValue a r x).fst
-  exact NLS.FunctionalAnalysis.hasDerivAt_continuousMap_of_pointwise
+  exact NLS.FunctionalAnalysis.hasDerivAt_continuousMap_of_pointwise_real_banach
     (fun r => (ordinaryFourthClassicalPhysicalFlow a r).1)
     (fun r => (fourthClassicalVelocity 0 (ordinaryFourthClassicalSourceFlow a r)).1) hv hp time
 

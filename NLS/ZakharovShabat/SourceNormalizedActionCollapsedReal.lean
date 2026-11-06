@@ -92,6 +92,7 @@ theorem sourceStandardRootOmittedProduct_im_eq_zero_on_realAxis
   simp_rw [heq] at hc
   exact Complex.conj_eq_iff_im.mp (tendsto_nhds_unique hc ht)
 
+omit [Fact (1 ≤ p)] in
 /-- A finite deleted critical product is real at a real spectral
 argument if all critical roots are real. -/
 theorem jointDeletedSingleSpectralPartialProduct_im_eq_zero_of_real_roots

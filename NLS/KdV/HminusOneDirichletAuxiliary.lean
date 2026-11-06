@@ -1,3 +1,5 @@
+import NLS.KdV.MiuraCanonicalEndpoints
+import NLS.KdV.HillHminusAuxiliaryDirichlet
 import NLS.KdV.MiuraL2DirichletAuxiliary
 import NLS.KdV.HminusOneDirichletEigenstate
 import NLS.SequenceSpaces.PeriodOneMiuraRealLift
@@ -10,16 +12,6 @@ noncomputable section
 open Set Complex NLS.LinearVolterra NLS.ZakharovShabat NLS.MKdV
 open scoped ComplexConjugate
 namespace NLS.KdV
-
-/-- Literal shifted Miura transport preserves the exact auxiliary
-characteristic normalization, with the physical constant energy shift. -/
-theorem auxiliaryDirichlet_eq_mul_hillHminusDirichlet
-    (q : PeriodOneHminusOne) (u : Coeff 2) (c z : ℂ)
-    (hi : periodOneMiura u = q+periodOneL2Inclusion (lp.single 2 0 c)) :
-    auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) .dirichlet
-      (hillMiuraDiagonal u) z = z*hillHminusDirichlet q (z^2-c) := by
-  rw [hillHminusDirichlet_eq_miura_of_shifted_image q u c (z^2-c) hi,
-    sub_add_cancel,auxiliaryDirichlet_eq_mul_quasiHillL2Dirichlet]
 
 /-- At any nonzero square-root energy, the rough scalar characteristic
 zero criterion is the ACTUAL original auxiliary operator spectral criterion.
@@ -36,14 +28,6 @@ theorem hillHminusDirichlet_eq_zero_iff_auxiliarySpectrum
   rw [auxiliaryDirichlet_eq_mul_quasiHillL2Dirichlet,hsq,mul_eq_zero,
     ← hillHminusDirichlet_eq_miura_of_shifted_image q u c lambda hi]
   exact (or_iff_right hz).symm
-
-/-- A real unit-period scalar lift gives a real-type original Dirac source. -/
-theorem isRealType_hillMiuraDiagonal (u : PeriodOneRealL2) :
-    IsRealType (CoeffPair.toMax 2 (hillMiuraDiagonal u.val)) := by
-  intro n
-  change (hillMiuraDiagonal u.val).snd n = conj ((hillMiuraDiagonal u.val).fst (-n))
-  rw [hillMiuraDiagonal_snd,hillMiuraDiagonal_fst]
-  simpa only [neg_neg] using u.property (-n)
 
 /-- Every zero of the full H-minus-one Dirichlet characteristic of a
 real original potential is real. A real shifted Miura lift is constructed

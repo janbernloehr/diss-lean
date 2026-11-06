@@ -1,0 +1,11 @@
+Merge validation: passed
+Article parent: 7d6e793d28cd67482ef39b87bd1b85ef6fd48af1
+Main: b91ea10fe328f4046a8768218ae5b485041cf075
+Strict import closure: 8053 modules; 5191 freshly compiled; 2862 source-verified cached imports.
+NLS.lean aggregate and unchanged MainTheorem11/13/14/51/59: passed.
+KdV pseudomeasures exact public axiom audit: 9586 declarations; standard Lean axioms only.
+Main mKdV/NLS hierarchy audit: 11421 declarations including auxiliaries; passed.
+Additional below-L2 caller axiom audit: 1007 declarations; passed.
+Compiler warnings:0; errors:0. Nine informational ring hints from proofs byte-identical to both parents.
+No resource-limit changes or linter suppressions.
+No full fresh dependency rebuild claimed. Canonical checkout unchanged and read-only.

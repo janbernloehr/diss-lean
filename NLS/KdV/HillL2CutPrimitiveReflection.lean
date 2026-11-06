@@ -54,7 +54,7 @@ theorem HillL2NormalizedCutPrimitive.reflection
     (isPathConnected_convex_complex_segment_complement_including_singleton
       _ p.left p.right isOpen_ball (convex_ball _ _) hL).isConnected.isPreconnected
   have hasrc : (a,SpectralWeight.one.toCoeff q) ∈ hillL2ContinuationDomain := by
-    apply mem_hillL2ContinuationDomain_of_high_distance q hq n hn hcut a
+    apply mem_hillL2ContinuationDomain_of_high_distance q hq n hn (by linarith [norm_nonneg q]) a
       (ball_subset_closedBall (hsub haA).1)
     have he : ‖a-(freeHillValue n : ℂ)‖ = 3*(n : ℝ)/4 := by
       simpa only [mem_sphere,dist_eq_norm] using ha

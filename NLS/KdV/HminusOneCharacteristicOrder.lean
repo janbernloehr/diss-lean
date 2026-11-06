@@ -1,3 +1,4 @@
+import NLS.KdV.HillMiuraTraceOrder
 import NLS.KdV.SingularHillMiuraPeriodOne
 import NLS.KdV.SingularHillConstantShift
 import NLS.SequenceSpaces.PeriodOneMiuraRealLift
@@ -16,25 +17,6 @@ open Set Complex
 open scoped ENNReal
 namespace NLS.KdV
 open NLS.ZakharovShabat
-
-/-- The entire even Miura frequency trace descends exactly under squaring. -/
-theorem hillMiuraL2Discriminant_sq (u : Coeff 2) (z : ℂ) :
-    hillMiuraL2Discriminant u (z^2) = hillMiuraFrequencyTrace u z := by
-  rcases eq_or_eq_neg_of_sq_eq_sq (Complex.sqrt (z^2)) z
-    (ComplexAnalysis.complex_sqrt_sq (z^2)) with h | h
-  · rw [hillMiuraL2Discriminant,h]
-  · rw [hillMiuraL2Discriminant,h,hillMiuraFrequencyTrace_even]
-
-/-- The literal shifted Miura image identifies the entire physical trace
-with the fixed Dirac trace after translating and squaring the parameter. -/
-theorem hillHminusDiscriminant_shifted_miura_square (q : PeriodOneHminusOne)
-    (u : Coeff 2) (c z : ℂ)
-    (himage : periodOneMiura u = q+periodOneL2Inclusion (lp.single 2 0 c)) :
-    hillHminusDiscriminant q (z^2-c) =
-      canonicalDiscriminant (by norm_num) (periodOnePotential (hillMiuraDiagonal u)) z := by
-  rw [hillHminusDiscriminant_eq_miura_of_shifted_image q u c (z^2-c) himage,
-    sub_add_cancel,hillMiuraL2Discriminant_sq]
-  rfl
 
 /-- For every real H-minus-one potential and every complex energy, the
 analytic characteristic order is the ACTUAL full-domain physical algebraic

@@ -75,6 +75,6 @@ theorem hillL2HighContourMoment_im_eq_zero
     (hillL2HighContourMoment n m (SpectralWeight.one.toCoeff q)).im = 0 :=
   hillL2CircleMoment_im_eq_zero _ hreal (freeHillValue n) (n : ℝ)
     (by exact_mod_cast (show 0 < n by omega))
-    (mem_hillL2ContinuationDomain_high_sphere q hq n hn hcut) m
+    (mem_hillL2ContinuationDomain_high_sphere q hq n hn (by linarith [norm_nonneg q])) m
 
 end NLS.KdV

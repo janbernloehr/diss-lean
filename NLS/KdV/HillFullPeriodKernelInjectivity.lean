@@ -1,7 +1,78 @@
+import NLS.KdV.HillProductEquationEscapingLimit
+import NLS.KdV.HillFullProductPeriodDerivative
+import NLS.KdV.HillFullProductVariationGrowth
 import NLS.KdV.HillFullVariationDecay
 import NLS.KdV.HillProductPeriodUniformLimit
 import NLS.KdV.HillComplexEntirePeriodInterpolation
 import NLS.ComplexAnalysis.ParametricCircleIntegralHigher
+
+/-! A bounded full-product period operator at ANY original real energy
+gap data has zero kernel. Physical all-period uniqueness and full
+frequency-variation injectivity recover EVERY complex l2 direction. -/
+noncomputable section
+open Set Complex NLS.ZakharovShabat
+open scoped ENNReal Classical
+namespace NLS.KdV.HillProductEquationPatch
+
+theorem fullEnergyPeriodJacobian_kernel_eq_zero (P : HillProductEquationPatch)
+    (q : PeriodOneHminusOne) (hq : q ∈ P.source) (hr : IsRealPeriodOneHminusOne q)
+    (d : lp (fun _ : ℕ+ => ℂ) 2) (hd : d ∈ hillHminusEnergyGapData ⟨q,hr⟩)
+    (T : lp (fun _ : ℕ+ => ℂ) 2 →L[ℂ] lp (fun _ : ℕ+ => ℂ) 2)
+    (hT : P.fullEnergyPeriodJacobianEntries q hq d T)
+    (h : lp (fun _ : ℕ+ => ℂ) 2) (hker : T h = 0) : h = 0 := by
+  let B := P.parent.parent.miuraBall.actionBall
+  have hb := (P.parent.subset (P.subset hq)).1
+  let u : PeriodOneRealL2 := ⟨B.lift q,B.lift_real q hb hr⟩
+  let c : ℂ := B.shift
+  let F := hillEnergyFullProductDataVariation d h
+  have hreal : IsRealType (CoeffPair.toMax 2 (P.sourcePsi q)) := (hillMiuraRealSource u).property
+  have hdom : (c,d) ∈ LpSequence.quadraticFrequencyDomain Real.pi :=
+    P.parent.energyGapData_mem_frequencyDomain q (P.subset hq) hr d hd
+  have hp (m : ℕ+) : hillEnergyNumeratorPeriod c (hillMiuraDiagonal u.val)
+      (P.canonicalPeriodCircle q hq ((m:ℕ):ℤ)) F = 0 := by
+    have he := P.fullEnergyPeriodJacobian_apply q hq hr d T hT m h
+    rw [hker] at he
+    change 0 = (2*Real.pi:ℂ)*_ at he
+    have hz := (mul_eq_zero.mp he.symm).resolve_left (by simp [Real.pi_ne_zero])
+    rw [fderiv_hillEnergyFullProductFixedPeriod_data c (P.sourcePsi q) hreal] at hz
+    exact hz
+  have hF : AnalyticOnNhd ℂ F univ := analyticOnNhd_hillEnergyFullProductDataVariation d h
+  have hzero : F = 0 := hillEnergyNumerator_eq_zero_of_positive_periods u c F hF
+    (fun m => ⟨P.canonicalPeriodCircle q hq ((m:ℕ):ℤ),hp m⟩)
+    (hillEnergyFullProductDataVariation_pullback_sub_sine c d h hdom)
+  have hvar (z : ℂ) : sourcePsiFullProductVariation (hillIndependentFrequencyDisplacement (c,d))
+      (hillIndependentFrequencyDataVariation c d h) z = 0 := by
+    rw [hillEnergyFullProductDataVariation_frequency c d h hdom z]
+    change -2*z*F (z^2-c) = 0
+    rw [hzero]
+    simp only [Pi.zero_apply,mul_zero]
+  have ha : hillIndependentFrequencyDisplacement (c,d) ∈ sourcePeriodicGapRootSet (by norm_num) (by norm_num) (P.sourcePsi q) :=
+    fun k => P.parent.energyGapData_independentFrequency_mem_signed_gap q (P.subset hq) hr d hd k
+  have hbzero := sourcePsiFullProductVariation_zero_imp_direction_zero_of_gapRoots
+    (by norm_num) (by norm_num) (hillIndependentFrequencyDisplacement (c,d))
+    (hillIndependentFrequencyDataVariation c d h) (P.sourcePsi q) hreal ha hvar
+  exact hillFrequencyDataVariation_zero_imp_direction_zero c d h hdom hbzero
+
+theorem fullEnergyPeriodJacobian_injective (P : HillProductEquationPatch)
+    (q : PeriodOneHminusOne) (hq : q ∈ P.source) (hr : IsRealPeriodOneHminusOne q)
+    (d : lp (fun _ : ℕ+ => ℂ) 2) (hd : d ∈ hillHminusEnergyGapData ⟨q,hr⟩)
+    (T : lp (fun _ : ℕ+ => ℂ) 2 →L[ℂ] lp (fun _ : ℕ+ => ℂ) 2)
+    (hT : P.fullEnergyPeriodJacobianEntries q hq d T) : Function.Injective T := by
+  intro a b hab
+  apply sub_eq_zero.mp
+  apply P.fullEnergyPeriodJacobian_kernel_eq_zero q hq hr d hd T hT (a-b)
+  rw [map_sub,hab,sub_self]
+
+theorem sequenceJacobian_actual_real_escaping_limit_injective (P : HillProductEquationPatch)
+    (q : PeriodOneHminusOne) (hq : q ∈ P.source) (hr : IsRealPeriodOneHminusOne q)
+    (n : ℕ → ℕ+) (hn : Filter.Tendsto (fun j => (n j:ℕ)) Filter.atTop Filter.atTop)
+    (T : lp (fun _ : ℕ+ => ℂ) 2 →L[ℂ] lp (fun _ : ℕ+ => ℂ) 2)
+    (hT : Filter.Tendsto (fun j => P.sequenceJacobian (n j) (hillHminusPsiZeroDisplacement (n j) ⟨q,hr⟩,q)) Filter.atTop (nhds T)) :
+    Function.Injective T := by
+  obtain ⟨d,hd,hentries,_⟩ := P.exists_full_energy_gap_data_of_actual_real_escaping_limit q hq hr n hn T hT
+  exact P.fullEnergyPeriodJacobian_injective q hq hr d hd T hentries
+
+end NLS.KdV.HillProductEquationPatch
 
 noncomputable section
 set_option autoImplicit false

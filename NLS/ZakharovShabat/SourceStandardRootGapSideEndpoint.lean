@@ -1,3 +1,4 @@
+import NLS.ZakharovShabat.SourceStandardRootWeightedRealCircleBoundary
 import NLS.ZakharovShabat.SourceStandardRootGapSideSourceImproper
 
 /-!
@@ -12,31 +13,6 @@ noncomputable section
 open Set Complex Filter MeasureTheory
 open scoped ENNReal Topology
 namespace NLS.ZakharovShabat
-
-/-- The affine closed gap is exactly the actual canonical periodic segment. -/
-theorem sourceStandardRoot_gapSegment_eq_periodicSegment {p : ℝ≥0∞} [Fact (1 ≤ p)]
-    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ) :
-    standardRootGapSegment (sourceStandardRootMidpoint hp hp1 ψ n)
-      (sourceStandardRootHalfGap hp hp1 ψ n) = sourcePeriodicSegment hp hp1 ψ n := by
-  apply Set.Subset.antisymm
-  · rintro z ⟨t,ht,rfl⟩
-    refine ⟨(1-t)/2,(1+t)/2,by linarith [ht.2],by linarith [ht.1],by ring,?_⟩
-    simp only [Complex.real_smul]
-    dsimp [sourceStandardRootMidpoint,sourceStandardRootHalfGap,
-      canonicalPeriodicMidpoint,canonicalPeriodicGap]
-    push_cast
-    ring
-  · rintro z ⟨a,b,ha,hb,hab,rfl⟩
-    refine ⟨b-a,⟨by linarith,by linarith⟩,?_⟩
-    change (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n+
-      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)/2+
-      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-
-        canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)/2*((b-a : ℝ):ℂ) = _
-    simp only [Complex.real_smul,Complex.ofReal_sub]
-    have habC : (a : ℂ)+(b : ℂ) = 1 := by exact_mod_cast hab
-    linear_combination
-      -((canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n+
-        canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)/2)*habC
 
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 

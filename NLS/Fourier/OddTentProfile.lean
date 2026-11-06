@@ -1,3 +1,4 @@
+import NLS.Fourier.PeriodOneTrigPairing
 import NLS.Fourier.TentProfile
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 
@@ -82,14 +83,6 @@ theorem integral_oddTentProfile_mul_exp_pos (a b : ℝ)
     apply sub_pos.mpr
     apply Real.exp_lt_exp.mpr
     nlinarith
-
-/-- The original Fourier coefficient is the literal unit-interval integral. -/
-theorem periodOneCoefficient_eq_wave_integral (f : ℝ → ℂ) (n : ℤ) :
-    periodOneCoefficient f n = ∫ x in (0 : ℝ)..1, f x*wave (-(2*n)) x := by
-  rw [periodOneCoefficient,fourierCoeffOn_one]
-  unfold halfCoefficient
-  rw [← mul_assoc]
-  norm_num
 
 /-- The signed profile's mean vanishes in the original coefficient convention. -/
 theorem periodOneCoefficient_oddTentProfile_zero (a b : ℝ) :
