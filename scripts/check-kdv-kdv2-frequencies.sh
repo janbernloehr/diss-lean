@@ -3243,6 +3243,18 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/GlobalWeakFrequencyNormalization
   NLS/Articles/KdVKdV2Frequencies/GlobalWeakKdVFrequencyPacket
   NLS/Articles/KdVKdV2Frequencies/GlobalHilbertWeakFrequencyAgreement
+  NLS/SequenceSpaces/DividedCubicRowBounds
+  NLS/SequenceSpaces/DividedCubicFrequencyPacket
+  NLS/ZakharovShabat/SourceDividedSecondMomentPacket
+  NLS/KdV/PhysicalMiuraLpFrequencyChart
+  NLS/Articles/KdVKdV2Frequencies/PhysicalLpFrequencyPairCharts
+  NLS/SequenceSpaces/RealSequenceActionDescent
+  NLS/Articles/KdVKdV2Frequencies/GlobalLpFrequencyActionCharts
+  NLS/Articles/KdVKdV2Frequencies/GlobalWeakLpKdVFrequencyPacket
+  NLS/SequenceSpaces/PositiveIndexWeakLift
+  NLS/Articles/KdVKdV2Frequencies/WeakKdVAllExponents
+  NLS/SequenceSpaces/WeightedAnalyticPullback
+  NLS/Articles/KdVKdV2Frequencies/Theorem12WeakEndpoint
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
