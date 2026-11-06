@@ -2679,6 +2679,20 @@ modules=(
   NLS/SequenceSpaces/SobolevSignedRealCompactGerm
   NLS/Articles/KdVKdV2Frequencies/ActualSignedAbelianFourier
   NLS/Articles/KdVKdV2Frequencies/NativeRoughSignedFourierForwardInverse
+  NLS/SequenceSpaces/SignedReciprocalSymbol
+  NLS/SequenceSpaces/DeletedRestrictionEquiv
+  NLS/SequenceSpaces/PeriodOneFreeFourierEquiv
+  NLS/SequenceSpaces/SignedMultiplierPrincipal
+  NLS/Articles/KdVKdV2Frequencies/ActualSignedPrincipalSymbol
+  NLS/Articles/KdVKdV2Frequencies/ActualMeanZeroPrincipalEquiv
+  NLS/FunctionalAnalysis/CompactEquivPerturbation
+  NLS/ComplexAnalysis/AnalyticJacobianInjectivity
+  NLS/FunctionalAnalysis/DerivativeEmbeddingTransfer
+  NLS/Articles/KdVKdV2Frequencies/ActualNativeJacobianUnit
+  NLS/Articles/KdVKdV2Frequencies/ActualWeakJacobianNeighborhood
+  NLS/Articles/KdVKdV2Frequencies/ActualAllNativeJacobianUnits
+  NLS/Articles/KdVKdV2Frequencies/ActualNativeAnalyticInverseCharts
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughAllRealBaseInverseCharts
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

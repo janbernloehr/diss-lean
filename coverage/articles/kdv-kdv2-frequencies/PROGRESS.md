@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest full signed Fourier principal of the SAME actual map
+## Latest all real-base native Jacobian units and analytic inverse charts
+
+The SAME actual signed Z now has invertible literal native mean-zero Jacobians and genuine complex analytic inverse charts at EVERY eligible REAL mean-zero base in ONE common rough ball, before ALL orders s>=-1. The exact full signed principal is a bounded equivalence in those charts. Actual weak Jacobian injectivity transfers through exact complex Sobolev inclusions, and the compact remainder gives native bijectivity. Each chart uses the SAME native restriction of Z and has open source/target domains with analytic inverse. See `NATIVE_ALL_REAL_BASE_INVERSE_CHARTS.md`.
+
+The SAME Z,R retain every earlier inverse and physical identity. Identification of every stronger chart inverse with that SAME R, exact full native mean-zero recovery, arbitrary-real-base/GLOBAL rough extension/inversion and remaining canonical/Hamiltonian/frequency/PDE conclusions remain obligations. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2670 unchanged selected baseline sources. All 14 newly selected own modules strictly rebuilt in dependency order after freezing 2730 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2684 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 14-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2684-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2684-module rebuild is claimed.
+
+Fresh audit: 21046 selected and 43116 imported NLS declarations; permitted axioms only. Fourteen new own modules contain 27 explicit theorems.
+
+## Earlier full signed Fourier principal of the SAME actual map
 
 The SAME actual signed Z,R now retain their FULL native Fourier/Miura principal plus compact at EVERY eligible real base and ALL t>=0. The actual positive symbol is uniformly nonzero on ONE complex rough ball, with its exact native analytic reciprocal. ONE actual chart, original root-data witness, ALL genuine native Miura lift germs and one constant physical sign selection precede all orders and source points. Native signed germs include EXACTLY to the SAME Z at EVERY complex point of conjugation-invariant OPEN COMPLEX neighborhoods. The derivative comparison holds at every physically real point in those neighborhoods. See `NATIVE_SIGNED_FOURIER_PRINCIPAL.md`.
 

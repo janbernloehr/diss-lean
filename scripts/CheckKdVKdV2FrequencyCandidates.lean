@@ -1,3 +1,17 @@
+import NLS.Articles.KdVKdV2Frequencies.ActualNativeAnalyticInverseCharts
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughAllRealBaseInverseCharts
+import NLS.Articles.KdVKdV2Frequencies.ActualWeakJacobianNeighborhood
+import NLS.Articles.KdVKdV2Frequencies.ActualAllNativeJacobianUnits
+import NLS.Articles.KdVKdV2Frequencies.ActualNativeJacobianUnit
+import NLS.ComplexAnalysis.AnalyticJacobianInjectivity
+import NLS.FunctionalAnalysis.DerivativeEmbeddingTransfer
+import NLS.Articles.KdVKdV2Frequencies.ActualMeanZeroPrincipalEquiv
+import NLS.FunctionalAnalysis.CompactEquivPerturbation
+import NLS.Articles.KdVKdV2Frequencies.ActualSignedPrincipalSymbol
+import NLS.SequenceSpaces.SignedMultiplierPrincipal
+import NLS.SequenceSpaces.PeriodOneFreeFourierEquiv
+import NLS.SequenceSpaces.SignedReciprocalSymbol
+import NLS.SequenceSpaces.DeletedRestrictionEquiv
 import NLS.Articles.KdVKdV2Frequencies.ActualSignedAbelianFourier
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedFourierForwardInverse
 import NLS.Articles.KdVKdV2Frequencies.ActualPositiveAbelianFourier
@@ -4532,7 +4546,21 @@ private def kdvFrequencyAuditChunk20 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.ActualPositiveAbelianFourier,
   `NLS.SequenceSpaces.SobolevSignedRealCompactGerm,
   `NLS.Articles.KdVKdV2Frequencies.ActualSignedAbelianFourier,
-  `NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedFourierForwardInverse
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedFourierForwardInverse,
+  `NLS.SequenceSpaces.SignedReciprocalSymbol,
+  `NLS.SequenceSpaces.DeletedRestrictionEquiv,
+  `NLS.SequenceSpaces.PeriodOneFreeFourierEquiv,
+  `NLS.SequenceSpaces.SignedMultiplierPrincipal,
+  `NLS.Articles.KdVKdV2Frequencies.ActualSignedPrincipalSymbol,
+  `NLS.Articles.KdVKdV2Frequencies.ActualMeanZeroPrincipalEquiv,
+  `NLS.FunctionalAnalysis.CompactEquivPerturbation,
+  `NLS.ComplexAnalysis.AnalyticJacobianInjectivity,
+  `NLS.FunctionalAnalysis.DerivativeEmbeddingTransfer,
+  `NLS.Articles.KdVKdV2Frequencies.ActualNativeJacobianUnit,
+  `NLS.Articles.KdVKdV2Frequencies.ActualWeakJacobianNeighborhood,
+  `NLS.Articles.KdVKdV2Frequencies.ActualAllNativeJacobianUnits,
+  `NLS.Articles.KdVKdV2Frequencies.ActualNativeAnalyticInverseCharts,
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllRealBaseInverseCharts
 ]
 
 open Lean in
