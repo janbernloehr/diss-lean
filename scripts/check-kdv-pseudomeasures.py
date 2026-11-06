@@ -2044,6 +2044,17 @@ modules = [
     'NLS.KdV.PseudomeasureWideReconstruction',
     'NLS.KdV.PseudomeasureWideSecondOrder',
     'NLS.KdV.PseudomeasureWideSolutionRegularity',
+    'NLS.Articles.KdVPseudomeasures.SourceSharpResonantKernel',
+    'NLS.Articles.KdVPseudomeasures.SourceSharpResonantRows',
+    'NLS.Articles.KdVPseudomeasures.SourceSharpResonantEpsilon',
+    'NLS.Articles.KdVPseudomeasures.SourceLemma210',
+    'NLS.Articles.KdVPseudomeasures.SourceLemma210Extended',
+    'NLS.Articles.KdVPseudomeasures.SourceLemma210Source',
+    'NLS.KdV.PseudomeasureWideCoefficients',
+    'NLS.KdV.PseudomeasureWideWeightInclusion',
+    'NLS.KdV.PseudomeasureWideWeightedErrors',
+    'NLS.Articles.KdVPseudomeasures.SourceWideSharpCouplings',
+    'NLS.KdV.PseudomeasureWideAnalyticCoefficients',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

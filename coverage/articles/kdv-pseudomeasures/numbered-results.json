@@ -1,6 +1,6 @@
 {
   "article": "1610.00278v1",
-  "audited_on": "2026-11-06",
+  "audited_on": "2026-11-07",
   "scope": "Every numbered theorem, lemma, proposition, corollary and remark; numbered equations are not independent results.",
   "source_pdf_sha256": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "baseline_head": "69dc5a6c2f9d6bafaf84730c98014c0d4f7f2e9a",
@@ -11,8 +11,8 @@
   "remarks": 6,
   "status_counts": {
     "proved": 35,
-    "proved_corrected": 4,
-    "partial": 13,
+    "proved_corrected": 5,
+    "partial": 12,
     "not_found": 2
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -222,19 +222,34 @@
       "label": "Lemma 2.10",
       "line": 782,
       "statement": "Lemma 2.10 Let q ∈ Fℓw,s,∞\n                        0,C  with w ∈ M and −1/2 < s ⩽ 0. Then for any\n      s,∞\nf ∈ Fℓ⋆,C and λ ∈ Sn with n ⩾ ns ,\n\n       w2n h2nis |hTn f, e±n i| ⩽ c′s εs (n)kqkw,s,p kf kw,s,p;±n\n\nwhere c′s ⩾ cs ⩾ 1 is independent of q, n, and λ, and\n               \n                loghni , s = 0,\n                    n\n     εs (n) =\n                    1\n                1−|s|  , −1/2 < s < 0. ⋊",
-      "status": "partial",
-      "comparison": "Refined coefficient estimates support adapted-map construction; a full source wrapper with the precise piecewise epsilon_s, constants, arbitrary weights and printed strip is absent. Printed p is inconsistent with the stated infinity domain.",
+      "status": "proved_corrected",
+      "comparison": "Full sharp piecewise epsilon_s on the printed radius-12n strip for every n>=2, both signed rows and arbitrary source spectral weight. The constant precedes all weights, potentials, tests and spectral parameters and is at least the wide-strip c_s. The original unweighted infinity test domain is retained: the weighted right-hand norm is the extended supremum, including infinity, and both actual Fourier rows converge absolutely. The undefined printed p is interpreted as infinity; r=-s is only a reparameterization.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean",
-        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedCoefficients.lean"
+        "NLS/Articles/KdVPseudomeasures/SourceSharpResonantKernel.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceSharpResonantRows.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceSharpResonantEpsilon.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma210.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma210Extended.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma210Source.lean"
       ],
-      "declarations": [],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_10",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_10_extended",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_10_original",
+        "NLS.Articles.KdVPseudomeasures.source_resonant_series_summable",
+        "NLS.Articles.KdVPseudomeasures.source_scaled_reciprocal_bound"
+      ],
       "source_page": 13,
       "statement_sha256": "95752c1c4317975f8e075b2b04ae5f95a218396d60a8c10c3de07ebc8bed4cf7",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean": "dc7f287262a33e797f9717ddbcc7fabc8dee068b99aae811c515db6dfcb600cd",
-        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedCoefficients.lean": "d30c4dff329054001ab3441bb95dae5ac16daee0460d863fd16322d09743e00b"
-      }
+        "NLS/Articles/KdVPseudomeasures/SourceSharpResonantKernel.lean": "155fb78ad25f0e62d5d135ae323827c815bf01d760760d643449df305aad69fc",
+        "NLS/Articles/KdVPseudomeasures/SourceSharpResonantRows.lean": "f350b22e083e69ce81fe0a46a96f7b1401f5c649dfee5f879310c9b6ffa2704b",
+        "NLS/Articles/KdVPseudomeasures/SourceSharpResonantEpsilon.lean": "c513e3630a3807532fc7dd8bc3546878c99f61bef4c6a72b62077209bb62c1ee",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma210.lean": "ef1ea51003a11245770585357b588f7595ff78abaae9d3bc48186f83ffd79322",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma210Extended.lean": "8b6ffeeecbdf884d968d380b09295fbf6dd2f8cee7e46ccc134d81559f79d417",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma210Source.lean": "97ea2a20fd78d24f50f976831e1ec7a6fae6ef20f38ef18fad01fb782c7822fc"
+      },
+      "source_correction": "The printed norm exponent p is undefined in this infinity-domain lemma. It is infinity throughout the proved statement. For tests outside the extra weighted space, the right-hand norm is the extended supremum rather than an additional finite-norm hypothesis."
     },
     {
       "label": "Lemma 2.11",

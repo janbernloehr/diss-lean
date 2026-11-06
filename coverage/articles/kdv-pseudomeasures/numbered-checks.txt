@@ -1,8 +1,8 @@
 Numbered-result milestone validation: PASSED
 Paper: arXiv 1610.00278v1
 Scope: 54 numbered items (48 formal results, six remarks). Full-paper proof completion: FALSE.
-Closure: 8949 modules; 108 compiled during this request; 8841 source/dependency-verified reused.
-Article exact public API: 9781 declarations (8201 theorems; 1580 definitions). All 9607 baseline names preserved.
+Closure: 8960 modules; 119 compiled during this request; 8841 source/dependency-verified reused.
+Article exact public API: 9816 declarations (8233 theorems; 1583 definitions). All 9607 baseline names preserved.
 Allowed axioms only: propext, Classical.choice, Quot.sound.
 All relevant aggregate imports and requested axiom checks passed. Zero warnings/errors. Informational tactic hints: {'NLS.ZakharovShabat.SourceStandardRootTransverseBound': 1, 'NLS.ZakharovShabat.SourceNormalizedActionEstimate': 1, 'NLS.ZakharovShabat.SourceNormalizedActionCollapseEstimate': 1, 'NLS.ZakharovShabat.SourcePsiJacobianDiagonalAsymptotic': 1, 'NLS.ZakharovShabat.SourceGapWeightedEtaAngle': 1, 'NLS.ZakharovShabat.SobolevNextPhaseDifference': 1, 'NLS.ZakharovShabat.SobolevHamiltonianSinhTaylor': 1, 'NLS.ZakharovShabat.SobolevWKBNextSeparatedCorrection': 1, 'NLS.Fourier.AbelStripWitness': 1, 'NLS.KdV.HillFreeUniformPeriodJacobian': 1}.
 No new axioms, proof-limit increases or linter suppressions.

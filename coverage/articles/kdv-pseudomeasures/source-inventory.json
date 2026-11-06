@@ -9240,8 +9240,8 @@
     "all_numbered_results_proved": false,
     "status_counts": {
       "proved": 35,
-      "proved_corrected": 4,
-      "partial": 13,
+      "proved_corrected": 5,
+      "partial": 12,
       "not_found": 2
     },
     "historical_milestones": "Earlier *_followup, verified_*, validation and publication snapshots are historical; consult the numbered-result audit for present full-paper scope. A main-theorem completion claim is not full-paper completion.",

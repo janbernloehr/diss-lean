@@ -6615,3 +6615,14 @@ import NLS.KdV.PseudomeasureWideInhomogeneousResults
 import NLS.KdV.PseudomeasureWideReconstruction
 import NLS.KdV.PseudomeasureWideSecondOrder
 import NLS.KdV.PseudomeasureWideSolutionRegularity
+import NLS.Articles.KdVPseudomeasures.SourceSharpResonantKernel
+import NLS.Articles.KdVPseudomeasures.SourceSharpResonantRows
+import NLS.Articles.KdVPseudomeasures.SourceSharpResonantEpsilon
+import NLS.Articles.KdVPseudomeasures.SourceLemma210
+import NLS.Articles.KdVPseudomeasures.SourceLemma210Extended
+import NLS.Articles.KdVPseudomeasures.SourceLemma210Source
+import NLS.KdV.PseudomeasureWideCoefficients
+import NLS.KdV.PseudomeasureWideWeightInclusion
+import NLS.KdV.PseudomeasureWideWeightedErrors
+import NLS.Articles.KdVPseudomeasures.SourceWideSharpCouplings
+import NLS.KdV.PseudomeasureWideAnalyticCoefficients

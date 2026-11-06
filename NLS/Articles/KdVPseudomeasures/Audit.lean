@@ -2010,6 +2010,17 @@ import NLS.KdV.PseudomeasureWideInhomogeneousResults
 import NLS.KdV.PseudomeasureWideReconstruction
 import NLS.KdV.PseudomeasureWideSecondOrder
 import NLS.KdV.PseudomeasureWideSolutionRegularity
+import NLS.Articles.KdVPseudomeasures.SourceSharpResonantKernel
+import NLS.Articles.KdVPseudomeasures.SourceSharpResonantRows
+import NLS.Articles.KdVPseudomeasures.SourceSharpResonantEpsilon
+import NLS.Articles.KdVPseudomeasures.SourceLemma210
+import NLS.Articles.KdVPseudomeasures.SourceLemma210Extended
+import NLS.Articles.KdVPseudomeasures.SourceLemma210Source
+import NLS.KdV.PseudomeasureWideCoefficients
+import NLS.KdV.PseudomeasureWideWeightInclusion
+import NLS.KdV.PseudomeasureWideWeightedErrors
+import NLS.Articles.KdVPseudomeasures.SourceWideSharpCouplings
+import NLS.KdV.PseudomeasureWideAnalyticCoefficients
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11794,3 +11805,38 @@ import NLS.KdV.PseudomeasureWideSolutionRegularity
 #print axioms NLS.KdV.endpointSecondOrderH1Inclusion_val
 #print axioms NLS.KdV.endpointHillH1Modes_sobolev
 #print axioms NLS.KdV.endpointReconstruction_response_secondOrder_wide
+#print axioms NLS.Articles.KdVPseudomeasures.source_resonant_weight_ratio
+#print axioms NLS.Articles.KdVPseudomeasures.source_resonant_symbol_factor
+#print axioms NLS.Articles.KdVPseudomeasures.source_resonant_term_bound
+#print axioms NLS.Articles.KdVPseudomeasures.source_resonant_row_sum_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePredualEpsilon
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePredualEpsilon_nonneg
+#print axioms NLS.Articles.KdVPseudomeasures.source_scaled_reciprocal_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_10_plus
+#print axioms NLS.Articles.KdVPseudomeasures.source_negativeShiftedNorm_reflection
+#print axioms NLS.Articles.KdVPseudomeasures.source_widePerturbation_reflection
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_10
+#print axioms NLS.Articles.KdVPseudomeasures.sourceShiftedENorm
+#print axioms NLS.Articles.KdVPseudomeasures.source_exists_weighted_of_shift_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_10_extended
+#print axioms NLS.Articles.KdVPseudomeasures.source_resonant_series_summable_plus
+#print axioms NLS.Articles.KdVPseudomeasures.source_resonant_series_summable
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_10_original
+#print axioms NLS.KdV.wideEndpointHillCorrectedMode
+#print axioms NLS.KdV.negativeShiftedNorm_wideEndpointHillCorrectedMode_le
+#print axioms NLS.KdV.wideEndpointHillCorrectedMode_coefficient_error
+#print axioms NLS.KdV.wideEndpointHillCorrectedMode_pos
+#print axioms NLS.KdV.wideEndpointHillCorrectedMode_neg
+#print axioms NLS.KdV.wideEndpointHillPerturbation_weightInclusion
+#print axioms NLS.KdV.wideEndpointHill_small_weightInclusion
+#print axioms NLS.KdV.wideEndpointHillTailInverse_weightInclusion
+#print axioms NLS.KdV.wideEndpointHillCorrectedMode_weightInclusion
+#print axioms NLS.KdV.wideEndpointHill_small_forgetWeight
+#print axioms NLS.KdV.wideEndpointHillCorrectedMode_forgetWeight_coefficient
+#print axioms NLS.KdV.wideEndpointCoefficients_eq_weightedCorrectedModes
+#print axioms NLS.KdV.wideEndpointCoefficients_weighted_errors_le
+#print axioms NLS.KdV.wideEndpointCouplings_weighted_le
+#print axioms NLS.Articles.KdVPseudomeasures.source_wideCorrectedMode_error_identity
+#print axioms NLS.Articles.KdVPseudomeasures.source_wideCoupling_errors_sharp
+#print axioms NLS.KdV.analyticAt_endpointEffective_coefficient_wide
+#print axioms NLS.KdV.analyticAt_endpointCoefficients_wide
