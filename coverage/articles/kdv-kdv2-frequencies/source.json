@@ -770,6 +770,21 @@
           "source_clause": "Exact original moment formula for the independently defined physical frequency",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.native_finiteGap_kdv_frequency_moments",
           "qualification": "The intrinsic frequencies of the INDEPENDENT physical Hamiltonians now satisfy the original moment identities at every open mode of every actual native finite-gap source. KdV: omega1_n-(2*pi*n)^3=-12*sum_k k*Omega2_nk. KdV2: omega2_n-20*(2*pi*n)*H0-(2*pi*n)^5=-160*pi^2*sum_k k^3*Omega2_nk+80*sum_k k*Omega4_nk. H0 is the independent native mass, calibrated to the canonical physical half integral of q^2. Literal natural-index tsums are genuine by actual closed gap tails, and all smoothness, coordinate-germ, spectral-frequency and physical mass identifications are proved rather than assumed. Closed own modes and infinite-gap limits remain OPEN."
+        },
+        {
+          "source_clause": "Actual spectral frequency identification through ALL closed own gaps",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.native_finiteGap_kdv_frequency_eq_dirichlet_all_gaps",
+          "qualification": "Actual higher-native finite-gap inverse perturbations open a closed own mode while retaining a fixed finite spectral gap set. Independently proved intrinsic-frequency and spectral-sum continuity give equality at the limit. The actual native KdV/KdV2 frequency therefore equals the finite original Dirichlet sum at EVERY positive selected mode, OPEN OR CLOSED, on the full original real mean-zero native H1/H2 finite-gap source. The finite cutoff must include both S and the selected n. No coordinate is cancelled at a closed gap, and no extra source regularity hypothesis remains."
+        },
+        {
+          "source_clause": "Exact physical frequency moment formula at EVERY native finite-gap mode",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.native_finiteGap_kdv_frequency_moments_all_gaps",
+          "qualification": "The true independent physical KdV/KdV2 action derivatives satisfy the ORIGINAL moment identities at EVERY positive mode of EVERY actual native spectral finite-gap source, INCLUDING CLOSED OWN GAPS. KdV: omega1_n-(2*pi*n)^3=-12*tsum_k k*Omega2_nk. KdV2: omega2_n-20*(2*pi*n)*H0-(2*pi*n)^5=-160*pi^2*tsum_k k^3*Omega2_nk+80*tsum_k k*Omega4_nk. All original contours, period/Fourier/action conventions, physical mass and literal natural-index tsums are retained. No open-own-mode, extra smoothness, coordinate-germ or frequency identity hypothesis is assumed."
+        },
+        {
+          "source_clause": "Actual intrinsic frequency at ZERO ORIGINAL ACTIONS",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.originalKdVFrequency_zero",
+          "qualification": "The SAME global native forward map sends zero to zero, and zero signed targets have exactly zero original actions. All free physical gaps collapse and all weighted positive moment sums vanish. The ACTUAL intrinsic native frequencies at zero are (2*pi*n)^3 and (2*pi*n)^5, with zero physical mass. These are proved also as real values on the ORIGINAL positive action cones of orders three/five. Two private free-gap/moment calibration lemmas are included; no nonzero coordinate or auxiliary spectral definition is used."
         }
       ]
     },
@@ -872,6 +887,21 @@
           "source_clause": "Exact original moment formula for the independently defined physical frequency",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.native_finiteGap_kdv2_frequency_moments",
           "qualification": "The intrinsic frequencies of the INDEPENDENT physical Hamiltonians now satisfy the original moment identities at every open mode of every actual native finite-gap source. KdV: omega1_n-(2*pi*n)^3=-12*sum_k k*Omega2_nk. KdV2: omega2_n-20*(2*pi*n)*H0-(2*pi*n)^5=-160*pi^2*sum_k k^3*Omega2_nk+80*sum_k k*Omega4_nk. H0 is the independent native mass, calibrated to the canonical physical half integral of q^2. Literal natural-index tsums are genuine by actual closed gap tails, and all smoothness, coordinate-germ, spectral-frequency and physical mass identifications are proved rather than assumed. Closed own modes and infinite-gap limits remain OPEN."
+        },
+        {
+          "source_clause": "Actual spectral frequency identification through ALL closed own gaps",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.native_finiteGap_kdv2_frequency_eq_dirichlet_all_gaps",
+          "qualification": "Actual higher-native finite-gap inverse perturbations open a closed own mode while retaining a fixed finite spectral gap set. Independently proved intrinsic-frequency and spectral-sum continuity give equality at the limit. The actual native KdV/KdV2 frequency therefore equals the finite original Dirichlet sum at EVERY positive selected mode, OPEN OR CLOSED, on the full original real mean-zero native H1/H2 finite-gap source. The finite cutoff must include both S and the selected n. No coordinate is cancelled at a closed gap, and no extra source regularity hypothesis remains."
+        },
+        {
+          "source_clause": "Exact physical frequency moment formula at EVERY native finite-gap mode",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.native_finiteGap_kdv2_frequency_moments_all_gaps",
+          "qualification": "The true independent physical KdV/KdV2 action derivatives satisfy the ORIGINAL moment identities at EVERY positive mode of EVERY actual native spectral finite-gap source, INCLUDING CLOSED OWN GAPS. KdV: omega1_n-(2*pi*n)^3=-12*tsum_k k*Omega2_nk. KdV2: omega2_n-20*(2*pi*n)*H0-(2*pi*n)^5=-160*pi^2*tsum_k k^3*Omega2_nk+80*tsum_k k*Omega4_nk. All original contours, period/Fourier/action conventions, physical mass and literal natural-index tsums are retained. No open-own-mode, extra smoothness, coordinate-germ or frequency identity hypothesis is assumed."
+        },
+        {
+          "source_clause": "Actual intrinsic frequency at ZERO ORIGINAL ACTIONS",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.originalKdV2Frequency_zero",
+          "qualification": "The SAME global native forward map sends zero to zero, and zero signed targets have exactly zero original actions. All free physical gaps collapse and all weighted positive moment sums vanish. The ACTUAL intrinsic native frequencies at zero are (2*pi*n)^3 and (2*pi*n)^5, with zero physical mass. These are proved also as real values on the ORIGINAL positive action cones of orders three/five. Two private free-gap/moment calibration lemmas are included; no nonzero coordinate or auxiliary spectral definition is used."
         }
       ]
     },
@@ -39023,12 +39053,166 @@
       "scope": "The intrinsic frequencies of the INDEPENDENT physical Hamiltonians now satisfy the original moment identities at every open mode of every actual native finite-gap source. KdV: omega1_n-(2*pi*n)^3=-12*sum_k k*Omega2_nk. KdV2: omega2_n-20*(2*pi*n)*H0-(2*pi*n)^5=-160*pi^2*sum_k k^3*Omega2_nk+80*sum_k k*Omega4_nk. H0 is the independent native mass, calibrated to the canonical physical half integral of q^2. Literal natural-index tsums are genuine by actual closed gap tails, and all smoothness, coordinate-germ, spectral-frequency and physical mass identifications are proved rather than assumed. Closed own modes and infinite-gap limits remain OPEN.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "1025b90bc35042b18a587b7c34f7c9bdfccad51e6b0a6d93f5bd63682cd54644"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroSobolevInclusion.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "Literal bounded real inclusions between original raw real mean-zero Sobolev spaces preserve every original Fourier coefficient and both reality/central constraints. Both native weighted norms are retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f8d6d9d809846db406d1329f181fcc92ee927adfdfe6c6fcf6c2f52de1183eaf"
+    },
+    {
+      "path": "NLS/KdV/NativeHillSourceComparisons.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "Equality of every native coefficient identifies the entire original physical Hill source across native orders. Canonical physical source maps and continuous representatives are continuous in original native norms. Continuous representatives agree across native orders, and at native order at least three their second actual spatial derivative is exactly a bounded continuous Fourier jet, without smoothness assumptions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "003744d3cbc05abd27283a9957271e23729c9c752d14f14e1be2f14672218866"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeFrequencyContinuity.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "The ACTUAL intrinsic physical hierarchy frequency has real analytic source dependence on the ENTIRE original real mean-zero native H^m source, including every closed action and infinite support. Its continuity is derived from the true positive-action derivative, genuine analytic action extensions and the whole native action map.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0ad20dccc305e3afb1ab575878aa457260633a4c217edc7b81df76393703f0fc"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletDerivativeContinuity.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "The actual Dirichlet characteristic derivative at every labelled positive real Dirichlet root is continuous through all real physical sources, including closed gaps. Joint analytic spectral differentiation and actual simple-root labels give this denominator continuity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8b4dd79ba2b0176a69c5bb9b89c268d7623d810bf78de1c0af58182107e1dfb1"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedRelift.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "A proved stronger weighted Hilbert membership relifts the literal coefficients into that weight with physical reality, central zero and every coefficient unchanged. An explicit component proof retains default kernel limits.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "26a7c401d563da4d243e8e1595019341ecdf463d721c7e488885300c733061a4"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/DirichletVelocityContinuity.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "Actual KdV/KdV2 Dirichlet velocity residue coefficients and finite spectral sums are continuous through ALL real closed or open gaps. The original KdV2 second spatial jet continuity is an explicit family hypothesis. Simple-root nonvanishing controls every denominator, and the actual canonical numerator has proved joint continuity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "71147515f8253917b2b5a583333910fd75d55a0d31d5115cc4e6e2ec97baf504"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapModeOpening.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "The SAME global native inverse constructs actual continuous source perturbations whose positive signed coefficient changes by exactly real t at the selected index. A genuinely closed selected spectral gap opens for every nonzero t; the actual spectral gap set stays in S union that index for all t. Actual finite-gap regularity supplies every native integer Sobolev membership and a coefficient-preserving all-order lift of the SAME physical source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "423af2206da12234a4daacb17b32bd565fb8ea32b53a8b8cfe8d9d57c17aaf87"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeDirichletFrequencyContinuity.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "The actual finite KdV Dirichlet spectral sum is continuous on the entire original H1 source, including closed selected gaps. The KdV2 sum is continuous after literal H^M -> H2 inclusion for M>=3; bounded continuous second jets discharge its physical derivative continuity. No physical smoothness or gap-opening premise is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1526375cc6c7dd594076f90a87f108d2b04a4a093f722def09d2fe7d1b6a952f"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeClosedModeFrequencyIdentification.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "Actual higher-native finite-gap inverse perturbations open a closed own mode while retaining a fixed finite spectral gap set. Independently proved intrinsic-frequency and spectral-sum continuity give equality at the limit. The actual native KdV/KdV2 frequency therefore equals the finite original Dirichlet sum at EVERY positive selected mode, OPEN OR CLOSED, on the full original real mean-zero native H1/H2 finite-gap source. The finite cutoff must include both S and the selected n. No coordinate is cancelled at a closed gap, and no extra source regularity hypothesis remains.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1b545e2907b992e153dfc864ac9f8b19c0f4d66147b4eb0f5fd3359f71a60623"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeAllGapFrequencyMoments.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "The true independent physical KdV/KdV2 action derivatives satisfy the ORIGINAL moment identities at EVERY positive mode of EVERY actual native spectral finite-gap source, INCLUDING CLOSED OWN GAPS. KdV: omega1_n-(2*pi*n)^3=-12*tsum_k k*Omega2_nk. KdV2: omega2_n-20*(2*pi*n)*H0-(2*pi*n)^5=-160*pi^2*tsum_k k^3*Omega2_nk+80*tsum_k k*Omega4_nk. All original contours, period/Fourier/action conventions, physical mass and literal natural-index tsums are retained. No open-own-mode, extra smoothness, coordinate-germ or frequency identity hypothesis is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b8f558514c707c2b3a3020056d4062d73a5e5968511887c952c030ece86c8567"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeFreePhysicalFrequencies.lean",
+      "source_labels": [
+        "Actual intrinsic physical frequency/moment identification at ALL finite-gap own modes, including closed gaps, and exact free normalization; necessary supporting identification for Theorems 1.2 and 1.9, not their complete low-regularity extension/asymptotic claims"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "The SAME global native forward map sends zero to zero, and zero signed targets have exactly zero original actions. All free physical gaps collapse and all weighted positive moment sums vanish. The ACTUAL intrinsic native frequencies at zero are (2*pi*n)^3 and (2*pi*n)^5, with zero physical mass. These are proved also as real values on the ORIGINAL positive action cones of orders three/five. Two private free-gap/moment calibration lemmas are included; no nonzero coordinate or auxiliary spectral definition is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c5fff6c2667ee562cca90e18a2a7da19ff87deffba5e06ad8b5e193659ff2e61"
     }
   ],
   "dependencies_needed": [
-    "The ACTUAL intrinsic physical KdV frequency now equals the original finite Dirichlet spectral sum and has the original -12 second-moment identity at EVERY OPEN own mode of EVERY original real mean-zero native H1 spectral finite-gap source, with no extra smoothness or frequency hypothesis. NEXT extend through closed own modes via proved actual finite-gap approximation/continuity, then to genuine infinite-gap frequencies and analytic spectral series. Sharp infinite-gap summability, locally uniform low-regularity asymptotics, sequence-valued analytic extension and compact derivative correction of Theorem 1.2 remain OPEN, together with the remaining concavity/local-inverse conclusions.",
-    "The ACTUAL intrinsic physical KdV2 frequency now has the original finite Dirichlet identity and fifth/second-moment formula at EVERY OPEN own mode of EVERY native H2 spectral finite-gap source. Coefficients -160*pi^2 and 80, leading fifth power and exact 20*(2*pi*n)*native physical H0 mass subtraction are retained. NEXT remove the open-own-mode restriction by actual native finite-gap approximation and continuity, pass to infinite gaps, and establish the sharp sequence-valued bounds/asymptotics, fixed-mass and PDE conclusions of Theorems 1.9 and 1.12.",
-    "The ACTUAL intrinsic physical KdV/KdV2 frequencies are now identified spectrally at EVERY open own mode of EVERY original native real mean-zero finite-gap source. Equality with the Dirichlet velocity sum follows by comparing the actual physical PDE coordinate differential with the proved intrinsic-frequency Hamiltonian rotation and cancelling a proved nonzero physical coordinate. Existing actual contour deformations then give the ORIGINAL moment formulas with coefficients -12, -160*pi^2 and 80, the leading cubic/fifth powers, and the KdV2 physical mass subtraction 20*(2*pi*n)*H0. The complete source, Fourier, period, coordinate and mass calibrations are proved. No smoothness, coordinate-matching or frequency identity is assumed of the source. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical. The other ten COMPLETE main theorem rows remain OPEN. The selected own gap is required OPEN in the new intrinsic frequency/moment identification. NEXT extend that equality through closed own modes using proved actual native finite-gap approximation and continuity, and then identify the genuine infinite-gap frequencies with the convergent analytic spectral series. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. This milestone does not prove a complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+    "The ACTUAL intrinsic physical KdV frequency now has the original finite Dirichlet and -12 second-moment identities at EVERY positive own mode, OPEN OR CLOSED, of EVERY original real mean-zero native H1 spectral finite-gap source. Actual native inverse approximations and continuity remove the open-mode restriction. The frequency at zero ORIGINAL actions is exactly (2*pi*n)^3. NEXT pass from actual dense finite-gap sources to all native physical frequencies and analytic spectral series, then prove sharp infinite-gap summability, locally uniform low-regularity asymptotics, sequence-valued analytic extension, compact derivative correction and the remaining main conclusions.",
+    "The ACTUAL intrinsic physical KdV2 frequency now has the original finite Dirichlet and moment identities at EVERY positive own mode, INCLUDING CLOSED GAPS, of EVERY native H2 finite-gap source. The coefficients -160*pi^2 and 80, fifth power and exact physical H0 mass subtraction are retained. Higher-native inverse perturbations and actual second-jet continuity prove the limit without an extra regularity hypothesis. The frequency at zero ORIGINAL actions is exactly (2*pi*n)^5. NEXT pass to infinite-gap physical frequencies and analytic spectral series, then prove sharp sequence-valued bounds/asymptotics, fixed-mass and actual PDE conclusions.",
+    "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -39054,8 +39238,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 22995,
-    "total_declarations_audited": 45065,
+    "candidate_declarations_audited": 23071,
+    "total_declarations_audited": 45138,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -39064,7 +39248,7 @@
     "main_theorems_verified": [
       "Theorem 1.1"
     ],
-    "selected_modules": 2930,
+    "selected_modules": 2941,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -39178,7 +39362,8 @@
     "physical_action_frequency_validation_sequence": "Prior strict evidence retained for all 2894 unchanged selected baseline sources. All six new own modules strictly rebuilt in dependency order after freezing 2950 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2900 selected modules. Exact selection, dependency order, reachability and exact six-module increase in NLS import closure verified. No new canonical prerequisite selection or provenance record; all 47 prior records remain unchanged and verified. The 23 private audit chunks have at most 128 names. The entire transitive audit loop, including its bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2900-name runtime probe using all 23 chunk references rejects extra and missing module sets. Private fresh outputs, unchanged canonical main and pinned Mathlib verified. Default heartbeat, recursion and kernel limits remain in force. No full 2900-module rebuild is claimed.",
     "native_finite_gap_variation_validation_sequence": "Prior strict evidence retained for all 2900 unchanged selected baseline sources. All seven new own modules strictly rebuilt in dependency order after freezing 2957 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2907 selected modules. Exact selection, dependency order, reachability and exact seven-module increase in NLS import closure verified. No new canonical prerequisite selection or provenance record; all 47 prior records remain unchanged and verified. The 23 private audit chunks have at most 128 names. The entire transitive audit loop, including its bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2907-name runtime probe using all 23 chunk references rejects extra and missing module sets. Private fresh outputs, unchanged canonical main and pinned Mathlib verified. Default heartbeat, recursion and kernel limits remain in force. No full 2907-module rebuild is claimed.",
     "physical_finite_gap_vectors_validation_sequence": "All 2907 prior selected sources remain byte-identical and retain their strict build evidence. All 16 new own modules were strictly rebuilt in dependency order AFTER freezing 2973 selected-source/checker/provenance/pinned-Mathlib-source hashes; the fresh combined transitive axiom audit covers all 2923 selected modules and every imported NLS declaration. Exact ordered selection, reachability and exact 16-module increase in import closure were verified. The entire audit traversal, permitted axioms and full imported-NLS scope are byte-identical to the published baseline. The 23 private chunks contain at most 128 module names; a runtime 2923-name bidirectional NameSet probe rejects extra and missing selections. All 47 prior provenance records are unchanged and checked against their source commits, with no new canonical reuse. Outputs are private, fresh and reached through the article overlay; canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits and warningAsError remain in force. This is a 16-module incremental rebuild with retained baseline strict evidence, not a full 2923-module rebuild.",
-    "intrinsic_finite_gap_moments_validation_sequence": "All 2923 prior selected sources remain byte-identical and retain strict build evidence. All seven new own modules were strictly rebuilt in dependency order AFTER freezing 2980 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 2930 selected modules and every imported NLS declaration. Exact ordered selection, reachability and exact seven-module import-closure increase were checked. The entire audit loop, collectAxioms traversal, permitted axioms and full imported NLS scope are byte-identical to the published baseline. All 23 private chunks have at most 128 module names; the actual 2930-name runtime bidirectional NameSet probe rejects extra and missing selections. All 47 prior provenance records are unchanged and verified against source commits, with no new canonical reuse. Outputs are private, fresh and reached through the article overlay; canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits and warningAsError remain in force. This is a seven-module incremental rebuild with retained baseline strict evidence, not a full 2930-module rebuild."
+    "intrinsic_finite_gap_moments_validation_sequence": "All 2923 prior selected sources remain byte-identical and retain strict build evidence. All seven new own modules were strictly rebuilt in dependency order AFTER freezing 2980 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 2930 selected modules and every imported NLS declaration. Exact ordered selection, reachability and exact seven-module import-closure increase were checked. The entire audit loop, collectAxioms traversal, permitted axioms and full imported NLS scope are byte-identical to the published baseline. All 23 private chunks have at most 128 module names; the actual 2930-name runtime bidirectional NameSet probe rejects extra and missing selections. All 47 prior provenance records are unchanged and verified against source commits, with no new canonical reuse. Outputs are private, fresh and reached through the article overlay; canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits and warningAsError remain in force. This is a seven-module incremental rebuild with retained baseline strict evidence, not a full 2930-module rebuild.",
+    "all_gap_intrinsic_frequencies_validation_sequence": "All 2930 prior selected sources remain byte-identical and retain strict build evidence. All 11 new own modules were strictly rebuilt in dependency order AFTER freezing 2991 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 2941 selected modules and every imported NLS declaration. Exact ordered selection, reachability and exact 11-module import-closure increase were checked. The entire audit loop, collectAxioms traversal, permitted axioms and full imported NLS scope are byte-identical to the published baseline. All 23 private chunks have at most 128 module names; the actual 2941-name runtime bidirectional NameSet probe rejects extra and missing selections. All 47 prior provenance records are unchanged and verified against their source commits, with no new canonical reuse. Outputs are private, fresh and reached through the article overlay; canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits and warningAsError remain in force. This is an 11-module incremental rebuild with retained baseline strict evidence, not a full 2941-module rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -40336,6 +40521,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "bbc4674df8fe4560f010171be2d06115143c4760",
+      "description": "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5.",
+      "entries": [
+        "The ACTUAL intrinsic physical KdV frequency now equals the original finite Dirichlet spectral sum and has the original -12 second-moment identity at EVERY OPEN own mode of EVERY original real mean-zero native H1 spectral finite-gap source, with no extra smoothness or frequency hypothesis. NEXT extend through closed own modes via proved actual finite-gap approximation/continuity, then to genuine infinite-gap frequencies and analytic spectral series. Sharp infinite-gap summability, locally uniform low-regularity asymptotics, sequence-valued analytic extension and compact derivative correction of Theorem 1.2 remain OPEN, together with the remaining concavity/local-inverse conclusions.",
+        "The ACTUAL intrinsic physical KdV2 frequency now has the original finite Dirichlet identity and fifth/second-moment formula at EVERY OPEN own mode of EVERY native H2 spectral finite-gap source. Coefficients -160*pi^2 and 80, leading fifth power and exact 20*(2*pi*n)*native physical H0 mass subtraction are retained. NEXT remove the open-own-mode restriction by actual native finite-gap approximation and continuity, pass to infinite gaps, and establish the sharp sequence-valued bounds/asymptotics, fixed-mass and PDE conclusions of Theorems 1.9 and 1.12.",
+        "The ACTUAL intrinsic physical KdV/KdV2 frequencies are now identified spectrally at EVERY open own mode of EVERY original native real mean-zero finite-gap source. Equality with the Dirichlet velocity sum follows by comparing the actual physical PDE coordinate differential with the proved intrinsic-frequency Hamiltonian rotation and cancelling a proved nonzero physical coordinate. Existing actual contour deformations then give the ORIGINAL moment formulas with coefficients -12, -160*pi^2 and 80, the leading cubic/fifth powers, and the KdV2 physical mass subtraction 20*(2*pi*n)*H0. The complete source, Fourier, period, coordinate and mass calibrations are proved. No smoothness, coordinate-matching or frequency identity is assumed of the source. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical. The other ten COMPLETE main theorem rows remain OPEN. The selected own gap is required OPEN in the new intrinsic frequency/moment identification. NEXT extend that equality through closed own modes using proved actual native finite-gap approximation and continuity, and then identify the genuine infinite-gap frequencies with the convergent analytic spectral series. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. This milestone does not prove a complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -40419,5 +40616,6 @@
   "physical_action_frequencies_record": "PHYSICAL_ACTION_FREQUENCIES.md",
   "native_finite_gap_variation_record": "NATIVE_FINITE_GAP_VARIATION.md",
   "physical_finite_gap_vectors_record": "PHYSICAL_FINITE_GAP_VECTORS.md",
-  "intrinsic_finite_gap_moments_record": "INTRINSIC_FINITE_GAP_MOMENTS.md"
+  "intrinsic_finite_gap_moments_record": "INTRINSIC_FINITE_GAP_MOMENTS.md",
+  "all_gap_intrinsic_frequencies_record": "ALL_GAP_INTRINSIC_FREQUENCIES.md"
 }

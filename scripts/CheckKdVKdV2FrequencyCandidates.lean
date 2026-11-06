@@ -1,3 +1,14 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeFreePhysicalFrequencies
+import NLS.Articles.KdVKdV2Frequencies.NativeAllGapFrequencyMoments
+import NLS.Articles.KdVKdV2Frequencies.NativeClosedModeFrequencyIdentification
+import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapModeOpening
+import NLS.Articles.KdVKdV2Frequencies.NativeDirichletFrequencyContinuity
+import NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedRelift
+import NLS.Articles.KdVKdV2Frequencies.DirichletVelocityContinuity
+import NLS.KdV.HillDirichletDerivativeContinuity
+import NLS.SequenceSpaces.PhysicalRealMeanZeroSobolevInclusion
+import NLS.KdV.NativeHillSourceComparisons
+import NLS.Articles.KdVKdV2Frequencies.NativeFrequencyContinuity
 import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapFrequencyMoments
 import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapSpectralFrequencies
 import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapCoordinateJets
@@ -5058,7 +5069,18 @@ private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapCoordinateJets,
   `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapContinuousSources,
   `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapSpectralFrequencies,
-  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapFrequencyMoments
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapFrequencyMoments,
+  `NLS.SequenceSpaces.PhysicalRealMeanZeroSobolevInclusion,
+  `NLS.KdV.NativeHillSourceComparisons,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFrequencyContinuity,
+  `NLS.KdV.HillDirichletDerivativeContinuity,
+  `NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedRelift,
+  `NLS.Articles.KdVKdV2Frequencies.DirichletVelocityContinuity,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapModeOpening,
+  `NLS.Articles.KdVKdV2Frequencies.NativeDirichletFrequencyContinuity,
+  `NLS.Articles.KdVKdV2Frequencies.NativeClosedModeFrequencyIdentification,
+  `NLS.Articles.KdVKdV2Frequencies.NativeAllGapFrequencyMoments,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFreePhysicalFrequencies
 ]
 
 open Lean in

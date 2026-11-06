@@ -2939,6 +2939,17 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapContinuousSources
   NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapSpectralFrequencies
   NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapFrequencyMoments
+  NLS/SequenceSpaces/PhysicalRealMeanZeroSobolevInclusion
+  NLS/KdV/NativeHillSourceComparisons
+  NLS/Articles/KdVKdV2Frequencies/NativeFrequencyContinuity
+  NLS/KdV/HillDirichletDerivativeContinuity
+  NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedRelift
+  NLS/Articles/KdVKdV2Frequencies/DirichletVelocityContinuity
+  NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapModeOpening
+  NLS/Articles/KdVKdV2Frequencies/NativeDirichletFrequencyContinuity
+  NLS/Articles/KdVKdV2Frequencies/NativeClosedModeFrequencyIdentification
+  NLS/Articles/KdVKdV2Frequencies/NativeAllGapFrequencyMoments
+  NLS/Articles/KdVKdV2Frequencies/NativeFreePhysicalFrequencies
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
