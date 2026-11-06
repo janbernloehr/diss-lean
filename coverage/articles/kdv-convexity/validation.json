@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-06",
-  "milestone": "Compute the actual cubic Hill moment action-square coefficient -3 at zero, with exact physical primitive matching and analytic continuation to all real rough sources",
+  "milestone": "Prove the full physical Hilbert Taylor normalization, actual local gradient inverse and one uniform real-direction Hessian radius",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": true,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -2305,11 +2305,22 @@
     "NLS.KdV.HillFreeCubicMomentFactor",
     "NLS.KdV.HillFreeCubicActionRatio",
     "NLS.KdV.HillRoughScalarGermIdentity",
-    "NLS.Articles.KdVConvexity.CubicActionRatioAtZero"
+    "NLS.Articles.KdVConvexity.CubicActionRatioAtZero",
+    "NLS.SequenceSpaces.WeightedQuadraticActionAlgebra",
+    "NLS.Articles.KdVConvexity.FreeActionRays",
+    "NLS.Articles.KdVConvexity.ActionRayMomentLimits",
+    "NLS.ComplexAnalysis.SecondDerivativeRayLimit",
+    "NLS.SequenceSpaces.LpOperatorBasisExt",
+    "NLS.Articles.KdVConvexity.ActionTaylorAtZero",
+    "NLS.Articles.KdVConvexity.PhysicalTaylorAtZero",
+    "NLS.Articles.KdVConvexity.ActionHessianBounds",
+    "NLS.Articles.KdVConvexity.PhysicalLocalConsequences",
+    "NLS.ComplexAnalysis.AnalyticQuadraticRemainder",
+    "NLS.Articles.KdVConvexity.PhysicalTaylorExpansion"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 17747,
+    "declarations": 17815,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -2350,6 +2361,10 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.SequenceSpaces.WeightedQuadraticActionAlgebra",
+      "NLS.ComplexAnalysis.SecondDerivativeRayLimit",
+      "NLS.SequenceSpaces.LpOperatorBasisExt",
+      "NLS.ComplexAnalysis.AnalyticQuadraticRemainder",
       "NLS.ComplexAnalysis.QuadraticGapCubicMoment",
       "NLS.ComplexAnalysis.CollapsedQuadraticSolutionValue",
       "NLS.ComplexAnalysis.ParametricSineFourthCosineMean",
@@ -3139,7 +3154,10 @@
   "files": {
     "NLS/Articles/KdVConvexity/ActionDifferential.lean": "a8bb54a95e54ef9d18adc3848eb730e174cd9a2dffb5c438a52afe612164f900",
     "NLS/Articles/KdVConvexity/ActionEmbedding.lean": "76a71b6f518b8c5ef03af0b5681ad21d838a85a261f92d5c996f761e01585037",
+    "NLS/Articles/KdVConvexity/ActionHessianBounds.lean": "7850abf2fceb881c26ed950bc58f719e902bd97e2ba3dc78986e25433e6b4fcd",
     "NLS/Articles/KdVConvexity/ActionMomentNormalization.lean": "f56a545ccf078b4035e2a87d5a3f8aa743daef5062036be1348d2194d397eb1d",
+    "NLS/Articles/KdVConvexity/ActionRayMomentLimits.lean": "6f269934c7b7b64062ec846c87b05df86a531b1fa8ac6ca18be264cae5decd1c",
+    "NLS/Articles/KdVConvexity/ActionTaylorAtZero.lean": "935350e9aa1b681a181094f4918dc1323579b06476d680f93473f85ed9dbf4e6",
     "NLS/Articles/KdVConvexity/ActualH1HamiltonianExtension.lean": "3b99288230871a9fde8ef2b908febb2abafaf879484f08a2cb98b7ad83ada951",
     "NLS/Articles/KdVConvexity/AnalyticSeries.lean": "6ebd3fd34d32ce236ae7b60756cf1542c36a3e6d76cb671eb756e52c390db15b",
     "NLS/Articles/KdVConvexity/ArnoldConeMomentGerms.lean": "3d026d5090765b6164403985fc262439500579a89fe2d44e7d83dbe47fd2aede",
@@ -3157,6 +3175,7 @@
     "NLS/Articles/KdVConvexity/DirichletSequenceCoordinates.lean": "a827174f82c2e919ab4876048a9f910cf0cd3d89e57423df7ee4b61461de215b",
     "NLS/Articles/KdVConvexity/FiniteArnoldRealization.lean": "756a49a1828e27db2a3aa6df0dbab438af1e2b3d40dd53c51149e1c6917804b2",
     "NLS/Articles/KdVConvexity/FiniteH1PhysicalIdentity.lean": "790e798cb00180787a919d3099e042e2e66a1503753bcaa0499f9a8bd6cb0c07",
+    "NLS/Articles/KdVConvexity/FreeActionRays.lean": "de872ce9e3d1297d040da706000c8a99fb4a6de7c12a2aea665e2afc85625463",
     "NLS/Articles/KdVConvexity/FreeDirichletLinearization.lean": "b355c65bba40980b6cf699362cc90838736d01efd37c66e0d83be24e4914ea32",
     "NLS/Articles/KdVConvexity/FreeLogNormingLinearization.lean": "4615302bad4f8faa4fc1a998d6e8f210999947b316c3080ee2f10b2053e072e2",
     "NLS/Articles/KdVConvexity/GlobalActionMomentDescent.lean": "a2f74d3f9e07e26ee7e11324052539c0e072b549560143161099cd87eb762431",
@@ -3186,6 +3205,9 @@
     "NLS/Articles/KdVConvexity/PhysicalActionHamiltonian.lean": "e3b9fe9525a68a3b3b78081be7c54413b3fa2b7812f0a80e4cc6adb18ebdf8a8",
     "NLS/Articles/KdVConvexity/PhysicalExtensionUniqueness.lean": "8d1080dea18346af3091034e1635e4b9a9bb2933eebaa8a3eac777611d8246ae",
     "NLS/Articles/KdVConvexity/PhysicalHilbertActions.lean": "6383ffbc7453f22af3ff076322de8d998a8dafa0072e9f93123667883a79999e",
+    "NLS/Articles/KdVConvexity/PhysicalLocalConsequences.lean": "981a0883e0e845318eb5b2687be3bf4ded00ed072acc1e747922f1f411308add",
+    "NLS/Articles/KdVConvexity/PhysicalTaylorAtZero.lean": "bae6eda441564d9ada16ed2f1adfb6ff33939d451a122ee7658c49f8c39e2175",
+    "NLS/Articles/KdVConvexity/PhysicalTaylorExpansion.lean": "0d2b77eca522468b3026bc5ef1e6f9c8dafd88c481b857b78a93a4fec3caf552",
     "NLS/Articles/KdVConvexity/PositiveActionNorm.lean": "bbbc98ebde0b835c62edbf5d39f9ac357c0e15f7858a576c4fdcf4095d2e6607",
     "NLS/Articles/KdVConvexity/SmoothPhysicalHamiltonianIdentity.lean": "5e6ee1a65290a2bf623dd4d6c956022c49c2488fa93f457892780471883e2944",
     "NLS/Articles/KdVConvexity/SpectralActionSequence.lean": "bd59fba5087083a345963ff808e4a7467e5e248062afbfd9ed46dbe576846c7c",
@@ -3255,6 +3277,7 @@
     "NLS/ComplexAnalysis/AnalyticOpenGluing.lean": "95e477ae62d2b9f558ce7e0cf7fab716b0ebf0b828c87622483a42baaa8fffab",
     "NLS/ComplexAnalysis/AnalyticOpenInverse.lean": "81bae69d1bb0fe99647ac9789b1b66a7924ac68f925960a4b5e7b97884100941",
     "NLS/ComplexAnalysis/AnalyticPhaseEnergyShift.lean": "07f89e7c0c82ff83a211810edce0e682ed1a3639fc6293e40ffba74c250840a0",
+    "NLS/ComplexAnalysis/AnalyticQuadraticRemainder.lean": "493094506870991bb20151ee4bae6283176fb722a02c98215be6ec31487fd29b",
     "NLS/ComplexAnalysis/AnalyticSimpleCriticalBranch.lean": "32f181d430c69ecc7a14fff0403b6165730da2ef195e315979997942074b0aec",
     "NLS/ComplexAnalysis/AnalyticSquarePullback.lean": "a1f77f382502536bfc197f3c67dd201dff5ac8b268c0fa4ab43d77ba503eeff6",
     "NLS/ComplexAnalysis/AnalyticTwoZeroRoot.lean": "c770ee26b8bb2bf1ce4272b9e07fa0eb20aacae8989983249607215279e38f22",
@@ -3470,6 +3493,7 @@
     "NLS/ComplexAnalysis/ScalarStateMass.lean": "a4bf6bf494919a24bfb2e6236a5e3a71df299a408a1d3e61d1474388c450fb6c",
     "NLS/ComplexAnalysis/ScalarStateMixedPairing.lean": "9e7c1f639016bc60c996e71b3a0b30b43fe48bc7bdb19152ea4c5e0edd6e34e3",
     "NLS/ComplexAnalysis/ScalarStateSquaredPairing.lean": "c12e7f97d500ced8ad33bfbc5db48a8f29a527d8b4c87e1d442cff57e4f82da2",
+    "NLS/ComplexAnalysis/SecondDerivativeRayLimit.lean": "3a2cd49a9aef6db36c9c58d9828c8ace26d15ebae66feb1feb9dd4c6282b8e1f",
     "NLS/ComplexAnalysis/SemicircleMean.lean": "d0a074b66f1ab510ff2087f4ee615ac123b235da9110365bcf4393693724c82b",
     "NLS/ComplexAnalysis/ShiftedSquarePeriod.lean": "96f350a484b67126804b9a21e73333565265c7c66472fe724d87b22a90d8a0b1",
     "NLS/ComplexAnalysis/ShiftedSquareRootBounds.lean": "1b3b73455080ec61b2c502efba60594420f74ad88b2a64499809f58e576c4fad",
@@ -5206,6 +5230,7 @@
     "NLS/SequenceSpaces/LocalScalarActionFamilyDescent.lean": "027e24a2d872d83d2e4c6e86e8f64484e69b6f64cc6b9c944afed7d38cc4d95a",
     "NLS/SequenceSpaces/LocalSeriesContinuity.lean": "0284d419caac0e17019232424e43ed2d0d8049815609a576151ff1194c48603d",
     "NLS/SequenceSpaces/LocalTailSumDescent.lean": "4eaa277463ec31839e9a096dbc50c9558455f5e9fcac13357f8eee0bb172af72",
+    "NLS/SequenceSpaces/LpOperatorBasisExt.lean": "d9146595427f296d391bc8817b5fcd30e65b1a276ee4d43b1875b77f42d7bd12",
     "NLS/SequenceSpaces/MeanZeroSobolevIdentities.lean": "77deb2c7dc1af307becbac64ed96c014bed10f20a3e266286a72dea9cb87cf6b",
     "NLS/SequenceSpaces/MeanZeroSobolevInclusion.lean": "4668bbe5aa29ce299e92c5612f5cd65d944ae1678a6619b0be797d0607ff06dd",
     "NLS/SequenceSpaces/MeanZeroWeightedCoordinates.lean": "de4aecc5abb537f6d2eace740bcdc1e7dc8dc646a741ffdb5ae1fa6faf2022bf",
@@ -5346,6 +5371,7 @@
     "NLS/SequenceSpaces/WeightedCoefficientCompactness.lean": "8d00adf1c132874483f87e83056f13ffceae0ad3f7033d74908c8e270c7122cc",
     "NLS/SequenceSpaces/WeightedInsertion.lean": "a4aeffa707f59fb1ae02afacbb06963c9085a2b04601162b495faf0810eb20b6",
     "NLS/SequenceSpaces/WeightedNonnegativeAnalyticAtlas.lean": "c738f2ed628014130135c5fdd28b1db886c1076143618ce3a394c074e7711a13",
+    "NLS/SequenceSpaces/WeightedQuadraticActionAlgebra.lean": "34289ddddad8bc56ff56e49129c1c5bba0e41c7ee5411016783acd289ab29061",
     "NLS/SequenceSpaces/WeightedRestriction.lean": "1affd75425a25bcc4fd93bb52f5daacf9c569d33bba9e17b7bc7848c507bbac4",
     "NLS/SequenceSpaces/WeightedScalarActionFamilyDescent.lean": "56b54e9ed7338c41f2a58418ba130a53b6b1ddc6122ea821a59b845577cf6f6a",
     "NLS/SequenceSpaces/WeightedSourceSignedCompletion.lean": "7a926ae06c9398d9b8058737841b9b08362c050093c88f8c9923fa8800e78ad0",
@@ -5425,7 +5451,7 @@
     "NLS/ZakharovShabat/SourceWeightedEtaFactorization.lean": "c22fd5e2ec86b9e571506f9d1b64a0b6f047171bfb0bc6aa920763d4cdeb74bb",
     "NLS/ZakharovShabat/SourceZeroGapActionBound.lean": "4fb1acc2f217e87f0e65d53828ba7f2cc2c266064f918e2ad0e8dd22fcda307e",
     "NLS/ZakharovShabat/SourceZeroGapMassEstimate.lean": "6b656c4b26c06b37ec752562aa81be67147fba7d3dd14cb254afd3090a3484d3",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "c491f8f11b06f1ff10fe806bf4a87781694bed98a951421ab41045d6836b6ba2",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "637660b6b8efc52540ac28fdfb5674272cb1cddae69a5799937269c153d9f168",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/action-sequence-library-reuse.json": "9126c713dd2dbd5eb3b1d902df1cea7bdd35cbbd75a6ee13e21fd9d7fd49827e",
@@ -5452,13 +5478,14 @@
     "coverage/articles/kdv-convexity/physical-multiplicity-library-reuse.json": "7d1c8a377416df2565220cb470a9dfdfc4fdddbef0bba93ac3151584ba69ead7",
     "coverage/articles/kdv-convexity/physical-phase-library-reuse.json": "7a4ca9fe64598657908b68be57b0ba268cae4c17d7e01cc722da56db025dbb94",
     "coverage/articles/kdv-convexity/physical-spectrum-library-reuse.json": "e36082bd809d71f7ff753f6dd3740433709f156e0f113b4e55189be868c78132",
+    "coverage/articles/kdv-convexity/physical-taylor-library-reuse.json": "dfc734466b1727e5d09b83946e26ebb13122b309b44702cf1391691ac867f416",
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
     "coverage/articles/kdv-convexity/sobolev-energy-library-reuse.json": "a5a808fd7bbc87f3979d3c913affabdb3f9550a4c3d997d63b578ef57aa7f4c7",
-    "scripts/check-kdv-convexity.sh": "74c5b8aaf52d3165de722ec9c7e4d8e0a4a846f4e4ca19feada4db27369831c3"
+    "scripts/check-kdv-convexity.sh": "13719ec65c17bd4cc2e2fcb17d8612d8780b08a1e622f29b2ee1b6afa366d5c9"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -5476,7 +5503,7 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "Global potential-space gluing is now proved: one complex-open neighborhood of the entire real H^-1 space carries all canonical polynomial and cubic moments, agrees with every actual real period, and retains locally uniform complex-tail quadratic bounds. Finite-gap exterior matching, the normalized inversion remainder of Lemma 4.4 and the physical energy/frequency identities remain open.",
-    "Apply the proved actual source identity 8*pi*n*R_n=I_n^2*L_n, L_n(0)=-3, to the actual local coordinate inverse at zero and one-/two-mode positive action openings. Derive the physical Hstar zero differential and all basis Hessian entries, then use Hilbert analyticity and basis density for the full bounded gradient derivative -6*Id. Construct the actual original coordinatewise analytic physical KdV frequency family on an ell^(-1,1) neighborhood V0, with physical recovery. Apply the proved common-domain continuation bridge to finish the full V intersect V0 identity. Apply the checked analytic consequences to complete the positive-index local diffeomorphism and single Hessian-radius assertion. Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates and physical KdV well-posedness.",
+    "Construct the actual original coordinatewise analytic physical KdV frequency family on an ell^(-1,1) neighborhood V0, with physical recovery. Apply the proved common-domain continuation bridge to finish the full V intersect V0 identity. This is the remaining essential component of main Theorem 1.1. Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates and physical KdV well-posedness.",
     "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. Even polynomial Arnold periods are nonnegative; the level-zero Arnold and cubic zero sets equal the closed-gap set. These signs and zero criteria hold for the common all-index family and its matched source tail at every real input. Global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
@@ -5508,9 +5535,10 @@
     "The actual normalized source primitive now has its physical quartic energy-circle coefficient and all-gap decomposition for every smooth real mean-zero source, with a checked intrinsic partial trace and smooth Hstar identity under the original weighted summability condition. Extending the physical identity to the entire original action domain, identifying physical frequencies and proving -6*Id remain open. All main theorem flags remain false.",
     "The global physical analytic Hstar extension is now proved on one complex neighborhood of the entire nonnegative ell2 quadrant, agreeing with physical renormalized KdV energy on the entire original positive ell^(3,1) action Banach cone with exact weight (1+n)^3. The physical frequency identity, actual -6*Id coefficient and main Theorems 1.1-1.3 remain incomplete.",
     "The intrinsic physical-frequency identity is now proved on the full original positive ell^(3,1) cone, including all collapsed actions. The actual frequency family on the larger original ell^(-1,1) neighborhood V0 and its full common-domain identity are still open. No main theorem is marked complete.",
-    "The actual fixed-index weighted cubic moment has an analytic raw-action-square factor with exact free value -3 at every positive index. The final source identity covers all real Hminus1 sources near zero and all collapsed gaps. Transport to the full Hilbert Hstar Hessian is still required; zero gradient, -6*Id and all main theorems remain incomplete."
+    "The actual fixed-index weighted cubic moment has an analytic raw-action-square factor with exact free value -3 at every positive index. The final source identity covers all real Hminus1 sources near zero and all collapsed gaps. Transport to the full Hilbert Hstar Hessian is still required; zero gradient, -6*Id and all main theorems remain incomplete.",
+    "The physical Hilbert zero gradient, full bounded derivative -6*Id, cubic-norm quadratic Taylor remainder, actual local gradient inverse and one uniform Hessian radius are now proved. Earlier progress entries record their historical status. The remaining essential Theorem 1.1 input is the actual larger V0 physical-frequency family and full common-domain identity."
   ],
-  "previous_progress_commit": "ca69980c6e09dd04e109c926b7a4a35e42ba71c1",
+  "previous_progress_commit": "1f6daebbd70ad6bbda585bad680efa416f08740a",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -6003,7 +6031,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation against ca69980: all 2272 baseline proof-source hashes unchanged. Sixteen authored modules pass strict Lean 4.33.1/mathlib v4.33.1 compilation with default authored limits and no heartbeat/linter overrides. The actual free trace slope and rough primitive amplitude, exact endpoint/root-sheet physical matching, fourth-half-gap contour factor and physical raw-action comparison compute K_n(0)=-3/(8*pi*n). Physical real L2 germ identity continues as a complex rough germ and recovers R_n=I_n^2*K_n at every real Hminus1 source sufficiently close to zero, with the neighborhood allowed to depend on n. The weighted summand factor has free value -3. No physical Taylor coefficient is assumed. The full Hilbert Hstar Taylor expansion, zero gradient, -6*Id derivative and actual larger base-frequency domain remain incomplete. Reproduction lists 2288 modules. Positive-index example, combined transitive axiom audit and 1792 coverage-name checks pass, with 782 additional module origins. All 2829 remaining reference imports are byte-identical and were not rebuilt. This is not a full repository rebuild.",
+  "focused_validation_scope": "Incremental validation against 1f6daeb: all 2288 baseline proof-source hashes unchanged. Eleven authored modules pass strict Lean 4.33.1/mathlib v4.33.1 compilation with default authored limits and no heartbeat/linter overrides. Actual real rough sources realize every positive Hilbert action ray. The proved source cubic coefficient gives finite-support ray limits. Analytic Taylor limits, Hessian symmetry and lp basis density identify the full bounded gradient derivative -6*Id and zero gradient. Every global physical extension has this intrinsic normalization. The full complex Hilbert remainder Hstar(a)+3*sum a_n^2=O(norm(a)^3), actual open analytic gradient inverse, one all-direction Hessian radius and strict concavity on the positive ball are proved. Reproduction lists 2299 modules. The positive-index example, combined transitive axiom audit and 1826 coverage-name checks pass, with 786 additional module origins. All 2830 remaining reference imports are byte-identical and were not rebuilt. The larger actual V0 physical-frequency family and all full main theorems remain incomplete. This is not a full repository rebuild.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -6313,9 +6341,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 1792,
-    "audit_modules_present": 782,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/CubicNormalizationCoverageNames.log"
+    "declarations": 1826,
+    "audit_modules_present": 786,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/PhysicalTaylorCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -6404,201 +6432,145 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "ca69980c6e09dd04e109c926b7a4a35e42ba71c1",
-    "baseline_modules": 2272,
+    "baseline_commit": "1f6daebbd70ad6bbda585bad680efa416f08740a",
+    "baseline_modules": 2288,
     "baseline_source_hashes_unchanged": true,
     "newly_checked_exact_shared_modules": 0,
-    "newly_checked_authored_modules": 16,
+    "newly_checked_authored_modules": 11,
     "completed_module_checks": [
       {
-        "module": "NLS.ComplexAnalysis.QuadraticGapCubicMoment",
-        "source_sha256": "59231611a5ed67fa9dfa0a3d0d7070f4bfaf5f42d5dddf9443fd724d767b8a48",
-        "olean_sha256": "fc2e70e8a6465ed7c614c563fe6b63eafb0053dcdf1bb7b40bab1acec3b5e050",
+        "module": "NLS.SequenceSpaces.WeightedQuadraticActionAlgebra",
+        "source_sha256": "34289ddddad8bc56ff56e49129c1c5bba0e41c7ee5411016783acd289ab29061",
+        "olean_sha256": "a5b97c87377065c90afcda70aac3ec49e6b2bd93a0ea0272d380340bc4df5c95",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.ComplexAnalysis.QuadraticGapCubicMoment.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.SequenceSpaces.WeightedQuadraticActionAlgebra.log",
         "authored_here": true
       },
       {
-        "module": "NLS.ComplexAnalysis.CollapsedQuadraticSolutionValue",
-        "source_sha256": "b96ecff1b445d13046e340095b419c66a94964faa827a8cf86cb9e41f2a35a7b",
-        "olean_sha256": "60c7dfe12a008c8f2f2c8d95ce14553027e8a3f6314ce5ce461d77446b813f16",
+        "module": "NLS.Articles.KdVConvexity.FreeActionRays",
+        "source_sha256": "de872ce9e3d1297d040da706000c8a99fb4a6de7c12a2aea665e2afc85625463",
+        "olean_sha256": "efe5eeae0d3831f49a76c98990775f868720ac03efdf8182ef011bdc1531da27",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.SequenceSpaces.WeightedQuadraticActionAlgebra": "a5b97c87377065c90afcda70aac3ec49e6b2bd93a0ea0272d380340bc4df5c95"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.FreeActionRays.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.Articles.KdVConvexity.ActionRayMomentLimits",
+        "source_sha256": "6f269934c7b7b64062ec846c87b05df86a531b1fa8ac6ca18be264cae5decd1c",
+        "olean_sha256": "2cda7eaff8819dcd42a2d4b3afee67ff185ed92c4998db8b4c1ced5a8091e262",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.Articles.KdVConvexity.FreeActionRays": "efe5eeae0d3831f49a76c98990775f868720ac03efdf8182ef011bdc1531da27"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.ActionRayMomentLimits.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.ComplexAnalysis.SecondDerivativeRayLimit",
+        "source_sha256": "3a2cd49a9aef6db36c9c58d9828c8ace26d15ebae66feb1feb9dd4c6282b8e1f",
+        "olean_sha256": "f925cb665f9233e6aa53503938c8d48f8a6e21f1280778c1b0507c7d0f16b64b",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.ComplexAnalysis.CollapsedQuadraticSolutionValue.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.ComplexAnalysis.SecondDerivativeRayLimit.log",
         "authored_here": true
       },
       {
-        "module": "NLS.ComplexAnalysis.ParametricSineFourthCosineMean",
-        "source_sha256": "62079cff73b8ae0dfd8b339da2ce6c08549a29d2a9e816eeeab9e87a6bea59f0",
-        "olean_sha256": "17b94e548249f79e6810f0bc3da51615c8b9a8dd2d83005f2ec40af7adad6a43",
+        "module": "NLS.SequenceSpaces.LpOperatorBasisExt",
+        "source_sha256": "d9146595427f296d391bc8817b5fcd30e65b1a276ee4d43b1875b77f42d7bd12",
+        "olean_sha256": "98309fb226c0499416a0e074f8c7fd648a1486e7610149974a4be00df863a0b6",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.ComplexAnalysis.ParametricSineFourthCosineMean.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.SequenceSpaces.LpOperatorBasisExt.log",
         "authored_here": true
       },
       {
-        "module": "NLS.ComplexAnalysis.ParametricSineFourthCosineMeanLocal",
-        "source_sha256": "3741b23137297ac11c2b6f7d5f6e03102d320b82c223f5660c6dc5c29dc13847",
-        "olean_sha256": "2d1e9b196f5f05069724c321e9b73ece6d04a18f6134a41fa3a93081d6c2c522",
+        "module": "NLS.Articles.KdVConvexity.ActionTaylorAtZero",
+        "source_sha256": "935350e9aa1b681a181094f4918dc1323579b06476d680f93473f85ed9dbf4e6",
+        "olean_sha256": "26f696e17830cc4bda363a14cd72555464cedaa8cd0d1a9e7ce2d37656d50040",
         "selected_direct_dependency_object_hashes": {
-          "NLS.ComplexAnalysis.ParametricSineFourthCosineMean": "17b94e548249f79e6810f0bc3da51615c8b9a8dd2d83005f2ec40af7adad6a43"
+          "NLS.Articles.KdVConvexity.ActionRayMomentLimits": "2cda7eaff8819dcd42a2d4b3afee67ff185ed92c4998db8b4c1ced5a8091e262",
+          "NLS.ComplexAnalysis.SecondDerivativeRayLimit": "f925cb665f9233e6aa53503938c8d48f8a6e21f1280778c1b0507c7d0f16b64b",
+          "NLS.SequenceSpaces.LpOperatorBasisExt": "98309fb226c0499416a0e074f8c7fd648a1486e7610149974a4be00df863a0b6"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.ComplexAnalysis.ParametricSineFourthCosineMeanLocal.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.ActionTaylorAtZero.log",
         "authored_here": true
       },
       {
-        "module": "NLS.ComplexAnalysis.QuadraticGapCubicFactor",
-        "source_sha256": "053a99b0326cfe1f7c3f8f6d0cda83e85a56df0fa2f1ea035cefda2c1ec1bd39",
-        "olean_sha256": "0dcf1eba7484cdd99d423253daf51191b1c5d6b4ffc2deaffaea88e5e298d9eb",
+        "module": "NLS.Articles.KdVConvexity.PhysicalTaylorAtZero",
+        "source_sha256": "bae6eda441564d9ada16ed2f1adfb6ff33939d451a122ee7658c49f8c39e2175",
+        "olean_sha256": "0c7e39b38c8ce1e16004b259156d322b8c0e81d1bcfe203e9b6fae1019ebff75",
         "selected_direct_dependency_object_hashes": {
-          "NLS.ComplexAnalysis.QuadraticGapCubicMoment": "fc2e70e8a6465ed7c614c563fe6b63eafb0053dcdf1bb7b40bab1acec3b5e050",
-          "NLS.ComplexAnalysis.ParametricSineFourthCosineMeanLocal": "2d1e9b196f5f05069724c321e9b73ece6d04a18f6134a41fa3a93081d6c2c522"
+          "NLS.Articles.KdVConvexity.ActionTaylorAtZero": "26f696e17830cc4bda363a14cd72555464cedaa8cd0d1a9e7ce2d37656d50040"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.ComplexAnalysis.QuadraticGapCubicFactor.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.PhysicalTaylorAtZero.log",
         "authored_here": true
       },
       {
-        "module": "NLS.ComplexAnalysis.QuadraticPrimitiveIdentification",
-        "source_sha256": "1f501de621f6483a8105458c4dba52da2b90526721f931730b07f265b1fd3ff4",
-        "olean_sha256": "1f01f160a42d889dde9af73bd35439598824b6e4f6c98b59e9ef193b3ee1ba3c",
+        "module": "NLS.Articles.KdVConvexity.ActionHessianBounds",
+        "source_sha256": "7850abf2fceb881c26ed950bc58f719e902bd97e2ba3dc78986e25433e6b4fcd",
+        "olean_sha256": "280403607761dfd79efe40294041d84e5f268a2ebc9302802b9d77ee10cfd113",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.Articles.KdVConvexity.ActionTaylorAtZero": "26f696e17830cc4bda363a14cd72555464cedaa8cd0d1a9e7ce2d37656d50040"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.ActionHessianBounds.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.Articles.KdVConvexity.PhysicalLocalConsequences",
+        "source_sha256": "981a0883e0e845318eb5b2687be3bf4ded00ed072acc1e747922f1f411308add",
+        "olean_sha256": "367aa6e39f2ac86cbc6ef96fe10a990ab72b7de233ea61afdea816361aa170f0",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.Articles.KdVConvexity.PhysicalTaylorAtZero": "0c7e39b38c8ce1e16004b259156d322b8c0e81d1bcfe203e9b6fae1019ebff75",
+          "NLS.Articles.KdVConvexity.ActionHessianBounds": "280403607761dfd79efe40294041d84e5f268a2ebc9302802b9d77ee10cfd113"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.PhysicalLocalConsequences.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.ComplexAnalysis.AnalyticQuadraticRemainder",
+        "source_sha256": "493094506870991bb20151ee4bae6283176fb722a02c98215be6ec31487fd29b",
+        "olean_sha256": "53e5372492eada4f8c51555a2ceba41c2c69ac5c5cd9ebd111fd400129f648d3",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.ComplexAnalysis.QuadraticPrimitiveIdentification.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.ComplexAnalysis.AnalyticQuadraticRemainder.log",
         "authored_here": true
       },
       {
-        "module": "NLS.KdV.HillFreeDeflatedTraceSlope",
-        "source_sha256": "95185d9a910c565cbb928150ba17b44611be34678bef3613638e2c188294299b",
-        "olean_sha256": "849f33bc77cfaff66468a01f0b8abd0a3ae4bb4e734f25db3950087f5ecb8be6",
-        "selected_direct_dependency_object_hashes": {},
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.KdV.HillFreeDeflatedTraceSlope.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillFreeQuadraticPrimitive",
-        "source_sha256": "9d992fdc94ce053cacaf8ee8811e7346ec4863fa852e3276a6b88270174a9061",
-        "olean_sha256": "f470b1f6d3f1a6f6b58ff4d06f02fa4a1fd4318715208604114068a463697648",
+        "module": "NLS.Articles.KdVConvexity.PhysicalTaylorExpansion",
+        "source_sha256": "0d2b77eca522468b3026bc5ef1e6f9c8dafd88c481b857b78a93a4fec3caf552",
+        "olean_sha256": "d27dc9b9b186d7893777625a8833681b26391ed57438600d10361ec40136357e",
         "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillFreeDeflatedTraceSlope": "849f33bc77cfaff66468a01f0b8abd0a3ae4bb4e734f25db3950087f5ecb8be6",
-          "NLS.ComplexAnalysis.CollapsedQuadraticSolutionValue": "60c7dfe12a008c8f2f2c8d95ce14553027e8a3f6314ce5ce461d77446b813f16"
+          "NLS.Articles.KdVConvexity.PhysicalTaylorAtZero": "0c7e39b38c8ce1e16004b259156d322b8c0e81d1bcfe203e9b6fae1019ebff75",
+          "NLS.Articles.KdVConvexity.ActionHessianBounds": "280403607761dfd79efe40294041d84e5f268a2ebc9302802b9d77ee10cfd113",
+          "NLS.ComplexAnalysis.AnalyticQuadraticRemainder": "53e5372492eada4f8c51555a2ceba41c2c69ac5c5cd9ebd111fd400129f648d3"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.KdV.HillFreeQuadraticPrimitive.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillPhysicalGapPrimitive",
-        "source_sha256": "65287123308eaa21a43068f38e508baeed57028590548210724f9b2724a42d71",
-        "olean_sha256": "21d2a48791cc72bc7b9e3d69bbf68dca4ff24635d9e75c2a7a58b0d5dcdc32e8",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.ComplexAnalysis.QuadraticPrimitiveIdentification": "1f01f160a42d889dde9af73bd35439598824b6e4f6c98b59e9ef193b3ee1ba3c"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.KdV.HillPhysicalGapPrimitive.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillFreePrimitivePhysicalData",
-        "source_sha256": "a0ae4d1b811eda8473d4a1074a7cf751c3dcb328d9ff9d9f7e89bae21f816602",
-        "olean_sha256": "a2579b3d3229e54591a0dcc8a7f8ea2b788657e80a258cd341b9b6b4e1a9d401",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillFreeQuadraticPrimitive": "f470b1f6d3f1a6f6b58ff4d06f02fa4a1fd4318715208604114068a463697648",
-          "NLS.KdV.HillPhysicalGapPrimitive": "21d2a48791cc72bc7b9e3d69bbf68dca4ff24635d9e75c2a7a58b0d5dcdc32e8"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.KdV.HillFreePrimitivePhysicalData.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillFreePhysicalRootAmplitude",
-        "source_sha256": "824fadd08e908b43379eb98efa3bb3716eec2aa28fbf8dbd14f53ad90a906fce",
-        "olean_sha256": "bc96973345b1eccfc60f7ce8d16cf65559a27c89ec811e62221a620138774e79",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillFreePrimitivePhysicalData": "a2579b3d3229e54591a0dcc8a7f8ea2b788657e80a258cd341b9b6b4e1a9d401"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.KdV.HillFreePhysicalRootAmplitude.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillPhysicalCubicFactor",
-        "source_sha256": "16892ae8fd6154a54c6022036b29a6551aeb3fff8f3557586ca71bc60a3cb535",
-        "olean_sha256": "04310fe4e16471c3d475642c35ee5f5916f91bf6423097fab9f42327fe185488",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.ComplexAnalysis.QuadraticGapCubicFactor": "0dcf1eba7484cdd99d423253daf51191b1c5d6b4ffc2deaffaea88e5e298d9eb"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.KdV.HillPhysicalCubicFactor.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillFreeCubicMomentFactor",
-        "source_sha256": "4566c0ce686084f8e362916e48599a27c7a38edf739173ace71f5f0c1b180a90",
-        "olean_sha256": "a436b64a9e4f0b5cd07395d90c86aaae152e5e81f8001a2dfbaa958230ccf268",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillFreePhysicalRootAmplitude": "bc96973345b1eccfc60f7ce8d16cf65559a27c89ec811e62221a620138774e79",
-          "NLS.KdV.HillPhysicalCubicFactor": "04310fe4e16471c3d475642c35ee5f5916f91bf6423097fab9f42327fe185488"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.KdV.HillFreeCubicMomentFactor.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillFreeCubicActionRatio",
-        "source_sha256": "18bf1cbd95de6f85179d1bc04866b7799de33225806f1a1b5041bf08990856e6",
-        "olean_sha256": "25a58904d93da54d2f537957f2d57b968af6f2b7aad44afa9f2d60bae92ae571",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillFreeCubicMomentFactor": "a436b64a9e4f0b5cd07395d90c86aaae152e5e81f8001a2dfbaa958230ccf268"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.KdV.HillFreeCubicActionRatio.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillRoughScalarGermIdentity",
-        "source_sha256": "5e7a274e2e1ebdae81a4a79ec8381fb16a596a0cf402ba4813f3d5dbbcd138da",
-        "olean_sha256": "411982512ebd521e3c8afe948f06a06919977f648edb32be16fc94b432e11aa6",
-        "selected_direct_dependency_object_hashes": {},
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.KdV.HillRoughScalarGermIdentity.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.CubicActionRatioAtZero",
-        "source_sha256": "3f24e01f0009ad8f89c97a29c478941c22c80989d889611b700cbfdf7fe253a9",
-        "olean_sha256": "e827d948d3696cf4892d8753048519ec556fe6a1d43800f7fc37090fc9c118f4",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillFreeCubicActionRatio": "25a58904d93da54d2f537957f2d57b968af6f2b7aad44afa9f2d60bae92ae571",
-          "NLS.KdV.HillRoughScalarGermIdentity": "411982512ebd521e3c8afe948f06a06919977f648edb32be16fc94b432e11aa6"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-NLS.Articles.KdVConvexity.CubicActionRatioAtZero.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.PhysicalTaylorExpansion.log",
         "authored_here": true
       }
     ],
-    "combined_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-normalization-validation.log",
+    "combined_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-validation.log",
     "baseline_build_receipts_preserved_in_parent_commit": true,
-    "reference_import_source_manifest": "coverage/articles/kdv-convexity/cubic-normalization-library-reuse.json",
+    "reference_import_source_manifest": "coverage/articles/kdv-convexity/physical-taylor-library-reuse.json",
     "inherited_reference_import_closure_rebuilt": false
   },
   "Hminus1_real_spectral_progress": {
@@ -8535,5 +8507,50 @@
     "remaining_byte_identical_reference_sources": 2829
   },
   "actual_weighted_cubic_action_square_coefficient_minus_three_verified": true,
-  "full_Hilbert_Hstar_quadratic_Taylor_expansion_verified": false
+  "full_Hilbert_Hstar_quadratic_Taylor_expansion_verified": true,
+  "physical_Hilbert_Taylor_and_local_consequences_progress": {
+    "status": "proved_and_strictly_validated",
+    "new_authored_modules": [
+      "NLS.SequenceSpaces.WeightedQuadraticActionAlgebra",
+      "NLS.Articles.KdVConvexity.FreeActionRays",
+      "NLS.Articles.KdVConvexity.ActionRayMomentLimits",
+      "NLS.ComplexAnalysis.SecondDerivativeRayLimit",
+      "NLS.SequenceSpaces.LpOperatorBasisExt",
+      "NLS.Articles.KdVConvexity.ActionTaylorAtZero",
+      "NLS.Articles.KdVConvexity.PhysicalTaylorAtZero",
+      "NLS.Articles.KdVConvexity.ActionHessianBounds",
+      "NLS.Articles.KdVConvexity.PhysicalLocalConsequences",
+      "NLS.ComplexAnalysis.AnalyticQuadraticRemainder",
+      "NLS.Articles.KdVConvexity.PhysicalTaylorExpansion"
+    ],
+    "actual_zero_pair_chart_constructed": true,
+    "all_positive_Hilbert_rays_realized_by_actual_mean_zero_real_rough_sources": true,
+    "exact_action_ray": "I(gamma(t))=t^2*v, gamma(t) tends to the real zero Hminus1 source",
+    "fixed_index_source_radii_do_not_need_to_be_uniform": true,
+    "finite_support_contour_ray_limit": "H(t^2*v)/(t^2)^2 tends to -3*sum_n v_n^2 for every positive finite-support v",
+    "zero_gradient_at_origin_proved": true,
+    "full_bounded_gradient_derivative_at_origin": "-6*Id on the original positive-index complex ell2 space, including infinite-support directions",
+    "basis_density_extension_proved": true,
+    "physical_extension_germ_uniqueness_used": true,
+    "normalization_intrinsic_to_every_PhysicalHstarExtension": true,
+    "full_Hilbert_quadratic_Taylor_remainder": "Hstar(a)+3*sum_n a_n^2=O(norm(a)^3) in the complex ell2 norm",
+    "actual_open_analytic_gradient_inverse_proved": true,
+    "one_Hessian_radius_chosen_before_all_actions_and_real_Hilbert_directions": true,
+    "Hessian_bound_holds_at_all_complex_actions_in_the_ball": true,
+    "strict_concavity_on_positive_Hilbert_ball_proved": true,
+    "Taylor_declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.Taylor_at_zero",
+    "quadratic_remainder_declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.quadratic_Taylor_remainder_raw_actions",
+    "local_inverse_declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.local_gradient_inverse",
+    "Hessian_radius_declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.local_hessian_bound_and_strict_concavity",
+    "actual_larger_V0_frequency_extension_proved": false,
+    "main_Theorem_1_1_complete": false,
+    "main_Theorems_1_2_and_1_3_complete": false,
+    "authored_heartbeat_or_linter_overrides": false,
+    "baseline_proof_source_hashes_unchanged": 2288,
+    "remaining_byte_identical_reference_sources": 2830
+  },
+  "gradient_zero_at_origin_verified": true,
+  "full_bounded_gradient_derivative_minus_six_verified": true,
+  "positive_index_local_gradient_diffeomorphism_verified": true,
+  "single_radius_Hessian_bound_and_local_strict_concavity_verified": true
 }

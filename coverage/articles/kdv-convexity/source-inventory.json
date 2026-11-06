@@ -1841,12 +1841,44 @@
         "NLS.KdV.eventuallyEq_rough_of_physical_real_germ",
         "NLS.Articles.KdVConvexity.realZeroRoughSource",
         "NLS.Articles.KdVConvexity.exists_intrinsic_cubic_action_ratio_at_zero",
-        "NLS.Articles.KdVConvexity.exists_intrinsic_weighted_cubic_action_ratio_at_zero"
+        "NLS.Articles.KdVConvexity.exists_intrinsic_weighted_cubic_action_ratio_at_zero",
+        "NLS.WeightedCoeff.actionsFromNormalizedCoordinates_smul",
+        "NLS.WeightedCoeff.eq_zero_of_real_actionsFromNormalizedCoordinates_eq_zero",
+        "NLS.WeightedCoeff.exists_real_actionsFromNormalizedCoordinates_lift",
+        "NLS.Articles.KdVConvexity.exists_zero_spectral_pair_chart",
+        "NLS.Articles.KdVConvexity.exists_real_rough_action_ray",
+        "NLS.Articles.KdVConvexity.tendsto_weightedContourTerm_div_action_ray_sq",
+        "NLS.Articles.KdVConvexity.positiveQuadrant_real_smul",
+        "NLS.Articles.KdVConvexity.tendsto_contourHamiltonian_div_finite_action_ray_sq",
+        "NLS.ComplexAnalysis.iteratedDeriv_linear_ray",
+        "NLS.ComplexAnalysis.tendsto_div_sq_linear_ray",
+        "NLS.SequenceSpaces.lp_continuousLinearMap_eq_of_single",
+        "NLS.Articles.KdVConvexity.positiveQuadrant_single",
+        "NLS.Articles.KdVConvexity.positiveQuadrant_add",
+        "NLS.Articles.KdVConvexity.actionGradient_derivative_of_basis_hessian",
+        "NLS.Articles.KdVConvexity.actionTaylor_of_finite_ray_limits",
+        "NLS.Articles.KdVConvexity.zero_mem_positiveQuadrant",
+        "NLS.Articles.KdVConvexity.exists_physicalHstarExtension_with_Taylor_at_zero",
+        "NLS.Articles.KdVConvexity.PhysicalHstarExtension.Taylor_at_zero",
+        "NLS.Articles.KdVConvexity.actionBilinearPairing",
+        "NLS.Articles.KdVConvexity.actionBilinearPairing_eq_tsum",
+        "NLS.Articles.KdVConvexity.norm_actionBilinearPairing_le",
+        "NLS.Articles.KdVConvexity.actionBilinearPairing_cotangent",
+        "NLS.Articles.KdVConvexity.action_hessian_eq_pairing_gradient_derivative",
+        "NLS.Articles.KdVConvexity.actionBilinearPairing_real_self",
+        "NLS.Articles.KdVConvexity.exists_action_ball_hessian_bound",
+        "NLS.Articles.KdVConvexity.convex_positiveQuadrant",
+        "NLS.Articles.KdVConvexity.strictConcaveOn_action_positive_ball",
+        "NLS.Articles.KdVConvexity.PhysicalHstarExtension.local_gradient_inverse",
+        "NLS.Articles.KdVConvexity.PhysicalHstarExtension.local_hessian_bound_and_strict_concavity",
+        "NLS.ComplexAnalysis.analytic_quadratic_remainder",
+        "NLS.Articles.KdVConvexity.PhysicalHstarExtension.differential_at_zero",
+        "NLS.Articles.KdVConvexity.PhysicalHstarExtension.hessian_at_zero",
+        "NLS.Articles.KdVConvexity.PhysicalHstarExtension.quadratic_Taylor_remainder",
+        "NLS.Articles.KdVConvexity.PhysicalHstarExtension.quadratic_Taylor_remainder_raw_actions"
       ],
       "remaining": [
-        "Apply the proved actual source identity 8*pi*n*R_n=I_n^2*L_n, L_n(0)=-3, to the actual local coordinate inverse at zero and one-/two-mode positive action openings. Derive the physical Hstar zero differential and all basis Hessian entries, then use Hilbert analyticity and basis density for the full bounded gradient derivative -6*Id.",
-        "Construct the actual original coordinatewise analytic physical KdV frequency family on an ell^(-1,1) neighborhood V0, with physical recovery. Apply the proved common-domain continuation bridge to finish the full V intersect V0 identity.",
-        "Apply the checked analytic consequences to complete the positive-index local diffeomorphism and single Hessian-radius assertion.",
+        "Construct the actual original coordinatewise analytic physical KdV frequency family on an ell^(-1,1) neighborhood V0, with physical recovery. Apply the proved common-domain continuation bridge to finish the full V intersect V0 identity. This is the remaining essential component of main Theorem 1.1.",
         "Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates and physical KdV well-posedness."
       ],
       "verified_statement_components": [
@@ -1871,10 +1903,23 @@
         },
         {
           "component": "Gradient at zero is zero and its full bounded derivative is -6 times identity.",
-          "result": "source_normalization_proved_Hilbert_operator_statement_still_open",
-          "declaration": "NLS.Articles.KdVConvexity.exists_intrinsic_weighted_cubic_action_ratio_at_zero",
-          "scope": "For every positive n, the actual weighted cubic moment factors as I_n(q)^2*L_n(q) near the real zero Hminus1 source, with L_n analytic at zero and L_n(0)=-3; low and collapsed gaps included.",
-          "remaining": "Transport through actual positive-action coordinate openings and identify the full Hilbert zero differential and Hessian. Neither zero gradient nor -6*Id is yet marked complete."
+          "result": "proved",
+          "declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.Taylor_at_zero",
+          "scope": "-6*Id on the original positive-index complex ell2 space, including infinite-support directions",
+          "quadratic_remainder_declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.quadratic_Taylor_remainder_raw_actions",
+          "normalization": "Hstar(a)+3*sum_n a_n^2=O(norm(a)^3) in the complex ell2 norm"
+        },
+        {
+          "component": "An analytic local diffeomorphism near zero on complex ell2.",
+          "result": "proved",
+          "declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.local_gradient_inverse",
+          "scope": "Actual open neighborhoods and an analytic inverse with both inverse identities; the domain is contained in the global physical extension domain."
+        },
+        {
+          "component": "One positive radius, chosen before I and J, for the real Hessian bound d2H(I)[J,J] <= -norm(J)^2 on nonnegative ell2 actions, for every real ell2 direction J.",
+          "result": "proved",
+          "declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.local_hessian_bound_and_strict_concavity",
+          "scope": "The actual physical Hamiltonian on the original positive-index complex ell2 Hilbert space. One Hessian radius covers all complex actions in the ball and every real Hilbert direction, including infinite support; strict concavity holds on the positive ball."
         }
       ]
     },
@@ -4717,5 +4762,46 @@
     "authored_heartbeat_or_linter_overrides": false,
     "baseline_proof_source_hashes_unchanged": 2272,
     "remaining_byte_identical_reference_sources": 2829
+  },
+  "physical_Hilbert_Taylor_and_local_consequences_progress": {
+    "status": "proved_and_strictly_validated",
+    "new_authored_modules": [
+      "NLS.SequenceSpaces.WeightedQuadraticActionAlgebra",
+      "NLS.Articles.KdVConvexity.FreeActionRays",
+      "NLS.Articles.KdVConvexity.ActionRayMomentLimits",
+      "NLS.ComplexAnalysis.SecondDerivativeRayLimit",
+      "NLS.SequenceSpaces.LpOperatorBasisExt",
+      "NLS.Articles.KdVConvexity.ActionTaylorAtZero",
+      "NLS.Articles.KdVConvexity.PhysicalTaylorAtZero",
+      "NLS.Articles.KdVConvexity.ActionHessianBounds",
+      "NLS.Articles.KdVConvexity.PhysicalLocalConsequences",
+      "NLS.ComplexAnalysis.AnalyticQuadraticRemainder",
+      "NLS.Articles.KdVConvexity.PhysicalTaylorExpansion"
+    ],
+    "actual_zero_pair_chart_constructed": true,
+    "all_positive_Hilbert_rays_realized_by_actual_mean_zero_real_rough_sources": true,
+    "exact_action_ray": "I(gamma(t))=t^2*v, gamma(t) tends to the real zero Hminus1 source",
+    "fixed_index_source_radii_do_not_need_to_be_uniform": true,
+    "finite_support_contour_ray_limit": "H(t^2*v)/(t^2)^2 tends to -3*sum_n v_n^2 for every positive finite-support v",
+    "zero_gradient_at_origin_proved": true,
+    "full_bounded_gradient_derivative_at_origin": "-6*Id on the original positive-index complex ell2 space, including infinite-support directions",
+    "basis_density_extension_proved": true,
+    "physical_extension_germ_uniqueness_used": true,
+    "normalization_intrinsic_to_every_PhysicalHstarExtension": true,
+    "full_Hilbert_quadratic_Taylor_remainder": "Hstar(a)+3*sum_n a_n^2=O(norm(a)^3) in the complex ell2 norm",
+    "actual_open_analytic_gradient_inverse_proved": true,
+    "one_Hessian_radius_chosen_before_all_actions_and_real_Hilbert_directions": true,
+    "Hessian_bound_holds_at_all_complex_actions_in_the_ball": true,
+    "strict_concavity_on_positive_Hilbert_ball_proved": true,
+    "Taylor_declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.Taylor_at_zero",
+    "quadratic_remainder_declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.quadratic_Taylor_remainder_raw_actions",
+    "local_inverse_declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.local_gradient_inverse",
+    "Hessian_radius_declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.local_hessian_bound_and_strict_concavity",
+    "actual_larger_V0_frequency_extension_proved": false,
+    "main_Theorem_1_1_complete": false,
+    "main_Theorems_1_2_and_1_3_complete": false,
+    "authored_heartbeat_or_linter_overrides": false,
+    "baseline_proof_source_hashes_unchanged": 2288,
+    "remaining_byte_identical_reference_sources": 2830
   }
 }
