@@ -2847,19 +2847,72 @@ labels with this entire physical spectrum as a set, supplies an original
 H1 eigenvector at every label, proves physical minimality of the lowest
 label and transports semisimplicity of real physical root spaces.
 
-Equality of the **physical algebraic multiplicities** with the earlier
-scalar analytic zero orders remains open here. A self-adjoint L2
+The following milestone identifies the **physical algebraic multiplicities**
+with those scalar analytic zero orders at every real potential. A self-adjoint L2
 realization is not inferred from closedness of the H^-1 operator. The
 Cartesian KdV global inverse, action identities and main Theorems 1.1-1.3
 also remain open. `physical-spectrum-library-reuse.json` records the
 71 exact rechecked source hashes and the 2323 remaining byte-identical
 cached dependencies, which were not rebuilt.
 
+## Actual physical algebraic multiplicities at every real H^-1 potential
+
+`SingularHillMovingProjection.lean` proves bounded-operator norm
+continuity of the original Riesz projection when potential, circle
+center and radius all move continuously. The angular integral stays in
+the original H^-1 operator norm. The original H1 domain is unchanged.
+
+`SingularHillFreeMultiplicity.lean` identifies the free effective
+determinant exactly as `(lambda-pi^2*n^2)^2` and proves actual original
+algebraic multiplicity two at every positive free level.
+`SingularHillFreeGround.lean` identifies the entire original ground
+eigenspace with the complex constants and proves multiplicity one.
+
+The canonical gap centers and collars are continuous through closed
+gaps. `HillHminusOnePhysicalGapProjection.lean` follows these physical
+circles along the literal real potential path `t*q`. Finite projection
+rank stability makes their ranks constant on `[0,1]`.
+`HillHminusOnePhysicalGapRange.lean` identifies the range as the supremum
+of the two actual endpoint root spaces and proves its dimension is two
+at every positive gap. Independent nonzero endpoint spaces therefore
+have dimensions one and one when the gap is open; a closed gap has one
+actual root space of dimension two. A separate continuously moving
+ground circle retains the one-dimensional free ground range.
+
+`HillHminusOnePhysicalMultiplicity.lean` proves the full identity
+
+```text
+physicalAlgebraicMultiplicity(L(Q),lambda)
+  = analyticOrderNatAt(Delta_Hminus(q,.)^2-4,lambda)
+```
+
+for every **real** unit-period H^-1 potential and **every complex**
+energy. The original full H1 operator domain and full algebraic root
+chain definition are retained. Ground, zero energy, all low/open/closed
+gaps, nonreal energies and nonspectral values are included. There is no
+extra mean-zero, finite-support, smoothness or simplicity hypothesis.
+The canonical real label fiber counts are now exactly the actual
+physical algebraic multiplicities, not only scalar characteristic orders.
+
+No multiplicity equality for nonreal potentials or self-adjoint L2
+realization is inferred. Global Cartesian KdV inversion/action identities
+and Theorems 1.1-1.3 remain open. The inherited 2323-source import closure
+matches the read-only reference and was not rebuilt; its hashes are in
+`physical-multiplicity-library-reuse.json`.
+
+The shared frequencies branch was also re-inspected at `6921d8d`.
+Its actual global rough forward data are constructed; global real
+mean-zero injectivity and real-preserving local inverses at every rough
+real base are proved. Those source declarations are pinned as subsequent
+reuse candidates, not imported or counted as validated here. Global
+rough surjectivity remains explicitly open on that branch too.
+
 ## Remaining essential KdV work
 
-1. Match the physical algebraic multiplicities with the scalar analytic
-   zero orders, construct the self-adjoint L2 realization, and prove the
-   action-fiber/discriminant identity. The full original H1-domain
+1. Prove the action-fiber/discriminant identity. Physical algebraic
+   multiplicities now equal the scalar analytic zero orders at every
+   real H^-1 potential and every complex energy, so canonical labels
+   carry the actual full-domain physical multiplicities. The full original H1-domain
    singular Hill operator is now closed with compact resolvent, and its
    entire spectrum is exactly the actual H^-1 characteristic zero set. Every canonical real label now has
    an intrinsic nonzero H1 scalar weak eigenfunction with its exact sign. Full-discriminant invariance of
@@ -2940,19 +2993,18 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `7ff9406` contains 539 source modules, whose
-source hashes remain unchanged. Seventy-one exact shared modules and six
-authored bridge modules pass Lean 4.33.1/mathlib v4.33.1 with
-`warningAsError=true`, in three completed check drivers. The complete
-reproduction script lists 616 NLS modules and the preceding private
+The validated baseline at `e898788` contains 616 source modules, whose
+source hashes remain unchanged. Nine authored modules pass Lean
+4.33.1/mathlib v4.33.1 with `warningAsError=true`; the complete
+reproduction script lists 625 NLS modules and the preceding private
 pinned mathlib compilation. The positive-index example, cumulative
-transitive axiom audit and 1406 coverage-declaration checks pass. This
+transitive axiom audit and 1455 coverage-declaration checks pass. This
 is incremental validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
 helpers and all declarations originating in 301 additional shared modules:
-6749 declarations in total, transitively. Only `propext`,
+6815 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-06",
-  "milestone": "Identify the entire actual Hminus1 characteristic with the full original closed singular Hill operator spectrum at every complex potential",
+  "milestone": "Identify full original physical algebraic multiplicities with actual characteristic orders at every real Hminus1 potential and every complex energy",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -633,11 +633,20 @@
     "NLS.KdV.SingularHillDenseSpectrum",
     "NLS.KdV.HillHminusOneSingularPotential",
     "NLS.KdV.HillHminusOnePhysicalSpectrum",
-    "NLS.KdV.HillHminusOnePhysicalLabels"
+    "NLS.KdV.HillHminusOnePhysicalLabels",
+    "NLS.KdV.SingularHillMovingProjection",
+    "NLS.KdV.SingularHillFreeMultiplicity",
+    "NLS.KdV.SingularHillFreeGround",
+    "NLS.KdV.SingularHillProjectionRootPair",
+    "NLS.KdV.HillHminusOnePhysicalGapProjection",
+    "NLS.KdV.HillHminusOnePhysicalGapRange",
+    "NLS.KdV.HillHminusOnePhysicalGapMultiplicity",
+    "NLS.KdV.HillHminusOnePhysicalGroundMultiplicity",
+    "NLS.KdV.HillHminusOnePhysicalMultiplicity"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 6749,
+    "declarations": 6815,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -1325,8 +1334,13 @@
     "NLS/KdV/HillHminusOnePairUniqueness.lean": "9978a3e9efdf97127c2e8748104417e45300c9dfa3f7618fe2af2599ec6ac7c3",
     "NLS/KdV/HillHminusOnePhysicalCut.lean": "eb3fa7232841695ce7c83a6784307603ac6d53036125faa9215127ec1fa42079",
     "NLS/KdV/HillHminusOnePhysicalDirichlet.lean": "399b8de979781d5908910bd10b81a645bb84ca7cb31d550b1d529eda655f27c0",
+    "NLS/KdV/HillHminusOnePhysicalGapMultiplicity.lean": "ef35cd0a0c7fd0ba92804f74def27d63de244f49fb7abdb40f2a1a938976e862",
+    "NLS/KdV/HillHminusOnePhysicalGapProjection.lean": "d6bf269cb6dcce4e0f1b9f0b7afbb5bc74bfef70571a610a9109fd1d997d6e37",
+    "NLS/KdV/HillHminusOnePhysicalGapRange.lean": "7efb569a64296ced366693347f61a0bf34275327adfa142b7c3844aea0766519",
+    "NLS/KdV/HillHminusOnePhysicalGroundMultiplicity.lean": "9f0cb8c4f3f16b936c3c5309e5e1934db4e34adea818a9422f51b85e28db09ad",
     "NLS/KdV/HillHminusOnePhysicalHighCuts.lean": "c2a105320092913861adfdecee1917452d1b304131e6213906155b776df7bd3d",
     "NLS/KdV/HillHminusOnePhysicalLabels.lean": "1295dd398fedb1916f2fa4996d48376ca3e83a3fc2694c553a7b0ae24899ea63",
+    "NLS/KdV/HillHminusOnePhysicalMultiplicity.lean": "bacea6e95df3c4ce6a6f73d52e861d23bfb671e7a268c684fb0ca915a0374ef8",
     "NLS/KdV/HillHminusOnePhysicalQuasi.lean": "10050b4fc0301037b50ad97b9749d51aefa97cd498d2c88e9cf89dba1b05a4d7",
     "NLS/KdV/HillHminusOnePhysicalSpectrum.lean": "1eb7a7004abb9d5dafe001a83bed12b5099714bfae55538034140a2981cfa4da",
     "NLS/KdV/HillHminusOnePrimitiveStrip.lean": "9984157753ef5d600407bd4d78dfcd4dcdbce25c1d6cf9c4aab69e2f328da0ed",
@@ -1438,11 +1452,15 @@
     "NLS/KdV/SingularHillDenseSpectrum.lean": "2981b3d360ddf424675d6c64b07015a48fae0099bcb499da754eb76dcc6b86b9",
     "NLS/KdV/SingularHillEnergy.lean": "351161fc3fa21af5ee9f5d49a48d4f6431f6db5581e711025f599f50f3dcdeec",
     "NLS/KdV/SingularHillFredholm.lean": "88e5499cdc1e85c6ec8b99c4d343c398bbf014dd271983df53a0b0483ad0b4e0",
+    "NLS/KdV/SingularHillFreeGround.lean": "f890e2579ca54a5174588ef59a284ff35490674a7d351bb1f0d79e662b74b377",
     "NLS/KdV/SingularHillFreeIsomorphism.lean": "be2cf5bed930a47ddffc874418acd676dde022d6a3bf4eb5587fdeaa94a43634",
+    "NLS/KdV/SingularHillFreeMultiplicity.lean": "0ec7b5364e27ab7b036e107fbd7c754feeb605bdfa9f1c5177944ee49e91631b",
     "NLS/KdV/SingularHillL2Characteristic.lean": "8c5f0ef6ed9953b5bcf14d80fdcbfb78f97ea73bbe71db6eb7eca46c7d840095",
     "NLS/KdV/SingularHillL2Domain.lean": "9e9b223f83f559c9a9858afd78c59586345dbdfed4c8daa937be4c9ffae6c7b3",
+    "NLS/KdV/SingularHillMovingProjection.lean": "d7a68916edce8f81adc67a3297d104adf660d984818f3e29b8dae9f4ed07f9e3",
     "NLS/KdV/SingularHillOperatorDomain.lean": "eea62c9e663aa9faeb7b2b19a5bd93c5d7707b15af4164013e0ff757be35cd95",
     "NLS/KdV/SingularHillPhysical.lean": "1887043fee01b890e56eebe82898d2af3ccdfcdcb203faafd802cc9821db8655",
+    "NLS/KdV/SingularHillProjectionRootPair.lean": "8e6541359eec0655667558516232ea727aae37edd43ee99a561cc4a79f8e22d6",
     "NLS/KdV/SingularHillRealSpectrum.lean": "74b982e500d0b5ffc9fba83709fd1f22a5e4314007bc4a49b8e1beed35d675ac",
     "NLS/KdV/SingularHillResolventFamily.lean": "d54b1773c3a4bc2cc2237bb4cbd01f92867e953ad35d67097d860c6e94d7a157",
     "NLS/KdV/SingularHillRootSpace.lean": "1bd86b23d34a0ce48a33dd665649da038004a528b5d430fd12c83e47bb5532cf",
@@ -1600,7 +1618,7 @@
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
     "NLS/ZakharovShabat/SourceDirichletAntiSamplesAnalytic.lean": "d46e1211272cfa14ed59a35946ba07971d92e09205bd7cc412a746204495e719",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "1d7a9e983c48037b718057ee31c9b5c424bc436658fe8dce8f1174fa251162db",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "91eee2d175aee7e8d520ce60508123610cea0306938651c4ded13234825b6c9d",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/action-sequence-library-reuse.json": "9126c713dd2dbd5eb3b1d902df1cea7bdd35cbbd75a6ee13e21fd9d7fd49827e",
@@ -1620,13 +1638,14 @@
     "coverage/articles/kdv-convexity/log-norming-library-reuse.json": "5ac41afacd68b0f50b3ae87ccb598540e2c7e9025b6fa77866c49f74f02433cd",
     "coverage/articles/kdv-convexity/miura-shared-imports.json": "03ff17c03499d952d3bc9ad51743ae761db5416ca4f93426e2e731fac0a39b00",
     "coverage/articles/kdv-convexity/physical-cut-shared-imports.json": "c6adf4965416cc426fc385ce324b4afb1aae45fec50e499debfbd5c2a2c5997f",
+    "coverage/articles/kdv-convexity/physical-multiplicity-library-reuse.json": "7d1c8a377416df2565220cb470a9dfdfc4fdddbef0bba93ac3151584ba69ead7",
     "coverage/articles/kdv-convexity/physical-spectrum-library-reuse.json": "e36082bd809d71f7ff753f6dd3740433709f156e0f113b4e55189be868c78132",
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
-    "scripts/check-kdv-convexity.sh": "458837c96e9d0d19a8161c52663f91e2f775a7686588a0f3f1bdda398bf3a7bf"
+    "scripts/check-kdv-convexity.sh": "9ac9227a32491d3368613e999d6157b443f095938a6d3022b4f926cd3f2f6e01"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-spectrum-audit-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-audit-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -1644,7 +1663,7 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "Global potential-space gluing is now proved: one complex-open neighborhood of the entire real H^-1 space carries all canonical polynomial and cubic moments, agrees with every actual real period, and retains locally uniform complex-tail quadratic bounds. Finite-gap exterior matching, the normalized inversion remainder of Lemma 4.4 and the physical energy/frequency identities remain open.",
-    "Construct the full Cartesian KdV spectral coordinates and an analytic inverse potential realization near all real normalized Hilbert pairs. Prove their quadratic actions equal the actual Arnold actions and that equal action sequences determine the full discriminant, then instantiate the verified positive-ell2 analytic contour extension. The actual Dirichlet energy/norming map and its bounded Jacobian are analytic near every real H^-1 potential, with exact intrinsic differential functionals; its mean-zero free derivative is a Fourier isomorphism giving a local inverse. Prove the all-real/global inverse and symplectic/action identities. The actual full original H1-domain singular Hill operator is now realized on every original unit-period complex H^-1 input with equivalent source norms, closed graph and compact resolvent. Its entire physical spectrum is exactly the zero set of the actual characteristic, and real canonical labels exhaust that spectrum. Match the physical algebraic multiplicities with scalar analytic zero orders; a self-adjoint L2 realization has not been constructed here. Physical renormalized Hamiltonian/frequencies, -6*Id and main Theorems 1.1-1.3 remain unverified.",
+    "Construct the full Cartesian KdV spectral coordinates and an analytic inverse potential realization near all real normalized Hilbert pairs. Prove their quadratic actions equal the actual Arnold actions and that equal action sequences determine the full discriminant, then instantiate the verified positive-ell2 analytic contour extension. The actual Dirichlet energy/norming map and its bounded Jacobian are analytic near every real H^-1 potential, with exact intrinsic differential functionals and a mean-zero Fourier isomorphism at zero. The full original closed H1-domain Hill operator is already realized at every complex H^-1 potential; for every real potential, its full physical algebraic multiplicities now equal the scalar analytic characteristic orders at every complex energy. Canonical real labels therefore enumerate the entire physical spectrum with actual algebraic multiplicities. Reuse the newer constructed global rough Abelian forward map, its all-real local inverses and real global injectivity where applicable; global rough surjectivity and the full coordinate/action realization remain open. Identify physical renormalized Hamiltonian/frequencies and -6*Id and complete main Theorems 1.1-1.3. No self-adjoint L2 realization or multiplicity statement for nonreal potentials is inferred here.",
     "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. Even polynomial Arnold periods are nonnegative; the level-zero Arnold and cubic zero sets equal the closed-gap set. These signs and zero criteria hold for the common all-index family and its matched source tail at every real input. Global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
@@ -1665,9 +1684,10 @@
     "The exact free Dirichlet column is sin(n*pi*x)/(n*pi); its squared mass and H^-1 potential pairing now fix the actual derivative dmu_n(0)[h]=h_0-(h_n+h_-n)/2. The global normalized ell2 energy map has this full bounded derivative divided by 1+n. The logarithmic norming derivative, combined mean-zero inverse and all main theorems remain unproved.",
     "The combined actual energy/norming map now has a two-sided complex analytic inverse on open neighborhoods of zero in mean-zero H^-1 and ell2 x ell2. A global Cartesian KdV inverse near all real normalized Hilbert pairs, symplecticity, Arnold action identities and the unconditional main theorems remain open.",
     "The entire bounded Hilbert spectral Jacobian is now analytic on the actual global potential domain, with exact energy and chart-independent norming functionals at every real potential. Invertibility of its mean-zero restriction away from zero, global Cartesian KdV coordinates, symplectic/action identities and the unconditional main theorems remain open.",
-    "The entire full original singular Hill spectrum is now exactly Delta_Hminus(q,lambda)^2=4 for every complex H^-1 potential, with the original full H1 domain. Real canonical labels exhaust the actual physical spectrum and original real algebraic root spaces are semisimple. Equality of physical multiplicities with scalar analytic zero orders, a self-adjoint L2 realization, the global Cartesian KdV inverse/action identities and all main theorems remain open."
+    "The entire full original singular Hill spectrum is now exactly Delta_Hminus(q,lambda)^2=4 for every complex H^-1 potential, with the original full H1 domain. Real canonical labels exhaust the actual physical spectrum and original real algebraic root spaces are semisimple. Equality of physical multiplicities with scalar analytic zero orders, a self-adjoint L2 realization, the global Cartesian KdV inverse/action identities and all main theorems remain open.",
+    "For every real original H^-1 potential and every complex energy, physical algebraic multiplicity now equals the entire characteristic analytic zero order, on the original full H1 domain. Ground, open/closed gaps and nonspectral values are included. Nonreal-potential multiplicity equality and a self-adjoint L2 realization are not claimed. Global rough KdV surjectivity, global coordinate/action identities, physical Hamiltonian/frequency assertions and all main theorems remain open."
   ],
-  "previous_progress_commit": "7ff9406086cbfd4d13cbb30162cae68983aa5630",
+  "previous_progress_commit": "e898788c9cbfe98ad4b0d187a96e6ca54d9a7f88",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -2159,7 +2179,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation against 7ff9406: all 539 baseline source hashes unchanged; 71 exact pinned shared modules and six authored bridge modules pass warningAsError checks in three completed drivers, followed by the positive-index example, cumulative transitive axiom audit and 1406 coverage-name checks. The full reproduction script lists 616 NLS modules plus the preceding private pinned mathlib compilation. Remaining inherited import-closure sources (2323 outside the focused baseline/new modules) match the read-only compiled reference byte-for-byte and were not rebuilt.",
+  "focused_validation_scope": "Incremental validation against e898788: all 616 baseline source hashes unchanged; nine authored modules pass warningAsError checks, followed by the positive-index example, cumulative transitive axiom audit and 1455 coverage-name checks. The complete reproduction script lists 625 NLS modules plus the preceding private pinned mathlib compilation. Inherited import-closure sources (2323 outside the focused baseline) match the read-only compiled reference byte-for-byte and were not rebuilt.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -2469,9 +2489,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 1406,
+    "declarations": 1455,
     "audit_modules_present": 301,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/PhysicalSpectrumCoverageNames.log"
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/PhysicalMultiplicityCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -2560,779 +2580,87 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "7ff9406086cbfd4d13cbb30162cae68983aa5630",
-    "baseline_modules": 539,
+    "baseline_commit": "e898788c9cbfe98ad4b0d187a96e6ca54d9a7f88",
+    "baseline_modules": 616,
     "baseline_source_hashes_unchanged": true,
-    "newly_checked_exact_shared_modules": 71,
-    "newly_checked_authored_modules": 6,
+    "newly_checked_exact_shared_modules": 0,
+    "newly_checked_authored_modules": 9,
     "completed_module_checks": [
       {
-        "module": "NLS.KdV.FreeHillRegularity",
-        "source_sha256": "3381c7cdacbab7032a648f01132cbde618bd5bea46763d9851dc939fddb7b235",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.FreeHillRegularity.lean.log",
+        "module": "NLS.KdV.SingularHillMovingProjection",
+        "source_sha256": "d7a68916edce8f81adc67a3297d104adf660d984818f3e29b8dae9f4ed07f9e3",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillMovingProjection.lean.log",
         "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
+        "result": "passed"
       },
       {
-        "module": "NLS.SequenceSpaces.NegativeSpectralWeight",
-        "source_sha256": "fb0339634ff5d28f9bfc442f51907a1367ad4fee3815fa16cd232c16f80706b2",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.NegativeSpectralWeight.lean.log",
+        "module": "NLS.KdV.SingularHillFreeMultiplicity",
+        "source_sha256": "0ec7b5364e27ab7b036e107fbd7c754feeb605bdfa9f1c5177944ee49e91631b",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillFreeMultiplicity.lean.log",
         "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
+        "result": "passed"
       },
       {
-        "module": "NLS.SequenceSpaces.HillMixedKernel",
-        "source_sha256": "20c291246496d1c314e5f3df2db3cb038990b714bb66d6c1d4e381486c219c6c",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.HillMixedKernel.lean.log",
+        "module": "NLS.KdV.SingularHillFreeGround",
+        "source_sha256": "f890e2579ca54a5174588ef59a284ff35490674a7d351bb1f0d79e662b74b377",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillFreeGround.lean.log",
         "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
+        "result": "passed"
       },
       {
-        "module": "NLS.KdV.PseudomeasureKernel",
-        "source_sha256": "f01c07d26885a0f79ee7ca89c786174d27cc1ec121eff8366b2eb2125a76aa8b",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureKernel.lean.log",
+        "module": "NLS.KdV.SingularHillProjectionRootPair",
+        "source_sha256": "8e6541359eec0655667558516232ea727aae37edd43ee99a561cc4a79f8e22d6",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillProjectionRootPair.lean.log",
         "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
+        "result": "passed"
       },
       {
-        "module": "NLS.SequenceSpaces.InfinityMatrix",
-        "source_sha256": "db5010ffc574d3779e99c246708de4cb1831ab6c5e85cf16ed59e01b0091ff12",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.InfinityMatrix.lean.log",
+        "module": "NLS.KdV.HillHminusOnePhysicalGapProjection",
+        "source_sha256": "d6bf269cb6dcce4e0f1b9f0b7afbb5bc74bfef70571a610a9109fd1d997d6e37",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOnePhysicalGapProjection.lean.log",
         "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
+        "result": "passed"
       },
       {
-        "module": "NLS.SequenceSpaces.ShiftReflection",
-        "source_sha256": "60240db4cfe2229c4c4d112815163341636552473ef588295432f0b24c0df676",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.ShiftReflection.lean.log",
+        "module": "NLS.KdV.HillHminusOnePhysicalGapRange",
+        "source_sha256": "7efb569a64296ced366693347f61a0bf34275327adfa142b7c3844aea0766519",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOnePhysicalGapRange.lean.log",
         "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
+        "result": "passed"
       },
       {
-        "module": "NLS.KdV.PseudomeasurePerturbation",
-        "source_sha256": "8a02466f93b8d9e3280cb298001b67a5e8e69c0ae4692a660298506b4cc04068",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasurePerturbation.lean.log",
+        "module": "NLS.KdV.HillHminusOnePhysicalGapMultiplicity",
+        "source_sha256": "ef35cd0a0c7fd0ba92804f74def27d63de244f49fb7abdb40f2a1a938976e862",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOnePhysicalGapMultiplicity.lean.log",
         "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
+        "result": "passed"
       },
       {
-        "module": "NLS.SequenceSpaces.SobolevConvolutionBounds",
-        "source_sha256": "4a607fc257db00cb10d991efe25cb91334054ed66703ba3ad8f8e85d248a6564",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.SobolevConvolutionBounds.lean.log",
+        "module": "NLS.KdV.HillHminusOnePhysicalGroundMultiplicity",
+        "source_sha256": "9f0cb8c4f3f16b936c3c5309e5e1934db4e34adea818a9422f51b85e28db09ad",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOnePhysicalGroundMultiplicity.lean.log",
         "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
+        "result": "passed"
       },
       {
-        "module": "NLS.Fourier.PeriodicH1Multiplication",
-        "source_sha256": "b4bb3d0c9bb9f6f93b3813462aa50bd9699db7604873d69d0b87f813431b433f",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Fourier.PeriodicH1Multiplication.lean.log",
+        "module": "NLS.KdV.HillHminusOnePhysicalMultiplicity",
+        "source_sha256": "bacea6e95df3c4ce6a6f73d52e861d23bfb671e7a268c684fb0ca915a0374ef8",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOnePhysicalMultiplicity.lean.log",
         "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.SequenceSpaces.WienerWeakStar",
-        "source_sha256": "2a076d7574d6563ce90040c202599697876fb6d01b6ed7c1dba84ad35a0c378c",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.WienerWeakStar.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.SequenceSpaces.WeightedWienerWeakStar",
-        "source_sha256": "7015840f12a415b9c63ed5398e6bd9e1ddf9d2fe888a747520b7689c6a70be1c",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.WeightedWienerWeakStar.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.SequenceSpaces.WeightedWeakStarCompactness",
-        "source_sha256": "bb0b70dbb82bff45ebb1f618894793caef99aa8b82d1b79bf794d5ea29c96202",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.WeightedWeakStarCompactness.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.SequenceSpaces.WeightedWeakStarLowerTopology",
-        "source_sha256": "508a71a1cf7499a555cd7a66a5ba0f506689ad99fd23b052ee1196c0032a843e",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.WeightedWeakStarLowerTopology.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureRegularity",
-        "source_sha256": "df3e3b2a926bf0644f0853133d9b236387139c1596379047b3fcab59ffdfe93c",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureRegularity.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.SequenceSpaces.NegativeModulation",
-        "source_sha256": "673ab91d9ec56869e589df04eeff4afc372278e87375a28614dc6936859d5cdc",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.NegativeModulation.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.SequenceSpaces.SignedSobolevConvolution",
-        "source_sha256": "2a59cc5b9417182e3bcb4438af84ddfc4d12641fc34eae24bf68c436cada6fcd",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.SignedSobolevConvolution.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureMultiplication",
-        "source_sha256": "87fa1110d485bd267a67b8a65184b1bea12560d02b09e47dacc25708b2c86eba",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureMultiplication.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillPhysical",
-        "source_sha256": "1887043fee01b890e56eebe82898d2af3ccdfcdcb203faafd802cc9821db8655",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillPhysical.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillFreeIsomorphism",
-        "source_sha256": "be2cf5bed930a47ddffc874418acd676dde022d6a3bf4eb5587fdeaa94a43634",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillFreeIsomorphism.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.SequenceSpaces.EndpointCompactInclusion",
-        "source_sha256": "dc548023a9917395921f454ac82e90451c3260e10e36288f37d5dca05d27bac2",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.EndpointCompactInclusion.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureFredholm",
-        "source_sha256": "c6925d965f8e765f906ee0296b9a0c4a936ba60f24e0beda006f71e8714929ce",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureFredholm.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.FreeHillAnalytic",
-        "source_sha256": "13b1d8e49c4f717a8bee34c476917f18cf41b22b988904f027e1ae1d52404190",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.FreeHillAnalytic.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureTailInverse",
-        "source_sha256": "687364671778fca0082f2abc0f487b03d4447c9ac15a9483011a799f510a3bc9",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureTailInverse.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureReduction",
-        "source_sha256": "90794b1f914252d92694b0f64cce51236e979f3490bcef0c1a97956214c4fcfe",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureReduction.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureAnalytic",
-        "source_sha256": "4f32cf077bcb8aa7730ceb0ea19f9b63b31842adc1fa195857bf0f810c3e90c8",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureAnalytic.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureLocalization",
-        "source_sha256": "678c89d336fc0d609ad70c850e951ed7e8c8ffb11cb5a45663695741dcd5eed5",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureLocalization.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureZeroCount",
-        "source_sha256": "e1110debbe210e87826986ace226ef39eb37af81f59dee27571ea7c89f99d3dc",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureZeroCount.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureResolvent",
-        "source_sha256": "d718ad1cfc3be699c035e23672c43ab1f2bd44a32e366b73e13b380856abf9bc",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureResolvent.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillOperatorDomain",
-        "source_sha256": "eea62c9e663aa9faeb7b2b19a5bd93c5d7707b15af4164013e0ff757be35cd95",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillOperatorDomain.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureSpectrum",
-        "source_sha256": "22c430fe535e39da8ebbd4109c6717dc01d069f53f025ab53210823809abeb5a",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureSpectrum.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.FunctionalAnalysis.ResolventRootSpace",
-        "source_sha256": "293c79c78a088a0d750c84225ab6057a2e26ae2be82c281c5c467b85953984ba",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.FunctionalAnalysis.ResolventRootSpace.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillRootSpace",
-        "source_sha256": "1bd86b23d34a0ce48a33dd665649da038004a528b5d430fd12c83e47bb5532cf",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillRootSpace.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureEllipticRegularity",
-        "source_sha256": "d1324c1dd93113b79f18c9b03f28040b56dd28460c7eed23b22231a403ce7bd5",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureEllipticRegularity.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureRootSpaces",
-        "source_sha256": "048dd52ee786e58563f9e8174b0eb7817e78c0d67c4077025d43bfad593332a5",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureRootSpaces.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.ComplexAnalysis.CircleOpenCollar",
-        "source_sha256": "d888c02dc0baf41031e73b30e2ac5c53964dba6b4cb3caa7e829cbb60c64b79f",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.CircleOpenCollar.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.FunctionalAnalysis.CircleResolventProjection",
-        "source_sha256": "875fecafa6ac103cdc050e4178137f44b3e35090cbe14a5a123a9f2478fadc60",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.FunctionalAnalysis.CircleResolventProjection.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.Fourier.PeriodicSingularMultiplicationFamily",
-        "source_sha256": "b4fc4a8842a2e4434ad64c697af9f95c11e74a005bcde2541b936fb8417931c0",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Fourier.PeriodicSingularMultiplicationFamily.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureRieszProjection",
-        "source_sha256": "42be33c3c17367b9a74cc365026ed4626d8cb1cb8b34ba5ed12b18a535269532",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureRieszProjection.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillResolventFamily",
-        "source_sha256": "d54b1773c3a4bc2cc2237bb4cbd01f92867e953ad35d67097d860c6e94d7a157",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillResolventFamily.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.Fourier.PeriodicSobolevConjugation",
-        "source_sha256": "230392238ae2daf6d6ec26eda67c52bbf532e7a9998e6bc2eac2be477e371368",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Fourier.PeriodicSobolevConjugation.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillBilinear",
-        "source_sha256": "a175144c88790df0d560a5ddd250e5520dc533bd036ae181f5e57daf6df71159",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillBilinear.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillSesquilinear",
-        "source_sha256": "f0d046bc412d60b66a6bfcfa4c4e62283bdf067b29df36e257fdb16797a09088",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillSesquilinear.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.SequenceSpaces.HilbertProductTame",
-        "source_sha256": "2007625a626c8447965276c204d8edeece4ee3a8a273c3ea137d6cdb378cbbeb",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.HilbertProductTame.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.Fourier.PeriodicH1FormBound",
-        "source_sha256": "1f060ae6c6419dea87dc0356c7a261621fb9c9d74a1fef94137734e136a34a5d",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Fourier.PeriodicH1FormBound.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillEnergy",
-        "source_sha256": "351161fc3fa21af5ee9f5d49a48d4f6431f6db5581e711025f599f50f3dcdeec",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillEnergy.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillSemibounded",
-        "source_sha256": "cb97a27a233bc71e0b54f06bc94893a0b91d1d9a7a870e2860bb323784eb0b51",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillSemibounded.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillFredholm",
-        "source_sha256": "88e5499cdc1e85c6ec8b99c4d343c398bbf014dd271983df53a0b0483ad0b4e0",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillFredholm.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillSpectrum",
-        "source_sha256": "a50f20589346b3859ef3da692985b7a69f5f2a26ac51a14d84d067312b0f2e3d",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillSpectrum.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillAlgebraicMultiplicity",
-        "source_sha256": "bd084eba57c74d7e5a2594cdc222e137dc4a3b5fc414e01f9edb9e2fddfe85f9",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillAlgebraicMultiplicity.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillL2Domain",
-        "source_sha256": "9e9b223f83f559c9a9858afd78c59586345dbdfed4c8daa937be4c9ffae6c7b3",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillL2Domain.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillL2Characteristic",
-        "source_sha256": "8c5f0ef6ed9953b5bcf14d80fdcbfb78f97ea73bbe71db6eb7eca46c7d840095",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillL2Characteristic.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.FunctionalAnalysis.PencilRootSemisimple",
-        "source_sha256": "868a3d3bdc259c849a3e8849af636150ad5dea8cb4169121509a632507a0f5f6",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.FunctionalAnalysis.PencilRootSemisimple.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillRealSpectrum",
-        "source_sha256": "74b982e500d0b5ffc9fba83709fd1f22a5e4314007bc4a49b8e1beed35d675ac",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillRealSpectrum.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.FunctionalAnalysis.PencilRootChains",
-        "source_sha256": "ca36c1bbe2d860e8dd0995634c109d7b9e71e44b9acf6c7221f6f57f38b6a5a0",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.FunctionalAnalysis.PencilRootChains.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureH1Analytic",
-        "source_sha256": "cffbf93f62621e66bbffc0df46933813d9fa2839188fc42e4eac63edb32ac336",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureH1Analytic.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureCoefficients",
-        "source_sha256": "360479ad68465bb2f3ce8b0cbf9526de6e400ca37916e6ae48638d65bdbf841f",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureCoefficients.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureBilinearSymmetry",
-        "source_sha256": "7b12c7c40eff1328937cc5e03357eb483ed72b289473e92f40501f28e59284dc",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureBilinearSymmetry.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureReconstructionAnalytic",
-        "source_sha256": "2865d5489a41277cf250cffd6ef7062768958e4fde704425857e2b71c4497724",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureReconstructionAnalytic.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureInhomogeneousReduction",
-        "source_sha256": "5444be52063524cb219dc7ebfd920e2cd2008d12b5af0692e5b7e215a9b5962c",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureInhomogeneousReduction.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.ComplexAnalysis.PoweredAnalyticJet",
-        "source_sha256": "d7bd3babe85505a12c0a6f70aad51ed6187a759b89884f6b244d78c02f29ef9a",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.PoweredAnalyticJet.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillChains",
-        "source_sha256": "bed5928f113d6d41ab40a4bae834cce9a26e671302324258d1c6b344635effb1",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillChains.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureChainJets",
-        "source_sha256": "adb3e009953d18d3f54cd31989df455d86b15020228167395ca7e870b3a8c964",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureChainJets.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.ComplexAnalysis.BanachFiniteJets",
-        "source_sha256": "acb5c1d03b08e9cdf61f4db6f0e6592ecc72f8386c50bab66ed4bbc5053a3146",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.BanachFiniteJets.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.ComplexAnalysis.MatrixAnalyticJetAction",
-        "source_sha256": "1a9092b39a64066db7eb82c4224a3fb616c591428dc9b9b493c1913ae8cbfcb8",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.MatrixAnalyticJetAction.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.ComplexAnalysis.AffinePencilJets",
-        "source_sha256": "3670ac9abad65b6268bce85f8142ea106b0b53a68b99fbe56224a4903a3a5194",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.AffinePencilJets.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureTaylorKernel",
-        "source_sha256": "45d62fca96af6b942890c691c9c1108dc421d64e89b59a57a88f64395c9bc24b",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureTaylorKernel.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureMultiplicityOrder",
-        "source_sha256": "b75f4d4e01a6ad2cf080da3fe4c4da28f56a87939e891ce4ad6194843699f3ed",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureMultiplicityOrder.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureRealSpectrum",
-        "source_sha256": "892e69f480e43eae347bd0d43145dc7a233f68b7a232ad806e193e0c14c0e7ac",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureRealSpectrum.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.FunctionalAnalysis.FiniteInvariantSpectrum",
-        "source_sha256": "d02fb09facb2db2a125d85c71448ae1596473a6f447d5b06327da0be0d791f7a",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.FunctionalAnalysis.FiniteInvariantSpectrum.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.PseudomeasureRieszRange",
-        "source_sha256": "a5be912ae1830da3af4b04077bb0f76b6e0a6e55ca09ca90a3984ef8e531f08f",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.PseudomeasureRieszRange.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.KdV.SingularHillSpectralProjection",
-        "source_sha256": "ddd6fab83b811aedfc8ca3b6d8b330af53ae354ca5293878b21e9ad434d1bfcf",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/singular-operator-projection-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillSpectralProjection.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "exact shared source",
-        "source_commit": "96091c032a493d784e382745e2394400beaab1be"
-      },
-      {
-        "module": "NLS.SequenceSpaces.PeriodOneHminusOneDoubling",
-        "source_sha256": "75ae28701051bd28544398c510cb350532d43ffc3d1f5f4c22f12d3d32bb17ce",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-spectrum-authored-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.PeriodOneHminusOneDoubling.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "authored bridge"
-      },
-      {
-        "module": "NLS.ComplexAnalysis.ClosedZeroGraphPersistence",
-        "source_sha256": "977f6ca9e37448c6da701097b5e47f82953ae551d9a0baae1d64b346a7c657ab",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-spectrum-authored-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.ClosedZeroGraphPersistence.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "authored bridge"
-      },
-      {
-        "module": "NLS.KdV.SingularHillDenseSpectrum",
-        "source_sha256": "2981b3d360ddf424675d6c64b07015a48fae0099bcb499da754eb76dcc6b86b9",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-spectrum-authored-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.SingularHillDenseSpectrum.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "authored bridge"
-      },
-      {
-        "module": "NLS.KdV.HillHminusOneSingularPotential",
-        "source_sha256": "f7309c42786e8e29b0566173558f2261b5e849ae370a9db5b12e7f628c82a082",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-spectrum-authored-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneSingularPotential.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "authored bridge"
-      },
-      {
-        "module": "NLS.KdV.HillHminusOnePhysicalSpectrum",
-        "source_sha256": "1eb7a7004abb9d5dafe001a83bed12b5099714bfae55538034140a2981cfa4da",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-spectrum-authored-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOnePhysicalSpectrum.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "authored bridge"
-      },
-      {
-        "module": "NLS.KdV.HillHminusOnePhysicalLabels",
-        "source_sha256": "1295dd398fedb1916f2fa4996d48376ca3e83a3fc2694c553a7b0ae24899ea63",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-spectrum-authored-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOnePhysicalLabels.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "kind": "authored bridge"
+        "result": "passed"
       }
     ],
-    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-spectrum-audit-validation.log",
-    "inherited_reference_import_source_manifest": "coverage/articles/kdv-convexity/physical-spectrum-library-reuse.json",
+    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-multiplicity-audit-validation.log",
+    "inherited_reference_import_source_manifest": "coverage/articles/kdv-convexity/physical-multiplicity-library-reuse.json",
     "inherited_reference_import_closure_rebuilt": false
   },
   "Hminus1_real_spectral_progress": {
@@ -4799,5 +4127,60 @@
     "inherited_library_source_reuse_manifest": "coverage/articles/kdv-convexity/physical-spectrum-library-reuse.json",
     "remaining_inherited_reference_import_closure_sources_byte_identical": 2323,
     "remaining_inherited_reference_import_closure_rebuilt_this_milestone": false
+  },
+  "Hminus1_physical_characteristic_multiplicity_progress": {
+    "actual_moving_resolvent_circles_and_projection_continuity_in_original_Hminus1_operator_norm": true,
+    "moving_center_and_radius_retain_canonical_gap_labels_and_closed_gaps": true,
+    "actual_original_free_ground_root_space_linearly_equivalent_to_complex_constants": true,
+    "original_free_ground_algebraic_multiplicity": 1,
+    "original_free_positive_level_algebraic_multiplicity": 2,
+    "rank_constant_along_actual_straight_real_potential_paths_by_finite_projection_rank_stability": true,
+    "actual_ground_projection_rank_one_at_every_real_Hminus1_potential": true,
+    "actual_positive_gap_projection_rank_two_at_every_real_Hminus1_potential": true,
+    "physical_gap_projection_range_equals_supremum_of_actual_endpoint_root_spaces": true,
+    "closed_gap_actual_full_original_algebraic_multiplicity_two": true,
+    "open_gap_actual_full_original_endpoint_algebraic_multiplicities_one_and_one": true,
+    "original_ground_algebraic_multiplicity_one_at_every_real_Hminus1_potential": true,
+    "actual_original_Hill_algebraic_multiplicity_equals_characteristic_zero_order_at_every_real_potential_and_every_complex_energy": true,
+    "exact_statement": "For every real unit-period H^-1 q and every complex lambda, singularHillAlgebraicMultiplicity(periodOneSingularPotential(q),lambda)=analyticOrderNatAt(Delta_Hminus(q,.)^2-4,lambda).",
+    "real_canonical_label_fiber_counts_equal_actual_physical_algebraic_multiplicities": true,
+    "original_full_H1_domain_and_full_algebraic_chain_requirements_retained": true,
+    "nonreal_nonspectral_zero_energy_open_and_closed_gap_cases_included": true,
+    "mean_zero_extra_regularity_finite_support_or_simplicity_hypothesis_required": false,
+    "complex_nonreal_potential_multiplicity_identification_proved": false,
+    "self_adjoint_L2_operator_realization_inferred_from_Hminus1_closedness": false,
+    "full_global_Cartesian_KdV_inverse_and_Arnold_action_identities_proved": false,
+    "main_Theorem_1_1_unconditional_positive_ell2_extension_proved": false,
+    "physical_multiplicity_declaration": "NLS.KdV.singularHillAlgebraicMultiplicity_periodOne_eq_analyticOrderNatAt",
+    "physical_label_count_declaration": "NLS.KdV.multiplicity_hillHminusRealLabels_physical",
+    "new_authored_modules": [
+      "NLS.KdV.SingularHillMovingProjection",
+      "NLS.KdV.SingularHillFreeMultiplicity",
+      "NLS.KdV.SingularHillFreeGround",
+      "NLS.KdV.SingularHillProjectionRootPair",
+      "NLS.KdV.HillHminusOnePhysicalGapProjection",
+      "NLS.KdV.HillHminusOnePhysicalGapRange",
+      "NLS.KdV.HillHminusOnePhysicalGapMultiplicity",
+      "NLS.KdV.HillHminusOnePhysicalGroundMultiplicity",
+      "NLS.KdV.HillHminusOnePhysicalMultiplicity"
+    ],
+    "inherited_library_source_reuse_manifest": "coverage/articles/kdv-convexity/physical-multiplicity-library-reuse.json",
+    "inherited_reference_import_closure_sources_byte_identical": 2323,
+    "inherited_reference_import_closure_rebuilt_this_milestone": false,
+    "newer_shared_rough_forward_inverse_candidates": {
+      "branch": "articles/kdv-kdv2-frequencies",
+      "commit": "6921d8d05ca7e0d05ba9417a0916503694319f9a",
+      "scope": "Read-only inspection, not imported or counted as revalidated in this milestone. Actual global rough forward data are constructed; global real mean-zero injectivity and a real-preserving local inverse at every real rough base are proved. Global rough surjectivity remains open.",
+      "candidate_roots": [
+        "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianForward.lean",
+        "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInjective.lean",
+        "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInverseMatching.lean"
+      ],
+      "inspected_declarations": [
+        "nonempty_globalRoughAbelianForwardData",
+        "GlobalRoughAbelianForwardData.signed_injective_real_meanZero",
+        "GlobalRoughAbelianForwardData.exists_one_weak_inverse_all_native_matching"
+      ]
+    }
   }
 }
