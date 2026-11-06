@@ -840,6 +840,11 @@
           "source_clause": "ONE common complex weak-action ball chosen BEFORE EVERY actual KdV frequency, with real nonnegative-locus values and full native recovery",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_common_kdv_weak_action_frequency",
           "qualification": "There exist ONE radius rho>0 and functions g_n complex analytic on the SAME full complex normalized weak l1 action ball, chosen BEFORE EVERY positive n. ALL g_n are real valued on the entire nonnegative action locus of that SAME ball. For EVERY original real mean-zero native H1 source whose ACTUAL weak actions lie in that ball, and EVERY n, g_n equals the TRUE independent physical KdV frequency minus (2*pi*n)^3. Original weak action normalization is exactly Weight.sobolev(-1) times the original actions. Arbitrary phases, infinite support and ALL closed own/tail actions are included. There is no n-dependent radius, assumed family factor, assumed rough reality, source-native smallness or finite-gap premise. Sharp sequence-valued target membership and analyticity are still separate."
+        },
+        {
+          "source_clause": "Theorem 1.2(iv): global analytic Hilbert correction and full -6*Id Taylor at zero, with actual native-cone frequency identification",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_global_hilbert_actual_kdv_frequency_with_Taylor",
+          "qualification": "COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. This proves the global Hilbert extension and full origin Taylor support for Theorem 1.2(iv), with agreement on the ENTIRE original native cubic-weight action cone. It does not yet prove agreement on the larger V intersect V0 weak-action domain, compactness of the derivative correction at EVERY action, the sharp sequence-valued weak-action bounds or locally uniform asymptotics. Global weak-cone scalar continuation and the remaining sequence, concavity, inverse and PDE conclusions remain OPEN. The KdV2 weighted moment sums and mass-normalized identification remain OPEN."
         }
       ]
     },
@@ -39558,10 +39563,2242 @@
       "scope": "There exist ONE radius rho>0 and functions g_n complex analytic on the SAME full complex normalized weak l1 action ball, chosen BEFORE EVERY positive n. ALL g_n are real valued on the entire nonnegative action locus of that SAME ball. For EVERY original real mean-zero native H1 source whose ACTUAL weak actions lie in that ball, and EVERY n, g_n equals the TRUE independent physical KdV frequency minus (2*pi*n)^3. Original weak action normalization is exactly Weight.sobolev(-1) times the original actions. Arbitrary phases, infinite support and ALL closed own/tail actions are included. There is no n-dependent radius, assumed family factor, assumed rough reality, source-native smallness or finite-gap premise. Sharp sequence-valued target membership and analyticity are still separate.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "77a062df8c271b130bfece233d8451531cc9cccd127544a2965dfa2550232fa2"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/AnalyticSeries.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6ebd3fd34d32ce236ae7b60756cf1542c36a3e6d76cb671eb756e52c390db15b"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionEmbedding.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "76a71b6f518b8c5ef03af0b5681ad21d838a85a261f92d5c996f761e01585037"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertReindexIsometry.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f2428fa28a733920bd744b6a6803375080279be468cc0b412a8beb54284ab00f"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/HilbertActionUnreindex.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ffd82d4f993a580f043f27ac0bea98887a91f5eac84f343c335ef37f6152e232"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertScalarGradient.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8c77dd1f05d4cb2768b587edc6e9918a7f9168c834824769358d0efc83018e1c"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionDifferential.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a8bb54a95e54ef9d18adc3848eb730e174cd9a2dffb5c438a52afe612164f900"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalExtension.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a78d76d0fa33b892f8b981d49a64f59f7fd0eee4c04eb34c73817cd86359c11d"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BaseContourSeries.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition retained_local_baseline. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8a84db27117c935608f186e0f0c1396f38b0126611a9a98b1b57d19b5762001e"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/TailExtension.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5de2c7ed440338bc5a96c29fc70ae3de7c2c06001d13c292db236b7062e0eef"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BaseContourTailSeries.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition compatibility_bridge. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d861765b05ddb930c27cf949cfaeb0a32cb2f59dd2683052e586ba40040487e6"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ContinuousMapAnalytic.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "723485d2c382bbe0c3fd8b3e904ee9168c58aa52233c36970772aef35dfcd76f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ContinuousMapSuperposition.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8f38c6d264d917dea2429403a070aaa86d03d3bace998b3b5d187ceacaaf2af8"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ContinuousMapAnalyticInverse.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d130092234c2b04dcae7adc7ede8c1427dc1a087a972940c1b8c22ebc5de262f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CompactCoordinateExtension.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "67d591df24a188d919f608dbba5c1e1750c88258cfe9bd728d3e62d6d06a0513"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CompactCoordinateJointExtension.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "63c2a0f1625a69094d691f7a4da4669c97372df40a75f9c9d987802447c6d94b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CompactCoordinateContinuation.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7b6d6f0b6034979de71f59c1c45bd32a15dbce5e3e00fc5e4b5d7ec5a60c239d"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NearbyCircleHomotopy.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b210b415b05cb7477074cc8c00cb12d1697aca9eae3c7659c7ed6a0258bd4f9b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/PhysicalCutCubicSign.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a8e0bf2fe39923e7b915cb97f07e443fe9dd08b983ab1bf4418851de1d28c1b6"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealCutWeightedPowerIntegral.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "901923a011de43f0b8dbc0f585bfb2db611085b870a12bcf59789c11c4c64782"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarCoordinateUniqueness.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4619f5710120f1b85ee1935048ab268cbe45acb717fb5846b47cd44f2f393584"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllBoundaryLimits.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0bc9037a6b2fee99a089f7cb1b4e7ca2205eaa97451f4d4f558caf45314f99bd"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneBoundaryLabelContinuity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2187d094e036be8473598fb49569338df31c58a35d5ff7ee7335f09fd237b186"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllEndpointNormalization.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9b738bcd3a62b84b17be95ed0c15d9310129b77839298447634fd8186e3eda2d"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneBandContinuation.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e518257e0c63b19823a69959f4fe5840b46ed72a34ab9248330a8cf515eacf60"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealGapProfile.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3a05713adf045e288d49a54002a609fd15c48cf4e8c735fdb0ac48686628b20e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneBoundaryGapProfile.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "913e5ce9b7c8a896b2c5b532bddb232bbd0158b40cc6e919948bad8666676b4a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGlobalGapBoundaryValues.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ef1c870be10019ad6af2fd51a4e94e2f139be00cf89120a3ac90f9ae874713f8"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllGapSquares.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "53f29fdd3b0e854439c35c57f47986cd85ab3a2d04a753f1b710dd6a3ac15b71"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllRealPeriods.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "29ca2ce19b67fc08903ae93209e20401c078f0b6d1d74c4a58cc60c0c52f1ff0"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapContourContinuity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d37ba9261fcfaa7df8cf3535d22f8798679468ed908da92c7b8e41922b467e64"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneJointContourPrimitive.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ed50b1df21705db9ebdd55767a1b5a47ed7292d87c2dbc4e84f4a294f49b3ac7"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneJointGapPeriodGerms.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7e403def1ebcb5af71801546cccd3238a285f95edfc818df5144a3c87cae93dc"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTraceChartSource.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "18e716bab8099e3ae2eca54e76bc9f980df87a46e760073ae1fc40dd5ba84a4a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTraceChartBoundary.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7255410db568142888bc53814e9a80882ce8795494bde9cd5b0ccba1257f754d"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTraceChartRealAgreement.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "58445fb433f254785158a3050b930d55e8d6026e42e772b1275891a0a8086969"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAnalyticCanonicalPeriods.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aadf87cb25bb3047f0e7ad38bcd10132bc4f71db1b8343dc1842b3f3bd8690a3"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneFinitePeriodExtensions.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a1ae2660520d65d75e3a6d01a03e8c8a3d7336bab41a0ac991c749ec27a143fa"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllCubicSigns.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "61ae4e774afee8e0db4249adfdd398eb2f2a3f07328fdaf828b7fbced7ded1e9"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealPeriodFormulas.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "153a1e0a4df8c35bdca107fab3d411f3e85b9d7a564a4751e4f829cbb3b5830a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllPeriodZeros.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b719f5f1f4e17e871bb1901ba8526875acd871e4c7f66a4f0d4e835c80e6f300"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/CanonicalMomentPreparation.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a4e67c69a5fb52d284f2e95c4edfda4f18e94fc0f9cd4e4751330a4590877939"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealGapCircleNesting.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3bc3f9fa9e97f1ad253fff90a59bd0e184263c1fe2f3c81e04f7c7ae2318cdb1"
+    },
+    {
+      "path": "NLS/KdV/ActionHamiltonianMomentAlgebra.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition compatibility_bridge. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0bb4e1dc50b38920b51b4254ec3621d393b2d17ab93a9b79437af8bc82fcc7d4"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillMomentRadius.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "08b471ecaf76388fa5aff3c620144bc71ef8e510c05b594737d0b28b3b715303"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillMomentCutRoot.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b962f4382c55e7501bd6f1a9bf01357ff468885bd49fa0f467f9a954da37aa95"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillHighContourActions.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b5a5b11f4408bdc592b36903f2e709684dbef19d0509587336af94830ae4e230"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillActionGapBounds.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dbb5f2b7317a45430c83bd93bc0b1545129f843c1c7b11d802b8a1d17591628f"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillCubicGapBounds.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0fb46fa52a214336b79dc267c5400984404de5dc5f79acf846394a92e48442b5"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCubicGapBounds.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "04d9ffd4a01047d88c32ca7cd234ddbfffc7b6dd9ee88a12d34254ae551f8905"
+    },
+    {
+      "path": "NLS/KdV/HillHminusPairUniquenessCompatibility.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition compatibility_bridge. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8b794119f856e99dd4b396526a1bb7a97441023a3b68638b6ab2de4c13672e2a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneArnoldActionComparison.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0f32b8ddd842c2c88b4f86d814937cb418f2fda61a6838084839c71b247e0f44"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCanonicalTailLocalization.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2b7589199dc1b6ebd308e54b57407da5a5f0b6f22141a42ca84cab93994e0911"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTailContourGeometry.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "212ae8680fd384f7f559fdd61392191d8769509cea1e1adc6627924a0deb9665"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCanonicalHighPeriods.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1d72ee6330971839545cfa3032a2b2c84eb48276f53411db96412240fb5708d3"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/CommonCanonicalMomentFamily.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4bd10d8df2b479aa60e1ce10a5923e00e4f573b3d4ea9cc895cbc5674d21129a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/LocalScalarActionFamilyDescent.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "027e24a2d872d83d2e4c6e86e8f64484e69b6f64cc6b9c944afed7d38cc4d95a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealScalarActionFamilyDescent.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7bd1190899ecb6317356ee704bd2d8dc9866bca5a753afe9ef161d40daa7e278"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ScalarActionFamilyGluing.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "847ebf775275586c2ca25d917b2bf53ed6a324e47b47cec274c226bd09f5c7a2"
+    },
+    {
+      "path": "NLS/SequenceSpaces/GlobalScalarActionFamilyDescent.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a38339b4e884da2f578bfde5527f81cdf23f618436ddd0b2c3527fcafbe0bb31"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedScalarActionFamilyDescent.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "56b54e9ed7338c41f2a58418ba130a53b6b1ddc6122ea821a59b845577cf6f6a"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/CoordinateActionExtension.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e6ccaf0af52cd1f71242fc0ca91232e3a0be02a71e5f48a155de1398643a3310"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealFormBallGluing.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3213aa924bb244ecb36ce04a8cfe0d536943513c30a1a6fe2eebbb0726ccb71d"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealImag.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "beda4f87d014c73cf41b5340f7ed1804d945de395ec1406c511277876bbe2541"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneHminusOneRealForm.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "969214f2960dcc517b0c66bd45a4d8a9fee7c4b8078c9e5c2dd679a6a8a5ddf3"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalCanonicalMomentFamily.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b2f16836ea9a4eb51388a74334f59e1859c5f691b3cc255ed9c585223f10fd06"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CoshLogBoundaryUniqueness.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "165facd262875d95ee154735600341e67492b55e5e30319925fe9921ec3b773b"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIsospectralLabels.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "72bf659376cf1f8938aa6e3bf831e3204a30d7adcdd4237ccbbe85465feb80f9"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIsospectralPrimitive.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8515147db74e95b8c5481725e260ac161cff750ea08e773a2a11de577bbded7f"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIsospectralPeriods.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cfa0923c09b8a8e744bb9747ba5b30847b9457f01535b52b48ed41c35081b906"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/IsospectralCanonicalMoments.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c08e7638701cb06a2eecbbed9d572be6ba59dadd88a9e11aa2e8d2a147ba6065"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillActionUpperBound.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "58415cd3865e2746e07b6d29d753f12cbe9b7d4425bd05f364f0218a5cacad5c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneArnoldGapUpperBound.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "79fe7328712a864b5208f2c2cbf953f89a1fbd3659b9778d3a1a9eeeeda469f5"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraGapComparison.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "21119649cd5dac98f51c3088d101046f5dbc7ecebe7e2257b2cfb500b6b56a82"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapMajorant.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "04e4997f47c674780a5334e82674db3152d7722cdeb8179eb17d61ef69d04c1e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneArnoldMajorant.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "51a4649b94fb266c8e3b85b2e1788c7cfc350b2a906ca4093ad13a3c82809d1a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticSquareTailMajorant.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "edc69423dff00148a8ae2efa00834b36af92a131b596844f71873164e9882f98"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedAnalyticRealization.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3b4d11f15e039314f34709b46608f9909d0deddd14c3e9bff965b432ca2481b8"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/SpectralActionSequence.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bd59fba5087083a345963ff808e4a7467e5e248062afbfd9ed46dbe576846c7c"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalSpectralActions.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5c7ec71a2b397ab2f9110496fe7889bafb051a7db363a50cda2ad20fd5c2def9"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PositiveActionNorm.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bbbc98ebde0b835c62edbf5d39f9ac357c0e15f7858a576c4fdcf4095d2e6607"
+    },
+    {
+      "path": "NLS/KdV/HillHminusPhysicalArnoldActions.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "782257c8dc253a4fd82c0d5ec51804330ecde32ef57c601f017ea065db3465c1"
+    },
+    {
+      "path": "NLS/KdV/HillHminusPhysicalSourceDensity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "43e15aa5d19e46c618e52fc42dfd8383e38690681a4066447c4cf77d29e285f1"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalArnoldCalibration.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0f87eb2455a2a75b53e2c689e906660e75085851124c326bd71443e7d98b1d3b"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalArnoldCoercivity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dddec583edf6deba5f27e8e7e86631176a0758e22e6b894fc2047a87668d1e23"
+    },
+    {
+      "path": "NLS/KdV/HillFiniteActionRealization.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1fafd254990011a4ded91c668e0b4c627534cfd3945732cd0325eb23ffdd2bbc"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FiniteArnoldRealization.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "756a49a1828e27db2a3aa6df0dbab438af1e2b3d40dd53c51149e1c6917804b2"
+    },
+    {
+      "path": "NLS/KdV/HillConstantActionCurves.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "46c4465b27ddd6d66b9ac6fa69431821c103b55921c29404365794bbd32a3fa9"
+    },
+    {
+      "path": "NLS/KdV/HillOriginalSequenceActions.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4f6a1f446c1494620e1fcec4183135c5e8787496c35bb0839ef99d2422edc9b3"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ModulusFiberInvariance.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "01b2f40e138e02e501b177e2476b48e806b675c3cc94fe58b97e97b590a360af"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SingleCoordinatePhase.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9064403fca0e0d1a2896a0d71e1b0c5002e3cf1182e8825869ce9bb27d0cf13e"
+    },
+    {
+      "path": "NLS/KdV/HillOriginalActionFibers.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8f477b1f1df98cbbf5c02be9be5a200145e3fd6caa668b93f63d996f238814dd"
+    },
+    {
+      "path": "NLS/KdV/HillRoughActionApproximation.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1f43156db6ccddfb781d02817ddc827dd0186734df6ba6b8ba31c4f43345e383"
+    },
+    {
+      "path": "NLS/KdV/HillRoughActionFibers.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2c8cb7826d257d1976a04d39c6f861660c9902dc55d4fc811c186f88bc7196b1"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalArnoldActionFibers.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e5afc28695b051a567a1dc7076e9b3050536b3bf5a3a55ed2333050e859a68f4"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraCriticalFrequencies.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9aa82eb7bd48ee4dd3e11f5e63d728f0cb03efe85647afac89f12b934040f4c4"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraCriticalSpectrum.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1c2983e9534c95f1e441aeb650a13926ca6857363cda8f0ee711ad92b11c0780"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraCriticalLabels.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3547819ba8d145248826d462ec8c2d4699c74cf92c758ebf4a379745b9434cde"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraCriticalActions.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "add603ffbe2ccd26d78ff4e9ff31978594b7a689994cf09db46e3ddba5716203"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHigherActionCoefficientContinuity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "119ea8e49b4059432153eb97e1217d6139fa7b9b699272d813617644df0bc7f1"
+    },
+    {
+      "path": "NLS/KdV/HillActionCoefficientLimits.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "331fef02f7925c285ccd9485233e3e76adbae65b3721c97125267afc613d92cd"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalArnoldSurjectivity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cf922b20a468be8852823145f86be727f68b02e50f0aeabd753ec3e18388ed03"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveReindex.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6e9c87c3c0eb088a9ddb16173b33a5a7a0ef25a975b93dee12dd5ddb95941e88"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SignedHilbertPairs.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c77ea59d701fb7e19d5e7cf5e72e6f0c3ea3ac1998b2aca0bad5076e985036eb"
+    },
+    {
+      "path": "NLS/KdV/HillRoughPairInverse.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "24bf097cc0e2bbd0cc30ab92a25f364836da382948a4ca7bb23b38ef96078477"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/LocalSpectralPairCharts.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0fc7f64cb086533b08b20b08a4b4804586347eab353e0d9a15aaf3eca78131c9"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/SpectralCoordinateExtension.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ae97a5fbe4b100c5471732e4b7cb00fe02ba2a27f16d9ae652589396f14c4ad1"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/LocalCubicPairCharts.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "00a89a44cd521899faaa719a4d251325052a2518919d27c07cc71b5770c0dd8f"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ArnoldConeMomentGerms.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3d026d5090765b6164403985fc262439500579a89fe2d44e7d83dbe47fd2aede"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarFamilyTransport.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "94e2b7c6d9b12dd52cd7044a86b2dbe24f8de4bf11bc1e7d295d507d1284ba95"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionMomentNormalization.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f56a545ccf078b4035e2a87d5a3f8aa743daef5062036be1348d2194d397eb1d"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CollapsedQuadraticSolutionValue.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b96ecff1b445d13046e340095b419c66a94964faa827a8cf86cb9e41f2a35a7b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricSineFourthCosineMean.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "62079cff73b8ae0dfd8b339da2ce6c08549a29d2a9e816eeeab9e87a6bea59f0"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricSineFourthCosineMeanLocal.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3741b23137297ac11c2b6f7d5f6e03102d320b82c223f5660c6dc5c29dc13847"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticGapCubicMoment.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "59231611a5ed67fa9dfa0a3d0d7070f4bfaf5f42d5dddf9443fd724d767b8a48"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticGapCubicFactor.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "053a99b0326cfe1f7c3f8f6d0cda83e85a56df0fa2f1ea035cefda2c1ec1bd39"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticPrimitiveIdentification.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1f501de621f6483a8105458c4dba52da2b90526721f931730b07f265b1fd3ff4"
+    },
+    {
+      "path": "NLS/KdV/ActionHamiltonianTrace.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5988bb27f067619b70ac1d3016b669484758a22987fc175a19d9b862dc621608"
+    },
+    {
+      "path": "NLS/KdV/HillFreeDeflatedTraceSlope.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "95185d9a910c565cbb928150ba17b44611be34678bef3613638e2c188294299b"
+    },
+    {
+      "path": "NLS/KdV/HillFreeQuadraticPrimitive.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9d992fdc94ce053cacaf8ee8811e7346ec4863fa852e3276a6b88270174a9061"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalGapPrimitive.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "65287123308eaa21a43068f38e508baeed57028590548210724f9b2724a42d71"
+    },
+    {
+      "path": "NLS/KdV/HillFreePrimitivePhysicalData.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a0ae4d1b811eda8473d4a1074a7cf751c3dcb328d9ff9d9f7e89bae21f816602"
+    },
+    {
+      "path": "NLS/KdV/HillFreePhysicalRootAmplitude.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "824fadd08e908b43379eb98efa3bb3716eec2aa28fbf8dbd14f53ad90a906fce"
+    },
+    {
+      "path": "NLS/KdV/HillFreeQuarticContour.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8ca585da6657174e3b44dadb75e8fea89171363b00682cc4907c076b0df9c654"
+    },
+    {
+      "path": "NLS/KdV/HillL2CubicPhysicalPeriods.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c8b7414d07834d33c94ee3c783186c258e3838432ef23b07005ef0acb36cc041"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalCubicFactor.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "16892ae8fd6154a54c6022036b29a6551aeb3fff8f3557586ca71bc60a3cb535"
+    },
+    {
+      "path": "NLS/KdV/HillFreeCubicMomentFactor.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4566c0ce686084f8e362916e48599a27c7a38edf739173ace71f5f0c1b180a90"
+    },
+    {
+      "path": "NLS/KdV/HillFreeCubicActionRatio.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "18bf1cbd95de6f85179d1bc04866b7799de33225806f1a1b5041bf08990856e6"
+    },
+    {
+      "path": "NLS/KdV/HillRoughScalarGermIdentity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5e7a274e2e1ebdae81a4a79ec8381fb16a596a0cf402ba4813f3d5dbbcd138da"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/CubicActionRatioAtZero.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3f24e01f0009ad8f89c97a29c478941c22c80989d889611b700cbfdf7fe253a9"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedQuadraticActionAlgebra.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "34289ddddad8bc56ff56e49129c1c5bba0e41c7ee5411016783acd289ab29061"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FreeActionRays.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "de872ce9e3d1297d040da706000c8a99fb4a6de7c12a2aea665e2afc85625463"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionRayMomentLimits.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6f269934c7b7b64062ec846c87b05df86a531b1fa8ac6ca18be264cae5decd1c"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/DerivativeRayLimit.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "867cc3bb92700c7d1d133e18177c833a2e8c67327124087ab081b855d6437c87"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SecondDerivativeRayLimit.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3a2cd49a9aef6db36c9c58d9828c8ace26d15ebae66feb1feb9dd4c6282b8e1f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/LpOperatorBasisExt.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d9146595427f296d391bc8817b5fcd30e65b1a276ee4d43b1875b77f42d7bd12"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionTaylorAtZero.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "935350e9aa1b681a181094f4918dc1323579b06476d680f93473f85ed9dbf4e6"
+    },
+    {
+      "path": "NLS/SequenceSpaces/LocalAtlasActionFamilyDescent.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "62f9d43f23bfa6b15bc6d67cce04ecb0ff72a7c8311ebe58154ea1a2e0220f36"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalActionMomentDescent.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a2f74d3f9e07e26ee7e11324052539c0e072b549560143161099cd87eb762431"
+    },
+    {
+      "path": "NLS/Fourier/PeriodOneContinuousMean.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3f94bd7a49acdff0fc63393ff928699a0e642082f14f5cdf232ff614a01c1523"
+    },
+    {
+      "path": "NLS/KdV/SobolevHamiltonian.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3037789354f8afb930e1a8f6a4f4f472bd10185ab225aa1e0b044cca9e0b7348"
+    },
+    {
+      "path": "NLS/KdV/HillNativeH1Source.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "720fb1dbc269dab9ae8cd6404e9a38525f2be1988377d9654128263c561536e2"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SummableCoordinateNormContinuity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fb3876e410d7f6d728a0b96f1aead57701297b1c6649d421ece1e9e0c81f6ad0"
+    },
+    {
+      "path": "NLS/KdV/HillWeightedActionSequence.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f2f5514d98b587e7f58075c285cc76a423d4898e7df9d2ad1f0b4650ad7ea1a0"
+    },
+    {
+      "path": "NLS/KdV/HillH1LinearActionEnergy.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e6fa001053c7f49fbce0f3da3c96a142c53fa0d6ad6636d1c1620fef99a170ab"
+    },
+    {
+      "path": "NLS/KdV/HillRawActionSequence.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ba8d493fc76ce896f398510a858352dc2d01421e4f8b5efb5baee94b4fee57f9"
+    },
+    {
+      "path": "NLS/KdV/HillWeightedNativeSource.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b1ace228cefe92f90e1b286aef62f815d9af0f65d3b33c3ac1530e14f730c7f6"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalHilbertActions.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6383ffbc7453f22af3ff076322de8d998a8dafa0072e9f93123667883a79999e"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/UnconditionalContourExtension.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8afc32456e3fd72c4d8433e4f9e2bcd067d5cc25fd5aece6e1d08154ae92da05"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuarticInversionRemainder.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "860dc979ed911fcd069c885a673830945e50de913bf416adffa8dc88339c7a91"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LaurentQuarticRemainder.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5377d5b3447fd132d8401f9b3f227714d2ff2f4eeb8a9e29275cc3cee594663f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScaledQuarticContourCoefficient.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition compatibility_bridge. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ae0106d0e723dd1765fca1bd8d8a5181b366dac854dcd94f4aec6b3756062a52"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillPhaseCoefficients.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c367c502f019ac02cf5b60de1928503edb3fc0be578f24a449d8f6b6889a7a06"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillQuarticModel.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7fdf8f7b81151ac579b35ebd9674179a22a0e309309571fcd1a90c3b023262ba"
+    },
+    {
+      "path": "NLS/KdV/HillL2UpperQuarticAsymptotics.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d8221093b300014b721225b7e88ad8bde9b267e4b7d234dd431386b4babe9a27"
+    },
+    {
+      "path": "NLS/KdV/HillL2QuarticCircleAsymptotics.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d777b651fa8268b5966a3eac6008bafb53327b72d57a9ae98f75801eecb4eb97"
+    },
+    {
+      "path": "NLS/KdV/HillSmoothQuarticTraceLimit.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_with_compatibility_imports. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "27d957fa2aa731a6a3d0450c181d0260394a8419de0a1fad963cb4621b3b86f6"
+    },
+    {
+      "path": "NLS/KdV/HillSmoothIntrinsicQuarticTrace.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f9bc14d4a672d03db2ce334684aa4d7a80ccad957d843fda486d5e7fa142515b"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/SmoothPhysicalHamiltonianIdentity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5e6ee1a65290a2bf623dd4d6c956022c49c2488fa93f457892780471883e2944"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FiniteH1PhysicalIdentity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "790e798cb00180787a919d3099e042e2e66a1503753bcaa0499f9a8bd6cb0c07"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/H1PhysicalHamiltonianIdentity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b6d230d434072462901c3946d52590351b662c9703b628a8a50c1e974d4ce35b"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActualH1HamiltonianExtension.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3b99288230871a9fde8ef2b908febb2abafaf879484f08a2cb98b7ad83ada951"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveSupportedMembership.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "21961c7f970dda0c4e4ff8b04bb2d13f23963a0c5dd76542832bf7b5b4f6c928"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ArnoldH1Regularity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8aad36f9e628605fc8b44eefa9bd7324397b5d490ee2bc2c94b0d3e970f86380"
+    },
+    {
+      "path": "NLS/KdV/HillNativeH1Recovery.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e235b15e0c08bd65adaa7b85f849d7ff5aac27f59687dd84cc1cdb1861326bba"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/OriginalActionDomainRealization.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "994e0eb53cee20326111a9ecf113eedb6002d161b62c349f9a55349ef0fd0409"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/OriginalWeightedActionSpace.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "61793a22e4457581253fc81ffb0f9b7706e76410036d6a848fd3230d99ce2d6c"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/OriginalActionLinearEnergy.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0ff7ca8392d36de1b0eb5b0089bab15dc106d1f6003999f1119fe222d60ed5ce"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalActionHamiltonian.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e3b9fe9525a68a3b3b78081be7c54413b3fa2b7812f0a80e4cc6adb18ebdf8a8"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalActionDifferential.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "99724a343b282bb31959aec063c27f965581685201c95a5a0b3ae669af13df57"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocalAnalyticExtensionTransport.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5fb7095b239eaebbc368f1e77bfac0c292b50f90e352a06b385d0d794d387844"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocalAnalyticNonvanishing.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0686b39c7a0f5a9fac44be47b048fbe164bbf9ea998cb90e618c11e5835725f7"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactInvertibleComplement.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "47bac9b0dc3c498c5a836b6d392b365760968e758d6885f4a91cb80dc8383748"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactAnalyticDeterminant.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "27e053b2d881800a3cbc62e38c3db4d79ce45a34ccbf87720ff31b917eeefc09"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeAnalyticDensity.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "69d828480045328fb3fe31b50edd685f3b95322be7630e191f681b7ea384d92a"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/NonnegativeAnalyticFredholm.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bce06539e6400a6671d8f7c84bb4de729bbbc1d1c878d83e8098005955f2872d"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/WeightedNonnegativeAnalyticFredholm.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "30386d5c8c7f9b79323e9d4ad1f91df0c66f74f349ecf1a5445112934956c674"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeAnalyticAtlas.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cd6583ad35b5fa98123400d786b222375b7ed81d56313a9044bcf1c7a2e398b6"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedNonnegativeAnalyticAtlas.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition reused_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c738f2ed628014130135c5fdd28b1db886c1076143618ce3a394c074e7711a13"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/IntrinsicPhysicalFrequencies.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2d62a0bd9456f05c2691ad32cef953a3cccf36b60dd6ad9ee1ac03df2781be6f"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalExtensionUniqueness.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8d1080dea18346af3091034e1635e4b9a9bb2933eebaa8a3eac777611d8246ae"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalTaylorAtZero.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Pinned physical Hilbert KdV extension/Taylor dependency, strictly rebuilt and transitively axiom audited; disposition imported_unchanged. Per-file source/local hashes and adaptations are in SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bae6eda441564d9ada16ed2f1adfb6ff33939d451a122ee7658c49f8c39e2175"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveOneReindex.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Bounded literal positive-index sampling on complex l1, with norm at most one and exact coefficient recovery.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7888c0f9e1a8e780e8720f06683c74f22c7db1c4e18848eb468d040bbf9e8a74"
+    },
+    {
+      "path": "NLS/KdV/NativeHillH1PhysicalComparison.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Bounded coefficient-preserving comparison of native H1 with the physical Hilbert-action H1 source; entire rough/physical sources, canonical continuous representatives and independently defined physical Hamiltonians agree EXACTLY.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d511a45c291919d5aaa0caa6a22b567c98540bfe08d524dec8358374db02fd87"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/PhysicalHilbertActionReindex.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Bounded raw-action reindexing from this article's cubic-weight l1 actions to the shared physical extension's original action Banach space. Original weights, all raw positive coefficients, the complete nonnegative locus and every unit raw action direction agree without rescaling.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "72511c3ffdf06dbb1e69b892e0eae2299b423dd70727991fcc05c89c7bc53bf5"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/OriginalPhysicalKdVEnergyComparison.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "The actual native physical Hilbert actions equal the original actions of the SAME fixed map. The independently chosen original inverse representative realizes ALL prescribed actions in their full original norm. The TWO independent physical KdV action energies agree on EVERY original positive cubic-weight point, including infinite and closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "287c6035f6e36d0daa31be1d2f1137c668478e08eaa3d0ba7cd3462363203580"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/OriginalPhysicalKdVFrequencyComparison.lean",
+      "source_labels": [
+        "Global analytic Hilbert extension of the ACTUAL original KdV frequency correction and full -6*Id derivative at zero; supporting Theorem 1.2(iv), not its COMPLETE weak-domain, compactness or asymptotic conclusions"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "The TRUE original KdV correction omega1_n-(2*pi*n)^3 now has a GLOBAL analytic Hilbert-valued extension on an open complex ell2 neighborhood of the ENTIRE nonnegative Hilbert cone. It recovers the actual independently defined physical KdV action frequency at EVERY original cubic-weight action point, including infinite support and ALL closed gaps. The full bounded derivative at zero is EXACTLY -6*Id; both the renormalized Hamiltonian and its gradient vanish at zero. Exact coefficient-preserving source, raw action, physical energy and positive-derivative comparisons identify the shared physical extension with this article's SAME fixed Birkhoff map/inverse and actual frequency.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a877e8029b992b713a4f55fabc6d48deb6ae872ef128c28c0e06707fd0af92c5"
     }
   ],
   "dependencies_needed": [
-    "There exist ONE radius rho>0 and functions g_n complex analytic on the SAME full complex normalized weak l1 action ball, chosen BEFORE EVERY positive n. ALL g_n are real valued on the entire nonnegative action locus of that SAME ball. For EVERY original real mean-zero native H1 source whose ACTUAL weak actions lie in that ball, and EVERY n, g_n equals the TRUE independent physical KdV frequency minus (2*pi*n)^3. Original weak action normalization is exactly Weight.sobolev(-1) times the original actions. Arbitrary phases, infinite support and ALL closed own/tail actions are included. There is no n-dependent radius, assumed family factor, assumed rough reality, source-native smallness or finite-gap premise. Sharp sequence-valued target membership and analyticity are still separate. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The common componentwise complex action domain NEAR ZERO and real-valued weak-cone extension are now proved. The COMPLETE Theorem 1.2 still requires extension around the ENTIRE original weak action cone, sharp SEQUENCE-VALUED analytic target membership/bounds and locally uniform asymptotics, compact derivative corrections and the other stated conclusions. Componentwise analyticity on a common ball does not imply those sequence-valued claims. Generic concavity/local inverses remain OPEN. The KdV2 weighted second/fourth series, true mass-renormalized identification and its global action/sequence/PDE conclusions remain OPEN.",
+    "The TRUE original KdV correction omega1_n-(2*pi*n)^3 now has a GLOBAL analytic Hilbert-valued extension on an open complex ell2 neighborhood of the ENTIRE nonnegative Hilbert cone. It recovers the actual independently defined physical KdV action frequency at EVERY original cubic-weight action point, including infinite support and ALL closed gaps. The full bounded derivative at zero is EXACTLY -6*Id; both the renormalized Hamiltonian and its gradient vanish at zero. Exact coefficient-preserving source, raw action, physical energy and positive-derivative comparisons identify the shared physical extension with this article's SAME fixed Birkhoff map/inverse and actual frequency. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. This proves the global Hilbert extension and full origin Taylor support for Theorem 1.2(iv), with agreement on the ENTIRE original native cubic-weight action cone. It does not yet prove agreement on the larger V intersect V0 weak-action domain, compactness of the derivative correction at EVERY action, the sharp sequence-valued weak-action bounds or locally uniform asymptotics. Global weak-cone scalar continuation and the remaining sequence, concavity, inverse and PDE conclusions remain OPEN. The KdV2 weighted moment sums and mass-normalized identification remain OPEN.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
@@ -39589,8 +41826,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 23157,
-    "total_declarations_audited": 45227,
+    "candidate_declarations_audited": 24446,
+    "total_declarations_audited": 46516,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -39599,7 +41836,7 @@
     "main_theorems_verified": [
       "Theorem 1.1"
     ],
-    "selected_modules": 2963,
+    "selected_modules": 3149,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -39718,7 +41955,8 @@
     "native_spectral_approximation_validation_sequence": "All 2941 prior selected sources remain byte-identical and retain their strict build evidence. All SIX new own modules were strictly rebuilt in dependency order AFTER freezing 2997 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 2947 selected modules and every imported NLS declaration. Exact ordered selection, reachability and the exact six-module import-closure increase were checked. The entire transitive audit loop, collectAxioms traversal, permitted axioms and imported NLS scope are byte-identical to the published baseline. The selection now has 24 private chunks, each at most 128 names; the actual 2947-name bidirectional NameSet probe rejects insertion/deletion mismatches. All 47 prior provenance records remain unchanged and verified against their source commits; there is no new canonical reuse. All outputs are private and fresh through the article overlay. Canonical main and pinned Mathlib are unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a SIX-module incremental rebuild retaining baseline strict evidence, not a full 2947-module rebuild.",
     "original_infinite_gap_kdv_validation_sequence": "All 2947 prior selected sources remain byte-identical and retain their strict build evidence. All FOUR new own modules were strictly rebuilt in dependency order AFTER freezing 3001 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 2951 selected modules and every imported NLS declaration. Exact ordered selection, reachability and the exact four-module import-closure increase were checked. The entire transitive audit loop, collectAxioms traversal, permitted axioms and imported NLS scope are byte-identical to the published baseline. The selection has 24 private chunks, each at most 128 names; the actual 2951-name bidirectional NameSet probe rejects insertion/deletion mismatches. All 47 prior provenance records remain unchanged and verified against their source commits; there is no new canonical reuse. All outputs are private and fresh through the article overlay. Canonical main and pinned Mathlib are unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a FOUR-module incremental rebuild retaining baseline strict evidence, not a full 2951-module rebuild.",
     "weak_kdv_action_frequency_validation_sequence": "All 2951 prior selected sources remain byte-identical and retain their strict build evidence. All SEVEN new own modules were strictly rebuilt in dependency order AFTER freezing 3008 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 2958 selected modules and every imported NLS declaration. Exact ordered selection, reachability and the exact seven-module import-closure increase were checked. The entire transitive audit loop, collectAxioms traversal, permitted axioms and imported NLS scope are byte-identical to the published baseline. The selection has 24 private chunks, each at most 128 names; the actual 2958-name bidirectional NameSet probe rejects insertion/deletion mismatches. All 47 prior provenance records remain unchanged and verified against their source commits; there is no new canonical reuse. All outputs are private and fresh through the article overlay. Canonical main and pinned Mathlib are unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a SEVEN-module incremental rebuild retaining baseline strict evidence, not a full 2958-module rebuild.",
-    "common_kdv_action_domain_validation_sequence": "All 2958 prior selected sources remain byte-identical and retain their strict build evidence. All FIVE new own modules were strictly rebuilt in dependency order AFTER freezing 3013 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 2963 selected modules and every imported NLS declaration. Exact ordered selection, reachability and the exact five-module import-closure increase were checked. The entire transitive audit loop, collectAxioms traversal, permitted axioms and imported NLS scope are byte-identical to the published baseline. The selection has 24 private chunks, each at most 128 names; the actual 2963-name bidirectional NameSet probe rejects insertion/deletion mismatches. All 47 prior provenance records remain unchanged and verified against their source commits; there is no new canonical reuse. All outputs are private and fresh through the article overlay. Canonical main and pinned Mathlib are unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a FIVE-module incremental rebuild retaining baseline strict evidence, not a full 2963-module rebuild."
+    "common_kdv_action_domain_validation_sequence": "All 2958 prior selected sources remain byte-identical and retain their strict build evidence. All FIVE new own modules were strictly rebuilt in dependency order AFTER freezing 3013 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 2963 selected modules and every imported NLS declaration. Exact ordered selection, reachability and the exact five-module import-closure increase were checked. The entire transitive audit loop, collectAxioms traversal, permitted axioms and imported NLS scope are byte-identical to the published baseline. The selection has 24 private chunks, each at most 128 names; the actual 2963-name bidirectional NameSet probe rejects insertion/deletion mismatches. All 47 prior provenance records remain unchanged and verified against their source commits; there is no new canonical reuse. All outputs are private and fresh through the article overlay. Canonical main and pinned Mathlib are unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a FIVE-module incremental rebuild retaining baseline strict evidence, not a full 2963-module rebuild.",
+    "physical_hilbert_taylor_validation_sequence": "All 2963 baseline selected sources remain byte-identical. All 186 newly selected modules were strictly rebuilt in dependency order AFTER freezing 3200 selected-source/checker/provenance/pinned-Mathlib-source hashes: 157 imported sources (146 unchanged and 11 with recorded compatibility imports/names), four new compatibility bridges, 20 existing previously unselected sources (19 unchanged from the pinned branch and one retained local BaseContourSeries), and five own comparison/result modules. One unchanged baseline PeriodOneRealFormIdentity source was additionally strictly rechecked after restoring its original bytes during compatibility work; its rebuilt artifact is byte-identical to the artifact used by the authoritative full audit. The combined transitive audit covers all 3149 selected modules and EVERY imported NLS declaration. Exact ordered selection, reachability and the EXACT 186-module import-closure increase were checked. The entire audit loop, collectAxioms traversal, permitted axioms and imported NLS scope remain byte-identical to baseline. The 25 private selection chunks have at most 128 names each; the actual 3149-name bidirectional NameSet probe rejects insertion/deletion mismatches. All 47 prior provenance records remain byte-identical and verified against their pinned source commits. The new SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json records 181 files against articles/kdv-convexity commit 26b85de3342a041e107adc5622160a302031f1c3, including every adaptation and retained local variant. Private outputs and article overlay freshness, unchanged canonical main and pinned Mathlib were checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is an incremental rebuild retaining baseline strict evidence, not a full 3149-module rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -39872,6 +42110,12 @@
       "commit": "e36a0443e127c72527458d1970ad66ecbef091f2",
       "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json",
       "kind": "26 unchanged actual gap/deflated-root/normalized-differential/sheeted-terminal Abelian chart dependencies plus one compatibility import removing an already-proved duplicate theorem; twelve local variants retained unchanged. Full branch not merged."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "26b85de3342a041e107adc5622160a302031f1c3",
+      "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json",
+      "kind": "157 physical extension/Taylor sources, 4 new compatibility bridges, 20 existing newly selected dependencies; no existing local NLS source changed. Five own modules identify the physical extension with this article's actual source/actions/energy/frequency. Full branch not merged."
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
@@ -40936,6 +43180,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "9c9018b05e7c78f993216c85a90a222497efd843",
+      "description": "The TRUE original KdV correction omega1_n-(2*pi*n)^3 now has a GLOBAL analytic Hilbert-valued extension on an open complex ell2 neighborhood of the ENTIRE nonnegative Hilbert cone. It recovers the actual independently defined physical KdV action frequency at EVERY original cubic-weight action point, including infinite support and ALL closed gaps. The full bounded derivative at zero is EXACTLY -6*Id; both the renormalized Hamiltonian and its gradient vanish at zero. Exact coefficient-preserving source, raw action, physical energy and positive-derivative comparisons identify the shared physical extension with this article's SAME fixed Birkhoff map/inverse and actual frequency.",
+      "entries": [
+        "There exist ONE radius rho>0 and functions g_n complex analytic on the SAME full complex normalized weak l1 action ball, chosen BEFORE EVERY positive n. ALL g_n are real valued on the entire nonnegative action locus of that SAME ball. For EVERY original real mean-zero native H1 source whose ACTUAL weak actions lie in that ball, and EVERY n, g_n equals the TRUE independent physical KdV frequency minus (2*pi*n)^3. Original weak action normalization is exactly Weight.sobolev(-1) times the original actions. Arbitrary phases, infinite support and ALL closed own/tail actions are included. There is no n-dependent radius, assumed family factor, assumed rough reality, source-native smallness or finite-gap premise. Sharp sequence-valued target membership and analyticity are still separate. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The common componentwise complex action domain NEAR ZERO and real-valued weak-cone extension are now proved. The COMPLETE Theorem 1.2 still requires extension around the ENTIRE original weak action cone, sharp SEQUENCE-VALUED analytic target membership/bounds and locally uniform asymptotics, compact derivative corrections and the other stated conclusions. Componentwise analyticity on a common ball does not imply those sequence-valued claims. Generic concavity/local inverses remain OPEN. The KdV2 weighted second/fourth series, true mass-renormalized identification and its global action/sequence/PDE conclusions remain OPEN.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -41024,5 +43280,7 @@
   "native_spectral_approximation_record": "NATIVE_SPECTRAL_APPROXIMATION.md",
   "original_infinite_gap_kdv_record": "ORIGINAL_INFINITE_GAP_KDV.md",
   "weak_kdv_action_frequency_record": "WEAK_KDV_ACTION_FREQUENCY.md",
-  "common_kdv_action_domain_record": "COMMON_KDV_ACTION_DOMAIN.md"
+  "common_kdv_action_domain_record": "COMMON_KDV_ACTION_DOMAIN.md",
+  "physical_hilbert_taylor_record": "PHYSICAL_HILBERT_TAYLOR.md",
+  "shared_physical_hilbert_taylor_import_record": "SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json"
 }

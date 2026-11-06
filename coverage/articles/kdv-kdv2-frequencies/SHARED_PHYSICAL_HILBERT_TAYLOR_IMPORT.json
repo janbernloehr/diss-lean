@@ -1,0 +1,1953 @@
+{
+  "schema_version": 1,
+  "source_branch": "articles/kdv-convexity",
+  "source_commit": "26b85de3342a041e107adc5622160a302031f1c3",
+  "purpose": "Physical global Hilbert KdV energy/frequency and Taylor normalization reuse; new compatibility modules preserve every prior local source.",
+  "files": [
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionDifferential.lean",
+      "source_path": "NLS/Articles/KdVConvexity/ActionDifferential.lean",
+      "source_sha256": "a8bb54a95e54ef9d18adc3848eb730e174cd9a2dffb5c438a52afe612164f900",
+      "local_sha256": "a8bb54a95e54ef9d18adc3848eb730e174cd9a2dffb5c438a52afe612164f900",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionMomentNormalization.lean",
+      "source_path": "NLS/Articles/KdVConvexity/ActionMomentNormalization.lean",
+      "source_sha256": "f56a545ccf078b4035e2a87d5a3f8aa743daef5062036be1348d2194d397eb1d",
+      "local_sha256": "f56a545ccf078b4035e2a87d5a3f8aa743daef5062036be1348d2194d397eb1d",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionRayMomentLimits.lean",
+      "source_path": "NLS/Articles/KdVConvexity/ActionRayMomentLimits.lean",
+      "source_sha256": "6f269934c7b7b64062ec846c87b05df86a531b1fa8ac6ca18be264cae5decd1c",
+      "local_sha256": "6f269934c7b7b64062ec846c87b05df86a531b1fa8ac6ca18be264cae5decd1c",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionTaylorAtZero.lean",
+      "source_path": "NLS/Articles/KdVConvexity/ActionTaylorAtZero.lean",
+      "source_sha256": "935350e9aa1b681a181094f4918dc1323579b06476d680f93473f85ed9dbf4e6",
+      "local_sha256": "935350e9aa1b681a181094f4918dc1323579b06476d680f93473f85ed9dbf4e6",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActualH1HamiltonianExtension.lean",
+      "source_path": "NLS/Articles/KdVConvexity/ActualH1HamiltonianExtension.lean",
+      "source_sha256": "3b99288230871a9fde8ef2b908febb2abafaf879484f08a2cb98b7ad83ada951",
+      "local_sha256": "3b99288230871a9fde8ef2b908febb2abafaf879484f08a2cb98b7ad83ada951",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ArnoldConeMomentGerms.lean",
+      "source_path": "NLS/Articles/KdVConvexity/ArnoldConeMomentGerms.lean",
+      "source_sha256": "3d026d5090765b6164403985fc262439500579a89fe2d44e7d83dbe47fd2aede",
+      "local_sha256": "3d026d5090765b6164403985fc262439500579a89fe2d44e7d83dbe47fd2aede",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ArnoldH1Regularity.lean",
+      "source_path": "NLS/Articles/KdVConvexity/ArnoldH1Regularity.lean",
+      "source_sha256": "8aad36f9e628605fc8b44eefa9bd7324397b5d490ee2bc2c94b0d3e970f86380",
+      "local_sha256": "8aad36f9e628605fc8b44eefa9bd7324397b5d490ee2bc2c94b0d3e970f86380",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/CanonicalMomentPreparation.lean",
+      "source_path": "NLS/Articles/KdVConvexity/CanonicalMomentPreparation.lean",
+      "source_sha256": "a4e67c69a5fb52d284f2e95c4edfda4f18e94fc0f9cd4e4751330a4590877939",
+      "local_sha256": "a4e67c69a5fb52d284f2e95c4edfda4f18e94fc0f9cd4e4751330a4590877939",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/CommonCanonicalMomentFamily.lean",
+      "source_path": "NLS/Articles/KdVConvexity/CommonCanonicalMomentFamily.lean",
+      "source_sha256": "4bd10d8df2b479aa60e1ce10a5923e00e4f573b3d4ea9cc895cbc5674d21129a",
+      "local_sha256": "4bd10d8df2b479aa60e1ce10a5923e00e4f573b3d4ea9cc895cbc5674d21129a",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/CoordinateActionExtension.lean",
+      "source_path": "NLS/Articles/KdVConvexity/CoordinateActionExtension.lean",
+      "source_sha256": "731561a0e5afb2460ac2b5f17dc2d7cd70cd97c5491af0fa1b9ced0de5c0bf23",
+      "local_sha256": "e6ccaf0af52cd1f71242fc0ca91232e3a0be02a71e5f48a155de1398643a3310",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [
+          "NLS.Articles.KdVConvexity.BaseContourTailSeries"
+        ],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/CubicActionRatioAtZero.lean",
+      "source_path": "NLS/Articles/KdVConvexity/CubicActionRatioAtZero.lean",
+      "source_sha256": "3f24e01f0009ad8f89c97a29c478941c22c80989d889611b700cbfdf7fe253a9",
+      "local_sha256": "3f24e01f0009ad8f89c97a29c478941c22c80989d889611b700cbfdf7fe253a9",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FiniteArnoldRealization.lean",
+      "source_path": "NLS/Articles/KdVConvexity/FiniteArnoldRealization.lean",
+      "source_sha256": "756a49a1828e27db2a3aa6df0dbab438af1e2b3d40dd53c51149e1c6917804b2",
+      "local_sha256": "756a49a1828e27db2a3aa6df0dbab438af1e2b3d40dd53c51149e1c6917804b2",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FiniteH1PhysicalIdentity.lean",
+      "source_path": "NLS/Articles/KdVConvexity/FiniteH1PhysicalIdentity.lean",
+      "source_sha256": "790e798cb00180787a919d3099e042e2e66a1503753bcaa0499f9a8bd6cb0c07",
+      "local_sha256": "790e798cb00180787a919d3099e042e2e66a1503753bcaa0499f9a8bd6cb0c07",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FreeActionRays.lean",
+      "source_path": "NLS/Articles/KdVConvexity/FreeActionRays.lean",
+      "source_sha256": "de872ce9e3d1297d040da706000c8a99fb4a6de7c12a2aea665e2afc85625463",
+      "local_sha256": "de872ce9e3d1297d040da706000c8a99fb4a6de7c12a2aea665e2afc85625463",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalActionMomentDescent.lean",
+      "source_path": "NLS/Articles/KdVConvexity/GlobalActionMomentDescent.lean",
+      "source_sha256": "a2f74d3f9e07e26ee7e11324052539c0e072b549560143161099cd87eb762431",
+      "local_sha256": "a2f74d3f9e07e26ee7e11324052539c0e072b549560143161099cd87eb762431",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalArnoldActionFibers.lean",
+      "source_path": "NLS/Articles/KdVConvexity/GlobalArnoldActionFibers.lean",
+      "source_sha256": "e5afc28695b051a567a1dc7076e9b3050536b3bf5a3a55ed2333050e859a68f4",
+      "local_sha256": "e5afc28695b051a567a1dc7076e9b3050536b3bf5a3a55ed2333050e859a68f4",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalArnoldCalibration.lean",
+      "source_path": "NLS/Articles/KdVConvexity/GlobalArnoldCalibration.lean",
+      "source_sha256": "0f87eb2455a2a75b53e2c689e906660e75085851124c326bd71443e7d98b1d3b",
+      "local_sha256": "0f87eb2455a2a75b53e2c689e906660e75085851124c326bd71443e7d98b1d3b",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalArnoldCoercivity.lean",
+      "source_path": "NLS/Articles/KdVConvexity/GlobalArnoldCoercivity.lean",
+      "source_sha256": "dddec583edf6deba5f27e8e7e86631176a0758e22e6b894fc2047a87668d1e23",
+      "local_sha256": "dddec583edf6deba5f27e8e7e86631176a0758e22e6b894fc2047a87668d1e23",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalArnoldSurjectivity.lean",
+      "source_path": "NLS/Articles/KdVConvexity/GlobalArnoldSurjectivity.lean",
+      "source_sha256": "cf922b20a468be8852823145f86be727f68b02e50f0aeabd753ec3e18388ed03",
+      "local_sha256": "cf922b20a468be8852823145f86be727f68b02e50f0aeabd753ec3e18388ed03",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalCanonicalMomentFamily.lean",
+      "source_path": "NLS/Articles/KdVConvexity/GlobalCanonicalMomentFamily.lean",
+      "source_sha256": "b2f16836ea9a4eb51388a74334f59e1859c5f691b3cc255ed9c585223f10fd06",
+      "local_sha256": "b2f16836ea9a4eb51388a74334f59e1859c5f691b3cc255ed9c585223f10fd06",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalSpectralActions.lean",
+      "source_path": "NLS/Articles/KdVConvexity/GlobalSpectralActions.lean",
+      "source_sha256": "5c7ec71a2b397ab2f9110496fe7889bafb051a7db363a50cda2ad20fd5c2def9",
+      "local_sha256": "5c7ec71a2b397ab2f9110496fe7889bafb051a7db363a50cda2ad20fd5c2def9",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/H1PhysicalHamiltonianIdentity.lean",
+      "source_path": "NLS/Articles/KdVConvexity/H1PhysicalHamiltonianIdentity.lean",
+      "source_sha256": "b6d230d434072462901c3946d52590351b662c9703b628a8a50c1e974d4ce35b",
+      "local_sha256": "b6d230d434072462901c3946d52590351b662c9703b628a8a50c1e974d4ce35b",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/HilbertActionUnreindex.lean",
+      "source_path": "NLS/Articles/KdVConvexity/HilbertActionUnreindex.lean",
+      "source_sha256": "ffd82d4f993a580f043f27ac0bea98887a91f5eac84f343c335ef37f6152e232",
+      "local_sha256": "ffd82d4f993a580f043f27ac0bea98887a91f5eac84f343c335ef37f6152e232",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/IntrinsicPhysicalFrequencies.lean",
+      "source_path": "NLS/Articles/KdVConvexity/IntrinsicPhysicalFrequencies.lean",
+      "source_sha256": "2d62a0bd9456f05c2691ad32cef953a3cccf36b60dd6ad9ee1ac03df2781be6f",
+      "local_sha256": "2d62a0bd9456f05c2691ad32cef953a3cccf36b60dd6ad9ee1ac03df2781be6f",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/IsospectralCanonicalMoments.lean",
+      "source_path": "NLS/Articles/KdVConvexity/IsospectralCanonicalMoments.lean",
+      "source_sha256": "c08e7638701cb06a2eecbbed9d572be6ba59dadd88a9e11aa2e8d2a147ba6065",
+      "local_sha256": "c08e7638701cb06a2eecbbed9d572be6ba59dadd88a9e11aa2e8d2a147ba6065",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/LocalCubicPairCharts.lean",
+      "source_path": "NLS/Articles/KdVConvexity/LocalCubicPairCharts.lean",
+      "source_sha256": "00a89a44cd521899faaa719a4d251325052a2518919d27c07cc71b5770c0dd8f",
+      "local_sha256": "00a89a44cd521899faaa719a4d251325052a2518919d27c07cc71b5770c0dd8f",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/LocalSpectralPairCharts.lean",
+      "source_path": "NLS/Articles/KdVConvexity/LocalSpectralPairCharts.lean",
+      "source_sha256": "0fc7f64cb086533b08b20b08a4b4804586347eab353e0d9a15aaf3eca78131c9",
+      "local_sha256": "0fc7f64cb086533b08b20b08a4b4804586347eab353e0d9a15aaf3eca78131c9",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/OriginalActionDomainRealization.lean",
+      "source_path": "NLS/Articles/KdVConvexity/OriginalActionDomainRealization.lean",
+      "source_sha256": "994e0eb53cee20326111a9ecf113eedb6002d161b62c349f9a55349ef0fd0409",
+      "local_sha256": "994e0eb53cee20326111a9ecf113eedb6002d161b62c349f9a55349ef0fd0409",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/OriginalActionLinearEnergy.lean",
+      "source_path": "NLS/Articles/KdVConvexity/OriginalActionLinearEnergy.lean",
+      "source_sha256": "0ff7ca8392d36de1b0eb5b0089bab15dc106d1f6003999f1119fe222d60ed5ce",
+      "local_sha256": "0ff7ca8392d36de1b0eb5b0089bab15dc106d1f6003999f1119fe222d60ed5ce",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/OriginalWeightedActionSpace.lean",
+      "source_path": "NLS/Articles/KdVConvexity/OriginalWeightedActionSpace.lean",
+      "source_sha256": "61793a22e4457581253fc81ffb0f9b7706e76410036d6a848fd3230d99ce2d6c",
+      "local_sha256": "61793a22e4457581253fc81ffb0f9b7706e76410036d6a848fd3230d99ce2d6c",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalActionDifferential.lean",
+      "source_path": "NLS/Articles/KdVConvexity/PhysicalActionDifferential.lean",
+      "source_sha256": "99724a343b282bb31959aec063c27f965581685201c95a5a0b3ae669af13df57",
+      "local_sha256": "99724a343b282bb31959aec063c27f965581685201c95a5a0b3ae669af13df57",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalActionHamiltonian.lean",
+      "source_path": "NLS/Articles/KdVConvexity/PhysicalActionHamiltonian.lean",
+      "source_sha256": "e3b9fe9525a68a3b3b78081be7c54413b3fa2b7812f0a80e4cc6adb18ebdf8a8",
+      "local_sha256": "e3b9fe9525a68a3b3b78081be7c54413b3fa2b7812f0a80e4cc6adb18ebdf8a8",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalExtensionUniqueness.lean",
+      "source_path": "NLS/Articles/KdVConvexity/PhysicalExtensionUniqueness.lean",
+      "source_sha256": "8d1080dea18346af3091034e1635e4b9a9bb2933eebaa8a3eac777611d8246ae",
+      "local_sha256": "8d1080dea18346af3091034e1635e4b9a9bb2933eebaa8a3eac777611d8246ae",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalHilbertActions.lean",
+      "source_path": "NLS/Articles/KdVConvexity/PhysicalHilbertActions.lean",
+      "source_sha256": "6383ffbc7453f22af3ff076322de8d998a8dafa0072e9f93123667883a79999e",
+      "local_sha256": "6383ffbc7453f22af3ff076322de8d998a8dafa0072e9f93123667883a79999e",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalTaylorAtZero.lean",
+      "source_path": "NLS/Articles/KdVConvexity/PhysicalTaylorAtZero.lean",
+      "source_sha256": "bae6eda441564d9ada16ed2f1adfb6ff33939d451a122ee7658c49f8c39e2175",
+      "local_sha256": "bae6eda441564d9ada16ed2f1adfb6ff33939d451a122ee7658c49f8c39e2175",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PositiveActionNorm.lean",
+      "source_path": "NLS/Articles/KdVConvexity/PositiveActionNorm.lean",
+      "source_sha256": "bbbc98ebde0b835c62edbf5d39f9ac357c0e15f7858a576c4fdcf4095d2e6607",
+      "local_sha256": "bbbc98ebde0b835c62edbf5d39f9ac357c0e15f7858a576c4fdcf4095d2e6607",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/SmoothPhysicalHamiltonianIdentity.lean",
+      "source_path": "NLS/Articles/KdVConvexity/SmoothPhysicalHamiltonianIdentity.lean",
+      "source_sha256": "5e6ee1a65290a2bf623dd4d6c956022c49c2488fa93f457892780471883e2944",
+      "local_sha256": "5e6ee1a65290a2bf623dd4d6c956022c49c2488fa93f457892780471883e2944",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/SpectralActionSequence.lean",
+      "source_path": "NLS/Articles/KdVConvexity/SpectralActionSequence.lean",
+      "source_sha256": "bd59fba5087083a345963ff808e4a7467e5e248062afbfd9ed46dbe576846c7c",
+      "local_sha256": "bd59fba5087083a345963ff808e4a7467e5e248062afbfd9ed46dbe576846c7c",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/SpectralCoordinateExtension.lean",
+      "source_path": "NLS/Articles/KdVConvexity/SpectralCoordinateExtension.lean",
+      "source_sha256": "ae97a5fbe4b100c5471732e4b7cb00fe02ba2a27f16d9ae652589396f14c4ad1",
+      "local_sha256": "ae97a5fbe4b100c5471732e4b7cb00fe02ba2a27f16d9ae652589396f14c4ad1",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/TailExtension.lean",
+      "source_path": "NLS/Articles/KdVConvexity/TailExtension.lean",
+      "source_sha256": "a5de2c7ed440338bc5a96c29fc70ae3de7c2c06001d13c292db236b7062e0eef",
+      "local_sha256": "a5de2c7ed440338bc5a96c29fc70ae3de7c2c06001d13c292db236b7062e0eef",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/UnconditionalContourExtension.lean",
+      "source_path": "NLS/Articles/KdVConvexity/UnconditionalContourExtension.lean",
+      "source_sha256": "8ceebbe1f0b908e5954634ce87f6f9d379cdcdc65989e77ac3fd723721c34602",
+      "local_sha256": "8afc32456e3fd72c4d8433e4f9e2bcd067d5cc25fd5aece6e1d08154ae92da05",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [
+          "NLS.Articles.KdVConvexity.BaseContourTailSeries"
+        ],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CollapsedQuadraticSolutionValue.lean",
+      "source_path": "NLS/ComplexAnalysis/CollapsedQuadraticSolutionValue.lean",
+      "source_sha256": "b96ecff1b445d13046e340095b419c66a94964faa827a8cf86cb9e41f2a35a7b",
+      "local_sha256": "b96ecff1b445d13046e340095b419c66a94964faa827a8cf86cb9e41f2a35a7b",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CompactCoordinateContinuation.lean",
+      "source_path": "NLS/ComplexAnalysis/CompactCoordinateContinuation.lean",
+      "source_sha256": "7b6d6f0b6034979de71f59c1c45bd32a15dbce5e3e00fc5e4b5d7ec5a60c239d",
+      "local_sha256": "7b6d6f0b6034979de71f59c1c45bd32a15dbce5e3e00fc5e4b5d7ec5a60c239d",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CompactCoordinateExtension.lean",
+      "source_path": "NLS/ComplexAnalysis/CompactCoordinateExtension.lean",
+      "source_sha256": "67d591df24a188d919f608dbba5c1e1750c88258cfe9bd728d3e62d6d06a0513",
+      "local_sha256": "67d591df24a188d919f608dbba5c1e1750c88258cfe9bd728d3e62d6d06a0513",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CompactCoordinateJointExtension.lean",
+      "source_path": "NLS/ComplexAnalysis/CompactCoordinateJointExtension.lean",
+      "source_sha256": "63c2a0f1625a69094d691f7a4da4669c97372df40a75f9c9d987802447c6d94b",
+      "local_sha256": "63c2a0f1625a69094d691f7a4da4669c97372df40a75f9c9d987802447c6d94b",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CoshLogBoundaryUniqueness.lean",
+      "source_path": "NLS/ComplexAnalysis/CoshLogBoundaryUniqueness.lean",
+      "source_sha256": "165facd262875d95ee154735600341e67492b55e5e30319925fe9921ec3b773b",
+      "local_sha256": "165facd262875d95ee154735600341e67492b55e5e30319925fe9921ec3b773b",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LaurentQuarticRemainder.lean",
+      "source_path": "NLS/ComplexAnalysis/LaurentQuarticRemainder.lean",
+      "source_sha256": "5377d5b3447fd132d8401f9b3f227714d2ff2f4eeb8a9e29275cc3cee594663f",
+      "local_sha256": "5377d5b3447fd132d8401f9b3f227714d2ff2f4eeb8a9e29275cc3cee594663f",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NearbyCircleHomotopy.lean",
+      "source_path": "NLS/ComplexAnalysis/NearbyCircleHomotopy.lean",
+      "source_sha256": "b210b415b05cb7477074cc8c00cb12d1697aca9eae3c7659c7ed6a0258bd4f9b",
+      "local_sha256": "b210b415b05cb7477074cc8c00cb12d1697aca9eae3c7659c7ed6a0258bd4f9b",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricSineFourthCosineMean.lean",
+      "source_path": "NLS/ComplexAnalysis/ParametricSineFourthCosineMean.lean",
+      "source_sha256": "62079cff73b8ae0dfd8b339da2ce6c08549a29d2a9e816eeeab9e87a6bea59f0",
+      "local_sha256": "62079cff73b8ae0dfd8b339da2ce6c08549a29d2a9e816eeeab9e87a6bea59f0",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricSineFourthCosineMeanLocal.lean",
+      "source_path": "NLS/ComplexAnalysis/ParametricSineFourthCosineMeanLocal.lean",
+      "source_sha256": "3741b23137297ac11c2b6f7d5f6e03102d320b82c223f5660c6dc5c29dc13847",
+      "local_sha256": "3741b23137297ac11c2b6f7d5f6e03102d320b82c223f5660c6dc5c29dc13847",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/PhysicalCutCubicSign.lean",
+      "source_path": "NLS/ComplexAnalysis/PhysicalCutCubicSign.lean",
+      "source_sha256": "a8e0bf2fe39923e7b915cb97f07e443fe9dd08b983ab1bf4418851de1d28c1b6",
+      "local_sha256": "a8e0bf2fe39923e7b915cb97f07e443fe9dd08b983ab1bf4418851de1d28c1b6",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticGapCubicFactor.lean",
+      "source_path": "NLS/ComplexAnalysis/QuadraticGapCubicFactor.lean",
+      "source_sha256": "053a99b0326cfe1f7c3f8f6d0cda83e85a56df0fa2f1ea035cefda2c1ec1bd39",
+      "local_sha256": "053a99b0326cfe1f7c3f8f6d0cda83e85a56df0fa2f1ea035cefda2c1ec1bd39",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticGapCubicMoment.lean",
+      "source_path": "NLS/ComplexAnalysis/QuadraticGapCubicMoment.lean",
+      "source_sha256": "59231611a5ed67fa9dfa0a3d0d7070f4bfaf5f42d5dddf9443fd724d767b8a48",
+      "local_sha256": "59231611a5ed67fa9dfa0a3d0d7070f4bfaf5f42d5dddf9443fd724d767b8a48",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticPrimitiveIdentification.lean",
+      "source_path": "NLS/ComplexAnalysis/QuadraticPrimitiveIdentification.lean",
+      "source_sha256": "1f501de621f6483a8105458c4dba52da2b90526721f931730b07f265b1fd3ff4",
+      "local_sha256": "1f501de621f6483a8105458c4dba52da2b90526721f931730b07f265b1fd3ff4",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuarticInversionRemainder.lean",
+      "source_path": "NLS/ComplexAnalysis/QuarticInversionRemainder.lean",
+      "source_sha256": "860dc979ed911fcd069c885a673830945e50de913bf416adffa8dc88339c7a91",
+      "local_sha256": "860dc979ed911fcd069c885a673830945e50de913bf416adffa8dc88339c7a91",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealCutWeightedPowerIntegral.lean",
+      "source_path": "NLS/ComplexAnalysis/RealCutWeightedPowerIntegral.lean",
+      "source_sha256": "901923a011de43f0b8dbc0f585bfb2db611085b870a12bcf59789c11c4c64782",
+      "local_sha256": "901923a011de43f0b8dbc0f585bfb2db611085b870a12bcf59789c11c4c64782",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealFormBallGluing.lean",
+      "source_path": "NLS/ComplexAnalysis/RealFormBallGluing.lean",
+      "source_sha256": "3213aa924bb244ecb36ce04a8cfe0d536943513c30a1a6fe2eebbb0726ccb71d",
+      "local_sha256": "3213aa924bb244ecb36ce04a8cfe0d536943513c30a1a6fe2eebbb0726ccb71d",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealGapCircleNesting.lean",
+      "source_path": "NLS/ComplexAnalysis/RealGapCircleNesting.lean",
+      "source_sha256": "3bc3f9fa9e97f1ad253fff90a59bd0e184263c1fe2f3c81e04f7c7ae2318cdb1",
+      "local_sha256": "3bc3f9fa9e97f1ad253fff90a59bd0e184263c1fe2f3c81e04f7c7ae2318cdb1",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarCoordinateUniqueness.lean",
+      "source_path": "NLS/ComplexAnalysis/ScalarCoordinateUniqueness.lean",
+      "source_sha256": "4619f5710120f1b85ee1935048ab268cbe45acb717fb5846b47cd44f2f393584",
+      "local_sha256": "4619f5710120f1b85ee1935048ab268cbe45acb717fb5846b47cd44f2f393584",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarFamilyTransport.lean",
+      "source_path": "NLS/ComplexAnalysis/ScalarFamilyTransport.lean",
+      "source_sha256": "94e2b7c6d9b12dd52cd7044a86b2dbe24f8de4bf11bc1e7d295d507d1284ba95",
+      "local_sha256": "94e2b7c6d9b12dd52cd7044a86b2dbe24f8de4bf11bc1e7d295d507d1284ba95",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SecondDerivativeRayLimit.lean",
+      "source_path": "NLS/ComplexAnalysis/SecondDerivativeRayLimit.lean",
+      "source_sha256": "3a2cd49a9aef6db36c9c58d9828c8ace26d15ebae66feb1feb9dd4c6282b8e1f",
+      "local_sha256": "3a2cd49a9aef6db36c9c58d9828c8ace26d15ebae66feb1feb9dd4c6282b8e1f",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/Fourier/PeriodOneContinuousMean.lean",
+      "source_path": "NLS/Fourier/PeriodOneContinuousMean.lean",
+      "source_sha256": "3f94bd7a49acdff0fc63393ff928699a0e642082f14f5cdf232ff614a01c1523",
+      "local_sha256": "3f94bd7a49acdff0fc63393ff928699a0e642082f14f5cdf232ff614a01c1523",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillActionGapBounds.lean",
+      "source_path": "NLS/KdV/ClassicalHillActionGapBounds.lean",
+      "source_sha256": "cdfde91187e4f7bccf3876019c6f412a0cb6e2c336561453211e1f881c0018a1",
+      "local_sha256": "dbb5f2b7317a45430c83bd93bc0b1545129f843c1c7b11d802b8a1d17591628f",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [
+          "NLS.KdV.ActionHamiltonianMomentAlgebra"
+        ],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillActionUpperBound.lean",
+      "source_path": "NLS/KdV/ClassicalHillActionUpperBound.lean",
+      "source_sha256": "f90f008ef80b65e4df55f4f126ec1c272de8b7a4875986ea0882e77949d1c8f0",
+      "local_sha256": "58415cd3865e2746e07b6d29d753f12cbe9b7d4425bd05f364f0218a5cacad5c",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [
+          "NLS.KdV.ActionHamiltonianMomentAlgebra"
+        ],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillCubicGapBounds.lean",
+      "source_path": "NLS/KdV/ClassicalHillCubicGapBounds.lean",
+      "source_sha256": "0fb46fa52a214336b79dc267c5400984404de5dc5f79acf846394a92e48442b5",
+      "local_sha256": "0fb46fa52a214336b79dc267c5400984404de5dc5f79acf846394a92e48442b5",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillHighContourActions.lean",
+      "source_path": "NLS/KdV/ClassicalHillHighContourActions.lean",
+      "source_sha256": "b5a5b11f4408bdc592b36903f2e709684dbef19d0509587336af94830ae4e230",
+      "local_sha256": "b5a5b11f4408bdc592b36903f2e709684dbef19d0509587336af94830ae4e230",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillMomentCutRoot.lean",
+      "source_path": "NLS/KdV/ClassicalHillMomentCutRoot.lean",
+      "source_sha256": "b962f4382c55e7501bd6f1a9bf01357ff468885bd49fa0f467f9a954da37aa95",
+      "local_sha256": "b962f4382c55e7501bd6f1a9bf01357ff468885bd49fa0f467f9a954da37aa95",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillMomentRadius.lean",
+      "source_path": "NLS/KdV/ClassicalHillMomentRadius.lean",
+      "source_sha256": "08b471ecaf76388fa5aff3c620144bc71ef8e510c05b594737d0b28b3b715303",
+      "local_sha256": "08b471ecaf76388fa5aff3c620144bc71ef8e510c05b594737d0b28b3b715303",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillPhaseCoefficients.lean",
+      "source_path": "NLS/KdV/ClassicalHillPhaseCoefficients.lean",
+      "source_sha256": "c367c502f019ac02cf5b60de1928503edb3fc0be578f24a449d8f6b6889a7a06",
+      "local_sha256": "c367c502f019ac02cf5b60de1928503edb3fc0be578f24a449d8f6b6889a7a06",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillQuarticModel.lean",
+      "source_path": "NLS/KdV/ClassicalHillQuarticModel.lean",
+      "source_sha256": "7fdf8f7b81151ac579b35ebd9674179a22a0e309309571fcd1a90c3b023262ba",
+      "local_sha256": "7fdf8f7b81151ac579b35ebd9674179a22a0e309309571fcd1a90c3b023262ba",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillActionCoefficientLimits.lean",
+      "source_path": "NLS/KdV/HillActionCoefficientLimits.lean",
+      "source_sha256": "331fef02f7925c285ccd9485233e3e76adbae65b3721c97125267afc613d92cd",
+      "local_sha256": "331fef02f7925c285ccd9485233e3e76adbae65b3721c97125267afc613d92cd",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillConstantActionCurves.lean",
+      "source_path": "NLS/KdV/HillConstantActionCurves.lean",
+      "source_sha256": "46c4465b27ddd6d66b9ac6fa69431821c103b55921c29404365794bbd32a3fa9",
+      "local_sha256": "46c4465b27ddd6d66b9ac6fa69431821c103b55921c29404365794bbd32a3fa9",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillFiniteActionRealization.lean",
+      "source_path": "NLS/KdV/HillFiniteActionRealization.lean",
+      "source_sha256": "1fafd254990011a4ded91c668e0b4c627534cfd3945732cd0325eb23ffdd2bbc",
+      "local_sha256": "1fafd254990011a4ded91c668e0b4c627534cfd3945732cd0325eb23ffdd2bbc",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillFreeCubicActionRatio.lean",
+      "source_path": "NLS/KdV/HillFreeCubicActionRatio.lean",
+      "source_sha256": "18bf1cbd95de6f85179d1bc04866b7799de33225806f1a1b5041bf08990856e6",
+      "local_sha256": "18bf1cbd95de6f85179d1bc04866b7799de33225806f1a1b5041bf08990856e6",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillFreeCubicMomentFactor.lean",
+      "source_path": "NLS/KdV/HillFreeCubicMomentFactor.lean",
+      "source_sha256": "4566c0ce686084f8e362916e48599a27c7a38edf739173ace71f5f0c1b180a90",
+      "local_sha256": "4566c0ce686084f8e362916e48599a27c7a38edf739173ace71f5f0c1b180a90",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillFreeDeflatedTraceSlope.lean",
+      "source_path": "NLS/KdV/HillFreeDeflatedTraceSlope.lean",
+      "source_sha256": "95185d9a910c565cbb928150ba17b44611be34678bef3613638e2c188294299b",
+      "local_sha256": "95185d9a910c565cbb928150ba17b44611be34678bef3613638e2c188294299b",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillFreePhysicalRootAmplitude.lean",
+      "source_path": "NLS/KdV/HillFreePhysicalRootAmplitude.lean",
+      "source_sha256": "824fadd08e908b43379eb98efa3bb3716eec2aa28fbf8dbd14f53ad90a906fce",
+      "local_sha256": "824fadd08e908b43379eb98efa3bb3716eec2aa28fbf8dbd14f53ad90a906fce",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillFreePrimitivePhysicalData.lean",
+      "source_path": "NLS/KdV/HillFreePrimitivePhysicalData.lean",
+      "source_sha256": "a0ae4d1b811eda8473d4a1074a7cf751c3dcb328d9ff9d9f7e89bae21f816602",
+      "local_sha256": "a0ae4d1b811eda8473d4a1074a7cf751c3dcb328d9ff9d9f7e89bae21f816602",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillFreeQuadraticPrimitive.lean",
+      "source_path": "NLS/KdV/HillFreeQuadraticPrimitive.lean",
+      "source_sha256": "9d992fdc94ce053cacaf8ee8811e7346ec4863fa852e3276a6b88270174a9061",
+      "local_sha256": "9d992fdc94ce053cacaf8ee8811e7346ec4863fa852e3276a6b88270174a9061",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillFreeQuarticContour.lean",
+      "source_path": "NLS/KdV/HillFreeQuarticContour.lean",
+      "source_sha256": "1083af427793eb60df0f0836eec2d31ea5f454d35f3c07d95489aaf653f0e570",
+      "local_sha256": "8ca585da6657174e3b44dadb75e8fea89171363b00682cc4907c076b0df9c654",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [
+          "NLS.KdV.ActionHamiltonianMomentAlgebra"
+        ],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillH1LinearActionEnergy.lean",
+      "source_path": "NLS/KdV/HillH1LinearActionEnergy.lean",
+      "source_sha256": "e6fa001053c7f49fbce0f3da3c96a142c53fa0d6ad6636d1c1620fef99a170ab",
+      "local_sha256": "e6fa001053c7f49fbce0f3da3c96a142c53fa0d6ad6636d1c1620fef99a170ab",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllBoundaryLimits.lean",
+      "source_path": "NLS/KdV/HillHminusOneAllBoundaryLimits.lean",
+      "source_sha256": "0bc9037a6b2fee99a089f7cb1b4e7ca2205eaa97451f4d4f558caf45314f99bd",
+      "local_sha256": "0bc9037a6b2fee99a089f7cb1b4e7ca2205eaa97451f4d4f558caf45314f99bd",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllCubicSigns.lean",
+      "source_path": "NLS/KdV/HillHminusOneAllCubicSigns.lean",
+      "source_sha256": "61ae4e774afee8e0db4249adfdd398eb2f2a3f07328fdaf828b7fbced7ded1e9",
+      "local_sha256": "61ae4e774afee8e0db4249adfdd398eb2f2a3f07328fdaf828b7fbced7ded1e9",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllEndpointNormalization.lean",
+      "source_path": "NLS/KdV/HillHminusOneAllEndpointNormalization.lean",
+      "source_sha256": "9b738bcd3a62b84b17be95ed0c15d9310129b77839298447634fd8186e3eda2d",
+      "local_sha256": "9b738bcd3a62b84b17be95ed0c15d9310129b77839298447634fd8186e3eda2d",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllGapSquares.lean",
+      "source_path": "NLS/KdV/HillHminusOneAllGapSquares.lean",
+      "source_sha256": "53f29fdd3b0e854439c35c57f47986cd85ab3a2d04a753f1b710dd6a3ac15b71",
+      "local_sha256": "53f29fdd3b0e854439c35c57f47986cd85ab3a2d04a753f1b710dd6a3ac15b71",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllPeriodZeros.lean",
+      "source_path": "NLS/KdV/HillHminusOneAllPeriodZeros.lean",
+      "source_sha256": "b719f5f1f4e17e871bb1901ba8526875acd871e4c7f66a4f0d4e835c80e6f300",
+      "local_sha256": "b719f5f1f4e17e871bb1901ba8526875acd871e4c7f66a4f0d4e835c80e6f300",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAllRealPeriods.lean",
+      "source_path": "NLS/KdV/HillHminusOneAllRealPeriods.lean",
+      "source_sha256": "29ca2ce19b67fc08903ae93209e20401c078f0b6d1d74c4a58cc60c0c52f1ff0",
+      "local_sha256": "29ca2ce19b67fc08903ae93209e20401c078f0b6d1d74c4a58cc60c0c52f1ff0",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAnalyticCanonicalPeriods.lean",
+      "source_path": "NLS/KdV/HillHminusOneAnalyticCanonicalPeriods.lean",
+      "source_sha256": "aadf87cb25bb3047f0e7ad38bcd10132bc4f71db1b8343dc1842b3f3bd8690a3",
+      "local_sha256": "aadf87cb25bb3047f0e7ad38bcd10132bc4f71db1b8343dc1842b3f3bd8690a3",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneArnoldActionComparison.lean",
+      "source_path": "NLS/KdV/HillHminusOneArnoldActionComparison.lean",
+      "source_sha256": "0b56591d7b68195d25c58d9976c9231554ccb68a160dfa2701e6b38e641bc660",
+      "local_sha256": "0f32b8ddd842c2c88b4f86d814937cb418f2fda61a6838084839c71b247e0f44",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [
+          "NLS.KdV.ActionHamiltonianMomentAlgebra",
+          "NLS.KdV.HillHminusPairUniquenessCompatibility"
+        ],
+        "renamed_scaled_quartic": false,
+        "pair_name": "Use the two-radius compatibility alias; preserve existing same-radius eq_or_swap."
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneArnoldGapUpperBound.lean",
+      "source_path": "NLS/KdV/HillHminusOneArnoldGapUpperBound.lean",
+      "source_sha256": "cdadcb9b8d83fdd61b204422570a822dc66ce7e26c38a746eb6b222a98c1e82b",
+      "local_sha256": "79fe7328712a864b5208f2c2cbf953f89a1fbd3659b9778d3a1a9eeeeda469f5",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [
+          "NLS.KdV.HillHminusPairUniquenessCompatibility"
+        ],
+        "renamed_scaled_quartic": false,
+        "pair_name": "Use the two-radius compatibility alias; preserve existing same-radius eq_or_swap."
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneArnoldMajorant.lean",
+      "source_path": "NLS/KdV/HillHminusOneArnoldMajorant.lean",
+      "source_sha256": "51a4649b94fb266c8e3b85b2e1788c7cfc350b2a906ca4093ad13a3c82809d1a",
+      "local_sha256": "51a4649b94fb266c8e3b85b2e1788c7cfc350b2a906ca4093ad13a3c82809d1a",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneBandContinuation.lean",
+      "source_path": "NLS/KdV/HillHminusOneBandContinuation.lean",
+      "source_sha256": "e518257e0c63b19823a69959f4fe5840b46ed72a34ab9248330a8cf515eacf60",
+      "local_sha256": "e518257e0c63b19823a69959f4fe5840b46ed72a34ab9248330a8cf515eacf60",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneBoundaryGapProfile.lean",
+      "source_path": "NLS/KdV/HillHminusOneBoundaryGapProfile.lean",
+      "source_sha256": "913e5ce9b7c8a896b2c5b532bddb232bbd0158b40cc6e919948bad8666676b4a",
+      "local_sha256": "913e5ce9b7c8a896b2c5b532bddb232bbd0158b40cc6e919948bad8666676b4a",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneBoundaryLabelContinuity.lean",
+      "source_path": "NLS/KdV/HillHminusOneBoundaryLabelContinuity.lean",
+      "source_sha256": "2187d094e036be8473598fb49569338df31c58a35d5ff7ee7335f09fd237b186",
+      "local_sha256": "2187d094e036be8473598fb49569338df31c58a35d5ff7ee7335f09fd237b186",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCanonicalHighPeriods.lean",
+      "source_path": "NLS/KdV/HillHminusOneCanonicalHighPeriods.lean",
+      "source_sha256": "1d72ee6330971839545cfa3032a2b2c84eb48276f53411db96412240fb5708d3",
+      "local_sha256": "1d72ee6330971839545cfa3032a2b2c84eb48276f53411db96412240fb5708d3",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCanonicalTailLocalization.lean",
+      "source_path": "NLS/KdV/HillHminusOneCanonicalTailLocalization.lean",
+      "source_sha256": "2b7589199dc1b6ebd308e54b57407da5a5f0b6f22141a42ca84cab93994e0911",
+      "local_sha256": "2b7589199dc1b6ebd308e54b57407da5a5f0b6f22141a42ca84cab93994e0911",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCubicGapBounds.lean",
+      "source_path": "NLS/KdV/HillHminusOneCubicGapBounds.lean",
+      "source_sha256": "04d9ffd4a01047d88c32ca7cd234ddbfffc7b6dd9ee88a12d34254ae551f8905",
+      "local_sha256": "04d9ffd4a01047d88c32ca7cd234ddbfffc7b6dd9ee88a12d34254ae551f8905",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneFinitePeriodExtensions.lean",
+      "source_path": "NLS/KdV/HillHminusOneFinitePeriodExtensions.lean",
+      "source_sha256": "a1ae2660520d65d75e3a6d01a03e8c8a3d7336bab41a0ac991c749ec27a143fa",
+      "local_sha256": "a1ae2660520d65d75e3a6d01a03e8c8a3d7336bab41a0ac991c749ec27a143fa",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapContourContinuity.lean",
+      "source_path": "NLS/KdV/HillHminusOneGapContourContinuity.lean",
+      "source_sha256": "d37ba9261fcfaa7df8cf3535d22f8798679468ed908da92c7b8e41922b467e64",
+      "local_sha256": "d37ba9261fcfaa7df8cf3535d22f8798679468ed908da92c7b8e41922b467e64",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapMajorant.lean",
+      "source_path": "NLS/KdV/HillHminusOneGapMajorant.lean",
+      "source_sha256": "bf89b42807f3162d6ed9de3d011178f01c149b1346b913557091963166ad71d9",
+      "local_sha256": "04e4997f47c674780a5334e82674db3152d7722cdeb8179eb17d61ef69d04c1e",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [
+          "NLS.KdV.HillHminusPairUniquenessCompatibility"
+        ],
+        "renamed_scaled_quartic": false,
+        "pair_name": "Use the two-radius compatibility alias; preserve existing same-radius eq_or_swap."
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGlobalGapBoundaryValues.lean",
+      "source_path": "NLS/KdV/HillHminusOneGlobalGapBoundaryValues.lean",
+      "source_sha256": "ef1c870be10019ad6af2fd51a4e94e2f139be00cf89120a3ac90f9ae874713f8",
+      "local_sha256": "ef1c870be10019ad6af2fd51a4e94e2f139be00cf89120a3ac90f9ae874713f8",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIsospectralLabels.lean",
+      "source_path": "NLS/KdV/HillHminusOneIsospectralLabels.lean",
+      "source_sha256": "72bf659376cf1f8938aa6e3bf831e3204a30d7adcdd4237ccbbe85465feb80f9",
+      "local_sha256": "72bf659376cf1f8938aa6e3bf831e3204a30d7adcdd4237ccbbe85465feb80f9",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIsospectralPeriods.lean",
+      "source_path": "NLS/KdV/HillHminusOneIsospectralPeriods.lean",
+      "source_sha256": "cfa0923c09b8a8e744bb9747ba5b30847b9457f01535b52b48ed41c35081b906",
+      "local_sha256": "cfa0923c09b8a8e744bb9747ba5b30847b9457f01535b52b48ed41c35081b906",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIsospectralPrimitive.lean",
+      "source_path": "NLS/KdV/HillHminusOneIsospectralPrimitive.lean",
+      "source_sha256": "8515147db74e95b8c5481725e260ac161cff750ea08e773a2a11de577bbded7f",
+      "local_sha256": "8515147db74e95b8c5481725e260ac161cff750ea08e773a2a11de577bbded7f",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneJointContourPrimitive.lean",
+      "source_path": "NLS/KdV/HillHminusOneJointContourPrimitive.lean",
+      "source_sha256": "ed50b1df21705db9ebdd55767a1b5a47ed7292d87c2dbc4e84f4a294f49b3ac7",
+      "local_sha256": "ed50b1df21705db9ebdd55767a1b5a47ed7292d87c2dbc4e84f4a294f49b3ac7",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneJointGapPeriodGerms.lean",
+      "source_path": "NLS/KdV/HillHminusOneJointGapPeriodGerms.lean",
+      "source_sha256": "7e403def1ebcb5af71801546cccd3238a285f95edfc818df5144a3c87cae93dc",
+      "local_sha256": "7e403def1ebcb5af71801546cccd3238a285f95edfc818df5144a3c87cae93dc",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraGapComparison.lean",
+      "source_path": "NLS/KdV/HillHminusOneMiuraGapComparison.lean",
+      "source_sha256": "21119649cd5dac98f51c3088d101046f5dbc7ecebe7e2257b2cfb500b6b56a82",
+      "local_sha256": "21119649cd5dac98f51c3088d101046f5dbc7ecebe7e2257b2cfb500b6b56a82",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealGapProfile.lean",
+      "source_path": "NLS/KdV/HillHminusOneRealGapProfile.lean",
+      "source_sha256": "3a05713adf045e288d49a54002a609fd15c48cf4e8c735fdb0ac48686628b20e",
+      "local_sha256": "3a05713adf045e288d49a54002a609fd15c48cf4e8c735fdb0ac48686628b20e",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealPeriodFormulas.lean",
+      "source_path": "NLS/KdV/HillHminusOneRealPeriodFormulas.lean",
+      "source_sha256": "153a1e0a4df8c35bdca107fab3d411f3e85b9d7a564a4751e4f829cbb3b5830a",
+      "local_sha256": "153a1e0a4df8c35bdca107fab3d411f3e85b9d7a564a4751e4f829cbb3b5830a",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTailContourGeometry.lean",
+      "source_path": "NLS/KdV/HillHminusOneTailContourGeometry.lean",
+      "source_sha256": "212ae8680fd384f7f559fdd61392191d8769509cea1e1adc6627924a0deb9665",
+      "local_sha256": "212ae8680fd384f7f559fdd61392191d8769509cea1e1adc6627924a0deb9665",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTraceChartBoundary.lean",
+      "source_path": "NLS/KdV/HillHminusOneTraceChartBoundary.lean",
+      "source_sha256": "7255410db568142888bc53814e9a80882ce8795494bde9cd5b0ccba1257f754d",
+      "local_sha256": "7255410db568142888bc53814e9a80882ce8795494bde9cd5b0ccba1257f754d",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTraceChartRealAgreement.lean",
+      "source_path": "NLS/KdV/HillHminusOneTraceChartRealAgreement.lean",
+      "source_sha256": "58445fb433f254785158a3050b930d55e8d6026e42e772b1275891a0a8086969",
+      "local_sha256": "58445fb433f254785158a3050b930d55e8d6026e42e772b1275891a0a8086969",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTraceChartSource.lean",
+      "source_path": "NLS/KdV/HillHminusOneTraceChartSource.lean",
+      "source_sha256": "18e716bab8099e3ae2eca54e76bc9f980df87a46e760073ae1fc40dd5ba84a4a",
+      "local_sha256": "18e716bab8099e3ae2eca54e76bc9f980df87a46e760073ae1fc40dd5ba84a4a",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusPhysicalArnoldActions.lean",
+      "source_path": "NLS/KdV/HillHminusPhysicalArnoldActions.lean",
+      "source_sha256": "782257c8dc253a4fd82c0d5ec51804330ecde32ef57c601f017ea065db3465c1",
+      "local_sha256": "782257c8dc253a4fd82c0d5ec51804330ecde32ef57c601f017ea065db3465c1",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillHminusPhysicalSourceDensity.lean",
+      "source_path": "NLS/KdV/HillHminusPhysicalSourceDensity.lean",
+      "source_sha256": "43e15aa5d19e46c618e52fc42dfd8383e38690681a4066447c4cf77d29e285f1",
+      "local_sha256": "43e15aa5d19e46c618e52fc42dfd8383e38690681a4066447c4cf77d29e285f1",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillL2CubicPhysicalPeriods.lean",
+      "source_path": "NLS/KdV/HillL2CubicPhysicalPeriods.lean",
+      "source_sha256": "c8b7414d07834d33c94ee3c783186c258e3838432ef23b07005ef0acb36cc041",
+      "local_sha256": "c8b7414d07834d33c94ee3c783186c258e3838432ef23b07005ef0acb36cc041",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillL2QuarticCircleAsymptotics.lean",
+      "source_path": "NLS/KdV/HillL2QuarticCircleAsymptotics.lean",
+      "source_sha256": "d777b651fa8268b5966a3eac6008bafb53327b72d57a9ae98f75801eecb4eb97",
+      "local_sha256": "d777b651fa8268b5966a3eac6008bafb53327b72d57a9ae98f75801eecb4eb97",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillL2UpperQuarticAsymptotics.lean",
+      "source_path": "NLS/KdV/HillL2UpperQuarticAsymptotics.lean",
+      "source_sha256": "d8221093b300014b721225b7e88ad8bde9b267e4b7d234dd431386b4babe9a27",
+      "local_sha256": "d8221093b300014b721225b7e88ad8bde9b267e4b7d234dd431386b4babe9a27",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillMiuraCriticalActions.lean",
+      "source_path": "NLS/KdV/HillMiuraCriticalActions.lean",
+      "source_sha256": "add603ffbe2ccd26d78ff4e9ff31978594b7a689994cf09db46e3ddba5716203",
+      "local_sha256": "add603ffbe2ccd26d78ff4e9ff31978594b7a689994cf09db46e3ddba5716203",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillMiuraCriticalFrequencies.lean",
+      "source_path": "NLS/KdV/HillMiuraCriticalFrequencies.lean",
+      "source_sha256": "9aa82eb7bd48ee4dd3e11f5e63d728f0cb03efe85647afac89f12b934040f4c4",
+      "local_sha256": "9aa82eb7bd48ee4dd3e11f5e63d728f0cb03efe85647afac89f12b934040f4c4",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillMiuraCriticalLabels.lean",
+      "source_path": "NLS/KdV/HillMiuraCriticalLabels.lean",
+      "source_sha256": "3547819ba8d145248826d462ec8c2d4699c74cf92c758ebf4a379745b9434cde",
+      "local_sha256": "3547819ba8d145248826d462ec8c2d4699c74cf92c758ebf4a379745b9434cde",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillMiuraCriticalSpectrum.lean",
+      "source_path": "NLS/KdV/HillMiuraCriticalSpectrum.lean",
+      "source_sha256": "1c2983e9534c95f1e441aeb650a13926ca6857363cda8f0ee711ad92b11c0780",
+      "local_sha256": "1c2983e9534c95f1e441aeb650a13926ca6857363cda8f0ee711ad92b11c0780",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillNativeH1Recovery.lean",
+      "source_path": "NLS/KdV/HillNativeH1Recovery.lean",
+      "source_sha256": "e235b15e0c08bd65adaa7b85f849d7ff5aac27f59687dd84cc1cdb1861326bba",
+      "local_sha256": "e235b15e0c08bd65adaa7b85f849d7ff5aac27f59687dd84cc1cdb1861326bba",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillNativeH1Source.lean",
+      "source_path": "NLS/KdV/HillNativeH1Source.lean",
+      "source_sha256": "720fb1dbc269dab9ae8cd6404e9a38525f2be1988377d9654128263c561536e2",
+      "local_sha256": "720fb1dbc269dab9ae8cd6404e9a38525f2be1988377d9654128263c561536e2",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillOriginalActionFibers.lean",
+      "source_path": "NLS/KdV/HillOriginalActionFibers.lean",
+      "source_sha256": "8f477b1f1df98cbbf5c02be9be5a200145e3fd6caa668b93f63d996f238814dd",
+      "local_sha256": "8f477b1f1df98cbbf5c02be9be5a200145e3fd6caa668b93f63d996f238814dd",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillOriginalSequenceActions.lean",
+      "source_path": "NLS/KdV/HillOriginalSequenceActions.lean",
+      "source_sha256": "4f6a1f446c1494620e1fcec4183135c5e8787496c35bb0839ef99d2422edc9b3",
+      "local_sha256": "4f6a1f446c1494620e1fcec4183135c5e8787496c35bb0839ef99d2422edc9b3",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalCubicFactor.lean",
+      "source_path": "NLS/KdV/HillPhysicalCubicFactor.lean",
+      "source_sha256": "16892ae8fd6154a54c6022036b29a6551aeb3fff8f3557586ca71bc60a3cb535",
+      "local_sha256": "16892ae8fd6154a54c6022036b29a6551aeb3fff8f3557586ca71bc60a3cb535",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalGapPrimitive.lean",
+      "source_path": "NLS/KdV/HillPhysicalGapPrimitive.lean",
+      "source_sha256": "65287123308eaa21a43068f38e508baeed57028590548210724f9b2724a42d71",
+      "local_sha256": "65287123308eaa21a43068f38e508baeed57028590548210724f9b2724a42d71",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillRawActionSequence.lean",
+      "source_path": "NLS/KdV/HillRawActionSequence.lean",
+      "source_sha256": "ba8d493fc76ce896f398510a858352dc2d01421e4f8b5efb5baee94b4fee57f9",
+      "local_sha256": "ba8d493fc76ce896f398510a858352dc2d01421e4f8b5efb5baee94b4fee57f9",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillRoughActionApproximation.lean",
+      "source_path": "NLS/KdV/HillRoughActionApproximation.lean",
+      "source_sha256": "1f43156db6ccddfb781d02817ddc827dd0186734df6ba6b8ba31c4f43345e383",
+      "local_sha256": "1f43156db6ccddfb781d02817ddc827dd0186734df6ba6b8ba31c4f43345e383",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillRoughActionFibers.lean",
+      "source_path": "NLS/KdV/HillRoughActionFibers.lean",
+      "source_sha256": "2c8cb7826d257d1976a04d39c6f861660c9902dc55d4fc811c186f88bc7196b1",
+      "local_sha256": "2c8cb7826d257d1976a04d39c6f861660c9902dc55d4fc811c186f88bc7196b1",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillRoughPairInverse.lean",
+      "source_path": "NLS/KdV/HillRoughPairInverse.lean",
+      "source_sha256": "24bf097cc0e2bbd0cc30ab92a25f364836da382948a4ca7bb23b38ef96078477",
+      "local_sha256": "24bf097cc0e2bbd0cc30ab92a25f364836da382948a4ca7bb23b38ef96078477",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillRoughScalarGermIdentity.lean",
+      "source_path": "NLS/KdV/HillRoughScalarGermIdentity.lean",
+      "source_sha256": "5e7a274e2e1ebdae81a4a79ec8381fb16a596a0cf402ba4813f3d5dbbcd138da",
+      "local_sha256": "5e7a274e2e1ebdae81a4a79ec8381fb16a596a0cf402ba4813f3d5dbbcd138da",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillSmoothIntrinsicQuarticTrace.lean",
+      "source_path": "NLS/KdV/HillSmoothIntrinsicQuarticTrace.lean",
+      "source_sha256": "f9bc14d4a672d03db2ce334684aa4d7a80ccad957d843fda486d5e7fa142515b",
+      "local_sha256": "f9bc14d4a672d03db2ce334684aa4d7a80ccad957d843fda486d5e7fa142515b",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillSmoothQuarticTraceLimit.lean",
+      "source_path": "NLS/KdV/HillSmoothQuarticTraceLimit.lean",
+      "source_sha256": "159b6573b8b978a2a60b8d7f7c7e17a97ef1a149f153790f2ce683a5694bf735",
+      "local_sha256": "27d957fa2aa731a6a3d0450c181d0260394a8419de0a1fad963cb4621b3b86f6",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [
+          "NLS.ComplexAnalysis.ScaledQuarticContourCoefficient"
+        ],
+        "renamed_scaled_quartic": true
+      }
+    },
+    {
+      "path": "NLS/KdV/HillWeightedActionSequence.lean",
+      "source_path": "NLS/KdV/HillWeightedActionSequence.lean",
+      "source_sha256": "f2f5514d98b587e7f58075c285cc76a423d4898e7df9d2ad1f0b4650ad7ea1a0",
+      "local_sha256": "f2f5514d98b587e7f58075c285cc76a423d4898e7df9d2ad1f0b4650ad7ea1a0",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/HillWeightedNativeSource.lean",
+      "source_path": "NLS/KdV/HillWeightedNativeSource.lean",
+      "source_sha256": "b1ace228cefe92f90e1b286aef62f815d9af0f65d3b33c3ac1530e14f730c7f6",
+      "local_sha256": "b1ace228cefe92f90e1b286aef62f815d9af0f65d3b33c3ac1530e14f730c7f6",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/SobolevHamiltonian.lean",
+      "source_path": "NLS/KdV/SobolevHamiltonian.lean",
+      "source_sha256": "3037789354f8afb930e1a8f6a4f4f472bd10185ab225aa1e0b044cca9e0b7348",
+      "local_sha256": "3037789354f8afb930e1a8f6a4f4f472bd10185ab225aa1e0b044cca9e0b7348",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticSquareTailMajorant.lean",
+      "source_path": "NLS/SequenceSpaces/AnalyticSquareTailMajorant.lean",
+      "source_sha256": "edc69423dff00148a8ae2efa00834b36af92a131b596844f71873164e9882f98",
+      "local_sha256": "edc69423dff00148a8ae2efa00834b36af92a131b596844f71873164e9882f98",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/GlobalScalarActionFamilyDescent.lean",
+      "source_path": "NLS/SequenceSpaces/GlobalScalarActionFamilyDescent.lean",
+      "source_sha256": "a38339b4e884da2f578bfde5527f81cdf23f618436ddd0b2c3527fcafbe0bb31",
+      "local_sha256": "a38339b4e884da2f578bfde5527f81cdf23f618436ddd0b2c3527fcafbe0bb31",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertReindexIsometry.lean",
+      "source_path": "NLS/SequenceSpaces/HilbertReindexIsometry.lean",
+      "source_sha256": "f2428fa28a733920bd744b6a6803375080279be468cc0b412a8beb54284ab00f",
+      "local_sha256": "f2428fa28a733920bd744b6a6803375080279be468cc0b412a8beb54284ab00f",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/LocalAtlasActionFamilyDescent.lean",
+      "source_path": "NLS/SequenceSpaces/LocalAtlasActionFamilyDescent.lean",
+      "source_sha256": "62f9d43f23bfa6b15bc6d67cce04ecb0ff72a7c8311ebe58154ea1a2e0220f36",
+      "local_sha256": "62f9d43f23bfa6b15bc6d67cce04ecb0ff72a7c8311ebe58154ea1a2e0220f36",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/LocalScalarActionFamilyDescent.lean",
+      "source_path": "NLS/SequenceSpaces/LocalScalarActionFamilyDescent.lean",
+      "source_sha256": "027e24a2d872d83d2e4c6e86e8f64484e69b6f64cc6b9c944afed7d38cc4d95a",
+      "local_sha256": "027e24a2d872d83d2e4c6e86e8f64484e69b6f64cc6b9c944afed7d38cc4d95a",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/LpOperatorBasisExt.lean",
+      "source_path": "NLS/SequenceSpaces/LpOperatorBasisExt.lean",
+      "source_sha256": "d9146595427f296d391bc8817b5fcd30e65b1a276ee4d43b1875b77f42d7bd12",
+      "local_sha256": "d9146595427f296d391bc8817b5fcd30e65b1a276ee4d43b1875b77f42d7bd12",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/ModulusFiberInvariance.lean",
+      "source_path": "NLS/SequenceSpaces/ModulusFiberInvariance.lean",
+      "source_sha256": "01b2f40e138e02e501b177e2476b48e806b675c3cc94fe58b97e97b590a360af",
+      "local_sha256": "01b2f40e138e02e501b177e2476b48e806b675c3cc94fe58b97e97b590a360af",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneHminusOneRealForm.lean",
+      "source_path": "NLS/SequenceSpaces/PeriodOneHminusOneRealForm.lean",
+      "source_sha256": "3112fd59d270f7427cad06f52ae75c71fecf911e5680e4331d9483808cf21a85",
+      "local_sha256": "969214f2960dcc517b0c66bd45a4d8a9fee7c4b8078c9e5c2dd679a6a8a5ddf3",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false,
+        "real_part_names": "Rename incoming real/imaginary gluing parts and their internal helper lemmas; retain the existing verified PeriodOneRealFormIdentity source and declarations unchanged."
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealImag.lean",
+      "source_path": "NLS/SequenceSpaces/PhysicalRealImag.lean",
+      "source_sha256": "5445748fc87a95eaaeb8b7883b42e5760f11fc60f46ded06646d2e6f59fa83db",
+      "local_sha256": "beda4f87d014c73cf41b5340f7ed1804d945de395ec1406c511277876bbe2541",
+      "disposition": "imported_with_compatibility_imports",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false,
+        "conjugation_continuity_name": "Give the incoming all-exponent continuity helper a distinct name; retain the older Hilbert signed-completion theorem unchanged."
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveReindex.lean",
+      "source_path": "NLS/SequenceSpaces/PositiveReindex.lean",
+      "source_sha256": "6e9c87c3c0eb088a9ddb16173b33a5a7a0ef25a975b93dee12dd5ddb95941e88",
+      "local_sha256": "6e9c87c3c0eb088a9ddb16173b33a5a7a0ef25a975b93dee12dd5ddb95941e88",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveSupportedMembership.lean",
+      "source_path": "NLS/SequenceSpaces/PositiveSupportedMembership.lean",
+      "source_sha256": "21961c7f970dda0c4e4ff8b04bb2d13f23963a0c5dd76542832bf7b5b4f6c928",
+      "local_sha256": "21961c7f970dda0c4e4ff8b04bb2d13f23963a0c5dd76542832bf7b5b4f6c928",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealScalarActionFamilyDescent.lean",
+      "source_path": "NLS/SequenceSpaces/RealScalarActionFamilyDescent.lean",
+      "source_sha256": "7bd1190899ecb6317356ee704bd2d8dc9866bca5a753afe9ef161d40daa7e278",
+      "local_sha256": "7bd1190899ecb6317356ee704bd2d8dc9866bca5a753afe9ef161d40daa7e278",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/ScalarActionFamilyGluing.lean",
+      "source_path": "NLS/SequenceSpaces/ScalarActionFamilyGluing.lean",
+      "source_sha256": "847ebf775275586c2ca25d917b2bf53ed6a324e47b47cec274c226bd09f5c7a2",
+      "local_sha256": "847ebf775275586c2ca25d917b2bf53ed6a324e47b47cec274c226bd09f5c7a2",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/SignedHilbertPairs.lean",
+      "source_path": "NLS/SequenceSpaces/SignedHilbertPairs.lean",
+      "source_sha256": "c77ea59d701fb7e19d5e7cf5e72e6f0c3ea3ac1998b2aca0bad5076e985036eb",
+      "local_sha256": "c77ea59d701fb7e19d5e7cf5e72e6f0c3ea3ac1998b2aca0bad5076e985036eb",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/SingleCoordinatePhase.lean",
+      "source_path": "NLS/SequenceSpaces/SingleCoordinatePhase.lean",
+      "source_sha256": "9064403fca0e0d1a2896a0d71e1b0c5002e3cf1182e8825869ce9bb27d0cf13e",
+      "local_sha256": "9064403fca0e0d1a2896a0d71e1b0c5002e3cf1182e8825869ce9bb27d0cf13e",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/SummableCoordinateNormContinuity.lean",
+      "source_path": "NLS/SequenceSpaces/SummableCoordinateNormContinuity.lean",
+      "source_sha256": "fb3876e410d7f6d728a0b96f1aead57701297b1c6649d421ece1e9e0c81f6ad0",
+      "local_sha256": "fb3876e410d7f6d728a0b96f1aead57701297b1c6649d421ece1e9e0c81f6ad0",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedQuadraticActionAlgebra.lean",
+      "source_path": "NLS/SequenceSpaces/WeightedQuadraticActionAlgebra.lean",
+      "source_sha256": "34289ddddad8bc56ff56e49129c1c5bba0e41c7ee5411016783acd289ab29061",
+      "local_sha256": "34289ddddad8bc56ff56e49129c1c5bba0e41c7ee5411016783acd289ab29061",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedScalarActionFamilyDescent.lean",
+      "source_path": "NLS/SequenceSpaces/WeightedScalarActionFamilyDescent.lean",
+      "source_sha256": "56b54e9ed7338c41f2a58418ba130a53b6b1ddc6122ea821a59b845577cf6f6a",
+      "local_sha256": "56b54e9ed7338c41f2a58418ba130a53b6b1ddc6122ea821a59b845577cf6f6a",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHigherActionCoefficientContinuity.lean",
+      "source_path": "NLS/ZakharovShabat/SourceHigherActionCoefficientContinuity.lean",
+      "source_sha256": "119ea8e49b4059432153eb97e1217d6139fa7b9b699272d813617644df0bc7f1",
+      "local_sha256": "119ea8e49b4059432153eb97e1217d6139fa7b9b699272d813617644df0bc7f1",
+      "disposition": "imported_unchanged",
+      "adaptation": {
+        "extra_imports": [],
+        "renamed_scaled_quartic": false
+      }
+    },
+    {
+      "path": "NLS/KdV/ActionHamiltonianMomentAlgebra.lean",
+      "source_path": "NLS/KdV/ActionHamiltonianMoments.lean",
+      "source_sha256": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8",
+      "local_sha256": "0bb4e1dc50b38920b51b4254ec3621d393b2d17ab93a9b79437af8bc82fcc7d4",
+      "disposition": "compatibility_bridge",
+      "adaptation": "Extract four additional primitive-action algebra lemmas without changing the existing verified source."
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BaseContourTailSeries.lean",
+      "source_path": "NLS/Articles/KdVConvexity/BaseContourSeries.lean",
+      "source_sha256": "27c6244f1fa47880719e51cbae8a62203b5d4ac5561a4cd518940cbb6ad71f4f",
+      "local_sha256": "d861765b05ddb930c27cf949cfaeb0a32cb2f59dd2683052e586ba40040487e6",
+      "disposition": "compatibility_bridge",
+      "adaptation": "Extract the additional tail-bound contour summation theorem, retaining all existing local BaseContourSeries declarations unchanged."
+    },
+    {
+      "path": "NLS/KdV/HillHminusPairUniquenessCompatibility.lean",
+      "source_path": "NLS/KdV/HillHminusOnePairUniqueness.lean",
+      "source_sha256": "9978a3e9efdf97127c2e8748104417e45300c9dfa3f7618fe2af2599ec6ac7c3",
+      "local_sha256": "8b794119f856e99dd4b396526a1bb7a97441023a3b68638b6ab2de4c13672e2a",
+      "disposition": "compatibility_bridge",
+      "adaptation": "Recover the pinned theorem name by the existing verified general two-radius uniqueness theorem."
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScaledQuarticContourCoefficient.lean",
+      "source_path": "NLS/ComplexAnalysis/QuarticContourCoefficient.lean",
+      "source_sha256": "0eb5441d861bc56aa4d7b9e5136496c8d95d4430ac55fb5f21e6fe2cf0764688",
+      "local_sha256": "ae0106d0e723dd1765fca1bd8d8a5181b366dac854dcd94f4aec6b3756062a52",
+      "disposition": "compatibility_bridge",
+      "adaptation": "Retain the local unscaled estimate and derive the pinned physical Hamiltonian scaling as a new theorem with a distinct name."
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionEmbedding.lean",
+      "source_path": "NLS/Articles/KdVConvexity/ActionEmbedding.lean",
+      "source_sha256": "76a71b6f518b8c5ef03af0b5681ad21d838a85a261f92d5c996f761e01585037",
+      "local_sha256": "76a71b6f518b8c5ef03af0b5681ad21d838a85a261f92d5c996f761e01585037",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/AnalyticSeries.lean",
+      "source_path": "NLS/Articles/KdVConvexity/AnalyticSeries.lean",
+      "source_sha256": "6ebd3fd34d32ce236ae7b60756cf1542c36a3e6d76cb671eb756e52c390db15b",
+      "local_sha256": "6ebd3fd34d32ce236ae7b60756cf1542c36a3e6d76cb671eb756e52c390db15b",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BaseContourSeries.lean",
+      "source_path": "NLS/Articles/KdVConvexity/BaseContourSeries.lean",
+      "source_sha256": "27c6244f1fa47880719e51cbae8a62203b5d4ac5561a4cd518940cbb6ad71f4f",
+      "local_sha256": "8a84db27117c935608f186e0f0c1396f38b0126611a9a98b1b57d19b5762001e",
+      "disposition": "retained_local_baseline",
+      "adaptation": "Existing local source bytes are preserved; additional pinned BaseContourSeries theorem is in BaseContourTailSeries."
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalExtension.lean",
+      "source_path": "NLS/Articles/KdVConvexity/GlobalExtension.lean",
+      "source_sha256": "a78d76d0fa33b892f8b981d49a64f59f7fd0eee4c04eb34c73817cd86359c11d",
+      "local_sha256": "a78d76d0fa33b892f8b981d49a64f59f7fd0eee4c04eb34c73817cd86359c11d",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ContinuousMapAnalytic.lean",
+      "source_path": "NLS/ComplexAnalysis/ContinuousMapAnalytic.lean",
+      "source_sha256": "723485d2c382bbe0c3fd8b3e904ee9168c58aa52233c36970772aef35dfcd76f",
+      "local_sha256": "723485d2c382bbe0c3fd8b3e904ee9168c58aa52233c36970772aef35dfcd76f",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ContinuousMapAnalyticInverse.lean",
+      "source_path": "NLS/ComplexAnalysis/ContinuousMapAnalyticInverse.lean",
+      "source_sha256": "d130092234c2b04dcae7adc7ede8c1427dc1a087a972940c1b8c22ebc5de262f",
+      "local_sha256": "d130092234c2b04dcae7adc7ede8c1427dc1a087a972940c1b8c22ebc5de262f",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ContinuousMapSuperposition.lean",
+      "source_path": "NLS/ComplexAnalysis/ContinuousMapSuperposition.lean",
+      "source_sha256": "8f38c6d264d917dea2429403a070aaa86d03d3bace998b3b5d187ceacaaf2af8",
+      "local_sha256": "8f38c6d264d917dea2429403a070aaa86d03d3bace998b3b5d187ceacaaf2af8",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/ComplexAnalysis/DerivativeRayLimit.lean",
+      "source_path": "NLS/ComplexAnalysis/DerivativeRayLimit.lean",
+      "source_sha256": "867cc3bb92700c7d1d133e18177c833a2e8c67327124087ab081b855d6437c87",
+      "local_sha256": "867cc3bb92700c7d1d133e18177c833a2e8c67327124087ab081b855d6437c87",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocalAnalyticExtensionTransport.lean",
+      "source_path": "NLS/ComplexAnalysis/LocalAnalyticExtensionTransport.lean",
+      "source_sha256": "5fb7095b239eaebbc368f1e77bfac0c292b50f90e352a06b385d0d794d387844",
+      "local_sha256": "5fb7095b239eaebbc368f1e77bfac0c292b50f90e352a06b385d0d794d387844",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocalAnalyticNonvanishing.lean",
+      "source_path": "NLS/ComplexAnalysis/LocalAnalyticNonvanishing.lean",
+      "source_sha256": "0686b39c7a0f5a9fac44be47b048fbe164bbf9ea998cb90e618c11e5835725f7",
+      "local_sha256": "0686b39c7a0f5a9fac44be47b048fbe164bbf9ea998cb90e618c11e5835725f7",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactAnalyticDeterminant.lean",
+      "source_path": "NLS/FunctionalAnalysis/CompactAnalyticDeterminant.lean",
+      "source_sha256": "27e053b2d881800a3cbc62e38c3db4d79ce45a34ccbf87720ff31b917eeefc09",
+      "local_sha256": "27e053b2d881800a3cbc62e38c3db4d79ce45a34ccbf87720ff31b917eeefc09",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactInvertibleComplement.lean",
+      "source_path": "NLS/FunctionalAnalysis/CompactInvertibleComplement.lean",
+      "source_sha256": "47bac9b0dc3c498c5a836b6d392b365760968e758d6885f4a91cb80dc8383748",
+      "local_sha256": "47bac9b0dc3c498c5a836b6d392b365760968e758d6885f4a91cb80dc8383748",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/NonnegativeAnalyticFredholm.lean",
+      "source_path": "NLS/FunctionalAnalysis/NonnegativeAnalyticFredholm.lean",
+      "source_sha256": "bce06539e6400a6671d8f7c84bb4de729bbbc1d1c878d83e8098005955f2872d",
+      "local_sha256": "bce06539e6400a6671d8f7c84bb4de729bbbc1d1c878d83e8098005955f2872d",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/WeightedNonnegativeAnalyticFredholm.lean",
+      "source_path": "NLS/FunctionalAnalysis/WeightedNonnegativeAnalyticFredholm.lean",
+      "source_sha256": "30386d5c8c7f9b79323e9d4ad1f91df0c66f74f349ecf1a5445112934956c674",
+      "local_sha256": "30386d5c8c7f9b79323e9d4ad1f91df0c66f74f349ecf1a5445112934956c674",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/KdV/ActionHamiltonianTrace.lean",
+      "source_path": "NLS/KdV/ActionHamiltonianTrace.lean",
+      "source_sha256": "5988bb27f067619b70ac1d3016b669484758a22987fc175a19d9b862dc621608",
+      "local_sha256": "5988bb27f067619b70ac1d3016b669484758a22987fc175a19d9b862dc621608",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertScalarGradient.lean",
+      "source_path": "NLS/SequenceSpaces/HilbertScalarGradient.lean",
+      "source_sha256": "8c77dd1f05d4cb2768b587edc6e9918a7f9168c834824769358d0efc83018e1c",
+      "local_sha256": "8c77dd1f05d4cb2768b587edc6e9918a7f9168c834824769358d0efc83018e1c",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeAnalyticAtlas.lean",
+      "source_path": "NLS/SequenceSpaces/NonnegativeAnalyticAtlas.lean",
+      "source_sha256": "cd6583ad35b5fa98123400d786b222375b7ed81d56313a9044bcf1c7a2e398b6",
+      "local_sha256": "cd6583ad35b5fa98123400d786b222375b7ed81d56313a9044bcf1c7a2e398b6",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeAnalyticDensity.lean",
+      "source_path": "NLS/SequenceSpaces/NonnegativeAnalyticDensity.lean",
+      "source_sha256": "69d828480045328fb3fe31b50edd685f3b95322be7630e191f681b7ea384d92a",
+      "local_sha256": "69d828480045328fb3fe31b50edd685f3b95322be7630e191f681b7ea384d92a",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedAnalyticRealization.lean",
+      "source_path": "NLS/SequenceSpaces/WeightedAnalyticRealization.lean",
+      "source_sha256": "3b4d11f15e039314f34709b46608f9909d0deddd14c3e9bff965b432ca2481b8",
+      "local_sha256": "3b4d11f15e039314f34709b46608f9909d0deddd14c3e9bff965b432ca2481b8",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedNonnegativeAnalyticAtlas.lean",
+      "source_path": "NLS/SequenceSpaces/WeightedNonnegativeAnalyticAtlas.lean",
+      "source_sha256": "c738f2ed628014130135c5fdd28b1db886c1076143618ce3a394c074e7711a13",
+      "local_sha256": "c738f2ed628014130135c5fdd28b1db886c1076143618ce3a394c074e7711a13",
+      "disposition": "reused_unchanged",
+      "adaptation": ""
+    }
+  ],
+  "baseline_commit": "9c9018b05e7c78f993216c85a90a222497efd843",
+  "compatibility_policy": "Every existing local NLS source is preserved byte-for-byte. Added imports and distinct incoming helper names are recorded per file; new bridge modules retain or derive the pinned statements from existing verified stronger/local results. All adapted results are strictly recompiled and included in the full transitive axiom audit."
+}
