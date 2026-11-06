@@ -1,3 +1,11 @@
+import NLS.KdV.HillHminusSobolevMiuraCompactDerivative
+import NLS.Articles.KdVKdV2Frequencies.RoughSobolevAbelianCompactPacket
+import NLS.SequenceSpaces.WeightedAnalyticPacketCompact
+import NLS.KdV.HillHminusSobolevAbelianCompact
+import NLS.SequenceSpaces.PeriodOneMiuraInverseCompact
+import NLS.SequenceSpaces.PeriodOneMiuraCompactJacobian
+import NLS.FunctionalAnalysis.CompactRightInverseBetweenSpaces
+import NLS.SequenceSpaces.CompactHolderDerivative
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevAnalyticInverse
 import NLS.KdV.HillSobolevAbelianInverse
 import NLS.Articles.KdVKdV2Frequencies.ActualSobolevInverseGerms
@@ -4412,7 +4420,15 @@ private def kdvFrequencyAuditChunk20 : Array Lean.Name := #[
   `NLS.ComplexAnalysis.LocalRightInverseMatching,
   `NLS.KdV.HillSobolevAbelianInverse,
   `NLS.Articles.KdVKdV2Frequencies.ActualSobolevInverseGerms,
-  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevAnalyticInverse
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevAnalyticInverse,
+  `NLS.SequenceSpaces.CompactHolderDerivative,
+  `NLS.SequenceSpaces.PeriodOneMiuraCompactJacobian,
+  `NLS.FunctionalAnalysis.CompactRightInverseBetweenSpaces,
+  `NLS.SequenceSpaces.PeriodOneMiuraInverseCompact,
+  `NLS.SequenceSpaces.WeightedAnalyticPacketCompact,
+  `NLS.KdV.HillHminusSobolevAbelianCompact,
+  `NLS.KdV.HillHminusSobolevMiuraCompactDerivative,
+  `NLS.Articles.KdVKdV2Frequencies.RoughSobolevAbelianCompactPacket
 ]
 
 open Lean in

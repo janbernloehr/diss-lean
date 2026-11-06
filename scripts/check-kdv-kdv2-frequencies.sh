@@ -2619,6 +2619,14 @@ modules=(
   NLS/KdV/HillSobolevAbelianInverse
   NLS/Articles/KdVKdV2Frequencies/ActualSobolevInverseGerms
   NLS/Articles/KdVKdV2Frequencies/NativeRoughAllSobolevAnalyticInverse
+  NLS/SequenceSpaces/CompactHolderDerivative
+  NLS/SequenceSpaces/PeriodOneMiuraCompactJacobian
+  NLS/FunctionalAnalysis/CompactRightInverseBetweenSpaces
+  NLS/SequenceSpaces/PeriodOneMiuraInverseCompact
+  NLS/SequenceSpaces/WeightedAnalyticPacketCompact
+  NLS/KdV/HillHminusSobolevAbelianCompact
+  NLS/KdV/HillHminusSobolevMiuraCompactDerivative
+  NLS/Articles/KdVKdV2Frequencies/RoughSobolevAbelianCompactPacket
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
