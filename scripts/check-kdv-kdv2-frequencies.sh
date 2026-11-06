@@ -2842,6 +2842,52 @@ modules=(
   NLS/KdV/NativeHamiltonianShifts
   NLS/KdV/NativeHamiltonianIsospectral
   NLS/Articles/KdVKdV2Frequencies/GlobalNativeHamiltonianActionInvariance
+  NLS/ComplexAnalysis/OpenMapDescent
+  NLS/ComplexAnalysis/QuadraticLineRoot
+  NLS/SequenceSpaces/RealActionRotation
+  NLS/SequenceSpaces/ComplexActionStationarity
+  NLS/SequenceSpaces/ComplexSignInvariance
+  NLS/SequenceSpaces/FiniteCenterBall
+  NLS/SequenceSpaces/MixedSquare
+  NLS/SequenceSpaces/TailSquareDescent
+  NLS/SequenceSpaces/TailSquareDescentHeadAnalytic
+  NLS/SequenceSpaces/TailSquareDescentCoordinateAnalytic
+  NLS/SequenceSpaces/ActionSplitDirection
+  NLS/SequenceSpaces/AnalyticSequenceSlice
+  NLS/SequenceSpaces/FiniteMixedSquareLineLift
+  NLS/SequenceSpaces/PairCoordinateDensity
+  NLS/SequenceSpaces/TailSquareDescentAnalyticSlice
+  NLS/SequenceSpaces/TailSquareDescentFiniteLine
+  NLS/SequenceSpaces/TailSquareDescentAnalyticLine
+  NLS/SequenceSpaces/TailSquareDescentFrechet
+  NLS/SequenceSpaces/TailSquareDescentAnalytic
+  NLS/SequenceSpaces/TailActionStationarity
+  NLS/SequenceSpaces/TailActionInvariance
+  NLS/SequenceSpaces/TailSumCoordinates
+  NLS/SequenceSpaces/HeadActionSection
+  NLS/SequenceSpaces/LocalTailSumDescent
+  NLS/SequenceSpaces/HeadRotationStationarity
+  NLS/SequenceSpaces/HeadActionTangent
+  NLS/SequenceSpaces/HeadActionCurveInvariance
+  NLS/SequenceSpaces/HeadActionPath
+  NLS/SequenceSpaces/HeadActionPathAnalytic
+  NLS/SequenceSpaces/HeadActionPathNeighborhood
+  NLS/SequenceSpaces/HeadRotationDescent
+  NLS/SequenceSpaces/LocalHeadActionDescent
+  NLS/SequenceSpaces/ScalarTailSquareDescent
+  NLS/SequenceSpaces/LocalScalarActionDescent
+  NLS/SequenceSpaces/NonnegativeActionIdentity
+  NLS/SequenceSpaces/NonnegativeActionOverlap
+  NLS/SequenceSpaces/NonnegativeActionGluing
+  NLS/SequenceSpaces/NonzeroFiniteCenter
+  NLS/SequenceSpaces/RealActionBallGluing
+  NLS/SequenceSpaces/RealActionPairLifting
+  NLS/SequenceSpaces/RealActionLifting
+  NLS/SequenceSpaces/ScalarActionDescentFromRealGerms
+  NLS/SequenceSpaces/SignedCartesianActions
+  NLS/Articles/KdVKdV2Frequencies/GlobalNativeHamiltonianActionDescent
+  NLS/SequenceSpaces/SobolevSignedActionSequence
+  NLS/Articles/KdVKdV2Frequencies/GlobalWeightedHamiltonianActionFactors
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

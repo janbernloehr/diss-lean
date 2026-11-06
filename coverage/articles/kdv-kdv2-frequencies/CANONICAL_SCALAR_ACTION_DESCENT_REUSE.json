@@ -1,0 +1,253 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "scope": "Exact 41-module canonical dependency closure of scalar analytic action descent, real action lifting, sign/rotation invariance and nonnegative analytic gluing. Reused byte-for-byte from verified canonical main, selected explicitly, strictly rebuilt privately at default limits and included in the full transitive audit. No canonical source or branch is changed.",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/OpenMapDescent.lean",
+      "source_sha256": "56712915e98dec6c7ed1dcfbb005f0155a514c86a23f824c1ef152dc1844a614",
+      "local_sha256": "56712915e98dec6c7ed1dcfbb005f0155a514c86a23f824c1ef152dc1844a614",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticLineRoot.lean",
+      "source_sha256": "6bd103888683391fbdb4cecb1b5de5b8133eb4dc2c9c3e154fa32a15806e1a39",
+      "local_sha256": "6bd103888683391fbdb4cecb1b5de5b8133eb4dc2c9c3e154fa32a15806e1a39",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealActionRotation.lean",
+      "source_sha256": "cfeffd5a4f7ed73f9bf60df3a5ec77715036ea663629d900bdd0fbc5db8a4905",
+      "local_sha256": "cfeffd5a4f7ed73f9bf60df3a5ec77715036ea663629d900bdd0fbc5db8a4905",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ComplexActionStationarity.lean",
+      "source_sha256": "4785105ad31021a5b1caa1c049ea82ae3af8f8638e63bc830c6a9065c8c18f12",
+      "local_sha256": "4785105ad31021a5b1caa1c049ea82ae3af8f8638e63bc830c6a9065c8c18f12",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ComplexSignInvariance.lean",
+      "source_sha256": "21c5d7f7478c36e9d34ce2c3fb8bf17423520b7e57ba5aca624d5a1aedd7bd28",
+      "local_sha256": "21c5d7f7478c36e9d34ce2c3fb8bf17423520b7e57ba5aca624d5a1aedd7bd28",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FiniteCenterBall.lean",
+      "source_sha256": "f734a0127a2e0e90c17c121743933e8ad0cfe07fc60e357940393bf606deedc7",
+      "local_sha256": "f734a0127a2e0e90c17c121743933e8ad0cfe07fc60e357940393bf606deedc7",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/MixedSquare.lean",
+      "source_sha256": "5dc8df60cbf56e9cee82aeaa9ee445afaaf7201dbf769e145d803264c05af32c",
+      "local_sha256": "5dc8df60cbf56e9cee82aeaa9ee445afaaf7201dbf769e145d803264c05af32c",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailSquareDescent.lean",
+      "source_sha256": "c20fd3018bfd6ecc3039d42726a245b87a470a5100f7f92952b045294e318946",
+      "local_sha256": "c20fd3018bfd6ecc3039d42726a245b87a470a5100f7f92952b045294e318946",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailSquareDescentHeadAnalytic.lean",
+      "source_sha256": "bc0db4c1aec5ff64a39569bf032554f07f65520fcd6832cbb08154a4aff66af9",
+      "local_sha256": "bc0db4c1aec5ff64a39569bf032554f07f65520fcd6832cbb08154a4aff66af9",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailSquareDescentCoordinateAnalytic.lean",
+      "source_sha256": "1d42e4c4eb1588acfe134737564e41e2be157436edd72f7a1c85269ee1e2998e",
+      "local_sha256": "1d42e4c4eb1588acfe134737564e41e2be157436edd72f7a1c85269ee1e2998e",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ActionSplitDirection.lean",
+      "source_sha256": "15c742b4880302397b56fe85d70c458dd20d0ae89145eaae2cae40ecd9e73dc2",
+      "local_sha256": "15c742b4880302397b56fe85d70c458dd20d0ae89145eaae2cae40ecd9e73dc2",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticSequenceSlice.lean",
+      "source_sha256": "b724f8b371f6475316fe9dd675ab741127509011f8330077e6a256509aa7e748",
+      "local_sha256": "b724f8b371f6475316fe9dd675ab741127509011f8330077e6a256509aa7e748",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FiniteMixedSquareLineLift.lean",
+      "source_sha256": "1e1975bc496009326670ce6847b6709d309595067366cbe06b2265568c3d3481",
+      "local_sha256": "1e1975bc496009326670ce6847b6709d309595067366cbe06b2265568c3d3481",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PairCoordinateDensity.lean",
+      "source_sha256": "a32606c54e346cddf627cd740a1dd01476f9398a04dc39a898035c0017fb4d16",
+      "local_sha256": "a32606c54e346cddf627cd740a1dd01476f9398a04dc39a898035c0017fb4d16",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailSquareDescentAnalyticSlice.lean",
+      "source_sha256": "1159d6ff9fc570ca47035111a96f9d887b8dcf4f63f7ba40c71b15afdcc1006c",
+      "local_sha256": "1159d6ff9fc570ca47035111a96f9d887b8dcf4f63f7ba40c71b15afdcc1006c",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailSquareDescentFiniteLine.lean",
+      "source_sha256": "6ce8ade63e447520019a531aec54edaea64220e3111adeec5ce74778e7d2a8ec",
+      "local_sha256": "6ce8ade63e447520019a531aec54edaea64220e3111adeec5ce74778e7d2a8ec",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailSquareDescentAnalyticLine.lean",
+      "source_sha256": "50a8e2b69020531b09b7f131139840e5403eea7c576b1d290f33c855d8c2614b",
+      "local_sha256": "50a8e2b69020531b09b7f131139840e5403eea7c576b1d290f33c855d8c2614b",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailSquareDescentFrechet.lean",
+      "source_sha256": "eca200812246facc297165ec0f6f856192dddac0cdff4b730f3c75972fbd137d",
+      "local_sha256": "eca200812246facc297165ec0f6f856192dddac0cdff4b730f3c75972fbd137d",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailSquareDescentAnalytic.lean",
+      "source_sha256": "778a2b5c5c7bece659b6074d6dcfb44105add00dfc196e9bfb35536f8b1099e6",
+      "local_sha256": "778a2b5c5c7bece659b6074d6dcfb44105add00dfc196e9bfb35536f8b1099e6",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailActionStationarity.lean",
+      "source_sha256": "166640b9df36a45f4aec95d2fdff08987d9f4bbd5558ae8692801de8bfbd5ed6",
+      "local_sha256": "166640b9df36a45f4aec95d2fdff08987d9f4bbd5558ae8692801de8bfbd5ed6",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailActionInvariance.lean",
+      "source_sha256": "d409b21bf5aba005916b42669f429feb3361a2912e5d530d9cbd38879b9bee57",
+      "local_sha256": "d409b21bf5aba005916b42669f429feb3361a2912e5d530d9cbd38879b9bee57",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailSumCoordinates.lean",
+      "source_sha256": "8db3d8d3d9d533c8e9961920c1a7a514fec920489fb795f1f950e6020055f56c",
+      "local_sha256": "8db3d8d3d9d533c8e9961920c1a7a514fec920489fb795f1f950e6020055f56c",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HeadActionSection.lean",
+      "source_sha256": "d8e3dd0c25fafe9c2a682e76d283202620903a557012b90dc554787901a0f5ef",
+      "local_sha256": "d8e3dd0c25fafe9c2a682e76d283202620903a557012b90dc554787901a0f5ef",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/LocalTailSumDescent.lean",
+      "source_sha256": "4eaa277463ec31839e9a096dbc50c9558455f5e9fcac13357f8eee0bb172af72",
+      "local_sha256": "4eaa277463ec31839e9a096dbc50c9558455f5e9fcac13357f8eee0bb172af72",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HeadRotationStationarity.lean",
+      "source_sha256": "96fcbab4528009a5de360b7c3b7086242bc7683db74d429722f7de0f97e63deb",
+      "local_sha256": "96fcbab4528009a5de360b7c3b7086242bc7683db74d429722f7de0f97e63deb",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HeadActionTangent.lean",
+      "source_sha256": "f6dd0da918de93558e99220edbc4dff730912ec3c9dddf30d2f817c7f111508f",
+      "local_sha256": "f6dd0da918de93558e99220edbc4dff730912ec3c9dddf30d2f817c7f111508f",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HeadActionCurveInvariance.lean",
+      "source_sha256": "df73840badc2383cc4189bebb3b88db7d4f47f2f7f20ac548a5d09411abb7bb0",
+      "local_sha256": "df73840badc2383cc4189bebb3b88db7d4f47f2f7f20ac548a5d09411abb7bb0",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HeadActionPath.lean",
+      "source_sha256": "b9ba1f2bbb33088cb16857d4fbe6bb1ee1247bdacab5eaa1ec128990d54d0505",
+      "local_sha256": "b9ba1f2bbb33088cb16857d4fbe6bb1ee1247bdacab5eaa1ec128990d54d0505",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HeadActionPathAnalytic.lean",
+      "source_sha256": "b0a97d7f498728a4d890f34d8d1d43480bf7861bbfaba510baccd5c70e44ae7b",
+      "local_sha256": "b0a97d7f498728a4d890f34d8d1d43480bf7861bbfaba510baccd5c70e44ae7b",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HeadActionPathNeighborhood.lean",
+      "source_sha256": "9e163fefb6e55648da68d953a03d74738f967760e893497cbdf6a3cc9d4c8540",
+      "local_sha256": "9e163fefb6e55648da68d953a03d74738f967760e893497cbdf6a3cc9d4c8540",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HeadRotationDescent.lean",
+      "source_sha256": "c6cda3b111cfd9f11acac4f04e11df68c87acf0ef363f803ea22650dd89efe28",
+      "local_sha256": "c6cda3b111cfd9f11acac4f04e11df68c87acf0ef363f803ea22650dd89efe28",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/LocalHeadActionDescent.lean",
+      "source_sha256": "36337730424b327e1248fb07fff1dc26f865216ef254d3f19be7f5fe00ef8ed8",
+      "local_sha256": "36337730424b327e1248fb07fff1dc26f865216ef254d3f19be7f5fe00ef8ed8",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ScalarTailSquareDescent.lean",
+      "source_sha256": "d3eb4bdf298e625c942221c266ace8d5fcdcff7830aa3e6653eb072e7bf5ca64",
+      "local_sha256": "d3eb4bdf298e625c942221c266ace8d5fcdcff7830aa3e6653eb072e7bf5ca64",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/LocalScalarActionDescent.lean",
+      "source_sha256": "3bce57da41b9476f7616e87164be4988ac7c707290c59d27df45a58f8c8063d2",
+      "local_sha256": "3bce57da41b9476f7616e87164be4988ac7c707290c59d27df45a58f8c8063d2",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeActionIdentity.lean",
+      "source_sha256": "a4b94b65d7bac4d116fa223b4fdf670a4feb139d8963c78bc23b13bff30e50b5",
+      "local_sha256": "a4b94b65d7bac4d116fa223b4fdf670a4feb139d8963c78bc23b13bff30e50b5",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeActionOverlap.lean",
+      "source_sha256": "2fb470260b26720f154fdfd605eb6a0ab1f1a3868d568dbc2f71980471652fa1",
+      "local_sha256": "2fb470260b26720f154fdfd605eb6a0ab1f1a3868d568dbc2f71980471652fa1",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeActionGluing.lean",
+      "source_sha256": "681b0ac559fbc25c579a93383e6b03ce30b57af9aa0bb1b8cddf2faaf3dc73fb",
+      "local_sha256": "681b0ac559fbc25c579a93383e6b03ce30b57af9aa0bb1b8cddf2faaf3dc73fb",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonzeroFiniteCenter.lean",
+      "source_sha256": "d0d297008dc1284ef7ecd3ba3edbe3b9e261f3dd55080008064dda87f482a3f0",
+      "local_sha256": "d0d297008dc1284ef7ecd3ba3edbe3b9e261f3dd55080008064dda87f482a3f0",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealActionBallGluing.lean",
+      "source_sha256": "6a705eb473ba84898d3c473adbf45cc49ed906a6c1bb599d52f655be3e4febda",
+      "local_sha256": "6a705eb473ba84898d3c473adbf45cc49ed906a6c1bb599d52f655be3e4febda",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealActionPairLifting.lean",
+      "source_sha256": "fb69e1771a1a9dba81d9579ab5a15d91359e35d8ef662ba310daa4f0e248c0cc",
+      "local_sha256": "fb69e1771a1a9dba81d9579ab5a15d91359e35d8ef662ba310daa4f0e248c0cc",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealActionLifting.lean",
+      "source_sha256": "67e9bebd923a2e48311ffbbd3382bb01cd13167486e85cd35e6c79bb17d33871",
+      "local_sha256": "67e9bebd923a2e48311ffbbd3382bb01cd13167486e85cd35e6c79bb17d33871",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}
