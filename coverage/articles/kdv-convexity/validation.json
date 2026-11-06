@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-06",
-  "milestone": "Prove actual rough realization of the entire nonnegative weighted Arnold-action cone, including the whole positive ell2 quadrant",
+  "milestone": "Prove equal intrinsic Arnold actions determine the full entire discriminant on every real mean-zero Hminus1 source",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -2216,11 +2216,18 @@
     "NLS.KdV.HillActionCoefficientLimits",
     "NLS.Articles.KdVConvexity.FiniteArnoldRealization",
     "NLS.Articles.KdVConvexity.GlobalArnoldSurjectivity",
-    "NLS.KdV.HillConstantActionCurves"
+    "NLS.KdV.HillConstantActionCurves",
+    "NLS.SequenceSpaces.ModulusFiberInvariance",
+    "NLS.SequenceSpaces.SingleCoordinatePhase",
+    "NLS.KdV.HillOriginalSequenceActions",
+    "NLS.KdV.HillOriginalActionFibers",
+    "NLS.KdV.HillRoughActionApproximation",
+    "NLS.KdV.HillRoughActionFibers",
+    "NLS.Articles.KdVConvexity.GlobalArnoldActionFibers"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 17024,
+    "declarations": 17058,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -2261,6 +2268,8 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.SequenceSpaces.ModulusFiberInvariance",
+      "NLS.SequenceSpaces.SingleCoordinatePhase",
       "NLS.ComplexAnalysis.TwoZeroRootEndpointBound",
       "NLS.ComplexAnalysis.RealTwoZeroUnit",
       "NLS.ComplexAnalysis.RealEndpointRootBoundary",
@@ -3031,6 +3040,7 @@
     "NLS/Articles/KdVConvexity/FiniteArnoldRealization.lean": "756a49a1828e27db2a3aa6df0dbab438af1e2b3d40dd53c51149e1c6917804b2",
     "NLS/Articles/KdVConvexity/FreeDirichletLinearization.lean": "b355c65bba40980b6cf699362cc90838736d01efd37c66e0d83be24e4914ea32",
     "NLS/Articles/KdVConvexity/FreeLogNormingLinearization.lean": "4615302bad4f8faa4fc1a998d6e8f210999947b316c3080ee2f10b2053e072e2",
+    "NLS/Articles/KdVConvexity/GlobalArnoldActionFibers.lean": "e5afc28695b051a567a1dc7076e9b3050536b3bf5a3a55ed2333050e859a68f4",
     "NLS/Articles/KdVConvexity/GlobalArnoldCalibration.lean": "0f87eb2455a2a75b53e2c689e906660e75085851124c326bd71443e7d98b1d3b",
     "NLS/Articles/KdVConvexity/GlobalArnoldCoercivity.lean": "dddec583edf6deba5f27e8e7e86631176a0758e22e6b894fc2047a87668d1e23",
     "NLS/Articles/KdVConvexity/GlobalArnoldSurjectivity.lean": "cf922b20a468be8852823145f86be727f68b02e50f0aeabd753ec3e18388ed03",
@@ -4583,6 +4593,7 @@
     "NLS/KdV/HillOmittedEnergyRootProduct.lean": "e7fe0a93f90cd6baa4226b59cb4525a26ebdeb00b326275590020ba0e34d8161",
     "NLS/KdV/HillOpenGapHalfLength.lean": "d8fb9973b24f2940f58e70c3ad4012fa083f6c2751c0ad1a38cb58b45a12c1c4",
     "NLS/KdV/HillOpenRegularEndpointCotangents.lean": "4de1569ea1bcca97b47cc0220846b88c2dbf42fec742df7c676f5637c804f0b2",
+    "NLS/KdV/HillOriginalActionFibers.lean": "8f477b1f1df98cbbf5c02be9be5a200145e3fd6caa668b93f63d996f238814dd",
     "NLS/KdV/HillOriginalAllGapCartesianGardner.lean": "fb9712a1c833bf927530a55a414778ff8319e0bcf40c9cfb20b03b0e09092712",
     "NLS/KdV/HillOriginalAllGapCartesianMatrix.lean": "c6537e24c0deb62c1814719668a09158659556082da069f93dd1c0ba742340ee",
     "NLS/KdV/HillOriginalBaseSpectralSequence.lean": "646944976767bc2d07d0f3200c6a3c88499c9c3f198e1f0da58b3dd404efe1c0",
@@ -4608,6 +4619,7 @@
     "NLS/KdV/HillOriginalRealCartesianGardner.lean": "2413c5ad5e70e723d782f3beacf9d1a2df4c55f08b0693d7013a98c3301212b9",
     "NLS/KdV/HillOriginalRealSpectralAnalytic.lean": "cf4bd6d783c33f0b0ef86aa59988b77eb07e05c44f581030dee2ff9d05815b64",
     "NLS/KdV/HillOriginalScalarCompactHessian.lean": "0a90f19a96d35900a9f8f46d2a297d42b3c5a25cf812569a0010116091038aad",
+    "NLS/KdV/HillOriginalSequenceActions.lean": "4f6a1f446c1494620e1fcec4183135c5e8787496c35bb0839ef99d2422edc9b3",
     "NLS/KdV/HillOriginalSequenceBasisDirections.lean": "1c652fe3abda59e2bbf3047e0fd388f6a75b0da1d44aa01515cd1d0bbef4a5f3",
     "NLS/KdV/HillOriginalSequencePhysicalDifferential.lean": "4c507209281963f4a4f0d528e51851df39921608ccdbec61f1febff547783eaf",
     "NLS/KdV/HillOriginalSourceHilbertStructure.lean": "93e6c8f0c451a191309d6684fa0a3f2b77bd0190ac00d80fe5fffc69c9fd4e4f",
@@ -4725,6 +4737,8 @@
     "NLS/KdV/HillRoughAbelianGardnerOn.lean": "db8c87d6839f1056c41cfead6b90460dd9c65ab6876bdb4112c8f110ed75b5a3",
     "NLS/KdV/HillRoughAbelianHamiltonianRange.lean": "a17f108f648b2aeca10bae9ee1000e787384fe2185bf234d33cf21a39c4f06af",
     "NLS/KdV/HillRoughAbelianPacketSigns.lean": "503b4ec0009522ae06e212052b73693a7317316347bc2d51e415b481f17372e1",
+    "NLS/KdV/HillRoughActionApproximation.lean": "1f43156db6ccddfb781d02817ddc827dd0186734df6ba6b8ba31c4f43345e383",
+    "NLS/KdV/HillRoughActionFibers.lean": "2c8cb7826d257d1976a04d39c6f861660c9902dc55d4fc811c186f88bc7196b1",
     "NLS/KdV/HillRoughPhysicalL2Reconstruction.lean": "0ae675980536e251346d713a9b129fa69df946720fe761dfd9db51aa447c6d26",
     "NLS/KdV/HillRoughPhysicalUniqueness.lean": "2aa6734d951791869bbafa9a8b99b8068febfff49c2bc1cf67b7bfd39b707fef",
     "NLS/KdV/HillRoughScalarEquation.lean": "b1c50d59b6c9a67e16bc491f2adf53757565d82544931f420654792e13d35ab2",
@@ -5018,6 +5032,7 @@
     "NLS/SequenceSpaces/MeanZeroWeightedCoordinates.lean": "de4aecc5abb537f6d2eace740bcdc1e7dc8dc646a741ffdb5ae1fa6faf2022bf",
     "NLS/SequenceSpaces/MeanZeroWeightedReality.lean": "7ecc169ef5e2b3ffaf6e7fde8af5cdbd8e56d85f7ed7397bbc42e8c9a3f7067e",
     "NLS/SequenceSpaces/MixedSquare.lean": "5dc8df60cbf56e9cee82aeaa9ee445afaaf7201dbf769e145d803264c05af32c",
+    "NLS/SequenceSpaces/ModulusFiberInvariance.lean": "01b2f40e138e02e501b177e2476b48e806b675c3cc94fe58b97e97b590a360af",
     "NLS/SequenceSpaces/NatL2AnalyticGermHeadTail.lean": "c12704c4d75742f6e63f18c347662f8c70a55aaf824da0d46baea07706fb10f8",
     "NLS/SequenceSpaces/NatL2AnalyticRealization.lean": "e7f82dfa0dd48dd1ad25fd24406aec0006e96e4cc742d3a348773d22a033af3c",
     "NLS/SequenceSpaces/NatL2BoundedMultipliers.lean": "de07e71f7d8ba21550fb5d8ca30bcbb39cc8948270c3e8a2d23475a1ada265ab",
@@ -5118,6 +5133,7 @@
     "NLS/SequenceSpaces/SignedMultiplierPrincipal.lean": "03ee9bc0c2deeaefaf177d9bd28db278bf69444848e5fcd7a8091c84c72bd22f",
     "NLS/SequenceSpaces/SignedReciprocalSymbol.lean": "a839771a1855fb2a02d1425a4ed9809e5630baa06be963832e81f6dc03479a38",
     "NLS/SequenceSpaces/SignedSobolevConvolution.lean": "2a59cc5b9417182e3bcb4438af84ddfc4d12641fc34eae24bf68c436cada6fcd",
+    "NLS/SequenceSpaces/SingleCoordinatePhase.lean": "9064403fca0e0d1a2896a0d71e1b0c5002e3cf1182e8825869ce9bb27d0cf13e",
     "NLS/SequenceSpaces/SingletonPairedEnumeration.lean": "d9aadeb8411a4d56b216c9972668688262f862a0347f723be309219bbd342418",
     "NLS/SequenceSpaces/SobolevConvolutionBounds.lean": "4a607fc257db00cb10d991efe25cb91334054ed66703ba3ad8f8e85d248a6564",
     "NLS/SequenceSpaces/SobolevHalfWeights.lean": "c57f3ecc1d2ebb171d235f0a1e295f7089731368baa5b8e6f13e190c0d692bb9",
@@ -5216,7 +5232,7 @@
     "NLS/ZakharovShabat/SourceWeightedEtaFactorization.lean": "c22fd5e2ec86b9e571506f9d1b64a0b6f047171bfb0bc6aa920763d4cdeb74bb",
     "NLS/ZakharovShabat/SourceZeroGapActionBound.lean": "4fb1acc2f217e87f0e65d53828ba7f2cc2c266064f918e2ad0e8dd22fcda307e",
     "NLS/ZakharovShabat/SourceZeroGapMassEstimate.lean": "6b656c4b26c06b37ec752562aa81be67147fba7d3dd14cb254afd3090a3484d3",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "28198b3b43e51deeae0b965d98db4473f81fa5947195f89f2e1a0993f6c83627",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "c63ac6e8616852b9452795756905188b68c1033a002e78453faf75ef98b1aed4",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/action-sequence-library-reuse.json": "9126c713dd2dbd5eb3b1d902df1cea7bdd35cbbd75a6ee13e21fd9d7fd49827e",
@@ -5242,10 +5258,10 @@
     "coverage/articles/kdv-convexity/physical-spectrum-library-reuse.json": "e36082bd809d71f7ff753f6dd3740433709f156e0f113b4e55189be868c78132",
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
-    "scripts/check-kdv-convexity.sh": "ce09519c29743a0ef019a7840dca11aee2c90bd25e9ea5325fb25a06547bc5ec"
+    "scripts/check-kdv-convexity.sh": "f6b71bf0082439c6a51511313c3e6e18f6c5f9b3787a0195b723f3a1089ec361"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-onto-audit-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-fibers-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -5263,7 +5279,7 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "Global potential-space gluing is now proved: one complex-open neighborhood of the entire real H^-1 space carries all canonical polynomial and cubic moments, agrees with every actual real period, and retains locally uniform complex-tail quadratic bounds. Finite-gap exterior matching, the normalized inversion remainder of Lemma 4.4 and the physical energy/frequency identities remain open.",
-    "The entire nonnegative weighted ell1 action cone now has actual real mean-zero Hminus1 preimages, hence so does the whole positive ell2 quadrant including its boundary. Prove equal Hill actions determine the mean-zero discriminant, construct analytic action germs from the actual real local weak inverses and glue the scalar moment family with its uniform local quadratic bounds. Then identify the physical renormalized Hamiltonian/frequencies and -6*Id and complete Theorems 1.1-1.3. Action-cone surjectivity does not assert full rough Cartesian surjectivity or complete the global analytic extension.",
+    "The whole nonnegative weighted Arnold cone has actual real mean-zero Hminus1 preimages, and equal intrinsic Hill actions now determine the entire discriminant at every real mean-zero Hminus1 source. Construct normalized complex pair coordinates for each actual real local weak inverse, descend the canonical moment family in these local coordinate germs and glue the independent action germs with uniform local quadratic bounds over the whole cone. Then identify the physical renormalized Hamiltonian/frequencies and -6*Id and finish Theorems 1.1-1.3. Full rough Cartesian surjectivity is not assumed or inferred.",
     "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. Even polynomial Arnold periods are nonnegative; the level-zero Arnold and cubic zero sets equal the closed-gap set. These signs and zero criteria hold for the common all-index family and its matched source tail at every real input. Global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
@@ -5288,9 +5304,10 @@
     "For every real original H^-1 potential and every complex energy, physical algebraic multiplicity now equals the entire characteristic analytic zero order, on the original full H1 domain. Ground, open/closed gaps and nonspectral values are included. Nonreal-potential multiplicity equality and a self-adjoint L2 realization are not claimed. Global rough KdV surjectivity, global coordinate/action identities, physical Hamiltonian/frequency assertions and all main theorems remain open.",
     "The critical-factor Hill/Dirac action comparison is unconditional at every positive index; the ground energy estimate currently requires actual spectral finite-gap factors. Rough approximation, global coordinate surjectivity and all main theorems remain open.",
     "The global energy/source estimates now hold in the actual original weighted Arnold-action norm at every real mean-zero Hminus1 source. These bounds and bounded-coefficient continuity of higher Dirac actions do not by themselves establish action-cone or Cartesian coordinate surjectivity, global analytic action descent, the physical Hamiltonian identity or any main theorem.",
-    "Action-cone surjectivity is proved without strong factor compactness or an assumed inverse. Global analytic action descent, equality of discriminants on action fibers and the main theorems remain open."
+    "Action-cone surjectivity is proved without strong factor compactness or an assumed inverse. Global analytic action descent, equality of discriminants on action fibers and the main theorems remain open.",
+    "Equal actual intrinsic Arnold actions now determine the entire mean-zero rough Hill discriminant. Constructing and gluing analytic action germs, the physical Hamiltonian identity and every main theorem remain open."
   ],
-  "previous_progress_commit": "11750549496da1faa10a116fb0c1577931c8955c",
+  "previous_progress_commit": "92f24b3b6e53c7cce7237e3224c841e5ebf371e1",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -5782,7 +5799,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation against 1175054: all 2194 baseline proof-source hashes unchanged. Five new authored modules pass Lean 4.33.1/mathlib v4.33.1 with warningAsError=true. The positive-index example, combined transitive axiom audit and 1514 declaration-name checks pass. Reproduction lists 2199 modules. No full repository rebuild.",
+  "focused_validation_scope": "Incremental validation against 92f24b3: all 2199 baseline proof-source hashes unchanged. Seven authored modules pass strict Lean 4.33.1/mathlib v4.33.1 compilation. Positive-index example, combined transitive axiom audit and 1537 coverage-name checks pass, with 753 additional audited module origins. Reproduction lists 2206 modules; no full repository rebuild.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -6092,9 +6109,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 1514,
-    "audit_modules_present": 751,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/ActionOntoCoverageNames.log"
+    "declarations": 1537,
+    "audit_modules_present": 753,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/ActionFibersCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -6183,53 +6200,69 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "11750549496da1faa10a116fb0c1577931c8955c",
-    "baseline_modules": 2194,
+    "baseline_commit": "92f24b3b6e53c7cce7237e3224c841e5ebf371e1",
+    "baseline_modules": 2199,
     "baseline_source_hashes_unchanged": true,
-    "newly_checked_authored_modules": 5,
+    "newly_checked_authored_modules": 7,
     "completed_module_checks": [
       {
-        "module": "NLS.KdV.HillFiniteActionRealization",
-        "source_sha256": "1fafd254990011a4ded91c668e0b4c627534cfd3945732cd0325eb23ffdd2bbc",
-        "olean_sha256": "70cab2f8c9778ffbe72d5d9c32e779ec5637678c8f477004891ea374208a6902",
+        "module": "NLS.SequenceSpaces.ModulusFiberInvariance",
+        "source_sha256": "01b2f40e138e02e501b177e2476b48e806b675c3cc94fe58b97e97b590a360af",
+        "olean_sha256": "9abb7bc6e59c8bf0f395f234fd0a2ba6c2eba431c2482f23490321bb087567fa",
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-onto-finite.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-fibers-NLS.SequenceSpaces.ModulusFiberInvariance.log"
       },
       {
-        "module": "NLS.KdV.HillActionCoefficientLimits",
-        "source_sha256": "331fef02f7925c285ccd9485233e3e76adbae65b3721c97125267afc613d92cd",
-        "olean_sha256": "dda7fd6181795110a00e9aa0732cc9eabb10df29220cfa68c6caf38bbdd9abc1",
+        "module": "NLS.SequenceSpaces.SingleCoordinatePhase",
+        "source_sha256": "9064403fca0e0d1a2896a0d71e1b0c5002e3cf1182e8825869ce9bb27d0cf13e",
+        "olean_sha256": "08ab832e8652cea650559a56e026634d0b4b465349a0c7c8b451b3d8874a2af5",
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-onto-limits.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-fibers-NLS.SequenceSpaces.SingleCoordinatePhase.log"
       },
       {
-        "module": "NLS.Articles.KdVConvexity.FiniteArnoldRealization",
-        "source_sha256": "756a49a1828e27db2a3aa6df0dbab438af1e2b3d40dd53c51149e1c6917804b2",
-        "olean_sha256": "23f6195f00b3ce5b5f09515b5562de92944f44db59e5bee5c734ac4b3708c904",
+        "module": "NLS.KdV.HillOriginalSequenceActions",
+        "source_sha256": "4f6a1f446c1494620e1fcec4183135c5e8787496c35bb0839ef99d2422edc9b3",
+        "olean_sha256": "c26ae8aef174de905c6ac5c2f2da4114d3268ba61053028a52514ddfc7978a89",
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-onto-head.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-fibers-NLS.KdV.HillOriginalSequenceActions.log"
       },
       {
-        "module": "NLS.Articles.KdVConvexity.GlobalArnoldSurjectivity",
-        "source_sha256": "cf922b20a468be8852823145f86be727f68b02e50f0aeabd753ec3e18388ed03",
-        "olean_sha256": "1c68e11b23d13c0f9054a34a39b2c78b7c483126fb303c8203c1f823ec9f0e82",
+        "module": "NLS.KdV.HillOriginalActionFibers",
+        "source_sha256": "8f477b1f1df98cbbf5c02be9be5a200145e3fd6caa668b93f63d996f238814dd",
+        "olean_sha256": "92b251726f41cad91149b4c3959f515d71e0ed741da78af808ebe0b756c33efd",
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-onto-global.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-fibers-NLS.KdV.HillOriginalActionFibers.log"
       },
       {
-        "module": "NLS.KdV.HillConstantActionCurves",
-        "source_sha256": "46c4465b27ddd6d66b9ac6fa69431821c103b55921c29404365794bbd32a3fa9",
-        "olean_sha256": "035aac1f1107d513ef390f7c881c7d4c23ebd47d099d930a76d43f40a2b9498d",
+        "module": "NLS.KdV.HillRoughActionApproximation",
+        "source_sha256": "1f43156db6ccddfb781d02817ddc827dd0186734df6ba6b8ba31c4f43345e383",
+        "olean_sha256": "e0a314ec19051ea8af288c2454696cdb0e0f5d4149519cb6bc270a401e54298e",
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-onto-curves.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-fibers-NLS.KdV.HillRoughActionApproximation.log"
+      },
+      {
+        "module": "NLS.KdV.HillRoughActionFibers",
+        "source_sha256": "2c8cb7826d257d1976a04d39c6f861660c9902dc55d4fc811c186f88bc7196b1",
+        "olean_sha256": "224d3a973c3edfac37a22411f47e0f9279afc46610f3e7250f6927983367a152",
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-fibers-NLS.KdV.HillRoughActionFibers.log"
+      },
+      {
+        "module": "NLS.Articles.KdVConvexity.GlobalArnoldActionFibers",
+        "source_sha256": "e5afc28695b051a567a1dc7076e9b3050536b3bf5a3a55ed2333050e859a68f4",
+        "olean_sha256": "cece20cd59155f0215669e6dae3404b75fc50b4e5cfa1b0eb003c1d6993ec9ac",
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-fibers-NLS.Articles.KdVConvexity.GlobalArnoldActionFibers.log"
       }
     ],
-    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-onto-audit-validation.log",
+    "combined_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/action-fibers-validation.log",
     "baseline_build_receipts_preserved_in_parent_commit": true,
     "inherited_reference_import_closure_rebuilt": false
   },
@@ -7848,6 +7881,32 @@
     "equal_actions_determine_discriminant_proved": false,
     "global_analytic_action_descent_proved": false,
     "discriminant_constant_on_differentiable_physical_constant_action_curves": true,
+    "Theorem_1_1_complete": false
+  },
+  "global_Arnold_action_fiber_discriminant_progress": {
+    "status": "proved_and_strictly_validated",
+    "new_modules": [
+      "NLS.SequenceSpaces.ModulusFiberInvariance",
+      "NLS.SequenceSpaces.SingleCoordinatePhase",
+      "NLS.KdV.HillOriginalSequenceActions",
+      "NLS.KdV.HillOriginalActionFibers",
+      "NLS.KdV.HillRoughActionApproximation",
+      "NLS.KdV.HillRoughActionFibers",
+      "NLS.Articles.KdVConvexity.GlobalArnoldActionFibers"
+    ],
+    "exact_original_target_action_normalization": "norm(spectralMap(q)_k)^2=4*pi*(k+1)*I_(k+1)(q)",
+    "actual_physical_inverse_lifts_single_coordinate_rotations": true,
+    "full_original_mean_zero_L2_equal_action_fibers_have_equal_entire_discriminants": true,
+    "strong_Hminus1_physical_approximations_with_literal_signed_target_truncations": true,
+    "literal_truncation_preserves_positive_coordinate_phases_and_scale": true,
+    "all_real_mean_zero_Hminus1_equal_positive_modulus_fibers_have_equal_discriminants": true,
+    "all_real_mean_zero_Hminus1_equal_intrinsic_Arnold_actions_have_equal_discriminants": true,
+    "L2_membership_finite_gap_smallness_or_open_gap_premises_required": false,
+    "main_declaration": "NLS.Articles.KdVConvexity.hillHminusDiscriminant_eq_of_Arnold_actions",
+    "actual_weighted_Arnold_map_declaration": "NLS.Articles.KdVConvexity.hillHminusDiscriminant_eq_of_global_Arnold_eq",
+    "proof_route": "Smooth one-coordinate phase rotations lift through the actual original global L2 spectral inverse. Constant-action curve stationarity gives trace invariance. Finite coordinate replacements and lp head convergence give equality on every full L2 action fiber. Each real mean-zero rough source is approximated strongly in Hminus1 through its actual real local weak inverse using literal signed finite target truncations. Equal positive coordinate moduli are preserved by common truncation; full L2 discriminant equality passes to the strong rough limits. The global original Arnold calibration removes all coordinate input assumptions.",
+    "global_rough_Cartesian_surjectivity_proved": false,
+    "global_analytic_action_descent_proved": false,
     "Theorem_1_1_complete": false
   }
 }

@@ -3047,36 +3047,54 @@ needed for the global analytic extension in Theorem 1.1. This result does
 not assert global Cartesian-coordinate surjectivity. All main Theorems
 1.1-1.3 remain open.
 
+## Full rough action-fiber invariance of the discriminant
+
+`GlobalArnoldActionFibers.lean` proves that **equal intrinsic Arnold
+periods determine the entire Hill discriminant at every real mean-zero
+H^-1 source**. There is no L2, finite-gap, smallness or open-gap premise.
+The actual analytic weighted Arnold map therefore has the required
+full-discriminant action-fiber identity on its real mean-zero domain.
+
+`HillOriginalSequenceActions.lean` checks the exact target normalization
+`norm(Z_k)^2=4*pi*(k+1)*I_(k+1)`. Smooth one-coordinate phase rotations
+lift through the constructed original global physical L2 inverse.
+`HillOriginalActionFibers.lean` applies the proved constant-action curve
+stationarity. `ModulusFiberInvariance.lean` and
+`SingleCoordinatePhase.lean` extend the finite replacements to every
+full infinite-dimensional equal-modulus fiber by norm convergence.
+
+`HillRoughActionApproximation.lean` constructs actual original mean-zero
+L2 source approximants converging strongly in H^-1. Their SAME global
+signed coordinates are literal symmetric finite truncations, preserving
+every retained positive phase and normalization.
+`HillRoughActionFibers.lean` compares common truncations of two sources
+with equal positive moduli using the full physical L2 identity, then
+passes the entire discriminant to the strong rough source limits. The
+actual global Arnold calibration yields the intrinsic action statement.
+
+Together with action-cone realization, this removes the spectral-fiber
+invariance obligation. The analytic local action charts and common-domain
+gluing still have to be constructed. Full rough Cartesian surjectivity
+is not asserted, and all main Theorems 1.1-1.3 remain open.
+
 ## Remaining essential KdV work
 
-1. Prove the action-fiber/discriminant identity. Physical algebraic
-   multiplicities now equal the scalar analytic zero orders at every
-   real H^-1 potential and every complex energy, so canonical labels
-   carry the actual full-domain physical multiplicities. The full original H1-domain
-   singular Hill operator is now closed with compact resolvent, and its
-   entire spectrum is exactly the actual H^-1 characteristic zero set. Every canonical real label now has
-   an intrinsic nonzero H1 scalar weak eigenfunction with its exact sign. Full-discriminant invariance of
-   all real canonical periods is now proved. Global potential-space moment
-   gluing is now proved on one complex neighborhood of the entire real
-   H^-1 space, with every canonical period and the locally uniform
-   quadratic complex-tail bounds.
-2. The **high-index complex H^-1-neighborhood** bounds
-   |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n|,
-   |A_n|<=C*gamma_n^2/n and
-   |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
-   global KdV Birkhoff actions I_n and descend the moments analytically
-   to the common weighted action neighborhood.
-3. Instantiate the proved spectral-coordinate extension theorem with the
-   actual global KdV coordinate realization. Then prove
-   the identification of the exterior quartic coefficient with the physical
-   energy from (4.7). The contour decomposition and calculation in
-   (4.11)–(4.12) are now proved in the shared KdV library; the physical
-   inputs are not. Extend the resulting physical identity as in
-   Corollary 4.8 (pp. 30–31), identifying the sum with H*.
-4. Identify the gradient with the existing physical frequencies minus
-   8*pi^3*n^3 on V intersect V0, and prove the KdV quadratic coefficients
-   giving the full -6*Id derivative. Apply the checked local consequences
-   after positive-index Hessian/real-cone transport.
+1. Construct normalized complex pair coordinates for the actual local
+   real weak inverse over each nonnegative action point. The whole cone
+   now has actual source preimages, and equal actions determine the full
+   mean-zero rough discriminant.
+2. Descend the canonical moments in these independent local coordinate
+   germs and glue their action germs, retaining the uniform local bounds
+   `|8*n*pi*R_n|<=C*|I_n|^2`. Sum on one open neighborhood of the entire
+   positive ell2 quadrant. The shared potential-space moment family,
+   local scalar descent and action-cone gluing tools are already checked.
+3. Identify the exterior quartic coefficient with physical energy and
+   use the finite-gap trace formula and density to identify the global
+   contour sum with the physical renormalized Hamiltonian H*.
+4. Identify the gradient with the physical KdV frequencies minus
+   `8*pi^3*n^3` on the full common domain, prove the quadratic Taylor
+   coefficients giving the bounded derivative `-6*Id`, and complete
+   Theorems 1.1-1.3 with their original domains and quantifiers.
 
 The `kdv-estimates` branch was re-inspected through commit `05e5530`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
@@ -3133,19 +3151,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `1175054` contains 2194 source modules, whose
-source hashes remain unchanged. Five new authored modules pass strict
+The validated baseline at `92f24b3` contains 2199 source modules, whose
+source hashes remain unchanged. Seven new authored modules pass strict
 Lean 4.33.1/mathlib v4.33.1 compilation with `warningAsError=true`.
-The reproduction script lists 2199 NLS modules. The positive-index
-example, combined transitive axiom audit and 1514 coverage declaration
+The reproduction script lists 2206 NLS modules. The positive-index
+example, combined transitive axiom audit and 1537 coverage declaration
 checks pass. Earlier dependency-build receipts remain in the parent
 commit. Inherited reference imports were not rebuilt. This is incremental
 dependency validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 751 additional shared modules:
-17024 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 753 additional shared modules:
+17058 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
