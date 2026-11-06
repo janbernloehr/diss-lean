@@ -1,3 +1,12 @@
+import NLS.KdV.HillRoughAbelianGardnerOn
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianCanonical
+import NLS.KdV.HillAbelianSignedPhysicalValues
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianNativeGerms
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForward
+import NLS.ComplexAnalysis.AnalyticOpenGluing
+import NLS.Articles.KdVKdV2Frequencies.PhysicallyOrientedRoughPackets
+import NLS.KdV.HillPhysicalAbelianSignCalibration
+import NLS.ComplexAnalysis.RealAnalyticGermSign
 import NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseSignedPrincipalSymbol
 import NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseMeanZeroPrincipalEquiv
 import NLS.SequenceSpaces.SobolevSignedRealCompactGermAt
@@ -4629,7 +4638,16 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.SequenceSpaces.SobolevSignedRealCompactGermAt,
   `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseSignedFourierGerms,
   `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseSignedPrincipalSymbol,
-  `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseMeanZeroPrincipalEquiv
+  `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseMeanZeroPrincipalEquiv,
+  `NLS.ComplexAnalysis.RealAnalyticGermSign,
+  `NLS.KdV.HillPhysicalAbelianSignCalibration,
+  `NLS.ComplexAnalysis.AnalyticOpenGluing,
+  `NLS.Articles.KdVKdV2Frequencies.PhysicallyOrientedRoughPackets,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForward,
+  `NLS.KdV.HillAbelianSignedPhysicalValues,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianNativeGerms,
+  `NLS.KdV.HillRoughAbelianGardnerOn,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianCanonical
 ]
 
 open Lean in

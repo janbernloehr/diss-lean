@@ -317,6 +317,26 @@
           "source_clause": "Actual mean-zero principal equivalence at every eligible real native base and every nonnegative Sobolev order",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_packetMeanZeroFourierPrincipalAt_equiv",
           "qualification": "At EVERY eligible real native base in the arbitrary-base rough ball and EVERY nonnegative native Sobolev order, the literal full signed principal in native mean-zero source/target charts is a bounded complex linear equivalence. Its inverse retains the actual full-symbol/root/phase reciprocal and free Miura map. Together with the compact derivative remainder this identifies the Fredholm principal; full Jacobian invertibility and nonlinear inverse charts away from zero remain unproved."
+        },
+        {
+          "source_clause": "ONE actual native complex analytic forward map on an OPEN neighborhood of the ENTIRE real HminusOne space, with canonical physical orientation and exact full-complex local-chart retention",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.nonempty_globalRoughAbelianForwardData",
+          "qualification": "ONE actual positive packet glues native complex analytically on an OPEN neighborhood of the ENTIRE real HminusOne space, including all non-L2 bases. The domain is invariant under actual conjugation and every actual original local chart is retained on its ENTIRE original complex ball. The SAME signed hminusHalf forward map is genuinely complex analytic on this global neighborhood, with literal zero central slot and exact equality to each retained signed local packet. Every physical source has exact original normalized positive coordinates. This is global forward construction; inverse, injectivity/surjectivity and full Jacobian invertibility remain open."
+        },
+        {
+          "source_clause": "Full literal original signed physical recovery at EVERY physical source and signed target reality at EVERY real rough source",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.signed_physical",
+          "qualification": "The ONE global signed rough map recovers the full literal ORIGINAL signed physical coordinate sequence at EVERY physical source, including low and closed gaps, arbitrary means and unbounded L2 norms. It has literal signed target reality at EVERY real rough source. At EVERY real native source base and EVERY nonnegative Sobolev order it has a bounded genuine native complex analytic forward germ, exact inclusion to THAT SAME global map, zero central slot and conjugation-invariant OPEN domain. At EVERY real point its derivative is the SAME retained actual Fourier principal plus compact remainder, and the actual mean-zero principal is a bounded equivalence. No smallness/L2-center hypothesis remains; no nonlinear inverse or full Jacobian unit is inferred."
+        },
+        {
+          "source_clause": "Native analytic forward germs of the SAME global signed map at EVERY real native base and EVERY nonnegative Sobolev order",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_all_native_signed_germ",
+          "qualification": "The ONE global signed rough map recovers the full literal ORIGINAL signed physical coordinate sequence at EVERY physical source, including low and closed gaps, arbitrary means and unbounded L2 norms. It has literal signed target reality at EVERY real rough source. At EVERY real native source base and EVERY nonnegative Sobolev order it has a bounded genuine native complex analytic forward germ, exact inclusion to THAT SAME global map, zero central slot and conjugation-invariant OPEN domain. At EVERY real point its derivative is the SAME retained actual Fourier principal plus compact remainder, and the actual mean-zero principal is a bounded equivalence. No smallness/L2-center hypothesis remains; no nonlinear inverse or full Jacobian unit is inferred."
+        },
+        {
+          "source_clause": "FULL original Gardner matrix at EVERY real mean-zero HminusOne source, with exact Abelian normalization and fixed global physical L2 Birkhoff agreement",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.gardner_matrix_real_meanZero",
+          "qualification": "The SAME global rough signed map has the FULL original Gardner matrix with exact Abelian normalization at EVERY real mean-zero HminusOne source, including NON-L2 sources and closed gaps. It agrees EXACTLY with the fixed GLOBAL ORIGINAL physical L2 Birkhoff map after the literal verified action/Cartesian/Abelian normalization. Full Jacobian invertibility, a global rough inverse and global diffeomorphism remain open."
         }
       ]
     },
@@ -35849,12 +35869,120 @@
       "scope": "At EVERY eligible real native base in the arbitrary-base rough ball and EVERY nonnegative native Sobolev order, the literal full signed principal in native mean-zero source/target charts is a bounded complex linear equivalence. Its inverse retains the actual full-symbol/root/phase reciprocal and free Miura map. Together with the compact derivative remainder this identifies the Fredholm principal; full Jacobian invertibility and nonlinear inverse charts away from zero remain unproved.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "631791882aec1a0d7d17ae7c972ff21d5b85b82dc04d8ca409af73f602b2ad3b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealAnalyticGermSign.lean",
+      "source_labels": [
+        "Actual global rough Abelian forward construction with canonical physical orientation and all native Sobolev germs, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Complex-valued real analytic scalar germs can be cancelled by a nontrivial real analytic germ, including when its value at the base is zero. Equality of squares on an open preconnected real Banach domain fixes ONE constant sign on the whole domain. This permits actual physical L2 sign calibration without complexifying the physical real source domain.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ad1aae38b2aadcb5841e02886a30562d656dfbc05c95f0dc519a35c05314783f"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalAbelianSignCalibration.lean",
+      "source_labels": [
+        "Actual global rough Abelian forward construction with canonical physical orientation and all native Sobolev germs, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ORIGINAL physical Abelian coordinate is real Banach analytic at EVERY original real L2 source, including closed gaps. Actual nonzero-own-sheet density removes sheet exceptions from continuous equality on any open physical domain. For ANY analytic rough packet satisfying literal physical square recovery, ONE infinite coordinate sign selection recovers the EXACT ORIGINAL normalized physical coordinates throughout its ENTIRE rough ball, inclclosed gaps/arbitrary means/unbounded physical L2 norms. The rough center may be non-L2. Signs precede all sources and indices; no smaller ball is selected.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "680856d6027410fa43006b029b5ed076056bffaa292067c967f4c458269c70f6"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticOpenGluing.lean",
+      "source_labels": [
+        "Actual global rough Abelian forward construction with canonical physical orientation and all native Sobolev germs, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "An arbitrary family of native complex analytic maps on open domains, exactly equal on all overlaps, glues into ONE native complex analytic map on their entire union. The total map equals EVERY supplied chart on its WHOLE original domain; no shrinking or target completion is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "95e477ae62d2b9f558ce7e0cf7fab716b0ebf0b828c87622483a42baaa8fffab"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/PhysicallyOrientedRoughPackets.lean",
+      "source_labels": [
+        "Actual global rough Abelian forward construction with canonical physical orientation and all native Sobolev germs, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY real rough base, one retained actual full packet and ONE fixed infinite sign selection have EXACT ORIGINAL physical recovery throughout their ENTIRE ball, including closed gaps. The SAME actual Miura chart, original roots, amplitudes, full phases and all native lift witnesses are retained. Any two such canonically oriented packets agree EXACTLY on the ENTIRE COMPLEX overlap of their original real-centered balls. Canonical local physical signs and complex overlap gluing compatibility are closed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0931d149e85e48ca162a697f61ee7b0f9ad5aae3b4f2873a9e6083cdef500e03"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianForward.lean",
+      "source_labels": [
+        "Actual global rough Abelian forward construction with canonical physical orientation and all native Sobolev germs, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ONE actual positive packet glues native complex analytically on an OPEN neighborhood of the ENTIRE real HminusOne space, including all non-L2 bases. The domain is invariant under actual conjugation and every actual original local chart is retained on its ENTIRE original complex ball. The SAME signed hminusHalf forward map is genuinely complex analytic on this global neighborhood, with literal zero central slot and exact equality to each retained signed local packet. Every physical source has exact original normalized positive coordinates. This is global forward construction; inverse, injectivity/surjectivity and full Jacobian invertibility remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ec0c9cb1d77e14f22f870ea564f554894e93d5dacbaa0546d7d96550a2f21106"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianSignedPhysicalValues.lean",
+      "source_labels": [
+        "Actual global rough Abelian forward construction with canonical physical orientation and all native Sobolev germs, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At an arbitrary original physical source, exact normalized positive values and nonpositive zeros AT THAT SOURCE alone give full literal ORIGINAL signed physical recovery for the actual signedTargetLift. The source is fixed by actual conjugation. No zero-centered ball, gap-opening condition, source mean restriction or L2 norm bound is needed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9240e7b64b983dbd5e2bf5d803859424e59e46972e29ed702cd6eb1c31ab972e"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianNativeGerms.lean",
+      "source_labels": [
+        "Actual global rough Abelian forward construction with canonical physical orientation and all native Sobolev germs, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ONE global signed rough map recovers the full literal ORIGINAL signed physical coordinate sequence at EVERY physical source, including low and closed gaps, arbitrary means and unbounded L2 norms. It has literal signed target reality at EVERY real rough source. At EVERY real native source base and EVERY nonnegative Sobolev order it has a bounded genuine native complex analytic forward germ, exact inclusion to THAT SAME global map, zero central slot and conjugation-invariant OPEN domain. At EVERY real point its derivative is the SAME retained actual Fourier principal plus compact remainder, and the actual mean-zero principal is a bounded equivalence. No smallness/L2-center hypothesis remains; no nonlinear inverse or full Jacobian unit is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "93ee69cfc3272112ee56390cc516b968318c6e5cac19c1ba52de080e05b796a0"
+    },
+    {
+      "path": "NLS/KdV/HillRoughAbelianGardnerOn.lean",
+      "source_labels": [
+        "Actual global rough Abelian forward construction with canonical physical orientation and all native Sobolev germs, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "On ANY open complex rough domain, an actual native analytic signed map with exact full ORIGINAL physical recovery has the original Gardner matrix at EVERY real mean-zero rough point. The actual sqrt(2) Cartesian-to-Abelian normalization gives exactly ONE HALF of the original complex Cartesian matrix. Original full physical germs and actual mean-zero physical rough density are used. No zero-centered domain, L2-center or open-gap hypothesis remains.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "db8c87d6839f1056c41cfead6b90460dd9c65ab6876bdb4112c8f110ed75b5a3"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianCanonical.lean",
+      "source_labels": [
+        "Actual global rough Abelian forward construction with canonical physical orientation and all native Sobolev germs, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The SAME global rough signed map has the FULL original Gardner matrix with exact Abelian normalization at EVERY real mean-zero HminusOne source, including NON-L2 sources and closed gaps. It agrees EXACTLY with the fixed GLOBAL ORIGINAL physical L2 Birkhoff map after the literal verified action/Cartesian/Abelian normalization. Full Jacobian invertibility, a global rough inverse and global diffeomorphism remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "63099f09ce463db9c8422ad3275f1e4cb74b2ba19cb3d1d9847a7ff39afd07e5"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "All earlier near-zero all-order native forward/inverse germs remain attached to the SAME Z,R. The actual ALL-index amplitude/reciprocal construction at every real HminusOne source is retained. NEW: the full coupled Abelian/Fourier packet at arbitrary NON-L2 REAL rough bases is constructed on ONE complex ball before all indices and Sobolev orders, with the SAME actual Miura chart, original roots, full noncentral phase, literal complex coordinate formulas and physical square recovery. All-order native positive and signed Sobolev germs have the actual Fourier principal plus compact remainder at every real point. The actual full signed principal is a bounded equivalence in the literal mean-zero charts at every eligible real native base. Original physical values determine complex rough germs, and ANY two actual packets agree up to ONE constant infinite sign selection on their ENTIRE complex overlap. NEXT pin canonical physical signs consistently, construct/glue the global rough Birkhoff map, prove actual Jacobian invertibility/canonicality and global inversion/Sobolev-scale inverse and action-Hamiltonian identification. Constant-sign overlap compatibility alone does not prove canonical global gluing. Complete global Theorem 1.1 and all other complete main rows, full KdV/KdV2 frequency formulas, sharp bounds/action descent and actual PDE conclusions remain open.",
+    "All earlier near-zero SAME Z,R forward/inverse results and arbitrary-base actual full packet/principal constructions remain. NEW: canonical physical signs are pinned on ENTIRE rough balls by real analytic original physical coordinates, before all sources/indices/orders. The canonically oriented actual packets agree EXACTLY on their ENTIRE complex overlaps. They glue to ONE genuine native complex analytic positive and signed forward map on an OPEN conjugation-invariant neighborhood of the ENTIRE real HminusOne space, including non-L2 bases. The SAME global signed map has full literal original physical recovery at EVERY physical source, real target symmetry and zero central slot at every real rough source. Every real native base at every nonnegative Sobolev order has a bounded genuine complex analytic forward germ, exact inclusion to THAT SAME global map, actual Fourier principal plus compact remainder and actual mean-zero principal equivalence. Canonical sign pinning, global rough forward gluing and the actual Gardner matrix at EVERY real mean-zero rough source are CLOSED. The FULL original Gardner matrix with exact Abelian normalization is now proved at EVERY real mean-zero rough source, and exact agreement with the fixed GLOBAL ORIGINAL physical L2 Birkhoff map is retained. NEXT prove full mean-zero Jacobian invertibility, global injectivity/surjectivity and global rough inverse with compatible native Sobolev-scale inverse and action-Hamiltonian identification. An invertible principal plus compact remainder alone does not prove the full Jacobian is a unit. Complete Theorem 1.1 and all other complete main rows remain open, together with full frequency formulas/sharp bounds/action descent/fixed-mass corrections and actual KdV/KdV2 PDE conclusions.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -35880,15 +36008,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 21227,
-    "total_declarations_audited": 43297,
+    "candidate_declarations_audited": 21319,
+    "total_declarations_audited": 43387,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2717,
+    "selected_modules": 2726,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -35978,7 +36106,8 @@
     "matched_inverse_validation_sequence": "Prior strict evidence retained for all 2684 unchanged selected baseline sources. All eight newly selected own modules strictly rebuilt in dependency order after freezing 2738 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2692 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The exact selection now uses 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2692-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2692-module rebuild is claimed.",
     "arbitrary_high_actions_validation_sequence": "Prior strict evidence retained for all 2692 unchanged selected baseline sources. All six newly selected own modules strictly rebuilt in dependency order after freezing 2744 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2698 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact six-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2698-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2698-module rebuild is claimed.",
     "arbitrary_all_amplitudes_validation_sequence": "Prior strict evidence retained for all 2698 unchanged selected baseline sources. All nine newly selected own modules strictly rebuilt in dependency order after freezing 2753 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2707 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2707-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2707-module rebuild is claimed.",
-    "arbitrary_packets_validation_sequence": "Prior strict evidence retained for all 2707 unchanged selected baseline sources. All ten newly selected own modules strictly rebuilt in dependency order after freezing 2763 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2717 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact ten-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2717-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2717-module rebuild is claimed."
+    "arbitrary_packets_validation_sequence": "Prior strict evidence retained for all 2707 unchanged selected baseline sources. All ten newly selected own modules strictly rebuilt in dependency order after freezing 2763 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2717 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact ten-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2717-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2717-module rebuild is claimed.",
+    "global_forward_validation_sequence": "Prior strict evidence retained for all 2717 unchanged selected baseline sources. All nine newly selected own modules strictly rebuilt in dependency order after freezing 2772 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2726 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2726-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2726-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -36848,6 +36977,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "a953b20e8dbb5762ac1a2fa814dae512e98526b4",
+      "description": "Pin canonical physical signs on entire rough balls, prove exact full-complex overlap equality and glue ONE actual global rough forward map with all native Sobolev germs.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "All earlier near-zero all-order native forward/inverse germs remain attached to the SAME Z,R. The actual ALL-index amplitude/reciprocal construction at every real HminusOne source is retained. NEW: the full coupled Abelian/Fourier packet at arbitrary NON-L2 REAL rough bases is constructed on ONE complex ball before all indices and Sobolev orders, with the SAME actual Miura chart, original roots, full noncentral phase, literal complex coordinate formulas and physical square recovery. All-order native positive and signed Sobolev germs have the actual Fourier principal plus compact remainder at every real point. The actual full signed principal is a bounded equivalence in the literal mean-zero charts at every eligible real native base. Original physical values determine complex rough germs, and ANY two actual packets agree up to ONE constant infinite sign selection on their ENTIRE complex overlap. NEXT pin canonical physical signs consistently, construct/glue the global rough Birkhoff map, prove actual Jacobian invertibility/canonicality and global inversion/Sobolev-scale inverse and action-Hamiltonian identification. Constant-sign overlap compatibility alone does not prove canonical global gluing. Complete global Theorem 1.1 and all other complete main rows, full KdV/KdV2 frequency formulas, sharp bounds/action descent and actual PDE conclusions remain open.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -36903,5 +37044,6 @@
   "matched_inverse_record": "NATIVE_MATCHED_ALL_REAL_BASE_INVERSE.md",
   "arbitrary_rough_high_actions_record": "ARBITRARY_ROUGH_HIGH_ACTION_AMPLITUDES.md",
   "arbitrary_rough_all_amplitudes_record": "ARBITRARY_ROUGH_ALL_ACTION_AMPLITUDES.md",
-  "arbitrary_rough_full_packets_record": "ARBITRARY_ROUGH_FULL_PACKETS.md"
+  "arbitrary_rough_full_packets_record": "ARBITRARY_ROUGH_FULL_PACKETS.md",
+  "global_rough_abelian_forward_record": "GLOBAL_ROUGH_ABELIAN_FORWARD.md"
 }

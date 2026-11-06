@@ -2726,6 +2726,15 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseSignedFourierGerms
   NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseSignedPrincipalSymbol
   NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseMeanZeroPrincipalEquiv
+  NLS/ComplexAnalysis/RealAnalyticGermSign
+  NLS/KdV/HillPhysicalAbelianSignCalibration
+  NLS/ComplexAnalysis/AnalyticOpenGluing
+  NLS/Articles/KdVKdV2Frequencies/PhysicallyOrientedRoughPackets
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianForward
+  NLS/KdV/HillAbelianSignedPhysicalValues
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianNativeGerms
+  NLS/KdV/HillRoughAbelianGardnerOn
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianCanonical
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
