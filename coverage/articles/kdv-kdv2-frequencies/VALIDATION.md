@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest exact rough Miura ground energy and central gap
+## Latest actual spectral finite-gap weak Miura mass bound
+
+The actual normalized SPECTRAL finite-gap Miura factor now satisfies the mass/energy bound with coefficient ONE by the ORIGINAL signed weak first-weighted Dirac actions. An exact squared-canonical-primitive/frequency mass contour, proved removal of the zero pole and finite-hole decomposition give the actual inverse-frequency mass identity. The real gap profile comparison t+1/t>=2 and the existing ordinary action-mass trace formula absorb half of the mass. Both index signs, actual normalizations, closed noncentral gaps and the SAME original primitive/actions are retained. See `GLOBAL_MIURA_FINITE_GAP_MASS_BOUND.md`.
+
+The SPECTRAL finite-gap Dirac mass bound is CLOSED. Identify these actual weighted Dirac actions with the SAME global weak HILL target actions at normalized critical factors, prove the required spectral finite-gap approximation/continuity argument, and obtain an actual compactness/no-loss or reconstruction proof of rough Birkhoff SURJECTIVITY. Global all-order inversion and action-Hamiltonian/frequency/sharp estimate/action descent/fixed-mass/PDE conclusions remain essential obligations. All eleven COMPLETE main theorem rows remain OPEN.
+
+Prior strict evidence retained for all 2763 unchanged selected baseline sources. All eight new own modules and one unchanged canonical prerequisite strictly rebuilt in dependency order after freezing 2819 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2772 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; one unchanged canonical prerequisite and one new verified provenance record are selected. All 44 provenance records are verified. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2772-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2772-module rebuild is claimed.
+
+Fresh audit: 21534 selected and 43600 imported NLS declarations; permitted axioms only. Eight new own modules contain 21 explicit theorems.
+
+## Earlier exact rough Miura ground energy and central gap
 
 Every real mean-zero HminusOne source now has an actual real mean-zero L2 Miura factor at EXACTLY the negative intrinsic lowest Hill energy. The actual positive periodic zero-energy gauge gives trace two. Spectral ordering forces both indexed central Dirac endpoints to be zero, so the original real, indexed and complex central actions vanish. Every complex Hill characteristic root lies above the translated zero energy because its actual Dirac square-root frequency is real. No exterior shift, assumed ground state, or inverse at the critical Miura factor is used. See `GLOBAL_MIURA_GROUND_ENERGY.md`.
 
@@ -870,7 +880,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2763 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2772 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1939,7 +1949,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2763 selected modules (including generated and private declarations)
+the 2772 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4964,4 +4974,19 @@ PASS NLS/MKdV/L2QuasiHillZeroGauge
 PASS NLS/KdV/HillMiuraZeroGap
 PASS NLS/KdV/HillMiuraGroundEnergy
 Axiom audit passed: 21480 candidate declarations; 43550 declarations total.
+```
+
+Latest actual spectral finite-gap weak Miura mass-bound strict checks and fresh combined audit:
+
+```text
+PASS NLS/ComplexAnalysis/SquareOverFrequencyContour
+PASS NLS/ZakharovShabat/SourceFullAbelianMassCoefficient
+PASS NLS/ZakharovShabat/SourceFullAbelianMassContour
+PASS NLS/ZakharovShabat/SourceFullAbelianZeroMass
+PASS NLS/ZakharovShabat/SourceFullAbelianInverseMoment
+PASS NLS/ZakharovShabat/SourceZeroGapActionBound
+PASS NLS/ZakharovShabat/SourceFullAbelianInverseMomentReal
+PASS NLS/ZakharovShabat/SourceZeroGapMassEstimate
+PASS NLS/KdV/HillMiuraFiniteGapEnergyBound
+Axiom audit passed: 21534 candidate declarations; 43600 declarations total.
 ```

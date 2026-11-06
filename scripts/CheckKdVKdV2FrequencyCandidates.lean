@@ -1,3 +1,12 @@
+import NLS.ZakharovShabat.SourceFullAbelianMassCoefficient
+import NLS.ZakharovShabat.SourceFullAbelianInverseMomentReal
+import NLS.ZakharovShabat.SourceZeroGapMassEstimate
+import NLS.KdV.HillMiuraFiniteGapEnergyBound
+import NLS.ZakharovShabat.SourceZeroGapActionBound
+import NLS.ZakharovShabat.SourceFullAbelianInverseMoment
+import NLS.ZakharovShabat.SourceFullAbelianZeroMass
+import NLS.ZakharovShabat.SourceFullAbelianMassContour
+import NLS.ComplexAnalysis.SquareOverFrequencyContour
 import NLS.KdV.HillMiuraGroundEnergy
 import NLS.KdV.HillMiuraZeroGap
 import NLS.MKdV.L2QuasiHillZeroGauge
@@ -4721,7 +4730,16 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.KdV.HillMiuraMinimalMeanZero,
   `NLS.MKdV.L2QuasiHillZeroGauge,
   `NLS.KdV.HillMiuraZeroGap,
-  `NLS.KdV.HillMiuraGroundEnergy
+  `NLS.KdV.HillMiuraGroundEnergy,
+  `NLS.ComplexAnalysis.SquareOverFrequencyContour,
+  `NLS.ZakharovShabat.SourceFullAbelianMassCoefficient,
+  `NLS.ZakharovShabat.SourceFullAbelianMassContour,
+  `NLS.ZakharovShabat.SourceFullAbelianZeroMass,
+  `NLS.ZakharovShabat.SourceFullAbelianInverseMoment,
+  `NLS.ZakharovShabat.SourceZeroGapActionBound,
+  `NLS.ZakharovShabat.SourceFullAbelianInverseMomentReal,
+  `NLS.ZakharovShabat.SourceZeroGapMassEstimate,
+  `NLS.KdV.HillMiuraFiniteGapEnergyBound
 ]
 
 open Lean in

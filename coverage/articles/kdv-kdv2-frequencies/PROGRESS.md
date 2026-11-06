@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest exact rough Miura ground energy and central gap
+## Latest actual spectral finite-gap weak Miura mass bound
+
+The actual normalized SPECTRAL finite-gap Miura factor now satisfies the mass/energy bound with coefficient ONE by the ORIGINAL signed weak first-weighted Dirac actions. An exact squared-canonical-primitive/frequency mass contour, proved removal of the zero pole and finite-hole decomposition give the actual inverse-frequency mass identity. The real gap profile comparison t+1/t>=2 and the existing ordinary action-mass trace formula absorb half of the mass. Both index signs, actual normalizations, closed noncentral gaps and the SAME original primitive/actions are retained. See `GLOBAL_MIURA_FINITE_GAP_MASS_BOUND.md`.
+
+The SPECTRAL finite-gap Dirac mass bound is CLOSED. Identify these actual weighted Dirac actions with the SAME global weak HILL target actions at normalized critical factors, prove the required spectral finite-gap approximation/continuity argument, and obtain an actual compactness/no-loss or reconstruction proof of rough Birkhoff SURJECTIVITY. Global all-order inversion and action-Hamiltonian/frequency/sharp estimate/action descent/fixed-mass/PDE conclusions remain essential obligations. All eleven COMPLETE main theorem rows remain OPEN.
+
+Prior strict evidence retained for all 2763 unchanged selected baseline sources. All eight new own modules and one unchanged canonical prerequisite strictly rebuilt in dependency order after freezing 2819 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2772 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; one unchanged canonical prerequisite and one new verified provenance record are selected. All 44 provenance records are verified. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2772-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2772-module rebuild is claimed.
+
+Fresh audit: 21534 selected and 43600 imported NLS declarations; permitted axioms only. Eight new own modules contain 21 explicit theorems.
+
+## Earlier exact rough Miura ground energy and central gap
 
 Every real mean-zero HminusOne source now has an actual real mean-zero L2 Miura factor at EXACTLY the negative intrinsic lowest Hill energy. The actual positive periodic zero-energy gauge gives trace two. Spectral ordering forces both indexed central Dirac endpoints to be zero, so the original real, indexed and complex central actions vanish. Every complex Hill characteristic root lies above the translated zero energy because its actual Dirac square-root frequency is real. No exterior shift, assumed ground state, or inverse at the critical Miura factor is used. See `GLOBAL_MIURA_GROUND_ENERGY.md`.
 

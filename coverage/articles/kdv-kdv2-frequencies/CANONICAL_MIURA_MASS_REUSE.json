@@ -1,0 +1,13 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "scope": "Reuse the existing actual full Abelian finite-gap physical-mass Laurent coefficient unchanged, as the prerequisite of the new inverse-frequency mass contour and normalized finite-gap weak Dirac-action estimate. Newly selected, privately strictly rebuilt and included in the combined transitive axiom audit; no canonical edit or merge.",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/SourceFullAbelianMassCoefficient.lean",
+      "source_sha256": "ec92d2eabd67f794609941cd9196edee7db415998c2dca35e75de84f5d88156f",
+      "local_sha256": "ec92d2eabd67f794609941cd9196edee7db415998c2dca35e75de84f5d88156f",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}
