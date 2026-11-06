@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.PhysicalMiuraFrequencyRecovery
 import NLS.Articles.KdVConvexity.FiniteGapPhysicalFrequencyIdentity
 import NLS.Articles.KdVConvexity.PhysicalQuarticFrequencyPreparation
 import NLS.Articles.KdVConvexity.WeightedFrequencyMomentPreparation
@@ -112,6 +113,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.ZakharovShabat.SourceAbelianMomentPeriodCircle,
+    `NLS.ZakharovShabat.SourceReflectedPeriodCircle,
+    `NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedTruncation,
+
 
 
     `NLS.Articles.KdVKdV2Frequencies.SmoothKdVIdentities,

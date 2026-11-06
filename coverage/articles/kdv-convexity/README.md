@@ -3523,7 +3523,7 @@ factory gives the same exact physical formula at EVERY finitely supported
 original action sequence and EVERY selected mode. No Birkhoff inverse,
 physical frequency formula or action realization is a caller hypothesis.
 
-The missing step is now the exact shifted-Miura pullback of these physical
+At that milestone the next step was the exact shifted-Miura pullback of these physical
 Hill moments to the constructed analytic rough signed sums. Finite-gap
 density and native frequency continuity can then recover physical values
 at infinite-gap original sources. Rough chart independence, global
@@ -3531,18 +3531,51 @@ intrinsic gluing and actual action-fiber descent remain necessary to
 construct `BasePhysicalFrequencyExtension`. The printed locally uniform
 `O(1)` base bound remains refuted and is not restored by this bridge.
 
+## Exact shifted-Miura pullback and infinite-gap physical recovery
+
+`HillPhysicalMiuraSecondMoment.lean` proves the literal physical identity
+`Omega_nk^(2) = M_n,k^(2) - M_n,-k^(2)` for every positive n and k,
+including collapsed gaps. The source path from zero fixes the primitive's
+logarithm period, and the actual canonical product fixes its root sign.
+The shifted square-map Jacobian is exactly `2*z`; reflection retains
+positive orientation and the same selected numerator index. No additional
+normalization factor occurs. Coefficients analytic on the physical cut
+domain suffice for transfer to the original intrinsic Hill circle.
+
+`HillPhysicalMiuraMomentSum.lean` identifies the absolutely convergent
+physical weighted series with the already constructed signed Dirac sum.
+`PhysicalMiuraFrequencyChart.lean` constructs an actual analytic chart at
+EVERY real Hminus1 source. One common complex-open source domain precedes
+ALL positive selected indices. Its correction is `-12` times this same
+actual moment sum and recovers the original physical series.
+
+`NativeFiniteGapApproximation.lean` uses symmetric truncation through the
+actual global native Birkhoff homeomorphism. The resulting actual
+finite-gap sources converge in the ORIGINAL Sobolev norm. Continuity of
+the intrinsic native Hamiltonian frequencies and analyticity of the rough
+chart then give `native_physical_frequency_eq_miura_chart` at EVERY native
+H1 source, including infinitely many open gaps and closed selected modes.
+`original_physical_frequency_eq_miura_chart` retains this article's
+independent physical energy derivative. The unconditional factory
+`exists_original_physical_frequency_miura_recovery` supplies a genuine
+physical realization and common analytic recovery chart at EVERY point
+of the original action cone, with infinite support permitted.
+
+Rough chart independence, intrinsic global gluing and actual base action
+descent remain open. These local source results do not yet construct a
+nonempty `BasePhysicalFrequencyExtension`. The printed locally uniform
+`O(1)` estimate remains refuted.
+
 ## Remaining essential KdV work
 
-1. Match the actual physical Hill second moments to the constructed
-   signed Miura weighted sums, retaining the square-map Jacobian, root
-   sign and energy shift. The physical finite-gap frequency identity now
-   covers every selected mode and every finitely supported original action.
-   Use finite-gap density and native source frequency continuity for
-   physical recovery at infinite-gap original sources. Prove rough chart
-   independence, global intrinsic gluing and actual action descent;
-   construct a nonempty `BasePhysicalFrequencyExtension` on the whole
-   positive ell^(-1,1) cone and apply the common-domain assembly for
-   Theorem 1.1. The printed locally uniform `O(1)` estimate remains excluded.
+1. Use the proved full original H1 physical frequency recovery, density
+   and complex real-form uniqueness for rough mean-zero Miura-chart
+   independence. Glue the intrinsic rough source corrections, prove actual
+   action-fiber invariance and analytic local pair-chart descent, and
+   construct a nonempty `BasePhysicalFrequencyExtension` on the entire
+   positive base action cone. Apply the common-domain assembly to finish
+   corrected Theorem 1.1. The exact shifted-Miura pullback and infinite-gap
+   physical recovery are complete; the printed uniform `O(1)` is excluded.
 2. Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates
    and physical KdV well-posedness.
 
@@ -3601,20 +3634,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `eb23510` contains 2317 proof sources, whose
-hashes remain unchanged. All 198 new modules pass strict Lean compilation:
-190 byte-identical shared imports, three documented shared compatibility
-modules and five authored modules, with default proof limits and no
-linter overrides. Reproduction lists 2515 modules. The positive-index
-example, combined transitive axiom audit and 2760 coverage declaration
-checks pass. All 2852 remaining reference import sources agree byte-for-
-byte and were not rebuilt. Earlier receipts remain in the parent commit.
-This is incremental validation, not a full repository build.
+The validated baseline at `26b85de` contains 2515 proof sources, whose
+hashes remain unchanged. All 12 authored new modules pass strict Lean
+compilation with default proof limits and no linter overrides. Reproduction
+lists 2527 modules. The positive-index example, combined transitive axiom
+audit and 2785 coverage-name checks pass. All 2852 remaining reference
+import sources agree byte-for-byte and were not rebuilt. Earlier receipts
+remain in the parent commit. This is incremental validation, not a full
+repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 903 additional shared modules:
-19626 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 906 additional shared modules:
+19701 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
