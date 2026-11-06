@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest all real-base native inverse germs of the SAME R
+## Latest arbitrary-base high physical actions and amplitudes
+
+Actual high actions, physical action ratios and invertible principal amplitudes now exist on one COMPLEX rough neighborhood of EVERY HminusOne source. The neighborhood and cutoff precede ALL high indices. Physical recovery holds for EVERY physical L2 source in that rough neighborhood, including closed gaps, arbitrary means and unrestricted L2 norms. The weighted amplitudes satisfy 1/8 <= sqrt(1+n)*norm(B) <=2 throughout the complex neighborhood. See `ARBITRARY_ROUGH_HIGH_ACTION_AMPLITUDES.md`.
+
+This extends the high-tail construction beyond the neighborhood of zero. The actual finite head at arbitrary non-L2 real rough bases, the full packet and global rough Birkhoff inversion remain obligations, together with the global canonical/Hamiltonian/frequency/PDE conclusions. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2692 unchanged selected baseline sources. All six newly selected own modules strictly rebuilt in dependency order after freezing 2744 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2698 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact six-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2698-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2698-module rebuild is claimed.
+
+Fresh audit: 21085 selected and 43155 imported NLS declarations; permitted axioms only. Six new own modules contain 9 explicit theorems.
+
+## Earlier all real-base native inverse germs of the SAME R
 
 All stronger native analytic inverse charts now agree EXACTLY with the SAME retained rough R at EVERY eligible REAL source and target base near zero, before ALL Sobolev orders s>=-1. ONE common rough inverse-source ball precedes those choices. The inverse germs are native complex analytic on OPEN stronger target neighborhoods and retain full source/target coefficient inclusions, actual right-inverse identity and BOTH central zero coefficients. Target-based eligibility uses the original weak inverse domain W and the actual R image in that common rough ball. See `NATIVE_MATCHED_ALL_REAL_BASE_INVERSE.md`.
 

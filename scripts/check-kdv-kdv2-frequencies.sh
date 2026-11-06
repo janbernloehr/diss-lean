@@ -2701,6 +2701,12 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/ActualAllNativeStrongRInverse
   NLS/Articles/KdVKdV2Frequencies/ActualRealTargetStrongInverse
   NLS/Articles/KdVKdV2Frequencies/NativeRoughAllRealBaseAnalyticInverse
+  NLS/KdV/HillHminusIntrinsicHighGapPairs
+  NLS/KdV/HillHminusArbitraryBasePhysicalActions
+  NLS/KdV/HillPhysicalGapOpening
+  NLS/KdV/HillHminusPhysicalRatioIdentification
+  NLS/KdV/HillHminusArbitraryBaseActionRatios
+  NLS/KdV/HillHminusArbitraryBaseActionAmplitudes
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

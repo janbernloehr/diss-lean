@@ -1,3 +1,9 @@
+import NLS.KdV.HillHminusArbitraryBaseActionAmplitudes
+import NLS.KdV.HillPhysicalGapOpening
+import NLS.KdV.HillHminusPhysicalRatioIdentification
+import NLS.KdV.HillHminusArbitraryBaseActionRatios
+import NLS.KdV.HillHminusIntrinsicHighGapPairs
+import NLS.KdV.HillHminusArbitraryBasePhysicalActions
 import NLS.Articles.KdVKdV2Frequencies.ActualRealTargetStrongInverse
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughAllRealBaseAnalyticInverse
 import NLS.Articles.KdVKdV2Frequencies.ActualAllNativeStrongRInverse
@@ -4579,7 +4585,13 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.ActualNativeInverseMatching,
   `NLS.Articles.KdVKdV2Frequencies.ActualAllNativeStrongRInverse,
   `NLS.Articles.KdVKdV2Frequencies.ActualRealTargetStrongInverse,
-  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllRealBaseAnalyticInverse
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllRealBaseAnalyticInverse,
+  `NLS.KdV.HillHminusIntrinsicHighGapPairs,
+  `NLS.KdV.HillHminusArbitraryBasePhysicalActions,
+  `NLS.KdV.HillPhysicalGapOpening,
+  `NLS.KdV.HillHminusPhysicalRatioIdentification,
+  `NLS.KdV.HillHminusArbitraryBaseActionRatios,
+  `NLS.KdV.HillHminusArbitraryBaseActionAmplitudes
 ]
 
 open Lean in
