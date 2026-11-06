@@ -1,5 +1,15 @@
 # KdV/KdV2 frequencies — branch progress
 
+## Latest original native Hamiltonian action invariance
+
+The ORIGINAL printed KdV H1 and KdV2 H2 are now proved spectral invariants on their FULL original real mean-zero H1 and H2 domains. Their SAME-inverse global Birkhoff pullbacks are constant on EVERY complete actual action fiber on the ENTIRE raw real mean-zero h^(3/2) and h^(5/2) targets. Exact scalar Riccati calculations, physical Miura identifications on all native domains and full native constant-shift identities prove the link; no smoothness, finite-gap, smallness or gap-opening assumption remains. See `NATIVE_HAMILTONIAN_ACTION_INVARIANCE.md`.
+
+The actual native H1/H2 spectral-invariance and complete action-fiber invariance obligations are CLOSED. To finish Theorem 1.1(iii), construct local ANALYTIC factors through the complete actions at every real native action point, including every closed-gap point, and glue globally. Global real analyticity of a pullback plus constancy on action fibers is not by itself the required analytic factorization. The full KdV hierarchy identification/descent, physical frequency derivative formulas, sharp estimates, fixed-mass and actual PDE conclusions remain essential. All eleven COMPLETE main theorem rows remain OPEN.
+
+Prior strict evidence retained for all 2826 unchanged selected baseline sources. All seven new own modules strictly rebuilt in dependency order after freezing 2882 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2833 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact seven-module increase in NLS import closure verified. No new canonical prerequisite selection or provenance record is needed; all 46 prior provenance records remain unchanged and verified. The selection has 23 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2833-name runtime probe using all 23 current chunk references rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2833-module rebuild is claimed.
+
+Fresh audit: 22072 selected and 44142 imported NLS declarations. Seven new own modules contain 41 explicit theorems.
+
 ## Latest native ground-factor spectral invariants
 
 Equal complete actual signed actions now determine the energy and every positive-order native scalar Miura/Hill hierarchy value of arbitrary normalized ground factors. Such factors exist on every original integer H^s source domain with exactly H^(s+1) regularity. The proof uses the actual entire rough Hill discriminant, its EXACT shifted-square trace identity with the Dirac discriminant, original canonically indexed higher-action gap integrals, and the full-domain physical odd Hamiltonian trace. All amplitudes, infinite support and collapsed gaps are included. See `NATIVE_MIURA_SPECTRAL_INVARIANTS.md`.
