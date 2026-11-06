@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual Miura charts analytic in every stronger Sobolev norm
+## Latest stronger analyticity of the SAME actual positive Abelian map
+
+ONE ACTUAL original positive rough Abelian map and ONE common complex rough ball now precede ALL s>=-1 and ALL eligible REAL native H^s sources. Near EVERY such source, its LITERAL weighted normalized coordinate sequence is COMPLEX ANALYTIC into the native Hilbert target, with exact coefficients and a common local norm bound before all signed output indices. Exact original physical recovery, zero, nonpositive zeros and weak linear bounds remain attached to the SAME map. See `NATIVE_STRONG_ABELIAN_CHARTS.md`.
+
+The normalized positive coefficients are original z_n/sqrt(1+n), and the native sequence weight is W_(s+1). Actual stronger Miura germs and the reused weighted complex eta theorem retain the SAME root family and ordinary Dirichlet phase. The FULL physical amplitude, midpoint and noncentral phase exponential remain in the packet. Physical square agreement is continued to a norm identity on the WHOLE COMPLEX rough ball, including closed gaps, so the stronger norm bounds are complex bounds, not just real-source membership statements. One actual eta chart at EVERY real rough base precedes all orders and sources.
+
+Prior strict evidence retained for all 2429 unchanged selected baseline sources. All 155 newly selected canonical prerequisites strictly checked at their unchanged pinned source bytes; all eleven new own modules then strictly rebuilt in dependency order after freezing the complete proof/checker/provenance selection, followed by a fresh combined transitive axiom audit of all 2595 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2639 frozen source/checker/provenance/Mathlib-source hashes, 41 verified provenance records (40 unchanged, one new), private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY 155 unchanged canonical selections and eleven own modules. The checker selection is assembled from 128-name private data chunks in the SAME order, preserving its transitive axiom loop unchanged and passing a runtime 2595-name selection probe at default recursion limits. No full 2595-module rebuild is claimed.
+
+Fresh audit: 20451 selected and 42523 imported NLS declarations; permitted axioms only. Eleven new own modules contain 22 explicit theorems. Full signed Sobolev forward/inverse charts, arbitrary-base/global rough Birkhoff inversion and Hamiltonian/frequency/PDE conclusions remain obligations. All eleven complete main theorem rows remain OPEN.
+
+## Earlier actual Miura charts analytic in every stronger Sobolev norm
 
 At EVERY real original H-minus-one Hill base, ONE actual real-preserving complex rough Miura chart is selected BEFORE ALL s>=-1 and ALL eligible complex native H^s sources. At EVERY eligible complex stronger source, its SAME literal lift, realized as an explicit native H^(s+1) function, agrees EXACTLY on an open neighborhood with a COMPLEX ANALYTIC native map. The positive outside-spectrum energy shift and EVERY original positive Hill endpoint label, including first and collapsed gaps, are retained. See `NATIVE_STRONG_MIURA_CHARTS.md`.
 

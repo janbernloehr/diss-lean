@@ -242,6 +242,11 @@
           "source_clause": "Actual rough Hill Miura charts have complex analytic native H^s-to-H^(s+1) restrictions for ALL s>=-1, at EVERY real base with ONE rough chart before all orders/sources; original physical labels retained",
           "lean_declaration": "NLS.KdV.exists_hillHminus_real_native_all_sobolev_analytic_Miura_germs",
           "qualification": "An EXPLICIT native function uses the SAME literal actual rough Hill Miura lift coefficients on eligible H^(t-1) sources. For EVERY t>=0 and EVERY eligible complex native source, it agrees EXACTLY on an open neighborhood with a native H^t-valued COMPLEX ANALYTIC function. ONE rough chart is chosen at EVERY real base BEFORE all orders/sources, retaining real form, outside-spectrum shift and EVERY original positive Hill endpoint label. These are exact stronger analytic germs, not an inference from pointwise membership. This supports the stronger Birkhoff topology; it does not yet prove stronger Sobolev analyticity of the actual Abelian map or its inverse."
+        },
+        {
+          "source_clause": "The SAME ACTUAL original positive Abelian map has native complex analytic Sobolev sequence restrictions near every eligible real source in ONE common rough ball, before ALL s>=-1 and all sources, retaining exact physical coordinates and normalization",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_actual_all_sobolev_positive_abelian",
+          "qualification": "The SAME ACTUAL original positive rough Abelian map from the native physical recovery theorem has genuine COMPLEX ANALYTIC native Sobolev sequence restrictions near EVERY eligible REAL source in ONE common rough ball, for ALL s>=-1. The ball and map precede every order and source; original physical recovery, zero, nonpositive zeros and weak linear bounds are retained. Its normalized coefficients are original z_n/sqrt(1+n); the literal weighted realization uses W_(s+1). Complex rough norm comparison with the actual stronger packet gives locally uniform sequence bounds, then scalar analyticity gives stronger Banach analyticity. This proves the positive-coordinate restriction; full signed Sobolev forward/inverse charts and arbitrary-base/global rough Birkhoff inversion remain separate obligations."
         }
       ]
     },
@@ -32318,12 +32323,2004 @@
       "scope": "An EXPLICIT native function uses the SAME literal actual rough Hill Miura lift coefficients on eligible H^(t-1) sources. For EVERY t>=0 and EVERY eligible complex native source, it agrees EXACTLY on an open neighborhood with a native H^t-valued COMPLEX ANALYTIC function. ONE rough chart is chosen at EVERY real base BEFORE all orders/sources, retaining real form, outside-spectrum shift and EVERY original positive Hill endpoint label. These are exact stronger analytic germs, not an inference from pointwise membership.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "579f1a2b1950ccad04c1c611b3aca0d7902255c1cbe8804dfe703b97da41b216"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CauchyOuterLimit.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The outer Cauchy contour at infinity A function tending to one at complex infinity has outer Cauchy integral tending to 2*pi*i. Continuity on sufficiently large circles is explicit.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "263190a10578cc18e8e00958d72f7971f09f3fde33d7913a12f9b4f6dd317984"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CubicInversionRemainder.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Cubing an analytic inverse-frequency phase The first three Taylor coefficients determine the cubic Laurent expansion. The omitted terms are an analytic function of inverse frequency times `z^-2`, giving a uniform quadratic bound in all complex directions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fedd2e4b9667b5aece1a81588979be90a4b07c05e0098834146597980a54c3a5"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CubicInversionContour.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The exact cubic Hamiltonian contour coefficient The analytic inverse-frequency remainder contributes no period. The simple-pole term therefore recovers the renormalized third Hamiltonian exactly on every sufficiently large circle.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "87fd49aadc9890cd701761fdaf523b6cf3419f9d898f63deca675cddbbeaf427"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/OrderedGapSeparation.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Uniform separation and normalization of exterior gap kernels The two neighboring intervals give a positive lower bound on the distance from any fixed gap to all other gaps. This bounds the square-root factor and normalized poles, and preserves the exact scale of the original kernel.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8578174935fab570382833fb1ba4c76a31085f3a36d44682aaf0b158332f81e3"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealComplexification.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Continuous coordinates for an arbitrary real complexification The real-linear homeomorphism (x,y) ↦ x+i*y records the complexification without fixing a norm. Its inverse gives continuous real and imaginary projections; they need not be contractions or have prescribed bounds.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e88c6514ecd82688e09aa241ba2ef8f7b167649ed6c51cded3aba95f7691734e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SineWeightedCubicIntegral.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A cubic lower bound for a nonnegative cosine-coordinate profile",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "30e2aa2f9ea5d518e741c9a188a3f56392c36b6663b6aa3961374f100bf898d2"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SineCorrectedCubicIntegral.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Sharp cubic bounds for a corrected sine profile A variance inequality on [0,pi] gives the sharp quadratic-to-cubic ratio for sin(theta)*(1+V(theta)), provided V is nonnegative and its specified linear correction moment is nonnegative. The scaling lemma retains the exact action and cubic-moment constants.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e838c9c88bdb579b85920b92651c18d82bbb50a3b2da67ae607f588ee7a644b5"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SineExteriorKernelCorrection.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Positive correction moments for exterior cosine kernels Pairing reflected cosine kernels gives a nonnegative remainder. Integration proves the required linear moment inequality on both sides of a gap, and finite positive mixtures satisfy the sharp cubic profile ratio.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e54778a401dced1fe70256f7f661dcc475397ce40ef8d4f163667991588bd9d6"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SineIntegralKernelCorrection.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Integral mixtures of exterior cosine kernels Fubini extends the correction inequality from finite sums to kernel integrals. An integrable exterior-distance majorant supplies continuity of the profile and absolute integrability of the product integrand. Measurability, positivity, and integrability requirements remain explicit.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d82dd114705c8a904df1a1769edc5c01d3f846ebccab5fff3b236fdef151b473"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SourceLemmaE2.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lemma E.2: identity from the real slice of a complexification The source's neighborhood is taken to meet the included real space, as its proof and applications require. Mere nonemptiness of the complex domain cannot replace this condition. Connectedness suffices; no convexity or projection norm bound is imposed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "03de7c99c5c002e0a8a6a02032d45484272d8fa1c554b4e4e25e160d66007f82"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/RealMonomialBounds.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Real monomial bounds for the reduced Hamiltonians Conjugate jets have equal absolute values. Combining the two field counts at each order gives the weighted-degree and even-degree restrictions in (5.9), and the finite positive majorant in (5.10).",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "45a9cb62809216ac0365e33eba401eba3bfeb1deea7f269a914191c307d8e7af"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/TwoFactorSplit.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Selecting two factors from a finite monomial Selection allows repetition of an index. This uniformly covers the two factorization cases in the proof of Lemma 26.3.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e412fdc95f3d784cfa25031bad126ca70352fccbfd0482baae7a4389c65be745"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/MonomialInterpolationExponents.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The exponents in the monomial interpolation estimate (5.12)",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "432243cb4e242d577e149ee178f88d37808df79d3ff8f3b8250f2c9960796d04"
+    },
+    {
+      "path": "NLS/SequenceSpaces/GeometricAbsorption.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Scaled Young absorption with an arbitrary small coefficient",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e643134e17fbb6d77bdc5b13057c312e912c98c87e94d4205dc0827cfc90b99b"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ShiftedHilbertInverse.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Shifted reciprocal Hilbert bounds, including the zero mode",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ea3af23f5b8e0c58bc8a9e8a0bbe03b9891592d5839b3234f2870c06a3884e04"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertAgmon.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A multiplicative H¹ Fourier embedding A variable shifted inverse weight and Cauchy–Schwarz bound the absolute Fourier sum by the geometric mean of the L² and H¹ norms. The zero mode is included, so the estimate applies to arbitrary periodic fields.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "28bd8fc49be3edceb1bad0aef5ffa7a194b65e7d86aeef8c3c0255f5111f01b3"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertGeometricInterpolation.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Geometric interpolation of Hilbert coefficient norms Hölder gives log-convexity for any three coefficient sequences whose pointwise magnitudes obey the geometric interpolation inequality, including endpoints.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a47e513806cd3aa859703174a094e4a70adb7604075211c87465597a983619ce"
+    },
+    {
+      "path": "NLS/SequenceSpaces/LinearSpectralWeight.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The weight class M₁ in Section 25 A member is a spectral weight with an exact factor ⟨n⟩=1+|n|, leaving another normalized monotone submultiplicative spectral weight.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8d510ca7edf805fd138c59d2b80a107a9b104bafb41d030bc9ed41c0ad421b08"
+    },
+    {
+      "path": "NLS/SequenceSpaces/LinearWeightLattice.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lattice sums for weights with one linear factor The estimates retain the zero mode of the bracket weight and remove only the resonant reciprocal. Combined with the π/2 strip denominator, these constants suffice for the constant four in Lemma 25.2.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d60312d67a617f212624c207556f12bd52b8aaf133e2577b1b9f4e4451a5310f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/OrderedPairStripPropagation.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Propagating ordered pairs across adjacent counted intervals Exactly two occurrences in each adjacent interval determine the preceding or following pair from an anchored pair. Values may repeat; indices do not.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "15b0397906379dec017cee66efc29bcc744e86bbd021dcbefe85e51e23a7c43f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PiSobolevEmbedding.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The source H¹ absolute Fourier-sum bound The reciprocal π-normalized weight has squared ℓ² norm at most two. Cauchy–Schwarz therefore gives the source constant √2 in H¹ → ℓ¹.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "78249eed9ca6a7f14cf103c7c0eecba870239946ff9a1f4a2b7cb160ede029fb"
+    },
+    {
+      "path": "NLS/SequenceSpaces/QuarticSummability.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Absolute summability from a quartic gap bound",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "904916e84ed3b4da75d405c6b8af6dbeb750ea577cfe9518efbfc1b4a42019b6"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SobolevConvolution.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Convolution preserves one Fourier derivative Two one-derivative coefficient sequences have a one-derivative convolution. The Leibniz identity is proved for the absolutely convergent coefficient sums. This supplies the regularity needed for the original spectral equation.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cbde859fe3c07f35bf7ebb615e063c289908dc03f597a56d459338b149d51fcd"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SobolevInterpolation.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Sharp Hilbert Sobolev interpolation The inhomogeneous weight (1+|n|)^s is log-convex in s. Its interpolation between L² and H^m has constant one and includes both endpoint orders.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ac29f015e55136cc0317809973e7ee4e3854a7a8895e79832cb4921b0fd1ee3f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/AbsolutePotentialHeight.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Imaginary spectral height from absolutely summable potentials The two diagonal eigenvector equations give a geometric-mean bound for the imaginary part. This keeps both potential components instead of taking their maximum and is suitable for the dissertation's Hilbert pair norm.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "126d6e2ce596e56103f918cf0a5a1d7b4e32c2e93828d6da3ea6a2f90abc8ac7"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightKernel.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The Hilbert kernel behind Lemma 25.2 Retaining the factor π/2 in the strip denominator gives a uniform squared kernel bound of 16/⟨n⟩², including the zero strip and its lattice center.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "901269cf11bb2a7080f86a78295eb426a5d5faba489dfb72d3972cbaa57cb654"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightDiagonalRow.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The inverse-bracket gain for the actual diagonal row in Lemma 25.3",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ee0c32b44fe6e43f06e4cbe0c297b599bff4f0c47d2e8a6e0e8ab84f645a3308"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightKernelPairing.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Cauchy–Schwarz for the Section 25 double kernel The full coefficient product on the two-dimensional lattice has exactly the product of the two Hilbert norms. This gives absolute convergence and the constant four for the actual complementary-symbol kernel.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c4358b051d0ce605b8e2ed3e3c80d5e3f0fa3b7f61eb82f7ad885a32a21a3167"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightDoubleSeries.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The actual weighted absolute double series in Lemma 25.2",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "33b25fd76387bd64d394d2920d270fa36c1c769bb33b5f7a397ac0aa1db52181"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightSandwich.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lemma 25.2: the scalar double inverse on M₁ The absolutely convergent double series controls the actual complementary sandwich in shifted weighted ℓ¹. Reflection gives the opposite physical sign.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8287399850ff34f785fbac0292249085e244272d9eae854cc9040ecea70fcb13"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightSquareEstimate.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lemma 25.2 and its explicit quadratic contraction threshold For every weight in M₁ the actual squared potential inverse obeys the 4‖φ‖²/⟨n⟩ estimate in the shifted Hilbert pair norm. Consequently the square is a half-contraction once ⟨n⟩ ≥ 8‖φ‖², uniformly on the full closed strip.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d3dbff2fff44ca9cb32851689a0340ff46e87b5417d05b65cdf91aa967f9d74c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightResonantCoefficients.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lemma 25.3: the actual resonant coefficient bounds The explicit quadratic threshold gives the diagonal constant one and the off-diagonal constant eight, with each component's norm and Fourier sign retained. The potential may be an arbitrary complex Hilbert pair.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "040ff11a92c2b0f031c92d56a360e587164859e46e708b1e3abe21dc4031639f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightCoefficientAnalytic.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lemma 25.3 on the full closed spectral strip The explicit threshold places every strip point in the existing open analytic correction domain. The total analytic extensions agree with the actual resonant matrix coefficients and satisfy the source's uniform bounds.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7a6cdce3595aab2543ed8525d459573bf51b17909a0c7df5cbd1d0646c031ee9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/QuadraticLocalizationRadius.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The explicit radius in Lemma 25.4",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "82098f1a1e2d692d39b853353c13e2b0842e6714cfe7a2eeadc294ec4aaf392a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightDeterminantBounds.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Quantitative determinant bounds at the quadratic threshold These estimates retain the Hilbert pair norm and work for complex potentials. They concern the actual analytic determinant, without a qualitative cutoff.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9690a96c453231ad9b6120ea90eef6414f030b535898e5ead4a2d2c2428ef610"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightRootGap.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The factor-six gap estimate at the explicit quadratic threshold",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "600d169773b6bffd8755a30f11b3af4641101ae76321fed8394567930d308e84"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightZeroCount.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Two determinant zeros at the explicit quadratic threshold The count uses analytic orders, so a repeated root has multiplicity two. No additional frequency cutoff or reality assumption is imposed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d9aff95b64c567b4df8fec192ce2c70362fec9c0124ae96cd5bb9bdc3f29a83b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightRoots.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lemma 25.4's quantitative determinant roots There are exactly two roots counted with analytic multiplicity, at the explicit threshold, with the source radius and factor-six gap bound. Identification with canonical periodic eigenvalues is a separate theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6cf6b3ef82cb01a01a065bab653d65e0628521c72fba7e913bd6380c5c3dce79"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevEigenvectorRegularity.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A second derivative for eigenvectors of a one-derivative potential The original operator equation and the convolution Leibniz rule recover one additional derivative. No frequency cutoff or resolvent assumption enters this regularity argument.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "96962b2f72571396d30e899339e6506f7edb004bddae6dcfe18f5b36a968ec20"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevWeightedSpectralBridge.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Original eigenvectors and linearly growing weighted domains Weights comparable to one Fourier derivative have the same eigenvectors as the original operator. Regularity, rather than a second contraction hypothesis, supplies the inverse direction of the domain inclusion.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d5821f64116a509d5b2e0be42aaa6167bade6d497bec4677dfb21a732068e2b9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightSpectralLocalization.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Quantitative localization of the original periodic spectrum Regularity identifies weighted determinant zeros with original spectral points at the explicit quadratic threshold. The source H¹ weight is included. Canonical signed labels and algebraic spectral multiplicities are separate.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7bcdc40808c7e795d67279941a06e719e26f8d8eeee61a76a36fd88bf51e2e20"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightSpectralMultiplicity.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Algebraic multiplicity at the quadratic localization threshold A closed weighted norm ball connects the potential to zero while keeping the quarter-spacing circle in the original resolvent set. Constancy of contour rank gives algebraic count two, including collapsed root pairs.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "188eeff9b2f58d4dfe0f54fc5e7a1f3a51f008c5f38fb7d004f80a319d0d9dc0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightEndpointCounts.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Counting endpoint occurrences in quantitative strips The original canonical periodic product has total zero order two in each quantitative strip. Any complete endpoint labeling therefore has exactly two occurrences there, even when their spectral values coincide.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6978ad23005f9e92810cd374a3623b6e73b4e9a940fc319cdb70a22398e6da91"
+    },
+    {
+      "path": "NLS/ZakharovShabat/EndpointPairOfStripCount.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Recovering an endpoint pair from its strip occurrence count Once both indexed slots belong to a strip with exactly two occurrences, they exhaust its spectrum and carry every original algebraic multiplicity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fcadbc37b082a6fc39db32c89e9d0d1c76131fa384fbcd9f96da069108b3b8f6"
+    },
+    {
+      "path": "NLS/ZakharovShabat/EndpointStripPropagation.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Inward propagation of counted endpoint pairs Strictly localized anchors and two occurrences per adjacent strip identify the next pair inward. The argument uses real-part order only.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b2710a99d22b023ae462371649445d0293ab0b6e84dcc8fcf4a6c8047dadc84a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/EndpointStripAnchors.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Reaching any signed index from distant anchors The positive and negative tails are treated separately. Every strip used has absolute index at least that of the target, preserving its threshold.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c2ab5d4e6432e63fbdb2a992f25aacbd7bbb1c382cc377bda7905d2277bd2ffb"
+    },
+    {
+      "path": "NLS/ZakharovShabat/H1SpectralHeight.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The global H¹ imaginary spectral bound in Theorem 25.1",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0663d1dbc46630b09ea252fe5473e23cc13dbf42f2d5d9d99cf2a8719ada3300"
+    },
+    {
+      "path": "NLS/ZakharovShabat/LinearWeightCanonicalLocalization.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Canonical signed labels at the quadratic threshold Distant canonical pairs anchor the two tails. Counting occurrences on each successive strip propagates their signed labels inward to the exact threshold.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6cae647dd2199b3a2c0489630e0b5269c30ee9f960594ab255a10c8bbab2b255"
+    },
+    {
+      "path": "NLS/ZakharovShabat/QuadraticCanonicalPeriodicPair.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lemma 25.4 with canonical signed labels The two determinant roots coincide, with multiplicity, with the canonical periodic endpoints at the explicit quadratic threshold. The source radius and factor-six gap bound use the exact π-normalized H¹ norm.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "10d4116d9bd4747e60502c3e2bcb258500a92754c3dbdb080de90361a01ed296"
+    },
+    {
+      "path": "NLS/ZakharovShabat/QuadraticCentralStrip.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The remaining canonical eigenvalues lie in the central strip Two endpoint occurrences exhaust every quantitative strip, so no other signed slot can enter it. Covering the plane by these strips gives the printed quadratic real-part bound for all remaining indices.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "895f5f9b432a5298a726c69b3216858ac067d86a0402a135dfd7db6b87f0a8b4"
+    },
+    {
+      "path": "NLS/ZakharovShabat/QuadraticSpectralBox.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Theorem 25.1: uniform H¹ localization of the periodic spectrum Canonical endpoints above the exact quadratic threshold lie in the source discs; every remaining indexed endpoint lies in the printed central box. The imaginary bound holds globally and needs no parity assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8fc6703ba3b18a4b5d03de4301fc76add826bde659d052c03e4129f348c3819f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/H1GapIntervalLocalization.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Localization of every real point between the canonical H¹ endpoints",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "15146655cd5ca356487890a3bee484d46a2c246e598651a8f89eeb93737e756d"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NonzeroQuadraticRadius.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Nonzero-index arithmetic for Proposition 26.1",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "db053c275981feda8ea0664328e0cba5b75f03af79c720b50be6c517eba6ef98"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevJetNormBounds.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Exact-normalization bounds for physical Sobolev jets",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9303ea5c2e51a93092123d9809b4a4b45f1cb515bce7ee60cf26c66de2648817"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevHighestJetEnergy.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Separating the top derivative from the inhomogeneous Sobolev norm",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2c6de455ebf5fc663fded1ada50a2c23c613f644a0f328f73b371317bf962e8b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevJetInterpolation.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The physical supremum interpolation inequality (5.11) The multiplicative H¹ embedding applied to the k-th derivative, followed by Hilbert interpolation at orders k and k+1, yields the exact exponent (k+1/2)/m. All constants retain the period-one Fourier normalization.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6834962d8db63c2604f1541744c0aa3430629a9eefd9ab29b7b784d80cc1e90b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevOddRemainderBounds.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Physical monomial majorants for the odd Hamiltonian remainder The finite positive majorant (5.10) is valid pointwise and after integration for every real H^m source. Every participating multi-index has weight 2m+2 and even total degree, as in (5.9). No interpolation estimate is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6432e7915e8c9ab11bbe27aaa850e972afe245a0a8cf7c5f6f0dfa3e54a118c3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevMonomialIntegral.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Two physical L² factors in each remainder monomial",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "94cf4b319ee2cf4eb86ab1472a1d53ee982c527f85926a84b25401d2e1ce0517"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevMonomialInterpolation.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The actual monomial interpolation estimate (5.12)",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bfaab8e2e3cafb73302c67d23d03bd4eadf545a8d90cdf77268882f9e9c08767"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevRemainderAbsorption.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Absorbing the odd remainder into the H^m norm Young's inequality gives an arbitrary small H^m-square coefficient and the exact L² power 4m+2, first per monomial and then for the physical remainder.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "40d4a043f186f4947dfd1549cf6af10a0d51726cd8c4e151842c1aa017006078"
+    },
+    {
+      "path": "NLS/ZakharovShabat/OddHamiltonianRemainderEstimate.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lemma 26.3: the L²-only odd Hamiltonian remainder estimate For every positive ε the actual absolute physical remainder integral is at most ε times the highest derivative energy plus C(1+‖ψ‖₂^(4m))‖ψ‖₂². The constants are uniform over all real H^m sources. The physical Hamiltonian therefore obeys both the stated upper bound and a coercive lower bound.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b79a2c5ec34995a8528e24ac95d283547b13fc68bdcd80a648d56151ba426d17"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceClosedGapsZero.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A real source with all gaps closed is zero The exact zero criterion for the Birkhoff coordinates and global injectivity prove the assertion at every finite exponent above one.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9a2ef14aa26a131dab35bee6c1a6ca9d1d791ee56c14427fd9dd3571b0d0dfea"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFiniteGapContourDecomposition.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Contour decomposition outside finitely many open gaps One radius threshold works for every function analytic off the open gaps. The small contours may be any real-centered isolating family, and closed gaps require no holes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f86d60de2b004e3c1b62481b5c91d60b5be9db7175cc18d4005229b6ec1bb676"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFullAbelianCubicHamiltonianContour.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The first contour identity in Lemma 20.2 The actual physical Hamiltonian combination `H_3 - 2*H_1^2` equals `8/(6*pi)` times the exterior integral of the cubed full primitive. The equality holds on every sufficiently large circle, at every finite exponent above one and every real finite-gap source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "96efdc703d67dc85161b48043de6ce9c56fb2b551977736175fe832a32cb7197"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePrimitivePowerCubicShift.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The cubic shift and primitive-power moments Expanding `F_0 = F_n - i*pi*n` on a local isolating circle leaves only the first and third moments, since the zeroth and second moments vanish.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fa42647a16c0176480c811fc5bd590b8108274c1ecb44a3eec99f2c430669369"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePrimitivePowerHamiltonian.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lemma 21.2: the finite-gap Hamiltonian identity The physical Hamiltonian minus its mass and action contributions equals `-(4/3)` times the sum of actual cubic primitive-power moments. All sums have finite support at a real finite-gap source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1f161a13ee687a49fd83f85babfe2ee23ec8e509d1e6f982cb5f657db42c9a94"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFiniteGapRenormalizedHamiltonian.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The sign of the finite-gap renormalized Hamiltonian The physical correction is real and nonpositive. It is strictly negative whenever any spectral gap is open, and vanishes exactly when all gaps close.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7afc004f902424c5e745a5524512b9325c97e10fc2d690ef7f52e1be496d8a8b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFiniteGapHamiltonianExponent.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Exponent compatibility of physical finite-gap Hamiltonians Identical Fourier coefficients give identical smooth physical representatives. Consequently the physical hierarchy and its renormalized correction are unchanged when the same source is included in a larger exponent space.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c58b84e30bddb0cc4eba98e7ee5437df709ff7cd1b0c58c769e0dc3fdf75672b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFiniteGapNLSVariation.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Physical NLS variations at the original finite-gap sources The existing coefficient-preserving smooth representatives have the correct conjugate-pair reality. Their actual third Hamiltonian has the classical energy gradients, and its physical vector field is smooth, periodic, and real. This identifies the physical field; equality with the time derivative of the constructed spectral flow is a separate step.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "78e7cfae545743d86c37135d3aafd766a360b6bdeae2022478a9038a6865a400"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNormalizedActionUniformBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A common bound for all normalized Hilbert actions The established ℓ² bound on the deviation from the free normalized action bounds every scalar factor, including at collapsed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "38149fe22febcbb4685160ba131c12c3424741d0b31b3e7f98eaad91b60e5aed"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePiSobolevCoordinates.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Exact physical Sobolev coordinates on every original H^m source At order k the coefficients are multiplied by ⟨2nπ⟩^k. The component-sum Hilbert norm is the dissertation's norm, without an equivalent-norm replacement.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "49fcec03603a62e16216ab1f090a23ba273840fe2f399cad9e2f97fef9d69ed3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePrimitivePowerComplexBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Uniform complex gap bounds for primitive-power moments One connected open neighborhood of the full real source locus supports the bound in Lemma 21.1(iii), locally uniformly at every complex source and uniformly over all signed indices and all natural orders.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ae44ab3930386472059a4cf1380293ec86d15df1681410c3c76fdc6e933a6776"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePrimitivePowerCubicSequence.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The analytic cubic-moment sequence in ℓ¹ The quartic gap estimate and locally bounded ℓ⁴ gap sequence give a locally bounded ℓ¹-valued map. Its scalar coordinates are the actual analytic moments, so bounded-coordinate Taylor assembly proves full Banach-space analyticity without a ball-uniform series assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "caef65a76b4b650c664112cbf344e6ec33fc5dcc1e31bfb460c18e7e7e5b195c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRenormalizedHamiltonian.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The analytic renormalized Hamiltonian on FL⁴ The literal cubic-moment sum defines the extension in Proposition 21.3. Its analyticity comes from the ℓ¹-valued sequence; its locally uniform convergence follows from continuous decreasing truncation tails.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ac8a7bc51be01f333c47b681e0fe293e3292db636abaa06d5f19463e8701d463"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevGapBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Locally bounded weighted squared gaps on the full H¹ source",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "37289ad946a51e3e6aee301cf89eba353d5058ecaa3947b8f0e91b816d6a4a54"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevActionBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Locally bounded kinetic-weighted actions on H¹ The actual action factors as the squared gap times the normalized action. The weighted gap estimate therefore controls the absolute sum of `(2πn)² I_n` on a complex H¹ neighborhood of every real source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "93a0af19e1dbf194a47513be2cbbec8f1b3d2b2d43e7139defa13efab7730815"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevActionAnalytic.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Analytic weighted spectral-action sum near real H¹ sources Local ℓ¹ bounds assemble the actual analytic scalar actions into one analytic sequence map. Bounded summation gives the physical weighted-action subtraction, with an absolutely convergent literal series on an open complex H¹ neighborhood of the entire real source locus.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "947c8c9bc28993a9de3c375065cff48cec3436849786fba96044b34c912b5b93"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevNormalizedCoordinates.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # H¹ coordinates for the weighted closing inverse The original coefficient at n is multiplied by the physical weight 1+2|n|. This is continuously equivalent to the H¹ weight 1+|n|. Both directions preserve the actual physical source after unweighting.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b907afa53355a021e98e73b37b2d9a14d91e4c0dee85968502d9cd62073ce93f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevFiniteGapDensity.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Actual finite-gap density in H¹ The weighted spectral closing inverse gives nearby real finite-gap sources in normalized coordinates. The continuous inverse coordinate map transfers the approximation to the original H¹ norm, with the same physical operator and canonical gaps. This is stronger than unweighted Fourier-Lebesgue density.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "36a56ce513db75debd1814d3ecbd6736e9ea1333b8af00894376b263a77cd0ed"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevPhysicalCorrection.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The actual physical Hamiltonian correction on H¹ The mass, physical energy, and weighted action subtraction are now all defined and analytic near every real H¹ source. On finite-gap sources this is precisely the correction in the established physical trace identity. Identification with the cubic-moment extension on all H¹ sources still requires a density or trace argument.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "500b75a60034eac35c329b357f14fe2f624d09b04203307300c134a18be2f872"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevHamiltonianIdentification.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Identification of the physical H¹ correction with the FL⁴ extension The actual finite-gap identity passes to every real H¹ source using the proved H¹ finite-gap density. Both the physical correction and the literal cubic-moment sum are continuous in this topology. Exponent compatibility identifies the same physical finite-gap source in the Hilbert and FL⁴ spaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "442a9d5117daf5de594d40fa88dc06ef002439132849b3cdc1068a34954b7d23"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevEnergyCoercivity.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Coercivity of the defocusing physical energy The H¹ weight is controlled by the physical mass and kinetic energy. On the real source locus the quartic term is nonnegative, so mass plus physical Hamiltonian controls the first-component H¹ norm and its continuous synthesis.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "71a36f536d6f68b3e399675acbf36a09273c9813fc921e7da925fefb80f052bc"
+    },
+    {
+      "path": "NLS/ZakharovShabat/PhysicalH1NormBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The Fourier comparison used in Lemma 27.1",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5458abeb2ae7a34fa77652d7900d6098cfbe40b768ebf9bac452e5ec296cac6"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevQuarticMassBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The quartic interaction dominates squared mass on a unit period",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "454867eb6bd20c57a4f0eb840e8fbbca9b645e1624b78c8ecc60c357e0e44d7a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceActionSequenceExponent.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Actual spectral action sequences beyond the Hilbert exponent The analytic Birkhoff map and its exact action-radius identity assemble the original actions in the Banach half-exponent space. The derivative coordinates remain the derivatives of the original spectral actions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "966e3cbffb9c6e24a5659ca7b511fa3da8e58991b050a52b4772bd5de0441a3a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffActionHamiltonian.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Action Hamiltonians in actual Birkhoff coordinates Differentiating the full analytic action-radius identity gives `dI = x dx + y dy`, also at collapsed gaps. The canonical Poisson identities then give the one-mode rotation velocity `(-y,x)` for the actual action Hamiltonian, with every other coordinate stationary.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5d70d735f4446ec57221e30ba749c0f9fa58f3f62334e4f9997657587d6d8233"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceActionFiniteGapDifferential.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Finite support of the full action differential At a real collapsed gap the full complex action differential vanishes, including directions that open that gap. Consequently the Banach action sequence differential at a finite-gap source has a single finite support for every direction. This gives a finite chain rule for any differentiable function of the actions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1872d964f43258bdb318b5f8d22203314bb5bf9f3dd4e23ecc3b92dd72abcd61"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHigherActionEstimates.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Higher-action bounds from localization of the periodic gap These estimates isolate the use of spectral localization in Chapter 5. The constants depend only on a containing interval, and the comparison is valid at every odd level, including collapsed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3a21b75eed46c467e1daee1eda70995db2ca1a31bc0bc201fc18d7d81deb9b72"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceH1HigherActionEstimates.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Proposition 26.1: quantitative higher-action estimates The source's H¹ norm is the exact π-normalized weighted Hilbert norm of its period-one physical realization. The higher-action index 2m denotes the source level 2m+1. No division by an action or a gap is used, so every statement includes collapsed gaps and level m=0.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7c1d942d51949665092607242fad0785b7ed72b4c77be097a16b7c9a019fadf2"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePiSobolevNormBounds.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Physical norm bounds used to sum the action estimates",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "09726cb9b244d3e31bf77f566702b75eb0eab57d8dc615c586cae39056c95428"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedActionMajorant.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Pointwise and summed action bounds for Lemma 26.2 The high-index comparison costs 8^m times the level-(2m+1) action. The remaining indices, including zero, cost the explicit central factor. This positive majorant also proves absolute summability of weighted actions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "94bf2d2565a657f8dbce9d3a3b8da83958cd2f5c8143b400d4349665cfb382cb"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevActionEstimate.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The summed action estimate, with the trace-consistent Hamiltonian sign With the Hamiltonians defined in Appendix H and trace (5.4), the last term is +2^m H_(2m+1). The extra (-1)^(m+1) printed in Lemma 26.2 conflicts with that trace at even m. We retain the physical Hamiltonian definition and state the positive-sign estimate explicitly, rather than silently changing normalization. The stronger mass coefficient one half is also retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5ebb121194d3b3abfee43d910346a0fe1272cc695b136f3befa5e898d2e38476"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceActionSobolevUpperBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Theorem 23.2(i): a uniform upper bound for the weighted actions All norms use the exact physical Fourier weights and the component-sum pair norm. The constant depends only on m; every real H^m source is admitted.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6eaafaa9ad3be71f1fe5bf6c9bfd3baf61cf637ddd2dc8c1ff59f561272dc1bd"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceOrdinaryMass.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The ordinary NLS mass correction for exponents at most two The physical Hilbert mass pulled back through the exponent inclusion is entire. Its real restriction equals the absolutely convergent sum of the original spectral actions, so action preservation also preserves the ordinary NLS frequency correction.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e946e2913586faf92c6c9f7c3183a59f73fc6b9e294403857640c15b6975ae67"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceMassActionDifferential.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The mass cotangent as the sum of original action cotangents The real trace formula determines the complex analytic mass germ. Bounded ℓ¹ summation then differentiates the full trace, and at finite gap the result is a finite sum. The same formula holds on H¹ through the unchanged coefficient inclusion.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "666c7af967b3cb3f85d6cecb493c033b6535cc8a7067f27ca9d270ae8b83cc1e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceH1ActionSums.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Real action sums and physical mass at H¹ regularity",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "61dd35bddc1e7a6131518273e446ec30046b9e12a85ac9e89b9c24d74605e6aa"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceH1ConverseActionEstimate.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Lemma 27.1: energy and H¹ norms controlled by the actions The physical correction is nonpositive. The quartic mass bound and the discrete Fourier comparison give the exact factor 1/3 in the source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0bbe75cb44a36869984b9b967ce807c29f02cb0fb08e0357391eb711014b4fc0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevHamiltonianDifferential.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The physical correction identity as a full complex H¹ differential Normalized weighted coordinates carry the H¹ real form to the original Hilbert source real form. Analytic uniqueness therefore upgrades agreement on real H¹ sources to equality of complex germs, and hence to equality of the full complex Banach derivatives.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "293b5b27b6a0de3d770dd97595e97204910479d9583675d4458d057c845ba4a3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevHigherActionBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Absolute convergence of the first three higher-action levels on H¹ The weighted squared-gap estimate dominates the actual complex higher actions. One complex H¹ neighborhood and one ℓ¹ bound work for levels one through three, without a finite-gap assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cd8efc44bfbc46f3456897f09e45df1fadc91d0f1190b2750b34d5550ad93cf5"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevHigherActionAnalytic.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Analytic higher-action sequences and sums on H¹ The first three levels form actual ℓ¹-valued analytic maps. Bounded linear summation then proves analyticity of the literal infinite series.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a37ac27f8a7ab6766ece26ad7b01a22fabd9b80ddaf8af2e6a477549b65247c5"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevHigherActionTrace.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Mass and energy higher-action traces beyond finite-gap sources H¹ finite-gap density and analytic ℓ¹ summation prove the physical trace identities on every real H¹ source. Real-form uniqueness extends both to one open complex H¹ neighborhood of the full real locus.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "85df7516619e60222fe12253ee8db31b239bf20b282dc2d8aef3677b919f13bc"
+    },
+    {
+      "path": "NLS/ZakharovShabat/HigherSobolevH1Realization.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Coefficient-preserving H¹ realization of every higher Sobolev source",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "74ce2c796b54e8aa5ff35bab5913493dd64ee13b57b41b4510fcb5d8f6bbfd3b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/RefinedH1ActionBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A refined H¹ action bound for the constants in Lemma 27.2",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c82f1304439c19be1bacec3488296e7a1031b36d53df2f47ca96e4507fdb9676"
+    },
+    {
+      "path": "NLS/ZakharovShabat/Lemma272ConstantBudget.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Exact constant arithmetic for Lemma 27.2 at orders m ≥ 2",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "41732dbc77ae3db06a545dbff79aa06b55e756b8e99920c92fa10bc68eb7649f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/Lemma272EndpointArithmetic.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # What the mass and kinetic estimates imply at the endpoint of Lemma 27.2 These are scalar implications, not counterexamples involving spectral data.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fe084437716eaec001e3b92f1f6a9cd952053d177f98b3a1ca5120500283c583"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NormalizedWeightedClosingCompatibility.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Weighted and unweighted adapted maps describe the same source On one common complex neighborhood, decoding the normalized weighted adapted map gives the actual unweighted adapted map at every large cutoff. Both low Fourier coefficients and the moving-center high block agree.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c89a5020a3edef04ff753fb86c8c1182f2da861cda6baf057d751622a62ba04e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ResonantMidpointTaylor.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Diagonal Taylor bounds for periodic midpoints Cauchy estimates on nested disks bound the second spectral derivative. The first-order remainders at two endpoints have cancelling linear terms, so averaging introduces a squared-gap error, without a reality assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d7be509fb5d33886a11d06db7d1865b098808830cfeca64a793ffc8d0083f555"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ResonantMidpointCenter.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Midpoint comparison with the resonant diagonal center Subtracting two root equations controls the sum of their residuals. A counted double root uses the vanishing determinant derivative instead. The diagonal Taylor estimate then bounds the midpoint-center error by the full off-diagonal product, rather than its square root.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d3caf0749b33e2a6c8385de9dd1d9ea80343696d5cfed36e9f3bdd9617050930"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ResonantOffDiagonalMajorants.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Sequence majorants for full off-diagonal coefficients Powered Young bounds the double reciprocal rows in the original exponent. Adding the leading Fourier coefficients gives two actual ℓp majorants, with a polynomial norm budget on bounded sets of unit-weight sources. Their product controls the full-strip off-diagonal product supremum.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7629ba060b0d11d167a42643bed51160dac4db93ffa87b7eef513be9dd034cf1"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRelativeHigherActions.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Mean-value comparisons relative to any odd action level The base action contributes a nonnegative spectral weight to the gap measure. The mean-value identity therefore remains valid without dividing by that action, even for collapsed gaps or gaps meeting the spectral origin.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "073453c6b5403149cd7560c9fe44a15a8816e94be5699f141364d7afdc8d6b94"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCentralThirdActionComparison.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Central comparisons with level-three actions in Lemma 27.2",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7d0eff9ace5007c822dc641f0563472a1f66939ddd229ce2b273c2f3f6b579e9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevHamiltonianThirdActionBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Summing the central comparison against the physical level-three energy This is the spectral summation step of Lemma 27.2. The remaining conversion of the H¹ factor to the printed action-only remainder is kept separate.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cda262cf7c72976cbf6e483a75a809d27f3ebd1404e0dfa962dc1c0aed0c2470"
+    },
+    {
+      "path": "NLS/ZakharovShabat/WeightedResonantMidpointCenter.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Midpoint-center comparison for the actual periodic spectrum The original algebraic multiplicities identify each counted pair with zeros of the actual resonant determinant. A repeated endpoint has order two and hence vanishing determinant derivative. The resulting product bound applies to the intrinsic trace midpoint on one source neighborhood.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "75c30748d295048e9b73361932d391e712532e1a164780d306c4cb370c8cd853"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceResonantMidpointCenter.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Midpoint-center estimates in the original source variables Common source neighborhoods supply actual counted pairs, identify their midpoints with the canonical endpoint average, and control the complete off-diagonal product by two bounded ℓp coefficient sequences.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8497378702038c740dab5eb0c006bd24d155dbf1cd28028dfc9bd119f107df3b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffSingletonStrip.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Singleton periodic strips force actual coordinate zeros Uniform canonical endpoint pairs identify the closed gap on one common source neighborhood. The real closed-gap identity then kills both original Birkhoff coordinates, uniformly at all sufficiently distant indices.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7855cbfe8cdb6010bbc4cbd6f119a85ba61696ebf50ba87f656920fa606ec9fe"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRealTypeIdentity.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # E.2 on the actual Fourier source real form The physical real and imaginary projections already have the continuity bounds needed for local uniqueness. Connectedness propagates the identity through the whole complex domain, without assuming convexity or requiring that the domain contain every real-type source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "502502ba886ec51774b245d3c6922e1a7aeaf1b2facd7b600d0abd3c13198a06"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceDeleteResonance.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Deleting the two signed coefficients of one resonance The physical pair projection is complex linear, preserves real type, and contracts the actual finite-exponent source norm. Distant projections send one common smaller ball into a prescribed ball around a fixed source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "afc3f7e9b2e7b0b5cc3976d8959c70ba508e17937ac748d352361221420cfd4c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRealTypeAnalyticSlice.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Holomorphic vanishing after a linear source projection A real slice determines a holomorphic observation after an analytic change of source coordinates and a bounded linear projection. The result is uniform on the whole connected ball, rather than just a germ at its center.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "de33a4bab478f3b0b7773a0451a383c6e695cf53b5ff041ae8bc7db62a2460d0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffDeletedSlice.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Complex vanishing on deleted adapted coordinate slices The real-form identity theorem extends actual real coordinate zeros to one complex ball after an analytic source change and signed projection.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9494d0331c19b67464bea41aea164ed046a20eabb4673e870e05d4e30db4f092"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffComplexClosingInverse.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Actual complex coordinate zeros in adapted inverse charts An actual adapted inverse maps into any prescribed source neighborhood. Deleting the signed closing coordinates kills both original Birkhoff coordinates throughout a common complex ball at every distant index. The complex zero follows from real spectral closing and holomorphic uniqueness.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c4fc9df65df5f31a41e76ba617687e795744e05b7f256521097bb28063e9d9f1"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffComplexClosingBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A complex bound by the actual adapted closing coordinates On a complex neighborhood of each real source, every distant Birkhoff coordinate is bounded by the two signed adapted coordinates. The proof uses actual complex zeros, local Lipschitz continuity, and the quantitative lower distance bound for the near-identity adapted map.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "17725780dc76ec0606cbf7a8e2c55c145e051b0d2c5c4551b8eaa3d112727f85"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexSequence.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Weighted complex Birkhoff sequences in normalized coordinates Actual weighted membership rules out the total constructor's fallback. A common norm bound then upgrades scalar coordinate analyticity to analyticity in the full weighted target norm.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1f356b8cf9ad5ca192aa30b3dace6b7fa4b3f14232ffb18333b45d7f003a9344"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Constructed complex weighted sequence bounds Uniform compatibility of the adapted maps transfers the complex coordinate bound to normalized weighted sources. A fixed finite head and two bounded adapted sequences control the entire weighted output on an open complex neighborhood of each weighted real source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f1110971eda9b12f0a9eead01505a033b09b7329783489f6a1cfcc1d9a1fc3ec"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceEtaInverseNormalization.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Exact inverse normalization of eta The actual signed eta coordinate is recovered from the original signed Birkhoff coordinate by its inverse normalization and beta phase.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "47c205288d4ee7df62e9af14bcc86f560d959e6526132bf10eda2bdbfc92b570"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFullAbelianUniformGapBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Uniform linear gap estimate for the full abelian primitive Around every real source, one neighborhood, tail cutoff and positive constant control both boundary values on all distant complex gaps. The profiles are actual limits of the canonical normalized primitive.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1f2a2300d18f75511b9f82af1d0418de312316a2308acd9e46210b7ba0c82fd6"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePrimitivePowerRealBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Real-source gap-size bounds for primitive-power moments A uniform bound for the arcosh profile gives the expected additional factor of the gap width. The established boundary bounds make this locally uniform in real sources and uniform in distant indices.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "68f7b5a28ca6392b020c8f3aa892d62818b9be04916f4841f8fc85231ba13e82"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePrimitivePowerCubicLowerBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A quantitative cubic-moment lower bound from actual actions and gaps The cleared inequality includes collapsed gaps. The quotient form uses Lean's zero quotient at a collapsed gap, where the action and cubic moment both vanish.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "04b89680c19860c998685c9796691a4675376c866767976423e3cc48a7618893"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapAngularDensity.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Positive angular densities of the actual spectral gaps Each angular density integrates to one half of its original action. Summable actions therefore give joint integrability over the exterior gap indices and angles. Real Hilbert inputs supply this summability.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c9d95de3d8efe51f25166c04f349778f258ce94ca9d97f2a3fb1376e94ed3320"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRealGapSeparation.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Uniform separation of actual real spectral gaps Strict ordering of the original periodic endpoints separates each fixed gap from every other gap, including collapsed exterior gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "eb809d4ca73e60cef1240bdcc20c46a4d46247eda3ed9ada263105b43cd70793"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceExteriorGapKernel.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The actual exterior spectral kernel and its integrable majorant The original gap endpoints and profiles define measurable kernel data. For an open selected gap, neighboring gaps give a uniform separation constant. The kernel majorant is bounded by the angular density divided by its square, and action summability proves integrability.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d333fb78ca3ff18bd385a6145b9978e989c30a8d150093e19176f99377c7d6ac"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePrimitivePowerSharpCubic.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A sharp cubic moment bound conditional on the actual gap profile The exact real action and cubic-moment integrals convert the scalar profile ratio into R_n >= (3/4)*|I_n|^2. A positive exterior-kernel representation with an integrable majorant supplies the required scalar hypotheses. The representation of the actual discriminant profile is an explicit hypothesis: this module does not construct it.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "917b939ccc1cd437a4c2a9083573a759a568f49c01c165067341aac4a133925d"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceExteriorGapCorrection.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A continuous positive correction built from actual gap profiles The explicit exterior kernel integral is nonnegative and continuous when the actual actions are summable. Equality with the original profile remains an explicit hypothesis in the sharp cubic-moment theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "83b6da5ae25a67f8a9de54c904d3a1815b3dc101d5d502e4b2340c4e8171a644"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHamiltonianActionOnlyBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The exact action-only bound of Lemma 27.2 for m ≥ 2 The endpoint m=1 is separate: the estimate below only uses it under an explicit small-action hypothesis. No unrestricted endpoint assertion is made here.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8b3cf4e1d2cee2b66e666f343f2187dbf8adc1c8b2bf8c00618b84e53b8a79cc"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceH1EndpointActionBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Stronger endpoint estimates and a uniform variant of Lemma 27.2 Retaining the mass subtraction extends the printed m=1 estimate to S ≤ 2. The unrestricted variant below has an explicitly enlarged remainder.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b5ce7e458b94124ea836233827da775eb610dbcaa4af125ba3854f703e1c7ba5"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceH1EndpointMomentCriterion.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The remaining spectral condition at the endpoint of Lemma 27.2 The kinetic slack and the cubic-moment sum are individually nonnegative. The printed estimate is equivalent to their satisfying the lower bound below. No global quantitative lower bound for the cubic moments is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "127650eee862293ec2bc6fe7ec6302ee35e29b3d298eb060a1971a3b9123fa0a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceH1ZeroModeActionBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Isolating the zero action in the H1 energy budget The exact bracket weights give 2*M-I_0 <= S. If the central action is zero, H3 <= S-M+S^2/2 without any smallness restriction. A collapsed zero gap supplies this hypothesis, proving the literal endpoint of Lemma 27.2 on that class. These are the original actions and physical Hamiltonian.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f0b8734855b35e9bcc9a59340905f50ecca380e2d01356ca702f5821e308d475"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceH1ZeroModeMomentCriterion.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # A zero-gap cubic moment criterion for Lemma 27.2 The exact H1 energy identity and nonnegativity of all cubic moments reduce the unrestricted endpoint to the single bound R_0 >= (3/4)*I_0^2. The criterion keeps this lower bound as an explicit hypothesis.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "688775af601bd6f25dc5cc4706cf57ede5935441d05f14f2c1fbf42631db6d8e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceH1ActualGapCriterion.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The H1 endpoint from one explicit spectral profile identity The actual H1 action trace supplies the integrable kernel majorant, and the moment atlas is constructed internally. The sole remaining premise is equality of the actual zero-gap profile with the specified candidate. This file does not prove that identity or the unrestricted endpoint.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "18162bb13f9520b50c34dfb0b4a29e2098294d69eae9dc5e85ce67dc6b1f6fa6"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSharpCubicFiniteGapReduction.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Finite-gap reduction of the sharp cubic bound Continuity of actual moments and density of finite-gap sources reduce the sharp cubic estimate to the finite-gap case, for every finite p>1. Finite spectral support supplies action summability. The H1 endpoint therefore follows from only the finite-gap zero-profile identities; those identities are an explicit hypothesis here and are proved in `SourceFiniteGapProfileIdentity`.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b9d2617634b38f5ae0a17a3b6650d3f91aca9d398de95d12153fd5eee71009c0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceExteriorKernelFiniteSum.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Finite support and real coordinates of the actual kernel The proved majorant justifies Fubini. Finite spectral support, the angular cutoff and the normalized-coordinate identity retain the exact kernel.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a104a3cc8cdf25686342a4905d4dddd8008d8885e21bce665651ff73f635841a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFilledGapQuotient.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The analytically filled spectral quotient The actual quotient -i*F_n/root_n extends across the selected gap. Its values recover the real cosine profile, and its boundary jumps on all other gaps retain the exact normalization. The positive exterior-kernel representation is not assumed or proved here.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cc764a1c764b458a89829dbfc2f5677d851c8ee88fe0e884ec1081c1b663b246"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedPrimitiveBoundary.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Analytic weights in actual primitive contour integrals The exact factor -2 and cancellation of primitive index offsets are proved with the original standard-root orientation.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "065ac62f5475b965086e8c28bae2823dc35a6ad1611ece2a279a80d5b0260241"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceExteriorQuotientContour.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Actual exterior quotient contours as arcosh integrals The weight is analytic on every exterior isolating disc and the original primitive index offsets contribute zero.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2d08f6e94a06025c336b7a186387a5d0ccf2b0684eee677fec332565a0cd709b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceExteriorRootDenominator.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The exact signed exterior kernel denominator Strict ordering of actual gaps determines both the real root sign and the exterior displacement sign, including closed gap endpoints.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "63abbf44bf1286ec3c93995b7414951e043781ef510907e7cb8dc8c3f1f8c5bf"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceExteriorContourKernel.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Exterior contours equal the actual positive kernels Each exterior contour is exactly -2*pi*i times its positive angular kernel integral, in the original root and action conventions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4a1b746d0627d329d38820134434ab76722f74f0de4b3259a6498c2dc59027c0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/StandardRootInfinity.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Normalization of the standard root at complex infinity The normalized standard root divided by the spectral parameter tends to minus one, with no restriction on the complex center or squared gap.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "22c13d300717ad36464c7db33f7cceea387a217778b262935985bbc8602dd1da"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFilledGapQuotientInfinity.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Finite-gap normalization of the filled quotient The actual finite-gap primitive has leading coefficient -i at complex infinity. Together with the standard-root asymptotic, this proves that the analytically filled quotient tends to one.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7599f9f9cc3871d6771a1f1e4da67a550492fd76a9472377e088424741b32ad9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFiniteGapQuotientCauchy.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The finite-gap quotient as exterior Cauchy contours The selected gap is filled, the remaining open-gap discs form finitely many holes, and normalization at infinity supplies the outer constant.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b57156c7df2c98b3ac044ac7ca3ccb57b7720fc8cf73f757638ad00c17995407"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFiniteGapProfileIdentity.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The actual finite-gap profile representation Combining the Cauchy formula with the exact contour-kernel identities proves that the filled quotient is one plus the constructed correction. The real cosine profile identity includes both selected endpoints.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cb37bc3b873be6b9c1d84c948d3b3e26e61fec646f0241ffdc1acedbb6742d00"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePrimitivePowerGlobalCubic.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The global sharp cubic-action estimate The finite-gap representation proves the cubic lower bound on finite-gap sources. Continuity and density extend it to every real source at every finite p>1; collapsed gaps are handled without dividing by their length.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5a4926da20f23ae13c0c1d404ed8d398b7c113ad6606acfe6e5435cea083a59"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapActionLowerBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # The sharp actual gap-action lower bound The positive finite-gap profile dominates the semicircle profile. Integration gives gamma_n squared <= 4 I_n; continuity and finite-gap density extend it to every real source at every finite exponent p > 1. Collapsed gaps are included and the final theorem constructs its primitive atlas internally.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "decdf8b22b5e0bf98d53fd7e1763ab6fa1ccf8af46b2775da8e43da6ec1eab59"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNormalizedActionLowerBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Sharp real lower bounds for the normalized action and root The actual normalized action is at least one quarter on the whole real source space, including collapsed gaps. Consequently the normalized root is at least one, its reciprocal has norm at most one, and its deviation from one is controlled by half the normalized-action deviation.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0363a81d105b628825ecf437e05eeca6a47467c0b8692f5195a2581900d41684"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNormalizedRootComplexLower.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Uniform nonvanishing of all complex normalized roots Near every real source, every actual normalized root has norm at least one half. The inverse bound holds on the same neighborhood for every signed index.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4fea2dc4bb941f63056d26d7756ef764d0d463abea92c82ac2fd0370527178b5"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedEtaComplexBound.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Native complex weighted eta bounds The inverse normalization and the native weighted Birkhoff bound give actual weighted eta membership and locally uniform norms on a common complex neighborhood.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7d74d50d5b008ea41d20d82dd5a87dd46744d5b18849894eefccbc1157cb45ac"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedEtaComplexAnalytic.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical prerequisite of SourceWeightedEtaComplexAnalytic from articles/kdv-estimates at 25e906bba4584c1c1ffbf0d13cd15ce0dfeee814. Actual weighted complex eta estimates are reused for the original Hill packet. Original module scope: # Native weighted analyticity of eta Both actual signs preserve every spectral weight analytically near each weighted real source. The coefficient equalities exclude the fallback on the stated domain.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "62001f1df1390858b3689cd6ed965eae0bea0acca9c9de9fd9be0a2a76c68800"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraSobolevNormalizedSource.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL phase-rotated ordinary Dirichlet Miura source is represented by a bounded native Sobolev normalization map. Its coefficient decoder is EXACTLY sourcePhase(hillMiuraDiagonal(ToL2 a)); the half-scale spectral weight at index 2*n equals the original period-one Sobolev weight at n. Physical conjugate-reflection reality is retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "db91714cf184c85737452f6cbad695de5849827994b4d0edd8e8629994a31954"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraSobolevEtaSequence.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For the SAME supplied original root family, the canonical weighted complex eta theorem gives native H^t-weighted eta sequences near EVERY real native H^t Miura base, ALL t>=0. One complex native neighborhood and norm bound precede BOTH signs and ALL signed indices. Exact actual raw coefficients exclude any total-constructor fallback.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dbb42e9ad69d1868c6583b8ccc0ce96c1bcd67026297c935d5ca0eb5c1fa28bb"
+    },
+    {
+      "path": "NLS/KdV/HillHminusSobolevEtaGerms.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A genuine stronger analytic Miura germ transfers the weighted eta theorem to the SAME ACTUAL rough Hill chart. Native H^(t-1) complex neighborhoods carry actual H^t-weighted own-index eta sequences analytically, with exact ordinary Dirichlet source, SAME root family, common norm bound and retained source beta domain.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "edfec53753bef222c9696519bef46a55cf994b15b1265f48becf658b0c04d9d5"
+    },
+    {
+      "path": "NLS/KdV/HillHminusAllSobolevEtaCharts.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY real original rough Hill base, ONE actual rough chart, positive outside-spectrum energy shift and original psi root family precede ALL t>=0 and ALL eligible real native sources. Every such source has an OPEN COMPLEX native neighborhood with actual weighted eta analyticity, a common norm bound before every signed output index and exact raw values. All original positive Hill endpoint labels, including low and collapsed gaps, are retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "272d26afe14d63da6a94167cdd994ad467c48c170b7de5596fdb37b0b908d1a7"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedAnalyticPacket.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A reusable bounded native ell-infinity analytic symbol preserves an EXACT actual weighted sequence packet under a complex linear source pullback. Produces explicit open source neighborhoods, full native Hilbert analyticity, common norm bounds and exact literal product coefficients before all signed indices.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aa5bfc5b7c357d582b42c48475ac8bbff0e34e007103cd97a87f3ad8aff513a7"
+    },
+    {
+      "path": "NLS/KdV/HillHminusSobolevAbelianSymbols.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The SAME actual Hill eta sequence is multiplied by the FULL native Abelian symbol. Actual rough analyticity and genuine stronger weighted complex analytic germs retain exact source values, root family and every phase factor in that symbol; there is no amplitude-only replacement.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "eedd04d4cfb6fa90964720ebed96445593a9a92021611bfebec79921e644b640"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/RoughSobolevAbelianPacket.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ONE ACTUAL normalized rough Abelian packet and ONE common complex rough ball precede ALL t>=0 and ALL eligible real native H^(t-1) sources. Full physical amplitude, normalized midpoint, noncentral beta exponential and actual own-index eta are assembled in native Banach norms. Original physical coordinate SQUARES are retained off the physical sheet; stronger weighted native complex analytic germs and uniform local bounds work before ALL signed indices. Fixing and identifying the original coordinates is completed in NativeRoughSobolevPositiveAbelian.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a271b5af84cb787229b421b7aa1e8162c1ebf0d07e9e7e15949d0aa561dae78d"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneHminusAnalyticContinuation.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A reusable dense complex linear inclusion and ONE native analytic germ determine functions on a WHOLE common complex ball. The actual L2-to-H-minus-one specialization first continues on the convex preimage of the rough ball, then uses genuine rough dense range. No small L2 norm of the source is required.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e1f187802fd4e2933ebb8e965060ee6e1bbf5a3e730fc912fe5d7729064eb90"
+    },
+    {
+      "path": "NLS/KdV/HillRoughAbelianSquareComparison.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual physical Abelian square agreement, even initially restricted away from the physical sheet, forces EXACT scalar norm agreement throughout the WHOLE COMPLEX rough ball. A genuinely nontrivial physical sheet detector fixes a native analytic sign germ, complex L2 continuation reaches every L2 source in the rough ball, and rough density reaches all complex sources. Closed gaps are not excluded in the final norm identity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b19716257b4275c22cebd1c8bb42656f145c12f8864d08f353c56da0c5403d4c"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedAnalyticNormComparison.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual weak scalar analyticity and a native locally bounded COMPLEX weighted sequence norm comparison prove stronger sequence analyticity of the LITERAL weighted map, with exact coefficients and common bounds. Genuine membership rules out the total fallback. Real-source membership or real-only norm comparison is not used to infer complex analyticity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f5e860b8f9a3d0cfc5cd653b66e8e49dc2759910b954d346de33563cf9f0b292"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughSobolevPositiveAbelian.lean",
+      "source_labels": [
+        "Actual weighted complex eta and stronger native positive Abelian analyticity supporting the Sobolev topology in Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The SAME ACTUAL original positive rough Abelian map from the native physical recovery theorem has genuine COMPLEX ANALYTIC native Sobolev sequence restrictions near EVERY eligible REAL source in ONE common rough ball, for ALL s>=-1. The ball and map precede every order and source; original physical recovery, zero, nonpositive zeros and weak linear bounds are retained. Its normalized coefficients are original z_n/sqrt(1+n); the literal weighted realization uses W_(s+1). Complex rough norm comparison with the actual stronger packet gives locally uniform sequence bounds, then scalar analyticity gives stronger Banach analyticity. This proves the positive-coordinate restriction; full signed Sobolev forward/inverse charts and arbitrary-base/global rough Birkhoff inversion remain separate obligations.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c25ced0b3c242ee2550515751369a67214c251f65d7e223912d172de00f08c2a"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The ACTUAL local rough Birkhoff inverse R retains EVERY exact native Sobolev membership endpoint on ONE open real-preserving target neighborhood, before ALL real targets of arbitrary support and ALL s>=-1. The actual signed rough Abelian map retains the corresponding criterion on a whole real mean-zero rough source ball. NOW the ACTUAL Hill Miura lift has stronger COMPLEX ANALYTIC restrictions H^s-to-H^(s+1), for ALL s>=-1 and every eligible complex source, on ONE rough chart selected at EVERY real base BEFORE all orders/sources. This is proved using actual strong Jacobians, Neumann weak bijectivity, native inverse charts and exact matching to the SAME rough branch; original Hill labels and outside-spectrum shift are retained. NEXT transfer this stronger topology/analyticity to the ACTUAL Abelian/Birkhoff packets and their inverse restrictions, establish arbitrary-base/global H-minus-one Birkhoff inversion, and prove the remaining frequency/PDE conclusions. Stronger Miura analyticity is not yet stronger Birkhoff analyticity.",
+    "The SAME ACTUAL original positive rough Abelian map NOW has genuine COMPLEX ANALYTIC native Sobolev sequence restrictions near EVERY eligible REAL source in ONE common rough ball, before ALL s>=-1 and all such sources. Its original positive physical coordinates are normalized by sqrt(1+n); actual weighted sequence realizations use W_(s+1), the exact normalization corresponding to h^(s+1/2) of the original positive coordinates. This follows from actual weighted complex eta estimates, stronger SAME Miura germs, the full physical amplitude/midpoint/noncentral phase packet, and a COMPLEX rough norm identity fixed by physical square germs, L2 analytic continuation and rough density. ONE eta chart is also available at EVERY real rough base before all orders/sources. The previous all-order membership endpoints of the SAME actual signed Z and inverse R are retained. NEXT complete the full signed Sobolev forward restriction and stronger inverse topology/analyticity, arbitrary-base/global rough Birkhoff inversion, and the remaining Hamiltonian/frequency/PDE conclusions. Positive-coordinate analyticity alone does not assert these remaining full Birkhoff conclusions.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -32349,15 +34346,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 19288,
-    "total_declarations_audited": 41358,
+    "candidate_declarations_audited": 20451,
+    "total_declarations_audited": 42523,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2429,
+    "selected_modules": 2595,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -32435,7 +34432,8 @@
     "physical_mass_divergence_validation_sequence": "Prior strict evidence retained for all 2372 unchanged selected baseline sources. All four new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2376 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2418 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these four selections; no new shared-source import is needed. No full 2376-module rebuild is claimed.",
     "actual_miura_sobolev_validation_sequence": "Prior strict evidence retained for all 2376 unchanged selected baseline sources. ALL 38 new selections strictly rebuilt in dependency order: 34 byte-identical canonical sources, one canonical proof with its global heartbeat override removed, and three new own proof modules. A fresh combined transitive axiom audit covers all 2414 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2457 frozen source/checker/provenance/Mathlib-source hashes, 39 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The new reachable NLS import closure is EXACTLY these 38 selections. No full 2414-module rebuild is claimed.",
     "native_rough_all_sobolev_validation_sequence": "Prior strict evidence retained for all 2414 unchanged selected baseline sources. All six new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2420 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2463 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these six selections; no new shared-source import or adaptation is needed. No full 2420-module rebuild is claimed.",
-    "native_strong_miura_validation_sequence": "Prior strict evidence retained for all 2420 unchanged selected baseline sources. All nine new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2429 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2472 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these nine selections; no new shared-source import or adaptation is needed. No full 2429-module rebuild is claimed."
+    "native_strong_miura_validation_sequence": "Prior strict evidence retained for all 2420 unchanged selected baseline sources. All nine new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2429 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2472 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these nine selections; no new shared-source import or adaptation is needed. No full 2429-module rebuild is claimed.",
+    "native_strong_abelian_validation_sequence": "Prior strict evidence retained for all 2429 unchanged selected baseline sources. All 155 newly selected canonical prerequisites strictly checked at their unchanged pinned source bytes; all eleven new own modules then strictly rebuilt in dependency order after freezing the complete proof/checker/provenance selection, followed by a fresh combined transitive axiom audit of all 2595 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2639 frozen source/checker/provenance/Mathlib-source hashes, 41 verified provenance records (40 unchanged, one new), private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY 155 unchanged canonical selections and eleven own modules. The checker selection is assembled from 128-name private data chunks in the SAME order, preserving its transitive axiom loop unchanged and passing a runtime 2595-name selection probe at default recursion limits. No full 2595-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -33161,6 +35159,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "1536b9a1a3a9ed94e9c8c27f5746fe6601931651",
+      "description": "Actual stronger Miura analytic germs now give actual weighted eta germs at every real base, a fully normalized physical Abelian square packet, and stronger native complex analyticity of the SAME original positive Abelian coordinates near every eligible real source in one rough ball. Reuses155 unchanged canonical prerequisites.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The ACTUAL local rough Birkhoff inverse R retains EVERY exact native Sobolev membership endpoint on ONE open real-preserving target neighborhood, before ALL real targets of arbitrary support and ALL s>=-1. The actual signed rough Abelian map retains the corresponding criterion on a whole real mean-zero rough source ball. NOW the ACTUAL Hill Miura lift has stronger COMPLEX ANALYTIC restrictions H^s-to-H^(s+1), for ALL s>=-1 and every eligible complex source, on ONE rough chart selected at EVERY real base BEFORE all orders/sources. This is proved using actual strong Jacobians, Neumann weak bijectivity, native inverse charts and exact matching to the SAME rough branch; original Hill labels and outside-spectrum shift are retained. NEXT transfer this stronger topology/analyticity to the ACTUAL Abelian/Birkhoff packets and their inverse restrictions, establish arbitrary-base/global H-minus-one Birkhoff inversion, and prove the remaining frequency/PDE conclusions. Stronger Miura analyticity is not yet stronger Birkhoff analyticity.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -33204,5 +35214,6 @@
   "actual_miura_sobolev_record": "ACTUAL_MIURA_SOBOLEV_REGULARITY.md",
   "canonical_miura_sobolev_reuse_record": "CANONICAL_MIURA_SOBOLEV_REUSE.json",
   "native_rough_all_sobolev_record": "NATIVE_ROUGH_ALL_SOBOLEV_INVERSE.md",
-  "native_strong_miura_record": "NATIVE_STRONG_MIURA_CHARTS.md"
+  "native_strong_miura_record": "NATIVE_STRONG_MIURA_CHARTS.md",
+  "native_strong_abelian_record": "NATIVE_STRONG_ABELIAN_CHARTS.md"
 }

@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual Miura charts analytic in every stronger Sobolev norm
+## Latest stronger analyticity of the SAME actual positive Abelian map
+
+ONE ACTUAL original positive rough Abelian map and ONE common complex rough ball now precede ALL s>=-1 and ALL eligible REAL native H^s sources. Near EVERY such source, its LITERAL weighted normalized coordinate sequence is COMPLEX ANALYTIC into the native Hilbert target, with exact coefficients and a common local norm bound before all signed output indices. Exact original physical recovery, zero, nonpositive zeros and weak linear bounds remain attached to the SAME map. See `NATIVE_STRONG_ABELIAN_CHARTS.md`.
+
+The normalized positive coefficients are original z_n/sqrt(1+n), and the native sequence weight is W_(s+1). Actual stronger Miura germs and the reused weighted complex eta theorem retain the SAME root family and ordinary Dirichlet phase. The FULL physical amplitude, midpoint and noncentral phase exponential remain in the packet. Physical square agreement is continued to a norm identity on the WHOLE COMPLEX rough ball, including closed gaps, so the stronger norm bounds are complex bounds, not just real-source membership statements. One actual eta chart at EVERY real rough base precedes all orders and sources.
+
+Prior strict evidence retained for all 2429 unchanged selected baseline sources. All 155 newly selected canonical prerequisites strictly checked at their unchanged pinned source bytes; all eleven new own modules then strictly rebuilt in dependency order after freezing the complete proof/checker/provenance selection, followed by a fresh combined transitive axiom audit of all 2595 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2639 frozen source/checker/provenance/Mathlib-source hashes, 41 verified provenance records (40 unchanged, one new), private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY 155 unchanged canonical selections and eleven own modules. The checker selection is assembled from 128-name private data chunks in the SAME order, preserving its transitive axiom loop unchanged and passing a runtime 2595-name selection probe at default recursion limits. No full 2595-module rebuild is claimed.
+
+Fresh audit: 20451 selected and 42523 imported NLS declarations; permitted axioms only. Eleven new own modules contain 22 explicit theorems. Full signed Sobolev forward/inverse charts, arbitrary-base/global rough Birkhoff inversion and Hamiltonian/frequency/PDE conclusions remain obligations. All eleven complete main theorem rows remain OPEN.
+
+## Earlier actual Miura charts analytic in every stronger Sobolev norm
 
 At EVERY real original H-minus-one Hill base, ONE actual real-preserving complex rough Miura chart is selected BEFORE ALL s>=-1 and ALL eligible complex native H^s sources. At EVERY eligible complex stronger source, its SAME literal lift, realized as an explicit native H^(s+1) function, agrees EXACTLY on an open neighborhood with a COMPLEX ANALYTIC native map. The positive outside-spectrum energy shift and EVERY original positive Hill endpoint label, including first and collapsed gaps, are retained. See `NATIVE_STRONG_MIURA_CHARTS.md`.
 
@@ -670,7 +680,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2429 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2595 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1739,7 +1749,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2429 selected modules (including generated and private declarations)
+the 2595 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4465,3 +4475,21 @@ PASS NLS/KdV/HillHminusStrongMiuraCharts
 PASS NLS/KdV/HillHminusNativeSobolevMiuraLift
 Axiom audit passed: 19288 candidate declarations; 41358 declarations total.
 ```
+
+Latest own stronger actual Abelian checks and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillMiuraSobolevNormalizedSource
+PASS NLS/KdV/HillMiuraSobolevEtaSequence
+PASS NLS/KdV/HillHminusSobolevEtaGerms
+PASS NLS/KdV/HillHminusAllSobolevEtaCharts
+PASS NLS/SequenceSpaces/WeightedAnalyticPacket
+PASS NLS/KdV/HillHminusSobolevAbelianSymbols
+PASS NLS/Articles/KdVKdV2Frequencies/RoughSobolevAbelianPacket
+PASS NLS/SequenceSpaces/PeriodOneHminusAnalyticContinuation
+PASS NLS/KdV/HillRoughAbelianSquareComparison
+PASS NLS/SequenceSpaces/WeightedAnalyticNormComparison
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughSobolevPositiveAbelian
+Axiom audit passed: 20451 candidate declarations; 42523 declarations total.
+```
+The 155 unchanged canonical prerequisite checks are certified by `CANONICAL_STRONG_ETA_REUSE.json`.
