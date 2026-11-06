@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual compact derivative factors in all native Sobolev norms
+## Latest exact physical signs and full signed compact derivatives of the SAME map
+
+The SAME actual signed Z,R now retain FULL native compact eta/symbol derivative germs for ALL t>=0 and eligible real H^(t-1) bases in ONE smaller complex rough ball. ONE actual Hill chart, FULL amplitude/midpoint/noncentral-phase symbol and constant infinite physical sign selection precede all orders and source points. The actual signed g:H^(t-1)->h^(t-1/2) includes EXACTLY to the SAME Z at EVERY complex point of each conjugation-invariant OPEN COMPLEX neighborhood. Both actual conjugate-source derivatives enter its exact principal operator; the remainder is compact. See `NATIVE_SIGNED_COMPACT_DERIVATIVES.md`.
+
+All previous weak complex inverse, real form, every real Sobolev membership endpoint, all stronger forward germs, original physical L2 representatives, fixed GLOBAL original Birkhoff coordinates, exact mass and all-order analytic inverse germs at ZERO remain retained for the SAME Z,R. The actual eta/Fourier comparison and leading multiplier bounds still need proof before full mean-zero Jacobian Fredholm/invertibility, arbitrary-real-base inverse analyticity and GLOBAL rough inversion. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2618 unchanged selected baseline sources. All nine newly selected modules (eight own and one unchanged shared reuse) strictly rebuilt in dependency order after freezing 2672 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2627 selected modules. Exact checker/audit/coverage/evidence selection, selected dependency order, reachability and the exact nine-module increase in NLS import closure verified. All 41 prior verified provenance records and all baseline sources remain unchanged. One NEW canonical reuse record verifies the already present shared SignChange source byte-for-byte against clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; no source adaptation is needed. All 42 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, allowed axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. The 2627-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2627-module rebuild is claimed.
+
+Fresh audit: 20632 selected and 42702 imported NLS declarations; permitted axioms only. Eight new own modules contain 21 explicit theorems.
+
+## Earlier actual compact derivative factors in all native Sobolev norms
 
 The ACTUAL Hill Miura lift derivative now differs compactly from the fixed free mass inverse at EVERY complex point of its stronger analytic germs. At EVERY real rough base, ONE actual chart and outside-spectrum positive shift precede ALL orders and eligible complex sources; the SAME lift, physical real form and ALL original Hill endpoint labels remain attached. Actual positive Abelian packets retain the FULL amplitude/midpoint/noncentral-phase symbol and physical off-sheet squares, and their native derivatives minus the full symbol times the ACTUAL weighted own-index eta derivative are COMPACT at every complex point. See `NATIVE_COMPACT_DERIVATIVE_FACTORS.md`.
 
@@ -710,7 +720,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2618 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2627 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1779,7 +1789,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2618 selected modules (including generated and private declarations)
+the 2627 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4563,4 +4573,19 @@ PASS NLS/KdV/HillHminusSobolevAbelianCompact
 PASS NLS/KdV/HillHminusSobolevMiuraCompactDerivative
 PASS NLS/Articles/KdVKdV2Frequencies/RoughSobolevAbelianCompactPacket
 Axiom audit passed: 20554 candidate declarations; 42626 declarations total.
+```
+
+Latest exact signed compact strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/SignChange
+PASS NLS/KdV/HillRoughAbelianConstantSign
+PASS NLS/SequenceSpaces/ConstantSignPacketTransport
+PASS NLS/KdV/HillRoughAbelianPacketSigns
+PASS NLS/SequenceSpaces/SignedCompletionDerivative
+PASS NLS/Articles/KdVKdV2Frequencies/ActualPositiveAbelianCompact
+PASS NLS/SequenceSpaces/SobolevSignedCompactGerm
+PASS NLS/Articles/KdVKdV2Frequencies/ActualSignedAbelianCompact
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughSignedCompactForwardInverse
+Axiom audit passed: 20632 candidate declarations; 42702 declarations total.
 ```

@@ -1,3 +1,12 @@
+import NLS.SequenceSpaces.SignChange
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedCompactForwardInverse
+import NLS.SequenceSpaces.SobolevSignedCompactGerm
+import NLS.Articles.KdVKdV2Frequencies.ActualSignedAbelianCompact
+import NLS.Articles.KdVKdV2Frequencies.ActualPositiveAbelianCompact
+import NLS.KdV.HillRoughAbelianPacketSigns
+import NLS.SequenceSpaces.SignedCompletionDerivative
+import NLS.KdV.HillRoughAbelianConstantSign
+import NLS.SequenceSpaces.ConstantSignPacketTransport
 import NLS.KdV.HillHminusSobolevMiuraCompactDerivative
 import NLS.Articles.KdVKdV2Frequencies.RoughSobolevAbelianCompactPacket
 import NLS.SequenceSpaces.WeightedAnalyticPacketCompact
@@ -4428,7 +4437,16 @@ private def kdvFrequencyAuditChunk20 : Array Lean.Name := #[
   `NLS.SequenceSpaces.WeightedAnalyticPacketCompact,
   `NLS.KdV.HillHminusSobolevAbelianCompact,
   `NLS.KdV.HillHminusSobolevMiuraCompactDerivative,
-  `NLS.Articles.KdVKdV2Frequencies.RoughSobolevAbelianCompactPacket
+  `NLS.Articles.KdVKdV2Frequencies.RoughSobolevAbelianCompactPacket,
+  `NLS.SequenceSpaces.SignChange,
+  `NLS.KdV.HillRoughAbelianConstantSign,
+  `NLS.SequenceSpaces.ConstantSignPacketTransport,
+  `NLS.KdV.HillRoughAbelianPacketSigns,
+  `NLS.SequenceSpaces.SignedCompletionDerivative,
+  `NLS.Articles.KdVKdV2Frequencies.ActualPositiveAbelianCompact,
+  `NLS.SequenceSpaces.SobolevSignedCompactGerm,
+  `NLS.Articles.KdVKdV2Frequencies.ActualSignedAbelianCompact,
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedCompactForwardInverse
 ]
 
 open Lean in

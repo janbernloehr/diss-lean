@@ -1,0 +1,17 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "purpose": "Reuse the unchanged shared arbitrary infinite coordinate-sign complex linear isometry for exact physical Abelian signs, weighted coefficient transport and compact derivative formulas of the SAME actual signed map.",
+  "roots": [
+    "NLS/SequenceSpaces/SignChange.lean"
+  ],
+  "files": [
+    {
+      "path": "NLS/SequenceSpaces/SignChange.lean",
+      "source_sha256": "e72beb7ef2f69d0bd6bd4a9b3339961c46f5dd2b5deee9881b486ada8543b33b",
+      "local_sha256": "e72beb7ef2f69d0bd6bd4a9b3339961c46f5dd2b5deee9881b486ada8543b33b",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "validation": "Selected in the exact new NLS closure and strictly rebuilt with the eight new own modules under default Lean limits, followed by the full combined transitive axiom audit. Existing source bytes are unchanged."
+}

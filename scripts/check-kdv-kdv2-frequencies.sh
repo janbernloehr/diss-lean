@@ -2627,6 +2627,15 @@ modules=(
   NLS/KdV/HillHminusSobolevAbelianCompact
   NLS/KdV/HillHminusSobolevMiuraCompactDerivative
   NLS/Articles/KdVKdV2Frequencies/RoughSobolevAbelianCompactPacket
+  NLS/SequenceSpaces/SignChange
+  NLS/KdV/HillRoughAbelianConstantSign
+  NLS/SequenceSpaces/ConstantSignPacketTransport
+  NLS/KdV/HillRoughAbelianPacketSigns
+  NLS/SequenceSpaces/SignedCompletionDerivative
+  NLS/Articles/KdVKdV2Frequencies/ActualPositiveAbelianCompact
+  NLS/SequenceSpaces/SobolevSignedCompactGerm
+  NLS/Articles/KdVKdV2Frequencies/ActualSignedAbelianCompact
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughSignedCompactForwardInverse
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
