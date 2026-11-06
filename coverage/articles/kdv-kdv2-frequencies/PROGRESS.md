@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest global physical mass obstruction
+## Latest actual all-order Miura Sobolev bridge
+
+For EVERY actual complex L2 Miura lift solving the literal equation q=u'+u^2-c, and EVERY s>=-1, the ORIGINAL rough source q is in native H^s IFF its given lift u is in native H^(s+1). The converse starts from the actual L2 lift and bootstraps its regularity; it does not assume greater lift regularity. On a real slice this is exactly equivalent to H^(s+1) of the ACTUAL full signed canonical Dirac gap sequence. See `ACTUAL_MIURA_SOBOLEV_REGULARITY.md`.
+
+At EVERY real H-minus-one base, ONE actual complex analytic Miura chart and positive energy shift now precede ALL sources and Sobolev orders. The chart preserves the real form, detects every Sobolev order and retains EVERY exact original Hill endpoint label as the squared-and-shifted actual canonical Dirac endpoint, including first and collapsed gaps. No zero-neighborhood or initial L2-source assumption is used.
+
+Prior strict evidence retained for all 2376 unchanged selected baseline sources. ALL 38 new selections strictly rebuilt in dependency order: 34 byte-identical canonical sources, one canonical proof with its global heartbeat override removed, and three new own proof modules. A fresh combined transitive axiom audit covers all 2414 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2457 frozen source/checker/provenance/Mathlib-source hashes, 39 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The new reachable NLS import closure is EXACTLY these 38 selections. No full 2414-module rebuild is claimed.
+
+Fresh audit: 19159 selected and 41228 imported NLS declarations; permitted axioms only. The canonical center-gap proof is checked at DEFAULT heartbeats after removing its old 500000 override. Pointwise source/lift/gap membership is proved; stronger Sobolev-topology analytic dependence, exact original Hill Birkhoff target regularity, global rough inversion and the frequency/PDE main conclusions remain obligations. All eleven complete main theorem rows remain OPEN.
+
+## Earlier global physical mass obstruction
 
 At EVERY genuinely non-L2 real mean-zero native H^s datum, s>=-1, ACTUAL smooth real mean-zero unit-period physical approximants now converge in the SAME H^s Hilbert topology and their ACTUAL classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero subspace. No local spectral chart or smallness assumption is used. See `PHYSICAL_MASS_DIVERGENCE.md`.
 

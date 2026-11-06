@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest global physical mass obstruction
+## Latest actual all-order Miura Sobolev bridge
+
+For EVERY actual complex L2 Miura lift solving the literal equation q=u'+u^2-c, and EVERY s>=-1, the ORIGINAL rough source q is in native H^s IFF its given lift u is in native H^(s+1). The converse starts from the actual L2 lift and bootstraps its regularity; it does not assume greater lift regularity. On a real slice this is exactly equivalent to H^(s+1) of the ACTUAL full signed canonical Dirac gap sequence. See `ACTUAL_MIURA_SOBOLEV_REGULARITY.md`.
+
+At EVERY real H-minus-one base, ONE actual complex analytic Miura chart and positive energy shift now precede ALL sources and Sobolev orders. The chart preserves the real form, detects every Sobolev order and retains EVERY exact original Hill endpoint label as the squared-and-shifted actual canonical Dirac endpoint, including first and collapsed gaps. No zero-neighborhood or initial L2-source assumption is used.
+
+Prior strict evidence retained for all 2376 unchanged selected baseline sources. ALL 38 new selections strictly rebuilt in dependency order: 34 byte-identical canonical sources, one canonical proof with its global heartbeat override removed, and three new own proof modules. A fresh combined transitive axiom audit covers all 2414 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2457 frozen source/checker/provenance/Mathlib-source hashes, 39 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The new reachable NLS import closure is EXACTLY these 38 selections. No full 2414-module rebuild is claimed.
+
+Fresh audit: 19159 selected and 41228 imported NLS declarations; permitted axioms only. The canonical center-gap proof is checked at DEFAULT heartbeats after removing its old 500000 override. Pointwise source/lift/gap membership is proved; stronger Sobolev-topology analytic dependence, exact original Hill Birkhoff target regularity, global rough inversion and the frequency/PDE main conclusions remain obligations. All eleven complete main theorem rows remain OPEN.
+
+## Earlier global physical mass obstruction
 
 At EVERY genuinely non-L2 real mean-zero native H^s datum, s>=-1, ACTUAL smooth real mean-zero unit-period physical approximants now converge in the SAME H^s Hilbert topology and their ACTUAL classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero subspace. No local spectral chart or smallness assumption is used. See `PHYSICAL_MASS_DIVERGENCE.md`.
 
@@ -640,7 +650,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2376 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2414 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1709,7 +1719,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2376 selected modules (including generated and private declarations)
+the 2414 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4363,4 +4373,48 @@ PASS NLS/KdV/HillContinuousQuadraticMass
 PASS NLS/KdV/HillPhysicalSobolevApproximation
 PASS NLS/Articles/KdVKdV2Frequencies/PhysicalMassDivergence
 Axiom audit passed: 18823 candidate declarations; 40893 declarations total.
+```
+
+Latest actual all-order Miura Sobolev bridge strict checks and fresh combined audit:
+
+```text
+PASS NLS/ComplexAnalysis/LinearCoordinatesLocalInverse
+PASS NLS/ComplexAnalysis/NearbySquareRoot
+PASS NLS/SequenceSpaces/ForcedQuadraticTailSummability
+PASS NLS/SequenceSpaces/QuadraticActionsExponent
+PASS NLS/SequenceSpaces/SquareRootLifting
+PASS NLS/SequenceSpaces/QuadraticActionLifting
+PASS NLS/SequenceSpaces/RealFormIdentity
+PASS NLS/SequenceSpaces/NonnegativeActions
+PASS NLS/SequenceSpaces/RealAnalyticInverseRestriction
+PASS NLS/SequenceSpaces/RealOperatorInverse
+PASS NLS/SequenceSpaces/RealCoefficientCoordinates
+PASS NLS/SequenceSpaces/SummableGeometricTails
+PASS NLS/SequenceSpaces/WeightedNonnegativeActions
+PASS NLS/SequenceSpaces/WeightedRealCoeff
+PASS NLS/SequenceSpaces/WeightedRealInclusion
+PASS NLS/ZakharovShabat/ResonantRealGapCenter
+PASS NLS/ZakharovShabat/SourceBirkhoffDenseRange
+PASS NLS/ZakharovShabat/SourceBirkhoffOriginalFormula
+PASS NLS/ZakharovShabat/SourceBirkhoffOriginalDomain
+PASS NLS/ZakharovShabat/SourceRealBallCore
+PASS NLS/ZakharovShabat/SourceBirkhoffOriginalMap
+PASS NLS/ZakharovShabat/SourceSection14Original
+PASS NLS/ZakharovShabat/SourceBirkhoffOriginalExponent
+PASS NLS/ZakharovShabat/SourceBirkhoffWeightedMembership
+PASS NLS/ZakharovShabat/SourceWeightedRealSpaces
+PASS NLS/ZakharovShabat/SourceBirkhoffWeightedMap
+PASS NLS/ZakharovShabat/SourceBirkhoffOriginalWeightedMap
+PASS NLS/ZakharovShabat/SourceResonantCenterGapBound
+PASS NLS/ZakharovShabat/SourceWeightedCenterGapBound
+PASS NLS/ZakharovShabat/SourceGapWeightedTail
+PASS NLS/ZakharovShabat/SourceGapWeightedRegularity
+PASS NLS/ZakharovShabat/SourceSection14
+PASS NLS/ZakharovShabat/SourceSection14WeightedMembership
+PASS NLS/ZakharovShabat/SourceSobolevGapRegularity
+PASS NLS/ZakharovShabat/SourceWeightedRealMembership
+PASS NLS/SequenceSpaces/PeriodOneMiuraTameProduct
+PASS NLS/SequenceSpaces/PeriodOneMiuraSobolevEquivalence
+PASS NLS/KdV/HillHminusMiuraSobolevRegularity
+Axiom audit passed: 19159 candidate declarations; 41228 declarations total.
 ```

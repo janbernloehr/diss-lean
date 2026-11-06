@@ -15,7 +15,6 @@ namespace NLS.ZakharovShabat
 open Set Complex
 open scoped ENNReal
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
-set_option maxHeartbeats 500000
 
 /-- A uniform factor-two gap bound at every sufficiently distant actual center.
 No estimate or spectral labeling is supplied as an external premise. -/

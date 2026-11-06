@@ -1,0 +1,218 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "scope": "Canonical actual Sobolev gap bootstrap and weighted real source realizations, reused for the exact all-s>=-1 regularity of every actual rough Hill Miura source. 34 sources remain byte-identical to canonical main. The existing global 500000-heartbeat option is removed from SourceResonantCenterGapBound so its actual proof is checked at the default 200000 budget. All 35 shared dependencies and three new proof modules are strictly compiled privately in dependency order and transitively audited; canonical main is unchanged.",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/LinearCoordinatesLocalInverse.lean",
+      "source_sha256": "f5ab0abdb698f9deaa34c7b509ab928ac3ba1fdf27e91c62b6f987d37d65c443",
+      "local_sha256": "f5ab0abdb698f9deaa34c7b509ab928ac3ba1fdf27e91c62b6f987d37d65c443",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NearbySquareRoot.lean",
+      "source_sha256": "4da6c33575fe38cb4e324626e5942c91786915a304c3b00c8f313537f8c6017d",
+      "local_sha256": "4da6c33575fe38cb4e324626e5942c91786915a304c3b00c8f313537f8c6017d",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ForcedQuadraticTailSummability.lean",
+      "source_sha256": "116e2de963c11dc037966a913d59a585fb64d52f7d016d92ef348a4901f7471a",
+      "local_sha256": "116e2de963c11dc037966a913d59a585fb64d52f7d016d92ef348a4901f7471a",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/QuadraticActionsExponent.lean",
+      "source_sha256": "76a47fb843df4fdc9c770cb367b3a4cdd59a774219eae4a0c891d758681be81a",
+      "local_sha256": "76a47fb843df4fdc9c770cb367b3a4cdd59a774219eae4a0c891d758681be81a",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SquareRootLifting.lean",
+      "source_sha256": "2a82b4d30e778a274e663025ffffee79c1c8672bac7bf44e1b01368b34fb77ce",
+      "local_sha256": "2a82b4d30e778a274e663025ffffee79c1c8672bac7bf44e1b01368b34fb77ce",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/QuadraticActionLifting.lean",
+      "source_sha256": "c4c46eb765568e1f36ada5d31c93f68c2080fd394a9133cde43b148cf65341a2",
+      "local_sha256": "c4c46eb765568e1f36ada5d31c93f68c2080fd394a9133cde43b148cf65341a2",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealFormIdentity.lean",
+      "source_sha256": "a4e070eae0c39b17dfd19ae4c1e70d1a7a281bc692a6da27d2099a38bb0b22ec",
+      "local_sha256": "a4e070eae0c39b17dfd19ae4c1e70d1a7a281bc692a6da27d2099a38bb0b22ec",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeActions.lean",
+      "source_sha256": "db3ab0c0a94f1743919b790de52ef02f13e06a96720dc9b21ed90b09c0e27af5",
+      "local_sha256": "db3ab0c0a94f1743919b790de52ef02f13e06a96720dc9b21ed90b09c0e27af5",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealAnalyticInverseRestriction.lean",
+      "source_sha256": "dfae7fec37f6c9819b931614631f911c50b2aa693e4e6ecc05fddc80ba410b4e",
+      "local_sha256": "dfae7fec37f6c9819b931614631f911c50b2aa693e4e6ecc05fddc80ba410b4e",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealOperatorInverse.lean",
+      "source_sha256": "39d4a6eb122e6b9871f2a34d20d2a6d09d8587eab285fb2d9299fdae1119c477",
+      "local_sha256": "39d4a6eb122e6b9871f2a34d20d2a6d09d8587eab285fb2d9299fdae1119c477",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealCoefficientCoordinates.lean",
+      "source_sha256": "89df85cd5053bafa54e9b0034ae48578dee9794872abc28d0de7676c5b6c0f24",
+      "local_sha256": "89df85cd5053bafa54e9b0034ae48578dee9794872abc28d0de7676c5b6c0f24",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SummableGeometricTails.lean",
+      "source_sha256": "3055795f5a4070b974d2ff33efad62c8965061cd65fec6abd3b36189c89d55f9",
+      "local_sha256": "3055795f5a4070b974d2ff33efad62c8965061cd65fec6abd3b36189c89d55f9",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedNonnegativeActions.lean",
+      "source_sha256": "889e8fb0f27b55813eff84b90f87c7672a0c799d2da03753f838a60fc472c778",
+      "local_sha256": "889e8fb0f27b55813eff84b90f87c7672a0c799d2da03753f838a60fc472c778",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedRealCoeff.lean",
+      "source_sha256": "908a8a5db6ad3d8e8d350176d242abd6a8227ec6c753f95a67101e551e562671",
+      "local_sha256": "908a8a5db6ad3d8e8d350176d242abd6a8227ec6c753f95a67101e551e562671",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedRealInclusion.lean",
+      "source_sha256": "472190d346c4d420ef3472625506330887e976e61635ed686c55288d25fcb045",
+      "local_sha256": "472190d346c4d420ef3472625506330887e976e61635ed686c55288d25fcb045",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ResonantRealGapCenter.lean",
+      "source_sha256": "4a9cbe0cb61562442465606604232ff8ee38a0cc54839d65a5f441c71361a8e9",
+      "local_sha256": "4a9cbe0cb61562442465606604232ff8ee38a0cc54839d65a5f441c71361a8e9",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffDenseRange.lean",
+      "source_sha256": "04bb31934f52c4bad120a30b3b5ddce215e568be5563107af2520eb0b483853f",
+      "local_sha256": "04bb31934f52c4bad120a30b3b5ddce215e568be5563107af2520eb0b483853f",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffOriginalFormula.lean",
+      "source_sha256": "3ab26708a03ed5b14c0be4b09798a3d6b841cbedebfa9a8de51829936d0e30b2",
+      "local_sha256": "3ab26708a03ed5b14c0be4b09798a3d6b841cbedebfa9a8de51829936d0e30b2",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffOriginalDomain.lean",
+      "source_sha256": "973701a23a023a9d0446de9097dfec4da9a4acf4191e3bb094ede5b8ebe8be68",
+      "local_sha256": "973701a23a023a9d0446de9097dfec4da9a4acf4191e3bb094ede5b8ebe8be68",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRealBallCore.lean",
+      "source_sha256": "25ec5aa5a79e17a5734175c7e6dd4aa4240e2ca894a62fa0e172d14335f6e041",
+      "local_sha256": "25ec5aa5a79e17a5734175c7e6dd4aa4240e2ca894a62fa0e172d14335f6e041",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffOriginalMap.lean",
+      "source_sha256": "313cba611de27a0ac85dfe08ae3d750e2463ca2bc350a10e690cb75f2ee45191",
+      "local_sha256": "313cba611de27a0ac85dfe08ae3d750e2463ca2bc350a10e690cb75f2ee45191",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSection14Original.lean",
+      "source_sha256": "06488c4ec9377473b49cd8a44a15466cd1fef9356df97e7fdac4c8366ab5d3ef",
+      "local_sha256": "06488c4ec9377473b49cd8a44a15466cd1fef9356df97e7fdac4c8366ab5d3ef",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffOriginalExponent.lean",
+      "source_sha256": "bfd2f4ea5e9e56540dbe37ca705e1a836d0acfb057267072106e0bd597eddbfa",
+      "local_sha256": "bfd2f4ea5e9e56540dbe37ca705e1a836d0acfb057267072106e0bd597eddbfa",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedMembership.lean",
+      "source_sha256": "5335cc76a5a50d1e0cf71580e6780e3c7f57286423bb22b2e3a0e2b4e511c041",
+      "local_sha256": "5335cc76a5a50d1e0cf71580e6780e3c7f57286423bb22b2e3a0e2b4e511c041",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedRealSpaces.lean",
+      "source_sha256": "313e6736928f2ff0fce7f6fa3daf046186b61da484bcc316c6e19d1014e2f400",
+      "local_sha256": "313e6736928f2ff0fce7f6fa3daf046186b61da484bcc316c6e19d1014e2f400",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedMap.lean",
+      "source_sha256": "7cc52a03883b2e6b9b2b7356d767a702c17bc39dcb8537ee79dd86f9014333d2",
+      "local_sha256": "7cc52a03883b2e6b9b2b7356d767a702c17bc39dcb8537ee79dd86f9014333d2",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffOriginalWeightedMap.lean",
+      "source_sha256": "bea5df758f3c6aa189d3fabc54fc7b0b24503d16e1332870d4cba541271f8b8f",
+      "local_sha256": "bea5df758f3c6aa189d3fabc54fc7b0b24503d16e1332870d4cba541271f8b8f",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceResonantCenterGapBound.lean",
+      "source_sha256": "4f3d08d3a4976a1ba6d265beef00b487f5ea1c1977807dffc87ea2f3e1b79ad4",
+      "local_sha256": "c7b36b1987ca8507d56cfae906aaff176842532321d194b9d909675b8c8f9fd7",
+      "disposition": "adapted_default_heartbeats",
+      "adaptation": "Removed the global maxHeartbeats 500000 option; proof is validated at the default 200000 budget."
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedCenterGapBound.lean",
+      "source_sha256": "7a731681f0215ec785de769a31f7dee8eb5e7cee39825e7d607c5ac8ff8ff9db",
+      "local_sha256": "7a731681f0215ec785de769a31f7dee8eb5e7cee39825e7d607c5ac8ff8ff9db",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedTail.lean",
+      "source_sha256": "6ac13c96e0c19fdf25ec47aed662e98aaaf1aba7311f02f058c4e52a9458e163",
+      "local_sha256": "6ac13c96e0c19fdf25ec47aed662e98aaaf1aba7311f02f058c4e52a9458e163",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedRegularity.lean",
+      "source_sha256": "d8958febcf3606479848b99a10453e988af3878965c63fa0c548e28afff6f70a",
+      "local_sha256": "d8958febcf3606479848b99a10453e988af3878965c63fa0c548e28afff6f70a",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSection14.lean",
+      "source_sha256": "c9d7f10b7218389acc886f6337e3d7a312d8200659c839da1def0b7062cfa4f2",
+      "local_sha256": "c9d7f10b7218389acc886f6337e3d7a312d8200659c839da1def0b7062cfa4f2",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSection14WeightedMembership.lean",
+      "source_sha256": "63b6948bedeac7daca96b5f725664704f3ff3e3ba1c92b8ea63c9e08004990a2",
+      "local_sha256": "63b6948bedeac7daca96b5f725664704f3ff3e3ba1c92b8ea63c9e08004990a2",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevGapRegularity.lean",
+      "source_sha256": "53bc6e8a9f62b3b2b7ec65afc144cde0345af7c50b4ee4b1aa4c20fd5e426977",
+      "local_sha256": "53bc6e8a9f62b3b2b7ec65afc144cde0345af7c50b4ee4b1aa4c20fd5e426977",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedRealMembership.lean",
+      "source_sha256": "2ff32acbf10b2910a576af0b6b5380e2e304e1f7833203b687a8b170773b47a6",
+      "local_sha256": "2ff32acbf10b2910a576af0b6b5380e2e304e1f7833203b687a8b170773b47a6",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

@@ -2385,6 +2385,44 @@ modules=(
   NLS/KdV/HillContinuousQuadraticMass
   NLS/KdV/HillPhysicalSobolevApproximation
   NLS/Articles/KdVKdV2Frequencies/PhysicalMassDivergence
+  NLS/ComplexAnalysis/LinearCoordinatesLocalInverse
+  NLS/ComplexAnalysis/NearbySquareRoot
+  NLS/SequenceSpaces/ForcedQuadraticTailSummability
+  NLS/SequenceSpaces/QuadraticActionsExponent
+  NLS/SequenceSpaces/SquareRootLifting
+  NLS/SequenceSpaces/QuadraticActionLifting
+  NLS/SequenceSpaces/RealFormIdentity
+  NLS/SequenceSpaces/NonnegativeActions
+  NLS/SequenceSpaces/RealAnalyticInverseRestriction
+  NLS/SequenceSpaces/RealOperatorInverse
+  NLS/SequenceSpaces/RealCoefficientCoordinates
+  NLS/SequenceSpaces/SummableGeometricTails
+  NLS/SequenceSpaces/WeightedNonnegativeActions
+  NLS/SequenceSpaces/WeightedRealCoeff
+  NLS/SequenceSpaces/WeightedRealInclusion
+  NLS/ZakharovShabat/ResonantRealGapCenter
+  NLS/ZakharovShabat/SourceBirkhoffDenseRange
+  NLS/ZakharovShabat/SourceBirkhoffOriginalFormula
+  NLS/ZakharovShabat/SourceBirkhoffOriginalDomain
+  NLS/ZakharovShabat/SourceRealBallCore
+  NLS/ZakharovShabat/SourceBirkhoffOriginalMap
+  NLS/ZakharovShabat/SourceSection14Original
+  NLS/ZakharovShabat/SourceBirkhoffOriginalExponent
+  NLS/ZakharovShabat/SourceBirkhoffWeightedMembership
+  NLS/ZakharovShabat/SourceWeightedRealSpaces
+  NLS/ZakharovShabat/SourceBirkhoffWeightedMap
+  NLS/ZakharovShabat/SourceBirkhoffOriginalWeightedMap
+  NLS/ZakharovShabat/SourceResonantCenterGapBound
+  NLS/ZakharovShabat/SourceWeightedCenterGapBound
+  NLS/ZakharovShabat/SourceGapWeightedTail
+  NLS/ZakharovShabat/SourceGapWeightedRegularity
+  NLS/ZakharovShabat/SourceSection14
+  NLS/ZakharovShabat/SourceSection14WeightedMembership
+  NLS/ZakharovShabat/SourceSobolevGapRegularity
+  NLS/ZakharovShabat/SourceWeightedRealMembership
+  NLS/SequenceSpaces/PeriodOneMiuraTameProduct
+  NLS/SequenceSpaces/PeriodOneMiuraSobolevEquivalence
+  NLS/KdV/HillHminusMiuraSobolevRegularity
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

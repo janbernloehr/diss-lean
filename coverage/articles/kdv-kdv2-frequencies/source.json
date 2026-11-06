@@ -227,6 +227,11 @@
           "source_clause": "Exact native physical L2 endpoint of the actual local rough inverse for EVERY real target, with arbitrary support",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_real_target_L2_endpoint_inverse",
           "qualification": "The SAME ACTUAL analytic rough local inverse R has the exact physical L2 endpoint for EVERY real target in its open neighborhood, with arbitrary support: raw R(b) is L2 IFF its literal negative-half weighted target lift is in native h^(1/2). Every such endpoint target has an ORIGINAL physical real mean-zero L2 representative with exact fixed GLOBAL Birkhoff coordinates and squared norm sum 4*pi*n*|z_n|^2 (equivalently 2*kdvFiniteMass). Sufficiency uses actual finite-support physical preimages, uniform genuine mass bounds, original L2 compactness and rough-limit uniqueness. Necessity uses original physical recovery and native global Birkhoff summability. R is complex analytic with values in H-minus-one; a separate claim of analyticity into the stronger L2 topology is not asserted. Global/arbitrary-base rough inversion and the full Sobolev/PDE main conclusions remain open."
+        },
+        {
+          "source_clause": "All-s>=-1 actual Miura source/lift and signed Dirac-gap Sobolev bridge at EVERY real rough base, with one chart before all sources/orders and exact original Hill labels",
+          "lean_declaration": "NLS.KdV.exists_hillHminus_real_Miura_all_sobolev_chart",
+          "qualification": "EVERY actual complex Hill Miura chart detects the exact all-s>=-1 source/lift regularity shift on its ENTIRE domain. For EVERY real L2 lift of the ORIGINAL rough source, H^s of q is equivalent to native H^(s+1) of the ACTUAL full signed canonical Dirac gap sequence, including low, negative and collapsed indices. At EVERY real H-minus-one base, ONE actual complex analytic chart and ONE positive energy shift are selected BEFORE all sources and orders, preserve the real form, detect every Sobolev order and retain EVERY original positive Hill label as the exact squared-and-shifted canonical Dirac endpoint. No smallness or initial L2 membership of q. The full native Hill Birkhoff target regularity/topology, global rough inversion and frequency/PDE conclusions remain open."
         }
       ]
     },
@@ -31579,12 +31584,544 @@
       "scope": "GLOBAL mass obstruction supporting Theorem 1.12(v): at EVERY non-L2 real mean-zero H^s datum for s>=-1, smooth physical approximants exist in the SAME H^s topology and actual H_0 diverges. ANY extension agreeing with the actual smooth physical invariant fails continuity even WITHIN the real mean-zero subspace at that datum. Along EVERY real continuous physical H^s approximation, the exact positive-mode mass term 20*(2*n*pi)*H_0 diverges. Full KdV2 frequency identification, continuity of its renormalized correction and actual solution-map obstruction remain unproved; no complete main theorem is closed.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "40535f9ae400f591f39db58eedf25a88a118ca14e6967365e7f892e2cfb9d564"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LinearCoordinatesLocalInverse.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f5ab0abdb698f9deaa34c7b509ab928ac3ba1fdf27e91c62b6f987d37d65c443"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NearbySquareRoot.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4da6c33575fe38cb4e324626e5942c91786915a304c3b00c8f313537f8c6017d"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ForcedQuadraticTailSummability.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "116e2de963c11dc037966a913d59a585fb64d52f7d016d92ef348a4901f7471a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/QuadraticActionsExponent.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "76a47fb843df4fdc9c770cb367b3a4cdd59a774219eae4a0c891d758681be81a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SquareRootLifting.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2a82b4d30e778a274e663025ffffee79c1c8672bac7bf44e1b01368b34fb77ce"
+    },
+    {
+      "path": "NLS/SequenceSpaces/QuadraticActionLifting.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c4c46eb765568e1f36ada5d31c93f68c2080fd394a9133cde43b148cf65341a2"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealFormIdentity.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a4e070eae0c39b17dfd19ae4c1e70d1a7a281bc692a6da27d2099a38bb0b22ec"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeActions.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "db3ab0c0a94f1743919b790de52ef02f13e06a96720dc9b21ed90b09c0e27af5"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealAnalyticInverseRestriction.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dfae7fec37f6c9819b931614631f911c50b2aa693e4e6ecc05fddc80ba410b4e"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealOperatorInverse.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "39d4a6eb122e6b9871f2a34d20d2a6d09d8587eab285fb2d9299fdae1119c477"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealCoefficientCoordinates.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "89df85cd5053bafa54e9b0034ae48578dee9794872abc28d0de7676c5b6c0f24"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SummableGeometricTails.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3055795f5a4070b974d2ff33efad62c8965061cd65fec6abd3b36189c89d55f9"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedNonnegativeActions.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "889e8fb0f27b55813eff84b90f87c7672a0c799d2da03753f838a60fc472c778"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedRealCoeff.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "908a8a5db6ad3d8e8d350176d242abd6a8227ec6c753f95a67101e551e562671"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedRealInclusion.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "472190d346c4d420ef3472625506330887e976e61635ed686c55288d25fcb045"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ResonantRealGapCenter.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4a9cbe0cb61562442465606604232ff8ee38a0cc54839d65a5f441c71361a8e9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffDenseRange.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "04bb31934f52c4bad120a30b3b5ddce215e568be5563107af2520eb0b483853f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffOriginalFormula.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3ab26708a03ed5b14c0be4b09798a3d6b841cbedebfa9a8de51829936d0e30b2"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffOriginalDomain.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "973701a23a023a9d0446de9097dfec4da9a4acf4191e3bb094ede5b8ebe8be68"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRealBallCore.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "25ec5aa5a79e17a5734175c7e6dd4aa4240e2ca894a62fa0e172d14335f6e041"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffOriginalMap.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "313cba611de27a0ac85dfe08ae3d750e2463ca2bc350a10e690cb75f2ee45191"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSection14Original.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "06488c4ec9377473b49cd8a44a15466cd1fef9356df97e7fdac4c8366ab5d3ef"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffOriginalExponent.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bfd2f4ea5e9e56540dbe37ca705e1a836d0acfb057267072106e0bd597eddbfa"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedMembership.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5335cc76a5a50d1e0cf71580e6780e3c7f57286423bb22b2e3a0e2b4e511c041"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedRealSpaces.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "313e6736928f2ff0fce7f6fa3daf046186b61da484bcc316c6e19d1014e2f400"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedMap.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7cc52a03883b2e6b9b2b7356d767a702c17bc39dcb8537ee79dd86f9014333d2"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffOriginalWeightedMap.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bea5df758f3c6aa189d3fabc54fc7b0b24503d16e1332870d4cba541271f8b8f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceResonantCenterGapBound.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c7b36b1987ca8507d56cfae906aaff176842532321d194b9d909675b8c8f9fd7"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedCenterGapBound.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7a731681f0215ec785de769a31f7dee8eb5e7cee39825e7d607c5ac8ff8ff9db"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedTail.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6ac13c96e0c19fdf25ec47aed662e98aaaf1aba7311f02f058c4e52a9458e163"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedRegularity.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d8958febcf3606479848b99a10453e988af3878965c63fa0c548e28afff6f70a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSection14.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c9d7f10b7218389acc886f6337e3d7a312d8200659c839da1def0b7062cfa4f2"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSection14WeightedMembership.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "63b6948bedeac7daca96b5f725664704f3ff3e3ba1c92b8ea63c9e08004990a2"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSobolevGapRegularity.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "53bc6e8a9f62b3b2b7ec65afc144cde0345af7c50b4ee4b1aa4c20fd5e426977"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedRealMembership.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "Verified canonical dependency of the actual all-order rough Hill Miura/Dirac-gap Sobolev criterion: weighted real source realization, genuine actual-gap tail bootstrap and its needed analytic inverse/source dependencies. Exact canonical source and local hashes are recorded in CANONICAL_MIURA_SOBOLEV_REUSE.json. 34 shared sources are reused byte-identically; the global 500000-heartbeat override in SourceResonantCenterGapBound is removed and its existing proof strictly validated at the default 200000 budget. This supporting dependency is not the full native Hill Birkhoff regularity or global rough inverse theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2ff32acbf10b2910a576af0b6b5380e2e304e1f7833203b687a8b170773b47a6"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraTameProduct.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "The ACTUAL two-L2 distributional Miura product satisfies a tame weighted bound at EVERY nonnegative real input order t. For EVERY loss d>1/2, native H^t membership of both inputs implies native H^(t-d) membership of their ACTUAL convolution. Exact inverse-weight identity and a genuine native Hilbert norm bound at loss one are proved. Genuine absolute row sums, actual Young convolution and reciprocal Sobolev summability are used; no totalized nonsummable tsum or Fourier-support premise.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "65066c413abaac395c766e0a42fe6763e57e7219d97a09aaf7755af623944755"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraSobolevEquivalence.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "For EVERY actual complex L2 Miura lift solving q=u'+u^2-c, EVERY s>=-1 has EXACT raw native Sobolev equivalence: q belongs to H^s IFF u belongs to H^(s+1). Necessity starts from the given L2 lift and bootstraps by quarter-order gains using the fractional-loss product bound and the literal 2*pi*i*n derivative. Sufficiency uses only the single required finite Sobolev order. No smallness, reality, finite-gap or all-orders input hypothesis. This is pointwise membership equivalence; stronger-topology analytic dependence of the lift is separate.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "83a5994e9b70337ff19d4c1c4311b1eec642a89177b54af7fa7fdc7cb1d30406"
+    },
+    {
+      "path": "NLS/KdV/HillHminusMiuraSobolevRegularity.lean",
+      "source_labels": [
+        "Actual Miura source/lift and signed Dirac-gap regularity supporting Theorem 1.1 and the Sobolev-domain dependencies of Theorem 1.12"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "EVERY actual complex Hill Miura chart detects the exact all-s>=-1 source/lift regularity shift on its ENTIRE domain. For EVERY real L2 lift of the ORIGINAL rough source, H^s of q is equivalent to native H^(s+1) of the ACTUAL full signed canonical Dirac gap sequence, including low, negative and collapsed indices. At EVERY real H-minus-one base, ONE actual complex analytic chart and ONE positive energy shift are selected BEFORE all sources and orders, preserve the real form, detect every Sobolev order and retain EVERY original positive Hill label as the exact squared-and-shifted canonical Dirac endpoint. No smallness or initial L2 membership of q. The full native Hill Birkhoff target regularity/topology, global rough inversion and frequency/PDE conclusions remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a7eac8e81787851ec4de06f3e22e7d7c85c1892ba14a5500815d35bd087e40a3"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The ACTUAL analytic local rough inverse R NOW has the EXACT L2 endpoint for EVERY real target in its open neighborhood, including arbitrary infinite support: raw R(b) is L2 IFF its literal original signed target lift lies in native h^(1/2). Endpoint targets have ORIGINAL physical real mean-zero L2 representatives, exact fixed GLOBAL Birkhoff coordinates and exact squared norm sum 4*pi*n*|z_n|^2. Sufficiency is derived from all-Sobolev finite-support physical preimages and genuine mass bounds via original L2 compactness; necessity uses actual physical recovery and native Birkhoff summability. Non-half-regular real targets therefore have genuinely non-L2 rough inverse images. NEXT actual physical approximation/mass-divergence families, quantitative negative-Sobolev convergence and Hamiltonian/action-frequency identification. Arbitrary-base/global rough inversion, full inverse Sobolev topology for arbitrary targets and frequency/PDE main conclusions remain obligations. GLOBAL original-source mass divergence and actual smooth physical approximation in the SAME native H^s topology are now proved independently of the local inverse, at EVERY real mean-zero non-L2 datum for s>=-1; see PHYSICAL_MASS_DIVERGENCE.md. These close the mass/approximation component only, not the remaining full frequency/PDE obligations.",
+    "The ACTUAL analytic local rough inverse R NOW has the EXACT L2 endpoint for EVERY real target in its open neighborhood, including arbitrary infinite support: raw R(b) is L2 IFF its literal original signed target lift lies in native h^(1/2). Endpoint targets have ORIGINAL physical real mean-zero L2 representatives, exact fixed GLOBAL Birkhoff coordinates and exact squared norm sum 4*pi*n*|z_n|^2. Sufficiency is derived from all-Sobolev finite-support physical preimages and genuine mass bounds via original L2 compactness; necessity uses actual physical recovery and native Birkhoff summability. Non-half-regular real targets therefore have genuinely non-L2 rough inverse images. NEXT actual physical approximation/mass-divergence families, quantitative negative-Sobolev convergence and Hamiltonian/action-frequency identification. Arbitrary-base/global rough inversion, full inverse Sobolev topology for arbitrary targets and frequency/PDE main conclusions remain obligations. GLOBAL original-source mass divergence and actual smooth physical approximation in the SAME native H^s topology are now proved independently of the local inverse, at EVERY real mean-zero non-L2 datum for s>=-1; see PHYSICAL_MASS_DIVERGENCE.md. These close the mass/approximation component only, not the remaining full frequency/PDE obligations. The ACTUAL Miura source/lift regularity bridge is now exact at EVERY complex chart source and EVERY s>=-1: q in H^s IFF its existing L2 lift u is in H^(s+1). On every real slice this is equivalent to native H^(s+1) of the full ACTUAL signed canonical Dirac gap sequence. ONE actual chart at EVERY real rough base retains all Sobolev orders and every original Hill endpoint label. NEXT convert these criteria to the original native Hill Birkhoff target weights, prove the stronger topology/analyticity and finish arbitrary-base/global rough inversion. Pointwise membership alone does not establish these remaining conclusions.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -31610,15 +32147,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 18823,
-    "total_declarations_audited": 40893,
+    "candidate_declarations_audited": 19159,
+    "total_declarations_audited": 41228,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2376,
+    "selected_modules": 2414,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -31693,7 +32230,8 @@
     "native_rough_canonical_inverse_validation_sequence": "Prior strict evidence retained for all 1815 unchanged selected baseline sources. ALL 544 newly selected modules strictly rebuilt in dependency order (519 incoming shared files, 20 previously unselected unchanged canonical helpers, five own proof modules), followed by a fresh combined transitive axiom audit of all 2359 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2401 frozen source/checker/provenance/Mathlib-source hashes, all 39 verified provenance records (38 unchanged), private fresh outputs and unchanged clean canonical main verified. The imported NLS closure adds exactly these 544 selections. No full 2359-module rebuild is claimed.",
     "native_rough_finite_support_validation_sequence": "Prior strict evidence retained for all 2359 unchanged selected baseline sources. All eight new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2367 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2409 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these eight selections; no new shared-source import is needed. No full 2367-module rebuild is claimed.",
     "native_rough_L2_endpoint_validation_sequence": "Prior strict evidence retained for all 2367 unchanged selected baseline sources. All five new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2372 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2414 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these five selections; no new shared-source import is needed. No full 2372-module rebuild is claimed.",
-    "physical_mass_divergence_validation_sequence": "Prior strict evidence retained for all 2372 unchanged selected baseline sources. All four new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2376 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2418 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these four selections; no new shared-source import is needed. No full 2376-module rebuild is claimed."
+    "physical_mass_divergence_validation_sequence": "Prior strict evidence retained for all 2372 unchanged selected baseline sources. All four new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2376 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2418 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these four selections; no new shared-source import is needed. No full 2376-module rebuild is claimed.",
+    "actual_miura_sobolev_validation_sequence": "Prior strict evidence retained for all 2376 unchanged selected baseline sources. ALL 38 new selections strictly rebuilt in dependency order: 34 byte-identical canonical sources, one canonical proof with its global heartbeat override removed, and three new own proof modules. A fresh combined transitive axiom audit covers all 2414 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2457 frozen source/checker/provenance/Mathlib-source hashes, 39 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The new reachable NLS import closure is EXACTLY these 38 selections. No full 2414-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -32383,6 +32921,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "4cbe828fe5397384535348ac7d096df2e435800e",
+      "description": "Prior global physical mass obstruction; now exact ALL-s>=-1 Sobolev criterion for EVERY actual L2 Miura lift and its actual signed Dirac gaps, in ONE actual arbitrary-real-base chart retaining every original Hill endpoint label.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The ACTUAL analytic local rough inverse R NOW has the EXACT L2 endpoint for EVERY real target in its open neighborhood, including arbitrary infinite support: raw R(b) is L2 IFF its literal original signed target lift lies in native h^(1/2). Endpoint targets have ORIGINAL physical real mean-zero L2 representatives, exact fixed GLOBAL Birkhoff coordinates and exact squared norm sum 4*pi*n*|z_n|^2. Sufficiency is derived from all-Sobolev finite-support physical preimages and genuine mass bounds via original L2 compactness; necessity uses actual physical recovery and native Birkhoff summability. Non-half-regular real targets therefore have genuinely non-L2 rough inverse images. NEXT actual physical approximation/mass-divergence families, quantitative negative-Sobolev convergence and Hamiltonian/action-frequency identification. Arbitrary-base/global rough inversion, full inverse Sobolev topology for arbitrary targets and frequency/PDE main conclusions remain obligations. GLOBAL original-source mass divergence and actual smooth physical approximation in the SAME native H^s topology are now proved independently of the local inverse, at EVERY real mean-zero non-L2 datum for s>=-1; see PHYSICAL_MASS_DIVERGENCE.md. These close the mass/approximation component only, not the remaining full frequency/PDE obligations.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -32422,5 +32972,7 @@
   "shared_fixed_birkhoff_import_record": "SHARED_FIXED_BIRKHOFF_IMPORT.json",
   "native_rough_finite_support_record": "NATIVE_ROUGH_FINITE_SUPPORT_PREIMAGES.md",
   "native_rough_L2_endpoint_record": "NATIVE_ROUGH_L2_ENDPOINT.md",
-  "physical_mass_divergence_record": "PHYSICAL_MASS_DIVERGENCE.md"
+  "physical_mass_divergence_record": "PHYSICAL_MASS_DIVERGENCE.md",
+  "actual_miura_sobolev_record": "ACTUAL_MIURA_SOBOLEV_REGULARITY.md",
+  "canonical_miura_sobolev_reuse_record": "CANONICAL_MIURA_SOBOLEV_REUSE.json"
 }
