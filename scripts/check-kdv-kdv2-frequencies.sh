@@ -2636,6 +2636,37 @@ modules=(
   NLS/SequenceSpaces/SobolevSignedCompactGerm
   NLS/Articles/KdVKdV2Frequencies/ActualSignedAbelianCompact
   NLS/Articles/KdVKdV2Frequencies/NativeRoughSignedCompactForwardInverse
+  NLS/SequenceSpaces/TailDiagonalCompact
+  NLS/ZakharovShabat/SourceSignedBlockCompact
+  NLS/SequenceSpaces/CompactDiagonalEntries
+  NLS/ZakharovShabat/SourceCompactSignedEntries
+  NLS/ZakharovShabat/WeightedSignedBlockLift
+  NLS/ZakharovShabat/NormalizedWeightedClosingDerivativeEquiv
+  NLS/Poisson/WeightedRegularSourceCotangent
+  NLS/ZakharovShabat/SourceWeightedInclusion
+  NLS/ZakharovShabat/SourceWeightedCotangent
+  NLS/ZakharovShabat/SourceBirkhoffWeightedCanonical
+  NLS/ZakharovShabat/SourceBirkhoffWeightedComplexAnalytic
+  NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDerivative
+  NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDomain
+  NLS/ZakharovShabat/NormalizedWeightedBirkhoffJacobian
+  NLS/ZakharovShabat/SourceSymmetricTruncate
+  NLS/ZakharovShabat/NormalizedWeightedClosingCompact
+  NLS/FunctionalAnalysis/CompactInverseDerivative
+  NLS/ZakharovShabat/SourceBirkhoffClosingInverseCompact
+  NLS/ZakharovShabat/SourceDeletedSliceDerivative
+  NLS/ZakharovShabat/SourceBirkhoffFiniteGapAdaptedDerivative
+  NLS/ZakharovShabat/SourceBirkhoffWeightedFiniteGapJacobianCompact
+  NLS/ZakharovShabat/SourceWeightedFiniteGapDensity
+  NLS/ZakharovShabat/SourceBirkhoffWeightedJacobianCompact
+  NLS/SequenceSpaces/BoundedAnalyticSymbol
+  NLS/SequenceSpaces/AnalyticRootPhaseSymbol
+  NLS/ZakharovShabat/SourceEtaNormalizationSymbol
+  NLS/ZakharovShabat/NormalizedWeightedBirkhoffDifferential
+  NLS/ZakharovShabat/SourceWeightedEtaFactorization
+  NLS/ZakharovShabat/SourceWeightedEtaCompactDerivative
+  NLS/KdV/HillMiuraSobolevEtaCompactDerivative
+  NLS/KdV/HillHminusSobolevEtaCompactDerivative
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

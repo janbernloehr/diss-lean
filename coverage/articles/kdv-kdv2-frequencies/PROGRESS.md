@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest exact physical signs and full signed compact derivatives of the SAME map
+## Latest actual native eta Fourier principal
+
+The ACTUAL weighted eta derivative now has its exact Fourier principal with compact remainder. Its original normalized action root and angular phase give native analytic bounded reciprocal multipliers; both signs and every signed index share one local complex domain and bound. On the SAME actual Hill Dirichlet source the positive free factor is EXACTLY 2*i times the native H^t weight isometry. Through a genuine native germ of the SAME actual Miura chart, ANY native realization of the original rough eta coefficients has the additional exact free mass-zero inverse factor. See `NATIVE_ETA_FOURIER_PRINCIPAL.md`.
+
+The actual normalization/phase multiplier is retained literally. This closes the eta/Fourier comparison dependency under the stated actual-chart and root-data hypotheses. It does not yet prove the full Abelian leading-symbol lower bounds, mean-zero signed Jacobian Fredholm/invertibility, arbitrary-real-base inverse analyticity or global rough inversion. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2627 unchanged selected baseline sources. All 31 newly selected modules (eight own and 23 unchanged canonical reuses) strictly rebuilt in dependency order after freezing 2704 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2658 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 31-module increase in NLS import closure verified. All 42 prior verified provenance records remain byte-for-byte unchanged; one new canonical reuse record verifies all 23 unchanged source files. All 43 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2658-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2658-module rebuild is claimed.
+
+Fresh audit: 20859 selected and 42931 imported NLS declarations; permitted axioms only. Eight new own modules contain 19 explicit theorems.
+
+## Earlier exact physical signs and full signed compact derivatives of the SAME map
 
 The SAME actual signed Z,R now retain FULL native compact eta/symbol derivative germs for ALL t>=0 and eligible real H^(t-1) bases in ONE smaller complex rough ball. ONE actual Hill chart, FULL amplitude/midpoint/noncentral-phase symbol and constant infinite physical sign selection precede all orders and source points. The actual signed g:H^(t-1)->h^(t-1/2) includes EXACTLY to the SAME Z at EVERY complex point of each conjugation-invariant OPEN COMPLEX neighborhood. Both actual conjugate-source derivatives enter its exact principal operator; the remainder is compact. See `NATIVE_SIGNED_COMPACT_DERIVATIVES.md`.
 

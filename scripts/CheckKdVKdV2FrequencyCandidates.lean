@@ -1,3 +1,34 @@
+import NLS.KdV.HillHminusSobolevEtaCompactDerivative
+import NLS.ZakharovShabat.SourceWeightedEtaFactorization
+import NLS.ZakharovShabat.SourceWeightedEtaCompactDerivative
+import NLS.KdV.HillMiuraSobolevEtaCompactDerivative
+import NLS.ZakharovShabat.NormalizedWeightedBirkhoffDifferential
+import NLS.SequenceSpaces.AnalyticRootPhaseSymbol
+import NLS.ZakharovShabat.SourceEtaNormalizationSymbol
+import NLS.SequenceSpaces.TailDiagonalCompact
+import NLS.ZakharovShabat.SourceSignedBlockCompact
+import NLS.SequenceSpaces.CompactDiagonalEntries
+import NLS.ZakharovShabat.SourceCompactSignedEntries
+import NLS.ZakharovShabat.WeightedSignedBlockLift
+import NLS.ZakharovShabat.NormalizedWeightedClosingDerivativeEquiv
+import NLS.Poisson.WeightedRegularSourceCotangent
+import NLS.ZakharovShabat.SourceWeightedInclusion
+import NLS.ZakharovShabat.SourceWeightedCotangent
+import NLS.ZakharovShabat.SourceBirkhoffWeightedCanonical
+import NLS.ZakharovShabat.SourceBirkhoffWeightedComplexAnalytic
+import NLS.ZakharovShabat.SourceBirkhoffWeightedComplexDerivative
+import NLS.ZakharovShabat.SourceBirkhoffWeightedComplexDomain
+import NLS.ZakharovShabat.NormalizedWeightedBirkhoffJacobian
+import NLS.ZakharovShabat.SourceSymmetricTruncate
+import NLS.ZakharovShabat.NormalizedWeightedClosingCompact
+import NLS.FunctionalAnalysis.CompactInverseDerivative
+import NLS.ZakharovShabat.SourceBirkhoffClosingInverseCompact
+import NLS.ZakharovShabat.SourceDeletedSliceDerivative
+import NLS.ZakharovShabat.SourceBirkhoffFiniteGapAdaptedDerivative
+import NLS.ZakharovShabat.SourceBirkhoffWeightedFiniteGapJacobianCompact
+import NLS.ZakharovShabat.SourceWeightedFiniteGapDensity
+import NLS.ZakharovShabat.SourceBirkhoffWeightedJacobianCompact
+import NLS.SequenceSpaces.BoundedAnalyticSymbol
 import NLS.SequenceSpaces.SignChange
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedCompactForwardInverse
 import NLS.SequenceSpaces.SobolevSignedCompactGerm
@@ -4446,7 +4477,38 @@ private def kdvFrequencyAuditChunk20 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.ActualPositiveAbelianCompact,
   `NLS.SequenceSpaces.SobolevSignedCompactGerm,
   `NLS.Articles.KdVKdV2Frequencies.ActualSignedAbelianCompact,
-  `NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedCompactForwardInverse
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedCompactForwardInverse,
+  `NLS.SequenceSpaces.TailDiagonalCompact,
+  `NLS.ZakharovShabat.SourceSignedBlockCompact,
+  `NLS.SequenceSpaces.CompactDiagonalEntries,
+  `NLS.ZakharovShabat.SourceCompactSignedEntries,
+  `NLS.ZakharovShabat.WeightedSignedBlockLift,
+  `NLS.ZakharovShabat.NormalizedWeightedClosingDerivativeEquiv,
+  `NLS.Poisson.WeightedRegularSourceCotangent,
+  `NLS.ZakharovShabat.SourceWeightedInclusion,
+  `NLS.ZakharovShabat.SourceWeightedCotangent,
+  `NLS.ZakharovShabat.SourceBirkhoffWeightedCanonical,
+  `NLS.ZakharovShabat.SourceBirkhoffWeightedComplexAnalytic,
+  `NLS.ZakharovShabat.SourceBirkhoffWeightedComplexDerivative,
+  `NLS.ZakharovShabat.SourceBirkhoffWeightedComplexDomain,
+  `NLS.ZakharovShabat.NormalizedWeightedBirkhoffJacobian,
+  `NLS.ZakharovShabat.SourceSymmetricTruncate,
+  `NLS.ZakharovShabat.NormalizedWeightedClosingCompact,
+  `NLS.FunctionalAnalysis.CompactInverseDerivative,
+  `NLS.ZakharovShabat.SourceBirkhoffClosingInverseCompact,
+  `NLS.ZakharovShabat.SourceDeletedSliceDerivative,
+  `NLS.ZakharovShabat.SourceBirkhoffFiniteGapAdaptedDerivative,
+  `NLS.ZakharovShabat.SourceBirkhoffWeightedFiniteGapJacobianCompact,
+  `NLS.ZakharovShabat.SourceWeightedFiniteGapDensity,
+  `NLS.ZakharovShabat.SourceBirkhoffWeightedJacobianCompact,
+  `NLS.SequenceSpaces.BoundedAnalyticSymbol,
+  `NLS.SequenceSpaces.AnalyticRootPhaseSymbol,
+  `NLS.ZakharovShabat.SourceEtaNormalizationSymbol,
+  `NLS.ZakharovShabat.NormalizedWeightedBirkhoffDifferential,
+  `NLS.ZakharovShabat.SourceWeightedEtaFactorization,
+  `NLS.ZakharovShabat.SourceWeightedEtaCompactDerivative,
+  `NLS.KdV.HillMiuraSobolevEtaCompactDerivative,
+  `NLS.KdV.HillHminusSobolevEtaCompactDerivative
 ]
 
 open Lean in

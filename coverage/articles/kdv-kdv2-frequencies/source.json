@@ -272,6 +272,11 @@
           "source_clause": "The SAME actual Z,R retain all prior inverse/physical identities and ALL native full signed compact derivative germs with exact physical coordinate signs, phases and half-order target transport on conjugation-invariant OPEN COMPLEX domains",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_signed_compact_forward_inverse",
           "qualification": "The SAME actual signed forward/inverse pair Z,R retains EVERY earlier weak complex right-inverse, physical real form, all real Sobolev membership endpoints, all stronger forward germs, original physical L2 representatives, EVERY fixed GLOBAL original L2 Birkhoff coordinate, exact squared mass and all-order native analytic inverse germs at ZERO. The SAME Z NOW has full signed ACTUAL compact eta/symbol derivative germs for ALL native orders and eligible REAL bases in ONE smaller complex rough ball, with conjugation-invariant open complex domains and exact physical sign/phase/half-order normalization. The actual eta/Fourier principal and leading multiplier estimates still need proof before full mean-zero Jacobian Fredholm/invertibility or arbitrary-base/global inverse results."
+        },
+        {
+          "source_clause": "The actual weighted own-index eta derivative has its exact normalized Fourier principal and compact remainder through the SAME native Miura lift at eligible real bases in every native Sobolev order",
+          "lean_declaration": "NLS.KdV.HillHminusPsiChart.isCompactOperator_native_eta_derivative_sub_principal",
+          "qualification": "ANY native realization F of the SAME actual rough Hill eta coefficients has derivative equal to the literal normalization/phase multiplier times 2*i times the H^t weight isometry times the ACTUAL free mass-zero Miura inverse, plus compact, at every eligible base whose actual lift is physically real. The supplied original chart, root-data witness, genuine analytic native Miura germ and its exact rough inclusion are retained. Equality of native eta germs is proved from their exact coefficients on a complex neighborhood; no new eta map or right inverse is substituted. This comparison does not yet establish the full signed mean-zero Birkhoff Jacobian invertibility."
         }
       ]
     },
@@ -34724,12 +34729,384 @@
       "scope": "The SAME actual signed forward/inverse pair Z,R retains EVERY earlier weak complex right-inverse, physical real form, all real Sobolev membership endpoints, all stronger forward germs, original physical L2 representatives, EVERY fixed GLOBAL original L2 Birkhoff coordinate, exact squared mass and all-order native analytic inverse germs at ZERO. The SAME Z NOW has full signed ACTUAL compact eta/symbol derivative germs for ALL native orders and eligible REAL bases in ONE smaller complex rough ball, with conjugation-invariant open complex domains and exact physical sign/phase/half-order normalization. The actual eta/Fourier principal and leading multiplier estimates still need proof before full mean-zero Jacobian Fredholm/invertibility or arbitrary-base/global inverse results.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "b83178db09f30c56841fa71d3d6d195c8c79695d9cca278ad3d1c7485c310b65"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TailDiagonalCompact.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "13e43ec99c054283bfe97e38928190d4daf2b588b122f6ef1e38264e46d0b5db"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSignedBlockCompact.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e3acfdeb4f8f5177c6de0b3161e655d802350620b8c0793d0fcd0440bb0fc785"
+    },
+    {
+      "path": "NLS/SequenceSpaces/CompactDiagonalEntries.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "48e765a4dd3c01d32e4dbc6d8ef737855ebfe4ccbd009fc7487e561f6dda3248"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCompactSignedEntries.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1df7f07d1567098e3e03a9d4ff0d5373a3fd0ee1368d3e7a657a4d9500cb6859"
+    },
+    {
+      "path": "NLS/ZakharovShabat/WeightedSignedBlockLift.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5e88e688774ab931af13156f159c0f089ab723591af7373a5f6db422cbd3d91"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NormalizedWeightedClosingDerivativeEquiv.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "07a6b2121eff85370d736d8ee2afc9baf049be8557f493ec91e19e08efd491a3"
+    },
+    {
+      "path": "NLS/Poisson/WeightedRegularSourceCotangent.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5f4f5882c8602c9b5fa79c1f9f1e66866a0680ef9e4439faac4aab6994fde14"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedInclusion.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ee1359a6798a3393e61fe90becaa59d53d1c6a6e0e5649fa7152a12c4591fff3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedCotangent.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1ca48d72708ebcf31296377a65fec4ecdb879e36a46690a78b504c33324664f6"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedCanonical.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6c1c5399272d6af75fd78f1ac969df5bd45556127a28c446f1e292203079c595"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexAnalytic.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0044c389492459edc034da7683accefa4eb011620e2dc93356e2af0c2f307584"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDerivative.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a74df62bee9e08088c9a79ff30d15e6804691ef7b761ba78e80270f8bf5844db"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDomain.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "42751c02a4fe5c39a65f14f8a6bb0278b2a96738acca7df6003809df2d2d9ddf"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NormalizedWeightedBirkhoffJacobian.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "af20a9768216cc529280f433878ed655de95aac2bfe96e2a74cc5fd7450eef02"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSymmetricTruncate.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6346f22a6d624d6017ed176bf80c720e710054fa5c8f04f531e384b576f4c8f3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NormalizedWeightedClosingCompact.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "78b80d0d489078a0935fab8445fe916a296657bace0614f04f40de00eec57cb8"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactInverseDerivative.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f0a53a8d917129f9c5eecba8103cad572a04c2357e6a3938bbdc6cc63d059057"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffClosingInverseCompact.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ef5cabc33f33938f492a1ec8108d7e7cc1eaaa9998a2605802831e0ab4de15ef"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceDeletedSliceDerivative.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "732f8869d7f6aaba36a9b0f1e9ebee0255f7512505fc32c88291a1c655edef9d"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffFiniteGapAdaptedDerivative.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "299ff7a18c42d4a6e83ecb3c11ec1496d910364bd94440d360000bc51f778229"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedFiniteGapJacobianCompact.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d1934f3a1e6b8555ff441d50bf3042f5ebf3f175fbe3d282f7473b38866280ed"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedFiniteGapDensity.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "48b9a1ee4a1f3328808a4acf9afa49acd7d5cd2ce208f518a073bfa5c1bc1188"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedJacobianCompact.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "UNCHANGED canonical weighted Jacobian/Fourier compactness prerequisite, strictly rebuilt at default limits and transitively axiom audited. All 23 exact newly reachable prerequisites are byte-for-byte identical to clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; hashes and provenance are in CANONICAL_WEIGHTED_JACOBIAN_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e3eedc3060ed2b850580334b6fa86ed0856dd730983d9e5f4592224dd3c84d46"
+    },
+    {
+      "path": "NLS/SequenceSpaces/BoundedAnalyticSymbol.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Uniformly bounded scalar analytic coefficients realize the SAME actual native ell-infinity analytic symbol, with exact coefficients and norm bounds. Coordinatewise reciprocal symbols give an actual bounded multiplier equivalence. The derivative of a native analytic symbol times an ell2 packet differs compactly from its full frozen-symbol principal whenever the actual packet derivative does.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e14df8921a9c622fe3032fe3bca4ceba4ac374e4844c5c95fa14da841d6b944"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticRootPhaseSymbol.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The literal reciprocal root times exp(-sign*i*beta) and root times the opposite phase are bounded analytic native ell-infinity reciprocal symbols on ONE complex domain. ONE bound precedes both signs and every index. Actual root nonvanishing, root/reciprocal-root bounds and phase bounds are explicit hypotheses. No phase-tail or amplitude-only replacement is made.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "748c2580b019c7a4adc09738f4d5bc7299fb23f2a3a7afa8f227e404a72d189a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceEtaNormalizationSymbol.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Near EVERY actual real source, the original normalized action root and original angular beta correction supply the actual bounded analytic normalization and its exact reciprocal. ONE open complex domain contained in the actual source domain and ONE bound precede both signs and all signed indices. Upper root, lower root and angular-series bounds are proved from the actual source data.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bc8d8e3794f95f70524c372b2b3a1da2881317b7fa8fb58527cda2c95fec6f2b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NormalizedWeightedBirkhoffDifferential.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The derivative of the SAME normalized weighted Birkhoff map equals its actual previously verified normalized weighted Jacobian. At EVERY normalized real source and EVERY spectral weight, its difference from the exact original Fourier operator is compact. The actual weight-coordinate equivalence and original weighted map are retained exactly.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9be8d3163f07c2a19c15190d78bd0aebe8807c5ec413b6b39ecb97db69bafdc4"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedEtaFactorization.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY normalized real source and EVERY spectral weight, both actual weighted eta signs factor EXACTLY through the SAME normalized weighted Birkhoff map and literal reciprocal-root/phase multiplier. ONE open complex domain and ONE bound precede both signs and every index. The multiplier and reciprocal are native analytic and their coefficientwise product is exactly one.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c22fd5e2ec86b9e571506f9d1b64a0b6f047171bfb0bc6aa920763d4cdeb74bb"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedEtaCompactDerivative.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY normalized real source and EVERY spectral weight, the ACTUAL weighted eta derivative differs compactly from its full normalization/phase multiplier composed with the exact signed rectangular Fourier coordinate. That multiplier is an actual bounded equivalence with its actual reciprocal. The positive free rectangular coordinate is EXACTLY minus twice the second source component.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0670b34924cbd7729915efd107b0a03b5e71215c9ba9beaf4bfde4f6eb11d7b8"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraSobolevEtaCompactDerivative.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For the SAME actual original root family, at EVERY physically real native Sobolev Miura base and EVERY real t>=0, the actual positive weighted eta derivative is its literal inverse-root/phase multiplier times 2*i times the native H^t weight isometry, plus compact. The actual ordinary Dirichlet source and its phase, spectral weight at 2n and exact coefficient at every signed n are retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "59e4a089454bac9c71e32b0dcda4d30757c7ad8c11f4f11affd13b6ca4ef392c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusSobolevEtaCompactDerivative.lean",
+      "source_labels": [
+        "Actual weighted eta Fourier principal with compact derivative remainder, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ANY native realization F of the SAME actual rough Hill eta coefficients has derivative equal to the literal normalization/phase multiplier times 2*i times the H^t weight isometry times the ACTUAL free mass-zero Miura inverse, plus compact, at every eligible base whose actual lift is physically real. The supplied original chart, root-data witness, genuine analytic native Miura germ and its exact rough inclusion are retained. Equality of native eta germs is proved from their exact coefficients on a complex neighborhood; no new eta map or right inverse is substituted. This comparison does not yet establish the full signed mean-zero Birkhoff Jacobian invertibility.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e18b3583c64579bd025470e1f06a464e230ebb830d2abf4f355ca050e79c133b"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The SAME actual Z,R NOW retain FULL SIGNED native compact eta/symbol derivative germs on ONE smaller complex rough ball before ALL native orders and eligible real bases. Physical off-sheet squares fix ONE constant infinite coordinate-sign selection on the WHOLE common COMPLEX rough ball. Double actual source/target conjugation transports the compact remainder EXACTLY, and explicit conjugation-invariant OPEN COMPLEX domains control both actual eta derivatives. The SAME supplied Z is recovered by literal target inclusion at EVERY complex point. All previous zero-base inverse germs, weak inverse, real membership and physical/global-coordinate/mass identities remain. NEXT prove the ACTUAL weighted eta/Fourier principal comparison and full leading multiplier lower bounds/tail phases, then restrict the exact principal to native mean-zero charts, prove full actual Jacobian Fredholm/invertibility and inverse analyticity at EVERY eligible real base, extend arbitrary-base/GLOBAL rough inversion, and establish the remaining Hamiltonian/frequency/PDE conclusions. Physical sign and full signed compact transport are NOW proved; compact eta/symbol principal formulas alone do not prove the remaining Fredholm/global assertions.",
+    "The ACTUAL weighted eta/Fourier derivative comparison is NOW proved, with its literal bounded invertible inverse-root/phase multiplier. At every eligible physically real native Miura base and all t>=0, the exact principal is multiplication(mu)*2*i*weightIsometry_t. ANY native realization of the SAME original rough Hill eta coefficients, through a supplied genuine analytic Miura germ and retained original root-data witness, has the exact additional free mass-zero inverse factor and compact remainder. All previous full signed compact germs for the SAME Z,R remain. NEXT retain those witnesses in ONE common full signed family, prove actual full Abelian leading-symbol lower bounds (amplitude, normalized Dirac midpoint and noncentral phase), compose the new eta principal into the full signed derivative, restrict to the exact native mean-zero charts, and prove full Jacobian Fredholm/invertibility and inverse analyticity at EVERY eligible real base. Arbitrary-base/GLOBAL rough extension/inversion and the remaining Hamiltonian/frequency/PDE conclusions remain. Eta normalization invertibility does not by itself establish invertibility of the full signed Birkhoff principal.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -34755,15 +35132,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 20632,
-    "total_declarations_audited": 42702,
+    "candidate_declarations_audited": 20859,
+    "total_declarations_audited": 42931,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2627,
+    "selected_modules": 2658,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -34846,7 +35223,8 @@
     "native_signed_forward_validation_sequence": "Prior strict evidence retained for all 2595 unchanged selected baseline sources. All eight new own modules strictly rebuilt in dependency order after freezing the complete proof/checker/provenance selection, followed by a fresh combined transitive axiom audit of all 2603 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2647 frozen source/checker/provenance/Mathlib-source hashes, all 41 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these eight own modules; no new shared-source import or adaptation is needed. The SAME ordered selection uses a NameSet for candidate membership, with a runtime bidirectional equivalence guard; final 2603-name adversarial probes reject extra and missing entries. Removing that exact guard/index optimization restores the baseline audit loop byte-for-byte, preserving transitive collectAxioms, allowed axioms and full imported NLS scope. Default heartbeat/recursion limits remain in force. No full 2603-module rebuild is claimed.",
     "native_sobolev_inverse_validation_sequence": "Prior strict evidence retained for all 2603 unchanged selected baseline sources. All seven new own modules strictly rebuilt in dependency order after freezing 2654 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2610 selected modules. Exact checker/audit/coverage/evidence selection, selected dependency order, reachability and the exact seven-module increase in NLS import closure verified. All 41 verified provenance records and all baseline sources remain unchanged; no new shared import or adaptation is needed. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, allowed axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. The 2610-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2610-module rebuild is claimed.",
     "native_compact_factors_validation_sequence": "Prior strict evidence retained for all 2610 unchanged selected baseline sources. All eight new own modules strictly rebuilt in dependency order after freezing 2662 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2618 selected modules. Exact checker/audit/coverage/evidence selection, selected dependency order, reachability and the exact eight-module increase in NLS import closure verified. All 41 verified provenance records and all baseline sources remain unchanged; no new shared import or adaptation is needed. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, allowed axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. The 2618-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2618-module rebuild is claimed.",
-    "native_signed_compact_validation_sequence": "Prior strict evidence retained for all 2618 unchanged selected baseline sources. All nine newly selected modules (eight own and one unchanged shared reuse) strictly rebuilt in dependency order after freezing 2672 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2627 selected modules. Exact checker/audit/coverage/evidence selection, selected dependency order, reachability and the exact nine-module increase in NLS import closure verified. All 41 prior verified provenance records and all baseline sources remain unchanged. One NEW canonical reuse record verifies the already present shared SignChange source byte-for-byte against clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; no source adaptation is needed. All 42 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, allowed axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. The 2627-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2627-module rebuild is claimed."
+    "native_signed_compact_validation_sequence": "Prior strict evidence retained for all 2618 unchanged selected baseline sources. All nine newly selected modules (eight own and one unchanged shared reuse) strictly rebuilt in dependency order after freezing 2672 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2627 selected modules. Exact checker/audit/coverage/evidence selection, selected dependency order, reachability and the exact nine-module increase in NLS import closure verified. All 41 prior verified provenance records and all baseline sources remain unchanged. One NEW canonical reuse record verifies the already present shared SignChange source byte-for-byte against clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; no source adaptation is needed. All 42 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, allowed axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. The 2627-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2627-module rebuild is claimed.",
+    "native_eta_fourier_validation_sequence": "Prior strict evidence retained for all 2627 unchanged selected baseline sources. All 31 newly selected modules (eight own and 23 unchanged canonical reuses) strictly rebuilt in dependency order after freezing 2704 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2658 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 31-module increase in NLS import closure verified. All 42 prior verified provenance records remain byte-for-byte unchanged; one new canonical reuse record verifies all 23 unchanged source files. All 43 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2658-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2658-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -35632,6 +36010,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "5c156006a4726077e02d13df9c7615cfc18e0cae",
+      "description": "Actual native eta Fourier principal comparison through the SAME weighted Birkhoff map and native Miura lift, retaining the literal invertible root/phase multiplier.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The SAME actual Z,R NOW retain FULL SIGNED native compact eta/symbol derivative germs on ONE smaller complex rough ball before ALL native orders and eligible real bases. Physical off-sheet squares fix ONE constant infinite coordinate-sign selection on the WHOLE common COMPLEX rough ball. Double actual source/target conjugation transports the compact remainder EXACTLY, and explicit conjugation-invariant OPEN COMPLEX domains control both actual eta derivatives. The SAME supplied Z is recovered by literal target inclusion at EVERY complex point. All previous zero-base inverse germs, weak inverse, real membership and physical/global-coordinate/mass identities remain. NEXT prove the ACTUAL weighted eta/Fourier principal comparison and full leading multiplier lower bounds/tail phases, then restrict the exact principal to native mean-zero charts, prove full actual Jacobian Fredholm/invertibility and inverse analyticity at EVERY eligible real base, extend arbitrary-base/GLOBAL rough inversion, and establish the remaining Hamiltonian/frequency/PDE conclusions. Physical sign and full signed compact transport are NOW proved; compact eta/symbol principal formulas alone do not prove the remaining Fredholm/global assertions.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -35680,5 +36070,6 @@
   "native_signed_forward_record": "NATIVE_STRONG_SIGNED_FORWARD.md",
   "native_sobolev_inverse_record": "NATIVE_STRONG_INVERSE_GERMS.md",
   "native_compact_factors_record": "NATIVE_COMPACT_DERIVATIVE_FACTORS.md",
-  "native_signed_compact_record": "NATIVE_SIGNED_COMPACT_DERIVATIVES.md"
+  "native_signed_compact_record": "NATIVE_SIGNED_COMPACT_DERIVATIVES.md",
+  "native_eta_fourier_record": "NATIVE_ETA_FOURIER_PRINCIPAL.md"
 }

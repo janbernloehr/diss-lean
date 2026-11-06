@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest exact physical signs and full signed compact derivatives of the SAME map
+## Latest actual native eta Fourier principal
+
+The ACTUAL weighted eta derivative now has its exact Fourier principal with compact remainder. Its original normalized action root and angular phase give native analytic bounded reciprocal multipliers; both signs and every signed index share one local complex domain and bound. On the SAME actual Hill Dirichlet source the positive free factor is EXACTLY 2*i times the native H^t weight isometry. Through a genuine native germ of the SAME actual Miura chart, ANY native realization of the original rough eta coefficients has the additional exact free mass-zero inverse factor. See `NATIVE_ETA_FOURIER_PRINCIPAL.md`.
+
+The actual normalization/phase multiplier is retained literally. This closes the eta/Fourier comparison dependency under the stated actual-chart and root-data hypotheses. It does not yet prove the full Abelian leading-symbol lower bounds, mean-zero signed Jacobian Fredholm/invertibility, arbitrary-real-base inverse analyticity or global rough inversion. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2627 unchanged selected baseline sources. All 31 newly selected modules (eight own and 23 unchanged canonical reuses) strictly rebuilt in dependency order after freezing 2704 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2658 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 31-module increase in NLS import closure verified. All 42 prior verified provenance records remain byte-for-byte unchanged; one new canonical reuse record verifies all 23 unchanged source files. All 43 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2658-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2658-module rebuild is claimed.
+
+Fresh audit: 20859 selected and 42931 imported NLS declarations; permitted axioms only. Eight new own modules contain 19 explicit theorems.
+
+## Earlier exact physical signs and full signed compact derivatives of the SAME map
 
 The SAME actual signed Z,R now retain FULL native compact eta/symbol derivative germs for ALL t>=0 and eligible real H^(t-1) bases in ONE smaller complex rough ball. ONE actual Hill chart, FULL amplitude/midpoint/noncentral-phase symbol and constant infinite physical sign selection precede all orders and source points. The actual signed g:H^(t-1)->h^(t-1/2) includes EXACTLY to the SAME Z at EVERY complex point of each conjugation-invariant OPEN COMPLEX neighborhood. Both actual conjugate-source derivatives enter its exact principal operator; the remainder is compact. See `NATIVE_SIGNED_COMPACT_DERIVATIVES.md`.
 
@@ -720,7 +730,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2627 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2658 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1789,7 +1799,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2627 selected modules (including generated and private declarations)
+the 2658 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4588,4 +4598,41 @@ PASS NLS/SequenceSpaces/SobolevSignedCompactGerm
 PASS NLS/Articles/KdVKdV2Frequencies/ActualSignedAbelianCompact
 PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughSignedCompactForwardInverse
 Axiom audit passed: 20632 candidate declarations; 42702 declarations total.
+```
+
+Latest actual eta Fourier strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/TailDiagonalCompact
+PASS NLS/ZakharovShabat/SourceSignedBlockCompact
+PASS NLS/SequenceSpaces/CompactDiagonalEntries
+PASS NLS/ZakharovShabat/SourceCompactSignedEntries
+PASS NLS/ZakharovShabat/WeightedSignedBlockLift
+PASS NLS/ZakharovShabat/NormalizedWeightedClosingDerivativeEquiv
+PASS NLS/Poisson/WeightedRegularSourceCotangent
+PASS NLS/ZakharovShabat/SourceWeightedInclusion
+PASS NLS/ZakharovShabat/SourceWeightedCotangent
+PASS NLS/ZakharovShabat/SourceBirkhoffWeightedCanonical
+PASS NLS/ZakharovShabat/SourceBirkhoffWeightedComplexAnalytic
+PASS NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDerivative
+PASS NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDomain
+PASS NLS/ZakharovShabat/NormalizedWeightedBirkhoffJacobian
+PASS NLS/ZakharovShabat/SourceSymmetricTruncate
+PASS NLS/ZakharovShabat/NormalizedWeightedClosingCompact
+PASS NLS/FunctionalAnalysis/CompactInverseDerivative
+PASS NLS/ZakharovShabat/SourceBirkhoffClosingInverseCompact
+PASS NLS/ZakharovShabat/SourceDeletedSliceDerivative
+PASS NLS/ZakharovShabat/SourceBirkhoffFiniteGapAdaptedDerivative
+PASS NLS/ZakharovShabat/SourceBirkhoffWeightedFiniteGapJacobianCompact
+PASS NLS/ZakharovShabat/SourceWeightedFiniteGapDensity
+PASS NLS/ZakharovShabat/SourceBirkhoffWeightedJacobianCompact
+PASS NLS/SequenceSpaces/BoundedAnalyticSymbol
+PASS NLS/SequenceSpaces/AnalyticRootPhaseSymbol
+PASS NLS/ZakharovShabat/SourceEtaNormalizationSymbol
+PASS NLS/ZakharovShabat/NormalizedWeightedBirkhoffDifferential
+PASS NLS/ZakharovShabat/SourceWeightedEtaFactorization
+PASS NLS/ZakharovShabat/SourceWeightedEtaCompactDerivative
+PASS NLS/KdV/HillMiuraSobolevEtaCompactDerivative
+PASS NLS/KdV/HillHminusSobolevEtaCompactDerivative
+Axiom audit passed: 20859 candidate declarations; 42931 declarations total.
 ```

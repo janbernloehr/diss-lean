@@ -1,0 +1,149 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "purpose": "Reuse the verified actual normalized weighted Birkhoff Jacobian Fourier-plus-compact result, its actual native complex map derivative and finite-gap density prerequisites for the eta principal derivative comparison, retaining original source/target normalization.",
+  "roots": [
+    "NLS/ZakharovShabat/SourceBirkhoffWeightedJacobianCompact.lean"
+  ],
+  "files": [
+    {
+      "path": "NLS/SequenceSpaces/TailDiagonalCompact.lean",
+      "source_sha256": "13e43ec99c054283bfe97e38928190d4daf2b588b122f6ef1e38264e46d0b5db",
+      "local_sha256": "13e43ec99c054283bfe97e38928190d4daf2b588b122f6ef1e38264e46d0b5db",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSignedBlockCompact.lean",
+      "source_sha256": "e3acfdeb4f8f5177c6de0b3161e655d802350620b8c0793d0fcd0440bb0fc785",
+      "local_sha256": "e3acfdeb4f8f5177c6de0b3161e655d802350620b8c0793d0fcd0440bb0fc785",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/CompactDiagonalEntries.lean",
+      "source_sha256": "48e765a4dd3c01d32e4dbc6d8ef737855ebfe4ccbd009fc7487e561f6dda3248",
+      "local_sha256": "48e765a4dd3c01d32e4dbc6d8ef737855ebfe4ccbd009fc7487e561f6dda3248",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCompactSignedEntries.lean",
+      "source_sha256": "1df7f07d1567098e3e03a9d4ff0d5373a3fd0ee1368d3e7a657a4d9500cb6859",
+      "local_sha256": "1df7f07d1567098e3e03a9d4ff0d5373a3fd0ee1368d3e7a657a4d9500cb6859",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/WeightedSignedBlockLift.lean",
+      "source_sha256": "a5e88e688774ab931af13156f159c0f089ab723591af7373a5f6db422cbd3d91",
+      "local_sha256": "a5e88e688774ab931af13156f159c0f089ab723591af7373a5f6db422cbd3d91",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NormalizedWeightedClosingDerivativeEquiv.lean",
+      "source_sha256": "07a6b2121eff85370d736d8ee2afc9baf049be8557f493ec91e19e08efd491a3",
+      "local_sha256": "07a6b2121eff85370d736d8ee2afc9baf049be8557f493ec91e19e08efd491a3",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/Poisson/WeightedRegularSourceCotangent.lean",
+      "source_sha256": "a5f4f5882c8602c9b5fa79c1f9f1e66866a0680ef9e4439faac4aab6994fde14",
+      "local_sha256": "a5f4f5882c8602c9b5fa79c1f9f1e66866a0680ef9e4439faac4aab6994fde14",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedInclusion.lean",
+      "source_sha256": "ee1359a6798a3393e61fe90becaa59d53d1c6a6e0e5649fa7152a12c4591fff3",
+      "local_sha256": "ee1359a6798a3393e61fe90becaa59d53d1c6a6e0e5649fa7152a12c4591fff3",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedCotangent.lean",
+      "source_sha256": "1ca48d72708ebcf31296377a65fec4ecdb879e36a46690a78b504c33324664f6",
+      "local_sha256": "1ca48d72708ebcf31296377a65fec4ecdb879e36a46690a78b504c33324664f6",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedCanonical.lean",
+      "source_sha256": "6c1c5399272d6af75fd78f1ac969df5bd45556127a28c446f1e292203079c595",
+      "local_sha256": "6c1c5399272d6af75fd78f1ac969df5bd45556127a28c446f1e292203079c595",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexAnalytic.lean",
+      "source_sha256": "0044c389492459edc034da7683accefa4eb011620e2dc93356e2af0c2f307584",
+      "local_sha256": "0044c389492459edc034da7683accefa4eb011620e2dc93356e2af0c2f307584",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDerivative.lean",
+      "source_sha256": "a74df62bee9e08088c9a79ff30d15e6804691ef7b761ba78e80270f8bf5844db",
+      "local_sha256": "a74df62bee9e08088c9a79ff30d15e6804691ef7b761ba78e80270f8bf5844db",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDomain.lean",
+      "source_sha256": "42751c02a4fe5c39a65f14f8a6bb0278b2a96738acca7df6003809df2d2d9ddf",
+      "local_sha256": "42751c02a4fe5c39a65f14f8a6bb0278b2a96738acca7df6003809df2d2d9ddf",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NormalizedWeightedBirkhoffJacobian.lean",
+      "source_sha256": "af20a9768216cc529280f433878ed655de95aac2bfe96e2a74cc5fd7450eef02",
+      "local_sha256": "af20a9768216cc529280f433878ed655de95aac2bfe96e2a74cc5fd7450eef02",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSymmetricTruncate.lean",
+      "source_sha256": "6346f22a6d624d6017ed176bf80c720e710054fa5c8f04f531e384b576f4c8f3",
+      "local_sha256": "6346f22a6d624d6017ed176bf80c720e710054fa5c8f04f531e384b576f4c8f3",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NormalizedWeightedClosingCompact.lean",
+      "source_sha256": "78b80d0d489078a0935fab8445fe916a296657bace0614f04f40de00eec57cb8",
+      "local_sha256": "78b80d0d489078a0935fab8445fe916a296657bace0614f04f40de00eec57cb8",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactInverseDerivative.lean",
+      "source_sha256": "f0a53a8d917129f9c5eecba8103cad572a04c2357e6a3938bbdc6cc63d059057",
+      "local_sha256": "f0a53a8d917129f9c5eecba8103cad572a04c2357e6a3938bbdc6cc63d059057",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffClosingInverseCompact.lean",
+      "source_sha256": "ef5cabc33f33938f492a1ec8108d7e7cc1eaaa9998a2605802831e0ab4de15ef",
+      "local_sha256": "ef5cabc33f33938f492a1ec8108d7e7cc1eaaa9998a2605802831e0ab4de15ef",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceDeletedSliceDerivative.lean",
+      "source_sha256": "732f8869d7f6aaba36a9b0f1e9ebee0255f7512505fc32c88291a1c655edef9d",
+      "local_sha256": "732f8869d7f6aaba36a9b0f1e9ebee0255f7512505fc32c88291a1c655edef9d",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffFiniteGapAdaptedDerivative.lean",
+      "source_sha256": "299ff7a18c42d4a6e83ecb3c11ec1496d910364bd94440d360000bc51f778229",
+      "local_sha256": "299ff7a18c42d4a6e83ecb3c11ec1496d910364bd94440d360000bc51f778229",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedFiniteGapJacobianCompact.lean",
+      "source_sha256": "d1934f3a1e6b8555ff441d50bf3042f5ebf3f175fbe3d282f7473b38866280ed",
+      "local_sha256": "d1934f3a1e6b8555ff441d50bf3042f5ebf3f175fbe3d282f7473b38866280ed",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedFiniteGapDensity.lean",
+      "source_sha256": "48b9a1ee4a1f3328808a4acf9afa49acd7d5cd2ce208f518a073bfa5c1bc1188",
+      "local_sha256": "48b9a1ee4a1f3328808a4acf9afa49acd7d5cd2ce208f518a073bfa5c1bc1188",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceBirkhoffWeightedJacobianCompact.lean",
+      "source_sha256": "e3eedc3060ed2b850580334b6fa86ed0856dd730983d9e5f4592224dd3c84d46",
+      "local_sha256": "e3eedc3060ed2b850580334b6fa86ed0856dd730983d9e5f4592224dd3c84d46",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "validation": "All exact newly reachable prerequisites are selected and strictly rebuilt at default Lean limits, followed by the combined transitive axiom audit; no canonical source bytes are adapted."
+}
