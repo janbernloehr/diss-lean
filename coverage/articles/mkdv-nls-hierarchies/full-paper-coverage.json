@@ -1,0 +1,3430 @@
+{
+  "schema_version": 1,
+  "article_id": "mkdv-nls-hierarchies",
+  "scope": "Every mathematical assertion in arXiv:1601.07580v1, including background, remarks, unnumbered displays, intermediate proof assertions and both appendices.",
+  "status": "in_progress",
+  "completion_rule": "Every mathematical passage must receive complete semantic decomposition, exact-domain correspondence and validated declarations, or a proved counterexample plus corrected replacement. A main-theorem status does not discharge other claims. Cited background is included; bibliography, history, acknowledgments and document metadata are excluded.",
+  "source": {
+    "abstract_url": "https://arxiv.org/abs/1601.07580v1",
+    "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
+    "version": "v1",
+    "pdf_pages": 20,
+    "pdf_sha256": "df935943f7c35bec35b6dd2e79e89eb7e3cc144e76fdb2d26fe3a051021f87ca",
+    "private_pdf": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/work/source/1601.07580v1.pdf",
+    "private_text": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/work/source/1601.07580v1.txt"
+  },
+  "text_line_convention": "One-based lines after UTF-8 text.split(newline); form-feed characters increment PDF page. Source private and unmodified.",
+  "source_text_sha256": "d4ec6c32437f56918a9282c31c13a1f01df099f8430d2a4ede196a29c5de7c17",
+  "scope_first_line": 8,
+  "scope_last_line": 1327,
+  "named_statement_count": 18,
+  "numbered_equation_count": 25,
+  "assertion_count": 98,
+  "passage_count": 241,
+  "semantic_inventory_complete": false,
+  "assertions": [
+    {
+      "id": "abstract-hierarchy-subsystem",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 8,
+      "page": 1,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "The entire mKdV hierarchy is obtained by restricting the corresponding NLS vector fields, with all regularity and convention clauses.",
+      "declarations": []
+    },
+    {
+      "id": "theorem-1",
+      "kind": "named_statement",
+      "label": "Theorem 1",
+      "line": 148,
+      "page": 3,
+      "status": "proved",
+      "obligation": "Both flow components and even vanishing; original complex H^m, every m>=1.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_original_domain",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_m2_smooth",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_smooth_miura_hierarchy",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6_smooth_miura",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_sharp",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_sharp_miura_hierarchy",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6_native_miura",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_native_miura_hierarchy",
+        "NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6",
+        "NLS.Articles.MKdVNLSHierarchies.spectral_hierarchy_native_identification",
+        "NLS.Articles.MKdVNLSHierarchies.equation12_spectral_native_laurent"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "theorem-2",
+      "kind": "named_statement",
+      "label": "Theorem 2",
+      "line": 164,
+      "page": 3,
+      "status": "proved_with_recorded_corrections",
+      "obligation": "All four swap/phase gradient and vector-field identities; corrected R recurrence on original Sobolev domains.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_gradients",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_gradients",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_vector_fields",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_vector_fields",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected_coefficients",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "theorem-3",
+      "kind": "named_statement",
+      "label": "Theorem 3",
+      "line": 221,
+      "page": 4,
+      "status": "proved_with_recorded_corrections",
+      "obligation": "Positive frequency identity on all real H^(m-1), including closed actions; printed parity is false.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_corrected_for_any_original_frequency_extension",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_original_bracket_agreement",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_original_frequency_extension_certificate",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_frequency_holomorphic_extension",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_m1_frequency_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_printed_parity_counterexample"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "theorem-4",
+      "kind": "named_statement",
+      "label": "Theorem 4",
+      "line": 232,
+      "page": 4,
+      "status": "proved_with_recorded_corrections",
+      "obligation": "All parts on real H1; reverse mean is replaced by mean squared; angles modulo 2*pi on own-open-action locus.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_central_action_zero",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_action_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_positive_action_zero_iff_hillGap_collapsed",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_positive_actions",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mkdv_actions_of_nls_actions",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mean_square_of_nls_actions",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_nls_actions_of_mkdv_actions_mean",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_actual_Gardner_derivative",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_complete_action_rotation",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_actual_action_generator",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_phase_sum",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_angle_sum",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_sum_representatives"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "theorem-5",
+      "kind": "named_statement",
+      "label": "Theorem 5",
+      "line": 604,
+      "page": 9,
+      "status": "proved",
+      "obligation": "Independent physical L2 Hill discriminant equals diagonal ZS discriminant at squared spectral parameter, every complex H1 source.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity",
+        "NLS.Articles.MKdVNLSHierarchies.hill_column_spec",
+        "NLS.MKdV.physicalMiuraSolution_unique",
+        "NLS.Articles.MKdVNLSHierarchies.theorem5_operator_discriminant_identity"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "lemma-2",
+      "kind": "named_statement",
+      "label": "Lemma 2",
+      "line": 621,
+      "page": 10,
+      "status": "partial",
+      "obligation": "Scalar solution intertwining and literal physical fundamental-matrix gauge identity, including endpoint conjugacy for lambda nonzero.",
+      "declarations": [
+        "NLS.MKdV.miura_equation_classicalSolution"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "lemma-3",
+      "kind": "named_statement",
+      "label": "Lemma 3",
+      "line": 682,
+      "page": 10,
+      "status": "partial",
+      "obligation": "Indexed squared endpoints, squared gaps and vanishing equivalence; GEOMETRIC eigenspace multiplicities must also be proved (analytic zero orders alone do not settle this clause).",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_spectral_set",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_real_spectrum_nonnegative",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_multiplicity_nonzero",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_multiplicity_zero",
+        "NLS.MKdV.miuraHillLabels_root_iff",
+        "NLS.MKdV.miuraHillLabels_multiplicity",
+        "NLS.MKdV.miuraHillLabels_nonnegative",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_ground_endpoints",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_indexed_endpoints",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_square_image",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_collapsed_iff"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "lemma-4",
+      "kind": "named_statement",
+      "label": "Lemma 4",
+      "line": 733,
+      "page": 11,
+      "status": "proved",
+      "obligation": "Canonical root comparison on real H1, right half-plane, off all NLS gaps.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_C1_right_halfPlane",
+        "NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_H1_right_halfPlane",
+        "NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_H1_gapComplement"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "lemma-5",
+      "kind": "named_statement",
+      "label": "Lemma 5",
+      "line": 757,
+      "page": 11,
+      "status": "proved",
+      "obligation": "Primitive comparison on real H1 with the same exact spectral domain and sheet normalization.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma5_primitive_real_C1_right_halfPlane",
+        "NLS.Articles.MKdVNLSHierarchies.lemma5_primitive_real_H1_right_halfPlane",
+        "NLS.Articles.MKdVNLSHierarchies.lemma5_primitive_real_H1_gapComplement"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "proposition-6",
+      "kind": "named_statement",
+      "label": "Proposition 6",
+      "line": 792,
+      "page": 12,
+      "status": "proved",
+      "obligation": "Factor-two scalar hierarchy and even vanishing at original native complex Sobolev regularity.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.proposition6_native_miura",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_sharp",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6_finiteGap_native",
+        "NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6",
+        "NLS.Articles.MKdVNLSHierarchies.spectral_hierarchy_native_identification"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "lemma-7",
+      "kind": "named_statement",
+      "label": "Lemma 7",
+      "line": 822,
+      "page": 12,
+      "status": "proved",
+      "obligation": "All positive modes and all integer levels; genuine ambient complex L2 analytic extension.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma7_integer_levels_real_H1",
+        "NLS.MKdV.two_mul_miuraHillActionContour",
+        "NLS.MKdV.MiuraActionContourFamily.actionContour_eq_mul_winding",
+        "NLS.Articles.MKdVNLSHierarchies.lemma7",
+        "NLS.Articles.MKdVNLSHierarchies.lemma7_analytic_extension",
+        "NLS.MKdV.sourceDiagonalLaurentAction_eq_two_miuraActionLevel"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "theorem-6",
+      "kind": "named_statement",
+      "label": "Theorem 6",
+      "line": 918,
+      "page": 13,
+      "status": "partial",
+      "obligation": "Five parts: discriminants, eigenvalue/gap labels and invariant W; spectral derivatives; source gradients; canonical roots; spatial gradient equation and periodic xi with all three symmetries.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_swap",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_swap_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_reflection_covectors"
+      ],
+      "existing_details": "source-map.json",
+      "certified_part": "P and pure T discriminant identities, spectral derivatives, and full Frechet cotangents, for every complex finite source exponent p>1. Pointwise L2 gradient identification, phase and other clauses remain separate."
+    },
+    {
+      "id": "corollary-8",
+      "kind": "named_statement",
+      "label": "Corollary 8",
+      "line": 1035,
+      "page": 15,
+      "status": "pending_full_statement",
+      "obligation": "Primitive and gradient symmetries for P, pure T and every real phase, on the precise cut complement.",
+      "declarations": [],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "corollary-9",
+      "kind": "named_statement",
+      "label": "Corollary 9",
+      "line": 1058,
+      "page": 15,
+      "status": "pending_full_statement",
+      "obligation": "Both symmetry-constrained spatial primitive-gradient recurrences. Restrict spectral domain; part ii requires J*phi on the nonlocal scalar term.",
+      "declarations": [],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "lemma-10",
+      "kind": "named_statement",
+      "label": "Lemma 10",
+      "line": 1091,
+      "page": 16,
+      "status": "partial",
+      "obligation": "All three full-source gradient identities. Partial diagonal noncentral recurrence is insufficient. Part iii needs typed nonlocal correction.",
+      "declarations": [
+        "NLS.MKdV.miuraLaurentActionGradient_fourier",
+        "NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.fderiv_action"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "proposition-11",
+      "kind": "named_statement",
+      "label": "Proposition 11",
+      "line": 1193,
+      "page": 17,
+      "status": "partial",
+      "obligation": "All three full-source identities, including pure T in i and nonlocal T-even/T-odd recurrence in iii. Part ii uses corrected R.",
+      "declarations": [],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "lemma-13",
+      "kind": "named_statement",
+      "label": "Lemma 13",
+      "line": 1291,
+      "page": 19,
+      "status": "pending_full_statement",
+      "obligation": "All three actual fundamental-matrix symmetries, every real x and lambda, original real-type L2 source, plus reflected monodromy. Unit-interval continuous profiles alone are insufficient.",
+      "declarations": [],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "lemma-14",
+      "kind": "named_statement",
+      "label": "Lemma 14",
+      "line": 1311,
+      "page": 19,
+      "status": "proved_with_explicit_nonempty_real_slice",
+      "obligation": "Analytic identity principle on a connected open complexification domain meeting the real form. Nonempty real slice is necessary.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma14",
+        "NLS.Articles.MKdVNLSHierarchies.lemma14_real_slice_hypothesis_needed"
+      ],
+      "existing_details": "source-map.json"
+    },
+    {
+      "id": "equation-1",
+      "kind": "numbered_equation",
+      "label": "(1)",
+      "line": 41,
+      "page": 1,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Gardner bracket; its domain of definition, antisymmetry, Jacobi and mean Casimir.",
+      "declarations": []
+    },
+    {
+      "id": "equation-2",
+      "kind": "numbered_equation",
+      "label": "(2)",
+      "line": 60,
+      "page": 1,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Actual two-component NLS Hamiltonian equations with cubic coefficient 2.",
+      "declarations": []
+    },
+    {
+      "id": "equation-3",
+      "kind": "numbered_equation",
+      "label": "(3)",
+      "line": 66,
+      "page": 2,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "NLS energy integral and its two actual first variations.",
+      "declarations": []
+    },
+    {
+      "id": "equation-4",
+      "kind": "numbered_equation",
+      "label": "(4)",
+      "line": 71,
+      "page": 2,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "NLS Poisson bracket and physical Poisson tensor -iJ.",
+      "declarations": []
+    },
+    {
+      "id": "equation-5",
+      "kind": "numbered_equation",
+      "label": "(5)",
+      "line": 110,
+      "page": 2,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Actual fourth NLS Hamiltonian vector field, and defocusing/focusing mKdV restrictions.",
+      "declarations": []
+    },
+    {
+      "id": "equation-6",
+      "kind": "numbered_equation",
+      "label": "(6)",
+      "line": 298,
+      "page": 5,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "K_m = S_(2m-1)#/2 on the appropriate Sobolev domain; printed m>=0 requires correction to m>=1.",
+      "declarations": []
+    },
+    {
+      "id": "equation-7",
+      "kind": "numbered_equation",
+      "label": "(7)",
+      "line": 320,
+      "page": 6,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Compactly supported smooth NLS bi-Hamiltonian representation using the displayed nonconstant K2.",
+      "declarations": []
+    },
+    {
+      "id": "equation-8",
+      "kind": "numbered_equation",
+      "label": "(8)",
+      "line": 338,
+      "page": 6,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Compactly supported Lenard recurrence at all orders and its stated periodic symmetry-subspace versions.",
+      "declarations": []
+    },
+    {
+      "id": "equation-9",
+      "kind": "numbered_equation",
+      "label": "(9)",
+      "line": 415,
+      "page": 7,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Independent Hill periodic characteristic entire product with original labeled eigenvalues and convergence.",
+      "declarations": []
+    },
+    {
+      "id": "equation-10",
+      "kind": "numbered_equation",
+      "label": "(10)",
+      "line": 441,
+      "page": 7,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Hill canonical-root sign and analytic extension on the specified joint domain.",
+      "declarations": []
+    },
+    {
+      "id": "equation-11",
+      "kind": "numbered_equation",
+      "label": "(11)",
+      "line": 455,
+      "page": 8,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Hill primitive as a path integral, with path independence, normalization and joint analyticity.",
+      "declarations": []
+    },
+    {
+      "id": "equation-12",
+      "kind": "numbered_equation",
+      "label": "(12)",
+      "line": 482,
+      "page": 8,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Finite-gap Hill primitive asymptotic expansion and every error order with the physical K_k coefficients.",
+      "declarations": []
+    },
+    {
+      "id": "equation-13",
+      "kind": "numbered_equation",
+      "label": "(13)",
+      "line": 490,
+      "page": 8,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Literal inverse-energy-weighted Hill action contour integral, contour independence and gap-vanishing criterion.",
+      "declarations": []
+    },
+    {
+      "id": "equation-14",
+      "kind": "numbered_equation",
+      "label": "(14)",
+      "line": 523,
+      "page": 8,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "ZS periodic characteristic entire product with algebraic multiplicities and convergence.",
+      "declarations": []
+    },
+    {
+      "id": "equation-15",
+      "kind": "numbered_equation",
+      "label": "(15)",
+      "line": 544,
+      "page": 9,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "NLS canonical-root sign and joint analytic extension.",
+      "declarations": []
+    },
+    {
+      "id": "equation-16",
+      "kind": "numbered_equation",
+      "label": "(16)",
+      "line": 551,
+      "page": 9,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "NLS primitive averaged-basepoint integral, analyticity and well-defined path independence.",
+      "declarations": []
+    },
+    {
+      "id": "equation-17",
+      "kind": "numbered_equation",
+      "label": "(17)",
+      "line": 563,
+      "page": 9,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Actual source gradient of the primitive equals the discriminant gradient divided by the canonical root.",
+      "declarations": []
+    },
+    {
+      "id": "equation-18",
+      "kind": "numbered_equation",
+      "label": "(18)",
+      "line": 587,
+      "page": 9,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Finite-gap convergent Laurent expansion with all physical NLS Hamiltonians as coefficients.",
+      "declarations": []
+    },
+    {
+      "id": "equation-19",
+      "kind": "numbered_equation",
+      "label": "(19)",
+      "line": 594,
+      "page": 9,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Literal NLS action contour integral, contour independence and vanishing iff collapsed gap.",
+      "declarations": []
+    },
+    {
+      "id": "equation-20",
+      "kind": "numbered_equation",
+      "label": "(20)",
+      "line": 678,
+      "page": 10,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Diagonal spectral endpoint reflection for every integer label, including the central pair.",
+      "declarations": []
+    },
+    {
+      "id": "equation-21",
+      "kind": "numbered_equation",
+      "label": "(21)",
+      "line": 729,
+      "page": 11,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Actual physical Hill zero-energy discriminant equals 2*cosh(mean).",
+      "declarations": []
+    },
+    {
+      "id": "equation-22",
+      "kind": "numbered_equation",
+      "label": "(22)",
+      "line": 809,
+      "page": 12,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Hill higher actions at every integer level, with the contour avoiding zero.",
+      "declarations": []
+    },
+    {
+      "id": "equation-23",
+      "kind": "numbered_equation",
+      "label": "(23)",
+      "line": 817,
+      "page": 12,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "NLS higher actions at every integer level, including admissibility of the central contour when powers are singular.",
+      "declarations": []
+    },
+    {
+      "id": "equation-24",
+      "kind": "numbered_equation",
+      "label": "(24)",
+      "line": 983,
+      "page": 14,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Squared-eigenfunction representation of the actual discriminant gradient on the explicitly nonzero monodromy-entry locus.",
+      "declarations": []
+    },
+    {
+      "id": "equation-25",
+      "kind": "numbered_equation",
+      "label": "(25)",
+      "line": 1129,
+      "page": 16,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Full-source higher-action gradient transformations, at all positive levels and integer modes.",
+      "declarations": []
+    },
+    {
+      "id": "intro-mkdv-energy",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 29,
+      "page": 1,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "mKdV energy variation, Gardner field and mean preservation.",
+      "declarations": []
+    },
+    {
+      "id": "intro-mkdv-hierarchy",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 46,
+      "page": 1,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Existence, recursion, regularity and pairwise Gardner commutation of every scalar Hamiltonian.",
+      "declarations": []
+    },
+    {
+      "id": "intro-real-forms",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 79,
+      "page": 2,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "NLS real-type and imaginary-type invariant subspaces for actual flows at their stated regularities.",
+      "declarations": []
+    },
+    {
+      "id": "intro-scalar-nls",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 83,
+      "page": 2,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Correct defocusing/focusing scalar reductions with coefficient 2, and the displayed restricted energies.",
+      "declarations": []
+    },
+    {
+      "id": "intro-nls-hierarchy",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 96,
+      "page": 2,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "All NLS hierarchy integrals, recursion, regularity and pairwise Poisson commutation; calibrations S1 through S4 and normalization footnote.",
+      "declarations": []
+    },
+    {
+      "id": "intro-mkdv-real-forms",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 114,
+      "page": 2,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Invariant real and imaginary diagonal subspaces of S4 and their actual scalar equations.",
+      "declarations": []
+    },
+    {
+      "id": "intro-kdv-subsystem",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 157,
+      "page": 3,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Precise Miura identification with KdV, including range/mean data and solution-flow statement.",
+      "declarations": []
+    },
+    {
+      "id": "mkdv-birkhoff-background",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 183,
+      "page": 3,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Global independent mKdV spectral Cartesian map: every native Sobolev class, analytic bijection/inverse, ALL cross-mode canonical brackets, Casimir mean and Hamiltonian normal forms.",
+      "declarations": []
+    },
+    {
+      "id": "mkdv-cartesian-equations",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 196,
+      "page": 4,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Action-preserving clockwise rotations with dx/dt=eta*y and corrected dy/dt=-eta*x; actual Hamiltonian frequency identification.",
+      "declarations": []
+    },
+    {
+      "id": "nls-birkhoff-background",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 201,
+      "page": 4,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Original dNLS global canonical analytic Birkhoff diffeomorphism, native Sobolev range, every Hamiltonian normal form and opposite bracket sign.",
+      "declarations": []
+    },
+    {
+      "id": "nls-cartesian-equations",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 213,
+      "page": 4,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Counterclockwise NLS rotations, actual Hamiltonian frequency identification and action preservation.",
+      "declarations": []
+    },
+    {
+      "id": "kdv-frequency-remark",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 227,
+      "page": 4,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "mKdV/KdV frequency relation with index shift, and negative-mode NLS frequency antisymmetry.",
+      "declarations": []
+    },
+    {
+      "id": "trace-background",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 247,
+      "page": 4,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Locally uniformly convergent physical hierarchy and gradient trace identities with factor 2^(k-1) and full quantifiers.",
+      "declarations": []
+    },
+    {
+      "id": "operator-conventions",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 260,
+      "page": 5,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Reconcile swapped off-diagonal potential entries across p5, p8 and Appendix A, including spectral reflection and integer labels.",
+      "declarations": []
+    },
+    {
+      "id": "proof1-intro-factors",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 282,
+      "page": 5,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Correct missing factor 1/2 in the displayed flow comparison from the scalar identity.",
+      "declarations": []
+    },
+    {
+      "id": "magri-compatible-brackets",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 322,
+      "page": 6,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Displayed compact-support nonlocal K2, compatibility and Jacobi for every real linear pencil parameter.",
+      "declarations": []
+    },
+    {
+      "id": "magri-periodic-obstruction",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 340,
+      "page": 6,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Nonzero constant periodic profiles have zero S2 gradient and nonzero S3 vector field, excluding every linear K* recurrence there.",
+      "declarations": []
+    },
+    {
+      "id": "magri-boundary-subspaces",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 350,
+      "page": 6,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "T-even and T-odd subspaces: boundary derivative claims, dynamical invariance and odd-level periodic Lenard recurrence; audit parity carefully.",
+      "declarations": []
+    },
+    {
+      "id": "negative-action-angle-remark",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 359,
+      "page": 6,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Diagonal negative-mode action equality, angle negation modulo periods and frequency antisymmetry.",
+      "declarations": []
+    },
+    {
+      "id": "miura-flow-background",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 383,
+      "page": 7,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Miura map H1 to L2, actual defocusing mKdV-to-KdV solution intertwining and required well-posedness.",
+      "declarations": []
+    },
+    {
+      "id": "hill-spectral-background",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 394,
+      "page": 7,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Physical twice-periodic Hill spectrum: discreteness, labeling with multiplicity, real-type reality and correct high-energy asymptotics including the mean shift.",
+      "declarations": []
+    },
+    {
+      "id": "hill-isolating-domains",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 421,
+      "page": 7,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Joint complex Hill gap separation and isolating neighborhoods; audit printed fixed-radius disks against nonzero constant mean potential.",
+      "declarations": []
+    },
+    {
+      "id": "hill-primitive-log",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 461,
+      "page": 8,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Normalized local Hill arcosh/log formula, exact branch and additive n*pi*i.",
+      "declarations": []
+    },
+    {
+      "id": "nls-spectral-background",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 501,
+      "page": 8,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Actual twice-periodic ZS operator spectrum: discreteness, algebraic labels, l2 asymptotics, gaps and reality.",
+      "declarations": []
+    },
+    {
+      "id": "nls-isolating-domains",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 532,
+      "page": 8,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Joint complex NLS isolating disks, neighborhood union W and endpoint/gap analyticity conventions.",
+      "declarations": []
+    },
+    {
+      "id": "nls-primitive-basepoints",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 565,
+      "page": 9,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Both central basepoint primitives agree, vanish at both endpoints, and have the stated local arcosh/log form.",
+      "declarations": []
+    },
+    {
+      "id": "physical-gauge-matrix",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 611,
+      "page": 9,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Physical A(x,lambda,u): determinant -2*lambda, exact invertibility locus and period-one boundary identification.",
+      "declarations": []
+    },
+    {
+      "id": "lemma2-proof-identities",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 638,
+      "page": 10,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Physical first- and second-order solution identities, transformed derivatives, normalized fundamental matrices; correct energy lambda to lambda^2.",
+      "declarations": []
+    },
+    {
+      "id": "diagonal-discriminant-parity",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 670,
+      "page": 10,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Actual diagonal discriminant is even in spectral parameter.",
+      "declarations": []
+    },
+    {
+      "id": "lemma3-proof-ordering",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 697,
+      "page": 11,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Real Miura Hill spectrum nonnegative; endpoint squaring preserves positive-index order, including zero mean.",
+      "declarations": []
+    },
+    {
+      "id": "central-gap-positivity",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 718,
+      "page": 11,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Central NLS discriminant positivity and action positivity on the symmetric central gap.",
+      "declarations": []
+    },
+    {
+      "id": "squaring-cut-domains",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 738,
+      "page": 11,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Squaring is a biholomorphic correspondence of the right-half-plane cut complement with the Hill cut complement.",
+      "declarations": []
+    },
+    {
+      "id": "lemma5-substitution",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 764,
+      "page": 11,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Physical spectral derivative chain rule and path substitution preserving root normalization.",
+      "declarations": []
+    },
+    {
+      "id": "lemma7-contour-substitution",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 831,
+      "page": 12,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Squaring maps sufficiently close oriented noncentral contours bijectively; Jacobian gives exact factor 2 at every integer level.",
+      "declarations": []
+    },
+    {
+      "id": "hill-discriminants-commute",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 861,
+      "page": 13,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Actual physical Hill discriminants commute under the Gardner bracket on their exact domains.",
+      "declarations": []
+    },
+    {
+      "id": "nls-discriminants-commute",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 874,
+      "page": 13,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Actual complex source ZS discriminants commute under the NLS bracket, and this gives higher-action commutation.",
+      "declarations": []
+    },
+    {
+      "id": "reverse-mean-proof",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 885,
+      "page": 13,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Printed arcosh recovery loses the sign of the mean; prove the corrected global analytic mean-square factor and explicit obstruction.",
+      "declarations": []
+    },
+    {
+      "id": "theorem6-root-proof",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 964,
+      "page": 14,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Canonical-root signs under P,T,Ralpha via a connected parameter argument; justify any star-shaped or path assumptions on W.",
+      "declarations": []
+    },
+    {
+      "id": "generic-monodromy-entry",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 989,
+      "page": 14,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Audit assertion m2 identically zero iff potential zero: triangular complex potentials invalidate it without an additional reality restriction.",
+      "declarations": []
+    },
+    {
+      "id": "squared-eigenfunction-algebra",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 991,
+      "page": 14,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "All star-product vector/matrix identities used for the spatial discriminant-gradient ODE.",
+      "declarations": []
+    },
+    {
+      "id": "xi-spatial-periodicity",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1008,
+      "page": 15,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Actual xi integral, boundary constant, periodicity and P,T,Ralpha covariance for every real spatial point.",
+      "declarations": []
+    },
+    {
+      "id": "primitive-gradient-domains",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1058,
+      "page": 15,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Corollary 9 must use the cut complement or an explicitly proved continuation; F is not defined on every lambda as printed.",
+      "declarations": []
+    },
+    {
+      "id": "higher-action-contour-symmetries",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1111,
+      "page": 16,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Reflection preserves contour orientation, yields level parity, and allows differentiating the actual source contour integrals.",
+      "declarations": []
+    },
+    {
+      "id": "lemma10-proof-parity",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1123,
+      "page": 16,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Correct missing parity factor in the pure-T higher-action identity in the proof of part i; audit shifted indices in part ii.",
+      "declarations": []
+    },
+    {
+      "id": "gardner-bracket-transfer",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1160,
+      "page": 17,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Diagonal chain rule, actual bracket transfer for every admissible functional and action direction, then the actual angle-action bracket.",
+      "declarations": []
+    },
+    {
+      "id": "odd-recurrence-failure-remark",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1209,
+      "page": 17,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Construct explicit symmetry-constrained counterexamples to the stated odd-order alternatives, with the exact m>=2 range.",
+      "declarations": []
+    },
+    {
+      "id": "analytic-continuation-subspaces",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1221,
+      "page": 18,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Justify gradient trace convergence/differentiation and analytic continuation on the P/phase and T-even/T-odd constrained complex subspaces, not only the full ambient space.",
+      "declarations": []
+    },
+    {
+      "id": "proof1-domain-extension",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1244,
+      "page": 18,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Correct scalar/vector type slip and explain extension from the proof H^(2m-1) domain to the claimed sharp H^m domain.",
+      "declarations": []
+    },
+    {
+      "id": "proof3-closed-actions",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1260,
+      "page": 18,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Actual local flow and angle differentiation, correct positive sign, and continuation to all closed actions on the sharp native domain.",
+      "declarations": []
+    },
+    {
+      "id": "lemma13-ode-identification",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1285,
+      "page": 19,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "All appendix identities identify actual normalized whole-line fundamental solutions, including inverse monodromy at reflected times.",
+      "declarations": []
+    },
+    {
+      "id": "lemma14-proof",
+      "kind": "unnumbered_or_proof_claim",
+      "line": 1316,
+      "page": 19,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Real-form Taylor coefficients, complex polarization and connected-domain identity continuation; a nonempty real slice is explicit.",
+      "declarations": []
+    },
+    {
+      "id": "scalar-defocusing-correction",
+      "kind": "certified_correction",
+      "line": 83,
+      "page": 2,
+      "status": "proved_correction_and_counterexample",
+      "obligation": "The physical NLS energy yields i*v_t=-v_xx+2*|v|^2*v; coefficient 1 fails on the constant one profile.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.introduction_defocusing_NLS_reduction",
+        "NLS.Articles.MKdVNLSHierarchies.introduction_defocusing_cubic_coefficient_one_false"
+      ]
+    },
+    {
+      "id": "scalar-focusing-correction",
+      "kind": "certified_correction",
+      "line": 89,
+      "page": 2,
+      "status": "proved_correction_and_counterexample",
+      "obligation": "On (iv,i*conj(v)), the physical energy yields i*v_t=-v_xx-2*|v|^2*v; coefficient 1 fails on constant v=1.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.introduction_focusing_NLS_reduction",
+        "NLS.Articles.MKdVNLSHierarchies.introduction_focusing_cubic_coefficient_one_false"
+      ]
+    },
+    {
+      "id": "cartesian-rotation-correction",
+      "kind": "certified_correction",
+      "line": 196,
+      "page": 4,
+      "status": "proved_correction_and_counterexample",
+      "obligation": "Clockwise plane rotation has derivative (eta*y,-eta*x), preserves the quadratic action, and refutes printed dy/dt=-eta*y.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.introduction_mKdV_cartesian_equations",
+        "NLS.Articles.MKdVNLSHierarchies.introduction_mKdV_action_preserved",
+        "NLS.Articles.MKdVNLSHierarchies.introduction_printed_cartesian_second_equation_false"
+      ]
+    }
+  ],
+  "passages": [
+    {
+      "id": "passage-001",
+      "page": 1,
+      "first_line": 8,
+      "last_line": 8,
+      "source_sha256": "8da7a0f6901a2e13cf2651db79fd2b421e21249bb49c57aa234e7fdb221f5a20",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "abstract-hierarchy-subsystem"
+      ]
+    },
+    {
+      "id": "passage-002",
+      "page": 1,
+      "first_line": 13,
+      "last_line": 15,
+      "source_sha256": "42f00c200a5e7b6138c2742ceec4a32b7dd4e576ef45553d13e9dfff26f6b7f6",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-003",
+      "page": 1,
+      "first_line": 18,
+      "last_line": 19,
+      "source_sha256": "7652b5a8cda23ecff70b82b1c04c57e851ee60c6a95ce180270eeba8be0a0cad",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-004",
+      "page": 1,
+      "first_line": 22,
+      "last_line": 23,
+      "source_sha256": "b519b0045728ac40bc3b52d934d5cb8e3d8d2b50e73ff19094a02ef782e46533",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-005",
+      "page": 1,
+      "first_line": 26,
+      "last_line": 26,
+      "source_sha256": "b4986b0ba576cc2f3387e641fd97dd651296afcc47751ac836f3bce7b7a5c61f",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-006",
+      "page": 1,
+      "first_line": 28,
+      "last_line": 28,
+      "source_sha256": "16465ab0cbeef9ecfc3f6d811e4f4522d2569065d2aa5f2269d42f63a7077d17",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-007",
+      "page": 1,
+      "first_line": 30,
+      "last_line": 30,
+      "source_sha256": "ff31f2c6fc201e1dd5492c626679ec638ecf428c11ad747ed3c32e64320e8e03",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-008",
+      "page": 1,
+      "first_line": 32,
+      "last_line": 42,
+      "source_sha256": "e8f9cf5d554b977c7f6c74497be9aaeaf4b46c26a6e6d47c254c873ad4dbfe79",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-1"
+      ]
+    },
+    {
+      "id": "passage-009",
+      "page": 1,
+      "first_line": 44,
+      "last_line": 45,
+      "source_sha256": "064cf7c75d8cc45366bfa89ed80b58c2f2e0bcb69ad567d6e81cc823eb59a492",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-010",
+      "page": 1,
+      "first_line": 47,
+      "last_line": 53,
+      "source_sha256": "63efc141776be73b3510eacc5c39a8c428ef39e7d4b9c1ff908f83bd4f5b8d4e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-011",
+      "page": 1,
+      "first_line": 55,
+      "last_line": 57,
+      "source_sha256": "78f889bffc53ffdfe4186baab81001e3711afe95920254f990d35549988a8a6e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-012",
+      "page": 1,
+      "first_line": 59,
+      "last_line": 61,
+      "source_sha256": "8f1483197a44568a1241e15e7410c878ea2fcf46289fbcb03009b4a7c52699ff",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-2"
+      ]
+    },
+    {
+      "id": "passage-013",
+      "page": 1,
+      "first_line": 63,
+      "last_line": 63,
+      "source_sha256": "f6f12a187fac8a180005314fb68b0450563c6898cd4ad8acbb90c6a9d4c7d50e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-014",
+      "page": 2,
+      "first_line": 64,
+      "last_line": 67,
+      "source_sha256": "c77699e7d193af83599eefed1452e02f9172233629874c6d189e17e6665efb98",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-3"
+      ]
+    },
+    {
+      "id": "passage-015",
+      "page": 2,
+      "first_line": 69,
+      "last_line": 72,
+      "source_sha256": "0a4c42db416732590a07993a4e7c434eb7f90842ed035846eb4e6c5a643aad58",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-4"
+      ]
+    },
+    {
+      "id": "passage-016",
+      "page": 2,
+      "first_line": 74,
+      "last_line": 77,
+      "source_sha256": "6c98c9ab7d05809a19f9bade5e620f0ea243c4409e9196d3247b0fd398d650d6",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-017",
+      "page": 2,
+      "first_line": 79,
+      "last_line": 79,
+      "source_sha256": "9f1893c52acf47c3d1c03a248067e96f2590b07d01b6e8031616fda8e1ac1722",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "intro-real-forms"
+      ]
+    },
+    {
+      "id": "passage-018",
+      "page": 2,
+      "first_line": 81,
+      "last_line": 85,
+      "source_sha256": "e05bca71de0eab7a3e980b05b3430e0be1661029d8e8162bf8c5e31b75fdff43",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "intro-scalar-nls",
+        "scalar-defocusing-correction"
+      ]
+    },
+    {
+      "id": "passage-019",
+      "page": 2,
+      "first_line": 87,
+      "last_line": 91,
+      "source_sha256": "56d18559138f8f314b85d17f4c6731d177678fb3bdc0669b23a388d95619a6fa",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "scalar-focusing-correction"
+      ]
+    },
+    {
+      "id": "passage-020",
+      "page": 2,
+      "first_line": 93,
+      "last_line": 105,
+      "source_sha256": "0f8988fa9f22e3b2f33d496c98cb2b6bdf47bafb5746241e311e071b4cdf953a",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "intro-nls-hierarchy"
+      ]
+    },
+    {
+      "id": "passage-021",
+      "page": 2,
+      "first_line": 107,
+      "last_line": 107,
+      "source_sha256": "5c244c75ab21950dc60a8f045991d9a99579d6487fa511eb3bd32cf1210d9616",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-022",
+      "page": 2,
+      "first_line": 109,
+      "last_line": 111,
+      "source_sha256": "a37a316b7c7aabfeea792b3890cc5cf9b1307017ff25a330b1970c1dd899c1eb",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-5"
+      ]
+    },
+    {
+      "id": "passage-023",
+      "page": 2,
+      "first_line": 113,
+      "last_line": 113,
+      "source_sha256": "094429cb0f3a4711489e9c81527d19b7db794bc7fd318998ce15652c94f203d4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-024",
+      "page": 2,
+      "first_line": 115,
+      "last_line": 115,
+      "source_sha256": "106c1f8307c0a641b9e71288183cb8b0717d2a36660a23f5b04a47eadca9728e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-025",
+      "page": 2,
+      "first_line": 117,
+      "last_line": 118,
+      "source_sha256": "ccab1822832e219556b35be29a023a7a57d84c4fb04f4d6a12907b1d25920aa1",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-026",
+      "page": 2,
+      "first_line": 120,
+      "last_line": 120,
+      "source_sha256": "2dd16d0f1751d0cac80d60c4b5386f783a8298c7b8abecf0a31448b3777d54ae",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-027",
+      "page": 2,
+      "first_line": 122,
+      "last_line": 123,
+      "source_sha256": "42eb3ffbdb6a87cb46878603091eed8b95d1cccae7475542b4a55bd15948f947",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-028",
+      "page": 2,
+      "first_line": 125,
+      "last_line": 126,
+      "source_sha256": "966cf5f8efda93a4ba32b906484a9a5629d7fe2e7fa7f26eb5a560e2a253c054",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-029",
+      "page": 2,
+      "first_line": 128,
+      "last_line": 128,
+      "source_sha256": "084bbd475c2a09ed7fd86c6285dd1c52c1fde8d29a74eca4b04a706e6d3821d8",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-030",
+      "page": 2,
+      "first_line": 132,
+      "last_line": 132,
+      "source_sha256": "11dddfc330cf675bdec6837297660a20639c0bfe2ba668d4cad3ad865c25d91f",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-031",
+      "page": 3,
+      "first_line": 133,
+      "last_line": 141,
+      "source_sha256": "9af2ac69e6c311c69ce3225f2f3fb13e476e256c73ea2f8e9a68f04409c6ba0b",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-032",
+      "page": 3,
+      "first_line": 143,
+      "last_line": 144,
+      "source_sha256": "ae388dc0e80f14c9649e3c8e25b262775109d13284d11e11f5a022a1d5b116ee",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-033",
+      "page": 3,
+      "first_line": 146,
+      "last_line": 146,
+      "source_sha256": "b4de4f11e6f049d0d51152de24f900c81937d005a84702a5463e6867113035ab",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-034",
+      "page": 3,
+      "first_line": 148,
+      "last_line": 149,
+      "source_sha256": "a5ef428d48e6b51f359962ad768f2e40859d45ec209fa90e7fd2dad23506299a",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "theorem-1"
+      ]
+    },
+    {
+      "id": "passage-035",
+      "page": 3,
+      "first_line": 151,
+      "last_line": 153,
+      "source_sha256": "324a989987c814a9d0709bb663425ea2ad08610757424cd1504dd1272a0836bd",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-036",
+      "page": 3,
+      "first_line": 155,
+      "last_line": 162,
+      "source_sha256": "2e4a32e8b5813bcb48478cc020352660da13983d6268a3b1309e609f6a689730",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "intro-kdv-subsystem"
+      ]
+    },
+    {
+      "id": "passage-037",
+      "page": 3,
+      "first_line": 164,
+      "last_line": 164,
+      "source_sha256": "2ed4b429ca019a1a300d2c70c8422a7187f30c53b9d1f40b2a81c3a25f8d1905",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "theorem-2"
+      ]
+    },
+    {
+      "id": "passage-038",
+      "page": 3,
+      "first_line": 166,
+      "last_line": 168,
+      "source_sha256": "03c1a8eab3a38418f24159f1904f5f45384abbff8ff90467383f125043b1f78b",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-039",
+      "page": 3,
+      "first_line": 170,
+      "last_line": 171,
+      "source_sha256": "eeb7abf004010efe7506a1157a1e354a55e08a868d6da73a907ed5a3962ba306",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-040",
+      "page": 3,
+      "first_line": 173,
+      "last_line": 173,
+      "source_sha256": "2cfb820f3aec40d371bd25a20d5cd59f3f1fcc2eca5910cab58543442f6db9ff",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-041",
+      "page": 3,
+      "first_line": 175,
+      "last_line": 185,
+      "source_sha256": "2dcaedcb07b9b2cf7be9dfbc8256f352673ea95c122c20e3916cfc1aebdebd57",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "mkdv-birkhoff-background"
+      ]
+    },
+    {
+      "id": "passage-042",
+      "page": 3,
+      "first_line": 187,
+      "last_line": 188,
+      "source_sha256": "65e192bde522893e160130d522ed39c94e8f05a90a5e02b0564bec7a78dba0af",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-043",
+      "page": 3,
+      "first_line": 190,
+      "last_line": 190,
+      "source_sha256": "09df667c301dea04ebf0b5230f4a8175f85bdce84b312b866eba3966338b6f03",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-044",
+      "page": 3,
+      "first_line": 193,
+      "last_line": 193,
+      "source_sha256": "e6f1f65e7eec9c5631ee4fab7170980026fb6db7759efbfe1c95f9e2b36f4ee1",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-045",
+      "page": 4,
+      "first_line": 194,
+      "last_line": 197,
+      "source_sha256": "c170857cda48615d453f43046886089947d7a2faaf48628404e01a130b8d0e40",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "mkdv-cartesian-equations",
+        "cartesian-rotation-correction"
+      ]
+    },
+    {
+      "id": "passage-046",
+      "page": 4,
+      "first_line": 199,
+      "last_line": 199,
+      "source_sha256": "a403a825cb74452e461172649f32c2600d3e0f4c640c4d7b6ee6e26a7fa39842",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-047",
+      "page": 4,
+      "first_line": 201,
+      "last_line": 207,
+      "source_sha256": "95ad0b98c94186be9b414208cc2ee66e0ec86787d9910dfa5e891973989e8861",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "nls-birkhoff-background"
+      ]
+    },
+    {
+      "id": "passage-048",
+      "page": 4,
+      "first_line": 209,
+      "last_line": 209,
+      "source_sha256": "60b4e5ccf4825562ea7b169f807394cfab7e017e926f1d5166f7bfaf81c8174a",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-049",
+      "page": 4,
+      "first_line": 211,
+      "last_line": 214,
+      "source_sha256": "9fd7badd2ebde25bb255561249e79f96e649da589de537cf108658ff979d4bc1",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "nls-cartesian-equations"
+      ]
+    },
+    {
+      "id": "passage-050",
+      "page": 4,
+      "first_line": 216,
+      "last_line": 216,
+      "source_sha256": "0c5848792ddd8049677c34a0703a9f35f93136d4c1caa0e702437c345e4ac92c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-051",
+      "page": 4,
+      "first_line": 218,
+      "last_line": 219,
+      "source_sha256": "e36bba96fa380e2f3836e92ed386dc41121cad2df2daf38f2d97e2b5ef505263",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-052",
+      "page": 4,
+      "first_line": 221,
+      "last_line": 227,
+      "source_sha256": "07bbebc5fb11141d02d9d78716ac81299a4b74b44298db8b95dcd0a9246c1af9",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "theorem-3",
+        "kdv-frequency-remark"
+      ]
+    },
+    {
+      "id": "passage-053",
+      "page": 4,
+      "first_line": 229,
+      "last_line": 230,
+      "source_sha256": "4d0e3e3508351a7a023ed9cafdf7a86297adacbd6615480cdeb8e17ad5e62c0d",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-054",
+      "page": 4,
+      "first_line": 232,
+      "last_line": 232,
+      "source_sha256": "c12d4189d03128ff12d4765d729ba934432acff21b24e9624629a2636760dc32",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "theorem-4"
+      ]
+    },
+    {
+      "id": "passage-055",
+      "page": 4,
+      "first_line": 234,
+      "last_line": 236,
+      "source_sha256": "c90e8493a12f35897f0bf667054753298bb8619dca35bd6218e2c2ff41b4aac6",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-056",
+      "page": 4,
+      "first_line": 238,
+      "last_line": 244,
+      "source_sha256": "d05ce8e3c107ae3e40a345b09f3f9ccdccf31b6299c3b907c0209e8752587eb4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-057",
+      "page": 4,
+      "first_line": 246,
+      "last_line": 252,
+      "source_sha256": "75d0cf29f4e8a5e4e0c82b4ef9feb331c81b0acb588ca54cfec6d0202e0f4c34",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "trace-background"
+      ]
+    },
+    {
+      "id": "passage-058",
+      "page": 4,
+      "first_line": 254,
+      "last_line": 254,
+      "source_sha256": "42cfb35dcd5cd359a8afcbd48308fedd52750a690321863e4bb3275619673523",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-059",
+      "page": 4,
+      "first_line": 257,
+      "last_line": 257,
+      "source_sha256": "e4973d4ad5955289e77c586d2699b6390159367b7bcf57c70a6326f79d8fa604",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-060",
+      "page": 5,
+      "first_line": 258,
+      "last_line": 269,
+      "source_sha256": "c43239aaca4560e93b504ca079d79cf11c8b6267eb248c9329b7081aa0cac6f9",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "operator-conventions"
+      ]
+    },
+    {
+      "id": "passage-061",
+      "page": 5,
+      "first_line": 271,
+      "last_line": 271,
+      "source_sha256": "96849fb7e872b7b1c5553bb644306364eeca03c6817e8c2cd4abec3eec615aa9",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-062",
+      "page": 5,
+      "first_line": 273,
+      "last_line": 283,
+      "source_sha256": "12f6d8b3915622c7b0750c3e61cbdf9f25bd74fa50bd90aa0aa3a8e67880bc1c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "proof1-intro-factors"
+      ]
+    },
+    {
+      "id": "passage-063",
+      "page": 5,
+      "first_line": 285,
+      "last_line": 286,
+      "source_sha256": "0d7af12d04ecc05eea6dda78787223e06ba5f3db7bff1de58aec2f68aff21301",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-064",
+      "page": 5,
+      "first_line": 289,
+      "last_line": 313,
+      "source_sha256": "b9ed59e760ab18d3318323911836a770382bd25f16fd4ede60218622a2306529",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-6"
+      ]
+    },
+    {
+      "id": "passage-065",
+      "page": 5,
+      "first_line": 316,
+      "last_line": 316,
+      "source_sha256": "efc247a55a010e84450f36ae45da634f6296d83ef1fce48e8d8556ee5475634a",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-066",
+      "page": 6,
+      "first_line": 317,
+      "last_line": 318,
+      "source_sha256": "3c9f4b357723630b34034b017619113b350bfe6b1b3c04e18eb6d0b7f0693706",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-067",
+      "page": 6,
+      "first_line": 320,
+      "last_line": 320,
+      "source_sha256": "4d152b7e102e2d2005ed1056878dd547170c5339a4510846b96e4f9a260abbe7",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-7"
+      ]
+    },
+    {
+      "id": "passage-068",
+      "page": 6,
+      "first_line": 322,
+      "last_line": 325,
+      "source_sha256": "0b5048a389a06d9343870e671c9b1e18d70e2980503f6a16d3505a1ce3f5fdc9",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "magri-compatible-brackets"
+      ]
+    },
+    {
+      "id": "passage-069",
+      "page": 6,
+      "first_line": 327,
+      "last_line": 330,
+      "source_sha256": "75e7e3ee30d4c60c7670c45550b08b51435e21659fde80340af37ecb4a77971c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-070",
+      "page": 6,
+      "first_line": 332,
+      "last_line": 332,
+      "source_sha256": "669843e9876822be5bed80a610531ff40c9ca1d08d593b01aa8cb75861319a1e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-071",
+      "page": 6,
+      "first_line": 334,
+      "last_line": 336,
+      "source_sha256": "23289f464a4088df4a448d8021f46923ac24ca2245b269b2430548869e8f0502",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-072",
+      "page": 6,
+      "first_line": 338,
+      "last_line": 338,
+      "source_sha256": "0579a5e3451397dc098957b95e4c29ce9f864c21f7bd50237da8608cb1959057",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-8"
+      ]
+    },
+    {
+      "id": "passage-073",
+      "page": 6,
+      "first_line": 340,
+      "last_line": 344,
+      "source_sha256": "8669b29b0b2f8aa8fe60c558fdff2cc6901160050f5f206e1964270c0f659fe9",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "magri-periodic-obstruction"
+      ]
+    },
+    {
+      "id": "passage-074",
+      "page": 6,
+      "first_line": 346,
+      "last_line": 346,
+      "source_sha256": "76ce57e87e3638a1a57627e9da69e88c1c22437fc3315653453933f1d3c03ac4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-075",
+      "page": 6,
+      "first_line": 348,
+      "last_line": 350,
+      "source_sha256": "014821af214175cf1c1c1911e879be3eff156382faee639b88ac4878dbe9b2d5",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "magri-boundary-subspaces"
+      ]
+    },
+    {
+      "id": "passage-076",
+      "page": 6,
+      "first_line": 352,
+      "last_line": 352,
+      "source_sha256": "0247bd4e3d241418def19d6c62ba096d18ac1c5cf63ec442fafc8542d705b26f",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-077",
+      "page": 6,
+      "first_line": 354,
+      "last_line": 370,
+      "source_sha256": "be67f848cd715be8349d1516f3769fe72c44cf2b4f9d1112fb3033024a00be4f",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "negative-action-angle-remark"
+      ]
+    },
+    {
+      "id": "passage-078",
+      "page": 6,
+      "first_line": 375,
+      "last_line": 375,
+      "source_sha256": "6a4639a465acf76703cac014aa92fdc43fa13c1542b94f86cdf6b6f45cff6b1a",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-079",
+      "page": 7,
+      "first_line": 376,
+      "last_line": 376,
+      "source_sha256": "aac22980e63f8f24fd9103e7282086e521c3b80f3c85b77e0408f3a84b772357",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-080",
+      "page": 7,
+      "first_line": 378,
+      "last_line": 380,
+      "source_sha256": "0416e48a38a250bee0212b83741cde2ec1c9fd52c693bafef60e5bd5df7f7dda",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-081",
+      "page": 7,
+      "first_line": 382,
+      "last_line": 382,
+      "source_sha256": "456642079f73e232b2387fbb61ac93ba960f7e05247229f49c685a92c103eae5",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-082",
+      "page": 7,
+      "first_line": 384,
+      "last_line": 387,
+      "source_sha256": "4180018e94fdacb7cb5e0997d73ca4f506caef039e2ed368d9b3408f7d339235",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-083",
+      "page": 7,
+      "first_line": 389,
+      "last_line": 389,
+      "source_sha256": "e2545c4e192a912482d5c7ecb549f3bcf6891b3e2623aec086ccd178b63cb76d",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-084",
+      "page": 7,
+      "first_line": 391,
+      "last_line": 400,
+      "source_sha256": "0172b2af283cf3a1a6a33c0857a45fce3f401dc987dd1d2f7c517a0aa03aa32e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "hill-spectral-background"
+      ]
+    },
+    {
+      "id": "passage-085",
+      "page": 7,
+      "first_line": 402,
+      "last_line": 405,
+      "source_sha256": "710ed0cc906f1ed7f9ae0338ca2076bdc9bede513cfee2830f5e18b582ea8128",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-086",
+      "page": 7,
+      "first_line": 407,
+      "last_line": 417,
+      "source_sha256": "9e0b7690f9696de1d3c13fbb61c4f64e3f6b8bf3aef8e5218ee069046bd82c0d",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-9"
+      ]
+    },
+    {
+      "id": "passage-087",
+      "page": 7,
+      "first_line": 419,
+      "last_line": 421,
+      "source_sha256": "2fe5c236af11b6a06da7c40a9c8933d3b55f22a92edd6112131ac15210ac5849",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "hill-isolating-domains"
+      ]
+    },
+    {
+      "id": "passage-088",
+      "page": 7,
+      "first_line": 423,
+      "last_line": 427,
+      "source_sha256": "24bd9b0cef663a57a2af15be496ddbc402d5e7386d89cc9217a094e0aca5de14",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-089",
+      "page": 7,
+      "first_line": 429,
+      "last_line": 434,
+      "source_sha256": "fff8cd222a6e5a2e21d0fceef270fb44855e3ecbba2bbdaf7e70e15b80eaa895",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-090",
+      "page": 7,
+      "first_line": 436,
+      "last_line": 446,
+      "source_sha256": "6e681e4caf14da0bd367bb460168f4df46b0ad7f0090c59d8812911c195daa35",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-10"
+      ]
+    },
+    {
+      "id": "passage-091",
+      "page": 7,
+      "first_line": 448,
+      "last_line": 448,
+      "source_sha256": "397f6eaa159cf0375ca86f16c3628ccad39725616b307e06cef14ceaff716714",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-092",
+      "page": 8,
+      "first_line": 449,
+      "last_line": 459,
+      "source_sha256": "a1b1efc8851dc36e523de1e103baaf9acb029138d81f888f52db8c33f64cc2e7",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-11"
+      ]
+    },
+    {
+      "id": "passage-093",
+      "page": 8,
+      "first_line": 461,
+      "last_line": 474,
+      "source_sha256": "7a6494217cab08416e8b1b85766dc3078701a6576553dd3896f7f8b0fd31f429",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "hill-primitive-log"
+      ]
+    },
+    {
+      "id": "passage-094",
+      "page": 8,
+      "first_line": 476,
+      "last_line": 484,
+      "source_sha256": "c57425d231a24e2b587d4ad9dfc302f61a274e34f236abf1ab5a4ca16a4d1d4a",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-12"
+      ]
+    },
+    {
+      "id": "passage-095",
+      "page": 8,
+      "first_line": 487,
+      "last_line": 491,
+      "source_sha256": "f9350effe140387c85b7ad7f9001d85e4cf4e6747fa74de81f08523e31e81c6b",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-13"
+      ]
+    },
+    {
+      "id": "passage-096",
+      "page": 8,
+      "first_line": 493,
+      "last_line": 500,
+      "source_sha256": "00989a1f24a1101da305c7613bdfc08147e0a7d473fd382f7c9e4a7fd02ec823",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-097",
+      "page": 8,
+      "first_line": 502,
+      "last_line": 510,
+      "source_sha256": "b0e71149b7fb26c0656f0c7b059c1ab0efb3bbea17f17c4007761cdb48b5e224",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-098",
+      "page": 8,
+      "first_line": 512,
+      "last_line": 515,
+      "source_sha256": "d04580f83995d66c1956085b8c8b296db9afa4e262eef70f9df865944bb4e409",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-099",
+      "page": 8,
+      "first_line": 517,
+      "last_line": 525,
+      "source_sha256": "05a0768da99b9fec0ea2878c3babeaf7ed2abe0f70ef40c11782e4d9c88aa945",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-14"
+      ]
+    },
+    {
+      "id": "passage-100",
+      "page": 8,
+      "first_line": 528,
+      "last_line": 532,
+      "source_sha256": "5ccd100b938e541b6aa42c0463c8c460291bb4a34bde8a8a9e3ea686a6dde60c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "nls-isolating-domains"
+      ]
+    },
+    {
+      "id": "passage-101",
+      "page": 8,
+      "first_line": 535,
+      "last_line": 535,
+      "source_sha256": "e3e59a39c3d0dd1ab86004ed4d64e6801cad973bb9be10949dc1e15f030c16c0",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-102",
+      "page": 9,
+      "first_line": 536,
+      "last_line": 575,
+      "source_sha256": "b15cf64125975cf6f50ad29741bf4e11dcf663a1ffd7785c0e591c9c904b5ce4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-15",
+        "equation-16",
+        "equation-17",
+        "nls-primitive-basepoints"
+      ]
+    },
+    {
+      "id": "passage-103",
+      "page": 9,
+      "first_line": 577,
+      "last_line": 589,
+      "source_sha256": "57c35c99947e0d222a3fab92c7cc344c5a6ffaafc8fbfb279c85279f18f4d133",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-18"
+      ]
+    },
+    {
+      "id": "passage-104",
+      "page": 9,
+      "first_line": 591,
+      "last_line": 597,
+      "source_sha256": "fcff9c71a91c76248ac60613e32db7bff188361ffd03634d6d380004406f016d",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-19"
+      ]
+    },
+    {
+      "id": "passage-105",
+      "page": 9,
+      "first_line": 600,
+      "last_line": 600,
+      "source_sha256": "29fc14ab1acf7505917176a174645095a6de71d387bf8d5e3701c4a88ba6ac39",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-106",
+      "page": 9,
+      "first_line": 602,
+      "last_line": 606,
+      "source_sha256": "edfab670e90724294ee4ea44ff8c6f907107c88042689270b0efed212737674c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "theorem-5"
+      ]
+    },
+    {
+      "id": "passage-107",
+      "page": 9,
+      "first_line": 608,
+      "last_line": 617,
+      "source_sha256": "bcf9e6487cb97f3e3c6628ae1e26118a7245c1ff354749d7e607001717181107",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "physical-gauge-matrix"
+      ]
+    },
+    {
+      "id": "passage-108",
+      "page": 9,
+      "first_line": 620,
+      "last_line": 620,
+      "source_sha256": "b01cbb0a4fa225403a2fec0d8f5d56cbd3bce5a24ea3c2810082c070c8969e7b",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-109",
+      "page": 10,
+      "first_line": 621,
+      "last_line": 621,
+      "source_sha256": "1f90e261a334ba039f43415111e7b88af84792158ab8d66a64effdfc2ea46198",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma-2"
+      ]
+    },
+    {
+      "id": "passage-110",
+      "page": 10,
+      "first_line": 623,
+      "last_line": 623,
+      "source_sha256": "e1bc6aa2edf5d29049263a7bf7f5b921c9718457a40ddb811c62c4c3fde99c13",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-111",
+      "page": 10,
+      "first_line": 625,
+      "last_line": 625,
+      "source_sha256": "21af6f1260f927f5b9b3ff5ca4a5d19493a1a47a5977240d8dca31bc47a63527",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-112",
+      "page": 10,
+      "first_line": 627,
+      "last_line": 627,
+      "source_sha256": "fdf5f1daa82cb8766ae7f0584c93a539ed9abdbc730af24ced3737f587a3853d",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-113",
+      "page": 10,
+      "first_line": 629,
+      "last_line": 629,
+      "source_sha256": "32ae117d58bf52d028241a136b45d971955dba8e182e659ae507e65b70bfe090",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-114",
+      "page": 10,
+      "first_line": 631,
+      "last_line": 631,
+      "source_sha256": "6a203ee68aaf7bf24b6ed7650e22111f03b3073ecb639375102ac13722069426",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-115",
+      "page": 10,
+      "first_line": 633,
+      "last_line": 633,
+      "source_sha256": "93e69cda19ccc5bb7278bb7505c8ad9d09e0e6dbc706fcda1744ad51ee5b65e1",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-116",
+      "page": 10,
+      "first_line": 635,
+      "last_line": 635,
+      "source_sha256": "b6026b216ef7a41973b4dc209e6c8200ac732b0d9c3cc480f8eafb42f2279dc3",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-117",
+      "page": 10,
+      "first_line": 637,
+      "last_line": 642,
+      "source_sha256": "678b23e2f5f01ea116b49ad1078d4e60e1fae5916ce235d50f82a97153e4f646",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma2-proof-identities"
+      ]
+    },
+    {
+      "id": "passage-118",
+      "page": 10,
+      "first_line": 644,
+      "last_line": 647,
+      "source_sha256": "ff34ea2e435e74b836dcfd4a8ff7e7d288df1ad2bd23d5414e7d9e566bdc9a30",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-119",
+      "page": 10,
+      "first_line": 649,
+      "last_line": 649,
+      "source_sha256": "b270a56167b7533759e0143163910226da896b7765dd36c22a370af7203c59fe",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-120",
+      "page": 10,
+      "first_line": 651,
+      "last_line": 651,
+      "source_sha256": "7f1cf971c75acbadf5b80c0a293e854edad9b5f0187f75ae1365eddbbda36252",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-121",
+      "page": 10,
+      "first_line": 653,
+      "last_line": 656,
+      "source_sha256": "7fce91751a56a5aa3f4b67831068d24b528152d61b3fb1cc995743f77677333c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-122",
+      "page": 10,
+      "first_line": 660,
+      "last_line": 663,
+      "source_sha256": "cdd513dc41649cb48cf89c649fb6e4526c397466c559825d521b20283e5316dd",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-123",
+      "page": 10,
+      "first_line": 665,
+      "last_line": 665,
+      "source_sha256": "7e7dc7c82df2fd4d54c94ec4751ce3bd1148056fdc2483636ca758786e7cb6da",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-124",
+      "page": 10,
+      "first_line": 667,
+      "last_line": 669,
+      "source_sha256": "27e31c28ef6592e8754de71fd011db9ca155725709375ecb61395cfbd438d0cf",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-125",
+      "page": 10,
+      "first_line": 671,
+      "last_line": 674,
+      "source_sha256": "bcc34e2ea35b1d03835722d229e147dde75c9c5df1b7e11670f79e10bdf4a608",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-126",
+      "page": 10,
+      "first_line": 677,
+      "last_line": 678,
+      "source_sha256": "91d82cfafd76d422ac400d0f8fb7cd1e0c11fb3bf2b23bcbe45cd49d775b281c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-20"
+      ]
+    },
+    {
+      "id": "passage-127",
+      "page": 10,
+      "first_line": 680,
+      "last_line": 680,
+      "source_sha256": "35d44fa382a38dfe577a060c62b97035866094cfadf6e383c8f7dcd6500f0884",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-128",
+      "page": 10,
+      "first_line": 682,
+      "last_line": 686,
+      "source_sha256": "e8b9b86862772fec4c019a63d45bb4e6332b407a5a51ee1f8cc274e2debb22b4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma-3"
+      ]
+    },
+    {
+      "id": "passage-129",
+      "page": 10,
+      "first_line": 688,
+      "last_line": 690,
+      "source_sha256": "10d4c2f8e8135b5f9a6bc80476245559fbf8d1177903506f229977930a3a84e4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-130",
+      "page": 10,
+      "first_line": 693,
+      "last_line": 693,
+      "source_sha256": "7fc8187789aad8b2509b8e2c46bb989eb0777fcbec291c18bb81ca0ea6fc9fc9",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-131",
+      "page": 11,
+      "first_line": 694,
+      "last_line": 714,
+      "source_sha256": "5872272897938e08309369386e878ed4b88374a223182ad26126e176cdc01f81",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma3-proof-ordering"
+      ]
+    },
+    {
+      "id": "passage-132",
+      "page": 11,
+      "first_line": 716,
+      "last_line": 716,
+      "source_sha256": "d4afdaa68c7bc0d76db17e59920c0e36248ea68019ff84a0b846a5cc8e25be83",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-133",
+      "page": 11,
+      "first_line": 718,
+      "last_line": 718,
+      "source_sha256": "a3afd2cb750b713d5a55514a46d22cb1fcfdb476263dd4ee386683400bdedc5a",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "central-gap-positivity"
+      ]
+    },
+    {
+      "id": "passage-134",
+      "page": 11,
+      "first_line": 720,
+      "last_line": 723,
+      "source_sha256": "90d533206f767d07cd3087111b0e2466dcfb0b66c73bd3feda5ecc9788985d9a",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-135",
+      "page": 11,
+      "first_line": 725,
+      "last_line": 725,
+      "source_sha256": "12b4c1cbdccca957ced2caf38522676336ff04ed904d0bc3e2d39a567575572b",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-136",
+      "page": 11,
+      "first_line": 727,
+      "last_line": 727,
+      "source_sha256": "2d12a0c798c125b828b590f54ce31f3b0fc847a1094237a2f5f5ac4408d128cf",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-137",
+      "page": 11,
+      "first_line": 729,
+      "last_line": 729,
+      "source_sha256": "8c0aaea2c4c4c311cb692fd688275c597d4874f7ec515a362d82e9aff2067daa",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-21"
+      ]
+    },
+    {
+      "id": "passage-138",
+      "page": 11,
+      "first_line": 731,
+      "last_line": 731,
+      "source_sha256": "30eeb80e70d278e7a5de782fe7cac2c48f97b4e04b37629cc167da12952dede5",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-139",
+      "page": 11,
+      "first_line": 733,
+      "last_line": 747,
+      "source_sha256": "669bff78bd652fe76f1d5e8b4e34f0830652ce20e8a2acb3e747e9f2a389cf51",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma-4",
+        "squaring-cut-domains"
+      ]
+    },
+    {
+      "id": "passage-140",
+      "page": 11,
+      "first_line": 749,
+      "last_line": 755,
+      "source_sha256": "340a26a2abda371109dd2edd6eb5addd2bc6c710437ef7a7a8987d3d7c4e789e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-141",
+      "page": 11,
+      "first_line": 757,
+      "last_line": 759,
+      "source_sha256": "fe434a48471b930d541f64810497b7ec20e2d80c96aa243fe54d35889086faba",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma-5"
+      ]
+    },
+    {
+      "id": "passage-142",
+      "page": 11,
+      "first_line": 761,
+      "last_line": 761,
+      "source_sha256": "5ffa393b540d9464fa552bbdc36137ae140cf568f429ac0fcae20e5f479f7f23",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-143",
+      "page": 11,
+      "first_line": 763,
+      "last_line": 773,
+      "source_sha256": "edadd33904d85389b85cc115711c574fcca281a4666dfc909acfe35c32f2f55b",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma5-substitution"
+      ]
+    },
+    {
+      "id": "passage-144",
+      "page": 11,
+      "first_line": 775,
+      "last_line": 785,
+      "source_sha256": "f1a3bc73bf7e9bbd03a15d594c39694f31d544ce8ad1d37bd1f4fb6ada1aa90d",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-145",
+      "page": 11,
+      "first_line": 787,
+      "last_line": 787,
+      "source_sha256": "cd51b9677ba5aabcfea6194c2fa412244500d916a61ad9a96176876aa2b22851",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-146",
+      "page": 12,
+      "first_line": 788,
+      "last_line": 790,
+      "source_sha256": "08f89f366e90e7e9db7b0a913b687730a1e0341077953914eec65e54d9feaa66",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-147",
+      "page": 12,
+      "first_line": 792,
+      "last_line": 802,
+      "source_sha256": "683815657ccc460f018680b2def2036a28f2302923f3b3d7219d6e4b660a26f1",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "proposition-6"
+      ]
+    },
+    {
+      "id": "passage-148",
+      "page": 12,
+      "first_line": 804,
+      "last_line": 810,
+      "source_sha256": "34896b1cf27d663e228738f415e6a0266905369abe22903f5211f8ee6e189316",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-22"
+      ]
+    },
+    {
+      "id": "passage-149",
+      "page": 12,
+      "first_line": 812,
+      "last_line": 820,
+      "source_sha256": "db5f8590322e317c66a9a60f00b9c4e212a27318f4e6f99aecb140aa410f35de",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-23"
+      ]
+    },
+    {
+      "id": "passage-150",
+      "page": 12,
+      "first_line": 822,
+      "last_line": 828,
+      "source_sha256": "496fe1622c9eb91e066aa344083adfeba1ff882a65fc1de34fef8e41f676be59",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma-7"
+      ]
+    },
+    {
+      "id": "passage-151",
+      "page": 12,
+      "first_line": 830,
+      "last_line": 845,
+      "source_sha256": "778204b978b94e89e83096b9de1610a088f6f27535393a4af79daf26fa8c9a98",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma7-contour-substitution"
+      ]
+    },
+    {
+      "id": "passage-152",
+      "page": 12,
+      "first_line": 847,
+      "last_line": 856,
+      "source_sha256": "d89aea30347f79e21b96a1cb9b3ac1eb6f53651346158271758ba7b9b7abb4dc",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-153",
+      "page": 12,
+      "first_line": 861,
+      "last_line": 861,
+      "source_sha256": "0acad8fb45ab85236f1a58113549e05f2f11984c0f5aa5e26cae53f64fb423a5",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": [
+        "hill-discriminants-commute"
+      ]
+    },
+    {
+      "id": "passage-154",
+      "page": 13,
+      "first_line": 862,
+      "last_line": 870,
+      "source_sha256": "cba698d8d4dd651e0133ab0f235ba9dddbdfd55315dec96f7ec4489a3b7f5373",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-155",
+      "page": 13,
+      "first_line": 874,
+      "last_line": 882,
+      "source_sha256": "73cefe775c14389c51583e325bcc9e42d035758b00f58e2820d70d87977b4800",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "nls-discriminants-commute"
+      ]
+    },
+    {
+      "id": "passage-156",
+      "page": 13,
+      "first_line": 884,
+      "last_line": 899,
+      "source_sha256": "d51e4c4fa3888c37e033ad456ac80510e5cc5bed3fb04ec3c3726fe31d11b865",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "reverse-mean-proof"
+      ]
+    },
+    {
+      "id": "passage-157",
+      "page": 13,
+      "first_line": 902,
+      "last_line": 902,
+      "source_sha256": "0f0954c7d529fee3064baf0176e4d634ccd70dd5fb1a9621702c43a83c1f39e9",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-158",
+      "page": 13,
+      "first_line": 904,
+      "last_line": 909,
+      "source_sha256": "d3d86a1c603c727fe15fcf3dc9df032e8e2260c158fbabd7afeb824afebca548",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-159",
+      "page": 13,
+      "first_line": 911,
+      "last_line": 916,
+      "source_sha256": "19b83efeec33423bb6d2d747231f74f5afddc322330b21a0d44c878203c7f494",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-160",
+      "page": 13,
+      "first_line": 918,
+      "last_line": 918,
+      "source_sha256": "3458dcb78811ad0cd403bdbccd6653de45c3eca27705b7917d841ba53e66a702",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "theorem-6"
+      ]
+    },
+    {
+      "id": "passage-161",
+      "page": 13,
+      "first_line": 920,
+      "last_line": 921,
+      "source_sha256": "b891760cf316d2bf12ec0049ca5d84cbbced4f20a353756248b2b05ff0729e09",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-162",
+      "page": 13,
+      "first_line": 923,
+      "last_line": 925,
+      "source_sha256": "51c1a7921706bae760db62a51215198c99c42e4a9ebb49de891b306d8224a00e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-163",
+      "page": 13,
+      "first_line": 927,
+      "last_line": 927,
+      "source_sha256": "68d635aa5d7898999629573b5397f7690d02801cedfc9cc168b8b7e77ecf5c86",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-164",
+      "page": 13,
+      "first_line": 929,
+      "last_line": 929,
+      "source_sha256": "e9b1dd4d87855ad7b363f0e89e82334d6db3652ef3b56056d15d547a908a6116",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-165",
+      "page": 13,
+      "first_line": 931,
+      "last_line": 931,
+      "source_sha256": "2c00b5437a122a31dae06ec55d2e54f99cb8686a5e60872807c511ce0264f280",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-166",
+      "page": 13,
+      "first_line": 933,
+      "last_line": 933,
+      "source_sha256": "9b0170df36ee0007a2ccf34920accc0b3993a33451023178851ba5b5bd0f783c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-167",
+      "page": 13,
+      "first_line": 937,
+      "last_line": 937,
+      "source_sha256": "f2661bdf6b639afee7715df57b2b19b4ffcaded6b5d4b6724892f033ece1a386",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-168",
+      "page": 14,
+      "first_line": 938,
+      "last_line": 943,
+      "source_sha256": "9c33cd304a1b545872e38582dbc9cad1cde7fa36b416e90c9af5c134a14914bc",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-169",
+      "page": 14,
+      "first_line": 945,
+      "last_line": 948,
+      "source_sha256": "68f861d828da8a0568d4c54dc2df13cb6a2f37e1fe2748900ce33ac009f3ac9f",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-170",
+      "page": 14,
+      "first_line": 950,
+      "last_line": 951,
+      "source_sha256": "c3622b1cc782d6986946295efb77c183d31b36c9fa17677d5ca3a70d6b9fcb8a",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-171",
+      "page": 14,
+      "first_line": 953,
+      "last_line": 957,
+      "source_sha256": "3b737a2c6cafac3dfb101467dae65379011266348b4d25eee67f2fe312bfa5ab",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-172",
+      "page": 14,
+      "first_line": 959,
+      "last_line": 959,
+      "source_sha256": "6edda4b354dd72ebedb17ba17302e26eda270a668112f652fd7ccd758b65faca",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-173",
+      "page": 14,
+      "first_line": 961,
+      "last_line": 970,
+      "source_sha256": "e52247f1d1d534ba0b26c42ba86dc03cf13948166fd6f7cdf46d0eafbec6a122",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "theorem6-root-proof"
+      ]
+    },
+    {
+      "id": "passage-174",
+      "page": 14,
+      "first_line": 972,
+      "last_line": 984,
+      "source_sha256": "d7a70528bf6ee18a72f1a86760e5136da8e3368f091ab50d0f69dfd9bce3a724",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-24"
+      ]
+    },
+    {
+      "id": "passage-175",
+      "page": 14,
+      "first_line": 986,
+      "last_line": 991,
+      "source_sha256": "2f165e53542f510fe77587ab51e4b35208cb8111bd20443f73f55968bb6a2ed4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "generic-monodromy-entry",
+        "squared-eigenfunction-algebra"
+      ]
+    },
+    {
+      "id": "passage-176",
+      "page": 14,
+      "first_line": 993,
+      "last_line": 993,
+      "source_sha256": "111271a3da352ac32fce21faf88206c103b4f1469665b4c23095982ec06f83c3",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-177",
+      "page": 14,
+      "first_line": 995,
+      "last_line": 995,
+      "source_sha256": "0d029140c0996de49d5a333b443173dc57fddbff010f22b582abc92784b3bb27",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-178",
+      "page": 14,
+      "first_line": 997,
+      "last_line": 1000,
+      "source_sha256": "cb2b494303dcea7fbcbe2b103700944973281b08932d5df0da3d99e5fcb511a4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-179",
+      "page": 14,
+      "first_line": 1002,
+      "last_line": 1004,
+      "source_sha256": "b4889ccb0b07a71b79c7c41af7c051f92ef1a2034c3da09c25a32615dc8b5f0a",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-180",
+      "page": 14,
+      "first_line": 1007,
+      "last_line": 1007,
+      "source_sha256": "59ace7ed14dcea726dccf9f841d4c7abe0384ed94aba2c633a8fdbf1fd2a6d70",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-181",
+      "page": 15,
+      "first_line": 1008,
+      "last_line": 1009,
+      "source_sha256": "b8d1a3ddcda76610537019252f23fc7f34124170b85e1d7a1298a407b13142a2",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "xi-spatial-periodicity"
+      ]
+    },
+    {
+      "id": "passage-182",
+      "page": 15,
+      "first_line": 1011,
+      "last_line": 1013,
+      "source_sha256": "29637c025b6f0422906cfe8d2fd6c8cc94d0ca3840a3fff581441106567cd574",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-183",
+      "page": 15,
+      "first_line": 1015,
+      "last_line": 1035,
+      "source_sha256": "89a8f5508ef6b50a414bb78fef853984b383a9af470268cfe2a790bd729988d8",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "corollary-8"
+      ]
+    },
+    {
+      "id": "passage-184",
+      "page": 15,
+      "first_line": 1037,
+      "last_line": 1038,
+      "source_sha256": "cc747cb2c31c9323349dfd842e44c16d21a1ae9b655f70dd7aa16dc628c3495c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-185",
+      "page": 15,
+      "first_line": 1040,
+      "last_line": 1056,
+      "source_sha256": "e1b33a5fa14539b7a3e3ff391c41ffa7a4faf149b12e52929dafea1a3f0c1f0f",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-186",
+      "page": 15,
+      "first_line": 1058,
+      "last_line": 1058,
+      "source_sha256": "369a3e9f4f73ed03e3ea38f2abbfd4bf29bb412abc9fccdd47aa83ce24ce0f86",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "corollary-9",
+        "primitive-gradient-domains"
+      ]
+    },
+    {
+      "id": "passage-187",
+      "page": 15,
+      "first_line": 1060,
+      "last_line": 1060,
+      "source_sha256": "464cabe050cc75a39a53521281132c1db6dcec058998667dfddc6805f0928b55",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-188",
+      "page": 15,
+      "first_line": 1062,
+      "last_line": 1075,
+      "source_sha256": "3d6d85d75306fe2c17667c3537fcdd7ce532a98787e6feba9d1d1c39c78ea81c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-189",
+      "page": 15,
+      "first_line": 1078,
+      "last_line": 1078,
+      "source_sha256": "415cf36a45bff8fd6de7927c3a5ab44e174aeb54adc8c2578c1564980ee7f1e9",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-190",
+      "page": 16,
+      "first_line": 1079,
+      "last_line": 1079,
+      "source_sha256": "9992b2c100be9c59d1ae1f72a5c42e138f444b65fec1ebf5904c2815de991d43",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-191",
+      "page": 16,
+      "first_line": 1081,
+      "last_line": 1087,
+      "source_sha256": "1c1c7a74ea2fd15f934951e8172f62bc3c40157f5e9d25890766f0b7d84676b7",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-192",
+      "page": 16,
+      "first_line": 1089,
+      "last_line": 1089,
+      "source_sha256": "aa870b845ca4f815d3db78f0eb8c4cf0418e8851f5072ed30ef603976617e3e9",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-193",
+      "page": 16,
+      "first_line": 1091,
+      "last_line": 1091,
+      "source_sha256": "bc394ae9bdbb6d7ffb05e6c8a5c03514ed5480929017e11be55674e5f9fbc4ed",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma-10"
+      ]
+    },
+    {
+      "id": "passage-194",
+      "page": 16,
+      "first_line": 1093,
+      "last_line": 1093,
+      "source_sha256": "21e14f8bef50f1da73b588bbd93eea2c053fe39febb7b350f4d976f6d9cc93b8",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-195",
+      "page": 16,
+      "first_line": 1095,
+      "last_line": 1095,
+      "source_sha256": "43553793aecf9cad8629bc7deec5fd892db8929af15f517551a5325db25b5e24",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-196",
+      "page": 16,
+      "first_line": 1097,
+      "last_line": 1097,
+      "source_sha256": "1f3f5efd1dfa45132479ab568a0f8c474bc312337c02db508f6bdc3c865328e1",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-197",
+      "page": 16,
+      "first_line": 1099,
+      "last_line": 1106,
+      "source_sha256": "266047bc2d2ec01002f75f8944f1bdfb36589079cdf7b3fa0362bcaacbedbcdf",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-198",
+      "page": 16,
+      "first_line": 1108,
+      "last_line": 1108,
+      "source_sha256": "05d9696cce812cc434cae38b18b76f20745d029e343ad09bb28b468ca88ad6b8",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-199",
+      "page": 16,
+      "first_line": 1110,
+      "last_line": 1123,
+      "source_sha256": "5c1f00a8758b67951e836cdfad59c18246d79d6c9f6fd86bc1ebe0f884ddc7b5",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "higher-action-contour-symmetries",
+        "lemma10-proof-parity"
+      ]
+    },
+    {
+      "id": "passage-200",
+      "page": 16,
+      "first_line": 1125,
+      "last_line": 1127,
+      "source_sha256": "c75c5464b6928b6b4e7b85ecaec3ec274a035571c66cd8f00ba5aee4f0bb624b",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-201",
+      "page": 16,
+      "first_line": 1129,
+      "last_line": 1129,
+      "source_sha256": "350477c3dc78b5104f6278f2b7a6f468699f65adfc0d3400e099661c7ad1e31e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "equation-25"
+      ]
+    },
+    {
+      "id": "passage-202",
+      "page": 16,
+      "first_line": 1131,
+      "last_line": 1141,
+      "source_sha256": "e29946fc74e2ee14165120531ba18d84a499fcf1ec1bba70ea6e3a49e057370c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-203",
+      "page": 16,
+      "first_line": 1144,
+      "last_line": 1144,
+      "source_sha256": "3dd7a4481964b964be6e031feb54085044dd9c5d1d0dd8e815152df3164668f3",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-204",
+      "page": 17,
+      "first_line": 1145,
+      "last_line": 1155,
+      "source_sha256": "481ae920e8933aec081d157e52fa4a88752486112f4d3abaed139a704f2aaa06",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-205",
+      "page": 17,
+      "first_line": 1157,
+      "last_line": 1161,
+      "source_sha256": "a08b3121bed9038f91b2108fc63a5306d4eb9ab1a02910007e17e5f02c505af8",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "gardner-bracket-transfer"
+      ]
+    },
+    {
+      "id": "passage-206",
+      "page": 17,
+      "first_line": 1164,
+      "last_line": 1164,
+      "source_sha256": "d4306bc0433c08d4af3706f69182b7575478c792b1faaa76065042b5060f4981",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-207",
+      "page": 17,
+      "first_line": 1166,
+      "last_line": 1166,
+      "source_sha256": "e0ae64dd7ed24015dd543aa83dc13bc8c216e70ee81751ffbf1ed4f1d25a9460",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-208",
+      "page": 17,
+      "first_line": 1168,
+      "last_line": 1182,
+      "source_sha256": "80b117d2ffbabdd932c431f3bea4f37f79e2d561fb96697476c2b162e7ac58df",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-209",
+      "page": 17,
+      "first_line": 1184,
+      "last_line": 1185,
+      "source_sha256": "6e7eb901a511a5b39645ba402db93bd9a63dfaacb4152762192477148b7265e4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-210",
+      "page": 17,
+      "first_line": 1187,
+      "last_line": 1189,
+      "source_sha256": "33d61b47207e68eb12fb90f20bc09df901b42cc3917e4d8dfadadd00e129526c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-211",
+      "page": 17,
+      "first_line": 1191,
+      "last_line": 1191,
+      "source_sha256": "a16a5c790a8eb9d7c432652dda5abbffd1921e8527c59d52bcdc18ea25ef2b9e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-212",
+      "page": 17,
+      "first_line": 1193,
+      "last_line": 1193,
+      "source_sha256": "3052ad3807cc89f291a5c4579e7d206f55f9d4d6735789339ef929a24ce90645",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "proposition-11"
+      ]
+    },
+    {
+      "id": "passage-213",
+      "page": 17,
+      "first_line": 1195,
+      "last_line": 1195,
+      "source_sha256": "b3c5a992e5e523a76ca9b9ebbdcd685c92ffdd67a239df26caf5207c0832b0d9",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-214",
+      "page": 17,
+      "first_line": 1197,
+      "last_line": 1197,
+      "source_sha256": "2b2250a3020fb3065e9c2f86fe580ee5bc7e3e613a80e33698af15524d2b9fc3",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-215",
+      "page": 17,
+      "first_line": 1199,
+      "last_line": 1199,
+      "source_sha256": "8df513db31a17e7e19dcfc48ae2820b60f87f3d38c511fe78a810813d07d38e8",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-216",
+      "page": 17,
+      "first_line": 1201,
+      "last_line": 1204,
+      "source_sha256": "f1ca05dd248fe72006a3127e2c1b8d56b892584120b6f7594fd850cf65024225",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-217",
+      "page": 17,
+      "first_line": 1206,
+      "last_line": 1207,
+      "source_sha256": "a83ff9de6bbe112f1b4371aad2702eec39d7f8d556afd5dd785471a59d5b414d",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-218",
+      "page": 17,
+      "first_line": 1212,
+      "last_line": 1212,
+      "source_sha256": "a6844290759ecefe81ab9067591b175a385f7ddbcf84ee8e8877df2ff7a69d7c",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-219",
+      "page": 18,
+      "first_line": 1213,
+      "last_line": 1214,
+      "source_sha256": "18530f61e658902350bc473969275213fcd8dbfe36037adda010e46d591a409a",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-220",
+      "page": 18,
+      "first_line": 1216,
+      "last_line": 1220,
+      "source_sha256": "43e1e730b0b6a0efc0d072326d6491dab67e61a08fb38a9d85370048ada5f58e",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-221",
+      "page": 18,
+      "first_line": 1222,
+      "last_line": 1231,
+      "source_sha256": "5842dd0de3cca541f5df8e5a99f5351756120cff5d37bc7f5ddb8077104d258d",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-222",
+      "page": 18,
+      "first_line": 1234,
+      "last_line": 1244,
+      "source_sha256": "7b3c9555e120b61c7f15a9b516572d92ef7dce1169fc453fedd379032293eef9",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "proof1-domain-extension"
+      ]
+    },
+    {
+      "id": "passage-223",
+      "page": 18,
+      "first_line": 1246,
+      "last_line": 1246,
+      "source_sha256": "f0ed2318f9da1910ac2aa96b2b9ffa3833d5d9bab5cc83d44a2326572d5800f6",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-224",
+      "page": 18,
+      "first_line": 1248,
+      "last_line": 1248,
+      "source_sha256": "15cf39c7ad3750d30afca7757abfe1ea0d4e1103289655257162cbfa375920b7",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-225",
+      "page": 18,
+      "first_line": 1250,
+      "last_line": 1253,
+      "source_sha256": "eefe63d3a16a5bd9f3f309cf5333db8e779fc8cd4bb0570e062289fbbb3f7c25",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-226",
+      "page": 18,
+      "first_line": 1255,
+      "last_line": 1256,
+      "source_sha256": "cb389deb73f9bf73c85b2a9f406a110237b9ce7b88637a41befbd8aa77c7eca4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-227",
+      "page": 18,
+      "first_line": 1258,
+      "last_line": 1258,
+      "source_sha256": "dab0403e04b7c3983703bfe77fc9155ad9536c50f35996393b0a8f3823aebaa6",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-228",
+      "page": 18,
+      "first_line": 1260,
+      "last_line": 1263,
+      "source_sha256": "35d018ec993e8dcc341d41fabedaa942ad2ba46d626d710a517d2e7cae46827a",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "proof3-closed-actions"
+      ]
+    },
+    {
+      "id": "passage-229",
+      "page": 18,
+      "first_line": 1265,
+      "last_line": 1265,
+      "source_sha256": "62c85b5e397bc0ce9b25688ab9051f8bda321669507134221e7c0c960d521c2c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-230",
+      "page": 18,
+      "first_line": 1267,
+      "last_line": 1269,
+      "source_sha256": "8584adc7730154776cebcc8556574abf7c97a52728ed8ebfbbdf151a6c9c563f",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-231",
+      "page": 18,
+      "first_line": 1271,
+      "last_line": 1271,
+      "source_sha256": "f28308de0cbf5e612a5e5aeb6817a4488be10511a3f4c262730ef78d7f20587c",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-232",
+      "page": 18,
+      "first_line": 1273,
+      "last_line": 1275,
+      "source_sha256": "ea4a5de33daf9792ee007165f4c730834c9edacd4c04c58624bf0edfb692e332",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-233",
+      "page": 18,
+      "first_line": 1280,
+      "last_line": 1280,
+      "source_sha256": "5ee71649a09b639dcc8f676c1e77e74e91ae968ecc2fbf1f8fc6c48be70c5707",
+      "status": "nonmathematical_metadata",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-234",
+      "page": 19,
+      "first_line": 1281,
+      "last_line": 1287,
+      "source_sha256": "b7a982eb1f03242b7be5284326cc2759160917b4e130cca0a1c12cd29759a0c0",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma13-ode-identification"
+      ]
+    },
+    {
+      "id": "passage-235",
+      "page": 19,
+      "first_line": 1289,
+      "last_line": 1289,
+      "source_sha256": "4a96fe4b26a95ea0d694ae4daee2dac511a4efeecb305a6d3de50db891ae1175",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-236",
+      "page": 19,
+      "first_line": 1291,
+      "last_line": 1300,
+      "source_sha256": "9aef2726b0eda4a8070819cd1d8feae917bd06b7fce56fdac0df9fa7e04fb13d",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma-13"
+      ]
+    },
+    {
+      "id": "passage-237",
+      "page": 19,
+      "first_line": 1302,
+      "last_line": 1306,
+      "source_sha256": "404aee3b142da840085725bab879673f0759602640448e09d398bffc05ac2ea9",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-238",
+      "page": 19,
+      "first_line": 1309,
+      "last_line": 1309,
+      "source_sha256": "2201524f3134a1a1a4939db8f88360890e7a1b71d1c70ea5ff3ab378574293a4",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    },
+    {
+      "id": "passage-239",
+      "page": 19,
+      "first_line": 1311,
+      "last_line": 1313,
+      "source_sha256": "8e774819e390bb2e2f2d1f4f69df629a4a37a493435d716bc8bf4c7da2836323",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma-14"
+      ]
+    },
+    {
+      "id": "passage-240",
+      "page": 19,
+      "first_line": 1315,
+      "last_line": 1319,
+      "source_sha256": "a01b35a48ce4f277e77c46daad1b21aad9c5358c49132610c5a20a0c15445599",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": [
+        "lemma14-proof"
+      ]
+    },
+    {
+      "id": "passage-241",
+      "page": 19,
+      "first_line": 1321,
+      "last_line": 1325,
+      "source_sha256": "c0ced599938c512c344bf53a6fd08220dcb378b96e30376b79c0225476558d77",
+      "status": "pending_semantic_and_correspondence_review",
+      "assertion_ids": []
+    }
+  ],
+  "known_open_obligations": [
+    "Full Theorem 6, Corollaries 8 and 9, Lemma 10 and Proposition 11 beyond their already checked parts.",
+    "Literal physical Lemma 2 matrix conjugacy and Lemma 3 geometric eigenspace multiplicities.",
+    "Lemma 13 on all real spatial points and original L2 sources.",
+    "Independent mKdV Cartesian cross-mode canonicity and all background/operator/analytic setup claims.",
+    "Every source passage marked pending, including all cited mathematical facts actually invoked."
+  ]
+}

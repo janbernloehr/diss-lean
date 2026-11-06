@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "mkdv-nls-hierarchies",
-  "status": "all_main_theorems_proved_with_documented_source_corrections",
+  "status": "in_progress_full_paper",
   "source": {
     "abstract_url": "https://arxiv.org/abs/1601.07580v1",
     "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
@@ -1644,7 +1644,14 @@
       "The explicit parabolic hypotheses of the terminal-release lemma are now derived at every actual open Dirichlet endpoint in MiuraOpenEndpointMonodromy.lean. The actual native profile translation is identified in MiuraNativePeriodicProfile.lean. Subsequent modules prove simultaneous interior divisors, canonical terminal generator values and the full final angle sum."
     ]
   },
-  "latest_validation": "PR3 main merge validation: fresh strict compilation of the additional main dNLS module and merged aggregate; all1113 unchanged article private outputs hash-checked. Targeted audit9615, combined audit54506, and all219 incoming main modules imported together with the merged aggregate and audited for55356 NLS declarations. All1117 frozen inputs and original pinned mathlib import hashes match. No mathematical proof source or audit scope changed. Full dependency tree not rebuilt.",
+  "latest_validation": {
+    "report": "full-paper-validation.json",
+    "status": "passed_for_recorded_progress",
+    "whole_paper_complete": false,
+    "base_commit": "a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa",
+    "article_audit": 9799,
+    "combined_audit": 61298
+  },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
     "declarations": [
@@ -1667,5 +1674,36 @@
       "The three documented source corrections remain: Theorem2(ii) matrix, Theorem3 positive sign and Theorem4(ii) reverse mean squared."
     ]
   },
-  "integration_validation": "merge-validation.json"
+  "integration_validation": "merge-validation.json",
+  "main_theorems_status": "all_main_theorems_proved_with_documented_source_corrections",
+  "full_paper_coverage": {
+    "ledger": "full-paper-coverage.json",
+    "status": "in_progress",
+    "semantic_inventory_complete": false,
+    "main_theorems_complete": true,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
+    "initial_semantic_assertions": 98,
+    "source_passages": 241
+  },
+  "full_paper_expansion": {
+    "date": "2026-11-06",
+    "modules": [
+      "NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean",
+      "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+      "NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean",
+      "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean"
+    ],
+    "new_public_theorems": 28,
+    "new_public_definitions": 1,
+    "certified_corrections": [
+      "Scalar focusing/defocusing cubic coefficient two, with constant-profile counterexamples.",
+      "mKdV Cartesian second equation uses x, with action preservation and a counterexample.",
+      "Lemma14 explicitly requires a nonempty real slice, with a counterexample."
+    ],
+    "certified_Theorem6_parts": "P and pure T discriminants, spectral derivatives and full Frechet cotangents on every complex finite exponent p>1. No pointwise-gradient, phase, endpoint-label, root or spatial-ODE completion is inferred.",
+    "remaining": "See full-paper-coverage.json; all pending passages remain completion obligations."
+  }
 }

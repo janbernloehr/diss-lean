@@ -6443,3 +6443,8 @@ import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianAngleSum
 import NLS.Articles.DNLSEstimates.MainEstimates
 import NLS.KdV.HillEnergyTraceGradient
 import NLS.KdV.HillEnergyTraceGradientRegularity
+import NLS.ZakharovShabat.ClassicalNLSFocusingReduction
+import NLS.Articles.MKdVNLSHierarchies.IntroductionCorrections
+import NLS.Articles.MKdVNLSHierarchies.AnalyticIdentity
+import NLS.ZakharovShabat.SourceMidpointReflection
+import NLS.Articles.MKdVNLSHierarchies.DiscriminantReflectionSymmetries

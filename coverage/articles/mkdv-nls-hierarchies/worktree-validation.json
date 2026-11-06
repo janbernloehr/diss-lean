@@ -38149,5 +38149,12 @@
     "block_count": 58,
     "total_count": 3464
   },
-  "merge_validation": "merge-validation.json"
+  "merge_validation": "merge-validation.json",
+  "latest_full_paper_progress": {
+    "report": "full-paper-validation.json",
+    "status": "passed_for_recorded_progress",
+    "whole_paper_complete": false,
+    "date": "2026-11-06",
+    "note": "Earlier top-level fields record the completed main-theorem milestone. The expanded whole-paper scope and current validation are in the new report and ledger."
+  }
 }

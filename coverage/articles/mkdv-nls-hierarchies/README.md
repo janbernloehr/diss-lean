@@ -1,6 +1,6 @@
 # The mKdV and NLS hierarchies revisited — verification coverage
 
-Status: **All main theorems are proved with the documented source corrections.
+Status: **Whole-paper verification is in progress. All main theorems are proved with the documented source corrections.
 Theorems 1 and 2 hold on their original complex Sobolev domains (with the
 matrix correction in Theorem2(ii)). Theorem3 holds at every order on the
 full real H^(m-1) domain, including closed actions, with the corrected
@@ -42,6 +42,67 @@ angle-sum factor is asserted. See the final milestone and validation below.
 
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
+
+
+## Whole-paper scope (2026-11-06)
+
+The completion target now includes **every mathematical assertion** in the assigned
+version: all 18 named statements, all 25 numbered equations, unnumbered setup
+and background claims, mathematical remarks, proof intermediates and both
+appendices. Citing a reference does not remove an invoked claim from this target.
+
+[`full-paper-coverage.json`](full-paper-coverage.json) captures every nonblank
+passage in the mathematical body by source lines, PDF page and hash. Its initial
+semantic inventory records named statements, numbered equations and additional
+prose/proof obligations. Passage decomposition and correspondence review are
+explicitly **incomplete**. A pending passage cannot be silently treated as proved.
+The source locator convention and exact private-source hashes are in the ledger.
+
+The main theorems remain proved with the earlier corrections, but important
+whole-paper work remains: the full discriminant/primitive/action symmetry
+packages (Theorem 6, Corollaries 8–9, Lemma 10 and Proposition 11); the physical
+matrix clause in Lemma 2; geometric multiplicities in Lemma 3; whole-line L2
+fundamental-matrix symmetries in Lemma 13; and background claims including
+independent cross-mode mKdV Cartesian canonicity. Analytic zero orders do not
+certify geometric multiplicities.
+
+The P and pure T clauses of Theorem 6(i)–(iii) now have source interfaces
+for the actual discriminant, spectral derivative and full Fréchet cotangent
+on every complex finite exponent p>1, including the original L2 domain.
+Pure T is implemented without component exchange. Pointwise gradient
+identification and the other Theorem 6 clauses remain separate obligations.
+
+`python3 scripts/check_mkdv_nls_coverage.py` checks the inventory structure.
+With `--source-text` it also verifies exact source passage hashes and coverage;
+with `--require-complete` it rejects any unfinished inventory. This structural
+check does not replace mathematical correspondence review or Lean checking.
+
+The current progress validation is in [`full-paper-validation.json`](full-paper-validation.json):
+28 new theorems and one definition; fresh strict compilation of all five new
+modules and the combined aggregate; targeted audit of 9,799 declarations and
+combined audit of 61,298. Imported compiled sources are hash-verified against
+the validated incoming-main checkout. No fresh full repository source rebuild
+is claimed.
+
+Additional checked corrections:
+
+- Page 2: the physical NLS energy gives `i*v_t = -v_xx +/- 2*|v|^2*v`.
+  Both printed scalar reductions omit the factor two. Constant profiles refute
+  coefficient one. `IntroductionCorrections.lean` exports the exact reductions
+  and counterexamples.
+- Page 4: the mKdV Cartesian equations are `x_dot = eta*y`,
+  `y_dot = -eta*x`. The printed second equation repeats `y`. The actual rotation
+  derivative, action preservation and a counterexample are checked.
+- Appendix B: Lemma 14 explicitly requires a nonempty real slice.
+  `AnalyticIdentity.lean` proves the general Banach-space statement and a
+  counterexample when the complex domain misses its real form.
+
+Other issues remain audit obligations: scalar nonlocal integrals subtracted from
+vector gradients in Corollary 9(ii), Lemma 10(iii) and Proposition 11(iii); the
+spectral domain in Corollary 9; high-energy Hill neighborhoods and mean shifts;
+and the generic-monodromy-entry argument for complex triangular potentials.
+No corrected formula for these is counted as proved until its actual
+mathematical statement and original domain have been validated.
 
 ## Pinned source
 
@@ -114,7 +175,7 @@ Miura/Hill versus diagonal ZS discriminants), Proposition 6 (p. 12,
 `K_m=S_(2m-1)#/2` and even vanishing), Lemma 7 (p. 12, action comparison),
 Theorem 6 (pp. 13–14, discriminant symmetries), Lemma 10 (pp. 16–17,
 action-gradient identities) and Proposition 11 (pp. 17–18, hierarchy gradients).
-These are dependencies of the four main theorems, not extra completion targets.
+All of these are now independent completion targets under the expanded whole-paper scope. The prior main-theorem milestone does not certify their full statements.
 
 ## Proof-development checkpoints
 

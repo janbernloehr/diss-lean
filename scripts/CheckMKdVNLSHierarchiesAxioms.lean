@@ -1,3 +1,8 @@
+import NLS.ZakharovShabat.ClassicalNLSFocusingReduction
+import NLS.Articles.MKdVNLSHierarchies.IntroductionCorrections
+import NLS.Articles.MKdVNLSHierarchies.AnalyticIdentity
+import NLS.ZakharovShabat.SourceMidpointReflection
+import NLS.Articles.MKdVNLSHierarchies.DiscriminantReflectionSymmetries
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianAngleSum
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianTerminalGeometry
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhasePeriods
@@ -3718,11 +3723,78 @@ private def hasAuditedPrefix (scopes : Lean.NameHashSet) : Lean.Name → Bool
   | name@(.str parent _) => scopes.contains name || hasAuditedPrefix scopes parent
   | name@(.num parent _) => scopes.contains name || hasAuditedPrefix scopes parent
 
+private def mkdvNLSAuditPrefixes58 : Array Lean.Name := #[
+  `NLS.ZakharovShabat.classicalNLSVectorField_focusing,
+  `NLS.ZakharovShabat.classicalNLSVectorField_focusing_realForm,
+  `NLS.ZakharovShabat.classicalNLSVectorField_defocusing_constant_one,
+  `NLS.ZakharovShabat.classicalNLSVectorField_focusing_constant_one,
+  `_private.NLS.ZakharovShabat.ClassicalNLSFocusingReduction,
+  `NLS.Articles.MKdVNLSHierarchies.introduction_defocusing_NLS_reduction,
+  `NLS.Articles.MKdVNLSHierarchies.introduction_focusing_NLS_reduction,
+  `NLS.Articles.MKdVNLSHierarchies.introduction_defocusing_cubic_coefficient_one_false,
+  `NLS.Articles.MKdVNLSHierarchies.introduction_focusing_cubic_coefficient_one_false,
+  `NLS.Articles.MKdVNLSHierarchies.introduction_mKdV_cartesian_equations,
+  `NLS.Articles.MKdVNLSHierarchies.introduction_mKdV_action_preserved,
+  `NLS.Articles.MKdVNLSHierarchies.introduction_printed_cartesian_second_equation_false,
+  `_private.NLS.Articles.MKdVNLSHierarchies.IntroductionCorrections,
+  `NLS.Articles.MKdVNLSHierarchies.lemma14,
+  `NLS.Articles.MKdVNLSHierarchies.lemma14_of_real_point,
+  `NLS.Articles.MKdVNLSHierarchies.lemma14_real_slice_hypothesis_needed,
+  `_private.NLS.Articles.MKdVNLSHierarchies.AnalyticIdentity,
+  `NLS.ZakharovShabat.sourceMidpointReflection,
+  `NLS.ZakharovShabat.sourceMidpointReflection_fst,
+  `NLS.ZakharovShabat.sourceMidpointReflection_snd,
+  `NLS.ZakharovShabat.sourceMidpointReflection_involutive,
+  `NLS.ZakharovShabat.sourceDiscriminant_midpointReflection,
+  `NLS.ZakharovShabat.sourceDiscriminant_deriv_midpointReflection,
+  `NLS.ZakharovShabat.sourceDiscriminantCotangent_of_linear_symmetry,
+  `NLS.ZakharovShabat.sourceDiscriminantCotangent_componentSwap,
+  `NLS.ZakharovShabat.sourceDiscriminantCotangent_midpointReflection,
+  `_private.NLS.ZakharovShabat.SourceMidpointReflection,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_i_reflection,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_ii_swap,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_ii_reflection,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_iii_swap_covectors,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_iii_reflection_covectors,
+  `_private.NLS.Articles.MKdVNLSHierarchies.DiscriminantReflectionSymmetries,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.ZakharovShabat.classicalNLSVectorField_focusing,
+    ``NLS.ZakharovShabat.classicalNLSVectorField_focusing_realForm,
+    ``NLS.ZakharovShabat.classicalNLSVectorField_defocusing_constant_one,
+    ``NLS.ZakharovShabat.classicalNLSVectorField_focusing_constant_one,
+    ``NLS.Articles.MKdVNLSHierarchies.introduction_defocusing_NLS_reduction,
+    ``NLS.Articles.MKdVNLSHierarchies.introduction_focusing_NLS_reduction,
+    ``NLS.Articles.MKdVNLSHierarchies.introduction_defocusing_cubic_coefficient_one_false,
+    ``NLS.Articles.MKdVNLSHierarchies.introduction_focusing_cubic_coefficient_one_false,
+    ``NLS.Articles.MKdVNLSHierarchies.introduction_mKdV_cartesian_equations,
+    ``NLS.Articles.MKdVNLSHierarchies.introduction_mKdV_action_preserved,
+    ``NLS.Articles.MKdVNLSHierarchies.introduction_printed_cartesian_second_equation_false,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma14,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma14_of_real_point,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma14_real_slice_hypothesis_needed,
+    ``NLS.ZakharovShabat.sourceMidpointReflection,
+    ``NLS.ZakharovShabat.sourceMidpointReflection_fst,
+    ``NLS.ZakharovShabat.sourceMidpointReflection_snd,
+    ``NLS.ZakharovShabat.sourceMidpointReflection_involutive,
+    ``NLS.ZakharovShabat.sourceDiscriminant_midpointReflection,
+    ``NLS.ZakharovShabat.sourceDiscriminant_deriv_midpointReflection,
+    ``NLS.ZakharovShabat.sourceDiscriminantCotangent_of_linear_symmetry,
+    ``NLS.ZakharovShabat.sourceDiscriminantCotangent_componentSwap,
+    ``NLS.ZakharovShabat.sourceDiscriminantCotangent_midpointReflection,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_i_reflection,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_ii_swap,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_ii_reflection,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_iii_swap_covectors,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_iii_reflection_covectors,
+
     ``NLS.Articles.MKdVNLSHierarchies.independent_full_phase_complete_action_rotation,
     ``NLS.Articles.MKdVNLSHierarchies.independent_full_phase_actual_action_generator,
     ``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_phase_sum,

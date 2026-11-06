@@ -3360,3 +3360,33 @@ match. This reuses validated dependencies and is not a full source rebuild.
 
 The main theorem coverage and the three documented source corrections are
 unchanged. See merge-validation.json for exact parents, hashes and scope.
+
+
+## 2026-11-06 — Whole-paper scope and first additional proofs
+
+The target now includes every mathematical claim in the assigned source,
+including background, unnumbered displays, proof intermediates and appendices.
+Main-theorem completion remains a historical milestone; whole-paper completion
+is **in progress**. The initial ledger records all 18 named statements, all 25
+numbered equations, 98 semantic assertion records and every one of 241 source
+passages. Semantic decomposition and correspondence review remain unfinished.
+
+New checked proofs establish the scalar focusing NLS reduction and its real
+form, both missing-factor-two counterexamples, the correct Cartesian rotation
+equations and action preservation, and the general Banach-space real-slice
+identity principle with its nonempty-slice counterexample. Pure midpoint
+reflection has the actual source discriminant, spectral derivative and
+Fréchet-cotangent identities, alongside component-swap cotangent covariance.
+Article interfaces export the P/T clauses of Theorem 6(i)–(iii), without
+asserting completion of its other clauses.
+
+The branch fast-forwards to main `a1d8eb8` after the previous PR was merged.
+Five new modules add 28 theorems and one definition. The combined aggregate
+compiles with strict options and default limits. The article axiom audit
+passes for 9,799 declarations and auxiliaries; the combined NLS audit passes
+for 61,298. Only propext, Classical.choice and Quot.sound are allowed. All
+7,222 frozen mathematical/checker inputs and all 1,114 reused checker prefix
+outputs are unchanged. Cached imports were source-hash-verified against the
+validated incoming-main checkout; no fresh full dependency rebuild is claimed.
+Exact current evidence is in full-paper-validation.json. The coverage checker
+prevents the ledger from being marked complete while obligations remain open.

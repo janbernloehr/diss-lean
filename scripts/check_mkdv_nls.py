@@ -1150,6 +1150,11 @@ modules = [
     'NLS/MKdV/MiuraFullPhaseGenerator.lean',
     'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianAngleSum.lean',
     'NLS/Articles/DNLSEstimates/MainEstimates.lean',
+    'NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean',
+    'NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean',
+    'NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean',
+    'NLS/ZakharovShabat/SourceMidpointReflection.lean',
+    'NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")
