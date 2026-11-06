@@ -2027,6 +2027,10 @@ import NLS.Articles.KdVPseudomeasures.SourceLemma217
 import NLS.KdV.PseudomeasureSharpTailWeights
 import NLS.KdV.PseudomeasureSharpTailGaps
 import NLS.Articles.KdVPseudomeasures.SourceLemma212
+import NLS.SequenceSpaces.FourierRealTorusNoncompact
+import NLS.SequenceSpaces.FourierRealTorusExample
+import NLS.Articles.KdVPseudomeasures.SourceNoncompactTori
+import NLS.Articles.KdVPseudomeasures.SourceRemark15
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11869,3 +11873,21 @@ import NLS.Articles.KdVPseudomeasures.SourceLemma212
 #print axioms NLS.KdV.EndpointHillComplexPair.sharp_tail_gap_le
 #print axioms NLS.Articles.KdVPseudomeasures.source_weighted_gap_tail_point
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_12
+#print axioms NLS.WeightedCoeff.pairedSignFlip
+#print axioms NLS.WeightedCoeff.pairedSignFlip_apply
+#print axioms NLS.WeightedCoeff.PositiveWeightedC0
+#print axioms NLS.WeightedCoeff.positiveWeightedC0_of_compact_pairedFlips
+#print axioms NLS.WeightedCoeff.realInverseWeightCoefficients
+#print axioms NLS.WeightedCoeff.realInverseWeightCoefficients_apply
+#print axioms NLS.WeightedCoeff.realInverseWeightCoefficients_weighted_norm
+#print axioms NLS.WeightedCoeff.not_positiveWeightedC0_realInverseWeightCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.pairedSignFlip_mem_articleEndpointActionTorus
+#print axioms NLS.Articles.KdVPseudomeasures.not_isCompact_articleEndpointActionTorus_of_not_c0
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_5_iii_targetOrder
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_5_iii_sourceNorm
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_5_corrected
+#print axioms NLS.Articles.KdVPseudomeasures.sourceRemark2_3
+#print axioms NLS.Articles.KdVPseudomeasures.mem_hillRealNativeActionTorus_iff_norms
+#print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_5_torus
+#print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_5_topologies
+#print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_5

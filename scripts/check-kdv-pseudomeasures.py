@@ -2061,6 +2061,10 @@ modules = [
     'NLS.KdV.PseudomeasureSharpTailWeights',
     'NLS.KdV.PseudomeasureSharpTailGaps',
     'NLS.Articles.KdVPseudomeasures.SourceLemma212',
+    'NLS.SequenceSpaces.FourierRealTorusNoncompact',
+    'NLS.SequenceSpaces.FourierRealTorusExample',
+    'NLS.Articles.KdVPseudomeasures.SourceNoncompactTori',
+    'NLS.Articles.KdVPseudomeasures.SourceRemark15',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -6632,3 +6632,7 @@ import NLS.Articles.KdVPseudomeasures.SourceLemma217
 import NLS.KdV.PseudomeasureSharpTailWeights
 import NLS.KdV.PseudomeasureSharpTailGaps
 import NLS.Articles.KdVPseudomeasures.SourceLemma212
+import NLS.SequenceSpaces.FourierRealTorusNoncompact
+import NLS.SequenceSpaces.FourierRealTorusExample
+import NLS.Articles.KdVPseudomeasures.SourceNoncompactTori
+import NLS.Articles.KdVPseudomeasures.SourceRemark15

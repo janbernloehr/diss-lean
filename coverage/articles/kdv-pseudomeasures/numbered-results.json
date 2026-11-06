@@ -10,10 +10,10 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 38,
-    "proved_corrected": 5,
-    "partial": 9,
-    "not_found": 2
+    "proved": 40,
+    "proved_corrected": 6,
+    "partial": 7,
+    "not_found": 1
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
   "results": [
@@ -562,22 +562,28 @@
       "label": "Lemma 3.5",
       "line": 1934,
       "statement": "Lemma 3.5 Suppose q ∈ Fℓs,∞\n                        0   with −1/2 < s ⩽ 0.\n\n  (i) Iso(q) is bounded in Fℓs,∞\n                             0   .\n\n (ii) Φs,∞ (Iso(q)) = TΦ(q) .\n\n              / cs0 = {z ∈ ℓs,∞\n(iii) If Φ(q) ∈             0   : hnis zn → 0}, then Φ(Iso(q)) is not compact\n           s,∞\n      in Fℓ0 . ⋊",
-      "status": "partial",
-      "comparison": "Parts (i) boundedness and (ii) full torus image are proved. Part (iii), failure of strong compactness for nonvanishing weighted tails, needs its own theorem; printed target/source type annotations are inconsistent. The printed part (iii) uses s instead of s+1/2 in its tail space; with the actual target regularity this premise is vacuous. The intended noncompactness criterion must use the target order.",
+      "status": "proved_corrected",
+      "comparison": "All three parts are proved: original source norm boundedness; exact full endpoint action-torus image; strong noncompactness when the literal target-order weighted coefficients fail c0. Independent physical conjugate mode flips give the noncompactness proof in the actual s+1/2 target norm. Its entire original source isospectral fiber is strongly noncompact as well. The printed part (iii) uses source order s for a Birkhoff target, giving a vacuous premise; the intended criterion consistently uses target order s+1/2, as in the documented Theorem 1.4 codomain correction.",
       "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceNoncompactTori.lean",
+        "NLS/Articles/KdVPseudomeasures/EndpointIsospectralTorusImage.lean",
         "NLS/Articles/KdVPseudomeasures/ArticleEndpointTargetNorm.lean",
-        "NLS/Articles/KdVPseudomeasures/EndpointIsospectralTorusImage.lean"
+        "NLS/SequenceSpaces/FourierRealTorusNoncompact.lean"
       ],
       "declarations": [
-        "NLS.Articles.KdVPseudomeasures.sourceLemma3_5_i",
-        "NLS.Articles.KdVPseudomeasures.sourceLemma3_5_ii_articleNorm"
+        "NLS.Articles.KdVPseudomeasures.sourceLemma3_5_corrected",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma3_5_iii_targetOrder",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma3_5_iii_sourceNorm"
       ],
       "source_page": 30,
       "statement_sha256": "083f83eaf1ec9987b2976e28509ef4ef97c6dc6660fe0744aa09a379e51ff93b",
       "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceNoncompactTori.lean": "af6dee278894d15ad9c6d57c4b73dfca9d873ae583c3143a3c7a5c028999ea18",
+        "NLS/Articles/KdVPseudomeasures/EndpointIsospectralTorusImage.lean": "cb0c9e0f3f1f9b8b74676fb26f4da215427e3fac155f442e0fafbcdc8bf5416d",
         "NLS/Articles/KdVPseudomeasures/ArticleEndpointTargetNorm.lean": "859761917384a1efca8d51f3bf745eba177230e05a824b1bc2e0c598e466d459",
-        "NLS/Articles/KdVPseudomeasures/EndpointIsospectralTorusImage.lean": "cb0c9e0f3f1f9b8b74676fb26f4da215427e3fac155f442e0fafbcdc8bf5416d"
-      }
+        "NLS/SequenceSpaces/FourierRealTorusNoncompact.lean": "a0c3212fbe8f745ca5d38b17d946bf9f28caad5f5871550c57c5dd1c4c1f57fa"
+      },
+      "source_correction": "Part (iii): use c0 at the Birkhoff target order s+1/2, and measure Phi(Iso(q)) in that actual target norm. The original source fiber is separately proved noncompact in its F-l^(s,infinity) norm. The printed c0^s premise is vacuous for every actual target."
     },
     {
       "label": "Lemma 3.6",
@@ -1052,25 +1058,50 @@
       "label": "Remark 1.5",
       "line": 139,
       "statement": "Remark 1.5. Note that by [10] for any q ∈ H0−1 , Φ(Iso(q)) = TΦ(q) where\n                                  −1/2,2\n       TΦ(q) = {z̃ = (z̃k )k∈Z ∈ ℓ0        : |z̃k | = |Φ(q)k | ∀ k ∈ Z}.         (2)\n\nFurthermore, since by Theorem 1.4 for any q ∈ Fℓs,∞\n                                                  0   , −1/2 < s ⩽ 0, Iso(q) is\nbounded in Fℓs,∞\n             0   , the weak* topology on Iso(q) coincides with the one induced\nby the norm k·kσ,p for any −1/2 < σ < s, 2 ⩽ p < ∞ with (s − σ)p > 1 – cf.\nLemma B.1 from Appendix B. ⊸",
-      "status": "partial",
-      "comparison": "Isospectral torus equality and weak-star compactness proved; strong norm noncompactness assertion remains linked to Lemma 3.5(iii).",
-      "providers": [],
-      "declarations": [],
+      "status": "proved",
+      "comparison": "The literal full Hminus-one isospectral image is exactly its fixed-modulus signed torus. Every full original endpoint isospectral fiber has a common bound in the original source norm, and its actual physical Wiener weak-star topology is identical to the topology induced by every finite lower Banach exponent satisfying (s-sigma)*p>1 (hence every printed p>=2). The previous comparison incorrectly invented a strong-noncompactness obligation absent from this remark.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceRemark15.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean",
+        "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceRemark1_5",
+        "NLS.Articles.KdVPseudomeasures.sourceRemark1_5_torus",
+        "NLS.Articles.KdVPseudomeasures.sourceRemark1_5_topologies",
+        "NLS.Articles.KdVPseudomeasures.mem_hillRealNativeActionTorus_iff_norms"
+      ],
       "source_page": 3,
       "statement_sha256": "bee7ae8a0a44e0309e30ba4e7416dc4d10f0b71f1a5b8ae03579eb6bb6aea0a4",
-      "provider_sha256": {}
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceRemark15.lean": "cff0b868a9ae66f00c9fd956eaf71dc5d3a19d49e0cd4856ba4f98f6505e967d",
+        "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean": "1b0ea267b508e2342e9d4914221fde4f7d21818a6dc9f1a4ead9f17fd24023f8",
+        "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74"
+      },
+      "source_analysis_correction": "The source Remark 1.5 asserts torus equality, endpoint boundedness and agreement with lower norm topologies. It does not assert strong noncompactness. That unrelated prior coverage obligation is retracted."
     },
     {
       "label": "Remark 2.3",
       "line": 399,
       "statement": "Remark 2.3. For any −1/2 < s ⩽ 0, there are potentials q ∈ Fℓs,∞ so that\nIso(q) is not compact in Fℓs,∞ – see item (iii) in Lemma 3.5. ⊸",
-      "status": "not_found",
-      "comparison": "The source asserts existence, for each endpoint order, of a potential with a strongly noncompact isospectral set. It requires an explicit non-c0 action-torus example and transfer through the endpoint Birkhoff map; the earlier weighted ell-two comparison was unrelated to this remark.",
-      "providers": [],
-      "declarations": [],
+      "status": "proved",
+      "comparison": "For every admissible endpoint order, an explicit real mean-zero target has every positive weighted coefficient equal to one. Surjectivity of the actual endpoint Birkhoff map gives an original physical potential whose entire isospectral set is noncompact in the strong source norm. No ell-two condition replaces the literal noncompactness assertion.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceNoncompactTori.lean",
+        "NLS/SequenceSpaces/FourierRealTorusExample.lean",
+        "NLS/SequenceSpaces/FourierRealTorusNoncompact.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceRemark2_3",
+        "NLS.WeightedCoeff.not_positiveWeightedC0_realInverseWeightCoefficients"
+      ],
       "source_page": 7,
       "statement_sha256": "61d3036cd38093aa77727c7a4d4d6e5ebed78a253f8a7dc08236efee92fcb331",
-      "provider_sha256": {},
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceNoncompactTori.lean": "af6dee278894d15ad9c6d57c4b73dfca9d873ae583c3143a3c7a5c028999ea18",
+        "NLS/SequenceSpaces/FourierRealTorusExample.lean": "7ac5beb0518592c181010d77985603c18c719a8ec337cf123b48684a65adc41b",
+        "NLS/SequenceSpaces/FourierRealTorusNoncompact.lean": "a0c3212fbe8f745ca5d38b17d946bf9f28caad5f5871550c57c5dd1c4c1f57fa"
+      },
       "source_analysis_correction": "Retract the prior comparison requiring a gap sequence outside weighted ell-two. The literal remark concerns noncompactness of the isospectral set in the strong endpoint infinity norm."
     },
     {
