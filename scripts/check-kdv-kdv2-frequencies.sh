@@ -2759,6 +2759,9 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianOrigin
   NLS/ComplexAnalysis/RealAnalyticInverseChart
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInverseMatching
+  NLS/SequenceSpaces/PeriodOneMiuraGlobalCompactness
+  NLS/SequenceSpaces/PeriodOneRealMiuraProperness
+  NLS/SequenceSpaces/PeriodOneMiuraMinimalEnergy
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

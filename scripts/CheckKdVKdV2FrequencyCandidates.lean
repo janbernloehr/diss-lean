@@ -1,3 +1,6 @@
+import NLS.SequenceSpaces.PeriodOneMiuraMinimalEnergy
+import NLS.SequenceSpaces.PeriodOneRealMiuraProperness
+import NLS.SequenceSpaces.PeriodOneMiuraGlobalCompactness
 import NLS.ComplexAnalysis.RealAnalyticInverseChart
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseMatching
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianOrigin
@@ -4695,7 +4698,10 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianComplexCanonical,
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianOrigin,
   `NLS.ComplexAnalysis.RealAnalyticInverseChart,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseMatching
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseMatching,
+  `NLS.SequenceSpaces.PeriodOneMiuraGlobalCompactness,
+  `NLS.SequenceSpaces.PeriodOneRealMiuraProperness,
+  `NLS.SequenceSpaces.PeriodOneMiuraMinimalEnergy
 ]
 
 open Lean in
