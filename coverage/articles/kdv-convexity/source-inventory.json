@@ -48,7 +48,7 @@
       ],
       "domain": "Positive-index actions (I_n) for n >= 1; nonnegative includes zero coordinates; original Hkdv on weighted ell^(3,1)_+.",
       "topology": "Norm topology on complex ell2; open ambient extension around every cone point.",
-      "status": "partially_verified",
+      "status": "verified_with_source_correction",
       "checked_preparation": [
         "NLS.Articles.KdVConvexity.gradient_derivative_of_basis_hessian",
         "NLS.Articles.KdVConvexity.exists_ball_hessian_le_neg_three_norm_sq",
@@ -2834,12 +2834,39 @@
         "NLS.Articles.KdVConvexity.nativeFiniteGapApproximation_finite_gap",
         "NLS.Articles.KdVConvexity.native_physical_frequency_eq_miura_chart",
         "NLS.Articles.KdVConvexity.original_physical_frequency_eq_miura_chart",
-        "NLS.Articles.KdVConvexity.exists_original_physical_frequency_miura_recovery"
+        "NLS.Articles.KdVConvexity.exists_original_physical_frequency_miura_recovery",
+        "NLS.KdV.positive_finiteSupport_of_pair_inverse",
+        "NLS.KdV.exists_native_of_finite_positive_support",
+        "NLS.Articles.KdVConvexity.PhysicalFrequencyPairChart",
+        "NLS.Articles.KdVConvexity.PhysicalFrequencyPairChart.correction",
+        "NLS.Articles.KdVConvexity.PhysicalFrequencyPairChart.analytic_correction",
+        "NLS.Articles.KdVConvexity.PhysicalFrequencyPairChart.finite_physical_recovery",
+        "NLS.Articles.KdVConvexity.exists_physicalFrequencyPairChart",
+        "NLS.Coeff.quadraticActionsExponent_truncatePair",
+        "NLS.Coeff.eq_of_finite_pair_action_agreement",
+        "NLS.Articles.KdVConvexity.originalBaseActionInclusion_injective",
+        "NLS.Articles.KdVConvexity.PhysicalFrequencyPairChart.correction_eq_of_real_actions",
+        "NLS.Articles.KdVConvexity.PhysicalFrequencyRealPair",
+        "NLS.Articles.KdVConvexity.PhysicalFrequencyRealPair.actions",
+        "NLS.Articles.KdVConvexity.PhysicalFrequencyRealPair.exists_common_action_ball",
+        "NLS.Articles.KdVConvexity.exists_global_physical_frequency_action_corrections",
+        "NLS.ComplexAnalysis.analyticOnNhd_scalarFamily_add_preimage",
+        "NLS.ComplexAnalysis.scalarFamily_add_properties_preimage",
+        "NLS.WeightedCoeff.weightNormalization_coe_eq",
+        "NLS.WeightedCoeff.weightNormalization_nonnegative",
+        "NLS.Articles.KdVConvexity.PhysicalFrequencyPairChart.normalized_actions_at_native",
+        "NLS.Articles.KdVConvexity.PhysicalFrequencyPairChart.correction_at_native",
+        "NLS.Articles.KdVConvexity.physical_frequency_action_factor_recovery",
+        "NLS.Articles.KdVConvexity.normalizedBaseFrequency",
+        "NLS.Articles.KdVConvexity.basePhysicalFrequencyOfNormalizedFamily",
+        "NLS.Articles.KdVConvexity.nonempty_basePhysicalFrequencyExtension",
+        "NLS.Articles.KdVConvexity.PhysicalHstarExtension.real_and_nonpositive_on_cone",
+        "NLS.Articles.KdVConvexity.Theorem11PhysicalData",
+        "NLS.Articles.KdVConvexity.theorem_1_1_corrected",
+        "NLS.Articles.KdVConvexity.Theorem11PhysicalData.analytic_nonlinear_frequency",
+        "NLS.Articles.KdVConvexity.Theorem11PhysicalData.printed_uniform_base_estimate_impossible"
       ],
-      "remaining": [
-        "Prove rough mean-zero Miura-chart independence from the now proved full original H1 physical recovery, using density and complex real-form uniqueness. Glue the intrinsic rough source corrections, prove actual action-fiber invariance and analytic local pair-chart descent, and construct a nonempty BasePhysicalFrequencyExtension on the entire positive base action cone. Apply the checked common-domain assembly to finish the corrected Theorem 1.1. Exact shifted-Miura moment pullback and physical recovery at infinite-gap H1 sources are complete. The printed locally uniform O(1) estimate remains refuted.",
-        "Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates and physical KdV well-posedness."
-      ],
+      "remaining": [],
       "verified_statement_components": [
         {
           "component": "One complex open neighborhood V of the entire nonnegative ell2 action quadrant and an analytic extension of the physical renormalized KdV Hamiltonian to V.",
@@ -2849,22 +2876,23 @@
           "original_Birkhoff_action_agreement": "NLS.Articles.KdVConvexity.physicalHilbertActions_eq_original_Birkhoff_actions",
           "domain_weight": "(1+n)^3, exactly the source convention <n>=1+n at n>=1.",
           "normalization": "Physical period-one energy integral of q_prime^2/2+q^3; raw actions (x_n^2+y_n^2)/2; subtract 8*pi^3*n^3*I_n.",
-          "scope": "ONE complex open neighborhood of the ENTIRE nonnegative positive-index ell2 action quadrant, with physical agreement on the ENTIRE original positive weighted ell^(3,1) action Banach cone, including all zero coordinates."
+          "scope": "ONE complex open neighborhood of the ENTIRE nonnegative positive-index ell2 action quadrant, with physical agreement on the ENTIRE original positive weighted ell^(3,1) action Banach cone, including all zero coordinates.",
+          "real_on_entire_positive_cone": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.real_and_nonpositive_on_cone"
         },
         {
           "component": "The bilinear Hilbert gradient agrees coordinatewise with the existing KdV frequencies minus 8*pi^3*n^3 on V intersect V0.",
-          "result": "partially_proved_on_full_original_action_cone",
-          "declaration": "NLS.Articles.KdVConvexity.exists_global_analytic_gradient_with_original_physical_frequencies",
+          "result": "proved_with_source_correction",
+          "declaration": "NLS.Articles.KdVConvexity.theorem_1_1_corrected",
           "physical_derivative_intrinsic_to_actual_energy": "NLS.Articles.KdVConvexity.originalPhysicalEnergyDifferential_eq_local_germ",
           "original_domain": "Entire original positive ell^(3,1) Banach cone with exact norm (1+n)^3, including all boundary points and infinite support.",
-          "remaining": "Prove rough mean-zero Miura-chart independence from the now proved full original H1 physical recovery, using density and complex real-form uniqueness. Glue the intrinsic rough source corrections, prove actual action-fiber invariance and analytic local pair-chart descent, and construct a nonempty BasePhysicalFrequencyExtension on the entire positive base action cone. Apply the checked common-domain assembly to finish the corrected Theorem 1.1. Exact shifted-Miura moment pullback and physical recovery at infinite-gap H1 sources are complete. The printed locally uniform O(1) estimate remains refuted.",
+          "remaining": "None for corrected Theorem 1.1. Printed equation (1.7) is refuted and is not part of the corrected statement.",
           "uniform_continuation_bridge": "NLS.Articles.KdVConvexity.exists_common_physical_frequency_domain",
-          "remaining_input_record": "NLS.Articles.KdVConvexity.BasePhysicalFrequencyExtension",
           "printed_equation_1_7_status": "locally_uniform_O1_bound_refuted",
           "constructed_moment_preparation": "NLS.Articles.KdVConvexity.exists_analytic_positive_weighted_moment_source_chart",
           "physical_quartic_preparation": "NLS.Articles.KdVConvexity.physicalPartialQuarticDirection_coordinate_phase",
           "physical_finite_gap_frequency_identification": "NLS.Articles.KdVConvexity.exists_original_action_realization_with_finiteGap_frequency_moments",
-          "physical_Miura_frequency_recovery": "NLS.Articles.KdVConvexity.exists_original_physical_frequency_miura_recovery"
+          "physical_Miura_frequency_recovery": "NLS.Articles.KdVConvexity.exists_original_physical_frequency_miura_recovery",
+          "base_frequency_construction": "NLS.Articles.KdVConvexity.nonempty_basePhysicalFrequencyExtension"
         },
         {
           "component": "Gradient at zero is zero and its full bounded derivative is -6 times identity.",
@@ -2886,7 +2914,11 @@
           "declaration": "NLS.Articles.KdVConvexity.PhysicalHstarExtension.local_hessian_bound_and_strict_concavity",
           "scope": "The actual physical Hamiltonian on the original positive-index complex ell2 Hilbert space. One Hessian radius covers all complex actions in the ball and every real Hilbert direction, including infinite support; strict concavity holds on the positive ball."
         }
-      ]
+      ],
+      "declaration": "NLS.Articles.KdVConvexity.theorem_1_1_corrected",
+      "statement_record": "NLS.Articles.KdVConvexity.Theorem11PhysicalData",
+      "source_qualification": "The printed preamble equation (1.7), locally uniform O(1) on one common complex ell^(-1,1) neighborhood, is false for the actual physical frequencies. Coordinatewise analyticity and physical recovery on one common domain are proved without it; the estimate negation is also proved.",
+      "all_components_jointly_realized": "NLS.Articles.KdVConvexity.Theorem11PhysicalData"
     },
     {
       "label": "Theorem 1.2",
@@ -5990,6 +6022,58 @@
     "main_Theorem_1_1_complete": false,
     "main_Theorems_1_2_and_1_3_complete": false,
     "authored_heartbeat_or_linter_overrides": false,
+    "remaining_byte_identical_reference_sources": 2852,
+    "remaining_claims_superseded_by": "corrected_Theorem_1_1_progress"
+  },
+  "corrected_Theorem_1_1_progress": {
+    "status": "corrected_Theorem_1_1_proved_and_strictly_validated",
+    "main_declaration": "NLS.Articles.KdVConvexity.theorem_1_1_corrected",
+    "precise_statement_record": "NLS.Articles.KdVConvexity.Theorem11PhysicalData",
+    "new_authored_modules": [
+      "NLS.KdV.HillRoughFinitePairRegularity",
+      "NLS.Articles.KdVConvexity.PhysicalFrequencyPairCharts",
+      "NLS.SequenceSpaces.FinitePairActionIdentity",
+      "NLS.Articles.KdVConvexity.PhysicalFrequencyPairInvariance",
+      "NLS.Articles.KdVConvexity.GlobalFrequencyActionDescent",
+      "NLS.ComplexAnalysis.ScalarFamilyAffineTransport",
+      "NLS.SequenceSpaces.WeightedNonnegativeTransport",
+      "NLS.Articles.KdVConvexity.BasePhysicalFrequencyConstruction",
+      "NLS.Articles.KdVConvexity.PhysicalHstarReality",
+      "NLS.Articles.KdVConvexity.MainTheorem11"
+    ],
+    "baseline_proof_sources_preserved": 2527,
+    "finite_actual_pair_inverse_targets_have_all_native_Sobolev_regularity": true,
+    "simultaneous_real_truncation_preserves_equal_actions": true,
+    "independent_pair_charts_agree_on_all_real_action_fibers": true,
+    "infinite_support_and_all_closed_coordinates_included": true,
+    "actual_frequencies_descend_and_glue_on_one_common_complex_action_domain": true,
+    "no_uniform_frequency_family_bound_assumed": true,
+    "actual_BasePhysicalFrequencyExtension_nonempty_proved": true,
+    "base_frequency_factory": "NLS.Articles.KdVConvexity.nonempty_basePhysicalFrequencyExtension",
+    "full_V_intersect_V0_physical_frequency_identification_proved": true,
+    "one_complex_Hilbert_neighborhood_contains_entire_positive_cone": true,
+    "physical_Hstar_agreement_on_entire_original_cubic_weighted_action_cone": true,
+    "physical_Hstar_real_on_entire_positive_Hilbert_cone": true,
+    "full_Hilbert_gradient_zero_and_derivative_minus_six_proved": true,
+    "actual_local_complex_analytic_gradient_inverse_proved": true,
+    "one_radius_Hessian_bound_all_real_Hilbert_directions_proved": true,
+    "local_strict_concavity_proved": true,
+    "global_Hilbert_valued_renormalized_frequency_analyticity_proved": true,
+    "source_correction": "The printed preamble equation (1.7), locally uniform O(1) on one common complex ell^(-1,1) neighborhood, is false for the actual physical frequencies. Coordinatewise analyticity and physical recovery on one common domain are proved without it; the estimate negation is also proved.",
+    "source_correction_declaration": "NLS.Articles.KdVConvexity.Theorem11PhysicalData.printed_uniform_base_estimate_impossible",
+    "separate_global_complex_rough_source_frequency_gluing_required": false,
+    "descent_route": "Direct actual pair-chart action descent; finite physical targets and simultaneous truncation identify all real action fibers and independent pair charts. The common action factors glue without first constructing a separate global complex rough-source frequency family.",
+    "main_Theorem_1_1_corrected_complete": true,
+    "printed_equation_1_7_verified": false,
+    "main_Theorems_1_2_and_1_3_complete": false,
+    "authored_heartbeat_or_linter_overrides": false,
+    "authored_instance_priority_overrides": false,
     "remaining_byte_identical_reference_sources": 2852
+  },
+  "current_main_theorem_status": {
+    "Theorem_1_1": "verified_with_explicit_source_correction_to_preamble_1_7",
+    "Theorem_1_2": "not_verified",
+    "Theorem_1_3": "not_verified",
+    "all_main_theorems_complete": false
   }
 }
