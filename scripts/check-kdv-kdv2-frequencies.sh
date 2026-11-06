@@ -2903,6 +2903,12 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/OriginalComplexMeanZeroBirkhoffMap
   NLS/Articles/KdVKdV2Frequencies/OriginalNativeBirkhoffIdentifications
   NLS/Articles/KdVKdV2Frequencies/MainTheorem11
+  NLS/ComplexAnalysis/ActionRayDerivative
+  NLS/SequenceSpaces/WeightedPositiveActionDerivatives
+  NLS/Articles/KdVKdV2Frequencies/OriginalActionHamiltonians
+  NLS/SequenceSpaces/SobolevSignedActionModeCurve
+  NLS/Articles/KdVKdV2Frequencies/OriginalHierarchyActionFrequencies
+  NLS/Articles/KdVKdV2Frequencies/OriginalNativeHamiltonianFrequencyDifferential
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

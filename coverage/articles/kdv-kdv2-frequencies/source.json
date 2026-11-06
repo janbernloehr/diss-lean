@@ -709,7 +709,24 @@
         4
       ],
       "status": "open",
-      "role": "KdV frequency extension, asymptotics and compact derivative"
+      "role": "KdV frequency extension, asymptotics and compact derivative",
+      "verified_supporting_clauses": [
+        {
+          "source_clause": "The defining physical frequency omega_n=partial_(I_n) H in the original native action norm of order three",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.originalKdVFrequency_eq_physical_derivative",
+          "qualification": "Actual right derivative of the independently defined printed physical KdV Hamiltonian at genuine real native potentials with prescribed original actions. Every genuine analytic factor gives exactly the same unscaled positive derivative, including all closed gaps; no arbitrary negative or zero coordinate derivative is used."
+        },
+        {
+          "source_clause": "Native scalar real analyticity before the low-regularity sequence-valued extension",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_originalKdVFrequency_native_analytic_extensions",
+          "qualification": "One common complex action neighborhood before every positive index. Only scalar real analyticity in the original native weighted l1 norm is asserted here. All source low-regularity, sharp target sequence bounds, compactness and asymptotics remain OPEN."
+        },
+        {
+          "source_clause": "Actual physical native Hamiltonian differential in the original signed coordinates",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fderiv_birkhoffKdVHamiltonian_signed_mode",
+          "qualification": "The entire original native H_m composed with the SAME global inverse has its actual complex curve derivative in every real signed mode equal to (z_n*conj(c)+c*z_-n)*omega_n. Its actual real Frechet derivative in the raw native target norm is 2*Re(z_n*conj(c))*omega_n. Real and imaginary coordinate modes give exactly 2*Re(z_n)*omega_n and 2*Im(z_n)*omega_n. The first differential vanishes in every mode direction at a closed gap, while the frequency remains intrinsically defined by the action derivative. Explicit H1/H2 corollaries retain the exact printed physical Hamiltonians and native norms."
+        }
+      ]
     },
     {
       "label": "Theorem 1.3",
@@ -749,7 +766,24 @@
         6
       ],
       "status": "open",
-      "role": "KdV2 frequency extension and asymptotics"
+      "role": "KdV2 frequency extension and asymptotics",
+      "verified_supporting_clauses": [
+        {
+          "source_clause": "The defining physical frequency omega_n=partial_(I_n) H in the original native action norm of order five",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.originalKdV2Frequency_eq_physical_derivative",
+          "qualification": "Actual right derivative of the independently defined printed physical KdV2 Hamiltonian at genuine real native potentials with prescribed original actions. Every genuine analytic factor gives exactly the same unscaled positive derivative, including all closed gaps; no arbitrary negative or zero coordinate derivative is used."
+        },
+        {
+          "source_clause": "Native scalar real analyticity before the low-regularity sequence-valued extension",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_originalKdV2Frequency_native_analytic_extensions",
+          "qualification": "One common complex action neighborhood before every positive index. Only scalar real analyticity in the original native weighted l1 norm is asserted here. All source low-regularity, sharp target sequence bounds, compactness and asymptotics remain OPEN."
+        },
+        {
+          "source_clause": "Actual physical native Hamiltonian differential in the original signed coordinates",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fderiv_birkhoffKdV2Hamiltonian_signed_mode",
+          "qualification": "The entire original native H_m composed with the SAME global inverse has its actual complex curve derivative in every real signed mode equal to (z_n*conj(c)+c*z_-n)*omega_n. Its actual real Frechet derivative in the raw native target norm is 2*Re(z_n*conj(c))*omega_n. Real and imaginary coordinate modes give exactly 2*Re(z_n)*omega_n and 2*Im(z_n)*omega_n. The first differential vanishes in every mode direction at a closed gap, while the frequency remains intrinsically defined by the action derivative. Explicit H1/H2 corollaries retain the exact printed physical Hamiltonians and native norms."
+        }
+      ]
     },
     {
       "label": "Corollary 1.11",
@@ -38363,12 +38397,96 @@
       "scope": "COMPLETE source Theorem 1.1 is proved as theorem_1_1 : Nonempty OriginalBirkhoffTheoremData, an existential bundle keeping ONE complex map and ONE neighborhood through all clauses. It contains every s>=-1 native real analytic diffeomorphism and its literal restriction diagram, the intrinsic physical canonical matrix, the full hierarchy physical Hamiltonians composed with those SAME inverses as globally real analytic functions with analytic factors through the literal original actions, and the exact Fourier differential in the rough complex space and EVERY real native norm. The printed H1/H2 factors are explicit corollaries using the previously proved exact physical calibrations.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "687ce9a302bdffb6abec264a0fed8bb7d1150200fcf9c606bd5a8bfa1bd158ca"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ActionRayDerivative.lean",
+      "source_labels": [
+        "Physical action-derivative definition of original KdV/KdV2 frequencies (p.3), essential support for Theorems 1.2 and 1.9; not their complete extension/asymptotic conclusions"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "For a genuine complex differentiable scalar function on an arbitrary complex normed space, restriction to the unscaled positive real ray determines the complex directional derivative at its endpoint. Equality of physical values on the ray forces equal directional derivatives. Real values on the ray force a real derivative. One-sided derivative uniqueness at zero proves these assertions without excluding boundary points or assuming interior positivity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c7eeaa15510fbbe7af388d414080e568574a802a38dff037a7e42ed23335e38c"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedPositiveActionDerivatives.lean",
+      "source_labels": [
+        "Physical action-derivative definition of original KdV/KdV2 frequencies (p.3), essential support for Theorems 1.2 and 1.9; not their complete extension/asymptotic conclusions"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "The true original action cone consists of nonnegative raw weighted sequences supported ONLY at positive integer indices. Every positive unit increment remains in this cone. Physical recovery therefore uniquely determines every positive coordinate of the actual complex Frechet derivative, including at closed gaps and arbitrary infinite support; real physical recovery implies real derivatives. The unit direction is the original raw coefficient one, with its original weighted norm, and is never a negative or central coordinate. Each scalar derivative is analytic on the same action neighborhood; no bounded sequence-valued gradient is asserted.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "883400fa6d940f22699030e339c4c122043dbc2486ef2fc7986dd777165c83c6"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/OriginalActionHamiltonians.lean",
+      "source_labels": [
+        "Physical action-derivative definition of original KdV/KdV2 frequencies (p.3), essential support for Theorems 1.2 and 1.9; not their complete extension/asymptotic conclusions"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "For every physical hierarchy member H_m and exact original action order r=2m+1, a genuine raw real mean-zero h^(m+1/2) target realizes every true nonnegative action sequence. The SAME fixed global inverse supplies an actual real mean-zero H^m potential. Evaluating the independently defined physical native H_m there defines the action Hamiltonian BEFORE choosing an analytic factor. Genuine analytic factors exist for the actual hierarchy, recover every original raw target and equal this physical action Hamiltonian on the whole true cone. Its value equals H_m at ANY native real mean-zero source with these actual full signed Birkhoff coordinates. Thus arbitrary target or factor choices do not replace the physical Hamiltonian.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2e16688ce820a203f1bb3bcda9cd718fb23620a4e5a24aa80e73464c6bff5678"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SobolevSignedActionModeCurve.lean",
+      "source_labels": [
+        "Physical action-derivative definition of original KdV/KdV2 frequencies (p.3), essential support for Theorems 1.2 and 1.9; not their complete extension/asymptotic conclusions"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "A literal real native signed mode has raw amplitudes c at n and conj(c) at -n. The entire original weighted l1 action sequence of z+t*mode is proved equal IN NORM to a one-coordinate quadratic polynomial, with exact coefficient t*(z_n*conj(c)+c*z_-n)+t^2*c*conj(c). This gives an actual weighted Banach derivative, not merely coordinatewise derivatives, with no action or Fourier rescaling.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "df4e76fca85811df23a9b4eab92c94d1c54d6eac15d827d3f930f17a634b6c24"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/OriginalHierarchyActionFrequencies.lean",
+      "source_labels": [
+        "Physical action-derivative definition of original KdV/KdV2 frequencies (p.3), essential support for Theorems 1.2 and 1.9; not their complete extension/asymptotic conclusions"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "The intrinsic hierarchy frequency is defined as the ACTUAL right derivative of the independently defined physical action Hamiltonian along a positive action ray, before choosing any analytic extension. It equals the unscaled positive coordinate derivative of EVERY genuine analytic factor and is physically real, at every action point including all closed gaps and infinite support. ONE complex action neighborhood works before ALL positive indices for scalar real analytic extensions. The actual printed KdV/KdV2 frequencies have literal native action orders three/five and differentiate the independently defined native physical H1/H2, not a spectral series assumed to be a Hamiltonian derivative.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "01b87ff600a88bf62f09be74c75af1ea7857a3e3a87ace9ac3539247da988154"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/OriginalNativeHamiltonianFrequencyDifferential.lean",
+      "source_labels": [
+        "Physical action-derivative definition of original KdV/KdV2 frequencies (p.3), essential support for Theorems 1.2 and 1.9; not their complete extension/asymptotic conclusions"
+      ],
+      "source_pages": [
+        3,
+        4,
+        6
+      ],
+      "scope": "The entire original native H_m composed with the SAME global inverse has its actual complex curve derivative in every real signed mode equal to (z_n*conj(c)+c*z_-n)*omega_n. Its actual real Frechet derivative in the raw native target norm is 2*Re(z_n*conj(c))*omega_n. Real and imaginary coordinate modes give exactly 2*Re(z_n)*omega_n and 2*Im(z_n)*omega_n. The first differential vanishes in every mode direction at a closed gap, while the frequency remains intrinsically defined by the action derivative. Explicit H1/H2 corollaries retain the exact printed physical Hamiltonians and native norms.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1ad69424223e911be886cde27dd234b6e94af97069b6af03ff3974d4a261c7f8"
     }
   ],
   "dependencies_needed": [
-    "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
-    "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "COMPLETE Theorem 1.1 is now VERIFIED: one actual complex mean-zero Birkhoff map on one open neighborhood of ALL real mean-zero H^-1 data, with all s>=-1 native real analytic diffeomorphisms, the intrinsic physical canonical bracket, the original H1/H2 and full native hierarchy as analytic functions of the actual actions through the SAME inverse, and the exact printed Fourier differential at EVERY native order. Ten COMPLETE main theorem rows remain OPEN: Theorems 1.2, 1.3, 1.9, 1.12, 3.10 and 4.12, and Corollaries 1.4, 1.5, 1.7 and 1.11. Actual physical frequency derivative formulas, sharp infinite-gap estimates, fixed-mass bounds and actual KdV/KdV2 PDE conclusions remain essential. The overall article goal remains incomplete.",
+    "Identify the ACTUAL physical KdV action derivatives now defined in OriginalHierarchyActionFrequencies with the original intrinsic finite-gap cubic contour/moment frequencies. The exact native signed-mode Frechet differential is now proved, including all closed gaps. Then prove sharp infinite-gap summability, locally uniform asymptotics, the full low-regularity sequence-valued analytic extensions and compact derivative correction of Theorem 1.2, followed by the remaining concavity and local-inverse conclusions.",
+    "Identify the ACTUAL physical KdV2 action derivatives now defined on the original order-five cone with the original intrinsic finite-gap fifth contour/moment frequencies, retaining every physical mass and dispersion coefficient. The exact native signed-mode Frechet differential is now proved. Then prove the sharp infinite-gap and low-regularity sequence-valued extension, fixed-mass bounds and actual PDE conclusions required by Theorems 1.9 and 1.12.",
+    "The ORIGINAL KdV/KdV2 frequencies now have an intrinsic definition as actual derivatives of the independently defined physical Hamiltonians on their ENTIRE native positive action cones of orders three/five. Every genuine analytic factor has the same unscaled positive action derivative, including all closed gaps and infinite support. Scalar frequencies have real analytic extensions on one common native action neighborhood. Their exact coefficients in the actual native signed-coordinate Frechet differential through the SAME global inverse are proved: 2*Re(z_n*conj(c))*omega_n, with real/imaginary modes 2*Re(z_n)*omega_n and 2*Im(z_n)*omega_n. This holds for every original hierarchy member H_m. COMPLETE Theorem 1.1 remains VERIFIED and unchanged. The other ten COMPLETE main theorem rows remain OPEN. Next identify these ACTUAL physical derivatives with the already developed original finite-gap contour/moment frequency formulas and rough analytic spectral series, then prove the source low-regularity extensions, sharp infinite-gap estimates, sequence-valued analytic target bounds, compact derivative corrections, fixed-mass bounds and actual KdV/KdV2 PDE conclusions. Scalar native analyticity and exact mode differentials do not by themselves prove those main results. No sharp sequence-space extension, free-dispersion Taylor expansion, spectral-frequency equality, or actual PDE evolution is claimed by this milestone.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -38394,8 +38512,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 22669,
-    "total_declarations_audited": 44739,
+    "candidate_declarations_audited": 22771,
+    "total_declarations_audited": 44841,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -38404,7 +38522,7 @@
     "main_theorems_verified": [
       "Theorem 1.1"
     ],
-    "selected_modules": 2894,
+    "selected_modules": 2900,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -38514,7 +38632,8 @@
     "native_physical_hamiltonian_action_invariance_validation_sequence": "Prior strict evidence retained for all 2826 unchanged selected baseline sources. All seven new own modules strictly rebuilt in dependency order after freezing 2882 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2833 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact seven-module increase in NLS import closure verified. No new canonical prerequisite selection or provenance record is needed; all 46 prior provenance records remain unchanged and verified. The selection has 23 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2833-name runtime probe using all 23 current chunk references rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2833-module rebuild is claimed.",
     "native_weighted_analytic_action_factor_validation_sequence": "Prior strict evidence retained for all 2833 unchanged selected baseline sources. The exact 41-module canonical scalar action-descent dependency closure is reused byte-for-byte from verified main c5bcf634 and recorded in CANONICAL_SCALAR_ACTION_DESCENT_REUSE.json. All 46 newly selected modules (41 unchanged canonical prerequisites followed by five new own modules) strictly rebuilt in dependency order after freezing 2929 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2879 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 46-module increase in NLS import closure verified. All 46 prior provenance records remain unchanged; all 47 records are verified. The selection has 23 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2879-name runtime probe using all 23 current chunk references rejects extra and missing module sets. Exploratory checks are superseded by the final dependency-ordered rebuild after all earlier producers were terminal. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion and kernel limits remain in force. No full 2879-module rebuild is claimed.",
     "native_full_hierarchy_action_factor_validation_sequence": "Prior strict evidence retained for all 2879 unchanged selected baseline sources. All ten new own modules strictly rebuilt in dependency order after freezing 2939 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2889 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact ten-module increase in NLS import closure verified. The existing verified ungraded integration-by-parts, full endpoint polynomial means, Miura hierarchy and analytic action-descent developments are reused. No new canonical prerequisite selection or provenance record is needed; all 47 prior records remain unchanged and verified. The selection has 23 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2889-name runtime probe using all 23 current chunk references rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat, recursion and kernel limits remain in force. No full 2889-module rebuild is claimed.",
-    "main_theorem_1_1_validation_sequence": "Prior strict evidence retained for all 2889 unchanged selected baseline sources. All five new own modules strictly rebuilt in dependency order after freezing 2944 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2894 selected modules. Exact selection, dependency order, reachability and exact five-module increase in NLS import closure verified. No new canonical prerequisite selection or provenance record; all 47 prior records remain unchanged and verified. The 23 private audit chunks have at most 128 names. The entire transitive audit loop, including its bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2894-name runtime probe using all 23 chunk references rejects extra and missing module sets. Private fresh outputs, unchanged canonical main and pinned Mathlib verified. Default heartbeat, recursion and kernel limits remain in force. No full 2894-module rebuild is claimed."
+    "main_theorem_1_1_validation_sequence": "Prior strict evidence retained for all 2889 unchanged selected baseline sources. All five new own modules strictly rebuilt in dependency order after freezing 2944 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2894 selected modules. Exact selection, dependency order, reachability and exact five-module increase in NLS import closure verified. No new canonical prerequisite selection or provenance record; all 47 prior records remain unchanged and verified. The 23 private audit chunks have at most 128 names. The entire transitive audit loop, including its bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2894-name runtime probe using all 23 chunk references rejects extra and missing module sets. Private fresh outputs, unchanged canonical main and pinned Mathlib verified. Default heartbeat, recursion and kernel limits remain in force. No full 2894-module rebuild is claimed.",
+    "physical_action_frequency_validation_sequence": "Prior strict evidence retained for all 2894 unchanged selected baseline sources. All six new own modules strictly rebuilt in dependency order after freezing 2950 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2900 selected modules. Exact selection, dependency order, reachability and exact six-module increase in NLS import closure verified. No new canonical prerequisite selection or provenance record; all 47 prior records remain unchanged and verified. The 23 private audit chunks have at most 128 names. The entire transitive audit loop, including its bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2900-name runtime probe using all 23 chunk references rejects extra and missing module sets. Private fresh outputs, unchanged canonical main and pinned Mathlib verified. Default heartbeat, recursion and kernel limits remain in force. No full 2900-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -39624,6 +39743,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "25c358e58671f00734792bc62042e54c57c36e96",
+      "description": "The ORIGINAL KdV/KdV2 frequencies now have an intrinsic definition as actual derivatives of the independently defined physical Hamiltonians on their ENTIRE native positive action cones of orders three/five. Every genuine analytic factor has the same unscaled positive action derivative, including all closed gaps and infinite support. Scalar frequencies have real analytic extensions on one common native action neighborhood. Their exact coefficients in the actual native signed-coordinate Frechet differential through the SAME global inverse are proved: 2*Re(z_n*conj(c))*omega_n, with real/imaginary modes 2*Re(z_n)*omega_n and 2*Im(z_n)*omega_n. This holds for every original hierarchy member H_m.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "COMPLETE Theorem 1.1 is now VERIFIED: one actual complex mean-zero Birkhoff map on one open neighborhood of ALL real mean-zero H^-1 data, with all s>=-1 native real analytic diffeomorphisms, the intrinsic physical canonical bracket, the original H1/H2 and full native hierarchy as analytic functions of the actual actions through the SAME inverse, and the exact printed Fourier differential at EVERY native order. Ten COMPLETE main theorem rows remain OPEN: Theorems 1.2, 1.3, 1.9, 1.12, 3.10 and 4.12, and Corollaries 1.4, 1.5, 1.7 and 1.11. Actual physical frequency derivative formulas, sharp infinite-gap estimates, fixed-mass bounds and actual KdV/KdV2 PDE conclusions remain essential. The overall article goal remains incomplete.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -39703,5 +39834,6 @@
   "native_weighted_action_factors_record": "NATIVE_WEIGHTED_ACTION_FACTORS.md",
   "canonical_scalar_action_descent_record": "CANONICAL_SCALAR_ACTION_DESCENT_REUSE.json",
   "native_hierarchy_action_factors_record": "NATIVE_HIERARCHY_ACTION_FACTORS.md",
-  "main_theorem_1_1_record": "MAIN_THEOREM_1_1.md"
+  "main_theorem_1_1_record": "MAIN_THEOREM_1_1.md",
+  "physical_action_frequencies_record": "PHYSICAL_ACTION_FREQUENCIES.md"
 }

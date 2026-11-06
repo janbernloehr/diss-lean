@@ -1,3 +1,9 @@
+import NLS.Articles.KdVKdV2Frequencies.OriginalNativeHamiltonianFrequencyDifferential
+import NLS.SequenceSpaces.SobolevSignedActionModeCurve
+import NLS.Articles.KdVKdV2Frequencies.OriginalHierarchyActionFrequencies
+import NLS.Articles.KdVKdV2Frequencies.OriginalActionHamiltonians
+import NLS.SequenceSpaces.WeightedPositiveActionDerivatives
+import NLS.ComplexAnalysis.ActionRayDerivative
 import NLS.Articles.KdVKdV2Frequencies.MainTheorem11
 import NLS.Articles.KdVKdV2Frequencies.OriginalNativeBirkhoffIdentifications
 import NLS.Articles.KdVKdV2Frequencies.OriginalComplexMeanZeroBirkhoffMap
@@ -4986,7 +4992,13 @@ private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
   `NLS.Poisson.MeanZeroHminusGardnerBracket,
   `NLS.Articles.KdVKdV2Frequencies.OriginalComplexMeanZeroBirkhoffMap,
   `NLS.Articles.KdVKdV2Frequencies.OriginalNativeBirkhoffIdentifications,
-  `NLS.Articles.KdVKdV2Frequencies.MainTheorem11
+  `NLS.Articles.KdVKdV2Frequencies.MainTheorem11,
+  `NLS.ComplexAnalysis.ActionRayDerivative,
+  `NLS.SequenceSpaces.WeightedPositiveActionDerivatives,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalActionHamiltonians,
+  `NLS.SequenceSpaces.SobolevSignedActionModeCurve,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalHierarchyActionFrequencies,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalNativeHamiltonianFrequencyDifferential
 ]
 
 open Lean in
