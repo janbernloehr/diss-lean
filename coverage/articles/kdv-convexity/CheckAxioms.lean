@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.DirichletHilbertJacobian
 import NLS.Articles.KdVConvexity.DirichletLocalInverse
 import NLS.Articles.KdVConvexity.FreeDirichletLinearization
 import NLS.Articles.KdVConvexity.DirichletCoordinateDifferential

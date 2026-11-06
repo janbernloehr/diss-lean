@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "article_id": "kdv-convexity",
-  "date": "2026-11-05",
-  "milestone": "Prove the full logarithmic norming Fourier derivative, combined mean-zero isomorphism and actual local analytic Dirichlet inverse",
+  "date": "2026-11-06",
+  "milestone": "Prove the full intrinsic logarithmic norming differential and analytic bounded Hilbert spectral Jacobian at every real Hminus1 potential",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -551,11 +551,16 @@
     "NLS.SequenceSpaces.PeriodOneHminusOneMeanZero",
     "NLS.Articles.KdVConvexity.DirichletLinearizationInverse",
     "NLS.ComplexAnalysis.AnalyticEquivDerivativeInverse",
-    "NLS.Articles.KdVConvexity.DirichletLocalInverse"
+    "NLS.Articles.KdVConvexity.DirichletLocalInverse",
+    "NLS.KdV.HillHminusOneNormingVariation",
+    "NLS.KdV.HillHminusOneNormingDifferential",
+    "NLS.KdV.HillHminusOneLogNormingDifferential",
+    "NLS.KdV.HillHminusOneDirichletJacobian",
+    "NLS.Articles.KdVConvexity.DirichletHilbertJacobian"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 5366,
+    "declarations": 5420,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -880,6 +885,7 @@
     "NLS/Articles/KdVConvexity/CommonCanonicalMomentFamily.lean": "4bd10d8df2b479aa60e1ce10a5923e00e4f573b3d4ea9cc895cbc5674d21129a",
     "NLS/Articles/KdVConvexity/CoordinateActionExtension.lean": "731561a0e5afb2460ac2b5f17dc2d7cd70cd97c5491af0fa1b9ced0de5c0bf23",
     "NLS/Articles/KdVConvexity/DirichletCoordinateDifferential.lean": "677f90079de77c6ad0e105c7b2f926c764426dbaef8782e62905fdc0d1b05618",
+    "NLS/Articles/KdVConvexity/DirichletHilbertJacobian.lean": "5d3a3133ca301ac588b55df3815e56b94aea5751f8fdfe60f47d1ced3b7affd3",
     "NLS/Articles/KdVConvexity/DirichletLinearizationInverse.lean": "e833b4bb1289f1578519a31b34e42f8781358dfdb5ae9238e2401b66b5a16b33",
     "NLS/Articles/KdVConvexity/DirichletLocalInverse.lean": "6cb418432ad64dc5f917eb3b4170b4ed2de5932f5db6286fb16d129ce47c9283",
     "NLS/Articles/KdVConvexity/DirichletSequenceCoordinates.lean": "a827174f82c2e919ab4876048a9f910cf0cd3d89e57423df7ee4b61461de215b",
@@ -1130,6 +1136,7 @@
     "NLS/KdV/HillHminusOneDirichletGapLabels.lean": "4a0536bc04ed48ab27daefdc5bce2b1601de4b255cd4c6f62a54abbb8dbc929b",
     "NLS/KdV/HillHminusOneDirichletGapUniqueness.lean": "93e8438adf19d69e3fc8d51ed1a7fa7aa84e7581e37ba0a6f4a012c4a2eb543c",
     "NLS/KdV/HillHminusOneDirichletH1Analytic.lean": "dbda4b5d49e165284340fc21bb82dce6ebb4961598d4df9c9b849678bd274943",
+    "NLS/KdV/HillHminusOneDirichletJacobian.lean": "a51192808b068d76d9877dd9188372a5034fe711430dfadf9ddf4cd28500cd59",
     "NLS/KdV/HillHminusOneDirichletLogNorming.lean": "ffa6cef4e7e14f60b5e368db293ee25db2975a5046a4452da8a03bd764dee514",
     "NLS/KdV/HillHminusOneDirichletLowerBound.lean": "d4538219fc65862cab3f14eb821ae57f75effa0cb9e583c5522d9417c5c28f26",
     "NLS/KdV/HillHminusOneDirichletLowerExterior.lean": "19147eda7e67022cbd0ab7c420ef4a26cddb589675a242b24bdfb09a1f39b2d8",
@@ -1183,12 +1190,15 @@
     "NLS/KdV/HillHminusOneLabelContinuity.lean": "faa6f16768b669c1d4b67921145f7a2f819894b26a90b414639a73a8c789eb75",
     "NLS/KdV/HillHminusOneLabelFamilies.lean": "6e109bfc0880762920b7d6633d8b33ba858ae17146560a3ade84aef91f582536",
     "NLS/KdV/HillHminusOneLabelUniqueness.lean": "316cd9f889a10dbca3d84b12063d4bcce5e2d471188b7b53130c5fea0a75304e",
+    "NLS/KdV/HillHminusOneLogNormingDifferential.lean": "7caf3479d057acf958c3262d4d40f2a41d62a5a42854af8c927ba406a2481878",
     "NLS/KdV/HillHminusOneMassPotentialPairing.lean": "590b644b4bc624d7331ede30acada8d50e89a9ab10f3d44206ea07abd3b4044c",
     "NLS/KdV/HillHminusOneMiuraGapComparison.lean": "21119649cd5dac98f51c3088d101046f5dbc7ecebe7e2257b2cfb500b6b56a82",
     "NLS/KdV/HillHminusOneMomentCutRoot.lean": "811cd5a06c309f105f6d955dc605cedb34c9fcbf8267535f9e166c3f7fa81ac8",
     "NLS/KdV/HillHminusOneMomentRadius.lean": "9b8276a247239f9d2974cc0b3df7a41079209173646bd02c8432e78b6d68c87f",
     "NLS/KdV/HillHminusOneMomentReality.lean": "7787c86cc99d5c9242fc52d545f0a353743d46d7e14c564f498166299d4ac359",
+    "NLS/KdV/HillHminusOneNormingDifferential.lean": "4e52aed2749f06f080ab31a6d2e57d61313026948b47522462614c8e3e650dba",
     "NLS/KdV/HillHminusOneNormingPerturbation.lean": "d2b3b4385a8011489eef768f329ec7dcb87278c0ae2f3c2ac6e6060bf6a2f0aa",
+    "NLS/KdV/HillHminusOneNormingVariation.lean": "b21bbad19ae13880e86b5e5d14f9290b9bbef6f9ebadbd0f53638bc33005aba4",
     "NLS/KdV/HillHminusOnePairUniqueness.lean": "9978a3e9efdf97127c2e8748104417e45300c9dfa3f7618fe2af2599ec6ac7c3",
     "NLS/KdV/HillHminusOnePhysicalCut.lean": "eb3fa7232841695ce7c83a6784307603ac6d53036125faa9215127ec1fa42079",
     "NLS/KdV/HillHminusOnePhysicalDirichlet.lean": "399b8de979781d5908910bd10b81a645bb84ca7cb31d550b1d529eda655f27c0",
@@ -1407,7 +1417,7 @@
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
     "NLS/ZakharovShabat/SourceDirichletAntiSamplesAnalytic.lean": "d46e1211272cfa14ed59a35946ba07971d92e09205bd7cc412a746204495e719",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "de865cc0ddd3bd08a75dfa529afd2e636d827ac0b06a870cfc3fd43043704900",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "8b304b2fbf2698f1cfa249609cfb4b3d9f5c78b272b3e2b96fa92ed2127cff71",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/action-sequence-library-reuse.json": "9126c713dd2dbd5eb3b1d902df1cea7bdd35cbbd75a6ee13e21fd9d7fd49827e",
@@ -1417,6 +1427,7 @@
     "coverage/articles/kdv-convexity/dirichlet-differential-library-reuse.json": "b6cbf4b25b138f1296db73cab7218c8f3620b40e943522454302a8342f11afa5",
     "coverage/articles/kdv-convexity/dirichlet-exhaustion-shared-imports.json": "465a8340a7622c1c19d3016bf34383c28ffd3080f5ebe07953a480e1a47d2dc9",
     "coverage/articles/kdv-convexity/dirichlet-gap-shared-imports.json": "4f4ba5814d179bdaf348876d27a0c7ff530ccf62df6e0a944a5fa755deb05a0e",
+    "coverage/articles/kdv-convexity/dirichlet-hilbert-jacobian-library-reuse.json": "35af046a0a5988f556b80491191722bcda71da9bdf18fb8286dfe1f4f77e4842",
     "coverage/articles/kdv-convexity/dirichlet-local-inverse-library-reuse.json": "ffcd1b5fff57775a0480f256cd80e91319881a40f497a37410bdd6f3953bea6c",
     "coverage/articles/kdv-convexity/dirichlet-shared-imports.json": "69e1c7df945527a159731d5cd8e520d8f6487c0311b60a6f765dbb3de1277613",
     "coverage/articles/kdv-convexity/endpoint-shared-imports.json": "778c8d2856fdae5d4d08b2ac267d2c4abb029cc4fc246cb0f88824d73be3e8d8",
@@ -1428,10 +1439,10 @@
     "coverage/articles/kdv-convexity/physical-cut-shared-imports.json": "c6adf4965416cc426fc385ce324b4afb1aae45fec50e499debfbd5c2a2c5997f",
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
-    "scripts/check-kdv-convexity.sh": "7e789470349b0e06c4836b466667c3a30a7c7d655b82a95c6ecabe32873935c7"
+    "scripts/check-kdv-convexity.sh": "4b6bad0012d82acc7aecaea45c66f068f70ae8c8cdb0d7f42ba203dcf63b3bc0"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-audit-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-hilbert-jacobian-audit-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -1449,7 +1460,7 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "Global potential-space gluing is now proved: one complex-open neighborhood of the entire real H^-1 space carries all canonical polynomial and cubic moments, agrees with every actual real period, and retains locally uniform complex-tail quadratic bounds. Finite-gap exterior matching, the normalized inversion remainder of Lemma 4.4 and the physical energy/frequency identities remain open.",
-    "Construct the full Cartesian KdV spectral coordinates and an analytic inverse potential realization near all real normalized Hilbert pairs. Prove their quadratic actions equal the actual Arnold actions and that equal action sequences determine the full discriminant, then instantiate the verified positive-ell2 analytic contour extension. The actual normalized Dirichlet energy and logarithmic norming sequences already extend jointly as Banach analytic ell2 maps near every real H^-1 potential. Their combined free derivative is now an explicit bounded Fourier isomorphism on mean-zero H^-1, giving a two-sided complex analytic inverse on open neighborhoods of zero. This local Dirichlet inverse does not yet supply the global Cartesian KdV realization or its symplectic/action identities. The closed/self-adjoint Hill operator domain and periodic multiplicity identification, physical renormalized Hamiltonian/frequencies, -6*Id and main Theorems 1.1-1.3 remain unverified.",
+    "Construct the full Cartesian KdV spectral coordinates and an analytic inverse potential realization near all real normalized Hilbert pairs. Prove their quadratic actions equal the actual Arnold actions and that equal action sequences determine the full discriminant, then instantiate the verified positive-ell2 analytic contour extension. The actual normalized Dirichlet energy and logarithmic norming sequences extend jointly as Banach analytic ell2 maps near every real H^-1 potential. Their full bounded Jacobian is now analytic on the same domain and has exact intrinsic energy and corrected sine-cosine norming functional coordinates at every real potential, including all closed gaps and arbitrary complex directions. Its mean-zero restriction at zero is an explicit Fourier isomorphism and gives a two-sided local analytic inverse. Prove mean-zero Jacobian invertibility at every real potential and the required global inverse and symplectic/action identities. The closed/self-adjoint Hill operator domain and periodic multiplicity identification, physical renormalized Hamiltonian/frequencies, -6*Id and main Theorems 1.1-1.3 remain unverified.",
     "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. Even polynomial Arnold periods are nonnegative; the level-zero Arnold and cubic zero sets equal the closed-gap set. These signs and zero criteria hold for the common all-index family and its matched source tail at every real input. Global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
@@ -1468,9 +1479,10 @@
     "The global logarithmic norming sequence K_n=log((-1)^n Re(gamma_n)) is now one complex Banach analytic ell2 map near the entire real H^-1 space. Exact Miura terminal-factor comparison and signed anti-discriminant samples fix every index; inverse-sinh superposition handles the sequence norm. This is not yet the Cartesian KdV inverse realization, and the positive-ell2 extension and all main theorems remain open.",
     "The actual normalized Dirichlet scalar column is now jointly entire in the full continuous/L2 H1 graph. Every actual complex root branch has the exact H^-1 differential da[h]*integral Y^2=<h,Y^2>, and the global Hilbert normalized energy map has the corresponding derivative with factor 1+n. Explicit free Fourier linearization, the Cartesian inverse and symplectic/action identities are not yet proved; Theorems 1.1-1.3 remain open.",
     "The exact free Dirichlet column is sin(n*pi*x)/(n*pi); its squared mass and H^-1 potential pairing now fix the actual derivative dmu_n(0)[h]=h_0-(h_n+h_-n)/2. The global normalized ell2 energy map has this full bounded derivative divided by 1+n. The logarithmic norming derivative, combined mean-zero inverse and all main theorems remain unproved.",
-    "The combined actual energy/norming map now has a two-sided complex analytic inverse on open neighborhoods of zero in mean-zero H^-1 and ell2 x ell2. A global Cartesian KdV inverse near all real normalized Hilbert pairs, symplecticity, Arnold action identities and the unconditional main theorems remain open."
+    "The combined actual energy/norming map now has a two-sided complex analytic inverse on open neighborhoods of zero in mean-zero H^-1 and ell2 x ell2. A global Cartesian KdV inverse near all real normalized Hilbert pairs, symplecticity, Arnold action identities and the unconditional main theorems remain open.",
+    "The entire bounded Hilbert spectral Jacobian is now analytic on the actual global potential domain, with exact energy and chart-independent norming functionals at every real potential. Invertibility of its mean-zero restriction away from zero, global Cartesian KdV coordinates, symplectic/action identities and the unconditional main theorems remain open."
   ],
-  "previous_progress_commit": "bb82c5f3e8e6be36ea5ae988f076fc3c315c1427",
+  "previous_progress_commit": "42c8d1917ef4189f33f2bd6931c79275d3a0aee6",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -1962,7 +1974,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation against bb82c5f: all 522 baseline source hashes unchanged; twelve authored modules pass warningAsError checks, followed by the positive-index example, cumulative transitive axiom audit and 1330 coverage-name checks. Full reproduction script lists 534 NLS modules plus the preceding private pinned mathlib compilation. Inherited import-closure sources (2297 outside the focused baseline) match the read-only compiled reference byte-for-byte and were not rebuilt.",
+  "focused_validation_scope": "Incremental validation against 42c8d19: all 534 baseline source hashes unchanged; five authored modules pass warningAsError checks, followed by the positive-index example, cumulative transitive axiom audit and 1355 coverage-name checks. Full reproduction script lists 539 NLS modules plus the preceding private pinned mathlib compilation. Inherited import-closure sources (2297 outside the focused baseline) match the read-only compiled reference byte-for-byte and were not rebuilt.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -2272,9 +2284,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 1330,
+    "declarations": 1355,
     "audit_modules_present": 272,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/DirichletLocalInverseCoverageNames.log"
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/DirichletHilbertJacobianCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -2363,111 +2375,55 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "bb82c5f3e8e6be36ea5ae988f076fc3c315c1427",
-    "baseline_modules": 522,
+    "baseline_commit": "42c8d1917ef4189f33f2bd6931c79275d3a0aee6",
+    "baseline_modules": 534,
     "baseline_source_hashes_unchanged": true,
     "newly_checked_exact_shared_modules": 0,
-    "newly_checked_authored_modules": 12,
+    "newly_checked_authored_modules": 5,
     "completed_module_checks": [
       {
-        "module": "NLS.MKdV.L2QuasiHillFreeCosine",
-        "source_sha256": "e3cc304dd5110066bc995e5d65be35cd033e1bcd75abb6578e61cfca64ada1e5",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillFreeCosine.lean.log",
+        "module": "NLS.KdV.HillHminusOneNormingVariation",
+        "source_sha256": "b21bbad19ae13880e86b5e5d14f9290b9bbef6f9ebadbd0f53638bc33005aba4",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-hilbert-jacobian-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneNormingVariation.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.Fourier.SineCosinePairing",
-        "source_sha256": "22d92c34865c290f3770dfccf8533b806530a7673305c024078c3dc7c5308f99",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Fourier.SineCosinePairing.lean.log",
+        "module": "NLS.KdV.HillHminusOneNormingDifferential",
+        "source_sha256": "4e52aed2749f06f080ab31a6d2e57d61313026948b47522462614c8e3e650dba",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-hilbert-jacobian-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneNormingDifferential.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.KdV.HillHminusOneFreeNormingPairing",
-        "source_sha256": "1e67a83925c209b71e7949e7894ef573a60c8059918f871503ffcf201db95353",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneFreeNormingPairing.lean.log",
+        "module": "NLS.KdV.HillHminusOneLogNormingDifferential",
+        "source_sha256": "7caf3479d057acf958c3262d4d40f2a41d62a5a42854af8c927ba406a2481878",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-hilbert-jacobian-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneLogNormingDifferential.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.KdV.HillHminusOneNormingPerturbation",
-        "source_sha256": "d2b3b4385a8011489eef768f329ec7dcb87278c0ae2f3c2ac6e6060bf6a2f0aa",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneNormingPerturbation.lean.log",
+        "module": "NLS.KdV.HillHminusOneDirichletJacobian",
+        "source_sha256": "a51192808b068d76d9877dd9188372a5034fe711430dfadf9ddf4cd28500cd59",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-hilbert-jacobian-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneDirichletJacobian.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.KdV.HillHminusOneFreeNormingDifferential",
-        "source_sha256": "db15932b2d7e1e3035c88cd22fea76eb823d452d49a828d00b7400284b93c786",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneFreeNormingDifferential.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.SequenceSpaces.PeriodOneHminusOneRealGerms",
-        "source_sha256": "4ce9954747a6d8307e6a91525ed30ed2e0f2af8d251ac0d93662106217be60de",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.PeriodOneHminusOneRealGerms.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.KdV.HillHminusOneFreeLogNormingDifferential",
-        "source_sha256": "bc8fbaa70a794d30b198b94678f349cecbfc1af2c3f3400ebaa1ca99b5bf732f",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneFreeLogNormingDifferential.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.FreeLogNormingLinearization",
-        "source_sha256": "4615302bad4f8faa4fc1a998d6e8f210999947b316c3080ee2f10b2053e072e2",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Articles.KdVConvexity.FreeLogNormingLinearization.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.SequenceSpaces.PeriodOneHminusOneMeanZero",
-        "source_sha256": "e4ddf10e27797d39817e4c4238e437599fe16a80c9653104424da02f8f0822a6",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.PeriodOneHminusOneMeanZero.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.DirichletLinearizationInverse",
-        "source_sha256": "e833b4bb1289f1578519a31b34e42f8781358dfdb5ae9238e2401b66b5a16b33",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Articles.KdVConvexity.DirichletLinearizationInverse.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.ComplexAnalysis.AnalyticEquivDerivativeInverse",
-        "source_sha256": "366631dfe357fa0acdefd11b7c4107d833149f10015d4a611b41f56ec50b93ee",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.AnalyticEquivDerivativeInverse.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.DirichletLocalInverse",
-        "source_sha256": "6cb418432ad64dc5f917eb3b4170b4ed2de5932f5db6286fb16d129ce47c9283",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-milestone-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Articles.KdVConvexity.DirichletLocalInverse.lean.log",
+        "module": "NLS.Articles.KdVConvexity.DirichletHilbertJacobian",
+        "source_sha256": "5d3a3133ca301ac588b55df3815e56b94aea5751f8fdfe60f47d1ced3b7affd3",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-hilbert-jacobian-milestone-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Articles.KdVConvexity.DirichletHilbertJacobian.lean.log",
         "warningAsError": true,
         "result": "passed"
       }
     ],
-    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-local-inverse-audit-validation.log",
-    "inherited_reference_import_source_manifest": "coverage/articles/kdv-convexity/dirichlet-local-inverse-library-reuse.json",
+    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-hilbert-jacobian-audit-validation.log",
+    "inherited_reference_import_source_manifest": "coverage/articles/kdv-convexity/dirichlet-hilbert-jacobian-library-reuse.json",
     "inherited_reference_import_closure_rebuilt": false
   },
   "Hminus1_real_spectral_progress": {
@@ -3735,6 +3691,68 @@
       "NLS.Articles.KdVConvexity.DirichletLocalInverse"
     ],
     "inherited_library_source_reuse_manifest": "coverage/articles/kdv-convexity/dirichlet-local-inverse-library-reuse.json",
+    "inherited_reference_import_closure_sources_byte_identical": 2297,
+    "inherited_reference_import_closure_rebuilt_this_milestone": false
+  },
+  "Hminus1_actual_global_Dirichlet_Jacobian_progress": {
+    "exact_two_potential_norming_identity_at_every_complex_Dirichlet_root": true,
+    "cosine_terminal_value_times_Dirichlet_terminal_momentum_equals_one_at_every_complex_root": true,
+    "terminal_momentum_full_complex_Hminus1_differential_at_every_analytic_Dirichlet_branch": true,
+    "energy_overlap_correction_retained_at_arbitrary_base_potential": true,
+    "any_actual_analytic_log_norming_extension_has_logarithmic_terminal_derivative_at_every_real_potential": true,
+    "all_closed_gaps_included_without_gap_openness_assumption": true,
+    "all_complex_Hminus1_directions_allowed_without_finite_support_restriction": true,
+    "bounded_energy_and_log_norming_differential_functionals_constructed_at_every_real_potential": true,
+    "energy_formula": "dmu_n(q)[h]=P_h(Y_n,Y_n)/M_n, M_n=integral Y_n^2 != 0.",
+    "norming_formula": "dkappa_n(q)[h]=P_h(Y_n,C_n)-integral(Y_n*C_n)*dmu_n(q)[h].",
+    "norming_functional_independent_of_Miura_chart_used_for_cosine_column": true,
+    "full_actual_Hminus1_to_ell2_product_Jacobian_constructed": true,
+    "Jacobian_varies_Banach_analytically_on_same_global_complex_potential_domain": true,
+    "exact_coordinate_CLM_identities_at_every_real_potential": "eval_n o dE(q)=(1/(1+n))*dmu_n(q); eval_n o dK(q)=dkappa_n(q).",
+    "full_Jacobian_at_zero_equals_exact_free_Fourier_operator": true,
+    "mean_zero_restriction_at_zero_equals_proved_continuous_linear_equivalence": true,
+    "mean_zero_Jacobian_invertible_at_every_real_potential_proved": false,
+    "full_Cartesian_KdV_inverse_near_all_real_normalized_Hilbert_pairs_constructed": false,
+    "quadratic_actions_equal_actual_Arnold_actions_proved": false,
+    "action_fibers_determine_full_discriminant_proved": false,
+    "main_Theorem_1_1_unconditional_positive_ell2_extension_proved": false,
+    "scalar_norming_differential_declaration": "NLS.KdV.hillHminusDirichletLogNorming_extension_hasFDerivAt",
+    "chart_independence_declaration": "NLS.KdV.hillHminusDirichletLogNormingDifferential_eq_chart",
+    "analytic_Jacobian_declaration": "NLS.Articles.KdVConvexity.DirichletHilbertCoordinates.analytic_jacobian",
+    "reviewed_new_shared_foundation_candidates": [
+      {
+        "branch": "kdv-estimates",
+        "commit": "25e906bba4584c1c1ffbf0d13cd15ce0dfeee814",
+        "candidate_root": "NLS/KdV/HillOriginalGlobalInverse.lean",
+        "root_blob_sha": "67fdf6db58661725ac76c311e7ad54c717dc29a4",
+        "scope": "Global actual physical real mean-zero L2 inverse, with Banach analyticity of both directions; Hminus1 global realization still requires a bridge.",
+        "status": "Read-only source inspection; not imported, rebuilt, or included as a proved dependency in this milestone."
+      },
+      {
+        "branch": "kdv-pseudomeasures",
+        "commit": "96091c032a493d784e382745e2394400beaab1be",
+        "candidate_root": "NLS/KdV/SingularHillAlgebraicMultiplicity.lean",
+        "root_blob_sha": "cd2d013ae8c9a291617eb76554c24442d02ab31b",
+        "scope": "Full original Hminus1 singular Hill spectrum and physical algebraic multiplicity; reconcile potential conventions and identify our discriminant.",
+        "status": "Read-only source inspection; not imported, rebuilt, or included as a proved dependency in this milestone."
+      },
+      {
+        "branch": "kdv-kdv2-frequencies",
+        "commit": "9d96f3cda85a9a379bfd91e685e320f9ca45d163",
+        "candidate_root": "NLS/Articles/KdVKdV2Frequencies/NativeRoughRealAbelianInverse.lean",
+        "root_blob_sha": "cadc790441f81a2aa6bec2f1a5bec72d5d1da92e",
+        "scope": "Actual rough signed Abelian local inverse preserving the physical real form at zero; no global rough inverse asserted.",
+        "status": "Read-only source inspection; not imported, rebuilt, or included as a proved dependency in this milestone."
+      }
+    ],
+    "new_authored_modules": [
+      "NLS.KdV.HillHminusOneNormingVariation",
+      "NLS.KdV.HillHminusOneNormingDifferential",
+      "NLS.KdV.HillHminusOneLogNormingDifferential",
+      "NLS.KdV.HillHminusOneDirichletJacobian",
+      "NLS.Articles.KdVConvexity.DirichletHilbertJacobian"
+    ],
+    "inherited_library_source_reuse_manifest": "coverage/articles/kdv-convexity/dirichlet-hilbert-jacobian-library-reuse.json",
     "inherited_reference_import_closure_sources_byte_identical": 2297,
     "inherited_reference_import_closure_rebuilt_this_milestone": false
   }

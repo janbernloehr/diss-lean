@@ -2758,6 +2758,53 @@ in Theorem 1.1. The inherited import closure contains 2297 byte-identical
 cached sources outside the 522-module baseline; these were not rebuilt.
 See `dirichlet-local-inverse-library-reuse.json` for hashes and audit scope.
 
+## The actual spectral Jacobian at every real H^-1 potential
+
+`HillHminusOneNormingVariation.lean` replaces the free cosine test with
+the actual cosine solution at an arbitrary base potential. Its exact
+two-potential Green identity holds at every complex Dirichlet root.
+At the base root it also proves that the cosine terminal value times
+the Dirichlet terminal momentum is exactly one.
+
+`HillHminusOneNormingDifferential.lean` differentiates that identity in
+the original complex H^-1 norm, using the proved analytic H1 graph and
+mass-resolvent pairing. The energy-overlap term is retained at arbitrary
+base potentials. `HillHminusOneLogNormingDifferential.lean` identifies
+any actual analytic norming extension with the signed terminal logarithm
+as a complex germ at every real potential.
+
+`HillHminusOneDirichletJacobian.lean` constructs actual bounded
+complex-linear energy and logarithmic norming functionals. If `Y_n`
+is the normalized Dirichlet column, `C_n` the cosine column in any
+Miura chart, `P_h` the intrinsic potential pairing and `M_n=integral Y_n^2`,
+then `M_n` is nonzero and
+
+```text
+dmu_n(q)[h]    = P_h(Y_n,Y_n)/M_n
+dkappa_n(q)[h] = P_h(Y_n,C_n)-integral(Y_n*C_n)*dmu_n(q)[h].
+```
+
+The corrected norming functional is independent of the chosen Miura
+chart. These are full complex Frechet derivatives for every H^-1
+direction, at every real potential and positive index, including all
+closed gaps. They do not require finite Fourier support.
+
+`DirichletHilbertJacobian.lean` constructs the full bounded derivative
+of the actual energy/norming map into `ell2 x ell2`. This operator-valued
+map is Banach analytic on the same complex open neighborhood of the
+entire real potential space. At every real potential its coordinate
+operators are exactly `dmu_n/(1+n)` and `dkappa_n`. Its restriction to
+the mean-zero phase space is the derivative of the actual restricted
+map; at zero it equals the previously proved Fourier equivalence.
+
+Invertibility of the mean-zero Jacobian at every real potential remains
+open. The present result supplies its exact operator and coordinate
+formulas; it does not assert the global inverse, Cartesian KdV
+coordinates, symplectic/action identities or Theorem 1.1. The inherited
+2297-source import closure outside the 534-module baseline is byte
+identical to the read-only compiled reference and was not rebuilt.
+See `dirichlet-hilbert-jacobian-library-reuse.json` for hashes and scope.
+
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
@@ -2814,6 +2861,24 @@ in this branch. Joint complex-potential central periods and the global
 Birkhoff construction remain open.
 No separate messages were sent to other article chats.
 
+## New shared foundations inspected on 2026-11-06
+
+The read-only `kdv-estimates` branch at `25e906b` now contains the
+actual physical mean-zero L2 global inverse and both analytic directions
+in `HillOriginalGlobalInverse.lean`. This is a genuine L2 result; the
+global H^-1 inverse required here is not inferred from it.
+`kdv-pseudomeasures` at `96091c0` supplies the full original singular
+H^-1 Hill operator spectrum and algebraic multiplicities, while
+`kdv-kdv2-frequencies` at `9d96f3c` supplies an actual rough signed
+Abelian local inverse preserving the physical real form at zero.
+
+These source results were inspected and pinned as reuse candidates.
+They have not yet been imported or revalidated in this branch. Matching
+their original potential/discriminant conventions and integrating the
+needed exact dependency closures are the next reuse tasks. Their full
+commit and source-blob identifiers are recorded in the latest progress
+object in `source-inventory.json` and `validation.json`.
+
 ## Validation and worktree
 
 The dedicated ordinary Git worktree is
@@ -2823,18 +2888,18 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `bb82c5f` contains 522 source modules, whose
-source hashes remain unchanged. Twelve authored modules pass Lean
+The validated baseline at `42c8d19` contains 534 source modules, whose
+source hashes remain unchanged. Five authored modules pass Lean
 4.33.1/mathlib v4.33.1 with `warningAsError=true`; the complete
-reproduction script lists 534 NLS modules and the preceding private
+reproduction script lists 539 NLS modules and the preceding private
 pinned mathlib compilation. The positive-index example, cumulative
-transitive axiom audit and 1330 coverage-declaration checks pass. This
+transitive axiom audit and 1355 coverage-declaration checks pass. This
 is incremental validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
 helpers and all declarations originating in 272 additional shared modules:
-5366 declarations in total, transitively. Only `propext`,
+5420 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
