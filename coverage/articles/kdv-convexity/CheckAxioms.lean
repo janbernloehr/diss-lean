@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.BasePhysicalFrequencyExtension
 import NLS.Articles.KdVConvexity.PhysicalLocalConsequences
 import NLS.Articles.KdVConvexity.PhysicalTaylorExpansion
 import NLS.Articles.KdVConvexity.CubicActionRatioAtZero
@@ -108,6 +109,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.ComplexAnalysis.UniformScalarDerivativeBound,
+
     `NLS.SequenceSpaces.WeightedQuadraticActionAlgebra,
     `NLS.ComplexAnalysis.SecondDerivativeRayLimit,
     `NLS.SequenceSpaces.LpOperatorBasisExt,

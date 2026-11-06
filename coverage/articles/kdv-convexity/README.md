@@ -3373,12 +3373,37 @@ direction `v`, including infinite support. The bound holds even at all
 complex actions in that ball. Strict concavity holds on its positive
 quadrant. All statements use the original positive-index ell2 space.
 
+## Corrected base-frequency bound and the exact remaining construction
+
+The printed locally uniform `O(1)` estimate (1.7) on the complex
+ell^(-1,1) base domain is now formally refuted. This is a source correction,
+not completion of the remaining frequency construction. A raw unit action
+at n has base norm exactly `1/(1+n)`, while physical normalization forces
+`d(omega_n)(0)[e_n]=-6`. Hence the n-th cotangent norm is at least
+`6*(1+n)`. One locally uniform scalar tail bound would give a uniform
+cotangent norm bound by Cauchy's estimate. This remains impossible after
+ANY finite index cutoff. No sequence-valued base analyticity is assumed.
+
+`BasePhysicalFrequencyExtension.lean` specifies the remaining record:
+coordinatewise analytic frequencies on ONE open neighborhood of the
+entire positive base cone, recovering the actual physical energy
+coordinate derivatives on the full original positive action cone.
+Nonemptiness is still OPEN. The false `O(1)` estimate is not included.
+Given this record, `exists_compatible_physicalHstarExtension` constructs
+one global physical Hilbert extension carrying all frequency identities
+simultaneously on its entire domain. All its previously checked Taylor
+and local inverse/Hessian conclusions continue to hold.
+
+The [source correction](BASE_FREQUENCY_CORRECTION.md) gives the exact
+formal scope, verified PDF provenance and independent published
+corroboration. No replacement upper estimate is proved here.
+
 ## Remaining essential KdV work
 
-1. Construct the actual coordinatewise analytic physical frequency family
-   on the original ell^(-1,1) domain V0. Apply the checked continuation
-   bridge to finish the full common-domain identity. This is the remaining
-   essential assertion of main Theorem 1.1.
+1. Construct an actual `BasePhysicalFrequencyExtension` on the original
+   ell^(-1,1) domain V0 and prove that the record is nonempty. Use the
+   checked simultaneous-domain assembly to finish Theorem 1.1. The
+   incompatible printed `O(1)` estimate is excluded from this target.
 2. Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates
    and physical KdV well-posedness.
 
@@ -3437,19 +3462,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `1f6daeb` contains 2288 proof sources, whose
-hashes remain unchanged. Eleven authored modules pass strict Lean
+The validated baseline at `2ccac43` contains 2299 proof sources, whose
+hashes remain unchanged. Four authored modules pass strict Lean
 compilation with `warningAsError=true`, default authored limits and no
-linter overrides. Reproduction lists 2299 modules. The positive-index
-example, combined transitive axiom audit and 1826 coverage declaration
+linter overrides. Reproduction lists 2303 modules. The positive-index
+example, combined transitive axiom audit and 1836 coverage declaration
 checks pass. All 2830 remaining reference import sources agree byte-for-
 byte and were not rebuilt. Earlier receipts remain in the parent commit.
 This is incremental validation, not a full repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 786 additional shared modules:
-17815 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 787 additional shared modules:
+17848 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

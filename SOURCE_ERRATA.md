@@ -1,5 +1,20 @@
 # Source discrepancies
 
+## KdV convexity, equation (1.7), p. 3: uniform frequency bound on the base domain
+
+The locally uniform O(1) correction to the free frequencies cannot hold on
+the stated complex ell^(-1,1) action neighborhood. Physical normalization
+forces the n-th base cotangent norm at zero to be at least 6*(1+n), whereas
+one locally uniform scalar bound would give uniformly bounded cotangents
+by Cauchy's estimate. The contradiction permits an arbitrary finite index
+cutoff. Coordinatewise analytic extension and physical recovery remain the
+constructive target; no replacement upper estimate is asserted here.
+
+See the [checked correction](coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md)
+and [formal obstruction](NLS/Articles/KdVConvexity/BaseFrequencyBoundObstruction.lean).
+Main Theorem 1.1 remains incomplete until the actual base family is constructed.
+
+
 ## Lemma 25.3 proof, p.110: component product and inverse notation
 
 Use the positive intermediate estimate

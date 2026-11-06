@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-06",
-  "milestone": "Prove the full physical Hilbert Taylor normalization, actual local gradient inverse and one uniform real-direction Hessian radius",
+  "milestone": "Correct the printed base-frequency bound using the physical Taylor normalization and specify the exact remaining V0 construction",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": true,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -2316,11 +2316,15 @@
     "NLS.Articles.KdVConvexity.ActionHessianBounds",
     "NLS.Articles.KdVConvexity.PhysicalLocalConsequences",
     "NLS.ComplexAnalysis.AnalyticQuadraticRemainder",
-    "NLS.Articles.KdVConvexity.PhysicalTaylorExpansion"
+    "NLS.Articles.KdVConvexity.PhysicalTaylorExpansion",
+    "NLS.Articles.KdVConvexity.BaseFrequencyTaylor",
+    "NLS.ComplexAnalysis.UniformScalarDerivativeBound",
+    "NLS.Articles.KdVConvexity.BaseFrequencyBoundObstruction",
+    "NLS.Articles.KdVConvexity.BasePhysicalFrequencyExtension"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 17815,
+    "declarations": 17848,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -2361,6 +2365,7 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.ComplexAnalysis.UniformScalarDerivativeBound",
       "NLS.SequenceSpaces.WeightedQuadraticActionAlgebra",
       "NLS.ComplexAnalysis.SecondDerivativeRayLimit",
       "NLS.SequenceSpaces.LpOperatorBasisExt",
@@ -3163,7 +3168,10 @@
     "NLS/Articles/KdVConvexity/ArnoldConeMomentGerms.lean": "3d026d5090765b6164403985fc262439500579a89fe2d44e7d83dbe47fd2aede",
     "NLS/Articles/KdVConvexity/ArnoldH1Regularity.lean": "8aad36f9e628605fc8b44eefa9bd7324397b5d490ee2bc2c94b0d3e970f86380",
     "NLS/Articles/KdVConvexity/BaseContourSeries.lean": "27c6244f1fa47880719e51cbae8a62203b5d4ac5561a4cd518940cbb6ad71f4f",
+    "NLS/Articles/KdVConvexity/BaseFrequencyBoundObstruction.lean": "27688bf5b5eda258fe6f77f1be93384b4669cdb3d9cf2b678887e926089fb0cc",
     "NLS/Articles/KdVConvexity/BaseFrequencyContinuation.lean": "4fcabcc7528d8c0ab3bad05b6b1cd98839af7f946d3c0d4224e95deafaff3095",
+    "NLS/Articles/KdVConvexity/BaseFrequencyTaylor.lean": "701a163b551cdb9b354d72eb7ea72a14347de4cd2ecec800aa96bce55969a053",
+    "NLS/Articles/KdVConvexity/BasePhysicalFrequencyExtension.lean": "b199dc4de2de2c62b10d9991e980ffd829e0470f9a008a34d75c286ad2ac46ff",
     "NLS/Articles/KdVConvexity/CanonicalMomentPreparation.lean": "a4e67c69a5fb52d284f2e95c4edfda4f18e94fc0f9cd4e4751330a4590877939",
     "NLS/Articles/KdVConvexity/CommonCanonicalMomentFamily.lean": "4bd10d8df2b479aa60e1ce10a5923e00e4f573b3d4ea9cc895cbc5674d21129a",
     "NLS/Articles/KdVConvexity/CoordinateActionExtension.lean": "731561a0e5afb2460ac2b5f17dc2d7cd70cd97c5491af0fa1b9ced0de5c0bf23",
@@ -3539,6 +3547,7 @@
     "NLS/ComplexAnalysis/TwoZeroRootEndpointBound.lean": "12947f693ed705ab585ad10755eb54e88da8aa7d69839fe2b3e606e6949cabc2",
     "NLS/ComplexAnalysis/UniformAnalyticBallVariation.lean": "b8280854480554d8653804818c9b683861c3a64e0dafd8e4f791072f19edb2b0",
     "NLS/ComplexAnalysis/UniformPositiveAnalyticFamily.lean": "b32e6fbfda610911c796f3a4c57406e6b2a5c32ed5610232ba62c7c959c976e4",
+    "NLS/ComplexAnalysis/UniformScalarDerivativeBound.lean": "8a52ef192a1c37567c1bc7676f86ebc4b8ccdb3364055d2c6f5936faebe183b4",
     "NLS/ComplexAnalysis/UnimodularWeightedTraceError.lean": "9108e8df6f28a8d9adb6cd1d5e23cd5715a68c64daf2b89d48941f4dcb341edc",
     "NLS/ComplexAnalysis/UnitIntervalNormEnergy.lean": "9f91a79ecf2dc5b2b424e8cd73ca7878e825001a31dae9a9b156d7f8a93b0c68",
     "NLS/ComplexAnalysis/UpperCircleReflection.lean": "2eaf24258d99416418fbc825900be0a11a07baee2b4ee64547fd05f2c682c6fc",
@@ -5451,11 +5460,14 @@
     "NLS/ZakharovShabat/SourceWeightedEtaFactorization.lean": "c22fd5e2ec86b9e571506f9d1b64a0b6f047171bfb0bc6aa920763d4cdeb74bb",
     "NLS/ZakharovShabat/SourceZeroGapActionBound.lean": "4fb1acc2f217e87f0e65d53828ba7f2cc2c266064f918e2ad0e8dd22fcda307e",
     "NLS/ZakharovShabat/SourceZeroGapMassEstimate.lean": "6b656c4b26c06b37ec752562aa81be67147fba7d3dd14cb254afd3090a3484d3",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "637660b6b8efc52540ac28fdfb5674272cb1cddae69a5799937269c153d9f168",
+    "SOURCE_ERRATA.md": "c02f42ab011aaf7d1100ffb55af859ecdb448a1d8dc6db5f0b0326ebe6ad06e9",
+    "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md": "cdf1e80388bb3e0824a36caac1289a95048c5660c5245b76f45f4802cf6b893b",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "dfc2e986515af5b8944eac066fb5e3ac1152e39e5677b2bcd6d4bdd9dc8c0483",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/action-sequence-library-reuse.json": "9126c713dd2dbd5eb3b1d902df1cea7bdd35cbbd75a6ee13e21fd9d7fd49827e",
     "coverage/articles/kdv-convexity/band-primitive-shared-imports.json": "ee14ececa4bebbb805a8d49836d86e72ab62e34a26910f7886d91d931b485ef1",
+    "coverage/articles/kdv-convexity/base-frequency-obstruction-library-reuse.json": "5897787a5f2974c29daf4d9141a5de187d06effea86758a11163fd2b13c35b99",
     "coverage/articles/kdv-convexity/canonical-gap-shared-imports.json": "d00ef2f2e5dfb8f8653278c9d60c66daa4f730be745c0e546de66245e61665fc",
     "coverage/articles/kdv-convexity/critical-miura-library-reuse.json": "24a86ead130e1aa2752b41cc9aa0708c6d8a54e67bf6090e88f555416d04d7d0",
     "coverage/articles/kdv-convexity/cubic-normalization-library-reuse.json": "587b914ae0ca6c94b3f879651c5e0086fa1d7fda04d87bc1b91ed85816bccefe",
@@ -5482,10 +5494,10 @@
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
     "coverage/articles/kdv-convexity/sobolev-energy-library-reuse.json": "a5a808fd7bbc87f3979d3c913affabdb3f9550a4c3d997d63b578ef57aa7f4c7",
-    "scripts/check-kdv-convexity.sh": "13719ec65c17bd4cc2e2fcb17d8612d8780b08a1e622f29b2ee1b6afa366d5c9"
+    "scripts/check-kdv-convexity.sh": "f10c9d25f446cd44bdfee36441c3a55fb1c747c84d7b6eb2941b81b3147caf4b"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/base-frequency-obstruction-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -5503,7 +5515,7 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "Global potential-space gluing is now proved: one complex-open neighborhood of the entire real H^-1 space carries all canonical polynomial and cubic moments, agrees with every actual real period, and retains locally uniform complex-tail quadratic bounds. Finite-gap exterior matching, the normalized inversion remainder of Lemma 4.4 and the physical energy/frequency identities remain open.",
-    "Construct the actual original coordinatewise analytic physical KdV frequency family on an ell^(-1,1) neighborhood V0, with physical recovery. Apply the proved common-domain continuation bridge to finish the full V intersect V0 identity. This is the remaining essential component of main Theorem 1.1. Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates and physical KdV well-posedness.",
+    "Construct an actual BasePhysicalFrequencyExtension: one complex-open ell^(-1,1) neighborhood of the whole positive base cone, coordinatewise analytic frequencies and recovery of the intrinsic physical energy derivatives on the whole original positive ell^(3,1) cone. Prove nonemptiness of the record, then use exists_compatible_physicalHstarExtension to finish Theorem 1.1. Do not require the locally uniform O(1) bound printed in (1.7), which is now refuted by the exact cotangent norm growth. Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates and physical KdV well-posedness.",
     "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. Even polynomial Arnold periods are nonnegative; the level-zero Arnold and cubic zero sets equal the closed-gap set. These signs and zero criteria hold for the common all-index family and its matched source tail at every real input. Global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
@@ -5536,9 +5548,10 @@
     "The global physical analytic Hstar extension is now proved on one complex neighborhood of the entire nonnegative ell2 quadrant, agreeing with physical renormalized KdV energy on the entire original positive ell^(3,1) action Banach cone with exact weight (1+n)^3. The physical frequency identity, actual -6*Id coefficient and main Theorems 1.1-1.3 remain incomplete.",
     "The intrinsic physical-frequency identity is now proved on the full original positive ell^(3,1) cone, including all collapsed actions. The actual frequency family on the larger original ell^(-1,1) neighborhood V0 and its full common-domain identity are still open. No main theorem is marked complete.",
     "The actual fixed-index weighted cubic moment has an analytic raw-action-square factor with exact free value -3 at every positive index. The final source identity covers all real Hminus1 sources near zero and all collapsed gaps. Transport to the full Hilbert Hstar Hessian is still required; zero gradient, -6*Id and all main theorems remain incomplete.",
-    "The physical Hilbert zero gradient, full bounded derivative -6*Id, cubic-norm quadratic Taylor remainder, actual local gradient inverse and one uniform Hessian radius are now proved. Earlier progress entries record their historical status. The remaining essential Theorem 1.1 input is the actual larger V0 physical-frequency family and full common-domain identity."
+    "The physical Hilbert zero gradient, full bounded derivative -6*Id, cubic-norm quadratic Taylor remainder, actual local gradient inverse and one uniform Hessian radius are now proved. Earlier progress entries record their historical status. The remaining essential Theorem 1.1 input is the actual larger V0 physical-frequency family and full common-domain identity.",
+    "Equation (1.7) cannot be used with its printed locally uniform O(1) base bound: that bound is now refuted from the actual physical -6 normalization and the exact (1+n)^(-1) action norm. Construct the actual coordinatewise base family without this false estimate. No corrected upper growth estimate is asserted here."
   ],
-  "previous_progress_commit": "1f6daebbd70ad6bbda585bad680efa416f08740a",
+  "previous_progress_commit": "2ccac4318b162d3981d044092ad00d9a4687159a",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -6031,7 +6044,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation against 1f6daeb: all 2288 baseline proof-source hashes unchanged. Eleven authored modules pass strict Lean 4.33.1/mathlib v4.33.1 compilation with default authored limits and no heartbeat/linter overrides. Actual real rough sources realize every positive Hilbert action ray. The proved source cubic coefficient gives finite-support ray limits. Analytic Taylor limits, Hessian symmetry and lp basis density identify the full bounded gradient derivative -6*Id and zero gradient. Every global physical extension has this intrinsic normalization. The full complex Hilbert remainder Hstar(a)+3*sum a_n^2=O(norm(a)^3), actual open analytic gradient inverse, one all-direction Hessian radius and strict concavity on the positive ball are proved. Reproduction lists 2299 modules. The positive-index example, combined transitive axiom audit and 1826 coverage-name checks pass, with 786 additional module origins. All 2830 remaining reference imports are byte-identical and were not rebuilt. The larger actual V0 physical-frequency family and all full main theorems remain incomplete. This is not a full repository rebuild.",
+  "focused_validation_scope": "Incremental validation against 2ccac43: all 2299 baseline proof-source hashes unchanged. Four authored modules pass strict Lean 4.33.1/mathlib v4.33.1 compilation with default authored limits and no heartbeat/linter overrides. The actual physical Taylor normalization and checked continuation bridge force each candidate base scalar frequency cotangent at zero to have norm at least 6*(1+n), in the exact base norm. A reusable Cauchy estimate proves that this rules out the locally uniform O(1) claim in equation (1.7), even after any finite index cutoff and without sequence-valued base analyticity. The exact remaining coordinatewise analytic physical frequency record is specified; its nonemptiness is NOT proved. Conditional simultaneous-domain assembly preserves the full physical Hilbert extension and all prior local consequences. Reproduction lists 2303 modules. The positive-index example, combined transitive axiom audit and 1836 coverage-name checks pass, with 787 additional module origins. All 2830 remaining reference imports are byte-identical and were not rebuilt. The actual V0 family and all full main theorems remain incomplete. This is not a full repository rebuild.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -6341,9 +6354,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 1826,
-    "audit_modules_present": 786,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/PhysicalTaylorCoverageNames.log"
+    "declarations": 1836,
+    "audit_modules_present": 787,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/BaseFrequencyBoundCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -6432,145 +6445,61 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "1f6daebbd70ad6bbda585bad680efa416f08740a",
-    "baseline_modules": 2288,
+    "baseline_commit": "2ccac4318b162d3981d044092ad00d9a4687159a",
+    "baseline_modules": 2299,
     "baseline_source_hashes_unchanged": true,
     "newly_checked_exact_shared_modules": 0,
-    "newly_checked_authored_modules": 11,
+    "newly_checked_authored_modules": 4,
     "completed_module_checks": [
       {
-        "module": "NLS.SequenceSpaces.WeightedQuadraticActionAlgebra",
-        "source_sha256": "34289ddddad8bc56ff56e49129c1c5bba0e41c7ee5411016783acd289ab29061",
-        "olean_sha256": "a5b97c87377065c90afcda70aac3ec49e6b2bd93a0ea0272d380340bc4df5c95",
+        "module": "NLS.Articles.KdVConvexity.BaseFrequencyTaylor",
+        "source_sha256": "701a163b551cdb9b354d72eb7ea72a14347de4cd2ecec800aa96bce55969a053",
+        "olean_sha256": "22e316288593751c701a0f3461a32695292b207bcc3beb18b4ed98ed56a53c00",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.SequenceSpaces.WeightedQuadraticActionAlgebra.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/base-frequency-obstruction-NLS.Articles.KdVConvexity.BaseFrequencyTaylor.log",
         "authored_here": true
       },
       {
-        "module": "NLS.Articles.KdVConvexity.FreeActionRays",
-        "source_sha256": "de872ce9e3d1297d040da706000c8a99fb4a6de7c12a2aea665e2afc85625463",
-        "olean_sha256": "efe5eeae0d3831f49a76c98990775f868720ac03efdf8182ef011bdc1531da27",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.WeightedQuadraticActionAlgebra": "a5b97c87377065c90afcda70aac3ec49e6b2bd93a0ea0272d380340bc4df5c95"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.FreeActionRays.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.ActionRayMomentLimits",
-        "source_sha256": "6f269934c7b7b64062ec846c87b05df86a531b1fa8ac6ca18be264cae5decd1c",
-        "olean_sha256": "2cda7eaff8819dcd42a2d4b3afee67ff185ed92c4998db8b4c1ced5a8091e262",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.Articles.KdVConvexity.FreeActionRays": "efe5eeae0d3831f49a76c98990775f868720ac03efdf8182ef011bdc1531da27"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.ActionRayMomentLimits.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.ComplexAnalysis.SecondDerivativeRayLimit",
-        "source_sha256": "3a2cd49a9aef6db36c9c58d9828c8ace26d15ebae66feb1feb9dd4c6282b8e1f",
-        "olean_sha256": "f925cb665f9233e6aa53503938c8d48f8a6e21f1280778c1b0507c7d0f16b64b",
+        "module": "NLS.ComplexAnalysis.UniformScalarDerivativeBound",
+        "source_sha256": "8a52ef192a1c37567c1bc7676f86ebc4b8ccdb3364055d2c6f5936faebe183b4",
+        "olean_sha256": "83499e1e43cd5602758e41daec5bd88e296dde08d12e717aeadd878334d4b439",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.ComplexAnalysis.SecondDerivativeRayLimit.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/base-frequency-obstruction-NLS.ComplexAnalysis.UniformScalarDerivativeBound.log",
         "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.LpOperatorBasisExt",
-        "source_sha256": "d9146595427f296d391bc8817b5fcd30e65b1a276ee4d43b1875b77f42d7bd12",
-        "olean_sha256": "98309fb226c0499416a0e074f8c7fd648a1486e7610149974a4be00df863a0b6",
-        "selected_direct_dependency_object_hashes": {},
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.SequenceSpaces.LpOperatorBasisExt.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.ActionTaylorAtZero",
-        "source_sha256": "935350e9aa1b681a181094f4918dc1323579b06476d680f93473f85ed9dbf4e6",
-        "olean_sha256": "26f696e17830cc4bda363a14cd72555464cedaa8cd0d1a9e7ce2d37656d50040",
+        "module": "NLS.Articles.KdVConvexity.BaseFrequencyBoundObstruction",
+        "source_sha256": "27688bf5b5eda258fe6f77f1be93384b4669cdb3d9cf2b678887e926089fb0cc",
+        "olean_sha256": "92d5ace8ebab89bb8fc71cadd987914a30d165cf9decb527a86ffcbaa5dcb265",
         "selected_direct_dependency_object_hashes": {
-          "NLS.Articles.KdVConvexity.ActionRayMomentLimits": "2cda7eaff8819dcd42a2d4b3afee67ff185ed92c4998db8b4c1ced5a8091e262",
-          "NLS.ComplexAnalysis.SecondDerivativeRayLimit": "f925cb665f9233e6aa53503938c8d48f8a6e21f1280778c1b0507c7d0f16b64b",
-          "NLS.SequenceSpaces.LpOperatorBasisExt": "98309fb226c0499416a0e074f8c7fd648a1486e7610149974a4be00df863a0b6"
+          "NLS.Articles.KdVConvexity.BaseFrequencyTaylor": "22e316288593751c701a0f3461a32695292b207bcc3beb18b4ed98ed56a53c00",
+          "NLS.ComplexAnalysis.UniformScalarDerivativeBound": "83499e1e43cd5602758e41daec5bd88e296dde08d12e717aeadd878334d4b439"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.ActionTaylorAtZero.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/base-frequency-obstruction-NLS.Articles.KdVConvexity.BaseFrequencyBoundObstruction.log",
         "authored_here": true
       },
       {
-        "module": "NLS.Articles.KdVConvexity.PhysicalTaylorAtZero",
-        "source_sha256": "bae6eda441564d9ada16ed2f1adfb6ff33939d451a122ee7658c49f8c39e2175",
-        "olean_sha256": "0c7e39b38c8ce1e16004b259156d322b8c0e81d1bcfe203e9b6fae1019ebff75",
+        "module": "NLS.Articles.KdVConvexity.BasePhysicalFrequencyExtension",
+        "source_sha256": "b199dc4de2de2c62b10d9991e980ffd829e0470f9a008a34d75c286ad2ac46ff",
+        "olean_sha256": "30093b66095a1405a8ceb8a26140e625e59a91bf8fe73df000be1c017276d238",
         "selected_direct_dependency_object_hashes": {
-          "NLS.Articles.KdVConvexity.ActionTaylorAtZero": "26f696e17830cc4bda363a14cd72555464cedaa8cd0d1a9e7ce2d37656d50040"
+          "NLS.Articles.KdVConvexity.BaseFrequencyBoundObstruction": "92d5ace8ebab89bb8fc71cadd987914a30d165cf9decb527a86ffcbaa5dcb265"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.PhysicalTaylorAtZero.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.ActionHessianBounds",
-        "source_sha256": "7850abf2fceb881c26ed950bc58f719e902bd97e2ba3dc78986e25433e6b4fcd",
-        "olean_sha256": "280403607761dfd79efe40294041d84e5f268a2ebc9302802b9d77ee10cfd113",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.Articles.KdVConvexity.ActionTaylorAtZero": "26f696e17830cc4bda363a14cd72555464cedaa8cd0d1a9e7ce2d37656d50040"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.ActionHessianBounds.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.PhysicalLocalConsequences",
-        "source_sha256": "981a0883e0e845318eb5b2687be3bf4ded00ed072acc1e747922f1f411308add",
-        "olean_sha256": "367aa6e39f2ac86cbc6ef96fe10a990ab72b7de233ea61afdea816361aa170f0",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.Articles.KdVConvexity.PhysicalTaylorAtZero": "0c7e39b38c8ce1e16004b259156d322b8c0e81d1bcfe203e9b6fae1019ebff75",
-          "NLS.Articles.KdVConvexity.ActionHessianBounds": "280403607761dfd79efe40294041d84e5f268a2ebc9302802b9d77ee10cfd113"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.PhysicalLocalConsequences.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.ComplexAnalysis.AnalyticQuadraticRemainder",
-        "source_sha256": "493094506870991bb20151ee4bae6283176fb722a02c98215be6ec31487fd29b",
-        "olean_sha256": "53e5372492eada4f8c51555a2ceba41c2c69ac5c5cd9ebd111fd400129f648d3",
-        "selected_direct_dependency_object_hashes": {},
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.ComplexAnalysis.AnalyticQuadraticRemainder.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.PhysicalTaylorExpansion",
-        "source_sha256": "0d2b77eca522468b3026bc5ef1e6f9c8dafd88c481b857b78a93a4fec3caf552",
-        "olean_sha256": "d27dc9b9b186d7893777625a8833681b26391ed57438600d10361ec40136357e",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.Articles.KdVConvexity.PhysicalTaylorAtZero": "0c7e39b38c8ce1e16004b259156d322b8c0e81d1bcfe203e9b6fae1019ebff75",
-          "NLS.Articles.KdVConvexity.ActionHessianBounds": "280403607761dfd79efe40294041d84e5f268a2ebc9302802b9d77ee10cfd113",
-          "NLS.ComplexAnalysis.AnalyticQuadraticRemainder": "53e5372492eada4f8c51555a2ceba41c2c69ac5c5cd9ebd111fd400129f648d3"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-NLS.Articles.KdVConvexity.PhysicalTaylorExpansion.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/base-frequency-obstruction-NLS.Articles.KdVConvexity.BasePhysicalFrequencyExtension.log",
         "authored_here": true
       }
     ],
-    "combined_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-taylor-validation.log",
+    "combined_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/base-frequency-obstruction-validation.log",
     "baseline_build_receipts_preserved_in_parent_commit": true,
-    "reference_import_source_manifest": "coverage/articles/kdv-convexity/physical-taylor-library-reuse.json",
+    "reference_import_source_manifest": "coverage/articles/kdv-convexity/base-frequency-obstruction-library-reuse.json",
     "inherited_reference_import_closure_rebuilt": false
   },
   "Hminus1_real_spectral_progress": {
@@ -8552,5 +8481,60 @@
   "gradient_zero_at_origin_verified": true,
   "full_bounded_gradient_derivative_minus_six_verified": true,
   "positive_index_local_gradient_diffeomorphism_verified": true,
-  "single_radius_Hessian_bound_and_local_strict_concavity_verified": true
+  "single_radius_Hessian_bound_and_local_strict_concavity_verified": true,
+  "base_frequency_norm_obstruction_progress": {
+    "status": "proved_and_strictly_validated",
+    "new_authored_modules": [
+      "NLS.Articles.KdVConvexity.BaseFrequencyTaylor",
+      "NLS.ComplexAnalysis.UniformScalarDerivativeBound",
+      "NLS.Articles.KdVConvexity.BaseFrequencyBoundObstruction",
+      "NLS.Articles.KdVConvexity.BasePhysicalFrequencyExtension"
+    ],
+    "raw_base_singleton_norm": "1/(1+n)",
+    "actual_physical_base_coordinate_derivative_at_zero": "-6",
+    "full_base_cotangent_norm_lower_bound": "6*(1+n)",
+    "no_locally_uniform_O1_tail_even_after_arbitrary_finite_cutoff": true,
+    "sequence_valued_base_analyticity_not_assumed_in_obstruction": true,
+    "source_equation_1_7_correction": {
+      "source": "arXiv:1502.05857v1, equation (1.7), printed p. 3",
+      "source_pdf_sha256": "38ee7f287ee8b790b794865accc8ad51d1083e414b82a73c4a543147a7ec4688",
+      "printed_claim": "The correction omega_n-8*pi^3*n^3 is O(1) as n tends to infinity locally uniformly on a complex ell^(-1,1) neighborhood V0 of the positive action cone.",
+      "result": "refuted_as_printed_under_the_stated_locally_uniform_complex_base_norm_interpretation",
+      "obstruction_declaration": "NLS.Articles.KdVConvexity.not_locally_uniformly_bounded_physical_base_frequency_tail",
+      "derivative_lower_bound_declaration": "NLS.Articles.KdVConvexity.physical_base_frequency_derivative_norm_lower_bound",
+      "exact_norm_lower_bound": "norm(d(omega_n)(0)) >= 6*(1+n), with raw unit action norm exactly 1/(1+n).",
+      "quantifiers": "No N and M give one neighborhood of zero on which all n>=N satisfy norm(omega_n(a)-8*pi^3*n^3)<=M. Only coordinatewise analyticity and physical recovery on the full original positive action cone are assumed.",
+      "main_theorem_impact": "The coordinatewise V0 construction remains open. O(1) is not an admissible construction target; no substitute upper bound is proved here. The global physical Hilbert extension, Taylor operator and local consequences remain proved.",
+      "external_corroboration": "Kappeler-Molnar, Ann. I. H. Poincare AN 35 (2018), Corollary 1.5(ii), printed p.104, explicitly rules out O(1) already below H^(-1/2). External results are not imported as Lean axioms.",
+      "external_source_url": "https://ems.press/content/serial-article-files/16625#page=4",
+      "correction_report": "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md"
+    },
+    "exact_remaining_frequency_input_record": "NLS.Articles.KdVConvexity.BasePhysicalFrequencyExtension",
+    "record_requires_only_coordinatewise_analyticity_and_full_original_cone_physical_recovery": true,
+    "nonempty_actual_base_frequency_record_proved": false,
+    "conditional_full_common_domain_physical_extension_assembly": "NLS.Articles.KdVConvexity.BasePhysicalFrequencyExtension.exists_compatible_physicalHstarExtension",
+    "main_Theorem_1_1_complete": false,
+    "main_Theorems_1_2_and_1_3_complete": false,
+    "authored_heartbeat_or_linter_overrides": false,
+    "baseline_proof_source_hashes_unchanged": 2299,
+    "remaining_byte_identical_reference_sources": 2830
+  },
+  "source_corrections": [
+    {
+      "source": "arXiv:1502.05857v1, equation (1.7), printed p. 3",
+      "source_pdf_sha256": "38ee7f287ee8b790b794865accc8ad51d1083e414b82a73c4a543147a7ec4688",
+      "printed_claim": "The correction omega_n-8*pi^3*n^3 is O(1) as n tends to infinity locally uniformly on a complex ell^(-1,1) neighborhood V0 of the positive action cone.",
+      "result": "refuted_as_printed_under_the_stated_locally_uniform_complex_base_norm_interpretation",
+      "obstruction_declaration": "NLS.Articles.KdVConvexity.not_locally_uniformly_bounded_physical_base_frequency_tail",
+      "derivative_lower_bound_declaration": "NLS.Articles.KdVConvexity.physical_base_frequency_derivative_norm_lower_bound",
+      "exact_norm_lower_bound": "norm(d(omega_n)(0)) >= 6*(1+n), with raw unit action norm exactly 1/(1+n).",
+      "quantifiers": "No N and M give one neighborhood of zero on which all n>=N satisfy norm(omega_n(a)-8*pi^3*n^3)<=M. Only coordinatewise analyticity and physical recovery on the full original positive action cone are assumed.",
+      "main_theorem_impact": "The coordinatewise V0 construction remains open. O(1) is not an admissible construction target; no substitute upper bound is proved here. The global physical Hilbert extension, Taylor operator and local consequences remain proved.",
+      "external_corroboration": "Kappeler-Molnar, Ann. I. H. Poincare AN 35 (2018), Corollary 1.5(ii), printed p.104, explicitly rules out O(1) already below H^(-1/2). External results are not imported as Lean axioms.",
+      "external_source_url": "https://ems.press/content/serial-article-files/16625#page=4",
+      "correction_report": "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md"
+    }
+  ],
+  "printed_equation_1_7_locally_uniform_O1_base_frequency_bound_refuted": true,
+  "actual_BasePhysicalFrequencyExtension_nonempty_verified": false
 }
