@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest global action-fiber isospectrality
+## Latest actual native Hamiltonians and global pullbacks
+
+The ORIGINAL physical KdV and KdV2 Hamiltonians now have explicit complex analytic polynomial definitions on the FULL native H1 and H2 domains. Their exact printed unit-period integrals, actual classical/weak derivatives and physical reality are proved without smoothness assumptions. Composing with the SAME fixed global weak inverse, restricted by the verified regularity theorem, gives real analytic Hamiltonians on the ENTIRE ACTUAL raw h^(3/2) and h^(5/2) real mean-zero targets, with full signed source recovery and all original norms and coefficients retained. See `GLOBAL_NATIVE_HAMILTONIANS.md`.
+
+The missing native physical Hamiltonian definitions, endpoint physical integral identification, reality and global native Birkhoff-pullback real analyticity are CLOSED. NEXT prove isospectral invariance and spectral/hierarchy identifications of THESE actual native Hamiltonians, construct local ANALYTIC factors through the complete actions at every closed-gap point, and glue globally. The physical frequency derivative formulas, sharp estimates, fixed-mass and actual KdV/KdV2 PDE conclusions remain open. All eleven COMPLETE main theorem rows, including the action-only and hierarchy clauses of Theorem 1.1(iii), remain OPEN.
+
+Prior strict evidence retained for all 2813 unchanged selected baseline sources. All seven new own modules strictly rebuilt in dependency order after freezing 2869 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2820 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact seven-module increase in NLS import closure verified. Existing verified transitive native Sobolev and Fourier dependencies are reused; no new canonical prerequisite selection or provenance record is needed. All 46 prior provenance records remain byte-for-byte unchanged and are verified. The selection now has 23 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2820-name runtime probe, using ALL 23 current chunk references, rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2820-module rebuild is claimed.
+
+Fresh audit: 21994 selected and 44060 imported NLS declarations; permitted axioms only. Seven new own modules contain 39 explicit theorems, including three private helpers.
+
+## Earlier global action-fiber isospectrality
 
 The COMPLETE actual action products of the SAME global signed map now determine the ACTUAL entire Hill discriminant on the ENTIRE real mean-zero HminusOne source space, including non-L2 sources, arbitrary size, infinite support and closed gaps. Equal original actions first give global L2 isospectrality through genuine differentiable inverse phase curves and Hilbert-norm limits. Exact finite physical inverse approximants and the SAME weak global inverse extend this to every rough source. See `GLOBAL_ROUGH_ACTION_ISOSPECTRAL.md`.
 

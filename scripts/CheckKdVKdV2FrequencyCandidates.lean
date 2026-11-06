@@ -1,3 +1,10 @@
+import NLS.KdV.NativeHamiltonianPhysicalIntegrals
+import NLS.KdV.NativeHamiltonianReality
+import NLS.Articles.KdVKdV2Frequencies.GlobalNativeIntegerInverse
+import NLS.Articles.KdVKdV2Frequencies.GlobalRawIntegerInverse
+import NLS.Articles.KdVKdV2Frequencies.GlobalNativeHamiltonians
+import NLS.Fourier.SobolevContinuousJetDerivative
+import NLS.KdV.NativeHamiltonianPolynomials
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughInverseSourceContinuity
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionIsospectral
 import NLS.SequenceSpaces.ComplexHilbertPhaseFiber
@@ -4821,7 +4828,17 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.KdV.HillActionPreservingCurves,
   `NLS.KdV.HillBirkhoffIsospectral,
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughInverseSourceContinuity,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionIsospectral
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionIsospectral,
+  `NLS.Fourier.SobolevContinuousJetDerivative,
+  `NLS.KdV.NativeHamiltonianPolynomials,
+  `NLS.KdV.NativeHamiltonianPhysicalIntegrals
+]
+
+private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
+  `NLS.KdV.NativeHamiltonianReality,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalNativeIntegerInverse,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRawIntegerInverse,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalNativeHamiltonians
 ]
 
 open Lean in
@@ -4849,7 +4866,8 @@ run_cmd do
     kdvFrequencyAuditChunk18,
     kdvFrequencyAuditChunk19,
     kdvFrequencyAuditChunk20,
-    kdvFrequencyAuditChunk21
+    kdvFrequencyAuditChunk21,
+    kdvFrequencyAuditChunk22
   ].flatten
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

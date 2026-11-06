@@ -2822,6 +2822,13 @@ modules=(
   NLS/KdV/HillBirkhoffIsospectral
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughInverseSourceContinuity
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughActionIsospectral
+  NLS/Fourier/SobolevContinuousJetDerivative
+  NLS/KdV/NativeHamiltonianPolynomials
+  NLS/KdV/NativeHamiltonianPhysicalIntegrals
+  NLS/KdV/NativeHamiltonianReality
+  NLS/Articles/KdVKdV2Frequencies/GlobalNativeIntegerInverse
+  NLS/Articles/KdVKdV2Frequencies/GlobalRawIntegerInverse
+  NLS/Articles/KdVKdV2Frequencies/GlobalNativeHamiltonians
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

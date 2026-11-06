@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest global action-fiber isospectrality
+## Latest actual native Hamiltonians and global pullbacks
+
+The ORIGINAL physical KdV and KdV2 Hamiltonians now have explicit complex analytic polynomial definitions on the FULL native H1 and H2 domains. Their exact printed unit-period integrals, actual classical/weak derivatives and physical reality are proved without smoothness assumptions. Composing with the SAME fixed global weak inverse, restricted by the verified regularity theorem, gives real analytic Hamiltonians on the ENTIRE ACTUAL raw h^(3/2) and h^(5/2) real mean-zero targets, with full signed source recovery and all original norms and coefficients retained. See `GLOBAL_NATIVE_HAMILTONIANS.md`.
+
+The missing native physical Hamiltonian definitions, endpoint physical integral identification, reality and global native Birkhoff-pullback real analyticity are CLOSED. NEXT prove isospectral invariance and spectral/hierarchy identifications of THESE actual native Hamiltonians, construct local ANALYTIC factors through the complete actions at every closed-gap point, and glue globally. The physical frequency derivative formulas, sharp estimates, fixed-mass and actual KdV/KdV2 PDE conclusions remain open. All eleven COMPLETE main theorem rows, including the action-only and hierarchy clauses of Theorem 1.1(iii), remain OPEN.
+
+Prior strict evidence retained for all 2813 unchanged selected baseline sources. All seven new own modules strictly rebuilt in dependency order after freezing 2869 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2820 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact seven-module increase in NLS import closure verified. Existing verified transitive native Sobolev and Fourier dependencies are reused; no new canonical prerequisite selection or provenance record is needed. All 46 prior provenance records remain byte-for-byte unchanged and are verified. The selection now has 23 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2820-name runtime probe, using ALL 23 current chunk references, rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2820-module rebuild is claimed.
+
+Fresh audit: 21994 selected and 44060 imported NLS declarations; permitted axioms only. Seven new own modules contain 39 explicit theorems, including three private helpers.
+
+## Earlier global action-fiber isospectrality
 
 The COMPLETE actual action products of the SAME global signed map now determine the ACTUAL entire Hill discriminant on the ENTIRE real mean-zero HminusOne source space, including non-L2 sources, arbitrary size, infinite support and closed gaps. Equal original actions first give global L2 isospectrality through genuine differentiable inverse phase curves and Hilbert-norm limits. Exact finite physical inverse approximants and the SAME weak global inverse extend this to every rough source. See `GLOBAL_ROUGH_ACTION_ISOSPECTRAL.md`.
 
@@ -930,7 +940,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2813 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2820 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1999,7 +2009,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2813 selected modules (including generated and private declarations)
+the 2820 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -5110,4 +5120,17 @@ PASS NLS/KdV/HillBirkhoffIsospectral
 PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughInverseSourceContinuity
 PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughActionIsospectral
 Axiom audit passed: 21883 candidate declarations; 43953 declarations total.
+```
+
+Latest actual native Hamiltonian strict checks and fresh combined audit:
+
+```text
+PASS NLS/Fourier/SobolevContinuousJetDerivative
+PASS NLS/KdV/NativeHamiltonianPolynomials
+PASS NLS/KdV/NativeHamiltonianPhysicalIntegrals
+PASS NLS/KdV/NativeHamiltonianReality
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalNativeIntegerInverse
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRawIntegerInverse
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalNativeHamiltonians
+Axiom audit passed: 21994 candidate declarations; 44060 declarations total.
 ```
