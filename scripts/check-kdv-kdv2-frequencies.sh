@@ -2612,6 +2612,13 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/NativeRoughSobolevSignedAbelian
   NLS/Articles/KdVKdV2Frequencies/ActualSignedSobolevRestriction
   NLS/Articles/KdVKdV2Frequencies/NativeRoughAllSobolevForwardInverse
+  NLS/SequenceSpaces/MeanZeroSobolevInclusion
+  NLS/KdV/HillSobolevAbelianDerivative
+  NLS/Articles/KdVKdV2Frequencies/ActualRoughFourierDifferential
+  NLS/ComplexAnalysis/LocalRightInverseMatching
+  NLS/KdV/HillSobolevAbelianInverse
+  NLS/Articles/KdVKdV2Frequencies/ActualSobolevInverseGerms
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughAllSobolevAnalyticInverse
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -1,3 +1,10 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevAnalyticInverse
+import NLS.KdV.HillSobolevAbelianInverse
+import NLS.Articles.KdVKdV2Frequencies.ActualSobolevInverseGerms
+import NLS.ComplexAnalysis.LocalRightInverseMatching
+import NLS.KdV.HillSobolevAbelianDerivative
+import NLS.Articles.KdVKdV2Frequencies.ActualRoughFourierDifferential
+import NLS.SequenceSpaces.MeanZeroSobolevInclusion
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevForwardInverse
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughSobolevSignedAbelian
 import NLS.Articles.KdVKdV2Frequencies.ActualSignedSobolevRestriction
@@ -4398,7 +4405,14 @@ private def kdvFrequencyAuditChunk20 : Array Lean.Name := #[
   `NLS.SequenceSpaces.SobolevSignedAnalyticGerms,
   `NLS.Articles.KdVKdV2Frequencies.NativeRoughSobolevSignedAbelian,
   `NLS.Articles.KdVKdV2Frequencies.ActualSignedSobolevRestriction,
-  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevForwardInverse
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevForwardInverse,
+  `NLS.SequenceSpaces.MeanZeroSobolevInclusion,
+  `NLS.KdV.HillSobolevAbelianDerivative,
+  `NLS.Articles.KdVKdV2Frequencies.ActualRoughFourierDifferential,
+  `NLS.ComplexAnalysis.LocalRightInverseMatching,
+  `NLS.KdV.HillSobolevAbelianInverse,
+  `NLS.Articles.KdVKdV2Frequencies.ActualSobolevInverseGerms,
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevAnalyticInverse
 ]
 
 open Lean in

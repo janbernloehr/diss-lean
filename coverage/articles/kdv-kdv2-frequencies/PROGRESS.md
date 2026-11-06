@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest full signed Sobolev analyticity of the SAME actual forward map
+## Latest native analytic Sobolev inverse germs of the SAME actual inverse
+
+The SAME actual full signed Z,R now have native COMPLEX ANALYTIC inverse germs at ZERO for ALL s>=-1. Each OPEN COMPLEX mean-zero h^(s+1/2) target neighborhood has an H^s-valued analytic inverse whose literal rough inclusion agrees EXACTLY with the SAME R after literal target inclusion. These neighborhoods may depend on order. The original Fourier normalization, an actual Banach analytic inverse chart and weak local injectivity prove the match; no argument from real pointwise membership is substituted. See `NATIVE_STRONG_INVERSE_GERMS.md`.
+
+All prior weak complex inverse, real form, all real Sobolev membership endpoints, all stronger forward germs, original physical L2 representatives, EVERY fixed GLOBAL original Birkhoff coordinate and exact mass identities remain in the SAME combined family. Inverse analyticity at arbitrary real base points, arbitrary-base/global rough inversion and remaining Hamiltonian/frequency/PDE conclusions are still required. All eleven COMPLETE main theorem rows remain OPEN.
+
+Prior strict evidence retained for all 2603 unchanged selected baseline sources. All seven new own modules strictly rebuilt in dependency order after freezing 2654 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2610 selected modules. Exact checker/audit/coverage/evidence selection, selected dependency order, reachability and the exact seven-module increase in NLS import closure verified. All 41 verified provenance records and all baseline sources remain unchanged; no new shared import or adaptation is needed. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, allowed axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. The 2610-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2610-module rebuild is claimed.
+
+Fresh audit: 20523 selected and 42593 imported NLS declarations; permitted axioms only. Seven new own modules contain 15 explicit theorems.
+
+## Earlier full signed Sobolev analyticity of the SAME actual forward map
 
 The SAME ACTUAL full signed Z used by the retained actual rough inverse R now has genuine COMPLEX ANALYTIC native H^s-to-h^(s+1/2) forward germs for ALL s>=-1, at EVERY eligible real source in ONE common rough ball. Original positive, negative and central coordinates retain exact physical normalization. Each germ is analytic on a native OPEN COMPLEX neighborhood, has a common native norm bound before all signed indices, and includes EXACTLY to the SAME weak Z at every complex source of that neighborhood. See `NATIVE_STRONG_SIGNED_FORWARD.md`.
 
