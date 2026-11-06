@@ -850,6 +850,21 @@
           "source_clause": "Theorem 1.2(iv): SAME actual Hilbert and weak corrections on ONE FULL COMPLEX domain intersection before all indices, with entire-Hilbert-cone reality",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_common_complex_hilbert_weak_kdv_frequency",
           "qualification": "COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. This proves actual Hilbert/weak complex-domain compatibility near the weak origin and full nonnegative-Hilbert reality supporting Theorem 1.2(iv). The weak domain here is ONE BALL NEAR ZERO. It is not yet a neighborhood of the ENTIRE nonnegative weak-action cone, so the complete global V0 agreement remains OPEN. Compactness of the Hilbert derivative correction at EVERY action, sharp sequence-valued weak-action target estimates and locally uniform asymptotics remain OPEN, as do the other main concavity/inverse/PDE conclusions. KdV2 weighted sums and mass-normalized identification remain OPEN."
+        },
+        {
+          "source_clause": "Genuine weighted ell-infinity Banach-analytic extension of the ACTUAL weak KdV correction on ONE complex action ball before all modes",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_actual_weak_kdv_frequency_packet",
+          "qualification": "COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. A genuine SEQUENCE-VALUED weak extension and the LINEAR own-index bound are now proved NEAR ZERO, with exact actual physical frequency recovery. The weak domain is still a ball near zero, not a neighborhood of the ENTIRE nonnegative weak-action cone. The full global V0 extension, the stronger stated lp remainders and locally uniform high-index asymptotics, and compactness of the Hilbert derivative correction at EVERY action remain OPEN. The other main concavity/inverse/PDE conclusions and KdV2 weighted sums/mass-normalized identification remain OPEN."
+        },
+        {
+          "source_clause": "SAME bounded weak packet and global physical Hilbert gradient on ONE full COMPLEX intersection",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_actual_bounded_weak_hilbert_kdv_frequency",
+          "qualification": "COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. A genuine SEQUENCE-VALUED weak extension and the LINEAR own-index bound are now proved NEAR ZERO, with exact actual physical frequency recovery. The weak domain is still a ball near zero, not a neighborhood of the ENTIRE nonnegative weak-action cone. The full global V0 extension, the stronger stated lp remainders and locally uniform high-index asymptotics, and compactness of the Hilbert derivative correction at EVERY action remain OPEN. The other main concavity/inverse/PDE conclusions and KdV2 weighted sums/mass-normalized identification remain OPEN."
+        },
+        {
+          "source_clause": "Actual LINEAR bound |omega1_n-(2*pi*n)^3| <= L*n*norm(Aweak) on ONE common weak-action ball, with zero value and linear Banach norm bound",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_actual_weak_kdv_frequency_linear_bound",
+          "qualification": "COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. A genuine SEQUENCE-VALUED weak extension and the LINEAR own-index bound are now proved NEAR ZERO, with exact actual physical frequency recovery. The weak domain is still a ball near zero, not a neighborhood of the ENTIRE nonnegative weak-action cone. The full global V0 extension, the stronger stated lp remainders and locally uniform high-index asymptotics, and compactness of the Hilbert derivative correction at EVERY action remain OPEN. The other main concavity/inverse/PDE conclusions and KdV2 weighted sums/mass-normalized identification remain OPEN."
         }
       ]
     },
@@ -41860,10 +41875,142 @@
       "scope": "The SAME actual scalar weak-action KdV corrections and physical Hilbert gradient now agree on a FULL COMPLEX intersection of ONE weak-action ball and ONE open Hilbert neighborhood containing the ENTIRE nonnegative Hilbert cone. BOTH domains precede EVERY positive frequency index. The SAME Hilbert gradient is real on the ENTIRE nonnegative Hilbert cone, including actions lacking cubic-weight summability. The actual original native frequencies, exact weak normalization and full -6*Id Taylor operator are retained. This is no longer only equality on native real actions or an index-dependent analytic germ.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "73a52938db04bc5826d90abb52286d129ceb65c579c7755f15baee01c25c61a0"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertSquareWeightInterpolation.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "The literal square-weight relation between two actual ell2 endpoints supplies an actual midpoint weighted sequence and the sharp squared norm bound. The complex diagonal may be unbounded; both membership and the norm estimate are proved by Holder.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "65baf01baf6ca879cf787a3c985d28b1782c0b9036c6d1abc4f013e46745dff2"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneOnceWeightedMomentBounds.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Exact midpoint interpolation gives actual one-weight inverse columns with norm at most 2*n and actual reciprocal one-weight second-moment kernel norm at most 1032*pi*B^3*(gap_k^2/k^2)/k. The ACTUAL normalized second moment therefore has LINEAR own-index growth: norm(M_nk^2) <= 1376*pi^2*B^3*n*(gap_k^2/k^2)/k, preserving the actual root/primitive/numerator, including collapsed pairs.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1da704de363670a6738e3b175637ad613ef790be5b565b3504a3986d9e7dbec8"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneUniformMomentBounds.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Uniform actual finite-contour-head bounds hold on the SAME complex rough domain before ALL own and contour indices. Uniform primitive and critical-pole separation give full Hilbert kernel norm <= (240/pi)*A^3 and actual normalized second moment norm <= 320*A^3.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0160e71277e72cb4296d640260317104b2ae32868429267f8532ef3bf4a3b487"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneLinearFrequencyBounds.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "The ENTIRE actual second-moment summand row divided by the own index belongs to ell1 with ONE norm bound before all own indices. The finite head is uniformly controlled and the one-weight tail is dominated by the actual canonical frequency gap-square ell1 sequence. The full correction divided by n inherits the same uniform bound with the EXACT coefficient -12.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7f16db26bb2186ff3fb86da093cbacd8f207af5eb81c47fdddac618b71fb92ca"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneBoundedFrequencyPacket.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "The SAME actual convergent rough normalized second-moment series realizes ONE bounded Banach-analytic ell-infinity packet on a common rough-open source domain, with positive coefficient EXACTLY correction_n/n and zero nonpositive slots. Full uniform sequence bounds, rather than scalar analyticity alone, prove Banach analyticity. The entire actual weighted normalization data and scalar absolute convergence remain available.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e43a63a0fa6edadac4d13cae588f3b6e27d1be4626166a77af3a9cec68db4969"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePhysicalBoundedFrequencyPacket.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "The bounded Banach-analytic packet is identified with (-12 times the ORIGINAL INTRINSIC PHYSICAL second-moment sum)/n at EVERY actual real physical L2 source in one rough ball. Actual Miura inverse-period columns calibrate the entire original numerator; physical contour, primitive, root and 2*z Jacobian matching retain the literal original series and absolute convergence, including all closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0dd6bf7d690069e0c481d2a672b56d8fcbe17b56de26c93794ddf4ca457d0aaf"
+    },
+    {
+      "path": "NLS/KdV/HillRoughScalarAgreement.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Continuous agreement on ALL actual real mean-zero native H1 sources extends to EVERY real mean-zero H-minus-one source in the SAME rough ball, by actual Fourier approximants and uniqueness of limits. No regularity of the final rough source is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "61ce675a44e3cc75bd74b14f492d8bd619faab1e853d666d912fd4c8515f2649"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeBoundedKdVFrequencyPacket.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "ONE bounded Banach-analytic rough ell-infinity packet recovers EVERY independently defined actual native physical KdV correction divided by n. The SAME packet is isospectral on the full real mean-zero rough ball. Actual physical moment identification gives native calibration; original scalar invariance and native-to-rough density transfer it to all mean-zero rough inputs.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fdad05a6803b0e37b2af7b57b58055186efa0a2a93ee2830acea07497495e3d6"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/LocalBoundedWeakSpectralActionDescent.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Bounded SEQUENCE-VALUED analytic spectral action descent through the SAME fixed global weak inverse. One common scalar chart retains recovery at ALL COMPLEX source points. Its surjective action image transfers the full ell-infinity norm bound before every coordinate; bounded analytic realization gives a genuine Banach-analytic factor on ONE complex action domain. Only actual real mean-zero isospectral invariance is required.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ee556212ba1d3f1285958a9fe263183ab471ae5a40d8889b0ee5fa93541cba1f"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualWeakKdVFrequencyPacket.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "ONE full complex normalized weak-action ball supports the genuine Banach-analytic ell-infinity packet of TRUE KdV corrections divided by n. Its uniform norm bound precedes all modes, it is real on the ENTIRE nonnegative weak locus, and nonpositive slots vanish. EVERY original real mean-zero native H1 source with ACTUAL weak actions in the common ball is recovered, with no native norm smallness, phase, finite-support or open-gap premise.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5dc3e098620eb6e46d22de24e394187f122097731336928fa52a1275c77e3336"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualBoundedWeakHilbertAgreement.lean",
+      "source_labels": [
+        "ACTUAL weighted ell-infinity Banach-analytic KdV packet near the weak origin, LINEAR own-index/action-norm bound, and common COMPLEX Hilbert/weak identity before all modes; supporting Theorem 1.2, not COMPLETE global weak-cone/lp/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "The ACTUAL KdV correction divided by its original positive index now forms ONE Banach-analytic weighted ell-infinity packet on a common FULL COMPLEX normalized weak-action ball. The packet has a uniform norm bound, is real on the entire nonnegative weak locus, vanishes at zero and obeys a LINEAR weak-action norm bound on one smaller common ball. In particular EVERY true native frequency satisfies |omega1_n-(2*pi*n)^3| <= L*n*norm(A_weak), with ONE L and radius chosen BEFORE all modes. The SAME bounded packet agrees with the global physical Hilbert gradient on a FULL COMPLEX domain intersection, while retaining the ENTIRE nonnegative Hilbert cone and full -6*Id Taylor operator.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b290a3c0716aae31ab632376837d09d58de9d87176b8d0978405298bc621f971"
     }
   ],
   "dependencies_needed": [
-    "The SAME actual scalar weak-action KdV corrections and physical Hilbert gradient now agree on a FULL COMPLEX intersection of ONE weak-action ball and ONE open Hilbert neighborhood containing the ENTIRE nonnegative Hilbert cone. BOTH domains precede EVERY positive frequency index. The SAME Hilbert gradient is real on the ENTIRE nonnegative Hilbert cone, including actions lacking cubic-weight summability. The actual original native frequencies, exact weak normalization and full -6*Id Taylor operator are retained. This is no longer only equality on native real actions or an index-dependent analytic germ. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. This proves actual Hilbert/weak complex-domain compatibility near the weak origin and full nonnegative-Hilbert reality supporting Theorem 1.2(iv). The weak domain here is ONE BALL NEAR ZERO. It is not yet a neighborhood of the ENTIRE nonnegative weak-action cone, so the complete global V0 agreement remains OPEN. Compactness of the Hilbert derivative correction at EVERY action, sharp sequence-valued weak-action target estimates and locally uniform asymptotics remain OPEN, as do the other main concavity/inverse/PDE conclusions. KdV2 weighted sums and mass-normalized identification remain OPEN.",
+    "The ACTUAL KdV correction divided by its original positive index now forms ONE Banach-analytic weighted ell-infinity packet on a common FULL COMPLEX normalized weak-action ball. The packet has a uniform norm bound, is real on the entire nonnegative weak locus, vanishes at zero and obeys a LINEAR weak-action norm bound on one smaller common ball. In particular EVERY true native frequency satisfies |omega1_n-(2*pi*n)^3| <= L*n*norm(A_weak), with ONE L and radius chosen BEFORE all modes. The SAME bounded packet agrees with the global physical Hilbert gradient on a FULL COMPLEX domain intersection, while retaining the ENTIRE nonnegative Hilbert cone and full -6*Id Taylor operator. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. A genuine SEQUENCE-VALUED weak extension and the LINEAR own-index bound are now proved NEAR ZERO, with exact actual physical frequency recovery. The weak domain is still a ball near zero, not a neighborhood of the ENTIRE nonnegative weak-action cone. The full global V0 extension, the stronger stated lp remainders and locally uniform high-index asymptotics, and compactness of the Hilbert derivative correction at EVERY action remain OPEN. The other main concavity/inverse/PDE conclusions and KdV2 weighted sums/mass-normalized identification remain OPEN.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
@@ -41891,8 +42038,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 24495,
-    "total_declarations_audited": 46565,
+    "candidate_declarations_audited": 24575,
+    "total_declarations_audited": 46645,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -41901,7 +42048,7 @@
     "main_theorems_verified": [
       "Theorem 1.1"
     ],
-    "selected_modules": 3154,
+    "selected_modules": 3165,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -42022,7 +42169,8 @@
     "weak_kdv_action_frequency_validation_sequence": "All 2951 prior selected sources remain byte-identical and retain their strict build evidence. All SEVEN new own modules were strictly rebuilt in dependency order AFTER freezing 3008 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 2958 selected modules and every imported NLS declaration. Exact ordered selection, reachability and the exact seven-module import-closure increase were checked. The entire transitive audit loop, collectAxioms traversal, permitted axioms and imported NLS scope are byte-identical to the published baseline. The selection has 24 private chunks, each at most 128 names; the actual 2958-name bidirectional NameSet probe rejects insertion/deletion mismatches. All 47 prior provenance records remain unchanged and verified against their source commits; there is no new canonical reuse. All outputs are private and fresh through the article overlay. Canonical main and pinned Mathlib are unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a SEVEN-module incremental rebuild retaining baseline strict evidence, not a full 2958-module rebuild.",
     "common_kdv_action_domain_validation_sequence": "All 2958 prior selected sources remain byte-identical and retain their strict build evidence. All FIVE new own modules were strictly rebuilt in dependency order AFTER freezing 3013 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 2963 selected modules and every imported NLS declaration. Exact ordered selection, reachability and the exact five-module import-closure increase were checked. The entire transitive audit loop, collectAxioms traversal, permitted axioms and imported NLS scope are byte-identical to the published baseline. The selection has 24 private chunks, each at most 128 names; the actual 2963-name bidirectional NameSet probe rejects insertion/deletion mismatches. All 47 prior provenance records remain unchanged and verified against their source commits; there is no new canonical reuse. All outputs are private and fresh through the article overlay. Canonical main and pinned Mathlib are unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a FIVE-module incremental rebuild retaining baseline strict evidence, not a full 2963-module rebuild.",
     "physical_hilbert_taylor_validation_sequence": "All 2963 baseline selected sources remain byte-identical. All 186 newly selected modules were strictly rebuilt in dependency order AFTER freezing 3200 selected-source/checker/provenance/pinned-Mathlib-source hashes: 157 imported sources (146 unchanged and 11 with recorded compatibility imports/names), four new compatibility bridges, 20 existing previously unselected sources (19 unchanged from the pinned branch and one retained local BaseContourSeries), and five own comparison/result modules. One unchanged baseline PeriodOneRealFormIdentity source was additionally strictly rechecked after restoring its original bytes during compatibility work; its rebuilt artifact is byte-identical to the artifact used by the authoritative full audit. The combined transitive audit covers all 3149 selected modules and EVERY imported NLS declaration. Exact ordered selection, reachability and the EXACT 186-module import-closure increase were checked. The entire audit loop, collectAxioms traversal, permitted axioms and imported NLS scope remain byte-identical to baseline. The 25 private selection chunks have at most 128 names each; the actual 3149-name bidirectional NameSet probe rejects insertion/deletion mismatches. All 47 prior provenance records remain byte-identical and verified against their pinned source commits. The new SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json records 181 files against articles/kdv-convexity commit 26b85de3342a041e107adc5622160a302031f1c3, including every adaptation and retained local variant. Private outputs and article overlay freshness, unchanged canonical main and pinned Mathlib were checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is an incremental rebuild retaining baseline strict evidence, not a full 3149-module rebuild.",
-    "common_hilbert_weak_kdv_validation_sequence": "All 3149 prior selected sources and all 48 prior provenance records remain byte-identical. Five new own modules were strictly rebuilt in dependency order AFTER freezing 3205 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 3154 selected modules and EVERY imported NLS declaration. Exact ordered selection, full selected dependency order, reachability and the EXACT five-module import-closure increase were verified. The entire transitive audit loop, collectAxioms traversal, permitted axioms and imported NLS scope remain byte-identical to baseline. The selection has 25 private chunks, each at most 128 names; the actual 3154-name bidirectional NameSet probe rejects insertion/deletion mismatches. There is no new shared import or canonical reuse record. All private outputs are fresh and correctly linked through the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a FIVE-module incremental rebuild retaining baseline strict evidence, not a full 3154-module rebuild."
+    "common_hilbert_weak_kdv_validation_sequence": "All 3149 prior selected sources and all 48 prior provenance records remain byte-identical. Five new own modules were strictly rebuilt in dependency order AFTER freezing 3205 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 3154 selected modules and EVERY imported NLS declaration. Exact ordered selection, full selected dependency order, reachability and the EXACT five-module import-closure increase were verified. The entire transitive audit loop, collectAxioms traversal, permitted axioms and imported NLS scope remain byte-identical to baseline. The selection has 25 private chunks, each at most 128 names; the actual 3154-name bidirectional NameSet probe rejects insertion/deletion mismatches. There is no new shared import or canonical reuse record. All private outputs are fresh and correctly linked through the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a FIVE-module incremental rebuild retaining baseline strict evidence, not a full 3154-module rebuild.",
+    "bounded_weak_kdv_packet_validation_sequence": "All 3154 prior selected sources and all 48 prior provenance records remain byte-identical. ELEVEN new own modules were strictly rebuilt in dependency order AFTER freezing 3216 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 3165 selected modules and EVERY imported NLS declaration. Exact ordered selection, full selected dependency order, reachability and the EXACT eleven-module import-closure increase were verified. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. The selection has 25 private chunks of at most 128 names; the actual 3165-name bidirectional NameSet probe rejects insertion/deletion mismatches. There is no new shared import or canonical reuse record. All private outputs are fresh and correctly linked through the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is an ELEVEN-module incremental rebuild retaining baseline strict evidence, not a full 3165-module rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -43270,6 +43418,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "14bca8c0965de47cd185f808f5b36114700de445",
+      "description": "The ACTUAL KdV correction divided by its original positive index now forms ONE Banach-analytic weighted ell-infinity packet on a common FULL COMPLEX normalized weak-action ball. The packet has a uniform norm bound, is real on the entire nonnegative weak locus, vanishes at zero and obeys a LINEAR weak-action norm bound on one smaller common ball. In particular EVERY true native frequency satisfies |omega1_n-(2*pi*n)^3| <= L*n*norm(A_weak), with ONE L and radius chosen BEFORE all modes. The SAME bounded packet agrees with the global physical Hilbert gradient on a FULL COMPLEX domain intersection, while retaining the ENTIRE nonnegative Hilbert cone and full -6*Id Taylor operator.",
+      "entries": [
+        "The SAME actual scalar weak-action KdV corrections and physical Hilbert gradient now agree on a FULL COMPLEX intersection of ONE weak-action ball and ONE open Hilbert neighborhood containing the ENTIRE nonnegative Hilbert cone. BOTH domains precede EVERY positive frequency index. The SAME Hilbert gradient is real on the ENTIRE nonnegative Hilbert cone, including actions lacking cubic-weight summability. The actual original native frequencies, exact weak normalization and full -6*Id Taylor operator are retained. This is no longer only equality on native real actions or an index-dependent analytic germ. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. This proves actual Hilbert/weak complex-domain compatibility near the weak origin and full nonnegative-Hilbert reality supporting Theorem 1.2(iv). The weak domain here is ONE BALL NEAR ZERO. It is not yet a neighborhood of the ENTIRE nonnegative weak-action cone, so the complete global V0 agreement remains OPEN. Compactness of the Hilbert derivative correction at EVERY action, sharp sequence-valued weak-action target estimates and locally uniform asymptotics remain OPEN, as do the other main concavity/inverse/PDE conclusions. KdV2 weighted sums and mass-normalized identification remain OPEN.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -43361,5 +43521,6 @@
   "common_kdv_action_domain_record": "COMMON_KDV_ACTION_DOMAIN.md",
   "physical_hilbert_taylor_record": "PHYSICAL_HILBERT_TAYLOR.md",
   "shared_physical_hilbert_taylor_import_record": "SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json",
-  "common_hilbert_weak_kdv_record": "COMMON_HILBERT_WEAK_KDV.md"
+  "common_hilbert_weak_kdv_record": "COMMON_HILBERT_WEAK_KDV.md",
+  "bounded_weak_kdv_packet_record": "BOUNDED_WEAK_KDV_PACKET.md"
 }

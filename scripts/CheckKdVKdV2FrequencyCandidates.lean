@@ -1,3 +1,14 @@
+import NLS.Articles.KdVKdV2Frequencies.ActualBoundedWeakHilbertAgreement
+import NLS.Articles.KdVKdV2Frequencies.ActualWeakKdVFrequencyPacket
+import NLS.Articles.KdVKdV2Frequencies.LocalBoundedWeakSpectralActionDescent
+import NLS.KdV.HillRoughScalarAgreement
+import NLS.Articles.KdVKdV2Frequencies.NativeBoundedKdVFrequencyPacket
+import NLS.KdV.HillHminusOnePhysicalBoundedFrequencyPacket
+import NLS.KdV.HillHminusOneBoundedFrequencyPacket
+import NLS.KdV.HillHminusOneLinearFrequencyBounds
+import NLS.KdV.HillHminusOneUniformMomentBounds
+import NLS.SequenceSpaces.HilbertSquareWeightInterpolation
+import NLS.KdV.HillHminusOneOnceWeightedMomentBounds
 import NLS.ComplexAnalysis.CommonConeWeakNeighborhood
 import NLS.Articles.KdVKdV2Frequencies.ActualHilbertWeakFrequencyAgreement
 import NLS.Articles.KdVKdV2Frequencies.NativeHilbertWeakActionComparison
@@ -5512,7 +5523,18 @@ private def kdvFrequencyAuditChunk24 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.OriginalHilbertActionLift,
   `NLS.Articles.KdVKdV2Frequencies.NativeHilbertWeakActionComparison,
   `NLS.ComplexAnalysis.CommonConeWeakNeighborhood,
-  `NLS.Articles.KdVKdV2Frequencies.ActualHilbertWeakFrequencyAgreement
+  `NLS.Articles.KdVKdV2Frequencies.ActualHilbertWeakFrequencyAgreement,
+  `NLS.SequenceSpaces.HilbertSquareWeightInterpolation,
+  `NLS.KdV.HillHminusOneOnceWeightedMomentBounds,
+  `NLS.KdV.HillHminusOneUniformMomentBounds,
+  `NLS.KdV.HillHminusOneLinearFrequencyBounds,
+  `NLS.KdV.HillHminusOneBoundedFrequencyPacket,
+  `NLS.KdV.HillHminusOnePhysicalBoundedFrequencyPacket,
+  `NLS.KdV.HillRoughScalarAgreement,
+  `NLS.Articles.KdVKdV2Frequencies.NativeBoundedKdVFrequencyPacket,
+  `NLS.Articles.KdVKdV2Frequencies.LocalBoundedWeakSpectralActionDescent,
+  `NLS.Articles.KdVKdV2Frequencies.ActualWeakKdVFrequencyPacket,
+  `NLS.Articles.KdVKdV2Frequencies.ActualBoundedWeakHilbertAgreement
 ]
 
 open Lean in
