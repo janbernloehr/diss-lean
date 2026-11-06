@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest all real-base native Jacobian units and analytic inverse charts
+## Latest all real-base native inverse germs of the SAME R
+
+All stronger native analytic inverse charts now agree EXACTLY with the SAME retained rough R at EVERY eligible REAL source and target base near zero, before ALL Sobolev orders s>=-1. ONE common rough inverse-source ball precedes those choices. The inverse germs are native complex analytic on OPEN stronger target neighborhoods and retain full source/target coefficient inclusions, actual right-inverse identity and BOTH central zero coefficients. Target-based eligibility uses the original weak inverse domain W and the actual R image in that common rough ball. See `NATIVE_MATCHED_ALL_REAL_BASE_INVERSE.md`.
+
+The SAME Z,R retain every earlier inverse, physical, Jacobian, regularity, original-global-coordinate and mass identity. Arbitrary-real-rough-source/GLOBAL Birkhoff extension and inversion, full global canonical/Hamiltonian identifications and remaining frequency/PDE conclusions remain obligations. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2684 unchanged selected baseline sources. All eight newly selected own modules strictly rebuilt in dependency order after freezing 2738 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2692 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The exact selection now uses 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2692-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2692-module rebuild is claimed.
+
+Fresh audit: 21072 selected and 43142 imported NLS declarations; permitted axioms only. Eight new own modules contain 10 explicit theorems.
+
+## Earlier all real-base native Jacobian units and analytic inverse charts
 
 The SAME actual signed Z now has invertible literal native mean-zero Jacobians and genuine complex analytic inverse charts at EVERY eligible REAL mean-zero base in ONE common rough ball, before ALL orders s>=-1. The exact full signed principal is a bounded equivalence in those charts. Actual weak Jacobian injectivity transfers through exact complex Sobolev inclusions, and the compact remainder gives native bijectivity. Each chart uses the SAME native restriction of Z and has open source/target domains with analytic inverse. See `NATIVE_ALL_REAL_BASE_INVERSE_CHARTS.md`.
 

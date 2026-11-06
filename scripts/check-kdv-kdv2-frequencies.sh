@@ -2693,6 +2693,14 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/ActualAllNativeJacobianUnits
   NLS/Articles/KdVKdV2Frequencies/ActualNativeAnalyticInverseCharts
   NLS/Articles/KdVKdV2Frequencies/NativeRoughAllRealBaseInverseCharts
+  NLS/ComplexAnalysis/LocalRightInverseMatchingAt
+  NLS/ComplexAnalysis/CommonInverseDomain
+  NLS/Articles/KdVKdV2Frequencies/ActualRoughInverseDomain
+  NLS/Articles/KdVKdV2Frequencies/NativeAbelianInverseRecovery
+  NLS/Articles/KdVKdV2Frequencies/ActualNativeInverseMatching
+  NLS/Articles/KdVKdV2Frequencies/ActualAllNativeStrongRInverse
+  NLS/Articles/KdVKdV2Frequencies/ActualRealTargetStrongInverse
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughAllRealBaseAnalyticInverse
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

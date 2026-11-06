@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest all real-base native Jacobian units and analytic inverse charts
+## Latest all real-base native inverse germs of the SAME R
+
+All stronger native analytic inverse charts now agree EXACTLY with the SAME retained rough R at EVERY eligible REAL source and target base near zero, before ALL Sobolev orders s>=-1. ONE common rough inverse-source ball precedes those choices. The inverse germs are native complex analytic on OPEN stronger target neighborhoods and retain full source/target coefficient inclusions, actual right-inverse identity and BOTH central zero coefficients. Target-based eligibility uses the original weak inverse domain W and the actual R image in that common rough ball. See `NATIVE_MATCHED_ALL_REAL_BASE_INVERSE.md`.
+
+The SAME Z,R retain every earlier inverse, physical, Jacobian, regularity, original-global-coordinate and mass identity. Arbitrary-real-rough-source/GLOBAL Birkhoff extension and inversion, full global canonical/Hamiltonian identifications and remaining frequency/PDE conclusions remain obligations. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2684 unchanged selected baseline sources. All eight newly selected own modules strictly rebuilt in dependency order after freezing 2738 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2692 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The exact selection now uses 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2692-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2692-module rebuild is claimed.
+
+Fresh audit: 21072 selected and 43142 imported NLS declarations; permitted axioms only. Eight new own modules contain 10 explicit theorems.
+
+## Earlier all real-base native Jacobian units and analytic inverse charts
 
 The SAME actual signed Z now has invertible literal native mean-zero Jacobians and genuine complex analytic inverse charts at EVERY eligible REAL mean-zero base in ONE common rough ball, before ALL orders s>=-1. The exact full signed principal is a bounded equivalence in those charts. Actual weak Jacobian injectivity transfers through exact complex Sobolev inclusions, and the compact remainder gives native bijectivity. Each chart uses the SAME native restriction of Z and has open source/target domains with analytic inverse. See `NATIVE_ALL_REAL_BASE_INVERSE_CHARTS.md`.
 
@@ -750,7 +760,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2684 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2692 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1819,7 +1829,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2684 selected modules (including generated and private declarations)
+the 2692 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4693,4 +4703,18 @@ PASS NLS/Articles/KdVKdV2Frequencies/ActualAllNativeJacobianUnits
 PASS NLS/Articles/KdVKdV2Frequencies/ActualNativeAnalyticInverseCharts
 PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughAllRealBaseInverseCharts
 Axiom audit passed: 21046 candidate declarations; 43116 declarations total.
+```
+
+Latest matched all real-base native inverse strict checks and fresh combined audit:
+
+```text
+PASS NLS/ComplexAnalysis/LocalRightInverseMatchingAt
+PASS NLS/ComplexAnalysis/CommonInverseDomain
+PASS NLS/Articles/KdVKdV2Frequencies/ActualRoughInverseDomain
+PASS NLS/Articles/KdVKdV2Frequencies/NativeAbelianInverseRecovery
+PASS NLS/Articles/KdVKdV2Frequencies/ActualNativeInverseMatching
+PASS NLS/Articles/KdVKdV2Frequencies/ActualAllNativeStrongRInverse
+PASS NLS/Articles/KdVKdV2Frequencies/ActualRealTargetStrongInverse
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughAllRealBaseAnalyticInverse
+Axiom audit passed: 21072 candidate declarations; 43142 declarations total.
 ```

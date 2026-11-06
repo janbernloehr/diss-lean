@@ -1,3 +1,11 @@
+import NLS.Articles.KdVKdV2Frequencies.ActualRealTargetStrongInverse
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughAllRealBaseAnalyticInverse
+import NLS.Articles.KdVKdV2Frequencies.ActualAllNativeStrongRInverse
+import NLS.Articles.KdVKdV2Frequencies.ActualNativeInverseMatching
+import NLS.Articles.KdVKdV2Frequencies.ActualRoughInverseDomain
+import NLS.Articles.KdVKdV2Frequencies.NativeAbelianInverseRecovery
+import NLS.ComplexAnalysis.LocalRightInverseMatchingAt
+import NLS.ComplexAnalysis.CommonInverseDomain
 import NLS.Articles.KdVKdV2Frequencies.ActualNativeAnalyticInverseCharts
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughAllRealBaseInverseCharts
 import NLS.Articles.KdVKdV2Frequencies.ActualWeakJacobianNeighborhood
@@ -4560,7 +4568,18 @@ private def kdvFrequencyAuditChunk20 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.ActualWeakJacobianNeighborhood,
   `NLS.Articles.KdVKdV2Frequencies.ActualAllNativeJacobianUnits,
   `NLS.Articles.KdVKdV2Frequencies.ActualNativeAnalyticInverseCharts,
-  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllRealBaseInverseCharts
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllRealBaseInverseCharts,
+  `NLS.ComplexAnalysis.LocalRightInverseMatchingAt,
+  `NLS.ComplexAnalysis.CommonInverseDomain,
+  `NLS.Articles.KdVKdV2Frequencies.ActualRoughInverseDomain,
+  `NLS.Articles.KdVKdV2Frequencies.NativeAbelianInverseRecovery
+]
+
+private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
+  `NLS.Articles.KdVKdV2Frequencies.ActualNativeInverseMatching,
+  `NLS.Articles.KdVKdV2Frequencies.ActualAllNativeStrongRInverse,
+  `NLS.Articles.KdVKdV2Frequencies.ActualRealTargetStrongInverse,
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllRealBaseAnalyticInverse
 ]
 
 open Lean in
@@ -4587,7 +4606,8 @@ run_cmd do
     kdvFrequencyAuditChunk17,
     kdvFrequencyAuditChunk18,
     kdvFrequencyAuditChunk19,
-    kdvFrequencyAuditChunk20
+    kdvFrequencyAuditChunk20,
+    kdvFrequencyAuditChunk21
   ].flatten
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

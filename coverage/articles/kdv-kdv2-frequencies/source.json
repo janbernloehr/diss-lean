@@ -287,6 +287,11 @@
           "source_clause": "The SAME actual Z,R retain all prior inverse/physical identities and ALL native mean-zero Jacobian units and complex analytic inverse charts at EVERY eligible real mean-zero base in ONE common rough ball, before ALL orders s>=-1",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_all_real_base_inverse_charts",
           "qualification": "The SAME actual signed Z,R retain EVERY previous weak complex inverse, physical real form, real Sobolev membership endpoint, stronger forward germ, original physical L2 representative, fixed GLOBAL original Birkhoff coordinate, exact mass, all-order analytic inverse germ at ZERO, full signed eta compact germ and Fourier compact germ. The SAME Z NOW also has ALL native mean-zero Jacobian units and genuine complex analytic inverse charts at EVERY eligible REAL mean-zero base in ONE common rough ball, before ALL Sobolev orders. The inverse charts are for normalized native restrictions; identification with the SAME retained R at all bases, arbitrary-base/GLOBAL rough extension, canonicality and the complete main theorems remain obligations."
+        },
+        {
+          "source_clause": "All native analytic inverse charts match the SAME retained rough inverse R at EVERY eligible real source and target base near zero, for ALL orders s>=-1, with full coefficient and zero-mode recovery",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_all_real_base_analytic_inverse",
+          "qualification": "The SAME actual signed Z,R retain EVERY earlier weak complex inverse, physical real form, real Sobolev membership endpoint, stronger forward germ, original physical L2 representative, fixed GLOBAL original Birkhoff coordinate, exact mass, zero-base strong inverse germ, full signed compact derivatives, all native Jacobian units and analytic inverse charts. The SAME R NOW has all-order native complex analytic inverse germs at EVERY eligible REAL source and target base near zero, matching the actual chart inverses with exact full coefficient recovery and both zero slots. One common rough inverse-source ball precedes all orders. Global/arbitrary-real-rough-source extension, global canonicality/Hamiltonian/frequency/PDE conclusions and complete main theorem rows remain open."
         }
       ]
     },
@@ -35423,12 +35428,108 @@
       "scope": "The SAME actual signed Z,R retain EVERY previous weak complex inverse, physical real form, real Sobolev membership endpoint, stronger forward germ, original physical L2 representative, fixed GLOBAL original Birkhoff coordinate, exact mass, all-order analytic inverse germ at ZERO, full signed eta compact germ and Fourier compact germ. The SAME Z NOW also has ALL native mean-zero Jacobian units and genuine complex analytic inverse charts at EVERY eligible REAL mean-zero base in ONE common rough ball, before ALL Sobolev orders. The inverse charts are for normalized native restrictions; identification with the SAME retained R at all bases, arbitrary-base/GLOBAL rough extension, canonicality and the complete main theorems remain obligations.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "f6343a0c2f55207ee578ba7c9ec10d5190b3cd040d4c49cee804cb159a6090c9"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocalRightInverseMatchingAt.lean",
+      "source_labels": [
+        "Matched all-order native inverse germs of the SAME rough inverse R at every eligible real source and target base near zero, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At ANY target base, a GIVEN genuine native analytic inverse germ agrees on an OPEN complex neighborhood with the GIVEN weak continuous right inverse whenever both actual sources lie in the SAME weak injectivity domain. The original functions and exact right-inverse identities are retained; the base need not be zero, and no new inverse is selected.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cd1dd624e7b978c6ea930221eac07785a7b629833c54336436b57d0a33829daf"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CommonInverseDomain.lean",
+      "source_labels": [
+        "Matched all-order native inverse germs of the SAME rough inverse R at every eligible real source and target base near zero, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual weak local injectivity and continuity give ONE open source domain on which the GIVEN right inverse is also a left inverse. The same domain is chosen before all later stronger topologies and source bases. The original weak map and right inverse remain fixed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5d991e46073c96a13b1ca03b597468d1f3958e0bb68dfa2480cc53befdc6276"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualRoughInverseDomain.lean",
+      "source_labels": [
+        "Matched all-order native inverse germs of the SAME rough inverse R at every eligible real source and target base near zero, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ANY GIVEN actual physical weak Z and retained continuous rough inverse R have ONE common normalized rough source ball inside an actual weak injectivity domain. The SAME R is an exact left inverse there, with full source recovery through the literal mean-zero lift. This common choice precedes ALL native orders and real bases; it is obtained from the exact physical Fourier differential and actual weak inverse chart.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d3c9a7b597a4b6e5319125d1a891af314e410241000bb83290f36a164182baa6"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeAbelianInverseRecovery.lean",
+      "source_labels": [
+        "Matched all-order native inverse germs of the SAME rough inverse R at every eligible real source and target base near zero, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The actual normalized native forward map has the exact commuting Sobolev inclusion diagram at every genuine complex point. Normalized source matching with the GIVEN mean-zero R recovers the FULL native source. The actual full weak right-inverse identity then forces the stronger target zero coefficient to vanish; native lift/projection identities recover the FULL stronger forward identity, not only projected coordinates.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8265198365a3ced67b2d6d954ff09ce635132c0fc856379476f73aa791befad8"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualNativeInverseMatching.lean",
+      "source_labels": [
+        "Matched all-order native inverse germs of the SAME rough inverse R at every eligible real source and target base near zero, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ANY supplied actual native analytic inverse chart matches the GIVEN rough R near its ACTUAL native image whenever both weak sources lie in the common injectivity domain. The inverse is genuinely analytic in the native source norm on an OPEN complex native target neighborhood. Exact agreement with THAT SAME R, native source mean zero, domain membership, center recovery and FULL stronger forward/right-inverse identity including the target zero slot hold at EVERY complex point of that neighborhood.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d0e0dc904ed1fb9322b360476c5cef955dafd61574a20006f9f7f41746210514"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualAllNativeStrongRInverse.lean",
+      "source_labels": [
+        "Matched all-order native inverse germs of the SAME rough inverse R at every eligible real source and target base near zero, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unconditional for ANY GIVEN actual physical weak Z and retained continuous rough R with its original inverse identities: ONE common smaller rough source ball precedes ALL orders s>=-1 and EVERY eligible REAL mean-zero native source base. All stronger native analytic inverse germs agree EXACTLY with THAT SAME R on genuine OPEN COMPLEX target neighborhoods around the ACTUAL native images. Full stronger forward identity, both zero slots and exact source/target coefficient inclusions are retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "708568a806f8d36c52f54203b1ba073c50885125262c821ec17066a7b95f2b56"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualRealTargetStrongInverse.lean",
+      "source_labels": [
+        "Matched all-order native inverse germs of the SAME rough inverse R at every eligible real source and target base near zero, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Matched source-based inverse germs and the PREVIOUSLY verified actual real Sobolev membership equivalence give target-based native complex analytic germs of the SAME R. ONE common inverse-source rough ball precedes ALL orders s>=-1 and EVERY eligible REAL stronger target: its weak inclusion lies in W and its actual inverse lies in that ball. On an OPEN COMPLEX stronger target neighborhood of that GIVEN target, a native analytic G includes EXACTLY to THAT SAME R, has zero source coefficient, and satisfies the FULL actual weak forward identity with the literal stronger target lift. Real-source membership alone is not used to infer analyticity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "143ab1e2042b569f596fa457b342519d2ad2b3164e82fa48e01e55c6f648d5ff"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughAllRealBaseAnalyticInverse.lean",
+      "source_labels": [
+        "Matched all-order native inverse germs of the SAME rough inverse R at every eligible real source and target base near zero, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The SAME actual signed Z,R retain EVERY earlier weak complex inverse, physical real form, real Sobolev membership endpoint, stronger forward germ, original physical L2 representative, fixed GLOBAL original Birkhoff coordinate, exact mass, zero-base strong inverse germ, full signed compact derivatives, all native Jacobian units and analytic inverse charts. The SAME R NOW has all-order native complex analytic inverse germs at EVERY eligible REAL source and target base near zero, matching the actual chart inverses with exact full coefficient recovery and both zero slots. One common rough inverse-source ball precedes all orders. Global/arbitrary-real-rough-source extension, global canonicality/Hamiltonian/frequency/PDE conclusions and complete main theorem rows remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f93efb147d35ade7d581ff84cb14d2864faa7959899e86f542711b03f0bf587a"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The ACTUAL signed principal is NOW a bounded equivalence on the literal native mean-zero charts at EVERY eligible real base and EVERY native order. Exact complex inclusion to the SAME weak map transfers weak Jacobian injectivity, and the compact perturbation argument proves ACTUAL native mean-zero Jacobian units. ONE rough ball before ALL s>=-1 and eligible REAL mean-zero bases supports genuine complex analytic inverse charts of the normalized SAME native restrictions, with exact native weights, open source/target domains and analytic chart inverses. The SAME Z,R retain all prior inverse and physical identities. NEXT identify these stronger chart inverses with the SAME retained rough R at every eligible base, retaining exact full native mean-zero coefficient identities, then extend actual Birkhoff construction/inversion over arbitrary real rough sources/GLOBALLY and establish the remaining canonical action-Hamiltonian, full KdV/KdV2 frequency and PDE conclusions. Native mean-zero principal equivalence, full Jacobian invertibility and local inverse charts NEAR ZERO are now proved; GLOBAL assertions and complete main rows are not inferred.",
+    "The SAME actual R NOW has genuine native complex analytic inverse germs at EVERY eligible REAL source and target base in ONE common rough inverse-source ball, before ALL s>=-1. Actual chart inverses agree EXACTLY with THAT SAME R on OPEN COMPLEX stronger target neighborhoods. Full native source and stronger forward identities, target and source zero coefficients, exact physical normalization and literal Sobolev inclusions are retained. Real target eligibility is stated in the original weak inverse domain W and requires the actual R image to lie in the common rough ball. Every earlier Jacobian, forward/inverse, physical, global-original-coordinate and mass identity remains attached to the SAME Z,R. This closes the all-real-base local inverse matching and full native recovery obligations near zero. NEXT extend actual Birkhoff construction and inversion over arbitrary real rough sources/GLOBALLY, retain full global Sobolev-scale canonical action-Hamiltonian identifications, and establish the remaining full KdV/KdV2 frequency identities/estimates and actual PDE conclusions. The near-zero all-order local result does not prove the complete GLOBAL Theorem 1.1 or any other complete main row.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -35454,15 +35555,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 21046,
-    "total_declarations_audited": 43116,
+    "candidate_declarations_audited": 21072,
+    "total_declarations_audited": 43142,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2684,
+    "selected_modules": 2692,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -35548,7 +35649,8 @@
     "native_signed_compact_validation_sequence": "Prior strict evidence retained for all 2618 unchanged selected baseline sources. All nine newly selected modules (eight own and one unchanged shared reuse) strictly rebuilt in dependency order after freezing 2672 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2627 selected modules. Exact checker/audit/coverage/evidence selection, selected dependency order, reachability and the exact nine-module increase in NLS import closure verified. All 41 prior verified provenance records and all baseline sources remain unchanged. One NEW canonical reuse record verifies the already present shared SignChange source byte-for-byte against clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; no source adaptation is needed. All 42 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, allowed axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. The 2627-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2627-module rebuild is claimed.",
     "native_eta_fourier_validation_sequence": "Prior strict evidence retained for all 2627 unchanged selected baseline sources. All 31 newly selected modules (eight own and 23 unchanged canonical reuses) strictly rebuilt in dependency order after freezing 2704 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2658 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 31-module increase in NLS import closure verified. All 42 prior verified provenance records remain byte-for-byte unchanged; one new canonical reuse record verifies all 23 unchanged source files. All 43 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2658-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2658-module rebuild is claimed.",
     "native_signed_fourier_validation_sequence": "Prior strict evidence retained for all 2658 unchanged selected baseline sources. All 12 newly selected own modules strictly rebuilt in dependency order after freezing 2716 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2670 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 12-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new reuse/import record is needed because no new canonical prerequisite is selected. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2670-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2670-module rebuild is claimed.",
-    "native_jacobian_validation_sequence": "Prior strict evidence retained for all 2670 unchanged selected baseline sources. All 14 newly selected own modules strictly rebuilt in dependency order after freezing 2730 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2684 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 14-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2684-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2684-module rebuild is claimed."
+    "native_jacobian_validation_sequence": "Prior strict evidence retained for all 2670 unchanged selected baseline sources. All 14 newly selected own modules strictly rebuilt in dependency order after freezing 2730 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2684 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 14-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2684-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2684-module rebuild is claimed.",
+    "matched_inverse_validation_sequence": "Prior strict evidence retained for all 2684 unchanged selected baseline sources. All eight newly selected own modules strictly rebuilt in dependency order after freezing 2738 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2692 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The exact selection now uses 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2692-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2692-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -36370,6 +36472,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "dc6f8740c6fc2f6d50e9c42b67b121e34e3e097a",
+      "description": "Match ALL actual native analytic chart inverses to the SAME retained rough R at every eligible real source and target base near zero; prove full coefficient recovery including both central zeros.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The ACTUAL signed principal is NOW a bounded equivalence on the literal native mean-zero charts at EVERY eligible real base and EVERY native order. Exact complex inclusion to the SAME weak map transfers weak Jacobian injectivity, and the compact perturbation argument proves ACTUAL native mean-zero Jacobian units. ONE rough ball before ALL s>=-1 and eligible REAL mean-zero bases supports genuine complex analytic inverse charts of the normalized SAME native restrictions, with exact native weights, open source/target domains and analytic chart inverses. The SAME Z,R retain all prior inverse and physical identities. NEXT identify these stronger chart inverses with the SAME retained rough R at every eligible base, retaining exact full native mean-zero coefficient identities, then extend actual Birkhoff construction/inversion over arbitrary real rough sources/GLOBALLY and establish the remaining canonical action-Hamiltonian, full KdV/KdV2 frequency and PDE conclusions. Native mean-zero principal equivalence, full Jacobian invertibility and local inverse charts NEAR ZERO are now proved; GLOBAL assertions and complete main rows are not inferred.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -36421,5 +36535,6 @@
   "native_signed_compact_record": "NATIVE_SIGNED_COMPACT_DERIVATIVES.md",
   "native_eta_fourier_record": "NATIVE_ETA_FOURIER_PRINCIPAL.md",
   "native_signed_fourier_record": "NATIVE_SIGNED_FOURIER_PRINCIPAL.md",
-  "native_jacobian_record": "NATIVE_ALL_REAL_BASE_INVERSE_CHARTS.md"
+  "native_jacobian_record": "NATIVE_ALL_REAL_BASE_INVERSE_CHARTS.md",
+  "matched_inverse_record": "NATIVE_MATCHED_ALL_REAL_BASE_INVERSE.md"
 }
