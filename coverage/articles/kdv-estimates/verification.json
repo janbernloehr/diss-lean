@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "kdv-estimates",
-  "date": "2026-11-05",
+  "date": "2026-11-06",
   "main_theorems_verified": true,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
   "branch": "articles/kdv-estimates",
@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 9959,
+    "declarations": 9979,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -1278,7 +1278,8 @@
       "NLS.RealWeightedNatPair.summable_weighted_sq",
       "NLS.realNatPairNormalization",
       "NLS.realNatPairNormalization.eq_1",
-      "NLS.realWeightedNatPairSubmodule"
+      "NLS.realWeightedNatPairSubmodule",
+      "NLS.ComplexAnalysis.RealComplexification.eqOn_zero_of_nonempty_real_slice"
     ]
   },
   "full_repository_validation": "Fresh strict compilation of every incoming or changed source and its complete reverse dependency closure, adding missing local dependencies; combined aggregate import, KdV and incoming mKdV/NLS article audits, full public NLS transitive axiom audit, explicit main Theorems1\u20133 checks, and frequency/energy normalization check. The full 7729-example run found eight script-only issues; all eight corrected anonymous commands passed a normal-elaborator recheck in the original file scopes, retaining the 7721 unchanged successful examples from the full run. All nonexample commands were preserved and re-elaborated, and no linter was disabled. No fresh all-green monolithic example rerun, full fresh Lake build or complete focused-script rerun is claimed.",
@@ -2769,9 +2770,14 @@
     "NLS/KdV/HillOriginalBirkhoffWeightedRestriction.lean": "81c82be4b698df99c25c6277fa0fb55bcdecea9eeda3dcf08407f3a58e1024c8",
     "NLS/KdV/HillOriginalBirkhoffSobolevRestriction.lean": "f43b146fdea5ecb9ef5ea359f19f31040f1d964e2c6dc3c775a679c9fb6be6b2",
     "NLS/KdV/HillOriginalBirkhoffActions.lean": "578c00aac60ab295a425e6d3da1a206d3608cea84ddf891e8fa9aaf9155ceee4",
-    "NLS/Articles/KdVEstimates/MainBirkhoffEstimates.lean": "6c4a41f5ee8628386447ca50a06d656dfa83833f52c8a95573bca56cc4a3fcc8"
+    "NLS/Articles/KdVEstimates/MainBirkhoffEstimates.lean": "6c4a41f5ee8628386447ca50a06d656dfa83833f52c8a95573bca56cc4a3fcc8",
+    "NLS/ComplexAnalysis/RealComplexificationIdentity.lean": "e5caebfeef1e6035339759f5084a5a841488b38ac83ba52d1e22829c2bb9f8c6",
+    "NLS/KdV/HillSharpComplement.lean": "6b0ee6ca3cc15b6b1a25eda80c6e591aaa7c45211e7299bf0657948f79a6e9a5",
+    "NLS/Articles/KdVEstimates/Lemma7.lean": "79c576feb9d545cd7ab6d7aad6d479b5b0fa51aaf8a2504f3d3df866a9ba3536",
+    "NLS/Articles/KdVEstimates/AppendixA3.lean": "7f08a1d85f52ae36aa9d05df110d1b21ad92d763b6d7231eca94d41871f87aa7",
+    "NLS/Articles/KdVEstimates/AppendixD1.lean": "da97281d9fb66f753d368f22b7ff688d3b0dfde158ca4584f710a47703ca11a8"
   },
-  "remaining": "No mathematical obligation remains for the named main Theorems1\u20133. PR4 main integration is validated; the PR itself has not been merged.",
+  "remaining": "Whole-paper coverage remains incomplete: see whole-paper.json for every named result, explicit corrections, and open equation/unnumbered-claim audits.",
   "milestone": "Main Theorems 1\u20133 for the fixed original physical Birkhoff map",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
@@ -4261,7 +4267,12 @@
     "NLS.KdV.HillOriginalBirkhoffWeightedRestriction",
     "NLS.KdV.HillOriginalBirkhoffSobolevRestriction",
     "NLS.KdV.HillOriginalBirkhoffActions",
-    "NLS.Articles.KdVEstimates.MainBirkhoffEstimates"
+    "NLS.Articles.KdVEstimates.MainBirkhoffEstimates",
+    "NLS.ComplexAnalysis.RealComplexificationIdentity",
+    "NLS.KdV.HillSharpComplement",
+    "NLS.Articles.KdVEstimates.Lemma7",
+    "NLS.Articles.KdVEstimates.AppendixA3",
+    "NLS.Articles.KdVEstimates.AppendixD1"
   ],
   "proof_commits": [
     {
@@ -5425,7 +5436,8 @@
       "focused_modules": 892,
       "shared_build_lock_respected": true,
       "earlier_deferred_attempts": 3
-    }
+    },
+    "historical_scope": "The preceding fields record the main-theorem/integration baseline; five new strict modules and their current aggregate/audit are recorded in whole-paper-validation.json."
   },
   "warningAsError": true,
   "previous_aggregate_attempts": [
@@ -6379,7 +6391,7 @@
       "scope": "All 1475 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1468-module base has strict validation recorded at commit 16d0e19dbd9d136a62297e5f749e3b2024216c0b (complete 583-module strict focused run plus 885 isolated additions; all 1468 source hashes preserved, 9814-declaration audit and successful aggregate), and all 7 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9853-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1475-module focused script, full Lake rebuild and full repository examples were not rerun."
     }
   ],
-  "completion_status": "proofs_verified_published_PR4_integration_validated",
+  "completion_status": "whole_paper_in_progress_main_theorems_verified",
   "main_theorem_completion_audit": {
     "status": "passed_locally",
     "source_pdf_sha256": "b275b8c6770a650f614acd0788611044c6b0ee8da4506857294dc3ae617666dd",
@@ -6416,10 +6428,11 @@
     "source_correction": "Hill operator is -d^2/dx^2+q as fixed by source formula (2), page 5; the page-8 omitted exponent is corrected."
   },
   "publication": {
-    "status": "published_branch_PR4",
+    "status": "PR4_merged_whole_paper_continuation",
     "pull_request": "https://github.com/janbernloehr/diss-lean/pull/4",
     "original_published_head": "25e906bba4584c1c1ffbf0d13cd15ce0dfeee814",
-    "validation_timing": "This integration report records the checks before the merge commit and its publication. The original validated article head was already pushed and independently verified."
+    "validation_timing": "This integration report records the checks before the merge commit and its publication. The original validated article head was already pushed and independently verified.",
+    "merged_commit": "a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa"
   },
   "latest_merge_validation": {
     "report": "coverage/articles/kdv-estimates/merge-validation.json",
@@ -6433,5 +6446,14 @@
     "global_NLS_audit_declarations": 60500,
     "aggregate_exit_code": 0,
     "examples_exit_code": 0
+  },
+  "whole_paper_verified": false,
+  "whole_paper_validation": {
+    "report": "coverage/articles/kdv-estimates/whole-paper-validation.json",
+    "status": "passed_for_recorded_scope",
+    "focused_modules": 1491,
+    "new_strict_modules": 5,
+    "transitive_axiom_declarations": 9979,
+    "aggregate_exit_code": 0
   }
 }

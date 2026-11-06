@@ -6443,3 +6443,8 @@ import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianAngleSum
 import NLS.Articles.DNLSEstimates.MainEstimates
 import NLS.KdV.HillEnergyTraceGradient
 import NLS.KdV.HillEnergyTraceGradientRegularity
+import NLS.ComplexAnalysis.RealComplexificationIdentity
+import NLS.KdV.HillSharpComplement
+import NLS.Articles.KdVEstimates.Lemma7
+import NLS.Articles.KdVEstimates.AppendixA3
+import NLS.Articles.KdVEstimates.AppendixD1

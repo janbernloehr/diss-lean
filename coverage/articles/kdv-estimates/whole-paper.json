@@ -1,0 +1,590 @@
+{
+  "schema_version": 1,
+  "article_id": "kdv-estimates",
+  "date": "2026-11-06",
+  "requested_scope": "Every mathematical assertion in the pinned paper, including both Corollary 1 occurrences, intermediate results, appendices, displayed equations, remarks and background facts needed by the arguments.",
+  "main_theorems_verified": true,
+  "whole_paper_verified": false,
+  "inventory_complete": false,
+  "literal_printed_version_has_obstructions": true,
+  "status": "whole_paper_in_progress_with_explicit_source_corrections",
+  "source": {
+    "arxiv": "1502.04550v1",
+    "pdf_sha256": "b275b8c6770a650f614acd0788611044c6b0ee8da4506857294dc3ae617666dd",
+    "text_sha256": "2747cee0de2eb96928858c9228e578ac37c0c3ccca077b44c8f72d677cadd54a"
+  },
+  "baseline_commit": "ab7e663618c3dfdb6d5fb19dd852e5bfa55ce144",
+  "coverage_policy": [
+    "Candidate library modules do not establish source correspondence. Check every domain, quantifier, normalization, constant, convergence statement and uniformity claim.",
+    "A citation is provenance, not an axiom or a supplied proof witness. Prove the used mathematical claim or reuse a checked theorem.",
+    "Explicitly record source corrections and formal obstructions. Never silently mark a weakened or corrected statement as the literal printed result.",
+    "The 27 named results are only the initial inventory. Equations and unnumbered claims require a separate page-by-page audit before completeness can be asserted."
+  ],
+  "named_results": [
+    {
+      "id": "theorem-1",
+      "label": "Theorem 1",
+      "occurrence": 1,
+      "source_page": 3,
+      "source_text_line": 114,
+      "scope": "Both integer Sobolev estimates for the same original physical Birkhoff map.",
+      "status": "verified",
+      "declarations": [
+        "NLS.Articles.KdVEstimates.theorem1"
+      ],
+      "validation": "Existing main-theorem milestone and PR4 integration validation."
+    },
+    {
+      "id": "corollary-1-1",
+      "label": "Corollary 1",
+      "occurrence": 1,
+      "source_page": 3,
+      "source_text_line": 137,
+      "scope": "Global-in-time KdV solution bound with the printed exponent and uniform constant.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "theorem-2",
+      "label": "Theorem 2",
+      "occurrence": 1,
+      "source_page": 3,
+      "source_text_line": 155,
+      "scope": "Both integer weighted action estimates, including actual summability.",
+      "status": "verified",
+      "declarations": [
+        "NLS.Articles.KdVEstimates.theorem2"
+      ],
+      "validation": "Existing main-theorem milestone and PR4 integration validation."
+    },
+    {
+      "id": "theorem-3",
+      "label": "Theorem 3",
+      "occurrence": 1,
+      "source_page": 4,
+      "source_text_line": 219,
+      "scope": "General spectral-weight membership and both bounds with one constant.",
+      "status": "verified",
+      "declarations": [
+        "NLS.Articles.KdVEstimates.theorem3"
+      ],
+      "validation": "Existing main-theorem milestone and PR4 integration validation."
+    },
+    {
+      "id": "corollary-1-2",
+      "label": "Corollary 1",
+      "occurrence": 2,
+      "source_page": 4,
+      "source_text_line": 245,
+      "scope": "Every real Sobolev exponent s>=0: homogeneous target membership and both polynomial bounds.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-1",
+      "label": "Lemma 1",
+      "occurrence": 1,
+      "source_page": 10,
+      "source_text_line": 592,
+      "scope": "Analytic Abelian form, removable closed gaps, and vanishing gap periods.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-2",
+      "label": "Lemma 2",
+      "occurrence": 1,
+      "source_page": 11,
+      "source_text_line": 730,
+      "scope": "All numbered properties of the normalized primitives, including analytic dependence and boundary normalization.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "proposition-3",
+      "label": "Proposition 3",
+      "occurrence": 1,
+      "source_page": 14,
+      "source_text_line": 929,
+      "scope": "Finite-gap primitive asymptotic with its exact Hamiltonian coefficients.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-4",
+      "label": "Lemma 4",
+      "occurrence": 1,
+      "source_page": 15,
+      "source_text_line": 1033,
+      "scope": "All hierarchy trace formulas on the stated Sobolev domains.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "proposition-5",
+      "label": "Proposition 5",
+      "occurrence": 1,
+      "source_page": 16,
+      "source_text_line": 1107,
+      "scope": "High- and low-index moment/action bounds with the printed thresholds and constants.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-6",
+      "label": "Lemma 6",
+      "occurrence": 1,
+      "source_page": 16,
+      "source_text_line": 1139,
+      "scope": "Direct weighted action bound, including the explicit error constant.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-7",
+      "label": "Lemma 7",
+      "occurrence": 1,
+      "source_page": 17,
+      "source_text_line": 1191,
+      "scope": "Half-kinetic Hamiltonian normalization and homogeneous lower-jet polynomial without constant term.",
+      "status": "verified",
+      "declarations": [
+        "NLS.Articles.KdVEstimates.lemma7"
+      ],
+      "qualification": "Positive hierarchy orders m>=1, as in the surrounding estimates. The integer grading doubles the printed half-integer grading."
+    },
+    {
+      "id": "lemma-8",
+      "label": "Lemma 8",
+      "occurrence": 1,
+      "source_page": 19,
+      "source_text_line": 1297,
+      "scope": "Sharp moment/action sum bound with leading 2^(-m) and error 2^(9m).",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "theorem-4",
+      "label": "Theorem 4",
+      "occurrence": 1,
+      "source_page": 19,
+      "source_text_line": 1315,
+      "scope": "Hamiltonian/action bound with the exact leading coefficient 2^m.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-9",
+      "label": "Lemma 9",
+      "occurrence": 1,
+      "source_page": 23,
+      "source_text_line": 1593,
+      "scope": "The chi bound with its stated Sobolev exponent, threshold and numerical constant.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "corollary-2",
+      "label": "Corollary 2",
+      "occurrence": 1,
+      "source_page": 24,
+      "source_text_line": 1710,
+      "scope": "The resulting high-index action/gap comparison with the printed constants.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "proposition-a-1",
+      "label": "Proposition A.1",
+      "occurrence": 1,
+      "source_page": 25,
+      "source_text_line": 1782,
+      "scope": "Complex periodic spectral localization, cutoff four, and the low-spectrum bounds.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-a-2",
+      "label": "Lemma A.2",
+      "occurrence": 1,
+      "source_page": 26,
+      "source_text_line": 1799,
+      "scope": "The lower bound on the real part of the lowest eigenvalue.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-a-3",
+      "label": "Lemma A.3",
+      "occurrence": 1,
+      "source_page": 27,
+      "source_text_line": 1872,
+      "scope": "Every shifted-norm tail bound with constant two on the printed strips.",
+      "status": "verified_with_explicit_correction",
+      "declarations": [
+        "NLS.Articles.KdVEstimates.lemmaA3_corrected",
+        "NLS.Articles.KdVEstimates.lemmaA3_printed_strip_obstruction"
+      ],
+      "qualification": "Use radius-six strips, retaining the exact constant two. The printed radius-twelve strip at n=1 contains lambda=0 and a retained zero mode, so its claimed complementary inverse does not exist there. This correction is not coverage of the literal printed domain."
+    },
+    {
+      "id": "lemma-a-4",
+      "label": "Lemma A.4",
+      "occurrence": 1,
+      "source_page": 28,
+      "source_text_line": 1981,
+      "scope": "All effective-operator coefficient bounds and equality of diagonals.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-a-5",
+      "label": "Lemma A.5",
+      "occurrence": 1,
+      "source_page": 29,
+      "source_text_line": 2007,
+      "scope": "Exactly two zeros counted with multiplicity in the stated region.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-a-6",
+      "label": "Lemma A.6",
+      "occurrence": 1,
+      "source_page": 30,
+      "source_text_line": 2057,
+      "scope": "The precise localization of the two reduced roots.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "proposition-a-7",
+      "label": "Proposition A.7",
+      "occurrence": 1,
+      "source_page": 30,
+      "source_text_line": 2081,
+      "scope": "Both weighted high-frequency gap estimates.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "corollary-a-8",
+      "label": "Corollary A.8",
+      "occurrence": 1,
+      "source_page": 31,
+      "source_text_line": 2108,
+      "scope": "The stated weighted gap-tail bound.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-b-1",
+      "label": "Lemma B.1",
+      "occurrence": 1,
+      "source_page": 32,
+      "source_text_line": 2181,
+      "scope": "Uniform discriminant asymptotics, including uniformity on bounded Sobolev subsets and strips.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-c-1",
+      "label": "Lemma C.1",
+      "occurrence": 1,
+      "source_page": 33,
+      "source_text_line": 2267,
+      "scope": "Analytic dependence of the actual normalized primitive across collapsed gaps.",
+      "status": "source_comparison_pending",
+      "declarations": []
+    },
+    {
+      "id": "lemma-d-1",
+      "label": "Lemma D.1",
+      "occurrence": 1,
+      "source_page": 36,
+      "source_text_line": 2467,
+      "scope": "Identity theorem for an analytic map on a connected complexified real Banach domain.",
+      "status": "verified_with_explicit_correction",
+      "declarations": [
+        "NLS.Articles.KdVEstimates.lemmaD1_corrected",
+        "NLS.Articles.KdVEstimates.lemmaD1_nonempty_real_slice_is_necessary"
+      ],
+      "qualification": "Make the nonempty real slice used by the printed proof explicit. U=ball(i,1/2), f=1 proves this hypothesis cannot simply be omitted."
+    }
+  ],
+  "numbered_equation_audit": [
+    {
+      "label": "(1)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(2)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(3)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(4)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(5)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(6)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(7)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(8)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(9)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(10)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(11)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(12)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(13)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(14)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(15)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(16)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(17)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(18)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(19)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(20)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(21)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(22)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(23)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(24)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(25)",
+      "status": "source_comparison_pending"
+    },
+    {
+      "label": "(26)",
+      "status": "source_comparison_pending"
+    }
+  ],
+  "unnumbered_claim_audit": {
+    "status": "not_complete",
+    "pages": [
+      {
+        "page": 1,
+        "status": "pending"
+      },
+      {
+        "page": 2,
+        "status": "pending"
+      },
+      {
+        "page": 3,
+        "status": "pending"
+      },
+      {
+        "page": 4,
+        "status": "pending"
+      },
+      {
+        "page": 5,
+        "status": "pending"
+      },
+      {
+        "page": 6,
+        "status": "pending"
+      },
+      {
+        "page": 7,
+        "status": "pending"
+      },
+      {
+        "page": 8,
+        "status": "pending"
+      },
+      {
+        "page": 9,
+        "status": "pending"
+      },
+      {
+        "page": 10,
+        "status": "pending"
+      },
+      {
+        "page": 11,
+        "status": "pending"
+      },
+      {
+        "page": 12,
+        "status": "pending"
+      },
+      {
+        "page": 13,
+        "status": "pending"
+      },
+      {
+        "page": 14,
+        "status": "pending"
+      },
+      {
+        "page": 15,
+        "status": "pending"
+      },
+      {
+        "page": 16,
+        "status": "pending"
+      },
+      {
+        "page": 17,
+        "status": "pending"
+      },
+      {
+        "page": 18,
+        "status": "pending"
+      },
+      {
+        "page": 19,
+        "status": "pending"
+      },
+      {
+        "page": 20,
+        "status": "pending"
+      },
+      {
+        "page": 21,
+        "status": "pending"
+      },
+      {
+        "page": 22,
+        "status": "pending"
+      },
+      {
+        "page": 23,
+        "status": "pending"
+      },
+      {
+        "page": 24,
+        "status": "pending"
+      },
+      {
+        "page": 25,
+        "status": "pending"
+      },
+      {
+        "page": 26,
+        "status": "pending"
+      },
+      {
+        "page": 27,
+        "status": "pending"
+      },
+      {
+        "page": 28,
+        "status": "pending"
+      },
+      {
+        "page": 29,
+        "status": "pending"
+      },
+      {
+        "page": 30,
+        "status": "pending"
+      },
+      {
+        "page": 31,
+        "status": "pending"
+      },
+      {
+        "page": 32,
+        "status": "pending"
+      },
+      {
+        "page": 33,
+        "status": "pending"
+      },
+      {
+        "page": 34,
+        "status": "pending"
+      },
+      {
+        "page": 35,
+        "status": "pending"
+      },
+      {
+        "page": 36,
+        "status": "pending"
+      },
+      {
+        "page": 37,
+        "status": "pending"
+      }
+    ],
+    "explicit_obligations": [
+      "Birkhoff mapping, real analyticity, inverse, canonicality, and all claimed higher-space mapping properties.",
+      "KdV flow existence and action conservation on the corollary domains.",
+      "Spectral labels, products, branch conventions, period identities, and convergence or uniformity assertions.",
+      "All estimates and polynomial/interpolation steps appearing inside proofs, including the arbitrary-real-s corollary.",
+      "Remarks and cited background assertions used as mathematical facts, including negative-Sobolev extensions."
+    ]
+  },
+  "known_exact_comparison_gaps": [
+    "Appendix A cutoff four versus the earlier cutoff eight: the new radius-six tail bound now gives the cutoff-four Neumann inverse, but root localization and all downstream printed constants still need exact review.",
+    "Theorem 4 requires leading coefficient 2^m; the earlier C*(top+lower) estimate does not certify that statement.",
+    "Lemma 8 requires leading 2^(-m) and the explicit low-action coefficient, not a generic uniform majorant.",
+    "Both Corollary 1 occurrences remain unverified; integer main theorems do not imply either without additional work."
+  ],
+  "validation_report": "coverage/articles/kdv-estimates/whole-paper-validation.json",
+  "integrated_main_commit": "a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa",
+  "integration_note": "PR4 was merged while this continuation was in progress. The branch was fast-forwarded to the merge commit; its source tree equals the validated baseline."
+}

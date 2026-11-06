@@ -1,4 +1,35 @@
-# KdV estimates: main theorem coverage
+# KdV estimates: whole-paper coverage in progress
+
+The requested scope is now the entire pinned paper. **Whole-paper verification
+is not complete.** The [coverage ledger](whole-paper.json) inventories all 27
+named results, distinguishes the two occurrences of Corollary 1, and keeps the
+numbered equations and a page-by-page audit of unnumbered claims open. Existing
+main-theorem verification remains valid; a library module alone is not evidence
+that every source hypothesis, constant and uniformity assertion matches.
+
+Lemma 7 now has an explicit article theorem with the half-kinetic normalization,
+exact homogeneous grading and zero constant coefficient. Equation (14)'s exact
+monomial constraint is also proved. Both pass strict Lean checks.
+
+Two source qualifications are recorded with formal proofs:
+
+- Lemma D.1 needs a nonempty real slice, as used in its printed proof. The
+  corrected identity theorem is proved; the constant function one on the ball
+  of radius one half about i proves the hypothesis cannot be omitted.
+- Lemma A.3 uses radius-twelve strips in print. At n=1 the strip contains zero,
+  where the retained constant mode prevents a complementary inverse. The
+  corrected radius-six statement is proved with the exact constant two in every
+  shifted norm. It gives a genuine two-sided Neumann inverse at cutoff
+  `n >= 4*norm(q)`. This does not certify the literal radius-twelve statement or
+  the downstream Appendix A localization constants.
+
+The exact leading coefficients in Lemma 8 and Theorem 4, both Corollary 1
+statements, the remaining named results and unnumbered claims still need source
+comparison and any missing proofs. Historical validation below concerns the
+main-theorem milestone. New proof validation is in
+[whole-paper-validation.json](whole-paper-validation.json).
+
+## Verified main-theorem milestone
 
 The named main Theorems 1–3 of Jan-Cornelius Molnar, *On Two-Sided Estimates
 for the Nonlinear Fourier Transform of KdV*, are proved locally. The exact
@@ -71,14 +102,16 @@ axiom checks. That original theorem milestone did not include a fresh complete
 The later integration checks are recorded below.
 
 This coverage concerns the named main Theorems 1–3. The two statements
-labelled Corollary 1 in the source are outside this completion claim.
+labelled Corollary 1 were outside that milestone and are now explicit open
+obligations in the whole-paper scope.
 Global surjectivity on every higher weighted space is not asserted.
 The Hill operator is `-d²/dx² + q`; the missing exponent in the page-8
 display is corrected consistently with formula (2) on page 5.
 
 The work is published on the separate `articles/kdv-estimates` branch in
-[PR #4](https://github.com/janbernloehr/diss-lean/pull/4). The current integration
-with `main` is validated; no merge of the PR itself is claimed.
+[PR #4](https://github.com/janbernloehr/diss-lean/pull/4). PR #4 was merged as
+`a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa`; this whole-paper continuation
+is based on that commit, whose tree matches the validated merge resolution.
 
 ## Main integration validation
 

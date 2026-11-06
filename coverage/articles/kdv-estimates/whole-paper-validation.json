@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "article_id": "kdv-estimates",
+  "date": "2026-11-06",
+  "status": "passed_for_recorded_scope",
+  "main_theorems_verified": true,
+  "whole_paper_verified": false,
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "baseline": {
+    "commit": "ab7e663618c3dfdb6d5fb19dd852e5bfa55ce144",
+    "integrated_main_commit": "a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa",
+    "merge_commit_has_same_source_tree": true,
+    "focused_modules": 1486,
+    "all_focused_sources_unchanged": true,
+    "sorted_source_hash_map_sha256": "3acd81dfeb7bd49c613ab6ef1070bf0fe9bb0eb7f6b1cc1f2ce812e171ec8ba8",
+    "provenance": "Existing strict main-theorem and PR4 integration reports; all 1486 focused source bytes rechecked against the baseline commit."
+  },
+  "new_modules": [
+    {
+      "module": "NLS.ComplexAnalysis.RealComplexificationIdentity",
+      "source": "NLS/ComplexAnalysis/RealComplexificationIdentity.lean",
+      "sha256": "e5caebfeef1e6035339759f5084a5a841488b38ac83ba52d1e22829c2bb9f8c6",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.HillSharpComplement",
+      "source": "NLS/KdV/HillSharpComplement.lean",
+      "sha256": "6b0ee6ca3cc15b6b1a25eda80c6e591aaa7c45211e7299bf0657948f79a6e9a5",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.Articles.KdVEstimates.Lemma7",
+      "source": "NLS/Articles/KdVEstimates/Lemma7.lean",
+      "sha256": "79c576feb9d545cd7ab6d7aad6d479b5b0fa51aaf8a2504f3d3df866a9ba3536",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.Articles.KdVEstimates.AppendixA3",
+      "source": "NLS/Articles/KdVEstimates/AppendixA3.lean",
+      "sha256": "7f08a1d85f52ae36aa9d05df110d1b21ad92d763b6d7231eca94d41871f87aa7",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.Articles.KdVEstimates.AppendixD1",
+      "source": "NLS/Articles/KdVEstimates/AppendixD1.lean",
+      "sha256": "da97281d9fb66f753d368f22b7ff688d3b0dfde158ca4584f710a47703ca11a8",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "current_focused_module_count": 1491,
+  "aggregate": {
+    "exit_code": 0,
+    "command": "lean -DautoImplicit=false -DwarningAsError=true -o .lake/build/lib/lean/NLS.olean NLS.lean",
+    "source_sha256": "397256f8f9dfa9ac54efe2f670efeec857b24ec515960aef7f661bc8a4b93fd2",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "transitive_axiom_audit": {
+    "exit_code": 0,
+    "declarations": 9979,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "command": "lean -DautoImplicit=false -DwarningAsError=true coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
+    "source_sha256": "96e57a6fa90acb983a5a6b82b952788a77dd2aed9d386c742f82827b65b3ab40",
+    "log_sha256": "96e88936cafe58b7199dc3f9fed7fbbf0de8753f2069b943feadda79870bb712",
+    "scope": "Current KdV and article namespaces plus the existing explicit shared seeds and the new real-complexification identity theorem; each selected declaration is audited transitively."
+  },
+  "focused_script": {
+    "syntax_check_exit_code": 0,
+    "source_sha256": "8fb9b02e49e645bfc2d3a98e5f764693cd720ce5c5817b23cf19410e50cee720",
+    "new_modules_registered": true,
+    "fresh_complete_run_claimed": false
+  },
+  "coverage_ledger": {
+    "source": "coverage/articles/kdv-estimates/whole-paper.json",
+    "sha256": "b8672e83eb28ea1d4433e9d4989c75eb9e0e927a66137569221a6d1d5f6cd4e1",
+    "named_results": 27,
+    "verified_named_results": 4,
+    "explicitly_corrected_named_results": 2,
+    "source_comparison_pending_named_results": 21,
+    "numbered_equation_entries": 26,
+    "unnumbered_page_audit_entries": 37,
+    "inventory_complete": false
+  },
+  "limits": [
+    "No fresh complete 1491-module focused-script run, Lake rebuild, full examples run or global NLS audit is claimed for this additive delta. The prior integration results remain historical baseline evidence.",
+    "Only the named main theorems and Lemma 7 have exact named-result coverage here; A.3 and D.1 are explicitly corrected results with formally proved obstructions to dropping the corrections.",
+    "All other named results, numbered equations and unnumbered mathematical claims remain open for source comparison. Existing candidate library modules are not automatically treated as source verification."
+  ]
+}

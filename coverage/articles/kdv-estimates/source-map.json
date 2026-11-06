@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "article_id": "kdv-estimates",
-  "status": "main_theorems_verified_PR4_integration_validated",
-  "workspace_phase": "Integrated into isolated articles/kdv-estimates Git worktree after user approval; main checkout left unchanged",
+  "status": "whole_paper_in_progress_main_theorems_verified",
+  "workspace_phase": "whole_paper_continuation",
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
   "source": {
     "title": "On Two-Sided Estimates for the Nonlinear Fourier Transform of KdV",
@@ -19506,8 +19506,8 @@
     "source_correspondence": "Main Theorems 1, 2 and both parts of Theorem 3 of pinned arXiv:1502.04550v1, using its fixed physical real Birkhoff coordinates, exact positive-index targets and original real mean-zero sources.",
     "hypotheses": "Theorem 1 and Theorem 2 quantify over every integer m>=1 and every real mean-zero source with original Fourier norm sum (1+|2*pi*k|)^(2m)|u_hat(k)|^2. Theorem 3 quantifies over every r in [0,1/2], every normalized symmetric monotone submultiplicative weight v, w=<k>^r*v and every real mean-zero source in H^w. The weight on real arguments is its piecewise linear extension. Raw target index k means physical n=k+1. Target norms use (2*pi*n)^(2m+1), respectively (2*pi*n)*w(2*n)^2. I_n=(x_n^2+y_n^2)/2 is the actual physical action. The main estimates assume no canonical-map, inverse or norm-comparison witness.",
     "result": "Construct the literal original real coordinates (Re Z_n,-Im Z_n), prove their complete canonical Gardner matrix at every original real mean-zero L2 source including all closed gaps, and encode them in explicit weighted real-pair Hilbert spaces. The normalization is sqrt(2*pi*n)*(x_n-i*y_n), so raw coordinate equality, norm formulas, complete target topology and both real Banach analytic directions of the original global map are proved. Weighted and homogeneous Sobolev restrictions retain literally the same raw pairs of this one global map; target membership and exact equality with the previously checked spectral sequence norms are proved. Its actions equal the original physical gap actions at every positive index. Prove summability of all integer action masses used in the main statements. Transfer the checked native integer and weighted estimates to precise main Theorems 1, 2 and both parts of Theorem 3, with one common positive constant for Theorem 3. No replacement norm-compatible map, supplied inverse, canonicality premise or action-identity premise is used.",
-    "qualification": "Local proof completion of the named main Theorems 1\u20133. The base physical map and inverse are globally real Banach analytic; no unproved global surjectivity on every higher weighted space or dynamical Corollary 1 is claimed. Full Lake rebuild and full examples were not rerun. Push remains pending the earlier destination approval.",
-    "remaining": "Main Theorems 1, 2 and both parts of Theorem 3 are proved locally for the SAME fixed original physical real Birkhoff map with the exact source and target norms. Publication remains blocked by the previously rejected push pending GitHub destination approval. No push success or completed integration is claimed.",
+    "qualification": "The named main Theorems 1\u20133 are verified for the original map. Their branch was pushed and PR4 was merged. Whole-paper coverage is a separate, incomplete continuation; see whole-paper.json.",
+    "remaining": "No remaining obligation for the named main estimates. Both Corollary 1 occurrences, the remaining source statements and unnumbered claims are now in scope and remain tracked in whole-paper.json.",
     "proof_origin": {
       "new_modules": 11,
       "validation": "11 isolated strict module checks; all 1475 prior focused modules preserved byte for byte. No raised limits, disabled linters, sorry or new axioms."
@@ -19547,11 +19547,14 @@
       "Global onto property on every higher weighted space",
       "Successful push or merge"
     ],
-    "source_correction": "Hill operator is -d^2/dx^2+q as fixed by source formula (2), page 5; the page-8 omitted exponent is corrected."
+    "source_correction": "Hill operator is -d^2/dx^2+q as fixed by source formula (2), page 5; the page-8 omitted exponent is corrected.",
+    "scope_note": "Historical main-theorem milestone; publication and the broader requested scope are recorded by the current top-level status and whole-paper reports."
   },
   "latest_merge_validation": {
     "report": "coverage/articles/kdv-estimates/merge-validation.json",
     "merged_main": "b91ea10fe328f4046a8768218ae5b485041cf075",
     "status": "passed"
-  }
+  },
+  "whole_paper_verified": false,
+  "whole_paper_coverage": "coverage/articles/kdv-estimates/whole-paper.json"
 }

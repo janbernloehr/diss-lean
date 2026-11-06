@@ -1486,13 +1486,20 @@ import NLS.KdV.HillOriginalBirkhoffSobolevRestriction
 import NLS.KdV.HillOriginalBirkhoffActions
 import NLS.Articles.KdVEstimates.MainBirkhoffEstimates
 
+import NLS.ComplexAnalysis.RealComplexificationIdentity
+import NLS.KdV.HillSharpComplement
+import NLS.Articles.KdVEstimates.Lemma7
+import NLS.Articles.KdVEstimates.AppendixA3
+import NLS.Articles.KdVEstimates.AppendixD1
+
 /-! Transitive audit of the shared KdV foundations and article adapters.
-The article's main theorems are not claimed by this audit. -/
+This checks axiom dependencies; source correspondence is recorded separately. -/
 
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let shared := #[``NLS.FiniteSpectralDeterminant.det_prod_formula,
+  let shared := #[``NLS.ComplexAnalysis.RealComplexification.eqOn_zero_of_nonempty_real_slice,
+    ``NLS.FiniteSpectralDeterminant.det_prod_formula,
     ``NLS.FiniteSpectralDeterminant.determinant_shift_bound,
     ``NLS.Weight.pullback, ``NLS.Weight.pullback_apply,
     ``NLS.WeightedCoeff.insertIsometry, ``NLS.WeightedCoeff.insertIsometry_image,

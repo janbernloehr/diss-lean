@@ -236,6 +236,7 @@ modules+=(NLS/KdV/HillMeanZeroSequencePhysicalDifferential NLS/KdV/HillMeanZeroC
 modules+=(NLS/FunctionalAnalysis/ClosedRangeCompactNormal NLS/KdV/HillOriginalDerivativeSurjectivity)
 modules+=(NLS/FunctionalAnalysis/HilbertSurjectiveRightInverse NLS/FunctionalAnalysis/NeumannCompositionBoundGeneral NLS/FunctionalAnalysis/SurjectiveKernelPersistence NLS/FunctionalAnalysis/SurjectiveOperatorConnectedFamily NLS/KdV/HillOriginalDerivativeBijectivity NLS/KdV/HillOriginalLocalInverse NLS/KdV/HillOriginalGlobalInverse)
 modules+=(NLS/KdV/HillOriginalRealBirkhoffCoordinates NLS/Poisson/RealCartesianSignedMatrix NLS/KdV/HillOriginalRealCartesianGardner NLS/SequenceSpaces/RealWeightedNatPair NLS/KdV/HillBirkhoffTargetSpaces NLS/KdV/HillOriginalBirkhoffMap NLS/KdV/HillOriginalWeightedMeanZeroSource NLS/KdV/HillOriginalBirkhoffWeightedRestriction NLS/KdV/HillOriginalBirkhoffSobolevRestriction NLS/KdV/HillOriginalBirkhoffActions NLS/Articles/KdVEstimates/MainBirkhoffEstimates)
+modules+=(NLS/ComplexAnalysis/RealComplexificationIdentity NLS/KdV/HillSharpComplement NLS/Articles/KdVEstimates/Lemma7 NLS/Articles/KdVEstimates/AppendixA3 NLS/Articles/KdVEstimates/AppendixD1)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
