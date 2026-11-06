@@ -6607,3 +6607,11 @@ import NLS.KdV.PseudomeasureWideComplexPairs
 import NLS.KdV.PseudomeasureWideCouplingRadius
 import NLS.KdV.PseudomeasureWideReduction
 import NLS.KdV.PseudomeasureWideZeroCount
+import NLS.Articles.KdVPseudomeasures.SourceInhomogeneousRemarks
+import NLS.KdV.PseudomeasureWideComplementEquation
+import NLS.KdV.PseudomeasureWideH1Analytic
+import NLS.KdV.PseudomeasureWideInhomogeneous
+import NLS.KdV.PseudomeasureWideInhomogeneousResults
+import NLS.KdV.PseudomeasureWideReconstruction
+import NLS.KdV.PseudomeasureWideSecondOrder
+import NLS.KdV.PseudomeasureWideSolutionRegularity

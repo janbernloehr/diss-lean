@@ -2002,6 +2002,14 @@ import NLS.KdV.PseudomeasureWideComplexPairs
 import NLS.KdV.PseudomeasureWideCouplingRadius
 import NLS.KdV.PseudomeasureWideReduction
 import NLS.KdV.PseudomeasureWideZeroCount
+import NLS.Articles.KdVPseudomeasures.SourceInhomogeneousRemarks
+import NLS.KdV.PseudomeasureWideComplementEquation
+import NLS.KdV.PseudomeasureWideH1Analytic
+import NLS.KdV.PseudomeasureWideInhomogeneous
+import NLS.KdV.PseudomeasureWideInhomogeneousResults
+import NLS.KdV.PseudomeasureWideReconstruction
+import NLS.KdV.PseudomeasureWideSecondOrder
+import NLS.KdV.PseudomeasureWideSolutionRegularity
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11740,3 +11748,49 @@ import NLS.KdV.PseudomeasureWideZeroCount
 #print axioms NLS.KdV.endpointReducedDeterminant_wide_two_zeros
 #print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_eq_analyticOrderNatAt_wide
 #print axioms NLS.KdV.endpointHill_wide_strip_algebraic_count_two
+#print axioms NLS.Articles.KdVPseudomeasures.SourceInhomogeneousStatements
+#print axioms NLS.Articles.KdVPseudomeasures.sourceRemarks2_6_2_8
+#print axioms NLS.KdV.EndpointComplementEquation
+#print axioms NLS.KdV.endpointH1Multiplication_resolventFamily_wide
+#print axioms NLS.KdV.endpointComplementEquation_free_reconstruct
+#print axioms NLS.KdV.endpointComplementEquation_unique
+#print axioms NLS.KdV.endpointResponseFamily_complement_equation
+#print axioms NLS.KdV.existsUnique_endpointComplementEquation
+#print axioms NLS.KdV.endpointResponseFamily_potential_KT
+#print axioms NLS.KdV.endpointWienerResolventFamily_eq_wide
+#print axioms NLS.KdV.endpointH1SymbolFamily_apply_wide
+#print axioms NLS.KdV.analyticAt_endpointH1SymbolFamily_wide
+#print axioms NLS.KdV.endpointH1ResolventFamily_coefficient_wide
+#print axioms NLS.KdV.endpointH1ResolventFamily_eq_wide
+#print axioms NLS.KdV.analyticAt_endpointH1ResolventFamily_wide
+#print axioms NLS.KdV.endpointH1ResolventFamily_toWiener_wide
+#print axioms NLS.KdV.endpointH1ResolventFamily_free_residual_wide
+#print axioms NLS.KdV.analyticAt_endpointResponseFamily_wide
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_decompose_wide
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_totalForcing_wide
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_reconstruct_wide
+#print axioms NLS.KdV.endpointResponseFamily_coordinates_wide
+#print axioms NLS.KdV.endpointResponseFamily_residual_wide
+#print axioms NLS.KdV.endpointPhysicalPencil_reconstruction_iff_wide
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_reduced_wide
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_iff_wide
+#print axioms NLS.KdV.EndpointComplementResult
+#print axioms NLS.KdV.endpointComplementResult
+#print axioms NLS.KdV.EndpointInhomogeneousResult
+#print axioms NLS.KdV.endpointInhomogeneousResult
+#print axioms NLS.KdV.EndpointInhomogeneousFullResult
+#print axioms NLS.KdV.endpointInhomogeneousFullResult
+#print axioms NLS.KdV.wideEndpointHillResonantResidual
+#print axioms NLS.KdV.wideEndpointHillReconstruct_residual_equation
+#print axioms NLS.KdV.endpointReconstructionFamily_eq_wide
+#print axioms NLS.KdV.analyticAt_endpointReconstructionFamily_wide
+#print axioms NLS.KdV.endpointReconstructionFamily_coordinates_wide
+#print axioms NLS.KdV.endpointReconstructionFamily_residual_wide
+#print axioms NLS.KdV.endpointSecondOrder_weight_identity
+#print axioms NLS.KdV.endpointSecondOrderResolventFamily
+#print axioms NLS.KdV.endpointSecondOrderResolventFamily_apply_wide
+#print axioms NLS.KdV.endpointH1ResolventFamily_secondOrder_wide
+#print axioms NLS.KdV.endpointSecondOrderH1Inclusion
+#print axioms NLS.KdV.endpointSecondOrderH1Inclusion_val
+#print axioms NLS.KdV.endpointHillH1Modes_sobolev
+#print axioms NLS.KdV.endpointReconstruction_response_secondOrder_wide

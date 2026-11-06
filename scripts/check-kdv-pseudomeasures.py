@@ -2036,6 +2036,14 @@ modules = [
     'NLS.KdV.PseudomeasureWideCouplingRadius',
     'NLS.KdV.PseudomeasureWideReduction',
     'NLS.KdV.PseudomeasureWideZeroCount',
+    'NLS.Articles.KdVPseudomeasures.SourceInhomogeneousRemarks',
+    'NLS.KdV.PseudomeasureWideComplementEquation',
+    'NLS.KdV.PseudomeasureWideH1Analytic',
+    'NLS.KdV.PseudomeasureWideInhomogeneous',
+    'NLS.KdV.PseudomeasureWideInhomogeneousResults',
+    'NLS.KdV.PseudomeasureWideReconstruction',
+    'NLS.KdV.PseudomeasureWideSecondOrder',
+    'NLS.KdV.PseudomeasureWideSolutionRegularity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

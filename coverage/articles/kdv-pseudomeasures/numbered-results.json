@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 33,
+    "proved": 35,
     "proved_corrected": 4,
-    "partial": 15,
+    "partial": 13,
     "not_found": 2
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -1050,25 +1050,84 @@
       "label": "Remark 2.6",
       "line": 623,
       "statement": "Remark 2.6. By the same approach, one can study the inhomogeneous equation\n\n       (L − λ)f = g,            g ∈ Fℓs,∞\n                                      ⋆,C ,\n\nfor λ ∈ Sn and n ⩾ ns . Writing f = u + v and g = Pn g + Qn g, the Q-equation\nbecomes\n\n       Aλ v = Qn V (u + v) − Qn g = Qn V v + Qn (V u − g)\n\nleading for any given u ∈ Pn and λ ∈ Sn to the unique solution v̌ of the\nequation corresponding to (11)\n\n       v̌ = V v = Kn Tn (V u − g) ∈ Fℓs,∞\n                                      ⋆,C ,\n\nand, in turn, to the unique solution v ∈ Fℓs+2,∞\n                                           ⋆,C   ∩ Qn of the Q-equation\n\n     v = A−1                −1                      −1\n          λ Qn (V u − g) + Aλ Qn Kn Tn (V u − g) = Aλ Qn Kn (V u − g).                     ⊸",
-      "status": "partial",
-      "comparison": "Existing exact inhomogeneous physical reconstruction is available on the narrow strip. The full printed-strip statement and the explicit s+2,infinity regularity and uniqueness of the complementary response still need a source wrapper.",
-      "providers": [],
-      "declarations": [],
+      "status": "proved",
+      "comparison": "Full printed radius-12n strip and one uniform cutoff N≥2. For every original source potential, forcing and resonant amplitude, the complementary Q-equation has a unique solution on the entire original H1 domain and in the printed s+2,infinity class. Its original distribution has the literal two-order infinity realization, zero resonant coefficients, v=A_lambda^(-1)Q_n K_n(Vu-g), and Vv=K_n T_n(Vu-g). The stronger-space inclusion preserves every original distribution.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceInhomogeneousRemarks.lean",
+        "NLS/KdV/PseudomeasureWideComplementEquation.lean",
+        "NLS/KdV/PseudomeasureWideH1Analytic.lean",
+        "NLS/KdV/PseudomeasureWideInhomogeneous.lean",
+        "NLS/KdV/PseudomeasureWideInhomogeneousResults.lean",
+        "NLS/KdV/PseudomeasureWideReconstruction.lean",
+        "NLS/KdV/PseudomeasureWideSecondOrder.lean",
+        "NLS/KdV/PseudomeasureWideSolutionRegularity.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceRemarks2_6_2_8",
+        "NLS.Articles.KdVPseudomeasures.SourceInhomogeneousStatements",
+        "NLS.KdV.EndpointComplementResult",
+        "NLS.KdV.endpointComplementResult",
+        "NLS.KdV.EndpointInhomogeneousResult",
+        "NLS.KdV.endpointInhomogeneousResult",
+        "NLS.KdV.EndpointInhomogeneousFullResult",
+        "NLS.KdV.endpointInhomogeneousFullResult",
+        "NLS.KdV.endpointH1ResolventFamily_secondOrder_wide",
+        "NLS.KdV.endpointSecondOrderH1Inclusion_val"
+      ],
       "source_page": 10,
       "statement_sha256": "0e662366c19cf7a149802f5c8a39db90ae81ad72fbf1bb81cfa92e31bf0effc2",
-      "provider_sha256": {}
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceInhomogeneousRemarks.lean": "e3c995a2e445f4f8887ef43ea6683ff1048747370cad90b4f413889b96989568",
+        "NLS/KdV/PseudomeasureWideComplementEquation.lean": "187e7ae81baca5e855b37c46c7acb65450787a2f123cf37ada074d8255f289d7",
+        "NLS/KdV/PseudomeasureWideH1Analytic.lean": "267a128853ce8035409a516c9ed8dda313ebbc34852888c81f48ab045ab54f4e",
+        "NLS/KdV/PseudomeasureWideInhomogeneous.lean": "5cf817c4321a94a1adf66f3686f29e3f2aafb848322f9edefddae5751ea8da3d",
+        "NLS/KdV/PseudomeasureWideInhomogeneousResults.lean": "bd2dae2b086e3bbd069dd4b78b3cf88c75d26bac2577391cfe207aa9b3496fe9",
+        "NLS/KdV/PseudomeasureWideReconstruction.lean": "97bfddc141b434637e1a939e7eb4b0f5e66ca496e43e63523798831667eda3d4",
+        "NLS/KdV/PseudomeasureWideSecondOrder.lean": "ee4dbb6b168b3fb8bc7138008e325f1081218d5d6de5e6bea286d341c15818e7",
+        "NLS/KdV/PseudomeasureWideSolutionRegularity.lean": "8402a14131ae0921e50eaea26b1032ed2dcd971e0d500a79a73e3a15ea1cf5f5"
+      }
     },
     {
       "label": "Remark 2.8",
       "line": 683,
       "statement": "Remark 2.8. Solutions of the inhomogeneous equation (L − λ)f = g for g ∈\nFℓs,∞\n  ⋆,C , λ ∈ Sn , and n ⩾ ns can be obtained by substituting into the P -equation\n\n       Aλ u = Pn V u + Pn V v − Pn g\n\nthe expression for V v obtained in Remark 2.6, V v = Kn Tn (V u − g), to get\n\n       Aλ u = Pn V u + Pn Kn Tn V u − Pn g − Pn Kn Tn g\n              = Pn (Id + Kn Tn )V u − Pn (Id + Kn Tn )g.\n\nUsing that Id + Kn Tn = Kn one concludes that\n\n       Bn (λ)u = −Pn Kn (λ)g.                                               (18)\n\nConversely, for any solution u of (18), f = u + v, with v being the element in\nFℓs+2,∞\n  ⋆,C   given in Remark 2.6, satisfies (L − λ)f = g and f ∈ Fℓs+2,∞\n                                                                ⋆,C   . ⊸",
-      "status": "partial",
-      "comparison": "The source remark asserts exact inhomogeneous reconstruction and the finite equation B_n u=-P_n K_n g; it makes no meromorphic-inverse or pole-multiplicity assertion. Existing reconstruction proves the full original H1-domain identity on the narrow strip. Extending this to the complete printed strip and proving the stated s+2,infinity regularity of the reconstructed solution remain obligations.",
-      "providers": [],
-      "declarations": [],
+      "status": "proved",
+      "comparison": "Full printed inhomogeneous normal form on the entire radius-12n strip above one uniform cutoff. Retains the exact sign (L-lambda)f=g and finite equation B_n u=-P_n K_n g, proves both directions for every original H1 solution, and proves f belongs to the literal s+2,infinity source class. The same original analytic families and physical distributions are used.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceInhomogeneousRemarks.lean",
+        "NLS/KdV/PseudomeasureWideComplementEquation.lean",
+        "NLS/KdV/PseudomeasureWideH1Analytic.lean",
+        "NLS/KdV/PseudomeasureWideInhomogeneous.lean",
+        "NLS/KdV/PseudomeasureWideInhomogeneousResults.lean",
+        "NLS/KdV/PseudomeasureWideReconstruction.lean",
+        "NLS/KdV/PseudomeasureWideSecondOrder.lean",
+        "NLS/KdV/PseudomeasureWideSolutionRegularity.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceRemarks2_6_2_8",
+        "NLS.Articles.KdVPseudomeasures.SourceInhomogeneousStatements",
+        "NLS.KdV.EndpointComplementResult",
+        "NLS.KdV.endpointComplementResult",
+        "NLS.KdV.EndpointInhomogeneousResult",
+        "NLS.KdV.endpointInhomogeneousResult",
+        "NLS.KdV.EndpointInhomogeneousFullResult",
+        "NLS.KdV.endpointInhomogeneousFullResult",
+        "NLS.KdV.endpointH1ResolventFamily_secondOrder_wide",
+        "NLS.KdV.endpointSecondOrderH1Inclusion_val"
+      ],
       "source_page": 11,
       "statement_sha256": "42eb4f2a647b4e23bfdc6f6fa8cf8ca597831fd73dd18249a945ea0a19c4753f",
-      "provider_sha256": {}
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceInhomogeneousRemarks.lean": "e3c995a2e445f4f8887ef43ea6683ff1048747370cad90b4f413889b96989568",
+        "NLS/KdV/PseudomeasureWideComplementEquation.lean": "187e7ae81baca5e855b37c46c7acb65450787a2f123cf37ada074d8255f289d7",
+        "NLS/KdV/PseudomeasureWideH1Analytic.lean": "267a128853ce8035409a516c9ed8dda313ebbc34852888c81f48ab045ab54f4e",
+        "NLS/KdV/PseudomeasureWideInhomogeneous.lean": "5cf817c4321a94a1adf66f3686f29e3f2aafb848322f9edefddae5751ea8da3d",
+        "NLS/KdV/PseudomeasureWideInhomogeneousResults.lean": "bd2dae2b086e3bbd069dd4b78b3cf88c75d26bac2577391cfe207aa9b3496fe9",
+        "NLS/KdV/PseudomeasureWideReconstruction.lean": "97bfddc141b434637e1a939e7eb4b0f5e66ca496e43e63523798831667eda3d4",
+        "NLS/KdV/PseudomeasureWideSecondOrder.lean": "ee4dbb6b168b3fb8bc7138008e325f1081218d5d6de5e6bea286d341c15818e7",
+        "NLS/KdV/PseudomeasureWideSolutionRegularity.lean": "8402a14131ae0921e50eaea26b1032ed2dcd971e0d500a79a73e3a15ea1cf5f5"
+      },
+      "source_analysis_correction": "The former coverage entry incorrectly demanded a meromorphic-inverse and pole-multiplicity assertion. Neither appears in the printed remark; the exact source statement is the inhomogeneous reconstruction and finite equation."
     },
     {
       "label": "Remark C.5",
