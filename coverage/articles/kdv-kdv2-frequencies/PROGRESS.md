@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest canonical rough chart and fixed global L2 map
+## Latest actual finite-support physical inverse family
+
+The SAME actual rough Abelian chart now retains an explicit analytic inverse family R on an OPEN negative-half target neighborhood W of zero. Every complex target there has a mean-zero rough right inverse, and every real target gives a real rough source. EVERY real finite-support target has q=R(b) with ALL nonnegative Sobolev orders, with L2 membership derived from the actual spectral finite-gap condition rather than assumed.
+
+The reconstructed q is literally the rough inclusion of an ORIGINAL physical mean-zero real L2 potential p. Its fixed GLOBAL Birkhoff coordinates equal the prescribed original sqrt(action) target, and norm(p)^2=sum 4*pi*n*|z_n|^2. This is the squared L2 norm; the half-norm Hamiltonian convention has coefficient 2*pi*n. A single common rough ball detects every closed actual Hill gap from z_n=0, including low and collapsed gaps. See `NATIVE_ROUGH_FINITE_SUPPORT_PREIMAGES.md`.
+
+Prior strict evidence retained for all 2359 unchanged selected baseline sources. All eight new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2367 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2409 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these eight selections; no new shared-source import is needed. No full 2367-module rebuild is claimed.
+
+Fresh audit: 18780 selected and 40850 imported NLS declarations; permitted axioms only. Quantitative negative-Sobolev physical separating sequences, actual Hamiltonian/action-frequency identification, global rough inversion and full inverse Sobolev regularity for arbitrary targets remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier canonical rough chart and fixed global L2 map
 
 The SAME actual signed rough Abelian chart with a physical-real two-sided analytic local inverse now has the complete Gardner matrix at EVERY COMPLEX mean-zero H-minus-one source in its ENTIRE common ball. Its original sqrt(action) normalization gives {z_n,z_-m}=i delta_nm, the opposite mixed bracket -i delta_nm, and like-sign brackets zero. First/closed gaps and zero sheets are included.
 

@@ -207,6 +207,21 @@
           "source_clause": "ONE actual canonical signed rough chart with a real-preserving two-sided local inverse and exact agreement with the fixed global L2 map",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_canonical_real_abelian_inverse",
           "qualification": "ONE ACTUAL rough chart simultaneously has a two-sided complex analytic local inverse at zero, physical-real inverse preservation, exact whole-ball original signed physical recovery, the complete Gardner matrix at EVERY COMPLEX mean-zero rough source in its ball, and exact agreement with the fixed GLOBAL original real L2 Birkhoff map at EVERY physical source in that ball. Global/arbitrary-base rough inversion and full Sobolev regularity are not asserted."
+        },
+        {
+          "source_clause": "Actual real finite-gap rough sources have all nonnegative Sobolev orders without initial L2 membership",
+          "lean_declaration": "NLS.KdV.hillHminus_real_finiteGap_mem_sobolev",
+          "qualification": "EVERY REAL H-minus-one potential whose actual positive Hill gaps eventually collapse has ALL nonnegative Sobolev orders, without initial L2 membership or finite Fourier support. Exact all-label Miura comparison and positivity preserve each positive collapsed gap, reflection controls negative indices, and the real Dirac finite-gap bootstrap applies to the actual lift."
+        },
+        {
+          "source_clause": "A single rough neighborhood detects every actual closed gap from the original Abelian coordinate",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_rough_abelian_closed_gap_recovery",
+          "qualification": "ANY actual analytic rough signed Abelian extension with whole-ball original physical recovery has ONE smaller ball before ALL positive indices on which, at EVERY REAL mean-zero rough source, z_n=0 IFF its actual intrinsic Hill gap is closed. Uses the actual native gap-square and uniformly nonzero action-amplitude families plus rough density; no L2 source membership is assumed."
+        },
+        {
+          "source_clause": "Actual analytic rough inverse family has all-Sobolev finite-support physical preimages, exact global Birkhoff coordinates and squared L2 norm",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_finite_support_physical_preimages",
+          "qualification": "The SAME ACTUAL rough Abelian chart has an explicit complex analytic local right inverse R on an open negative-half target neighborhood W containing zero. R(0)=0, every complex target maps to a mean-zero rough source in the chart with exact right inverse identity, and real targets give physical-real sources. EVERY real finite-support target there has q=R(b) with ALL nonnegative Sobolev orders and a literal ORIGINAL physical mean-zero real L2 representative p. Its fixed GLOBAL Birkhoff coordinates equal the target and its squared L2 norm has the exact 4*pi*n formula. No initial L2 or Sobolev membership of the rough preimage is assumed; global/arbitrary-base rough inversion, full inverse Sobolev regularity for arbitrary targets and physical PDE frequency identification remain open."
         }
       ]
     },
@@ -31318,12 +31333,124 @@
       "scope": "ONE ACTUAL rough chart simultaneously has a two-sided complex analytic local inverse at zero, physical-real inverse preservation, exact whole-ball original signed physical recovery, the complete Gardner matrix at EVERY COMPLEX mean-zero rough source in its ball, and exact agreement with the fixed GLOBAL original real L2 Birkhoff map at EVERY physical source in that ball. Global/arbitrary-base rough inversion and full Sobolev regularity are not asserted.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "eb26e40737ff67cd4d147cdf6d7606278a03fde72aca88a32dbc8530ba6d5917"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraSobolevImage.lean",
+      "source_labels": [
+        "Actual finite-support rough Birkhoff inverse regularity supporting Theorem 1.1 and the physical PDE main arguments"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "The literal distributional Miura image of a lift with all nonnegative Sobolev orders has all those orders. Uses the actual unit-period derivative 2*pi*i*n, weighted convolution and exact subtraction of the constant energy shift. No initial L2 membership of the image is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1f317b003285e193d6a5a1b67453b51c4a7625f1d5bcea89951390eed1aa9a80"
+    },
+    {
+      "path": "NLS/KdV/HillHminusFiniteGapSobolev.lean",
+      "source_labels": [
+        "Actual finite-support rough Birkhoff inverse regularity supporting Theorem 1.1 and the physical PDE main arguments"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "EVERY REAL H-minus-one potential whose actual positive Hill gaps eventually collapse has ALL nonnegative Sobolev orders, without initial L2 membership or finite Fourier support. Exact all-label Miura comparison and positivity preserve each positive collapsed gap, reflection controls negative indices, and the real Dirac finite-gap bootstrap applies to the actual lift.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a636d72b81b10a8f2d229bf860924cb39d662d66cc9fdf0cab361602f9f051b8"
+    },
+    {
+      "path": "NLS/KdV/HillRoughAbelianGapNorm.lean",
+      "source_labels": [
+        "Actual finite-support rough Birkhoff inverse regularity supporting Theorem 1.1 and the physical PDE main arguments"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "The exact physical identity 4*(1+n)*norm(z_n)^2=n^2*norm(E_n)*norm(M_n)^2 transfers to EVERY real mean-zero rough source by original physical L2 density in the rough topology. Nonzero actual amplitude then detects exactly the zero normalized gap-square symbol; no bounded L2 approximation is required.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6a836fb1976024c21b84298446303ae2d7084bd3125814a74a86329038c4cba7"
+    },
+    {
+      "path": "NLS/KdV/HillRoughPhysicalL2Reconstruction.lean",
+      "source_labels": [
+        "Actual finite-support rough Birkhoff inverse regularity supporting Theorem 1.1 and the physical PDE main arguments"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "A real mean-zero H-minus-one source with literal raw L2 membership has an ORIGINAL real mean-zero physical L2 representative with exactly the same rough inclusion. The proof preserves every raw Fourier coefficient and uses the actual even-index physical embedding.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0ae675980536e251346d713a9b129fa69df946720fe761dfd9db51aa447c6d26"
+    },
+    {
+      "path": "NLS/KdV/HillBirkhoffAbelianMass.lean",
+      "source_labels": [
+        "Actual finite-support rough Birkhoff inverse regularity supporting Theorem 1.1 and the physical PDE main arguments"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "The fixed GLOBAL original physical L2 Birkhoff map has exact squared-source-norm identity norm(p)^2=sum over n>=1 of 4*pi*n*norm(z_n)^2, with its original z=(X-iY)/sqrt(2) normalization. This is the squared L2 norm; the half-norm Hamiltonian convention has factor 2*pi*n.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "032cd0e6d3e7f65ed6b26fd77f95c7f8a7b4e73a4c58773e0d460490e9abf335"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/RoughNonvanishingActionAmplitudes.lean",
+      "source_labels": [
+        "Actual finite-support rough Birkhoff inverse regularity supporting Theorem 1.1 and the physical PDE main arguments"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "ONE common complex rough ball precedes EVERY positive index and supports the ACTUAL native action-amplitude symbol with no positive component zero. Reuses the already proved uniform 1/4 Fourier-symbol lower bound and ell-infinity continuity at zero, retaining all original physical matches.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "40c0958993967f4b87f41e864df21b120902006c46063983a4d719dd69bd708d"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/RoughAbelianClosedGaps.lean",
+      "source_labels": [
+        "Actual finite-support rough Birkhoff inverse regularity supporting Theorem 1.1 and the physical PDE main arguments"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "ANY actual analytic rough signed Abelian extension with whole-ball original physical recovery has ONE smaller ball before ALL positive indices on which, at EVERY REAL mean-zero rough source, z_n=0 IFF its actual intrinsic Hill gap is closed. Uses the actual native gap-square and uniformly nonzero action-amplitude families plus rough density; no L2 source membership is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "28997d71d951f9a813793ff2c138677c6f93dd23a7ddd26e3829734d4c72081e"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughFiniteSupportPreimages.lean",
+      "source_labels": [
+        "Actual finite-support rough Birkhoff inverse regularity supporting Theorem 1.1 and the physical PDE main arguments"
+      ],
+      "source_pages": [
+        3,
+        7,
+        8
+      ],
+      "scope": "The SAME ACTUAL rough Abelian chart has an explicit complex analytic local right inverse R on an open negative-half target neighborhood W containing zero. R(0)=0, every complex target maps to a mean-zero rough source in the chart with exact right inverse identity, and real targets give physical-real sources. EVERY real finite-support target there has q=R(b) with ALL nonnegative Sobolev orders and a literal ORIGINAL physical mean-zero real L2 representative p. Its fixed GLOBAL Birkhoff coordinates equal the target and its squared L2 norm has the exact 4*pi*n formula. No initial L2 or Sobolev membership of the rough preimage is assumed; global/arbitrary-base rough inversion, full inverse Sobolev regularity for arbitrary targets and physical PDE frequency identification remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e4abccf9e7ef5ff7154e7f537b9c1cc3bbb168a6f7184cae15c20af2b516d1c7"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "Actual rough LOCAL Birkhoff chart at zero NOW canonical: the SAME signed analytic H-minus-one to H-minus-one-half map with physical-real two-sided local inverse, exact Fourier derivative, whole-ball physical recovery and full rough realness has the full Gardner matrix at EVERY COMPLEX mean-zero source in its entire ball, including closed gaps. It agrees EXACTLY with the FIXED GLOBAL original real L2 Birkhoff map. The fixed real L2 map, its global homeomorphism, analytic inverse, Parseval/action identities and canonical germs are imported and transitively audited. NEXT arbitrary-base/global rough inversion and full s>=-1 regularity; actual Hamiltonian/action-frequency identification and frequency/PDE main conclusions remain obligations.",
+    "Actual canonical rough local chart at zero NOW has an explicit analytic right inverse R on an open negative-half target neighborhood, zero at zero and physical-real on all real targets. A single rough ball detects ALL actual closed gaps by zero Abelian coordinates. Every REAL finite-gap H-minus-one source has all nonnegative Sobolev orders via the actual Miura/real-Dirac bootstrap. Therefore EVERY real finite-support target in the inverse neighborhood has an ORIGINAL physical real mean-zero L2 preimage with all nonnegative Sobolev orders, exactly the same rough source R(b), exact fixed GLOBAL Birkhoff coordinates and exact squared L2 norm sum 4*pi*n*|z_n|^2. NEXT quantitative negative-Sobolev physical separating sequences and actual Hamiltonian/action-frequency identification; arbitrary-base/global rough inversion and full s>=-1 inverse regularity for arbitrary targets remain open, as do the frequency/PDE main conclusions.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -31349,15 +31476,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 18750,
-    "total_declarations_audited": 40818,
+    "candidate_declarations_audited": 18780,
+    "total_declarations_audited": 40850,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2359,
+    "selected_modules": 2367,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -31429,7 +31556,8 @@
     "rough_phase_and_abelian_germs_validation_sequence": "Prior strict evidence retained for all 1515 unchanged selected baseline sources; all 252 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1767 selected modules. The new selections are 116 incoming sources, seven own proof modules and 129 unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1807 frozen source/checker/provenance/Mathlib-source hashes, 36 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 252 selections. No full 1767-module rebuild is claimed.",
     "native_rough_abelian_validation_sequence": "Prior strict evidence retained for all 1767 unchanged selected baseline sources; all 39 new selections strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 1806 selected modules. New selections: 11 unchanged incoming sources, 17 unchanged canonical helpers and 11 own proof modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1847 frozen source/checker/provenance/Mathlib-source hashes, 37 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 39 selections. No full 1806-module rebuild is claimed.",
     "native_rough_inverse_validation_sequence": "Prior strict evidence retained for all 1806 unchanged selected baseline sources; all nine new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 1815 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1856 frozen source/checker/provenance/Mathlib-source hashes, all 38 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these nine selections. No full 1815-module rebuild is claimed.",
-    "native_rough_canonical_inverse_validation_sequence": "Prior strict evidence retained for all 1815 unchanged selected baseline sources. ALL 544 newly selected modules strictly rebuilt in dependency order (519 incoming shared files, 20 previously unselected unchanged canonical helpers, five own proof modules), followed by a fresh combined transitive axiom audit of all 2359 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2401 frozen source/checker/provenance/Mathlib-source hashes, all 39 verified provenance records (38 unchanged), private fresh outputs and unchanged clean canonical main verified. The imported NLS closure adds exactly these 544 selections. No full 2359-module rebuild is claimed."
+    "native_rough_canonical_inverse_validation_sequence": "Prior strict evidence retained for all 1815 unchanged selected baseline sources. ALL 544 newly selected modules strictly rebuilt in dependency order (519 incoming shared files, 20 previously unselected unchanged canonical helpers, five own proof modules), followed by a fresh combined transitive axiom audit of all 2359 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2401 frozen source/checker/provenance/Mathlib-source hashes, all 39 verified provenance records (38 unchanged), private fresh outputs and unchanged clean canonical main verified. The imported NLS closure adds exactly these 544 selections. No full 2359-module rebuild is claimed.",
+    "native_rough_finite_support_validation_sequence": "Prior strict evidence retained for all 2359 unchanged selected baseline sources. All eight new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2367 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2409 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these eight selections; no new shared-source import is needed. No full 2367-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -32083,6 +32211,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "9affed0b2754bbdd1833253e814e01be616b3671",
+      "description": "Prior actual canonical rough chart identified with the fixed global L2 map; now uniformly detects closed gaps, reconstructs all-Sobolev physical finite-support preimages and retains the analytic inverse family with exact physical mass.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "Actual rough LOCAL Birkhoff chart at zero NOW canonical: the SAME signed analytic H-minus-one to H-minus-one-half map with physical-real two-sided local inverse, exact Fourier derivative, whole-ball physical recovery and full rough realness has the full Gardner matrix at EVERY COMPLEX mean-zero source in its entire ball, including closed gaps. It agrees EXACTLY with the FIXED GLOBAL original real L2 Birkhoff map. The fixed real L2 map, its global homeomorphism, analytic inverse, Parseval/action identities and canonical germs are imported and transitively audited. NEXT arbitrary-base/global rough inversion and full s>=-1 regularity; actual Hamiltonian/action-frequency identification and frequency/PDE main conclusions remain obligations.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -32119,5 +32259,6 @@
   "native_rough_abelian_record": "NATIVE_ROUGH_ABELIAN_PACKET.md",
   "native_rough_inverse_record": "NATIVE_ROUGH_REAL_INVERSE.md",
   "native_rough_canonical_inverse_record": "NATIVE_ROUGH_CANONICAL_INVERSE.md",
-  "shared_fixed_birkhoff_import_record": "SHARED_FIXED_BIRKHOFF_IMPORT.json"
+  "shared_fixed_birkhoff_import_record": "SHARED_FIXED_BIRKHOFF_IMPORT.json",
+  "native_rough_finite_support_record": "NATIVE_ROUGH_FINITE_SUPPORT_PREIMAGES.md"
 }

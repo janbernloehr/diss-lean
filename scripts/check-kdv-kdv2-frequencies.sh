@@ -2368,6 +2368,14 @@ modules=(
   NLS/KdV/HillRoughAbelianGardner
   NLS/KdV/HillBirkhoffAbelianNormalization
   NLS/Articles/KdVKdV2Frequencies/NativeRoughCanonicalAbelianInverse
+  NLS/SequenceSpaces/PeriodOneMiuraSobolevImage
+  NLS/KdV/HillHminusFiniteGapSobolev
+  NLS/KdV/HillRoughAbelianGapNorm
+  NLS/KdV/HillRoughPhysicalL2Reconstruction
+  NLS/KdV/HillBirkhoffAbelianMass
+  NLS/Articles/KdVKdV2Frequencies/RoughNonvanishingActionAmplitudes
+  NLS/Articles/KdVKdV2Frequencies/RoughAbelianClosedGaps
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughFiniteSupportPreimages
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

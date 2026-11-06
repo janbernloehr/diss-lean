@@ -1,3 +1,11 @@
+import NLS.SequenceSpaces.PeriodOneMiuraSobolevImage
+import NLS.KdV.HillHminusFiniteGapSobolev
+import NLS.KdV.HillRoughAbelianGapNorm
+import NLS.KdV.HillRoughPhysicalL2Reconstruction
+import NLS.KdV.HillBirkhoffAbelianMass
+import NLS.Articles.KdVKdV2Frequencies.RoughNonvanishingActionAmplitudes
+import NLS.Articles.KdVKdV2Frequencies.RoughAbelianClosedGaps
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughFiniteSupportPreimages
 import NLS.KdV.HillRoughAbelianGardner
 import NLS.KdV.HillBirkhoffAbelianNormalization
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughCanonicalAbelianInverse
@@ -3853,7 +3861,15 @@ run_cmd do
     `NLS.KdV.HillPhysicalMeanZeroRoughDensity,
     `NLS.KdV.HillRoughAbelianGardner,
     `NLS.KdV.HillBirkhoffAbelianNormalization,
-    `NLS.Articles.KdVKdV2Frequencies.NativeRoughCanonicalAbelianInverse
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughCanonicalAbelianInverse,
+    `NLS.SequenceSpaces.PeriodOneMiuraSobolevImage,
+    `NLS.KdV.HillHminusFiniteGapSobolev,
+    `NLS.KdV.HillRoughAbelianGapNorm,
+    `NLS.KdV.HillRoughPhysicalL2Reconstruction,
+    `NLS.KdV.HillBirkhoffAbelianMass,
+    `NLS.Articles.KdVKdV2Frequencies.RoughNonvanishingActionAmplitudes,
+    `NLS.Articles.KdVKdV2Frequencies.RoughAbelianClosedGaps,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughFiniteSupportPreimages
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
