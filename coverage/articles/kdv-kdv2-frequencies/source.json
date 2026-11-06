@@ -293,7 +293,14 @@
         8
       ],
       "status": "open",
-      "role": "physical KdV2 wellposedness and illposedness"
+      "role": "physical KdV2 wellposedness and illposedness",
+      "verified_supporting_clauses": [
+        {
+          "source_clause": "Part (v), global physical mass obstruction at EVERY non-L2 real mean-zero H^s datum: actual smooth approximants in the same topology, divergent H_0 and exact positive-mode mass contribution; no relative continuous H_0 extension",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.not_continuousWithinAt_physical_H0_extension_of_nonL2",
+          "qualification": "GLOBAL mass obstruction supporting Theorem 1.12(v): at EVERY non-L2 real mean-zero H^s datum for s>=-1, smooth physical approximants exist in the SAME H^s topology and actual H_0 diverges. ANY extension agreeing with the actual smooth physical invariant fails continuity even WITHIN the real mean-zero subspace at that datum. Along EVERY real continuous physical H^s approximation, the exact positive-mode mass term 20*(2*n*pi)*H_0 diverges. Full KdV2 frequency identification, continuity of its renormalized correction and actual solution-map obstruction remain unproved; no complete main theorem is closed."
+        }
+      ]
     },
     {
       "label": "Theorem 3.10",
@@ -31520,15 +31527,67 @@
       "scope": "The SAME ACTUAL analytic rough local inverse R has the exact physical L2 endpoint for EVERY real target in its open neighborhood, with arbitrary support: raw R(b) is L2 IFF its literal negative-half weighted target lift is in native h^(1/2). Every such endpoint target has an ORIGINAL physical real mean-zero L2 representative with exact fixed GLOBAL Birkhoff coordinates and squared norm sum 4*pi*n*|z_n|^2 (equivalently 2*kdvFiniteMass). Sufficiency uses actual finite-support physical preimages, uniform genuine mass bounds, original L2 compactness and rough-limit uniqueness. Necessity uses original physical recovery and native global Birkhoff summability. R is complex analytic with values in H-minus-one; a separate claim of analyticity into the stronger L2 topology is not asserted. Global/arbitrary-base rough inversion and the full Sobolev/PDE main conclusions remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "ce0af006bde09b41d44b09b31f5c5d4811b3d2b826090ce99701db132b0f53c7"
+    },
+    {
+      "path": "NLS/KdV/HillOriginalMassDivergence.lean",
+      "source_labels": [
+        "Global physical mass obstruction supporting Theorem 1.12(v)"
+      ],
+      "source_pages": [
+        7,
+        8
+      ],
+      "scope": "GLOBAL original physical L2 mass divergence at EVERY raw non-L2 H-minus-one limit, for EVERY filter of original L2 approximants. Exact half-norm convention and native H^s-convergence corollary for every s>=-1. Proof uses actual even-mode source sampling, continuous raw evaluation, nonsummable coordinate norm squares and the sampling contraction; no spectral chart, reality or finite-gap assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7965fe8c856fa6b39a7c6f51b785cd810b875a04af60a56eefaaf289b73c6d7c"
+    },
+    {
+      "path": "NLS/KdV/HillContinuousQuadraticMass.lean",
+      "source_labels": [
+        "Global physical mass obstruction supporting Theorem 1.12(v)"
+      ],
+      "source_pages": [
+        7,
+        8
+      ],
+      "scope": "Exact physical Parseval identification of the ORIGINAL period-two Fourier squared norm with the unit-period integral for EVERY continuous unit-period potential. For real physical potentials, the ACTUAL classicalQuadraticInvariant real part equals exactly one half of that squared norm. Consequently the actual H_0 diverges along EVERY real continuous physical approximation of a genuinely non-L2 rough source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7bedbc7a1b8af20c17515573e289d023351a4da81da9a7e69f6a78fd8bcf00f2"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalSobolevApproximation.lean",
+      "source_labels": [
+        "Global physical mass obstruction supporting Theorem 1.12(v)"
+      ],
+      "source_pages": [
+        7,
+        8
+      ],
+      "scope": "At EVERY real mean-zero native H^s datum, for EVERY real s, explicit symmetric raw Fourier truncations give ACTUAL C-infinity real mean-zero unit-period physical potentials, with literal original even Fourier coefficients and convergence in the SAME native H^s Hilbert norm. Approximants themselves remain in the real mean-zero subspace. Reuses the existing verified finite physical synthesis, without a local spectral chart or assumed L2 bound.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8f4af1d8cae200ca8b94b6f28861929d43cf693743ab84339212ac7a040a64cd"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/PhysicalMassDivergence.lean",
+      "source_labels": [
+        "Global physical mass obstruction supporting Theorem 1.12(v)"
+      ],
+      "source_pages": [
+        7,
+        8
+      ],
+      "scope": "GLOBAL mass obstruction supporting Theorem 1.12(v): at EVERY non-L2 real mean-zero H^s datum for s>=-1, smooth physical approximants exist in the SAME H^s topology and actual H_0 diverges. ANY extension agreeing with the actual smooth physical invariant fails continuity even WITHIN the real mean-zero subspace at that datum. Along EVERY real continuous physical H^s approximation, the exact positive-mode mass term 20*(2*n*pi)*H_0 diverges. Full KdV2 frequency identification, continuity of its renormalized correction and actual solution-map obstruction remain unproved; no complete main theorem is closed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "40535f9ae400f591f39db58eedf25a88a118ca14e6967365e7f892e2cfb9d564"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The ACTUAL analytic local rough inverse R NOW has the EXACT L2 endpoint for EVERY real target in its open neighborhood, including arbitrary infinite support: raw R(b) is L2 IFF its literal original signed target lift lies in native h^(1/2). Endpoint targets have ORIGINAL physical real mean-zero L2 representatives, exact fixed GLOBAL Birkhoff coordinates and exact squared norm sum 4*pi*n*|z_n|^2. Sufficiency is derived from all-Sobolev finite-support physical preimages and genuine mass bounds via original L2 compactness; necessity uses actual physical recovery and native Birkhoff summability. Non-half-regular real targets therefore have genuinely non-L2 rough inverse images. NEXT actual physical approximation/mass-divergence families, quantitative negative-Sobolev convergence and Hamiltonian/action-frequency identification. Arbitrary-base/global rough inversion, full inverse Sobolev topology for arbitrary targets and frequency/PDE main conclusions remain obligations.",
+    "The ACTUAL analytic local rough inverse R NOW has the EXACT L2 endpoint for EVERY real target in its open neighborhood, including arbitrary infinite support: raw R(b) is L2 IFF its literal original signed target lift lies in native h^(1/2). Endpoint targets have ORIGINAL physical real mean-zero L2 representatives, exact fixed GLOBAL Birkhoff coordinates and exact squared norm sum 4*pi*n*|z_n|^2. Sufficiency is derived from all-Sobolev finite-support physical preimages and genuine mass bounds via original L2 compactness; necessity uses actual physical recovery and native Birkhoff summability. Non-half-regular real targets therefore have genuinely non-L2 rough inverse images. NEXT actual physical approximation/mass-divergence families, quantitative negative-Sobolev convergence and Hamiltonian/action-frequency identification. Arbitrary-base/global rough inversion, full inverse Sobolev topology for arbitrary targets and frequency/PDE main conclusions remain obligations. GLOBAL original-source mass divergence and actual smooth physical approximation in the SAME native H^s topology are now proved independently of the local inverse, at EVERY real mean-zero non-L2 datum for s>=-1; see PHYSICAL_MASS_DIVERGENCE.md. These close the mass/approximation component only, not the remaining full frequency/PDE obligations.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
-    "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+    "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
   ],
   "workspace": {
     "canonical_checkout_files_modified": false,
@@ -31551,15 +31610,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 18809,
-    "total_declarations_audited": 40879,
+    "candidate_declarations_audited": 18823,
+    "total_declarations_audited": 40893,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2372,
+    "selected_modules": 2376,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -31633,7 +31692,8 @@
     "native_rough_inverse_validation_sequence": "Prior strict evidence retained for all 1806 unchanged selected baseline sources; all nine new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 1815 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1856 frozen source/checker/provenance/Mathlib-source hashes, all 38 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these nine selections. No full 1815-module rebuild is claimed.",
     "native_rough_canonical_inverse_validation_sequence": "Prior strict evidence retained for all 1815 unchanged selected baseline sources. ALL 544 newly selected modules strictly rebuilt in dependency order (519 incoming shared files, 20 previously unselected unchanged canonical helpers, five own proof modules), followed by a fresh combined transitive axiom audit of all 2359 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2401 frozen source/checker/provenance/Mathlib-source hashes, all 39 verified provenance records (38 unchanged), private fresh outputs and unchanged clean canonical main verified. The imported NLS closure adds exactly these 544 selections. No full 2359-module rebuild is claimed.",
     "native_rough_finite_support_validation_sequence": "Prior strict evidence retained for all 2359 unchanged selected baseline sources. All eight new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2367 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2409 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these eight selections; no new shared-source import is needed. No full 2367-module rebuild is claimed.",
-    "native_rough_L2_endpoint_validation_sequence": "Prior strict evidence retained for all 2367 unchanged selected baseline sources. All five new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2372 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2414 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these five selections; no new shared-source import is needed. No full 2372-module rebuild is claimed."
+    "native_rough_L2_endpoint_validation_sequence": "Prior strict evidence retained for all 2367 unchanged selected baseline sources. All five new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2372 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2414 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these five selections; no new shared-source import is needed. No full 2372-module rebuild is claimed.",
+    "physical_mass_divergence_validation_sequence": "Prior strict evidence retained for all 2372 unchanged selected baseline sources. All four new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2376 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2418 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these four selections; no new shared-source import is needed. No full 2376-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -32311,6 +32371,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "6b8b3d9248da7009b64288449a93641d7ac548a4",
+      "description": "Prior exact local rough inverse L2 endpoint; now global actual physical H_0 divergence, actual smooth H^s approximants at EVERY real mean-zero datum, and failure of relative continuity at EVERY genuinely non-L2 datum.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The ACTUAL analytic local rough inverse R NOW has the EXACT L2 endpoint for EVERY real target in its open neighborhood, including arbitrary infinite support: raw R(b) is L2 IFF its literal original signed target lift lies in native h^(1/2). Endpoint targets have ORIGINAL physical real mean-zero L2 representatives, exact fixed GLOBAL Birkhoff coordinates and exact squared norm sum 4*pi*n*|z_n|^2. Sufficiency is derived from all-Sobolev finite-support physical preimages and genuine mass bounds via original L2 compactness; necessity uses actual physical recovery and native Birkhoff summability. Non-half-regular real targets therefore have genuinely non-L2 rough inverse images. NEXT actual physical approximation/mass-divergence families, quantitative negative-Sobolev convergence and Hamiltonian/action-frequency identification. Arbitrary-base/global rough inversion, full inverse Sobolev topology for arbitrary targets and frequency/PDE main conclusions remain obligations.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -32349,5 +32421,6 @@
   "native_rough_canonical_inverse_record": "NATIVE_ROUGH_CANONICAL_INVERSE.md",
   "shared_fixed_birkhoff_import_record": "SHARED_FIXED_BIRKHOFF_IMPORT.json",
   "native_rough_finite_support_record": "NATIVE_ROUGH_FINITE_SUPPORT_PREIMAGES.md",
-  "native_rough_L2_endpoint_record": "NATIVE_ROUGH_L2_ENDPOINT.md"
+  "native_rough_L2_endpoint_record": "NATIVE_ROUGH_L2_ENDPOINT.md",
+  "physical_mass_divergence_record": "PHYSICAL_MASS_DIVERGENCE.md"
 }

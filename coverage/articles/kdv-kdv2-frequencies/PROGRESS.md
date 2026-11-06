@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest exact physical L2 endpoint of the rough inverse
+## Latest global physical mass obstruction
+
+At EVERY genuinely non-L2 real mean-zero native H^s datum, s>=-1, ACTUAL smooth real mean-zero unit-period physical approximants now converge in the SAME H^s Hilbert topology and their ACTUAL classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero subspace. No local spectral chart or smallness assumption is used. See `PHYSICAL_MASS_DIVERGENCE.md`.
+
+Parseval and unit periodicity prove the exact identity H_0(Q)=one half of the ORIGINAL period-two Fourier squared L2 norm for real physical Q. Every original L2 approximation of a raw non-L2 rough source has diverging mass; the proof uses genuine nonsummability, continuous raw coefficients and contractive even sampling. For every positive n, the exact KdV2 mass term 20*(2*n*pi)*H_0 diverges along EVERY real continuous physical H^s approximation.
+
+Prior strict evidence retained for all 2372 unchanged selected baseline sources. All four new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2376 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2418 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these four selections; no new shared-source import is needed. No full 2376-module rebuild is claimed.
+
+Fresh audit: 18823 selected and 40893 imported NLS declarations; permitted axioms only. This proves the GLOBAL mass/physical-approximation component of Theorem 1.12(v), including -1<s<0. Actual full-frequency identification, renormalized correction continuity and the physical solution-map obstruction remain obligations. All eleven complete main theorem rows remain OPEN.
+
+## Earlier exact physical L2 endpoint of the rough inverse
 
 The SAME actual analytic rough inverse family R now has the exact native physical endpoint for EVERY REAL target in its open neighborhood, with arbitrary support: R(b) has raw L2 coefficients IFF its literal negative-half weighted target lift belongs to native h^(1/2). Every endpoint target has an ORIGINAL physical real mean-zero L2 representative, exact fixed GLOBAL Birkhoff coordinates and norm(p)^2=sum 4*pi*n*|z_n|^2=2*kdvFiniteMass. Non-half-regular real targets have genuinely non-L2 rough inverse images. See `NATIVE_ROUGH_L2_ENDPOINT.md`.
 

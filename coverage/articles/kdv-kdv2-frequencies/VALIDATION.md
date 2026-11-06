@@ -1,11 +1,21 @@
-# Article-step validation — 2026-11-05
+# Article-step validation — 2026-11-06
 
 **Main-theorem status: not yet verified.** Actual KdV/KdV2 spectral frequencies
 and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest exact physical L2 endpoint of the rough inverse
+## Latest global physical mass obstruction
+
+At EVERY genuinely non-L2 real mean-zero native H^s datum, s>=-1, ACTUAL smooth real mean-zero unit-period physical approximants now converge in the SAME H^s Hilbert topology and their ACTUAL classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero subspace. No local spectral chart or smallness assumption is used. See `PHYSICAL_MASS_DIVERGENCE.md`.
+
+Parseval and unit periodicity prove the exact identity H_0(Q)=one half of the ORIGINAL period-two Fourier squared L2 norm for real physical Q. Every original L2 approximation of a raw non-L2 rough source has diverging mass; the proof uses genuine nonsummability, continuous raw coefficients and contractive even sampling. For every positive n, the exact KdV2 mass term 20*(2*n*pi)*H_0 diverges along EVERY real continuous physical H^s approximation.
+
+Prior strict evidence retained for all 2372 unchanged selected baseline sources. All four new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2376 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2418 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these four selections; no new shared-source import is needed. No full 2376-module rebuild is claimed.
+
+Fresh audit: 18823 selected and 40893 imported NLS declarations; permitted axioms only. This proves the GLOBAL mass/physical-approximation component of Theorem 1.12(v), including -1<s<0. Actual full-frequency identification, renormalized correction continuity and the physical solution-map obstruction remain obligations. All eleven complete main theorem rows remain OPEN.
+
+## Earlier exact physical L2 endpoint of the rough inverse
 
 The SAME actual analytic rough inverse family R now has the exact native physical endpoint for EVERY REAL target in its open neighborhood, with arbitrary support: R(b) has raw L2 coefficients IFF its literal negative-half weighted target lift belongs to native h^(1/2). Every endpoint target has an ORIGINAL physical real mean-zero L2 representative, exact fixed GLOBAL Birkhoff coordinates and norm(p)^2=sum 4*pi*n*|z_n|^2=2*kdvFiniteMass. Non-half-regular real targets have genuinely non-L2 rough inverse images. See `NATIVE_ROUGH_L2_ENDPOINT.md`.
 
@@ -630,7 +640,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2372 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2376 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1699,7 +1709,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2372 selected modules (including generated and private declarations)
+the 2376 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4343,4 +4353,14 @@ PASS NLS/KdV/HillBirkhoffAbelianSummability
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassTruncationBounds
 PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughEndpointInverse
 Axiom audit passed: 18809 candidate declarations; 40879 declarations total.
+```
+
+Latest global physical mass obstruction strict checks and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillOriginalMassDivergence
+PASS NLS/KdV/HillContinuousQuadraticMass
+PASS NLS/KdV/HillPhysicalSobolevApproximation
+PASS NLS/Articles/KdVKdV2Frequencies/PhysicalMassDivergence
+Axiom audit passed: 18823 candidate declarations; 40893 declarations total.
 ```

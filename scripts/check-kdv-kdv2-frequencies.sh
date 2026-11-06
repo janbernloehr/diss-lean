@@ -2381,6 +2381,10 @@ modules=(
   NLS/KdV/HillBirkhoffAbelianSummability
   NLS/Articles/KdVKdV2Frequencies/SignedMassTruncationBounds
   NLS/Articles/KdVKdV2Frequencies/NativeRoughEndpointInverse
+  NLS/KdV/HillOriginalMassDivergence
+  NLS/KdV/HillContinuousQuadraticMass
+  NLS/KdV/HillPhysicalSobolevApproximation
+  NLS/Articles/KdVKdV2Frequencies/PhysicalMassDivergence
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

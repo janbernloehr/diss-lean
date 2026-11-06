@@ -1,3 +1,7 @@
+import NLS.Articles.KdVKdV2Frequencies.PhysicalMassDivergence
+import NLS.KdV.HillPhysicalSobolevApproximation
+import NLS.KdV.HillContinuousQuadraticMass
+import NLS.KdV.HillOriginalMassDivergence
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughEndpointInverse
 import NLS.SequenceSpaces.DeletedSymmetricTruncation
 import NLS.KdV.HillPhysicalL2RoughClosure
@@ -3879,7 +3883,11 @@ run_cmd do
     `NLS.KdV.HillPhysicalL2RoughClosure,
     `NLS.KdV.HillBirkhoffAbelianSummability,
     `NLS.Articles.KdVKdV2Frequencies.SignedMassTruncationBounds,
-    `NLS.Articles.KdVKdV2Frequencies.NativeRoughEndpointInverse
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughEndpointInverse,
+    `NLS.KdV.HillOriginalMassDivergence,
+    `NLS.KdV.HillContinuousQuadraticMass,
+    `NLS.KdV.HillPhysicalSobolevApproximation,
+    `NLS.Articles.KdVKdV2Frequencies.PhysicalMassDivergence
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
