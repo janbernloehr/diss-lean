@@ -1,3 +1,13 @@
+import NLS.Articles.KdVKdV2Frequencies.GlobalKdVHierarchyActionFactors
+import NLS.KdV.NativeHillHierarchyReality
+import NLS.KdV.NativeHillHierarchyIsospectral
+import NLS.KdV.NativeHillHierarchyConstantVariation
+import NLS.KdV.HillHierarchyConstantVariation
+import NLS.KdV.HillHierarchyMiuraRestriction
+import NLS.DifferentialPolynomial.FieldJetSubstitution
+import NLS.DifferentialPolynomial.ScalarRiccatiConstantVariation
+import NLS.KdV.NativeHillHierarchyHamiltonian
+import NLS.KdV.HillRiccatiHierarchy
 import NLS.ComplexAnalysis.OpenMapDescent
 import NLS.ComplexAnalysis.QuadraticLineRoot
 import NLS.SequenceSpaces.RealActionRotation
@@ -4956,7 +4966,17 @@ private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
   `NLS.SequenceSpaces.SignedCartesianActions,
   `NLS.Articles.KdVKdV2Frequencies.GlobalNativeHamiltonianActionDescent,
   `NLS.SequenceSpaces.SobolevSignedActionSequence,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalWeightedHamiltonianActionFactors
+  `NLS.Articles.KdVKdV2Frequencies.GlobalWeightedHamiltonianActionFactors,
+  `NLS.KdV.HillRiccatiHierarchy,
+  `NLS.KdV.NativeHillHierarchyHamiltonian,
+  `NLS.DifferentialPolynomial.ScalarRiccatiConstantVariation,
+  `NLS.DifferentialPolynomial.FieldJetSubstitution,
+  `NLS.KdV.HillHierarchyMiuraRestriction,
+  `NLS.KdV.HillHierarchyConstantVariation,
+  `NLS.KdV.NativeHillHierarchyConstantVariation,
+  `NLS.KdV.NativeHillHierarchyIsospectral,
+  `NLS.KdV.NativeHillHierarchyReality,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalKdVHierarchyActionFactors
 ]
 
 open Lean in

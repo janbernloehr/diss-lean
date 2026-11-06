@@ -2888,6 +2888,16 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/GlobalNativeHamiltonianActionDescent
   NLS/SequenceSpaces/SobolevSignedActionSequence
   NLS/Articles/KdVKdV2Frequencies/GlobalWeightedHamiltonianActionFactors
+  NLS/KdV/HillRiccatiHierarchy
+  NLS/KdV/NativeHillHierarchyHamiltonian
+  NLS/DifferentialPolynomial/ScalarRiccatiConstantVariation
+  NLS/DifferentialPolynomial/FieldJetSubstitution
+  NLS/KdV/HillHierarchyMiuraRestriction
+  NLS/KdV/HillHierarchyConstantVariation
+  NLS/KdV/NativeHillHierarchyConstantVariation
+  NLS/KdV/NativeHillHierarchyIsospectral
+  NLS/KdV/NativeHillHierarchyReality
+  NLS/Articles/KdVKdV2Frequencies/GlobalKdVHierarchyActionFactors
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
