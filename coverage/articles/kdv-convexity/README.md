@@ -2957,6 +2957,62 @@ coordinate actions or prove the action-fiber/discriminant identity.
 All main theorems remain open. The reuse manifest records all new source
 hashes and the 2333 inherited byte-identical reference imports.
 
+## Global rough coercivity in the actual Arnold-action norm
+
+The constructed shared global rough forward data, real-preserving local
+weak inverses at every real base and global real mean-zero injectivity
+are imported at `540f131`. Their global ground-energy and source bounds
+are proved by actual local inverse target truncations and strong H^-1
+approximation; no spectral finite-gap or initial source bound remains.
+The private integration checks 1469 exact shared sources and 34 explicit
+interface adaptations while retaining all 685 baseline proof sources.
+Every adaptation is recorded in `global-ground-library-reuse.json`.
+
+`HillHminusPhysicalArnoldActions.lean` identifies the original physical
+real gap integrals with the intrinsic rough contour moments at every
+positive index and every polynomial moment level.
+`HillHminusPhysicalSourceDensity.lean` constructs the literal physical
+representative of each real unit-period L2 input and proves those
+original physical sources are dense in real H^-1.
+
+`GlobalArnoldCalibration.lean` uses this density and actual continuity to
+prove, at **every real H^-1 source**, including non-L2 inputs and closed gaps,
+
+```text
+I_n(q) = (1+n)*norm(D.positive(q)_n)^2.
+norm(I(q))_ell^(-1,1) = norm(D.positive(q))_ell2^2.
+```
+
+`PositiveActionNorm.lean` retains exactly the base weight `1/(1+n)`;
+positive coordinates are reindexed without dropping or rescaling terms.
+`GlobalArnoldCoercivity.lean` therefore proves, at **every real mean-zero
+H^-1 potential**, with no size or finite-gap premise,
+
+```text
+-lambda_0(q) <= E,             E=(2/pi)*norm(I(q))_ell^(-1,1),
+norm(q)_Hminus1 <= A*sqrt(E)+B*E.
+```
+
+Here `A=norm(periodOneMassOperator 0)+norm(periodOneL2Inclusion)` and
+`B=norm(periodOneMiuraProduct)+norm(periodOneL2Inclusion)` are fixed
+universal operator constants. The actual analytic weighted Arnold map
+exists near all real rough potentials with these estimates. These are
+bounds in the original spectral action norm, not assumed coordinate
+bounds or an inverse map supplied as a premise.
+
+`SourceHigherActionCoefficientContinuity.lean` additionally proves that
+every original real higher Dirac action, at every fixed signed index
+and every level, is continuous under bounded coefficientwise limits of
+real L2 pairs. A real-centered isolating circle persists along the
+actual real interpolation segments. Polynomial weights preserve uniform
+contour convergence; all closed-gap cases are included.
+
+These estimates and continuity results are inputs toward realizing the
+whole positive action cone and proving analytic action descent. They do
+not establish norm compactness, properness, global Cartesian inversion
+or the action-fiber/discriminant identity. The unconditional positive
+ell2 extension and all main Theorems 1.1-1.3 remain open.
+
 ## Remaining essential KdV work
 
 1. Prove the action-fiber/discriminant identity. Physical algebraic
@@ -3043,20 +3099,22 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `578b4c0` contains 625 source modules, whose
-source hashes remain unchanged. Fifty-two exact shared modules, one
-shared integration adaptation and seven authored modules pass Lean
-4.33.1/mathlib v4.33.1 with `warningAsError=true`. The fourteen modules
-affected by the real-form adaptation are rechecked. The complete
-reproduction script lists 685 NLS modules and the preceding private
-pinned mathlib compilation. The positive-index example, cumulative
-transitive axiom audit and 1472 coverage-declaration checks pass.
-This is incremental validation, not a full repository rebuild.
+The validated baseline at `79e1626` contains 685 source modules, whose
+source hashes remain unchanged. The private dependency build checks
+1469 exact shared sources, 34 integration adaptations and six authored
+modules with Lean 4.33.1/mathlib v4.33.1 and `warningAsError=true`.
+Completed checks are retained across resumes only when source, private
+object and selected dependency object hashes match. All 1509 new module
+checks pass. The reproduction script lists 2194 NLS modules. The
+positive-index example, combined transitive axiom audit and 1497 coverage
+declaration checks pass. The 2791 inherited byte-identical reference
+sources are not rebuilt. This is incremental dependency validation,
+not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 342 additional shared modules:
-7221 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 751 additional shared modules:
+16991 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
