@@ -1,5 +1,15 @@
 # KdV/KdV2 frequency maps — source and proof map
 
+## Latest native ground-factor spectral invariants
+
+Equal complete actual signed actions now determine the energy and every positive-order native scalar Miura/Hill hierarchy value of arbitrary normalized ground factors. Such factors exist on every original integer H^s source domain with exactly H^(s+1) regularity. The proof uses the actual entire rough Hill discriminant, its EXACT shifted-square trace identity with the Dirac discriminant, original canonically indexed higher-action gap integrals, and the full-domain physical odd Hamiltonian trace. All amplitudes, infinite support and collapsed gaps are included. See `NATIVE_MIURA_SPECTRAL_INVARIANTS.md`.
+
+The global ground-factor spectral matching, original higher-action invariance, full native odd Hamiltonian invariance and native ground-factor existence/regularity are CLOSED. To finish Theorem 1.1(iii), identify the printed native KdV H1/H2 functionals with the appropriate scalar Miura hierarchy members and prove their exact constant-shift identities; then descend the already analytic global pullbacks through the complete actions, including every closed-gap point, and glue globally. The full KdV hierarchy identification, physical frequency derivative formulas, sharp estimates, fixed-mass and actual PDE conclusions remain open. All eleven COMPLETE main theorem rows remain OPEN.
+
+Prior strict evidence retained for all 2820 unchanged selected baseline sources. All six new own modules strictly rebuilt in dependency order after freezing 2875 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2826 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact six-module increase in NLS import closure verified. No new canonical prerequisite selection or provenance record is needed; all 46 prior provenance records remain unchanged and verified. The selection has 23 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2826-name runtime probe using all 23 current chunk references rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2826-module rebuild is claimed.
+
+Fresh audit: 22015 selected and 44085 imported NLS declarations. Six new own modules contain 15 explicit theorems.
+
 Status: **main theorems not yet verified**. The initial private candidates
 were integrated into the dedicated `articles/kdv-kdv2-frequencies` worktree
 from canonical base `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. See

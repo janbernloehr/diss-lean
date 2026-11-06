@@ -1,3 +1,9 @@
+import NLS.Articles.KdVKdV2Frequencies.GlobalNativeMiuraInvariants
+import NLS.KdV.NativeMiuraGroundFactors
+import NLS.KdV.NativeMiuraSpectralInvariance
+import NLS.ZakharovShabat.SobolevOddHamiltonianIsospectral
+import NLS.KdV.HillMiuraGroundIsospectral
+import NLS.ZakharovShabat.SourceHigherActionIsospectral
 import NLS.KdV.NativeHamiltonianPhysicalIntegrals
 import NLS.KdV.NativeHamiltonianReality
 import NLS.Articles.KdVKdV2Frequencies.GlobalNativeIntegerInverse
@@ -4838,7 +4844,13 @@ private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
   `NLS.KdV.NativeHamiltonianReality,
   `NLS.Articles.KdVKdV2Frequencies.GlobalNativeIntegerInverse,
   `NLS.Articles.KdVKdV2Frequencies.GlobalRawIntegerInverse,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalNativeHamiltonians
+  `NLS.Articles.KdVKdV2Frequencies.GlobalNativeHamiltonians,
+  `NLS.KdV.HillMiuraGroundIsospectral,
+  `NLS.ZakharovShabat.SourceHigherActionIsospectral,
+  `NLS.ZakharovShabat.SobolevOddHamiltonianIsospectral,
+  `NLS.KdV.NativeMiuraSpectralInvariance,
+  `NLS.KdV.NativeMiuraGroundFactors,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalNativeMiuraInvariants
 ]
 
 open Lean in
