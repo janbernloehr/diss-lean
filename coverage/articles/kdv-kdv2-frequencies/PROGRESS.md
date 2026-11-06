@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest full Jacobian units and inverse charts at every real rough base
+## Latest GLOBAL rough injectivity and all-order nonlinear regularity
+
+The SAME actual global signed map is now GLOBALLY INJECTIVE on the ENTIRE real mean-zero HminusOne space, including NON-L2 sources and closed gaps. It has the exact ALL-order nonlinear criterion q in H^s IFF its actual target lies in h^(s+1/2), EVERY real rough q and EVERY s>=-1, with no initial strong membership assumed. Actual local inverse branches preserve reality. Two branches at a common rough target agree on symmetric finite real target approximants by recovered physical L2 regularity and ORIGINAL global L2 injectivity; continuity identifies their original rough preimages. See `GLOBAL_ROUGH_INJECTIVITY_REGULARITY.md`.
+
+Global SURJECTIVITY/properness or continuation, ONE global inverse and native inverse matching, complex-neighborhood canonicality/origin Fourier matching and action-Hamiltonian/frequency/PDE conclusions remain open. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2734 unchanged selected baseline sources. All eleven newly selected own modules strictly rebuilt in dependency order after freezing 2791 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2745 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eleven-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2745-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2745-module rebuild is claimed.
+
+Fresh audit: 21389 selected and 43453 imported NLS declarations; permitted axioms only. Eleven new own modules contain 23 explicit theorems.
+
+## Earlier full Jacobian units and inverse charts at every real rough base
 
 The SAME global signed map now has FULL actual mean-zero weak Jacobian units at EVERY real mean-zero HminusOne source, including NON-L2 bases. Actual canonical Hamiltonian directions hit every retained target unit vector, giving dense range; its ACTUAL compact principal then gives bijectivity. Exact inclusions transfer this to FULL native Jacobian units at EVERY real native base and EVERY nonnegative Sobolev order. Genuine TWO-SIDED analytic weak and native inverse charts now exist at ALL such bases, with OPEN source/target domains, full raw recovery and exact weak inclusion into THAT SAME global map. See `GLOBAL_ROUGH_JACOBIAN_INVERSE_CHARTS.md`.
 

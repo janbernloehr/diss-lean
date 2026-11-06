@@ -1,3 +1,14 @@
+import NLS.ZakharovShabat.SourceGapWeightedEtaRealNorm
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInjective
+import NLS.KdV.HillBirkhoffAbelianInjective
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianRealInverse
+import NLS.SequenceSpaces.DeletedRealFiniteApprox
+import NLS.ComplexAnalysis.RealInverseNeighborhoodAt
+import NLS.SequenceSpaces.MeanZeroWeightedReality
+import NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseAbelianRegularity
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianRegularity
+import NLS.KdV.HillHminusEtaGapRegularity
+import NLS.SequenceSpaces.PositiveReciprocalMembership
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseCharts
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianNativeJacobian
 import NLS.SequenceSpaces.MeanZeroSobolevIdentities
@@ -4663,7 +4674,18 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianWeakJacobian,
   `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseNativeJacobianUnit,
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianNativeJacobian,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseCharts
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseCharts,
+  `NLS.ZakharovShabat.SourceGapWeightedEtaRealNorm,
+  `NLS.KdV.HillHminusEtaGapRegularity,
+  `NLS.SequenceSpaces.PositiveReciprocalMembership,
+  `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseAbelianRegularity,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianRegularity,
+  `NLS.ComplexAnalysis.RealInverseNeighborhoodAt,
+  `NLS.SequenceSpaces.MeanZeroWeightedReality,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianRealInverse,
+  `NLS.SequenceSpaces.DeletedRealFiniteApprox,
+  `NLS.KdV.HillBirkhoffAbelianInjective,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInjective
 ]
 
 open Lean in

@@ -2743,6 +2743,17 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseNativeJacobianUnit
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianNativeJacobian
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInverseCharts
+  NLS/ZakharovShabat/SourceGapWeightedEtaRealNorm
+  NLS/KdV/HillHminusEtaGapRegularity
+  NLS/SequenceSpaces/PositiveReciprocalMembership
+  NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseAbelianRegularity
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianRegularity
+  NLS/ComplexAnalysis/RealInverseNeighborhoodAt
+  NLS/SequenceSpaces/MeanZeroWeightedReality
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianRealInverse
+  NLS/SequenceSpaces/DeletedRealFiniteApprox
+  NLS/KdV/HillBirkhoffAbelianInjective
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInjective
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

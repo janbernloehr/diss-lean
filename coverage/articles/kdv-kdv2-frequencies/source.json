@@ -352,6 +352,21 @@
           "source_clause": "Genuine TWO-SIDED analytic inverse charts of the SAME global map at EVERY real mean-zero rough/native base, with full raw recovery and exact weak inclusion",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_native_analytic_inverse_at",
           "qualification": "The SAME global rough forward map has genuine TWO-SIDED complex analytic weak inverse charts at EVERY real mean-zero HminusOne source, including NON-L2 bases. At EVERY nonnegative Sobolev order it also has genuine native complex analytic inverse charts at EVERY real mean-zero native base. Source and target domains are OPEN and use literal mean-zero weight charts. Full raw left/right recovery, zero central slots and exact weak inclusion of the inverse image into THAT SAME global signed map are proved. These are local inverse charts; global injectivity/surjectivity, one global rough inverse and cross-order matching of all local inverse branches remain open."
+        },
+        {
+          "source_clause": "GLOBAL injectivity of the SAME actual signed map on the ENTIRE real mean-zero HminusOne space, including NON-L2 sources and closed gaps",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.signed_injective_real_meanZero",
+          "qualification": "The SAME actual global signed map is GLOBALLY INJECTIVE on the ENTIRE real mean-zero HminusOne space, including all NON-L2 sources and closed gaps. At a regular target, the proved nonlinear Sobolev criterion recovers physical mean-zero L2 sources and original global L2 injectivity compares them. For an arbitrary common rough target, two actual real inverse branches are compared at symmetric finite real target approximants in their common OPEN neighborhood; inverse regularity gives physical L2 preimages, and continuity identifies the original rough preimages. No regular-target, initial L2, smallness or global-injectivity premise is assumed. Global surjectivity and a global inverse remain open."
+        },
+        {
+          "source_clause": "Exact ALL-order nonlinear source/target Sobolev regularity criterion at EVERY real rough source, with inverse regularity and no initial L2 hypothesis",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.sobolev_iff_signed_mem",
+          "qualification": "For the SAME global signed map, at EVERY real HminusOne source and EVERY s>=-1, q has H^s coefficients IFF the actual signed target has h^(s+1/2) coefficients. Both directions hold including NON-L2 sources, arbitrary means and closed gaps. Literal signed completion, target weight ratio, actual real symmetry and the retained full invertible symbol give the exact half-order shift. A target in h^(+1/2) recovers an ACTUAL original physical L2 source with exactly the same rough inclusion."
+        },
+        {
+          "source_clause": "Actual analytic local inverse branches preserve the physical real form at EVERY real mean-zero rough base",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_real_weak_inverse_germ",
+          "qualification": "The SAME global signed map and literal normalized mean-zero map commute EXACTLY with actual conjugation. At EVERY real mean-zero rough base, an actual native complex analytic inverse branch on an OPEN target neighborhood preserves the physical real form, has the exact original base value, full normalized right identity and full literal signed raw recovery into THAT SAME global map. NON-L2 bases are included."
         }
       ]
     },
@@ -36088,12 +36103,144 @@
       "scope": "The SAME global rough forward map has genuine TWO-SIDED complex analytic weak inverse charts at EVERY real mean-zero HminusOne source, including NON-L2 bases. At EVERY nonnegative Sobolev order it also has genuine native complex analytic inverse charts at EVERY real mean-zero native base. Source and target domains are OPEN and use literal mean-zero weight charts. Full raw left/right recovery, zero central slots and exact weak inclusion of the inverse image into THAT SAME global signed map are proved. These are local inverse charts; global injectivity/surjectivity, one global rough inverse and cross-order matching of all local inverse branches remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "c2a63314e69eedaa93240e3566aa093c5252ea4d528a8055e7c2f5b6723fa702"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedEtaRealNorm.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For the SAME supplied ORIGINAL source root family on ANY actual source domain, the original gap-weighted eta coordinate has EXACT norm equal to its canonical periodic gap at EVERY real source in the domain, including closed gaps. The open-gap proof retains the literal ORIGINAL integral phase and its proved zero imaginary part; the closed-gap proof uses the actual original collapsed coordinate. No H1-source assumption or strong-source cutoff estimate is imported.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "072a79fe779a052de6e5442a96fd12dd79f6ea334eb205db8db92280cb62ccca"
+    },
+    {
+      "path": "NLS/KdV/HillHminusEtaGapRegularity.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For ANY supplied actual rough Hill chart and ORIGINAL roots, the actual eta sequence has EXACT gap norm at EVERY real-preserving rough source and EVERY signed index. The ordinary Dirichlet source phase retains the literal canonical Miura endpoint labels. Together with the verified ALL-order real Miura source/gap criterion and exact signed root symmetry, this proves H^s source membership iff positive actual eta has H^(s+1) membership, for EVERY s>=-1, including NON-L2 sources and low/closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a4f9e9a0708cc27910bc1deaa5964da91e2d97908642e3dbf580f42b49974898"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveReciprocalMembership.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A positive-index bounded symbol and its bounded actual coefficientwise reciprocal preserve positive-half ell2 membership in BOTH directions. Actual Holder products construct the sequences; no initial membership of the divided sequence is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4213ad63184b246a2d762476db668030fb397d2d914779253060a1a353fffcb8"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseAbelianRegularity.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The SAME actual full rough packet has weighted H^(s+1) ell2 membership iff its real rough source has H^s membership, EVERY s>=-1, throughout its ENTIRE original ball. The proof uses the ORIGINAL eta-gap norm and actual bounded full symbol/reciprocal, retaining all midpoint/amplitude/noncentral phases and closed gaps. The ONE fixed canonical physical sign selection preserves this exact criterion. No initial L2 or stronger-source hypothesis is supplied.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fb7064ab7d7442d4a7a3cc93ce54d5a6091d35bd43a2069ebd8746185ac03d62"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianRegularity.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For the SAME global signed map, at EVERY real HminusOne source and EVERY s>=-1, q has H^s coefficients IFF the actual signed target has h^(s+1/2) coefficients. Both directions hold including NON-L2 sources, arbitrary means and closed gaps. Literal signed completion, target weight ratio, actual real symmetry and the retained full invertible symbol give the exact half-order shift. A target in h^(+1/2) recovers an ACTUAL original physical L2 source with exactly the same rough inclusion.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0f356d71c05715b555c30ee24fa194c0df5a169c8f938da0669ce374a0090021"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealInverseNeighborhoodAt.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A genuine local inverse at ANY fixed real base preserves the fixed real form on an OPEN target neighborhood. The source reflection is an actual isometry; local injectivity and exact conjugation equivariance are retained. No zero-base or linear inverse assumption is needed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dde9bc69d701d3b5960693812b1c3c465b27b2bf1446c56cb2513526157e18f4"
+    },
+    {
+      "path": "NLS/SequenceSpaces/MeanZeroWeightedReality.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Physical deleted-coordinate conjugation is an actual isometry. The literal mean-zero weighted lifts and projections intertwine actual weighted conjugate reflection, and real raw source coefficients are equivalent to the fixed deleted-coordinate real form. Source and target weights remain independent symmetric weights.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7ecc169ef5e2b3ffaf6e7fde8af5cdbd8e56d85f7ed7397bbc42e8c9a3f7067e"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianRealInverse.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The SAME global signed map and literal normalized mean-zero map commute EXACTLY with actual conjugation. At EVERY real mean-zero rough base, an actual native complex analytic inverse branch on an OPEN target neighborhood preserves the physical real form, has the exact original base value, full normalized right identity and full literal signed raw recovery into THAT SAME global map. NON-L2 bases are included.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4cb40c5f9f0d2594881cd3e5862a44049abdeadc713fd6baea2febd852638c39"
+    },
+    {
+      "path": "NLS/SequenceSpaces/DeletedRealFiniteApprox.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Reuses the VERIFIED existing actual symmetric deleted-coordinate truncation, its physical real form preservation, central zero and original norm convergence unchanged. Proves that after literal mean-zero lifting EACH approximant belongs to EVERY weighted target space, with no replacement topology or source realization assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4141a1a388c8dbe1b5bc3ac24c964f40cdea9052a86904e1d7ac9f276f8a85b5"
+    },
+    {
+      "path": "NLS/KdV/HillBirkhoffAbelianInjective.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Exact ORIGINAL complex Abelian coordinates determine the fixed GLOBAL ORIGINAL mean-zero physical L2 Birkhoff source. The proof retains the verified Cartesian-to-Abelian factor sqrt(2), recovers both literal raw real Cartesian coordinates and uses the actual global L2 Birkhoff homeomorphism injectivity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ca00fc061c1524857115201ce1abf886c5122cb4dffa65a04ca62afd958c04bb"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInjective.lean",
+      "source_labels": [
+        "GLOBAL real rough injectivity and exact all-order nonlinear Sobolev regularity of the SAME actual map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The SAME actual global signed map is GLOBALLY INJECTIVE on the ENTIRE real mean-zero HminusOne space, including all NON-L2 sources and closed gaps. At a regular target, the proved nonlinear Sobolev criterion recovers physical mean-zero L2 sources and original global L2 injectivity compares them. For an arbitrary common rough target, two actual real inverse branches are compared at symmetric finite real target approximants in their common OPEN neighborhood; inverse regularity gives physical L2 preimages, and continuity identifies the original rough preimages. No regular-target, initial L2, smallness or global-injectivity premise is assumed. Global surjectivity and a global inverse remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "22bbaa1f6a708dcf35365edda48f743a80e476ae87f6fcf25a91a014544d3c8e"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The SAME global signed forward map remains genuinely native complex analytic around the ENTIRE real HminusOne space, with exact canonical physical signs/full original physical recovery, real target symmetry, central zero and the actual Gardner matrix at every REAL mean-zero rough source. NEW: ACTUAL Hamiltonian directions hit every retained target unit vector with exact signed half-order weights, proving DENSE RANGE of the full mean-zero derivative. Its ACTUAL compact principal equivalence then proves the FULL weak Jacobian is a unit at EVERY real mean-zero rough source, including NON-L2 bases. Exact source/target inclusions transfer this to FULL native Jacobian units at EVERY real mean-zero native base and EVERY nonnegative Sobolev order. The SAME global map now has genuine two-sided OPEN complex analytic weak inverse charts at every real rough base and genuine native analytic inverse charts at every real native base, with full literal raw left/right recovery and exact weak inclusion of the inverse image. The full Jacobian-unit and arbitrary-real-base LOCAL inverse-chart obstructions are CLOSED. NEXT prove global injectivity/surjectivity/properness and one global rough inverse, match all stronger local inverse branches to that SAME rough inverse, extend the canonical matrix to a common COMPLEX mean-zero neighborhood, retain the exact origin/Fourier differential for this global map, and establish the global canonical action-Hamiltonian identifications. Complete Theorem 1.1 and all other complete main rows remain open, together with full frequency formulas/sharp bounds/action descent/fixed-mass corrections and actual KdV/KdV2 PDE conclusions.",
+    "The SAME global signed forward map retains exact canonical physical orientation/full original physical recovery, real symmetry, central zero, actual Gardner matrix at every REAL mean-zero rough source, FULL weak/all-native Jacobian units and genuine two-sided local analytic inverse charts at ALL real mean-zero rough/native bases. NEW: the ACTUAL original eta-gap norm, exact full bounded symbol/reciprocal and literal signed half-order weights prove q in H^s IFF the SAME global signed target lies in h^(s+1/2), EVERY real rough q and EVERY s>=-1, without assuming initial L2 or stronger membership. Actual inverse branches now preserve the physical real form at EVERY real rough base. Symmetric finite real target approximants are compared through two actual real inverse branches: regularity recovers physical L2 sources, ORIGINAL global L2 injectivity compares them, and continuity proves GLOBAL injectivity on the ENTIRE real mean-zero HminusOne space, including NON-L2 sources and closed gaps. The nonlinear regularity and global rough INJECTIVITY obstructions are CLOSED. NEXT prove global SURJECTIVITY/properness or an actual global continuation argument, construct ONE global rough inverse and match all native inverse branches to it. Extend the canonical matrix to a common COMPLEX mean-zero neighborhood, retain the exact origin/Fourier differential for this global map and establish the global canonical action-Hamiltonian identifications. Complete Theorem 1.1 and all other complete main rows remain open, together with full frequency formulas/sharp bounds/action descent/fixed-mass corrections and actual KdV/KdV2 PDE conclusions.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -36119,15 +36266,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 21352,
-    "total_declarations_audited": 43422,
+    "candidate_declarations_audited": 21389,
+    "total_declarations_audited": 43453,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2734,
+    "selected_modules": 2745,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -36219,7 +36366,8 @@
     "arbitrary_all_amplitudes_validation_sequence": "Prior strict evidence retained for all 2698 unchanged selected baseline sources. All nine newly selected own modules strictly rebuilt in dependency order after freezing 2753 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2707 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2707-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2707-module rebuild is claimed.",
     "arbitrary_packets_validation_sequence": "Prior strict evidence retained for all 2707 unchanged selected baseline sources. All ten newly selected own modules strictly rebuilt in dependency order after freezing 2763 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2717 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact ten-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2717-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2717-module rebuild is claimed.",
     "global_forward_validation_sequence": "Prior strict evidence retained for all 2717 unchanged selected baseline sources. All nine newly selected own modules strictly rebuilt in dependency order after freezing 2772 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2726 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2726-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2726-module rebuild is claimed.",
-    "global_jacobian_validation_sequence": "Prior strict evidence retained for all 2726 unchanged selected baseline sources. All eight newly selected own modules strictly rebuilt in dependency order after freezing 2780 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2734 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2734-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2734-module rebuild is claimed."
+    "global_jacobian_validation_sequence": "Prior strict evidence retained for all 2726 unchanged selected baseline sources. All eight newly selected own modules strictly rebuilt in dependency order after freezing 2780 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2734 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2734-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2734-module rebuild is claimed.",
+    "global_injective_validation_sequence": "Prior strict evidence retained for all 2734 unchanged selected baseline sources. All eleven newly selected own modules strictly rebuilt in dependency order after freezing 2791 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2745 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eleven-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2745-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2745-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -37113,6 +37261,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "c84278f1c8a7606c6ba6dbd8c59779582f4dabab",
+      "description": "Prove ALL-order nonlinear rough source/target regularity, actual real-preserving inverse branches and GLOBAL injectivity of the SAME real mean-zero rough map.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The SAME global signed forward map remains genuinely native complex analytic around the ENTIRE real HminusOne space, with exact canonical physical signs/full original physical recovery, real target symmetry, central zero and the actual Gardner matrix at every REAL mean-zero rough source. NEW: ACTUAL Hamiltonian directions hit every retained target unit vector with exact signed half-order weights, proving DENSE RANGE of the full mean-zero derivative. Its ACTUAL compact principal equivalence then proves the FULL weak Jacobian is a unit at EVERY real mean-zero rough source, including NON-L2 bases. Exact source/target inclusions transfer this to FULL native Jacobian units at EVERY real mean-zero native base and EVERY nonnegative Sobolev order. The SAME global map now has genuine two-sided OPEN complex analytic weak inverse charts at every real rough base and genuine native analytic inverse charts at every real native base, with full literal raw left/right recovery and exact weak inclusion of the inverse image. The full Jacobian-unit and arbitrary-real-base LOCAL inverse-chart obstructions are CLOSED. NEXT prove global injectivity/surjectivity/properness and one global rough inverse, match all stronger local inverse branches to that SAME rough inverse, extend the canonical matrix to a common COMPLEX mean-zero neighborhood, retain the exact origin/Fourier differential for this global map, and establish the global canonical action-Hamiltonian identifications. Complete Theorem 1.1 and all other complete main rows remain open, together with full frequency formulas/sharp bounds/action descent/fixed-mass corrections and actual KdV/KdV2 PDE conclusions.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -37170,5 +37330,6 @@
   "arbitrary_rough_all_amplitudes_record": "ARBITRARY_ROUGH_ALL_ACTION_AMPLITUDES.md",
   "arbitrary_rough_full_packets_record": "ARBITRARY_ROUGH_FULL_PACKETS.md",
   "global_rough_abelian_forward_record": "GLOBAL_ROUGH_ABELIAN_FORWARD.md",
-  "global_rough_jacobian_inverse_record": "GLOBAL_ROUGH_JACOBIAN_INVERSE_CHARTS.md"
+  "global_rough_jacobian_inverse_record": "GLOBAL_ROUGH_JACOBIAN_INVERSE_CHARTS.md",
+  "global_rough_injectivity_regularity_record": "GLOBAL_ROUGH_INJECTIVITY_REGULARITY.md"
 }
