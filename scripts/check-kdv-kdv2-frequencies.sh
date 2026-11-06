@@ -3185,6 +3185,64 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/LocalSequenceWeakSpectralActionDescent
   NLS/Articles/KdVKdV2Frequencies/ActualWeakHilbertKdVFrequencyPacket
   NLS/Articles/KdVKdV2Frequencies/ActualHilbertPacketAgreement
+  NLS/KdV/HillHminusCutContourTransfer
+  NLS/KdV/HillHminusPhysicalPrimitivePullback
+  NLS/ComplexAnalysis/CoshSquareCoordinateDerivative
+  NLS/KdV/HillFilledPrimitiveRootQuotient
+  NLS/ComplexAnalysis/TracePrimitivePowerContours
+  NLS/KdV/HillWeightedTraceContourDirections
+  NLS/KdV/HillQuarticContourVariation
+  NLS/KdV/HillPhysicalFrequencyMoments
+  NLS/KdV/HillPhysicalIntrinsicFrequencyMoments
+  NLS/KdV/MiuraAbelianPrimitiveReflection
+  NLS/ZakharovShabat/SourceAbelianMomentPeriodCircle
+  NLS/ZakharovShabat/SourceReflectedPeriodCircle
+  NLS/KdV/MiuraAbelianMomentPair
+  NLS/SequenceSpaces/SignedWeightedMomentPairs
+  NLS/KdV/HillPhysicalMiuraSecondMoment
+  NLS/SequenceSpaces/UniformHolderConvolution
+  NLS/SequenceSpaces/UniformReciprocalMajorant
+  NLS/ZakharovShabat/SourceMidpointProductSharedMajorant
+  NLS/ZakharovShabat/SourcePsiRefinedOffsetExponent
+  NLS/ZakharovShabat/SourcePsiRefinedQuotientTail
+  NLS/ZakharovShabat/SourcePsiSharedQuotientTail
+  NLS/ZakharovShabat/SourcePsiCentralGapBound
+  NLS/ZakharovShabat/SourcePsiSharedActualGapMajorant
+  NLS/ZakharovShabat/SourceAbelianMomentSquareMajorants
+  NLS/ZakharovShabat/SourceAbelianMomentDiagonalCoefficients
+  NLS/ZakharovShabat/SourceAbelianMomentDiagonalNeighborhood
+  NLS/ZakharovShabat/SourcePsiRefinedChiTail
+  NLS/ZakharovShabat/SourcePsiRefinedActualGapTail
+  NLS/ZakharovShabat/SourcePsiRefinedActualGapMajorants
+  NLS/SequenceSpaces/RefinedProductMajorant
+  NLS/ZakharovShabat/SourceAbelianMomentOffDiagonalMajorants
+  NLS/ZakharovShabat/SourceAbelianMomentCubicCoefficients
+  NLS/ZakharovShabat/SourceAbelianMomentOffDiagonalNeighborhood
+  NLS/ZakharovShabat/SourceAbelianMomentLemma20_3
+  NLS/SequenceSpaces/WeightedCubicRows
+  NLS/ZakharovShabat/SourceWeightedSecondMomentSequences
+  NLS/ZakharovShabat/SourceAbelianMomentSquaredGapAtlas
+  NLS/ZakharovShabat/SourceWeightedSecondMomentSums
+  NLS/KdV/HillPhysicalMiuraMomentSum
+  NLS/KdV/MiuraWeightedSecondMoments
+  NLS/KdV/HillHminusWeightedSecondMoments
+  NLS/KdV/PhysicalMiuraFrequencyChart
+  NLS/Articles/KdVConvexity/NativeFiniteGapApproximation
+  NLS/Articles/KdVConvexity/OriginalPositiveActionInsertion
+  NLS/Articles/KdVConvexity/NativeH1PhysicalCompatibility
+  NLS/Articles/KdVConvexity/NativeOriginalFrequencyCompatibility
+  NLS/Articles/KdVConvexity/FiniteGapPhysicalFrequencyIdentity
+  NLS/Articles/KdVConvexity/PhysicalMiuraFrequencyRecovery
+  NLS/KdV/HillRoughFinitePairRegularity
+  NLS/Articles/KdVConvexity/PhysicalFrequencyPairCharts
+  NLS/SequenceSpaces/FinitePairActionIdentity
+  NLS/Articles/KdVConvexity/PhysicalFrequencyPairInvariance
+  NLS/Articles/KdVConvexity/GlobalFrequencyActionDescent
+  NLS/Articles/KdVKdV2Frequencies/GlobalBoundedFrequencyActionCharts
+  NLS/KdV/HillRoughScalarRealityOn
+  NLS/Articles/KdVKdV2Frequencies/GlobalWeakFrequencyNormalization
+  NLS/Articles/KdVKdV2Frequencies/GlobalWeakKdVFrequencyPacket
+  NLS/Articles/KdVKdV2Frequencies/GlobalHilbertWeakFrequencyAgreement
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

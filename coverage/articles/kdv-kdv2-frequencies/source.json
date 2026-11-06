@@ -880,8 +880,19 @@
           "source_clause": "Actual weighted ell2 packet vanishes at zero and has a LINEAR Banach norm bound in the weak action norm on ONE smaller full complex ball",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_actual_weak_hilbert_kdv_frequency_linear_bound",
           "qualification": "COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The new actual SEQUENCE-VALUED result has target ell2 AFTER division by the original positive index and weak domain a BALL NEAR ZERO. It supports the r=2 target at s=-1 in Theorem 1.2(i); it does not provide all 1<r<2 targets or a neighborhood of the ENTIRE nonnegative weak-action cone. The full global weak extension, sharper weighted remainders at other regularities, locally uniform high-index asymptotics, and compactness of the Hilbert derivative correction at EVERY action remain OPEN. Main concavity, local inverse and PDE conclusions and KdV2 weighted sums/mass-renormalized identification remain OPEN."
+        },
+        {
+          "source_clause": "GLOBAL actual weighted ell-infinity Banach-analytic frequency correction on ONE full complex neighborhood of the ENTIRE nonnegative weak-action cone, with physical recovery at EVERY native source",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_global_actual_weak_kdv_frequency_packet",
+          "qualification": "COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The global weak domain and global complex Hilbert/weak compatibility obligations are now proved for a genuine weighted ell-infinity packet. This is not the full finite-r target assertion of Theorem 1.2(i): the previous weighted ell2 packet and its linear norm estimate remain NEAR ZERO, and all 1<r<2 targets and the stronger weighted remainders at other regularities remain OPEN. Locally uniform sharp high-index asymptotics and compactness of the Hilbert derivative correction at EVERY action remain OPEN. The main strict-concavity, local-inverse and PDE conclusions and KdV2 weighted sums/mass-renormalized identification remain OPEN."
+        },
+        {
+          "source_clause": "GLOBAL SAME physical Hilbert gradient and actual weak packet on ONE full complex Hilbert neighborhood retaining the ENTIRE nonnegative Hilbert cone and mapping into the GLOBAL weak domain",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_global_actual_hilbert_weak_kdv_frequency",
+          "qualification": "COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The global weak domain and global complex Hilbert/weak compatibility obligations are now proved for a genuine weighted ell-infinity packet. This is not the full finite-r target assertion of Theorem 1.2(i): the previous weighted ell2 packet and its linear norm estimate remain NEAR ZERO, and all 1<r<2 targets and the stronger weighted remainders at other regularities remain OPEN. Locally uniform sharp high-index asymptotics and compactness of the Hilbert derivative correction at EVERY action remain OPEN. The main strict-concavity, local-inverse and PDE conclusions and KdV2 weighted sums/mass-renormalized identification remain OPEN."
         }
-      ]
+      ],
+      "current_support_summary": "The ACTUAL KdV frequency correction divided by its original positive index now has ONE Banach-analytic weighted ell-infinity extension on a complex-open neighborhood of the ENTIRE nonnegative normalized weak-action cone. It recovers EVERY actual native H1 Hamiltonian frequency with no small-action premise, arbitrary phases, infinite support and all closed gaps. The SAME global weak packet agrees with the actual global Hilbert gradient on ONE full complex Hilbert neighborhood of its ENTIRE nonnegative cone, with the literal weak inclusion, G(0)=0 and full DG(0)=-6*Id retained. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The global weak domain and global complex Hilbert/weak compatibility obligations are now proved for a genuine weighted ell-infinity packet. This is not the full finite-r target assertion of Theorem 1.2(i): the previous weighted ell2 packet and its linear norm estimate remain NEAR ZERO, and all 1<r<2 targets and the stronger weighted remainders at other regularities remain OPEN. Locally uniform sharp high-index asymptotics and compactness of the Hilbert derivative correction at EVERY action remain OPEN. The main strict-concavity, local-inverse and PDE conclusions and KdV2 weighted sums/mass-renormalized identification remain OPEN."
     },
     {
       "label": "Theorem 1.3",
@@ -42154,10 +42165,706 @@
       "scope": "The ACTUAL KdV correction divided by its original positive index now forms ONE Banach-analytic weighted ell2 packet on a common FULL COMPLEX normalized weak-action ball. Absolute convergence of the ENTIRE Hilbert-valued moment series and its norm bound are proved BEFORE coordinate evaluation. The SAME packet recovers every actual native H1 physical Hamiltonian frequency, is real on the entire nonnegative weak locus, agrees with the global physical Hilbert gradient on one full complex intersection, vanishes at zero and obeys a LINEAR ell2 norm bound in the weak action norm on one smaller common ball.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "bd8391894d3acb1783a0bc146226181688abab99dc2353c477193217387a284f"
+    },
+    {
+      "path": "NLS/KdV/HillHminusCutContourTransfer.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1b2629ea8d2260f86fa52c592c813a9c5e228f81e0ee98ff9fc7fc0dd0cfd1c0"
+    },
+    {
+      "path": "NLS/KdV/HillHminusPhysicalPrimitivePullback.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d551d4a8700b59169f03b513d0fb949d67ff451738d163ae67fe3f5cd254eeb1"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CoshSquareCoordinateDerivative.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d3ba87ebfdf68e04a0f359538772c46e909ddd9b394ed6e997461c257739ec86"
+    },
+    {
+      "path": "NLS/KdV/HillFilledPrimitiveRootQuotient.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "78cca10e2761a7282b912e5e167d7c4b0f37d4c0cf83ca77f889cfe368601f60"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TracePrimitivePowerContours.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "51bf3d449237019429e28b9acf5d091815ec6d7d132b908918ea2c8323c7afa0"
+    },
+    {
+      "path": "NLS/KdV/HillWeightedTraceContourDirections.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "998699ae1ccf1f565ef109853924aafe9f665151969e94e3754c9c2ec95b8e70"
+    },
+    {
+      "path": "NLS/KdV/HillQuarticContourVariation.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0b03cf2b2c95b06e7dc52410e14281be130db6d1db8b5d2c7b6ecfc073cbaca7"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalFrequencyMoments.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d9a033a5b0f88507964d0dc6300dceabf74b2027e2151db1d85202969837ab84"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalIntrinsicFrequencyMoments.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5c687449cfb49cc0ab4fc432f95d47242c0ae58d790f305115af4359984b7c23"
+    },
+    {
+      "path": "NLS/KdV/MiuraAbelianPrimitiveReflection.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "21c1b7767d3ba073ef5a13b4fb42ef6231d164e70f985316aa501d9948de98b0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianMomentPeriodCircle.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3fa57035808fdcc3ed794c9dbdb3724b6b29308dd1c99f9f5de9f30b253c0f06"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceReflectedPeriodCircle.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1bc6477cbe7064339c0059693fed66566a70cf31e5d889a3b9a44e0b0edeb1e9"
+    },
+    {
+      "path": "NLS/KdV/MiuraAbelianMomentPair.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d536759f29fb8945ee4d6ebd695d1cf46173d03261fb514a5c225bb585979cd8"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SignedWeightedMomentPairs.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1cb275c1e5f55350c5ffefd79c5008a504ac7ae906bc26abd024b114979a0c08"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalMiuraSecondMoment.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7aaac15c9224f85e9791991b2db3bac52ca381b3f028924eb19d1a3ed5cb8b75"
+    },
+    {
+      "path": "NLS/SequenceSpaces/UniformHolderConvolution.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a7f95dfbcadfb4d21bbeca3611f5ce15041795a3cbe60b2144c60d944b171dfb"
+    },
+    {
+      "path": "NLS/SequenceSpaces/UniformReciprocalMajorant.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0cac95752c81eef0aad11d30f89f0d20d0af29c5a0cd7b9a16883c7e67975d6b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceMidpointProductSharedMajorant.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4171becd537703df60bffd44beb4cc50676300e75a9225d65e897a1893a141d8"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiRefinedOffsetExponent.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f5096491d96971c284ad36c5ed0aba5d26469c4a0b419a5de8096bb568ab70e3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiRefinedQuotientTail.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "311274f73481800a5ef1dcfa03f1ff2f1c9cf687520fec1ed7bd34523063e784"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiSharedQuotientTail.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "520b902469bbcb2cee7c854402af4798aaeb434895376942239e2b7fbdef66f3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiCentralGapBound.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "00e1833a250da9381ca86aafbbc322831e0df971e6223cd908caa6b6431af8ee"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiSharedActualGapMajorant.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d7875c362b18666ea67f8693da656df6e97fcbaef5bf4c8267836faa63d54673"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianMomentSquareMajorants.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2568294bd55ecd3d5b8ab9b674704cf1ef575f7de8caf56a98e86ecff3693fbc"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianMomentDiagonalCoefficients.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b4f26716f4341d1ebe0904ae70bf314d87a99fcc8454f465969d7154044c1162"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianMomentDiagonalNeighborhood.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d6d8651c333718b008d131b1e77add7b36e9749924eac8a414eb2d46dd9fdce7"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiRefinedChiTail.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e20ea99a9fc11c91143d577feb810a7e96c5827ec4e47297ce56b02d21a703f3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiRefinedActualGapTail.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e44a6dcfc980868b1772a505bb37b576cb42aabcd09c7e85f881359836ea55d3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiRefinedActualGapMajorants.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6904468c8bc13fe06c1576021b9c4144e006bb08bf8a6b63e060648e4e0971ff"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RefinedProductMajorant.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "706532eab835bc954140cdf83b9eb45af2aa77ea8932f3ad16d5c63c23bdd5cd"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianMomentOffDiagonalMajorants.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "29c90cce9c2c2908cc6925f16f67ba9c990b9a9aa5cf97eab64fc932317ee67c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianMomentCubicCoefficients.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5f565b5e1daa59e5e34ad493c9902c6341686197ab5dcc90bae2a599c4284995"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianMomentOffDiagonalNeighborhood.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8af20b6f99eedca545c0586b433222ed59237c6c363b8145216a1527153e8c5c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianMomentLemma20_3.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5c0cfc2da30f9cc1587cacb37f8aaa225c905a26baec72c98899532433c725b7"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedCubicRows.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9f54ec03498628fa9485194c72f92d8bb7a730ed9d7d8ed576123038105de166"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedSecondMomentSequences.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fa5c19aa51e9720cdb7d90105ca9b39762212e94a052834a43557dbd0269d387"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianMomentSquaredGapAtlas.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Byte-identical canonical dependency reused for actual global physical KdV moment sums and action descent. Its full proof is strictly rebuilt and audited in this worktree; see SHARED_GLOBAL_PHYSICAL_FREQUENCY_IMPORT.json for pinned source/local hashes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "74f5278f3003a387251d32659d380753823be3c20bc4e9fff1486ec3710deaf1"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedSecondMomentSums.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e8ba2b4cb1ff1c2ac71b268d4a2f083253721e1e63be690ca5adc11bbd3192c"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalMiuraMomentSum.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b91a205e3790939e44e76c3184ca83e84829dd97c1fc9966431987acd67c2e58"
+    },
+    {
+      "path": "NLS/KdV/MiuraWeightedSecondMoments.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7d2541269c44effe5853c31a4b686582615c3647e0d34c80fefa4cf0d0e26aa3"
+    },
+    {
+      "path": "NLS/KdV/HillHminusWeightedSecondMoments.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "552292c92f1a4fb9b9a70d989648675b284cae597918d2883fa8d5a0af4ffd33"
+    },
+    {
+      "path": "NLS/KdV/PhysicalMiuraFrequencyChart.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b5cffaaa20b3d77834adb9a53afdef676c23b823be8de64b19b0d6769f3affc5"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/NativeFiniteGapApproximation.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. Compatibility names delegate to the SAME previously verified native finite-gap approximants, their original Sobolev convergence and literal spectral-gap closures; prior helper bytes are retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0795282e6a1ff19bdf0f71f3a61a98246cbd5a34588311c08f61dd09bd5c4eb0"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/OriginalPositiveActionInsertion.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1a6a61788c2ea3623aabaf5d212a69556ddd3c8a2035c7b161fe1629143bb63e"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/NativeH1PhysicalCompatibility.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "173c6641c930191fefa8c0d9a6ed1a188f6a5fdd021b7ffd85b87f1734728732"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/NativeOriginalFrequencyCompatibility.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "73e50e99a1e578e1611b2138baf91daa44219816747555b145b44c249152c388"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FiniteGapPhysicalFrequencyIdentity.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "82df7c008fb2ea8a04db7ab04235c5005fb6caeffb8baa9f51dad3895102bf00"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalMiuraFrequencyRecovery.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b935eb43f0994842b20b2c1c9691cf16ddfe7596903de1b396d8f1a08836195c"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFinitePairRegularity.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b1e3be37ad2f027e9c74be450e742351384abe64aef4c27d7130b89ffe9fe7b5"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalFrequencyPairCharts.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "65b17df5d5908c0df6d0133d9df835be2b96addf30320a9a491600f29421d636"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FinitePairActionIdentity.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e1fa3e23c56743e1d757c80361d38bf228433fbdc0024f26fba665c2d843d50"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalFrequencyPairInvariance.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bf9d7cc2f53284d5fc1291d71ca759eb8cb31490b56c141c622b0e6788193978"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/GlobalFrequencyActionDescent.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Verified shared convexity-branch dependency for original physical KdV moment sums, physical native recovery and action descent near the ENTIRE weak cone. The imported source is byte-identical to the pinned upstream proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9f874cfac00d5a11428421f73dd2f7f7eb6edc21b4512d6b3f5e3caed80c9e8d"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalBoundedFrequencyActionCharts.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Actual physical source moment bounds give one linear-index bound at EVERY real rough source. The common COMPLEX scalar action chart transfers this bound before every frequency index. Gluing on nonnegative action overlaps preserves the local bounds and yields a common analytic scalar family near the ENTIRE normalized weak cone; every original real pair chart is recovered.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b755d36c4d487cb887fe385afac72ce3cd869a5e2cc89de7ebb9a74a0c482c72"
+    },
+    {
+      "path": "NLS/KdV/HillRoughScalarRealityOn.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Reusable reality transfer on ANY open rough source domain: scalar continuity and reality at all actual native real mean-zero H1 sources imply reality at EVERY real mean-zero H-minus-one source in the domain, by genuine native Fourier approximants. No origin ball restriction remains.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4d4eb608a7e586a522c2322e623182835db4fff958a05e708edb5b33fe2260bd"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalWeakFrequencyNormalization.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "Literal positive sampling transports the SAME original weak actions to the shared positive-label enumeration, preserving exact (1+n)^-1 weights, native actions and Hilbert inclusion. Every nonnegative action point has a genuine real physical pair realization. Actual physical Miura corrections are real on the full real mean-zero rough domain. The global scalar action family recovers EVERY independent native Hamiltonian frequency without a small-action premise.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "427f9231bb624d78a2560754aa9afaf0aef414b787fe3608305ce057a420c635"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalWeakKdVFrequencyPacket.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "ONE genuine Banach-analytic Coeff1-to-Coeff-infinity map on ONE complex-open neighborhood of the ENTIRE nonnegative weak cone has coefficient EXACTLY the actual KdV correction divided by n at EVERY native source, with no source/action smallness restriction. Uniform local family bounds produce actual bounded sequences before Banach analytic realization. Nonpositive output slots vanish and values are real on the entire nonnegative weak cone.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "205ac9532b9b69fb8f448a3b6f7fbc7c52b4932e2306942e008f026279744c6b"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalHilbertWeakFrequencyAgreement.lean",
+      "source_labels": [
+        "ACTUAL global weighted ell-infinity weak KdV extension and full complex Hilbert/weak compatibility near ENTIRE cones; supporting Theorem 1.2, not complete finite-r/asymptotic/compactness claims"
+      ],
+      "source_pages": [
+        4
+      ],
+      "scope": "The ACTUAL KdV frequency correction divided by its original positive index now has ONE Banach-analytic weighted ell-infinity extension on a complex-open neighborhood of the ENTIRE nonnegative normalized weak-action cone. It recovers EVERY actual native H1 Hamiltonian frequency with no small-action premise, arbitrary phases, infinite support and all closed gaps. The SAME global weak packet agrees with the actual global Hilbert gradient on ONE full complex Hilbert neighborhood of its ENTIRE nonnegative cone, with the literal weak inclusion, G(0)=0 and full DG(0)=-6*Id retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a28e275855151f12708be196ebbb549f0fe476b6c496714083c8ad147553312c"
     }
   ],
   "dependencies_needed": [
-    "The ACTUAL KdV correction divided by its original positive index now forms ONE Banach-analytic weighted ell2 packet on a common FULL COMPLEX normalized weak-action ball. Absolute convergence of the ENTIRE Hilbert-valued moment series and its norm bound are proved BEFORE coordinate evaluation. The SAME packet recovers every actual native H1 physical Hamiltonian frequency, is real on the entire nonnegative weak locus, agrees with the global physical Hilbert gradient on one full complex intersection, vanishes at zero and obeys a LINEAR ell2 norm bound in the weak action norm on one smaller common ball. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The new actual SEQUENCE-VALUED result has target ell2 AFTER division by the original positive index and weak domain a BALL NEAR ZERO. It supports the r=2 target at s=-1 in Theorem 1.2(i); it does not provide all 1<r<2 targets or a neighborhood of the ENTIRE nonnegative weak-action cone. The full global weak extension, sharper weighted remainders at other regularities, locally uniform high-index asymptotics, and compactness of the Hilbert derivative correction at EVERY action remain OPEN. Main concavity, local inverse and PDE conclusions and KdV2 weighted sums/mass-renormalized identification remain OPEN.",
+    "The ACTUAL KdV frequency correction divided by its original positive index now has ONE Banach-analytic weighted ell-infinity extension on a complex-open neighborhood of the ENTIRE nonnegative normalized weak-action cone. It recovers EVERY actual native H1 Hamiltonian frequency with no small-action premise, arbitrary phases, infinite support and all closed gaps. The SAME global weak packet agrees with the actual global Hilbert gradient on ONE full complex Hilbert neighborhood of its ENTIRE nonnegative cone, with the literal weak inclusion, G(0)=0 and full DG(0)=-6*Id retained. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The global weak domain and global complex Hilbert/weak compatibility obligations are now proved for a genuine weighted ell-infinity packet. This is not the full finite-r target assertion of Theorem 1.2(i): the previous weighted ell2 packet and its linear norm estimate remain NEAR ZERO, and all 1<r<2 targets and the stronger weighted remainders at other regularities remain OPEN. Locally uniform sharp high-index asymptotics and compactness of the Hilbert derivative correction at EVERY action remain OPEN. The main strict-concavity, local-inverse and PDE conclusions and KdV2 weighted sums/mass-renormalized identification remain OPEN.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
@@ -42185,8 +42892,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 24662,
-    "total_declarations_audited": 46732,
+    "candidate_declarations_audited": 24997,
+    "total_declarations_audited": 47067,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -42195,7 +42902,7 @@
     "main_theorems_verified": [
       "Theorem 1.1"
     ],
-    "selected_modules": 3176,
+    "selected_modules": 3234,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -42318,7 +43025,8 @@
     "physical_hilbert_taylor_validation_sequence": "All 2963 baseline selected sources remain byte-identical. All 186 newly selected modules were strictly rebuilt in dependency order AFTER freezing 3200 selected-source/checker/provenance/pinned-Mathlib-source hashes: 157 imported sources (146 unchanged and 11 with recorded compatibility imports/names), four new compatibility bridges, 20 existing previously unselected sources (19 unchanged from the pinned branch and one retained local BaseContourSeries), and five own comparison/result modules. One unchanged baseline PeriodOneRealFormIdentity source was additionally strictly rechecked after restoring its original bytes during compatibility work; its rebuilt artifact is byte-identical to the artifact used by the authoritative full audit. The combined transitive audit covers all 3149 selected modules and EVERY imported NLS declaration. Exact ordered selection, reachability and the EXACT 186-module import-closure increase were checked. The entire audit loop, collectAxioms traversal, permitted axioms and imported NLS scope remain byte-identical to baseline. The 25 private selection chunks have at most 128 names each; the actual 3149-name bidirectional NameSet probe rejects insertion/deletion mismatches. All 47 prior provenance records remain byte-identical and verified against their pinned source commits. The new SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json records 181 files against articles/kdv-convexity commit 26b85de3342a041e107adc5622160a302031f1c3, including every adaptation and retained local variant. Private outputs and article overlay freshness, unchanged canonical main and pinned Mathlib were checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is an incremental rebuild retaining baseline strict evidence, not a full 3149-module rebuild.",
     "common_hilbert_weak_kdv_validation_sequence": "All 3149 prior selected sources and all 48 prior provenance records remain byte-identical. Five new own modules were strictly rebuilt in dependency order AFTER freezing 3205 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 3154 selected modules and EVERY imported NLS declaration. Exact ordered selection, full selected dependency order, reachability and the EXACT five-module import-closure increase were verified. The entire transitive audit loop, collectAxioms traversal, permitted axioms and imported NLS scope remain byte-identical to baseline. The selection has 25 private chunks, each at most 128 names; the actual 3154-name bidirectional NameSet probe rejects insertion/deletion mismatches. There is no new shared import or canonical reuse record. All private outputs are fresh and correctly linked through the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a FIVE-module incremental rebuild retaining baseline strict evidence, not a full 3154-module rebuild.",
     "bounded_weak_kdv_packet_validation_sequence": "All 3154 prior selected sources and all 48 prior provenance records remain byte-identical. ELEVEN new own modules were strictly rebuilt in dependency order AFTER freezing 3216 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 3165 selected modules and EVERY imported NLS declaration. Exact ordered selection, full selected dependency order, reachability and the EXACT eleven-module import-closure increase were verified. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. The selection has 25 private chunks of at most 128 names; the actual 3165-name bidirectional NameSet probe rejects insertion/deletion mismatches. There is no new shared import or canonical reuse record. All private outputs are fresh and correctly linked through the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is an ELEVEN-module incremental rebuild retaining baseline strict evidence, not a full 3165-module rebuild.",
-    "hilbert_weak_kdv_packet_validation_sequence": "All 3165 prior selected sources and all 48 prior provenance records remain byte-identical. ELEVEN new own modules were strictly rebuilt in dependency order AFTER freezing 3227 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 3176 selected modules and EVERY imported NLS declaration. Exact ordered selection, full selected dependency order, reachability and the EXACT eleven-module import-closure increase were verified. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. The selection has 25 private chunks of at most 128 names; the actual 3176-name bidirectional NameSet probe rejects insertion/deletion mismatches. There is no new shared import or canonical reuse record. All private outputs are fresh and correctly linked through the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is an ELEVEN-module incremental rebuild retaining baseline strict evidence, not a full 3176-module rebuild."
+    "hilbert_weak_kdv_packet_validation_sequence": "All 3165 prior selected sources and all 48 prior provenance records remain byte-identical. ELEVEN new own modules were strictly rebuilt in dependency order AFTER freezing 3227 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 3176 selected modules and EVERY imported NLS declaration. Exact ordered selection, full selected dependency order, reachability and the EXACT eleven-module import-closure increase were verified. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. The selection has 25 private chunks of at most 128 names; the actual 3176-name bidirectional NameSet probe rejects insertion/deletion mismatches. There is no new shared import or canonical reuse record. All private outputs are fresh and correctly linked through the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is an ELEVEN-module incremental rebuild retaining baseline strict evidence, not a full 3176-module rebuild.",
+    "global_weak_kdv_packet_validation_sequence": "All 3176 prior selected sources and all 48 prior provenance records remain byte-identical. FIFTY-EIGHT newly selected modules were strictly rebuilt in dependency order AFTER freezing 3286 selected-source/checker/provenance/pinned-Mathlib-source hashes: FIVE own modules, THIRTY-THREE shared imports (one compatibility adapter), and TWENTY byte-identical canonical reuses. A fresh combined transitive axiom audit covers all 3234 selected modules and EVERY imported NLS declaration. Exact ordered selection, full selected dependency order, reachability and the EXACT 58-module import-closure increase were verified. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Selection uses 26 private chunks of at most 128 names; the actual 3234-name bidirectional NameSet probe rejects insertion/deletion mismatches. One new provenance record pins the convexity branch at 30835fa95c92c06d5a9a953028aed80a965304ae, verifies all 53 dependency source/local hashes, and records the adapter retaining the SAME previously verified native finite-gap approximants. All private outputs are fresh and correctly linked through the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a 58-module incremental rebuild retaining prior strict evidence, not a full 3234-module rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -43590,6 +44298,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "5b47a0940ef157fcc1bddcf73932c2026afa5154",
+      "description": "The ACTUAL KdV frequency correction divided by its original positive index now has ONE Banach-analytic weighted ell-infinity extension on a complex-open neighborhood of the ENTIRE nonnegative normalized weak-action cone. It recovers EVERY actual native H1 Hamiltonian frequency with no small-action premise, arbitrary phases, infinite support and all closed gaps. The SAME global weak packet agrees with the actual global Hilbert gradient on ONE full complex Hilbert neighborhood of its ENTIRE nonnegative cone, with the literal weak inclusion, G(0)=0 and full DG(0)=-6*Id retained.",
+      "entries": [
+        "The ACTUAL KdV correction divided by its original positive index now forms ONE Banach-analytic weighted ell2 packet on a common FULL COMPLEX normalized weak-action ball. Absolute convergence of the ENTIRE Hilbert-valued moment series and its norm bound are proved BEFORE coordinate evaluation. The SAME packet recovers every actual native H1 physical Hamiltonian frequency, is real on the entire nonnegative weak locus, agrees with the global physical Hilbert gradient on one full complex intersection, vanishes at zero and obeys a LINEAR ell2 norm bound in the weak action norm on one smaller common ball. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The new actual SEQUENCE-VALUED result has target ell2 AFTER division by the original positive index and weak domain a BALL NEAR ZERO. It supports the r=2 target at s=-1 in Theorem 1.2(i); it does not provide all 1<r<2 targets or a neighborhood of the ENTIRE nonnegative weak-action cone. The full global weak extension, sharper weighted remainders at other regularities, locally uniform high-index asymptotics, and compactness of the Hilbert derivative correction at EVERY action remain OPEN. Main concavity, local inverse and PDE conclusions and KdV2 weighted sums/mass-renormalized identification remain OPEN.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -43683,5 +44403,6 @@
   "shared_physical_hilbert_taylor_import_record": "SHARED_PHYSICAL_HILBERT_TAYLOR_IMPORT.json",
   "common_hilbert_weak_kdv_record": "COMMON_HILBERT_WEAK_KDV.md",
   "bounded_weak_kdv_packet_record": "BOUNDED_WEAK_KDV_PACKET.md",
-  "hilbert_weak_kdv_packet_record": "HILBERT_WEAK_KDV_PACKET.md"
+  "hilbert_weak_kdv_packet_record": "HILBERT_WEAK_KDV_PACKET.md",
+  "global_weak_kdv_packet_record": "GLOBAL_WEAK_KDV_PACKET.md"
 }

@@ -1,3 +1,61 @@
+import NLS.Articles.KdVKdV2Frequencies.GlobalHilbertWeakFrequencyAgreement
+import NLS.Articles.KdVKdV2Frequencies.GlobalWeakKdVFrequencyPacket
+import NLS.Articles.KdVKdV2Frequencies.GlobalBoundedFrequencyActionCharts
+import NLS.KdV.HillRoughScalarRealityOn
+import NLS.Articles.KdVKdV2Frequencies.GlobalWeakFrequencyNormalization
+import NLS.KdV.HillHminusCutContourTransfer
+import NLS.KdV.HillHminusPhysicalPrimitivePullback
+import NLS.ComplexAnalysis.CoshSquareCoordinateDerivative
+import NLS.KdV.HillFilledPrimitiveRootQuotient
+import NLS.ComplexAnalysis.TracePrimitivePowerContours
+import NLS.KdV.HillWeightedTraceContourDirections
+import NLS.KdV.HillQuarticContourVariation
+import NLS.KdV.HillPhysicalFrequencyMoments
+import NLS.KdV.HillPhysicalIntrinsicFrequencyMoments
+import NLS.KdV.MiuraAbelianPrimitiveReflection
+import NLS.ZakharovShabat.SourceAbelianMomentPeriodCircle
+import NLS.ZakharovShabat.SourceReflectedPeriodCircle
+import NLS.KdV.MiuraAbelianMomentPair
+import NLS.SequenceSpaces.SignedWeightedMomentPairs
+import NLS.KdV.HillPhysicalMiuraSecondMoment
+import NLS.SequenceSpaces.UniformHolderConvolution
+import NLS.SequenceSpaces.UniformReciprocalMajorant
+import NLS.ZakharovShabat.SourceMidpointProductSharedMajorant
+import NLS.ZakharovShabat.SourcePsiRefinedOffsetExponent
+import NLS.ZakharovShabat.SourcePsiRefinedQuotientTail
+import NLS.ZakharovShabat.SourcePsiSharedQuotientTail
+import NLS.ZakharovShabat.SourcePsiCentralGapBound
+import NLS.ZakharovShabat.SourcePsiSharedActualGapMajorant
+import NLS.ZakharovShabat.SourceAbelianMomentSquareMajorants
+import NLS.ZakharovShabat.SourceAbelianMomentDiagonalCoefficients
+import NLS.ZakharovShabat.SourceAbelianMomentDiagonalNeighborhood
+import NLS.ZakharovShabat.SourcePsiRefinedChiTail
+import NLS.ZakharovShabat.SourcePsiRefinedActualGapTail
+import NLS.ZakharovShabat.SourcePsiRefinedActualGapMajorants
+import NLS.SequenceSpaces.RefinedProductMajorant
+import NLS.ZakharovShabat.SourceAbelianMomentOffDiagonalMajorants
+import NLS.ZakharovShabat.SourceAbelianMomentCubicCoefficients
+import NLS.ZakharovShabat.SourceAbelianMomentOffDiagonalNeighborhood
+import NLS.ZakharovShabat.SourceAbelianMomentLemma20_3
+import NLS.SequenceSpaces.WeightedCubicRows
+import NLS.ZakharovShabat.SourceWeightedSecondMomentSequences
+import NLS.ZakharovShabat.SourceAbelianMomentSquaredGapAtlas
+import NLS.ZakharovShabat.SourceWeightedSecondMomentSums
+import NLS.KdV.HillPhysicalMiuraMomentSum
+import NLS.KdV.MiuraWeightedSecondMoments
+import NLS.KdV.HillHminusWeightedSecondMoments
+import NLS.KdV.PhysicalMiuraFrequencyChart
+import NLS.Articles.KdVConvexity.NativeFiniteGapApproximation
+import NLS.Articles.KdVConvexity.OriginalPositiveActionInsertion
+import NLS.Articles.KdVConvexity.NativeH1PhysicalCompatibility
+import NLS.Articles.KdVConvexity.NativeOriginalFrequencyCompatibility
+import NLS.Articles.KdVConvexity.FiniteGapPhysicalFrequencyIdentity
+import NLS.Articles.KdVConvexity.PhysicalMiuraFrequencyRecovery
+import NLS.KdV.HillRoughFinitePairRegularity
+import NLS.Articles.KdVConvexity.PhysicalFrequencyPairCharts
+import NLS.SequenceSpaces.FinitePairActionIdentity
+import NLS.Articles.KdVConvexity.PhysicalFrequencyPairInvariance
+import NLS.Articles.KdVConvexity.GlobalFrequencyActionDescent
 import NLS.Articles.KdVKdV2Frequencies.ActualWeakHilbertKdVFrequencyPacket
 import NLS.Articles.KdVKdV2Frequencies.ActualHilbertPacketAgreement
 import NLS.Articles.KdVKdV2Frequencies.LocalSequenceWeakSpectralActionDescent
@@ -5556,7 +5614,68 @@ private def kdvFrequencyAuditChunk24 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.NativeHilbertKdVFrequencyPacket,
   `NLS.Articles.KdVKdV2Frequencies.LocalSequenceWeakSpectralActionDescent,
   `NLS.Articles.KdVKdV2Frequencies.ActualWeakHilbertKdVFrequencyPacket,
-  `NLS.Articles.KdVKdV2Frequencies.ActualHilbertPacketAgreement
+  `NLS.Articles.KdVKdV2Frequencies.ActualHilbertPacketAgreement,
+  `NLS.KdV.HillHminusCutContourTransfer,
+  `NLS.KdV.HillHminusPhysicalPrimitivePullback,
+  `NLS.ComplexAnalysis.CoshSquareCoordinateDerivative,
+  `NLS.KdV.HillFilledPrimitiveRootQuotient,
+  `NLS.ComplexAnalysis.TracePrimitivePowerContours,
+  `NLS.KdV.HillWeightedTraceContourDirections,
+  `NLS.KdV.HillQuarticContourVariation,
+  `NLS.KdV.HillPhysicalFrequencyMoments,
+  `NLS.KdV.HillPhysicalIntrinsicFrequencyMoments,
+  `NLS.KdV.MiuraAbelianPrimitiveReflection,
+  `NLS.ZakharovShabat.SourceAbelianMomentPeriodCircle,
+  `NLS.ZakharovShabat.SourceReflectedPeriodCircle,
+  `NLS.KdV.MiuraAbelianMomentPair,
+  `NLS.SequenceSpaces.SignedWeightedMomentPairs,
+  `NLS.KdV.HillPhysicalMiuraSecondMoment,
+  `NLS.SequenceSpaces.UniformHolderConvolution,
+  `NLS.SequenceSpaces.UniformReciprocalMajorant,
+  `NLS.ZakharovShabat.SourceMidpointProductSharedMajorant,
+  `NLS.ZakharovShabat.SourcePsiRefinedOffsetExponent,
+  `NLS.ZakharovShabat.SourcePsiRefinedQuotientTail,
+  `NLS.ZakharovShabat.SourcePsiSharedQuotientTail,
+  `NLS.ZakharovShabat.SourcePsiCentralGapBound,
+  `NLS.ZakharovShabat.SourcePsiSharedActualGapMajorant,
+  `NLS.ZakharovShabat.SourceAbelianMomentSquareMajorants
+]
+
+private def kdvFrequencyAuditChunk25 : Array Lean.Name := #[
+  `NLS.ZakharovShabat.SourceAbelianMomentDiagonalCoefficients,
+  `NLS.ZakharovShabat.SourceAbelianMomentDiagonalNeighborhood,
+  `NLS.ZakharovShabat.SourcePsiRefinedChiTail,
+  `NLS.ZakharovShabat.SourcePsiRefinedActualGapTail,
+  `NLS.ZakharovShabat.SourcePsiRefinedActualGapMajorants,
+  `NLS.SequenceSpaces.RefinedProductMajorant,
+  `NLS.ZakharovShabat.SourceAbelianMomentOffDiagonalMajorants,
+  `NLS.ZakharovShabat.SourceAbelianMomentCubicCoefficients,
+  `NLS.ZakharovShabat.SourceAbelianMomentOffDiagonalNeighborhood,
+  `NLS.ZakharovShabat.SourceAbelianMomentLemma20_3,
+  `NLS.SequenceSpaces.WeightedCubicRows,
+  `NLS.ZakharovShabat.SourceWeightedSecondMomentSequences,
+  `NLS.ZakharovShabat.SourceAbelianMomentSquaredGapAtlas,
+  `NLS.ZakharovShabat.SourceWeightedSecondMomentSums,
+  `NLS.KdV.HillPhysicalMiuraMomentSum,
+  `NLS.KdV.MiuraWeightedSecondMoments,
+  `NLS.KdV.HillHminusWeightedSecondMoments,
+  `NLS.KdV.PhysicalMiuraFrequencyChart,
+  `NLS.Articles.KdVConvexity.NativeFiniteGapApproximation,
+  `NLS.Articles.KdVConvexity.OriginalPositiveActionInsertion,
+  `NLS.Articles.KdVConvexity.NativeH1PhysicalCompatibility,
+  `NLS.Articles.KdVConvexity.NativeOriginalFrequencyCompatibility,
+  `NLS.Articles.KdVConvexity.FiniteGapPhysicalFrequencyIdentity,
+  `NLS.Articles.KdVConvexity.PhysicalMiuraFrequencyRecovery,
+  `NLS.KdV.HillRoughFinitePairRegularity,
+  `NLS.Articles.KdVConvexity.PhysicalFrequencyPairCharts,
+  `NLS.SequenceSpaces.FinitePairActionIdentity,
+  `NLS.Articles.KdVConvexity.PhysicalFrequencyPairInvariance,
+  `NLS.Articles.KdVConvexity.GlobalFrequencyActionDescent,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalBoundedFrequencyActionCharts,
+  `NLS.KdV.HillRoughScalarRealityOn,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalWeakFrequencyNormalization,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalWeakKdVFrequencyPacket,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalHilbertWeakFrequencyAgreement
 ]
 
 open Lean in
@@ -5587,7 +5706,8 @@ run_cmd do
     kdvFrequencyAuditChunk21,
     kdvFrequencyAuditChunk22,
     kdvFrequencyAuditChunk23,
-    kdvFrequencyAuditChunk24
+    kdvFrequencyAuditChunk24,
+    kdvFrequencyAuditChunk25
   ].flatten
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
