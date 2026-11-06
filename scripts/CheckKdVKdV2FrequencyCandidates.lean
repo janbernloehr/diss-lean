@@ -1,3 +1,7 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeInfiniteGapKdVFrequency
+import NLS.KdV.HillOriginalSecondMomentSeries
+import NLS.KdV.HillHminusPhysicalMomentIdentification
+import NLS.KdV.HillIntrinsicFrequencyCircleMoments
 import NLS.KdV.HillHminusPhysicalMiuraFrequencySeries
 import NLS.Articles.KdVKdV2Frequencies.NativeSpectralMomentApproximation
 import NLS.KdV.HillHminusMiuraPhysicalNumerators
@@ -5095,7 +5099,11 @@ private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
 private def kdvFrequencyAuditChunk23 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.NativeSpectralMomentApproximation,
   `NLS.KdV.HillHminusMiuraPhysicalNumerators,
-  `NLS.KdV.HillHminusPhysicalMiuraFrequencySeries
+  `NLS.KdV.HillHminusPhysicalMiuraFrequencySeries,
+  `NLS.KdV.HillIntrinsicFrequencyCircleMoments,
+  `NLS.KdV.HillHminusPhysicalMomentIdentification,
+  `NLS.KdV.HillOriginalSecondMomentSeries,
+  `NLS.Articles.KdVKdV2Frequencies.NativeInfiniteGapKdVFrequency
 ]
 
 open Lean in

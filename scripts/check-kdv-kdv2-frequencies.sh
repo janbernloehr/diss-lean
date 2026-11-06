@@ -2956,6 +2956,10 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/NativeSpectralMomentApproximation
   NLS/KdV/HillHminusMiuraPhysicalNumerators
   NLS/KdV/HillHminusPhysicalMiuraFrequencySeries
+  NLS/KdV/HillIntrinsicFrequencyCircleMoments
+  NLS/KdV/HillHminusPhysicalMomentIdentification
+  NLS/KdV/HillOriginalSecondMomentSeries
+  NLS/Articles/KdVKdV2Frequencies/NativeInfiniteGapKdVFrequency
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
