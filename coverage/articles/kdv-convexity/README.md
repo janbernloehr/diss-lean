@@ -3011,7 +3011,41 @@ These estimates and continuity results are inputs toward realizing the
 whole positive action cone and proving analytic action descent. They do
 not establish norm compactness, properness, global Cartesian inversion
 or the action-fiber/discriminant identity. The unconditional positive
-ell2 extension and all main Theorems 1.1-1.3 remain open.
+ell2 extension and all main Theorems 1.1-1.3 remain open. The subsequent
+action-cone realization milestone below removes the onto obligation.
+
+## Actual realization of the whole nonnegative action cone
+
+`GlobalArnoldSurjectivity.lean` proves that **every nonnegative element of
+weighted ell^(-1,1)** is the actual full Hill action sequence of a real
+mean-zero H^-1 source. In particular every point of the positive ell2
+quadrant is realized, including zero coordinates and its entire boundary.
+There is no smallness, strict positivity or finite-support hypothesis.
+The actual analytic Arnold map near all real sources is onto this cone.
+
+`HillFiniteActionRealization.lean` uses the actual original global L2
+Birkhoff inverse to realize every finite nonnegative action prescription.
+`FiniteArnoldRealization.lean` realizes each literal finite head of a
+weighted action sequence without changing its raw action normalization.
+The ground-energy estimate bounds actual real mean-zero L2 Miura factors
+of those sources. `HillActionCoefficientLimits.lean` extracts a
+coefficientwise factor limit in L2 and reconstructs the actual rough
+Hill source by subtracting its exact zero-mode energy. Continuity of the
+original higher Dirac actions and the Hill=2*Dirac level-1 identity recover
+every prescribed action. No strong convergence or norm conservation of
+the factors is assumed.
+
+`HillConstantActionCurves.lean` also proves that every differentiable real
+mean-zero original L2 curve preserving all Hill actions has constant
+full discriminant, at every complex energy. This gives the stationarity
+step toward the action-fiber identity; existence of suitable curves
+between all equal-action sources remains to be proved.
+
+This removes the action-cone realization obligation. Equal-action
+invariance of the discriminant and analytic descent/gluing are still
+needed for the global analytic extension in Theorem 1.1. This result does
+not assert global Cartesian-coordinate surjectivity. All main Theorems
+1.1-1.3 remain open.
 
 ## Remaining essential KdV work
 
@@ -3099,22 +3133,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `79e1626` contains 685 source modules, whose
-source hashes remain unchanged. The private dependency build checks
-1469 exact shared sources, 34 integration adaptations and six authored
-modules with Lean 4.33.1/mathlib v4.33.1 and `warningAsError=true`.
-Completed checks are retained across resumes only when source, private
-object and selected dependency object hashes match. All 1509 new module
-checks pass. The reproduction script lists 2194 NLS modules. The
-positive-index example, combined transitive axiom audit and 1497 coverage
-declaration checks pass. The 2791 inherited byte-identical reference
-sources are not rebuilt. This is incremental dependency validation,
-not a full repository rebuild.
+The validated baseline at `1175054` contains 2194 source modules, whose
+source hashes remain unchanged. Five new authored modules pass strict
+Lean 4.33.1/mathlib v4.33.1 compilation with `warningAsError=true`.
+The reproduction script lists 2199 NLS modules. The positive-index
+example, combined transitive axiom audit and 1514 coverage declaration
+checks pass. Earlier dependency-build receipts remain in the parent
+commit. Inherited reference imports were not rebuilt. This is incremental
+dependency validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
 helpers and all declarations originating in 751 additional shared modules:
-16991 declarations in total, transitively. Only `propext`,
+17024 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

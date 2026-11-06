@@ -1546,10 +1546,27 @@
         "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.ground_factor_norm_sq_le_signed_norm",
         "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.norm_source_le_signed_norm",
         "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.positive_physical_action_norm",
-        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.physical_gap_closed_of_signed_zero"
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.physical_gap_closed_of_signed_zero",
+        "NLS.KdV.hillFiniteActionTarget",
+        "NLS.KdV.hillFiniteActionTarget_apply",
+        "NLS.KdV.exists_hillOriginalSource_finite_actions",
+        "NLS.KdV.hillNormalizedMiuraSource",
+        "NLS.KdV.hillNormalizedMiuraSource_real",
+        "NLS.KdV.hillNormalizedMiuraSource_zero",
+        "NLS.KdV.hillNormalizedMiuraSource_action",
+        "NLS.KdV.exists_hillSource_of_bounded_factor_action_limits",
+        "NLS.Articles.KdVConvexity.baseActionHeadSet",
+        "NLS.Articles.KdVConvexity.mem_baseActionHeadSet",
+        "NLS.Articles.KdVConvexity.exists_source_finite_Arnold_head",
+        "NLS.Articles.KdVConvexity.exists_source_of_nonnegative_Arnold_actions",
+        "NLS.Articles.KdVConvexity.exists_global_analytic_Arnold_map_onto_cone",
+        "NLS.Articles.KdVConvexity.exists_source_of_positive_ell2_actions",
+        "NLS.KdV.hillHminusTrace_variation_zero_of_original_action_germ_kernel",
+        "NLS.KdV.hillOriginalTrace_derivative_zero_on_constant_action_curve",
+        "NLS.KdV.hillOriginalTrace_eq_on_constant_action_curve"
       ],
       "remaining": [
-        "Complete actual target realization and analytic action descent on the whole positive action cone. The actual global rough forward data, all-real local weak inverses and global real mean-zero injectivity are now available here. The original Arnold actions equal the calibrated positive quadratic coordinates at every real Hminus1 source, and their exact weighted norm controls intrinsic ground energy and the full mean-zero Hminus1 source norm globally. These are genuine a priori bounds; boundedness alone does not prove norm compactness, properness or surjectivity. The new continuity of every higher Dirac action under bounded coefficient limits supplies a spectral limit input. Prove the necessary reconstruction/action-cone realization and the action-fiber/discriminant identity, then instantiate a global analytic contour extension on the whole positive ell2 quadrant. Identify the physical renormalized Hamiltonian/frequencies and -6*Id and complete Theorems 1.1-1.3. All main theorems remain open.",
+        "The entire nonnegative weighted ell1 action cone now has actual real mean-zero Hminus1 preimages, hence so does the whole positive ell2 quadrant including its boundary. Prove equal Hill actions determine the mean-zero discriminant, construct analytic action germs from the actual real local weak inverses and glue the scalar moment family with its uniform local quadratic bounds. Then identify the physical renormalized Hamiltonian/frequencies and -6*Id and complete Theorems 1.1-1.3. Action-cone surjectivity does not assert full rough Cartesian surjectivity or complete the global analytic extension.",
         "Identify the actual Arnold periods with the action coordinates of the same global H^-1 KdV Birkhoff map used in the article. The proved estimates concern the constructed spectral periods, not an arbitrary coordinate map.",
         "Instantiate the proved spectral-coordinate extension theorem using the actual global KdV Birkhoff realization and its real Arnold-action and action-fiber/discriminant identities. Common-neighborhood moment construction, finite central periods, analytic descent and ell2 summation/differentiation are already proved with their explicit inputs.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -4056,5 +4073,31 @@
     "library_reuse_manifest": "coverage/articles/kdv-convexity/global-ground-library-reuse.json",
     "inherited_reference_import_source_count": 2791,
     "inherited_reference_import_closure_rebuilt_this_milestone": false
+  },
+  "global_Arnold_action_cone_surjectivity_progress": {
+    "status": "proved_and_strictly_validated",
+    "new_modules": [
+      "NLS.KdV.HillFiniteActionRealization",
+      "NLS.KdV.HillActionCoefficientLimits",
+      "NLS.Articles.KdVConvexity.FiniteArnoldRealization",
+      "NLS.Articles.KdVConvexity.GlobalArnoldSurjectivity",
+      "NLS.KdV.HillConstantActionCurves"
+    ],
+    "finite_physical_action_realization": true,
+    "bounded_factor_action_limit_reconstruction": true,
+    "all_nonnegative_weighted_ell1_actions_have_actual_real_mean_zero_Hminus1_preimages": true,
+    "all_positive_ell2_quadrant_points_have_actual_real_mean_zero_Hminus1_preimages": true,
+    "zero_coordinates_and_infinite_dimensional_boundary_included": true,
+    "finite_support_smallness_or_strict_positivity_required": false,
+    "strong_factor_compactness_or_norm_conservation_assumed": false,
+    "construction": "Realize finite action heads with the actual original global L2 Birkhoff inverse. Intrinsic ground-factor coercivity bounds their real mean-zero L2 Miura factors. Coefficient compactness supplies a real mean-zero L2 factor limit. Every original level-1 Dirac action converges along this subsequence; the exact Hill=2*Dirac higher-action identity identifies all limiting prescribed Hill actions. Subtraction of the actual limit norm squared makes the reconstructed Hill source mean zero.",
+    "main_declaration": "NLS.Articles.KdVConvexity.exists_source_of_nonnegative_Arnold_actions",
+    "unconditional_map_declaration": "NLS.Articles.KdVConvexity.exists_global_analytic_Arnold_map_onto_cone",
+    "positive_ell2_declaration": "NLS.Articles.KdVConvexity.exists_source_of_positive_ell2_actions",
+    "global_rough_Cartesian_surjectivity_proved": false,
+    "equal_actions_determine_discriminant_proved": false,
+    "global_analytic_action_descent_proved": false,
+    "discriminant_constant_on_differentiable_physical_constant_action_curves": true,
+    "Theorem_1_1_complete": false
   }
 }

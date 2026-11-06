@@ -1,3 +1,5 @@
+import NLS.KdV.HillConstantActionCurves
+import NLS.Articles.KdVConvexity.GlobalArnoldSurjectivity
 import NLS.Articles.KdVConvexity.GlobalArnoldCoercivity
 import NLS.ZakharovShabat.SourceHigherActionCoefficientContinuity
 import NLS.KdV.HillMiuraCriticalEnergyBound
