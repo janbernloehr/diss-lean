@@ -2817,6 +2817,11 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealDiffeomorphisms
   NLS/SequenceSpaces/PhysicalRealMeanZeroWeighted
   NLS/Articles/KdVKdV2Frequencies/GlobalRawSobolevDiffeomorphisms
+  NLS/SequenceSpaces/ComplexHilbertPhaseFiber
+  NLS/KdV/HillActionPreservingCurves
+  NLS/KdV/HillBirkhoffIsospectral
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughInverseSourceContinuity
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughActionIsospectral
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

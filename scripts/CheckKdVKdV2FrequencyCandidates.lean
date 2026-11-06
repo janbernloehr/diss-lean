@@ -1,3 +1,8 @@
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughInverseSourceContinuity
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionIsospectral
+import NLS.SequenceSpaces.ComplexHilbertPhaseFiber
+import NLS.KdV.HillActionPreservingCurves
+import NLS.KdV.HillBirkhoffIsospectral
 import NLS.Articles.KdVKdV2Frequencies.GlobalRawSobolevDiffeomorphisms
 import NLS.SequenceSpaces.PhysicalRealMeanZeroWeighted
 import NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealDiffeomorphisms
@@ -4811,7 +4816,12 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealInverse,
   `NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealDiffeomorphisms,
   `NLS.SequenceSpaces.PhysicalRealMeanZeroWeighted,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalRawSobolevDiffeomorphisms
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRawSobolevDiffeomorphisms,
+  `NLS.SequenceSpaces.ComplexHilbertPhaseFiber,
+  `NLS.KdV.HillActionPreservingCurves,
+  `NLS.KdV.HillBirkhoffIsospectral,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughInverseSourceContinuity,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionIsospectral
 ]
 
 open Lean in
