@@ -3603,6 +3603,29 @@ the whole extension domain. The printed equation (1.7) is explicitly
 refuted; the other assertions are proved in their original domains,
 quantifiers, topologies and physical normalization.
 
+## Actual Fourier-Lebesgue Miura preparation for Theorem 1.2
+
+`HillHminusMiuraChart.fourierLebesgue_iff` proves the exact actual Miura
+source/lift regularity shift for EVERY finite p>=2 and every real s>=-1/2,
+including the endpoint, arbitrary source size and infinite support.
+A strict Holder embedding retains a positive 1/(2*p) Hilbert margin.
+The actual product H^t times H^t maps bounded bilinearly into H^(t-d)
+for every d>1/2. The exact unit-period mass resolvent gains one derivative
+with a native norm bound uniform in the Banach exponent.
+
+`exists_hillHminus_real_Miura_all_fourierLebesgue_chart` chooses ONE
+complex rough chart before ALL stronger orders and finite exponents.
+The SAME lift is analytic in the original native stronger norms, with
+exact raw coefficient agreement. Its Sobolev clause includes p=2; its
+Fourier-Lebesgue clause includes every real p>2. The chart retains its
+real form, zero-free energy shift and EVERY original physical Hill label.
+No heartbeat, linter or instance-priority override is used.
+
+This is preparation for Theorem 1.2. The exact Fourier-Lebesgue criterion
+for the SAME physical Birkhoff map, its analytic inverse, restricted
+derivative inverses and surjectivity remain essential open work.
+Theorem 1.3 remains open. Corrected Theorem 1.1 is unchanged.
+
 ## Remaining essential KdV work
 
 1. Complete Theorem 1.2 for the same actual physical Birkhoff map on every
@@ -3667,19 +3690,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `2befeb3` contains 2527 proof sources, whose
+The validated baseline at `30835fa` contains 2537 proof sources, whose
 hashes remain unchanged. All 10 new authored modules pass strict Lean
-compilation with default proof limits, no linter overrides and no instance
-priority changes. Reproduction lists 2537 modules. The positive-index
-example, combined transitive audit and 2815 coverage-name checks pass.
+compilation with default proof limits and no linter or instance-priority
+overrides. Reproduction lists 2547 modules. The positive-index example,
+combined transitive audit and 2849 coverage-name checks pass.
 All 2852 remaining reference imports agree byte-for-byte and were not
 rebuilt. Earlier receipts remain in the parent commit. This is incremental
 validation, not a full repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 909 additional shared modules:
-19804 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 917 additional shared modules:
+19866 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
