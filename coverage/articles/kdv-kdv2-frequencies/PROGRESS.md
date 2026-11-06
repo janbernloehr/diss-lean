@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual native eta Fourier principal
+## Latest full signed Fourier principal of the SAME actual map
+
+The SAME actual signed Z,R now retain their FULL native Fourier/Miura principal plus compact at EVERY eligible real base and ALL t>=0. The actual positive symbol is uniformly nonzero on ONE complex rough ball, with its exact native analytic reciprocal. ONE actual chart, original root-data witness, ALL genuine native Miura lift germs and one constant physical sign selection precede all orders and source points. Native signed germs include EXACTLY to the SAME Z at EVERY complex point of conjugation-invariant OPEN COMPLEX neighborhoods. The derivative comparison holds at every physically real point in those neighborhoods. See `NATIVE_SIGNED_FOURIER_PRINCIPAL.md`.
+
+All earlier inverse, physical, regularity, global-coordinate and mass identities are retained. Exact native mean-zero principal equivalence, full Jacobian Fredholm/invertibility, arbitrary-real-base inverse analyticity and global rough extension remain obligations. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2658 unchanged selected baseline sources. All 12 newly selected own modules strictly rebuilt in dependency order after freezing 2716 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2670 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 12-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new reuse/import record is needed because no new canonical prerequisite is selected. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2670-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2670-module rebuild is claimed.
+
+Fresh audit: 20954 selected and 43024 imported NLS declarations; permitted axioms only. Twelve new own modules contain 19 explicit theorems.
+
+## Earlier actual native eta Fourier principal
 
 The ACTUAL weighted eta derivative now has its exact Fourier principal with compact remainder. Its original normalized action root and angular phase give native analytic bounded reciprocal multipliers; both signs and every signed index share one local complex domain and bound. On the SAME actual Hill Dirichlet source the positive free factor is EXACTLY 2*i times the native H^t weight isometry. Through a genuine native germ of the SAME actual Miura chart, ANY native realization of the original rough eta coefficients has the additional exact free mass-zero inverse factor. See `NATIVE_ETA_FOURIER_PRINCIPAL.md`.
 

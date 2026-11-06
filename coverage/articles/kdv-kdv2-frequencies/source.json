@@ -277,6 +277,11 @@
           "source_clause": "The actual weighted own-index eta derivative has its exact normalized Fourier principal and compact remainder through the SAME native Miura lift at eligible real bases in every native Sobolev order",
           "lean_declaration": "NLS.KdV.HillHminusPsiChart.isCompactOperator_native_eta_derivative_sub_principal",
           "qualification": "ANY native realization F of the SAME actual rough Hill eta coefficients has derivative equal to the literal normalization/phase multiplier times 2*i times the H^t weight isometry times the ACTUAL free mass-zero Miura inverse, plus compact, at every eligible base whose actual lift is physically real. The supplied original chart, root-data witness, genuine analytic native Miura germ and its exact rough inclusion are retained. Equality of native eta germs is proved from their exact coefficients on a complex neighborhood; no new eta map or right inverse is substituted. This comparison does not yet establish the full signed mean-zero Birkhoff Jacobian invertibility."
+        },
+        {
+          "source_clause": "The SAME actual Z,R retain all prior inverse/physical identities and ALL native full signed Fourier/Miura compact derivative germs, with a uniformly nonzero full positive symbol/reciprocal and retained original chart/root/lift witnesses",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_signed_fourier_forward_inverse",
+          "qualification": "The SAME actual signed forward/inverse pair Z,R retains EVERY previous weak complex inverse, physical real form, real Sobolev membership endpoint, stronger forward germ, original physical L2 representative, fixed GLOBAL original Birkhoff coordinate, exact mass, all-order analytic inverse germ at ZERO and full signed eta compact germ. It NOW also has the actual FULL signed Fourier/Miura principal plus compact for ALL native orders and eligible real bases on ONE smaller complex rough ball, with the actual full positive symbol lower bounds/reciprocal and retained root/lift witnesses. Complete mean-zero Jacobian invertibility, arbitrary-real-base inverse analyticity, global rough extension and the complete main theorems are not inferred."
         }
       ]
     },
@@ -35101,12 +35106,156 @@
       "scope": "ANY native realization F of the SAME actual rough Hill eta coefficients has derivative equal to the literal normalization/phase multiplier times 2*i times the H^t weight isometry times the ACTUAL free mass-zero Miura inverse, plus compact, at every eligible base whose actual lift is physically real. The supplied original chart, root-data witness, genuine analytic native Miura germ and its exact rough inclusion are retained. Equality of native eta germs is proved from their exact coefficients on a complex neighborhood; no new eta map or right inverse is substituted. This comparison does not yet establish the full signed mean-zero Birkhoff Jacobian invertibility.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "e18b3583c64579bd025470e1f06a464e230ebb830d2abf4f355ca050e79c133b"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveAnalyticReciprocal.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A native infinity symbol uniformly nonzero on positive slots at one base has a common positive lower bound on ONE complex neighborhood. Actual positive symbols bounded away from zero have native analytic reciprocals with exact inverse coefficients, product one on every positive slot, zero nonpositive slots and the explicit inverse norm bound. No inverse on the whole coefficient space is inferred from a positive-slot identity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "77b112a5029a64bcadbe2796b50d52da60967d078ac9173b20d174dda2336544"
+    },
+    {
+      "path": "NLS/KdV/HillHminusMidpointLowerBound.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL normalized midpoint equals the labelled actual Dirac endpoint sum divided by 2*(1+n), preserving the original source phase exactly. The verified positive endpoint-sum comparison gives a uniform positive lower bound at EVERY real actual lift, including all low/closed gaps. The SAME native midpoint symbol has a bounded analytic reciprocal on ONE complex neighborhood before all positive indices.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e68afa300de775ffbda3fd7f0cf7556346b9eaeeb6c7388f9903faf187b75831"
+    },
+    {
+      "path": "NLS/KdV/HillHminusNoncentralPhaseReciprocal.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The literal FULL exp(i*actual noncentral beta) and exp(-i*actual noncentral beta) are native analytic reciprocal positive symbols on ONE complex domain before ALL indices. The uniform actual beta bound gives BOTH norm bounds and a strictly positive lower bound, even at complex sources. No phase-tail assumption or replacement by a real/amplitude-only factor is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8e38f153aacb2f94129b512e339aed9e7960fe132b3810aa52f55e5513e96c89"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/RoughInvertibleActionSymbol.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ONE complex rough ball before all positive indices supports the ACTUAL normalized action amplitude with its exact original physical normalization, zero nonpositive slots, native analyticity, upper norm bound and lower coefficient bound 1/8. Its ACTUAL positive reciprocal is native analytic, bounded by 8, and has exact inverse coefficients and product one.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aff0d0d84aa5528450dc84494148c74745c0844ae57a734bf20f251bb5398c40"
+    },
+    {
+      "path": "NLS/KdV/HillHminusRetainedMiuraEtaChart.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY real rough base ONE actual Hill chart retains the original root-data witness, real lift rule, energy shift, outside-spectrum condition, all original endpoint labels and ALL genuine complex native Sobolev germs of the SAME Miura lift. Any GIVEN native eta realization has the exact Fourier/Miura principal plus compact through those retained witnesses. The chart is not replaced by an unrelated existential map.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b29d9d6bb0661e200bccc77b7ff0d4d2252fbde6f26003b7e5d5ed0c4b781490"
+    },
+    {
+      "path": "NLS/KdV/HillHminusSobolevAbelianFourierPrincipal.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The full actual Abelian symbol derivative remainder composes with the actual eta Fourier comparison for the SAME supplied native packet. Its explicit principal is multiplication(FULL sigma) times multiplication(actual inverse-root/phase mu) times 2*i times weightIsometry_t times the actual free mass-zero inverse. The remainder is compact at each eligible physically real base; no signed mean-zero invertibility is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "17cae6f5913c3dd371218ae5b17c9dacc14839b9153f0199f6eceaea38fde80a"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/RoughAbelianFourierData.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ONE constructed actual chart, original root witness, ALL native Miura lift germs, full positive symbol and native reciprocal precede all Sobolev orders, sources and output indices. The literal FULL symbol is action amplitude times actual normalized midpoint times full noncentral phase. It has uniform positive lower and upper bounds on the WHOLE common COMPLEX rough ball and exact reciprocal coefficients. The SAME actual packet is analytic, equals that full symbol times its original own-index eta, has a native bound/zero nonpositive slots, and retains every original physical positive square identity off the original sheet, including low/closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d6a297d1d1bfa58a9fba5426b3a343f9a2e7f522457c49201950d4f9bdd1ac20"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/RoughAbelianFourierGerms.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For the SAME full actual packet and retained data, ALL native orders t>=0 and eligible REAL bases have complex analytic H^(t-1)-to-ell2 weighted packet germs. Every complex point retains exact original coefficients, domain and norm bound. At EVERY real point in the native neighborhood the actual derivative differs compactly from the explicit FULL Fourier/Miura principal. The real-base derivative comparison is not asserted at arbitrary nonreal points.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "357388f4e8b1278c40d1c0e02a34615e71ae66344c1a9f2d39fefffa19079026"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualPositiveAbelianFourier.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ANY GIVEN actual positive physical coordinate map has native analytic weighted germs with its FULL Fourier principal plus compact at every physically real point. ONE smaller rough ball and ONE constant infinite physical sign selection precede ALL orders, bases and indices. Exact actual weak-map recovery holds throughout the WHOLE complex ball. The SAME original chart, root witness, actual native Miura lifts, full positive symbol lower/upper bounds and exact reciprocal are retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5e4633fb8c0055b2a5f081a88f645bfcb9fea07793db1192fe322249461a9a25"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SobolevSignedRealCompactGerm.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Genuine native complex positive germs with real-base compact principal comparisons give FULL signed native complex germs. Their open complex neighborhoods are explicitly invariant under actual physical source conjugation. Literal inclusion to the SAME weak signed completion, exact half-order target weights and a common norm bound hold at EVERY complex point. At EVERY physically real point the signed derivative has the exact sum of the positive and reflected actual principal operators plus compact.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "51f9d85eee38d49032ee735059b8d09367e2ba91017114c8088f26ad38fc006d"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualSignedAbelianFourier.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ANY GIVEN actual full signed physical weak map Z has full native complex Fourier compact derivative germs for ALL orders and eligible REAL bases in ONE smaller rough ball. ONE retained actual chart/root-data witness, all genuine native Miura lift germs, uniformly nonzero FULL positive symbol/reciprocal and constant physical signs precede those quantifiers. Each conjugation-invariant OPEN COMPLEX native germ includes EXACTLY to THAT SAME Z at EVERY complex point. At EVERY real point its actual derivative differs compactly from the exact positive Fourier/Miura principal plus the actual reflected principal after literal native target-weight transport. Mean-zero principal equivalence/Fredholm/invertibility and arbitrary-base inverse analyticity are still obligations.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7c72977e9e7b6829c488771822e982e83462c8a6e297fd60eb9f75248ebbfcaf"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughSignedFourierForwardInverse.lean",
+      "source_labels": [
+        "Actual full signed Fourier/Miura compact derivative and full positive-symbol lower bounds for the SAME map, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The SAME actual signed forward/inverse pair Z,R retains EVERY previous weak complex inverse, physical real form, real Sobolev membership endpoint, stronger forward germ, original physical L2 representative, fixed GLOBAL original Birkhoff coordinate, exact mass, all-order analytic inverse germ at ZERO and full signed eta compact germ. It NOW also has the actual FULL signed Fourier/Miura principal plus compact for ALL native orders and eligible real bases on ONE smaller complex rough ball, with the actual full positive symbol lower bounds/reciprocal and retained root/lift witnesses. Complete mean-zero Jacobian invertibility, arbitrary-real-base inverse analyticity, global rough extension and the complete main theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d61e1cd1eb1981ff65efbbe0c62a2ce7641181cb1c1dc7ebc1a28943d6b09c9e"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The ACTUAL weighted eta/Fourier derivative comparison is NOW proved, with its literal bounded invertible inverse-root/phase multiplier. At every eligible physically real native Miura base and all t>=0, the exact principal is multiplication(mu)*2*i*weightIsometry_t. ANY native realization of the SAME original rough Hill eta coefficients, through a supplied genuine analytic Miura germ and retained original root-data witness, has the exact additional free mass-zero inverse factor and compact remainder. All previous full signed compact germs for the SAME Z,R remain. NEXT retain those witnesses in ONE common full signed family, prove actual full Abelian leading-symbol lower bounds (amplitude, normalized Dirac midpoint and noncentral phase), compose the new eta principal into the full signed derivative, restrict to the exact native mean-zero charts, and prove full Jacobian Fredholm/invertibility and inverse analyticity at EVERY eligible real base. Arbitrary-base/GLOBAL rough extension/inversion and the remaining Hamiltonian/frequency/PDE conclusions remain. Eta normalization invertibility does not by itself establish invertibility of the full signed Birkhoff principal.",
+    "The SAME actual Z,R NOW retain the FULL signed native Fourier/Miura principal plus compact at EVERY eligible REAL native base and ALL orders, with exact complex weak-map inclusion on conjugation-invariant OPEN COMPLEX neighborhoods. ONE retained actual chart/root-data witness and genuine native Miura lift family, ONE uniformly nonzero FULL positive Abelian symbol with an exact native analytic reciprocal, and ONE infinite constant physical sign selection precede all orders/sources/indices. Actual action amplitude, normalized midpoint (including low/closed modes), FULL noncentral phase, inverse-root/phase eta normalization, 2*i, physical free mass-zero inverse and target half-order weights are retained literally. NEXT identify the signed principal as a bounded equivalence on the EXACT native mean-zero charts, prove the full actual Jacobian Fredholm/invertibility and stronger inverse analyticity at EVERY eligible real base, then establish arbitrary-base/GLOBAL rough Birkhoff extension/inversion and remaining Hamiltonian/frequency/PDE conclusions. Full positive-symbol nonvanishing and Fourier compactness are now proved, but do not alone prove these remaining main assertions.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -35132,15 +35281,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 20859,
-    "total_declarations_audited": 42931,
+    "candidate_declarations_audited": 20954,
+    "total_declarations_audited": 43024,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2658,
+    "selected_modules": 2670,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -35224,7 +35373,8 @@
     "native_sobolev_inverse_validation_sequence": "Prior strict evidence retained for all 2603 unchanged selected baseline sources. All seven new own modules strictly rebuilt in dependency order after freezing 2654 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2610 selected modules. Exact checker/audit/coverage/evidence selection, selected dependency order, reachability and the exact seven-module increase in NLS import closure verified. All 41 verified provenance records and all baseline sources remain unchanged; no new shared import or adaptation is needed. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, allowed axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. The 2610-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2610-module rebuild is claimed.",
     "native_compact_factors_validation_sequence": "Prior strict evidence retained for all 2610 unchanged selected baseline sources. All eight new own modules strictly rebuilt in dependency order after freezing 2662 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2618 selected modules. Exact checker/audit/coverage/evidence selection, selected dependency order, reachability and the exact eight-module increase in NLS import closure verified. All 41 verified provenance records and all baseline sources remain unchanged; no new shared import or adaptation is needed. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, allowed axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. The 2618-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2618-module rebuild is claimed.",
     "native_signed_compact_validation_sequence": "Prior strict evidence retained for all 2618 unchanged selected baseline sources. All nine newly selected modules (eight own and one unchanged shared reuse) strictly rebuilt in dependency order after freezing 2672 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2627 selected modules. Exact checker/audit/coverage/evidence selection, selected dependency order, reachability and the exact nine-module increase in NLS import closure verified. All 41 prior verified provenance records and all baseline sources remain unchanged. One NEW canonical reuse record verifies the already present shared SignChange source byte-for-byte against clean main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec; no source adaptation is needed. All 42 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, allowed axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. The 2627-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2627-module rebuild is claimed.",
-    "native_eta_fourier_validation_sequence": "Prior strict evidence retained for all 2627 unchanged selected baseline sources. All 31 newly selected modules (eight own and 23 unchanged canonical reuses) strictly rebuilt in dependency order after freezing 2704 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2658 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 31-module increase in NLS import closure verified. All 42 prior verified provenance records remain byte-for-byte unchanged; one new canonical reuse record verifies all 23 unchanged source files. All 43 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2658-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2658-module rebuild is claimed."
+    "native_eta_fourier_validation_sequence": "Prior strict evidence retained for all 2627 unchanged selected baseline sources. All 31 newly selected modules (eight own and 23 unchanged canonical reuses) strictly rebuilt in dependency order after freezing 2704 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2658 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 31-module increase in NLS import closure verified. All 42 prior verified provenance records remain byte-for-byte unchanged; one new canonical reuse record verifies all 23 unchanged source files. All 43 provenance records are verified. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2658-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2658-module rebuild is claimed.",
+    "native_signed_fourier_validation_sequence": "Prior strict evidence retained for all 2658 unchanged selected baseline sources. All 12 newly selected own modules strictly rebuilt in dependency order after freezing 2716 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2670 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 12-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new reuse/import record is needed because no new canonical prerequisite is selected. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2670-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2670-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -36022,6 +36172,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "0f31d658ace057b371ea5d7c9a1f748a410b6c23",
+      "description": "Retain one actual chart/root witness/native Miura lift family and uniformly nonvanishing full positive symbol; attach the exact full signed Fourier/Miura compact derivative to the SAME actual Z,R.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The ACTUAL weighted eta/Fourier derivative comparison is NOW proved, with its literal bounded invertible inverse-root/phase multiplier. At every eligible physically real native Miura base and all t>=0, the exact principal is multiplication(mu)*2*i*weightIsometry_t. ANY native realization of the SAME original rough Hill eta coefficients, through a supplied genuine analytic Miura germ and retained original root-data witness, has the exact additional free mass-zero inverse factor and compact remainder. All previous full signed compact germs for the SAME Z,R remain. NEXT retain those witnesses in ONE common full signed family, prove actual full Abelian leading-symbol lower bounds (amplitude, normalized Dirac midpoint and noncentral phase), compose the new eta principal into the full signed derivative, restrict to the exact native mean-zero charts, and prove full Jacobian Fredholm/invertibility and inverse analyticity at EVERY eligible real base. Arbitrary-base/GLOBAL rough extension/inversion and the remaining Hamiltonian/frequency/PDE conclusions remain. Eta normalization invertibility does not by itself establish invertibility of the full signed Birkhoff principal.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -36071,5 +36233,6 @@
   "native_sobolev_inverse_record": "NATIVE_STRONG_INVERSE_GERMS.md",
   "native_compact_factors_record": "NATIVE_COMPACT_DERIVATIVE_FACTORS.md",
   "native_signed_compact_record": "NATIVE_SIGNED_COMPACT_DERIVATIVES.md",
-  "native_eta_fourier_record": "NATIVE_ETA_FOURIER_PRINCIPAL.md"
+  "native_eta_fourier_record": "NATIVE_ETA_FOURIER_PRINCIPAL.md",
+  "native_signed_fourier_record": "NATIVE_SIGNED_FOURIER_PRINCIPAL.md"
 }

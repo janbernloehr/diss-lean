@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual native eta Fourier principal
+## Latest full signed Fourier principal of the SAME actual map
+
+The SAME actual signed Z,R now retain their FULL native Fourier/Miura principal plus compact at EVERY eligible real base and ALL t>=0. The actual positive symbol is uniformly nonzero on ONE complex rough ball, with its exact native analytic reciprocal. ONE actual chart, original root-data witness, ALL genuine native Miura lift germs and one constant physical sign selection precede all orders and source points. Native signed germs include EXACTLY to the SAME Z at EVERY complex point of conjugation-invariant OPEN COMPLEX neighborhoods. The derivative comparison holds at every physically real point in those neighborhoods. See `NATIVE_SIGNED_FOURIER_PRINCIPAL.md`.
+
+All earlier inverse, physical, regularity, global-coordinate and mass identities are retained. Exact native mean-zero principal equivalence, full Jacobian Fredholm/invertibility, arbitrary-real-base inverse analyticity and global rough extension remain obligations. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2658 unchanged selected baseline sources. All 12 newly selected own modules strictly rebuilt in dependency order after freezing 2716 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2670 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 12-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new reuse/import record is needed because no new canonical prerequisite is selected. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2670-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2670-module rebuild is claimed.
+
+Fresh audit: 20954 selected and 43024 imported NLS declarations; permitted axioms only. Twelve new own modules contain 19 explicit theorems.
+
+## Earlier actual native eta Fourier principal
 
 The ACTUAL weighted eta derivative now has its exact Fourier principal with compact remainder. Its original normalized action root and angular phase give native analytic bounded reciprocal multipliers; both signs and every signed index share one local complex domain and bound. On the SAME actual Hill Dirichlet source the positive free factor is EXACTLY 2*i times the native H^t weight isometry. Through a genuine native germ of the SAME actual Miura chart, ANY native realization of the original rough eta coefficients has the additional exact free mass-zero inverse factor. See `NATIVE_ETA_FOURIER_PRINCIPAL.md`.
 
@@ -730,7 +740,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2658 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2670 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1799,7 +1809,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2658 selected modules (including generated and private declarations)
+the 2670 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4635,4 +4645,22 @@ PASS NLS/ZakharovShabat/SourceWeightedEtaCompactDerivative
 PASS NLS/KdV/HillMiuraSobolevEtaCompactDerivative
 PASS NLS/KdV/HillHminusSobolevEtaCompactDerivative
 Axiom audit passed: 20859 candidate declarations; 42931 declarations total.
+```
+
+Latest full signed Fourier strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/PositiveAnalyticReciprocal
+PASS NLS/KdV/HillHminusMidpointLowerBound
+PASS NLS/KdV/HillHminusNoncentralPhaseReciprocal
+PASS NLS/Articles/KdVKdV2Frequencies/RoughInvertibleActionSymbol
+PASS NLS/KdV/HillHminusRetainedMiuraEtaChart
+PASS NLS/KdV/HillHminusSobolevAbelianFourierPrincipal
+PASS NLS/Articles/KdVKdV2Frequencies/RoughAbelianFourierData
+PASS NLS/Articles/KdVKdV2Frequencies/RoughAbelianFourierGerms
+PASS NLS/Articles/KdVKdV2Frequencies/ActualPositiveAbelianFourier
+PASS NLS/SequenceSpaces/SobolevSignedRealCompactGerm
+PASS NLS/Articles/KdVKdV2Frequencies/ActualSignedAbelianFourier
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughSignedFourierForwardInverse
+Axiom audit passed: 20954 candidate declarations; 43024 declarations total.
 ```

@@ -1,3 +1,15 @@
+import NLS.Articles.KdVKdV2Frequencies.ActualSignedAbelianFourier
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedFourierForwardInverse
+import NLS.Articles.KdVKdV2Frequencies.ActualPositiveAbelianFourier
+import NLS.SequenceSpaces.SobolevSignedRealCompactGerm
+import NLS.Articles.KdVKdV2Frequencies.RoughAbelianFourierData
+import NLS.Articles.KdVKdV2Frequencies.RoughAbelianFourierGerms
+import NLS.KdV.HillHminusSobolevAbelianFourierPrincipal
+import NLS.KdV.HillHminusMidpointLowerBound
+import NLS.KdV.HillHminusNoncentralPhaseReciprocal
+import NLS.Articles.KdVKdV2Frequencies.RoughInvertibleActionSymbol
+import NLS.KdV.HillHminusRetainedMiuraEtaChart
+import NLS.SequenceSpaces.PositiveAnalyticReciprocal
 import NLS.KdV.HillHminusSobolevEtaCompactDerivative
 import NLS.ZakharovShabat.SourceWeightedEtaFactorization
 import NLS.ZakharovShabat.SourceWeightedEtaCompactDerivative
@@ -4508,7 +4520,19 @@ private def kdvFrequencyAuditChunk20 : Array Lean.Name := #[
   `NLS.ZakharovShabat.SourceWeightedEtaFactorization,
   `NLS.ZakharovShabat.SourceWeightedEtaCompactDerivative,
   `NLS.KdV.HillMiuraSobolevEtaCompactDerivative,
-  `NLS.KdV.HillHminusSobolevEtaCompactDerivative
+  `NLS.KdV.HillHminusSobolevEtaCompactDerivative,
+  `NLS.SequenceSpaces.PositiveAnalyticReciprocal,
+  `NLS.KdV.HillHminusMidpointLowerBound,
+  `NLS.KdV.HillHminusNoncentralPhaseReciprocal,
+  `NLS.Articles.KdVKdV2Frequencies.RoughInvertibleActionSymbol,
+  `NLS.KdV.HillHminusRetainedMiuraEtaChart,
+  `NLS.KdV.HillHminusSobolevAbelianFourierPrincipal,
+  `NLS.Articles.KdVKdV2Frequencies.RoughAbelianFourierData,
+  `NLS.Articles.KdVKdV2Frequencies.RoughAbelianFourierGerms,
+  `NLS.Articles.KdVKdV2Frequencies.ActualPositiveAbelianFourier,
+  `NLS.SequenceSpaces.SobolevSignedRealCompactGerm,
+  `NLS.Articles.KdVKdV2Frequencies.ActualSignedAbelianFourier,
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedFourierForwardInverse
 ]
 
 open Lean in

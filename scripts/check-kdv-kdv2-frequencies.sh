@@ -2667,6 +2667,18 @@ modules=(
   NLS/ZakharovShabat/SourceWeightedEtaCompactDerivative
   NLS/KdV/HillMiuraSobolevEtaCompactDerivative
   NLS/KdV/HillHminusSobolevEtaCompactDerivative
+  NLS/SequenceSpaces/PositiveAnalyticReciprocal
+  NLS/KdV/HillHminusMidpointLowerBound
+  NLS/KdV/HillHminusNoncentralPhaseReciprocal
+  NLS/Articles/KdVKdV2Frequencies/RoughInvertibleActionSymbol
+  NLS/KdV/HillHminusRetainedMiuraEtaChart
+  NLS/KdV/HillHminusSobolevAbelianFourierPrincipal
+  NLS/Articles/KdVKdV2Frequencies/RoughAbelianFourierData
+  NLS/Articles/KdVKdV2Frequencies/RoughAbelianFourierGerms
+  NLS/Articles/KdVKdV2Frequencies/ActualPositiveAbelianFourier
+  NLS/SequenceSpaces/SobolevSignedRealCompactGerm
+  NLS/Articles/KdVKdV2Frequencies/ActualSignedAbelianFourier
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughSignedFourierForwardInverse
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
