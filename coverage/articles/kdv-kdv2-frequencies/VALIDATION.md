@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual all-order Miura Sobolev bridge
+## Latest exact all-Sobolev endpoints of the actual rough inverse
+
+The SAME actual analytic rough inverse R now has EVERY native Sobolev endpoint on ONE open real-preserving target neighborhood, selected BEFORE ALL real targets of arbitrary support and ALL s>=-1: R(b) belongs to H^s IFF its literal signed target lift belongs to h^(s+1/2). The original exact L2 endpoint, ORIGINAL physical L2 representatives, fixed GLOBAL L2 Birkhoff coordinates and exact mass remain attached to this SAME R. See `NATIVE_ROUGH_ALL_SOBOLEV_INVERSE.md`.
+
+The ACTUAL signed rough Abelian map has the corresponding all-order criterion on one whole real mean-zero rough ball, including genuinely non-L2 sources. The shared library now proves the GLOBAL exact original Hill-energy-gap H^s criterion at EVERY real H-minus-one source. Actual endpoint-sum bracket comparison includes every low and collapsed gap; signed reflection and the finite central correction are explicit. A common actual amplitude has a UNIFORM positive lower bound, not just individual nonvanishing.
+
+Prior strict evidence retained for all 2414 unchanged selected baseline sources. All six new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2420 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2463 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these six selections; no new shared-source import or adaptation is needed. No full 2420-module rebuild is claimed.
+
+Fresh audit: 19192 selected and 41262 imported NLS declarations; permitted axioms only. R is analytic into H-minus-one. Stronger Sobolev-topology continuity/analyticity, arbitrary-base/global rough Birkhoff inversion and the frequency/PDE main conclusions remain obligations. All eleven complete main theorem rows remain OPEN.
+
+## Earlier actual all-order Miura Sobolev bridge
 
 For EVERY actual complex L2 Miura lift solving the literal equation q=u'+u^2-c, and EVERY s>=-1, the ORIGINAL rough source q is in native H^s IFF its given lift u is in native H^(s+1). The converse starts from the actual L2 lift and bootstraps its regularity; it does not assume greater lift regularity. On a real slice this is exactly equivalent to H^(s+1) of the ACTUAL full signed canonical Dirac gap sequence. See `ACTUAL_MIURA_SOBOLEV_REGULARITY.md`.
 
@@ -650,7 +660,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2414 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2420 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1719,7 +1729,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2414 selected modules (including generated and private declarations)
+the 2420 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4417,4 +4427,16 @@ PASS NLS/SequenceSpaces/PeriodOneMiuraTameProduct
 PASS NLS/SequenceSpaces/PeriodOneMiuraSobolevEquivalence
 PASS NLS/KdV/HillHminusMiuraSobolevRegularity
 Axiom audit passed: 19159 candidate declarations; 41228 declarations total.
+```
+
+Latest actual all-Sobolev inverse endpoints strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/PositiveHalfMembership
+PASS NLS/KdV/HillMiuraEndpointSumBounds
+PASS NLS/KdV/HillHminusSobolevGapRegularity
+PASS NLS/Articles/KdVKdV2Frequencies/RoughActionAmplitudeBounds
+PASS NLS/Articles/KdVKdV2Frequencies/RoughAbelianSobolevCriterion
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughAllSobolevInverse
+Axiom audit passed: 19192 candidate declarations; 41262 declarations total.
 ```

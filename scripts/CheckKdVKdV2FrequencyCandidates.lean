@@ -1,3 +1,9 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevInverse
+import NLS.Articles.KdVKdV2Frequencies.RoughAbelianSobolevCriterion
+import NLS.Articles.KdVKdV2Frequencies.RoughActionAmplitudeBounds
+import NLS.KdV.HillHminusSobolevGapRegularity
+import NLS.SequenceSpaces.PositiveHalfMembership
+import NLS.KdV.HillMiuraEndpointSumBounds
 import NLS.ComplexAnalysis.LinearCoordinatesLocalInverse
 import NLS.ComplexAnalysis.NearbySquareRoot
 import NLS.SequenceSpaces.ForcedQuadraticTailSummability
@@ -3963,7 +3969,13 @@ run_cmd do
     `NLS.ZakharovShabat.SourceWeightedRealMembership,
     `NLS.SequenceSpaces.PeriodOneMiuraTameProduct,
     `NLS.SequenceSpaces.PeriodOneMiuraSobolevEquivalence,
-    `NLS.KdV.HillHminusMiuraSobolevRegularity
+    `NLS.KdV.HillHminusMiuraSobolevRegularity,
+    `NLS.SequenceSpaces.PositiveHalfMembership,
+    `NLS.KdV.HillMiuraEndpointSumBounds,
+    `NLS.KdV.HillHminusSobolevGapRegularity,
+    `NLS.Articles.KdVKdV2Frequencies.RoughActionAmplitudeBounds,
+    `NLS.Articles.KdVKdV2Frequencies.RoughAbelianSobolevCriterion,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevInverse
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

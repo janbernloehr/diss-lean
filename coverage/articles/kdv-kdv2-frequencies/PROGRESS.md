@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual all-order Miura Sobolev bridge
+## Latest exact all-Sobolev endpoints of the actual rough inverse
+
+The SAME actual analytic rough inverse R now has EVERY native Sobolev endpoint on ONE open real-preserving target neighborhood, selected BEFORE ALL real targets of arbitrary support and ALL s>=-1: R(b) belongs to H^s IFF its literal signed target lift belongs to h^(s+1/2). The original exact L2 endpoint, ORIGINAL physical L2 representatives, fixed GLOBAL L2 Birkhoff coordinates and exact mass remain attached to this SAME R. See `NATIVE_ROUGH_ALL_SOBOLEV_INVERSE.md`.
+
+The ACTUAL signed rough Abelian map has the corresponding all-order criterion on one whole real mean-zero rough ball, including genuinely non-L2 sources. The shared library now proves the GLOBAL exact original Hill-energy-gap H^s criterion at EVERY real H-minus-one source. Actual endpoint-sum bracket comparison includes every low and collapsed gap; signed reflection and the finite central correction are explicit. A common actual amplitude has a UNIFORM positive lower bound, not just individual nonvanishing.
+
+Prior strict evidence retained for all 2414 unchanged selected baseline sources. All six new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2420 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2463 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these six selections; no new shared-source import or adaptation is needed. No full 2420-module rebuild is claimed.
+
+Fresh audit: 19192 selected and 41262 imported NLS declarations; permitted axioms only. R is analytic into H-minus-one. Stronger Sobolev-topology continuity/analyticity, arbitrary-base/global rough Birkhoff inversion and the frequency/PDE main conclusions remain obligations. All eleven complete main theorem rows remain OPEN.
+
+## Earlier actual all-order Miura Sobolev bridge
 
 For EVERY actual complex L2 Miura lift solving the literal equation q=u'+u^2-c, and EVERY s>=-1, the ORIGINAL rough source q is in native H^s IFF its given lift u is in native H^(s+1). The converse starts from the actual L2 lift and bootstraps its regularity; it does not assume greater lift regularity. On a real slice this is exactly equivalent to H^(s+1) of the ACTUAL full signed canonical Dirac gap sequence. See `ACTUAL_MIURA_SOBOLEV_REGULARITY.md`.
 

@@ -2423,6 +2423,12 @@ modules=(
   NLS/SequenceSpaces/PeriodOneMiuraTameProduct
   NLS/SequenceSpaces/PeriodOneMiuraSobolevEquivalence
   NLS/KdV/HillHminusMiuraSobolevRegularity
+  NLS/SequenceSpaces/PositiveHalfMembership
+  NLS/KdV/HillMiuraEndpointSumBounds
+  NLS/KdV/HillHminusSobolevGapRegularity
+  NLS/Articles/KdVKdV2Frequencies/RoughActionAmplitudeBounds
+  NLS/Articles/KdVKdV2Frequencies/RoughAbelianSobolevCriterion
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughAllSobolevInverse
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
