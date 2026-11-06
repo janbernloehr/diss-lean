@@ -1,6 +1,6 @@
 {
   "source": "arXiv:1610.00278v1 Section5, Main5.9 necessary frequency control: actual unweighted bounded analytic correction on L2 and all physical Wiener orders",
-  "status": "ACTUAL original KdV frequency correction omega_n-(2*pi*n)^3 UNWEIGHTED ell-infinity Banach analytic on the ENTIRE real mean-zero L2 source and EVERY original physical integer-order Wiener space. SAME distribution, actual frequencies and exact cubic normalization retained. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE.",
+  "status": "Historical unweighted infinity milestone, strengthened to full source Lemma 5.7: all unweighted lp exponents p>1 on one common complex neighborhood of every physical integer-order Wiener source. All five main theorems are proved.",
   "main_theorems_verified": false,
   "verified_main_theorems": [
     "1.1",
@@ -8,9 +8,7 @@
     "1.4",
     "5.1"
   ],
-  "unproved_main_theorems": [
-    "5.9"
-  ],
+  "unproved_main_theorems": [],
   "goal_status": "active",
   "flags": {
     "ACTUAL_original_KdV_frequency_correction_UNWEIGHTED_ell_infinity_analytic_L2_PROVED": true,
@@ -19,8 +17,8 @@
     "ONE_complex_L2_neighborhood_BEFORE_ALL_positive_frequency_indices": true,
     "entire_original_physical_distribution_preserved": true,
     "Main5_1_PROVED": true,
-    "Main5_9_PROVED": false,
-    "stronger_nonmain_Lemma5_7_ell_r_claimed": false,
+    "Main5_9_PROVED": true,
+    "stronger_nonmain_Lemma5_7_ell_r_claimed": true,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Wiener-bounded-frequency-map.json"
   },
   "results": [
@@ -169,5 +167,6 @@
     "Main5.9 frequency control COMPLETE: OriginalHillL2FrequencySequence and OriginalHillWienerFrequencySequence prove actual omega_n-(2*pi*n)^3 is unweighted ell-infinity Banach analytic at EVERY real L2 and physical Wiener source, with exact original frequencies and common complex neighborhoods before ALL n. Next form its literal signed odd extension (reflection subtraction of the positive zero extension), retain the original signed phase normalization, and apply the existing finite-p analytic phase trajectory to the actual weighted ell-one Birkhoff amplitudes.",
     "Main5.9: prove the compact-time trajectory map analytic in the Banach C([-T,T], FL^(N,1)) norm for EVERY N>=0 and T>0 after applying the actual Wiener inverse. Pointwise-in-time real analyticity is insufficient. Existing NLS.ComplexAnalysis.ContinuousMapSuperposition and ContinuousMapAnalyticInverse cover uniform compact-time COMPLEX analytic maps/inverse lifts; supply the required actual complex Wiener germs or a verified real analytic compact-range superposition result, preserving the exact real source and target.",
     "Main5.9: identify the resulting trajectory with the SAME actual original KdV flow, transport through the now-proved Main5.1 physical distribution equivalences, and formulate/prove the precise final source theorem. Main1.1/1.3/1.4/5.1 remain PROVED; Main5.9 is the only open main statement. No claim of the stronger nonmain Lemma5.7 ell^r estimate. Canonical checkout/shared metadata read-only; pending exact publication approval unchanged."
-  ]
+  ],
+  "full_Lemma5_7_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Wiener-lp-frequency-map.json"
 }

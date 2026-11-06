@@ -184,5 +184,6 @@
     "actual_original_KdV_flow_constructed": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "Original validation/fields record the preceding4613-declaration all-labels milestone. canonical_ACTION_independence_and_common_family_followup links the later4665-declaration audit: actual Miura ACTION independence, original real gap integrals and ALL indexed canonical actions glued analytically on ONE connected open complex neighborhood of the entire real form. Previous high-action comparison and complex low ratios remain open."
+  "validation_scope": "Original validation/fields record the preceding4613-declaration all-labels milestone. canonical_ACTION_independence_and_common_family_followup links the later4665-declaration audit: actual Miura ACTION independence, original real gap integrals and ALL indexed canonical actions glued analytically on ONE connected open complex neighborhood of the entire real form. Previous high-action comparison and complex low ratios remain open.",
+  "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }

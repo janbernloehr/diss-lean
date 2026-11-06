@@ -1969,6 +1969,19 @@ import NLS.ComplexAnalysis.RealContinuousMapSuperposition
 import NLS.FunctionalAnalysis.ContinuousMapLinearEquivalenceTransport
 import NLS.Articles.KdVPseudomeasures.OriginalHillWienerAnalyticTrajectories
 import NLS.Articles.KdVPseudomeasures.MainTheorem59
+import NLS.Articles.KdVPseudomeasures.Lemma57CommonNeighborhood
+import NLS.Articles.KdVPseudomeasures.Lemma57FrequencyCharts
+import NLS.Articles.KdVPseudomeasures.SourceAppendixC1
+import NLS.Articles.KdVPseudomeasures.SourceLemma57
+import NLS.Articles.KdVPseudomeasures.SourceLemma57Corollaries
+import NLS.Articles.KdVPseudomeasures.SourceLemmaA4Counterexample
+import NLS.Articles.KdVPseudomeasures.SourceLemmaA4InnerBall
+import NLS.Articles.KdVPseudomeasures.SourcePrintedStripCounterexample
+import NLS.Articles.KdVPseudomeasures.SourceWienerAuxiliaryResults
+import NLS.ComplexAnalysis.CompatibleRealBallCharts
+import NLS.FunctionalAnalysis.OpenMajorantNeighborhood
+import NLS.KdV.HillL2MomentLpSequence
+import NLS.SequenceSpaces.UnweightedPositiveMomentSeries
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11579,3 +11592,51 @@ import NLS.Articles.KdVPseudomeasures.MainTheorem59
 #print axioms NLS.KdV.continuous_hillDiscriminantGradientSpatialCurve_spectral
 #print axioms NLS.KdV.continuous_hillDiscriminantGardnerBracket_right
 #print axioms NLS.KdV.hillDiscriminantGardnerBracket_eq_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma5_7_L2
+#print axioms NLS.Articles.KdVPseudomeasures.hillComplexL2FrequencyCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.hillComplexL2FrequencyCoefficients_real
+#print axioms NLS.Articles.KdVPseudomeasures.lemma57_source_eq
+#print axioms NLS.Articles.KdVPseudomeasures.L2FrequencyLpChart.domain
+#print axioms NLS.Articles.KdVPseudomeasures.L2FrequencyLpChart.domain_open
+#print axioms NLS.Articles.KdVPseudomeasures.L2FrequencyLpChart.sequence
+#print axioms NLS.Articles.KdVPseudomeasures.L2FrequencyLpChart.lp_data
+#print axioms NLS.Articles.KdVPseudomeasures.L2FrequencyLpChart.analytic_sequence
+#print axioms NLS.Articles.KdVPseudomeasures.L2FrequencyLpChart.sequence_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.L2FrequencyLpChart.sequence_real_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.L2FrequencyLpChart.realSequence
+#print axioms NLS.Articles.KdVPseudomeasures.L2FrequencyLpChart.sequence_real
+#print axioms NLS.Articles.KdVPseudomeasures.exists_l2FrequencyLpChart
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletPotentialOperator
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaC_1
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerComplexFrequencyInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerComplexFrequencyInclusion_real
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma5_7
+#print axioms NLS.Articles.KdVPseudomeasures.lemma57_local_norm_bound
+#print axioms NLS.Articles.KdVPseudomeasures.lemma57_mode_analytic
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA4Counterexample
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA4Counterexample_analytic
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA4Counterexample_error
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA4Counterexample_hasDerivAt
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA4Counterexample_no_analytic_inverse
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA4_interior_counterexample
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA_4_innerBall
+#print axioms NLS.Articles.KdVPseudomeasures.printedHillStrip
+#print axioms NLS.Articles.KdVPseudomeasures.zero_mem_printedHillStrip_one
+#print axioms NLS.Articles.KdVPseudomeasures.printedStrip_Q1_free_kernel_counterexample
+#print axioms NLS.Articles.KdVPseudomeasures.printedStrip_one_inverse_unbounded
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma5_5
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma5_6
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVTargetTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma5_8
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerKdVTargetTrajectory_initial
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.real_projection_ball
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complex_ball_extensions_agree
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_on_given_balls
+#print axioms NLS.FunctionalAnalysis.exists_openMajorantNeighborhood
+#print axioms NLS.FunctionalAnalysis.OpenMajorantNeighborhood.mapsTo_preimage
+#print axioms NLS.FunctionalAnalysis.mem_preimage_of_apply_mem
+#print axioms NLS.KdV.HillProductEquationPatch.l2CenteredSecondMomentLpSequence
+#print axioms NLS.KdV.HillProductEquationPatch.L2FrequencyMomentBound
+#print axioms NLS.KdV.HillProductEquationPatch.L2FrequencyHilbertMajorant
+#print axioms NLS.KdV.HillProductEquationPatch.l2MomentLp_analytic_of_majorants
+#print axioms NLS.Coeff.exists_unweighted_positive_moment_series

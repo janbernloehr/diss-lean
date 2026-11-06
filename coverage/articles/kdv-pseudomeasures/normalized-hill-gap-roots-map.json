@@ -134,5 +134,6 @@
     "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "Original validation object records the prior energy-only normalization milestone; joint_potential_analyticity_followup links the later4357-declaration audited joint analytic construction."
+  "validation_scope": "Original validation object records the prior energy-only normalization milestone; joint_potential_analyticity_followup links the later4357-declaration audited joint analytic construction.",
+  "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }

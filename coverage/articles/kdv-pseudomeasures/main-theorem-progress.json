@@ -7467,7 +7467,7 @@
     ]
   },
   "essential_open_obligations": [],
-  "no_completion_claim": "All five assigned main statements1.1,1.3,1.4,5.1,5.9 PROVED. No remaining main Lean obligation. Main1.4 documented codomain correction retained. Full user goal ACTIVE because complete final private payload publication is pending explicit approval and verified push.",
+  "no_completion_claim": "All five assigned main theorems are proved and published at the baseline head 69dc5a6. Full numbered-result proof coverage remains incomplete; see numbered-results.json. The newly audited Lemma A.4 cannot be proved as printed.",
   "shared_module_moves": {
     "WeakStarEndpoint": "NLS/SequenceSpaces/WienerWeakStar.lean",
     "WeightedWeakStarEndpoint": "NLS/SequenceSpaces/WeightedWienerWeakStar.lean",
@@ -15166,5 +15166,26 @@
   },
   "published_article_parent": "7d6e793d28cd67482ef39b87bd1b85ef6fd48af1",
   "main_merge_validation": "coverage/articles/kdv-pseudomeasures/merge-validation.json",
-  "main_refresh_validation": "coverage/articles/kdv-pseudomeasures/refresh-validation.json"
+  "main_refresh_validation": "coverage/articles/kdv-pseudomeasures/refresh-validation.json",
+  "current_numbered_result_audit": {
+    "record": "coverage/articles/kdv-pseudomeasures/numbered-results.json",
+    "audited_on": "2026-11-06",
+    "total_numbered_results": 54,
+    "formal_results": 48,
+    "numbered_remarks": 6,
+    "five_main_theorems_proved": true,
+    "all_numbered_results_proved": false,
+    "status_counts": {
+      "proved": 27,
+      "proved_corrected": 3,
+      "partial": 22,
+      "not_found": 2
+    },
+    "historical_milestones": "Earlier *_followup, verified_*, validation and publication snapshots are historical; consult the numbered-result audit for present full-paper scope. A main-theorem completion claim is not full-paper completion.",
+    "Lemma5_7": "Proved in full, including every p>1 and a common complex Wiener neighborhood; see hill-L2-Wiener-lp-frequency-map.json.",
+    "LemmaA4": "User-authorized inner-ball replacement proved, retaining closed half-ball coverage; printed full-ball assertion formally refuted.",
+    "validation_record": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation": "passed; full-paper coverage incomplete"
+  },
+  "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }

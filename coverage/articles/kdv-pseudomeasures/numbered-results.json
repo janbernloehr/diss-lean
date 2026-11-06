@@ -1,0 +1,1043 @@
+{
+  "article": "1610.00278v1",
+  "audited_on": "2026-11-06",
+  "scope": "Every numbered theorem, lemma, proposition, corollary and remark; numbered equations are not independent results.",
+  "source_pdf_sha256": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
+  "baseline_head": "69dc5a6c2f9d6bafaf84730c98014c0d4f7f2e9a",
+  "canonical_checkout_read_only": true,
+  "complete_numbered_result_proof_coverage": false,
+  "total_numbered_results": 54,
+  "formal_results": 48,
+  "remarks": 6,
+  "status_counts": {
+    "proved": 27,
+    "proved_corrected": 3,
+    "partial": 22,
+    "not_found": 2
+  },
+  "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
+  "results": [
+    {
+      "label": "Theorem 1.1",
+      "line": 87,
+      "statement": "Theorem 1.1 For any q ∈ Fℓs,∞   0    with −1/2 < s ⩽ 0, the solution curve\n                           s,∞\nt 7→ S(t, q) evolves in Fℓ0 . It is bounded, supt∈R kS(t, q)ks,∞ < ∞ and\ncontinuous with respect to the weak* topology τw∗ . ⋊",
+      "status": "proved",
+      "comparison": "All initial data, global compact-time weak-star trajectory continuity; original physical distribution and exact endpoint norm.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_1"
+      ],
+      "source_page": 2,
+      "statement_sha256": "50290d1390eac81c07fa99005689abb08d47525b526e24bb8f801f2b2ff45022",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9"
+      }
+    },
+    {
+      "label": "Theorem 1.3",
+      "line": 101,
+      "statement": "Theorem 1.3 Let V ⊂ Fℓs,∞ 0  with −1/2 < s ⩽ 0 be a KdV-invariant k·ks,∞ -\nnorm bounded subset, that is\n       S(t, q) ∈ V,    ∀ t ∈ R, q ∈ V ;     supkqks,∞ < ∞.\n                                            q∈V\n\n\nSeptember 18, 2018                                                                  2\n\nThen for any T > 0, the restriction of the solution map S to V is weak*\ncontinuous,\n\n       S : (V, τw∗ ) → C([−T, T ], (V, τw∗ )).    ⋊",
+      "status": "proved",
+      "comparison": "Invariant norm-bounded weak-star closed subsets, joint compact-time continuous dependence.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_3"
+      ],
+      "source_page": 2,
+      "statement_sha256": "419ebc50efe7c7d6e1d89a4c1a8caa5170381bc6e81e97bd5425506f7dbd03e2",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3"
+      }
+    },
+    {
+      "label": "Theorem 1.4",
+      "line": 125,
+      "statement": "Theorem 1.4 For any −1/2 < s ⩽ 0, Φ : Fℓs,∞     0    → ℓs,∞\n                                                         0   is a bijective, bounded,\nreal analytic map between the two Banach spaces. Near the origin, Φ is a\nlocal diffeomorphism. When restricted to any k·ks,∞ -norm bounded subset\nV ⊂ Fℓs,∞0   , Φ : V → Φ(V ) is a homeomorphism when V and Φ(V ) are en-\n                                                               s+1/2,∞ −(s+1/2),1\ndowed with the weak* topologies σ(Fℓs,∞ 0  , Fℓ0−s,1 ) and σ(ℓ0        , ℓ0        ),\n                                          s,∞                                     −1\nrespectively. Furthermore for any q ∈ Fℓ0 , the set Iso(q) of elements q̃ ∈ H0\nso that −∂x2 + q and −∂x2 + q̃ have the same periodic spectrum is a k·ks,∞ -norm\nbounded subset of Fℓs,∞\n                     0   and hence Φ : Iso(q) → Φ(Iso(q)) is a homeomorphism\nwhen Iso(q) and Φ(Iso(q)) are endowed with the weak* topologies. ⋊",
+      "status": "proved_corrected",
+      "comparison": "Printed first codomain corrected from ell^(s,infinity) to ell^(s+1/2,infinity); preserves physical source, literal target norm, analyticity, bijectivity and bounded-set weak-star inverse.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4"
+      ],
+      "source_page": 3,
+      "statement_sha256": "5666a6ff59dc9b2bf627cdc32f37dfe1972c8994672a4b5c50e45587a3abb5ed",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74"
+      }
+    },
+    {
+      "label": "Theorem 2.1",
+      "line": 356,
+      "statement": "Theorem 2.1 Let w ∈ M and −1/2 < s ⩽ 0.\n\n  (i) For any q ∈ Fℓw,s,∞\n                    0,C   , one has (γn (q))n⩾1 ∈ ℓw,s,∞\n                                                   C     (N) and the map\n\n               Fℓw,s,∞\n                 0,C   → ℓw,s,∞\n                          C     (N),         q 7→ (γn (q))n⩾1 ,\n\n       is locally bounded.\n\n (ii) For any q ∈ Fℓw,s,∞\n                    0,C   , one has (τn − µn (q))n⩾1 ∈ ℓw,s,∞\n                                                        C     (N) and the map\n\n               Fℓw,s,∞\n                 0,C   → ℓw,s,∞\n                          C     (N),         q 7→ (τn (q) − µn (q))n⩾1 ,\n\n       is locally bounded.      ⋊",
+      "status": "proved",
+      "comparison": "Both parts; arbitrary original weights, complex source, entire actual spectral sequence, positive-index target norm and local boundedness.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean",
+        "NLS/Articles/KdVPseudomeasures/WeightedComplexMidpointPositive.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_i",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_ii_positive"
+      ],
+      "source_page": 6,
+      "statement_sha256": "bf1e39cea4f4abff3365329126f1143392cae4de52798adb6a34773d7874d455",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean": "ab15c771dfb57907c97b997ccc61dc9650e41c07a2298991e724cc7cc88edebd",
+        "NLS/Articles/KdVPseudomeasures/WeightedComplexMidpointPositive.lean": "9804cc0b9fb8cc8256adef360017a9d7ee41a1db178e560709151515957f14ca"
+      }
+    },
+    {
+      "label": "Theorem 2.2",
+      "line": 387,
+      "statement": "Theorem 2.2 Let q ∈ H0−1 with gap lengths γ(q) ∈ ℓs,∞\n                                                  R   for some −1/2 < s ⩽\n0. Then the following holds:\n\n  (i) q ∈ Fℓs,∞\n            0   .\n\n (ii) Iso(q) ⊂ Fℓs,∞\n                 0   .\n\n(iii) Iso(q) is weak* compact.       ⋊",
+      "status": "proved",
+      "comparison": "All three parts on the original entire real H-minus-one domain, with only the actual gap-membership hypothesis.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/OriginalEndpointMembership.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalEndpointCompactness.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_i",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_ii",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_iii"
+      ],
+      "source_page": 7,
+      "statement_sha256": "7f817b18fdf36eb960a4920ea1764e1e6f76cee22035a218cd4dee1f1d61f5da",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/OriginalEndpointMembership.lean": "e67f81d986f89e0e02325dba17f6758f1b9bce95d9ac98531f7bc7890711f64d",
+        "NLS/Articles/KdVPseudomeasures/OriginalEndpointCompactness.lean": "f389390ad2ffa828dc122348e8573168d7cd3dec2654a3282731438cc7b56c2d"
+      }
+    },
+    {
+      "label": "Lemma 2.4",
+      "line": 523,
+      "statement": "Lemma 2.4 Let −1/2 < s ⩽ 0, w ∈ M, and n ⩾ 1 be given. For any\nq ∈ Fℓw,s,∞\n      0,C   and λ ∈ Sn ,\n\n       Tn (λ) : Fℓw,s,∞\n                  ⋆,C   → Fℓw,s,∞\n                            ⋆,C\n\nis a bounded linear operator satisfying the estimate\n                                         cs\n       kTn (λ)kw,s,∞;±n ⩽              1/2−|s|\n                                               kqkw,s,∞ ,                                                     (12)\n                                     n\nwhere cs ⩾ 1 is a constant depending only on and decreasing monotonically in\ns. In particular, cs does not depend on q nor on the weight w. ⋊",
+      "status": "partial",
+      "comparison": "All weights, shifted infinity norm, monotone constant and physical operator identification are proved on radius-6n strips. The printed radius-12n strip is not covered by that interface.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_shiftedNorm_bounds",
+        "NLS.Articles.KdVPseudomeasures.spectralEndpointConstant_antitone",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_physical_identification"
+      ],
+      "source_page": 9,
+      "statement_sha256": "c5bad70849b953a392314296edbdcca384592d22060006d2eb9851dfd685fb5e",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean": "62c67807890561beb0cdecd5f27538f68a43e2a8d2a7dbe1be7e5b1e9f40f8b4"
+      },
+      "printed_domain_defect": "At n=1 the printed radius-12n strip contains lambda=0. The constant Fourier mode is a nonzero vector in Q_1 annihilated by the free operator. The inverse used to define T_1 therefore does not exist at that point, and its constant-mode reciprocal is unbounded near zero. See the checked source-strip counterexample. The existing radius-6n formulation avoids this defect.",
+      "counterexample_providers": [
+        "NLS/Articles/KdVPseudomeasures/SourcePrintedStripCounterexample.lean"
+      ],
+      "counterexample_declarations": [
+        "NLS.Articles.KdVPseudomeasures.printedStrip_Q1_free_kernel_counterexample",
+        "NLS.Articles.KdVPseudomeasures.printedStrip_one_inverse_unbounded"
+      ]
+    },
+    {
+      "label": "Corollary 2.5",
+      "line": 600,
+      "statement": "Corollary 2.5 For any q ∈ Fℓw,s,∞\n                                0,C with −1/2 < s ⩽ 0 and w ∈ M, there\nexists ns = ns (q) ⩾ 1 so that,\n\n       2cs kqkw,s,∞ ⩽ ns1/2−|s| ,                                                         (14)\n\nwith cs ⩾ 1 the constant in (12) implying that for any λ ∈ Sn , Tn (λ) is a 1/2\ncontraction on Fℓw,s,∞\n                  ⋆,C  with respect to the norms shifted by ±n, kTn (λ)kw,s,∞;±n ⩽\n1/2. The threshold ns (q) can be chosen uniformly in q on bounded subsets\n     w,s,∞\nof Fℓ0,C   . As a consequence, for n ⩾ ns (q), equation (11) and (8) can be\nuniquely solved for any given u ∈ Pn , λ ∈ Sn ,\n\n       v̌u,λ = Kn (λ)Tn (λ)V u ∈ Fℓs,∞\n                                   ⋆,C ,               Kn ≡ Kn (λ) := (Id − Tn (λ))−1 ,\n                                                                                          (15)\n                                                         s+2,∞\n       vu,λ = A−1          −1            −1\n               λ Qn V u + Aλ Qn v̌u,λ = Aλ Qn Kn V u ∈ Fℓ⋆,C   ∩ Qn .                     (16)\n\nIn particular, one has v̌u,λ = V vu,λ .            ⋊",
+      "status": "partial",
+      "comparison": "Uniform tail inverse and physical inhomogeneous reconstruction exist on the corrected radius-6n strip. Audit does not equate this with the entire printed strip.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible"
+      ],
+      "source_page": 10,
+      "statement_sha256": "b84784f4d9e7b33c13ced51aaaf37adca0497f1e38a92b3941a266c637a825a8",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean": "62c67807890561beb0cdecd5f27538f68a43e2a8d2a7dbe1be7e5b1e9f40f8b4",
+        "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean": "7979cae356f20afbab1b4a20847373c86b42f0e84f2d679eec37f6d9c6aaf85b"
+      }
+    },
+    {
+      "label": "Lemma 2.7",
+      "line": 662,
+      "statement": "Lemma 2.7 Assume that q ∈ Fℓs,∞  0,C with −1/2 < s ⩽ 0. Then for any n ⩾ ns\nwith ns given by Corollary 2.5, λ ∈ Sn is an eigenvalue of L(q) if and only if\ndet(Bn (λ)) = 0. ⋊",
+      "status": "partial",
+      "comparison": "Exact full H1-domain eigenvalue/determinant equivalence; radius-6n strip, rather than the complete printed radius-12n strip.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_7_uniform_physical_reduction"
+      ],
+      "source_page": 11,
+      "statement_sha256": "34c3811f9d216eb2687936ebf365fccfcc7c7946b9ec78043a7f746e8bb36975",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean": "fab4636881beb929d63dfc108d2f1dcccb4a378d9fa13a6fbce180ed1cbaec31"
+      }
+    },
+    {
+      "label": "Lemma 2.9",
+      "line": 749,
+      "statement": "Lemma 2.9 Suppose q ∈ Fℓw,s,∞ 0,C   with −1/2 < s ⩽ 0 and w ∈ M. Then for\nany n ⩾ ns , with ns as in Corollary 2.5, the coefficients an (λ) and b±n (λ) are\nanalytic functions on the strip Sn and for any λ ∈ Sn\n\n        (i)    |an (λ)| ⩽ 2kTn (λ)kw,s,∞;±n kqks,∞ ,\n                              s\n       (ii)    w2n h2ni |b±n (λ) − q±2n | ⩽ 2kTn (λ)kw,s,∞;±n kqkw,s,∞ .           ⋊",
+      "status": "partial",
+      "comparison": "Joint analyticity and weighted off-diagonal errors proved. The sharp arbitrary-weight diagonal estimate using the unweighted q norm is not established by the unit-weight theorem; strip discrepancy also remains.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_unit",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_weighted_errors",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_sourceWeightedEndpointEntries"
+      ],
+      "source_page": 12,
+      "statement_sha256": "43334f3bebe620cf97903cbb1a116accf0a511f7df9fbb937d078e30d18b398b",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean": "36579b70fe03c0416a74ae900a9844090bd2689e788b43bd398eeff66d4d1841",
+        "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean": "dc7f287262a33e797f9717ddbcc7fabc8dee068b99aae811c515db6dfcb600cd"
+      }
+    },
+    {
+      "label": "Lemma 2.10",
+      "line": 782,
+      "statement": "Lemma 2.10 Let q ∈ Fℓw,s,∞\n                        0,C  with w ∈ M and −1/2 < s ⩽ 0. Then for any\n      s,∞\nf ∈ Fℓ⋆,C and λ ∈ Sn with n ⩾ ns ,\n\n       w2n h2nis |hTn f, e±n i| ⩽ c′s εs (n)kqkw,s,p kf kw,s,p;±n\n\nwhere c′s ⩾ cs ⩾ 1 is independent of q, n, and λ, and\n               \n                loghni , s = 0,\n                    n\n     εs (n) =\n                    1\n                1−|s|  , −1/2 < s < 0. ⋊",
+      "status": "partial",
+      "comparison": "Refined coefficient estimates support adapted-map construction; a full source wrapper with the precise piecewise epsilon_s, constants, arbitrary weights and printed strip is absent. Printed p is inconsistent with the stated infinity domain.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedCoefficients.lean"
+      ],
+      "declarations": [],
+      "source_page": 13,
+      "statement_sha256": "95752c1c4317975f8e075b2b04ae5f95a218396d60a8c10c3de07ebc8bed4cf7",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean": "dc7f287262a33e797f9717ddbcc7fabc8dee068b99aae811c515db6dfcb600cd",
+        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedCoefficients.lean": "d30c4dff329054001ab3441bb95dae5ac16daee0460d863fd16322d09743e00b"
+      }
+    },
+    {
+      "label": "Lemma 2.11",
+      "line": 841,
+      "statement": "Lemma 2.11 Suppose q ∈ Fℓs,∞  0,C with −1/2 < s ⩽ 0. Choose ns = ns (q) ⩾ 1\nas in Corollary 2.5. Then for any n ⩾ ns , det(Bn (λ)) has exactly two roots\nξn,1 and ξn,2 in Sn counted with multiplicity. They are contained in\n\n       Dn := {λ : |λ − n2 π 2 | ⩽ 4n1/2 } ⊂ Sn\n\nand satisfy\n                          √\n       |ξn,1 − ξn,2 | ⩽       6 sup |bn (λ)b−n (λ)|1/2 .    ⋊                            (23)",
+      "status": "partial",
+      "comparison": "Exact two-count, physical multiplicity, localization and separation are proved on corrected radius-6n strips. The full printed-strip count is not inferred.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralAnalytic.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_algebraic_count"
+      ],
+      "source_page": 14,
+      "statement_sha256": "6193a9f79957d2add6458abe231bb42fc660a56a495e1557c86b7dbd73c69dbf",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean": "36579b70fe03c0416a74ae900a9844090bd2689e788b43bd398eeff66d4d1841",
+        "NLS/Articles/KdVPseudomeasures/SpectralAnalytic.lean": "adfb2bfa36acc624c77753f9b1756b6b14602e5a17c364d5dd5f948f6378bf1c",
+        "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean": "75f077ae23bb8f7369bcb6ff58d2d358552b382c4182e82f7a84acce520b21f2"
+      }
+    },
+    {
+      "label": "Lemma 2.12",
+      "line": 948,
+      "statement": "Lemma 2.12 If q ∈ Fℓw,s,∞\n                    0,C   with w ∈ M and −1/2 < s ⩽ 0, then for any\nN ⩾ ns ,\n                                                      16cs       2\n        kTN γ(q)kw,s,∞ ⩽ 4kTN qkw,s,∞ +                       kqkw,s,∞ .   ⋊",
+      "status": "partial",
+      "comparison": "Weighted gap membership and uniform quantitative tail bounds exist; the literal displayed 4 and 16*c_s tail inequality for all complex weights and all N >= n_s is not separately verified.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralComplexGaps.lean"
+      ],
+      "declarations": [],
+      "source_page": 15,
+      "statement_sha256": "fb9e670c94f4525f3f56272af4150d34742e8b4f43a59ce088e577f0584b436d",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean": "ab15c771dfb57907c97b997ccc61dc9650e41c07a2298991e724cc7cc88edebd",
+        "NLS/Articles/KdVPseudomeasures/SpectralComplexGaps.lean": "b93f1ab0a8d80b6cb090649d47a95601ecc2500135ecdea15dcf3999c88c9de3"
+      }
+    },
+    {
+      "label": "Lemma 2.13",
+      "line": 1019,
+      "statement": "Lemma 2.13 Let q ∈ Fℓs,∞                                            ′\n                          0,C with −1/2 < s ⩽ 0. Then there exists ns ⩾ ňs –\nwith nˇs given by (26) – so that for any n ⩾ n′s ,\n\n       (L − λ+                    +\n             n )ϕn = −γn ϕn + ηn fn ,\n\n\n\nSeptember 18, 2018                                                                 16\n\nwhere ηn ∈ C satisfies the estimate\n\n       |ηn | ⩽ 16(|γn | + |bn (λ+             +\n                                n )| + |b−n (λn )|).\n\nThe threshold n′s can be chosen locally uniformly in q ∈ Fℓs,∞\n                                                           0,C .                    ⋊",
+      "status": "proved",
+      "comparison": "Physical periodic eta identity, factor-16 estimate and locally uniform cutoff.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/PeriodicEtaBound.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_13"
+      ],
+      "source_page": 16,
+      "statement_sha256": "7860c42f3bb227d15c504ea300cad49dc1ee753434465c822c3e8e495ac88841",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/PeriodicEtaBound.lean": "6288d2143de8fa36e1a1525f7d9428792ec0567e4da58e951a89348e628df8fb"
+      }
+    },
+    {
+      "label": "Lemma 2.14",
+      "line": 1160,
+      "statement": "Lemma 2.14 Let q ∈ Fℓs,∞  0,C with −1/2 < s ⩽ 0. Then there exists ñs ⩾ ňs\n– with nˇs given by (26) – so that for any eigenfunction f ∈ Fℓs+2,p\n                                                               ⋆,C   of L(q)\ncorresponding to an eigenvalue λ ∈ Sn with n ⩾ ñs ,\n                     1\n       kPn f kL2 ⩾     kf kL2 .\n                     2\nThe threshold ñs can be chosen locally uniformly for q.         ⋊",
+      "status": "proved",
+      "comparison": "Actual physical eigenfunctions, free-mode half-norm lower bound and locally uniform cutoff.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/PeriodicFreeModeLowerBound.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_14"
+      ],
+      "source_page": 19,
+      "statement_sha256": "f48a939ccf6795b5c626e50b337e6ade9f5d017d52743d967dbb3c0d12dd8564",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/PeriodicFreeModeLowerBound.lean": "d5fa6eaef2138f236afada2a62a6dd7555e62d42305e02e74c3457ad1fe82846"
+      }
+    },
+    {
+      "label": "Lemma 2.15",
+      "line": 1243,
+      "statement": "Lemma 2.15 Let q ∈ Fℓs,∞                                           ′′   ′\n                         0,C with −1/2 < s ⩽ 0. Then there exists ns ⩾ ns\nwith n′s as in Lemma 2.13 so that for any n ⩾ n′′s\n\n                                      +\n       νn (µn − λ+\n                                                             \u0001\n                 n )gn = βn ηn Πn,q (fn I ) − γn Πn,q (ϕn I ) ,              (31)\n\nwhere βn ∈ C with |βn | ⩽ 1 and ηn is the off-diagonal coefficient in the matrix\nrepresentation of (L − λ+                                  +\n                        n ) En with respect to the basis {fn , ϕn }, introduced in\nLemma 2.13, and\n\n       1/2 ⩽ |νn | ⩽ 3/2.                                                    (32)\n\nn′′s can be chosen locally uniformly for q ∈ Fℓs,∞\n                                               0,C .    ⋊",
+      "status": "proved",
+      "comparison": "Visual inspection of PDF page 20 confirms beta is outside parentheses in formula (31), multiplying both terms already. The existing sourceLemma2_15_corrected proves that displayed formula; its historical suffix does not indicate a source defect. Native spectral vectors, projector, beta and nu bounds and uniform cutoff retained.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/PeriodicDirichletIdentity.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_15_corrected"
+      ],
+      "source_page": 20,
+      "statement_sha256": "8043b861d6d4e56a53501e2ebd9e6f58335c1e652e76f34d58a3371ae2adabc7",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/PeriodicDirichletIdentity.lean": "c8169caff969863197b8eaf9e9186d47a39f1c35c79e1e7b1020d3e36a36e3db"
+      }
+    },
+    {
+      "label": "Lemma 2.16",
+      "line": 1369,
+      "statement": "Lemma 2.16 Let −1/2 < s ⩽ 0 and m ⩾ 1. For n ⩾ Nm,s with Nm,s given\n                                                                        s,∞\nas in (35), the coefficients an and b±n are analytic functions on Sn × Bm   .\n                                      w,s,∞\nMoreover, their restrictions to Sn × B2m    for any w ∈ M satisfy\n\n                                     8cs m2\n        (i)    |an |Sn ×B w,s,∞ ⩽            ⩽ m/4.\n                          2m        n1/2−|s|\n                                                       loghni ′ 2     loghni\n       (ii)    w2n h2nis |b±n − q±2n |Sn ×B w,s,∞ ⩽      1−|s|\n                                                               8cs m ⩽ 1/2 m/4.     ⋊",
+      "status": "partial",
+      "comparison": "Analytic adapted coefficients and uniform error bounds exist with constructed thresholds. Literal (35) threshold and both printed sharp inequalities require a separate statement match.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedCoefficients.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralDiagonalRoot.lean"
+      ],
+      "declarations": [],
+      "source_page": 22,
+      "statement_sha256": "5f4ac7f343b8f02be69c6e100c4cb020e21dd2b5a28cbf387e749eda20e880e2",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedCoefficients.lean": "d30c4dff329054001ab3441bb95dae5ac16daee0460d863fd16322d09743e00b",
+        "NLS/Articles/KdVPseudomeasures/SpectralDiagonalRoot.lean": "9a4e2255b8d7d8d593b3b19b88050fa88cf1d627a104bf316037660163490d6e"
+      }
+    },
+    {
+      "label": "Lemma 2.17",
+      "line": 1385,
+      "statement": "Lemma 2.17 Let −1/2 < s ⩽ 0 and m ⩾ 1. For each n ⩾ Nm,s with Nm,s\ngiven as in (35), there exists a unique real analytic function\n\n             s,∞                                        8cs m2\n       αn : B2m  → C,          |αn − n2 π 2 |B s,∞ ⩽            ⩽ m/4,\n                                              2m       n1/2−|s|\n                                                          s,∞\nsuch that λ − n2 π 2 − an (λ, ·)|λ=αn ≡ 0 identically on B2m  .          ⋊",
+      "status": "partial",
+      "comparison": "Unique analytic diagonal roots and explicit bounds proved with constructed uniform thresholds. The exact printed threshold N_(m,s) and constants are not identified with that interface.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralDiagonalRoot.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_17",
+        "NLS.Articles.KdVPseudomeasures.source_uniform_weighted_diagonal_roots"
+      ],
+      "source_page": 22,
+      "statement_sha256": "8fa5ff35124d64c46a66a395a0649ef82e4786203730effd2a968bed391e4533",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralDiagonalRoot.lean": "9a4e2255b8d7d8d593b3b19b88050fa88cf1d627a104bf316037660163490d6e"
+      }
+    },
+    {
+      "label": "Proposition 2.18",
+      "line": 1455,
+      "statement": "Proposition 2.18 For −1/2 < s ⩽ 0 and m ⩾ 1, Ω(m) maps Bm            s,∞\n                                                                          into\n   s,∞                                                w,s,∞\nFℓ0,C . Further, for every w ∈ M, its restriction to Bm     is a real analytic\ndiffeomorphism\n\n       Ω(m) B w,s,∞ : Bm\n                       w,s,∞\n                             → Ω(m) (Bm\n                                      w,s,∞\n                                            ) ⊂ Fℓw,s,∞\n                                                  0,C\n                 m\n\n\nsuch that\n\n          sup        kd q Ω(m) − Idkw,s,∞ ⩽ 1/16,                                       (37)\n          w,s,∞\n       q∈Bm\n\n     w,s,p\nand Bm/2   ⊂ Ω(m) (Bm\n                    w,s,p\n                          ). Moreover,\n\n        1\n          kqkw,s,∞ ⩽ kΩ(m) (q)kw,s,∞ ⩽ 2kqkw,s,∞ ,                        w,s,∞\n                                                                     q ∈ Bm     .   ⋊   (38)",
+      "status": "proved_corrected",
+      "comparison": "All original weights; actual source map, inverse, full closed-ball injectivity, derivative bound, half-ball coverage and two-sided norm estimates. The isolated printed p is interpreted as infinity.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedDiffeomorphism.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralInverseRestriction.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceProposition2_18"
+      ],
+      "source_page": 23,
+      "statement_sha256": "0412d2c8bc7b7e5b80721ae83662943861d9ed2c1e3915bb3ab19f28c37c1aa2",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedDiffeomorphism.lean": "be91a6763b1511a7c615bc156ed332752603efac41b98b45acf3e09cb2528c02",
+        "NLS/Articles/KdVPseudomeasures/SpectralInverseRestriction.lean": "81556adae849ccb27b710f03f676b78f30ae980f7ee93ca08099777562d4138e"
+      }
+    },
+    {
+      "label": "Proposition 2.19",
+      "line": 1536,
+      "statement": "Proposition 2.19 Let −1/2 < s ⩽ 0, m ⩾ 1, and w ∈ M. If q ∈ Bm   and\n                   w,s,∞\n       Ω(m) (q) ∈ Bm/2   ,\n          w,s,∞\nthen q ∈ Bm     ⊂ Fℓw,s,∞\n                    0,C   .          ⋊",
+      "status": "proved",
+      "comparison": "Actual base-to-stronger-weight gain, identical distribution, closed-ball norm and uniform threshold.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralInverseRestriction.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceProposition2_19"
+      ],
+      "source_page": 24,
+      "statement_sha256": "66c24a8fa67338ceb8e75dd723d558656c1c8f6841a12a05e6c6a81e27387ebc",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralInverseRestriction.lean": "81556adae849ccb27b710f03f676b78f30ae980f7ee93ca08099777562d4138e"
+      }
+    },
+    {
+      "label": "Lemma 2.20",
+      "line": 1569,
+      "statement": "Lemma 2.20 Let −1/2 < s ⩽ 0, m ⩾ 1, and suppose that q ∈ Bm   , r =\n (m)\nΩ (q), and n ⩾ Mm,s with Mm,s given as in (36). If\n                               1    r2n\n       r−2n 6= 0,        and     ⩽      ⩽ 9,\n                               9   r−2n\nthen\n                               2\n       |r2n r−2n | ⩽ |γn (q)| ⩽ 9|r2n r−2n |.    ⋊",
+      "status": "partial",
+      "comparison": "Only the real-source case is explicitly proved. The printed complex coupling-ratio hypothesis must not be replaced by reality.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralInverseGapComparison.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_20_real"
+      ],
+      "source_page": 25,
+      "statement_sha256": "10d8160239b404bc57ca8ac35925b7200e3c39e5c02b28e958caa30c67b92c82",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralInverseGapComparison.lean": "d8092ac04209c9379f76cff3b351b1080380893abb51e7d973130efcf6b31615"
+      }
+    },
+    {
+      "label": "Lemma 2.21",
+      "line": 1713,
+      "statement": "Lemma 2.21 If q0 ∈ H0−1 with gap lengths γ(q0 ) ∈ ℓs,∞ , −1/2 < s ⩽ 0,\nthen Iso(q0 ) is a k·ks,∞ -norm bounded subset of Fℓs,∞\n                                                    0   . In particular, q0 is in\nFℓs,∞\n   0  .   ⋊",
+      "status": "proved",
+      "comparison": "Entire original real isospectral fiber bounded in exact endpoint norm under actual gap membership alone.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/OriginalEndpointBound.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_21"
+      ],
+      "source_page": 27,
+      "statement_sha256": "2e730336311e7d2f102ff0c84c056de102768b0a86596f586eef51f43fecace4",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/OriginalEndpointBound.lean": "ba48c2dd65f3525f98850817a0a4e7010fe9cf7c680f5a47a00a7853c2500805"
+      }
+    },
+    {
+      "label": "Theorem 3.1",
+      "line": 1795,
+      "statement": "Theorem 3.1 ([10, 15]) There exists a complex neighborhood W of H0−1 within\n  −1                                   −1/2\nH0,C  and an analytic map Φ : W → h0,C , q 7→ (zn (q))n∈Z with the following\nproperties:\n                                                     R1\n  (i) Φ is canonical in the sense that {zn , z−n } = 0 ∂u zn ∂x ∂u z−n dx = i for\n      all n ⩾ 1, whereas all other brackets between coordinate functions vanish.\n                                                                                s+1/2\n (ii) For any s ⩾ −1, the restriction Φ|H0s is a map Φ|H0s : H0s → h0                   which\n      is a bianalytic diffeomorphism.\n\n(iii) The KdV Hamiltonian H ◦ Φ−1 , expressed in the new variables, is defined\n          3/2\n      on h0 and depends on the action variables alone. In fact, it is a real\n      analytic function of the actions on the positive quadrant ℓ3,1\n                                                                 + (N),\n\n            ℓ3,1\n                                                     X\n             + (N) := {(In )n⩾1 : In ⩾ 0 ∀ n ⩾ 1,        n3 In < ∞}. ⋊",
+      "status": "partial",
+      "comparison": "Canonical H-minus-one Birkhoff map and integer regularity foundations exist. The complete cited theorem quantifies over every real Sobolev exponent s >= -1 and asserts Hamiltonian analyticity on the full action quadrant; no complete single statement/evidence match recorded.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/OriginalHillGlobalNativeInverse.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerRegularity.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillH1PhysicalFrequency.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeGardnerCanonicality.lean"
+      ],
+      "declarations": [],
+      "source_page": 28,
+      "statement_sha256": "b343852282463f953e3857c764999d3cb5148f3e2ebd395bbe06b711ac946bcc",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/OriginalHillGlobalNativeInverse.lean": "51f97989acd7bfabcb033c1a0b64406c33580944d4712e546cb3c02ab095b8c3",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerRegularity.lean": "593f9c3d891e8036ebd764da763857ba2f2abd1180112a19160c55c16f1c5b51",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillH1PhysicalFrequency.lean": "f12a1086f5861c49831b0d35ed73413b30874a93f7f626e6de31f5ae912d10e0",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeGardnerCanonicality.lean": "8614c206b02cc8b5a0a11da5f7ea3143d7e9f50abfa4f0918644d3f7ba76b864"
+      }
+    },
+    {
+      "label": "Theorem 3.2",
+      "line": 1822,
+      "statement": "Theorem 3.2 ([10]) After shrinking, if necessary, the complex neighborhood\nW of H0−1 in H0,C\n              −1\n                  of Theorem 3.1 the following holds:\n\n  (i) Let Zn = {q ∈ H0−1 : γn2 (q) 6= 0} for n ⩾ 1. The quotient In /γn2 , defined\n      on H0−1 \\ Zn , extends analytically to W for any n ⩾ 1. Moreover, for any\n      ε > 0 and any q ∈ W there exists n0 ⩾ 1 and an open neighborhood Wq\n      of q in W so that\n                      In\n                8nπ       − 1 ⩽ ε,           ∀ n ⩾ n0 ∀ p ∈ Wq .                  (46)\n                      γn2\n\n (ii) The Birkhoff coordinates (zn )n∈Z are analytic as maps from W into C\n      and fulfill locally uniformly in W and uniformly for n ⩾ 1, the estimate\n                        \u0012                    \u0013\n                          |γn | + |µn − τn |\n           |z±n | = O            √            .\n                                    n\n\n(iii) For any q ∈ W and n ⩾ 1 one has In (q) = 0 if and only if γn (q) = 0. In\n      particular, Φ(0) = 0. ⋊",
+      "status": "partial",
+      "comparison": "Canonical analytic actions, quotient asymptotics, gap-zero equivalence and Cartesian spectral bounds exist. Must package all three clauses on one actual common Birkhoff neighborhood; printed Z_n/complement is reversed.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianSpectralEstimate.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeCartesianMap.lean"
+      ],
+      "declarations": [],
+      "source_page": 29,
+      "statement_sha256": "16358252bc3c7c96b141057577d7d784a3b73fa2047c148a9ee0ed9a63cffab3",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianSpectralEstimate.lean": "8ec1697946a30abe5a2b3ea7ead91f7940943a74decf2b40bf5f0350eac9335a",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeCartesianMap.lean": "62d9035f1e8c554f98aceba9725202a04a497a62a827b98bc5a1877eb347cbb4"
+      }
+    },
+    {
+      "label": "Lemma 3.3",
+      "line": 1858,
+      "statement": "Lemma 3.3 For any −1/2 < s ⩽ 0\n\n                                         s+1/2,∞\n        Φs,∞ ≡ Φ              : Fℓs,∞\n                                  0   → ℓ0         ,     q 7→ (zn (q))n∈Z ,\n                      Fℓs,∞\n                        0\n\n\nis real analytic and extends analytically to an open neighborhood Ws,∞ of Fℓs,∞     0\nin Fℓs,∞\n      0,C  . Its Jacobian d 0 Φ s,∞ at q = 0  is the weighted Fourier  transform\n                                                                              !\n                    s,∞     s+1/2,∞                        1\n       d 0 Φs,∞ : Fℓ0 → ℓ0           ,     f 7→ p                    hf, e2n i\n                                                      2π max(|n|, 1)            n∈Z\n\nwith inverse given by\n                         s+1/2,∞\n                                    → Fℓs,∞\n                                                                Xp\n        (d 0 Φs,∞ )−1 : ℓ0              0   ,     (zn )n∈Z 7→     2π|n|zn e2n .\n                                                                n∈Z\n\nIn particular, Φs,∞ is a local diffeomorphism at q = 0.                ⋊",
+      "status": "proved",
+      "comparison": "Actual analytic endpoint map and complex neighborhood, exact weighted Fourier derivative/inverse and local inverse at zero; target order s+1/2.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/ArticleEndpointTargetNorm.lean",
+        "NLS/Articles/KdVPseudomeasures/NativeEndpointAnalyticCoordinates.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.analyticAt_articleEndpointPhysicalMap",
+        "NLS.Articles.KdVPseudomeasures.fderiv_articleEndpointPhysicalMap_zero",
+        "NLS.Articles.KdVPseudomeasures.articleEndpointPhysicalMap_localInverse_zero",
+        "NLS.Articles.KdVPseudomeasures.exists_hillEndpointSignedMap_analytic_neighborhood"
+      ],
+      "source_page": 29,
+      "statement_sha256": "5aa90c574b91bb8e2bf95c15d1cb2b9ed5caafc7279dc401749475221ffcbb9b",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/ArticleEndpointTargetNorm.lean": "859761917384a1efca8d51f3bf745eba177230e05a824b1bc2e0c598e466d459",
+        "NLS/Articles/KdVPseudomeasures/NativeEndpointAnalyticCoordinates.lean": "d67ce78c0df7abafc41038d56f8117dea848b9d6eb1c9b38119887cf1b0664bc"
+      }
+    },
+    {
+      "label": "Lemma 3.4",
+      "line": 1909,
+      "statement": "Lemma 3.4 For any −1/2 < s ⩽ 0, the map Φs,∞ : Fℓs,∞\n                                                 0   → ℓ0                           is\nonto. ⋊",
+      "status": "proved",
+      "comparison": "Onto follows from the proved equivalence for the exact physical source and ordinary target weight.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4"
+      ],
+      "source_page": 30,
+      "statement_sha256": "67511abf3e3fd03b5895dc39e8ec7f1b8e7f0f46546d37e15a6779a6efa13dd4",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74"
+      }
+    },
+    {
+      "label": "Lemma 3.5",
+      "line": 1934,
+      "statement": "Lemma 3.5 Suppose q ∈ Fℓs,∞\n                        0   with −1/2 < s ⩽ 0.\n\n  (i) Iso(q) is bounded in Fℓs,∞\n                             0   .\n\n (ii) Φs,∞ (Iso(q)) = TΦ(q) .\n\n              / cs0 = {z ∈ ℓs,∞\n(iii) If Φ(q) ∈             0   : hnis zn → 0}, then Φ(Iso(q)) is not compact\n           s,∞\n      in Fℓ0 . ⋊",
+      "status": "partial",
+      "comparison": "Parts (i) boundedness and (ii) full torus image are proved. Part (iii), failure of strong compactness for nonvanishing weighted tails, needs its own theorem; printed target/source type annotations are inconsistent. The printed part (iii) uses s instead of s+1/2 in its tail space; with the actual target regularity this premise is vacuous. The intended noncompactness criterion must use the target order.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/ArticleEndpointTargetNorm.lean",
+        "NLS/Articles/KdVPseudomeasures/EndpointIsospectralTorusImage.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma3_5_i",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma3_5_ii_articleNorm"
+      ],
+      "source_page": 30,
+      "statement_sha256": "083f83eaf1ec9987b2976e28509ef4ef97c6dc6660fe0744aa09a379e51ff93b",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/ArticleEndpointTargetNorm.lean": "859761917384a1efca8d51f3bf745eba177230e05a824b1bc2e0c598e466d459",
+        "NLS/Articles/KdVPseudomeasures/EndpointIsospectralTorusImage.lean": "cb0c9e0f3f1f9b8b74676fb26f4da215427e3fac155f442e0fafbcdc8bf5416d"
+      }
+    },
+    {
+      "label": "Lemma 3.6",
+      "line": 1977,
+      "statement": "Lemma 3.6 For any −1/2 < s ⩽ 0, the map Φs,∞ : Fℓs,∞\n                                                 0   → ℓ0                                 is\nk·ks,∞ -norm bounded. ⋊",
+      "status": "proved",
+      "comparison": "Uniform bound on each exact original source norm ball, in the ordinary target norm.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/ArticleEndpointTargetNorm.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma3_6_articleNorm"
+      ],
+      "source_page": 31,
+      "statement_sha256": "683f7f597a14ca8e7bbb128ebd2b1236f94e83cc07333fce73727fce6b5370b3",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/ArticleEndpointTargetNorm.lean": "859761917384a1efca8d51f3bf745eba177230e05a824b1bc2e0c598e466d459"
+      }
+    },
+    {
+      "label": "Lemma 3.7",
+      "line": 2008,
+      "statement": "Lemma 3.7 For any −1/2 < s ⩽ 0, the map Φs,∞ : Fℓs,∞  0  → ℓ0                          maps\nweak* convergent sequences to weak* convergent sequences. ⋊",
+      "status": "proved",
+      "comparison": "Every weak-star convergent sequence; actual physical source and ordinary target pairing.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/ArticleEndpointWeakStarContinuity.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma3_7_articleNorm"
+      ],
+      "source_page": 31,
+      "statement_sha256": "ce73833b5886e0605e4a5fa1f9eb638e78407990e4a100dc84782bf18476563b",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/ArticleEndpointWeakStarContinuity.lean": "929f4acf39e7a1ad2dcff60b85fb7b98dc25330b1d3ac2750bcfa37934b670d4"
+      }
+    },
+    {
+      "label": "Corollary 3.8",
+      "line": 2027,
+      "statement": "Corollary 3.8 For any −1/2 < s ⩽ 0 and m ⩾ 1, the map\n                                                s+1/2,∞       s+1/2,∞     −(s+1/2),1\n                s,∞\n       Φs,∞ : (Bm   , σ(Fℓs,∞\n                          0   , Fℓ0−s,1 )) → (ℓ0          , σ(ℓ0        , ℓ0           ))\n\nis a homeomorphism onto its image.          ⋊",
+      "status": "proved",
+      "comparison": "Bounded-set weak-star homeomorphism follows from the final main theorem, including closed source balls.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4"
+      ],
+      "source_page": 32,
+      "statement_sha256": "cd11e0bee0e1f7d40b78ba10b699275bce949c28ddeeff6b172870fb1650630b",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74"
+      }
+    },
+    {
+      "label": "Lemma 3.9",
+      "line": 2057,
+      "statement": "Lemma 3.9 Uniformly on k·ks,∞ -norm bounded subsets of Fℓs,∞\n                                                         0   , −1/2 < s ⩽\n0,\n\n       ωn = (2nπ)3 − 6In + o(1).        ⋊",
+      "status": "partial",
+      "comparison": "Existing inverse-index weighted lp frequency remainder is weaker than the displayed omega_n=(2*pi*n)^3-6*I_n+o(1), uniformly on every endpoint norm-bounded set. The sharp action subtraction and uniform o(1) are not claimed.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencySequence.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyGrowth.lean"
+      ],
+      "declarations": [],
+      "source_page": 32,
+      "statement_sha256": "90fe420dea6c08936b24f1f32f6827328f02d42958de20f781c280b99a93365e",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencySequence.lean": "641eb83b7c114aab89dab11ac9beab3181dbc9e1c4e6bd46b90072f0d7a29b2c",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyGrowth.lean": "55823c22b9799f8ee2c597e2b8e0a3b09984970d0ed3bb4979a9e5bd30f68958"
+      }
+    },
+    {
+      "label": "Theorem 5.1",
+      "line": 2126,
+      "statement": "Theorem 5.1 For any N ∈ Z⩾0 , the restriction ΦN,1 of the Birkhoff map\n                             N +1/2,1                        N +1/2,1\nΦ to Fℓ0N,1 takes values in ℓ0        and ΦN,1 : FℓN,1\n                                                    0   → ℓ0          is a real\nanalytic diffeomorphism, and therefore provides global Birkhoff coordinates on\nFℓN,1\n  0 .     ⋊",
+      "status": "proved",
+      "comparison": "Every nonnegative integer order, exact physical Wiener source and ordinary weighted ell-one target; both directions real analytic, free weighted Fourier derivative.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/MainTheorem51.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_1"
+      ],
+      "source_page": 33,
+      "statement_sha256": "2b032dcdc859d1b2b7d5707c8b2ee75764f9e944ccf28efe8533d2fd14e90c18",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/MainTheorem51.lean": "d3a7393f833deeebbb45163ef6ab574c40d20ed7dad062e982372209332d265c"
+      }
+    },
+    {
+      "label": "Theorem 5.2",
+      "line": 2145,
+      "statement": "Theorem 5.2 ([21, Theorem 1 & 4]) Let N ∈ Z⩾0 .\n\n\n\n\nSeptember 18, 2018                                                             33\n\n  (i) For any q ∈ FℓN,1\n                    0,C , the sequence of gap lengths (γn (q))n⩾1 , defined in (5)\n             N,1\n      is in ℓC (N) and the map\n\n               FℓN,1    N,1\n                 0,C → ℓC (N),              q 7→ (γn (q))n⩾1 ,\n\n        is uniformly bounded on bounded subsets.\n\n (ii) For any q ∈ FℓN,1\n                    0,C , the sequence (τn − µn (q))n⩾1 – cf. (5)-(6) – is in\n       N,1\n      ℓC (N) and the map\n\n               FℓN,1    N,1\n                 0,C → ℓC (N),              q 7→ (τn (q) − µn (q))n⩾1 ,\n\n        is uniformly bounded on bounded subsets.                 ⋊",
+      "status": "partial",
+      "comparison": "Wiener Birkhoff equivalences do not by themselves prove both complex spectral sequences are uniformly bounded on every bounded Wiener subset. Full direct spectral statement not located.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/OriginalHillL2OneSmoothing.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean"
+      ],
+      "declarations": [],
+      "source_page": 33,
+      "statement_sha256": "a8253e9c58095d2d9529571d1fc39b5a105555c144152b198a5e134c57633c62",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/OriginalHillL2OneSmoothing.lean": "944d84047e97ea3c6ea04a6f8777705056075dc5fa127d85ffa9d136b766b4ed",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean": "d71f57ecc07f97cdace2b5a73951cf8aa46213457d66e0aa55f4482b681bce7c"
+      }
+    },
+    {
+      "label": "Theorem 5.3",
+      "line": 2176,
+      "statement": "Theorem 5.3 ([21, Theorem 3]) Let q ∈ L20 and assume that (γn (q))n⩾1 ∈\nℓN,1\n R   for some N ∈ Z⩾0 . Then q ∈ FℓN,1\n                                   0   and Iso(q) ⊂ FℓN,1\n                                                      0 . ⋊",
+      "status": "partial",
+      "comparison": "Wiener inverse regularity is available through Birkhoff coordinates. Must derive the literal gap-only hypothesis on every real L2 source, including the entire isospectral set.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeL2Regularity.lean"
+      ],
+      "declarations": [],
+      "source_page": 34,
+      "statement_sha256": "672b2e7e1558f578cdbf96b57d7a447366bb6b7a1118a3014a37e84a040f0658",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean": "d71f57ecc07f97cdace2b5a73951cf8aa46213457d66e0aa55f4482b681bce7c",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeL2Regularity.lean": "5f7ff20c43c7cbbf4bb2b3dc0b95851ba44e90f53a5c16263c4b0be52d0033a6"
+      }
+    },
+    {
+      "label": "Lemma 5.4",
+      "line": 2186,
+      "statement": "Lemma 5.4 For any N ∈ Z⩾0\n\n                                        N +1/2,1\n        ΦN,1 ≡ Φ             : FℓN,1\n                                 0   → ℓ0          ,     q 7→ (zn (q))n∈Z ,\n                     FℓN,1\n                       0\n\n\nis real analytic and extends analytically to an open neighborhood WN,1 of FℓN,1\n                                                                            0\nin FℓN,1\n      0,C .   ⋊",
+      "status": "proved",
+      "comparison": "Real analytic physical Wiener Birkhoff equivalence; common complex-neighborhood extension supplied by the established contractive complexification extension theorem.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/MainTheorem51.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerEquiv"
+      ],
+      "source_page": 34,
+      "statement_sha256": "af5aaf453954e52ad9a9fb1e59c174ef4a5957636dc75a9cba3a68197bba5bdf",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/MainTheorem51.lean": "d3a7393f833deeebbb45163ef6ab574c40d20ed7dad062e982372209332d265c"
+      }
+    },
+    {
+      "label": "Lemma 5.5",
+      "line": 2221,
+      "statement": "Lemma 5.5 For any N ∈ Z⩾0 , the map ΦN,1 : FℓN,1\n                                             0   → ℓ0                            is onto.   ⋊",
+      "status": "proved",
+      "comparison": "Onto is a direct consequence of the proved Wiener equivalence.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceWienerAuxiliaryResults.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma5_5"
+      ],
+      "source_page": 34,
+      "statement_sha256": "4f6edc5302fd5a372fd4b3ff79ff57d5885692d43106d980023ede98f15f7fff",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceWienerAuxiliaryResults.lean": "ec2d8f5f53b4cb794f60a3acb49979adecf0642df56e938956013f16cbea9ab9"
+      }
+    },
+    {
+      "label": "Lemma 5.6",
+      "line": 2241,
+      "statement": "Lemma 5.6 For any q ∈ FℓN,1\n                        0   with N ∈ Z⩾0 ,\n                              N +1/2,1\n       d q ΦN,1 : FℓN,1\n                    0   → ℓ0\nis a linear isomorphism.           ⋊",
+      "status": "proved",
+      "comparison": "Both maps analytic and inverse; chain rule makes each derivative a continuous linear isomorphism. Exact source/target are preserved.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceWienerAuxiliaryResults.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma5_6"
+      ],
+      "source_page": 35,
+      "statement_sha256": "f95739379835d0504939065bf5d5864613e28a7847d8698bb8cd0e866fdb76ac",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceWienerAuxiliaryResults.lean": "ec2d8f5f53b4cb794f60a3acb49979adecf0642df56e938956013f16cbea9ab9"
+      }
+    },
+    {
+      "label": "Lemma 5.7",
+      "line": 2282,
+      "statement": "Lemma 5.7 The KdV frequencies ωn , n ⩾ 1, admit a real analytic extension\nto a common complex neighborhood WN,1 of FℓN,1\n                                            0 , N ∈ Z⩾0 , and for any\nr > 1 have the asymptotic behavior\n       ωn − 8n3 π 3 = ℓrn ,\nlocally uniformly on WN,1 .            ⋊",
+      "status": "proved",
+      "comparison": "Proved for every nonnegative integer physical Wiener order, one complex neighborhood of the entire real source chosen before all mode indices and all Banach exponents p>1. The same actual omega_n-(2*pi*n)^3 is analytic into each unweighted lp target; its coefficients agree with a common analytic infinity map. Real-point agreement uses the identical original physical distribution. Explicit local norm bounds and analytic cubic-plus-correction mode functions are supplied. No inverse-index weight or weakened exponent range.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceLemma57.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma57Corollaries.lean",
+        "NLS/Articles/KdVPseudomeasures/Lemma57CommonNeighborhood.lean",
+        "NLS/KdV/HillL2MomentLpSequence.lean",
+        "NLS/SequenceSpaces/UnweightedPositiveMomentSeries.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma5_7",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma5_7_L2",
+        "NLS.Articles.KdVPseudomeasures.lemma57_local_norm_bound",
+        "NLS.Articles.KdVPseudomeasures.lemma57_mode_analytic"
+      ],
+      "source_page": 35,
+      "statement_sha256": "c02aad3e2f989da6c2c55268c4c47cbe18e334bbb8aec9d202bb05db4e745afc",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceLemma57.lean": "18ae5fd793d24a8478f703ce76d7f05a23277085c2fd5dd0436abdfc9cec6481",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma57Corollaries.lean": "97335d4383640a7c46600abae300c07e43a05b6d66fee2acbd4fc094fc7dd9fd",
+        "NLS/Articles/KdVPseudomeasures/Lemma57CommonNeighborhood.lean": "328db036db47e2dbfa1d81a5b0718fddf3a1bc8f6b6099afa59d6eb0ad0ff5d3",
+        "NLS/KdV/HillL2MomentLpSequence.lean": "b959cfafdae608036785fd59761a6fe3394486c3236fd0afe3e6825950ddedd7",
+        "NLS/SequenceSpaces/UnweightedPositiveMomentSeries.lean": "c7243dc04f17286a43004fdeaf774d597b8a920850bb1fc8f78bb607b1c6919c"
+      }
+    },
+    {
+      "label": "Lemma 5.8",
+      "line": 2306,
+      "statement": "Lemma 5.8 For any N ∈ Z⩾0 and T > 0, the map\n               N +1/2,1                   N +1/2,1\n       SΦ : ℓ0            → C([−T, T ], ℓ0           ),   z 7→ (t 7→ SΦ (t, z)),\n\nis real-analytic.         ⋊",
+      "status": "proved",
+      "comparison": "Analytic compact-time coordinate trajectories for every target initial datum, via the physical inverse; checked initial-value identity.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceWienerAuxiliaryResults.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma5_8"
+      ],
+      "source_page": 36,
+      "statement_sha256": "05443479746ef2f89053cb8cfd025166b1239118af622c65a35628ed8272dce7",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceWienerAuxiliaryResults.lean": "ec2d8f5f53b4cb794f60a3acb49979adecf0642df56e938956013f16cbea9ab9"
+      }
+    },
+    {
+      "label": "Theorem 5.9",
+      "line": 2315,
+      "statement": "Theorem 5.9 For any N ∈ Z⩾0 , the KdV equation is globally in time C ω -\nwellposed on FℓN,1\n               0 . More precisely, for any T > 0, the map\n\n       S : FℓN,1\n             0   → C([−T, T ], FℓN,1\n                                 0 ),            q 7→ (t 7→ S(t, q)),\n\nis real analytic.         ⋊",
+      "status": "proved",
+      "comparison": "Global physical KdV trajectories analytic in uniform strong Wiener compact-time norm for every integer order.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/MainTheorem59.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_9"
+      ],
+      "source_page": 36,
+      "statement_sha256": "73802e336305179fbed0a1859ca891130df81ac365b9d9cc2299762cb88d05d2",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/MainTheorem59.lean": "9abc7c108928adf1dbfff58b8fa736a1241251615d90421a6b5aca0ba238394e"
+      }
+    },
+    {
+      "label": "Lemma A.1",
+      "line": 2334,
+      "statement": "Lemma A.1 For any 1/2 < σ < ∞ there exists a constant Cσ > 0 so that for\n                        1                          2σ−1\n                                                        if 1/2 < σ < 1, Cσ loghni\n            P\nany n ⩾ 1, |m|6=n |m2 −n  2 |σ is bounded by Cσ /n                            n\nif σ = 1, and Cσ /nσ if σ > 1. ⋊",
+      "status": "partial",
+      "comparison": "Reciprocal separation estimates exist in the library, but the literal sum over all |m| != n and all sigma > 1/2, including the sigma=1 logarithmic transition, has not been matched to a public declaration.",
+      "providers": [],
+      "declarations": [],
+      "source_page": 36,
+      "statement_sha256": "5a22514be908c9071da26af41bb75000280aaa5f634670a5ec8d2f3675736c68",
+      "provider_sha256": {}
+    },
+    {
+      "label": "Lemma A.2",
+      "line": 2352,
+      "statement": "Lemma A.2 Suppose −1/2 < s ⩽ 0. For any −1 ⩽ σ < s and 2 ⩽ p < ∞\nwith (s − σ)p > 1 one has ℓs,∞ C   ֒→ ℓσ,p\n                                        C   and the embedding is compact. In\n                                     −1/2+s−ε\nparticular, for any ε > 0, ℓs,∞\n                            C   ֒→ h C        . ⋊",
+      "status": "proved",
+      "comparison": "General weighted endpoint-to-lower finite-p compact inclusion is proved in NLS.SequenceSpaces.EndpointCompactInclusion and its shared dependencies; strict exponent condition retained.",
+      "providers": [
+        "NLS/SequenceSpaces/EndpointCompactInclusion.lean",
+        "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean"
+      ],
+      "declarations": [
+        "NLS.WeightedCoeff.isCompactOperator_endpointLowerInclusion",
+        "NLS.WeightedCoeff.endpointLowerInclusion_apply"
+      ],
+      "source_page": 36,
+      "statement_sha256": "f3d69090e7f4f8d53eb8227bfab464ccfd7cd8cd431d7fd33e81d1659153c6e5",
+      "provider_sha256": {
+        "NLS/SequenceSpaces/EndpointCompactInclusion.lean": "dc548023a9917395921f454ac82e90451c3260e10e36288f37d5dca05d27bac2",
+        "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean": "508a71a1cf7499a555cd7a66a5ba0f506689ad99fd23b052ee1196c0032a843e"
+      }
+    },
+    {
+      "label": "Lemma A.3",
+      "line": 2377,
+      "statement": "Lemma A.3 (i) Let −1 ⩽ t < −1/2. For a = (am )m∈Z ∈ htC and b =\n   (bm )m∈Z ∈ h1C , the convolution a∗b = ( m∈Z an−m bm )n∈Z is well defined\n                                           P\n\n   and\n\n               ka ∗ bkt,2 ⩽ Ct kakt,2 kbk1,2 .\n\n (ii) Let −1/2 ⩽ s ⩽ 0 and −s − 3/2 < t < 0. For any a = (am )m∈Z ∈ ℓs,∞\n                                                                     C\n      and b = (bm )m∈Z ∈ ht+2\n                          C ,\n\n\n               ka ∗ bks,∞ ⩽ Cs,t kaks,∞ kbkt+2,2 .   ⋊",
+      "status": "partial",
+      "comparison": "Generic weighted convolution tools exist. Both exact parameter ranges, actual convolution and source norm bounds need explicit source statements, especially the mixed endpoint/Hilbert estimate.",
+      "providers": [],
+      "declarations": [],
+      "source_page": 37,
+      "statement_sha256": "a5c88fc09c7057b7e82b9ede59345e533488ff1f8de4d8bc417679838463adc6",
+      "provider_sha256": {}
+    },
+    {
+      "label": "Lemma A.4",
+      "line": 2395,
+      "statement": "Lemma A.4 Let E be a complex Banach space and denote for r > 0, Br =\n{x ∈ E : kxk ⩽ r}. If f : Bm → E is analytic for some m ⩾ 1, and\n\n        sup |f (x) − x| ⩽ m/8,\n       x∈Bm\n\nthen f is an analytic diffeomorphism onto its image, and this image covers\nBm/2 . ⋊",
+      "status": "proved_corrected",
+      "comparison": "The printed full-ball diffeomorphism claim is false, even at an interior point: f(z)=z-z^16/8 has error <= 1/8 on the closed unit ball and a critical point w^15=1/2 with norm(w)<1, where no analytic inverse exists. The formalization uses the independent double-ball theorem with explicit domain margin.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA4Counterexample.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA4InnerBall.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA4Counterexample_analytic",
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA4Counterexample_error",
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA4Counterexample_hasDerivAt",
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA4Counterexample_no_analytic_inverse",
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA4_interior_counterexample",
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA_4_innerBall"
+      ],
+      "source_page": 37,
+      "statement_sha256": "228b5f3e1e9f62d4f06b7c08477c92e04f4028dd822b20d7e689a043a4b68360",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA4Counterexample.lean": "0ea6466e69fdb7785bb5492dc2eccbe044de83dce59647916d1cef1e5fd3a30a",
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA4InnerBall.lean": "231f118072d39244b1c34edc8913bbd6a4350d8397fbdb83a2cb0b0c1be5e5c8"
+      },
+      "printed_statement_status": "false_as_printed",
+      "replacement_authorized_by_user": true,
+      "replacement": "With the same m/8 error on the closed radius-m ball, the restriction to the OPEN radius-2m/3 ball has an analytic inverse on its open image, and the image contains the entire CLOSED radius-m/2 ball. Also injective on the CLOSED radius-2m/3 ball. Proved for every m>0 and arbitrary complex Banach space. The false printed full-ball assertion remains explicitly refuted."
+    },
+    {
+      "label": "Lemma B.1",
+      "line": 2412,
+      "statement": "Lemma B.1 Let s ∈ R.\n\n  (i) The closed unit ball of ℓ0s,∞ is weak* compact, weak* sequentially compact,\n      and the topology induced by the weak* topology on this ball is metrizable.\n\n (ii) For any sequence (x(m) )m⩾1 ⊂ ℓs,∞\n                                     0   and x ∈ ℓs,∞\n                                                  0   the following statements\n      are equivalent:\n\n        (a) (x(m) ) is weak* convergent to x.\n         (b) (x(m) ) is k·ks,∞ -norm bounded and componentwise convergent, i.e.\n                     sup kx(m) ks,∞ < ∞,         lim x(m)\n                                                      n   = xn ,   ∀ n ∈ Z.\n                     m⩾1                         m→∞\n\n\n\nSeptember 18, 2018                                                             37\n\n         (c) (x(m) ) is k·ks,∞ -norm bounded and x(m) → x in ℓσ,p\n                                                              0   for some σ < s\n             and 1 ⩽ p < ∞ with (s − σ)p > 1.\n\n(iii) For any subset A ⊂ ℓs,∞\n                          0   the following statements are equivalent:\n\n        (a) A is weak* compact.\n         (b) A is weak* sequentially compact.\n         (c) A is k·ks,∞ -norm bounded and weak* closed.\n        (d) A is k·ks,∞ -norm bounded and A is a compact subset of ℓσ,p\n                                                                    0 for some\n            σ < s and 1 ⩽ p < ∞ with (s − σ)p > 1.\n\n (iv) On any k·ks,∞ -norm bounded subset A ⊂ ℓs,∞  0  , the topology induced by\n      the k·kσ,p -norm, provided (s−σ)p > 1, coincides with the topology induced\n      by the weak* topology of ℓs,∞\n                                 0  . ⋊",
+      "status": "proved",
+      "comparison": "All four parts proved in general complex weighted endpoint spaces, including original zero-mode real form adapters, all real orders, existential lower exponents and induced topologies. Shared providers: WeightedWeakStarCompactness and WeightedWeakStarLowerTopology.",
+      "providers": [
+        "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean",
+        "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean"
+      ],
+      "declarations": [
+        "NLS.WeightedCoeff.isCompact_weakStarBall",
+        "NLS.WeightedCoeff.metrizable_weakStarBall",
+        "NLS.WeightedCoeff.isSeqCompact_weakStarBall",
+        "NLS.WeightedCoeff.tendsto_weakStar_seq_iff_bounded_coordinates",
+        "NLS.WeightedCoeff.isCompact_weakStar_iff_bounded_closed",
+        "NLS.WeightedCoeff.isCompact_weakStar_iff_isSeqCompact",
+        "NLS.WeightedCoeff.tendsto_weakStar_seq_iff_bounded_some_lower",
+        "NLS.WeightedCoeff.isCompact_weakStar_iff_bounded_some_lower_compact",
+        "NLS.WeightedCoeff.isEmbedding_lowerWeakStarRealization_on_bounded"
+      ],
+      "source_page": 37,
+      "statement_sha256": "078c907a5ead2868027e3c7bb6d2fd2246ef694409e4e607e28468828791cee4",
+      "provider_sha256": {
+        "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean": "bb0b70dbb82bff45ebb1f618894793caef99aa8b82d1b79bf794d5ea29c96202",
+        "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean": "508a71a1cf7499a555cd7a66a5ba0f506689ad99fd23b052ee1196c0032a843e"
+      }
+    },
+    {
+      "label": "Lemma C.1",
+      "line": 2504,
+      "statement": "Lemma C.1 Let q ∈ Hper + . For any g ∈ Hdir , the restriction (Vper ± g) H 1 : Hdir →\n                                                                                              dir\n                           1\nC coincides with Vdir g : Hdir → C.                 ⋊",
+      "status": "proved",
+      "comparison": "Full arbitrary H-minus-one potential, every native zero-trace H1 vector/test, both periodic and antiperiodic extensions with actual physical multiplication and restriction. No endpoint source hypothesis.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceAppendixC1.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaC_1"
+      ],
+      "source_page": 39,
+      "statement_sha256": "a8863f824c37f12cefd776d6909cae98b1c35962889cecb8d0cc3fcbac719334",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceAppendixC1.lean": "052be38dd703796c4d21a568914280d2a9f98d2d425d45838a00b52751e07a2a"
+      }
+    },
+    {
+      "label": "Lemma C.2",
+      "line": 2769,
+      "statement": "Lemma C.2 For any q ∈ Fℓs,∞ 0,C with −1/2 < s ⩽ 0, the following holds: For\nany g ∈ Fℓs,∞\n           ⋆,C and any  λ ∈ C, a solution f ∈ H 1 (R/2Z, C) of the inhomoge-\nneous equation (L(q) − λ)f = g is an element in Fℓs+2,∞\n                                                   ⋆,C  . ⋊",
+      "status": "proved",
+      "comparison": "Entire complex lambda plane and inhomogeneous endpoint right-hand side, same original distribution, two-derivative endpoint regularity.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaC_2"
+      ],
+      "source_page": 42,
+      "statement_sha256": "a9a6a1c868ab3dc8259351e532185b4361a04cf6b5199a87116550f85a3ca18d",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean": "fab4636881beb929d63dfc108d2f1dcccb4a378d9fa13a6fbce180ed1cbaec31"
+      }
+    },
+    {
+      "label": "Lemma C.3",
+      "line": 2805,
+      "statement": "Lemma C.3 For any q ∈ Fℓs,∞     0,C with −1/2 < s ⩽ 0 and for any n ⩾ ns\nEn (q) ⊂ Fℓs+2,∞\n           ⋆,C   ∩ H 1\n                     per + [Fℓ s+2,∞\n                               ⋆,C\n                                         1\n                                     ∩ Hper − ] if n is even [odd]. ⋊",
+      "status": "proved",
+      "comparison": "All physical generalized periodic spectral vectors, regularity s+2 and actual even/odd periodic-antiperiodic boundary conditions.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/PeriodicSpectralRegularity.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourcePeriodicSpectralVector_regular",
+        "NLS.Articles.KdVPseudomeasures.sourcePeriodicH1Vector_regular"
+      ],
+      "source_page": 43,
+      "statement_sha256": "cee79ec6672cba9a9b7cc78e7f39735902d26cc28a7335034601336683bab1a0",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/PeriodicSpectralRegularity.lean": "ee9830259ec119a3da78d2c510e6dd0d5e4f6c031a2806641aad0542c2fe199f"
+      }
+    },
+    {
+      "label": "Lemma C.4",
+      "line": 2846,
+      "statement": "Lemma C.4 Assume that q ∈ H0,C        with kqkt,2 < ∞ and −1 < t < −1/2.\nThen there exist constants Ct > 0 (only depending on t) and N ′ ⩾ N (with N\nas above) so that for any n ⩾ N the following holds\n                                         (log n)2\n  (i)          kPn,q − Pn kL2 →L∞ ⩽ Ct            kqkt,2\n                                          n1−|t|\n                                                (log n)2\n (ii)          kΠn,q − Πn kL2 (I)→L∞ (I) ⩽ Ct            kqkt,2\n                                                 n1−|t|\nThe constant N ′ can be chosen locally uniformly in q.            ⋊",
+      "status": "partial",
+      "comparison": "Actual periodic/Dirichlet Riesz convergence is proved on endpoint inputs. The printed arbitrary H^t potential, -1<t<-1/2, exact log-squared rate and locally uniform cutoff require a full statement match; endpoint restrictions do not count as full coverage.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/PeriodicProjectionConvergence.lean",
+        "NLS/Articles/KdVPseudomeasures/EndpointDirichletProjectionConvergence.lean"
+      ],
+      "declarations": [],
+      "source_page": 43,
+      "statement_sha256": "bcf6f6005aae7fc231d06313640d652c20949a8a693ab7c1a29dc54ccf0743d9",
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/PeriodicProjectionConvergence.lean": "f774cea248279388120d573a3bdf6cf67a85922a0f694a68d8bd79d4aec57403",
+        "NLS/Articles/KdVPseudomeasures/EndpointDirichletProjectionConvergence.lean": "6876199d948cce3289397a7e54493fe31696e0c04c884a6962b8f4ac3f603deb"
+      }
+    },
+    {
+      "label": "Remark 1.2",
+      "line": 92,
+      "statement": "Remark 1.2. It is easy to see that for generic initial data, the solution curve\nt 7→ SAiry (t, q) of the Airy equation, ∂t u = −∂x3 u, is not continuous with respect\nto the norm topology of Fℓs,∞ 0  . A similar result holds true for the KdV equation\nat least for small initial data – see Section 4. ⊸",
+      "status": "not_found",
+      "comparison": "Generic failure of strong norm continuity of solution curves; not inferred from weak-star wellposedness.",
+      "providers": [],
+      "declarations": [],
+      "source_page": 2,
+      "statement_sha256": "b009a3ebf698671a39d3271a3af25fdbf8098fca1299d6bfa480d3d981ad8ef4",
+      "provider_sha256": {}
+    },
+    {
+      "label": "Remark 1.5",
+      "line": 139,
+      "statement": "Remark 1.5. Note that by [10] for any q ∈ H0−1 , Φ(Iso(q)) = TΦ(q) where\n                                  −1/2,2\n       TΦ(q) = {z̃ = (z̃k )k∈Z ∈ ℓ0        : |z̃k | = |Φ(q)k | ∀ k ∈ Z}.         (2)\n\nFurthermore, since by Theorem 1.4 for any q ∈ Fℓs,∞\n                                                  0   , −1/2 < s ⩽ 0, Iso(q) is\nbounded in Fℓs,∞\n             0   , the weak* topology on Iso(q) coincides with the one induced\nby the norm k·kσ,p for any −1/2 < σ < s, 2 ⩽ p < ∞ with (s − σ)p > 1 – cf.\nLemma B.1 from Appendix B. ⊸",
+      "status": "partial",
+      "comparison": "Isospectral torus equality and weak-star compactness proved; strong norm noncompactness assertion remains linked to Lemma 3.5(iii).",
+      "providers": [],
+      "declarations": [],
+      "source_page": 3,
+      "statement_sha256": "bee7ae8a0a44e0309e30ba4e7416dc4d10f0b71f1a5b8ae03579eb6bb6aea0a4",
+      "provider_sha256": {}
+    },
+    {
+      "label": "Remark 2.3",
+      "line": 399,
+      "statement": "Remark 2.3. For any −1/2 < s ⩽ 0, there are potentials q ∈ Fℓs,∞ so that\nIso(q) is not compact in Fℓs,∞ – see item (iii) in Lemma 3.5. ⊸",
+      "status": "not_found",
+      "comparison": "Existence of endpoint potentials whose gap sequence fails the corresponding weighted ell-two condition requires an explicit example.",
+      "providers": [],
+      "declarations": [],
+      "source_page": 7,
+      "statement_sha256": "61d3036cd38093aa77727c7a4d4d6e5ebed78a253f8a7dc08236efee92fcb331",
+      "provider_sha256": {}
+    },
+    {
+      "label": "Remark 2.6",
+      "line": 623,
+      "statement": "Remark 2.6. By the same approach, one can study the inhomogeneous equation\n\n       (L − λ)f = g,            g ∈ Fℓs,∞\n                                      ⋆,C ,\n\nfor λ ∈ Sn and n ⩾ ns . Writing f = u + v and g = Pn g + Qn g, the Q-equation\nbecomes\n\n       Aλ v = Qn V (u + v) − Qn g = Qn V v + Qn (V u − g)\n\nleading for any given u ∈ Pn and λ ∈ Sn to the unique solution v̌ of the\nequation corresponding to (11)\n\n       v̌ = V v = Kn Tn (V u − g) ∈ Fℓs,∞\n                                      ⋆,C ,\n\nand, in turn, to the unique solution v ∈ Fℓs+2,∞\n                                           ⋆,C   ∩ Qn of the Q-equation\n\n     v = A−1                −1                      −1\n          λ Qn (V u − g) + Aλ Qn Kn Tn (V u − g) = Aλ Qn Kn (V u − g).                     ⊸",
+      "status": "partial",
+      "comparison": "Inhomogeneous physical reconstruction exists; exact printed strip qualification remains.",
+      "providers": [],
+      "declarations": [],
+      "source_page": 10,
+      "statement_sha256": "0e662366c19cf7a149802f5c8a39db90ae81ad72fbf1bb81cfa92e31bf0effc2",
+      "provider_sha256": {}
+    },
+    {
+      "label": "Remark 2.8",
+      "line": 683,
+      "statement": "Remark 2.8. Solutions of the inhomogeneous equation (L − λ)f = g for g ∈\nFℓs,∞\n  ⋆,C , λ ∈ Sn , and n ⩾ ns can be obtained by substituting into the P -equation\n\n       Aλ u = Pn V u + Pn V v − Pn g\n\nthe expression for V v obtained in Remark 2.6, V v = Kn Tn (V u − g), to get\n\n       Aλ u = Pn V u + Pn Kn Tn V u − Pn g − Pn Kn Tn g\n              = Pn (Id + Kn Tn )V u − Pn (Id + Kn Tn )g.\n\nUsing that Id + Kn Tn = Kn one concludes that\n\n       Bn (λ)u = −Pn Kn (λ)g.                                               (18)\n\nConversely, for any solution u of (18), f = u + v, with v being the element in\nFℓs+2,∞\n  ⋆,C   given in Remark 2.6, satisfies (L − λ)f = g and f ∈ Fℓs+2,∞\n                                                                ⋆,C   . ⊸",
+      "status": "partial",
+      "comparison": "Effective resolvent formulas exist; literal meromorphic-inverse assertion and pole multiplicities need a source wrapper.",
+      "providers": [],
+      "declarations": [],
+      "source_page": 11,
+      "statement_sha256": "42eb4f2a647b4e23bfdc6f6fa8cf8ca597831fd73dd18249a945ea0a19c4753f",
+      "provider_sha256": {}
+    },
+    {
+      "label": "Remark C.5",
+      "line": 2859,
+      "statement": "Remark C.5. We will apply Lemma C.4 for potentials q ∈ Fℓs,∞\n                                                         0,C with −1/2 <\ns ⩽ 0 using the fact that by the Sobolev embedding theorem there exists\n−1 < t < −1/2 so that Fℓs,∞     t\n                        0,C ֒→ H0,C . ⊸",
+      "status": "proved",
+      "comparison": "Application of lower weighted Hilbert embedding with strict epsilon; a parameter observation, not an additional spectral theorem.",
+      "providers": [],
+      "declarations": [],
+      "source_page": 43,
+      "statement_sha256": "8aed5377d144ec5cac0cb697832a156670b8ebd07db5540a3bfade85beb9ae6a",
+      "provider_sha256": {}
+    }
+  ],
+  "visual_checks": {
+    "Lemma 2.15": {
+      "pdf_page": 20,
+      "result": "beta already multiplies both terms; prior correction claim retracted"
+    },
+    "Lemma 3.5": {
+      "pdf_page": 30,
+      "result": "printed c0 order s makes premise vacuous given target s+1/2"
+    },
+    "Lemma 5.7": {
+      "pdf_page": 35,
+      "result": "all r>1 and one common complex neighborhood required"
+    },
+    "Lemma A.4": {
+      "pdf_page": 37,
+      "result": "printed full-ball assertion is false; interior polynomial counterexample checked"
+    }
+  },
+  "proof_check_command": "python3 scripts/check-kdv-pseudomeasures-merge.py (strict private output/cache; see numbered-validation.json for parameters and receipts)",
+  "record_check_command": "python3 scripts/check-kdv-pseudomeasures-numbered.py --paper-text PATH --paper-pdf PATH"
+}

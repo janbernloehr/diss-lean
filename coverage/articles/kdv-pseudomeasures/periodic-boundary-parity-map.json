@@ -187,5 +187,6 @@
     "source_Theorem2_1_ii_proved": false,
     "quantitative_Dirichlet_C4ii_rate_proved": false,
     "main_theorems_verified": false
-  }
+  },
+  "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }

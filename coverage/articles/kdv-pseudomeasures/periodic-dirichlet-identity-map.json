@@ -1,7 +1,7 @@
 {
-  "source": "arXiv:1610.00278v1, FULL corrected source Lemma2.15, physical identity(31), overlap(32), AppendixC.1 native signed restriction",
+  "source": "arXiv:1610.00278v1, source Lemma 2.15, displayed physical identity (31), overlap (32), Appendix C.1 signed restriction",
   "date": "2026-11-03",
-  "status": "PROVED FULL corrected Lemma2.15, including actual projected identity(31) with beta on BOTH residual terms and original overlap(32). All five MAIN theorems remain OPEN.",
+  "status": "PROVED Lemma 2.15 as printed; beta is outside parentheses in (31). The historical _corrected name is retained.",
   "modules": [
     "NLS/FunctionalAnalysis/SignedPeriodicIntegral.lean",
     "NLS/KdV/HillH1PhysicalForms.lean",
@@ -54,7 +54,7 @@
     "ACTUAL periodic native residuals with same-parity physical forcing restrict to an equality in the ENTIRE original native Dirichlet dual. The ACTUAL native contour intertwining and faithful L2-base injection then prove the FULL projected identity in ordinary physical interval L2, retaining the original contour and both forcing coefficients.",
     "EVERY unit vector in a two-dimensional actual orthonormal basis has an exact Euclidean coefficient decomposition with norm(alpha)^2+norm(beta)^2=ONE and BOTH coefficients at most ONE. Applied to the actual full periodic spectral range, this is an EXACT equality of original native H1 distributions, not only physical L2 classes.",
     "sourceLemma2_15_corrected constructs the ACTUAL canonical-label spectral basis f,phi, actual eta equation, identical stronger original endpoint distributions, actual unit zero-boundary G and faithful interval g, actual alpha,beta with unit energy and norm(beta)<=ONE. For ANY normalized ACTUAL Dirichlet eigenfunction v at the same original n, its ACTUAL projection coefficient nu satisfies ONE HALF<=norm(nu)<=THREE HALVES AND the FULL exact physical identity: nu*(mu_n-lambda_plus)*v = beta*eta*Pi(f|I)-beta*gamma*Pi(phi|I). ONE original endpoint norm-ball cutoff precedes q,n,all vectors and v and can exceed ANY supplied prior cutoff.",
-    "The full proved identity CORRECTS printed source(31): beta MUST multiply BOTH eta and gamma terms. This agrees with beta*(eta*f-gamma*phi) in the paper proof immediately below(31). The literal displayed identity without beta on gamma is NOT claimed as proved. Corrected full Lemma2.15 and source overlap(32) are COMPLETE.",
+    "Visual inspection of the PDF on page 20 confirms the printed beta is outside parentheses, multiplying BOTH terms. The proved formula agrees with the source display and proof. The previous text-extraction-based correction claim is retracted.",
     "Full COMPLEX weighted midpoint2.1(ii), quantitative Dirichlet C.4(ii) rate where needed, remaining low periodic parity/interlacing and complex ratio2.20 where used, and original Birkhoff/KdV approximation-flow constructions remain OPEN. ALL FIVE MAIN THEOREMS1.1,1.3,1.4,5.1,5.9 remain UNPROVED; goal ACTIVE."
   ],
   "verified": {
@@ -68,7 +68,7 @@
     "actual_full_projected_interval_L2_residual": true,
     "actual_spectral_basis_H1_coordinates_and_exact_unit_energy": true,
     "source_identity31_corrected_complete": true,
-    "printed_identity31_as_written_proved": false,
+    "printed_identity31_as_written_proved": true,
     "beta_required_on_both_eta_and_gamma_terms": true,
     "source_overlap32_proved": true,
     "source_Lemma2_15_corrected_complete": true,
@@ -91,7 +91,7 @@
     "spectral_basis": "The ACTUAL physical source-circle rank-two orthonormal basis has first vector at the original intrinsic canonical lambda_plus and second vector satisfying the ACTUAL eta/gamma equation. Unit-energy coordinates of the constructed G are exact native H1 equalities. Both f and phi retain IDENTICAL entire original F-ell^(s+2,infinity) distributions.",
     "contours": "SAME original positive index n and literal actual periodic/Dirichlet source circles centered(pi*n)^2 with radius n. Actual Dirichlet source-circle validity, isolation and algebraic simplicity are proved uniformly before q by the previous norm-ball compact-image result.",
     "quantifiers": "For EACH original endpoint norm ball R and ANY Nmin, ONE N>=2,N>=Nmin precedes every original q, its physical-period proof and every positive n>=N. The original spectral basis, eta, native G/g and alpha,beta with unit energy are constructed before ANY normalized actual Dirichlet eigenfunction v; for EVERY such v an actual nu satisfies the exact projected identity and original bounds.",
-    "correction31": "PROVED:nu*(mu_n-lambda_plus)*v=beta*eta*Pi(f|I)-beta*gamma*Pi(phi|I). The extracted displayed(31) omits beta on the gamma term, while its immediate proof shows beta*(eta*f-gamma*phi). The Lean theorem corrects that coefficient. The literal displayed formula is NOT asserted as proved.",
+    "correction31": "Visual inspection of the PDF on page 20 confirms the printed beta is outside parentheses, multiplying BOTH terms. The proved formula agrees with the source display and proof. The previous text-extraction-based correction claim is retracted.",
     "boundary_vector": "The proof constructs a unit vector in the actual trace-zero spectral kernel and then derives its exact coordinates in the actual source basis. A separate paper-specific phase-fixed formula for G-tilde is not identified or needed: the proof constructs all norm, trace, domain, coordinate, residual and overlap properties used by the corrected lemma.",
     "scope": "FULL corrected Lemma2.15 is complete. Full complex weighted midpoint2.1(ii), quantitative Dirichlet C.4(ii) and the five main theorems remain unproved."
   },
@@ -162,5 +162,12 @@
     "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "Original validation object records the earlier milestone. full_complex_weighted_source_Theorem2_1_ii_followup links the later4316-declaration audited FULL complex weighted midpoint2.1(ii) milestone."
+  "validation_scope": "Original validation object records the earlier milestone. full_complex_weighted_source_Theorem2_1_ii_followup links the later4316-declaration audited FULL complex weighted midpoint2.1(ii) milestone.",
+  "source_formula_visual_audit": {
+    "audited_on": "2026-11-06",
+    "pdf_page": 20,
+    "source_formula_correct_as_printed": true,
+    "prior_extraction_based_correction_claim_retracted": true,
+    "beta_multiplies_both_terms": true
+  }
 }

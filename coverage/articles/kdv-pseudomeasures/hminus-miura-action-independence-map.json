@@ -183,5 +183,6 @@
     "actual_original_KdV_flow_constructed": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "Original validation/fields record the preceding4665-declaration canonical action gluing milestone. canonical_high_comparison_and_complex_normalization_followup links the later4694-declaration audit: SAME-original-index high comparison, exact8*pi*n factorization and locally uniform high normalization around EVERY COMPLEX point of a common connected neighborhood. Low complex ratios and all-index complex gap-square gluing remain open."
+  "validation_scope": "Original validation/fields record the preceding4665-declaration canonical action gluing milestone. canonical_high_comparison_and_complex_normalization_followup links the later4694-declaration audit: SAME-original-index high comparison, exact8*pi*n factorization and locally uniform high normalization around EVERY COMPLEX point of a common connected neighborhood. Low complex ratios and all-index complex gap-square gluing remain open.",
+  "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }

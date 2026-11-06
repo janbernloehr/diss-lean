@@ -4,9 +4,9 @@ import NLS.KdV.HillDirichletSignedRestriction
 import NLS.KdV.SingularHillSpectralCoordinates
 import NLS.KdV.SingularHillCombinationResidual
 
-/-! Full source Lemma2.15 with the necessary correction to printed(31):
-the spectral coordinate beta multiplies BOTH residual terms. The proof
-immediately below printed(31) has precisely this corrected coefficient. -/
+/-! Full source Lemma 2.15. The printed formula (31) places beta
+outside parentheses, so it multiplies both residual terms. The historical
+`_corrected` declaration name is retained for API compatibility. -/
 noncomputable section
 open Set Metric
 open scoped ENNReal

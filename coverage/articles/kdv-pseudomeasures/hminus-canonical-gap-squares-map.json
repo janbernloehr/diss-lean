@@ -151,5 +151,6 @@
     "actual_original_KdV_flow_constructed": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "Original validation records the preceding4723-declaration all-index gap-square milestone. ALL_index_canonical_action_quotient_followup links the later4775-declaration audit: LOW/HIGH analytic nonzero action quotients through collapse, SAME-domain locally uniform8*pi*n normalization and ALL-index complex zero equivalence are now PROVED. Actual KdV coordinates and full source3.2 remain OPEN."
+  "validation_scope": "Original validation records the preceding4723-declaration all-index gap-square milestone. ALL_index_canonical_action_quotient_followup links the later4775-declaration audit: LOW/HIGH analytic nonzero action quotients through collapse, SAME-domain locally uniform8*pi*n normalization and ALL-index complex zero equivalence are now PROVED. Actual KdV coordinates and full source3.2 remain OPEN.",
+  "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }

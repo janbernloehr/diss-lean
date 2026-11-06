@@ -141,5 +141,6 @@
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "The validation object records this earlier milestone. actual_boundary_parity_and_interval_domain_followup links the later4248-declaration audited parity/boundary-vector/interval-domain milestone."
+  "validation_scope": "The validation object records this earlier milestone. actual_boundary_parity_and_interval_domain_followup links the later4248-declaration audited parity/boundary-vector/interval-domain milestone.",
+  "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }

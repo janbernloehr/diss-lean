@@ -1,0 +1,11 @@
+Numbered-result milestone validation: PASSED
+Paper: arXiv 1610.00278v1
+Scope: 54 numbered items (48 formal results, six remarks). Full-paper proof completion: FALSE.
+Closure: 8921 modules; 80 compiled during this request; 8841 source/dependency-verified reused.
+Article exact public API: 9655 declarations (8092 theorems; 1563 definitions). All 9607 baseline names preserved.
+Allowed axioms only: propext, Classical.choice, Quot.sound.
+All relevant aggregate imports and requested axiom checks passed. Zero warnings/errors. Ten informational tactic hints from existing dependency logs.
+No new axioms, proof-limit increases or linter suppressions.
+All five main-theorem source files unchanged from baseline.
+Canonical checkout remains read-only and clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
+See numbered-results.json for every source label, page, exact excerpt, proof match, correction and remaining obligation.

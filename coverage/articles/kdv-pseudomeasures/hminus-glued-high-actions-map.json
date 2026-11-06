@@ -193,5 +193,6 @@
     "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "Original validation and verified fields record the preceding4514-declaration high-action gluing milestone. actual_Miura_action_transfer_followup links the later4544-declaration audit: exact physical shifted Miura sheets, actual contour/winding transfer with factorTWO and common analytic local all-Dirac-index functions. Low original index/positive-circle geometry and Miura-chart independence remain open."
+  "validation_scope": "Original validation and verified fields record the preceding4514-declaration high-action gluing milestone. actual_Miura_action_transfer_followup links the later4544-declaration audit: exact physical shifted Miura sheets, actual contour/winding transfer with factorTWO and common analytic local all-Dirac-index functions. Low original index/positive-circle geometry and Miura-chart independence remain open.",
+  "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }

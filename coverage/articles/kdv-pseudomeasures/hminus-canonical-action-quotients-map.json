@@ -197,5 +197,6 @@
     "actual_original_KdV_flow_constructed": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "Original validation records the preceding4775-declaration all-index action-quotient milestone. canonical_analytic_Dirichlet_data_followup links the later4819-declaration audit: common analytic SIMPLE Dirichlet energies, full complex native spectrum exhaustion, noncollision and exact multiplicities are now PROVED. Norming sheet and actual KdV coordinates remain OPEN."
+  "validation_scope": "Original validation records the preceding4775-declaration all-index action-quotient milestone. canonical_analytic_Dirichlet_data_followup links the later4819-declaration audit: common analytic SIMPLE Dirichlet energies, full complex native spectrum exhaustion, noncollision and exact multiplicities are now PROVED. Norming sheet and actual KdV coordinates remain OPEN.",
+  "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }

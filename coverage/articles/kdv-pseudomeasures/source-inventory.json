@@ -4671,7 +4671,128 @@
       "reuse": "Copied byte-identically and used directly for the actual endpoint determinant perturbation bound; the existing Rouche/ZeroCountComparison library supplies the scalar two-zero count."
     }
   ],
-  "remaining_obligations": [],
+  "remaining_obligations": [
+    {
+      "label": "Lemma 2.4",
+      "status": "partial",
+      "obligation": "All weights, shifted infinity norm, monotone constant and physical operator identification are proved on radius-6n strips. The printed radius-12n strip is not covered by that interface."
+    },
+    {
+      "label": "Corollary 2.5",
+      "status": "partial",
+      "obligation": "Uniform tail inverse and physical inhomogeneous reconstruction exist on the corrected radius-6n strip. Audit does not equate this with the entire printed strip."
+    },
+    {
+      "label": "Lemma 2.7",
+      "status": "partial",
+      "obligation": "Exact full H1-domain eigenvalue/determinant equivalence; radius-6n strip, rather than the complete printed radius-12n strip."
+    },
+    {
+      "label": "Lemma 2.9",
+      "status": "partial",
+      "obligation": "Joint analyticity and weighted off-diagonal errors proved. The sharp arbitrary-weight diagonal estimate using the unweighted q norm is not established by the unit-weight theorem; strip discrepancy also remains."
+    },
+    {
+      "label": "Lemma 2.10",
+      "status": "partial",
+      "obligation": "Refined coefficient estimates support adapted-map construction; a full source wrapper with the precise piecewise epsilon_s, constants, arbitrary weights and printed strip is absent. Printed p is inconsistent with the stated infinity domain."
+    },
+    {
+      "label": "Lemma 2.11",
+      "status": "partial",
+      "obligation": "Exact two-count, physical multiplicity, localization and separation are proved on corrected radius-6n strips. The full printed-strip count is not inferred."
+    },
+    {
+      "label": "Lemma 2.12",
+      "status": "partial",
+      "obligation": "Weighted gap membership and uniform quantitative tail bounds exist; the literal displayed 4 and 16*c_s tail inequality for all complex weights and all N >= n_s is not separately verified."
+    },
+    {
+      "label": "Lemma 2.16",
+      "status": "partial",
+      "obligation": "Analytic adapted coefficients and uniform error bounds exist with constructed thresholds. Literal (35) threshold and both printed sharp inequalities require a separate statement match."
+    },
+    {
+      "label": "Lemma 2.17",
+      "status": "partial",
+      "obligation": "Unique analytic diagonal roots and explicit bounds proved with constructed uniform thresholds. The exact printed threshold N_(m,s) and constants are not identified with that interface."
+    },
+    {
+      "label": "Lemma 2.20",
+      "status": "partial",
+      "obligation": "Only the real-source case is explicitly proved. The printed complex coupling-ratio hypothesis must not be replaced by reality."
+    },
+    {
+      "label": "Theorem 3.1",
+      "status": "partial",
+      "obligation": "Canonical H-minus-one Birkhoff map and integer regularity foundations exist. The complete cited theorem quantifies over every real Sobolev exponent s >= -1 and asserts Hamiltonian analyticity on the full action quadrant; no complete single statement/evidence match recorded."
+    },
+    {
+      "label": "Theorem 3.2",
+      "status": "partial",
+      "obligation": "Canonical analytic actions, quotient asymptotics, gap-zero equivalence and Cartesian spectral bounds exist. Must package all three clauses on one actual common Birkhoff neighborhood; printed Z_n/complement is reversed."
+    },
+    {
+      "label": "Lemma 3.5",
+      "status": "partial",
+      "obligation": "Parts (i) boundedness and (ii) full torus image are proved. Part (iii), failure of strong compactness for nonvanishing weighted tails, needs its own theorem; printed target/source type annotations are inconsistent. The printed part (iii) uses s instead of s+1/2 in its tail space; with the actual target regularity this premise is vacuous. The intended noncompactness criterion must use the target order."
+    },
+    {
+      "label": "Lemma 3.9",
+      "status": "partial",
+      "obligation": "Existing inverse-index weighted lp frequency remainder is weaker than the displayed omega_n=(2*pi*n)^3-6*I_n+o(1), uniformly on every endpoint norm-bounded set. The sharp action subtraction and uniform o(1) are not claimed."
+    },
+    {
+      "label": "Theorem 5.2",
+      "status": "partial",
+      "obligation": "Wiener Birkhoff equivalences do not by themselves prove both complex spectral sequences are uniformly bounded on every bounded Wiener subset. Full direct spectral statement not located."
+    },
+    {
+      "label": "Theorem 5.3",
+      "status": "partial",
+      "obligation": "Wiener inverse regularity is available through Birkhoff coordinates. Must derive the literal gap-only hypothesis on every real L2 source, including the entire isospectral set."
+    },
+    {
+      "label": "Lemma A.1",
+      "status": "partial",
+      "obligation": "Reciprocal separation estimates exist in the library, but the literal sum over all |m| != n and all sigma > 1/2, including the sigma=1 logarithmic transition, has not been matched to a public declaration."
+    },
+    {
+      "label": "Lemma A.3",
+      "status": "partial",
+      "obligation": "Generic weighted convolution tools exist. Both exact parameter ranges, actual convolution and source norm bounds need explicit source statements, especially the mixed endpoint/Hilbert estimate."
+    },
+    {
+      "label": "Lemma C.4",
+      "status": "partial",
+      "obligation": "Actual periodic/Dirichlet Riesz convergence is proved on endpoint inputs. The printed arbitrary H^t potential, -1<t<-1/2, exact log-squared rate and locally uniform cutoff require a full statement match; endpoint restrictions do not count as full coverage."
+    },
+    {
+      "label": "Remark 1.2",
+      "status": "not_found",
+      "obligation": "Generic failure of strong norm continuity of solution curves; not inferred from weak-star wellposedness."
+    },
+    {
+      "label": "Remark 1.5",
+      "status": "partial",
+      "obligation": "Isospectral torus equality and weak-star compactness proved; strong norm noncompactness assertion remains linked to Lemma 3.5(iii)."
+    },
+    {
+      "label": "Remark 2.3",
+      "status": "not_found",
+      "obligation": "Existence of endpoint potentials whose gap sequence fails the corresponding weighted ell-two condition requires an explicit example."
+    },
+    {
+      "label": "Remark 2.6",
+      "status": "partial",
+      "obligation": "Inhomogeneous physical reconstruction exists; exact printed strip qualification remains."
+    },
+    {
+      "label": "Remark 2.8",
+      "status": "partial",
+      "obligation": "Effective resolvent formulas exist; literal meromorphic-inverse assertion and pole multiplicities need a source wrapper."
+    }
+  ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
     "branch": "articles/kdv-pseudomeasures",
@@ -9108,5 +9229,26 @@
     "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-9-all-main-proofs-map.json"
   },
   "main_merge_validation": "coverage/articles/kdv-pseudomeasures/merge-validation.json",
-  "main_refresh_validation": "coverage/articles/kdv-pseudomeasures/refresh-validation.json"
+  "main_refresh_validation": "coverage/articles/kdv-pseudomeasures/refresh-validation.json",
+  "current_numbered_result_audit": {
+    "record": "coverage/articles/kdv-pseudomeasures/numbered-results.json",
+    "audited_on": "2026-11-06",
+    "total_numbered_results": 54,
+    "formal_results": 48,
+    "numbered_remarks": 6,
+    "five_main_theorems_proved": true,
+    "all_numbered_results_proved": false,
+    "status_counts": {
+      "proved": 27,
+      "proved_corrected": 3,
+      "partial": 22,
+      "not_found": 2
+    },
+    "historical_milestones": "Earlier *_followup, verified_*, validation and publication snapshots are historical; consult the numbered-result audit for present full-paper scope. A main-theorem completion claim is not full-paper completion.",
+    "Lemma5_7": "Proved in full, including every p>1 and a common complex Wiener neighborhood; see hill-L2-Wiener-lp-frequency-map.json.",
+    "LemmaA4": "User-authorized inner-ball replacement proved, retaining closed half-ball coverage; printed full-ball assertion formally refuted.",
+    "validation_record": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation": "passed; full-paper coverage incomplete"
+  },
+  "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }
