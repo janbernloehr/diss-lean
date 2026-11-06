@@ -487,6 +487,26 @@
           "source_clause": "EVERY real mean-zero weak target has norm-convergent exact finite outputs with uniformly bounded actual original physical preimages",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_bounded_physical_inverse_approximants",
           "qualification": "EVERY real mean-zero native h^(-1/2) target, including targets outside all stronger spaces and of arbitrary size, has an ACTUAL sequence of ORIGINAL physical mean-zero inverse approximants. EVERY symmetric finite target truncation is recovered EXACTLY by the SAME signed global map; their outputs converge STRONGLY in the native weak target norm and have norm at most that of the given target. The actual preimages obey the SAME uniform universal HminusOne bound A*sqrt((2/pi)*norm(b)^2)+B*(2/pi)*norm(b)^2. This proves real weak image density with actual uniformly bounded physical preimages. Strong convergence or norm precompactness of those preimages for GROWING supports, and hence full rough surjectivity, remain OPEN."
+        },
+        {
+          "source_clause": "FULL actual real mean-zero HminusOne surjectivity onto EVERY real mean-zero native h^(-1/2) target, arbitrary size and without stronger regularity",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_real_meanZero_signed_preimage",
+          "qualification": "FULL rough real SURJECTIVITY of the SAME existing actual global signed map: EVERY actual real mean-zero native h^(-1/2) target, including arbitrary-size targets outside ALL stronger Sobolev spaces, has an ACTUAL real mean-zero HminusOne preimage. Exact finite ORIGINAL physical inverse approximants share ONE coefficient majorant given by the original target itself. The proved uniform action comparison and actual compact source container give a genuinely STRONG HminusOne subsequence, and actual forward continuity at the real mean-zero limit identifies the FULL signed target including phases. The SAME actual deleted weak map is onto its entire physical real Hilbert target. No smallness, source L2, spectral finite-gap, stronger target regularity, no-loss or assumed inverse premise remains."
+        },
+        {
+          "source_clause": "The SAME actual deleted weak map is onto its ENTIRE physical real Hilbert target, with exact source/target normalization",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.meanZeroForward_surjective_on_real",
+          "qualification": "FULL rough real SURJECTIVITY of the SAME existing actual global signed map: EVERY actual real mean-zero native h^(-1/2) target, including arbitrary-size targets outside ALL stronger Sobolev spaces, has an ACTUAL real mean-zero HminusOne preimage. Exact finite ORIGINAL physical inverse approximants share ONE coefficient majorant given by the original target itself. The proved uniform action comparison and actual compact source container give a genuinely STRONG HminusOne subsequence, and actual forward continuity at the real mean-zero limit identifies the FULL signed target including phases. The SAME actual deleted weak map is onto its entire physical real Hilbert target. No smallness, source L2, spectral finite-gap, stronger target regularity, no-loss or assumed inverse premise remains."
+        },
+        {
+          "source_clause": "Genuine growing-support compactness/no-loss from one actual weak coefficient majorant",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_compact_physical_preimage_container_of_positive_majorant",
+          "qualification": "For EVERY native weak signed target norm bound R and EVERY fixed Hilbert coefficient majorant a, ALL actual ORIGINAL physical mean-zero preimages whose SAME D.positive coefficients are bounded by a lie in ONE HminusOne norm-compact set. GROWING supports are allowed. The proved global ground-factor bound controls actual L2 factors; the new uniform action-tail estimate gives one literal summable norm-square majorant, actual Dirac action properness gives strong factor compactness, and the continuous normalized ACTUAL Miura map (including the exact factor-energy constant) gives strong rough compactness."
+        },
+        {
+          "source_clause": "Uniform actual signed canonical Dirac endpoint displacement and positive-frequency growth on EVERY L2 norm ball",
+          "lean_declaration": "NLS.ZakharovShabat.exists_uniform_real_hilbert_periodic_displacement_bound",
+          "qualification": "GLOBAL uniform spectral displacement on EVERY real L2 norm ball: ONE finite C(R) controls BOTH actual signed canonical endpoint displacements from pi*n at EVERY integer n, independently of source tails or stronger Sobolev norms. Norm-preserving actual source modulation moves the chosen indexed endpoint to a continuous central selection; the proved actual path retention and norm-ball central bound apply. Consequently ONE N(R)>=1 gives actual positive left endpoint >=pi*n/2 for EVERY real source in the ball and EVERY n>=N(R). No H1/linear-weight assumption or unproved oscillation/minmax theorem is used."
         }
       ]
     },
@@ -36895,12 +36915,132 @@
       "scope": "EVERY real mean-zero native h^(-1/2) target, including targets outside all stronger spaces and of arbitrary size, has an ACTUAL sequence of ORIGINAL physical mean-zero inverse approximants. EVERY symmetric finite target truncation is recovered EXACTLY by the SAME signed global map; their outputs converge STRONGLY in the native weak target norm and have norm at most that of the given target. The actual preimages obey the SAME uniform universal HminusOne bound A*sqrt((2/pi)*norm(b)^2)+B*(2/pi)*norm(b)^2. This proves real weak image density with actual uniformly bounded physical preimages. Strong convergence or norm precompactness of those preimages for GROWING supports, and hence full rough surjectivity, remain OPEN.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "d5fa8f2f347a11f2d043fab9e527d414bddd2ed16b55aee28db7b6cbf3ae1ad5"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHilbertCentralEndpointBound.lean",
+      "source_labels": [
+        "FULL actual rough real surjectivity and its proved uniform spectral/action-tail/no-loss dependencies for Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The two ACTUAL indexed central Dirac endpoints are uniformly bounded on EVERY real L2 source norm ball. Bounded real Fourier coefficient compactness and the already-proved actual indexed endpoint continuity under bounded coefficient limits rule out unbounded central selections. No common strong-source neighborhood, Fourier tail cutoff or stronger Sobolev norm is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "08e17a4be65140e249d8d90180c93e49603467787e50623a33d1d9769157859a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SpectralModulation.lean",
+      "source_labels": [
+        "FULL actual rough real surjectivity and its proved uniform spectral/action-tail/no-loss dependencies for Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Opposite actual Fourier shifts preserve the ORIGINAL derivative domain and intertwine the actual convolution-defined Dirac operator with an EXACT constant spectral translation pi*n. The two base shifts and domain shifts retain the correct factor of two. Every original periodic eigenvalue transports with an ACTUAL nonzero eigenvector in the SAME derivative domain, at every finite Banach exponent. All algebra uses the actual original operator; no spectral-set covariance assumption is supplied.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "796f8382a49703dd1a3139dfd7b799d762217d71a2134f13d56ff9787e53be0e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSpectralModulation.lean",
+      "source_labels": [
+        "FULL actual rough real surjectivity and its proved uniform spectral/action-tail/no-loss dependencies for Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The actual opposite period-one source Fourier shifts form a linear ISOMETRY of the ORIGINAL source pair norm and preserve the actual real Fourier form. The literal period-one insertion commutes with the period-two operator modulation with its exact factor two. Every actual source spectral point transports to the exact pi*n-translated spectral point. No spatial-translation or constant-phase substitute is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "100726450f4555805f7b12492fbdf3073a87b22423367e91911d9a1d680bc7ce"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCentralSpectralPath.lean",
+      "source_labels": [
+        "FULL actual rough real surjectivity and its proved uniform spectral/action-tail/no-loss dependencies for Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "No actual periodic spectral point lies strictly in the real band between consecutive canonical pairs. Along ANY continuous real-source path from zero, ANY continuous actual spectral selection starting at the free central zero stays in the ACTUAL central pair, including collapsed central gaps. Moving adjacent band midpoints and connectedness prevent crossing. No pair-index identification, cutoff agreement or simple-root premise is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e292b43d884da09e53f267ba0afd19f590a5e1eaed4f436fd4a3e324c1ddf0b3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHilbertUniformSpectralDisplacement.lean",
+      "source_labels": [
+        "FULL actual rough real surjectivity and its proved uniform spectral/action-tail/no-loss dependencies for Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "GLOBAL uniform spectral displacement on EVERY real L2 norm ball: ONE finite C(R) controls BOTH actual signed canonical endpoint displacements from pi*n at EVERY integer n, independently of source tails or stronger Sobolev norms. Norm-preserving actual source modulation moves the chosen indexed endpoint to a continuous central selection; the proved actual path retention and norm-ball central bound apply. Consequently ONE N(R)>=1 gives actual positive left endpoint >=pi*n/2 for EVERY real source in the ball and EVERY n>=N(R). No H1/linear-weight assumption or unproved oscillation/minmax theorem is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "34d11183acc75006816ba6d3c2700340cb7c11ed4b0f43a8af3f7c1c155f84ef"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHilbertWeakActionComparison.lean",
+      "source_labels": [
+        "FULL actual rough real surjectivity and its proved uniform spectral/action-tail/no-loss dependencies for Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ONE cutoff depending ONLY on the actual real L2 pair norm bound controls EVERY high ORIGINAL ordinary Dirac action by 2*J_(n,1)/(pi*n), including closed gaps. The actual uniform endpoint lower bound and the already-proved original higher-action mean-value formula give the comparison. No localization or uniform stronger Sobolev estimate remains as a premise.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "08dbb5da808e658c636742173a06f81e81db095d9267d5164f19b1f6fdf1d34b"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundActionTails.lean",
+      "source_labels": [
+        "FULL actual rough real surjectivity and its proved uniform spectral/action-tail/no-loss dependencies for Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For EVERY existing global actual forward datum D and EVERY actual normalized real factor of an ORIGINAL physical Hill source, ONE cutoff depending ONLY on its L2 pair norm bound controls the positive ordinary factor action by (2/pi)*norm(D.positive_n)^2. The exact ORIGINAL Hill I_n=2*Dirac J_(n,1) bridge and I_n=(1+n)*norm(D.positive_n)^2 retain the actual normalization. Actual diagonal spectral reflection controls BOTH signed ordinary action tails by (2/pi)*(norm(D.positive_j)^2+norm(D.positive_-j)^2). No uniform H1 source bound is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c1d1ae29fa6627229b0fe90ec04ff0aabedc5a0386afa5f9cda4f14d2ffeeda8"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHilbertActionTailCompactness.lean",
+      "source_labels": [
+        "FULL actual rough real surjectivity and its proved uniform spectral/action-tail/no-loss dependencies for Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "EVERY bounded actual real Hilbert source family whose high ORIGINAL ordinary actions have ONE nonnegative ell1 majorant lies in an ACTUAL norm-compact source container, allowing GROWING spectral supports. The exact ordinary mass trace bounds the finite low-action head, the fixed summable majorant gives a compact ell1 action set, and the already-verified actual ordinary action map is PROPER. No inverse, no-energy-loss or precompactness premise is left to the caller.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bb763a944a6080a2835e17a21af48b1f4a12a4e2e541416cdee0a338fb3e801b"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughActionMajorantCompactness.lean",
+      "source_labels": [
+        "FULL actual rough real surjectivity and its proved uniform spectral/action-tail/no-loss dependencies for Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For EVERY native weak signed target norm bound R and EVERY fixed Hilbert coefficient majorant a, ALL actual ORIGINAL physical mean-zero preimages whose SAME D.positive coefficients are bounded by a lie in ONE HminusOne norm-compact set. GROWING supports are allowed. The proved global ground-factor bound controls actual L2 factors; the new uniform action-tail estimate gives one literal summable norm-square majorant, actual Dirac action properness gives strong factor compactness, and the continuous normalized ACTUAL Miura map (including the exact factor-energy constant) gives strong rough compactness.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f2d96a116153093c50e039724273bb8668491d366f5c5461c5789f208d13f4ca"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughSurjective.lean",
+      "source_labels": [
+        "FULL actual rough real surjectivity and its proved uniform spectral/action-tail/no-loss dependencies for Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "FULL rough real SURJECTIVITY of the SAME existing actual global signed map: EVERY actual real mean-zero native h^(-1/2) target, including arbitrary-size targets outside ALL stronger Sobolev spaces, has an ACTUAL real mean-zero HminusOne preimage. Exact finite ORIGINAL physical inverse approximants share ONE coefficient majorant given by the original target itself. The proved uniform action comparison and actual compact source container give a genuinely STRONG HminusOne subsequence, and actual forward continuity at the real mean-zero limit identifies the FULL signed target including phases. The SAME actual deleted weak map is onto its entire physical real Hilbert target. No smallness, source L2, spectral finite-gap, stronger target regularity, no-loss or assumed inverse premise remains.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e3ed22df4aff7a47f1c886a48f461cb8aa79398b78c016067fd17718de5039d"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The SAME global signed forward map retains physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact all-order nonlinear Sobolev equivalence, GLOBAL real mean-zero rough injectivity, common COMPLEX canonicality, exact origin/Fourier normalization and ONE weak inverse before ALL native orders with full complex matching. Global auxiliary Miura properness and ACTUAL normalized ground factors at EVERY real mean-zero HminusOne q are proved. NEW: ALL canonical Hill labels match squared Dirac labels at normalized CRITICAL factors, including the single simple ground energy and every low/closed gap; ACTUAL Hill finite-gap tails imply ACTUAL spectral finite-gap ground factors. A DIRECT REAL change of variables proves ORIGINAL positive Hill I_n=2*ORIGINAL Dirac J_(n,1), without outside-energy inverse/sheet premises; exact weighted-action reflection retains both signs. The inverse-frequency mass estimate then bounds physical finite-gap factor energy by the SAME D.positive norm. ACTUAL finite target truncations through one genuine local real weak inverse produce physical finite-gap sources converging STRONGLY in HminusOne. Intrinsic ground-energy continuity yields GLOBAL -lowest(q) <= (2/pi)*norm(D.signed(q))^2 for EVERY real mean-zero rough source, including NON-L2/arbitrary-size sources. EVERY actual normalized factor has the corresponding global L2 bound. Fixed universal constants give norm(q)<=A*sqrt((2/pi)*norm(D.signed(q))^2)+B*(2/pi)*norm(D.signed(q))^2. The actual global weak energy/source bound obstruction is CLOSED. NEXT prove actual compactness/no-loss or reconstruction for rough Birkhoff SURJECTIVITY. A priori boundedness alone is NOT properness/onto. Then construct ONE global real rough inverse/global all-order diffeomorphisms and establish action-Hamiltonian identifications, frequency formulas/sharp estimates/action descent/fixed-mass corrections/actual KdV-KdV2 PDE conclusions. All eleven complete main rows remain OPEN. NEW: EVERY finite real mean-zero signed native weak target has an exact ORIGINAL physical mean-zero preimage using the fixed original Birkhoff inverse and exact full signed agreement. EVERY compact target set with one FIXED finite support has norm-compact FULL real mean-zero HminusOne preimage, using the original Dirac Hilbert compact container and continuous normalized actual Miura reconstruction. EVERY real mean-zero weak target has exact finite symmetric inverse approximants with native target norm convergence and uniform universal HminusOne source bounds. The real weak image is DENSE. No-loss for GROWING supports remains essential for full rough SURJECTIVITY; neither density nor fixed-support properness proves onto. All eleven complete main rows remain OPEN.",
+    "The SAME existing actual global signed rough map retains all previously proved original physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact nonlinear ALL-order regularity, GLOBAL real mean-zero injectivity, common COMPLEX canonicality, exact origin/Fourier normalization and ONE weak inverse before ALL native orders. Actual normalized ground factors and GLOBAL weak energy/source bounds at EVERY real mean-zero rough source are proved. NEW: norm-preserving actual Fourier modulation transports the ORIGINAL Dirac operator and spectrum with exact pi*n shift, while real band separation retains continuous central spectral selections. Bounded Fourier coefficient compactness gives actual central endpoint bounds on EVERY real L2 norm ball. Together these prove ONE uniform C(R) bounding BOTH actual signed canonical endpoint displacements at EVERY integer, hence ONE N(R) with positive left endpoint >=pi*n/2 for EVERY real source in the ball. The original higher-action mean-value formula and EXACT original Hill/Dirac action bridge give actual uniform ordinary-action tail domination by the SAME weak positive target coefficients, BOTH signs. A SINGLE summable action majorant and the already-proved actual ordinary Dirac action properness give strong factor compactness, allowing GROWING supports. Continuous normalized ACTUAL Miura reconstruction gives genuine HminusOne source compactness for exact finite ORIGINAL physical inverse approximants at EVERY real mean-zero weak target. Actual forward continuity identifies the FULL signed limiting target, including all phases. FULL actual rough real SURJECTIVITY and surjectivity of the SAME deleted real weak map are now CLOSED, with NO smallness, L2-source, finite-gap, stronger-target, compactness/no-loss or assumed inverse premise. NEXT use actual global injectivity and surjectivity to construct ONE global real rough inverse, prove its actual analytic germs and global ALL-native-order compatibility/diffeomorphisms, and finish action-Hamiltonian descent, frequency formulas/sharp estimates, fixed-mass and actual KdV/KdV2 PDE conclusions. All eleven COMPLETE main rows remain OPEN.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -36926,15 +37066,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 21637,
-    "total_declarations_audited": 43707,
+    "candidate_declarations_audited": 21706,
+    "total_declarations_audited": 43776,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2790,
+    "selected_modules": 2800,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -37035,7 +37175,8 @@
     "miura_ground_validation_sequence": "Prior strict evidence retained for all 2760 unchanged selected baseline sources. All three new own modules strictly rebuilt in dependency order after freezing 2809 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2763 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact three-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2763-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2763-module rebuild is claimed.",
     "miura_mass_validation_sequence": "Prior strict evidence retained for all 2763 unchanged selected baseline sources. All eight new own modules and one unchanged canonical prerequisite strictly rebuilt in dependency order after freezing 2819 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2772 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; one unchanged canonical prerequisite and one new verified provenance record are selected. All 44 provenance records are verified. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2772-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2772-module rebuild is claimed.",
     "ground_action_validation_sequence": "Prior strict evidence retained for all 2772 unchanged selected baseline sources. All eight new own modules and four unchanged canonical prerequisites strictly rebuilt in dependency order after freezing 2832 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2784 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact twelve-module increase in NLS import closure verified. All 44 prior verified provenance records remain byte-for-byte unchanged; four unchanged canonical prerequisites and one new verified provenance record are selected. All 45 provenance records are verified. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2784-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2784-module rebuild is claimed.",
-    "finite_support_validation_sequence": "Prior strict evidence retained for all 2784 unchanged selected baseline sources. All five new own modules and one unchanged canonical prerequisite strictly rebuilt in dependency order after freezing 2839 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2790 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact six-module increase in NLS import closure verified. All 45 prior provenance records remain byte-for-byte unchanged; the original compact-container prerequisite and one new verified provenance record are selected. All 46 provenance records are verified. Selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2790-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2790-module rebuild is claimed."
+    "finite_support_validation_sequence": "Prior strict evidence retained for all 2784 unchanged selected baseline sources. All five new own modules and one unchanged canonical prerequisite strictly rebuilt in dependency order after freezing 2839 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2790 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact six-module increase in NLS import closure verified. All 45 prior provenance records remain byte-for-byte unchanged; the original compact-container prerequisite and one new verified provenance record are selected. All 46 provenance records are verified. Selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2790-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2790-module rebuild is claimed.",
+    "rough_surjective_validation_sequence": "Prior strict evidence retained for all 2790 unchanged selected baseline sources. All ten new own modules strictly rebuilt in dependency order after freezing 2849 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2800 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact ten-module increase in NLS import closure verified. No new canonical prerequisite or provenance record is needed; ALL 46 prior provenance records remain byte-for-byte unchanged and all are verified. Selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2800-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2800-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -38037,6 +38178,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "decb728365ff82b63e6fa085e4cf65139041ae06",
+      "description": "Prove FULL actual rough real surjectivity, global uniform L2-ball canonical spectral displacement and ordinary action-tail comparison, and genuine strong rough compactness for growing-support exact physical inverse approximants.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The SAME global signed forward map retains physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact all-order nonlinear Sobolev equivalence, GLOBAL real mean-zero rough injectivity, common COMPLEX canonicality, exact origin/Fourier normalization and ONE weak inverse before ALL native orders with full complex matching. Global auxiliary Miura properness and ACTUAL normalized ground factors at EVERY real mean-zero HminusOne q are proved. NEW: ALL canonical Hill labels match squared Dirac labels at normalized CRITICAL factors, including the single simple ground energy and every low/closed gap; ACTUAL Hill finite-gap tails imply ACTUAL spectral finite-gap ground factors. A DIRECT REAL change of variables proves ORIGINAL positive Hill I_n=2*ORIGINAL Dirac J_(n,1), without outside-energy inverse/sheet premises; exact weighted-action reflection retains both signs. The inverse-frequency mass estimate then bounds physical finite-gap factor energy by the SAME D.positive norm. ACTUAL finite target truncations through one genuine local real weak inverse produce physical finite-gap sources converging STRONGLY in HminusOne. Intrinsic ground-energy continuity yields GLOBAL -lowest(q) <= (2/pi)*norm(D.signed(q))^2 for EVERY real mean-zero rough source, including NON-L2/arbitrary-size sources. EVERY actual normalized factor has the corresponding global L2 bound. Fixed universal constants give norm(q)<=A*sqrt((2/pi)*norm(D.signed(q))^2)+B*(2/pi)*norm(D.signed(q))^2. The actual global weak energy/source bound obstruction is CLOSED. NEXT prove actual compactness/no-loss or reconstruction for rough Birkhoff SURJECTIVITY. A priori boundedness alone is NOT properness/onto. Then construct ONE global real rough inverse/global all-order diffeomorphisms and establish action-Hamiltonian identifications, frequency formulas/sharp estimates/action descent/fixed-mass corrections/actual KdV-KdV2 PDE conclusions. All eleven complete main rows remain OPEN. NEW: EVERY finite real mean-zero signed native weak target has an exact ORIGINAL physical mean-zero preimage using the fixed original Birkhoff inverse and exact full signed agreement. EVERY compact target set with one FIXED finite support has norm-compact FULL real mean-zero HminusOne preimage, using the original Dirac Hilbert compact container and continuous normalized actual Miura reconstruction. EVERY real mean-zero weak target has exact finite symmetric inverse approximants with native target norm convergence and uniform universal HminusOne source bounds. The real weak image is DENSE. No-loss for GROWING supports remains essential for full rough SURJECTIVITY; neither density nor fixed-support properness proves onto. All eleven complete main rows remain OPEN.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -38106,5 +38259,6 @@
   "global_rough_ground_energy_bound_record": "GLOBAL_ROUGH_GROUND_ENERGY_BOUND.md",
   "canonical_ground_action_reuse_record": "CANONICAL_GROUND_ACTION_REUSE.json",
   "global_rough_finite_target_recovery_record": "GLOBAL_ROUGH_FINITE_TARGET_RECOVERY.md",
-  "canonical_finite_support_reuse_record": "CANONICAL_FINITE_SUPPORT_REUSE.json"
+  "canonical_finite_support_reuse_record": "CANONICAL_FINITE_SUPPORT_REUSE.json",
+  "global_rough_surjectivity_record": "GLOBAL_ROUGH_SURJECTIVITY.md"
 }

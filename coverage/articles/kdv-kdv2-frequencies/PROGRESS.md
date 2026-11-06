@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual finite-target recovery and fixed-support properness
+## Latest FULL actual rough real surjectivity
+
+FULL rough real surjectivity is proved for the SAME actual signed global forward map in the native h^(-1/2) target norm: EVERY real mean-zero weak target has an ACTUAL real mean-zero HminusOne preimage, with all signed phases and normalizations retained. A new genuine L2 norm-ball spectral displacement theorem closes the missing uniform tail estimate. Actual ordinary action properness then gives strong rough compactness of the exact finite inverse approximants even as their supports GROW. See `GLOBAL_ROUGH_SURJECTIVITY.md`.
+
+The actual uniform L2-ball spectral growth/action-tail obstruction, GROWING-support no-loss for exact inverse approximants, and FULL rough real SURJECTIVITY are CLOSED. NEXT construct ONE global real rough inverse from the proved global injectivity and surjectivity, establish its actual analytic inverse germs and global compatibility at ALL native Sobolev orders, and complete the remaining Hamiltonian/action descent/frequency/sharp estimate/fixed-mass/PDE identifications. All eleven COMPLETE main theorem rows remain OPEN.
+
+Prior strict evidence retained for all 2790 unchanged selected baseline sources. All ten new own modules strictly rebuilt in dependency order after freezing 2849 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2800 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact ten-module increase in NLS import closure verified. No new canonical prerequisite or provenance record is needed; ALL 46 prior provenance records remain byte-for-byte unchanged and all are verified. Selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2800-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2800-module rebuild is claimed.
+
+Fresh audit: 21706 selected and 43776 imported NLS declarations; permitted axioms only. Ten new own modules contain 27 explicit theorems.
+
+## Earlier actual finite-target recovery and fixed-support properness
 
 The SAME actual signed rough forward map is onto EVERY finite real mean-zero weak target at arbitrary size, with exact original physical inverse phases/signs/normalizations. Compact native target sets with a FIXED finite support have norm-compact FULL real mean-zero HminusOne preimages. Every real mean-zero weak target is the native norm limit of exact finite outputs of actual ORIGINAL physical mean-zero sources; those actual preimages are uniformly bounded by the proved universal weak source bound. See `GLOBAL_ROUGH_FINITE_TARGET_RECOVERY.md`.
 

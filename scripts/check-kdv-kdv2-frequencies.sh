@@ -2799,6 +2799,16 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteTargetRecovery
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteTargetProperness
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughDenseImage
+  NLS/ZakharovShabat/SourceHilbertCentralEndpointBound
+  NLS/ZakharovShabat/SpectralModulation
+  NLS/ZakharovShabat/SourceSpectralModulation
+  NLS/ZakharovShabat/SourceCentralSpectralPath
+  NLS/ZakharovShabat/SourceHilbertUniformSpectralDisplacement
+  NLS/ZakharovShabat/SourceHilbertWeakActionComparison
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundActionTails
+  NLS/ZakharovShabat/SourceHilbertActionTailCompactness
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughActionMajorantCompactness
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughSurjective
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -1,3 +1,13 @@
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughSurjective
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionMajorantCompactness
+import NLS.ZakharovShabat.SourceHilbertActionTailCompactness
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundActionTails
+import NLS.ZakharovShabat.SourceHilbertWeakActionComparison
+import NLS.ZakharovShabat.SourceHilbertUniformSpectralDisplacement
+import NLS.ZakharovShabat.SourceSpectralModulation
+import NLS.ZakharovShabat.SourceCentralSpectralPath
+import NLS.ZakharovShabat.SpectralModulation
+import NLS.ZakharovShabat.SourceHilbertCentralEndpointBound
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughDenseImage
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteTargetProperness
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteTargetRecovery
@@ -4775,7 +4785,17 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteSupportCompactness,
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteTargetRecovery,
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteTargetProperness,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughDenseImage
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughDenseImage,
+  `NLS.ZakharovShabat.SourceHilbertCentralEndpointBound,
+  `NLS.ZakharovShabat.SpectralModulation,
+  `NLS.ZakharovShabat.SourceSpectralModulation,
+  `NLS.ZakharovShabat.SourceCentralSpectralPath,
+  `NLS.ZakharovShabat.SourceHilbertUniformSpectralDisplacement,
+  `NLS.ZakharovShabat.SourceHilbertWeakActionComparison,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundActionTails,
+  `NLS.ZakharovShabat.SourceHilbertActionTailCompactness,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionMajorantCompactness,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughSurjective
 ]
 
 open Lean in
