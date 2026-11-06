@@ -1,3 +1,8 @@
+import NLS.ComplexAnalysis.CommonConeWeakNeighborhood
+import NLS.Articles.KdVKdV2Frequencies.ActualHilbertWeakFrequencyAgreement
+import NLS.Articles.KdVKdV2Frequencies.NativeHilbertWeakActionComparison
+import NLS.SequenceSpaces.PositiveOneExtension
+import NLS.Articles.KdVKdV2Frequencies.OriginalHilbertActionLift
 import NLS.Articles.KdVKdV2Frequencies.OriginalPhysicalKdVFrequencyComparison
 import NLS.SequenceSpaces.PositiveOneReindex
 import NLS.KdV.NativeHillH1PhysicalComparison
@@ -5502,7 +5507,12 @@ private def kdvFrequencyAuditChunk24 : Array Lean.Name := #[
   `NLS.KdV.NativeHillH1PhysicalComparison,
   `NLS.Articles.KdVKdV2Frequencies.PhysicalHilbertActionReindex,
   `NLS.Articles.KdVKdV2Frequencies.OriginalPhysicalKdVEnergyComparison,
-  `NLS.Articles.KdVKdV2Frequencies.OriginalPhysicalKdVFrequencyComparison
+  `NLS.Articles.KdVKdV2Frequencies.OriginalPhysicalKdVFrequencyComparison,
+  `NLS.SequenceSpaces.PositiveOneExtension,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalHilbertActionLift,
+  `NLS.Articles.KdVKdV2Frequencies.NativeHilbertWeakActionComparison,
+  `NLS.ComplexAnalysis.CommonConeWeakNeighborhood,
+  `NLS.Articles.KdVKdV2Frequencies.ActualHilbertWeakFrequencyAgreement
 ]
 
 open Lean in

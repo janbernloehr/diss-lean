@@ -3158,6 +3158,11 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/PhysicalHilbertActionReindex
   NLS/Articles/KdVKdV2Frequencies/OriginalPhysicalKdVEnergyComparison
   NLS/Articles/KdVKdV2Frequencies/OriginalPhysicalKdVFrequencyComparison
+  NLS/SequenceSpaces/PositiveOneExtension
+  NLS/Articles/KdVKdV2Frequencies/OriginalHilbertActionLift
+  NLS/Articles/KdVKdV2Frequencies/NativeHilbertWeakActionComparison
+  NLS/ComplexAnalysis/CommonConeWeakNeighborhood
+  NLS/Articles/KdVKdV2Frequencies/ActualHilbertWeakFrequencyAgreement
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
