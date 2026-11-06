@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.MainTheorem12
 import NLS.Articles.KdVConvexity.MainTheorem12Forward
 import NLS.Articles.KdVConvexity.MainTheorem12Preparation
 import NLS.Articles.KdVConvexity.FourierLebesgueMiuraPreparation
@@ -117,6 +118,26 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.FunctionalAnalysis.CompactDerivativeComposition,
+    `NLS.ComplexAnalysis.AnalyticCompactGermPullback,
+    `NLS.ZakharovShabat.SourceWeightedEtaExponentFactorization,
+    `NLS.SequenceSpaces.BoundedAnalyticSymbolExponent,
+    `NLS.ZakharovShabat.SourceWeightedEtaExponentCompactDerivative,
+    `NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraProduct,
+    `NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraCompact,
+    `NLS.SequenceSpaces.FourierLebesgueCompactInclusion,
+    `NLS.SequenceSpaces.PeriodOneFourierLebesgueFreeMassEquiv,
+    `NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraJacobian,
+    `NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraInverseCompact,
+    `NLS.SequenceSpaces.AnalyticSymbolCompactGerm,
+    `NLS.SequenceSpaces.PhysicalPositiveMultiplierEquiv,
+    `NLS.SequenceSpaces.PeriodOneFourierLebesguePrincipalEquiv,
+    `NLS.ComplexAnalysis.RealCompactDerivativeTransport,
+    `NLS.ComplexAnalysis.DerivativeInjectiveRestriction,
+    `NLS.SequenceSpaces.MeanZeroWeightedProjectionInjective,
+    `NLS.FunctionalAnalysis.CompactEquivPerturbationScalar,
+    `NLS.ComplexAnalysis.RealAnalyticEquivInverse,
+
     `NLS.ComplexAnalysis.AnalyticGermPullback,
     `NLS.ZakharovShabat.SourceGapWeightedEtaRealExponent,
     `NLS.SequenceSpaces.PhysicalPositiveCompletionExponent,
