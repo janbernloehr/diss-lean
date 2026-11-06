@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest arbitrary-base high physical actions and amplitudes
+## Latest all-index amplitudes at every real rough base
+
+The finite-head obstruction at arbitrary NON-L2 real rough bases is now closed. The actual normalized weighted Dirac moments and exact twice-weighted-action bridge give the ORIGINAL Hill ratios and principal amplitudes, including closed gaps. ONE complex rough ball before ALL positive indices now supports native ell-infinity analytic weighted amplitude and reciprocal symbols, uniform positive lower/upper bounds and exact ORIGINAL physical recovery throughout its physical locus. See `ARBITRARY_ROUGH_ALL_ACTION_AMPLITUDES.md`.
+
+Next assemble the full coupled Abelian/Fourier packet with the retained Miura/eta/full-phase data and prove global rough Birkhoff construction/inversion, compatibility and canonical/Hamiltonian/frequency/PDE conclusions. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2698 unchanged selected baseline sources. All nine newly selected own modules strictly rebuilt in dependency order after freezing 2753 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2707 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2707-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2707-module rebuild is claimed.
+
+Fresh audit: 21140 selected and 43210 imported NLS declarations; permitted axioms only. Nine new own modules contain 25 explicit theorems.
+
+## Earlier arbitrary-base high physical actions and amplitudes
 
 Actual high actions, physical action ratios and invertible principal amplitudes now exist on one COMPLEX rough neighborhood of EVERY HminusOne source. The neighborhood and cutoff precede ALL high indices. Physical recovery holds for EVERY physical L2 source in that rough neighborhood, including closed gaps, arbitrary means and unrestricted L2 norms. The weighted amplitudes satisfy 1/8 <= sqrt(1+n)*norm(B) <=2 throughout the complex neighborhood. See `ARBITRARY_ROUGH_HIGH_ACTION_AMPLITUDES.md`.
 

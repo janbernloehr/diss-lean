@@ -297,6 +297,11 @@
           "source_clause": "Actual high action amplitudes are native complex analytic and uniformly bounded above and away from zero around EVERY rough source; ORIGINAL physical recovery includes every closed gap and unrestricted L2 norms",
           "lean_declaration": "NLS.KdV.exists_hillHminus_arbitrary_base_high_physical_action_amplitudes",
           "qualification": "At ANY complex rough source, ONE open complex neighborhood and cutoff precede ALL high indices. Actual principal amplitudes B=sqrt(2*R)/sqrt(2) are native complex analytic and satisfy 1/8 <= sqrt(1+n)*norm(B) <=2 throughout the COMPLEX neighborhood. At EVERY physical L2 source there, B is EXACTLY the ORIGINAL Abelian amplitude prefactor, including collapsed gaps. The finite head at an arbitrary non-L2 real rough base, the full all-index packet and global Birkhoff inversion remain open."
+        },
+        {
+          "source_clause": "Actual finite head and ALL-index action amplitudes, uniformly invertible native analytic symbols and exact ORIGINAL physical recovery on a complex rough neighborhood of EVERY real HminusOne base",
+          "lean_declaration": "NLS.KdV.exists_hillHminus_arbitrary_base_native_amplitude_reciprocal",
+          "qualification": "Finite head and the previously verified infinite tail now give ONE complex rough ball before ALL positive indices at EVERY real rough source. All actual weighted amplitudes have uniform positive lower and upper bounds. They and their reciprocals form genuine native ell-infinity analytic maps, zero at nonpositive slots, with exact coefficientwise reciprocal product1 at every positive mode throughout the COMPLEX ball. Exact ORIGINAL physical amplitudes hold throughout its physical locus, inclclosed/arbitrarymean/unboundedL2. Full amplitude construction away from zero is closed; full coupled Abelian packet, global rough Birkhoff inversion/canonicality and frequency/PDE conclusions remain open."
         }
       ]
     },
@@ -35601,12 +35606,120 @@
       "scope": "At ANY complex rough source, ONE open complex neighborhood and cutoff precede ALL high indices. Actual principal amplitudes B=sqrt(2*R)/sqrt(2) are native complex analytic and satisfy 1/8 <= sqrt(1+n)*norm(B) <=2 throughout the COMPLEX neighborhood. At EVERY physical L2 source there, B is EXACTLY the ORIGINAL Abelian amplitude prefactor, including collapsed gaps. The finite head at an arbitrary non-L2 real rough base, the full all-index packet and global Birkhoff inversion remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "add7ebf4545adf0cccbd44bdf9726ebaac2c866c9d1d61ae9df5cc049f52cb03"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SineSquareCosineMeanSegment.lean",
+      "source_labels": [
+        "Actual all-index action amplitudes and native reciprocals at every real rough source, supporting global Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A jointly analytic numerator gives a native analytic sine-squared cosine mean from regularity on the ACTUAL segment alone. Analytic midpoint and squared half-gap suffice, including closed gaps and arbitrary discontinuous choices of the half-gap sign. Open-gap proof uses a local analytic square root and evenness; closed-gap proof uses local square descent.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bf4777a6687884c7d1c8e433c293fda80999f8541e593dd9b517843814b43b13"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNormalizedWeightedAction.lean",
+      "source_labels": [
+        "Actual all-index action amplitudes and native reciprocals at every real rough source, supporting global Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL filled Dirac primitive quotient defines normalized polynomially weighted actions WITHOUT dividing by a gap. One complex source ball before ALL signed indices and natural weights gives native analyticity and the exact factorization of the canonical higher action as full-frequency-gap squared times this normalized moment. The literal boundary normalization is -I/(2*pi). At a collapsed complex gap the normalized kth moment equals midpoint^k times the zeroth moment.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f05d588ea68ce1691d60d95b749fb987345b050e4aa977dabc1dfd6ed2cd194a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNormalizedWeightedActionCalibration.lean",
+      "source_labels": [
+        "Actual all-index action amplitudes and native reciprocals at every real rough source, supporting global Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The actual Cauchy quadratic equation fixes the collapsed midpoint quotient as MINUS the actual deleted critical-root factor. Its exact sine-squared mean is the existing canonical collapsed normalized action. The zeroth normalized weighted moment equals the SAME canonical normalized action at EVERY real source, including closed gaps; open-gap cancellation and closed-gap Cauchy calibration are proved separately.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "49621d72ef016ec54a3eeb87226b16f4a8afeae6a031c15e83788403274c815e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNormalizedWeightedActionPositive.lean",
+      "source_labels": [
+        "Actual all-index action amplitudes and native reciprocals at every real rough source, supporting global Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY real Dirac source the normalized first weighted moment equals a real point in the closed gap times the SAME canonical normalized action. This mean-value identity includes collapsed gaps by the calibrated midpoint formula. A strictly positive left endpoint therefore gives a strictly positive real normalized first moment even at a closed selected gap.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7ce12b4c85b9b6eb7f600098645072d6570698c361f0dfa7973f9c6d1fe0a9a4"
+    },
+    {
+      "path": "NLS/KdV/HillHminusMiuraActionMatching.lean",
+      "source_labels": [
+        "Actual all-index action amplitudes and native reciprocals at every real rough source, supporting global Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For ANY supplied actual Miura/Psi chart and EVERY original real physical Hill L2 source satisfying the actual chart conditions, its original Hill action equals EXACTLY TWICE the canonical first weighted Dirac action. Actual quadratic energy contours have the original root sign, orientation and index, including low/closed gaps. The Jacobian is retained and the energy-shift term vanishes by the proved zero Dirac period. No change of physical action normalization is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ee5cf0254f90428542d4f4e81f8fb8694d0b4f70b19a31331a58c5c015630bee"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNormalizedEnergyAction.lean",
+      "source_labels": [
+        "Actual all-index action amplitudes and native reciprocals at every real rough source, supporting global Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The correct energy ratio is TWICE the first normalized weighted Dirac action divided by the squared frequency midpoint. The energy half-gap is midpoint times FULL frequency gap. Exact action factorization, native analyticity and strictly positive real value at every real positive gap are proved INCLUDING COLLAPSED gaps. Every real source in an actual Cauchy source ball has a genuine native analytic ratio germ at a positive selected gap.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bd440a971a8aa250315c11c4c84c8d40d3124db50e6c9d3c3691429d5d10b7cf"
+    },
+    {
+      "path": "NLS/KdV/HillHminusMiuraActionRatios.lean",
+      "source_labels": [
+        "Actual all-index action amplitudes and native reciprocals at every real rough source, supporting global Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For the SAME supplied actual Miura/Psi chart, one actual Cauchy family and complex rough neighborhood support ratios at ALL positive indices. Each ratio is native complex analytic and strictly positive real at the real rough base, INCLUDING closed gaps. At EVERY physical L2 source throughout that rough neighborhood the ratio equals the ORIGINAL physical action-gap ratio, with arbitrary means and unrestricted L2 norms. Exact physical action factorization uses the twice-weighted-action identity, actual endpoint normalization and frequent physical gap opening.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "46d5329d5384f25d977095efcedca98b12d26708fd1e2e01377710ac86b59b2b"
+    },
+    {
+      "path": "NLS/KdV/HillHminusArbitraryBaseFiniteAmplitudes.lean",
+      "source_labels": [
+        "Actual all-index action amplitudes and native reciprocals at every real rough source, supporting global Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY real rough HminusOne source and EVERY prescribed finite head, ONE complex rough ball supports genuine native analytic principal amplitudes and uniform positive lower and upper WEIGHTED bounds. The functions come from the actual normalized weighted Miura ratios. They recover the ORIGINAL physical Abelian amplitudes throughout the entire rough ball, INCLUDING CLOSED GAPS and unrestricted physical L2 norms. No physical L2 base assumption is imposed on the rough center.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ed90e56e029cf6062c498a27dd49c7bde3aca769a554f4df0efd990eaa0e5326"
+    },
+    {
+      "path": "NLS/KdV/HillHminusArbitraryBaseAmplitudeSymbol.lean",
+      "source_labels": [
+        "Actual all-index action amplitudes and native reciprocals at every real rough source, supporting global Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Finite head and the previously verified infinite tail now give ONE complex rough ball before ALL positive indices at EVERY real rough source. All actual weighted amplitudes have uniform positive lower and upper bounds. They and their reciprocals form genuine native ell-infinity analytic maps, zero at nonpositive slots, with exact coefficientwise reciprocal product1 at every positive mode throughout the COMPLEX ball. Exact ORIGINAL physical amplitudes hold throughout its physical locus, inclclosed/arbitrarymean/unboundedL2. Full amplitude construction away from zero is closed; full coupled Abelian packet, global rough Birkhoff inversion/canonicality and frequency/PDE conclusions remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "95bd02fe4cb7005ca7f355b2831fc99209d8a0823c54a8318e4345ac422c6bdb"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "All near-zero all-order native forward/inverse germs at eligible real source and target bases remain attached to the SAME Z,R. NEW: at ANY complex rough HminusOne source, one open complex neighborhood and cutoff support ALL high actual actions, native analytic ratios and actual principal amplitudes, with exact ORIGINAL physical recovery throughout that rough neighborhood including collapsed gaps, arbitrary means and unrestricted L2 norms. Every real rough action equals its intrinsic-label boundary integral. High ratios satisfy norm <=2/n, positive real part and norm((2*pi*n)*R-1)<=1/2; amplitudes satisfy 1/8 <=sqrt(1+n)*norm(B)<=2 on the ENTIRE COMPLEX neighborhood. Every physical gap opens frequently at EVERY real L2 base, so continuous action-factor identities determine the correct closed-gap ratios. NEXT prove the finite-head actual amplitudes near arbitrary non-L2 real rough bases, assemble the full all-index packet with the retained Miura/phase data, and prove global rough Birkhoff construction/inversion, full global Sobolev-scale canonical action-Hamiltonian identification and remaining KdV/KdV2 frequency/PDE results. The high-tail arbitrary-base result does not prove complete global Theorem 1.1 or any other complete main row.",
+    "All near-zero all-order native forward/inverse germs at eligible real source and target bases remain attached to the SAME Z,R. NEW: the finite-head obstruction at arbitrary NON-L2 REAL HminusOne bases is CLOSED. Actual filled normalized weighted Dirac moments are analytic through closed gaps; their zeroth moment is the SAME canonical normalized action, their first moment has the positive real mean-value formula, and the ORIGINAL Hill action equals EXACTLY TWICE the first weighted Dirac action with the true quadratic Jacobian/shift/root sign. This constructs actual ratios and principal amplitudes at every real rough base. ONE complex rough ball before ALL positive indices now supports uniformly bounded/invertible weighted amplitudes and their native ell-infinity analytic reciprocals, with exact ORIGINAL physical recovery throughout the physical locus including closed gaps/arbitrary means/unrestricted L2 norms. NEXT assemble these amplitudes with the retained actual Miura/eta/full-phase data into one full all-index Abelian/Fourier packet at arbitrary real rough bases, prove compatibility/global rough Birkhoff construction and inversion and global Sobolev-scale canonical action-Hamiltonian identification, then the remaining KdV/KdV2 frequency identities/estimates and actual PDE conclusions. Complete global Theorem 1.1 and all other complete main rows remain open.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -35632,15 +35745,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 21085,
-    "total_declarations_audited": 43155,
+    "candidate_declarations_audited": 21140,
+    "total_declarations_audited": 43210,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2698,
+    "selected_modules": 2707,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -35728,7 +35841,8 @@
     "native_signed_fourier_validation_sequence": "Prior strict evidence retained for all 2658 unchanged selected baseline sources. All 12 newly selected own modules strictly rebuilt in dependency order after freezing 2716 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2670 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 12-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new reuse/import record is needed because no new canonical prerequisite is selected. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2670-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2670-module rebuild is claimed.",
     "native_jacobian_validation_sequence": "Prior strict evidence retained for all 2670 unchanged selected baseline sources. All 14 newly selected own modules strictly rebuilt in dependency order after freezing 2730 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2684 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact 14-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2684-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2684-module rebuild is claimed.",
     "matched_inverse_validation_sequence": "Prior strict evidence retained for all 2684 unchanged selected baseline sources. All eight newly selected own modules strictly rebuilt in dependency order after freezing 2738 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2692 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The exact selection now uses 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2692-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2692-module rebuild is claimed.",
-    "arbitrary_high_actions_validation_sequence": "Prior strict evidence retained for all 2692 unchanged selected baseline sources. All six newly selected own modules strictly rebuilt in dependency order after freezing 2744 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2698 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact six-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2698-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2698-module rebuild is claimed."
+    "arbitrary_high_actions_validation_sequence": "Prior strict evidence retained for all 2692 unchanged selected baseline sources. All six newly selected own modules strictly rebuilt in dependency order after freezing 2744 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2698 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact six-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2698-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2698-module rebuild is claimed.",
+    "arbitrary_all_amplitudes_validation_sequence": "Prior strict evidence retained for all 2698 unchanged selected baseline sources. All nine newly selected own modules strictly rebuilt in dependency order after freezing 2753 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2707 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2707-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2707-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -36574,6 +36688,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "e74f4c375ac4922dcfe7a0ae7b6d7f1c37430eef",
+      "description": "Close the arbitrary-real-rough finite head and ALL-index amplitude/reciprocal construction using calibrated normalized weighted Dirac actions and the exact physical Hill action bridge.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "All near-zero all-order native forward/inverse germs at eligible real source and target bases remain attached to the SAME Z,R. NEW: at ANY complex rough HminusOne source, one open complex neighborhood and cutoff support ALL high actual actions, native analytic ratios and actual principal amplitudes, with exact ORIGINAL physical recovery throughout that rough neighborhood including collapsed gaps, arbitrary means and unrestricted L2 norms. Every real rough action equals its intrinsic-label boundary integral. High ratios satisfy norm <=2/n, positive real part and norm((2*pi*n)*R-1)<=1/2; amplitudes satisfy 1/8 <=sqrt(1+n)*norm(B)<=2 on the ENTIRE COMPLEX neighborhood. Every physical gap opens frequently at EVERY real L2 base, so continuous action-factor identities determine the correct closed-gap ratios. NEXT prove the finite-head actual amplitudes near arbitrary non-L2 real rough bases, assemble the full all-index packet with the retained Miura/phase data, and prove global rough Birkhoff construction/inversion, full global Sobolev-scale canonical action-Hamiltonian identification and remaining KdV/KdV2 frequency/PDE results. The high-tail arbitrary-base result does not prove complete global Theorem 1.1 or any other complete main row.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -36627,5 +36753,6 @@
   "native_signed_fourier_record": "NATIVE_SIGNED_FOURIER_PRINCIPAL.md",
   "native_jacobian_record": "NATIVE_ALL_REAL_BASE_INVERSE_CHARTS.md",
   "matched_inverse_record": "NATIVE_MATCHED_ALL_REAL_BASE_INVERSE.md",
-  "arbitrary_rough_high_actions_record": "ARBITRARY_ROUGH_HIGH_ACTION_AMPLITUDES.md"
+  "arbitrary_rough_high_actions_record": "ARBITRARY_ROUGH_HIGH_ACTION_AMPLITUDES.md",
+  "arbitrary_rough_all_amplitudes_record": "ARBITRARY_ROUGH_ALL_ACTION_AMPLITUDES.md"
 }

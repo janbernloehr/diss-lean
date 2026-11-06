@@ -1,3 +1,12 @@
+import NLS.KdV.HillHminusArbitraryBaseAmplitudeSymbol
+import NLS.KdV.HillHminusArbitraryBaseFiniteAmplitudes
+import NLS.KdV.HillHminusMiuraActionRatios
+import NLS.KdV.HillHminusMiuraActionMatching
+import NLS.ZakharovShabat.SourceNormalizedEnergyAction
+import NLS.ZakharovShabat.SourceNormalizedWeightedActionPositive
+import NLS.ZakharovShabat.SourceNormalizedWeightedActionCalibration
+import NLS.ComplexAnalysis.SineSquareCosineMeanSegment
+import NLS.ZakharovShabat.SourceNormalizedWeightedAction
 import NLS.KdV.HillHminusArbitraryBaseActionAmplitudes
 import NLS.KdV.HillPhysicalGapOpening
 import NLS.KdV.HillHminusPhysicalRatioIdentification
@@ -4591,7 +4600,16 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.KdV.HillPhysicalGapOpening,
   `NLS.KdV.HillHminusPhysicalRatioIdentification,
   `NLS.KdV.HillHminusArbitraryBaseActionRatios,
-  `NLS.KdV.HillHminusArbitraryBaseActionAmplitudes
+  `NLS.KdV.HillHminusArbitraryBaseActionAmplitudes,
+  `NLS.ComplexAnalysis.SineSquareCosineMeanSegment,
+  `NLS.ZakharovShabat.SourceNormalizedWeightedAction,
+  `NLS.ZakharovShabat.SourceNormalizedWeightedActionCalibration,
+  `NLS.ZakharovShabat.SourceNormalizedWeightedActionPositive,
+  `NLS.KdV.HillHminusMiuraActionMatching,
+  `NLS.ZakharovShabat.SourceNormalizedEnergyAction,
+  `NLS.KdV.HillHminusMiuraActionRatios,
+  `NLS.KdV.HillHminusArbitraryBaseFiniteAmplitudes,
+  `NLS.KdV.HillHminusArbitraryBaseAmplitudeSymbol
 ]
 
 open Lean in

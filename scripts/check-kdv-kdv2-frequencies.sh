@@ -2707,6 +2707,15 @@ modules=(
   NLS/KdV/HillHminusPhysicalRatioIdentification
   NLS/KdV/HillHminusArbitraryBaseActionRatios
   NLS/KdV/HillHminusArbitraryBaseActionAmplitudes
+  NLS/ComplexAnalysis/SineSquareCosineMeanSegment
+  NLS/ZakharovShabat/SourceNormalizedWeightedAction
+  NLS/ZakharovShabat/SourceNormalizedWeightedActionCalibration
+  NLS/ZakharovShabat/SourceNormalizedWeightedActionPositive
+  NLS/KdV/HillHminusMiuraActionMatching
+  NLS/ZakharovShabat/SourceNormalizedEnergyAction
+  NLS/KdV/HillHminusMiuraActionRatios
+  NLS/KdV/HillHminusArbitraryBaseFiniteAmplitudes
+  NLS/KdV/HillHminusArbitraryBaseAmplitudeSymbol
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
