@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual signed rough Abelian map and real local inverse
+## Latest canonical rough chart and fixed global L2 map
+
+The SAME actual signed rough Abelian chart with a physical-real two-sided analytic local inverse now has the complete Gardner matrix at EVERY COMPLEX mean-zero H-minus-one source in its ENTIRE common ball. Its original sqrt(action) normalization gives {z_n,z_-m}=i delta_nm, the opposite mixed bracket -i delta_nm, and like-sign brackets zero. First/closed gaps and zero sheets are included.
+
+The fixed GLOBAL original real L2 Birkhoff homeomorphism, analytic forward/inverse maps, Parseval/action identities and all-base canonical physical germs are reused from the estimates branch. The exact normalization (X-iY)/sqrt(2)=original Abelian coordinate proves our actual rough chart agrees with that SAME fixed map at EVERY physical L2 source in its rough ball. See `NATIVE_ROUGH_CANONICAL_INVERSE.md` and `SHARED_FIXED_BIRKHOFF_IMPORT.json`.
+
+Prior strict evidence retained for all 1815 unchanged selected baseline sources. ALL 544 newly selected modules strictly rebuilt in dependency order (519 incoming shared files, 20 previously unselected unchanged canonical helpers, five own proof modules), followed by a fresh combined transitive axiom audit of all 2359 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2401 frozen source/checker/provenance/Mathlib-source hashes, all 39 verified provenance records (38 unchanged), private fresh outputs and unchanged clean canonical main verified. The imported NLS closure adds exactly these 544 selections. No full 2359-module rebuild is claimed.
+
+Fresh audit: 18750 selected and 40818 imported NLS declarations; permitted axioms only. Arbitrary-base/global rough inversion, full s>=-1 regularity, actual Hamiltonian/action-frequency identification and frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual signed rough Abelian map and real local inverse
 
 The ORIGINAL signed Abelian coordinates now have a native complex H-minus-one -> H-minus-one-half analytic extension on ONE rough ball, zero at zero with a linear norm bound and central slot zero. Every original real L2 source in the WHOLE rough ball is recovered, including first/closed gaps, zero endpoint sheets and nonzero means, without physical L2 smallness. The entire rough physical real form is preserved.
 
