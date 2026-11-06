@@ -1,6 +1,18 @@
 # Article-step validation — 2026-11-06
 
-## Latest full native hierarchy action factors
+## Current status: complete Theorem 1.1 verified
+
+COMPLETE Theorem 1.1 is now VERIFIED: one actual complex mean-zero Birkhoff map on one open neighborhood of ALL real mean-zero H^-1 data, with all s>=-1 native real analytic diffeomorphisms, the intrinsic physical canonical bracket, the original H1/H2 and full native hierarchy as analytic functions of the actual actions through the SAME inverse, and the exact printed Fourier differential at EVERY native order. See `MAIN_THEOREM_1_1.md` and `NLS/Articles/KdVKdV2Frequencies/MainTheorem11.lean`.
+
+Ten COMPLETE main theorem rows remain OPEN: Theorems 1.2, 1.3, 1.9, 1.12, 3.10 and 4.12, and Corollaries 1.4, 1.5, 1.7 and 1.11. Actual physical frequency derivative formulas, sharp infinite-gap estimates, fixed-mass bounds and actual KdV/KdV2 PDE conclusions remain essential. The overall article goal remains incomplete.
+
+Prior strict evidence retained for all 2889 unchanged selected baseline sources. All five new own modules strictly rebuilt in dependency order after freezing 2944 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2894 selected modules. Exact selection, dependency order, reachability and exact five-module increase in NLS import closure verified. No new canonical prerequisite selection or provenance record; all 47 prior records remain unchanged and verified. The 23 private audit chunks have at most 128 names. The entire transitive audit loop, including its bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2894-name runtime probe using all 23 chunk references rejects extra and missing module sets. Private fresh outputs, unchanged canonical main and pinned Mathlib verified. Default heartbeat, recursion and kernel limits remain in force. No full 2894-module rebuild is claimed.
+
+Fresh audit: 22669 selected and 44739 imported NLS declarations. Five new own modules contain 25 explicit theorems.
+
+Earlier milestone sections below are historical snapshots; their open-obligation statements are superseded by this current status.
+
+## Historical milestone: full native hierarchy action factors
 
 The analytic-action result now extends to every independently constructed original scalar Hill/KdV hierarchy member H_m, on its FULL native H^m source and raw h^(m+1/2) target. Actual physical Riccati densities define the Hamiltonians, with the exact printed H0/H1/H2 calibrations. All-order physical Miura identification, the exact constant-shift differential, genuine Hill spectral invariance and physical reality are proved before analytic action descent. The same fixed global inverse gives real analytic pullbacks and globally glued analytic factors in the original weighted l1 action norm of order 2m+1, including all closed gaps and infinite support. See `NATIVE_HIERARCHY_ACTION_FACTORS.md`.
 
@@ -10,7 +22,7 @@ Prior strict evidence retained for all 2879 unchanged selected baseline sources.
 
 Fresh audit: 22587 selected and 44657 imported NLS declarations. Ten new own modules contain 59 explicit theorems.
 
-## Latest original weighted analytic action factors
+## Historical milestone: original weighted analytic action factors
 
 The original physical KdV H1 and KdV2 H2 now have globally glued analytic factors through the original actions I_n=z_n*z_-n. Their factors are complex analytic on open neighborhoods of the entire nonnegative action cones in the original weighted l1 spaces of orders 3 and 5, and recover the same global-inverse Hamiltonians on all actual raw real mean-zero h^(3/2) and h^(5/2) targets. Reality holds on every true positive-index action sequence. The proof includes all closed gaps and infinite support, with the original indices, weights and 1/2 Cartesian normalization retained exactly. See `NATIVE_WEIGHTED_ACTION_FACTORS.md`.
 
@@ -20,7 +32,7 @@ Prior strict evidence retained for all 2833 unchanged selected baseline sources.
 
 Fresh audit: 22477 selected and 44547 imported NLS declarations. Five new own modules contain 39 explicit theorems.
 
-## Latest original native Hamiltonian action invariance
+## Historical milestone: original native Hamiltonian action invariance
 
 The ORIGINAL printed KdV H1 and KdV2 H2 are now proved spectral invariants on their FULL original real mean-zero H1 and H2 domains. Their SAME-inverse global Birkhoff pullbacks are constant on EVERY complete actual action fiber on the ENTIRE raw real mean-zero h^(3/2) and h^(5/2) targets. Exact scalar Riccati calculations, physical Miura identifications on all native domains and full native constant-shift identities prove the link; no smoothness, finite-gap, smallness or gap-opening assumption remains. See `NATIVE_HAMILTONIAN_ACTION_INVARIANCE.md`.
 
@@ -30,7 +42,7 @@ Prior strict evidence retained for all 2826 unchanged selected baseline sources.
 
 Fresh audit: 22072 selected and 44142 imported NLS declarations. Seven new own modules contain 41 explicit theorems.
 
-## Latest native ground-factor spectral invariants
+## Historical milestone: native ground-factor spectral invariants
 
 Equal complete actual signed actions now determine the energy and every positive-order native scalar Miura/Hill hierarchy value of arbitrary normalized ground factors. Such factors exist on every original integer H^s source domain with exactly H^(s+1) regularity. The proof uses the actual entire rough Hill discriminant, its EXACT shifted-square trace identity with the Dirac discriminant, original canonically indexed higher-action gap integrals, and the full-domain physical odd Hamiltonian trace. All amplitudes, infinite support and collapsed gaps are included. See `NATIVE_MIURA_SPECTRAL_INVARIANTS.md`.
 
@@ -45,7 +57,7 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual native Hamiltonians and global pullbacks
+## Historical milestone: actual native Hamiltonians and global pullbacks
 
 The ORIGINAL physical KdV and KdV2 Hamiltonians now have explicit complex analytic polynomial definitions on the FULL native H1 and H2 domains. Their exact printed unit-period integrals, actual classical/weak derivatives and physical reality are proved without smoothness assumptions. Composing with the SAME fixed global weak inverse, restricted by the verified regularity theorem, gives real analytic Hamiltonians on the ENTIRE ACTUAL raw h^(3/2) and h^(5/2) real mean-zero targets, with full signed source recovery and all original norms and coefficients retained. See `GLOBAL_NATIVE_HAMILTONIANS.md`.
 

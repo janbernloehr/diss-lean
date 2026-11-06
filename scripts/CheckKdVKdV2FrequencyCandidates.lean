@@ -1,3 +1,8 @@
+import NLS.Articles.KdVKdV2Frequencies.MainTheorem11
+import NLS.Articles.KdVKdV2Frequencies.OriginalNativeBirkhoffIdentifications
+import NLS.Articles.KdVKdV2Frequencies.OriginalComplexMeanZeroBirkhoffMap
+import NLS.Poisson.MeanZeroHminusGardnerBracket
+import NLS.SequenceSpaces.ComplexMeanZeroWeighted
 import NLS.Articles.KdVKdV2Frequencies.GlobalKdVHierarchyActionFactors
 import NLS.KdV.NativeHillHierarchyReality
 import NLS.KdV.NativeHillHierarchyIsospectral
@@ -4976,7 +4981,12 @@ private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
   `NLS.KdV.NativeHillHierarchyConstantVariation,
   `NLS.KdV.NativeHillHierarchyIsospectral,
   `NLS.KdV.NativeHillHierarchyReality,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalKdVHierarchyActionFactors
+  `NLS.Articles.KdVKdV2Frequencies.GlobalKdVHierarchyActionFactors,
+  `NLS.SequenceSpaces.ComplexMeanZeroWeighted,
+  `NLS.Poisson.MeanZeroHminusGardnerBracket,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalComplexMeanZeroBirkhoffMap,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalNativeBirkhoffIdentifications,
+  `NLS.Articles.KdVKdV2Frequencies.MainTheorem11
 ]
 
 open Lean in

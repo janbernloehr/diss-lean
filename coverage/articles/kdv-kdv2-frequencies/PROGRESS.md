@@ -1,6 +1,18 @@
 # KdV/KdV2 frequencies — branch progress
 
-## Latest full native hierarchy action factors
+## Current status: complete Theorem 1.1 verified
+
+COMPLETE Theorem 1.1 is now VERIFIED: one actual complex mean-zero Birkhoff map on one open neighborhood of ALL real mean-zero H^-1 data, with all s>=-1 native real analytic diffeomorphisms, the intrinsic physical canonical bracket, the original H1/H2 and full native hierarchy as analytic functions of the actual actions through the SAME inverse, and the exact printed Fourier differential at EVERY native order. See `MAIN_THEOREM_1_1.md` and `NLS/Articles/KdVKdV2Frequencies/MainTheorem11.lean`.
+
+Ten COMPLETE main theorem rows remain OPEN: Theorems 1.2, 1.3, 1.9, 1.12, 3.10 and 4.12, and Corollaries 1.4, 1.5, 1.7 and 1.11. Actual physical frequency derivative formulas, sharp infinite-gap estimates, fixed-mass bounds and actual KdV/KdV2 PDE conclusions remain essential. The overall article goal remains incomplete.
+
+Prior strict evidence retained for all 2889 unchanged selected baseline sources. All five new own modules strictly rebuilt in dependency order after freezing 2944 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2894 selected modules. Exact selection, dependency order, reachability and exact five-module increase in NLS import closure verified. No new canonical prerequisite selection or provenance record; all 47 prior records remain unchanged and verified. The 23 private audit chunks have at most 128 names. The entire transitive audit loop, including its bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2894-name runtime probe using all 23 chunk references rejects extra and missing module sets. Private fresh outputs, unchanged canonical main and pinned Mathlib verified. Default heartbeat, recursion and kernel limits remain in force. No full 2894-module rebuild is claimed.
+
+Fresh audit: 22669 selected and 44739 imported NLS declarations. Five new own modules contain 25 explicit theorems.
+
+Earlier milestone sections below are historical snapshots; their open-obligation statements are superseded by this current status.
+
+## Historical milestone: full native hierarchy action factors
 
 The analytic-action result now extends to every independently constructed original scalar Hill/KdV hierarchy member H_m, on its FULL native H^m source and raw h^(m+1/2) target. Actual physical Riccati densities define the Hamiltonians, with the exact printed H0/H1/H2 calibrations. All-order physical Miura identification, the exact constant-shift differential, genuine Hill spectral invariance and physical reality are proved before analytic action descent. The same fixed global inverse gives real analytic pullbacks and globally glued analytic factors in the original weighted l1 action norm of order 2m+1, including all closed gaps and infinite support. See `NATIVE_HIERARCHY_ACTION_FACTORS.md`.
 
@@ -10,7 +22,7 @@ Prior strict evidence retained for all 2879 unchanged selected baseline sources.
 
 Fresh audit: 22587 selected and 44657 imported NLS declarations. Ten new own modules contain 59 explicit theorems.
 
-## Latest original weighted analytic action factors
+## Historical milestone: original weighted analytic action factors
 
 The original physical KdV H1 and KdV2 H2 now have globally glued analytic factors through the original actions I_n=z_n*z_-n. Their factors are complex analytic on open neighborhoods of the entire nonnegative action cones in the original weighted l1 spaces of orders 3 and 5, and recover the same global-inverse Hamiltonians on all actual raw real mean-zero h^(3/2) and h^(5/2) targets. Reality holds on every true positive-index action sequence. The proof includes all closed gaps and infinite support, with the original indices, weights and 1/2 Cartesian normalization retained exactly. See `NATIVE_WEIGHTED_ACTION_FACTORS.md`.
 
@@ -20,7 +32,7 @@ Prior strict evidence retained for all 2833 unchanged selected baseline sources.
 
 Fresh audit: 22477 selected and 44547 imported NLS declarations. Five new own modules contain 39 explicit theorems.
 
-## Latest original native Hamiltonian action invariance
+## Historical milestone: original native Hamiltonian action invariance
 
 The ORIGINAL printed KdV H1 and KdV2 H2 are now proved spectral invariants on their FULL original real mean-zero H1 and H2 domains. Their SAME-inverse global Birkhoff pullbacks are constant on EVERY complete actual action fiber on the ENTIRE raw real mean-zero h^(3/2) and h^(5/2) targets. Exact scalar Riccati calculations, physical Miura identifications on all native domains and full native constant-shift identities prove the link; no smoothness, finite-gap, smallness or gap-opening assumption remains. See `NATIVE_HAMILTONIAN_ACTION_INVARIANCE.md`.
 
@@ -30,7 +42,7 @@ Prior strict evidence retained for all 2826 unchanged selected baseline sources.
 
 Fresh audit: 22072 selected and 44142 imported NLS declarations. Seven new own modules contain 41 explicit theorems.
 
-## Latest native ground-factor spectral invariants
+## Historical milestone: native ground-factor spectral invariants
 
 Equal complete actual signed actions now determine the energy and every positive-order native scalar Miura/Hill hierarchy value of arbitrary normalized ground factors. Such factors exist on every original integer H^s source domain with exactly H^(s+1) regularity. The proof uses the actual entire rough Hill discriminant, its EXACT shifted-square trace identity with the Dirac discriminant, original canonically indexed higher-action gap integrals, and the full-domain physical odd Hamiltonian trace. All amplitudes, infinite support and collapsed gaps are included. See `NATIVE_MIURA_SPECTRAL_INVARIANTS.md`.
 
@@ -57,7 +69,7 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual native Hamiltonians and global pullbacks
+## Historical milestone: actual native Hamiltonians and global pullbacks
 
 The ORIGINAL physical KdV and KdV2 Hamiltonians now have explicit complex analytic polynomial definitions on the FULL native H1 and H2 domains. Their exact printed unit-period integrals, actual classical/weak derivatives and physical reality are proved without smoothness assumptions. Composing with the SAME fixed global weak inverse, restricted by the verified regularity theorem, gives real analytic Hamiltonians on the ENTIRE ACTUAL raw h^(3/2) and h^(5/2) real mean-zero targets, with full signed source recovery and all original norms and coefficients retained. See `GLOBAL_NATIVE_HAMILTONIANS.md`.
 
@@ -919,91 +931,91 @@ Actual rough trace involution now gives coefficient-space Gardner tangents with 
 
 Current validation: 572 selected modules (569 unchanged prior checks and three new strict default-limit compilations); fresh combined transitive audit of 6246 selected and 28489 imported NLS declarations, permitted axioms only. Actual normalized numerator and Abelian-angle source variation, physical frequency69 and all main theorem conclusions remain open.
 
-## Latest actual normalized Dirichlet / discriminant bracket
+## Historical milestone: actual normalized Dirichlet / discriminant bracket
 
 The actual complex L2 Hill discriminant gradient and its spatial derivative are now identified. For every real period-one L2 source and positive Dirichlet index, the normalized physical Gardner bracket has the exact source quotient away from the energy diagonal and the exact filled value -r_D/2 on it. The actual mass, slope, sheet root, labelled energies and branch gradients are proved or selectively reused; real Fourier truncations justify the rough boundary identity. See `NORMALIZED_DIRICHLET_TRACE_BRACKET.md`.
 
 Current validation: 569 selected modules (527 unchanged prior checks, 39 unchanged shared imports and three new strict default-limit compilations); fresh combined transitive audit of 6223 selected and 28466 imported NLS declarations, permitted axioms only. The normalized Abelian-angle/discriminant identity, physical frequency69 and all main theorem conclusions remain open.
 
-## Latest actual Hill gradient and Gardner trace involution
+## Historical milestone: actual Hill gradient and Gardner trace involution
 
 The actual complex potential derivative of the Hill discriminant is now represented by its literal scalar quadratic kernel. A proved closed differential system and an explicit concomitant give genuine scalar Gardner trace involution at every continuous complex potential and all pairs of energies. The trace directions have mean zero and every actual discriminant is infinitesimally stationary along them. Exact Dirichlet squared-state source variation is also proved. See `ACTUAL_GARDNER_TRACE_INVOLUTION.md`.
 
 Current validation: 527 selected modules (523 unchanged prior checks, two existing helpers with heartbeat overrides removed, and two new strict default-limit compilations); fresh combined transitive audit of 5903 selected and 28021 imported NLS declarations, permitted axioms only. Normalized Dirichlet and Abelian angle identities, physical frequency69 and all main theorem conclusions remain open.
 
-## Latest actual Dirichlet / monodromy-kernel pairings
+## Historical milestone: actual Dirichlet / monodromy-kernel pairings
 
 The actual continuous scalar Hill IVP now gives squared and mixed boundary identities at arbitrary complex energies, including the diagonal. Determinant one and the proved spatial derivative of the literal quadratic monodromy kernel yield its exact Dirichlet pairing with all endpoint factors. See `DIRICHLET_TRACE_KERNEL_PAIRING.md`.
 
 Current validation: 523 selected modules (521 unchanged prior checks and two strict incremental compilations); fresh combined transitive audit of 5852 selected and 27994 imported NLS declarations, permitted axioms only. Identifying the kernel with the actual discriminant potential derivative, the physical angle-Poisson identity and all main theorem conclusions remain open.
 
-## Latest exact physical finite-gap quartic contour
+## Historical milestone: exact physical finite-gap quartic contour
 
 The actual finite-gap condition now gives one exterior radius before all even primitive powers and both centered contour radii. All these powers are analytic there and their circle integrals are independent of radius. For actual real smooth period-one mean-zero finite-gap potentials, the normalized quartic contour is therefore exactly -H1/4 on every sufficiently large centered circle, recovering the physical Hamiltonian with factor -4. See `FINITE_GAP_QUARTIC_IDENTITY.md`.
 
 Current validation: 521 selected modules (509 unchanged prior checks and 12 strict incremental compilations); fresh combined transitive audit of 5842 selected and 27984 imported NLS declarations, permitted axioms only. Actual angle-Poisson/frequency identification, action descent, global source domains and all main theorem conclusions remain open.
 
-## Latest actual physical quartic Hamiltonian coefficient
+## Historical milestone: actual physical quartic Hamiltonian coefficient
 
 The actual normalized smooth Hill primitive now gives a full-circle quartic remainder and the literal counterclockwise contour limit -H1/4, with explicit inverse-frequency error. Multiplying by -4 recovers the physical KdV Hamiltonian. Even powers are integrable across both real contour crossings. The shared actual squared-primitive expansion is selectively reused; existing local extensions are preserved. See `PHYSICAL_QUARTIC_COEFFICIENT.md`.
 
 Current validation: 508 selected modules (436 unchanged prior checks and 73 strict incremental compilations); fresh combined transitive audit of 5750 selected and 27892 imported NLS declarations, permitted axioms only. Exact finite-gap contour independence, angle-Poisson/frequency identification, action descent, global source domains and all main theorem conclusions remain open.
 
-## Latest actual spectral invariance toward action descent
+## Historical milestone: actual spectral invariance toward action descent
 
 Equal intrinsic Hill discriminants now give equal actual normalized numerators in a fixed real-type chart around every real rough base. One common ball fixes root signs and logarithmic phases on every original contour. On that same ball a single constructed actual family retains analytic moments, exact zeroth periods, odd cancellation and the absolutely/locally uniformly convergent analytic correction series, and all its moments/corrections are spectral invariants. See `SPECTRAL_INVARIANCE.md`.
 
 Current validation: 436 selected modules (431 unchanged prior checks, two unchanged canonical compilations and three new strict compilations); fresh combined transitive audit of 4977 selected and 27116 imported NLS declarations, permitted axioms only. Physical frequency identity, action realization/descent, global source domains and all main theorem conclusions remain open.
 
-## Latest actual Miura moments and analytic correction series
+## Historical milestone: actual Miura moments and analytic correction series
 
 Literal original-circle moments now use the actual Miura numerator directly. One actual normalized NLS family and one complex rough ball work before all indices and moment orders. Every moment is analytic; zeroth periods are exact and every odd moment vanishes. Each second-moment series converges absolutely and locally uniformly, and its correction is analytic. See `MIURA_FREQUENCY_SERIES.md`.
 
 Current validation: 431 selected modules (430 unchanged prior strict checks and one new strict compilation); fresh combined transitive audit of 4950 selected and 27100 imported NLS declarations, permitted axioms only. The physical identity (69), action descent, global source domains and all main theorem conclusions remain open.
 
-## Latest full complex-source normalized-family identification near zero
+## Historical milestone: full complex-source normalized-family identification near zero
 
 The actual physical conjugation and continuous real/imaginary decomposition instantiate the canonical connected real-form identity theorem. The actual Miura numerator now agrees with the constructed weighted normalized family for every complex input on the same local ball, every positive index and every energy. The actual two-weighted data retain analytic R/Q, free values, norm bounds and exact compatibility. See `COMPLEX_NORMALIZED_IDENTIFICATION.md`.
 
 Current validation: 430 selected modules (425 unchanged prior checks, three unchanged canonical helper compilations and two new strict compilations); fresh combined transitive audit of 4940 selected and 27090 imported NLS declarations, permitted axioms only. Global source domains and all main theorem conclusions remain open.
 
-## Latest actual weighted normalized-family identification
+## Historical milestone: actual weighted normalized-family identification
 
 Actual original periods and the genuine old-basis Hilbert representation identify the actual residue coefficient vector with the constructed inverse column. One common ball precedes all real rough inputs, positive indices and energies in entire Miura/weighted normalized-family equality. The actual two-weighted inverse construction supplies analytic R/Q, their free values, uniform norm bounds and exact weighted compatibility. See `MIURA_NORMALIZED_IDENTIFICATION.md`.
 
 Current validation: 425 selected modules, 424 unchanged previously checked plus one strict incremental compilation; fresh combined transitive audit of 4912 selected and 27068 imported NLS declarations, permitted axioms only. The equality is on the physical real slice near zero; source-domain/global extensions and all main theorem rows remain open.
 
-## Latest actual original normalized contour periods
+## Historical milestone: actual original normalized contour periods
 
 The actual Miura numerator now has the literal Kronecker periods on the original frequency circles. A proved homotopy inside the canonical root domain transfers the actual mapped NLS periods, with the correct shifted-square Jacobian and boundary root branch. One constructed normalized data set and norm ball precede all real rough inputs and positive mode pairs. See `ORIGINAL_NORMALIZED_PERIODS.md`.
 
 Current validation: 424 selected modules, 421 unchanged previously checked plus three strict incremental compilations; fresh combined transitive audit of 4907 selected and 27063 imported NLS declarations, permitted axioms only. Applying the verified inverse to identify the actual coefficients with its normalized columns remains next; no main theorem is closed.
 
-## Latest indexed adjacent-band geometry
+## Historical milestone: indexed adjacent-band geometry
 
 Actual critical confinement and shifted-square order identify the original contour crossings with canonical bands k-1 and k, on one common complex open neighborhood before all real inputs and positive indices. Actual normalized NLS period circles cross those same indexed bands, including collapsed gaps and the first-mode central case. See `ORIGINAL_CONTOUR_BANDS.md`.
 
 Current validation: 421 selected modules (419 unchanged previously checked plus two strict incremental compilations); fresh combined transitive audit of 4886 selected and 27042 imported NLS declarations, permitted axioms only. Actual homotopy, normalized period equality and all main theorem rows remain open.
 
-## Latest canonical roots on all original contours
+## Historical milestone: canonical roots on all original contours
 
 Actual real trace and strict negative radicand signs exclude all canonical cuts at original real crossings. Every original positive frequency circle is in the canonical energy-root domain. One constructed normalized real chart and one ball precede all real inputs, indices and contour points, with exact root and full complex germ agreement. See `ORIGINAL_CONTOUR_ROOTS.md`.
 
 Current validation: 419 selected modules, 417 unchanged previously checked plus two new strict incremental compilations; fresh combined transitive audit of 4860 selected and 27020 imported NLS declarations, permitted axioms only. Actual period transfer, normalized-family identification and all main theorem rows remain open.
 
-## Latest canonical and earlier period-data Hilbert compatibility
+## Historical milestone: canonical and earlier period-data Hilbert compatibility
 
 The complete actual free critical set fixes every canonical free label. Complex analytic uniqueness along real radial path images identifies the earlier branches and their full complex germs. Their filled scalar and Hilbert bases agree at every energy. On one ball chosen before all real inputs and indices, the actual descended Miura numerator is represented by genuine residue coefficients in the earlier period-data Hilbert basis. See `CANONICAL_CRITICAL_COMPATIBILITY.md`.
 
 Current validation: 417 selected modules (415 unchanged modules from the previous full strict rebuild plus two strict incremental compilations); fresh combined transitive audit of 4854 selected and 27013 imported NLS declarations, permitted axioms only. Original contour periods and normalized-family identification remain open; no main theorem is closed.
 
-## Latest intrinsic critical labels and complex chart germs
+## Historical milestone: intrinsic critical labels and complex chart germs
 
 Actual real chart overlaps have identical complete positive critical labels. Each label also agrees on a full complex neighborhood: the actual frequency chain proves nearby criticality, and a reusable moving divided difference argument proves simple-root germ uniqueness. No real-type hypothesis is imposed on nearby complex inputs. Neighborhoods may depend on the index. See `CRITICAL_CHART_GERMS.md`.
 
 Current strict validation: 415 modules, 4842 selected declarations, 27002 imported NLS declarations; permitted axioms only. All 412 earlier selected Lean sources remain unchanged. Old-family and contour compatibility and every main theorem remain open.
 
-## Latest full entire actual numerator Hilbert representation
+## Historical milestone: full entire actual numerator Hilbert representation
 
 Derived critical quotient decay and actual Cauchy interpolation now give
 absolute principal-part sums. Actual residue bounds prove signed l2
@@ -1021,7 +1033,7 @@ selected Lean sources and seven provenance records remain unchanged.
 Old critical-label/contour compatibility, weighted-family identification,
 physical frequency(69) and all main theorems remain open.
 
-## Latest complete actual rough critical energies and residues
+## Historical milestone: complete actual rough critical energies and residues
 
 Every critical energy of the independent rough Hill trace is now proved
 real and simple at every physically real Hminus1 input. The complete
@@ -1039,7 +1051,7 @@ selected Lean sources and seven provenance records remain unchanged.
 Hilbert residue realization, the numerator representation/identification,
 physical frequency(69) and all main theorems remain open.
 
-## Latest actual continued-root compatibility near zero
+## Historical milestone: actual continued-root compatibility near zero
 
 Every physically real Hminus1 potential now has no nonreal periodic
 spectral zero; every nonreal energy lies in the old source continuation
@@ -1055,7 +1067,7 @@ selected Lean sources and seven provenance records remain unchanged.
 A uniform complex neighborhood for all contours, entire-numerator
 identification, physical frequency69 and all main theorems remain open.
 
-## Latest actual Hill energy roots and root chart agreement
+## Historical milestone: actual Hill energy roots and root chart agreement
 
 Actual NLS canonical products now construct nonvanishing jointly analytic
 roots of the independent rough Hill radicand. Positive original discs lie
@@ -1073,7 +1085,7 @@ selected Lean sources and seven provenance records remain unchanged.
 Entire-numerator chart/weighted-family identification, full coherent W,
 physical frequency69, action descent and all main theorems remain open.
 
-## Latest actual canonical-root parity and normalized energy pullbacks
+## Historical milestone: actual canonical-root parity and normalized energy pullbacks
 
 The even Miura trace now proves complete actual endpoint reflection,
 including all central and repeated multiplicities, and oddness of the
@@ -1092,7 +1104,7 @@ Global Hill energy-root/chart independence, lowest-cut and overlap
 identification, physical frequency identity(69), action descent and all
 main theorems remain open.
 
-## Latest real rough Miura charts and entire energy psi candidates
+## Historical milestone: real rough Miura charts and entire energy psi candidates
 
 At every physically real Hminus1 potential, actual complex analytic Miura
 charts now preserve physical realness. This proves the real-type NLS
@@ -1110,7 +1122,7 @@ Root sign/contour matching, Hill energy normalization, overlap compatibility,
 physical frequency identity(69), action descent and all main theorems
 remain open.
 
-## Latest actual rough analytic second-moment series
+## Historical milestone: actual rough analytic second-moment series
 
 The actual analytic Miura L2 lift now supplies a genuine locally bounded
 l1 canonical gap-square sequence in the rough topology. Exact shifted
@@ -1128,7 +1140,7 @@ selected Lean sources remain unchanged and all seven provenance records
 remain valid. Physical frequency identity (69), full W, action descent and
 every main theorem remain open.
 
-## Latest actual rough normalized second moments
+## Historical milestone: actual rough normalized second moments
 
 The actual normalized family now has exact all-order Hilbert kernel formulas
 and absolutely convergent positive coefficient expansions. Actual cut roots,
@@ -1145,7 +1157,7 @@ Lean sources are unchanged; all seven provenance records remain valid.
 The actual rough summable gap majorant and rough moment-frequency series are
 next. Physical frequency identity (69), full W and every main theorem remain open.
 
-## Latest rough weighted normalization and critical-gap localization
+## Historical milestone: rough weighted normalization and critical-gap localization
 
 The actual rough period operator now has a constructed twice-weighted
 inverse with exact coordinate compatibility and genuine analytic l2

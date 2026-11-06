@@ -2898,6 +2898,11 @@ modules=(
   NLS/KdV/NativeHillHierarchyIsospectral
   NLS/KdV/NativeHillHierarchyReality
   NLS/Articles/KdVKdV2Frequencies/GlobalKdVHierarchyActionFactors
+  NLS/SequenceSpaces/ComplexMeanZeroWeighted
+  NLS/Poisson/MeanZeroHminusGardnerBracket
+  NLS/Articles/KdVKdV2Frequencies/OriginalComplexMeanZeroBirkhoffMap
+  NLS/Articles/KdVKdV2Frequencies/OriginalNativeBirkhoffIdentifications
+  NLS/Articles/KdVKdV2Frequencies/MainTheorem11
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
