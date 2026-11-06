@@ -21,6 +21,13 @@ full common-domain identity, the zero-gradient and `-6*Id` Taylor
 normalization, the local inverse/Hessian assertions, and main Theorems
 1.2-1.3 remain open.
 
+The actual cubic contour normalization at zero is now computed directly:
+for each positive n, `8*pi*n*R_n(q)=I_n(q)^2*L_n(q)` near the real zero
+Hminus1 source, with `L_n` analytic and `L_n(0)=-3`. The identity includes
+low and collapsed gaps and retains no L2 or finite-gap assumption. The
+source neighborhood may depend on n. Transport to the full Hilbert Hstar
+Taylor expansion and bounded derivative `-6*Id` is still required.
+
 On potential space, the actual unit-period Hill discriminant is jointly
 entire in energy and complex H^-1 potentials. Local analytic shifted-Miura
 charts give the physical L2 comparison and uniform H^-1 high-energy
@@ -3300,13 +3307,56 @@ The physical zero-gradient and minus-six Taylor coefficient also remain
 open. This milestone completes the original-domain physical derivative
 bridge corresponding to the last assertion of Corollary 4.8.
 
+## Actual cubic action-square normalization at zero
+
+`CubicActionRatioAtZero.lean` proves
+`exists_intrinsic_cubic_action_ratio_at_zero` and its weighted version.
+For EVERY positive index n, the ACTUAL intrinsic cubic period satisfies
+`R_n=I_n^2*K_n` near the real zero Hminus1 source. The factor is complex
+analytic at zero and has the computed value `-3/(8*pi*n)`. Multiplication
+by the actual Hamiltonian summand weight `8*pi*n` gives free coefficient
+`-3`. The local source neighborhood may depend on n. The multiplicative
+identity includes collapsed gaps and never divides by an action.
+
+The normalization is derived, not imported from the paper's Taylor
+expansion. `HillFreeDeflatedTraceSlope.lean` computes the ACTUAL free trace
+slope `i/(2*pi*n)`. `HillFreeQuadraticPrimitive.lean` constructs its
+rough-source analytic root amplitude, with that exact free value.
+`HillPhysicalGapPrimitive.lean` proves the actual zero cosine mean at
+every gap and endpoint-normalized primitive uniqueness with the fixed
+physical root sheet. `HillFreePhysicalRootAmplitude.lean` matches this
+analytic amplitude to the literal physical shifted primitive near zero.
+
+`QuadraticGapCubicMoment.lean` retains counterclockwise orientation and
+proves the exact fourth-half-gap contour factor, including arbitrary
+complex or collapsed endpoints. The fourth-sine cosine mean is analytic
+through collisions, without requiring an analytic choice of half-gap.
+`HillFreeCubicMomentFactor.lean` obtains the actual physical coefficient
+`-3/(32*pi^3*n^3)` after removing the fourth half-gap power. Comparison
+with the original raw Arnold action, whose half-gap-square factor has
+free value `1/(2*pi*n)`, gives `K_n(0)=-3/(8*pi*n)`.
+
+The physical real L2 identity determines a native complex L2 germ.
+Dense complex-linear continuation identifies the rough analytic germs.
+Recovery of the actual intrinsic moments then covers EVERY real Hminus1
+source sufficiently close to zero. No L2 or finite-gap hypothesis remains
+in the final source identity.
+
+The full Hilbert Taylor statement is not yet proved. The next step uses
+the actual local coordinate inverse at zero and finite positive action
+openings to obtain the zero differential and basis Hessian entries.
+Hilbert analyticity and basis density must then establish the full
+bounded gradient derivative `-6*Id`, including infinite directions.
+
 ## Remaining essential KdV work
 
-1. Construct the actual coordinatewise analytic physical KdV frequency
-   family on the original ell^(-1,1) neighborhood V0. Apply the proved
-   continuation bridge to complete the full common-domain identity.
-2. Prove the physical quadratic Taylor coefficients `-3*sum(I_n^2)`,
-   zero gradient and full bounded derivative `-6*Id` at zero.
+1. Transport the proved actual source coefficient `L_n(0)=-3` through
+   the actual local coordinate inverse and positive finite-mode action
+   openings. Prove zero gradient, all basis Hessian entries and the full
+   bounded gradient derivative `-6*Id` by Hilbert analyticity and density.
+2. Construct the actual coordinatewise analytic physical frequency family
+   on the original ell^(-1,1) domain V0. Apply the checked continuation
+   bridge to complete the full common-domain identity.
 3. Complete the positive-index local inverse and single Hessian radius,
    then main Theorems 1.2-1.3 on Fourier-Lebesgue coordinates and physical
    KdV well-posedness.
@@ -3366,19 +3416,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `49d9b15` contains 2265 proof sources, whose
-hashes remain unchanged. Six authored modules and one exact shared module
-pass strict Lean compilation with `warningAsError=true`, default authored
-limits and no linter overrides. Reproduction lists 2272 modules. The
-positive-index example, combined transitive axiom audit and 1756 coverage
-declaration checks pass. All 2829 remaining reference import sources agree
-byte-for-byte and were not rebuilt. Earlier receipts remain in the parent
-commit. This is incremental validation, not a full repository build.
+The validated baseline at `ca69980` contains 2272 proof sources, whose
+hashes remain unchanged. Sixteen authored modules pass strict Lean
+compilation with `warningAsError=true`, default authored limits and no
+linter overrides. Reproduction lists 2288 modules. The positive-index
+example, combined transitive axiom audit and 1792 coverage declaration
+checks pass. All 2829 remaining reference import sources agree byte-for-
+byte and were not rebuilt. Earlier receipts remain in the parent commit.
+This is incremental validation, not a full repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 776 additional shared modules:
-17662 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 782 additional shared modules:
+17747 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

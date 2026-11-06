@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.CubicActionRatioAtZero
 import NLS.Articles.KdVConvexity.BaseFrequencyContinuation
 import NLS.Articles.KdVConvexity.OriginalBirkhoffActionCompatibility
 import NLS.Articles.KdVConvexity.SmoothPhysicalHamiltonianIdentity
@@ -105,6 +106,13 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.ComplexAnalysis.QuadraticGapCubicMoment,
+    `NLS.ComplexAnalysis.CollapsedQuadraticSolutionValue,
+    `NLS.ComplexAnalysis.ParametricSineFourthCosineMean,
+    `NLS.ComplexAnalysis.ParametricSineFourthCosineMeanLocal,
+    `NLS.ComplexAnalysis.QuadraticGapCubicFactor,
+    `NLS.ComplexAnalysis.QuadraticPrimitiveIdentification,
+
     `NLS.SequenceSpaces.WeightedNonnegativeAnalyticAtlas,
     `NLS.Fourier.PeriodOneSobolev,
     `NLS.Fourier.PeriodOneContinuousMean,
