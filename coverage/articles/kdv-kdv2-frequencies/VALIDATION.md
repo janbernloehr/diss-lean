@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual finite-support physical inverse family
+## Latest exact physical L2 endpoint of the rough inverse
+
+The SAME actual analytic rough inverse family R now has the exact native physical endpoint for EVERY REAL target in its open neighborhood, with arbitrary support: R(b) has raw L2 coefficients IFF its literal negative-half weighted target lift belongs to native h^(1/2). Every endpoint target has an ORIGINAL physical real mean-zero L2 representative, exact fixed GLOBAL Birkhoff coordinates and norm(p)^2=sum 4*pi*n*|z_n|^2=2*kdvFiniteMass. Non-half-regular real targets have genuinely non-L2 rough inverse images. See `NATIVE_ROUGH_L2_ENDPOINT.md`.
+
+The proof derives the previously missing L2 membership. Finite spectral truncations have actual physical preimages with a common genuine L2 mass bound; original L2 compactness and uniqueness of the rough limit identify the same R(b). Conversely, actual physical recovery and native global Birkhoff Hilbert membership force endpoint regularity. No summability is inferred from a totalized tsum identity.
+
+Prior strict evidence retained for all 2367 unchanged selected baseline sources. All five new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2372 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2414 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these five selections; no new shared-source import is needed. No full 2372-module rebuild is claimed.
+
+Fresh audit: 18809 selected and 40879 imported NLS declarations; permitted axioms only. R is analytic into H-minus-one; stronger L2-topology analyticity is not packaged here. Global rough inversion, full inverse Sobolev topology, actual physical frequency/PDE identification and all eleven main theorem rows remain OPEN.
+
+## Earlier actual finite-support physical inverse family
 
 The SAME actual rough Abelian chart now retains an explicit analytic inverse family R on an OPEN negative-half target neighborhood W of zero. Every complex target there has a mean-zero rough right inverse, and every real target gives a real rough source. EVERY real finite-support target has q=R(b) with ALL nonnegative Sobolev orders, with L2 membership derived from the actual spectral finite-gap condition rather than assumed.
 
@@ -620,7 +630,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2367 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2372 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1689,7 +1699,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2367 selected modules (including generated and private declarations)
+the 2372 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4322,4 +4332,15 @@ PASS NLS/Articles/KdVKdV2Frequencies/RoughNonvanishingActionAmplitudes
 PASS NLS/Articles/KdVKdV2Frequencies/RoughAbelianClosedGaps
 PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughFiniteSupportPreimages
 Axiom audit passed: 18780 candidate declarations; 40850 declarations total.
+```
+
+Latest actual rough inverse endpoint strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/DeletedSymmetricTruncation
+PASS NLS/KdV/HillPhysicalL2RoughClosure
+PASS NLS/KdV/HillBirkhoffAbelianSummability
+PASS NLS/Articles/KdVKdV2Frequencies/SignedMassTruncationBounds
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughEndpointInverse
+Axiom audit passed: 18809 candidate declarations; 40879 declarations total.
 ```

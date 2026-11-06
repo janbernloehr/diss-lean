@@ -2376,6 +2376,11 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/RoughNonvanishingActionAmplitudes
   NLS/Articles/KdVKdV2Frequencies/RoughAbelianClosedGaps
   NLS/Articles/KdVKdV2Frequencies/NativeRoughFiniteSupportPreimages
+  NLS/SequenceSpaces/DeletedSymmetricTruncation
+  NLS/KdV/HillPhysicalL2RoughClosure
+  NLS/KdV/HillBirkhoffAbelianSummability
+  NLS/Articles/KdVKdV2Frequencies/SignedMassTruncationBounds
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughEndpointInverse
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
