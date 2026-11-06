@@ -2769,6 +2769,9 @@ modules=(
   NLS/SequenceSpaces/PeriodOneMiuraKernelAC
   NLS/FunctionalAnalysis/PeriodicScalarACMean
   NLS/KdV/HillMiuraMinimalMeanZero
+  NLS/MKdV/L2QuasiHillZeroGauge
+  NLS/KdV/HillMiuraZeroGap
+  NLS/KdV/HillMiuraGroundEnergy
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

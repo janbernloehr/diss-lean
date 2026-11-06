@@ -1,3 +1,6 @@
+import NLS.KdV.HillMiuraGroundEnergy
+import NLS.KdV.HillMiuraZeroGap
+import NLS.MKdV.L2QuasiHillZeroGauge
 import NLS.KdV.HillMiuraMinimalMeanZero
 import NLS.FunctionalAnalysis.PeriodicScalarACMean
 import NLS.Fourier.UnitIntervalL2ProductCoefficients
@@ -4715,7 +4718,10 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.Fourier.UnitIntervalL2ProductCoefficients,
   `NLS.SequenceSpaces.PeriodOneMiuraKernelAC,
   `NLS.FunctionalAnalysis.PeriodicScalarACMean,
-  `NLS.KdV.HillMiuraMinimalMeanZero
+  `NLS.KdV.HillMiuraMinimalMeanZero,
+  `NLS.MKdV.L2QuasiHillZeroGauge,
+  `NLS.KdV.HillMiuraZeroGap,
+  `NLS.KdV.HillMiuraGroundEnergy
 ]
 
 open Lean in
