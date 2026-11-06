@@ -96,7 +96,7 @@ See `source-inventory.json` for statement domains, quantifiers and pages.
 | --- | --- | --- |
 | Theorem 1.1, pp. 3–4 | A complex open extension around the entire nonnegative ell2 action quadrant; physical energy/frequency identities; gradient zero and full derivative -6*Id; analytic local inverse; one-radius Hessian bound for every real ell2 direction. | **Verified with explicit source correction** by `theorem_1_1_corrected` / `Theorem11PhysicalData`. All components hold jointly for the same physical extension. The preamble uniform O(1) estimate (1.7) is refuted and excluded. |
 | Theorem 1.2, p. 4 | For each -1/2<=s<=0 and finite p>=2, the same global H^-1 physical KdV Birkhoff map restricts to a real analytic diffeomorphism L_0^(s,p) -> ell_0^(s+1/2,p). | Verified by `theorem_1_2` and `theorem_1_2_global_native_analytic_diffeomorphism`: native real analyticity in BOTH original norms, full global bijection, BOTH fixed rough diagrams and all signed inverse coefficients. |
-| Theorem 1.3, p. 5 | Global C0 well-posedness of physical KdV on every such real Fourier-Lebesgue space, with the solution notion referenced by the paper. | Not verified. Sequence phase-flow results alone do not establish this PDE assertion. |
+| Theorem 1.3, p. 5 | Global C0 well-posedness of physical KdV on every such real Fourier-Lebesgue space, with the solution notion referenced by the paper. | Partially proved by `theorem_1_3_global_continuous_phase_preparation`: global native continuous physical phase group, same weak normalization, and uniform compact-time approximation by orbits with actual smooth spatial representatives. Classical KdV time-PDE recovery and the universal smooth-approximation solution property remain open. |
 
 For 1.1 the complex domain must contain every nonnegative ell2 action, not
 just zero. One local radius is chosen before all actions and all real Hilbert
@@ -3707,12 +3707,45 @@ with the ALREADY-FIXED global inverse by global bijectivity. The endpoint
 p=2 is the SAME proved raw Hilbert inverse. No new mathematical premise,
 axiom, proof-limit override or linter override is introduced.
 
+## Theorem 1.3: actual global continuous phase preparation
+
+`theorem_1_3_global_continuous_phase_preparation` chooses ONE actual
+physical Birkhoff map and ONE actual base frequency family before every
+-1/2<=s<=0 and finite p>=2. The physical base frequencies are real on the
+ENTIRE nonnegative weighted base cone. The native action map is continuous
+in that original base norm, and each raw positive action is exactly
+z_n*z_(-n). On every H1 source the phase frequencies recover the
+independently proved intrinsic KdV Hamiltonian frequencies, including
+closed coordinates. No uniform bound on the frequency sequence is used.
+
+The SAME native diffeomorphism conjugates these signed phases to a global
+continuous group in the ORIGINAL real mean-zero Fourier-Lebesgue source.
+Complete trajectories depend continuously in the native compact-open
+topology; native initial-data convergence therefore gives convergence
+uniform on every compact time set. All native orders/exponents give the
+SAME raw evolved source. The original weak normalization commutes with
+the SAME globally fixed rough phase evolution for every real time.
+
+Literal symmetric Birkhoff truncations pulled back by the SAME inverse
+converge in the original native source norm. Finite physical Birkhoff
+support implies every higher Sobolev order by the global physical
+regularity criterion, giving an ACTUAL smooth unit-period spatial
+representative. Every point on each approximating phase orbit has this
+spatial smoothness, and the approximating trajectories converge uniformly
+on every compact time set in the original norm.
+
 ## Remaining essential KdV work
 
-Complete Theorem 1.3: physical KdV global C0 well-posedness in the original
-Fourier-Lebesgue spaces, including trajectory and initial-data continuity,
-approximation, agreement and uniqueness in the referenced rough
-Hminus1 distributional solution theory.
+Theorem 1.3 remains open. Spatial smoothness is not yet a proof of the
+time PDE u_t=-u_xxx+6*u*u_x. Prove that identity on the approximating
+orbits, recover every genuine classical smooth solution from the SAME
+phase formula, and prove approximation independence and uniqueness for
+EVERY smooth approximating sequence. The referenced solution definition
+is Kappeler--Topalov, Duke Math. J. 135 (2006), p.328, Definitions 1.1-1.2:
+[author-uploaded primary text](https://www.researchgate.net/publication/278194325_Global_wellposedness_of_KdV_in_H-1TR).
+It requires the genuine classical solution limit and continuous dependence
+in C(R,X) with uniform convergence on bounded time intervals. No theorem
+from that paper is introduced as an unproved axiom here.
 
 The `kdv-estimates` branch was re-inspected through commit `05e5530`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
@@ -3769,19 +3802,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `ffdad9d` contains 2569 proof sources, whose
-hashes remain unchanged. All 29 new authored modules pass strict Lean
+The validated baseline at `98d0fd0` contains 2598 proof sources, whose
+hashes remain unchanged. All 19 new authored modules pass strict Lean
 compilation with default proof limits and no linter or instance-priority
-overrides. Reproduction lists 2598 modules. The positive-index example,
-combined transitive audit and 2982 coverage-name checks pass.
+overrides. Reproduction lists 2617 modules. The positive-index example,
+combined transitive audit and 3074 coverage-name checks pass.
 All 2852 remaining reference imports agree byte-for-byte and were not
 rebuilt. Earlier receipts remain in the parent commit. This is incremental
 validation, not a full repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 943 additional shared modules:
-20139 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 950 additional shared modules:
+20243 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

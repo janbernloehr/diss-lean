@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-06",
-  "milestone": "Main Theorem 1.2: the actual global real analytic Fourier-Lebesgue diffeomorphism and SAME fixed inverse",
+  "milestone": "Theorem 1.3 preparation: actual global native physical phase group, same weak evolution and uniform spatially smooth finite-gap approximation",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": true,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -2615,11 +2615,30 @@
     "NLS.ComplexAnalysis.RealAnalyticEquivInverse",
     "NLS.KdV.HillRoughFourierLebesgueInverseAnalytic",
     "NLS.KdV.HillRoughFourierLebesgueInverseAllExponents",
-    "NLS.Articles.KdVConvexity.MainTheorem12"
+    "NLS.Articles.KdVConvexity.MainTheorem12",
+    "NLS.Articles.KdVConvexity.BasePhysicalFrequencyReality",
+    "NLS.SequenceSpaces.WeightedSignedPairActions",
+    "NLS.Articles.KdVConvexity.FourierLebesguePhysicalActions",
+    "NLS.SequenceSpaces.SignedPositiveFrequency",
+    "NLS.SequenceSpaces.WeightedPhaseFlowFamily",
+    "NLS.SequenceSpaces.PhysicalRealMeanZeroPhaseFlowExponent",
+    "NLS.Articles.KdVConvexity.FourierLebesguePhysicalPhaseFlow",
+    "NLS.KdV.HillRoughFourierLebesgueHomeomorph",
+    "NLS.Dynamics.ConjugatedContinuousEvolution",
+    "NLS.Articles.KdVConvexity.FourierLebesguePhaseEvolution",
+    "NLS.KdV.HillRoughFiniteSupportSmooth",
+    "NLS.Articles.KdVConvexity.FourierLebesgueFiniteSupportSmooth",
+    "NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedTruncationExponent",
+    "NLS.Articles.KdVConvexity.FourierLebesgueFiniteGapApproximation",
+    "NLS.Articles.KdVConvexity.FourierLebesguePhaseCompatibility",
+    "NLS.Articles.KdVConvexity.FourierLebesgueFrequencyRecovery",
+    "NLS.SequenceSpaces.PhysicalRealDeletedPhaseFlow",
+    "NLS.Articles.KdVConvexity.WeakPhysicalPhaseEvolution",
+    "NLS.Articles.KdVConvexity.MainTheorem13Preparation"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 20139,
+    "declarations": 20243,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -2660,6 +2679,13 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.SequenceSpaces.WeightedSignedPairActions",
+      "NLS.SequenceSpaces.SignedPositiveFrequency",
+      "NLS.SequenceSpaces.WeightedPhaseFlowFamily",
+      "NLS.SequenceSpaces.PhysicalRealMeanZeroPhaseFlowExponent",
+      "NLS.Dynamics.ConjugatedContinuousEvolution",
+      "NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedTruncationExponent",
+      "NLS.SequenceSpaces.PhysicalRealDeletedPhaseFlow",
       "NLS.FunctionalAnalysis.CompactDerivativeComposition",
       "NLS.ComplexAnalysis.AnalyticCompactGermPullback",
       "NLS.ZakharovShabat.SourceWeightedEtaExponentFactorization",
@@ -3624,6 +3650,7 @@
     "NLS/Articles/KdVConvexity/BaseFrequencyTaylor.lean": "701a163b551cdb9b354d72eb7ea72a14347de4cd2ecec800aa96bce55969a053",
     "NLS/Articles/KdVConvexity/BasePhysicalFrequencyConstruction.lean": "8692cdf6aff076e9def15af5fb3da5974ece225d29eb53ae9c1dc55791b57a7c",
     "NLS/Articles/KdVConvexity/BasePhysicalFrequencyExtension.lean": "b199dc4de2de2c62b10d9991e980ffd829e0470f9a008a34d75c286ad2ac46ff",
+    "NLS/Articles/KdVConvexity/BasePhysicalFrequencyReality.lean": "c4bb0e727ab35a718581991293a95fbc5088dddc442e3505683de108b2d15597",
     "NLS/Articles/KdVConvexity/CanonicalMomentPreparation.lean": "a4e67c69a5fb52d284f2e95c4edfda4f18e94fc0f9cd4e4751330a4590877939",
     "NLS/Articles/KdVConvexity/CommonCanonicalMomentFamily.lean": "4bd10d8df2b479aa60e1ce10a5923e00e4f573b3d4ea9cc895cbc5674d21129a",
     "NLS/Articles/KdVConvexity/CoordinateActionExtension.lean": "731561a0e5afb2460ac2b5f17dc2d7cd70cd97c5491af0fa1b9ced0de5c0bf23",
@@ -3636,7 +3663,14 @@
     "NLS/Articles/KdVConvexity/FiniteArnoldRealization.lean": "756a49a1828e27db2a3aa6df0dbab438af1e2b3d40dd53c51149e1c6917804b2",
     "NLS/Articles/KdVConvexity/FiniteGapPhysicalFrequencyIdentity.lean": "82df7c008fb2ea8a04db7ab04235c5005fb6caeffb8baa9f51dad3895102bf00",
     "NLS/Articles/KdVConvexity/FiniteH1PhysicalIdentity.lean": "790e798cb00180787a919d3099e042e2e66a1503753bcaa0499f9a8bd6cb0c07",
+    "NLS/Articles/KdVConvexity/FourierLebesgueFiniteGapApproximation.lean": "55047fd7e3f352d9cb6dfae3f7f4f2d6796e6d1d61dc4811a7c58b5ab65b1140",
+    "NLS/Articles/KdVConvexity/FourierLebesgueFiniteSupportSmooth.lean": "da817a07a8bc975f2ae52a2205c207f44a333df1c1f1aa5f0b63a46cf5b83774",
+    "NLS/Articles/KdVConvexity/FourierLebesgueFrequencyRecovery.lean": "9f8b67583d6d178e8a60a3dfeebf3d7979bab9efa947e5a816134567f136f362",
     "NLS/Articles/KdVConvexity/FourierLebesgueMiuraPreparation.lean": "b0a30dc0b9691ce4e7af803e118a777a1cdea27c64cce69f42f1bbdf078fe3e5",
+    "NLS/Articles/KdVConvexity/FourierLebesguePhaseCompatibility.lean": "ed26cc4a4e9427f612dd7cf551619d11f0d381047baa3e0356f6027b436e36fd",
+    "NLS/Articles/KdVConvexity/FourierLebesguePhaseEvolution.lean": "019bc0baf4e7abf44f75c8c19ce2a30b77cd9e0c5d332400556ad233d57306dc",
+    "NLS/Articles/KdVConvexity/FourierLebesguePhysicalActions.lean": "51180fec18b00d9b9d518a44f3bb407849fef37866322ce1ffde604d66e318ff",
+    "NLS/Articles/KdVConvexity/FourierLebesguePhysicalPhaseFlow.lean": "d1036976047ae20dce09ee659394bdf7e1a80be834a517efd82531a6538a2be5",
     "NLS/Articles/KdVConvexity/FreeActionRays.lean": "de872ce9e3d1297d040da706000c8a99fb4a6de7c12a2aea665e2afc85625463",
     "NLS/Articles/KdVConvexity/FreeDirichletLinearization.lean": "b355c65bba40980b6cf699362cc90838736d01efd37c66e0d83be24e4914ea32",
     "NLS/Articles/KdVConvexity/FreeLogNormingLinearization.lean": "4615302bad4f8faa4fc1a998d6e8f210999947b316c3080ee2f10b2053e072e2",
@@ -3664,6 +3698,7 @@
     "NLS/Articles/KdVConvexity/MainTheorem12.lean": "67b2b49f4fbf3fa6ddded3cd1c3d2e5c62eb218df6d222cc8b911730d5a5dc50",
     "NLS/Articles/KdVConvexity/MainTheorem12Forward.lean": "4508b3916feafd416afcee466892a489ef9f470f85b2c7da7666950de20de336",
     "NLS/Articles/KdVConvexity/MainTheorem12Preparation.lean": "141baabc470db9471176d8148f3361d4d404ff13a32282e27e5ba97c93e8b52a",
+    "NLS/Articles/KdVConvexity/MainTheorem13Preparation.lean": "66d388cfc84cc8d9fc762360dab51cb76af0699ba125febe1aedc1d567cd2dc9",
     "NLS/Articles/KdVConvexity/NativeFiniteGapApproximation.lean": "08ed38233f03f05bcbcc82390878748e67df7e2b97ef0ad388a29481efbc7fde",
     "NLS/Articles/KdVConvexity/NativeH1PhysicalCompatibility.lean": "173c6641c930191fefa8c0d9a6ed1a188f6a5fdd021b7ffd85b87f1734728732",
     "NLS/Articles/KdVConvexity/NativeOriginalFrequencyCompatibility.lean": "73e50e99a1e578e1611b2138baf91daa44219816747555b145b44c249152c388",
@@ -3691,6 +3726,7 @@
     "NLS/Articles/KdVConvexity/TailExtension.lean": "a5de2c7ed440338bc5a96c29fc70ae3de7c2c06001d13c292db236b7062e0eef",
     "NLS/Articles/KdVConvexity/TailSeriesRealization.lean": "7d6aceb65c1e40955e091d952c4ba77178fade65a1147566fe1909ff68c9ee00",
     "NLS/Articles/KdVConvexity/UnconditionalContourExtension.lean": "8ceebbe1f0b908e5954634ce87f6f9d379cdcdc65989e77ac3fd723721c34602",
+    "NLS/Articles/KdVConvexity/WeakPhysicalPhaseEvolution.lean": "7f58fcdafed3c86b7d77e761bd0ff55ee46268e043e57bb5bf7f2aff0cc12720",
     "NLS/Articles/KdVConvexity/WeightedFrequencyMomentPreparation.lean": "3e47a43151317154c4471512499cde4801986d1e52acd95419fee3c440f6d076",
     "NLS/Articles/KdVKdV2Frequencies/ActualMeanZeroPrincipalEquiv.lean": "bcec81dc0a1b529b77b4e1c4c8bf62de749d6fb1880d5c5b23505d9ea5bbb106",
     "NLS/Articles/KdVKdV2Frequencies/ActualNativeJacobianUnit.lean": "010a56f44ff33078effd9dce260caeb8842d0d76f425d6605cc0d143c9c76320",
@@ -4134,6 +4170,7 @@
     "NLS/DifferentialPolynomial/ScalarRiccatiConstantVariation.lean": "48a7c81521b37b123643d9162a4ac05420834d6dc25fa1f39bf8435bbe28b845",
     "NLS/DifferentialPolynomial/SmoothVariation.lean": "fa570f62c9f16361614e285f7fc0e7e98f3e43bcc0b901af9aace5e7bbdc1798",
     "NLS/DifferentialPolynomial/UngradedIntegrationByParts.lean": "1964b724472e912f35df9d768289b9a9050688cddf2f2ef797815817912504ef",
+    "NLS/Dynamics/ConjugatedContinuousEvolution.lean": "fb38f136385b748d383aa21067f05b7eaa30c46ffd62a2ce63941ed7e22976b2",
     "NLS/Fourier/ACPeriodicUnitCoefficients.lean": "f0e4cd801db6e15039135b0c3799337ddb2f00d3a63d019a47c26b23d80d2765",
     "NLS/Fourier/CircleBilinearMean.lean": "89eab9297d3cc3a345ce9a837e115251dd44c929b2e842445153034298bb1fea",
     "NLS/Fourier/CircleUnitCoefficients.lean": "44ef67e3ad199596fc4ae9238f3845df90c36e393f4d3cca8d1c932fc43e421a",
@@ -5577,11 +5614,13 @@
     "NLS/KdV/HillRoughActionApproximation.lean": "1f43156db6ccddfb781d02817ddc827dd0186734df6ba6b8ba31c4f43345e383",
     "NLS/KdV/HillRoughActionFibers.lean": "2c8cb7826d257d1976a04d39c6f861660c9902dc55d4fc811c186f88bc7196b1",
     "NLS/KdV/HillRoughFinitePairRegularity.lean": "b1e3be37ad2f027e9c74be450e742351384abe64aef4c27d7130b89ffe9fe7b5",
+    "NLS/KdV/HillRoughFiniteSupportSmooth.lean": "d0387e376e8a6a91188fb1d4200a88ac5aa28cd9f48507bf1d110ebc6c3e1d8f",
     "NLS/KdV/HillRoughFourierLebesgueBijection.lean": "005e40bedc7fee24be089bb38bf1939a498693dd8ca7ace0ccf24c1639db17b8",
     "NLS/KdV/HillRoughFourierLebesgueCompactDerivative.lean": "6d0ed7ab04caddd20e8adbaa5eb3990878f91b7389f958f86871a1f093c6d71a",
     "NLS/KdV/HillRoughFourierLebesgueDerivativeInjective.lean": "8e160c3fa9f84e0ba5d9794277ca6c997d033f618c80708c0fd3af82653b75b5",
     "NLS/KdV/HillRoughFourierLebesgueForwardAllExponents.lean": "5964405da34c1e431cc00bdd87a6d556a4fcff688790e889ec4895feaec860b0",
     "NLS/KdV/HillRoughFourierLebesgueForwardAnalytic.lean": "1f161ec8881467801c1d08fec7477f9654d14ad904b846b4c27a681617e85601",
+    "NLS/KdV/HillRoughFourierLebesgueHomeomorph.lean": "788bcd9fbb14796de16e1d278ad3949d72bae3bd89057e909143e0f5b7d1e0c9",
     "NLS/KdV/HillRoughFourierLebesgueInverseAllExponents.lean": "551f578fdb4ce44371976affa8a5e0c174ca213aa9b69c8aec2ea02db0f89b70",
     "NLS/KdV/HillRoughFourierLebesgueInverseAnalytic.lean": "7bc04ac648b97f9d2564f8291fa845917b0adee63905f0df09b4a74a5405e825",
     "NLS/KdV/HillRoughFourierLebesgueInverseCompatibility.lean": "f1d127befe516a488ac48800e47dbedeb5884578f2f862525c4db5875f714471",
@@ -6016,13 +6055,16 @@
     "NLS/SequenceSpaces/PhysicalPositiveCompletionExponent.lean": "3b28e46a11bb8fb5fc0708c7e02152df8b5b28163b7612be1b7082d78ed5a1ba",
     "NLS/SequenceSpaces/PhysicalPositiveMultiplierEquiv.lean": "161be8510ebb87e9a3982c2236384fff6f07c62404e274b81bb8bf3a95c3326d",
     "NLS/SequenceSpaces/PhysicalRealDeletedHilbert.lean": "0edfee15358c0ef6947842c28c2df81ec73e14e60fbdcd81a27a1978f7d7ebae",
+    "NLS/SequenceSpaces/PhysicalRealDeletedPhaseFlow.lean": "2f58280935cd0f4e4154a0a6d43280e11c8fc03a98a139b0316d8187141d662d",
     "NLS/SequenceSpaces/PhysicalRealImag.lean": "5445748fc87a95eaaeb8b7883b42e5760f11fc60f46ded06646d2e6f59fa83db",
     "NLS/SequenceSpaces/PhysicalRealMeanZeroComplexSpan.lean": "1103f9288480c687fa8a06f01f3358a9396277c41aa5e741a3917c54991a45de",
+    "NLS/SequenceSpaces/PhysicalRealMeanZeroPhaseFlowExponent.lean": "1d080560c1c4650cc366e61c7930c55047a9eb09d6c3661fb01f142362c349d2",
     "NLS/SequenceSpaces/PhysicalRealMeanZeroSobolevInclusion.lean": "f8d6d9d809846db406d1329f181fcc92ee927adfdfe6c6fcf6c2f52de1183eaf",
     "NLS/SequenceSpaces/PhysicalRealMeanZeroWeighted.lean": "060af25bde3c76468ccb9ba90933e8bf9d2b257ddd0bc3dca45548d57af1786a",
     "NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedExponent.lean": "eab5f24bcf37510189983230276e5bea7603efb2f760fe13ca36e2b354bbd889",
     "NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedRelift.lean": "26a7c401d563da4d243e8e1595019341ecdf463d721c7e488885300c733061a4",
     "NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedTruncation.lean": "5002645a4830fa640f363d273d6e4db226edd62e332a7d28c71204c767260041",
+    "NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedTruncationExponent.lean": "bb9584476218a5f1b9f47c98774a64d2b97813adab6b27dee59e96eae51cae2e",
     "NLS/SequenceSpaces/PhysicalRealSobolevInclusion.lean": "0bb3efccf70a187cf854bf8f6293fe46ccbf3fd5875b55f4b49d93e228551128",
     "NLS/SequenceSpaces/PositiveAnalyticReciprocal.lean": "77b112a5029a64bcadbe2796b50d52da60967d078ac9173b20d174dda2336544",
     "NLS/SequenceSpaces/PositiveAnalyticWeightedProduct.lean": "519e6ee82d9f41da017ca8f8c3b0bfd756d7a3fb3a56ab1211879e3510bca171",
@@ -6066,6 +6108,7 @@
     "NLS/SequenceSpaces/SignedHilbertPairs.lean": "c77ea59d701fb7e19d5e7cf5e72e6f0c3ea3ac1998b2aca0bad5076e985036eb",
     "NLS/SequenceSpaces/SignedHolomorphicCompletion.lean": "d7709a129811f0ea70cc1b141e118aefb1f630f5d5d51fa53ba7a8e6098dcf91",
     "NLS/SequenceSpaces/SignedMultiplierPrincipal.lean": "03ee9bc0c2deeaefaf177d9bd28db278bf69444848e5fcd7a8091c84c72bd22f",
+    "NLS/SequenceSpaces/SignedPositiveFrequency.lean": "25e508c23605a997de973ff1f7d1d5cd09a68a6ebb39bba7bc41667f463e74e8",
     "NLS/SequenceSpaces/SignedReciprocalSymbol.lean": "a839771a1855fb2a02d1425a4ed9809e5630baa06be963832e81f6dc03479a38",
     "NLS/SequenceSpaces/SignedSobolevConvolution.lean": "2a59cc5b9417182e3bcb4438af84ddfc4d12641fc34eae24bf68c436cada6fcd",
     "NLS/SequenceSpaces/SignedWeightedMomentPairs.lean": "1cb275c1e5f55350c5ffefd79c5008a504ac7ae906bc26abd024b114979a0c08",
@@ -6106,11 +6149,13 @@
     "NLS/SequenceSpaces/WeightedInsertion.lean": "a4aeffa707f59fb1ae02afacbb06963c9085a2b04601162b495faf0810eb20b6",
     "NLS/SequenceSpaces/WeightedNonnegativeAnalyticAtlas.lean": "c738f2ed628014130135c5fdd28b1db886c1076143618ce3a394c074e7711a13",
     "NLS/SequenceSpaces/WeightedNonnegativeTransport.lean": "b8a85a6f0cdbde44cd457e3f124a2ced43d41a1d446464e8223f74b69b0fef51",
+    "NLS/SequenceSpaces/WeightedPhaseFlowFamily.lean": "6fa99ab8820088e71a352ce8c572fef72c2e97c8c8737c46f6e41ef54c35a8e0",
     "NLS/SequenceSpaces/WeightedPositiveActionDerivatives.lean": "883400fa6d940f22699030e339c4c122043dbc2486ef2fc7986dd777165c83c6",
     "NLS/SequenceSpaces/WeightedPositiveFiniteSums.lean": "89cd403714fb4fa990c21fc344cefc08c08f7df01dfb29919236d830e0d7ebca",
     "NLS/SequenceSpaces/WeightedQuadraticActionAlgebra.lean": "34289ddddad8bc56ff56e49129c1c5bba0e41c7ee5411016783acd289ab29061",
     "NLS/SequenceSpaces/WeightedRestriction.lean": "1affd75425a25bcc4fd93bb52f5daacf9c569d33bba9e17b7bc7848c507bbac4",
     "NLS/SequenceSpaces/WeightedScalarActionFamilyDescent.lean": "56b54e9ed7338c41f2a58418ba130a53b6b1ddc6122ea821a59b845577cf6f6a",
+    "NLS/SequenceSpaces/WeightedSignedPairActions.lean": "60a85f2d8bf1d36182c90a33453bd0e0285b9a2e81cffd420215f9780620bca1",
     "NLS/SequenceSpaces/WeightedSourceSignedCompletion.lean": "7a926ae06c9398d9b8058737841b9b08362c050093c88f8c9923fa8800e78ad0",
     "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean": "bb0b70dbb82bff45ebb1f618894793caef99aa8b82d1b79bf794d5ea29c96202",
     "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean": "508a71a1cf7499a555cd7a66a5ba0f506689ad99fd23b052ee1196c0032a843e",
@@ -6208,7 +6253,7 @@
     "NLS/ZakharovShabat/SpectralModulation.lean": "796f8382a49703dd1a3139dfd7b799d762217d71a2134f13d56ff9787e53be0e",
     "SOURCE_ERRATA.md": "c02f42ab011aaf7d1100ffb55af859ecdb448a1d8dc6db5f0b0326ebe6ad06e9",
     "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md": "cdf1e80388bb3e0824a36caac1289a95048c5660c5245b76f45f4802cf6b893b",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "4db353d5521945628609d632e17a9376c4df5ef0b4f937cffd8db199ae4e2ed6",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "32cce4a93f7b4567566b03ea58d92a605b5cdee0347e3d86f5d2bc5923d5e2ce",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/action-sequence-library-reuse.json": "9126c713dd2dbd5eb3b1d902df1cea7bdd35cbbd75a6ee13e21fd9d7fd49827e",
@@ -6229,6 +6274,7 @@
     "coverage/articles/kdv-convexity/fourier-lebesgue-forward-library-reuse.json": "bd68383b3b5326c0dd30ab8c48d67a0d6e9379eef4b6bed740d6f39131af3333",
     "coverage/articles/kdv-convexity/fourier-lebesgue-inverse-library-reuse.json": "320e4d6675181ce3aa790bd6406e5de4dba2acc1c4e84d75ab34101b7912a179",
     "coverage/articles/kdv-convexity/fourier-lebesgue-miura-library-reuse.json": "ac29e4b9d79e1564a5cc38ef9eefd64543f2a06029f9c6f68269d152ee39a479",
+    "coverage/articles/kdv-convexity/fourier-lebesgue-phase-library-reuse.json": "52a6965721fc4fce8996a19ea5f3a920b71a032ae326aa1230757a34a252cb08",
     "coverage/articles/kdv-convexity/free-dirichlet-linearization-library-reuse.json": "a2704beae438361e504b375899883202f3318e546657916470b0713319862aaf",
     "coverage/articles/kdv-convexity/global-ground-library-reuse.json": "5fecbfb7e905b3be5fe6b8951fd282d37cd6797390e00602aff0857427f797a0",
     "coverage/articles/kdv-convexity/hminus-real-shared-imports.json": "7cf3589bedf25268fd1f886149cae0a2205ff5625619a33bfc7ba6b44c2a78f0",
@@ -6250,10 +6296,10 @@
     "coverage/articles/kdv-convexity/sobolev-energy-library-reuse.json": "a5a808fd7bbc87f3979d3c913affabdb3f9550a4c3d997d63b578ef57aa7f4c7",
     "coverage/articles/kdv-convexity/theorem11-library-reuse.json": "c9b9d87827af9a6bdd4a8462fcd25d60b4c5a890071445f5deb3e708db6dc0c3",
     "coverage/articles/kdv-convexity/weighted-moment-library-reuse.json": "7b806d2adc490c00a195c620583f8c723ae6469c3a8b614fa356d0c8b81f3605",
-    "scripts/check-kdv-convexity.sh": "691a05a4310025238b896136bf060385f7acb5b10fa87d6317a711560125cca5"
+    "scripts/check-kdv-convexity.sh": "816fcdb3277b8594af766c86f09608a1a4509b90b71e180e0d0a68503e47b34f"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-audit.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-audit.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -6269,10 +6315,11 @@
   },
   "limits": [
     "Corrected Theorem 1.1 is verified. The source preamble equation (1.7), interpreted as a locally uniform O(1) bound on one common complex base neighborhood, is mathematically incompatible with the actual physical -6 normalization and is proved false. The corrected theorem retains common-domain coordinatewise analyticity and exact physical recovery.",
-    "Theorem 1.3: prove physical KdV global C0 well-posedness in every stated original Fourier-Lebesgue norm, with approximation, uniqueness and agreement with the referenced Hminus1 solution theory.",
-    "All 2569 baseline proof-source hashes are preserved and 29 new modules strictly checked. The 2852 remaining reference imports are byte-identical and were not rebuilt. No full repository build or replacement of dissertation validation is claimed."
+    "Recover the literal time KdV PDE u_t=-u_xxx+6*u*u_x for the smooth finite-support physical phase orbits, with the exact unit-period Fourier normalization. Spatial smoothness and global phase continuity alone do not prove the PDE.",
+    "Recover every genuine classical smooth KdV solution from the SAME physical phase formula. Then prove convergence for EVERY smooth approximating sequence and uniqueness in the solution class of Kappeler--Topalov Definition 1.1, together with identification with the Hminus1 classical-limit solution. The selected finite-gap approximation is already proved uniformly on compact time intervals.",
+    "All 2598 baseline proof-source hashes are preserved and 19 new authored modules strictly checked. The 2852 remaining reference imports are byte-identical and were not rebuilt. No full repository build or replacement of dissertation validation is claimed."
   ],
-  "previous_progress_commit": "ffdad9de14656f10b4386b8c0bd2e593189b37f7",
+  "previous_progress_commit": "98d0fd04cd4b41a6568cccaae21db078927bb406",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -6765,7 +6812,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation against ffdad9d preserves all 2569 baseline proof-source hashes. Strict Lean 4.33.1/mathlib v4.33.1 compilation validates 29 authored modules with default proof limits and no linter or instance-priority overrides. The ACTUAL native derivative is injective by differentiation of the fixed global weak normalization diagram. The literal native Miura product has a compact fixed-coefficient derivative by a strict Hilbert row majorant in ell^p. The actual retained native Miura lift has its exact free mass inverse plus compact. Actual eta normalization, bounded reciprocal, physical packet symbol and SAME signs compose with compact derivative remainders at every finite p>2. Positive real completion identifies the resulting actual native real principal with a bounded equivalence in BOTH original norms. The real Fredholm alternative gives native derivative bijectivity. Real analytic local inverses agree with the ALREADY-FIXED global inverse by global bijectivity; p=2 is the SAME proved raw Hilbert inverse. Every finite p>=2 is covered. Theorem12PhysicalData is inhabited unconditionally, and theorem_1_2_global_native_analytic_diffeomorphism retains the exact article range -1/2<=s<=0, both weak diagrams and full signed recovery. Corrected Theorem 1.1 and Theorem 1.2 are complete; Theorem 1.3 remains open. Reproduction lists 2598 modules. Positive-index example, transitive audit of 20139 declarations, 2982 coverage names and 943 additional module origins pass. The 2852 byte-identical reference imports were not rebuilt; no full repository rebuild is claimed.",
+  "focused_validation_scope": "Incremental validation against 98d0fd0 preserves all 2598 baseline proof-source hashes. Strict Lean 4.33.1/mathlib v4.33.1 compilation validates 19 authored modules with default proof limits and no authored linter or instance-priority overrides. The actual physical base frequencies are real on the ENTIRE nonnegative negative-order base cone by original action truncation and Hamiltonian recovery. Native physical actions are exactly z_n*z_(-n), with continuity in the original base norm. The already-proved native physical diffeomorphism conjugates their exact signed phase evolution to a global jointly continuous group. Complete trajectories depend continuously in the original native compact-open topology, hence native initial-data convergence gives uniform convergence on every compact time set. All native orders/exponents give the SAME raw evolved sources. The already-fixed weak source normalization commutes with the SAME global rough phase evolution. Literal symmetric native Birkhoff truncations converge in the original source norm; every point on their phase orbits has an actual spatially smooth periodic representative, proved from the global physical regularity criterion. Their trajectories converge uniformly on compact time sets. Actual frequencies recover the independently defined intrinsic KdV frequency at every H1 source. No classical KdV time-PDE or universal classical smooth-approximation theorem is claimed. The precise Kappeler--Topalov Definitions 1.1-1.2 have been checked in the author-uploaded primary text. Theorems 1.1 (corrected) and 1.2 remain complete; Theorem 1.3 remains open. Reproduction lists 2617 modules. Positive-index example, transitive audit of 20243 declarations, 3074 coverage names and 950 additional module origins pass. The 2852 remaining byte-identical reference imports were not rebuilt. No full repository build is claimed.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -7075,9 +7122,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 2982,
-    "audit_modules_present": 943,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/FourierLebesgueInverseCoverageNames.log"
+    "declarations": 3074,
+    "audit_modules_present": 950,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/PhysicalFourierLebesguePhaseCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -7166,356 +7213,239 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "ffdad9de14656f10b4386b8c0bd2e593189b37f7",
-    "baseline_modules": 2569,
+    "baseline_commit": "98d0fd04cd4b41a6568cccaae21db078927bb406",
+    "baseline_modules": 2598,
     "baseline_source_hashes_unchanged": true,
-    "newly_checked_authored_modules": 29,
+    "newly_checked_authored_modules": 19,
     "completed_module_checks": [
       {
-        "module": "NLS.FunctionalAnalysis.CompactDerivativeComposition",
-        "source_sha256": "914940615c645f855fee58fddaba2409de891dfc224c8eb9687eb61af6ee1455",
-        "olean_sha256": "adc643c69eb438f6a5a72c7cfabe770d73a429eee3b9f3b5a3447d24a67a258a",
+        "module": "NLS.Articles.KdVConvexity.BasePhysicalFrequencyReality",
+        "source_sha256": "c4bb0e727ab35a718581991293a95fbc5088dddc442e3505683de108b2d15597",
+        "olean_sha256": "de300f3b898ee474802b30626bcd1c41cdc92dfa76034ceb0a2e17b9f92fc1f5",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.FunctionalAnalysis.CompactDerivativeComposition.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Articles.KdVConvexity.BasePhysicalFrequencyReality.log",
         "authored_here": true
       },
       {
-        "module": "NLS.ComplexAnalysis.AnalyticCompactGermPullback",
-        "source_sha256": "7e73f392230aeff6ce59c4813fc4d3123bbd97470af9341d24d9a4c662668250",
-        "olean_sha256": "78590df5ac702dfacb5b2ceec40e7194eea5c629b6ec94af5de765144e8efeba",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.FunctionalAnalysis.CompactDerivativeComposition": "adc643c69eb438f6a5a72c7cfabe770d73a429eee3b9f3b5a3447d24a67a258a"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.ComplexAnalysis.AnalyticCompactGermPullback.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.ZakharovShabat.SourceWeightedEtaExponentFactorization",
-        "source_sha256": "94802fe438d0befc3fd291462f419fcb5badc3b690eb00d823eea4106f434e46",
-        "olean_sha256": "c2d5a60d84f34a7c63f91f6206eb17cb3a44588c1e0ee5654b229874210c21ae",
+        "module": "NLS.SequenceSpaces.WeightedSignedPairActions",
+        "source_sha256": "60a85f2d8bf1d36182c90a33453bd0e0285b9a2e81cffd420215f9780620bca1",
+        "olean_sha256": "218d73afb491d298ca61b3ffc4512207bd940f9fb078c6f62dad3489ebd99ce0",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.ZakharovShabat.SourceWeightedEtaExponentFactorization.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.SequenceSpaces.WeightedSignedPairActions.log",
         "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.BoundedAnalyticSymbolExponent",
-        "source_sha256": "17a8e286079c3e0bf169dc7a18f76f831628763f4ca655620890e65ef96f6407",
-        "olean_sha256": "3d7f4bfcb7dc61efa1b0cef5eeeaf32a3dd8b3606054ac8aed7e4173463822f5",
+        "module": "NLS.Articles.KdVConvexity.FourierLebesguePhysicalActions",
+        "source_sha256": "51180fec18b00d9b9d518a44f3bb407849fef37866322ce1ffde604d66e318ff",
+        "olean_sha256": "b1c821eaa57df4bca5ddabee4bcc7dcf28376aca158494f95116ff8956661c0f",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.Articles.KdVConvexity.BasePhysicalFrequencyReality": "de300f3b898ee474802b30626bcd1c41cdc92dfa76034ceb0a2e17b9f92fc1f5",
+          "NLS.SequenceSpaces.WeightedSignedPairActions": "218d73afb491d298ca61b3ffc4512207bd940f9fb078c6f62dad3489ebd99ce0"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Articles.KdVConvexity.FourierLebesguePhysicalActions.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.SequenceSpaces.SignedPositiveFrequency",
+        "source_sha256": "25e508c23605a997de973ff1f7d1d5cd09a68a6ebb39bba7bc41667f463e74e8",
+        "olean_sha256": "a604d921007a45df40537b25a819dc37837d03597fb7d28e3139b4554617c702",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.BoundedAnalyticSymbolExponent.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.SequenceSpaces.SignedPositiveFrequency.log",
         "authored_here": true
       },
       {
-        "module": "NLS.ZakharovShabat.SourceWeightedEtaExponentCompactDerivative",
-        "source_sha256": "c1d3a4a79205adc5ecdc7f50f0541a789eceaae0af593559333f272f1f738de9",
-        "olean_sha256": "235b059c93d974a2d9f26a65b3c51476ee028bcd96d9b2a343090f24cf976321",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.ZakharovShabat.SourceWeightedEtaExponentFactorization": "c2d5a60d84f34a7c63f91f6206eb17cb3a44588c1e0ee5654b229874210c21ae",
-          "NLS.SequenceSpaces.BoundedAnalyticSymbolExponent": "3d7f4bfcb7dc61efa1b0cef5eeeaf32a3dd8b3606054ac8aed7e4173463822f5"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.ZakharovShabat.SourceWeightedEtaExponentCompactDerivative.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillMiuraFourierLebesgueEtaCompactDerivative",
-        "source_sha256": "feffae7554b25a7646c2788798a4817078e27dbec2b046cccf2a4504ddbb1ae9",
-        "olean_sha256": "666f93a8ef2a98cf95bd4c5907d03e3f1755cc35e30e17a2a6cdc144ed2dcd77",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.ZakharovShabat.SourceWeightedEtaExponentCompactDerivative": "235b059c93d974a2d9f26a65b3c51476ee028bcd96d9b2a343090f24cf976321"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.KdV.HillMiuraFourierLebesgueEtaCompactDerivative.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillMiuraFourierLebesgueEtaCompactGerms",
-        "source_sha256": "4c7300a9f24338fe2d1638e23d59c392a6f501a219cf951614df97dd3cd0fce7",
-        "olean_sha256": "7549a4b6d3a4da3e9286756569de33e9474902b7ca3877e17f56931c989f2047",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillMiuraFourierLebesgueEtaCompactDerivative": "666f93a8ef2a98cf95bd4c5907d03e3f1755cc35e30e17a2a6cdc144ed2dcd77"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.KdV.HillMiuraFourierLebesgueEtaCompactGerms.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraProduct",
-        "source_sha256": "2cf6ded0eb11ac3ff5ee4cb10f954c44befdcbb7c5999dd1964235eab0d76eaa",
-        "olean_sha256": "c08c55b2134b2ddfc062a5140b3917b953b5afba5be31a7dbeae7fb6d87eecf3",
+        "module": "NLS.SequenceSpaces.WeightedPhaseFlowFamily",
+        "source_sha256": "6fa99ab8820088e71a352ce8c572fef72c2e97c8c8737c46f6e41ef54c35a8e0",
+        "olean_sha256": "cf1507984060a6b2395e53e5d5d440e66afb067c57fdcc3787077b8d8461b596",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraProduct.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.SequenceSpaces.WeightedPhaseFlowFamily.log",
         "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraCompact",
-        "source_sha256": "4e8e03eedcf0be15e21b4f8e81adfc3513dacbc70364b47ad608e0e5782976c9",
-        "olean_sha256": "292d88f401a815bf782e93b5cc0e6a1883440a7778467fa91f1e973c6fc4a045",
+        "module": "NLS.SequenceSpaces.PhysicalRealMeanZeroPhaseFlowExponent",
+        "source_sha256": "1d080560c1c4650cc366e61c7930c55047a9eb09d6c3661fb01f142362c349d2",
+        "olean_sha256": "f4b3ebc2a8d81a9f4f6228cd642fd866b7db25fd1873e848648f558d550c533b",
         "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraProduct": "c08c55b2134b2ddfc062a5140b3917b953b5afba5be31a7dbeae7fb6d87eecf3"
+          "NLS.SequenceSpaces.WeightedPhaseFlowFamily": "cf1507984060a6b2395e53e5d5d440e66afb067c57fdcc3787077b8d8461b596"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraCompact.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.SequenceSpaces.PhysicalRealMeanZeroPhaseFlowExponent.log",
         "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.FourierLebesgueCompactInclusion",
-        "source_sha256": "08892f0e63679901f55b094b26bc5ee5c3fc333ebd2d37301354a8cdde1343e1",
-        "olean_sha256": "e94faf8fb0f2c4d69e701bf2cbe725473cbb4120d4ddd11144c4d33f3115a86e",
+        "module": "NLS.Articles.KdVConvexity.FourierLebesguePhysicalPhaseFlow",
+        "source_sha256": "d1036976047ae20dce09ee659394bdf7e1a80be834a517efd82531a6538a2be5",
+        "olean_sha256": "1ee69cf2fb84c85eb64d51fbd7a0af7d3422957ec564019c716c92ec15af7f6f",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.Articles.KdVConvexity.FourierLebesguePhysicalActions": "b1c821eaa57df4bca5ddabee4bcc7dcf28376aca158494f95116ff8956661c0f",
+          "NLS.SequenceSpaces.SignedPositiveFrequency": "a604d921007a45df40537b25a819dc37837d03597fb7d28e3139b4554617c702",
+          "NLS.SequenceSpaces.PhysicalRealMeanZeroPhaseFlowExponent": "f4b3ebc2a8d81a9f4f6228cd642fd866b7db25fd1873e848648f558d550c533b"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Articles.KdVConvexity.FourierLebesguePhysicalPhaseFlow.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.KdV.HillRoughFourierLebesgueHomeomorph",
+        "source_sha256": "788bcd9fbb14796de16e1d278ad3949d72bae3bd89057e909143e0f5b7d1e0c9",
+        "olean_sha256": "6e0ad2c971dd89821509a4e5ade18d8c909e866fa5040d729e97ae078b46e0ac",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.FourierLebesgueCompactInclusion.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.KdV.HillRoughFourierLebesgueHomeomorph.log",
         "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.PeriodOneFourierLebesgueFreeMassEquiv",
-        "source_sha256": "0f02eb998adc8ef99aadb3653b29931a6d64e17ff6ac58bfc0fbd7ef2b67f7d3",
-        "olean_sha256": "24c95df00cc5f167f23c327d116bf9dde229017f33a4c08bae2cd1e343b79158",
+        "module": "NLS.Dynamics.ConjugatedContinuousEvolution",
+        "source_sha256": "fb38f136385b748d383aa21067f05b7eaa30c46ffd62a2ce63941ed7e22976b2",
+        "olean_sha256": "c323053f846098d9d081fb5e9830251f799401d2dd7a94ae1291d3f4b99aabb4",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.PeriodOneFourierLebesgueFreeMassEquiv.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Dynamics.ConjugatedContinuousEvolution.log",
         "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraJacobian",
-        "source_sha256": "0c9d18fecab9edfb55aeebda2c64bde4fbe4a96a74ead877d0dc601328c0cf6a",
-        "olean_sha256": "5dac6e5ea31539b989b163c389561eefd01d2350da3999604520a62d10c15f80",
+        "module": "NLS.Articles.KdVConvexity.FourierLebesguePhaseEvolution",
+        "source_sha256": "019bc0baf4e7abf44f75c8c19ce2a30b77cd9e0c5d332400556ad233d57306dc",
+        "olean_sha256": "3fd9175e45723f3f86955c5f6bcec65f830c5bb53a0baa6117ada3e81633ee98",
         "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraCompact": "292d88f401a815bf782e93b5cc0e6a1883440a7778467fa91f1e973c6fc4a045",
-          "NLS.SequenceSpaces.FourierLebesgueCompactInclusion": "e94faf8fb0f2c4d69e701bf2cbe725473cbb4120d4ddd11144c4d33f3115a86e",
-          "NLS.SequenceSpaces.PeriodOneFourierLebesgueFreeMassEquiv": "24c95df00cc5f167f23c327d116bf9dde229017f33a4c08bae2cd1e343b79158"
+          "NLS.Articles.KdVConvexity.FourierLebesguePhysicalPhaseFlow": "1ee69cf2fb84c85eb64d51fbd7a0af7d3422957ec564019c716c92ec15af7f6f",
+          "NLS.KdV.HillRoughFourierLebesgueHomeomorph": "6e0ad2c971dd89821509a4e5ade18d8c909e866fa5040d729e97ae078b46e0ac",
+          "NLS.Dynamics.ConjugatedContinuousEvolution": "c323053f846098d9d081fb5e9830251f799401d2dd7a94ae1291d3f4b99aabb4"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraJacobian.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Articles.KdVConvexity.FourierLebesguePhaseEvolution.log",
         "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraInverseCompact",
-        "source_sha256": "b49db2beb9f93618376d90bbf8407e03dfed270eabf9686a2f9e68ac356390dd",
-        "olean_sha256": "fc9cf3176763bf8e55007b7609871bd2f9a0baf5082a23f6a5c6aaf3290a8319",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraJacobian": "5dac6e5ea31539b989b163c389561eefd01d2350da3999604520a62d10c15f80"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraInverseCompact.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillHminusFourierLebesgueMiuraCompactDerivative",
-        "source_sha256": "75aeb5703db28dbc379f5b1f5e43c38573878cb86c4c714578028406ea8fc876",
-        "olean_sha256": "5170bb04b856e5ac10cef84ed66644287f4b0094921167cf9e74625282b84ff2",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.PeriodOneFourierLebesgueMiuraInverseCompact": "fc9cf3176763bf8e55007b7609871bd2f9a0baf5082a23f6a5c6aaf3290a8319"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.KdV.HillHminusFourierLebesgueMiuraCompactDerivative.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillHminusFourierLebesgueEtaCompactGerms",
-        "source_sha256": "53b096a0ef49ed414aed9e154f97585fa418f0d53d4c67b40025382d3ffc4766",
-        "olean_sha256": "301df442eccbb48136284a277dd6ae458dc14c1f9e3cdc6e30105e4990987572",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.ComplexAnalysis.AnalyticCompactGermPullback": "78590df5ac702dfacb5b2ceec40e7194eea5c629b6ec94af5de765144e8efeba",
-          "NLS.KdV.HillMiuraFourierLebesgueEtaCompactGerms": "7549a4b6d3a4da3e9286756569de33e9474902b7ca3877e17f56931c989f2047",
-          "NLS.KdV.HillHminusFourierLebesgueMiuraCompactDerivative": "5170bb04b856e5ac10cef84ed66644287f4b0094921167cf9e74625282b84ff2"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.KdV.HillHminusFourierLebesgueEtaCompactGerms.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.SequenceSpaces.AnalyticSymbolCompactGerm",
-        "source_sha256": "83685ce1ec60ee69140aff91661ac49d28f42942ec9c8c684dccbb8c1e79d760",
-        "olean_sha256": "e51ad42efd1d86062f21b8313a7a8c7f7f05a67c663454a903e670a22e1a9487",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.BoundedAnalyticSymbolExponent": "3d7f4bfcb7dc61efa1b0cef5eeeaf32a3dd8b3606054ac8aed7e4173463822f5"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.AnalyticSymbolCompactGerm.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillRoughFourierLebesguePositiveCompactGerms",
-        "source_sha256": "90ff4140113fd1d1fc9d13302bc7f199620ea79f48a6c86cf89d56aee13e848e",
-        "olean_sha256": "427a1f6161d5bfebcaace3fa8d059ba6ad689bf09d4b68b0c7d135a0991bdec5",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillHminusFourierLebesgueEtaCompactGerms": "301df442eccbb48136284a277dd6ae458dc14c1f9e3cdc6e30105e4990987572",
-          "NLS.SequenceSpaces.AnalyticSymbolCompactGerm": "e51ad42efd1d86062f21b8313a7a8c7f7f05a67c663454a903e670a22e1a9487"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.KdV.HillRoughFourierLebesguePositiveCompactGerms.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.SequenceSpaces.PhysicalPositiveMultiplierEquiv",
-        "source_sha256": "161be8510ebb87e9a3982c2236384fff6f07c62404e274b81bb8bf3a95c3326d",
-        "olean_sha256": "0d69d777f8bf9028c39ab9dd5bd37b5c80c034473690632be21bb903b9b40e42",
+        "module": "NLS.KdV.HillRoughFiniteSupportSmooth",
+        "source_sha256": "d0387e376e8a6a91188fb1d4200a88ac5aa28cd9f48507bf1d110ebc6c3e1d8f",
+        "olean_sha256": "51f735a1858db75bc9f8944447a762cee1d3555e5701b3d7981d4dc94c8c33f0",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.PhysicalPositiveMultiplierEquiv.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.KdV.HillRoughFiniteSupportSmooth.log",
         "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.PeriodOneFourierLebesguePrincipalEquiv",
-        "source_sha256": "fb902b3054f44dfe756a1c0d15bc187200bfe3e56e06977e7900ef8890088ac7",
-        "olean_sha256": "3433a923fdfce130b3cbe1b3ff6c0b58c7333efa882ce0c8bd5ec002d6741917",
+        "module": "NLS.Articles.KdVConvexity.FourierLebesgueFiniteSupportSmooth",
+        "source_sha256": "da817a07a8bc975f2ae52a2205c207f44a333df1c1f1aa5f0b63a46cf5b83774",
+        "olean_sha256": "b3a48984360c9210339c35d356c22df5a0065edde0d6437dd11bd55bbc2b95fd",
         "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.PeriodOneFourierLebesgueFreeMassEquiv": "24c95df00cc5f167f23c327d116bf9dde229017f33a4c08bae2cd1e343b79158",
-          "NLS.SequenceSpaces.PhysicalPositiveMultiplierEquiv": "0d69d777f8bf9028c39ab9dd5bd37b5c80c034473690632be21bb903b9b40e42"
+          "NLS.Articles.KdVConvexity.FourierLebesguePhaseEvolution": "3fd9175e45723f3f86955c5f6bcec65f830c5bb53a0baa6117ada3e81633ee98",
+          "NLS.KdV.HillRoughFiniteSupportSmooth": "51f735a1858db75bc9f8944447a762cee1d3555e5701b3d7981d4dc94c8c33f0"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.PeriodOneFourierLebesguePrincipalEquiv.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Articles.KdVConvexity.FourierLebesgueFiniteSupportSmooth.log",
         "authored_here": true
       },
       {
-        "module": "NLS.ComplexAnalysis.RealCompactDerivativeTransport",
-        "source_sha256": "da20c275c91efcc68480078468bac15cbbfcebd8895bfbbd403aa9c17b3fd2a7",
-        "olean_sha256": "bca97618cb3eca608675175369389dc686ee9609c262da7c5586f5b703622d7d",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.FunctionalAnalysis.CompactDerivativeComposition": "adc643c69eb438f6a5a72c7cfabe770d73a429eee3b9f3b5a3447d24a67a258a"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.ComplexAnalysis.RealCompactDerivativeTransport.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillRoughFourierLebesgueCompactDerivative",
-        "source_sha256": "6d0ed7ab04caddd20e8adbaa5eb3990878f91b7389f958f86871a1f093c6d71a",
-        "olean_sha256": "858a1e326b28c5b9b1f9cb7c194f69922fa1d75aa82e462f6a9a4a1e1ceeec38",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillRoughFourierLebesguePositiveCompactGerms": "427a1f6161d5bfebcaace3fa8d059ba6ad689bf09d4b68b0c7d135a0991bdec5",
-          "NLS.SequenceSpaces.PeriodOneFourierLebesguePrincipalEquiv": "3433a923fdfce130b3cbe1b3ff6c0b58c7333efa882ce0c8bd5ec002d6741917",
-          "NLS.ComplexAnalysis.RealCompactDerivativeTransport": "bca97618cb3eca608675175369389dc686ee9609c262da7c5586f5b703622d7d"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.KdV.HillRoughFourierLebesgueCompactDerivative.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.ComplexAnalysis.DerivativeInjectiveRestriction",
-        "source_sha256": "d06693cde7840c4fd995590d0159615811ae623866285f50f86e024761aa9e3f",
-        "olean_sha256": "de14018eba8274b904394c600c5d566851bd6b3e30c99850c08434adef35a273",
+        "module": "NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedTruncationExponent",
+        "source_sha256": "bb9584476218a5f1b9f47c98774a64d2b97813adab6b27dee59e96eae51cae2e",
+        "olean_sha256": "fe444451ee27107d440a0f59843164989c9c8d1dda5dfdfe72b13d92657e8718",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.ComplexAnalysis.DerivativeInjectiveRestriction.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedTruncationExponent.log",
         "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.MeanZeroWeightedProjectionInjective",
-        "source_sha256": "bd3e1616f1ee80c834b700c730a011ca9e79e2130de286799c1b796171540074",
-        "olean_sha256": "40d06ebf18e9f1d70cee51bf3b896c971521089bda8ea40956cfc52eb1f8f203",
+        "module": "NLS.Articles.KdVConvexity.FourierLebesgueFiniteGapApproximation",
+        "source_sha256": "55047fd7e3f352d9cb6dfae3f7f4f2d6796e6d1d61dc4811a7c58b5ab65b1140",
+        "olean_sha256": "bf8200f4960bf296cccf6c215a3a549a9d990ba2a0aaee3b743a2235c0ecb1bc",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.Articles.KdVConvexity.FourierLebesgueFiniteSupportSmooth": "b3a48984360c9210339c35d356c22df5a0065edde0d6437dd11bd55bbc2b95fd",
+          "NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedTruncationExponent": "fe444451ee27107d440a0f59843164989c9c8d1dda5dfdfe72b13d92657e8718"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Articles.KdVConvexity.FourierLebesgueFiniteGapApproximation.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.Articles.KdVConvexity.FourierLebesguePhaseCompatibility",
+        "source_sha256": "ed26cc4a4e9427f612dd7cf551619d11f0d381047baa3e0356f6027b436e36fd",
+        "olean_sha256": "c3a99cbdacb5b5b9060639bd5ee27a17c4017109cffffafe61514e970bb5e355",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.Articles.KdVConvexity.FourierLebesguePhaseEvolution": "3fd9175e45723f3f86955c5f6bcec65f830c5bb53a0baa6117ada3e81633ee98"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Articles.KdVConvexity.FourierLebesguePhaseCompatibility.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.Articles.KdVConvexity.FourierLebesgueFrequencyRecovery",
+        "source_sha256": "9f8b67583d6d178e8a60a3dfeebf3d7979bab9efa947e5a816134567f136f362",
+        "olean_sha256": "d3e467f63b023e0d5f59961e03d45c3f34efb9cbc6ea100d36d3337c5473fe09",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.Articles.KdVConvexity.FourierLebesguePhysicalPhaseFlow": "1ee69cf2fb84c85eb64d51fbd7a0af7d3422957ec564019c716c92ec15af7f6f"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Articles.KdVConvexity.FourierLebesgueFrequencyRecovery.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.SequenceSpaces.PhysicalRealDeletedPhaseFlow",
+        "source_sha256": "2f58280935cd0f4e4154a0a6d43280e11c8fc03a98a139b0316d8187141d662d",
+        "olean_sha256": "8cab8c0b30e431050601b89dbb412cc4abe14ea6d76b428bcf17af4a8560bd76",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.SequenceSpaces.MeanZeroWeightedProjectionInjective.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.SequenceSpaces.PhysicalRealDeletedPhaseFlow.log",
         "authored_here": true
       },
       {
-        "module": "NLS.KdV.HillRoughFourierLebesgueDerivativeInjective",
-        "source_sha256": "8e160c3fa9f84e0ba5d9794277ca6c997d033f618c80708c0fd3af82653b75b5",
-        "olean_sha256": "e184ebdc9e04a47ef16356dfce37d168ecbc8b57a9f3e803432b2cc08a21ca12",
+        "module": "NLS.Articles.KdVConvexity.WeakPhysicalPhaseEvolution",
+        "source_sha256": "7f58fcdafed3c86b7d77e761bd0ff55ee46268e043e57bb5bf7f2aff0cc12720",
+        "olean_sha256": "fc13ea97f4002d79de21346fe0b496b5b68e12c073c91774efcec9d6e6cc49f8",
         "selected_direct_dependency_object_hashes": {
-          "NLS.ComplexAnalysis.DerivativeInjectiveRestriction": "de14018eba8274b904394c600c5d566851bd6b3e30c99850c08434adef35a273",
-          "NLS.SequenceSpaces.MeanZeroWeightedProjectionInjective": "40d06ebf18e9f1d70cee51bf3b896c971521089bda8ea40956cfc52eb1f8f203"
+          "NLS.Articles.KdVConvexity.FourierLebesguePhaseEvolution": "3fd9175e45723f3f86955c5f6bcec65f830c5bb53a0baa6117ada3e81633ee98",
+          "NLS.SequenceSpaces.PhysicalRealDeletedPhaseFlow": "8cab8c0b30e431050601b89dbb412cc4abe14ea6d76b428bcf17af4a8560bd76"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.KdV.HillRoughFourierLebesgueDerivativeInjective.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Articles.KdVConvexity.WeakPhysicalPhaseEvolution.log",
         "authored_here": true
       },
       {
-        "module": "NLS.FunctionalAnalysis.CompactEquivPerturbationScalar",
-        "source_sha256": "de97e627480233498dce01dac2f90bf12844273ee814fddc469287c1837bff01",
-        "olean_sha256": "e4e66867a597bb49ff2320530d52a6e9d981c7a2029c39718e35d758b2dbe63a",
-        "selected_direct_dependency_object_hashes": {},
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.FunctionalAnalysis.CompactEquivPerturbationScalar.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.ComplexAnalysis.RealAnalyticEquivInverse",
-        "source_sha256": "7817556a5a66c076c34ff6a919c7fb8ad8623c9a70100aef3936ade23b894efe",
-        "olean_sha256": "2689dd838badfbf1024b6a9cf0f538e0b3497b333951a11beb0efa8595c0e0bd",
-        "selected_direct_dependency_object_hashes": {},
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.ComplexAnalysis.RealAnalyticEquivInverse.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillRoughFourierLebesgueInverseAnalytic",
-        "source_sha256": "7bc04ac648b97f9d2564f8291fa845917b0adee63905f0df09b4a74a5405e825",
-        "olean_sha256": "463aa091a4dadcefe959f6dd06b09333f8087a310a2c3bfb3152abdd4d8eba4e",
+        "module": "NLS.Articles.KdVConvexity.MainTheorem13Preparation",
+        "source_sha256": "66d388cfc84cc8d9fc762360dab51cb76af0699ba125febe1aedc1d567cd2dc9",
+        "olean_sha256": "98d0a9f501944dad5d811642aecce84c10737e6600dc1a1c65411ea305fbb13e",
         "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillRoughFourierLebesgueCompactDerivative": "858a1e326b28c5b9b1f9cb7c194f69922fa1d75aa82e462f6a9a4a1e1ceeec38",
-          "NLS.KdV.HillRoughFourierLebesgueDerivativeInjective": "e184ebdc9e04a47ef16356dfce37d168ecbc8b57a9f3e803432b2cc08a21ca12",
-          "NLS.FunctionalAnalysis.CompactEquivPerturbationScalar": "e4e66867a597bb49ff2320530d52a6e9d981c7a2029c39718e35d758b2dbe63a",
-          "NLS.ComplexAnalysis.RealAnalyticEquivInverse": "2689dd838badfbf1024b6a9cf0f538e0b3497b333951a11beb0efa8595c0e0bd"
+          "NLS.Articles.KdVConvexity.FourierLebesgueFiniteGapApproximation": "bf8200f4960bf296cccf6c215a3a549a9d990ba2a0aaee3b743a2235c0ecb1bc",
+          "NLS.Articles.KdVConvexity.FourierLebesguePhaseCompatibility": "c3a99cbdacb5b5b9060639bd5ee27a17c4017109cffffafe61514e970bb5e355",
+          "NLS.Articles.KdVConvexity.FourierLebesgueFrequencyRecovery": "d3e467f63b023e0d5f59961e03d45c3f34efb9cbc6ea100d36d3337c5473fe09",
+          "NLS.Articles.KdVConvexity.WeakPhysicalPhaseEvolution": "fc13ea97f4002d79de21346fe0b496b5b68e12c073c91774efcec9d6e6cc49f8"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.KdV.HillRoughFourierLebesgueInverseAnalytic.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillRoughFourierLebesgueInverseAllExponents",
-        "source_sha256": "551f578fdb4ce44371976affa8a5e0c174ca213aa9b69c8aec2ea02db0f89b70",
-        "olean_sha256": "113abee3339705a6401847369e8ec9a9b67ea7316c2190180e7f5e7bffbf8409",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillRoughFourierLebesgueInverseAnalytic": "463aa091a4dadcefe959f6dd06b09333f8087a310a2c3bfb3152abdd4d8eba4e"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.KdV.HillRoughFourierLebesgueInverseAllExponents.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.MainTheorem12",
-        "source_sha256": "67b2b49f4fbf3fa6ddded3cd1c3d2e5c62eb218df6d222cc8b911730d5a5dc50",
-        "olean_sha256": "4f58a58b1bb1ae37d849975cf54b0ed8c238157f0cf54d5742cad34da22ae4e7",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillRoughFourierLebesgueInverseAllExponents": "113abee3339705a6401847369e8ec9a9b67ea7316c2190180e7f5e7bffbf8409"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-NLS.Articles.KdVConvexity.MainTheorem12.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-NLS.Articles.KdVConvexity.MainTheorem13Preparation.log",
         "authored_here": true
       }
     ],
-    "combined_build_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-build.log",
-    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-inverse-audit.log",
+    "combined_build_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-build.log",
+    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-audit.log",
     "baseline_build_receipts_preserved_in_parent_commit": true,
-    "reference_import_source_manifest": "coverage/articles/kdv-convexity/fourier-lebesgue-inverse-library-reuse.json",
-    "inherited_reference_import_closure_rebuilt": false
+    "reference_import_source_manifest": "coverage/articles/kdv-convexity/fourier-lebesgue-phase-library-reuse.json",
+    "inherited_reference_import_closure_rebuilt": false,
+    "private_validation_label_correction_note": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/fourier-lebesgue-phase-validation-note.json"
   },
   "Hminus1_real_spectral_progress": {
     "potential_space": "Every real unit-period H^-1 potential, specified by conjugate reflection of its raw Fourier coefficients.",
@@ -9987,5 +9917,73 @@
     "remaining": [
       "Theorem 1.3: prove physical KdV global C0 well-posedness in every stated original Fourier-Lebesgue norm, with approximation, uniqueness and agreement with the referenced Hminus1 solution theory."
     ]
-  }
+  },
+  "fourier_Lebesgue_physical_phase_evolution_progress": {
+    "status": "global_native_physical_phase_group_and_smooth_spatial_finite_gap_approximation_proved_classical_PDE_recovery_open",
+    "article_preparation_declaration": "NLS.Articles.KdVConvexity.theorem_1_3_global_continuous_phase_preparation",
+    "new_authored_modules": [
+      "NLS.Articles.KdVConvexity.BasePhysicalFrequencyReality",
+      "NLS.SequenceSpaces.WeightedSignedPairActions",
+      "NLS.Articles.KdVConvexity.FourierLebesguePhysicalActions",
+      "NLS.SequenceSpaces.SignedPositiveFrequency",
+      "NLS.SequenceSpaces.WeightedPhaseFlowFamily",
+      "NLS.SequenceSpaces.PhysicalRealMeanZeroPhaseFlowExponent",
+      "NLS.Articles.KdVConvexity.FourierLebesguePhysicalPhaseFlow",
+      "NLS.KdV.HillRoughFourierLebesgueHomeomorph",
+      "NLS.Dynamics.ConjugatedContinuousEvolution",
+      "NLS.Articles.KdVConvexity.FourierLebesguePhaseEvolution",
+      "NLS.KdV.HillRoughFiniteSupportSmooth",
+      "NLS.Articles.KdVConvexity.FourierLebesgueFiniteSupportSmooth",
+      "NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedTruncationExponent",
+      "NLS.Articles.KdVConvexity.FourierLebesgueFiniteGapApproximation",
+      "NLS.Articles.KdVConvexity.FourierLebesguePhaseCompatibility",
+      "NLS.Articles.KdVConvexity.FourierLebesgueFrequencyRecovery",
+      "NLS.SequenceSpaces.PhysicalRealDeletedPhaseFlow",
+      "NLS.Articles.KdVConvexity.WeakPhysicalPhaseEvolution",
+      "NLS.Articles.KdVConvexity.MainTheorem13Preparation"
+    ],
+    "baseline_commit": "98d0fd04cd4b41a6568cccaae21db078927bb406",
+    "baseline_proof_sources_preserved": 2598,
+    "same_actual_physical_signed_map_retained": true,
+    "same_fixed_global_rough_inverse_retained": true,
+    "ONE_physical_map_and_frequency_family_before_ALL_article_orders_and_exponents": true,
+    "all_finite_exponents_p_ge_two": true,
+    "orders": "Shared native phase evolution holds at every s>=-1/2. The article preparation retains exactly -1/2<=s<=0.",
+    "original_real_mean_zero_weighted_lp_source_and_target_norms": true,
+    "actual_base_physical_frequency_reality_on_ENTIRE_nonnegative_base_cone": true,
+    "exact_raw_positive_action_z_n_times_z_minus_n": true,
+    "native_physical_actions_continuous_in_original_negative_order_base_norm": true,
+    "actual_frequency_recovery_on_every_H1_source_in_every_target_representing_same_signed_coordinates": true,
+    "exact_signed_phase_orientation_positive_i_omega_n_negative_minus_i_omega_n": true,
+    "original_actions_zero_mean_reality_and_target_norm_preserved": true,
+    "continuous_global_group_in_native_source": true,
+    "initial_data_to_complete_native_trajectory_map_continuous_compact_open_topology": true,
+    "native_initial_data_convergence_implies_uniform_convergence_on_every_compact_time_set": true,
+    "evolution_consistent_across_all_native_orders_and_exponents": true,
+    "SAME_weak_normalization_diagram_commutes_for_every_real_time": true,
+    "finite_Birkhoff_support_inverse_has_actual_smooth_periodic_spatial_representative": true,
+    "symmetric_native_Birkhoff_truncation_approximation_proved_uniformly_on_compact_times": true,
+    "every_point_on_approximating_orbits_has_spatial_smoothness": true,
+    "classical_time_KdV_PDE_for_these_orbits_proved": false,
+    "universal_classical_smooth_approximation_solution_notion_proved": false,
+    "main_Theorem_1_1_corrected_complete": true,
+    "main_Theorem_1_2_complete": true,
+    "main_Theorem_1_3_complete": false,
+    "authored_heartbeat_linter_or_instance_overrides": false,
+    "remaining": [
+      "Recover the literal time KdV PDE u_t=-u_xxx+6*u*u_x for the smooth finite-support physical phase orbits, with the exact unit-period Fourier normalization. Spatial smoothness and global phase continuity alone do not prove the PDE.",
+      "Recover every genuine classical smooth KdV solution from the SAME physical phase formula. Then prove convergence for EVERY smooth approximating sequence and uniqueness in the solution class of Kappeler--Topalov Definition 1.1, together with identification with the Hminus1 classical-limit solution. The selected finite-gap approximation is already proved uniformly on compact time intervals."
+    ],
+    "referenced_solution_notion": {
+      "reference": "Kappeler--Topalov, Global wellposedness of KdV in Hminus1(T,R), Duke Math. J. 135(2) (2006), 327-360",
+      "doi": "10.1215/S0012-7094-06-13524-X",
+      "definition_location": "p.328, Definitions 1.1 and 1.2",
+      "author_uploaded_primary_text_url": "https://www.researchgate.net/publication/278194325_Global_wellposedness_of_KdV_in_H-1TR",
+      "checked_date": "2026-11-07",
+      "solution_requirement": "For every sequence of smooth initial potentials converging in the original space, the corresponding genuine classical KdV solutions converge at every time to the solution curve. Global C0 well-posedness additionally requires continuous dependence in C(R,X), with the topology of uniform convergence on bounded time intervals.",
+      "NOT_used_as_an_unproved_axiom": true
+    }
+  },
+  "theorem_1_3_verified": false,
+  "theorem_1_3_global_continuous_phase_verified": true
 }

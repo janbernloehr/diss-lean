@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.MainTheorem13Preparation
 import NLS.Articles.KdVConvexity.MainTheorem12
 import NLS.Articles.KdVConvexity.MainTheorem12Forward
 import NLS.Articles.KdVConvexity.MainTheorem12Preparation
@@ -118,6 +119,14 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.SequenceSpaces.WeightedSignedPairActions,
+    `NLS.SequenceSpaces.SignedPositiveFrequency,
+    `NLS.SequenceSpaces.WeightedPhaseFlowFamily,
+    `NLS.SequenceSpaces.PhysicalRealMeanZeroPhaseFlowExponent,
+    `NLS.Dynamics.ConjugatedContinuousEvolution,
+    `NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedTruncationExponent,
+    `NLS.SequenceSpaces.PhysicalRealDeletedPhaseFlow,
+
     `NLS.FunctionalAnalysis.CompactDerivativeComposition,
     `NLS.ComplexAnalysis.AnalyticCompactGermPullback,
     `NLS.ZakharovShabat.SourceWeightedEtaExponentFactorization,
