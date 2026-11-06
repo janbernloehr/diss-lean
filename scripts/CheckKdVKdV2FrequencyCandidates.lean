@@ -1,3 +1,9 @@
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughDenseImage
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteTargetProperness
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteTargetRecovery
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteSupportCompactness
+import NLS.ZakharovShabat.SourceFiniteGapCompactContainer
+import NLS.KdV.HillMiuraFiniteSupportCompactness
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundEnergyBound
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundEnergyFiniteGap
 import NLS.KdV.HillMiuraGroundTargetBound
@@ -4763,7 +4769,13 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.KdV.HillMiuraActionReflection,
   `NLS.KdV.HillMiuraGroundTargetBound,
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundEnergyFiniteGap,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundEnergyBound
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundEnergyBound,
+  `NLS.ZakharovShabat.SourceFiniteGapCompactContainer,
+  `NLS.KdV.HillMiuraFiniteSupportCompactness,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteSupportCompactness,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteTargetRecovery,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteTargetProperness,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughDenseImage
 ]
 
 open Lean in

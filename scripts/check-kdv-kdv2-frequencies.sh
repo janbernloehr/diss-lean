@@ -2793,6 +2793,12 @@ modules=(
   NLS/KdV/HillMiuraGroundTargetBound
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundEnergyFiniteGap
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundEnergyBound
+  NLS/ZakharovShabat/SourceFiniteGapCompactContainer
+  NLS/KdV/HillMiuraFiniteSupportCompactness
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteSupportCompactness
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteTargetRecovery
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteTargetProperness
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughDenseImage
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

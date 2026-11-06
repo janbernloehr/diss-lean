@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest GLOBAL weak ground-energy and source bounds
+## Latest actual finite-target recovery and fixed-support properness
+
+The SAME actual signed rough forward map is onto EVERY finite real mean-zero weak target at arbitrary size, with exact original physical inverse phases/signs/normalizations. Compact native target sets with a FIXED finite support have norm-compact FULL real mean-zero HminusOne preimages. Every real mean-zero weak target is the native norm limit of exact finite outputs of actual ORIGINAL physical mean-zero sources; those actual preimages are uniformly bounded by the proved universal weak source bound. See `GLOBAL_ROUGH_FINITE_TARGET_RECOVERY.md`.
+
+Finite-target recovery, genuine properness over fixed finite supports, and real weak image DENSITY with actual bounded physical inverse approximants are CLOSED. Full rough SURJECTIVITY remains OPEN: the supports of the actual inverse approximants grow, so fixed-support compactness does not supply their norm precompactness. A genuine uniform tail/no-loss estimate or full phase-preserving reconstruction is still required. One global all-order inverse and Hamiltonian/frequency/sharp estimate/action descent/fixed-mass/PDE conclusions remain essential. All eleven COMPLETE main theorem rows remain OPEN.
+
+Prior strict evidence retained for all 2784 unchanged selected baseline sources. All five new own modules and one unchanged canonical prerequisite strictly rebuilt in dependency order after freezing 2839 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2790 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact six-module increase in NLS import closure verified. All 45 prior provenance records remain byte-for-byte unchanged; the original compact-container prerequisite and one new verified provenance record are selected. All 46 provenance records are verified. Selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2790-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2790-module rebuild is claimed.
+
+Fresh audit: 21637 selected and 43707 imported NLS declarations; permitted axioms only. Five new own modules contain 9 explicit theorems.
+
+## Earlier GLOBAL weak ground-energy and source bounds
 
 The actual weak ground-energy estimate and a universal HminusOne source bound now hold for EVERY real mean-zero rough source, including NON-L2 and arbitrary-size sources, in the norm of the SAME global actual signed forward target. Complete canonical label matching at normalized critical factors, actual finite-gap factor construction and direct original Hill/Dirac action comparison close the spectral bridge. Actual local weak inverse branches and finite target truncations extend the bound to every rough source by genuine strong HminusOne approximation and intrinsic lowest-energy continuity. See `GLOBAL_ROUGH_GROUND_ENERGY_BOUND.md`.
 
@@ -890,7 +900,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2784 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2790 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1959,7 +1969,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2784 selected modules (including generated and private declarations)
+the 2790 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -5017,4 +5027,16 @@ PASS NLS/KdV/HillMiuraGroundTargetBound
 PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundEnergyFiniteGap
 PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundEnergyBound
 Axiom audit passed: 21607 candidate declarations; 43677 declarations total.
+```
+
+Latest actual finite-target/fixed-support strict checks and fresh combined audit:
+
+```text
+PASS NLS/ZakharovShabat/SourceFiniteGapCompactContainer
+PASS NLS/KdV/HillMiuraFiniteSupportCompactness
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteSupportCompactness
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteTargetRecovery
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteTargetProperness
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughDenseImage
+Axiom audit passed: 21637 candidate declarations; 43707 declarations total.
 ```

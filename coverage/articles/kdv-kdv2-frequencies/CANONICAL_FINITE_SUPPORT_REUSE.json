@@ -1,0 +1,13 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "scope": "Reuse the original actual Hilbert Dirac norm-compact container for bounded sources with a fixed finite set of possible open gaps. The source is unchanged from canonical main, newly selected, strictly rebuilt privately and transitively audited. Its verified existing dependencies are retained; no canonical edit or merge.",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/SourceFiniteGapCompactContainer.lean",
+      "source_sha256": "483865d0a60ffb1a9d86721b737f58c5b11a1aa8878e9ed8ad191bda036fccb8",
+      "local_sha256": "483865d0a60ffb1a9d86721b737f58c5b11a1aa8878e9ed8ad191bda036fccb8",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}
