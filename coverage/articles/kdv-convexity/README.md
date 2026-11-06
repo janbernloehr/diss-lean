@@ -2907,6 +2907,56 @@ real base are proved. Those source declarations are pinned as subsequent
 reuse candidates, not imported or counted as validated here. Global
 rough surjectivity remains explicitly open on that branch too.
 
+## Critical normalized Miura factors and the original Hill actions
+
+The shared frequencies development is pinned at `c44c9e8`. Its actual
+normalized factor exists at the intrinsic ground energy for every real
+mean-zero H^-1 potential. The central Dirac gap is exactly closed at zero.
+Fifty-two sources are reused exactly and one real-form module is adapted
+by renaming its two local part definitions to avoid an existing interface
+collision. The affected dependency chain is rechecked privately.
+
+`HillMiuraCriticalFrequencies.lean` proves the nonnegative frequency
+list has exactly one zero slot and strictly positive remaining slots.
+`HillMiuraCriticalSpectrum.lean` proves the full squared list has exactly
+the actual Hill characteristic multiplicities. Away from zero the square
+map is unramified; at zero the actual Hill ground root is simple.
+`HillMiuraCriticalLabels.lean` therefore identifies every canonical Hill
+endpoint with its actual squared Dirac endpoint at the critical factor,
+including all repeated closed gaps. No outside-spectrum shift is used.
+
+`HillMiuraCriticalActions.lean` identifies the literal arcosh profiles and
+changes variables by `E=x^2-e` in the real gap integral. For every actual
+real mean-zero L2 factor with `Miura(u)=q+e` and every positive index,
+
+```text
+I_n^Hill(q) = 2 * J_(n,1)^Dirac(u).
+```
+
+This includes non-L2 rough Hill potentials and all collapsed gaps.
+`HillMiuraSignedActions.lean` proves the first weighted Dirac actions are
+odd under index reflection. `SignedFiniteSum.lean` combines a symmetric
+signed sum into twice its positive part. Consequently
+`HillMiuraCriticalEnergyBound.lean` proves
+
+```text
+norm(u)^2 <= sum_(n in s) I_n^Hill(q)/(pi*n)
+```
+
+for a finite set of positive indices whenever the actual Dirac source
+is spectrally finite-gap. At a normalized factor with `norm(u)^2=e`, the
+same bound holds for `-lambda_0(q)`. Spectral finite-gap is not a finite
+Fourier support hypothesis.
+
+Approximation/continuity extending this estimate to rough limits,
+compactness/no-loss reconstruction and global rough-coordinate
+surjectivity remain open. This is a verified input toward the global
+positive-ell2 extension, not a completion of Theorem 1.1. The weighted
+Dirac action identity here does not yet identify quadratic Cartesian
+coordinate actions or prove the action-fiber/discriminant identity.
+All main theorems remain open. The reuse manifest records all new source
+hashes and the 2333 inherited byte-identical reference imports.
+
 ## Remaining essential KdV work
 
 1. Prove the action-fiber/discriminant identity. Physical algebraic
@@ -2993,18 +3043,20 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `e898788` contains 616 source modules, whose
-source hashes remain unchanged. Nine authored modules pass Lean
-4.33.1/mathlib v4.33.1 with `warningAsError=true`; the complete
-reproduction script lists 625 NLS modules and the preceding private
+The validated baseline at `578b4c0` contains 625 source modules, whose
+source hashes remain unchanged. Fifty-two exact shared modules, one
+shared integration adaptation and seven authored modules pass Lean
+4.33.1/mathlib v4.33.1 with `warningAsError=true`. The fourteen modules
+affected by the real-form adaptation are rechecked. The complete
+reproduction script lists 685 NLS modules and the preceding private
 pinned mathlib compilation. The positive-index example, cumulative
-transitive axiom audit and 1455 coverage-declaration checks pass. This
-is incremental validation, not a full repository rebuild.
+transitive axiom audit and 1472 coverage-declaration checks pass.
+This is incremental validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 301 additional shared modules:
-6815 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 342 additional shared modules:
+7221 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

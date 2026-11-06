@@ -1504,10 +1504,27 @@
         "NLS.KdV.hillHminusPhysicalGroundProjection_rank_one",
         "NLS.KdV.hillHminusLowestRealRoot_physical_multiplicity_one",
         "NLS.KdV.singularHillAlgebraicMultiplicity_periodOne_eq_analyticOrderNatAt",
-        "NLS.KdV.multiplicity_hillHminusRealLabels_physical"
+        "NLS.KdV.multiplicity_hillHminusRealLabels_physical",
+        "NLS.KdV.hillMiuraPositiveFrequencies_zero_of_meanZero",
+        "NLS.KdV.hillMiuraPositiveFrequencies_pos_of_pos",
+        "NLS.KdV.hillMiuraPositiveFrequencies_eq_zero_iff",
+        "NLS.KdV.hillMiuraPositiveFrequencies_zero_count",
+        "NLS.KdV.hillMiuraSquaredLabels_critical_roots_iff",
+        "NLS.KdV.hillMiuraSquaredLabels_critical_multiplicity",
+        "NLS.KdV.hillHminusRealLabels_eq_squared_critical_miura",
+        "NLS.KdV.hillHminusRealLabels_critical_miura_left",
+        "NLS.KdV.hillHminusRealLabels_critical_miura_right",
+        "NLS.KdV.hillHminusRealGapProfile_shifted_miura_square",
+        "NLS.KdV.hillHminusRealGapContourMoment_eq_twice_critical_Dirac_action",
+        "NLS.KdV.sourceRealGapArcoshProfile_miura_neg",
+        "NLS.KdV.sourceRealHigherAction_miura_neg_one",
+        "NLS.sum_symmetric_int_eq_twice_positive",
+        "NLS.KdV.hillMiura_finiteGap_norm_sq_le_positive_weighted_actions",
+        "NLS.KdV.hillMiura_critical_norm_sq_le_Hill_actions",
+        "NLS.KdV.hillMiura_critical_ground_energy_le_Hill_actions"
       ],
       "remaining": [
-        "Construct the full Cartesian KdV spectral coordinates and an analytic inverse potential realization near all real normalized Hilbert pairs. Prove their quadratic actions equal the actual Arnold actions and that equal action sequences determine the full discriminant, then instantiate the verified positive-ell2 analytic contour extension. The actual Dirichlet energy/norming map and its bounded Jacobian are analytic near every real H^-1 potential, with exact intrinsic differential functionals and a mean-zero Fourier isomorphism at zero. The full original closed H1-domain Hill operator is already realized at every complex H^-1 potential; for every real potential, its full physical algebraic multiplicities now equal the scalar analytic characteristic orders at every complex energy. Canonical real labels therefore enumerate the entire physical spectrum with actual algebraic multiplicities. Reuse the newer constructed global rough Abelian forward map, its all-real local inverses and real global injectivity where applicable; global rough surjectivity and the full coordinate/action realization remain open. Identify physical renormalized Hamiltonian/frequencies and -6*Id and complete main Theorems 1.1-1.3. No self-adjoint L2 realization or multiplicity statement for nonreal potentials is inferred here.",
+        "Prove approximation/continuity and compactness/no-loss reconstruction needed for global rough KdV coordinate surjectivity. The actual normalized ground-energy Miura factor is now available, its squared Dirac endpoints equal the canonical Hill labels including zero and closed gaps, and the original Hill Arnold action is exactly twice its first weighted Dirac action at every positive index. For actual spectral finite-gap factors, the ground energy is bounded by a finite sum of the positive Hill actions divided by pi*n. Extend this bound to the required rough limits. Then construct the full Cartesian inverse near all real normalized Hilbert pairs, prove quadratic-coordinate/Arnold action and action-fiber/discriminant identities, and instantiate the verified global positive-ell2 analytic extension. Identify the physical renormalized Hamiltonian/frequencies and -6*Id, and complete Theorems 1.1-1.3.",
         "Identify the actual Arnold periods with the action coordinates of the same global H^-1 KdV Birkhoff map used in the article. The proved estimates concern the constructed spectral periods, not an arbitrary coordinate map.",
         "Instantiate the proved spectral-coordinate extension theorem using the actual global KdV Birkhoff realization and its real Arnold-action and action-fiber/discriminant identities. Common-neighborhood moment construction, finite central periods, analytic descent and ell2 summation/differentiation are already proved with their explicit inputs.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -3943,5 +3960,39 @@
         "GlobalRoughAbelianForwardData.exists_one_weak_inverse_all_native_matching"
       ]
     }
+  },
+  "critical_Miura_Hill_action_progress": {
+    "pinned_shared_source_commit": "c44c9e8711c5d9900384b0738bdd0632f2fa7d06",
+    "new_exact_shared_source_modules_strictly_checked": 52,
+    "new_adapted_shared_source_modules_strictly_checked": 1,
+    "adaptation": "Two conjugation-based real/imaginary part definitions renamed to coexist with the existing weighted-coefficient real form. All shared theorem statements and proofs retained up to those definition names.",
+    "actual_ground_energy_Miura_factor_for_every_real_mean_zero_Hminus1_potential_available": true,
+    "central_Dirac_gap_collapses_at_zero_for_every_real_mean_zero_L2_factor": true,
+    "full_squared_critical_frequency_enumeration_including_zero_constructed": true,
+    "full_characteristic_multiplicities_retained_at_ramified_zero_and_all_positive_closed_gaps": true,
+    "canonical_Hill_labels_equal_actual_squared_Dirac_labels_at_critical_factor": true,
+    "actual_real_gap_profile_matches_Dirac_arcosh_profile_under_shifted_square": true,
+    "exact_all_positive_index_Hill_Arnold_action_equals_twice_first_weighted_Dirac_action": true,
+    "action_identity": "For every actual real mean-zero L2 factor u with Miura(u)=q+e, I_n^Hill(q)=2*J_(n,1)^Dirac(u) for every positive n, including closed gaps and non-L2 q.",
+    "actual_signed_first_weighted_Dirac_actions_are_odd_in_index": true,
+    "actual_finite_gap_normalized_factor_energy_bounded_by_finite_positive_Hill_action_sum": true,
+    "energy_bound": "norm(u)^2 <= sum_(n in s) I_n^Hill(q)/(pi*n), for a finite positive-index set s, when the actual Dirac source is spectrally finite-gap. If norm(u)^2=e, the same bound holds for -lambda_0(q).",
+    "finite_gap_means_actual_spectral_gaps_not_finite_Fourier_support": true,
+    "bound_extended_to_all_rough_factors_by_approximation": false,
+    "global_rough_coordinate_surjectivity_proved": false,
+    "full_Cartesian_coordinate_quadratic_Arnold_action_identity_proved": false,
+    "main_Theorem_1_1_unconditional_positive_ell2_extension_proved": false,
+    "new_authored_modules": [
+      "NLS.KdV.HillMiuraCriticalFrequencies",
+      "NLS.KdV.HillMiuraCriticalSpectrum",
+      "NLS.KdV.HillMiuraCriticalLabels",
+      "NLS.KdV.HillMiuraCriticalActions",
+      "NLS.KdV.HillMiuraSignedActions",
+      "NLS.SequenceSpaces.SignedFiniteSum",
+      "NLS.KdV.HillMiuraCriticalEnergyBound"
+    ],
+    "inherited_reference_import_closure_sources_byte_identical": 2333,
+    "inherited_reference_import_closure_rebuilt_this_milestone": false,
+    "library_reuse_manifest": "coverage/articles/kdv-convexity/critical-miura-library-reuse.json"
   }
 }
