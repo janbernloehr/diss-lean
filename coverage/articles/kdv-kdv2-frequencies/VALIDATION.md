@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual spectral finite-gap weak Miura mass bound
+## Latest GLOBAL weak ground-energy and source bounds
+
+The actual weak ground-energy estimate and a universal HminusOne source bound now hold for EVERY real mean-zero rough source, including NON-L2 and arbitrary-size sources, in the norm of the SAME global actual signed forward target. Complete canonical label matching at normalized critical factors, actual finite-gap factor construction and direct original Hill/Dirac action comparison close the spectral bridge. Actual local weak inverse branches and finite target truncations extend the bound to every rough source by genuine strong HminusOne approximation and intrinsic lowest-energy continuity. See `GLOBAL_ROUGH_GROUND_ENERGY_BOUND.md`.
+
+The global weak energy/source a priori bounds are CLOSED. Prove actual compactness/no-loss or reconstruction giving rough Birkhoff SURJECTIVITY; boundedness alone is insufficient for norm compactness in infinite dimensions. One global all-order inverse and action-Hamiltonian/frequency/sharp estimate/action descent/fixed-mass/PDE conclusions remain essential obligations. All eleven COMPLETE main theorem rows remain OPEN.
+
+Prior strict evidence retained for all 2772 unchanged selected baseline sources. All eight new own modules and four unchanged canonical prerequisites strictly rebuilt in dependency order after freezing 2832 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2784 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact twelve-module increase in NLS import closure verified. All 44 prior verified provenance records remain byte-for-byte unchanged; four unchanged canonical prerequisites and one new verified provenance record are selected. All 45 provenance records are verified. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2784-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2784-module rebuild is claimed.
+
+Fresh audit: 21607 selected and 43677 imported NLS declarations; permitted axioms only. Eight new own modules contain 26 explicit theorems.
+
+## Earlier actual spectral finite-gap weak Miura mass bound
 
 The actual normalized SPECTRAL finite-gap Miura factor now satisfies the mass/energy bound with coefficient ONE by the ORIGINAL signed weak first-weighted Dirac actions. An exact squared-canonical-primitive/frequency mass contour, proved removal of the zero pole and finite-hole decomposition give the actual inverse-frequency mass identity. The real gap profile comparison t+1/t>=2 and the existing ordinary action-mass trace formula absorb half of the mass. Both index signs, actual normalizations, closed noncentral gaps and the SAME original primitive/actions are retained. See `GLOBAL_MIURA_FINITE_GAP_MASS_BOUND.md`.
 
@@ -880,7 +890,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2772 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2784 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1949,7 +1959,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2772 selected modules (including generated and private declarations)
+the 2784 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4989,4 +4999,22 @@ PASS NLS/ZakharovShabat/SourceFullAbelianInverseMomentReal
 PASS NLS/ZakharovShabat/SourceZeroGapMassEstimate
 PASS NLS/KdV/HillMiuraFiniteGapEnergyBound
 Axiom audit passed: 21534 candidate declarations; 43600 declarations total.
+```
+
+Latest GLOBAL weak ground-energy/source-bound strict checks and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillMiuraGroundEnumeration
+PASS NLS/KdV/HillMiuraGroundLabels
+PASS NLS/KdV/HillMiuraGroundFiniteGap
+PASS NLS/ZakharovShabat/SourceIndexedHigherAction
+PASS NLS/ZakharovShabat/SourceIndexedHigherActionAnalytic
+PASS NLS/ZakharovShabat/SourceRealHigherActionPositive
+PASS NLS/ZakharovShabat/SourceRealHigherActionIntegral
+PASS NLS/KdV/HillMiuraGroundActions
+PASS NLS/KdV/HillMiuraActionReflection
+PASS NLS/KdV/HillMiuraGroundTargetBound
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundEnergyFiniteGap
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundEnergyBound
+Axiom audit passed: 21607 candidate declarations; 43677 declarations total.
 ```

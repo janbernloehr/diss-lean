@@ -1,0 +1,31 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "scope": "Reuse the original indexed higher-action analytic and real interval-integral identities unchanged, including both signs and collapsed gaps, for the exact action comparison at normalized critical Miura ground factors. All four newly selected canonical prerequisites are strictly compiled privately and transitively audited; no canonical edit or merge.",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/SourceIndexedHigherAction.lean",
+      "source_sha256": "a76c61212b55dbe2425c2fd2cacf55e8fc01ac91c25c2ff5fa42c3f565ebe126",
+      "local_sha256": "a76c61212b55dbe2425c2fd2cacf55e8fc01ac91c25c2ff5fa42c3f565ebe126",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceIndexedHigherActionAnalytic.lean",
+      "source_sha256": "da4b313365bd56912772e02e7eeb612fbbb3791c869f08e81cd739009995aca0",
+      "local_sha256": "da4b313365bd56912772e02e7eeb612fbbb3791c869f08e81cd739009995aca0",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRealHigherActionPositive.lean",
+      "source_sha256": "87267ef18c271a54aeab58d62126833e58da324125e79a2feff7d4b591495554",
+      "local_sha256": "87267ef18c271a54aeab58d62126833e58da324125e79a2feff7d4b591495554",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRealHigherActionIntegral.lean",
+      "source_sha256": "fde51fbed906f0cc53005fc9028585429a34fe4c80f85dedbecbad2700e90362",
+      "local_sha256": "fde51fbed906f0cc53005fc9028585429a34fe4c80f85dedbecbad2700e90362",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

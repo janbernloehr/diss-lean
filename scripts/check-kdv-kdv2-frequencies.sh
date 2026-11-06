@@ -2781,6 +2781,18 @@ modules=(
   NLS/ZakharovShabat/SourceFullAbelianInverseMomentReal
   NLS/ZakharovShabat/SourceZeroGapMassEstimate
   NLS/KdV/HillMiuraFiniteGapEnergyBound
+  NLS/KdV/HillMiuraGroundEnumeration
+  NLS/KdV/HillMiuraGroundLabels
+  NLS/KdV/HillMiuraGroundFiniteGap
+  NLS/ZakharovShabat/SourceIndexedHigherAction
+  NLS/ZakharovShabat/SourceIndexedHigherActionAnalytic
+  NLS/ZakharovShabat/SourceRealHigherActionPositive
+  NLS/ZakharovShabat/SourceRealHigherActionIntegral
+  NLS/KdV/HillMiuraGroundActions
+  NLS/KdV/HillMiuraActionReflection
+  NLS/KdV/HillMiuraGroundTargetBound
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundEnergyFiniteGap
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundEnergyBound
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

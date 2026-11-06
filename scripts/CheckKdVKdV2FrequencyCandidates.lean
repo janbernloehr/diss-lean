@@ -1,3 +1,15 @@
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundEnergyBound
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundEnergyFiniteGap
+import NLS.KdV.HillMiuraGroundTargetBound
+import NLS.KdV.HillMiuraActionReflection
+import NLS.KdV.HillMiuraGroundActions
+import NLS.ZakharovShabat.SourceIndexedHigherAction
+import NLS.ZakharovShabat.SourceIndexedHigherActionAnalytic
+import NLS.ZakharovShabat.SourceRealHigherActionPositive
+import NLS.ZakharovShabat.SourceRealHigherActionIntegral
+import NLS.KdV.HillMiuraGroundLabels
+import NLS.KdV.HillMiuraGroundFiniteGap
+import NLS.KdV.HillMiuraGroundEnumeration
 import NLS.ZakharovShabat.SourceFullAbelianMassCoefficient
 import NLS.ZakharovShabat.SourceFullAbelianInverseMomentReal
 import NLS.ZakharovShabat.SourceZeroGapMassEstimate
@@ -4739,7 +4751,19 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.ZakharovShabat.SourceZeroGapActionBound,
   `NLS.ZakharovShabat.SourceFullAbelianInverseMomentReal,
   `NLS.ZakharovShabat.SourceZeroGapMassEstimate,
-  `NLS.KdV.HillMiuraFiniteGapEnergyBound
+  `NLS.KdV.HillMiuraFiniteGapEnergyBound,
+  `NLS.KdV.HillMiuraGroundEnumeration,
+  `NLS.KdV.HillMiuraGroundLabels,
+  `NLS.KdV.HillMiuraGroundFiniteGap,
+  `NLS.ZakharovShabat.SourceIndexedHigherAction,
+  `NLS.ZakharovShabat.SourceIndexedHigherActionAnalytic,
+  `NLS.ZakharovShabat.SourceRealHigherActionPositive,
+  `NLS.ZakharovShabat.SourceRealHigherActionIntegral,
+  `NLS.KdV.HillMiuraGroundActions,
+  `NLS.KdV.HillMiuraActionReflection,
+  `NLS.KdV.HillMiuraGroundTargetBound,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundEnergyFiniteGap,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundEnergyBound
 ]
 
 open Lean in

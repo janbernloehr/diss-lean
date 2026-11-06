@@ -452,6 +452,26 @@
           "source_clause": "Coefficient-one actual weak first-weighted-action bound at EVERY real Hilbert spectral finite-gap source with central endpoints zero",
           "lean_declaration": "NLS.ZakharovShabat.sourceFiniteGap_mass_le_weak_weighted_actions",
           "qualification": "For EVERY actual real Hilbert SPECTRAL finite-gap source whose central endpoints are zero, the physical mass and half the ORIGINAL squared pair norm are bounded with coefficient ONE by the finite sum of the ORIGINAL first weighted actions J_(n,1)/(pi*n), retaining BOTH index signs. The exact inverse-frequency identity absorbs half the ordinary action sum in the existing action-mass trace formula. No hypothetical moment identity or target action bound is assumed."
+        },
+        {
+          "source_clause": "GLOBAL a priori ground-energy bound in the SAME actual native signed weak target norm at EVERY real mean-zero HminusOne source",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.ground_energy_le_signed_norm",
+          "qualification": "GLOBAL a priori bound at EVERY actual real mean-zero HminusOne source q, including NON-L2/arbitrary-size sources: -lowest(q) <= (2/pi)*norm(D.positive(q))^2 <= (2/pi)*norm(D.signed(q))^2 for the SAME global actual map. Every actual normalized real factor has squared L2 norm bounded by the SAME signed weak norm. One existing actual real weak inverse at q yields physical finite-gap source approximants from actual finite target truncations; nonlinear regularity recovers physical L2 sources, actual zero target coordinates close the actual Hill tail, and the actual sources converge STRONGLY in HminusOne. Intrinsic lowest-energy continuity passes the bound to q. Fixed universal operator constants then bound norm(q) by A*sqrt((2/pi)*norm(D.signed(q))^2)+B*(2/pi)*norm(D.signed(q))^2. No initial L2, spectral finite-gap or source-size premise remains. Actual compactness/no-loss and rough Birkhoff SURJECTIVITY remain OPEN."
+        },
+        {
+          "source_clause": "GLOBAL universal HminusOne source bound by the SAME actual signed weak target norm, including NON-L2/arbitrary-size sources",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.norm_source_le_signed_norm",
+          "qualification": "GLOBAL a priori bound at EVERY actual real mean-zero HminusOne source q, including NON-L2/arbitrary-size sources: -lowest(q) <= (2/pi)*norm(D.positive(q))^2 <= (2/pi)*norm(D.signed(q))^2 for the SAME global actual map. Every actual normalized real factor has squared L2 norm bounded by the SAME signed weak norm. One existing actual real weak inverse at q yields physical finite-gap source approximants from actual finite target truncations; nonlinear regularity recovers physical L2 sources, actual zero target coordinates close the actual Hill tail, and the actual sources converge STRONGLY in HminusOne. Intrinsic lowest-energy continuity passes the bound to q. Fixed universal operator constants then bound norm(q) by A*sqrt((2/pi)*norm(D.signed(q))^2)+B*(2/pi)*norm(D.signed(q))^2. No initial L2, spectral finite-gap or source-size premise remains. Actual compactness/no-loss and rough Birkhoff SURJECTIVITY remain OPEN."
+        },
+        {
+          "source_clause": "ORIGINAL positive Hill actions equal twice ORIGINAL first weighted Dirac actions at EVERY normalized CRITICAL factor, including first/closed gaps",
+          "lean_declaration": "NLS.KdV.hillOriginal_action_eq_twice_ground_Dirac",
+          "qualification": "At ANY actual real normalized factor of ANY original physical Hill potential, ALL actual original Hill pair labels have the exact squared Dirac endpoint formulas. The LITERAL real arcosh profiles agree at E=x squared minus the actual factor energy. A REAL change of variables proves the ORIGINAL Hill action at EVERY positive index equals twice the ORIGINAL first weighted Dirac action, including the first and collapsed gaps. No outside-spectrum shift, Miura inverse at the critical factor, or continued-sheet choice is needed. The profile identity itself holds at every real frequency without a normalization premise."
+        },
+        {
+          "source_clause": "Every original low/high canonical Hill slot matches the actual normalized ground-factor Dirac slot, with full multiplicity and no outside-energy premise",
+          "lean_declaration": "NLS.KdV.hillHminusLabels_eq_squared_miuraDirac_of_meanZero",
+          "qualification": "Ordered multiplicity uniqueness identifies ALL actual canonical rough Hill labels with the corresponding squared canonical Dirac labels minus the actual factor energy at EVERY real mean-zero L2 factor. The bottom, EVERY low and high positive pair, first gap and all collapsed gaps are retained. The exterior-energy condition in the older label comparison is removed for normalized critical factors by proof."
         }
       ]
     },
@@ -36644,12 +36664,156 @@
       "scope": "For EVERY actual real mean-zero L2 factor with finitely many ACTUAL open diagonal Dirac gaps, its ACTUAL squared L2 norm is bounded with coefficient ONE by the ORIGINAL signed weak first-weighted-action sum J_(n,1)/(pi*n). Any literal shifted Miura equation with squared norm=e identifies -lowest(q)=e and gives the SAME estimate for the ACTUAL ground energy. This is a proved SPECTRAL finite-gap Dirac-action estimate. Identification with the SAME global weak HILL target actions, removal of the spectral finite-gap condition, and rough Birkhoff surjectivity remain OPEN.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "789965a00e025e968d45a3abcecae813a4a25920bd028e684d4875f318fde937"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraGroundEnumeration.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL nonnegative Dirac enumeration has initial frequency ZERO at every real mean-zero L2 factor and strictly POSITIVE frequency at EVERY other slot. Squaring gives EVERY root of the actual rough Hill characteristic, including the ground energy, with its FULL algebraic multiplicity. The zero case uses the proved intrinsic ground-energy identity and independently proved simplicity of the actual lowest Hill root. Every nonzero frequency retains its actual Dirac multiplicity. No exterior-energy premise or analytic inverse at the critical factor is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "296b48f832bf0042edaf47774dd692487554c93f0a188f2161c36a52fdbc06f4"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraGroundLabels.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Ordered multiplicity uniqueness identifies ALL actual canonical rough Hill labels with the corresponding squared canonical Dirac labels minus the actual factor energy at EVERY real mean-zero L2 factor. The bottom, EVERY low and high positive pair, first gap and all collapsed gaps are retained. The exterior-energy condition in the older label comparison is removed for normalized critical factors by proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "caa8f43db430bcc9b0b5a604467ecd86ed2cfbedbf3daee3f86ba264a36441c1"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraGroundFiniteGap.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY normalized actual real Miura factor, an original rough Hill positive gap is closed IFF the SAME-index actual positive Dirac gap is closed. Eventual collapse of actual rough Hill gaps therefore makes the normalized actual Dirac source SPECTRAL finite-gap, using proved negative endpoint reflection. EVERY real mean-zero rough Hill source with an eventually closed canonical gap tail now has an ACTUAL normalized spectral finite-gap ground factor, exact intrinsic energy and the previously proved weak Dirac-action bound. No factor or spectral finite-gap membership is supplied in that factory.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "eeb9bf973f10e51401d490f6c2c4bd163c93b3963a36eb43ac08efcf8e72c22b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceIndexedHigherAction.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Canonical original indexed higher-action analytic and real gap-integral prerequisite, reused BYTE-FOR-BYTE from canonical main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec. Newly selected, strictly rebuilt privately and transitively audited. The four-module exact dependency closure and source hashes are recorded in CANONICAL_GROUND_ACTION_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a76c61212b55dbe2425c2fd2cacf55e8fc01ac91c25c2ff5fa42c3f565ebe126"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceIndexedHigherActionAnalytic.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Canonical original indexed higher-action analytic and real gap-integral prerequisite, reused BYTE-FOR-BYTE from canonical main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec. Newly selected, strictly rebuilt privately and transitively audited. The four-module exact dependency closure and source hashes are recorded in CANONICAL_GROUND_ACTION_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "da4b313365bd56912772e02e7eeb612fbbb3791c869f08e81cd739009995aca0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRealHigherActionPositive.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Canonical original indexed higher-action analytic and real gap-integral prerequisite, reused BYTE-FOR-BYTE from canonical main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec. Newly selected, strictly rebuilt privately and transitively audited. The four-module exact dependency closure and source hashes are recorded in CANONICAL_GROUND_ACTION_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "87267ef18c271a54aeab58d62126833e58da324125e79a2feff7d4b591495554"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRealHigherActionIntegral.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Canonical original indexed higher-action analytic and real gap-integral prerequisite, reused BYTE-FOR-BYTE from canonical main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec. Newly selected, strictly rebuilt privately and transitively audited. The four-module exact dependency closure and source hashes are recorded in CANONICAL_GROUND_ACTION_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fde51fbed906f0cc53005fc9028585429a34fe4c80f85dedbecbad2700e90362"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraGroundActions.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At ANY actual real normalized factor of ANY original physical Hill potential, ALL actual original Hill pair labels have the exact squared Dirac endpoint formulas. The LITERAL real arcosh profiles agree at E=x squared minus the actual factor energy. A REAL change of variables proves the ORIGINAL Hill action at EVERY positive index equals twice the ORIGINAL first weighted Dirac action, including the first and collapsed gaps. No outside-spectrum shift, Miura inverse at the critical factor, or continued-sheet choice is needed. The profile identity itself holds at every real frequency without a normalization premise.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "25f201d790610140b4ab1bc30e6bf5b15a8d093eb425b0f27f82bfb5578d427f"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraActionReflection.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ORIGINAL actual arcosh gap profile of every diagonal source is invariant under simultaneous index/frequency negation. Every real higher Dirac action has the exact spectral-power reflection sign (-1)^k; the first weighted action is odd and the ordinary action is even. Proof uses the actual even trace, actual endpoint reflection and literal real interval integrals. Arbitrary real diagonal sources are NOT assumed spatial-reflection-fixed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ed192a8b3b9b9fce4175aeb55a8a78dc07339c5ef5fae64488e34f119a2bc059"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraGroundTargetBound.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For EVERY normalized ACTUAL spectral finite-gap factor of an original physical Hill potential, exact positive-coordinate calibration I_n=(1+n)*norm(a_n)^2 and the ORIGINAL weighted-action/reflection identities give norm(u)^2 <= (2/pi)*norm(a)^2. Both signed spectral indices are controlled through the actual Hilbert norm, with no extra tail or factor-size assumption. The positive calibration is instantiated by the SAME global actual forward map in the article module.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5057efef3cbed0a8d359925693859f0aae51707b8b4e64f532e883f6946aed91"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundEnergyFiniteGap.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The SAME D.positive at EVERY original physical source has exact action calibration I_n=(1+n)*norm(D.positive_n)^2 with the original 1+n normalization. For EVERY real mean-zero physical source with an eventually closed ACTUAL Hill gap tail, the ACTUAL intrinsic ground energy is bounded by (2/pi)*norm(D.positive(q))^2. Its normalized spectral finite-gap factor and all original action identifications are proved, not assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c6af8bdf7cda019c1a91eb4889cce79f6bb2a60c8f04a3f0bd53408cf9a595c5"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundEnergyBound.lean",
+      "source_labels": [
+        "Actual global weak ground-energy/source bounds, normalized critical-factor all-label/action comparison and necessary rough-surjectivity dependencies in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "GLOBAL a priori bound at EVERY actual real mean-zero HminusOne source q, including NON-L2/arbitrary-size sources: -lowest(q) <= (2/pi)*norm(D.positive(q))^2 <= (2/pi)*norm(D.signed(q))^2 for the SAME global actual map. Every actual normalized real factor has squared L2 norm bounded by the SAME signed weak norm. One existing actual real weak inverse at q yields physical finite-gap source approximants from actual finite target truncations; nonlinear regularity recovers physical L2 sources, actual zero target coordinates close the actual Hill tail, and the actual sources converge STRONGLY in HminusOne. Intrinsic lowest-energy continuity passes the bound to q. Fixed universal operator constants then bound norm(q) by A*sqrt((2/pi)*norm(D.signed(q))^2)+B*(2/pi)*norm(D.signed(q))^2. No initial L2, spectral finite-gap or source-size premise remains. Actual compactness/no-loss and rough Birkhoff SURJECTIVITY remain OPEN.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1fc999c920002d41f85a32818e31a6a8ca6ec1f7c79bdf77256e21ee77b42607"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The SAME global signed forward map retains physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact all-order nonlinear Sobolev equivalence, GLOBAL real mean-zero rough injectivity, common COMPLEX canonicality, exact origin/Fourier normalization and ONE weak inverse before ALL native orders with full actual complex matching. Global auxiliary Miura properness, attained least energy, ACTUAL mean-zero ground factors at EVERY real mean-zero HminusOne q and exact intrinsic lowest energy are proved with fixed universal source norm bounds in sqrt(e)+e. Both central Dirac endpoints and original central actions vanish. NEW: the ACTUAL squared full primitive/frequency contour recovers physical mass, its zero pole is removed by proof, and finite-hole deformation gives the EXACT inverse-frequency mass moment over the actual open gaps. With the actual real gap profiles and original action-mass trace, t+1/t>=2 gives the coefficient-ONE weak first-weighted Dirac-action bound for EVERY normalized actual SPECTRAL finite-gap L2 factor. NEXT identify those actual weighted Dirac actions with the SAME global weak HILL target actions at critical normalized factors, remove the spectral finite-gap condition through a proved approximation/continuity bridge, and prove actual compactness/no-loss or reconstruction for rough Birkhoff SURJECTIVITY. The present Dirac spectral finite-gap bound alone is NOT the full global weak Hill bound or onto. Then construct ONE global real rough inverse/global all-order diffeomorphisms and establish action-Hamiltonian identifications, frequency formulas/sharp estimates/action descent/fixed-mass corrections/actual KdV-KdV2 PDE conclusions. All eleven complete main rows remain OPEN.",
+    "The SAME global signed forward map retains physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact all-order nonlinear Sobolev equivalence, GLOBAL real mean-zero rough injectivity, common COMPLEX canonicality, exact origin/Fourier normalization and ONE weak inverse before ALL native orders with full complex matching. Global auxiliary Miura properness and ACTUAL normalized ground factors at EVERY real mean-zero HminusOne q are proved. NEW: ALL canonical Hill labels match squared Dirac labels at normalized CRITICAL factors, including the single simple ground energy and every low/closed gap; ACTUAL Hill finite-gap tails imply ACTUAL spectral finite-gap ground factors. A DIRECT REAL change of variables proves ORIGINAL positive Hill I_n=2*ORIGINAL Dirac J_(n,1), without outside-energy inverse/sheet premises; exact weighted-action reflection retains both signs. The inverse-frequency mass estimate then bounds physical finite-gap factor energy by the SAME D.positive norm. ACTUAL finite target truncations through one genuine local real weak inverse produce physical finite-gap sources converging STRONGLY in HminusOne. Intrinsic ground-energy continuity yields GLOBAL -lowest(q) <= (2/pi)*norm(D.signed(q))^2 for EVERY real mean-zero rough source, including NON-L2/arbitrary-size sources. EVERY actual normalized factor has the corresponding global L2 bound. Fixed universal constants give norm(q)<=A*sqrt((2/pi)*norm(D.signed(q))^2)+B*(2/pi)*norm(D.signed(q))^2. The actual global weak energy/source bound obstruction is CLOSED. NEXT prove actual compactness/no-loss or reconstruction for rough Birkhoff SURJECTIVITY. A priori boundedness alone is NOT properness/onto. Then construct ONE global real rough inverse/global all-order diffeomorphisms and establish action-Hamiltonian identifications, frequency formulas/sharp estimates/action descent/fixed-mass corrections/actual KdV-KdV2 PDE conclusions. All eleven complete main rows remain OPEN.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -36675,15 +36839,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 21534,
-    "total_declarations_audited": 43600,
+    "candidate_declarations_audited": 21607,
+    "total_declarations_audited": 43677,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2772,
+    "selected_modules": 2784,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -36782,7 +36946,8 @@
     "miura_proper_validation_sequence": "Prior strict evidence retained for all 2750 unchanged selected baseline sources. All three newly selected own modules strictly rebuilt in dependency order after freezing 2799 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2753 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact three-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2753-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2753-module rebuild is claimed.",
     "miura_critical_validation_sequence": "Prior strict evidence retained for all 2753 unchanged selected baseline sources. All seven newly selected own modules strictly rebuilt in dependency order after freezing 2806 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2760 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact seven-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2760-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2760-module rebuild is claimed.",
     "miura_ground_validation_sequence": "Prior strict evidence retained for all 2760 unchanged selected baseline sources. All three new own modules strictly rebuilt in dependency order after freezing 2809 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2763 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact three-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2763-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2763-module rebuild is claimed.",
-    "miura_mass_validation_sequence": "Prior strict evidence retained for all 2763 unchanged selected baseline sources. All eight new own modules and one unchanged canonical prerequisite strictly rebuilt in dependency order after freezing 2819 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2772 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; one unchanged canonical prerequisite and one new verified provenance record are selected. All 44 provenance records are verified. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2772-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2772-module rebuild is claimed."
+    "miura_mass_validation_sequence": "Prior strict evidence retained for all 2763 unchanged selected baseline sources. All eight new own modules and one unchanged canonical prerequisite strictly rebuilt in dependency order after freezing 2819 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2772 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; one unchanged canonical prerequisite and one new verified provenance record are selected. All 44 provenance records are verified. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2772-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2772-module rebuild is claimed.",
+    "ground_action_validation_sequence": "Prior strict evidence retained for all 2772 unchanged selected baseline sources. All eight new own modules and four unchanged canonical prerequisites strictly rebuilt in dependency order after freezing 2832 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2784 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact twelve-module increase in NLS import closure verified. All 44 prior verified provenance records remain byte-for-byte unchanged; four unchanged canonical prerequisites and one new verified provenance record are selected. All 45 provenance records are verified. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2784-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2784-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -37760,6 +37925,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "c44c9e8711c5d9900384b0738bdd0632f2fa7d06",
+      "description": "Prove complete critical-factor labels and ORIGINAL actions, actual spectral finite-gap ground factors, and the GLOBAL weak energy/source bounds for EVERY real mean-zero rough source in the SAME signed forward target norm.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The SAME global signed forward map retains physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact all-order nonlinear Sobolev equivalence, GLOBAL real mean-zero rough injectivity, common COMPLEX canonicality, exact origin/Fourier normalization and ONE weak inverse before ALL native orders with full actual complex matching. Global auxiliary Miura properness, attained least energy, ACTUAL mean-zero ground factors at EVERY real mean-zero HminusOne q and exact intrinsic lowest energy are proved with fixed universal source norm bounds in sqrt(e)+e. Both central Dirac endpoints and original central actions vanish. NEW: the ACTUAL squared full primitive/frequency contour recovers physical mass, its zero pole is removed by proof, and finite-hole deformation gives the EXACT inverse-frequency mass moment over the actual open gaps. With the actual real gap profiles and original action-mass trace, t+1/t>=2 gives the coefficient-ONE weak first-weighted Dirac-action bound for EVERY normalized actual SPECTRAL finite-gap L2 factor. NEXT identify those actual weighted Dirac actions with the SAME global weak HILL target actions at critical normalized factors, remove the spectral finite-gap condition through a proved approximation/continuity bridge, and prove actual compactness/no-loss or reconstruction for rough Birkhoff SURJECTIVITY. The present Dirac spectral finite-gap bound alone is NOT the full global weak Hill bound or onto. Then construct ONE global real rough inverse/global all-order diffeomorphisms and establish action-Hamiltonian identifications, frequency formulas/sharp estimates/action descent/fixed-mass corrections/actual KdV-KdV2 PDE conclusions. All eleven complete main rows remain OPEN.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -37825,5 +38002,7 @@
   "global_minimal_mean_zero_miura_record": "GLOBAL_MINIMAL_MEAN_ZERO_MIURA.md",
   "global_miura_ground_energy_record": "GLOBAL_MIURA_GROUND_ENERGY.md",
   "global_miura_finite_gap_mass_bound_record": "GLOBAL_MIURA_FINITE_GAP_MASS_BOUND.md",
-  "canonical_miura_mass_reuse_record": "CANONICAL_MIURA_MASS_REUSE.json"
+  "canonical_miura_mass_reuse_record": "CANONICAL_MIURA_MASS_REUSE.json",
+  "global_rough_ground_energy_bound_record": "GLOBAL_ROUGH_GROUND_ENERGY_BOUND.md",
+  "canonical_ground_action_reuse_record": "CANONICAL_GROUND_ACTION_REUSE.json"
 }
