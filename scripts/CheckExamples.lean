@@ -6635,7 +6635,7 @@ example : ‖intrinsicImaginaryConstant‖ = 2 := by
   rw [intrinsicImaginaryConstant, norm_ofFunction]
   norm_num [Fourier.intrinsicIntervalSize, Fourier.intrinsicIntervalEnergy,
     Fourier.intervalSquareEnergy, Real.volume_Ioo]
-  exact intrinsic_sqrt_four
+
 
 example : quotient intrinsicImaginaryConstant = 0 := by
   apply norm_eq_zero.mp
@@ -39059,7 +39059,7 @@ example (t : Icc (0 : ℝ) 1) :
 -- The pair norm is Hilbert, not the coordinate maximum: the 3-4 pair has norm 5.
 example : intervalPairH1Norm (fun _ => ((3 : ℂ),4*Complex.I)) 1 = 5 := by
   norm_num [intervalPairH1Norm,intervalH1Norm]
-  rw [show (25 : ℝ) = 5^2 by norm_num,Real.sqrt_sq (by norm_num)]
+
 
 -- Exact Born integral at a nonzero real frequency, including the sign-flipped kernel.
 example : oscillatoryIntegral (-Complex.I*(2*Real.pi)) (1/4) (fun _ => (1 : ℂ)) =
@@ -41206,8 +41206,8 @@ example :
       lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 5), norm_inv]
   have hG : Real.sqrt (‖φ.fst‖*‖φ.snd‖) = 2 := by
     norm_num [φ, lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 5)]
-    convert Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 2) using 1
-    norm_num
+
+
   exact ⟨h₁,h₂,norm_source_le_of_balanced_component_norms (by simp) φ _
     (h₁.trans hG.symm) (h₂.trans hG.symm),
     sourcePeriodicSpectrum_diagonalPotential (by simp) c φ,
@@ -60629,7 +60629,7 @@ example (u : IntervalPairL2) (n : ℤ) :
 example (φ : CoeffPair 2) : IsClassicalRealType (intervalL2Representative (sourcePhysicalL2 φ)) ↔
     φ ∈ realTypeSourceSubmodule 2 := sourcePhysicalL2_realType_iff φ
 
-example (u : IntervalPairL2) : u ∈ physicalRealSubmodule ↔
+example (u : IntervalPairL2) : u ∈ ZakharovShabat.physicalRealSubmodule ↔
     IsClassicalRealType (intervalL2Representative u) := mem_physicalRealSubmodule u
 
 -- The physical real source is an actual complete Hilbert-normed subspace.
@@ -61158,13 +61158,13 @@ example (L : IntervalPairL2 →L[ℂ] ℂ) :
 
 example (L : IntervalPairL2 →L[ℂ] ℂ)
     (hL : ∀ h : physicalRealSubmodule, (L h.val).im = 0) :
-    physicalHamiltonianDirection L ∈ physicalRealSubmodule :=
+    physicalHamiltonianDirection L ∈ ZakharovShabat.physicalRealSubmodule :=
   physicalHamiltonianDirection_mem_real L hL
 
 example (H : IntervalPairL2 → ℂ) (u : physicalRealSubmodule)
     (hH : DifferentiableAt ℂ H u.val)
     (hreal : ∀ v : physicalRealSubmodule, (H v.val).im = 0) :
-    physicalHamiltonianVector H u.val ∈ physicalRealSubmodule :=
+    physicalHamiltonianVector H u.val ∈ ZakharovShabat.physicalRealSubmodule :=
   physicalHamiltonianVector_mem_real H u hH hreal
 
 example (F G : IntervalPairL2 → ℂ) (u : IntervalPairL2) :
@@ -61172,7 +61172,7 @@ example (F G : IntervalPairL2 → ℂ) (u : IntervalPairL2) :
   fderiv_apply_physicalHamiltonianVector F G u
 
 example (n : ℤ) (u : physicalRealSubmodule) :
-    physicalHamiltonianVector (physicalIndexedAction n) u.val ∈ physicalRealSubmodule :=
+    physicalHamiltonianVector (physicalIndexedAction n) u.val ∈ ZakharovShabat.physicalRealSubmodule :=
   physicalHamiltonianVector_indexedAction_real n u
 
 example (n : ℤ) (u : physicalRealSubmodule)
@@ -73728,7 +73728,7 @@ example : normalizedStandardRoot 0 (-4) (-(5/4:ℂ)*Complex.I) =
     (Real.sqrt_eq_iff_mul_self_eq (by norm_num) (by norm_num)).mpr (by norm_num)
   norm_num at h
   convert h using 1 <;> ring_nf <;> norm_num [Complex.I_sq,Complex.inv_I,hsqrt4]
-  ring
+
 
 end AppendixFEndpointRootExamples
 

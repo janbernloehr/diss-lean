@@ -1787,446 +1787,353 @@ import NLS.ZakharovShabat.SourceNormalizedActionOnePlusDecomposition
 import NLS.SequenceSpaces.TwoExponentDecomposition
 import NLS.ZakharovShabat.SourceNormalizedActionTwoExponentDecomposition
 import NLS.ZakharovShabat.SourceNormalizedActionRootTwoExponentDecomposition
-
 import NLS.SequenceSpaces.DeletedExponentEmbedding
 import NLS.ZakharovShabat.SourceCanonicalRootExponent
 import NLS.ZakharovShabat.SourcePsiContourExponent
 import NLS.ZakharovShabat.SourcePsiGapRootExponent
-
 import NLS.ZakharovShabat.SourceAngularPrimitiveExponent
 import NLS.ZakharovShabat.SourceAngularBetaExponent
 import NLS.ZakharovShabat.SourceHolomorphicRealGerm
 import NLS.ZakharovShabat.SourceAngularBetaExponentDifferential
-
 import NLS.ZakharovShabat.SourceAngularEtaRemainderExponent
 import NLS.ZakharovShabat.SourceAngularEtaPhaseExponent
 import NLS.ZakharovShabat.SourceAngularThetaExponent
-
 import NLS.ZakharovShabat.SourceAngularThetaRegularCotangent
 import NLS.ZakharovShabat.SourceAngularThetaThetaExponent
 import NLS.ZakharovShabat.SourceActionExponentDifferential
 import NLS.ZakharovShabat.SourceCorollary13_2Regular
 import NLS.ZakharovShabat.SourceAngularRegularFourier
-
 import NLS.ZakharovShabat.SourceAngularEtaRemainderGlobal
 import NLS.ZakharovShabat.SourceGapWeightedEta
 import NLS.ZakharovShabat.SourceGapWeightedEtaAngle
 import NLS.ZakharovShabat.SourceGapWeightedEtaCommonDomain
-
 import NLS.ZakharovShabat.SourceAngularEtaRemainderBound
 import NLS.ZakharovShabat.SourceGapWeightedEtaBound
 import NLS.ZakharovShabat.SourcePsiUniformRootNormBound
 import NLS.ZakharovShabat.SourceAngularEtaDiagonalBound
 import NLS.ZakharovShabat.SourceGapWeightedEtaUniformBound
 import NLS.ZakharovShabat.SourceGapWeightedEtaLemma15_1
-
 import NLS.ZakharovShabat.SourceNormalizedActionRootAnalytic
 import NLS.ZakharovShabat.SourceBirkhoffCoordinates
 import NLS.ZakharovShabat.SourceBirkhoffCoordinateAngle
 import NLS.ZakharovShabat.SourceBirkhoffCoordinateCommonDomain
-
 import NLS.SequenceSpaces.TwoSequenceBound
 import NLS.ZakharovShabat.SourceAngularBetaCorrectionBound
 import NLS.ZakharovShabat.SourceBirkhoffCoordinateBound
 import NLS.ZakharovShabat.SourceBirkhoffSequence
 import NLS.ZakharovShabat.SourceBirkhoffSequenceLocal
 import NLS.ZakharovShabat.SourceBirkhoffMapAnalytic
-
 import NLS.SequenceSpaces.RealCoeff
 import NLS.ZakharovShabat.SourceAngularRealCharts
 import NLS.ZakharovShabat.SourceBirkhoffMapReal
 import NLS.ZakharovShabat.SourceBirkhoffTheorem15_2
-
 import NLS.ComplexAnalysis.RectangularDifferential
 import NLS.Poisson.RegularSourceCotangentAlgebra
 import NLS.ZakharovShabat.SourceBirkhoffCoordinateDifferential
 import NLS.ZakharovShabat.SourceBirkhoffRegularCotangent
 import NLS.ZakharovShabat.SourceBirkhoffOpenGapPoisson
-
 import NLS.ComplexAnalysis.RealAnalyticDenseNonzero
 import NLS.ZakharovShabat.SourceFloquetGapOpening
 import NLS.ZakharovShabat.SourceFloquetGapOpeningWitness
 import NLS.ZakharovShabat.SourceOpenGapDensity
 import NLS.ZakharovShabat.SourceBirkhoffFixedFamilyAnalytic
 import NLS.ZakharovShabat.SourceBirkhoffClosedGapPoisson
-
 import NLS.ZakharovShabat.SourceNormalizedActionExponent
 import NLS.ZakharovShabat.SourceBirkhoffCoordinateExponent
 import NLS.ZakharovShabat.SourceBirkhoffCanonicalAllExponents
 import NLS.ZakharovShabat.SourceBirkhoffLemma15_3
-
 import NLS.ZakharovShabat.SourceBirkhoffJacobian
 import NLS.ZakharovShabat.SourceGapWeightedEtaClosedDifferential
 import NLS.ZakharovShabat.SourceGapWeightedEtaFiniteGapDifferential
-
 import NLS.SequenceSpaces.FiniteSourceDensity
 import NLS.ZakharovShabat.ClassicalFreePotentialGradients
 import NLS.ZakharovShabat.SourceFreePotentialCotangents
 import NLS.ZakharovShabat.SourceFreeSpectralDifferentials
 import NLS.ZakharovShabat.SourceBirkhoffFreeDifferential
 import NLS.ZakharovShabat.SourceBirkhoffFourier
-
 import NLS.ZakharovShabat.ResonantDoubleRootClosing
 import NLS.ZakharovShabat.SourceClosedGapCenter
 import NLS.ZakharovShabat.SourceFiniteGapAdaptedCoordinates
-
 import NLS.SequenceSpaces.QuadraticTailBootstrap
 import NLS.SequenceSpaces.GeometricTailRegularity
 import NLS.ZakharovShabat.SourceFourierTail
 import NLS.ZakharovShabat.SourceFiniteGapTailRecurrence
 import NLS.ZakharovShabat.SourceFiniteGapRegularity
-
 import NLS.ZakharovShabat.WeightedResonantCenterForget
 import NLS.ZakharovShabat.WeightedEvenLeadingTail
 import NLS.ZakharovShabat.SourceFiniteGapWeightedClosing
 import NLS.ZakharovShabat.SourceFiniteGapWeightedTail
 import NLS.ZakharovShabat.SourceFiniteGapWeightedRegularity
 import NLS.ZakharovShabat.SourceFiniteGapSobolev
-
 import NLS.ComplexAnalysis.OscillatoryIntegralParts
 import NLS.ZakharovShabat.ClassicalFirstBorn
 import NLS.ZakharovShabat.ClassicalFirstBornBound
-
 import NLS.FunctionalAnalysis.IntegralGronwall
 import NLS.ComplexAnalysis.NormalizedDuhamelBound
 import NLS.ZakharovShabat.ClassicalRemainderBound
 import NLS.ZakharovShabat.ClassicalRemainderDerivativeBound
-
 import NLS.Fourier.SobolevUnitCurve
 import NLS.ZakharovShabat.ClassicalSobolevPotential
 import NLS.ZakharovShabat.ClassicalSobolevRemainderBound
-
 import NLS.Fourier.UnitIntervalEnergyBound
 import NLS.ZakharovShabat.ClassicalRemainderTimeRegularity
 import NLS.ZakharovShabat.ClassicalSobolevRemainderTimeBounds
 import NLS.ZakharovShabat.ClassicalSobolevRemainderSequenceBounds
-
 import NLS.Fourier.UnitIntervalCoefficientDecay
 import NLS.Fourier.UnitIntervalC1FourierLebesgue
 import NLS.ZakharovShabat.ClassicalSobolevRemainderFourierBound
-
 import NLS.SequenceSpaces.NormInterpolation
 import NLS.ZakharovShabat.ClassicalSobolevRemainderInterpolation
 import NLS.ZakharovShabat.ClassicalSobolevRemainderFourierDecay
-
 import NLS.Fourier.UnitIntervalC1Interpolation
 import NLS.ZakharovShabat.ClassicalFreeFrequencyDifference
 import NLS.ZakharovShabat.ClassicalShiftedFreeRemainder
 import NLS.ZakharovShabat.ClassicalShiftedFreeFourierDecay
-
 import NLS.SequenceSpaces.PowerDecaySummability
 import NLS.Fourier.UnitIntervalFourierExponentEmbedding
 import NLS.ZakharovShabat.FundamentalFourierSummabilityExponents
 import NLS.ZakharovShabat.ClassicalFourierTailSummability
 import NLS.ZakharovShabat.ClassicalFourierBoundAllFrequencies
 import NLS.ZakharovShabat.ClassicalFourierSequenceSummability
-
 import NLS.ZakharovShabat.EndpointGradientPolynomial
 import NLS.ZakharovShabat.ClassicalEndpointGradientRemainder
 import NLS.ZakharovShabat.ClassicalEndpointGradientBounds
 import NLS.ZakharovShabat.ClassicalEndpointGradientL2
 import NLS.ZakharovShabat.ClassicalEndpointGradientHilbertSummability
 import NLS.ZakharovShabat.ClassicalEndpointGradientErrorIntegral
-
 import NLS.ZakharovShabat.ClassicalEndpointGradientDerivative
 import NLS.ZakharovShabat.ClassicalEndpointGradientDerivativeBound
 import NLS.ZakharovShabat.ClassicalSobolevGradientDerivativeBounds
 import NLS.ZakharovShabat.ClassicalEndpointGradientFourierInterpolation
 import NLS.ZakharovShabat.ClassicalGradientFourierSummability
 import NLS.ZakharovShabat.ClassicalEndpointGradientFiniteSummability
-
 import NLS.Fourier.AbsoluteSummabilityEndpoints
 import NLS.ZakharovShabat.ClassicalTriangularPotential
 import NLS.ZakharovShabat.ClassicalEndpointGradientEndpointObstruction
 import NLS.ZakharovShabat.ClassicalGradientInfinityCounterexample
-
 import NLS.Fourier.IntervalCoefficientLinearity
 import NLS.ZakharovShabat.ClassicalCharacteristicGradientRemainders
 import NLS.ZakharovShabat.ClassicalCharacteristicGradientFourier
 import NLS.ZakharovShabat.ClassicalCharacteristicGradientSummability
-
 import NLS.ZakharovShabat.ClassicalGradientFourierPowerBound
 import NLS.ZakharovShabat.ClassicalGradientSpectralDiscBounds
 import NLS.ZakharovShabat.ClassicalDiscriminantGradientDiscSup
-
 import NLS.ZakharovShabat.FreeCircleSeparation
 import NLS.ZakharovShabat.ClassicalSobolevDiscriminantError
 import NLS.ZakharovShabat.ClassicalSobolevContourQuotient
 import NLS.ZakharovShabat.ClassicalContourGradientIntegrandBound
-
 import NLS.ComplexAnalysis.QuadraticFactorVariationContour
 import NLS.ZakharovShabat.SourceMidpointGradientContour
-
 import NLS.ZakharovShabat.SourceMidpointGradientTail
 import NLS.ZakharovShabat.SourceMidpointGradientOperatorContour
-
 import NLS.SequenceSpaces.SourceCotangentNormBound
 import NLS.ZakharovShabat.ContinuousSourceDiscriminantGradient
 import NLS.ZakharovShabat.SourceMidpointPhysicalFourierBound
 import NLS.ZakharovShabat.SourceMidpointSobolevSummability
-
 import NLS.ZakharovShabat.ClassicalSpectralVariation
 import NLS.ZakharovShabat.ClassicalDirichletGradientNormalization
 import NLS.ZakharovShabat.ClassicalDirichletRootGradient
-
 import NLS.ZakharovShabat.ContinuousSourceBoundaryRealization
 import NLS.ZakharovShabat.ContinuousSourceBoundaryGradient
 import NLS.ZakharovShabat.SourceDirichletNormalizedGradient
-
 import NLS.ZakharovShabat.SourceBoundarySimpleNeighborhood
 import NLS.ZakharovShabat.SourceBoundarySimpleDifferential
 import NLS.ZakharovShabat.SourceDirichletComplexGradient
 import NLS.ZakharovShabat.SourceDirichletComplexFourierGradient
-
 import NLS.ZakharovShabat.ClassicalSobolevBoundaryRootDisplacement
 import NLS.ZakharovShabat.SourceBoundarySobolevDisplacement
 import NLS.ZakharovShabat.ClassicalDirichletNormalizationBounds
 import NLS.ZakharovShabat.SourceDirichletSobolevNormalization
 import NLS.ZakharovShabat.ClassicalDirichletGradientValueBounds
 import NLS.ZakharovShabat.SourceDirichletGradientValueBound
-
 import NLS.ZakharovShabat.ClassicalDirichletGradientTimeRegularity
 import NLS.ZakharovShabat.ClassicalDirichletGradientDerivativeBound
 import NLS.ZakharovShabat.SourceDirichletGradientTimeBounds
 import NLS.ZakharovShabat.ClassicalDirichletGradientFourier
 import NLS.ZakharovShabat.SourceDirichletGradientFourierSummability
-
 import NLS.ZakharovShabat.SourceDirichletGradientErrorCotangent
 import NLS.ZakharovShabat.SourceFreeDirichletCotangent
 import NLS.ZakharovShabat.SourceDirichletSobolevSummability
 import NLS.ZakharovShabat.SourceSpectralGradientSobolevSummability
-
 import NLS.SequenceSpaces.ConjugateCotangent
 import NLS.SequenceSpaces.SourceConjugateGradient
 import NLS.ZakharovShabat.SourceSpectralConjugateGradients
-
 import NLS.ZakharovShabat.ContinuousSourceAntiDiscriminantGradient
 import NLS.ZakharovShabat.SourceAntiDiscriminantGradientError
 import NLS.ZakharovShabat.SourceAntiDiscriminantSobolevSummability
-
 import NLS.ZakharovShabat.DeletedProductSampledValues
 import NLS.ZakharovShabat.SourceOmittedProductBoundaryNormalization
-
 import NLS.SequenceSpaces.BoundedScalarProducts
 import NLS.ZakharovShabat.SourceGapWeightedEtaFreeCotangent
 import NLS.ZakharovShabat.SourceGapWeightedEtaClosedSummability
 import NLS.ZakharovShabat.SourceFiniteGapHilbertRealization
 import NLS.ZakharovShabat.SourceGapWeightedEtaFiniteGapSummability
-
 import NLS.ZakharovShabat.SourceHilbertGradientOuterSummability
 import NLS.ZakharovShabat.SourceGradientExponentRestriction
 import NLS.ZakharovShabat.SourceGapWeightedEtaAllExponentSummability
 import NLS.ZakharovShabat.SourceGapWeightedEtaLemma16_1
-
 import NLS.SequenceSpaces.ExponentialSummability
 import NLS.ZakharovShabat.SourceBirkhoffFiniteGapFactors
 import NLS.ZakharovShabat.SourceBirkhoffWeightedGradientSummability
 import NLS.ZakharovShabat.SourceBirkhoffRectangularGradientSummability
 import NLS.ZakharovShabat.SourceBirkhoffLemma16_2
-
 import NLS.ZakharovShabat.SourceBirkhoffFourierEquivalence
 import NLS.ZakharovShabat.SourceBirkhoffJacobianCompact
 import NLS.ZakharovShabat.SourceBirkhoffLemma16_3
-
 import NLS.FunctionalAnalysis.CompactDenseRange
 import NLS.ZakharovShabat.SourceBirkhoffJacobianRange
 import NLS.ZakharovShabat.SourceBirkhoffJacobianInvertible
 import NLS.ZakharovShabat.SourceBirkhoffRealJacobian
 import NLS.ZakharovShabat.SourceBirkhoffLocalInverse
-
 import NLS.ZakharovShabat.SourceBirkhoffJacobianAllExponents
 import NLS.ZakharovShabat.SourceBirkhoffProposition17_1
-
 import NLS.SequenceSpaces.RealCoeffTruncation
 import NLS.SequenceSpaces.RealCoeffExponent
 import NLS.ZakharovShabat.SourceBirkhoffFiniteSupport
 import NLS.ZakharovShabat.SourceBirkhoffFiniteGapFibers
 import NLS.ZakharovShabat.SourceBirkhoffMapExponent
 import NLS.ZakharovShabat.SourceBirkhoffInjectivityReduction
-
 import NLS.SequenceSpaces.QuadraticActions
 import NLS.ZakharovShabat.SourceHilbertActionSequence
 import NLS.ZakharovShabat.SourceHilbertActionTraceReduction
-
 import NLS.ComplexAnalysis.ExponentialVolterra
 import NLS.ComplexAnalysis.ExponentialVolterraApproximation
 import NLS.ZakharovShabat.ClassicalMassCorrection
 import NLS.ZakharovShabat.ClassicalDiscriminantMassAsymptotics
-
 import NLS.ZakharovShabat.SourceAbsoluteMassAsymptotics
 import NLS.ZakharovShabat.SourceFiniteGapMassAsymptotics
-
 import NLS.ComplexAnalysis.LogarithmicCoefficient
 import NLS.ComplexAnalysis.QuadraticRootCoefficient
 import NLS.ZakharovShabat.SourceFloquetMultiplier
 import NLS.ZakharovShabat.SourceCanonicalRootVerticalAsymptotics
 import NLS.ZakharovShabat.SourceFloquetMassCoefficient
 import NLS.ZakharovShabat.SourceMassNormalizedPrimitive
-
 import NLS.ZakharovShabat.SourceOpenGapComplement
 import NLS.ZakharovShabat.SourceFiniteGapExterior
-
 import NLS.ComplexAnalysis.ExteriorHolomorphicPrimitive
 import NLS.ZakharovShabat.SourceFiniteGapExteriorPeriod
 import NLS.ZakharovShabat.SourceFiniteGapExteriorPrimitive
 import NLS.ZakharovShabat.SourceFiniteGapExteriorMassNormalization
-
 import NLS.ComplexAnalysis.ExteriorCircleBounds
 import NLS.ComplexAnalysis.ExteriorRemovableSingularity
 import NLS.ZakharovShabat.SourceFloquetExteriorCircleBound
 import NLS.ZakharovShabat.SourceFiniteGapAtInfinity
-
 import NLS.ComplexAnalysis.InversionCircleCoefficients
 import NLS.ZakharovShabat.SourceFiniteGapExteriorCoefficients
-
 import NLS.ComplexAnalysis.ExteriorPrimitiveCoefficient
 import NLS.ZakharovShabat.SourceFiniteGapExteriorMass
-
 import NLS.ZakharovShabat.SourceRealActionRealCenteredCircle
 import NLS.ZakharovShabat.SourceFiniteGapActionTrace
 import NLS.ZakharovShabat.SourceHilbertActionTrace
-
 import NLS.SequenceSpaces.CoefficientCompactness
 import NLS.ZakharovShabat.SourceHilbertCoefficientCompactness
 import NLS.ZakharovShabat.SourceHilbertActionPropernessCriterion
-
 import NLS.SequenceSpaces.ConvolutionSandwichCoefficientContinuity
 import NLS.ZakharovShabat.DoubleResolventCoefficientContinuity
 import NLS.ZakharovShabat.NeumannResolventCoefficientContinuity
-
 import NLS.ZakharovShabat.ResolventReferenceChange
 import NLS.ZakharovShabat.ResolventCompactConvergence
 import NLS.ZakharovShabat.SpectralClusterCoefficientStability
 import NLS.ZakharovShabat.SourceSpectralCoefficientConvergence
-
 import NLS.ZakharovShabat.ContourOperatorCoefficientConvergence
 import NLS.ZakharovShabat.ContourTraceCoefficientConvergence
 import NLS.ZakharovShabat.RealSpectralPairCoefficientConvergence
 import NLS.ZakharovShabat.SourceSpectralTraceCoefficientConvergence
-
 import NLS.FunctionalAnalysis.BoundedSegmentLimits
 import NLS.ZakharovShabat.SourceSegmentResolventPersistence
 import NLS.ZakharovShabat.SourceSpectralSelectionCoefficientContinuity
 import NLS.ZakharovShabat.SourceCanonicalCoefficientContinuity
 import NLS.ZakharovShabat.SourceActionCoefficientCircle
-
 import NLS.SequenceSpaces.DominatedTails
 import NLS.ZakharovShabat.ClassicalDiscriminantGradientEnergy
 import NLS.ZakharovShabat.SourceDiscriminantCotangentDecay
-
 import NLS.SequenceSpaces.UniformDualCoefficientLimits
 import NLS.ZakharovShabat.SourceDiscriminantCoefficientContinuity
 import NLS.ZakharovShabat.SourceDiscriminantDerivativeCoefficientContinuity
-
 import NLS.ComplexAnalysis.SquareRootPathStability
 import NLS.ComplexAnalysis.UniformInverseCompact
 import NLS.ZakharovShabat.SourceActionSegmentCircle
 import NLS.ZakharovShabat.SourceCanonicalRootCoefficientContinuity
 import NLS.ZakharovShabat.SourceActionCoefficientContinuity
 import NLS.ZakharovShabat.SourceHilbertProperness
-
 import NLS.FunctionalAnalysis.ClosedLocalHomeomorph
 import NLS.ZakharovShabat.SourceBirkhoffLocalHomeomorph
 import NLS.ZakharovShabat.SourceHilbertGlobalInverse
 import NLS.ZakharovShabat.SourceBirkhoffProposition17_2
-
 import NLS.SequenceSpaces.RealActionReduction
 import NLS.ZakharovShabat.SourceHilbertActionReduction
-
 import NLS.FunctionalAnalysis.AutonomousODEUniqueness
 import NLS.ZakharovShabat.SourceAngularThetaRectangularDifferential
 import NLS.ZakharovShabat.SourceAngularThetaHamiltonian
 import NLS.ZakharovShabat.SourceHilbertAngleHamiltonian
 import NLS.ZakharovShabat.SourceHilbertAngleFlowUnique
-
 import NLS.SequenceSpaces.ConjugateCotangentLinear
 import NLS.FunctionalAnalysis.IntegralDisplacement
 import NLS.ZakharovShabat.SourceHilbertAngleStrongRegularity
 import NLS.ZakharovShabat.SourceHilbertAngleDisplacement
-
 import NLS.SequenceSpaces.RealActionTail
 import NLS.ZakharovShabat.SourceHilbertFiniteActionReduction
 import NLS.ZakharovShabat.SourceBirkhoffProposition17_3
-
 import NLS.ZakharovShabat.SourceBirkhoffGlobalInverse
 import NLS.ZakharovShabat.SourceBirkhoffDenseRange
-
 import NLS.SequenceSpaces.DominatedCompactness
 import NLS.SequenceSpaces.RealActionTorus
 import NLS.ZakharovShabat.SourceActionTorus
-
 import NLS.ZakharovShabat.PeriodicDiscriminantSpectralData
 import NLS.ZakharovShabat.SourceIsospectralSet
-
 import NLS.SequenceSpaces.RealActionRotation
 import NLS.ZakharovShabat.SourceBirkhoffActionHamiltonian
 import NLS.ZakharovShabat.SourceHilbertActionRotation
-
 import NLS.SequenceSpaces.RealActionRotationOrbit
 import NLS.ZakharovShabat.SourceBirkhoffLemma17_5
-
 import NLS.ComplexAnalysis.PrimitiveRemovableBoundary
 import NLS.ZakharovShabat.SourceAbelianHalfPlane
 import NLS.ZakharovShabat.SourceAbelianHalfPlaneProperties
-
 import NLS.ZakharovShabat.SourceAbelianDiscPrimitive
 import NLS.ZakharovShabat.SourceAbelianDiscGluing
 import NLS.ZakharovShabat.SourceAbelianLocalExtension
-
 import NLS.ComplexAnalysis.NormalizedLogarithmicPrimitive
 import NLS.ZakharovShabat.SourceFloquetEndpointLimit
 import NLS.ZakharovShabat.SourceAbelianFloquetIdentity
-
 import NLS.ZakharovShabat.SourceRealBandGeometry
 import NLS.ZakharovShabat.SourceCanonicalRootRealBand
 import NLS.ZakharovShabat.SourceRealBandArcsin
 import NLS.ZakharovShabat.SourceRealBandIntegral
-
 import NLS.ComplexAnalysis.ContinuousBoundaryTransfer
 import NLS.ZakharovShabat.SourceAbelianBandTransfer
 import NLS.ZakharovShabat.SourceAbelianHalfPlaneNormalization
 import NLS.ZakharovShabat.SourceAbelianNormalizedCharts
-
 import NLS.ZakharovShabat.SourceAbelianBandGluing
 import NLS.ZakharovShabat.SourceRealBandCoverage
 import NLS.ZakharovShabat.SourceAbelianGlobalPrimitive
 import NLS.ZakharovShabat.SourceAbelianGlobalProperties
-
 import NLS.ZakharovShabat.SourceCollapsedGapNeighborhood
 import NLS.ZakharovShabat.SourceAbelianPrimitive
 import NLS.ZakharovShabat.SourceAbelianPrimitiveProperties
-
 import NLS.ZakharovShabat.SourceRealGapArcoshPrimitive
 import NLS.ZakharovShabat.SourceRealGapArcoshBound
-
 import NLS.ZakharovShabat.SourceCriticalRootRatioRealGapBound
 import NLS.ZakharovShabat.SourceAbelianPartialGapLimit
 import NLS.ZakharovShabat.SourceAbelianGapVerticalLimit
 import NLS.ZakharovShabat.SourceCriticalRootRatioGapInteriorBound
 import NLS.ZakharovShabat.SourceAbelianGapBoundary
-
 import NLS.ComplexAnalysis.DenseAnalyticExtension
 import NLS.ComplexAnalysis.GapPrimitiveSquare
 import NLS.ZakharovShabat.SourceAbelianDiscSquare
 import NLS.ZakharovShabat.SourceAbelianSquare
-
 import NLS.ComplexAnalysis.NormalizedLogChart
 import NLS.ZakharovShabat.SourceFloquetJointLog
 import NLS.ZakharovShabat.SourceAbelianLogChart
-
 import NLS.ZakharovShabat.SourceAbelianRealBandValue
 import NLS.ZakharovShabat.SourceAbelianBandSourceContinuity
 import NLS.ZakharovShabat.SourceAbelianBandChart
-
 import NLS.ComplexAnalysis.ParameterContinuityPropagation
 import NLS.ZakharovShabat.SourceRootDomainConnected
 import NLS.ZakharovShabat.SourceAbelianSourceContinuity
 import NLS.ZakharovShabat.SourceAbelianJointExtension
-
 import NLS.ZakharovShabat.SourceAbelianJointChart
 import NLS.ZakharovShabat.SourceAbelianJointPrimitive
 import NLS.ZakharovShabat.SourceAbelianJointProperties
-
 import NLS.ComplexAnalysis.ParametricSourceLogarithm
 import NLS.ComplexAnalysis.ParametricSourceLogDomain
 import NLS.ComplexAnalysis.ContinuousLogarithmUnique
@@ -2234,67 +2141,55 @@ import NLS.ZakharovShabat.SourceRealTypeLogarithmUnique
 import NLS.ZakharovShabat.SourceAbelianRadialPrimitive
 import NLS.ZakharovShabat.SourceAbelianRadialCompatibility
 import NLS.ZakharovShabat.SourceAbelianExteriorProduct
-
 import NLS.ComplexAnalysis.MovingSourceLogarithm
 import NLS.ZakharovShabat.SourceAbelianProjectedPrimitive
 import NLS.ZakharovShabat.SourceAbelianProjectedCompatibility
 import NLS.ZakharovShabat.SourceAbelianEnlargedPrimitive
 import NLS.ZakharovShabat.SourceAbelianEnlargedExterior
-
 import NLS.ZakharovShabat.SourceAbelianComplexDiscContinuation
 import NLS.ZakharovShabat.SourceAbelianComplexEndpointLimits
 import NLS.ZakharovShabat.SourceAbelianComplexCollapsedExtension
-
 import NLS.ZakharovShabat.SourceAbelianCauchyPrimitive
 import NLS.ZakharovShabat.SourceAbelianCauchyChart
 import NLS.ZakharovShabat.SourceAbelianCauchyNormalization
 import NLS.ZakharovShabat.SourceAbelianCauchyContinuation
 import NLS.ZakharovShabat.SourceAbelianCauchySquare
-
 import NLS.ZakharovShabat.SourceFloquetJointDerivative
 import NLS.ZakharovShabat.SourceAbelianCauchyDifferential
 import NLS.ZakharovShabat.SourceAbelianDiscJointChart
 import NLS.ZakharovShabat.SourceAbelianDiscCompatibility
 import NLS.ZakharovShabat.SourceAbelianContinuedPrimitive
 import NLS.ZakharovShabat.SourceAbelianContinuedProperties
-
 import NLS.ComplexAnalysis.LocallyFiniteLatticeDiscs
 import NLS.ZakharovShabat.SourceAbelianUniformDiscFamily
 import NLS.ZakharovShabat.SourceAbelianUniformSpectralContinuation
 import NLS.ZakharovShabat.SourceAbelianUniformCollapsedFilling
 import NLS.ZakharovShabat.SourceAbelianAlmostRealSpectralContinuation
 import NLS.ZakharovShabat.SourceAbelianUniformRealNormalization
-
 import NLS.ComplexAnalysis.RealCenteredDiscExterior
 import NLS.ZakharovShabat.SourceAbelianComplexDomainConnected
 import NLS.ZakharovShabat.SourceAbelianSpectralCompatibility
 import NLS.ZakharovShabat.SourceAbelianSpectralChart
 import NLS.ZakharovShabat.SourceFullAbelianPrimitive
 import NLS.ZakharovShabat.SourceFullAbelianExterior
-
 import NLS.ComplexAnalysis.ParametricPrimitivePropagation
 import NLS.ZakharovShabat.SourceFullAbelianJointAnalytic
 import NLS.ZakharovShabat.SourceFullAbelianDifferential
 import NLS.ZakharovShabat.SourceFullAbelianCauchyCompatibility
-
 import NLS.ZakharovShabat.SourceFullAbelianCauchyPrimitive
 import NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily
 import NLS.ZakharovShabat.SourceFullAbelianUniformNormalization
 import NLS.ZakharovShabat.SourceFullAbelianUniformEndpoints
-
 import NLS.ComplexAnalysis.QuadraticPrimitiveGapBound
 import NLS.ZakharovShabat.SourceCriticalRootRatioUniformTailBound
 import NLS.ZakharovShabat.SourceCriticalRootGapUniformBound
 import NLS.ZakharovShabat.SourceFullAbelianGapBoundary
 import NLS.ZakharovShabat.SourceFullAbelianUniformGapBound
-
 import NLS.ZakharovShabat.SourceFullAbelianCauchySquare
 import NLS.ZakharovShabat.SourceFullAbelianSquare
 import NLS.ZakharovShabat.SourceFullAbelianUniformSquare
-
 import NLS.ZakharovShabat.SourceFullAbelianRealBoundary
 import NLS.ZakharovShabat.SourceFullAbelianFiniteGapExterior
-
 import NLS.ComplexAnalysis.ExteriorInversionRemainder
 import NLS.ZakharovShabat.SourcePeriodicEndpointAtInfinity
 import NLS.ZakharovShabat.SourceFullAbelianFiniteGapInversion
@@ -2493,30 +2388,24 @@ import NLS.SequenceSpaces.PairCoordinateDensity
 import NLS.SequenceSpaces.TailActionStationarity
 import NLS.SequenceSpaces.TailActionInvariance
 import NLS.ZakharovShabat.SourceFrequencyTailActionStationarity
-
 import NLS.SequenceSpaces.TailSumCoordinates
 import NLS.SequenceSpaces.LocalTailSumDescent
 import NLS.ZakharovShabat.SourceFrequencyLocalTailSumDescent
-
 import NLS.SequenceSpaces.NonzeroFiniteCenter
 import NLS.SequenceSpaces.HeadActionSection
-
 import NLS.SequenceSpaces.HeadRotationStationarity
 import NLS.SequenceSpaces.HeadRotationDescent
 import NLS.SequenceSpaces.HeadActionTangent
 import NLS.SequenceSpaces.HeadActionCurveInvariance
-
 import NLS.SequenceSpaces.HeadActionPath
 import NLS.SequenceSpaces.HeadActionPathAnalytic
 import NLS.SequenceSpaces.HeadActionPathNeighborhood
 import NLS.SequenceSpaces.LocalHeadActionDescent
 import NLS.ZakharovShabat.SourceFrequencyLocalActionDescent
-
 import NLS.SequenceSpaces.NonnegativeActions
 import NLS.SequenceSpaces.NonnegativeActionIdentity
 import NLS.SequenceSpaces.NonnegativeActionOverlap
 import NLS.SequenceSpaces.NonnegativeActionGluing
-
 import NLS.SequenceSpaces.RealActionPairLifting
 import NLS.SequenceSpaces.RealActionLifting
 import NLS.SequenceSpaces.RealActionBallGluing
@@ -2525,21 +2414,17 @@ import NLS.ZakharovShabat.SourceRealActionLifting
 import NLS.ZakharovShabat.SourceFrequencyRealActionBalls
 import NLS.ZakharovShabat.SourceFrequencyActionSpaceMaps
 import NLS.ZakharovShabat.SourceFrequencyActionSpaceCorrection
-
 import NLS.ZakharovShabat.SourceFrequencyActionExponentCompatibility
 import NLS.ZakharovShabat.SourceFrequencyActionExtensions
-
 import NLS.SequenceSpaces.BoundedRealActionBallGluing
 import NLS.ZakharovShabat.SourceActionCorrectionBounds
 import NLS.ZakharovShabat.SourceFrequencyBoundedActionSpaceMaps
 import NLS.ZakharovShabat.SourceFrequencyActionSpaceAsymptotic
 import NLS.ZakharovShabat.SourceFrequencyTheorem18_1
-
 import NLS.SequenceSpaces.RefinedActionDerivative
 import NLS.SequenceSpaces.RefinedActionExponent
 import NLS.ZakharovShabat.SourceFrequencyOrigin
 import NLS.ZakharovShabat.SourceFrequencySmoothingDerivative
-
 import NLS.SequenceSpaces.BoundedCoefficientWeakLimit
 import NLS.SequenceSpaces.DisjointCoefficientSums
 import NLS.SequenceSpaces.SimultaneousBlockApproximation
@@ -2548,11 +2433,9 @@ import NLS.SequenceSpaces.PittBlockContradiction
 import NLS.SequenceSpaces.Pitt
 import NLS.SequenceSpaces.CompactActionDerivative
 import NLS.ZakharovShabat.SourceFrequencyCompactDerivative
-
 import NLS.FunctionalAnalysis.FredholmDecomposition
 import NLS.FunctionalAnalysis.CompactFredholm
 import NLS.ZakharovShabat.SourceFrequencyFredholmDerivative
-
 import NLS.ComplexAnalysis.ParametricSineSquareMean
 import NLS.ZakharovShabat.SourceMomentFreeFactors
 import NLS.ZakharovShabat.SourceNormalizedSecondMoment
@@ -2562,7 +2445,6 @@ import NLS.ComplexAnalysis.DerivativeRayLimit
 import NLS.ZakharovShabat.SourceFrequencyDerivativeOrigin
 import NLS.ComplexAnalysis.ScalarDerivativeInverse
 import NLS.ZakharovShabat.SourceFrequencyLocalInverse
-
 import NLS.FunctionalAnalysis.SchurComplement
 import NLS.FunctionalAnalysis.AnalyticSchurComplement
 import NLS.FunctionalAnalysis.CompactInvertibleComplement
@@ -2572,47 +2454,39 @@ import NLS.FunctionalAnalysis.AnalyticFredholmDensity
 import NLS.ComplexAnalysis.AnalyticUnitDerivativeInverse
 import NLS.ZakharovShabat.SourceFrequencyConnectedDomain
 import NLS.ZakharovShabat.SourceFrequencyGenericLocalInverse
-
 import NLS.ZakharovShabat.SourceMomentReality
 import NLS.SequenceSpaces.RealSummableApproximation
 import NLS.ZakharovShabat.SourceFrequencyReality
 import NLS.ZakharovShabat.SourceFrequencyTheorem18_1Real
-
 import NLS.ZakharovShabat.SourcePrimitivePowerCircle
 import NLS.ZakharovShabat.SourceGapContourComparison
 import NLS.ZakharovShabat.SourcePrimitivePowerLocalChart
 import NLS.ZakharovShabat.SourcePrimitivePowerAtlas
 import NLS.ZakharovShabat.SourcePrimitivePowerAction
-
 import NLS.ZakharovShabat.SourcePrimitivePowerBoundary
 import NLS.ZakharovShabat.SourcePrimitivePowerRealIntegral
 import NLS.ZakharovShabat.SourcePrimitivePowerPositive
 import NLS.ZakharovShabat.SourcePrimitivePowerRealBound
-
 import NLS.ZakharovShabat.SourceFullAbelianAllGapBound
 import NLS.ZakharovShabat.SourcePrimitivePowerComplexCosine
 import NLS.ZakharovShabat.SourcePrimitivePowerComplexBound
 import NLS.ZakharovShabat.SourcePrimitivePowerLemma21_1
-
 import NLS.ZakharovShabat.SourceFiniteGapContourDecomposition
 import NLS.ZakharovShabat.SourcePrimitivePowerCubicShift
 import NLS.ZakharovShabat.SourcePrimitivePowerHamiltonian
 import NLS.ZakharovShabat.SourceFiniteGapRenormalizedHamiltonian
-
 import NLS.SequenceSpaces.QuarticSummability
 import NLS.SequenceSpaces.LocallyUniformSummation
 import NLS.ZakharovShabat.SourceClosedGapsZero
 import NLS.ZakharovShabat.SourcePrimitivePowerCubicSequence
 import NLS.ZakharovShabat.SourceRenormalizedHamiltonian
 import NLS.ZakharovShabat.SourceRenormalizedHamiltonianProposition21_3
-
 import NLS.SequenceSpaces.ScalarTailSquareDescent
 import NLS.SequenceSpaces.LocalScalarActionDescent
 import NLS.ZakharovShabat.SourcePrimitivePowerIsospectral
 import NLS.ZakharovShabat.SourceHamiltonianLocalActionDescent
 import NLS.ZakharovShabat.SourceHamiltonianRealActionBalls
 import NLS.ZakharovShabat.SourceHamiltonianActionExtension
-
 import NLS.SequenceSpaces.HilbertScalarGradient
 import NLS.SequenceSpaces.HilbertScalarConcavity
 import NLS.ZakharovShabat.SourceHilbertActionReductionWeighted
@@ -5021,7 +4895,6 @@ import NLS.KdV.HillL2CutPrimitiveUnit
 import NLS.KdV.HillL2CutUnitOrientation
 import NLS.KdV.HillL2GapBoundaryValues
 import NLS.Articles.KdVEstimates.EstimateAdapter
-
 import NLS.ComplexAnalysis.RealGapEllipse
 import NLS.ComplexAnalysis.RealGapEllipseHomotopy
 import NLS.ComplexAnalysis.RealGapEllipseIntegral
@@ -5031,7 +4904,6 @@ import NLS.ComplexAnalysis.NestedCircleHomotopy
 import NLS.ComplexAnalysis.AnalyticCutContour
 import NLS.KdV.HillL2GapContourIntegral
 import NLS.KdV.HillL2HighGapMoments
-
 import NLS.KdV.HillL2DiscAsymptotics
 import NLS.ZakharovShabat.ContinuousPotentialL2Bound
 import NLS.KdV.ClassicalSpectralEmbedding
@@ -5072,7 +4944,6 @@ import NLS.KdV.HillL2GapSquareIdentification
 import NLS.KdV.HillRealGapUnitBound
 import NLS.KdV.HillEventualActionGapBound
 import NLS.KdV.HillWeightedRealActions
-
 import NLS.KdV.ActionHamiltonianMoments
 import NLS.ComplexAnalysis.TracePrimitiveFunctoriality
 import NLS.KdV.ClassicalL2PrimitiveAgreement
@@ -5083,7 +4954,6 @@ import NLS.KdV.HillL2RegularBoundary
 import NLS.ComplexAnalysis.RealCoshTrace
 import NLS.KdV.HillL2BoundaryGapProfile
 import NLS.KdV.HillL2UpperCutAgreement
-
 import NLS.ComplexAnalysis.UpperLogarithmBoundary
 import NLS.KdV.HillL2AllBoundaryLimits
 import NLS.ComplexAnalysis.ParametricUpperLogarithmBoundary
@@ -5091,7 +4961,6 @@ import NLS.KdV.HillL2BoundaryLabelContinuity
 import NLS.KdV.HillL2AllEndpointNormalization
 import NLS.KdV.HillL2GlobalGapBoundaryValues
 import NLS.KdV.HillL2BandContinuation
-
 import NLS.ComplexAnalysis.ClosedUpperExtension
 import NLS.KdV.HillL2CutBounds
 import NLS.ComplexAnalysis.RealGapDiscIsolation
@@ -5100,7 +4969,6 @@ import NLS.ComplexAnalysis.BoundedPuncturedCircleIntegral
 import NLS.KdV.HillL2AllGapContourIntegrals
 import NLS.KdV.HillL2RealCutDifferential
 import NLS.KdV.HillL2RealContourMoments
-
 import NLS.ComplexAnalysis.BoundaryAnalyticCoordinate
 import NLS.ComplexAnalysis.CoshSquareLocalCoordinate
 import NLS.KdV.HillL2AllGapSquares
@@ -6408,3 +6276,170 @@ import NLS.KdV.HillOriginalBirkhoffWeightedRestriction
 import NLS.KdV.HillOriginalBirkhoffSobolevRestriction
 import NLS.KdV.HillOriginalBirkhoffActions
 import NLS.Articles.KdVEstimates.MainBirkhoffEstimates
+import NLS.ComplexAnalysis.CommutativeBilinearSquare
+import NLS.ZakharovShabat.PeriodOneSobolevProduct
+import NLS.ZakharovShabat.PeriodOneSobolevProductPairing
+import NLS.ZakharovShabat.PeriodOneL2Multiplication
+import NLS.ZakharovShabat.PeriodOneSobolevProductIntegration
+import NLS.Poisson.HillWeakMagri
+import NLS.MKdV.SobolevMiuraDifferential
+import NLS.MKdV.MiuraWeakMagriTransfer
+import NLS.Poisson.SobolevGardnerGradient
+import NLS.MKdV.SobolevMiuraMagriCanonical
+import NLS.MKdV.MiuraNativeActionFlowDerivative
+import NLS.MKdV.MiuraNativeActionVelocityGardner
+import NLS.MKdV.MiuraNativeActionFlowChainRule
+import NLS.Articles.MKdVNLSHierarchies.MiuraMagriIdentification
+import NLS.SequenceSpaces.ContinuousTailRotationInvariants
+import NLS.SequenceSpaces.PositiveCartesianRealDecoder
+import NLS.MKdV.MiuraNormalizedCartesianHomeomorph
+import NLS.MKdV.MiuraContinuousActionDescent
+import NLS.MKdV.MiuraOppositeAngularCoordinateDescent
+import NLS.MKdV.MiuraNativeActionFlowAllTimes
+import NLS.MKdV.MiuraGardnerGeneratorAngularDescent
+import NLS.ComplexAnalysis.ContinuousBoundedAngularProduct
+import NLS.MKdV.MiuraOpenAngularPhaseDescent
+import NLS.MKdV.MiuraNativeNLSAngularDomain
+import NLS.MKdV.MiuraOpenGardnerPhaseFactor
+import NLS.Articles.MKdVNLSHierarchies.AngleSumDescent
+import NLS.ComplexAnalysis.ZeroCountContinuousFamily
+import NLS.ComplexAnalysis.ScalarHillProductMagri
+import NLS.KdV.HillStateSecondDerivative
+import NLS.KdV.HillSolutionProductMagri
+import NLS.KdV.HillGradientSecondDerivatives
+import NLS.KdV.HillWeakGradientMagri
+import NLS.KdV.HillDirichletMagriBrackets
+import NLS.KdV.HillGradientPeriodicTraces
+import NLS.FunctionalAnalysis.UnitCurveLpBounds
+import NLS.KdV.HillGradientSecondRegularity
+import NLS.KdV.HillWeakMagriAntisymmetry
+import NLS.KdV.HillLogNormingMagriBrackets
+import NLS.KdV.HillWeakMagriScalars
+import NLS.KdV.HillMagriLogEnergyCoordinates
+import NLS.Articles.MKdVNLSHierarchies.IndependentHillMagriGeometry
+import NLS.Fourier.PeriodOneACCoefficients
+import NLS.Fourier.PeriodOneCurveSynthesis
+import NLS.KdV.HillPhysicalFourierCoefficients
+import NLS.MKdV.MiuraHillDirichletPositivity
+import NLS.Poisson.SobolevGardnerGradientCalculus
+import NLS.Poisson.UnitIntervalBilinearPairing
+import NLS.Fourier.PeriodOneH2CurveLift
+import NLS.Fourier.PeriodOneH2CurveData
+import NLS.KdV.HillNativeCotangents
+import NLS.MKdV.HillNativeMagriIntegral
+import NLS.KdV.HillNativeBranchGradients
+import NLS.MKdV.HillNativeSpectralBrackets
+import NLS.MKdV.MiuraDirichletBranchGradients
+import NLS.MKdV.MiuraDirichletBranchCompatibility
+import NLS.MKdV.MiuraLogEnergyGardnerCoordinates
+import NLS.Articles.MKdVNLSHierarchies.IndependentSpectralGardnerGeometry
+import NLS.KdV.HillSelectedDirichletAngle
+import NLS.KdV.HillDirichletRegularTermAnalytic
+import NLS.KdV.HillDirichletUnitPhase
+import NLS.KdV.HillFiniteAbelianPhase
+import NLS.KdV.HillFiniteAbelianSupport
+import NLS.MKdV.MiuraFiniteAbelianPhases
+import NLS.MKdV.MiuraFiniteGapAbelianPhase
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhaseConstruction
+import NLS.ComplexAnalysis.EndpointRootDiscBounds
+import NLS.KdV.HillAbelianTerminalBounds
+import NLS.KdV.HillAbelianSpectralScale
+import NLS.KdV.HillHighAbelianDiscGeometry
+import NLS.KdV.HillHighAbelianContourBounds
+import NLS.KdV.HillHighAbelianContourDecay
+import NLS.KdV.HillLocalNormalizedHilbertParameters
+import NLS.KdV.HillHighDeflatedDiscBounds
+import NLS.KdV.HillLocalAbelianDifferentialDecay
+import NLS.KdV.HillLocalAbelianTermDecay
+import NLS.KdV.HillAbelianCorrectionTails
+import NLS.KdV.HillFullAbelianPhase
+import NLS.MKdV.MiuraFullAbelianPhase
+import NLS.MKdV.MiuraNativeAbelianPhase
+import NLS.Articles.MKdVNLSHierarchies.FullIndependentAbelianPhase
+import NLS.ComplexAnalysis.ScalarHillProductPairing
+import NLS.KdV.HillSolutionProducts
+import NLS.KdV.HillDirichletProductPairings
+import NLS.KdV.HillDiscriminantNativeGradient
+import NLS.KdV.HillDiscriminantDirichletPairing
+import NLS.KdV.HillDirichletMagriBoundary
+import NLS.KdV.HillDirichletDiscriminantMagri
+import NLS.MKdV.MiuraDiscriminantGradient
+import NLS.Poisson.SobolevGardnerGradientPullback
+import NLS.MKdV.MiuraDiscriminantSourceGradient
+import NLS.ZakharovShabat.SourceOrdinaryLaurentCotangentCircle
+import NLS.MKdV.MiuraDirichletDiscriminantDirection
+import NLS.MKdV.MiuraDirichletActionContour
+import NLS.MKdV.MiuraDirichletActionMotion
+import NLS.Articles.MKdVNLSHierarchies.OriginalDivisorActionMotion
+import NLS.MKdV.QuasiHillDirichletCharacteristic
+import NLS.MKdV.MiuraHillDirichletComparison
+import NLS.MKdV.MiuraRotatedDirichletCharacteristic
+import NLS.MKdV.MiuraDirichletRootIdentification
+import NLS.MKdV.MiuraDirichletCharacteristicProduct
+import NLS.ComplexAnalysis.SquaredCharacteristicLimit
+import NLS.MKdV.MiuraDirichletEntireProduct
+import NLS.MKdV.MiuraDirichletCharacteristicNormalization
+import NLS.Articles.MKdVNLSHierarchies.OriginalDirichletCharacteristic
+import NLS.ComplexAnalysis.FiniteSpectralInterpolation
+import NLS.KdV.HillFiniteAbelianPolynomials
+import NLS.MKdV.MiuraFiniteGapAbelianProducts
+import NLS.MKdV.MiuraFiniteGapAbelianInterpolation
+import NLS.MKdV.MiuraIndependentCanonicalRoot
+import NLS.KdV.HillDirichletSheetNormalization
+import NLS.MKdV.MiuraFiniteAbelianTraceContraction
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianInterpolation
+import NLS.KdV.HillIsospectralAbelianData
+import NLS.MKdV.MiuraActionFlowAbelianData
+import NLS.KdV.HillAbelianRealPrimitiveDerivative
+import NLS.KdV.HillFiniteAbelianTerminalRepresentation
+import NLS.KdV.HillDirichletFamilyAngle
+import NLS.ComplexAnalysis.AbelianTerminalChainRule
+import NLS.KdV.HillIsospectralPrimitiveDerivative
+import NLS.KdV.HillIsospectralFinitePhaseDerivative
+import NLS.MKdV.MiuraActionFlowHillCurve
+import NLS.MKdV.MiuraIndependentPhaseDerivative
+import NLS.KdV.HillClosedDirichletAbelianValues
+import NLS.MKdV.MiuraDirichletContourExclusion
+import NLS.MKdV.MiuraSupportedAbelianTraceContraction
+import NLS.MKdV.MiuraAbelianActionCircleContraction
+import NLS.MKdV.MiuraIndependentPhaseActionCircle
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhaseMotion
+import NLS.ComplexAnalysis.OrderedRealGapCircleBounds
+import NLS.ComplexAnalysis.SquaredCircleBandHomotopy
+import NLS.MKdV.MiuraCauchyCircleBands
+import NLS.KdV.HillSquaredCirclePeriods
+import NLS.MKdV.MiuraIndependentAbelianActionPeriods
+import NLS.MKdV.MiuraIndependentPhaseKroneckerGenerator
+import NLS.MKdV.MiuraOppositeAbelianPhase
+import NLS.KdV.HillFinitePhaseFamilyRegularity
+import NLS.MKdV.MiuraFiniteGapPhaseTerminalRegularity
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhasePeriods
+import NLS.MKdV.MiuraNativeActionVelocityContinuity
+import NLS.MKdV.MiuraNativeAnalyticLieDerivative
+import NLS.MKdV.MiuraFinitePhaseLieContinuity
+import NLS.MKdV.MiuraFiniteGapFullPhaseLieContinuity
+import NLS.SequenceSpaces.WeightedSpatialTranslationContinuity
+import NLS.MKdV.MiuraNativeSpatialTranslation
+import NLS.ZakharovShabat.ClassicalPeriodicWholeLine
+import NLS.ZakharovShabat.ClassicalPeriodicMonodromyShift
+import NLS.MKdV.QuasiHillFundamentalMatrix
+import NLS.MKdV.QuasiHillZSMatrixComparison
+import NLS.MKdV.QuasiHillPeriodicBasepoint
+import NLS.MKdV.QuasiHillTerminalTranslation
+import NLS.KdV.HillOpenEndpointTraceDerivative
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianTerminalGeometry
+import NLS.MKdV.QuasiHillMonodromyEnergy
+import NLS.MKdV.MiuraOpenEndpointMonodromy
+import NLS.MKdV.MiuraNativePeriodicProfile
+import NLS.MKdV.MiuraNativeEndpointRelease
+import NLS.KdV.HillDirichletInteriorSheet
+import NLS.MKdV.MiuraNativeInteriorTranslation
+import NLS.MKdV.MiuraFiniteGapTerminalGenerator
+import NLS.MKdV.MiuraFiniteGapPhaseRotation
+import NLS.MKdV.MiuraNativeFiniteGapApproximation
+import NLS.MKdV.MiuraFullPhaseRotation
+import NLS.MKdV.MiuraFullPhaseGenerator
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianAngleSum
+import NLS.Articles.DNLSEstimates.MainEstimates
+import NLS.KdV.HillEnergyTraceGradient
+import NLS.KdV.HillEnergyTraceGradientRegularity

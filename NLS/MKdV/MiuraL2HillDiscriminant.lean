@@ -1,3 +1,5 @@
+import NLS.MKdV.SobolevMiuraPrimitive
+import NLS.MKdV.MiuraHillSpectralBridge
 import NLS.MKdV.SobolevMiuraPotential
 import NLS.MKdV.PeriodOneMiuraCurveCLM
 import NLS.MKdV.MiuraHillPhysicalTraceComparison

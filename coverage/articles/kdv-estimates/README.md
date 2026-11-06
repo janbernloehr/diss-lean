@@ -66,8 +66,9 @@ additions. The complete current aggregate import and expanded transitive
 axiom audit are checked separately. The only allowed axioms are
 `propext`, `Classical.choice`, and `Quot.sound`.
 The three final declarations also pass explicit integrated theorem and
-axiom checks. No fresh complete 1,486-module focused-script run, full Lake
-rebuild, or full repository examples run is claimed.
+axiom checks. That original theorem milestone did not include a fresh complete
+1,486-module focused-script run, full Lake rebuild, or repository examples run.
+The later integration checks are recorded below.
 
 This coverage concerns the named main Theorems 1–3. The two statements
 labelled Corollary 1 in the source are outside this completion claim.
@@ -75,6 +76,32 @@ Global surjectivity on every higher weighted space is not asserted.
 The Hill operator is `-d²/dx² + q`; the missing exponent in the page-8
 display is corrected consistently with formula (2) on page 5.
 
-The work is on the separate `articles/kdv-estimates` worktree. Publication
-is pending the earlier automatic approval review's GitHub destination
-approval; no successful push or merge is claimed.
+The work is published on the separate `articles/kdv-estimates` branch in
+[PR #4](https://github.com/janbernloehr/diss-lean/pull/4). The current integration
+with `main` is validated; no merge of the PR itself is claimed.
+
+## Main integration validation
+
+The merge retains the stronger spectral cutoff, combines the article imports,
+and keeps frequency and energy discriminant gradients distinct, with the
+energy construction under explicit `hillEnergyTraceGradient` names.
+The physical normalization relation is checked in Lean.
+
+1925 affected or missing modules passed fresh strict compilation. The combined
+aggregate import, final main-theorem checks, KdV audit
+(9959 declarations) and global NLS audit (60500 declarations)
+passed. See `merge-validation.json` for the exact source hashes and scope.
+
+
+All 7,729 examples are covered across the complete run and the corrected-command
+recheck: the 7,721 unchanged examples passed the full run, and the eight corrected
+anonymous commands passed in their original file scopes. Every nonexample command
+was preserved and re-elaborated. No fresh all-green monolithic rerun is claimed.
+The incoming mKdV/NLS audit also passed for 9768 declarations; its
+prefix selection uses the same scope set with a faster ancestor lookup.
+
+The corrected examples can be rechecked with pinned Lean 4.33.1:
+
+```bash
+lean -DautoImplicit=false -DwarningAsError=true --run scripts/CheckExamplesSubset.lean scripts/CheckExamples.lean 6634,39060,41187,60632,61159,61164,61174,73723 7729
+```

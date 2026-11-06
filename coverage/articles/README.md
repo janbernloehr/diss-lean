@@ -34,13 +34,14 @@ proofs or reorganizing thousands of established modules as a preliminary step.
 
 ## Tasks and initial reuse map
 
-These are starting hypotheses based on the article abstracts and the existing
-library, not completed source-to-theorem comparisons. Each task begins by
-pinning its source PDF and reading its main statements.
+Each task begins by pinning its source PDF and reading its main statements.
+Entries explicitly marked verified link their source-to-theorem comparison
+and validation record. The remaining entries are initial reuse hypotheses
+based on the abstracts and existing library.
 
 | Article task | Source | Initial reuse and responsibility |
 | --- | --- | --- |
-| `dnls-estimates` — New estimates of the nonlinear Fourier transform for the defocusing NLS equation | [arXiv:1403.1369v2](https://arxiv.org/abs/1403.1369v2) | Closest overlap: dissertation Theorem 0.1, Section 23, weighted estimates and Parseval. Verify the article's additional main estimates explicitly. Own `NLS/Articles/DNLSEstimates/`. |
+| `dnls-estimates` — New estimates of the nonlinear Fourier transform for the defocusing NLS equation | [arXiv:1403.1369v2](https://arxiv.org/abs/1403.1369v2) | **Main theorems verified:** Theorems 1–3 and Corollary 1, including complex weighted neighborhoods and common constants. [Source correspondence and validation](dnls-estimates/README.md). Own `NLS/Articles/DNLSEstimates/`. |
 | `kdv-estimates` — On two-sided estimates for the nonlinear Fourier transform of KdV | [arXiv:1502.04550v1](https://arxiv.org/abs/1502.04550v1) | Reuse sequence, analytic and tame-estimate infrastructure. Lead the shared `NLS/KdV` Hill operator, spectral labels and Birkhoff foundation needed by the other KdV articles. Own `NLS/Articles/KdVEstimates/`. |
 | `kdv-convexity` — On the convexity of the KdV Hamiltonian | [arXiv:1502.05857v1](https://arxiv.org/abs/1502.05857v1) | Reuse generic action-space, analytic inverse and concavity arguments. Consume the shared KdV foundation; own KdV action-Hamiltonian and convexity developments and `NLS/Articles/KdVConvexity/`. KdV-specific conclusions do not follow merely from analogous dNLS theorems. |
 | `mkdv-nls-hierarchies` — The mKdV and NLS hierarchies revisited | [arXiv:1601.07580v1](https://arxiv.org/abs/1601.07580v1) | Reuse the existing Riccati, differential-polynomial, Sobolev Hamiltonian and hierarchy trace modules. Lead `NLS/MKdV` hierarchy restrictions and the NLS-to-mKdV identification. Own `NLS/Articles/MKdVNLSHierarchies/`. |

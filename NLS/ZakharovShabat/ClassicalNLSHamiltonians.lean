@@ -1,3 +1,4 @@
+import NLS.FunctionalAnalysis.PeriodicIntegrationByParts
 import NLS.ZakharovShabat.NLSRiccatiHierarchy
 import NLS.ZakharovShabat.ClassicalDiscriminantMassAsymptotics
 import Mathlib.Analysis.Calculus.Deriv.Shift
@@ -39,12 +40,8 @@ theorem classicalNLSHamiltonian_two_unsymmetrized (a b : ℝ → ℂ) :
 /-- Spatial differentiation preserves periodicity, without regularity
 assumptions beyond those implicit in the total derivative. -/
 theorem periodic_deriv_of_periodic (f : ℝ → ℂ) (T : ℝ) (hf : Function.Periodic f T) :
-    Function.Periodic (deriv f) T := by
-  intro x
-  have he : (fun y => f (y+T)) = f := funext hf
-  have hd := deriv_comp_add_const f T x
-  rw [he] at hd
-  exact hd.symm
+    Function.Periodic (deriv f) T :=
+  NLS.FunctionalAnalysis.periodic_deriv f T hf
 
 /-- Every recursively generated density retains the source period. -/
 theorem periodic_nlsRiccatiDensity (a b : ℝ → ℂ) (T : ℝ)

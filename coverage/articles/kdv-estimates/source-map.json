@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "kdv-estimates",
-  "status": "main_theorems_verified_locally_publication_pending",
+  "status": "main_theorems_verified_PR4_integration_validated",
   "workspace_phase": "Integrated into isolated articles/kdv-estimates Git worktree after user approval; main checkout left unchanged",
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
   "source": {
@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "No mathematical obligation remains for this named main statement; branch publication is pending destination approval.",
+      "remaining": "No mathematical obligation remains for this main statement; it is covered by the published PR4.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -4014,7 +4014,7 @@
         "NLS.Articles.KdVEstimates.theorem2_physical",
         "NLS.Articles.KdVEstimates.theorem2_continuous"
       ],
-      "remaining": "No mathematical obligation remains for this named main statement; branch publication is pending destination approval.",
+      "remaining": "No mathematical obligation remains for this main statement; it is covered by the published PR4.",
       "status": "verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -4504,7 +4504,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "No mathematical obligation remains for this named main statement; branch publication is pending destination approval.",
+      "remaining": "No mathematical obligation remains for this main statement; it is covered by the published PR4.",
       "status": "verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -9074,9 +9074,9 @@
     }
   ],
   "next_shared_milestones": [
-    "The named main Theorems 1\u20133 are proved locally and source correspondence is recorded. Do not redo the Hill theory or fixed-map identification. Remaining completion step: publish the validated article branch after the pending GitHub destination approval; do not retry or bypass the earlier automatic review rejection."
+    "Review PR4 for integration; all named main Theorems1\u20133 and the incoming main article developments are preserved."
   ],
-  "workspace_need": "Main Theorems 1\u20133 are proved and locally validated on the isolated articles/kdv-estimates worktree. Commit the checked final milestone, then publish only this branch after the pending GitHub destination approval. Do not retry or bypass the prior automatic review rejection.",
+  "workspace_need": "Main Theorems1\u20133 are proved, published and covered by PR4. Current main integration is validated; no merge of PR4 itself is claimed.",
   "accepted_reference_scope": "coverage/MAIN_THEOREMS.md and coverage/ACCEPTED_REFERENCE.md were read. The dissertation verification is left intact. The accepted Grebert-Kappeler NLS manuscript does not replace a proof of Hill/KdV-specific assertions.",
   "continued_proved_foundation": {
     "module": "NLS/KdV/HillComplement.lean",
@@ -19548,5 +19548,10 @@
       "Successful push or merge"
     ],
     "source_correction": "Hill operator is -d^2/dx^2+q as fixed by source formula (2), page 5; the page-8 omitted exponent is corrected."
+  },
+  "latest_merge_validation": {
+    "report": "coverage/articles/kdv-estimates/merge-validation.json",
+    "merged_main": "b91ea10fe328f4046a8768218ae5b485041cf075",
+    "status": "passed"
   }
 }
