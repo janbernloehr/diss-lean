@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 27,
-    "proved_corrected": 3,
-    "partial": 22,
+    "proved": 28,
+    "proved_corrected": 4,
+    "partial": 20,
     "not_found": 2
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -452,18 +452,18 @@
       "label": "Theorem 3.2",
       "line": 1822,
       "statement": "Theorem 3.2 ([10]) After shrinking, if necessary, the complex neighborhood\nW of H0−1 in H0,C\n              −1\n                  of Theorem 3.1 the following holds:\n\n  (i) Let Zn = {q ∈ H0−1 : γn2 (q) 6= 0} for n ⩾ 1. The quotient In /γn2 , defined\n      on H0−1 \\ Zn , extends analytically to W for any n ⩾ 1. Moreover, for any\n      ε > 0 and any q ∈ W there exists n0 ⩾ 1 and an open neighborhood Wq\n      of q in W so that\n                      In\n                8nπ       − 1 ⩽ ε,           ∀ n ⩾ n0 ∀ p ∈ Wq .                  (46)\n                      γn2\n\n (ii) The Birkhoff coordinates (zn )n∈Z are analytic as maps from W into C\n      and fulfill locally uniformly in W and uniformly for n ⩾ 1, the estimate\n                        \u0012                    \u0013\n                          |γn | + |µn − τn |\n           |z±n | = O            √            .\n                                    n\n\n(iii) For any q ∈ W and n ⩾ 1 one has In (q) = 0 if and only if γn (q) = 0. In\n      particular, Φ(0) = 0. ⋊",
-      "status": "partial",
-      "comparison": "Canonical analytic actions, quotient asymptotics, gap-zero equivalence and Cartesian spectral bounds exist. Must package all three clauses on one actual common Birkhoff neighborhood; printed Z_n/complement is reversed.",
+      "status": "proved_corrected",
+      "comparison": "All three assertions packaged on one actual complex mean-zero Birkhoff neighborhood: analytic native map and quotients, action identity and zero-gap equivalence, locally uniform high-mode quotient asymptotics, signed coordinate bounds and Phi(0)=0. Corrects the printed reversed Z_n/complement: the raw quotient is defined where the gap square is nonzero.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianSpectralEstimate.lean",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeCartesianMap.lean"
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem32.lean"
       ],
-      "declarations": [],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem3_2"
+      ],
       "source_page": 29,
       "statement_sha256": "16358252bc3c7c96b141057577d7d784a3b73fa2047c148a9ee0ed9a63cffab3",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianSpectralEstimate.lean": "8ec1697946a30abe5a2b3ea7ead91f7940943a74decf2b40bf5f0350eac9335a",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeCartesianMap.lean": "62d9035f1e8c554f98aceba9725202a04a497a62a827b98bc5a1877eb347cbb4"
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem32.lean": "038dc220c25ac037e5d9856c64c5e134124232e555b65c4c28b2277a3851e5e4"
       }
     },
     {
@@ -810,13 +810,23 @@
       "label": "Lemma A.3",
       "line": 2377,
       "statement": "Lemma A.3 (i) Let −1 ⩽ t < −1/2. For a = (am )m∈Z ∈ htC and b =\n   (bm )m∈Z ∈ h1C , the convolution a∗b = ( m∈Z an−m bm )n∈Z is well defined\n                                           P\n\n   and\n\n               ka ∗ bkt,2 ⩽ Ct kakt,2 kbk1,2 .\n\n (ii) Let −1/2 ⩽ s ⩽ 0 and −s − 3/2 < t < 0. For any a = (am )m∈Z ∈ ℓs,∞\n                                                                     C\n      and b = (bm )m∈Z ∈ ht+2\n                          C ,\n\n\n               ka ∗ bks,∞ ⩽ Cs,t kaks,∞ kbkt+2,2 .   ⋊",
-      "status": "partial",
-      "comparison": "Generic weighted convolution tools exist. Both exact parameter ranges, actual convolution and source norm bounds need explicit source statements, especially the mixed endpoint/Hilbert estimate.",
-      "providers": [],
-      "declarations": [],
+      "status": "proved",
+      "comparison": "Both parts have the literal source parameter ranges and Sobolev weights, actual absolutely convergent convolution at every integer mode, and constants independent of both inputs. Part (i) uses the tame l2*l1 plus weighted l2*l2 split; part (ii) uses the strict Hilbert-to-Wiener embedding, including s=-1/2.",
+      "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA3.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA3Hilbert.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA_3_i",
+        "NLS.Articles.KdVPseudomeasures.SourceA3HilbertEstimate",
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA_3_ii"
+      ],
       "source_page": 37,
       "statement_sha256": "a5c88fc09c7057b7e82b9ede59345e533488ff1f8de4d8bc417679838463adc6",
-      "provider_sha256": {}
+      "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA3.lean": "802336bb607ae9928739e45da2cce10d0007ab69fd4e2751eb32dc60a8d5b95e",
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA3Hilbert.lean": "b28232e20f99cba704a6fe6393018136c2a58ddbb22e89cc556c958c87512a0c"
+      }
     },
     {
       "label": "Lemma A.4",

@@ -6587,3 +6587,6 @@ import NLS.ComplexAnalysis.CompatibleRealBallCharts
 import NLS.FunctionalAnalysis.OpenMajorantNeighborhood
 import NLS.KdV.HillL2MomentLpSequence
 import NLS.SequenceSpaces.UnweightedPositiveMomentSeries
+import NLS.Articles.KdVPseudomeasures.SourceTheorem32
+import NLS.Articles.KdVPseudomeasures.SourceLemmaA3
+import NLS.Articles.KdVPseudomeasures.SourceLemmaA3Hilbert

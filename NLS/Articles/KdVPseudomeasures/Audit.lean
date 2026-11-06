@@ -1982,6 +1982,9 @@ import NLS.ComplexAnalysis.CompatibleRealBallCharts
 import NLS.FunctionalAnalysis.OpenMajorantNeighborhood
 import NLS.KdV.HillL2MomentLpSequence
 import NLS.SequenceSpaces.UnweightedPositiveMomentSeries
+import NLS.Articles.KdVPseudomeasures.SourceTheorem32
+import NLS.Articles.KdVPseudomeasures.SourceLemmaA3
+import NLS.Articles.KdVPseudomeasures.SourceLemmaA3Hilbert
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11640,3 +11643,7 @@ import NLS.SequenceSpaces.UnweightedPositiveMomentSeries
 #print axioms NLS.KdV.HillProductEquationPatch.L2FrequencyHilbertMajorant
 #print axioms NLS.KdV.HillProductEquationPatch.l2MomentLp_analytic_of_majorants
 #print axioms NLS.Coeff.exists_unweighted_positive_moment_series
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem3_2
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA_3_ii
+#print axioms NLS.Articles.KdVPseudomeasures.SourceA3HilbertEstimate
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA_3_i

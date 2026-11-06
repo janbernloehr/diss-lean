@@ -2016,6 +2016,9 @@ modules = [
     'NLS.FunctionalAnalysis.OpenMajorantNeighborhood',
     'NLS.KdV.HillL2MomentLpSequence',
     'NLS.SequenceSpaces.UnweightedPositiveMomentSeries',
+    'NLS.Articles.KdVPseudomeasures.SourceTheorem32',
+    'NLS.Articles.KdVPseudomeasures.SourceLemmaA3',
+    'NLS.Articles.KdVPseudomeasures.SourceLemmaA3Hilbert',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
