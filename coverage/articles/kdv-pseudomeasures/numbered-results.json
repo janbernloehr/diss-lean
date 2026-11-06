@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 28,
+    "proved": 29,
     "proved_corrected": 4,
-    "partial": 20,
+    "partial": 19,
     "not_found": 2
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -640,18 +640,28 @@
       "label": "Theorem 5.3",
       "line": 2176,
       "statement": "Theorem 5.3 ([21, Theorem 3]) Let q ∈ L20 and assume that (γn (q))n⩾1 ∈\nℓN,1\n R   for some N ∈ Z⩾0 . Then q ∈ FℓN,1\n                                   0   and Iso(q) ⊂ FℓN,1\n                                                      0 . ⋊",
-      "status": "partial",
-      "comparison": "Wiener inverse regularity is available through Birkhoff coordinates. Must derive the literal gap-only hypothesis on every real L2 source, including the entire isospectral set.",
+      "status": "proved",
+      "comparison": "Full literal positive-index gap-only hypothesis: summability of n^N times the actual nth gap length for n≥1. The same original physical potential and its entire H-minus-one isospectral set have Wiener representatives of order N. The result is proved on every real mean-zero H-minus-one source, a stronger domain than the printed L2 domain. No Birkhoff membership or additional spectral premise is supplied by the caller.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeL2Regularity.lean"
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem53SpectralBound.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem53.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem53Positive.lean"
       ],
-      "declarations": [],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_3",
+        "NLS.Articles.KdVPseudomeasures.original_signed_gap_membership_of_positive_summable",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_3_signed",
+        "NLS.Articles.KdVPseudomeasures.exists_originalWiener_of_native_target",
+        "NLS.Articles.KdVPseudomeasures.exists_originalWiener_target_of_gap_membership",
+        "NLS.Articles.KdVPseudomeasures.original_native_signed_half_gap_bound",
+        "NLS.Articles.KdVPseudomeasures.original_cartesianWeight_le_twice_gap"
+      ],
       "source_page": 34,
       "statement_sha256": "672b2e7e1558f578cdbf96b57d7a447366bb6b7a1118a3014a37e84a040f0658",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean": "d71f57ecc07f97cdace2b5a73951cf8aa46213457d66e0aa55f4482b681bce7c",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeL2Regularity.lean": "5f7ff20c43c7cbbf4bb2b3dc0b95851ba44e90f53a5c16263c4b0be52d0033a6"
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem53SpectralBound.lean": "80d0b9762f4d69536269a4be846637f2b6126e011e4dc01c5473b6e68cf8ec9e",
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem53.lean": "b3faaad324af4c05a14b694468470a460daa6aa829c6e6907e7fdaa4d37e4af7",
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem53Positive.lean": "7cea0feb4f93364bb2311c81e05d9ca81cb34f6cf3ebcfafb9e75f7b65feefb6"
       }
     },
     {

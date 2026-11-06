@@ -6590,3 +6590,6 @@ import NLS.SequenceSpaces.UnweightedPositiveMomentSeries
 import NLS.Articles.KdVPseudomeasures.SourceTheorem32
 import NLS.Articles.KdVPseudomeasures.SourceLemmaA3
 import NLS.Articles.KdVPseudomeasures.SourceLemmaA3Hilbert
+import NLS.Articles.KdVPseudomeasures.SourceTheorem53SpectralBound
+import NLS.Articles.KdVPseudomeasures.SourceTheorem53
+import NLS.Articles.KdVPseudomeasures.SourceTheorem53Positive

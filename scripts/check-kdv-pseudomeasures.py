@@ -2019,6 +2019,9 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SourceTheorem32',
     'NLS.Articles.KdVPseudomeasures.SourceLemmaA3',
     'NLS.Articles.KdVPseudomeasures.SourceLemmaA3Hilbert',
+    'NLS.Articles.KdVPseudomeasures.SourceTheorem53SpectralBound',
+    'NLS.Articles.KdVPseudomeasures.SourceTheorem53',
+    'NLS.Articles.KdVPseudomeasures.SourceTheorem53Positive',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

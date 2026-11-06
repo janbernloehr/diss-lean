@@ -1985,6 +1985,9 @@ import NLS.SequenceSpaces.UnweightedPositiveMomentSeries
 import NLS.Articles.KdVPseudomeasures.SourceTheorem32
 import NLS.Articles.KdVPseudomeasures.SourceLemmaA3
 import NLS.Articles.KdVPseudomeasures.SourceLemmaA3Hilbert
+import NLS.Articles.KdVPseudomeasures.SourceTheorem53SpectralBound
+import NLS.Articles.KdVPseudomeasures.SourceTheorem53
+import NLS.Articles.KdVPseudomeasures.SourceTheorem53Positive
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11647,3 +11650,10 @@ import NLS.Articles.KdVPseudomeasures.SourceLemmaA3Hilbert
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA_3_ii
 #print axioms NLS.Articles.KdVPseudomeasures.SourceA3HilbertEstimate
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA_3_i
+#print axioms NLS.Articles.KdVPseudomeasures.original_cartesianWeight_le_twice_gap
+#print axioms NLS.Articles.KdVPseudomeasures.original_native_signed_half_gap_bound
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalWiener_target_of_gap_membership
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalWiener_of_native_target
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_3_signed
+#print axioms NLS.Articles.KdVPseudomeasures.original_signed_gap_membership_of_positive_summable
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_3
