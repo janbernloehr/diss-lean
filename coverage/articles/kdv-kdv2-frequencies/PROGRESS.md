@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest all-index amplitudes at every real rough base
+## Latest full packets at every real rough base
+
+The actual ALL-index amplitude, normalized midpoint and FULL noncentral phase now form ONE bounded analytic packet at EVERY real HminusOne base, including NON-L2 centers. The SAME retained chart and roots give all-order native positive and signed Sobolev germs. Their derivative at every real point is the actual Fourier principal plus a compact remainder, and the literal mean-zero principal is a bounded equivalence. Physical uniqueness extends over full complex chart overlaps; any two actual packets agree there up to ONE fixed infinite coordinate sign selection. See `ARBITRARY_ROUGH_FULL_PACKETS.md`.
+
+Canonical global physical signs, global rough gluing/inversion, full Jacobian invertibility/canonicality and the Hamiltonian/frequency/PDE conclusions still require proofs. Constant-sign overlap compatibility and an invertible principal do not establish those obligations. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2707 unchanged selected baseline sources. All ten newly selected own modules strictly rebuilt in dependency order after freezing 2763 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2717 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact ten-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2717-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2717-module rebuild is claimed.
+
+Fresh audit: 21227 selected and 43297 imported NLS declarations; permitted axioms only. Ten new own modules contain 21 explicit theorems.
+
+## Earlier all-index amplitudes at every real rough base
 
 The finite-head obstruction at arbitrary NON-L2 real rough bases is now closed. The actual normalized weighted Dirac moments and exact twice-weighted-action bridge give the ORIGINAL Hill ratios and principal amplitudes, including closed gaps. ONE complex rough ball before ALL positive indices now supports native ell-infinity analytic weighted amplitude and reciprocal symbols, uniform positive lower/upper bounds and exact ORIGINAL physical recovery throughout its physical locus. See `ARBITRARY_ROUGH_ALL_ACTION_AMPLITUDES.md`.
 

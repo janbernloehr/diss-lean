@@ -2716,6 +2716,16 @@ modules=(
   NLS/KdV/HillHminusMiuraActionRatios
   NLS/KdV/HillHminusArbitraryBaseFiniteAmplitudes
   NLS/KdV/HillHminusArbitraryBaseAmplitudeSymbol
+  NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseAbelianFourierData
+  NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseAbelianFourierGerms
+  NLS/SequenceSpaces/PeriodOneRealFormIdentityAt
+  NLS/KdV/HillArbitraryRoughPhysicalUniqueness
+  NLS/KdV/HillArbitraryRoughAbelianSigns
+  NLS/Articles/KdVKdV2Frequencies/ArbitraryBasePacketCompatibility
+  NLS/SequenceSpaces/SobolevSignedRealCompactGermAt
+  NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseSignedFourierGerms
+  NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseSignedPrincipalSymbol
+  NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseMeanZeroPrincipalEquiv
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

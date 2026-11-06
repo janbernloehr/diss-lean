@@ -1,3 +1,13 @@
+import NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseSignedPrincipalSymbol
+import NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseMeanZeroPrincipalEquiv
+import NLS.SequenceSpaces.SobolevSignedRealCompactGermAt
+import NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseSignedFourierGerms
+import NLS.Articles.KdVKdV2Frequencies.ArbitraryBasePacketCompatibility
+import NLS.KdV.HillArbitraryRoughAbelianSigns
+import NLS.SequenceSpaces.PeriodOneRealFormIdentityAt
+import NLS.KdV.HillArbitraryRoughPhysicalUniqueness
+import NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseAbelianFourierData
+import NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseAbelianFourierGerms
 import NLS.KdV.HillHminusArbitraryBaseAmplitudeSymbol
 import NLS.KdV.HillHminusArbitraryBaseFiniteAmplitudes
 import NLS.KdV.HillHminusMiuraActionRatios
@@ -4609,7 +4619,17 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.ZakharovShabat.SourceNormalizedEnergyAction,
   `NLS.KdV.HillHminusMiuraActionRatios,
   `NLS.KdV.HillHminusArbitraryBaseFiniteAmplitudes,
-  `NLS.KdV.HillHminusArbitraryBaseAmplitudeSymbol
+  `NLS.KdV.HillHminusArbitraryBaseAmplitudeSymbol,
+  `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseAbelianFourierData,
+  `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseAbelianFourierGerms,
+  `NLS.SequenceSpaces.PeriodOneRealFormIdentityAt,
+  `NLS.KdV.HillArbitraryRoughPhysicalUniqueness,
+  `NLS.KdV.HillArbitraryRoughAbelianSigns,
+  `NLS.Articles.KdVKdV2Frequencies.ArbitraryBasePacketCompatibility,
+  `NLS.SequenceSpaces.SobolevSignedRealCompactGermAt,
+  `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseSignedFourierGerms,
+  `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseSignedPrincipalSymbol,
+  `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseMeanZeroPrincipalEquiv
 ]
 
 open Lean in

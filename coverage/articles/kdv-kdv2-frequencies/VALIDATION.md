@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest all-index amplitudes at every real rough base
+## Latest full packets at every real rough base
+
+The actual ALL-index amplitude, normalized midpoint and FULL noncentral phase now form ONE bounded analytic packet at EVERY real HminusOne base, including NON-L2 centers. The SAME retained chart and roots give all-order native positive and signed Sobolev germs. Their derivative at every real point is the actual Fourier principal plus a compact remainder, and the literal mean-zero principal is a bounded equivalence. Physical uniqueness extends over full complex chart overlaps; any two actual packets agree there up to ONE fixed infinite coordinate sign selection. See `ARBITRARY_ROUGH_FULL_PACKETS.md`.
+
+Canonical global physical signs, global rough gluing/inversion, full Jacobian invertibility/canonicality and the Hamiltonian/frequency/PDE conclusions still require proofs. Constant-sign overlap compatibility and an invertible principal do not establish those obligations. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2707 unchanged selected baseline sources. All ten newly selected own modules strictly rebuilt in dependency order after freezing 2763 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2717 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact ten-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2717-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2717-module rebuild is claimed.
+
+Fresh audit: 21227 selected and 43297 imported NLS declarations; permitted axioms only. Ten new own modules contain 21 explicit theorems.
+
+## Earlier all-index amplitudes at every real rough base
 
 The finite-head obstruction at arbitrary NON-L2 real rough bases is now closed. The actual normalized weighted Dirac moments and exact twice-weighted-action bridge give the ORIGINAL Hill ratios and principal amplitudes, including closed gaps. ONE complex rough ball before ALL positive indices now supports native ell-infinity analytic weighted amplitude and reciprocal symbols, uniform positive lower/upper bounds and exact ORIGINAL physical recovery throughout its physical locus. See `ARBITRARY_ROUGH_ALL_ACTION_AMPLITUDES.md`.
 
@@ -780,7 +790,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2707 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2717 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1849,7 +1859,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2707 selected modules (including generated and private declarations)
+the 2717 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4764,4 +4774,20 @@ PASS NLS/KdV/HillHminusMiuraActionRatios
 PASS NLS/KdV/HillHminusArbitraryBaseFiniteAmplitudes
 PASS NLS/KdV/HillHminusArbitraryBaseAmplitudeSymbol
 Axiom audit passed: 21140 candidate declarations; 43210 declarations total.
+```
+
+Latest arbitrary-base full packets strict checks and fresh combined audit:
+
+```text
+PASS NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseAbelianFourierData
+PASS NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseAbelianFourierGerms
+PASS NLS/SequenceSpaces/PeriodOneRealFormIdentityAt
+PASS NLS/KdV/HillArbitraryRoughPhysicalUniqueness
+PASS NLS/KdV/HillArbitraryRoughAbelianSigns
+PASS NLS/Articles/KdVKdV2Frequencies/ArbitraryBasePacketCompatibility
+PASS NLS/SequenceSpaces/SobolevSignedRealCompactGermAt
+PASS NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseSignedFourierGerms
+PASS NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseSignedPrincipalSymbol
+PASS NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseMeanZeroPrincipalEquiv
+Axiom audit passed: 21227 candidate declarations; 43297 declarations total.
 ```
