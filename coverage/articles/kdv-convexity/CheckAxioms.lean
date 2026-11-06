@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOnePhysicalLabels
 import NLS.Articles.KdVConvexity.DirichletHilbertJacobian
 import NLS.Articles.KdVConvexity.DirichletLocalInverse
 import NLS.Articles.KdVConvexity.FreeDirichletLinearization
@@ -92,6 +93,35 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.SequenceSpaces.NegativeSpectralWeight,
+    `NLS.SequenceSpaces.HillMixedKernel,
+    `NLS.SequenceSpaces.InfinityMatrix,
+    `NLS.SequenceSpaces.ShiftReflection,
+    `NLS.SequenceSpaces.SobolevConvolutionBounds,
+    `NLS.Fourier.PeriodicH1Multiplication,
+    `NLS.SequenceSpaces.WienerWeakStar,
+    `NLS.SequenceSpaces.WeightedWienerWeakStar,
+    `NLS.SequenceSpaces.WeightedWeakStarCompactness,
+    `NLS.SequenceSpaces.WeightedWeakStarLowerTopology,
+    `NLS.SequenceSpaces.NegativeModulation,
+    `NLS.SequenceSpaces.SignedSobolevConvolution,
+    `NLS.SequenceSpaces.EndpointCompactInclusion,
+    `NLS.FunctionalAnalysis.ResolventRootSpace,
+    `NLS.ComplexAnalysis.CircleOpenCollar,
+    `NLS.FunctionalAnalysis.CircleResolventProjection,
+    `NLS.Fourier.PeriodicSingularMultiplicationFamily,
+    `NLS.Fourier.PeriodicSobolevConjugation,
+    `NLS.SequenceSpaces.HilbertProductTame,
+    `NLS.Fourier.PeriodicH1FormBound,
+    `NLS.FunctionalAnalysis.PencilRootSemisimple,
+    `NLS.FunctionalAnalysis.PencilRootChains,
+    `NLS.ComplexAnalysis.PoweredAnalyticJet,
+    `NLS.ComplexAnalysis.BanachFiniteJets,
+    `NLS.ComplexAnalysis.MatrixAnalyticJetAction,
+    `NLS.ComplexAnalysis.AffinePencilJets,
+    `NLS.FunctionalAnalysis.FiniteInvariantSpectrum,
+    `NLS.SequenceSpaces.PeriodOneHminusOneDoubling,
+    `NLS.ComplexAnalysis.ClosedZeroGraphPersistence,
     `NLS.MKdV.L2QuasiHillFreeCosine,
     `NLS.Fourier.SineCosinePairing,
     `NLS.SequenceSpaces.PeriodOneHminusOneRealGerms,

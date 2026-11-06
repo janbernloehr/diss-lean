@@ -2805,12 +2805,63 @@ coordinates, symplectic/action identities or Theorem 1.1. The inherited
 identical to the read-only compiled reference and was not rebuilt.
 See `dirichlet-hilbert-jacobian-library-reuse.json` for hashes and scope.
 
+## Full original physical Hill spectrum at every complex H^-1 potential
+
+Seventy-one shared source modules are copied exactly from
+`kdv-pseudomeasures` commit `96091c0` and strictly rechecked in this
+private checkout. They construct the original physical singular Hill
+operator on its full H1 domain, its dense closed graph in H^-1, compact
+resolvent, physical algebraic root spaces and finite spectral projections.
+Three existing focused dependencies retain their already validated
+versions; no existing source was overwritten. The imported sources all
+compile against these retained public interfaces.
+
+`PeriodOneHminusOneDoubling.lean` and
+`HillHminusOneSingularPotential.lean` construct the exact source adapter:
+`Q_hat(2*n)=q_hat(n)`, with all odd coefficients zero. Both source norms
+are compared explicitly as `norm(Q)<=norm(q)<=2*norm(Q)`. Real Fourier
+inputs give physically real distributions. No additional regularity,
+mean-zero or endpoint-space membership is imposed.
+
+`ClosedZeroGraphPersistence.lean` passes characteristic zeros under dense
+parameter approximation into a jointly closed spectral graph, including
+multiple zeros. `SingularHillDenseSpectrum.lean` proves the reverse
+spectral persistence using arbitrarily small physical resolvent circles
+and nonzero finite Riesz projection ranks. These operator ranks persist
+in the full original H^-1 norm, independently of an assumed scalar
+characteristic determinant.
+
+`HillHminusOnePhysicalSpectrum.lean` proves for **every complex H^-1
+potential and every complex energy**, including zero,
+
+```text
+lambda in spectrum(L(Q))  iff  Delta_Hminus(q,lambda)^2-4=0
+                         iff  an actual nonzero original H1 eigenvector exists.
+```
+
+The first equivalence is the complete original physical spectrum, not a
+high-frequency or finite-mode criterion. The actual resolvent is exactly
+the complement of this characteristic zero set. All real input spectra
+are real. `HillHminusOnePhysicalLabels.lean` identifies the canonical real
+labels with this entire physical spectrum as a set, supplies an original
+H1 eigenvector at every label, proves physical minimality of the lowest
+label and transports semisimplicity of real physical root spaces.
+
+Equality of the **physical algebraic multiplicities** with the earlier
+scalar analytic zero orders remains open here. A self-adjoint L2
+realization is not inferred from closedness of the H^-1 operator. The
+Cartesian KdV global inverse, action identities and main Theorems 1.1-1.3
+also remain open. `physical-spectrum-library-reuse.json` records the
+71 exact rechecked source hashes and the 2323 remaining byte-identical
+cached dependencies, which were not rebuilt.
+
 ## Remaining essential KdV work
 
-1. Construct the closed intrinsic singular Hill operator domain from the
-   now chart-independent weak form, prove self-adjoint spectral/
-   multiplicity identification, and prove the actual
-   action-fiber/discriminant identity. Every canonical real label now has
+1. Match the physical algebraic multiplicities with the scalar analytic
+   zero orders, construct the self-adjoint L2 realization, and prove the
+   action-fiber/discriminant identity. The full original H1-domain
+   singular Hill operator is now closed with compact resolvent, and its
+   entire spectrum is exactly the actual H^-1 characteristic zero set. Every canonical real label now has
    an intrinsic nonzero H1 scalar weak eigenfunction with its exact sign. Full-discriminant invariance of
    all real canonical periods is now proved. Global potential-space moment
    gluing is now proved on one complex neighborhood of the entire real
@@ -2872,12 +2923,13 @@ H^-1 Hill operator spectrum and algebraic multiplicities, while
 `kdv-kdv2-frequencies` at `9d96f3c` supplies an actual rough signed
 Abelian local inverse preserving the physical real form at zero.
 
-These source results were inspected and pinned as reuse candidates.
-They have not yet been imported or revalidated in this branch. Matching
-their original potential/discriminant conventions and integrating the
-needed exact dependency closures are the next reuse tasks. Their full
-commit and source-blob identifiers are recorded in the latest progress
-object in `source-inventory.json` and `validation.json`.
+These sources were initially inspected and pinned as reuse candidates.
+The singular Hill operator foundations at `96091c0` are now integrated
+as 71 exact, strictly rechecked shared sources with the full H^-1
+potential/discriminant bridge proved above. The newer L2 global inverse
+and rough signed Abelian local inverse remain candidates for subsequent
+integration. Their original inspection identifiers are retained in the
+Jacobian progress object in `source-inventory.json` and `validation.json`.
 
 ## Validation and worktree
 
@@ -2888,18 +2940,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `42c8d19` contains 534 source modules, whose
-source hashes remain unchanged. Five authored modules pass Lean
-4.33.1/mathlib v4.33.1 with `warningAsError=true`; the complete
-reproduction script lists 539 NLS modules and the preceding private
+The validated baseline at `7ff9406` contains 539 source modules, whose
+source hashes remain unchanged. Seventy-one exact shared modules and six
+authored bridge modules pass Lean 4.33.1/mathlib v4.33.1 with
+`warningAsError=true`, in three completed check drivers. The complete
+reproduction script lists 616 NLS modules and the preceding private
 pinned mathlib compilation. The positive-index example, cumulative
-transitive axiom audit and 1355 coverage-declaration checks pass. This
+transitive axiom audit and 1406 coverage-declaration checks pass. This
 is incremental validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 272 additional shared modules:
-5420 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 301 additional shared modules:
+6749 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
