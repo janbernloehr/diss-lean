@@ -2909,6 +2909,13 @@ modules=(
   NLS/SequenceSpaces/SobolevSignedActionModeCurve
   NLS/Articles/KdVKdV2Frequencies/OriginalHierarchyActionFrequencies
   NLS/Articles/KdVKdV2Frequencies/OriginalNativeHamiltonianFrequencyDifferential
+  NLS/SequenceSpaces/SobolevSignedComplexActions
+  NLS/SequenceSpaces/WeightedPositiveFiniteSums
+  NLS/SequenceSpaces/SobolevSignedFiniteActionDifferential
+  NLS/Articles/KdVKdV2Frequencies/FiniteActionHamiltonianDifferential
+  NLS/Articles/KdVKdV2Frequencies/NativeSourceFiniteActionVariation
+  NLS/KdV/NativeHillPhysicalSource
+  NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapHamiltonianVariation
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

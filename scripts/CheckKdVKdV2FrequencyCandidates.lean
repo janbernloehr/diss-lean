@@ -1,3 +1,10 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapHamiltonianVariation
+import NLS.Articles.KdVKdV2Frequencies.NativeSourceFiniteActionVariation
+import NLS.KdV.NativeHillPhysicalSource
+import NLS.Articles.KdVKdV2Frequencies.FiniteActionHamiltonianDifferential
+import NLS.SequenceSpaces.SobolevSignedFiniteActionDifferential
+import NLS.SequenceSpaces.SobolevSignedComplexActions
+import NLS.SequenceSpaces.WeightedPositiveFiniteSums
 import NLS.Articles.KdVKdV2Frequencies.OriginalNativeHamiltonianFrequencyDifferential
 import NLS.SequenceSpaces.SobolevSignedActionModeCurve
 import NLS.Articles.KdVKdV2Frequencies.OriginalHierarchyActionFrequencies
@@ -4998,7 +5005,14 @@ private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.OriginalActionHamiltonians,
   `NLS.SequenceSpaces.SobolevSignedActionModeCurve,
   `NLS.Articles.KdVKdV2Frequencies.OriginalHierarchyActionFrequencies,
-  `NLS.Articles.KdVKdV2Frequencies.OriginalNativeHamiltonianFrequencyDifferential
+  `NLS.Articles.KdVKdV2Frequencies.OriginalNativeHamiltonianFrequencyDifferential,
+  `NLS.SequenceSpaces.SobolevSignedComplexActions,
+  `NLS.SequenceSpaces.WeightedPositiveFiniteSums,
+  `NLS.SequenceSpaces.SobolevSignedFiniteActionDifferential,
+  `NLS.Articles.KdVKdV2Frequencies.FiniteActionHamiltonianDifferential,
+  `NLS.Articles.KdVKdV2Frequencies.NativeSourceFiniteActionVariation,
+  `NLS.KdV.NativeHillPhysicalSource,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapHamiltonianVariation
 ]
 
 open Lean in
