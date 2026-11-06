@@ -1,3 +1,11 @@
+import NLS.Articles.KdVKdV2Frequencies.GlobalRawSobolevDiffeomorphisms
+import NLS.SequenceSpaces.PhysicalRealMeanZeroWeighted
+import NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealDiffeomorphisms
+import NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealInverse
+import NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealForward
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughRealInverse
+import NLS.SequenceSpaces.PhysicalRealSobolevInclusion
+import NLS.SequenceSpaces.PhysicalRealDeletedHilbert
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughSurjective
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionMajorantCompactness
 import NLS.ZakharovShabat.SourceHilbertActionTailCompactness
@@ -4795,7 +4803,15 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundActionTails,
   `NLS.ZakharovShabat.SourceHilbertActionTailCompactness,
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionMajorantCompactness,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughSurjective
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughSurjective,
+  `NLS.SequenceSpaces.PhysicalRealDeletedHilbert,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughRealInverse,
+  `NLS.SequenceSpaces.PhysicalRealSobolevInclusion,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealForward,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealInverse,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealDiffeomorphisms,
+  `NLS.SequenceSpaces.PhysicalRealMeanZeroWeighted,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRawSobolevDiffeomorphisms
 ]
 
 open Lean in

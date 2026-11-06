@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest FULL actual rough real surjectivity
+## Latest global real Sobolev diffeomorphisms
+
+Theorem 1.1(i) is proved as a supporting clause: for EVERY s>=-1, the SAME actual global rough signed map is a global real analytic diffeomorphism between the raw real mean-zero H^s source and h^(s+1/2) target, in their original native norms. ONE global weak inverse is fixed BEFORE ALL orders; every native inverse is its literal restriction. Actual open complex inverse germs agree with that same inverse, and full signed source/target recovery preserves all phases and normalizations. See `GLOBAL_REAL_SOBOLEV_DIFFEOMORPHISMS.md`.
+
+The global weak real inverse, its actual analytic germs, ALL native global real analytic diffeomorphisms and the explicit raw-domain version of Theorem 1.1(i) are CLOSED. NEXT prove the remaining actual Hamiltonian/action descent and hierarchy identifications, frequency formulas and sharp estimates, fixed-mass and KdV/KdV2 PDE conclusions. Complete Theorem 1.1, including part (iii), and all ten other COMPLETE main theorem rows remain OPEN.
+
+Prior strict evidence retained for all 2800 unchanged selected baseline sources. All eight new own modules strictly rebuilt in dependency order after freezing 2857 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2808 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. No new canonical prerequisite or provenance record is needed; all 46 prior provenance records remain byte-for-byte unchanged and are verified. Selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2808-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2808-module rebuild is claimed.
+
+Fresh audit: 21852 selected and 43922 imported NLS declarations; permitted axioms only. Eight new own modules contain 54 explicit theorems, including private helpers.
+
+## Earlier FULL actual rough real surjectivity
 
 FULL rough real surjectivity is proved for the SAME actual signed global forward map in the native h^(-1/2) target norm: EVERY real mean-zero weak target has an ACTUAL real mean-zero HminusOne preimage, with all signed phases and normalizations retained. A new genuine L2 norm-ball spectral displacement theorem closes the missing uniform tail estimate. Actual ordinary action properness then gives strong rough compactness of the exact finite inverse approximants even as their supports GROW. See `GLOBAL_ROUGH_SURJECTIVITY.md`.
 
@@ -910,7 +920,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2800 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2808 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1979,7 +1989,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2800 selected modules (including generated and private declarations)
+the 2808 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -5065,4 +5075,18 @@ PASS NLS/ZakharovShabat/SourceHilbertActionTailCompactness
 PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughActionMajorantCompactness
 PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughSurjective
 Axiom audit passed: 21706 candidate declarations; 43776 declarations total.
+```
+
+Latest global real Sobolev diffeomorphism strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/PhysicalRealDeletedHilbert
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughRealInverse
+PASS NLS/SequenceSpaces/PhysicalRealSobolevInclusion
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealForward
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealInverse
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealDiffeomorphisms
+PASS NLS/SequenceSpaces/PhysicalRealMeanZeroWeighted
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRawSobolevDiffeomorphisms
+Axiom audit passed: 21852 candidate declarations; 43922 declarations total.
 ```

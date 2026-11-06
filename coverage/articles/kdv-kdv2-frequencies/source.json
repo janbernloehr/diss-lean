@@ -507,6 +507,26 @@
           "source_clause": "Uniform actual signed canonical Dirac endpoint displacement and positive-frequency growth on EVERY L2 norm ball",
           "lean_declaration": "NLS.ZakharovShabat.exists_uniform_real_hilbert_periodic_displacement_bound",
           "qualification": "GLOBAL uniform spectral displacement on EVERY real L2 norm ball: ONE finite C(R) controls BOTH actual signed canonical endpoint displacements from pi*n at EVERY integer n, independently of source tails or stronger Sobolev norms. Norm-preserving actual source modulation moves the chosen indexed endpoint to a continuous central selection; the proved actual path retention and norm-ball central bound apply. Consequently ONE N(R)>=1 gives actual positive left endpoint >=pi*n/2 for EVERY real source in the ball and EVERY n>=N(R). No H1/linear-weight assumption or unproved oscillation/minmax theorem is used."
+        },
+        {
+          "source_clause": "Theorem 1.1(i): for EVERY s>=-1, the SAME actual signed map is a GLOBAL real analytic diffeomorphism of the ACTUAL raw mean-zero source and target spaces in their original native norms",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_global_raw_real_analytic_sobolev_diffeomorphism",
+          "qualification": "Theorem 1.1(i), supporting clause in FULL: for EVERY s>=-1 the SAME actual global rough signed map restricts to a global real analytic diffeomorphism from the ACTUAL raw real mean-zero H^s space to the ACTUAL raw real mean-zero h^(s+1/2) space. Both directions are analytic in the original native norms. Explicit linear ISOMETRIES transport the compatible native maps; FULL signed raw coefficient recovery identifies the map with D.signed, preserving phases, both signs and central zero. No smallness, finite support or stronger regularity premise is present. Complete Theorem 1.1 remains OPEN because its Hamiltonian/action descent and hierarchy clauses still require proofs."
+        },
+        {
+          "source_clause": "ONE global weak inverse fixed BEFORE ALL compatible native real analytic diffeomorphisms, with the exact global inclusion diagram and FULL signed recovery",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_one_global_weak_inverse_all_native_diffeomorphisms",
+          "qualification": "At EVERY native order and EVERY native real target, an ACTUAL open complex inverse germ agrees with the SAME restricted global inverse on its entire real slice. The inverse is real analytic in both native norms. ONE weak real analytic homeomorphism is chosen BEFORE ALL native orders, followed by globally compatible native real analytic homeomorphisms and FULL signed recovery."
+        },
+        {
+          "source_clause": "EVERY actual native real inverse agrees with an ACTUAL open complex analytic inverse germ on its entire real target slice",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.realNativeInverse_has_complex_germ",
+          "qualification": "At EVERY native order and EVERY native real target, an ACTUAL open complex inverse germ agrees with the SAME restricted global inverse on its entire real slice. The inverse is real analytic in both native norms. ONE weak real analytic homeomorphism is chosen BEFORE ALL native orders, followed by globally compatible native real analytic homeomorphisms and FULL signed recovery."
+        },
+        {
+          "source_clause": "The ACTUAL raw native physical real mean-zero weighted spaces are explicitly real linearly ISOMETRIC to the normalized real Hilbert space",
+          "lean_declaration": "NLS.physicalRealMeanZeroWeightedIsometry",
+          "qualification": "The ACTUAL raw weighted Fourier spaces impose conjugate Fourier reality and raw zero mean and carry their inherited original weighted Hilbert norms. Literal weighted lift and projection give explicit REAL LINEAR ISOMETRIES from the normalized physical real deleted space, with both exact inverse identities and raw coefficient formulas. Completeness follows in the original raw native norm."
         }
       ]
     },
@@ -37035,12 +37055,108 @@
       "scope": "FULL rough real SURJECTIVITY of the SAME existing actual global signed map: EVERY actual real mean-zero native h^(-1/2) target, including arbitrary-size targets outside ALL stronger Sobolev spaces, has an ACTUAL real mean-zero HminusOne preimage. Exact finite ORIGINAL physical inverse approximants share ONE coefficient majorant given by the original target itself. The proved uniform action comparison and actual compact source container give a genuinely STRONG HminusOne subsequence, and actual forward continuity at the real mean-zero limit identifies the FULL signed target including phases. The SAME actual deleted weak map is onto its entire physical real Hilbert target. No smallness, source L2, spectral finite-gap, stronger target regularity, no-loss or assumed inverse premise remains.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "4e3ed22df4aff7a47f1c886a48f461cb8aa79398b78c016067fd17718de5039d"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealDeletedHilbert.lean",
+      "source_labels": [
+        "Theorem 1.1(i): ONE global real weak inverse and ALL native raw Sobolev real analytic diffeomorphisms"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL physical real normalized deleted Hilbert space is the fixed space of conjugate Fourier reflection, a closed complete REAL subspace. A bounded real projection restricts actual COMPLEX analytic germs to real analytic maps in the original normalized Hilbert norm. The physical Fourier reality convention is retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0edfee15358c0ef6947842c28c2df81ec73e14e60fbdcd81a27a1978f7d7ebae"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughRealInverse.lean",
+      "source_labels": [
+        "Theorem 1.1(i): ONE global real weak inverse and ALL native raw Sobolev real analytic diffeomorphisms"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ONE actual global weak real inverse is defined using the already-proved global injectivity and FULL rough real surjectivity of the SAME mean-zero forward map. Both directions are real analytic everywhere. At EVERY real weak target an ACTUAL open complex analytic inverse germ agrees with this SAME global inverse on its entire real target slice. EVERY eligible real-preserving complex weak inverse chart agrees with it. An actual global real analytic homeomorphism is obtained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fe60304b4b5470c55c6f6d5849a16f7c79b383a0c0301d0a2a8f11b3bf529e2a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealSobolevInclusion.lean",
+      "source_labels": [
+        "Theorem 1.1(i): ONE global real weak inverse and ALL native raw Sobolev real analytic diffeomorphisms"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Literal normalized Sobolev inclusions preserve conjugate Fourier reality, define real bounded linear maps, are injective, and are the identity at equal orders. These maps retain the exact original raw weighted lifts and inclusions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0bb3efccf70a187cf854bf8f6293fe46ccbf3fd5875b55f4b49d93e228551128"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealForward.lean",
+      "source_labels": [
+        "Theorem 1.1(i): ONE global real weak inverse and ALL native raw Sobolev real analytic diffeomorphisms"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For EVERY t>=0 the actual native forward map is defined from the SAME original signed rough map, with its strong target membership proved by the exact nonlinear regularity criterion. It commutes globally with the literal weak inclusions, recovers ALL raw signed native target coefficients, and is real analytic at EVERY native source in BOTH original native Banach norms by restriction of actual complex germs.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "17dbc087d6cc8db61a891dc3f7c813756fa651a3bbab334f65a85cbb4e612568"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealInverse.lean",
+      "source_labels": [
+        "Theorem 1.1(i): ONE global real weak inverse and ALL native raw Sobolev real analytic diffeomorphisms"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For EVERY t>=0 the native inverse is a literal restriction of the ALREADY-FIXED global weak inverse. Exact nonlinear regularity upgrades that SAME weak source to the native source space. Both global inverse identities, the exact weak commuting diagram, FULL native source recovery and FULL signed target recovery are proved, with NO separate inverse choice at each order.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "400e9fd0314058c37f0c050956fa625f9bd31e6c8853964a0960f748f6d2b50d"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealDiffeomorphisms.lean",
+      "source_labels": [
+        "Theorem 1.1(i): ONE global real weak inverse and ALL native raw Sobolev real analytic diffeomorphisms"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY native order and EVERY native real target, an ACTUAL open complex inverse germ agrees with the SAME restricted global inverse on its entire real slice. The inverse is real analytic in both native norms. ONE weak real analytic homeomorphism is chosen BEFORE ALL native orders, followed by globally compatible native real analytic homeomorphisms and FULL signed recovery.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "81c04227495832dfde1bc0bc2e9ea41ac6947193a73ef153a30425f5a340c892"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroWeighted.lean",
+      "source_labels": [
+        "Theorem 1.1(i): ONE global real weak inverse and ALL native raw Sobolev real analytic diffeomorphisms"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL raw weighted Fourier spaces impose conjugate Fourier reality and raw zero mean and carry their inherited original weighted Hilbert norms. Literal weighted lift and projection give explicit REAL LINEAR ISOMETRIES from the normalized physical real deleted space, with both exact inverse identities and raw coefficient formulas. Completeness follows in the original raw native norm.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "060af25bde3c76468ccb9ba90933e8bf9d2b257ddd0bc3dca45548d57af1786a"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalRawSobolevDiffeomorphisms.lean",
+      "source_labels": [
+        "Theorem 1.1(i): ONE global real weak inverse and ALL native raw Sobolev real analytic diffeomorphisms"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Theorem 1.1(i), supporting clause in FULL: for EVERY s>=-1 the SAME actual global rough signed map restricts to a global real analytic diffeomorphism from the ACTUAL raw real mean-zero H^s space to the ACTUAL raw real mean-zero h^(s+1/2) space. Both directions are analytic in the original native norms. Explicit linear ISOMETRIES transport the compatible native maps; FULL signed raw coefficient recovery identifies the map with D.signed, preserving phases, both signs and central zero. No smallness, finite support or stronger regularity premise is present. Complete Theorem 1.1 remains OPEN because its Hamiltonian/action descent and hierarchy clauses still require proofs.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ff482a26dd347caaa91cc3cc324dbc0d360d24fee26302be6107aec433d917a3"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The SAME existing actual global signed rough map retains all previously proved original physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact nonlinear ALL-order regularity, GLOBAL real mean-zero injectivity, common COMPLEX canonicality, exact origin/Fourier normalization and ONE weak inverse before ALL native orders. Actual normalized ground factors and GLOBAL weak energy/source bounds at EVERY real mean-zero rough source are proved. NEW: norm-preserving actual Fourier modulation transports the ORIGINAL Dirac operator and spectrum with exact pi*n shift, while real band separation retains continuous central spectral selections. Bounded Fourier coefficient compactness gives actual central endpoint bounds on EVERY real L2 norm ball. Together these prove ONE uniform C(R) bounding BOTH actual signed canonical endpoint displacements at EVERY integer, hence ONE N(R) with positive left endpoint >=pi*n/2 for EVERY real source in the ball. The original higher-action mean-value formula and EXACT original Hill/Dirac action bridge give actual uniform ordinary-action tail domination by the SAME weak positive target coefficients, BOTH signs. A SINGLE summable action majorant and the already-proved actual ordinary Dirac action properness give strong factor compactness, allowing GROWING supports. Continuous normalized ACTUAL Miura reconstruction gives genuine HminusOne source compactness for exact finite ORIGINAL physical inverse approximants at EVERY real mean-zero weak target. Actual forward continuity identifies the FULL signed limiting target, including all phases. FULL actual rough real SURJECTIVITY and surjectivity of the SAME deleted real weak map are now CLOSED, with NO smallness, L2-source, finite-gap, stronger-target, compactness/no-loss or assumed inverse premise. NEXT use actual global injectivity and surjectivity to construct ONE global real rough inverse, prove its actual analytic germs and global ALL-native-order compatibility/diffeomorphisms, and finish action-Hamiltonian descent, frequency formulas/sharp estimates, fixed-mass and actual KdV/KdV2 PDE conclusions. All eleven COMPLETE main rows remain OPEN.",
+    "The SAME existing actual global signed rough map retains all previously proved original physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact nonlinear ALL-order regularity, GLOBAL real mean-zero injectivity and surjectivity, common COMPLEX canonicality, exact origin/Fourier normalization, actual normalized ground factors, global weak energy/source bounds, uniform L2-ball spectral displacement and genuine growing-support no-loss. NEW: ONE global actual weak real inverse is fixed from actual bijectivity, and both directions are real analytic EVERYWHERE in the physical real Hilbert topology. Every eligible actual complex weak inverse germ agrees with THIS SAME global inverse on its entire real target slice. For EVERY t>=0, native forward maps are the literal strong outputs of D.signed; native inverse sources are THIS SAME weak inverse upgraded by exact nonlinear regularity. Both global inverse identities and exact global weak inclusion diagrams hold. Actual complex inverse germs yield real analyticity of BOTH native directions at EVERY source and target. ONE weak inverse is chosen BEFORE ALL orders. Explicit REAL LINEAR ISOMETRIES to the raw physical real mean-zero weighted spaces give the full supporting Theorem 1.1(i): EVERY s>=-1 admits a global real analytic diffeomorphism H^s_0 -> h^(s+1/2)_0 in the ORIGINAL native norms, exactly equal to D.signed on ALL signed raw coefficients. The global inverse/all-native-diffeomorphism obstruction is CLOSED. NEXT finish actual Hamiltonian/action descent and hierarchy identifications, frequency formulas and sharp estimates, fixed-mass and actual KdV/KdV2 PDE conclusions. Complete Theorem 1.1(iii) and all eleven COMPLETE main rows remain OPEN.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -37066,15 +37182,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 21706,
-    "total_declarations_audited": 43776,
+    "candidate_declarations_audited": 21852,
+    "total_declarations_audited": 43922,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2800,
+    "selected_modules": 2808,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -37176,7 +37292,8 @@
     "miura_mass_validation_sequence": "Prior strict evidence retained for all 2763 unchanged selected baseline sources. All eight new own modules and one unchanged canonical prerequisite strictly rebuilt in dependency order after freezing 2819 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2772 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact nine-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; one unchanged canonical prerequisite and one new verified provenance record are selected. All 44 provenance records are verified. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2772-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2772-module rebuild is claimed.",
     "ground_action_validation_sequence": "Prior strict evidence retained for all 2772 unchanged selected baseline sources. All eight new own modules and four unchanged canonical prerequisites strictly rebuilt in dependency order after freezing 2832 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2784 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact twelve-module increase in NLS import closure verified. All 44 prior verified provenance records remain byte-for-byte unchanged; four unchanged canonical prerequisites and one new verified provenance record are selected. All 45 provenance records are verified. The selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2784-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2784-module rebuild is claimed.",
     "finite_support_validation_sequence": "Prior strict evidence retained for all 2784 unchanged selected baseline sources. All five new own modules and one unchanged canonical prerequisite strictly rebuilt in dependency order after freezing 2839 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2790 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact six-module increase in NLS import closure verified. All 45 prior provenance records remain byte-for-byte unchanged; the original compact-container prerequisite and one new verified provenance record are selected. All 46 provenance records are verified. Selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2790-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2790-module rebuild is claimed.",
-    "rough_surjective_validation_sequence": "Prior strict evidence retained for all 2790 unchanged selected baseline sources. All ten new own modules strictly rebuilt in dependency order after freezing 2849 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2800 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact ten-module increase in NLS import closure verified. No new canonical prerequisite or provenance record is needed; ALL 46 prior provenance records remain byte-for-byte unchanged and all are verified. Selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2800-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2800-module rebuild is claimed."
+    "rough_surjective_validation_sequence": "Prior strict evidence retained for all 2790 unchanged selected baseline sources. All ten new own modules strictly rebuilt in dependency order after freezing 2849 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2800 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact ten-module increase in NLS import closure verified. No new canonical prerequisite or provenance record is needed; ALL 46 prior provenance records remain byte-for-byte unchanged and all are verified. Selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2800-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2800-module rebuild is claimed.",
+    "global_real_sobolev_diffeomorphism_validation_sequence": "Prior strict evidence retained for all 2800 unchanged selected baseline sources. All eight new own modules strictly rebuilt in dependency order after freezing 2857 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2808 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. No new canonical prerequisite or provenance record is needed; all 46 prior provenance records remain byte-for-byte unchanged and are verified. Selection retains 22 private chunks of at most 128 names. The entire transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is byte-for-byte identical to the published baseline. A 2808-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2808-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -38190,6 +38307,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "f471b289fb0f06ed5b95780e0c52381f1d729f3b",
+      "description": "Construct ONE global real analytic weak inverse, ALL compatible native real analytic diffeomorphisms and explicit raw Sobolev spaces with isometric transport, closing full supporting Theorem 1.1(i).",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The SAME existing actual global signed rough map retains all previously proved original physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact nonlinear ALL-order regularity, GLOBAL real mean-zero injectivity, common COMPLEX canonicality, exact origin/Fourier normalization and ONE weak inverse before ALL native orders. Actual normalized ground factors and GLOBAL weak energy/source bounds at EVERY real mean-zero rough source are proved. NEW: norm-preserving actual Fourier modulation transports the ORIGINAL Dirac operator and spectrum with exact pi*n shift, while real band separation retains continuous central spectral selections. Bounded Fourier coefficient compactness gives actual central endpoint bounds on EVERY real L2 norm ball. Together these prove ONE uniform C(R) bounding BOTH actual signed canonical endpoint displacements at EVERY integer, hence ONE N(R) with positive left endpoint >=pi*n/2 for EVERY real source in the ball. The original higher-action mean-value formula and EXACT original Hill/Dirac action bridge give actual uniform ordinary-action tail domination by the SAME weak positive target coefficients, BOTH signs. A SINGLE summable action majorant and the already-proved actual ordinary Dirac action properness give strong factor compactness, allowing GROWING supports. Continuous normalized ACTUAL Miura reconstruction gives genuine HminusOne source compactness for exact finite ORIGINAL physical inverse approximants at EVERY real mean-zero weak target. Actual forward continuity identifies the FULL signed limiting target, including all phases. FULL actual rough real SURJECTIVITY and surjectivity of the SAME deleted real weak map are now CLOSED, with NO smallness, L2-source, finite-gap, stronger-target, compactness/no-loss or assumed inverse premise. NEXT use actual global injectivity and surjectivity to construct ONE global real rough inverse, prove its actual analytic germs and global ALL-native-order compatibility/diffeomorphisms, and finish action-Hamiltonian descent, frequency formulas/sharp estimates, fixed-mass and actual KdV/KdV2 PDE conclusions. All eleven COMPLETE main rows remain OPEN.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -38260,5 +38389,6 @@
   "canonical_ground_action_reuse_record": "CANONICAL_GROUND_ACTION_REUSE.json",
   "global_rough_finite_target_recovery_record": "GLOBAL_ROUGH_FINITE_TARGET_RECOVERY.md",
   "canonical_finite_support_reuse_record": "CANONICAL_FINITE_SUPPORT_REUSE.json",
-  "global_rough_surjectivity_record": "GLOBAL_ROUGH_SURJECTIVITY.md"
+  "global_rough_surjectivity_record": "GLOBAL_ROUGH_SURJECTIVITY.md",
+  "global_real_sobolev_diffeomorphisms_record": "GLOBAL_REAL_SOBOLEV_DIFFEOMORPHISMS.md"
 }

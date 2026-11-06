@@ -2809,6 +2809,14 @@ modules=(
   NLS/ZakharovShabat/SourceHilbertActionTailCompactness
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughActionMajorantCompactness
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughSurjective
+  NLS/SequenceSpaces/PhysicalRealDeletedHilbert
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughRealInverse
+  NLS/SequenceSpaces/PhysicalRealSobolevInclusion
+  NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealForward
+  NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealInverse
+  NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealDiffeomorphisms
+  NLS/SequenceSpaces/PhysicalRealMeanZeroWeighted
+  NLS/Articles/KdVKdV2Frequencies/GlobalRawSobolevDiffeomorphisms
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
