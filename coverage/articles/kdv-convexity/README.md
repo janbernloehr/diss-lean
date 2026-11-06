@@ -3154,18 +3154,56 @@ decomposition, and passing the physical identity by density remain open.
 No physical Hstar identity, physical frequency identity or `-6*Id`
 coefficient is asserted. All main theorem flags remain false.
 
+## Actual source energy-circle coefficient and smooth physical identity
+
+The actual globally normalized source primitive is now used directly.
+The checked free-band anchor and all-order upper-arc estimates fix its
+branch. `LaurentQuarticRemainder.lean` controls quartic errors, and
+`ClassicalHillQuarticModel.lean` retains the physical first five phase
+coefficients. `HillL2UpperQuarticAsymptotics.lean` proves a uniform
+sixth-order phase comparison before taking fourth powers.
+`HillL2QuarticCircleAsymptotics.lean` gives the full energy-circle
+expansion `F(E)^4=E^2-H0-Hkdv/(4*E)+O(|E|^(-3/2))`.
+
+`QuarticContourCoefficient.lean` bounds the normalized coefficient error
+by `4*C/r` on energy circles of radius `r^2`.
+`HillFreeQuarticContour.lean` instantiates the finite-hole decomposition
+and the exact gap terms `8*pi^3*n^3*I_n+8*pi*n*R_n` using the actual
+primitive and its filled local squares. `HillSmoothQuarticTraceLimit.lean`
+therefore identifies the normalized actual energy-circle limit with
+physical KdV energy for **every smooth real mean-zero unit-period source**,
+without a finite-gap assumption.
+
+`HillL2CubicPhysicalPeriods.lean` identifies every original physical
+cubic gap period with the intrinsic rough cubic moment, including closed
+gaps. `HillSmoothIntrinsicQuarticTrace.lean` expresses physical energy
+as the limit of the partial intrinsic Arnold/cubic traces.
+`SmoothPhysicalHamiltonianIdentity.lean` then proves the literal identity
+`contourHamiltonian=Hkdv-sum_n(8*pi^3*n^3*I_n)` at every smooth physical
+source in the original summable linear-action domain. Its inputs are the
+literal raw-action recovery, cubic recovery and the two norm-summability
+conditions; the actual analytic contour family supplies the cubic inputs.
+No energy identity or primitive asymptotics is assumed in that theorem.
+
+This direct actual-source route bypasses the earlier constructed-phase
+matching obligation for the physical energy bridge. Extension of the
+smooth identity to the entire original weighted ell^(3,1) action domain
+still requires the appropriate Sobolev density and compatibility argument.
+The physical frequency identity and `-6*Id` remain open, so all main
+Theorem 1.1-1.3 flags remain false.
+
 ## Remaining essential KdV work
 
-1. Identify the actual analytic contour sum with physical renormalized
-   KdV energy. The finite-gap contour decomposition is checked, but the
-   constructed phase must be matched to the normalized source primitive
-   and original energy-circle quartic period. Then instantiate the gap
-   decomposition and pass the physical identity by density.
-2. Identify its bilinear Hilbert gradient with the physical frequencies
-   minus `8*pi^3*n^3` on the full common domain.
+1. Extend the checked smooth-source physical renormalized energy identity
+   to the entire original weighted ell^(3,1) positive action domain, with
+   the required Sobolev density, physical energy continuity and actual
+   source/action compatibility. The actual energy-circle residue and
+   all-gap contour decomposition are now proved.
+2. Identify the bilinear Hilbert gradient with physical frequencies minus
+   `8*pi^3*n^3` on the full common domain.
 3. Prove the exact quadratic Taylor coefficients giving `-6*Id`, finish
-   the original positive-index local inverse and single-radius Hessian
-   statement, and complete main Theorems 1.1-1.3.
+   the positive-index local inverse and single-radius Hessian statement,
+   and complete main Theorems 1.1-1.3.
 
 The `kdv-estimates` branch was re-inspected through commit `05e5530`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
@@ -3222,20 +3260,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `fc9460c` contains 2217 proof sources, whose
-hashes remain unchanged. Seven exact shared sources and eight authored
-modules pass strict Lean compilation with `warningAsError=true`. Authored
-proofs retain default limits and linters. Reproduction lists 2232 modules.
-The positive-index example, combined transitive axiom audit and 1594
-coverage declaration checks pass. All 2825 remaining reference import
-sources match the read-only compiled reference byte-for-byte and were not
+The validated baseline at `299a556` contains 2232 proof sources, whose
+hashes remain unchanged. Ten authored modules pass strict Lean compilation
+with `warningAsError=true`, default limits and no linter overrides.
+Reproduction lists 2242 modules. The positive-index example, combined
+transitive axiom audit and 1619 coverage declaration checks pass. All 2825
+remaining reference import sources still agree byte-for-byte and were not
 rebuilt. Earlier build receipts remain in the parent commit. This is
 incremental validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 768 additional shared modules:
-17242 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 770 additional shared modules:
+17319 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
