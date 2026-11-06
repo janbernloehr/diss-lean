@@ -3436,11 +3436,57 @@ physical frequency coefficient, independence of the shifted Miura chart,
 global intrinsic rough-source gluing, and actual action-fiber descent.
 No nonempty `BasePhysicalFrequencyExtension` is asserted yet.
 
+## Physical quartic cotangents and exact finite coordinate phases
+
+`TracePrimitivePowerContours.lean` proves a complex-open source
+neighborhood for every primitive power contour and its full source
+Frechet derivative. `HillWeightedTraceContourDirections.lean` integrates
+the actual Fourier trace Gardner directions against any continuous
+energy-circle weight. The resulting directions are isospectral, satisfy
+the physical weak Gardner identity, and act on every matching physical
+coordinate by the proved trace phase law, including a closed selected gap.
+
+`HillQuarticContourVariation.lean` constructs the actual recentered
+quartic source germ on every circle in the physical cut domain. At every
+real source its contour equals the literal physical primitive contour.
+Its energy normalization is `-2/(pi*i)`, its actual cotangent weight has
+coefficient `-8/(pi*i)`, and its coordinate phase has coefficient
+`4/(pi*i)`. The circle is in energy; a centered frequency circle maps
+twice around it under squaring. No extra factor of two is discarded.
+
+`CoshSquareCoordinateDerivative.lean` proves the division-free chain
+identity `deriv(coshSquareCoordinate)(z^2)*(2*z)=sinh(z)`.
+`HillFilledPrimitiveRootQuotient.lean` uses it to fill the actual quotient
+`F_k/root` as `(-1)^k/(4*deriv(coshSquareCoordinate)(F_k^2))` on the whole
+intrinsic gap disc. The denominator is proved nonzero off the gap using
+the actual physical root, and on the gap using its nonnegative physical
+profile. Both endpoints and a collapsed gap are included, with the
+literal canonical root sign retained.
+
+`HillPhysicalFrequencyMoments.lean` now constructs the actual physical
+Hill moments `Omega_nk^(m) = integral F_k^m * psi_n/root`. The filled
+quotient proves that every odd moment vanishes. The zeroth moment is
+exactly `2*pi*Kronecker(k,n)`. The cubic energy phase is therefore
+`8*pi^3*k^3*Kronecker(k,n) - 12*k*Omega_nk^(2)`.
+
+The article interface `PhysicalQuarticFrequencyPreparation.lean` gives
+analytic finite quartic source germs at every real original source.
+Their base value is the proved actual free-circle energy period, and
+the actual finite direction rotates the physical coordinate by
+`i*(8*pi^3*n^3*1_{1<=n<=N} - 12*sum_{k=1}^N k*Omega_nk^(2))*Z_n`.
+This is an exact finite contour phase theorem. Identification of the
+full physical energy cotangent, convergence in the needed cotangent
+topology, and the square-map pullback to the rough signed Miura sums
+remain open. No full KdV frequency formula or base action extension is
+asserted by this preparation.
+
 ## Remaining essential KdV work
 
-1. Identify the constructed weighted moment precursor with the physical
-   Hill frequency correction, retaining exact contour and energy-shift
-   constants. Prove Miura-chart independence, global rough-source gluing
+1. Pass the proved finite quartic cotangents to the full physical energy
+   and identify the exact coordinate phase with the physical frequency.
+   Match the physical Hill second moments to the constructed signed
+   Miura weighted sums, retaining the square-map Jacobian, root sign and
+   energy shift. Prove chart independence, global rough-source gluing
    and actual action descent; construct a nonempty
    `BasePhysicalFrequencyExtension` on the whole positive ell^(-1,1) cone.
    Use the checked simultaneous-domain assembly to finish Theorem 1.1.
@@ -3503,19 +3549,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `93e7752` contains 2303 proof sources, whose
+The validated baseline at `d1abd50` contains 2310 proof sources, whose
 hashes remain unchanged. Seven authored modules pass strict Lean
 compilation with `warningAsError=true`, default authored limits and no
-linter overrides. Reproduction lists 2310 modules. The positive-index
-example, combined transitive axiom audit and 1849 coverage declaration
+linter overrides. Reproduction lists 2317 modules. The positive-index
+example, combined transitive axiom audit and 1886 coverage declaration
 checks pass. All 2850 remaining reference import sources agree byte-for-
 byte and were not rebuilt. Earlier receipts remain in the parent commit.
 This is incremental validation, not a full repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 791 additional shared modules:
-17870 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 793 additional shared modules:
+17933 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.PhysicalQuarticFrequencyPreparation
 import NLS.Articles.KdVConvexity.WeightedFrequencyMomentPreparation
 import NLS.Articles.KdVConvexity.BasePhysicalFrequencyExtension
 import NLS.Articles.KdVConvexity.PhysicalLocalConsequences
@@ -110,6 +111,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.ComplexAnalysis.TracePrimitivePowerContours,
+    `NLS.ComplexAnalysis.CoshSquareCoordinateDerivative,
+
     `NLS.SequenceSpaces.WeightedCubicRows,
     `NLS.ZakharovShabat.SourceWeightedSecondMomentSequences,
     `NLS.ZakharovShabat.SourceWeightedSecondMomentSums,

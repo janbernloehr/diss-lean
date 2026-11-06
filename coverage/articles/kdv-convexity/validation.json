@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-06",
-  "milestone": "Construct actual analytic signed index-weighted second-moment sums and their physical-branch-compatible rough Miura source germs",
+  "milestone": "Derive actual physical quartic cotangents, fill endpoint primitive-root quotients and prove exact finite second-moment coordinate phases",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": true,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -2327,11 +2327,18 @@
     "NLS.KdV.MiuraWeightedSecondMoments",
     "NLS.KdV.HillHminusWeightedSecondMoments",
     "NLS.SequenceSpaces.SignedWeightedMomentPairs",
-    "NLS.Articles.KdVConvexity.WeightedFrequencyMomentPreparation"
+    "NLS.Articles.KdVConvexity.WeightedFrequencyMomentPreparation",
+    "NLS.ComplexAnalysis.TracePrimitivePowerContours",
+    "NLS.KdV.HillWeightedTraceContourDirections",
+    "NLS.KdV.HillQuarticContourVariation",
+    "NLS.ComplexAnalysis.CoshSquareCoordinateDerivative",
+    "NLS.KdV.HillFilledPrimitiveRootQuotient",
+    "NLS.KdV.HillPhysicalFrequencyMoments",
+    "NLS.Articles.KdVConvexity.PhysicalQuarticFrequencyPreparation"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 17870,
+    "declarations": 17933,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -2372,6 +2379,8 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.ComplexAnalysis.TracePrimitivePowerContours",
+      "NLS.ComplexAnalysis.CoshSquareCoordinateDerivative",
       "NLS.SequenceSpaces.WeightedCubicRows",
       "NLS.ZakharovShabat.SourceWeightedSecondMomentSequences",
       "NLS.ZakharovShabat.SourceWeightedSecondMomentSums",
@@ -3225,6 +3234,7 @@
     "NLS/Articles/KdVConvexity/PhysicalExtensionUniqueness.lean": "8d1080dea18346af3091034e1635e4b9a9bb2933eebaa8a3eac777611d8246ae",
     "NLS/Articles/KdVConvexity/PhysicalHilbertActions.lean": "6383ffbc7453f22af3ff076322de8d998a8dafa0072e9f93123667883a79999e",
     "NLS/Articles/KdVConvexity/PhysicalLocalConsequences.lean": "981a0883e0e845318eb5b2687be3bf4ded00ed072acc1e747922f1f411308add",
+    "NLS/Articles/KdVConvexity/PhysicalQuarticFrequencyPreparation.lean": "2924b7fafe40bced4184f0a80844a5719519de5b3c87de88a9008e59dd18f005",
     "NLS/Articles/KdVConvexity/PhysicalTaylorAtZero.lean": "bae6eda441564d9ada16ed2f1adfb6ff33939d451a122ee7658c49f8c39e2175",
     "NLS/Articles/KdVConvexity/PhysicalTaylorExpansion.lean": "0d2b77eca522468b3026bc5ef1e6f9c8dafd88c481b857b78a93a4fec3caf552",
     "NLS/Articles/KdVConvexity/PositiveActionNorm.lean": "bbbc98ebde0b835c62edbf5d39f9ac357c0e15f7858a576c4fdcf4095d2e6607",
@@ -3350,6 +3360,7 @@
     "NLS/ComplexAnalysis/ConvexCutCirclePeriod.lean": "57a6ba1586015429e07d8bd590cfc5a02f15f2e4f76bf9385b482d0fb3972819",
     "NLS/ComplexAnalysis/CoshLogBoundaryUniqueness.lean": "165facd262875d95ee154735600341e67492b55e5e30319925fe9921ec3b773b",
     "NLS/ComplexAnalysis/CoshSquareCoordinate.lean": "acbb58293a0ce8e938052be3f82c3e908d75356e289a7f73e050e13fcf3b8567",
+    "NLS/ComplexAnalysis/CoshSquareCoordinateDerivative.lean": "d3ba87ebfdf68e04a0f359538772c46e909ddd9b394ed6e997461c257739ec86",
     "NLS/ComplexAnalysis/CoshSquareLocalCoordinate.lean": "4bd06c278aaf50c57ad517383a8ab9e2d694157b02fd10a9c060045ea5dd6fb8",
     "NLS/ComplexAnalysis/CoshSquareRegularity.lean": "4b86410074d2921879cfb70e095b5eaf6f81bc2bb918a3333afe4b272cd80131",
     "NLS/ComplexAnalysis/CoshTraceDerivative.lean": "c37d1864d481e156b25b4122b2f7a0b87468eed85274e4c39ad39c6373b04da6",
@@ -3545,6 +3556,7 @@
     "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean": "284f588bf695820c3c55fc45dbc15b9b3ded2ceee27301158f535eaa78640d91",
     "NLS/ComplexAnalysis/TracePrimitiveMomentDifferential.lean": "6e079b783e8e0f4dd9998eb5157b454aa6350cdcc4fcbbd90bc2f18e60aeb1db",
     "NLS/ComplexAnalysis/TracePrimitiveMoments.lean": "214de92b4daf02a9ce95ead6111039d2ab69fcab3f416a4e59cd6386230e9acb",
+    "NLS/ComplexAnalysis/TracePrimitivePowerContours.lean": "51bf3d449237019429e28b9acf5d091815ec6d7d132b908918ea2c8323c7afa0",
     "NLS/ComplexAnalysis/TracePrimitiveReflection.lean": "7fb5b83b83f8558d01480d2aee5ad09f24bb127123a67f7642c90043b050190a",
     "NLS/ComplexAnalysis/TraceRootBranchUniqueness.lean": "5fd1bad8279f5a18af18c95406463ff70b3ed19b70efe901a2c0feb1d9717356",
     "NLS/ComplexAnalysis/TraceRootIsospectralDerivative.lean": "8ca540a9ed86dd092840e86f6625a56184616ec847b2c2e38af9b3ea80ad7748",
@@ -4089,6 +4101,7 @@
     "NLS/KdV/HillFilledFreeGapRoot.lean": "12c7be3fc9e2d8be30a757a4ade8e2595a34a7b5de7890556967ef979113617a",
     "NLS/KdV/HillFilledFreeGapUnit.lean": "b97e92c89bc2d82d31cfedc909e9c13eaa6b3d1af83bb13574cc152f3752d864",
     "NLS/KdV/HillFilledGapCutDomain.lean": "de888bea3f7c3481005c36c21573142917b2531c5440272d04d399cf8b35209e",
+    "NLS/KdV/HillFilledPrimitiveRootQuotient.lean": "78cca10e2761a7282b912e5e167d7c4b0f37d4c0cf83ca77f889cfe368601f60",
     "NLS/KdV/HillFilledRootIndexInverseBound.lean": "e520f4b6b56507deda9fe383dc59a7d616004991708f37b9d55c0c66cfaeb270",
     "NLS/KdV/HillFiniteActionRealization.lean": "1fafd254990011a4ded91c668e0b4c627534cfd3945732cd0325eb23ffdd2bbc",
     "NLS/KdV/HillFiniteBandCover.lean": "60b1b1e7b0325359aa5fd63a9a97da49a033e8551eb728cedd2489a798092764",
@@ -4871,6 +4884,7 @@
     "NLS/KdV/HillPhysicalCosinePath.lean": "2aa0f632c4f720344b7f7d4038c85036c1daf8197a1175e2a33ca0aac6c7ef50",
     "NLS/KdV/HillPhysicalCubicFactor.lean": "16892ae8fd6154a54c6022036b29a6551aeb3fff8f3557586ca71bc60a3cb535",
     "NLS/KdV/HillPhysicalDirectionPairing.lean": "f84ecaee365f5d406fb050bf407f366a1424040c2c45aabd1782c14b4a2c2d0f",
+    "NLS/KdV/HillPhysicalFrequencyMoments.lean": "d9a033a5b0f88507964d0dc6300dceabf74b2027e2151db1d85202969837ab84",
     "NLS/KdV/HillPhysicalGapBounds.lean": "7971dc2da98d8315e21350b6c5a8e8fbce84a6ca3c999f16a83695f688ba5c77",
     "NLS/KdV/HillPhysicalGapGermNontrivial.lean": "e79bc36426bfd34271dc376cdfd5d1e76df35bc616c5eb09d52b3a77752fd9bb",
     "NLS/KdV/HillPhysicalGapOpening.lean": "187f288b38b3aa4468c76d0ac57961aae455ab22ca823c99dfee4e52dc0c625e",
@@ -4899,6 +4913,7 @@
     "NLS/KdV/HillQuadraticDirichletPhysicalMatching.lean": "d509ad8ee0b2ed7a52862981778dc88ce2abe22a5811e37a243477ac98e8cb0e",
     "NLS/KdV/HillQuadraticEndpointCotangentBound.lean": "c31e661da82d0dc7dc3334dc5979ecc0724fc15c8cf76b1a9c2db2e1d883e90a",
     "NLS/KdV/HillQuadraticRootFreeNormalization.lean": "0144582dd3fb1bc32051c9979ca20e479ebc1a53896b2c8cbf757538ba0325fc",
+    "NLS/KdV/HillQuarticContourVariation.lean": "0b03cf2b2c95b06e7dc52410e14281be130db6d1db8b5d2c7b6ecfc073cbaca7",
     "NLS/KdV/HillRadiusEnergyCirclePhysicalRoot.lean": "472291dd55235edcc545fcedc95235b1991cc6293927de7fbc6fd42a93926345",
     "NLS/KdV/HillRadiusMidpointMoments.lean": "3fc832b29cf1b8dafcb8b46ec5b34b38fbb422b0ec35385c3625c532502ff9f2",
     "NLS/KdV/HillRadiusQuadraticData.lean": "e711f018dc8f07a2462594cbdc188c849fc2ad06f2d505f24994abdab8d8a71f",
@@ -5054,6 +5069,7 @@
     "NLS/KdV/HillWeightedRealActions.lean": "694558e17aafcc4ab7d2f7abea181c37f8c46397582e7c387f25f403757dd1a1",
     "NLS/KdV/HillWeightedSpectralContinuity.lean": "5b8f15d4a1fba234108917d3efcd1344f0aca1f5f8c9991c714bdb77d0c5e88f",
     "NLS/KdV/HillWeightedSpectralSequence.lean": "8a6fafc513024aaa8b416a15f870e79870cdf2e7f7757554da011ee99426d50e",
+    "NLS/KdV/HillWeightedTraceContourDirections.lean": "998699ae1ccf1f565ef109853924aafe9f665151969e94e3754c9c2ec95b8e70",
     "NLS/KdV/HillWideLocalization.lean": "5c318e26a1ba5048003efedb77d11dab9dda0cab983f146c346527af0f2a2032",
     "NLS/KdV/HillZeroCount.lean": "da4b4839b24a194cacfd83e8d9fc6b9aef14c690ddccad03f006ff4e61ff1929",
     "NLS/KdV/HillZeroNormingSheetFactors.lean": "1d0d712874312abf3c8a4deef0f3f613b806bb397eb8de8044371dc0a78dbbdc",
@@ -5480,7 +5496,7 @@
     "NLS/ZakharovShabat/SourceZeroGapMassEstimate.lean": "6b656c4b26c06b37ec752562aa81be67147fba7d3dd14cb254afd3090a3484d3",
     "SOURCE_ERRATA.md": "c02f42ab011aaf7d1100ffb55af859ecdb448a1d8dc6db5f0b0326ebe6ad06e9",
     "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md": "cdf1e80388bb3e0824a36caac1289a95048c5660c5245b76f45f4802cf6b893b",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "a7ce302815c3ad42a6ee6217b085c451a619a0dfa2e1571d0c87b757e533fac5",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "6dec1c74e47c872723a71843615794da458d6847ea3a4dc4c357af328ddd106c",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/action-sequence-library-reuse.json": "9126c713dd2dbd5eb3b1d902df1cea7bdd35cbbd75a6ee13e21fd9d7fd49827e",
@@ -5509,14 +5525,15 @@
     "coverage/articles/kdv-convexity/physical-phase-library-reuse.json": "7a4ca9fe64598657908b68be57b0ba268cae4c17d7e01cc722da56db025dbb94",
     "coverage/articles/kdv-convexity/physical-spectrum-library-reuse.json": "e36082bd809d71f7ff753f6dd3740433709f156e0f113b4e55189be868c78132",
     "coverage/articles/kdv-convexity/physical-taylor-library-reuse.json": "dfc734466b1727e5d09b83946e26ebb13122b309b44702cf1391691ac867f416",
+    "coverage/articles/kdv-convexity/quartic-frequency-library-reuse.json": "db2801b9608ddf1b0f6465537f8c7fa81b905793c16c35f8b7845cdef6d211b3",
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
     "coverage/articles/kdv-convexity/sobolev-energy-library-reuse.json": "a5a808fd7bbc87f3979d3c913affabdb3f9550a4c3d997d63b578ef57aa7f4c7",
     "coverage/articles/kdv-convexity/weighted-moment-library-reuse.json": "7b806d2adc490c00a195c620583f8c723ae6469c3a8b614fa356d0c8b81f3605",
-    "scripts/check-kdv-convexity.sh": "e06e9dad9d403f0187ee0309ea1173a74c4f87beeb2fa39ea4c8d5bc9d09282c"
+    "scripts/check-kdv-convexity.sh": "c3bc458ea3f635ab49ecb34f1b31852f5a0e90194e8435c14873cdcb984d31b6"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weighted-moment-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/quartic-frequency-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -5534,7 +5551,7 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "Global potential-space gluing is now proved: one complex-open neighborhood of the entire real H^-1 space carries all canonical polynomial and cubic moments, agrees with every actual real period, and retains locally uniform complex-tail quadratic bounds. Finite-gap exterior matching, the normalized inversion remainder of Lemma 4.4 and the physical energy/frequency identities remain open.",
-    "Identify the constructed actual positive-gap signed-pair moment sum with the physical Hill/KdV frequency correction, retaining the shifted energy, contour orientation, Jacobian and exact constants. Prove Miura-chart independence and global intrinsic rough-source gluing. Use actual action-fiber invariance and local pair charts for descent to the whole positive ell^(-1,1) cone, construct an actual BasePhysicalFrequencyExtension and prove its nonemptiness. Then apply the checked simultaneous-domain assembly to finish Theorem 1.1. The printed locally uniform O(1) bound remains refuted and is not a construction target. Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates and physical KdV well-posedness.",
+    "Identify the full physical KdV energy cotangent with the limit of the proved finite quartic cotangents, and pass the exact finite coordinate phase formula to physical frequency recovery. Match the literal physical Hill second moments to the constructed signed Miura weighted second-moment sums, including the square-map Jacobian, root sign, energy shift and contour normalization. Prove chart independence, global intrinsic rough-source gluing, actual action-fiber invariance and analytic descent; construct a nonempty BasePhysicalFrequencyExtension and use the checked common-domain assembly to finish Theorem 1.1. The printed locally uniform O(1) estimate remains refuted and is not a construction target. Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates and physical KdV well-posedness.",
     "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. Even polynomial Arnold periods are nonnegative; the level-zero Arnold and cubic zero sets equal the closed-gap set. These signs and zero criteria hold for the common all-index family and its matched source tail at every real input. Global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
@@ -5569,9 +5586,10 @@
     "The actual fixed-index weighted cubic moment has an analytic raw-action-square factor with exact free value -3 at every positive index. The final source identity covers all real Hminus1 sources near zero and all collapsed gaps. Transport to the full Hilbert Hstar Hessian is still required; zero gradient, -6*Id and all main theorems remain incomplete.",
     "The physical Hilbert zero gradient, full bounded derivative -6*Id, cubic-norm quadratic Taylor remainder, actual local gradient inverse and one uniform Hessian radius are now proved. Earlier progress entries record their historical status. The remaining essential Theorem 1.1 input is the actual larger V0 physical-frequency family and full common-domain identity.",
     "Equation (1.7) cannot be used with its printed locally uniform O(1) base bound: that bound is now refuted from the actual physical -6 normalization and the exact (1+n)^(-1) action norm. Construct the actual coordinatewise base family without this false estimate. No corrected upper growth estimate is asserted here.",
-    "The actual signed index-weighted normalized second-moment sum is now constructed analytically in Hilbert sources, with an ell1 realization and actual rough Miura source germs around every real Hminus1 source. Its positive-negative paired form retains the original physical normalized numerator branch. It is not yet identified with the physical KdV frequency correction; no chart independence, global intrinsic gluing or base action descent is claimed."
+    "The actual signed index-weighted normalized second-moment sum is now constructed analytically in Hilbert sources, with an ell1 realization and actual rough Miura source germs around every real Hminus1 source. Its positive-negative paired form retains the original physical normalized numerator branch. It is not yet identified with the physical KdV frequency correction; no chart independence, global intrinsic gluing or base action descent is claimed.",
+    "Actual quartic source cotangents and the finite physical second-moment coordinate phase formula are now proved with exact physical normalization and filled endpoint quotients. Passing cotangents to the full physical KdV Hamiltonian, matching the actual Hill moments to the rough signed Miura series, and completing intrinsic gluing/action descent remain open. Equality of finite contour values at a base is not asserted to identify the full energy derivative."
   ],
-  "previous_progress_commit": "93e775269ca264f823d85aa0d50a0520f773caa8",
+  "previous_progress_commit": "d1abd505f302e4820e43be2ce87b0394d7ab671a",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -6064,7 +6082,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation against 93e7752: all 2303 baseline proof-source hashes unchanged. Seven authored modules pass strict Lean 4.33.1/mathlib v4.33.1 compilation with default authored limits and no heartbeat/linter overrides. A reusable Hilbert quadratic majorant absorbs the extra signed index factor in the actual cubic reciprocal second-moment row. The literal weighted normalized moments have genuine analytic ell1 realizations, absolutely convergent sums and locally uniformly convergent symmetric cutoffs on one connected complex Hilbert-source neighborhood containing all real sources. The SAME Miura normalized root family supports the actual sums. At every real Hminus1 source an actual complex-open Miura chart supports all positive-index paired sums, with one local linear-index bound and literal original physical normalized numerator agreement at all energies. Identification with physical KdV frequencies, chart independence, global intrinsic gluing and action descent are NOT proved. Reproduction lists 2310 modules. The positive-index example, combined transitive axiom audit and 1849 coverage-name checks pass, with 791 additional module origins. All 2850 remaining reference imports are byte-identical and were not rebuilt. All full main theorems remain incomplete. This is not a full repository rebuild.",
+  "focused_validation_scope": "Incremental validation against d1abd50: all 2310 baseline proof-source hashes unchanged. Seven authored modules pass strict Lean 4.33.1/mathlib v4.33.1 compilation with default authored limits and no heartbeat/linter overrides. Primitive-power contours have actual analytic source germs and full Frechet derivatives. Weighted contours of actual Fourier trace Gardner directions are isospectral and satisfy their weak Hamiltonian pairing and the physical coordinate phase law, also at closed selected gaps. The physical energy normalization -2/(pi*i) gives the actual quartic cotangent -8/(pi*i) and phase coefficient 4/(pi*i). The shifted primitive/root quotient is filled analytically on every intrinsic gap disc, including collapsed gaps and both endpoints, with its literal physical root sign. Actual odd physical frequency moments vanish, and the zeroth moment is 2*pi*Kronecker(k,n). The cubic coefficient is exactly 8*pi^3*k^3*Kronecker(k,n)-12*k*Omega_nk^(2). Finite physical quartic source germs are analytic, match the actual free-circle energy period at their base, and give an exact finite coordinate phase formula. The full physical energy cotangent limit, Miura pullback, full frequency recovery, chart gluing and base action descent are NOT proved. Reproduction lists 2317 modules. The positive-index example, combined transitive axiom audit and 1886 coverage-name checks pass, with 793 additional module origins. All 2850 remaining reference imports are byte-identical and were not rebuilt. All full main theorems remain incomplete. This is not a full repository rebuild.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -6374,9 +6392,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 1849,
-    "audit_modules_present": 791,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/WeightedMomentCoverageNames.log"
+    "declarations": 1886,
+    "audit_modules_present": 793,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/QuarticFrequencyCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -6465,97 +6483,96 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "93e775269ca264f823d85aa0d50a0520f773caa8",
-    "baseline_modules": 2303,
+    "baseline_commit": "d1abd505f302e4820e43be2ce87b0394d7ab671a",
+    "baseline_modules": 2310,
     "baseline_source_hashes_unchanged": true,
     "newly_checked_exact_shared_modules": 0,
     "newly_checked_authored_modules": 7,
     "completed_module_checks": [
       {
-        "module": "NLS.SequenceSpaces.WeightedCubicRows",
-        "source_sha256": "9f54ec03498628fa9485194c72f92d8bb7a730ed9d7d8ed576123038105de166",
-        "olean_sha256": "f0e90292e935f1ff3984fa2974c204e901e07f4549bd3c244a3af7567f590688",
+        "module": "NLS.ComplexAnalysis.TracePrimitivePowerContours",
+        "source_sha256": "51bf3d449237019429e28b9acf5d091815ec6d7d132b908918ea2c8323c7afa0",
+        "olean_sha256": "25b091680e74cd1e1ffc1f5948ef0915fbfbb96cc71129f418b38d0f75cf6973",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weighted-moment-NLS.SequenceSpaces.WeightedCubicRows.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/quartic-frequency-NLS.ComplexAnalysis.TracePrimitivePowerContours.log",
         "authored_here": true
       },
       {
-        "module": "NLS.ZakharovShabat.SourceWeightedSecondMomentSequences",
-        "source_sha256": "fa5c19aa51e9720cdb7d90105ca9b39762212e94a052834a43557dbd0269d387",
-        "olean_sha256": "44c81c67b524bb876b6b99527c286c1952fe864b642c5f2753e7cb5406f9b071",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.WeightedCubicRows": "f0e90292e935f1ff3984fa2974c204e901e07f4549bd3c244a3af7567f590688"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weighted-moment-NLS.ZakharovShabat.SourceWeightedSecondMomentSequences.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.ZakharovShabat.SourceWeightedSecondMomentSums",
-        "source_sha256": "4e8ba2b4cb1ff1c2ac71b268d4a2f083253721e1e63be690ca5adc11bbd3192c",
-        "olean_sha256": "e654f5efa6bc95805267459e07a316efbf05300e0685737d527debba32c69cc2",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.ZakharovShabat.SourceWeightedSecondMomentSequences": "44c81c67b524bb876b6b99527c286c1952fe864b642c5f2753e7cb5406f9b071"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weighted-moment-NLS.ZakharovShabat.SourceWeightedSecondMomentSums.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.MiuraWeightedSecondMoments",
-        "source_sha256": "7d2541269c44effe5853c31a4b686582615c3647e0d34c80fefa4cf0d0e26aa3",
-        "olean_sha256": "4d3e3a4bf8dbec02ff325562ccb2970dc97532698ee5741930b8a38c2f8dc366",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.ZakharovShabat.SourceWeightedSecondMomentSums": "e654f5efa6bc95805267459e07a316efbf05300e0685737d527debba32c69cc2"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weighted-moment-NLS.KdV.MiuraWeightedSecondMoments.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.KdV.HillHminusWeightedSecondMoments",
-        "source_sha256": "552292c92f1a4fb9b9a70d989648675b284cae597918d2883fa8d5a0af4ffd33",
-        "olean_sha256": "263388bd8e3e37fe1e01f7f0d8eab2dc172a594fe1e70e106c26cb7fc87db7ce",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.MiuraWeightedSecondMoments": "4d3e3a4bf8dbec02ff325562ccb2970dc97532698ee5741930b8a38c2f8dc366"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weighted-moment-NLS.KdV.HillHminusWeightedSecondMoments.log",
-        "authored_here": true
-      },
-      {
-        "module": "NLS.SequenceSpaces.SignedWeightedMomentPairs",
-        "source_sha256": "1cb275c1e5f55350c5ffefd79c5008a504ac7ae906bc26abd024b114979a0c08",
-        "olean_sha256": "3842f4efb94beed8512d37e0a084d9f8ab5f103603a2960cf83c3bdd9e4c162e",
+        "module": "NLS.KdV.HillWeightedTraceContourDirections",
+        "source_sha256": "998699ae1ccf1f565ef109853924aafe9f665151969e94e3754c9c2ec95b8e70",
+        "olean_sha256": "0f7d9a4e59bc8c7cf0cca073b38fd66f152b2b1b931a47aca1d57b8f1d59b71c",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weighted-moment-NLS.SequenceSpaces.SignedWeightedMomentPairs.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/quartic-frequency-NLS.KdV.HillWeightedTraceContourDirections.log",
         "authored_here": true
       },
       {
-        "module": "NLS.Articles.KdVConvexity.WeightedFrequencyMomentPreparation",
-        "source_sha256": "3e47a43151317154c4471512499cde4801986d1e52acd95419fee3c440f6d076",
-        "olean_sha256": "f2c0ee207ed318f6204302c3bf6e496502f845e54244337fed02ca7a557da9fd",
+        "module": "NLS.KdV.HillQuarticContourVariation",
+        "source_sha256": "0b03cf2b2c95b06e7dc52410e14281be130db6d1db8b5d2c7b6ecfc073cbaca7",
+        "olean_sha256": "3d615ca5716ee916ace956325b0d4686eb8414e778b796c975394286f79a3492",
         "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillHminusWeightedSecondMoments": "263388bd8e3e37fe1e01f7f0d8eab2dc172a594fe1e70e106c26cb7fc87db7ce",
-          "NLS.SequenceSpaces.SignedWeightedMomentPairs": "3842f4efb94beed8512d37e0a084d9f8ab5f103603a2960cf83c3bdd9e4c162e"
+          "NLS.ComplexAnalysis.TracePrimitivePowerContours": "25b091680e74cd1e1ffc1f5948ef0915fbfbb96cc71129f418b38d0f75cf6973",
+          "NLS.KdV.HillWeightedTraceContourDirections": "0f7d9a4e59bc8c7cf0cca073b38fd66f152b2b1b931a47aca1d57b8f1d59b71c"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weighted-moment-NLS.Articles.KdVConvexity.WeightedFrequencyMomentPreparation.log",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/quartic-frequency-NLS.KdV.HillQuarticContourVariation.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.ComplexAnalysis.CoshSquareCoordinateDerivative",
+        "source_sha256": "d3ba87ebfdf68e04a0f359538772c46e909ddd9b394ed6e997461c257739ec86",
+        "olean_sha256": "c1ae44bcb5d1724c62ffd8d83eb169d3f9a27e923d4ab120e7a90d5da8a1d154",
+        "selected_direct_dependency_object_hashes": {},
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/quartic-frequency-NLS.ComplexAnalysis.CoshSquareCoordinateDerivative.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.KdV.HillFilledPrimitiveRootQuotient",
+        "source_sha256": "78cca10e2761a7282b912e5e167d7c4b0f37d4c0cf83ca77f889cfe368601f60",
+        "olean_sha256": "a495ce30b27dcdcf1b3e5277cbf12547fb3ba7ba12d84c1731b05fa1ddae4c39",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.ComplexAnalysis.CoshSquareCoordinateDerivative": "c1ae44bcb5d1724c62ffd8d83eb169d3f9a27e923d4ab120e7a90d5da8a1d154"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/quartic-frequency-NLS.KdV.HillFilledPrimitiveRootQuotient.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.KdV.HillPhysicalFrequencyMoments",
+        "source_sha256": "d9a033a5b0f88507964d0dc6300dceabf74b2027e2151db1d85202969837ab84",
+        "olean_sha256": "401cd1bdba8b15dc559df31ac625d74f1ba310a68eb193126b348f9d8164ff8e",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.KdV.HillFilledPrimitiveRootQuotient": "a495ce30b27dcdcf1b3e5277cbf12547fb3ba7ba12d84c1731b05fa1ddae4c39",
+          "NLS.KdV.HillQuarticContourVariation": "3d615ca5716ee916ace956325b0d4686eb8414e778b796c975394286f79a3492"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/quartic-frequency-NLS.KdV.HillPhysicalFrequencyMoments.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.Articles.KdVConvexity.PhysicalQuarticFrequencyPreparation",
+        "source_sha256": "2924b7fafe40bced4184f0a80844a5719519de5b3c87de88a9008e59dd18f005",
+        "olean_sha256": "9c81007afaca30ed53a118de1ea7249b825284a3bf39f481cc246032560e7dfd",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.KdV.HillPhysicalFrequencyMoments": "401cd1bdba8b15dc559df31ac625d74f1ba310a68eb193126b348f9d8164ff8e"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/quartic-frequency-NLS.Articles.KdVConvexity.PhysicalQuarticFrequencyPreparation.log",
         "authored_here": true
       }
     ],
-    "combined_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weighted-moment-validation.log",
+    "combined_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/quartic-frequency-validation.log",
     "baseline_build_receipts_preserved_in_parent_commit": true,
-    "reference_import_source_manifest": "coverage/articles/kdv-convexity/weighted-moment-library-reuse.json",
+    "reference_import_source_manifest": "coverage/articles/kdv-convexity/quartic-frequency-library-reuse.json",
     "inherited_reference_import_closure_rebuilt": false
   },
   "Hminus1_real_spectral_progress": {
@@ -8633,5 +8650,51 @@
   },
   "analytic_signed_index_weighted_secondMoment_sums_verified": true,
   "all_real_rough_source_weighted_moment_germs_verified": true,
-  "weighted_moment_precursor_physical_KdV_frequency_identification_verified": false
+  "weighted_moment_precursor_physical_KdV_frequency_identification_verified": false,
+  "physical_quartic_frequency_preparation_progress": {
+    "status": "proved_and_strictly_validated",
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.TracePrimitivePowerContours",
+      "NLS.KdV.HillWeightedTraceContourDirections",
+      "NLS.KdV.HillQuarticContourVariation",
+      "NLS.ComplexAnalysis.CoshSquareCoordinateDerivative",
+      "NLS.KdV.HillFilledPrimitiveRootQuotient",
+      "NLS.KdV.HillPhysicalFrequencyMoments",
+      "NLS.Articles.KdVConvexity.PhysicalQuarticFrequencyPreparation"
+    ],
+    "primitive_power_contour_analyticity_and_full_source_derivative": true,
+    "all_degrees_on_one_complex_source_neighborhood": true,
+    "weighted_actual_Fourier_trace_contour_directions": true,
+    "weighted_directions_isospectral_and_weak_Gardner_identity": true,
+    "weighted_actual_coordinate_variation_including_closed_selected_gap": true,
+    "actual_physical_quartic_source_germ_and_cotangent": true,
+    "quartic_recentered_contour_matches_every_real_source": true,
+    "energy_contour_normalization": "-2/(pi*i)",
+    "quartic_cotangent_coefficient": "-8/(pi*i)",
+    "quartic_coordinate_phase_coefficient": "4/(pi*i)",
+    "actual_shifted_primitive_root_quotient_filled_through_all_endpoints": true,
+    "filled_quotient_formula": "(-1)^k / (4*deriv(coshSquareCoordinate)(F_k^2))",
+    "filled_denominator_nonzero_on_complete_intrinsic_gap_disc": true,
+    "all_gap_indices_and_collapsed_gaps_included": true,
+    "actual_physical_odd_frequency_moments_vanish": true,
+    "actual_physical_zero_frequency_moment": "2*pi*Kronecker(k,n)",
+    "actual_physical_cubic_phase_reduction": "8*pi^3*k^3*Kronecker(k,n) - 12*k*Omega_nk^(2), with the literal raw counterclockwise second moment",
+    "finite_physical_quartic_sum_analytic_source_germ": true,
+    "finite_germ_value_equals_actual_free_energy_circle_period": true,
+    "finite_actual_coordinate_phase": "i * (8*pi^3*n^3*1_{1<=n<=N} - 12*sum_{k=1}^N k*Omega_nk^(2)) * Z_n",
+    "article_preparation_declaration": "NLS.Articles.KdVConvexity.physicalPartialQuarticDirection_coordinate_phase",
+    "full_physical_energy_cotangent_limit_identified": false,
+    "physical_Hill_second_moment_Miura_pullback_proved": false,
+    "actual_full_KdV_frequency_recovery_proved": false,
+    "Miura_chart_independence_and_action_descent_proved": false,
+    "nonempty_actual_base_frequency_record_proved": false,
+    "main_Theorem_1_1_complete": false,
+    "main_Theorems_1_2_and_1_3_complete": false,
+    "authored_heartbeat_or_linter_overrides": false,
+    "baseline_proof_source_hashes_unchanged": 2310,
+    "remaining_byte_identical_reference_sources": 2850
+  },
+  "physical_quartic_source_cotangents_verified": true,
+  "all_gap_filled_primitive_root_quotients_verified": true,
+  "actual_physical_finite_second_moment_phase_formula_verified": true
 }
