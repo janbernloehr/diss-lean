@@ -6626,3 +6626,6 @@ import NLS.KdV.PseudomeasureWideWeightInclusion
 import NLS.KdV.PseudomeasureWideWeightedErrors
 import NLS.Articles.KdVPseudomeasures.SourceWideSharpCouplings
 import NLS.KdV.PseudomeasureWideAnalyticCoefficients
+import NLS.Articles.KdVPseudomeasures.SourceThresholdNumerics
+import NLS.Articles.KdVPseudomeasures.SourceLemma216
+import NLS.Articles.KdVPseudomeasures.SourceLemma217

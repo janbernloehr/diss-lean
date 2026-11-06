@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 35,
+    "proved": 37,
     "proved_corrected": 5,
-    "partial": 12,
+    "partial": 10,
     "not_found": 2
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -359,37 +359,42 @@
       "label": "Lemma 2.16",
       "line": 1369,
       "statement": "Lemma 2.16 Let −1/2 < s ⩽ 0 and m ⩾ 1. For n ⩾ Nm,s with Nm,s given\n                                                                        s,∞\nas in (35), the coefficients an and b±n are analytic functions on Sn × Bm   .\n                                      w,s,∞\nMoreover, their restrictions to Sn × B2m    for any w ∈ M satisfy\n\n                                     8cs m2\n        (i)    |an |Sn ×B w,s,∞ ⩽            ⩽ m/4.\n                          2m        n1/2−|s|\n                                                       loghni ′ 2     loghni\n       (ii)    w2n h2nis |b±n − q±2n |Sn ×B w,s,∞ ⩽      1−|s|\n                                                               8cs m ⩽ 1/2 m/4.     ⋊",
-      "status": "partial",
-      "comparison": "Analytic adapted coefficients and uniform error bounds exist with constructed thresholds. Literal (35) threshold and both printed sharp inequalities require a separate statement match.",
+      "status": "proved",
+      "comparison": "Full printed threshold (35), literal 8*c_s*m^2 / n^(1/2-|s|) <= m/4 diagonal bound, both arbitrary-weight coupling errors with log(1+n)/n^(1-|s|)*8*c_s_prime*m^2 <= log(1+n)/sqrt(n)*m/4, and joint analyticity on neighborhoods of the entire closed balls and printed strip. One c_s_prime>=c_s>=1 precedes all m,w,q,n,z; r=-s only reparameterizes the source order. The same physical effective entries are used.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedCoefficients.lean",
-        "NLS/Articles/KdVPseudomeasures/SpectralDiagonalRoot.lean"
+        "NLS/Articles/KdVPseudomeasures/SourceThresholdNumerics.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma216.lean"
       ],
-      "declarations": [],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_16"
+      ],
       "source_page": 22,
       "statement_sha256": "5f4ac7f343b8f02be69c6e100c4cb020e21dd2b5a28cbf387e749eda20e880e2",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedCoefficients.lean": "d30c4dff329054001ab3441bb95dae5ac16daee0460d863fd16322d09743e00b",
-        "NLS/Articles/KdVPseudomeasures/SpectralDiagonalRoot.lean": "9a4e2255b8d7d8d593b3b19b88050fa88cf1d627a104bf316037660163490d6e"
+        "NLS/Articles/KdVPseudomeasures/SourceThresholdNumerics.lean": "038b0343540805d774377f5bb14a4bdff2e1f7da1f80eef4b16acb68581f4bde",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma216.lean": "82fa820f681eea1ba3c9034da2eeeef99d51156d67af492e55521cca3a42d888"
       }
     },
     {
       "label": "Lemma 2.17",
       "line": 1385,
       "statement": "Lemma 2.17 Let −1/2 < s ⩽ 0 and m ⩾ 1. For each n ⩾ Nm,s with Nm,s\ngiven as in (35), there exists a unique real analytic function\n\n             s,∞                                        8cs m2\n       αn : B2m  → C,          |αn − n2 π 2 |B s,∞ ⩽            ⩽ m/4,\n                                              2m       n1/2−|s|\n                                                          s,∞\nsuch that λ − n2 π 2 − an (λ, ·)|λ=αn ≡ 0 identically on B2m  .          ⋊",
-      "status": "partial",
-      "comparison": "Unique analytic diagonal roots and explicit bounds proved with constructed uniform thresholds. The exact printed threshold N_(m,s) and constants are not identified with that interface.",
+      "status": "proved",
+      "comparison": "Full literal threshold (35) and 8*c_s*m^2 / n^(1/2-|s|) <= m/4 displacement bound for the original distribution-space diagonal equation. The intrinsic root has a single ambient real-analytic extension at every point of the closed B_(2m), and uniqueness is equality of functions on that entire original mean-zero ball, among all selections satisfying the printed equation and bound. The threshold uses the same c_s_prime allowed by Lemma 2.16; n>=2 is available for its uniform cutoff.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/SpectralDiagonalRoot.lean"
+        "NLS/Articles/KdVPseudomeasures/SourceThresholdNumerics.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma216.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma217.lean"
       ],
       "declarations": [
-        "NLS.Articles.KdVPseudomeasures.sourceLemma2_17",
-        "NLS.Articles.KdVPseudomeasures.source_uniform_weighted_diagonal_roots"
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_17_threshold35"
       ],
       "source_page": 22,
       "statement_sha256": "8fa5ff35124d64c46a66a395a0649ef82e4786203730effd2a968bed391e4533",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/SpectralDiagonalRoot.lean": "9a4e2255b8d7d8d593b3b19b88050fa88cf1d627a104bf316037660163490d6e"
+        "NLS/Articles/KdVPseudomeasures/SourceThresholdNumerics.lean": "038b0343540805d774377f5bb14a4bdff2e1f7da1f80eef4b16acb68581f4bde",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma216.lean": "82fa820f681eea1ba3c9034da2eeeef99d51156d67af492e55521cca3a42d888",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma217.lean": "c229b7bf2a3ab8c2e3da8c26d295a1cf891da6dffee63841426ddb38ca65c81c"
       }
     },
     {

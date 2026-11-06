@@ -2021,6 +2021,9 @@ import NLS.KdV.PseudomeasureWideWeightInclusion
 import NLS.KdV.PseudomeasureWideWeightedErrors
 import NLS.Articles.KdVPseudomeasures.SourceWideSharpCouplings
 import NLS.KdV.PseudomeasureWideAnalyticCoefficients
+import NLS.Articles.KdVPseudomeasures.SourceThresholdNumerics
+import NLS.Articles.KdVPseudomeasures.SourceLemma216
+import NLS.Articles.KdVPseudomeasures.SourceLemma217
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11840,3 +11843,20 @@ import NLS.KdV.PseudomeasureWideAnalyticCoefficients
 #print axioms NLS.Articles.KdVPseudomeasures.source_wideCoupling_errors_sharp
 #print axioms NLS.KdV.analyticAt_endpointEffective_coefficient_wide
 #print axioms NLS.KdV.analyticAt_endpointCoefficients_wide
+#print axioms NLS.Articles.KdVPseudomeasures.source_log_one_add_le_sqrt
+#print axioms NLS.Articles.KdVPseudomeasures.source_epsilon_log_bound
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold35_bound
+#print axioms NLS.Articles.KdVPseudomeasures.source_log_power_le_half
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCoefficientConstant
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCoefficientConstant_one_le
+#print axioms NLS.Articles.KdVPseudomeasures.source_wideDiagonal_error
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold35_small
+#print axioms NLS.Articles.KdVPseudomeasures.SourceLemma216Bounds
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_16_bounds
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_16_analytic
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_16
+#print axioms NLS.Articles.KdVPseudomeasures.SourceDiagonalBall
+#print axioms NLS.Articles.KdVPseudomeasures.SourceLemma217RootOnBall
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold35_radius
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold35_source_small
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_17_threshold35

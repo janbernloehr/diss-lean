@@ -2055,6 +2055,9 @@ modules = [
     'NLS.KdV.PseudomeasureWideWeightedErrors',
     'NLS.Articles.KdVPseudomeasures.SourceWideSharpCouplings',
     'NLS.KdV.PseudomeasureWideAnalyticCoefficients',
+    'NLS.Articles.KdVPseudomeasures.SourceThresholdNumerics',
+    'NLS.Articles.KdVPseudomeasures.SourceLemma216',
+    'NLS.Articles.KdVPseudomeasures.SourceLemma217',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
