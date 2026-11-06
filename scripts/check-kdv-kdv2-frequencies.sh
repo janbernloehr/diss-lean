@@ -2916,6 +2916,22 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/NativeSourceFiniteActionVariation
   NLS/KdV/NativeHillPhysicalSource
   NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapHamiltonianVariation
+  NLS/KdV/NativeHillPhysicalDirection
+  NLS/Articles/KdVKdV2Frequencies/OriginalRoughActionGerms
+  NLS/DifferentialPolynomial/EulerFiniteSum
+  NLS/Articles/KdVKdV2Frequencies/NativeContourActionDifferentials
+  NLS/SequenceSpaces/PhysicalRealMeanZeroComplexSpan
+  NLS/Articles/KdVKdV2Frequencies/SmoothPhysicalHamiltonianVariation
+  NLS/ComplexAnalysis/AffineLineDerivative
+  NLS/Fourier/PeriodOneAffineCoefficients
+  NLS/Articles/KdVKdV2Frequencies/NativePhysicalHamiltonianVariations
+  NLS/Articles/KdVKdV2Frequencies/FiniteGapRoughFirstVariation
+  NLS/Articles/KdVKdV2Frequencies/FiniteActionCoordinateRotations
+  NLS/Fourier/PeriodOneSingleMode
+  NLS/Articles/KdVKdV2Frequencies/NativeHamiltonianFourierCovectors
+  NLS/Articles/KdVKdV2Frequencies/FiniteGapPhysicalHamiltonianVectors
+  NLS/KdV/HillHminusFiniteGapSmooth
+  NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapPhysicalRealization
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -1,3 +1,19 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapPhysicalRealization
+import NLS.KdV.HillHminusFiniteGapSmooth
+import NLS.Articles.KdVKdV2Frequencies.FiniteGapPhysicalHamiltonianVectors
+import NLS.Articles.KdVKdV2Frequencies.NativeHamiltonianFourierCovectors
+import NLS.Articles.KdVKdV2Frequencies.FiniteActionCoordinateRotations
+import NLS.Fourier.PeriodOneSingleMode
+import NLS.Articles.KdVKdV2Frequencies.FiniteGapRoughFirstVariation
+import NLS.Articles.KdVKdV2Frequencies.NativePhysicalHamiltonianVariations
+import NLS.SequenceSpaces.PhysicalRealMeanZeroComplexSpan
+import NLS.Articles.KdVKdV2Frequencies.SmoothPhysicalHamiltonianVariation
+import NLS.ComplexAnalysis.AffineLineDerivative
+import NLS.Fourier.PeriodOneAffineCoefficients
+import NLS.DifferentialPolynomial.EulerFiniteSum
+import NLS.Articles.KdVKdV2Frequencies.NativeContourActionDifferentials
+import NLS.KdV.NativeHillPhysicalDirection
+import NLS.Articles.KdVKdV2Frequencies.OriginalRoughActionGerms
 import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapHamiltonianVariation
 import NLS.Articles.KdVKdV2Frequencies.NativeSourceFiniteActionVariation
 import NLS.KdV.NativeHillPhysicalSource
@@ -5012,7 +5028,23 @@ private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.FiniteActionHamiltonianDifferential,
   `NLS.Articles.KdVKdV2Frequencies.NativeSourceFiniteActionVariation,
   `NLS.KdV.NativeHillPhysicalSource,
-  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapHamiltonianVariation
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapHamiltonianVariation,
+  `NLS.KdV.NativeHillPhysicalDirection,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalRoughActionGerms,
+  `NLS.DifferentialPolynomial.EulerFiniteSum,
+  `NLS.Articles.KdVKdV2Frequencies.NativeContourActionDifferentials,
+  `NLS.SequenceSpaces.PhysicalRealMeanZeroComplexSpan,
+  `NLS.Articles.KdVKdV2Frequencies.SmoothPhysicalHamiltonianVariation,
+  `NLS.ComplexAnalysis.AffineLineDerivative,
+  `NLS.Fourier.PeriodOneAffineCoefficients,
+  `NLS.Articles.KdVKdV2Frequencies.NativePhysicalHamiltonianVariations,
+  `NLS.Articles.KdVKdV2Frequencies.FiniteGapRoughFirstVariation,
+  `NLS.Articles.KdVKdV2Frequencies.FiniteActionCoordinateRotations,
+  `NLS.Fourier.PeriodOneSingleMode,
+  `NLS.Articles.KdVKdV2Frequencies.NativeHamiltonianFourierCovectors,
+  `NLS.Articles.KdVKdV2Frequencies.FiniteGapPhysicalHamiltonianVectors,
+  `NLS.KdV.HillHminusFiniteGapSmooth,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapPhysicalRealization
 ]
 
 open Lean in
