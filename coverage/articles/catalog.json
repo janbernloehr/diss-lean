@@ -12,7 +12,7 @@
       "module_directory": "NLS/Articles/DNLSEstimates",
       "coverage_directory": "coverage/articles/dnls-estimates",
       "initial_responsibility": "Closest dissertation overlap: compare every main article estimate with Section 23 and Theorem 0.1 before proving anything new.",
-      "status": "main_theorems_verified",
+      "status": "full_paper_in_progress",
       "verification_record": "coverage/articles/dnls-estimates/validation.json",
       "source_inventory": "coverage/articles/dnls-estimates/source-map.json",
       "main_theorem_module": "NLS/Articles/DNLSEstimates/MainEstimates.lean",
@@ -21,7 +21,17 @@
         "Theorem 2 and common-constant remark",
         "Theorem 3",
         "Corollary 1"
-      ]
+      ],
+      "main_theorems_status": "verified",
+      "required_scope": "Every mathematical assertion of arXiv:1403.1369v2, including intermediate results, proof steps, unnumbered claims and both appendices.",
+      "scope_expanded_date": "2026-11-06",
+      "full_paper_coverage": "coverage/articles/dnls-estimates/full-paper-claims.json",
+      "expanded_validation_record": "coverage/articles/dnls-estimates/full-paper-validation.json",
+      "full_paper_progress_report": "coverage/articles/dnls-estimates/FULL_PAPER.md",
+      "main_milestone_pr": {
+        "url": "https://github.com/janbernloehr/diss-lean/pull/2",
+        "state": "merged"
+      }
     },
     {
       "id": "kdv-estimates",

@@ -1,0 +1,5419 @@
+{
+  "schema_version": 1,
+  "article_id": "dnls-estimates",
+  "scope_changed_date": "2026-11-06",
+  "required_scope": "All mathematical assertions of the pinned article: named results, definitions and their well-definedness, numbered displays, unnumbered claims, proof steps, examples and both appendices. Historical/bibliographic attributions are contextual rather than Lean propositions.",
+  "status": "full_paper_in_progress",
+  "inventory_complete": false,
+  "source_pdf_sha256": "6862e6c30dffaa55f4a73b48155576310682c78e154ffcc1dbeeaf3eb0dd277b",
+  "extracted_text_sha256": "a27c0273ffecaace9d37e43e06d320d9202316daf3e11420c5e02d119d2fefa1",
+  "source_lines_convention": "1-based newline count preserving form feeds; PDF pages count from one.",
+  "named_statement_count": 27,
+  "named_statements": [
+    {
+      "label": "Theorem 1",
+      "source_page": 3,
+      "source_line": 114,
+      "claim": "Uniform two-sided integer Sobolev bounds for one original Birkhoff map.",
+      "status": "verified_main_milestone",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.theorems_one_two"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Theorem 2",
+      "source_page": 3,
+      "source_line": 143,
+      "claim": "Uniform two-sided action-moment estimates, with the same constants as Theorem 1.",
+      "status": "verified_main_milestone",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.theorems_one_two"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Theorem 3",
+      "source_page": 4,
+      "source_line": 210,
+      "claim": "Weighted complex-neighborhood action bound and real Birkhoff target bound for all M1 weights.",
+      "status": "verified_main_milestone",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.theorem_three"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Corollary 1",
+      "source_page": 4,
+      "source_line": 230,
+      "claim": "Real-exponent Sobolev estimates and complex neighborhoods, including the endpoint one.",
+      "status": "verified_main_milestone",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.corollary_one"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Theorem 4",
+      "source_page": 10,
+      "source_line": 564,
+      "claim": "Absolutely convergent higher-action trace at every level k>=2 on the complex H^(k-1) source domain, with factor -1/(2i)^(k-1).",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.theorem_four",
+        "NLS.Articles.DNLSEstimates.exists_theorem_four_domain"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 2",
+      "source_page": 10,
+      "source_line": 596,
+      "claim": "Joint and spectral analyticity of the Abelian differential, removability at closed gaps, and vanishing admissible endpoint and contour periods.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_two_domain",
+        "NLS.Articles.DNLSEstimates.lemma_two_joint",
+        "NLS.Articles.DNLSEstimates.lemma_two_spectral",
+        "NLS.Articles.DNLSEstimates.lemma_two_circle",
+        "NLS.Articles.DNLSEstimates.lemma_two_endpoint_path"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 3",
+      "source_page": 12,
+      "source_line": 739,
+      "claim": "Joint analyticity, continuous endpoint extension, real logarithmic boundary values and zero-potential normalization of the primitive.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.proposition_twenty",
+        "NLS.Articles.DNLSEstimates.lemma_three_spectral",
+        "NLS.Articles.DNLSEstimates.lemma_three_endpoint",
+        "NLS.Articles.DNLSEstimates.lemma_three_continuous_extension",
+        "NLS.Articles.DNLSEstimates.lemma_three_boundary",
+        "NLS.Articles.DNLSEstimates.lemma_three_local_log",
+        "NLS.Articles.DNLSEstimates.lemma_three_zero",
+        "NLS.Articles.DNLSEstimates.gap_profile_properties",
+        "NLS.Articles.DNLSEstimates.lemma_three_log_near_gap"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 4",
+      "source_page": 14,
+      "source_line": 859,
+      "claim": "Convergent exterior Laurent expansion of the primitive for every complex finite-gap source, with independently defined Hamiltonian coefficients.",
+      "status": "real_subcase_kernel_checked_complex_scope_open",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_four_real",
+        "NLS.Articles.DNLSEstimates.laurent_coefficient"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false,
+      "remaining": "The printed complex finite-gap domain is not discharged. The current smooth physical representative and Hamiltonian Laurent construction is real-type only. No extra smoothness hypothesis may silently replace the printed complex L2 scope."
+    },
+    {
+      "label": "Theorem 5",
+      "source_page": 15,
+      "source_line": 928,
+      "claim": "Quadratic H1 spectral localization, two eigenvalues per tail cluster, explicit tail radius and central box.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.theorem_five",
+        "NLS.Articles.DNLSEstimates.theorem_five_spectrum",
+        "NLS.Articles.DNLSEstimates.lemma_ten"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 5",
+      "source_page": 16,
+      "source_line": 1033,
+      "claim": "Bounded shifted weighted Neumann operator with reversed shift and norm bound.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_five"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 6",
+      "source_page": 17,
+      "source_line": 1084,
+      "claim": "Explicit shifted weighted norm bound on the squared Neumann operator at every index and spectral strip point.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_six"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 7",
+      "source_page": 18,
+      "source_line": 1159,
+      "claim": "Equivalence of the physical eigenvalue equation and vanishing reduced two-by-two determinant at the stated threshold.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_seven"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 8",
+      "source_page": 19,
+      "source_line": 1205,
+      "claim": "Equality of the two diagonal reduced-matrix entries.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_eight"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 9",
+      "source_page": 20,
+      "source_line": 1271,
+      "claim": "Analyticity and uniform weighted estimates of the diagonal and off-diagonal reduced entries.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_nine"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 10",
+      "source_page": 20,
+      "source_line": 1326,
+      "claim": "Exactly two reduced-determinant zeros, their quantitative disk localization and squared separation bound.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_ten"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Proposition 11",
+      "source_page": 22,
+      "source_line": 1400,
+      "claim": "Weighted gap tail estimate and global complex-neighborhood gap bound.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.proposition_eleven_tail",
+        "NLS.Articles.DNLSEstimates.proposition_eleven_global"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Proposition 12",
+      "source_page": 23,
+      "source_line": 1484,
+      "claim": "High and low odd-level action comparisons from actual endpoint localization, retaining a mean-value point in the gap.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.proposition_twelve_mean_value",
+        "NLS.Articles.DNLSEstimates.proposition_twelve_exterior",
+        "NLS.Articles.DNLSEstimates.proposition_twelve_central"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 13",
+      "source_page": 23,
+      "source_line": 1522,
+      "claim": "Weighted action moment bounded by the physical odd Hamiltonian plus an H1 remainder.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_thirteen"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 14",
+      "source_page": 24,
+      "source_line": 1590,
+      "claim": "Uniform epsilon absorption for the absolute physical remainder integral and Hamiltonian bound with an L2-only lower term.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_fourteen"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 15",
+      "source_page": 26,
+      "source_line": 1750,
+      "claim": "Energy-minus-mass-square kinetic action bound, weighted energy consequence and exact one-third H1 norm consequence.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_fifteen"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 16",
+      "source_page": 27,
+      "source_line": 1840,
+      "claim": "All-index odd higher-action sum bounded by lower action moments with the stated exponents.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_sixteen"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false,
+      "proof_note": "The exact printed statement is proved. A separate small zero-index argument repairs the use of the strict central hypothesis in the printed proof."
+    },
+    {
+      "label": "Lemma 17",
+      "source_page": 29,
+      "source_line": 1930,
+      "claim": "Uniform quantitative deleted-product bound on every high gap, including the finite head and infinite tail estimates.",
+      "status": "corrected_statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_seventeen",
+        "NLS.Articles.DNLSEstimates.lemma_seventeen_ratio",
+        "NLS.Articles.DNLSEstimates.complex_action_domain"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false,
+      "correction": "Final chi constant 2048 replaces 512. The intermediate positive ratio is 128*(abs(n)+N+2/5)/(abs(n)-N+3/10), valid also at the inclusive boundary; this replaces the printed rational estimate."
+    },
+    {
+      "label": "Proposition 18",
+      "source_page": 30,
+      "source_line": 2025,
+      "claim": "Quadratic H1 action-to-gap estimate on the complex neighborhood.",
+      "status": "corrected_statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.proposition_eighteen",
+        "NLS.Articles.DNLSEstimates.complex_action_domain"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false,
+      "correction": "Action-gap constant 4608 replaces 2048; the source remains complex H1 and the threshold is retained."
+    },
+    {
+      "label": "Lemma 19",
+      "source_page": 32,
+      "source_line": 2119,
+      "claim": "Local critical-point midpoint control near a collapsed complex gap and a uniform all-index neighborhood of every real source.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_nineteen"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Proposition 20",
+      "source_page": 33,
+      "source_line": 2180,
+      "claim": "Joint analyticity of the primitive on the full disc-complement product, including continuity and weak analyticity across the collapsed-gap divisor.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.proposition_twenty",
+        "NLS.Articles.DNLSEstimates.primitive_domain"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false
+    },
+    {
+      "label": "Lemma 21",
+      "source_page": 35,
+      "source_line": 2344,
+      "claim": "All-order Riccati remainder polynomial: leading jet, total homogeneous weight, derivative count, highest jet order and field balance.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_twenty_one_polynomial",
+        "NLS.Articles.DNLSEstimates.lemma_twenty_one_evaluation",
+        "NLS.Articles.DNLSEstimates.lemma_twenty_one_weak"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false,
+      "regularity": "Full complex H^(k-1), k=s+1; actual weak H^-1 density and physical remainder coefficients, as well as the polynomial and smooth statements."
+    },
+    {
+      "label": "Corollary 22",
+      "source_page": 36,
+      "source_line": 2374,
+      "claim": "One reduced polynomial per order on every real H^m source; exact leading kinetic energy, lower jets, homogeneous weight and field balance.",
+      "status": "statement_kernel_checked",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.corollary_twenty_two",
+        "NLS.Articles.DNLSEstimates.corollary_twenty_two_integral",
+        "NLS.Articles.DNLSEstimates.articleOddHamiltonian_eq_riccati_integral"
+      ],
+      "candidate_shared_modules": [],
+      "candidate_is_not_coverage": false,
+      "proof_passage_review_complete": false,
+      "regularity": "Full real H^m; physical highest weak derivative and a single graded polynomial chosen before the source."
+    }
+  ],
+  "body_paragraph_block_count": 350,
+  "body_paragraph_blocks": [
+    {
+      "id": "p01-b01",
+      "page": 1,
+      "line_start": 1,
+      "line_end": 3,
+      "text_sha256": "9d1e597637f0b3c09110034e245bd20dc2fd56ce626d13f122c8dd3c94ab53c8",
+      "review_status": "semantic_review_pending",
+      "page_end": 1
+    },
+    {
+      "id": "p01-b02",
+      "page": 1,
+      "line_start": 8,
+      "line_end": 9,
+      "text_sha256": "33f4050033fbbf8b5628887ecf5cad3fda49a517fc05b1856069fb6aadb2a8be",
+      "review_status": "semantic_review_pending",
+      "page_end": 1
+    },
+    {
+      "id": "p01-b03",
+      "page": 1,
+      "line_start": 11,
+      "line_end": 11,
+      "text_sha256": "43e2f5b8e6f869b27916d0997577e6ed8ea2285ec444ea07b4a67e2d5696b355",
+      "review_status": "semantic_review_pending",
+      "page_end": 1
+    },
+    {
+      "id": "p01-b04",
+      "page": 1,
+      "line_start": 14,
+      "line_end": 21,
+      "text_sha256": "0a7dbe11c8b7576b288403a9a57506f25fc29d87d87a0f4240ff27739216c6eb",
+      "review_status": "semantic_review_pending",
+      "page_end": 1
+    },
+    {
+      "id": "p01-b05",
+      "page": 1,
+      "line_start": 24,
+      "line_end": 24,
+      "text_sha256": "c08e2ed49e42230ac51ee9cad2932dd254257b7845d50e671ad76e892f04ce7b",
+      "review_status": "semantic_review_pending",
+      "page_end": 1
+    },
+    {
+      "id": "p01-b06",
+      "page": 1,
+      "line_start": 26,
+      "line_end": 28,
+      "text_sha256": "e25d8cab5c65bf0925c20664d0adb3331c1559556b8f9318f90cb872191833ea",
+      "review_status": "semantic_review_pending",
+      "page_end": 1
+    },
+    {
+      "id": "p01-b07",
+      "page": 1,
+      "line_start": 30,
+      "line_end": 36,
+      "text_sha256": "b3d93fe4c23b04208c8edfcc5cb3efe1c8684b51cd9db0911ddb5ea6415b7b47",
+      "review_status": "semantic_review_pending",
+      "page_end": 1
+    },
+    {
+      "id": "p01-b08",
+      "page": 1,
+      "line_start": 38,
+      "line_end": 42,
+      "text_sha256": "e1be4ffafe9d654c57145d3ee58d05517b3048b6c566eea9f4ad237e341a43c1",
+      "review_status": "semantic_review_pending",
+      "page_end": 1
+    },
+    {
+      "id": "p01-b09",
+      "page": 1,
+      "line_start": 44,
+      "line_end": 48,
+      "text_sha256": "67f1612afb37287102fae15cdd079046357af2b8eb084b6d0f4eced0640845df",
+      "review_status": "semantic_review_pending",
+      "page_end": 1
+    },
+    {
+      "id": "p01-b10",
+      "page": 1,
+      "line_start": 51,
+      "line_end": 52,
+      "text_sha256": "89243d58eb4812bf51c989dc15f412b3a47100ebf46c3b983968af5071f82250",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b01",
+      "page": 2,
+      "line_start": 54,
+      "line_end": 54,
+      "text_sha256": "acad4170c2f6064aeebe2e34d0a88ae921949504f783eccf9afca232d8406d87",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b02",
+      "page": 2,
+      "line_start": 56,
+      "line_end": 57,
+      "text_sha256": "26da07af53978026f7ded62d7ed21c0e53d4352548cd8846a7d5b38185061117",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b03",
+      "page": 2,
+      "line_start": 59,
+      "line_end": 59,
+      "text_sha256": "db001cc338240fd4f27f896580f0ec2032610b36be833fce046461bf15b895db",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b04",
+      "page": 2,
+      "line_start": 61,
+      "line_end": 61,
+      "text_sha256": "59967086a9885bfa83103e8c1718d607639af594a0d1504025c6fb5c226b3665",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b05",
+      "page": 2,
+      "line_start": 63,
+      "line_end": 63,
+      "text_sha256": "0f159b1dc0690055e3775f76afac18d88143f1a18c42a7b89db7df9655345570",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b06",
+      "page": 2,
+      "line_start": 65,
+      "line_end": 80,
+      "text_sha256": "a26d072a69ea4f712c95221c52d85aa77f5a9b6ebf2cf32aa7cd6ced8c01f54d",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b07",
+      "page": 2,
+      "line_start": 82,
+      "line_end": 83,
+      "text_sha256": "a5904e386f6fecf62cb93b2b2fdfc5765a15b904743920677b4850984efdd17f",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b08",
+      "page": 2,
+      "line_start": 85,
+      "line_end": 85,
+      "text_sha256": "9d28c4193d53c923b2bf8e52b33dd24f8afa42a2f0a16087463e61c7f70bddde",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b09",
+      "page": 2,
+      "line_start": 87,
+      "line_end": 91,
+      "text_sha256": "e877e80329db9a0225007d8a317b307a096d8c9bbcb6da0de98cd55ab6b2b160",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b10",
+      "page": 2,
+      "line_start": 93,
+      "line_end": 99,
+      "text_sha256": "4941e1d299e021753b1e6cd800944c13eb1cb812be0f149499e891c53a16efd4",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b11",
+      "page": 2,
+      "line_start": 101,
+      "line_end": 101,
+      "text_sha256": "52d4707f7bf99fbe3dd85e9fbd4d5e9be85c45870d85306115fc52399ea5ad58",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b12",
+      "page": 2,
+      "line_start": 103,
+      "line_end": 105,
+      "text_sha256": "d98aea6094bdd2a3bc594f989e41768460e4f3a43d4f4e48e098990d976c9d5d",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b13",
+      "page": 2,
+      "line_start": 107,
+      "line_end": 107,
+      "text_sha256": "f4b68928b36d091ccc6e3787c0960aeb205252b7a9531339872c2c2874745998",
+      "review_status": "semantic_review_pending",
+      "page_end": 2
+    },
+    {
+      "id": "p02-b14",
+      "page": 2,
+      "line_start": 109,
+      "line_end": 112,
+      "text_sha256": "96c1fa256e88fbabdebe475db392068b157b0de4e12fa2b67f4a1bb8997a0114",
+      "review_status": "semantic_review_pending",
+      "page_end": 3
+    },
+    {
+      "id": "p03-b01",
+      "page": 3,
+      "line_start": 114,
+      "line_end": 115,
+      "text_sha256": "e2eb64760ca564b463e2054c2de8f5fcdda470a3c6146c0c58b1e1ac28af7131",
+      "review_status": "statement_compared",
+      "page_end": 3,
+      "named_statement": "Theorem 1",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.theorems_one_two"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p03-b02",
+      "page": 3,
+      "line_start": 117,
+      "line_end": 118,
+      "text_sha256": "5295d48022d3c1c3446025fe787efb73837c786d3d33b34cc02f80be838578d0",
+      "review_status": "statement_compared",
+      "page_end": 3,
+      "named_statement": "Theorem 1",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.theorems_one_two"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p03-b03",
+      "page": 3,
+      "line_start": 121,
+      "line_end": 123,
+      "text_sha256": "24226a6065c60810977d6ddf53fc2450c63dde8e9a8009eff62c31dface460ee",
+      "review_status": "statement_compared",
+      "page_end": 3,
+      "named_statement": "Theorem 1",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.theorems_one_two"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p03-b04",
+      "page": 3,
+      "line_start": 125,
+      "line_end": 141,
+      "text_sha256": "0dfb95e4c5ec3de734aab7e04bfe7e66cd9da80f8324f7f9574f551e8b07fff2",
+      "review_status": "semantic_review_pending",
+      "page_end": 3
+    },
+    {
+      "id": "p03-b05",
+      "page": 3,
+      "line_start": 143,
+      "line_end": 147,
+      "text_sha256": "6a69e431501de5e26640584e8ffa0f67d18101ea30b3a071c4ba2c3cce282c8b",
+      "review_status": "statement_compared",
+      "page_end": 3,
+      "named_statement": "Theorem 2",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.theorems_one_two"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p03-b06",
+      "page": 3,
+      "line_start": 151,
+      "line_end": 154,
+      "text_sha256": "c4c58feea20646f287e664a64a1a5f1575a627708653dca6cfab660bf0f3efc7",
+      "review_status": "statement_compared",
+      "page_end": 3,
+      "named_statement": "Theorem 2",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.theorems_one_two"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p03-b07",
+      "page": 3,
+      "line_start": 157,
+      "line_end": 161,
+      "text_sha256": "bd39ad5ea12a61bc2ae9d010a29f1725b5dafd1e6bcabf535169d84199b1801a",
+      "review_status": "semantic_review_pending",
+      "page_end": 3
+    },
+    {
+      "id": "p03-b08",
+      "page": 3,
+      "line_start": 163,
+      "line_end": 163,
+      "text_sha256": "c8bea1c5d272e160de05728cfca1b27fb4fcf9e5d05d2a7e110d7ea900fc01b1",
+      "review_status": "semantic_review_pending",
+      "page_end": 3,
+      "related_auxiliary_groups": [
+        "SETUP-WEIGHTS"
+      ]
+    },
+    {
+      "id": "p03-b09",
+      "page": 3,
+      "line_start": 165,
+      "line_end": 172,
+      "text_sha256": "189e890edeb31e07a73b54695fa104650682803ae390a9e3488f44c2904ab310",
+      "review_status": "semantic_review_pending",
+      "page_end": 3,
+      "related_auxiliary_groups": [
+        "SETUP-WEIGHTS"
+      ]
+    },
+    {
+      "id": "p03-b10",
+      "page": 3,
+      "line_start": 176,
+      "line_end": 193,
+      "text_sha256": "8dfdc76193be4d54423fb108295c800aeacd0d3a13bbf5e8c3831a23c3ae2d99",
+      "review_status": "semantic_review_pending",
+      "page_end": 4,
+      "related_auxiliary_groups": [
+        "SETUP-WEIGHTS",
+        "SETUP-ABEL-STRIP"
+      ]
+    },
+    {
+      "id": "p04-b01",
+      "page": 4,
+      "line_start": 195,
+      "line_end": 203,
+      "text_sha256": "e51099c90b1b2521c40b0b4de935a19e33681233cc869042106a9250cc3a0202",
+      "review_status": "semantic_review_pending",
+      "page_end": 4,
+      "related_auxiliary_groups": [
+        "SETUP-WEIGHTS"
+      ]
+    },
+    {
+      "id": "p04-b02",
+      "page": 4,
+      "line_start": 205,
+      "line_end": 205,
+      "text_sha256": "e4cc6a871a8342ffc63f13c4232cf31b70e042e630249d2d28e3bfc2d3c56a40",
+      "review_status": "semantic_review_pending",
+      "page_end": 4,
+      "related_auxiliary_groups": [
+        "SETUP-WEIGHTS"
+      ]
+    },
+    {
+      "id": "p04-b03",
+      "page": 4,
+      "line_start": 207,
+      "line_end": 208,
+      "text_sha256": "f3d460a3700d1d212722f3d668ea299aea6055ebbf272185548f8b1dc384dc16",
+      "review_status": "semantic_review_pending",
+      "page_end": 4,
+      "related_auxiliary_groups": [
+        "SETUP-WEIGHTS"
+      ]
+    },
+    {
+      "id": "p04-b04",
+      "page": 4,
+      "line_start": 210,
+      "line_end": 211,
+      "text_sha256": "c342f111d8b58e7ab4ead4d72211bec9fe0c07efbf43e781253d866c2eabc9b8",
+      "review_status": "statement_compared",
+      "page_end": 4,
+      "named_statement": "Theorem 3",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.theorem_three"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p04-b05",
+      "page": 4,
+      "line_start": 213,
+      "line_end": 217,
+      "text_sha256": "46b32350e65e23b0c87890be8fe59ebeb399bbae3e9649cb7c64de2b2618adfe",
+      "review_status": "statement_compared",
+      "page_end": 4,
+      "named_statement": "Theorem 3",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.theorem_three"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p04-b06",
+      "page": 4,
+      "line_start": 219,
+      "line_end": 223,
+      "text_sha256": "9272a733bdb3f1355e7f2ba07ca2100ff6c35b2e0c0a3429090e13dc53c6638a",
+      "review_status": "statement_compared",
+      "page_end": 4,
+      "named_statement": "Theorem 3",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.theorem_three"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p04-b07",
+      "page": 4,
+      "line_start": 225,
+      "line_end": 228,
+      "text_sha256": "eba6918edea4fcd7c24769f134fab26b071cb518cc32060810f0007d50d55b28",
+      "review_status": "semantic_review_pending",
+      "page_end": 4
+    },
+    {
+      "id": "p04-b08",
+      "page": 4,
+      "line_start": 230,
+      "line_end": 234,
+      "text_sha256": "e5ceb5fd48330a860be9c33cfab2987ca863a0890ff014ab1c51709ade7f340c",
+      "review_status": "statement_compared",
+      "page_end": 4,
+      "named_statement": "Corollary 1",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.corollary_one"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p04-b09",
+      "page": 4,
+      "line_start": 237,
+      "line_end": 238,
+      "text_sha256": "bd86cd2a2c9262f465fa817b02a6f7e72a9768d4df90e9e46c598a2cc3ab0677",
+      "review_status": "statement_compared",
+      "page_end": 4,
+      "named_statement": "Corollary 1",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.corollary_one"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p04-b10",
+      "page": 4,
+      "line_start": 240,
+      "line_end": 240,
+      "text_sha256": "a6dd22d35c37acf60738a936d12844a3c44bf85002003ba7e17de6a97b4df5d0",
+      "review_status": "statement_compared",
+      "page_end": 4,
+      "named_statement": "Corollary 1",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.corollary_one"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p04-b11",
+      "page": 4,
+      "line_start": 242,
+      "line_end": 256,
+      "text_sha256": "cfdf7657118910749d06689f90f268e5d2ff2ee619b735adb0df023d4e99e2dc",
+      "review_status": "semantic_review_pending",
+      "page_end": 5
+    },
+    {
+      "id": "p05-b01",
+      "page": 5,
+      "line_start": 258,
+      "line_end": 259,
+      "text_sha256": "d5b61e506ca39b7daf6f62e4457e722ef657a988784b987b795593f7dc3ed779",
+      "review_status": "semantic_review_pending",
+      "page_end": 5
+    },
+    {
+      "id": "p05-b02",
+      "page": 5,
+      "line_start": 261,
+      "line_end": 262,
+      "text_sha256": "278ba093e85783d2f1fb60a074d9cfd534304374b44ddcc83aad9bf41205799b",
+      "review_status": "semantic_review_pending",
+      "page_end": 5
+    },
+    {
+      "id": "p05-b03",
+      "page": 5,
+      "line_start": 264,
+      "line_end": 267,
+      "text_sha256": "5a9ffd0d74fcfaeee992c60555e0985e8a08b0936d6a995c839716d2a113dfca",
+      "review_status": "semantic_review_pending",
+      "page_end": 5
+    },
+    {
+      "id": "p05-b04",
+      "page": 5,
+      "line_start": 269,
+      "line_end": 273,
+      "text_sha256": "ce7232708f77ec6ebdccfe24e57884c83769c0af5d5d41f9e5113a9048aa3f40",
+      "review_status": "semantic_review_pending",
+      "page_end": 5
+    },
+    {
+      "id": "p05-b05",
+      "page": 5,
+      "line_start": 275,
+      "line_end": 279,
+      "text_sha256": "6e03082c8ec2b671e61c946aa2e8dd85668fab59051c1fcfe9770cd5dadbae3f",
+      "review_status": "semantic_review_pending",
+      "page_end": 5
+    },
+    {
+      "id": "p05-b06",
+      "page": 5,
+      "line_start": 281,
+      "line_end": 285,
+      "text_sha256": "940601e67df8a68996c7994cfda0a0b0cc45d36480d2581232ea56c5009bacc1",
+      "review_status": "semantic_review_pending",
+      "page_end": 5
+    },
+    {
+      "id": "p05-b07",
+      "page": 5,
+      "line_start": 287,
+      "line_end": 293,
+      "text_sha256": "6a40dd8cef4028690fa8fdaa9ff84157c2593120f30177c29143e31c682b4e2a",
+      "review_status": "semantic_review_pending",
+      "page_end": 5
+    },
+    {
+      "id": "p05-b08",
+      "page": 5,
+      "line_start": 295,
+      "line_end": 301,
+      "text_sha256": "d318bf4a09ddd6340e08a7bf933f08f3d044d85229d3310e9decb41934895564",
+      "review_status": "semantic_review_pending",
+      "page_end": 5
+    },
+    {
+      "id": "p05-b09",
+      "page": 5,
+      "line_start": 304,
+      "line_end": 319,
+      "text_sha256": "4df60d89412d7254d0dd0befbb1b6829d9a7c5e4372fb8b830aea183825b639a",
+      "review_status": "semantic_review_pending",
+      "page_end": 6
+    },
+    {
+      "id": "p06-b01",
+      "page": 6,
+      "line_start": 321,
+      "line_end": 321,
+      "text_sha256": "33d64bb0f3116e3487b80840d911d34b3c22fec9f71daa7d4b41b1a37bacdf17",
+      "review_status": "semantic_review_pending",
+      "page_end": 6
+    },
+    {
+      "id": "p06-b02",
+      "page": 6,
+      "line_start": 323,
+      "line_end": 329,
+      "text_sha256": "35866a2c0ab70ecc4d795b316d906cfe6ffdd87da1b9f5e62a93b44cb402f013",
+      "review_status": "semantic_review_pending",
+      "page_end": 6
+    },
+    {
+      "id": "p06-b03",
+      "page": 6,
+      "line_start": 331,
+      "line_end": 332,
+      "text_sha256": "d0c28f62ca851927e7d89837fcfefce62801f5dd3e18fc4494c6202ef4a74b43",
+      "review_status": "semantic_review_pending",
+      "page_end": 6
+    },
+    {
+      "id": "p06-b04",
+      "page": 6,
+      "line_start": 334,
+      "line_end": 350,
+      "text_sha256": "7bd720b4b38e1df69efecc6b057ed7200ba1b3839ec1d2f1c47b25b4c995e65e",
+      "review_status": "semantic_review_pending",
+      "page_end": 6
+    },
+    {
+      "id": "p06-b05",
+      "page": 6,
+      "line_start": 352,
+      "line_end": 369,
+      "text_sha256": "ece61c9fbc9ff4ff7da57bec097325038eecaadb5ad7ebacb003358df2b4c309",
+      "review_status": "semantic_review_pending",
+      "page_end": 7
+    },
+    {
+      "id": "p07-b01",
+      "page": 7,
+      "line_start": 372,
+      "line_end": 372,
+      "text_sha256": "369f71236d84fbbbc413cd417fd93dd7a83ee3c27281079819820dcce2909943",
+      "review_status": "semantic_review_pending",
+      "page_end": 7
+    },
+    {
+      "id": "p07-b02",
+      "page": 7,
+      "line_start": 374,
+      "line_end": 387,
+      "text_sha256": "7333e8d3c435ae70b810e59acbe075c3ab068e3ff545e929f81a4c239778ee95",
+      "review_status": "semantic_review_pending",
+      "page_end": 7,
+      "related_auxiliary_groups": [
+        "SETUP-PERIODIC-ENDPOINTS"
+      ]
+    },
+    {
+      "id": "p07-b03",
+      "page": 7,
+      "line_start": 389,
+      "line_end": 390,
+      "text_sha256": "3452596ba0c5550ac30f537200cdfd085a4b7a262d7add721ed290de62efe171",
+      "review_status": "semantic_review_pending",
+      "page_end": 7,
+      "related_auxiliary_groups": [
+        "SETUP-PERIODIC-ENDPOINTS"
+      ]
+    },
+    {
+      "id": "p07-b04",
+      "page": 7,
+      "line_start": 392,
+      "line_end": 394,
+      "text_sha256": "f1e9aa704c2e5f41d9c2db6569bdccbf1250a45c6fa76f9f3ead718b0a9cff8e",
+      "review_status": "semantic_review_pending",
+      "page_end": 7,
+      "related_auxiliary_groups": [
+        "SETUP-PERIODIC-ENDPOINTS"
+      ]
+    },
+    {
+      "id": "p07-b05",
+      "page": 7,
+      "line_start": 396,
+      "line_end": 397,
+      "text_sha256": "7976f23f19f8378c40e51c0e13dd8d6aea05f53e7fc2e578ca1586ddf440d5cb",
+      "review_status": "semantic_review_pending",
+      "page_end": 7,
+      "related_auxiliary_groups": [
+        "SETUP-PERIODIC-ENDPOINTS"
+      ]
+    },
+    {
+      "id": "p07-b06",
+      "page": 7,
+      "line_start": 399,
+      "line_end": 400,
+      "text_sha256": "40671197db0204e6b046e022c924b4909e09567366af6522efbac9cec8424210",
+      "review_status": "semantic_review_pending",
+      "page_end": 7,
+      "related_auxiliary_groups": [
+        "SETUP-PERIODIC-ENDPOINTS"
+      ]
+    },
+    {
+      "id": "p07-b07",
+      "page": 7,
+      "line_start": 402,
+      "line_end": 403,
+      "text_sha256": "ace48ada14b55033228fab4aef837929ecafa145ef7e60bfed53f5e6445b848e",
+      "review_status": "semantic_review_pending",
+      "page_end": 7,
+      "related_auxiliary_groups": [
+        "SETUP-PERIODIC-ENDPOINTS"
+      ]
+    },
+    {
+      "id": "p07-b08",
+      "page": 7,
+      "line_start": 405,
+      "line_end": 408,
+      "text_sha256": "54fea58d8e7f00075b2df873cc276f823bbc3c95146983add7fb02aa04042fcc",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b01",
+      "page": 8,
+      "line_start": 410,
+      "line_end": 410,
+      "text_sha256": "e6975def03ef7573132caa3da05efc71c71bff9e3a0926acd50d29b98a10eb17",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b02",
+      "page": 8,
+      "line_start": 412,
+      "line_end": 422,
+      "text_sha256": "babf869f4484c2637ff8737f8e55b9d144b8b869c338658098506f76f1094b49",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b03",
+      "page": 8,
+      "line_start": 424,
+      "line_end": 431,
+      "text_sha256": "cdf95f8ba7b245041337cd4d91125ed40f218c47e31e9134c5efb130b3c64a88",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b04",
+      "page": 8,
+      "line_start": 433,
+      "line_end": 436,
+      "text_sha256": "739156422bd4367c7a7193ab8f9be6dca3b5506ca0ac535be7ce36107178a1ba",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b05",
+      "page": 8,
+      "line_start": 438,
+      "line_end": 439,
+      "text_sha256": "724947a898818f1d31519e17ea00ce63569271d65b00b54b2572e42d4cf5435c",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b06",
+      "page": 8,
+      "line_start": 441,
+      "line_end": 442,
+      "text_sha256": "9a472d2103b2355cdd288908a03c3041ef9a2eba4c2c53f14bdc44421ffcc5a6",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b07",
+      "page": 8,
+      "line_start": 444,
+      "line_end": 445,
+      "text_sha256": "a1e1a8bea16ae0f178691ccfc323bcfaeab76834d1eb239a3608b769b472dc70",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b08",
+      "page": 8,
+      "line_start": 447,
+      "line_end": 447,
+      "text_sha256": "a00e0ed4c319db06c0eedec027e89f8db963472d31eb6202a2d366bc0e1dba68",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b09",
+      "page": 8,
+      "line_start": 449,
+      "line_end": 449,
+      "text_sha256": "1b5ba4f5c9c1fcceb7fad008696180510fa2fc44ea3656986e26101d69060325",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b10",
+      "page": 8,
+      "line_start": 451,
+      "line_end": 451,
+      "text_sha256": "2168cc33333c472b383c2e55c2a7b243f9a7f69860d2b0398697531578d0a520",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b11",
+      "page": 8,
+      "line_start": 453,
+      "line_end": 463,
+      "text_sha256": "8fe1f683bcba553b721842ce2247abd0b29e61ebdc1a8d077a07ddba0b467dad",
+      "review_status": "semantic_review_pending",
+      "page_end": 8
+    },
+    {
+      "id": "p08-b12",
+      "page": 8,
+      "line_start": 465,
+      "line_end": 467,
+      "text_sha256": "44ecb37b35c4005079a137802c001b6124e66a44e91eebc12c1f09dd2ee3ade3",
+      "review_status": "semantic_review_pending",
+      "page_end": 9
+    },
+    {
+      "id": "p09-b01",
+      "page": 9,
+      "line_start": 469,
+      "line_end": 484,
+      "text_sha256": "a6666ac5d6e3c3fb52375842e4114945f566c7505be47979cfd206dde07325a9",
+      "review_status": "semantic_review_pending",
+      "page_end": 9
+    },
+    {
+      "id": "p09-b02",
+      "page": 9,
+      "line_start": 486,
+      "line_end": 489,
+      "text_sha256": "77d92f614c6b55aeac8144f3ddea6d09ef199b4d5f8d1e5ba2eb9cd460b6e82f",
+      "review_status": "semantic_review_pending",
+      "page_end": 9,
+      "related_auxiliary_groups": [
+        "SETUP-STANDARD-ROOT"
+      ]
+    },
+    {
+      "id": "p09-b03",
+      "page": 9,
+      "line_start": 491,
+      "line_end": 500,
+      "text_sha256": "c5ec6b77ba2b3c67beac418b21e1298e7417df63c923ba585a4a208f0d413d78",
+      "review_status": "semantic_review_pending",
+      "page_end": 9,
+      "related_auxiliary_groups": [
+        "SETUP-STANDARD-ROOT"
+      ]
+    },
+    {
+      "id": "p09-b04",
+      "page": 9,
+      "line_start": 502,
+      "line_end": 511,
+      "text_sha256": "e1985c5b5c8b2cae8f1f6e1766afc038a3f71decaf80a02c8ac2930b7e4128d4",
+      "review_status": "semantic_review_pending",
+      "page_end": 9
+    },
+    {
+      "id": "p09-b05",
+      "page": 9,
+      "line_start": 513,
+      "line_end": 520,
+      "text_sha256": "70097172fc65eaed7b370565d4c11037e9c93c33b05a3b9cfafbb38457ec74c1",
+      "review_status": "semantic_review_pending",
+      "page_end": 9
+    },
+    {
+      "id": "p09-b06",
+      "page": 9,
+      "line_start": 524,
+      "line_end": 536,
+      "text_sha256": "29ffea2c4f4250285d068a9bb96a40a5c923454377aebc5f9b789fd7c0abcdc1",
+      "review_status": "semantic_review_pending",
+      "page_end": 9
+    },
+    {
+      "id": "p09-b07",
+      "page": 9,
+      "line_start": 540,
+      "line_end": 552,
+      "text_sha256": "ac177d8bfe2c60b416b0e2b480a55b17c2466e4639180ba33989b57d833fe1b3",
+      "review_status": "semantic_review_pending",
+      "page_end": 10
+    },
+    {
+      "id": "p10-b01",
+      "page": 10,
+      "line_start": 554,
+      "line_end": 558,
+      "text_sha256": "e4f7591cfd97589145fcf421931945a438f11037b99e19aaf6be6643b10c0e0d",
+      "review_status": "semantic_review_pending",
+      "page_end": 10
+    },
+    {
+      "id": "p10-b02",
+      "page": 10,
+      "line_start": 560,
+      "line_end": 562,
+      "text_sha256": "4e7bdbc9870397151c5c8c5e8d651004033d8201bc79ad47ad18d43d75e7c673",
+      "review_status": "semantic_review_pending",
+      "page_end": 10
+    },
+    {
+      "id": "p10-b03",
+      "page": 10,
+      "line_start": 564,
+      "line_end": 568,
+      "text_sha256": "35fb08d629fc3205b2ede2771d74b0ae0a5c203c2eca2e5034b0a10d47ad95a8",
+      "review_status": "statement_compared",
+      "page_end": 10,
+      "named_statement": "Theorem 4",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.theorem_four",
+        "NLS.Articles.DNLSEstimates.exists_theorem_four_domain"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p10-b04",
+      "page": 10,
+      "line_start": 570,
+      "line_end": 577,
+      "text_sha256": "650e8f6cfa81998746ea9848efc8e7c78ec918c40607599d1c370fd86e1abc43",
+      "review_status": "semantic_review_pending",
+      "page_end": 10
+    },
+    {
+      "id": "p10-b05",
+      "page": 10,
+      "line_start": 579,
+      "line_end": 590,
+      "text_sha256": "1207cc7cf15e262741a6e70cc5a97b31ef96d9a20b343f93bc36f499ba85db85",
+      "review_status": "semantic_review_pending",
+      "page_end": 10,
+      "related_auxiliary_groups": [
+        "SETUP-DIFFERENTIAL-PRODUCT"
+      ]
+    },
+    {
+      "id": "p10-b06",
+      "page": 10,
+      "line_start": 592,
+      "line_end": 594,
+      "text_sha256": "d4c8b04f050d539da7e988c0d50540117577ea84c81beccf1ff29170e50e14ba",
+      "review_status": "semantic_review_pending",
+      "page_end": 10
+    },
+    {
+      "id": "p10-b07",
+      "page": 10,
+      "line_start": 596,
+      "line_end": 598,
+      "text_sha256": "f0c1f022a4f1fed4a026ba2eb91a8b9635fcc9bd8e77d2635738273d3c9f06f4",
+      "review_status": "statement_compared",
+      "page_end": 10,
+      "named_statement": "Lemma 2",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_two_domain",
+        "NLS.Articles.DNLSEstimates.lemma_two_joint",
+        "NLS.Articles.DNLSEstimates.lemma_two_spectral",
+        "NLS.Articles.DNLSEstimates.lemma_two_circle",
+        "NLS.Articles.DNLSEstimates.lemma_two_endpoint_path"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p10-b08",
+      "page": 10,
+      "line_start": 600,
+      "line_end": 602,
+      "text_sha256": "53a5c0de39ecb67a6f6bcdd97c0d77ade63d4e248ba08f3f6523b4160fcb69cb",
+      "review_status": "statement_compared",
+      "page_end": 10,
+      "named_statement": "Lemma 2",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_two_domain",
+        "NLS.Articles.DNLSEstimates.lemma_two_joint",
+        "NLS.Articles.DNLSEstimates.lemma_two_spectral",
+        "NLS.Articles.DNLSEstimates.lemma_two_circle",
+        "NLS.Articles.DNLSEstimates.lemma_two_endpoint_path"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p10-b09",
+      "page": 10,
+      "line_start": 604,
+      "line_end": 605,
+      "text_sha256": "e280005cf3d35875db2fbbd2ea219cde105778277b5792a48ad58dfd2040b331",
+      "review_status": "statement_compared",
+      "page_end": 10,
+      "named_statement": "Lemma 2",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_two_domain",
+        "NLS.Articles.DNLSEstimates.lemma_two_joint",
+        "NLS.Articles.DNLSEstimates.lemma_two_spectral",
+        "NLS.Articles.DNLSEstimates.lemma_two_circle",
+        "NLS.Articles.DNLSEstimates.lemma_two_endpoint_path"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p10-b10",
+      "page": 10,
+      "line_start": 607,
+      "line_end": 611,
+      "text_sha256": "3f9ae515e353ac89deff03eb291865a76c1cb7a03552d55ebc5161e640eff754",
+      "review_status": "statement_compared",
+      "page_end": 10,
+      "named_statement": "Lemma 2",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_two_domain",
+        "NLS.Articles.DNLSEstimates.lemma_two_joint",
+        "NLS.Articles.DNLSEstimates.lemma_two_spectral",
+        "NLS.Articles.DNLSEstimates.lemma_two_circle",
+        "NLS.Articles.DNLSEstimates.lemma_two_endpoint_path"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p10-b11",
+      "page": 10,
+      "line_start": 615,
+      "line_end": 620,
+      "text_sha256": "b08ec710551ebb1552a28624c2fc8e4688b6cc599264709e9766e5e317b02873",
+      "review_status": "statement_compared",
+      "page_end": 11,
+      "named_statement": "Lemma 2",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_two_domain",
+        "NLS.Articles.DNLSEstimates.lemma_two_joint",
+        "NLS.Articles.DNLSEstimates.lemma_two_spectral",
+        "NLS.Articles.DNLSEstimates.lemma_two_circle",
+        "NLS.Articles.DNLSEstimates.lemma_two_endpoint_path"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p11-b01",
+      "page": 11,
+      "line_start": 623,
+      "line_end": 633,
+      "text_sha256": "0c5136f4b68a86877221cd831c518c2040113f12c885bc740fa1cd6079d58224",
+      "review_status": "semantic_review_pending",
+      "page_end": 11
+    },
+    {
+      "id": "p11-b02",
+      "page": 11,
+      "line_start": 635,
+      "line_end": 635,
+      "text_sha256": "2b818ab2b9c3117c573a689714b5f2e3870d02901ac73869b55b5c3add218cdb",
+      "review_status": "semantic_review_pending",
+      "page_end": 11
+    },
+    {
+      "id": "p11-b03",
+      "page": 11,
+      "line_start": 637,
+      "line_end": 648,
+      "text_sha256": "d25e050a3a50acaece160b7bda2768998c1c652fa7b4b8af35eb857f6871b8c3",
+      "review_status": "semantic_review_pending",
+      "page_end": 11
+    },
+    {
+      "id": "p11-b04",
+      "page": 11,
+      "line_start": 651,
+      "line_end": 679,
+      "text_sha256": "359024866bc84f1f10c65b26ee849df708dff8e8e07c62e4f9b178be762108af",
+      "review_status": "semantic_review_pending",
+      "page_end": 11
+    },
+    {
+      "id": "p11-b05",
+      "page": 11,
+      "line_start": 681,
+      "line_end": 687,
+      "text_sha256": "216d5f7776ec6537a417226528580ba57fd5520ee8a402b4efcec281980659d3",
+      "review_status": "semantic_review_pending",
+      "page_end": 11
+    },
+    {
+      "id": "p11-b06",
+      "page": 11,
+      "line_start": 689,
+      "line_end": 692,
+      "text_sha256": "2e1a1b0f0466f536a16a4484aea57a2c6b54026f9562a19b898859c4e0f5fc2d",
+      "review_status": "semantic_review_pending",
+      "page_end": 11
+    },
+    {
+      "id": "p11-b07",
+      "page": 11,
+      "line_start": 694,
+      "line_end": 705,
+      "text_sha256": "54d0121d069898b51622c9ea3f44bc2f353c7b9cb7c156397b8ece8a527727f5",
+      "review_status": "semantic_review_pending",
+      "page_end": 12
+    },
+    {
+      "id": "p12-b01",
+      "page": 12,
+      "line_start": 707,
+      "line_end": 721,
+      "text_sha256": "1da4f7caf7e5f728d5eb7aac3da79e2306542ad13093467619f930fe1086afbe",
+      "review_status": "semantic_review_pending",
+      "page_end": 12
+    },
+    {
+      "id": "p12-b02",
+      "page": 12,
+      "line_start": 724,
+      "line_end": 733,
+      "text_sha256": "d078b504666dedd23e3b2534b51d24a4673e0d786f688e18c7eec266041d8129",
+      "review_status": "semantic_review_pending",
+      "page_end": 12
+    },
+    {
+      "id": "p12-b03",
+      "page": 12,
+      "line_start": 736,
+      "line_end": 737,
+      "text_sha256": "a52e2a74e1142187555912b9008ae366ffabe2e4eb78d1b5cdb696e2db393263",
+      "review_status": "semantic_review_pending",
+      "page_end": 12
+    },
+    {
+      "id": "p12-b04",
+      "page": 12,
+      "line_start": 739,
+      "line_end": 744,
+      "text_sha256": "f144525a0c8857cc6ca4f91e01915ad93509f9673899f35077248fc2ad49fe1d",
+      "review_status": "semantic_review_pending",
+      "page_end": 12
+    },
+    {
+      "id": "p12-b05",
+      "page": 12,
+      "line_start": 747,
+      "line_end": 748,
+      "text_sha256": "4b24482abe5aac3bd716cebe6b43082fb719e3a04235ee532b0d87098c88c17e",
+      "review_status": "semantic_review_pending",
+      "page_end": 12
+    },
+    {
+      "id": "p12-b06",
+      "page": 12,
+      "line_start": 750,
+      "line_end": 751,
+      "text_sha256": "02b0b64d5c4fe2c7fe0c522268c7879430f13c6777ac234576683e13949850f7",
+      "review_status": "semantic_review_pending",
+      "page_end": 12
+    },
+    {
+      "id": "p12-b07",
+      "page": 12,
+      "line_start": 753,
+      "line_end": 757,
+      "text_sha256": "768d1d56822a1fce54bc9afe3d713f6a6e1970cb71c83bd2e154823a66535c68",
+      "review_status": "semantic_review_pending",
+      "page_end": 12
+    },
+    {
+      "id": "p12-b08",
+      "page": 12,
+      "line_start": 760,
+      "line_end": 760,
+      "text_sha256": "b303810e2587acd1f5c1c42f2d1599de17de185489387eb645186fd9fa14af3b",
+      "review_status": "semantic_review_pending",
+      "page_end": 12
+    },
+    {
+      "id": "p12-b09",
+      "page": 12,
+      "line_start": 762,
+      "line_end": 764,
+      "text_sha256": "1457fd3e85174d40676bc76050dd0a9536a91c3c025eb1ca96d45119f23083ba",
+      "review_status": "semantic_review_pending",
+      "page_end": 12
+    },
+    {
+      "id": "p12-b10",
+      "page": 12,
+      "line_start": 766,
+      "line_end": 767,
+      "text_sha256": "b9969a0c38433a319d22b185e876138712dafc80ed4b4724ef6520562551b9ef",
+      "review_status": "semantic_review_pending",
+      "page_end": 13
+    },
+    {
+      "id": "p13-b01",
+      "page": 13,
+      "line_start": 769,
+      "line_end": 777,
+      "text_sha256": "b7a5d8c43cc58e45a2987ce90e1f32c61612f7cac97b9124bcedbdcd81cada93",
+      "review_status": "semantic_review_pending",
+      "page_end": 13
+    },
+    {
+      "id": "p13-b02",
+      "page": 13,
+      "line_start": 779,
+      "line_end": 779,
+      "text_sha256": "c86c72fe2879de3be829065c00b06389c3d6d4494eb07136a0e52e1aa867b436",
+      "review_status": "semantic_review_pending",
+      "page_end": 13
+    },
+    {
+      "id": "p13-b03",
+      "page": 13,
+      "line_start": 781,
+      "line_end": 788,
+      "text_sha256": "1f665456e80ce32cf72c4270d64a9fff5f1271b4ef9e2d9fdc18d48713deabab",
+      "review_status": "semantic_review_pending",
+      "page_end": 13
+    },
+    {
+      "id": "p13-b04",
+      "page": 13,
+      "line_start": 791,
+      "line_end": 793,
+      "text_sha256": "715ddc3e463ae2bb9c9972fb64a9fb3dcbbed846c76fe975940063ea012b5c09",
+      "review_status": "semantic_review_pending",
+      "page_end": 13
+    },
+    {
+      "id": "p13-b05",
+      "page": 13,
+      "line_start": 795,
+      "line_end": 806,
+      "text_sha256": "7e58cbfe4910bacad41081a83ccdfeb674953af0c8c0bb1e1d36c065db6e3a02",
+      "review_status": "semantic_review_pending",
+      "page_end": 13
+    },
+    {
+      "id": "p13-b06",
+      "page": 13,
+      "line_start": 808,
+      "line_end": 813,
+      "text_sha256": "c1575f7c44f812b7fa92dd964bda53d400b427add1dc7f49c80cdab1ac82e9f6",
+      "review_status": "semantic_review_pending",
+      "page_end": 13
+    },
+    {
+      "id": "p13-b07",
+      "page": 13,
+      "line_start": 815,
+      "line_end": 818,
+      "text_sha256": "82ed67d75a7871497d62054653602a86a707d5860dc4ca5b3346ccbaea6516b3",
+      "review_status": "semantic_review_pending",
+      "page_end": 13,
+      "related_auxiliary_groups": [
+        "HIGHER-GAP-INTEGRAL"
+      ]
+    },
+    {
+      "id": "p13-b08",
+      "page": 13,
+      "line_start": 820,
+      "line_end": 821,
+      "text_sha256": "263ea6a518600aebb05aa90fa5cc790a79f103148f924e32283979eee60e97b6",
+      "review_status": "semantic_review_pending",
+      "page_end": 13,
+      "related_auxiliary_groups": [
+        "HIGHER-GAP-INTEGRAL"
+      ]
+    },
+    {
+      "id": "p13-b09",
+      "page": 13,
+      "line_start": 823,
+      "line_end": 831,
+      "text_sha256": "344092603a8ed4b86f3a95e2e7b56af5830394933d8d1ea76b7c8c3af98117de",
+      "review_status": "semantic_review_pending",
+      "page_end": 13,
+      "related_auxiliary_groups": [
+        "HIGHER-GAP-INTEGRAL"
+      ]
+    },
+    {
+      "id": "p13-b10",
+      "page": 13,
+      "line_start": 833,
+      "line_end": 837,
+      "text_sha256": "69aa63d485b81c67356799ba916d4df12d9675504e762004adad3b02b8964eeb",
+      "review_status": "semantic_review_pending",
+      "page_end": 13,
+      "related_auxiliary_groups": [
+        "HIGHER-GAP-INTEGRAL"
+      ]
+    },
+    {
+      "id": "p13-b11",
+      "page": 13,
+      "line_start": 840,
+      "line_end": 841,
+      "text_sha256": "48214092e939fa85644ba0230975fec5b606177f677a88285ae3ea31b27abcae",
+      "review_status": "semantic_review_pending",
+      "page_end": 13,
+      "related_auxiliary_groups": [
+        "HIGHER-GAP-INTEGRAL"
+      ]
+    },
+    {
+      "id": "p13-b12",
+      "page": 13,
+      "line_start": 843,
+      "line_end": 844,
+      "text_sha256": "04bd8c4bd4bc03f16ca5208dde2d3913c485ecdf247e9a29b00e28d5e124e788",
+      "review_status": "semantic_review_pending",
+      "page_end": 13,
+      "related_auxiliary_groups": [
+        "HIGHER-GAP-INTEGRAL"
+      ]
+    },
+    {
+      "id": "p13-b13",
+      "page": 13,
+      "line_start": 846,
+      "line_end": 851,
+      "text_sha256": "13505a4bb7c9dda0186fc6cdcda49aa8ac2bb21d46a1966f7bee09eb4fd42acd",
+      "review_status": "semantic_review_pending",
+      "page_end": 13,
+      "related_auxiliary_groups": [
+        "HIGHER-ASYMPTOTICS"
+      ]
+    },
+    {
+      "id": "p13-b14",
+      "page": 13,
+      "line_start": 854,
+      "line_end": 863,
+      "text_sha256": "adc22e1ef4154abbf25d1db519cf43611c42b4a912312ebdb8dbf8b0e73d6479",
+      "review_status": "semantic_review_pending",
+      "page_end": 14
+    },
+    {
+      "id": "p14-b01",
+      "page": 14,
+      "line_start": 865,
+      "line_end": 894,
+      "text_sha256": "79eef30a83596f909b25aed6dd93ccda84f2421bba76ec0aae66ab3a6030edf2",
+      "review_status": "semantic_review_pending",
+      "page_end": 14
+    },
+    {
+      "id": "p14-b02",
+      "page": 14,
+      "line_start": 896,
+      "line_end": 908,
+      "text_sha256": "fbb079214c0a2248c81528b3f26dc0da11d0158ea77b4fe16297aa54bdf44c8a",
+      "review_status": "semantic_review_pending",
+      "page_end": 14
+    },
+    {
+      "id": "p14-b03",
+      "page": 14,
+      "line_start": 910,
+      "line_end": 910,
+      "text_sha256": "aafe75d9be4666b22f68965b1f896785179486c507cd4f3a2cd4cbf41922c009",
+      "review_status": "semantic_review_pending",
+      "page_end": 14
+    },
+    {
+      "id": "p14-b04",
+      "page": 14,
+      "line_start": 913,
+      "line_end": 914,
+      "text_sha256": "f8e37aaf4573a9a323cf92b292934e0caaa1f04eaf91eff1a3be91cccd98ec9f",
+      "review_status": "semantic_review_pending",
+      "page_end": 15
+    },
+    {
+      "id": "p15-b01",
+      "page": 15,
+      "line_start": 916,
+      "line_end": 921,
+      "text_sha256": "4d40286e65ab5c7e52b231fecb0ea4d13c66a0a8ce44ea7ef05f26505dbf0e81",
+      "review_status": "semantic_review_pending",
+      "page_end": 15
+    },
+    {
+      "id": "p15-b02",
+      "page": 15,
+      "line_start": 923,
+      "line_end": 926,
+      "text_sha256": "f1a6be0dd0e26d9090f371682251f5c545c50a9853bebd0c5c49b6019bcbfaca",
+      "review_status": "semantic_review_pending",
+      "page_end": 15,
+      "related_auxiliary_groups": [
+        "S3-L2-LOCALIZATION"
+      ]
+    },
+    {
+      "id": "p15-b03",
+      "page": 15,
+      "line_start": 928,
+      "line_end": 936,
+      "text_sha256": "308e8a6c1bfb8561a4d9d64fc3d833523fc76c87acfc3045e994ee4a15d73f21",
+      "review_status": "semantic_review_pending",
+      "page_end": 15
+    },
+    {
+      "id": "p15-b04",
+      "page": 15,
+      "line_start": 938,
+      "line_end": 955,
+      "text_sha256": "2185833e5cc4afdd923091e1b40e3810d0439cd04a0c0ee5425d15ba941f923f",
+      "review_status": "semantic_review_pending",
+      "page_end": 15,
+      "related_auxiliary_groups": [
+        "S3-FREE-MODES"
+      ]
+    },
+    {
+      "id": "p15-b05",
+      "page": 15,
+      "line_start": 957,
+      "line_end": 957,
+      "text_sha256": "e8e94ade74743449ab4d7881fb9ea846acbe466267860a73ed4cf07ecdc2a5e1",
+      "review_status": "semantic_review_pending",
+      "page_end": 15,
+      "related_auxiliary_groups": [
+        "S3-FREE-MODES"
+      ]
+    },
+    {
+      "id": "p15-b06",
+      "page": 15,
+      "line_start": 959,
+      "line_end": 962,
+      "text_sha256": "42ae471a120aebcc474152a547d746caeeac893b8ee155197e5a0c54671997ca",
+      "review_status": "semantic_review_pending",
+      "page_end": 15,
+      "related_auxiliary_groups": [
+        "S3-FREE-MODES"
+      ]
+    },
+    {
+      "id": "p15-b07",
+      "page": 15,
+      "line_start": 964,
+      "line_end": 966,
+      "text_sha256": "aa2f5b407b2940f4626538d103e36995909f9825c318cdd33c52b53787166072",
+      "review_status": "semantic_review_pending",
+      "page_end": 15,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p15-b08",
+      "page": 15,
+      "line_start": 968,
+      "line_end": 968,
+      "text_sha256": "888acc09148919946bbaf9e0f4b4c23b0c981bdfe6e3dd2b2504309e05d5f31b",
+      "review_status": "semantic_review_pending",
+      "page_end": 15,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p15-b09",
+      "page": 15,
+      "line_start": 971,
+      "line_end": 977,
+      "text_sha256": "b4693886266189a1341fab75e623e443914482ddbf5f1069f33ca6715a7be577",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p16-b01",
+      "page": 16,
+      "line_start": 979,
+      "line_end": 979,
+      "text_sha256": "788703fd8cc8d413105d16d619a02d61a5866c695f8aeecfb83c226c1dedc12b",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p16-b02",
+      "page": 16,
+      "line_start": 981,
+      "line_end": 981,
+      "text_sha256": "ad649d14f076567e812aca9f17efc3f4fe3297de1a21aa29018d7c2f048dcbfb",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p16-b03",
+      "page": 16,
+      "line_start": 983,
+      "line_end": 983,
+      "text_sha256": "6d0b4c99a338816bc820007962d445ad4822094e0ec33fa06d5bc09f407d4669",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p16-b04",
+      "page": 16,
+      "line_start": 985,
+      "line_end": 986,
+      "text_sha256": "8148cb1c4b6cb5742292f41a553831c8c8e8a8da7ef202728557d185056afa67",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p16-b05",
+      "page": 16,
+      "line_start": 988,
+      "line_end": 989,
+      "text_sha256": "86aae468980de42333150a002389851b32881663849538df3e381708740cf33a",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p16-b06",
+      "page": 16,
+      "line_start": 991,
+      "line_end": 995,
+      "text_sha256": "5acad1ea45babac9d397f828f8408405c4a2a9a48bbd1597d1119836b9b7ddff",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p16-b07",
+      "page": 16,
+      "line_start": 997,
+      "line_end": 997,
+      "text_sha256": "5244ddd2c31b9dc708f35f4385f1002e93864830d141dd10c436e6f0e34f67cb",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p16-b08",
+      "page": 16,
+      "line_start": 999,
+      "line_end": 1000,
+      "text_sha256": "9c62f39a4882758b0beb72c57b63dfce8542aa04a4e92e1387974382b62df136",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p16-b09",
+      "page": 16,
+      "line_start": 1002,
+      "line_end": 1002,
+      "text_sha256": "050a88cacec094d59d93438ea84d4922e62a6674d9d51f4ffd3ed01e5e862d1e",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ"
+      ]
+    },
+    {
+      "id": "p16-b10",
+      "page": 16,
+      "line_start": 1004,
+      "line_end": 1007,
+      "text_sha256": "e239bcd06b9bae2743b4ea83b6ff017a67451785fb8d77ab5fe07a21107286ab",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ",
+        "S3-INVERSE"
+      ]
+    },
+    {
+      "id": "p16-b11",
+      "page": 16,
+      "line_start": 1009,
+      "line_end": 1014,
+      "text_sha256": "24ba24dda71f75bc7090864c9ca82cd50abb21265689a92c7ef151cb963fad60",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ",
+        "S3-INVERSE"
+      ]
+    },
+    {
+      "id": "p16-b12",
+      "page": 16,
+      "line_start": 1016,
+      "line_end": 1022,
+      "text_sha256": "baeba1a1c637c58ffc74b9c97f57a5b5f417b3ae64d8711ff48c26ae14ad0d35",
+      "review_status": "semantic_review_pending",
+      "page_end": 16,
+      "related_auxiliary_groups": [
+        "S3-PQ",
+        "S3-INVERSE"
+      ]
+    },
+    {
+      "id": "p16-b13",
+      "page": 16,
+      "line_start": 1024,
+      "line_end": 1031,
+      "text_sha256": "ada98d656fd6ed1c33aef6d654b0d98d53f27920131c6405850df8211497b85b",
+      "review_status": "semantic_review_pending",
+      "page_end": 16
+    },
+    {
+      "id": "p16-b14",
+      "page": 16,
+      "line_start": 1033,
+      "line_end": 1033,
+      "text_sha256": "c90cdb1c4aa9c8fd4582d72a47b1daff5ce904aee8f3c0e136777e7105cdc87a",
+      "review_status": "semantic_review_pending",
+      "page_end": 16
+    },
+    {
+      "id": "p16-b15",
+      "page": 16,
+      "line_start": 1035,
+      "line_end": 1036,
+      "text_sha256": "8d78fe3a5753eef62982b87275833b7d9f060c61213f50d9372378c20163d286",
+      "review_status": "semantic_review_pending",
+      "page_end": 16
+    },
+    {
+      "id": "p16-b16",
+      "page": 16,
+      "line_start": 1038,
+      "line_end": 1038,
+      "text_sha256": "581657a5bf41880e3f1834ffaa7c277d53f1f2cf4e24a8a968db2074fc69f0fa",
+      "review_status": "semantic_review_pending",
+      "page_end": 16
+    },
+    {
+      "id": "p16-b17",
+      "page": 16,
+      "line_start": 1040,
+      "line_end": 1040,
+      "text_sha256": "a7de4b7ff037c02e03b1b7ebafb508c45911a68a131d40aa2dec1ac93cd423b8",
+      "review_status": "semantic_review_pending",
+      "page_end": 16
+    },
+    {
+      "id": "p16-b18",
+      "page": 16,
+      "line_start": 1042,
+      "line_end": 1054,
+      "text_sha256": "150e0f50496375c7c06cb0e1687d24c2d29380a52e3af34f06163527ca43e599",
+      "review_status": "semantic_review_pending",
+      "page_end": 17,
+      "related_auxiliary_groups": [
+        "S3-FIRST-SHIFT"
+      ]
+    },
+    {
+      "id": "p17-b01",
+      "page": 17,
+      "line_start": 1056,
+      "line_end": 1061,
+      "text_sha256": "a94d73c1fe481bbe36e728dda4781421caf6fdb570e2800fce4c89ca625a2f5c",
+      "review_status": "semantic_review_pending",
+      "page_end": 17,
+      "related_auxiliary_groups": [
+        "S3-FIRST-SHIFT"
+      ]
+    },
+    {
+      "id": "p17-b02",
+      "page": 17,
+      "line_start": 1063,
+      "line_end": 1065,
+      "text_sha256": "37658c41a19925c4e5fd537fc31a52bae6aeb7441255a059e44bf9c5f805bad4",
+      "review_status": "semantic_review_pending",
+      "page_end": 17,
+      "related_auxiliary_groups": [
+        "S3-FIRST-SHIFT"
+      ]
+    },
+    {
+      "id": "p17-b03",
+      "page": 17,
+      "line_start": 1067,
+      "line_end": 1070,
+      "text_sha256": "6a120c2166cf05d2e209aa43c0a8d29a9b43221157bd8e6c7035d77373f9dade",
+      "review_status": "semantic_review_pending",
+      "page_end": 17,
+      "related_auxiliary_groups": [
+        "S3-FIRST-SHIFT"
+      ]
+    },
+    {
+      "id": "p17-b04",
+      "page": 17,
+      "line_start": 1072,
+      "line_end": 1082,
+      "text_sha256": "59faf218680616233ea873be00e9542916beae81325a4c7602afa747bc41f0c1",
+      "review_status": "semantic_review_pending",
+      "page_end": 17,
+      "related_auxiliary_groups": [
+        "S3-FIRST-SHIFT"
+      ]
+    },
+    {
+      "id": "p17-b05",
+      "page": 17,
+      "line_start": 1084,
+      "line_end": 1087,
+      "text_sha256": "59166c6a8fe8b3b6cea17439019682987dd831b29cbb7c404576d62d34bd75dc",
+      "review_status": "semantic_review_pending",
+      "page_end": 17
+    },
+    {
+      "id": "p17-b06",
+      "page": 17,
+      "line_start": 1089,
+      "line_end": 1089,
+      "text_sha256": "573902ea7307c7cdb32cd1d0008d897640c6bcdba609437cd623daacb34caba9",
+      "review_status": "semantic_review_pending",
+      "page_end": 17
+    },
+    {
+      "id": "p17-b07",
+      "page": 17,
+      "line_start": 1091,
+      "line_end": 1092,
+      "text_sha256": "b6c9ec10a2f1a2528f3c2ae0c9e32263b541967d6750091ab5133146594c3d33",
+      "review_status": "semantic_review_pending",
+      "page_end": 17,
+      "related_auxiliary_groups": [
+        "S3-SQUARE-KERNEL"
+      ]
+    },
+    {
+      "id": "p17-b08",
+      "page": 17,
+      "line_start": 1094,
+      "line_end": 1100,
+      "text_sha256": "f44b4366a18e247f3f7898f26f6545548df681f576133f1f9dceaddd43c3e221",
+      "review_status": "semantic_review_pending",
+      "page_end": 17,
+      "related_auxiliary_groups": [
+        "S3-SQUARE-KERNEL"
+      ]
+    },
+    {
+      "id": "p17-b09",
+      "page": 17,
+      "line_start": 1102,
+      "line_end": 1112,
+      "text_sha256": "87f1b5aa6a0fb30b9e378ca93f6a5bde0e5a0721a490b651a373c3d8fcc6e5db",
+      "review_status": "semantic_review_pending",
+      "page_end": 17,
+      "related_auxiliary_groups": [
+        "S3-SQUARE-KERNEL"
+      ]
+    },
+    {
+      "id": "p17-b10",
+      "page": 17,
+      "line_start": 1115,
+      "line_end": 1129,
+      "text_sha256": "20bbd8e697676587bbc2e104db597a9a54fa93f6dd175f221414a87a64d8ac1c",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-SQUARE-KERNEL"
+      ]
+    },
+    {
+      "id": "p18-b01",
+      "page": 18,
+      "line_start": 1131,
+      "line_end": 1141,
+      "text_sha256": "2dfdf3e48c553bf353b3eb6b7b3614bad2960de4cb8b0ce143ed949838e0b33a",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-SQUARE-KERNEL",
+        "S3-NEUMANN"
+      ]
+    },
+    {
+      "id": "p18-b02",
+      "page": 18,
+      "line_start": 1143,
+      "line_end": 1143,
+      "text_sha256": "df9a94673220109d2b2671e0f2d4fd9fc47e905192c06652c46fd4ef9236409c",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-NEUMANN"
+      ]
+    },
+    {
+      "id": "p18-b03",
+      "page": 18,
+      "line_start": 1145,
+      "line_end": 1145,
+      "text_sha256": "9d401874595129459a187c05967bcbb383edb446149c7b4709dc0a78fd0532be",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-NEUMANN"
+      ]
+    },
+    {
+      "id": "p18-b04",
+      "page": 18,
+      "line_start": 1147,
+      "line_end": 1147,
+      "text_sha256": "cfc956535da111829b59806d3c4dcce3365280181436555a02122f86be6c3b99",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-NEUMANN"
+      ]
+    },
+    {
+      "id": "p18-b05",
+      "page": 18,
+      "line_start": 1149,
+      "line_end": 1149,
+      "text_sha256": "ddb289ce078daf341c0aa09f8015a746aa6c4853ec700cb6fb895155687737ae",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-NEUMANN"
+      ]
+    },
+    {
+      "id": "p18-b06",
+      "page": 18,
+      "line_start": 1151,
+      "line_end": 1151,
+      "text_sha256": "ff01e616390994d845a1aa7256d70a17f3b422c51ded9eef0adbe7a2b7c6e1b4",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-NEUMANN"
+      ]
+    },
+    {
+      "id": "p18-b07",
+      "page": 18,
+      "line_start": 1153,
+      "line_end": 1153,
+      "text_sha256": "4803df4a629dcd36f0857935b17b0e3e13868af20fc2a50a4a0ac27baec415ee",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-NEUMANN"
+      ]
+    },
+    {
+      "id": "p18-b08",
+      "page": 18,
+      "line_start": 1155,
+      "line_end": 1155,
+      "text_sha256": "5cceed80a5ac9a593be6fe1f09a8c7facbf22e40f70397ffac34824d944e7be0",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-NEUMANN"
+      ]
+    },
+    {
+      "id": "p18-b09",
+      "page": 18,
+      "line_start": 1157,
+      "line_end": 1160,
+      "text_sha256": "ad4c772b122e28feb0ba2629349159f6828ce3766c46c5c526a260b56b4ba4d6",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-NEUMANN"
+      ]
+    },
+    {
+      "id": "p18-b10",
+      "page": 18,
+      "line_start": 1162,
+      "line_end": 1163,
+      "text_sha256": "21109c7d766fad497cdae66192167dc70f7175c66be40064bba5f057d1f2d456",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-RECONSTRUCTION"
+      ]
+    },
+    {
+      "id": "p18-b11",
+      "page": 18,
+      "line_start": 1165,
+      "line_end": 1166,
+      "text_sha256": "0bd6dbba4474a008bf2f53e9969107aed1edcf97acdc8a54c906c007697527f0",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-RECONSTRUCTION"
+      ]
+    },
+    {
+      "id": "p18-b12",
+      "page": 18,
+      "line_start": 1168,
+      "line_end": 1168,
+      "text_sha256": "dacd6fc959b78fe618b5cbdd6887e65a09b5996c990f518aea41936e42e5ce67",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-RECONSTRUCTION"
+      ]
+    },
+    {
+      "id": "p18-b13",
+      "page": 18,
+      "line_start": 1170,
+      "line_end": 1170,
+      "text_sha256": "1acd91cf32ce952a7c6be41437caabb62500069d3bf7699e17ea4bc5f49b2fed",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-RECONSTRUCTION"
+      ]
+    },
+    {
+      "id": "p18-b14",
+      "page": 18,
+      "line_start": 1172,
+      "line_end": 1172,
+      "text_sha256": "1230a7ce7c0d82062ed8462ad0fd804ee12ecc29b2744878ed486ab10fe1b61d",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-RECONSTRUCTION"
+      ]
+    },
+    {
+      "id": "p18-b15",
+      "page": 18,
+      "line_start": 1174,
+      "line_end": 1174,
+      "text_sha256": "b6c48a74df540429c56818776ee14be4d3e9401c56fabb2c96096ce440387063",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-RECONSTRUCTION"
+      ]
+    },
+    {
+      "id": "p18-b16",
+      "page": 18,
+      "line_start": 1176,
+      "line_end": 1177,
+      "text_sha256": "9fd9aa775f5fba6d25c16afe5b64a8f2ccbddcc3d33490f9cc34e522a4ca8c10",
+      "review_status": "semantic_review_pending",
+      "page_end": 18,
+      "related_auxiliary_groups": [
+        "S3-RECONSTRUCTION"
+      ]
+    },
+    {
+      "id": "p18-b17",
+      "page": 18,
+      "line_start": 1179,
+      "line_end": 1181,
+      "text_sha256": "98cbe1c87067f01dbade8c0fd11e272c18b9684c8176a6060699cecac8eb7c10",
+      "review_status": "semantic_review_pending",
+      "page_end": 19
+    },
+    {
+      "id": "p19-b01",
+      "page": 19,
+      "line_start": 1183,
+      "line_end": 1185,
+      "text_sha256": "a3e886b13b38efb312f304b81ae6bcfe4bd237bf6492651fb1d253351caa1682",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b02",
+      "page": 19,
+      "line_start": 1187,
+      "line_end": 1192,
+      "text_sha256": "4a13b50e8cb8341381341241cf6e29f428d1a42e1b9bfa60d39b7daf019dbe68",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b03",
+      "page": 19,
+      "line_start": 1194,
+      "line_end": 1198,
+      "text_sha256": "a9b946def1745f16a2ac766e2af5a09f7fde1edda3af433e854825c2b552dd06",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b04",
+      "page": 19,
+      "line_start": 1200,
+      "line_end": 1205,
+      "text_sha256": "be10c76a0ebaea3936dd60b2a6e0a84ef59adf29a48ac0e5cfe2381ae4f80fc9",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b05",
+      "page": 19,
+      "line_start": 1207,
+      "line_end": 1208,
+      "text_sha256": "7dde47543d9050f923d31b00032fe0d04c113d5fe222e635cc332e00ec06788e",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b06",
+      "page": 19,
+      "line_start": 1210,
+      "line_end": 1223,
+      "text_sha256": "42c7707a4fb8c1c655095899a9c348e5ddc1c395aadf0f702b465867ce3a906c",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b07",
+      "page": 19,
+      "line_start": 1225,
+      "line_end": 1229,
+      "text_sha256": "eb80649ab80dc8d200511f8103ba73a17bb29f330624f6e4092ff60ada53155a",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b08",
+      "page": 19,
+      "line_start": 1231,
+      "line_end": 1232,
+      "text_sha256": "ee3c9a88657e82198c97fe6894b54f1c8ac214853a4d30bedcfd9dd4f459db5b",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b09",
+      "page": 19,
+      "line_start": 1234,
+      "line_end": 1234,
+      "text_sha256": "a5d79dd7189cb9bb952bfcd52678026fc45188d1ad719a6af4666df9b0fe3d58",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b10",
+      "page": 19,
+      "line_start": 1236,
+      "line_end": 1237,
+      "text_sha256": "7f31ddc7ad553f8d4990764c24ac64cfb5584a01c67b89c82056b18ab2be7a9e",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b11",
+      "page": 19,
+      "line_start": 1239,
+      "line_end": 1240,
+      "text_sha256": "ac93e08c28a07f9860f8cbc2c7dc6eb2b5cbbdd7aff3fef3ee47c09f95fc87e1",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b12",
+      "page": 19,
+      "line_start": 1242,
+      "line_end": 1252,
+      "text_sha256": "8b0857f57c9e091df3881b3132d52a0ad4305fb36afb2713271dfa55aa74a1d4",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b13",
+      "page": 19,
+      "line_start": 1254,
+      "line_end": 1256,
+      "text_sha256": "d6bf57999ddb786612315da5b43f1a6e7752faf23c3df25791b797dd15506dce",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b14",
+      "page": 19,
+      "line_start": 1258,
+      "line_end": 1262,
+      "text_sha256": "49c01dec649b0acf16a9c330ed1424282e11f19b22b7d9855dd59239fcef191e",
+      "review_status": "semantic_review_pending",
+      "page_end": 19,
+      "related_auxiliary_groups": [
+        "S3-MATRIX-SERIES"
+      ]
+    },
+    {
+      "id": "p19-b15",
+      "page": 19,
+      "line_start": 1265,
+      "line_end": 1282,
+      "text_sha256": "c4708f301d5ad607454762f338fc7b978f250ff0c52d2f61a00c947b86a62fbd",
+      "review_status": "semantic_review_pending",
+      "page_end": 20,
+      "related_auxiliary_groups": [
+        "S3-DIAGONAL"
+      ]
+    },
+    {
+      "id": "p20-b01",
+      "page": 20,
+      "line_start": 1284,
+      "line_end": 1291,
+      "text_sha256": "bedcc056dece2c2bd2b3d8b18ee7cdd44c719a3e1b8e66f1ee40ef947444cf31",
+      "review_status": "semantic_review_pending",
+      "page_end": 20,
+      "related_auxiliary_groups": [
+        "S3-DIAGONAL"
+      ]
+    },
+    {
+      "id": "p20-b02",
+      "page": 20,
+      "line_start": 1293,
+      "line_end": 1318,
+      "text_sha256": "ac86f4105e0e526b0e2447271cea18f242142e5a923745f86d8311f415d6e599",
+      "review_status": "semantic_review_pending",
+      "page_end": 20,
+      "related_auxiliary_groups": [
+        "S3-DIAGONAL"
+      ]
+    },
+    {
+      "id": "p20-b03",
+      "page": 20,
+      "line_start": 1320,
+      "line_end": 1322,
+      "text_sha256": "78332244d1a0d594f14379cd78692126711e313ec6bfe509dd0c91900b9ec320",
+      "review_status": "semantic_review_pending",
+      "page_end": 20,
+      "related_auxiliary_groups": [
+        "S3-DIAGONAL"
+      ]
+    },
+    {
+      "id": "p20-b04",
+      "page": 20,
+      "line_start": 1324,
+      "line_end": 1335,
+      "text_sha256": "2bd02aa4ff14f8369ed9c19a3214791c2950922d97235d823c3be7a4b9fb28ac",
+      "review_status": "semantic_review_pending",
+      "page_end": 20
+    },
+    {
+      "id": "p20-b05",
+      "page": 20,
+      "line_start": 1338,
+      "line_end": 1347,
+      "text_sha256": "f7bf93346b11a94316093d8c8cb83a448dbe2b176f1e42ea4a2c87313531fcf5",
+      "review_status": "semantic_review_pending",
+      "page_end": 21,
+      "related_auxiliary_groups": [
+        "S3-ROOTS"
+      ]
+    },
+    {
+      "id": "p21-b01",
+      "page": 21,
+      "line_start": 1349,
+      "line_end": 1360,
+      "text_sha256": "00903d6687ebaac7f74feea45de9460624bdc707a7b06f131c9716e212697f39",
+      "review_status": "semantic_review_pending",
+      "page_end": 21,
+      "related_auxiliary_groups": [
+        "S3-ROOTS"
+      ]
+    },
+    {
+      "id": "p21-b02",
+      "page": 21,
+      "line_start": 1362,
+      "line_end": 1363,
+      "text_sha256": "21a24d9c7cc441b9f7713fde8da26f2e202c666b30859a0a7d0308a4b83f4336",
+      "review_status": "semantic_review_pending",
+      "page_end": 21,
+      "related_auxiliary_groups": [
+        "S3-ROOTS"
+      ]
+    },
+    {
+      "id": "p21-b03",
+      "page": 21,
+      "line_start": 1365,
+      "line_end": 1366,
+      "text_sha256": "7e0d9959d580f3def860a76aa178c4d650dee61607002fa0b205c1ae591604df",
+      "review_status": "semantic_review_pending",
+      "page_end": 21,
+      "related_auxiliary_groups": [
+        "S3-ROOTS"
+      ]
+    },
+    {
+      "id": "p21-b04",
+      "page": 21,
+      "line_start": 1368,
+      "line_end": 1383,
+      "text_sha256": "b21c1d970b1e07ceac22bdb70b30a963921b051212486f1b7b00c3b377378254",
+      "review_status": "semantic_review_pending",
+      "page_end": 21,
+      "related_auxiliary_groups": [
+        "S3-ROOTS"
+      ]
+    },
+    {
+      "id": "p21-b05",
+      "page": 21,
+      "line_start": 1385,
+      "line_end": 1386,
+      "text_sha256": "fce62a4ef4f35448b60aabd10730ee16ee8949eadffe59c8c308a8fc24b04e71",
+      "review_status": "semantic_review_pending",
+      "page_end": 21,
+      "related_auxiliary_groups": [
+        "S3-ROOTS"
+      ]
+    },
+    {
+      "id": "p21-b06",
+      "page": 21,
+      "line_start": 1388,
+      "line_end": 1392,
+      "text_sha256": "92ff04179587e5a0df99e7f313a1793445f83ae23b2ca48eb5f143e314d613a3",
+      "review_status": "semantic_review_pending",
+      "page_end": 21,
+      "related_auxiliary_groups": [
+        "S3-HEIGHT"
+      ]
+    },
+    {
+      "id": "p21-b07",
+      "page": 21,
+      "line_start": 1394,
+      "line_end": 1394,
+      "text_sha256": "af7a8c54bee3317b3ed7812af7d1104911e15ee7f892b9a74091795b5b82d465",
+      "review_status": "semantic_review_pending",
+      "page_end": 21,
+      "related_auxiliary_groups": [
+        "S3-HEIGHT"
+      ]
+    },
+    {
+      "id": "p21-b08",
+      "page": 21,
+      "line_start": 1396,
+      "line_end": 1397,
+      "text_sha256": "095f5dea95cc5c734d00d1dbe77f70dc97f8d16c892bc3041529b2ab703feb1a",
+      "review_status": "semantic_review_pending",
+      "page_end": 21,
+      "related_auxiliary_groups": [
+        "S3-HEIGHT"
+      ]
+    },
+    {
+      "id": "p21-b09",
+      "page": 21,
+      "line_start": 1399,
+      "line_end": 1407,
+      "text_sha256": "a89d3acc3e98ef017e9f22a7e82c7cf216f4fd033de0ef783a38eb4c630e5b06",
+      "review_status": "semantic_review_pending",
+      "page_end": 22
+    },
+    {
+      "id": "p22-b01",
+      "page": 22,
+      "line_start": 1409,
+      "line_end": 1417,
+      "text_sha256": "4ecfde7fe5556d70adfb0d631ffe343417222b22676ce6ccbd832dc8925fc606",
+      "review_status": "semantic_review_pending",
+      "page_end": 22,
+      "related_auxiliary_groups": [
+        "S3-GAP-TAIL"
+      ]
+    },
+    {
+      "id": "p22-b02",
+      "page": 22,
+      "line_start": 1419,
+      "line_end": 1424,
+      "text_sha256": "eb2ff267030333de246641fbf387dabe30fb3130ec5c2485589cdd2a38793d5a",
+      "review_status": "semantic_review_pending",
+      "page_end": 22,
+      "related_auxiliary_groups": [
+        "S3-GAP-TAIL"
+      ]
+    },
+    {
+      "id": "p22-b03",
+      "page": 22,
+      "line_start": 1426,
+      "line_end": 1428,
+      "text_sha256": "3d94cf273e638c1f4a561ee1e8e312017638747a748cc906b9386f0079c0f49e",
+      "review_status": "semantic_review_pending",
+      "page_end": 22,
+      "related_auxiliary_groups": [
+        "S3-GAP-TAIL"
+      ]
+    },
+    {
+      "id": "p22-b04",
+      "page": 22,
+      "line_start": 1430,
+      "line_end": 1439,
+      "text_sha256": "adbb0218f9515b7c6f28f7d7b5a5e86a48bdb31345bbe5ea12dbed29c916dd1f",
+      "review_status": "semantic_review_pending",
+      "page_end": 22,
+      "related_auxiliary_groups": [
+        "S3-GAP-TAIL"
+      ]
+    },
+    {
+      "id": "p22-b05",
+      "page": 22,
+      "line_start": 1441,
+      "line_end": 1461,
+      "text_sha256": "e87766825849ecb80effc183d2321aac8b5973da4f9e90385bcc9f90094914b3",
+      "review_status": "semantic_review_pending",
+      "page_end": 22,
+      "related_auxiliary_groups": [
+        "S3-GAP-TAIL"
+      ]
+    },
+    {
+      "id": "p22-b06",
+      "page": 22,
+      "line_start": 1463,
+      "line_end": 1464,
+      "text_sha256": "b08fbca83b5ad482a1626f2e622269a8a0049c21693cb3ed1bce3d7920f1bed3",
+      "review_status": "semantic_review_pending",
+      "page_end": 22,
+      "related_auxiliary_groups": [
+        "S3-GAP-TAIL"
+      ]
+    },
+    {
+      "id": "p22-b07",
+      "page": 22,
+      "line_start": 1466,
+      "line_end": 1471,
+      "text_sha256": "11fddbac6f32a5e582b6c30184e7df87f9751c9a95d722e95e26fb2b109f20f9",
+      "review_status": "semantic_review_pending",
+      "page_end": 22,
+      "related_auxiliary_groups": [
+        "S3-GAP-TAIL",
+        "S3-INDIVIDUAL-GAP"
+      ]
+    },
+    {
+      "id": "p22-b08",
+      "page": 22,
+      "line_start": 1473,
+      "line_end": 1473,
+      "text_sha256": "feb38e916b55b754a87f1e378b091aabaf58c48b2de575a97fd423efeccac2ef",
+      "review_status": "semantic_review_pending",
+      "page_end": 22,
+      "related_auxiliary_groups": [
+        "S3-INDIVIDUAL-GAP"
+      ]
+    },
+    {
+      "id": "p22-b09",
+      "page": 22,
+      "line_start": 1478,
+      "line_end": 1479,
+      "text_sha256": "dfcab6378dda259bac8d44b5ba189e461a03b7746e4f3c60709a23d76645ec92",
+      "review_status": "semantic_review_pending",
+      "page_end": 23,
+      "related_auxiliary_groups": [
+        "S3-INDIVIDUAL-GAP"
+      ]
+    },
+    {
+      "id": "p23-b01",
+      "page": 23,
+      "line_start": 1481,
+      "line_end": 1492,
+      "text_sha256": "e4a5e7d024c599e9b4ae384646867196188c8a4e0f4812d8b84af3b0780306bc",
+      "review_status": "semantic_review_pending",
+      "page_end": 23
+    },
+    {
+      "id": "p23-b02",
+      "page": 23,
+      "line_start": 1494,
+      "line_end": 1494,
+      "text_sha256": "d66cabae9d0833ec08981ebe4bccb10853027e9fe8328e0465eac0c1d4f25da3",
+      "review_status": "semantic_review_pending",
+      "page_end": 23
+    },
+    {
+      "id": "p23-b03",
+      "page": 23,
+      "line_start": 1496,
+      "line_end": 1497,
+      "text_sha256": "465a67abf2331c8ce16cf83af253d4a94f4475a6bbbd8ad36da2e010d35febcc",
+      "review_status": "semantic_review_pending",
+      "page_end": 23
+    },
+    {
+      "id": "p23-b04",
+      "page": 23,
+      "line_start": 1499,
+      "line_end": 1508,
+      "text_sha256": "7b4547ba01b32e49e379d01b7c9fc9f1a02498b48472b027fda152189a0dea14",
+      "review_status": "semantic_review_pending",
+      "page_end": 23,
+      "related_auxiliary_groups": [
+        "S4-GAP-POWERS"
+      ]
+    },
+    {
+      "id": "p23-b05",
+      "page": 23,
+      "line_start": 1510,
+      "line_end": 1510,
+      "text_sha256": "1130667d52c1bfd95cda01d6364664f777dbc2504e4cdaada7c92fd8df1804ce",
+      "review_status": "semantic_review_pending",
+      "page_end": 23,
+      "related_auxiliary_groups": [
+        "S4-GAP-POWERS"
+      ]
+    },
+    {
+      "id": "p23-b06",
+      "page": 23,
+      "line_start": 1512,
+      "line_end": 1520,
+      "text_sha256": "867c8cf21f7c1aaf28615610372569a05a16fd574f253bf5374ae36404509919",
+      "review_status": "semantic_review_pending",
+      "page_end": 23,
+      "related_auxiliary_groups": [
+        "S4-GAP-POWERS"
+      ]
+    },
+    {
+      "id": "p23-b07",
+      "page": 23,
+      "line_start": 1522,
+      "line_end": 1522,
+      "text_sha256": "3a3905b496b706afeeb41826ee361b0e28c05f14c7888377e639270b20fcbfb2",
+      "review_status": "semantic_review_pending",
+      "page_end": 23
+    },
+    {
+      "id": "p23-b08",
+      "page": 23,
+      "line_start": 1524,
+      "line_end": 1525,
+      "text_sha256": "f9f3dd2e99b2b4d9eded74933e648e7b94ed866731515caa09304c51598e9c45",
+      "review_status": "semantic_review_pending",
+      "page_end": 23
+    },
+    {
+      "id": "p23-b09",
+      "page": 23,
+      "line_start": 1528,
+      "line_end": 1535,
+      "text_sha256": "8f86fdca117caa8481c243092be91b4ce70e930608900e35e3501fcf0b792376",
+      "review_status": "semantic_review_pending",
+      "page_end": 23,
+      "related_auxiliary_groups": [
+        "S4-MOMENT-SUM"
+      ]
+    },
+    {
+      "id": "p23-b10",
+      "page": 23,
+      "line_start": 1537,
+      "line_end": 1541,
+      "text_sha256": "ad177e13a5555a4ff26f907a0600d582551ded6e7f0bde59c9cab4652834d31d",
+      "review_status": "semantic_review_pending",
+      "page_end": 23,
+      "related_auxiliary_groups": [
+        "S4-MOMENT-SUM"
+      ]
+    },
+    {
+      "id": "p23-b11",
+      "page": 23,
+      "line_start": 1545,
+      "line_end": 1557,
+      "text_sha256": "a0e9f49dbf9592b4a040ae32123743edd6127adef73757d3c6e2f8450c8b88ae",
+      "review_status": "semantic_review_pending",
+      "page_end": 24
+    },
+    {
+      "id": "p24-b01",
+      "page": 24,
+      "line_start": 1559,
+      "line_end": 1564,
+      "text_sha256": "d45844d013b80aec3a0cec8bda377a9c3af359b4df039a0ceaa95a98ad59cd11",
+      "review_status": "semantic_review_pending",
+      "page_end": 24,
+      "related_auxiliary_groups": [
+        "S4-POLYNOMIAL-MAJORANT"
+      ]
+    },
+    {
+      "id": "p24-b02",
+      "page": 24,
+      "line_start": 1566,
+      "line_end": 1578,
+      "text_sha256": "50d842d951e90a8e02c97f620f6518d3b1bfbf77b5a300f218625f327869b809",
+      "review_status": "semantic_review_pending",
+      "page_end": 24,
+      "related_auxiliary_groups": [
+        "S4-POLYNOMIAL-MAJORANT"
+      ]
+    },
+    {
+      "id": "p24-b03",
+      "page": 24,
+      "line_start": 1580,
+      "line_end": 1580,
+      "text_sha256": "681ea532280eab7e2170e3061b48101d3c46ccb94a25550b9052b19e04c82e0d",
+      "review_status": "semantic_review_pending",
+      "page_end": 24,
+      "related_auxiliary_groups": [
+        "S4-POLYNOMIAL-MAJORANT"
+      ]
+    },
+    {
+      "id": "p24-b04",
+      "page": 24,
+      "line_start": 1582,
+      "line_end": 1585,
+      "text_sha256": "df0d105aae59e7ca2473baaa5e81f0dd69d7e6cf30e128e7550350c856524fda",
+      "review_status": "semantic_review_pending",
+      "page_end": 24,
+      "related_auxiliary_groups": [
+        "S4-POLYNOMIAL-MAJORANT"
+      ]
+    },
+    {
+      "id": "p24-b05",
+      "page": 24,
+      "line_start": 1587,
+      "line_end": 1588,
+      "text_sha256": "4d514fa24d3226702f4b913b4d10ccb3336eb253a2644eabbd18b5f0899d0113",
+      "review_status": "semantic_review_pending",
+      "page_end": 24,
+      "related_auxiliary_groups": [
+        "S4-POLYNOMIAL-MAJORANT"
+      ]
+    },
+    {
+      "id": "p24-b06",
+      "page": 24,
+      "line_start": 1590,
+      "line_end": 1594,
+      "text_sha256": "4ededa1485b4ff6d4d6cc94383e26aec02b406231b6346c74f54c44ab9efde65",
+      "review_status": "semantic_review_pending",
+      "page_end": 24
+    },
+    {
+      "id": "p24-b07",
+      "page": 24,
+      "line_start": 1596,
+      "line_end": 1598,
+      "text_sha256": "3086a241c710053cfd5050b5730dc826589eb33b3a95ec6d547d193947fb546a",
+      "review_status": "semantic_review_pending",
+      "page_end": 24,
+      "related_auxiliary_groups": [
+        "S4-TWO-FACTORS"
+      ]
+    },
+    {
+      "id": "p24-b08",
+      "page": 24,
+      "line_start": 1600,
+      "line_end": 1606,
+      "text_sha256": "040aee8b449ee6e377237be84f2e28ee4307e1ff1cdc65323423660f095b5014",
+      "review_status": "semantic_review_pending",
+      "page_end": 24,
+      "related_auxiliary_groups": [
+        "S4-TWO-FACTORS"
+      ]
+    },
+    {
+      "id": "p24-b09",
+      "page": 24,
+      "line_start": 1609,
+      "line_end": 1628,
+      "text_sha256": "d44156b2278dc0262abf5f4edfe98e89dd0cea5dcd921fc430f37e8176bc3b62",
+      "review_status": "semantic_review_pending",
+      "page_end": 25,
+      "related_auxiliary_groups": [
+        "S4-TWO-FACTORS"
+      ]
+    },
+    {
+      "id": "p25-b01",
+      "page": 25,
+      "line_start": 1630,
+      "line_end": 1630,
+      "text_sha256": "24348855580ad317acea831defc8d6a24df073354ae0732844643fe1061eb6b6",
+      "review_status": "semantic_review_pending",
+      "page_end": 25,
+      "related_auxiliary_groups": [
+        "S4-TWO-FACTORS"
+      ]
+    },
+    {
+      "id": "p25-b02",
+      "page": 25,
+      "line_start": 1632,
+      "line_end": 1639,
+      "text_sha256": "d3ba4d1c4d1a8a8932877c1a4804a0187d83387b103209cd243553a86a5ff5a8",
+      "review_status": "semantic_review_pending",
+      "page_end": 25,
+      "related_auxiliary_groups": [
+        "S4-TWO-FACTORS"
+      ]
+    },
+    {
+      "id": "p25-b03",
+      "page": 25,
+      "line_start": 1641,
+      "line_end": 1648,
+      "text_sha256": "91286f0a4b1d42d32721b6ae5c6f544013f5a92c4bc366d3079bf0c12b9031c3",
+      "review_status": "semantic_review_pending",
+      "page_end": 25,
+      "related_auxiliary_groups": [
+        "S4-TWO-FACTORS",
+        "S4-INTERPOLATION"
+      ]
+    },
+    {
+      "id": "p25-b04",
+      "page": 25,
+      "line_start": 1650,
+      "line_end": 1664,
+      "text_sha256": "3734d7795493f931fa70d6f08d99b6a08cb752d38dded34d9fbbecf2b4af5f1d",
+      "review_status": "semantic_review_pending",
+      "page_end": 25,
+      "related_auxiliary_groups": [
+        "S4-INTERPOLATION",
+        "S4-EXPONENTS"
+      ]
+    },
+    {
+      "id": "p25-b05",
+      "page": 25,
+      "line_start": 1666,
+      "line_end": 1666,
+      "text_sha256": "24348855580ad317acea831defc8d6a24df073354ae0732844643fe1061eb6b6",
+      "review_status": "semantic_review_pending",
+      "page_end": 25,
+      "related_auxiliary_groups": [
+        "S4-EXPONENTS"
+      ]
+    },
+    {
+      "id": "p25-b06",
+      "page": 25,
+      "line_start": 1668,
+      "line_end": 1675,
+      "text_sha256": "102dad8ab65b3a63d408e6ba80c4761451d8a4c18a9dd01f9a6a7d802e753200",
+      "review_status": "semantic_review_pending",
+      "page_end": 25,
+      "related_auxiliary_groups": [
+        "S4-EXPONENTS"
+      ]
+    },
+    {
+      "id": "p25-b07",
+      "page": 25,
+      "line_start": 1677,
+      "line_end": 1683,
+      "text_sha256": "06a97056e331c96919d8153e75fc9923de93351bb8799b4b5af3979b12c6c4c6",
+      "review_status": "semantic_review_pending",
+      "page_end": 25,
+      "related_auxiliary_groups": [
+        "S4-EXPONENTS"
+      ]
+    },
+    {
+      "id": "p25-b08",
+      "page": 25,
+      "line_start": 1685,
+      "line_end": 1691,
+      "text_sha256": "c5ef968b05b7fe95aaa1e401bb4cdc219068c46f164ae0cd8e263a1dcfbd6d66",
+      "review_status": "semantic_review_pending",
+      "page_end": 25,
+      "related_auxiliary_groups": [
+        "S4-EXPONENTS"
+      ]
+    },
+    {
+      "id": "p25-b09",
+      "page": 25,
+      "line_start": 1694,
+      "line_end": 1708,
+      "text_sha256": "535ebc484d9c176593d310a6f3dce4c9582b1ef3696d7976c6e95744dbccc16b",
+      "review_status": "semantic_review_pending",
+      "page_end": 26,
+      "related_auxiliary_groups": [
+        "S4-YOUNG"
+      ]
+    },
+    {
+      "id": "p26-b01",
+      "page": 26,
+      "line_start": 1710,
+      "line_end": 1713,
+      "text_sha256": "cbb5e73cea24f552416fdb1e2776dab52802db902e282df001e714b61991002d",
+      "review_status": "semantic_review_pending",
+      "page_end": 26,
+      "related_auxiliary_groups": [
+        "S4-YOUNG"
+      ]
+    },
+    {
+      "id": "p26-b02",
+      "page": 26,
+      "line_start": 1715,
+      "line_end": 1718,
+      "text_sha256": "67a0b6bfce1de5d91cd9ba21e5b73545c46747c58058ae956316036b72b13419",
+      "review_status": "semantic_review_pending",
+      "page_end": 26
+    },
+    {
+      "id": "p26-b03",
+      "page": 26,
+      "line_start": 1720,
+      "line_end": 1724,
+      "text_sha256": "3ca88d4111356c2e0484b7cbe2e474e7f0068a2d023880d8bb413d6b566b8c1b",
+      "review_status": "semantic_review_pending",
+      "page_end": 26
+    },
+    {
+      "id": "p26-b04",
+      "page": 26,
+      "line_start": 1726,
+      "line_end": 1726,
+      "text_sha256": "10c7c0e0076916c5e42ab998af3053eeaa0d477b2bf766d160355804fbdafefb",
+      "review_status": "semantic_review_pending",
+      "page_end": 26
+    },
+    {
+      "id": "p26-b05",
+      "page": 26,
+      "line_start": 1729,
+      "line_end": 1729,
+      "text_sha256": "abc4ce435b32ba9ae1388436f0f94bad7d1304a6ebff517aaee48e55979894ee",
+      "review_status": "semantic_review_pending",
+      "page_end": 26
+    },
+    {
+      "id": "p26-b06",
+      "page": 26,
+      "line_start": 1731,
+      "line_end": 1740,
+      "text_sha256": "deb0c080f1496b80c5579f8a722bfb3afacb62a4d0cad5a519ae757dd2d4375d",
+      "review_status": "semantic_review_pending",
+      "page_end": 26
+    },
+    {
+      "id": "p26-b07",
+      "page": 26,
+      "line_start": 1742,
+      "line_end": 1753,
+      "text_sha256": "c13a96b0e633a50900e56e0e8bf944e9465b2527ec8f82283a0e073c515d325a",
+      "review_status": "semantic_review_pending",
+      "page_end": 26
+    },
+    {
+      "id": "p26-b08",
+      "page": 26,
+      "line_start": 1755,
+      "line_end": 1756,
+      "text_sha256": "48143a60078860292fce115045605a5bdf92cc75d9a49ab05137e86c78566941",
+      "review_status": "semantic_review_pending",
+      "page_end": 26
+    },
+    {
+      "id": "p26-b09",
+      "page": 26,
+      "line_start": 1758,
+      "line_end": 1760,
+      "text_sha256": "98fdf70ace8a2e072886bec126f7abd01d449ca583708598f40a93cd73bd22d1",
+      "review_status": "semantic_review_pending",
+      "page_end": 26
+    },
+    {
+      "id": "p26-b10",
+      "page": 26,
+      "line_start": 1765,
+      "line_end": 1782,
+      "text_sha256": "dec5badaadcf5c91d0d8b7bf811d87eda58eca61b3f169370f5b74ac81899a15",
+      "review_status": "semantic_review_pending",
+      "page_end": 27,
+      "related_auxiliary_groups": [
+        "S5-CUBIC-CORRECTION"
+      ]
+    },
+    {
+      "id": "p27-b01",
+      "page": 27,
+      "line_start": 1785,
+      "line_end": 1786,
+      "text_sha256": "3c3cfe5ba882baa532e6857e9479c168443d0b9ca0a9aa5f003fda8365acb965",
+      "review_status": "semantic_review_pending",
+      "page_end": 27,
+      "related_auxiliary_groups": [
+        "S5-CUBIC-CORRECTION"
+      ]
+    },
+    {
+      "id": "p27-b02",
+      "page": 27,
+      "line_start": 1789,
+      "line_end": 1790,
+      "text_sha256": "cff78feca95d31f646958d64d3ab764380a423037e27dbdc0c2ffb90908c47d2",
+      "review_status": "semantic_review_pending",
+      "page_end": 27,
+      "related_auxiliary_groups": [
+        "S5-CUBIC-CORRECTION"
+      ]
+    },
+    {
+      "id": "p27-b03",
+      "page": 27,
+      "line_start": 1792,
+      "line_end": 1792,
+      "text_sha256": "1475cfc9c0c11cf2c571d2185ea8a17c590b559546548db197cd3a93ea01495c",
+      "review_status": "semantic_review_pending",
+      "page_end": 27,
+      "related_auxiliary_groups": [
+        "S5-CUBIC-CORRECTION"
+      ]
+    },
+    {
+      "id": "p27-b04",
+      "page": 27,
+      "line_start": 1794,
+      "line_end": 1812,
+      "text_sha256": "006b069c4ba2ece8056fca589abff82de6a0a46391e9d42a04f5758458dcd13b",
+      "review_status": "semantic_review_pending",
+      "page_end": 27,
+      "related_auxiliary_groups": [
+        "S5-CUBIC-CORRECTION"
+      ]
+    },
+    {
+      "id": "p27-b05",
+      "page": 27,
+      "line_start": 1815,
+      "line_end": 1823,
+      "text_sha256": "4a7b66f16e8ce49b26a1000e369c3b064bf728ff32ceff90acad5c215d266619",
+      "review_status": "semantic_review_pending",
+      "page_end": 27
+    },
+    {
+      "id": "p27-b06",
+      "page": 27,
+      "line_start": 1825,
+      "line_end": 1831,
+      "text_sha256": "dffbf86ec86d699473e6efa9737ab0d91b526141fa5b6acd5620677308e41ccd",
+      "review_status": "semantic_review_pending",
+      "page_end": 27
+    },
+    {
+      "id": "p27-b07",
+      "page": 27,
+      "line_start": 1833,
+      "line_end": 1837,
+      "text_sha256": "331c05cc5fcc537f2601550e30fe5ce7fe58f3410bf5a623eb569988423eac23",
+      "review_status": "semantic_review_pending",
+      "page_end": 27
+    },
+    {
+      "id": "p27-b08",
+      "page": 27,
+      "line_start": 1840,
+      "line_end": 1845,
+      "text_sha256": "992aa9f2d326951c8c0b0f88eb4da4c8a5aa018ae28344d618c9695577634629",
+      "review_status": "statement_compared",
+      "page_end": 27,
+      "named_statement": "Lemma 16",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_sixteen"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p27-b09",
+      "page": 27,
+      "line_start": 1847,
+      "line_end": 1847,
+      "text_sha256": "710821ebd033f62fe56c89a7d3f8a0a08b73d2893773313b3404ce59a779656f",
+      "review_status": "statement_compared",
+      "page_end": 27,
+      "named_statement": "Lemma 16",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_sixteen"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p27-b10",
+      "page": 27,
+      "line_start": 1849,
+      "line_end": 1854,
+      "text_sha256": "4c6b48355c0bc550c475ecbd942d864d7bec8fffbbf448194b1b5e8de825e5e3",
+      "review_status": "semantic_review_pending",
+      "page_end": 28
+    },
+    {
+      "id": "p28-b01",
+      "page": 28,
+      "line_start": 1856,
+      "line_end": 1867,
+      "text_sha256": "8ca025f794231dbfaf851cd8a693315ef50d04cb9308436baf9a0c2dfe3677f3",
+      "review_status": "semantic_review_pending",
+      "page_end": 28
+    },
+    {
+      "id": "p28-b02",
+      "page": 28,
+      "line_start": 1869,
+      "line_end": 1874,
+      "text_sha256": "76430552bc9927830951620fcfb3124cc9f5d40989ede79e45f93d23820e4961",
+      "review_status": "semantic_review_pending",
+      "page_end": 28
+    },
+    {
+      "id": "p28-b03",
+      "page": 28,
+      "line_start": 1878,
+      "line_end": 1878,
+      "text_sha256": "b3f41be68c58d16f34711e7366bf57f9bc9f6fa6affe1a5832edd1b458cd6128",
+      "review_status": "semantic_review_pending",
+      "page_end": 28
+    },
+    {
+      "id": "p28-b04",
+      "page": 28,
+      "line_start": 1880,
+      "line_end": 1889,
+      "text_sha256": "ffbd3ab7cc7c80074317f357a6161e4b21473ffe8ec61f5075b80b82a25033d2",
+      "review_status": "semantic_review_pending",
+      "page_end": 28
+    },
+    {
+      "id": "p28-b05",
+      "page": 28,
+      "line_start": 1891,
+      "line_end": 1910,
+      "text_sha256": "79393ee5e05f1f4a672759ab23d8dd40985bc6ce6c30a4d735ee11b40544d272",
+      "review_status": "semantic_review_pending",
+      "page_end": 28,
+      "related_auxiliary_groups": [
+        "S6-GAP-COORDINATE"
+      ]
+    },
+    {
+      "id": "p28-b06",
+      "page": 28,
+      "line_start": 1912,
+      "line_end": 1916,
+      "text_sha256": "8d4d114b583b31c18e40c31ee84ada6a6316d08d338ab13812fbdd37e1ba47dc",
+      "review_status": "semantic_review_pending",
+      "page_end": 28,
+      "related_auxiliary_groups": [
+        "S6-GAP-COORDINATE"
+      ]
+    },
+    {
+      "id": "p28-b07",
+      "page": 28,
+      "line_start": 1918,
+      "line_end": 1920,
+      "text_sha256": "5081bf9c8298cc382d605f191d23a463585590ea95aa69229b1fed9c68bd36da",
+      "review_status": "semantic_review_pending",
+      "page_end": 29,
+      "related_auxiliary_groups": [
+        "S6-GAP-COORDINATE"
+      ]
+    },
+    {
+      "id": "p29-b01",
+      "page": 29,
+      "line_start": 1922,
+      "line_end": 1926,
+      "text_sha256": "5b7fbec17fd4914ac99d61d6ce9f6adc00f383c6e3d7d0eacaaaa8125d99e797",
+      "review_status": "semantic_review_pending",
+      "page_end": 29,
+      "related_auxiliary_groups": [
+        "S6-GAP-COORDINATE"
+      ]
+    },
+    {
+      "id": "p29-b02",
+      "page": 29,
+      "line_start": 1928,
+      "line_end": 1947,
+      "text_sha256": "e259adc5bf49d3e0cc04d4599640ac27d10130fbe1b4680d4f45a447cb44fcd6",
+      "review_status": "semantic_review_pending",
+      "page_end": 29
+    },
+    {
+      "id": "p29-b03",
+      "page": 29,
+      "line_start": 1950,
+      "line_end": 1956,
+      "text_sha256": "0aec39091d1387b0b60a8981a6cba09eca0eed73a7b560f3df08396a82e19cf5",
+      "review_status": "semantic_review_pending",
+      "page_end": 29,
+      "related_auxiliary_groups": [
+        "S6-EXTERIOR-PRODUCT"
+      ]
+    },
+    {
+      "id": "p29-b04",
+      "page": 29,
+      "line_start": 1958,
+      "line_end": 1958,
+      "text_sha256": "ec70b280263b6d7b9cba29e15aa3c26c2a6dd6c136e7c0bd9e8cafa0d373ff06",
+      "review_status": "semantic_review_pending",
+      "page_end": 29,
+      "related_auxiliary_groups": [
+        "S6-EXTERIOR-PRODUCT"
+      ]
+    },
+    {
+      "id": "p29-b05",
+      "page": 29,
+      "line_start": 1960,
+      "line_end": 1981,
+      "text_sha256": "ea5073e22eea4f4df8c14542704645e21d87ae24bd3419fcf3a97a9478e5c1f9",
+      "review_status": "semantic_review_pending",
+      "page_end": 29,
+      "related_auxiliary_groups": [
+        "S6-EXTERIOR-PRODUCT"
+      ]
+    },
+    {
+      "id": "p29-b06",
+      "page": 29,
+      "line_start": 1983,
+      "line_end": 1987,
+      "text_sha256": "3655603ca790de2f45839dd60ace658f90a490e8510e6c1629f257d6c7beccdd",
+      "review_status": "semantic_review_pending",
+      "page_end": 29,
+      "related_auxiliary_groups": [
+        "S6-EXTERIOR-PRODUCT"
+      ]
+    },
+    {
+      "id": "p29-b07",
+      "page": 29,
+      "line_start": 1990,
+      "line_end": 1996,
+      "text_sha256": "e5b8f70968654fbe58c92a19ad944e2f7953d797e7e314a52f0fefe51bce2369",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-EXTERIOR-PRODUCT"
+      ]
+    },
+    {
+      "id": "p30-b01",
+      "page": 30,
+      "line_start": 1999,
+      "line_end": 2002,
+      "text_sha256": "a5ea9b8579caec1f310f3c4583f1a66978792bd2a996eb087a3b83d176626645",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-CENTRAL-PRODUCT"
+      ]
+    },
+    {
+      "id": "p30-b02",
+      "page": 30,
+      "line_start": 2004,
+      "line_end": 2005,
+      "text_sha256": "c0e537a4a90026b2ba70d1eab010d4c1e45badbb4a29b5c8820d536650b22ae7",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-CENTRAL-PRODUCT"
+      ]
+    },
+    {
+      "id": "p30-b03",
+      "page": 30,
+      "line_start": 2007,
+      "line_end": 2011,
+      "text_sha256": "96e013196eaa0e0da794247886ebde634d4328e1f0abe46033343662cf42589d",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-CENTRAL-PRODUCT"
+      ]
+    },
+    {
+      "id": "p30-b04",
+      "page": 30,
+      "line_start": 2013,
+      "line_end": 2013,
+      "text_sha256": "7a61fcf365c38045022dd4019a10c7caa34ec92ede703ecc7e5f704465d443d7",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-CENTRAL-PRODUCT"
+      ]
+    },
+    {
+      "id": "p30-b05",
+      "page": 30,
+      "line_start": 2015,
+      "line_end": 2015,
+      "text_sha256": "a5c9085e0cdf68a389b9621286b81d16799790d521d6ddccd658bcee7d10ff8d",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-CENTRAL-PRODUCT"
+      ]
+    },
+    {
+      "id": "p30-b06",
+      "page": 30,
+      "line_start": 2017,
+      "line_end": 2022,
+      "text_sha256": "e109ab1389c811e09b91a731e62dd139e4c7d513833afcfb622d7924cfe82ed6",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-CENTRAL-PRODUCT"
+      ]
+    },
+    {
+      "id": "p30-b07",
+      "page": 30,
+      "line_start": 2024,
+      "line_end": 2027,
+      "text_sha256": "83bea5771923299199db45ed2ec6f7c12a6033a74e65e88567e8c9583d930596",
+      "review_status": "statement_compared",
+      "page_end": 30,
+      "named_statement": "Proposition 18",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.proposition_eighteen",
+        "NLS.Articles.DNLSEstimates.complex_action_domain"
+      ],
+      "qualification": "Action-gap constant 4608 replaces 2048; the source remains complex H1 and the threshold is retained."
+    },
+    {
+      "id": "p30-b08",
+      "page": 30,
+      "line_start": 2029,
+      "line_end": 2035,
+      "text_sha256": "13f6b6660fc4bb0016c3f526d964a189cfbc976432e7ab141f57907c1255d075",
+      "review_status": "semantic_review_pending",
+      "page_end": 30
+    },
+    {
+      "id": "p30-b09",
+      "page": 30,
+      "line_start": 2037,
+      "line_end": 2039,
+      "text_sha256": "9e7f827b706b675c8a820180b3ea5e5357e53427bac5c97f45a17a8f44f83eb6",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-WEIGHTED-TAIL"
+      ]
+    },
+    {
+      "id": "p30-b10",
+      "page": 30,
+      "line_start": 2041,
+      "line_end": 2045,
+      "text_sha256": "fed7de6fedeb0eca16439c3ab635bf9ba711e712aa52fd925a7926faddf92fd4",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-WEIGHTED-TAIL"
+      ]
+    },
+    {
+      "id": "p30-b11",
+      "page": 30,
+      "line_start": 2047,
+      "line_end": 2052,
+      "text_sha256": "a76b5d5653e0d4da26f68b700539564ea522953a925499d9f178defe78ab84c5",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-WEIGHTED-TAIL"
+      ]
+    },
+    {
+      "id": "p30-b12",
+      "page": 30,
+      "line_start": 2054,
+      "line_end": 2058,
+      "text_sha256": "1f9b4acf818d0122502db575e9a853ee087432bcadaee9eeac7e879119ec84de",
+      "review_status": "semantic_review_pending",
+      "page_end": 30,
+      "related_auxiliary_groups": [
+        "S6-WEIGHTED-TAIL"
+      ]
+    },
+    {
+      "id": "p30-b13",
+      "page": 30,
+      "line_start": 2063,
+      "line_end": 2070,
+      "text_sha256": "e42ee0b14b7f51a68305beef8a65cc7ca0c28bad7dd4673fae46f8af26ee1fce",
+      "review_status": "semantic_review_pending",
+      "page_end": 31,
+      "related_auxiliary_groups": [
+        "S6-REAL-CENTRAL"
+      ]
+    },
+    {
+      "id": "p31-b01",
+      "page": 31,
+      "line_start": 2072,
+      "line_end": 2077,
+      "text_sha256": "037db5a9730065754199b1d4e7366130ef6071891c67fa17aa5fe8c23d37c015",
+      "review_status": "semantic_review_pending",
+      "page_end": 31,
+      "related_auxiliary_groups": [
+        "S6-REAL-CENTRAL"
+      ]
+    },
+    {
+      "id": "p31-b02",
+      "page": 31,
+      "line_start": 2079,
+      "line_end": 2087,
+      "text_sha256": "77f510fe96144f0434375fd5cfa0e8360a23843d242aa4f8931ea18428bea5f7",
+      "review_status": "semantic_review_pending",
+      "page_end": 31,
+      "related_auxiliary_groups": [
+        "S6-COMPLEX-EXTENSION"
+      ]
+    },
+    {
+      "id": "p31-b03",
+      "page": 31,
+      "line_start": 2089,
+      "line_end": 2092,
+      "text_sha256": "35436b24e98d409a74192a0b89518160621044a92c0446fdc343a67f94e24410",
+      "review_status": "semantic_review_pending",
+      "page_end": 31,
+      "related_auxiliary_groups": [
+        "S6-COMPLEX-EXTENSION"
+      ]
+    },
+    {
+      "id": "p31-b04",
+      "page": 31,
+      "line_start": 2095,
+      "line_end": 2095,
+      "text_sha256": "b3d2478d7c55b101c56073940e86d01e52c0d002fc6ff775dd83418e7b040eaa",
+      "review_status": "semantic_review_pending",
+      "page_end": 31,
+      "related_auxiliary_groups": [
+        "S6-COMPLEX-EXTENSION"
+      ]
+    },
+    {
+      "id": "p31-b05",
+      "page": 31,
+      "line_start": 2100,
+      "line_end": 2101,
+      "text_sha256": "33e27b8be7d0b930d9cb5296467e101d1a80bdfa9bca93da93e29a580f630961",
+      "review_status": "semantic_review_pending",
+      "page_end": 32
+    },
+    {
+      "id": "p32-b01",
+      "page": 32,
+      "line_start": 2103,
+      "line_end": 2109,
+      "text_sha256": "7a8f9d16ac75d18955c810e86fb0fcbfaa272eac9399d1f21274510014e3a081",
+      "review_status": "semantic_review_pending",
+      "page_end": 32
+    },
+    {
+      "id": "p32-b02",
+      "page": 32,
+      "line_start": 2111,
+      "line_end": 2117,
+      "text_sha256": "1c039fe947da5e8ea6a6b2a142e250bb90cd669dd3fe54315fc3a7922f2d9f82",
+      "review_status": "semantic_review_pending",
+      "page_end": 32
+    },
+    {
+      "id": "p32-b03",
+      "page": 32,
+      "line_start": 2119,
+      "line_end": 2120,
+      "text_sha256": "12b70452ad646ee11d3236af91398ffa7c66f2d1ab547e785b2f692beb8830bf",
+      "review_status": "statement_compared",
+      "page_end": 32,
+      "named_statement": "Lemma 19",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_nineteen"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p32-b04",
+      "page": 32,
+      "line_start": 2122,
+      "line_end": 2122,
+      "text_sha256": "ad8ffeffe2b3a4c948322349bf7334b15007c0a1b2031f053d6d06000fb6f785",
+      "review_status": "statement_compared",
+      "page_end": 32,
+      "named_statement": "Lemma 19",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_nineteen"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p32-b05",
+      "page": 32,
+      "line_start": 2124,
+      "line_end": 2124,
+      "text_sha256": "7f0f521f43b213be47369de4ab9994e23d56b2de102ccbbbfa3869024c8eb57a",
+      "review_status": "statement_compared",
+      "page_end": 32,
+      "named_statement": "Lemma 19",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_nineteen"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p32-b06",
+      "page": 32,
+      "line_start": 2126,
+      "line_end": 2126,
+      "text_sha256": "20941927df2d1935dec8f2f4c38377dc855a8641f55f08f0b1c601b56231c5da",
+      "review_status": "statement_compared",
+      "page_end": 32,
+      "named_statement": "Lemma 19",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_nineteen"
+      ],
+      "qualification": "Proof passages require their own semantic comparison."
+    },
+    {
+      "id": "p32-b07",
+      "page": 32,
+      "line_start": 2128,
+      "line_end": 2134,
+      "text_sha256": "2af9210106f2d99a9c4608d3eb6a62b609d80c80e29e22eb8ae683710c37355e",
+      "review_status": "semantic_review_pending",
+      "page_end": 32,
+      "related_auxiliary_groups": [
+        "A-DELETED-DISCRIMINANT"
+      ]
+    },
+    {
+      "id": "p32-b08",
+      "page": 32,
+      "line_start": 2137,
+      "line_end": 2143,
+      "text_sha256": "a75a5fdfbbfdcf68de5c0718a3d842f8c6d9e1501c03fb4b1288eb5c0e3567c7",
+      "review_status": "semantic_review_pending",
+      "page_end": 32,
+      "related_auxiliary_groups": [
+        "A-DELETED-DISCRIMINANT"
+      ]
+    },
+    {
+      "id": "p32-b09",
+      "page": 32,
+      "line_start": 2145,
+      "line_end": 2147,
+      "text_sha256": "a3a90977634cf2adaf5497576614984716c5e955fe513cd937525429badc5bb7",
+      "review_status": "semantic_review_pending",
+      "page_end": 32,
+      "related_auxiliary_groups": [
+        "A-DISK-BOUNDS"
+      ]
+    },
+    {
+      "id": "p32-b10",
+      "page": 32,
+      "line_start": 2149,
+      "line_end": 2149,
+      "text_sha256": "d2b2c05b0f1e82aef5b3227f09c59e0054aaec0ab966499850ec10874d2505c7",
+      "review_status": "semantic_review_pending",
+      "page_end": 32,
+      "related_auxiliary_groups": [
+        "A-DISK-BOUNDS"
+      ]
+    },
+    {
+      "id": "p32-b11",
+      "page": 32,
+      "line_start": 2151,
+      "line_end": 2155,
+      "text_sha256": "39ad2987ea1b55ec9c61c93a4e7a7b8b18e7c96b60f1e843a445e12c88da72b9",
+      "review_status": "semantic_review_pending",
+      "page_end": 32,
+      "related_auxiliary_groups": [
+        "A-CRITICAL-OFFSET"
+      ]
+    },
+    {
+      "id": "p32-b12",
+      "page": 32,
+      "line_start": 2157,
+      "line_end": 2164,
+      "text_sha256": "087dfa97786591edc769f0043f46b146e1b518feb1c18759352874fefbe7bc32",
+      "review_status": "semantic_review_pending",
+      "page_end": 32,
+      "related_auxiliary_groups": [
+        "A-CRITICAL-OFFSET"
+      ]
+    },
+    {
+      "id": "p32-b13",
+      "page": 32,
+      "line_start": 2169,
+      "line_end": 2173,
+      "text_sha256": "45a34fa7d206e857c5947e20c00e9ee592a963d2d599f47088c564ab7240a205",
+      "review_status": "semantic_review_pending",
+      "page_end": 33,
+      "related_auxiliary_groups": [
+        "A-CRITICAL-OFFSET"
+      ]
+    },
+    {
+      "id": "p33-b01",
+      "page": 33,
+      "line_start": 2175,
+      "line_end": 2175,
+      "text_sha256": "0f85eb52db3289f0b7ef6164f0a3a0e903f5ab56c210f186f101b24d7dc21a79",
+      "review_status": "semantic_review_pending",
+      "page_end": 33,
+      "related_auxiliary_groups": [
+        "A-CRITICAL-OFFSET"
+      ]
+    },
+    {
+      "id": "p33-b02",
+      "page": 33,
+      "line_start": 2177,
+      "line_end": 2180,
+      "text_sha256": "eebfdfdcca5ab5079ee0ef7294a2dff1952177af2b7c80867031433c40cce1eb",
+      "review_status": "semantic_review_pending",
+      "page_end": 33,
+      "related_auxiliary_groups": [
+        "A-CRITICAL-OFFSET"
+      ]
+    },
+    {
+      "id": "p33-b03",
+      "page": 33,
+      "line_start": 2182,
+      "line_end": 2210,
+      "text_sha256": "496978759853cc648ab38f2eef74a86fd5ecbbdc2f69dba7dc097fdd187d860b",
+      "review_status": "semantic_review_pending",
+      "page_end": 33,
+      "related_auxiliary_groups": [
+        "A-CONNECTORS",
+        "A-SQUARED-GAP-BRANCHES"
+      ]
+    },
+    {
+      "id": "p33-b04",
+      "page": 33,
+      "line_start": 2212,
+      "line_end": 2212,
+      "text_sha256": "aaa6c951eab98b5ade12f55edc6520eeb93002b65dfac4c234606de0df6abb24",
+      "review_status": "semantic_review_pending",
+      "page_end": 33,
+      "related_auxiliary_groups": [
+        "A-SQUARED-GAP-BRANCHES"
+      ]
+    },
+    {
+      "id": "p33-b05",
+      "page": 33,
+      "line_start": 2214,
+      "line_end": 2219,
+      "text_sha256": "8d6886ccf969632e3779555a3e0a2674a2bfb6cb32e5964584457128ae428041",
+      "review_status": "semantic_review_pending",
+      "page_end": 33,
+      "related_auxiliary_groups": [
+        "A-SQUARED-GAP-BRANCHES"
+      ]
+    },
+    {
+      "id": "p33-b06",
+      "page": 33,
+      "line_start": 2221,
+      "line_end": 2222,
+      "text_sha256": "212d069f41ca396224f39117162cdefba734fa08843d2665034dfa662bf724e7",
+      "review_status": "semantic_review_pending",
+      "page_end": 33,
+      "related_auxiliary_groups": [
+        "A-SQUARED-GAP-BRANCHES"
+      ]
+    },
+    {
+      "id": "p33-b07",
+      "page": 33,
+      "line_start": 2224,
+      "line_end": 2224,
+      "text_sha256": "558094b7168f00cf00215233d7eafafad16c7fd7a206aa96f101d3c8eb594e92",
+      "review_status": "semantic_review_pending",
+      "page_end": 33,
+      "related_auxiliary_groups": [
+        "A-ENDPOINT-SPOKE"
+      ]
+    },
+    {
+      "id": "p33-b08",
+      "page": 33,
+      "line_start": 2226,
+      "line_end": 2226,
+      "text_sha256": "731fe90d508ac30fd9bbeb6be31ba12c11fd241d6e92e5dc94b4cce2aa5fc16f",
+      "review_status": "semantic_review_pending",
+      "page_end": 33,
+      "related_auxiliary_groups": [
+        "A-ENDPOINT-SPOKE"
+      ]
+    },
+    {
+      "id": "p33-b09",
+      "page": 33,
+      "line_start": 2228,
+      "line_end": 2228,
+      "text_sha256": "48641f3a71353885e4eaa173ccaa3a04ce95c62bd7bda30c4f8296dfa77e7f3a",
+      "review_status": "semantic_review_pending",
+      "page_end": 33,
+      "related_auxiliary_groups": [
+        "A-ENDPOINT-SPOKE"
+      ]
+    },
+    {
+      "id": "p33-b10",
+      "page": 33,
+      "line_start": 2230,
+      "line_end": 2232,
+      "text_sha256": "b0255913c83ccb047f4b4ea2e78390d38b38423593ba9a58e00049b875638db5",
+      "review_status": "semantic_review_pending",
+      "page_end": 34,
+      "related_auxiliary_groups": [
+        "A-ENDPOINT-SPOKE"
+      ]
+    },
+    {
+      "id": "p34-b01",
+      "page": 34,
+      "line_start": 2234,
+      "line_end": 2234,
+      "text_sha256": "fb6368593403cd811454006868790754647673915af5b36db25d68fcf583049e",
+      "review_status": "semantic_review_pending",
+      "page_end": 34,
+      "related_auxiliary_groups": [
+        "A-ENDPOINT-SPOKE"
+      ]
+    },
+    {
+      "id": "p34-b02",
+      "page": 34,
+      "line_start": 2236,
+      "line_end": 2241,
+      "text_sha256": "e03b9a009dcd5d4b02c723b3e527fd1ca2639b198cfc3dd5a1ce00165c0990e3",
+      "review_status": "semantic_review_pending",
+      "page_end": 34,
+      "related_auxiliary_groups": [
+        "A-ENDPOINT-SPOKE"
+      ]
+    },
+    {
+      "id": "p34-b03",
+      "page": 34,
+      "line_start": 2243,
+      "line_end": 2249,
+      "text_sha256": "24557c7ba295589e62a0efd8fc26d19b0694661cfae438d890a76f2efee2665f",
+      "review_status": "semantic_review_pending",
+      "page_end": 34,
+      "related_auxiliary_groups": [
+        "A-ENDPOINT-SPOKE"
+      ]
+    },
+    {
+      "id": "p34-b04",
+      "page": 34,
+      "line_start": 2251,
+      "line_end": 2261,
+      "text_sha256": "922a8071e0e7aa7f4ecf5e47e356c327292bf8a86d23729507c394f28bf2833b",
+      "review_status": "semantic_review_pending",
+      "page_end": 34,
+      "related_auxiliary_groups": [
+        "A-COLLAPSED-RESTRICTION",
+        "A-SHORT-PIECE"
+      ]
+    },
+    {
+      "id": "p34-b05",
+      "page": 34,
+      "line_start": 2263,
+      "line_end": 2267,
+      "text_sha256": "dc43f8726f1cb039fbfcd0e7659517d140c978b872d2907e049b0e00958a5e60",
+      "review_status": "semantic_review_pending",
+      "page_end": 34,
+      "related_auxiliary_groups": [
+        "A-SHORT-PIECE"
+      ]
+    },
+    {
+      "id": "p34-b06",
+      "page": 34,
+      "line_start": 2269,
+      "line_end": 2270,
+      "text_sha256": "d34aa6b0ccbf0d4fe077ecbf24d44f2ada7a80735b26ea73f13942463e63dba6",
+      "review_status": "semantic_review_pending",
+      "page_end": 34,
+      "related_auxiliary_groups": [
+        "A-COMMON-POINT-LIMIT"
+      ]
+    },
+    {
+      "id": "p34-b07",
+      "page": 34,
+      "line_start": 2272,
+      "line_end": 2272,
+      "text_sha256": "e3da36c13af9a26607c6ab56fbd4891710412a1c357cef26da6c6be8e0d49c1f",
+      "review_status": "semantic_review_pending",
+      "page_end": 34,
+      "related_auxiliary_groups": [
+        "A-COMMON-POINT-LIMIT"
+      ]
+    },
+    {
+      "id": "p34-b08",
+      "page": 34,
+      "line_start": 2274,
+      "line_end": 2289,
+      "text_sha256": "f73af395c447127848c6ff50ce6f8835ece2f68a93d29d53d510705cbacc11b5",
+      "review_status": "semantic_review_pending",
+      "page_end": 34,
+      "related_auxiliary_groups": [
+        "A-COMMON-POINT-LIMIT"
+      ]
+    },
+    {
+      "id": "p34-b09",
+      "page": 34,
+      "line_start": 2292,
+      "line_end": 2305,
+      "text_sha256": "b85a33c42ee103f770619f0e4f8bad4a3021b5665a455a33f0e141bbfc8f42e7",
+      "review_status": "semantic_review_pending",
+      "page_end": 35,
+      "related_auxiliary_groups": [
+        "A-MAJORANT-L1"
+      ]
+    },
+    {
+      "id": "p35-b01",
+      "page": 35,
+      "line_start": 2307,
+      "line_end": 2317,
+      "text_sha256": "100212c04c862e37879605ba63c47a9228d7b481a509c6ec092ecf65b61759c3",
+      "review_status": "semantic_review_pending",
+      "page_end": 35,
+      "related_auxiliary_groups": [
+        "A-MAJORANT-L1"
+      ]
+    },
+    {
+      "id": "p35-b02",
+      "page": 35,
+      "line_start": 2319,
+      "line_end": 2323,
+      "text_sha256": "51a6c1605e472326f8657414825526c511e954c9f076a833a9244e67dd96ac06",
+      "review_status": "semantic_review_pending",
+      "page_end": 35,
+      "related_auxiliary_groups": [
+        "A-CONTINUITY-ANALYTICITY"
+      ]
+    },
+    {
+      "id": "p35-b03",
+      "page": 35,
+      "line_start": 2325,
+      "line_end": 2326,
+      "text_sha256": "d573f23c5dbfc9325895c7da9e3ab25b33a12941b23a7f7578e8d4cda400ec13",
+      "review_status": "semantic_review_pending",
+      "page_end": 35,
+      "related_auxiliary_groups": [
+        "A-CONTINUITY-ANALYTICITY"
+      ]
+    },
+    {
+      "id": "p35-b04",
+      "page": 35,
+      "line_start": 2329,
+      "line_end": 2329,
+      "text_sha256": "c32e4d5ae541e90f65f80fcefaaf9b9502e95ffb7e1ddae8df8444bdf1a816d9",
+      "review_status": "semantic_review_pending",
+      "page_end": 35
+    },
+    {
+      "id": "p35-b05",
+      "page": 35,
+      "line_start": 2331,
+      "line_end": 2337,
+      "text_sha256": "4374df80ecb3878f7cb73f1a56a0e98329a08debbc5e53e387e57292b6c0acbb",
+      "review_status": "semantic_review_pending",
+      "page_end": 35,
+      "related_auxiliary_groups": [
+        "B-RECURRENCE"
+      ]
+    },
+    {
+      "id": "p35-b06",
+      "page": 35,
+      "line_start": 2339,
+      "line_end": 2342,
+      "text_sha256": "36e7a095c534cf5b9794c6185ad8ddf44a673a0113da4cfced8072b7a91b350b",
+      "review_status": "semantic_review_pending",
+      "page_end": 35,
+      "related_auxiliary_groups": [
+        "B-RECURRENCE"
+      ]
+    },
+    {
+      "id": "p35-b07",
+      "page": 35,
+      "line_start": 2344,
+      "line_end": 2346,
+      "text_sha256": "a37dd19466819675a35ab9d3510fbdfa17941d10f0c296de549316ee5cec959f",
+      "review_status": "statement_compared",
+      "page_end": 35,
+      "named_statement": "Lemma 21",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_twenty_one_polynomial",
+        "NLS.Articles.DNLSEstimates.lemma_twenty_one_evaluation",
+        "NLS.Articles.DNLSEstimates.lemma_twenty_one_weak"
+      ],
+      "qualification": "Proof passages require their own semantic comparison.",
+      "related_auxiliary_groups": [
+        "B-STRUCTURE"
+      ]
+    },
+    {
+      "id": "p35-b08",
+      "page": 35,
+      "line_start": 2348,
+      "line_end": 2351,
+      "text_sha256": "5b39f706da49101d95c060cb98f3d4f2571616fdbfc0cf1299f29a7fe8360c6e",
+      "review_status": "statement_compared",
+      "page_end": 35,
+      "named_statement": "Lemma 21",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_twenty_one_polynomial",
+        "NLS.Articles.DNLSEstimates.lemma_twenty_one_evaluation",
+        "NLS.Articles.DNLSEstimates.lemma_twenty_one_weak"
+      ],
+      "qualification": "Proof passages require their own semantic comparison.",
+      "related_auxiliary_groups": [
+        "B-STRUCTURE"
+      ]
+    },
+    {
+      "id": "p35-b09",
+      "page": 35,
+      "line_start": 2355,
+      "line_end": 2359,
+      "text_sha256": "56a2efbe28793de329ea69f29c47c0c8851df18e2a1ff59b29057990078bc2de",
+      "review_status": "semantic_review_pending",
+      "page_end": 36,
+      "related_auxiliary_groups": [
+        "B-FIELD-RESCALING"
+      ]
+    },
+    {
+      "id": "p36-b01",
+      "page": 36,
+      "line_start": 2361,
+      "line_end": 2366,
+      "text_sha256": "bd16954d749764a631859d48f9946be874209554d616e522cdecadaa8546972d",
+      "review_status": "semantic_review_pending",
+      "page_end": 36,
+      "related_auxiliary_groups": [
+        "B-JET-REDUCTION"
+      ]
+    },
+    {
+      "id": "p36-b02",
+      "page": 36,
+      "line_start": 2368,
+      "line_end": 2372,
+      "text_sha256": "6e834f912b14c009c6a1787a8f7599ff60cd8d4160d7f3f51de6ccabc36269ad",
+      "review_status": "semantic_review_pending",
+      "page_end": 36,
+      "related_auxiliary_groups": [
+        "B-JET-REDUCTION"
+      ]
+    },
+    {
+      "id": "p36-b03",
+      "page": 36,
+      "line_start": 2374,
+      "line_end": 2378,
+      "text_sha256": "47f7aa78a743aabd7edf70992cdce3bd157a045d58a2aa54d9f9e24c0420e322",
+      "review_status": "statement_compared",
+      "page_end": 36,
+      "named_statement": "Corollary 22",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.corollary_twenty_two",
+        "NLS.Articles.DNLSEstimates.corollary_twenty_two_integral",
+        "NLS.Articles.DNLSEstimates.articleOddHamiltonian_eq_riccati_integral"
+      ],
+      "qualification": "Proof passages require their own semantic comparison.",
+      "related_auxiliary_groups": [
+        "B-JET-REDUCTION"
+      ]
+    },
+    {
+      "id": "p36-b04",
+      "page": 36,
+      "line_start": 2380,
+      "line_end": 2382,
+      "text_sha256": "ab5cd1d025dc6787a35289accf46f82258ba33c70ae08b03941c9e90712dd844",
+      "review_status": "statement_compared",
+      "page_end": 36,
+      "named_statement": "Corollary 22",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.corollary_twenty_two",
+        "NLS.Articles.DNLSEstimates.corollary_twenty_two_integral",
+        "NLS.Articles.DNLSEstimates.articleOddHamiltonian_eq_riccati_integral"
+      ],
+      "qualification": "Proof passages require their own semantic comparison.",
+      "related_auxiliary_groups": [
+        "B-JET-REDUCTION"
+      ]
+    }
+  ],
+  "coverage_policy": "Each block must be classified and every mathematical assertion mapped to an exact checked declaration or an explicit unresolved obligation. Statement-level kernel checks do not complete the review of its proof passages. The 350 blocks are a mechanical source inventory, not 350 independently reviewed claims.",
+  "corrections_to_track": [
+    {
+      "page": 9,
+      "claim": "Every higher level vanishes iff its gap is closed.",
+      "qualification": "All levels vanish at collapsed gaps. The real-source converse is verified for odd levels; an unrestricted even-level converse is not claimed."
+    },
+    {
+      "page": 35,
+      "claim": "H_k is the mean of phi_minus*u_k for every k>=1, with u_1=-phi_plus.",
+      "qualification": "Use the positive mass H_1 from Section 2; the raw mean at level one has the opposite sign. Higher levels retain the literal Riccati mean and the trace factor -1/(2i)^(k-1)."
+    },
+    {
+      "page": 5,
+      "claim": "The introductory odd trace displays a sum only over n>=1.",
+      "qualification": "Use all signed indices n in Z, as in the later trace formula and the checked original action trace. The displayed positive-only index was verified in the rendered PDF.",
+      "status": "corrected_signed_trace_kernel_checked"
+    },
+    {
+      "page": 9,
+      "claim": "Formula (1) prints a standard-root radicand with denominator 4*(tau_n-lambda).",
+      "qualification": "The standard-root radicand requires 4*(tau_n-lambda)^2. The missing square was verified in the rendered PDF. The existing normalized standard root uses the squared denominator.",
+      "status": "corrected_standard_root_compared",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.normalizedStandardRoot",
+        "NLS.ZakharovShabat.sourceStandardRoot_sq_of_not_mem_segment"
+      ]
+    },
+    {
+      "page": 27,
+      "claim": "The central comparison in the proof of Lemma 16 is applied to index zero even when the potential is small.",
+      "qualification": "Use the first-action estimate on the entire zero gap when P<=1/4; otherwise use the central third-action estimate. This directly proves the printed final bound without changing its mass exponents.",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.zero_gap_localization",
+        "NLS.Articles.DNLSEstimates.higherAction_le_action_add_third",
+        "NLS.Articles.DNLSEstimates.lemma_sixteen"
+      ]
+    },
+    {
+      "page": 29,
+      "claim": "Lemma 17 gives chi constant 512 and a rational intermediate bound.",
+      "qualification": "Use constant 2048 and the positive ratio recorded in the named-statement entry. Proposition 18 then uses constant 4608.",
+      "checked_declarations": [
+        "NLS.Articles.DNLSEstimates.lemma_seventeen",
+        "NLS.Articles.DNLSEstimates.lemma_seventeen_ratio",
+        "NLS.Articles.DNLSEstimates.proposition_eighteen"
+      ]
+    },
+    {
+      "source_lines": [
+        1092,
+        1138
+      ],
+      "auxiliary_group": "S3-SQUARE-KERNEL",
+      "qualification": "Use the actual denominator kernel, whose squared double sum is <=16/(1+abs(n))^2.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.complementarySandwich_apply",
+        "NLS.SpectralWeight.linear_signed_ratio",
+        "NLS.ZakharovShabat.tsum_linearWeightKernel_sq_le",
+        "NLS.ZakharovShabat.norm_weightedPotentialSquareInShift_linear"
+      ]
+    },
+    {
+      "source_lines": [
+        1281,
+        1323
+      ],
+      "auxiliary_group": "S3-DIAGONAL",
+      "qualification": "Both diagonal expressions use (I-T_n^2)^-1. The intermediate bound uses 2*norm(first)*norm(second)/(1+abs(n)), followed by 2ab<=a^2+b^2; do not assert each printed separate component-square bound.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.sourceM1_coefficients_joint_analytic",
+        "NLS.ZakharovShabat.norm_weightedResonantA_le_component_product",
+        "NLS.ZakharovShabat.weightedResonantA_parity",
+        "NLS.ZakharovShabat.weightedResonantA_parity_zero",
+        "NLS.ZakharovShabat.norm_weightedResonantA_linear"
+      ]
+    },
+    {
+      "source_lines": [
+        1389,
+        1398
+      ],
+      "auxiliary_group": "S3-HEIGHT",
+      "qualification": "The displayed complex difference is 2*i*Im(lambda), rather than 2*Im(lambda). The actual spectral-height estimate is proved directly.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.abs_im_le_H1_norm"
+      ]
+    },
+    {
+      "source_lines": [
+        1417,
+        1468
+      ],
+      "auxiliary_group": "S3-GAP-TAIL",
+      "qualification": "Keep the original source cutoff N distinct from period-two cutoff 2N. Horizontal packing and spectral height replace the arbitrary-isolating-disc diameter shortcut.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.sourceM1_gap_tail",
+        "NLS.ZakharovShabat.norm_weightedPairFourierTail_normalizedWeightedPeriodOne",
+        "NLS.ZakharovShabat.M1_canonicalGap_central_budget_of_height_one",
+        "NLS.ZakharovShabat.gap_global_265_height_budget"
+      ]
+    },
+    {
+      "source_lines": [
+        1564,
+        1588
+      ],
+      "auxiliary_group": "S4-POLYNOMIAL-MAJORANT",
+      "qualification": "Use natural integer multiplicities of the actual polynomial support instead of unsupported half-integer multiplicities.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.nlsOddReducedPolynomial_multiplicity_constraints",
+        "NLS.DifferentialPolynomial.jetMultiplicity",
+        "NLS.ZakharovShabat.norm_sobolevOddRemainderField_le"
+      ]
+    },
+    {
+      "source_lines": [
+        1598,
+        1645
+      ],
+      "auxiliary_group": "S4-TWO-FACTORS",
+      "qualification": "In the repeated-index display remove the unused second index from the residual product restriction.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.nlsOddReducedPolynomial_field_degree_bounds",
+        "NLS.DifferentialPolynomial.exists_two_factor_split",
+        "NLS.DifferentialPolynomial.prod_pow_two_factor_split",
+        "NLS.ZakharovShabat.integral_sobolevRealMonomial_le_split"
+      ]
+    },
+    {
+      "source_lines": [
+        1646,
+        1656
+      ],
+      "auxiliary_group": "S4-INTERPOLATION",
+      "qualification": "Use i<m for the supremum estimate; the L2 estimate allows i<=m. The printed supremum endpoint is not asserted.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.sourceSection26_supremum_interpolate",
+        "NLS.ZakharovShabat.sourceSection26_L2_interpolate"
+      ]
+    },
+    {
+      "source_lines": [
+        1658,
+        1692
+      ],
+      "auxiliary_group": "S4-EXPONENTS",
+      "qualification": "Replace the intermediate numerator D-4 by D-2; the final printed beta is retained.",
+      "checked_declarations": [
+        "NLS.DifferentialPolynomial.two_factor_interpolation_exponents",
+        "NLS.DifferentialPolynomial.monomial_interpolation_power_range",
+        "NLS.ZakharovShabat.exists_sobolevRealMonomial_interpolation_bound"
+      ]
+    },
+    {
+      "source_lines": [
+        1694,
+        1713
+      ],
+      "auxiliary_group": "S4-YOUNG",
+      "qualification": "The physical norm split uses 2^(2m-1), replacing the printed 2^(m-1). Epsilon is rescaled before this split.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.exists_sobolevRealMonomial_absorption",
+        "NLS.ZakharovShabat.exists_sobolevOddRemainder_Hm_absorption",
+        "NLS.ZakharovShabat.sourceSection26_physicalNorm_split",
+        "NLS.ZakharovShabat.exists_sobolevOddRemainder_derivative_absorption"
+      ]
+    },
+    {
+      "source_lines": [
+        176,
+        193
+      ],
+      "auxiliary_group": "SETUP-ABEL-STRIP",
+      "qualification": "With physical period one and the sampled weight w(2n), the exact Abel strip width is a/pi. The printed narrower-strip statement is retained only in the forward direction.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.source_abel_range_iff_physical_strip_extensions",
+        "NLS.ZakharovShabat.source_abel_printed_strip_forward"
+      ]
+    },
+    {
+      "source_lines": [
+        486,
+        500
+      ],
+      "auxiliary_group": "SETUP-STANDARD-ROOT",
+      "qualification": "Restore the omitted square in the printed denominator. The collapsed root is exactly tau-z, with its normalization fixed before any action is defined.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.normalizedStandardRoot",
+        "NLS.ZakharovShabat.sourceStandardRoot",
+        "NLS.ZakharovShabat.sourceStandardRoot_sq_of_not_mem_segment",
+        "NLS.ZakharovShabat.sourceStandardRoot_of_zeroGap"
+      ]
+    },
+    {
+      "source_lines": [
+        1891,
+        1926
+      ],
+      "auxiliary_group": "S6-GAP-COORDINATE",
+      "qualification": "Use the analytically filled quotient at a collapsed gap, and magnitudes for complex inequalities; do not interpret a raw 0/0 as the normalized value.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.SourceEquation2_18Data.circuit",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.factorization",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.action_integral",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_integral",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.factorization"
+      ]
+    },
+    {
+      "source_lines": [
+        1950,
+        1996
+      ],
+      "auxiliary_group": "S6-EXTERIOR-PRODUCT",
+      "qualification": "Use the directly proved finite-core and exterior budgets rather than asserting every numerical inequality in the printed e^2 chain. Original signed indices, source norms and omitted factor are retained.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.sourceH1_exterior_critical_factor_le",
+        "NLS.ZakharovShabat.M1_canonicalGap_finite_exterior_sq_le_three",
+        "NLS.ReciprocalSeries.sum_shifted_reciprocal_sq_le",
+        "NLS.ZakharovShabat.sourceH1_exterior_product_le_128",
+        "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_le_finite_core"
+      ]
+    },
+    {
+      "source_lines": [
+        1999,
+        2022
+      ],
+      "auxiliary_group": "S6-CENTRAL-PRODUCT",
+      "qualification": "Spectral continuity constructs the required common neighborhood. The comparison is not inferred solely from arbitrary disjoint isolating discs. The positive finite core uses -N<m<N and includes boundary modes in the exterior budget.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.section28_adjacent_distance_neighborhood_within",
+        "NLS.ZakharovShabat.section28_central_product_bound",
+        "NLS.ZakharovShabat.section28_central_product_bound_negative",
+        "NLS.ZakharovShabat.section28_complex_central_product_neighborhood",
+        "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_signed"
+      ]
+    },
+    {
+      "source_lines": [
+        2037,
+        2058
+      ],
+      "auxiliary_group": "S6-WEIGHTED-TAIL",
+      "qualification": "Retain 1+P_w^2 and the inclusive boundary. The printed tail expression that drops the additive one is not used.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_corrected",
+        "NLS.ZakharovShabat.M1_canonicalGap_tail_six_144",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_budget"
+      ]
+    },
+    {
+      "source_lines": [
+        2063,
+        2077
+      ],
+      "auxiliary_group": "S6-REAL-CENTRAL",
+      "qualification": "The finite central set is empty at cutoff zero. Choose N=floor(8*P_w^2), allowing equality in N<=8*P_w^2.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.sourceM1_real_central_actions_le",
+        "NLS.ZakharovShabat.sourceM1_real_weighted_actions_normalized",
+        "NLS.ZakharovShabat.weighted_action_two_pow_twenty_budget"
+      ]
+    },
+    {
+      "source_lines": [
+        2079,
+        2095
+      ],
+      "auxiliary_group": "S6-COMPLEX-EXTENSION",
+      "qualification": "The near-zero quadratic factor is the original weighted norm P_w, not the smaller H1 norm printed there.",
+      "checked_declarations": [
+        "NLS.ZakharovShabat.exists_local_sourceM1Action_bound",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_small_ball",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_bound"
+      ]
+    }
+  ],
+  "open_obligations": [
+    {
+      "id": "FULL-L4-COMPLEX",
+      "source_pages": [
+        14
+      ],
+      "claim": "Lemma 4 for every complex finite-gap source with physical Hamiltonian coefficients.",
+      "remaining": "Extend the existing real construction without adding unproved smoothness. Complex finite-gap spectral data alone do not imply smoothness, so an all-complex interpretation needs a justified Hamiltonian domain.",
+      "status": "open"
+    },
+    {
+      "id": "FULL-CURVE",
+      "source_pages": [
+        9
+      ],
+      "claim": "The spectral curve and the Riemann-surface/infinite-genus assertion.",
+      "remaining": "Supply the mathematical geometric formulation and proof, including the treatment of multiple spectral points. No existing checked article declaration discharges this.",
+      "status": "open"
+    },
+    {
+      "id": "FULL-BACKGROUND",
+      "source_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "claim": "All unnumbered setup and background assertions, including Birkhoff dynamics, weight examples, Fourier strip characterizations, and spectral products.",
+      "remaining": "Compare each independently with the existing physical construction; the main-theorem interfaces do not certify these automatically. Preserve existing norm, regularity and strip-width qualifications.",
+      "status": "open"
+    },
+    {
+      "id": "FULL-PROOF-PASSAGES",
+      "source_pages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "claim": "Every mathematical assertion inside proof passages and appendices.",
+      "remaining": "Decompose the mechanically captured paragraph blocks into individual assertions, compare exact domains, and map each to checked evidence or a positive correction. Alternative proofs of named results do not automatically certify every displayed intermediate inequality.",
+      "status": "open"
+    }
+  ],
+  "checked_declarations_validation": "full-paper-validation.json (separate from the historical main-theorem validation)",
+  "named_statement_summary": {
+    "exact_statements_checked": 24,
+    "corrected_statements_checked": 2,
+    "partially_checked": 1,
+    "proof_passage_review_complete": false
+  },
+  "reviewed_auxiliary_assertion_groups": [
+    {
+      "id": "S3-L2-LOCALIZATION",
+      "source_lines": [
+        922,
+        926
+      ],
+      "claim": "Fixed L2 norm does not give a uniform asymptotic free-lattice cutoff.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourcePlaneWave_mem_spectrum_iff_constant",
+        "NLS.ZakharovShabat.sourcePlaneWave_physical_norm_sq",
+        "NLS.ZakharovShabat.not_uniform_L2_ball_spectral_localization"
+      ]
+    },
+    {
+      "id": "S3-FREE-MODES",
+      "source_lines": [
+        949,
+        963
+      ],
+      "claim": "The free periodic eigenvalue n*pi has exactly the two physical resonant modes and algebraic multiplicity two.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+        "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range"
+      ]
+    },
+    {
+      "id": "S3-PQ",
+      "source_lines": [
+        965,
+        1018
+      ],
+      "claim": "Closed spectral strips and actual signed Fourier projections give the orthogonal resonant/complementary splitting and the original P/Q equations.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.resonant_add_complementary",
+        "NLS.ZakharovShabat.weightedResonantSplit_inner_eq_zero",
+        "NLS.ZakharovShabat.weightedFreePencil_eq_original",
+        "NLS.ZakharovShabat.weightedReconstruction_residual"
+      ]
+    },
+    {
+      "id": "S3-INVERSE",
+      "source_lines": [
+        1003,
+        1021
+      ],
+      "claim": "The complementary free inverse works in both orders on the actual derivative domain, including the resonant center.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.pencil_complementaryFreeDomainInverse",
+        "NLS.ZakharovShabat.complementaryFreeDomainInverse_pencil",
+        "NLS.ZakharovShabat.weightedPotentialInverse_eq_original"
+      ]
+    },
+    {
+      "id": "S3-FIRST-SHIFT",
+      "source_lines": [
+        1044,
+        1077
+      ],
+      "claim": "The weighted l1/Young estimate yields constant two for the first potential-resolvent operator, reversing the input and output shifts.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceLemma6_4_two"
+      ]
+    },
+    {
+      "id": "S3-SQUARE-KERNEL",
+      "source_lines": [
+        1092,
+        1138
+      ],
+      "claim": "The literal two-resolvent Fourier series is absolutely summable and gives the shifted square bound with constant four.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.complementarySandwich_apply",
+        "NLS.SpectralWeight.linear_signed_ratio",
+        "NLS.ZakharovShabat.tsum_linearWeightKernel_sq_le",
+        "NLS.ZakharovShabat.norm_weightedPotentialSquareInShift_linear"
+      ],
+      "correction": "Use the actual denominator kernel, whose squared double sum is <=16/(1+abs(n))^2.",
+      "printed_intermediates_not_closed": [
+        "The two printed separate auxiliary constants 32/5 and 5/2 have not been independently certified."
+      ]
+    },
+    {
+      "id": "S3-NEUMANN",
+      "source_lines": [
+        1139,
+        1157
+      ],
+      "claim": "The squared operator is a half-contraction at the exact quadratic cutoff; its convergent Neumann inverse solves the Q equation uniquely.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.weightedEvenCorrection_hasSum",
+        "NLS.ZakharovShabat.weightedCorrection_formula",
+        "NLS.ZakharovShabat.weightedQSolution_equation",
+        "NLS.ZakharovShabat.weightedQSolution_unique"
+      ]
+    },
+    {
+      "id": "S3-RECONSTRUCTION",
+      "source_lines": [
+        1162,
+        1178
+      ],
+      "claim": "A nonzero two-mode kernel vector reconstructs an original-domain eigenfunction, and every eigenfunction is recovered.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceResonantReconstruction_ne_zero_iff",
+        "NLS.ZakharovShabat.sourceResonantReconstruction_kernel_iff",
+        "NLS.ZakharovShabat.sourceResonantReconstruction_of_eigenvector"
+      ]
+    },
+    {
+      "id": "S3-MATRIX-SERIES",
+      "source_lines": [
+        1182,
+        1263
+      ],
+      "claim": "The reduced physical matrix has equal diagonals and the displayed even/odd inverse-series representations.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.weightedCorrectionMatrix_diagonal_eq",
+        "NLS.ZakharovShabat.weightedSourceResonantMatrix_form",
+        "NLS.ZakharovShabat.weightedResonantA_hasSum",
+        "NLS.ZakharovShabat.weightedResonantBPlus_remainder_hasSum",
+        "NLS.ZakharovShabat.weightedResonantBMinus_remainder_hasSum"
+      ]
+    },
+    {
+      "id": "S3-DIAGONAL",
+      "source_lines": [
+        1281,
+        1323
+      ],
+      "claim": "Coefficient analyticity and the final diagonal bound retain the exact physical pair norm and separate off-diagonal component norms.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceM1_coefficients_joint_analytic",
+        "NLS.ZakharovShabat.norm_weightedResonantA_le_component_product",
+        "NLS.ZakharovShabat.weightedResonantA_parity",
+        "NLS.ZakharovShabat.weightedResonantA_parity_zero",
+        "NLS.ZakharovShabat.norm_weightedResonantA_linear"
+      ],
+      "correction": "Both diagonal expressions use (I-T_n^2)^-1. The intermediate bound uses 2*norm(first)*norm(second)/(1+abs(n)), followed by 2ab<=a^2+b^2; do not assert each printed separate component-square bound."
+    },
+    {
+      "id": "S3-ROOTS",
+      "source_lines": [
+        1342,
+        1387
+      ],
+      "claim": "The auxiliary diagonal function has one simple root, the determinant has analytic zero count two, and its actual roots obey the stated radius and factor-six gap bound.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.linearWeight_diagonal_simple_root",
+        "NLS.ZakharovShabat.linearWeight_determinant_sourceDisc_zeroCount",
+        "NLS.ZakharovShabat.linearWeight_determinant_root_localization",
+        "NLS.ZakharovShabat.linearWeight_determinant_root_gap_le"
+      ]
+    },
+    {
+      "id": "S3-HEIGHT",
+      "source_lines": [
+        1389,
+        1398
+      ],
+      "claim": "The original physical H1 norm bounds the imaginary part of every periodic spectral point.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.abs_im_le_H1_norm"
+      ],
+      "correction": "The displayed complex difference is 2*i*Im(lambda), rather than 2*Im(lambda). The actual spectral-height estimate is proved directly."
+    },
+    {
+      "id": "S3-GAP-TAIL",
+      "source_lines": [
+        1417,
+        1468
+      ],
+      "claim": "Both Fourier remainders and the exact inclusive cutoff give the weighted gap tail and the common-neighborhood global bound.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceM1_gap_tail",
+        "NLS.ZakharovShabat.norm_weightedPairFourierTail_normalizedWeightedPeriodOne",
+        "NLS.ZakharovShabat.M1_canonicalGap_central_budget_of_height_one",
+        "NLS.ZakharovShabat.gap_global_265_height_budget"
+      ],
+      "correction": "Keep the original source cutoff N distinct from period-two cutoff 2N. Horizontal packing and spectral height replace the arbitrary-isolating-disc diameter shortcut."
+    },
+    {
+      "id": "S3-INDIVIDUAL-GAP",
+      "source_lines": [
+        1471,
+        1478
+      ],
+      "claim": "Formula (9) follows from the stronger individual bound sqrt(12)*P, hence also 4*P.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceM1_gap_individual"
+      ]
+    },
+    {
+      "id": "S4-GAP-POWERS",
+      "source_lines": [
+        1500,
+        1515
+      ],
+      "claim": "Nonzero-index radius <=3/8 implies the two-sided even-power estimate; the strict central case gives the exact quadratic absolute gap bound.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.quadraticLocalizationRadius_le_three_eighths",
+        "NLS.ZakharovShabat.spectral_point_even_power_bounds",
+        "NLS.ZakharovShabat.H1_gap_point_central_bound"
+      ]
+    },
+    {
+      "id": "S4-MOMENT-SUM",
+      "source_lines": [
+        1530,
+        1544
+      ],
+      "claim": "The action moment is controlled by the actual odd trace and a central mass remainder, with the zero index treated separately.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceWeightedActionTerm_le",
+        "NLS.ZakharovShabat.eight_pow_mul_tsum_realHigherActions",
+        "NLS.ZakharovShabat.central_action_weight_le",
+        "NLS.ZakharovShabat.sourceSection26_action_estimate"
+      ]
+    },
+    {
+      "id": "S4-POLYNOMIAL-MAJORANT",
+      "source_lines": [
+        1564,
+        1588
+      ],
+      "claim": "The actual reduced polynomial has balanced field counts, weighted degree 2m+2 and a finite physical monomial majorant.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.nlsOddReducedPolynomial_multiplicity_constraints",
+        "NLS.DifferentialPolynomial.jetMultiplicity",
+        "NLS.ZakharovShabat.norm_sobolevOddRemainderField_le"
+      ],
+      "correction": "Use natural integer multiplicities of the actual polynomial support instead of unsupported half-integer multiplicities."
+    },
+    {
+      "id": "S4-TWO-FACTORS",
+      "source_lines": [
+        1598,
+        1645
+      ],
+      "claim": "Each supported monomial has at least four fields; extraction of two factors permits L2/L-infinity interpolation, including coincident indices.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.nlsOddReducedPolynomial_field_degree_bounds",
+        "NLS.DifferentialPolynomial.exists_two_factor_split",
+        "NLS.DifferentialPolynomial.prod_pow_two_factor_split",
+        "NLS.ZakharovShabat.integral_sobolevRealMonomial_le_split"
+      ],
+      "correction": "In the repeated-index display remove the unused second index from the residual product restriction."
+    },
+    {
+      "id": "S4-INTERPOLATION",
+      "source_lines": [
+        1646,
+        1656
+      ],
+      "claim": "The actual physical derivative interpolates between scalar mass and Hm, in precisely the ranges needed by the polynomial.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceSection26_supremum_interpolate",
+        "NLS.ZakharovShabat.sourceSection26_L2_interpolate"
+      ],
+      "correction": "Use i<m for the supremum estimate; the L2 estimate allows i<=m. The printed supremum endpoint is not asserted."
+    },
+    {
+      "id": "S4-EXPONENTS",
+      "source_lines": [
+        1658,
+        1692
+      ],
+      "claim": "The collected exponents are alpha=2-(D-2)/(2m), beta=(1+1/(2m))*(D-2), with 0<alpha<2.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.DifferentialPolynomial.two_factor_interpolation_exponents",
+        "NLS.DifferentialPolynomial.monomial_interpolation_power_range",
+        "NLS.ZakharovShabat.exists_sobolevRealMonomial_interpolation_bound"
+      ],
+      "correction": "Replace the intermediate numerator D-4 by D-2; the final printed beta is retained."
+    },
+    {
+      "id": "S4-YOUNG",
+      "source_lines": [
+        1694,
+        1713
+      ],
+      "claim": "Young absorption gives the mass power 4m+2; a finite sum and physical Sobolev split give Lemma 14.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.exists_sobolevRealMonomial_absorption",
+        "NLS.ZakharovShabat.exists_sobolevOddRemainder_Hm_absorption",
+        "NLS.ZakharovShabat.sourceSection26_physicalNorm_split",
+        "NLS.ZakharovShabat.exists_sobolevOddRemainder_derivative_absorption"
+      ],
+      "correction": "The physical norm split uses 2^(2m-1), replacing the printed 2^(m-1). Epsilon is rescaled before this split."
+    },
+    {
+      "id": "A-DELETED-DISCRIMINANT",
+      "source_lines": [
+        2128,
+        2143
+      ],
+      "claim": "The actual deleted periodic product gives the differentiated quadratic discriminant identity and retains joint analyticity and the exact omitted zero set.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.canonicalDiscriminant_sq_sub_four_eq_midpoint_mul",
+        "NLS.ZakharovShabat.canonicalCriticalPoints_midpoint_offset_identity",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_joint_full",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_derivative_joint_full",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_eq_zero_iff"
+      ]
+    },
+    {
+      "id": "A-DISK-BOUNDS",
+      "source_lines": [
+        2145,
+        2149
+      ],
+      "claim": "Compactness of the original closed isolating disc supplies a positive deleted-product lower bound and a finite spectral-derivative upper bound on one source neighborhood.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_uniform_disk_bounds",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedDisk_subset_omittedDomain"
+      ]
+    },
+    {
+      "id": "A-CRITICAL-OFFSET",
+      "source_lines": [
+        2151,
+        2178
+      ],
+      "claim": "The collapsed-head and uniformly small distant-tail bounds combine into one all-index neighborhood of a real source.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.offset_eq",
+        "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_i",
+        "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_ii"
+      ],
+      "qualification": "The direct squared-gap-quotient proof supplies the literal half-gap statement; it does not automatically certify every intermediate root-count sentence in the printed proof."
+    },
+    {
+      "id": "A-CONNECTORS",
+      "source_lines": [
+        2182,
+        2194
+      ],
+      "claim": "Actual endpoint and connecting integrals decompose the same primitive; the connecting integral is analytic in the source.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq_add_polygonalIntegral",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.boundaryPolygonalIntegral_analytic"
+      ]
+    },
+    {
+      "id": "A-SQUARED-GAP-BRANCHES",
+      "source_lines": [
+        2196,
+        2222
+      ],
+      "claim": "The collapsed locus is defined by the analytic squared gap. Distinct complex endpoints have local unordered analytic branches, without continuity of the global lexicographic labels.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.exists_global_source_analytic_midpoint_squaredGap",
+        "NLS.ComplexAnalysis.exists_local_analytic_pair_branches",
+        "NLS.ZakharovShabat.exists_appendixFOpenGapBranches"
+      ]
+    },
+    {
+      "id": "A-ENDPOINT-SPOKE",
+      "source_lines": [
+        2224,
+        2249
+      ],
+      "claim": "One common source neighborhood supports the actual admissible endpoint spoke, its nonzero principal-root factor, integrable inverse-square-root majorant and analytic improper integral.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ComplexAnalysis.appendixF_endpoint_radicand_lower",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_integral_analytic",
+        "NLS.ZakharovShabat.appendixF_endpoint_uniform_branches",
+        "NLS.ZakharovShabat.appendixF_endpoint_uniform_radicand",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_source_endpoint_integral_analytic"
+      ]
+    },
+    {
+      "id": "A-COLLAPSED-RESTRICTION",
+      "source_lines": [
+        2251,
+        2255
+      ],
+      "claim": "At a collapsed gap, the actual primitive is the regular chi integral and has a source-analytic extension from the collapsed locus.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_collapsed_differential",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_segment",
+        "NLS.ZakharovShabat.exists_appendixF_collapsed_analytic_extensions"
+      ]
+    },
+    {
+      "id": "A-SHORT-PIECE",
+      "source_lines": [
+        2256,
+        2267
+      ],
+      "claim": "The actual endpoint-to-midpoint short piece is bounded by a constant times the collapsing gap and therefore tends to zero.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_norm_le_gap",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_integral_identity",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_remainder_tendsto_zero"
+      ]
+    },
+    {
+      "id": "A-COMMON-POINT-LIMIT",
+      "source_lines": [
+        2269,
+        2289
+      ],
+      "claim": "One original boundary point works for the collapsing sequence, and the actual normalized root and full spoke integrand converge at every positive parameter.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.exists_common_source_midpoint_spokes",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_rescaled_terms_tendsto",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_integrand_tendsto"
+      ]
+    },
+    {
+      "id": "A-MAJORANT-L1",
+      "source_lines": [
+        2292,
+        2317
+      ],
+      "claim": "The nonnegative moving majorant sqrt(t+e)/sqrt(abs(t-e)) is integrable, uniformly L1 bounded for e in [0,1], and converges to one in L1 as e tends to zero.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ComplexAnalysis.appendixF_quotient_le_positive_majorant",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_integrable",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_L1_bound",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_tendsto_L1",
+        "NLS.ComplexAnalysis.appendixF_tendsto_integral_moving_majorant"
+      ]
+    },
+    {
+      "id": "A-CONTINUITY-ANALYTICITY",
+      "source_lines": [
+        2319,
+        2326
+      ],
+      "claim": "The source-sequence limit proves continuity of the actual endpoint average; the independently constructed joint primitive proves the final analyticity statement.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_fixed_endpointAverage_limit",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_analytic",
+        "NLS.ZakharovShabat.sourceLemmaF2"
+      ],
+      "qualification": "A separate general analytic-subvariety extension theorem from the cited reference is not asserted as a checked proof dependency."
+    },
+    {
+      "id": "SETUP-WEIGHTS",
+      "source_lines": [
+        163,
+        208
+      ],
+      "claim": "The stated Abel, stretched-exponential/Gevrey and logarithmically weakened exponential weights are actual members of M, with the exact linear factor when s>=1.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.SpectralWeight.abel_apply",
+        "NLS.SpectralWeight.gevrey_apply",
+        "NLS.SpectralWeight.logarithmic_apply",
+        "NLS.SpectralWeight.hasLinearFactor_abel",
+        "NLS.SpectralWeight.hasLinearFactor_gevrey",
+        "NLS.SpectralWeight.hasLinearFactor_logarithmic"
+      ],
+      "qualification": "This checks the weight membership and linear factor. Full equivalence to a separately defined Gevrey function class remains part of the background comparison."
+    },
+    {
+      "id": "SETUP-ABEL-STRIP",
+      "source_lines": [
+        176,
+        193
+      ],
+      "claim": "The actual period-one physical potential has the holomorphic strip characterization with Sobolev norm boundary traces.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.source_abel_range_iff_physical_strip_extensions",
+        "NLS.ZakharovShabat.source_abel_printed_strip_forward"
+      ],
+      "qualification": "For positive a, the exact width is a/pi because the source norm samples w(2n). The printed narrower a/(2*pi) strip has the proved forward implication; its printed equivalence is not retained. At a=0 use the ordinary Sobolev case."
+    },
+    {
+      "id": "SETUP-PERIODIC-ENDPOINTS",
+      "source_lines": [
+        374,
+        403
+      ],
+      "claim": "The actual periodic spectrum is exhausted by canonical left/right endpoint pairs, each with an l2 displacement from n*pi.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.canonicalPeriodicEndpoints_exhaustive",
+        "NLS.ZakharovShabat.canonicalPeriodicLeftDisplacement",
+        "NLS.ZakharovShabat.canonicalPeriodicRightDisplacement",
+        "NLS.ZakharovShabat.discreteTopology_periodicSpectrum"
+      ],
+      "qualification": "Source L2 coefficients are transported to the physical period-two operator by the existing periodOnePotential realization; the signed ordering and multiplicities are retained."
+    },
+    {
+      "id": "SETUP-DIFFERENTIAL-PRODUCT",
+      "source_lines": [
+        579,
+        590
+      ],
+      "claim": "Formula (4) uses the actual discriminant derivative divided by the canonical root and the normalized -i critical-root product.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_product",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_hasProd",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.joint"
+      ]
+    },
+    {
+      "id": "HIGHER-GAP-INTEGRAL",
+      "source_lines": [
+        815,
+        843
+      ],
+      "claim": "Formula (7) is the literal real-gap arcosh integral of the original contour-defined higher action, including collapsed gaps.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_gapIntegral",
+        "NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec"
+      ],
+      "qualification": "Library power k denotes the printed level k+1, with factor 2/pi and real spectral power k."
+    },
+    {
+      "id": "HIGHER-ASYMPTOTICS",
+      "source_lines": [
+        845,
+        853
+      ],
+      "claim": "The mean-value gap samples have l2 displacements and their power ratio tends to one along both signed tails, yielding the higher-action asymptotic.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_exists_asymptotic_samples",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_leftEndpoint",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_rightEndpoint"
+      ],
+      "qualification": "The asymptotic is expressed without dividing by an action, so collapsed gaps are included."
+    },
+    {
+      "id": "SETUP-STANDARD-ROOT",
+      "source_lines": [
+        486,
+        500
+      ],
+      "claim": "The normalized root is (tau-z)*sqrt(1-gap^2/(4*(tau-z)^2)) and squares to the actual endpoint factor off the closed gap.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.normalizedStandardRoot",
+        "NLS.ZakharovShabat.sourceStandardRoot",
+        "NLS.ZakharovShabat.sourceStandardRoot_sq_of_not_mem_segment",
+        "NLS.ZakharovShabat.sourceStandardRoot_of_zeroGap"
+      ],
+      "correction": "Restore the omitted square in the printed denominator. The collapsed root is exactly tau-z, with its normalization fixed before any action is defined."
+    },
+    {
+      "id": "S5-CUBIC-CORRECTION",
+      "source_lines": [
+        1770,
+        1813
+      ],
+      "claim": "The actual physical cubic correction is a nonpositive, absolutely convergent cubic-gap moment sum; its finite-gap realization extends by continuity to H1.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.sobolevPhysicalHamiltonian_identity",
+        "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.summable_real_cubic_moments",
+        "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.real_moment_nonneg",
+        "NLS.ZakharovShabat.sourceSobolevPhysicalCorrection_nonpos"
+      ]
+    },
+    {
+      "id": "S6-GAP-COORDINATE",
+      "source_lines": [
+        1891,
+        1926
+      ],
+      "claim": "Recentring the action at the actual critical point gives the straight-gap integral and exact normalized critical-coordinate formula, with an analytic filled quotient at collapsed gaps.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceEquation2_18Data.circuit",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.factorization",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.action_integral",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_integral",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.factorization"
+      ],
+      "correction": "Use the analytically filled quotient at a collapsed gap, and magnitudes for complex inequalities; do not interpret a raw 0/0 as the normalized value."
+    },
+    {
+      "id": "S6-EXTERIOR-PRODUCT",
+      "source_lines": [
+        1950,
+        1996
+      ],
+      "claim": "The actual localized complex roots and common critical-offset bound give a single-factor estimate, finite square budgets and exterior-product bound 128.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceH1_exterior_critical_factor_le",
+        "NLS.ZakharovShabat.M1_canonicalGap_finite_exterior_sq_le_three",
+        "NLS.ReciprocalSeries.sum_shifted_reciprocal_sq_le",
+        "NLS.ZakharovShabat.sourceH1_exterior_product_le_128",
+        "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_le_finite_core"
+      ],
+      "correction": "Use the directly proved finite-core and exterior budgets rather than asserting every numerical inequality in the printed e^2 chain. Original signed indices, source norms and omitted factor are retained."
+    },
+    {
+      "id": "S6-CENTRAL-PRODUCT",
+      "source_lines": [
+        1999,
+        2022
+      ],
+      "claim": "One common complex neighborhood supplies adjacent-distance comparisons, exact signed telescoping and a positive enclosing-root ratio at the cutoff boundary.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.section28_adjacent_distance_neighborhood_within",
+        "NLS.ZakharovShabat.section28_central_product_bound",
+        "NLS.ZakharovShabat.section28_central_product_bound_negative",
+        "NLS.ZakharovShabat.section28_complex_central_product_neighborhood",
+        "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_signed"
+      ],
+      "correction": "Spectral continuity constructs the required common neighborhood. The comparison is not inferred solely from arbitrary disjoint isolating discs. The positive finite core uses -N<m<N and includes boundary modes in the exterior budget."
+    },
+    {
+      "id": "S6-WEIGHTED-TAIL",
+      "source_lines": [
+        2037,
+        2058
+      ],
+      "claim": "The actual weighted action tail converges and is bounded by 4608*(1+P_w^2) times the corresponding weighted gap tail; both use the same inclusive cutoff.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_corrected",
+        "NLS.ZakharovShabat.M1_canonicalGap_tail_six_144",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_budget"
+      ],
+      "correction": "Retain 1+P_w^2 and the inclusive boundary. The printed tail expression that drops the additive one is not used."
+    },
+    {
+      "id": "S6-REAL-CENTRAL",
+      "source_lines": [
+        2063,
+        2077
+      ],
+      "claim": "The real central weighted actions are bounded by the exact mass trace and the weight at 16*P_w^2; the full real bound has constant 2^20.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceM1_real_central_actions_le",
+        "NLS.ZakharovShabat.sourceM1_real_weighted_actions_normalized",
+        "NLS.ZakharovShabat.weighted_action_two_pow_twenty_budget"
+      ],
+      "correction": "The finite central set is empty at cutoff zero. Choose N=floor(8*P_w^2), allowing equality in N<=8*P_w^2."
+    },
+    {
+      "id": "S6-COMPLEX-EXTENSION",
+      "source_lines": [
+        2079,
+        2095
+      ],
+      "claim": "Continuity gives the doubled constant near each nonzero real weighted source; a separate quadratic small-ball estimate handles zero before the complex neighborhoods are assembled.",
+      "comparison_status": "compared_positive_correction",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.exists_local_sourceM1Action_bound",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_small_ball",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_bound"
+      ],
+      "correction": "The near-zero quadratic factor is the original weighted norm P_w, not the smaller H1 norm printed there."
+    },
+    {
+      "id": "B-RECURRENCE",
+      "source_lines": [
+        2331,
+        2342
+      ],
+      "claim": "The physical Hamiltonian hierarchy is independently defined by the actual derivative-plus-convolution Riccati recurrence, with smooth agreement and an H^-1 boundary extension.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.nlsRiccatiPolynomial_recurrence",
+        "NLS.ZakharovShabat.sobolevRiccatiDensity_succ_succ",
+        "NLS.ZakharovShabat.weakSobolevRiccatiDensity_eq_classical_coefficients",
+        "NLS.ZakharovShabat.weakSobolevRiccatiDensity_unique"
+      ]
+    },
+    {
+      "id": "B-STRUCTURE",
+      "source_lines": [
+        2344,
+        2351
+      ],
+      "claim": "Each supported nonlinear Hamiltonian monomial has the stated total weight, balanced field counts and derivative-count bound; the H^(k-1) identity holds in actual distributions.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+        "NLS.ZakharovShabat.nlsRiccatiRemainder_vars",
+        "NLS.ZakharovShabat.sourceLemmaH1_weak",
+        "NLS.ZakharovShabat.sourceLemmaH1_distribution",
+        "NLS.ZakharovShabat.sourceH1RemainderDistribution_coefficient"
+      ]
+    },
+    {
+      "id": "B-FIELD-RESCALING",
+      "source_lines": [
+        2355,
+        2359
+      ],
+      "claim": "The recurrence gives the exact field-rescaling identity u_k(a,c*b)=c*u_k(c*a,b), including c=0, and the associated physical Hamiltonian identity.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.nlsRiccatiDensity_field_rescaling",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_field_rescaling"
+      ]
+    },
+    {
+      "id": "B-JET-REDUCTION",
+      "source_lines": [
+        2361,
+        2382
+      ],
+      "claim": "A graded integration-by-parts reduction lowers every nonlinear factor to derivative order m-1; the chosen polynomial and physical integral extend to all real Hm inputs.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.exists_nlsOddRemainder_jet_reduction",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_leading_remainder",
+        "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_reduced_polynomial",
+        "NLS.ZakharovShabat.sourceCorollaryH2_integral",
+        "NLS.ZakharovShabat.sobolevOddHamiltonian_unique_continuous"
+      ]
+    }
+  ],
+  "auxiliary_group_policy": "These explicitly compared groups identify proved mathematical content and positive replacements for named proof steps. They are not asserted to exhaust the mathematics in their line spans. Any printed intermediates listed as not closed, and all other paragraph assertions, remain in the open proof-passage inventory.",
+  "auxiliary_assertion_group_count": 50,
+  "reference_policy": "A related auxiliary group is a navigation link and does not automatically close all assertions in an overlapping paragraph. Only the explicitly stated mathematical content and qualifications of the group have been compared."
+}

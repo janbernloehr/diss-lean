@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "status": "expanded_milestone_validated",
+  "full_paper_complete": false,
+  "branch": "articles/dnls-estimates",
+  "parent_commit": "9899d8911f3c27c87d2bbef19fd787bfc38b43de",
+  "source_pdf_sha256": "6862e6c30dffaa55f4a73b48155576310682c78e154ffcc1dbeeaf3eb0dd277b",
+  "lean_source_hashes": {
+    "NLS/Articles/DNLSEstimates/MainEstimates.lean": "55170c5d842a92fcd12c03487df7e9035c9dccd35f99332dab01d1106c8a9b0b",
+    "NLS/Articles/DNLSEstimates/Hierarchy.lean": "3cec0ed131adc7841135b839742e5e06cc0148cad8ec504b0601f6730c1ec294",
+    "NLS/Articles/DNLSEstimates/HigherActions.lean": "72e4228e19fd26c3e1a553977f6ce2563eac20100f5f070cae699446d8e6eda3",
+    "NLS/Articles/DNLSEstimates/SpectralEstimates.lean": "3e97758909baa0c40ccf282361243822c069b97a792928659fc8ad8698b3bc52",
+    "NLS/Articles/DNLSEstimates/ActionEstimates.lean": "690ee1a18c3eb5647f1fc8876c385553d77042d44a60c9d26aa8efdd51ebbebf",
+    "NLS/Articles/DNLSEstimates/Primitive.lean": "b7ef96a63ed9459748f01567083cf3dd0179ef331df92066524a688c60d2eb2b",
+    "NLS/Articles/DNLSEstimates/ComplexActions.lean": "d615af5a038029eee01b0203d89ddaf6d297202c0f6bac57b6f8e18557ab62ff",
+    "NLS/Articles/DNLSEstimates/ConverseEstimate.lean": "4b1bede2e2f67fabd9a3f522d71dfa34ad2be902df1bf7c429866e5995be46ad",
+    "NLS/Articles/DNLSEstimates/FiniteGap.lean": "4a01e6040714fb68609c9a0ba0301df5f0106567e05f9edd63fc3d8830efdd46",
+    "NLS.lean": "b22397dfc340e87a62f56a91a4651e3ced676b52218a70e9b17512cc9100bc1d",
+    "scripts/CheckDNLSEstimates.lean": "77cc7f29a0c55c58e4a9ce02c1343a4223d4635684f5b3d4e84f9bc18efa494b",
+    "scripts/CheckExamples.lean": "15695ebb23280a57b5e9129dfc296b09f732b1ccb0b859210379ab7043dd4baa",
+    "scripts/CheckAxioms.lean": "c91e63ffa25acce5cf4156d76aff8ed0610597b29d9005032ec72aa0ec0f2b9a"
+  },
+  "allowed_transitive_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "checks": [
+    {
+      "name": "MainEstimates",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/MainEstimates.olean",
+        "NLS/Articles/DNLSEstimates/MainEstimates.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:15.853246+00:00",
+      "elapsed_seconds": 2.475,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "Hierarchy",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/Hierarchy.olean",
+        "NLS/Articles/DNLSEstimates/Hierarchy.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:18.328689+00:00",
+      "elapsed_seconds": 2.834,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "HigherActions",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/HigherActions.olean",
+        "NLS/Articles/DNLSEstimates/HigherActions.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:21.162652+00:00",
+      "elapsed_seconds": 2.469,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "SpectralEstimates",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/SpectralEstimates.olean",
+        "NLS/Articles/DNLSEstimates/SpectralEstimates.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:23.631668+00:00",
+      "elapsed_seconds": 2.619,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "ActionEstimates",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/ActionEstimates.olean",
+        "NLS/Articles/DNLSEstimates/ActionEstimates.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:26.250852+00:00",
+      "elapsed_seconds": 2.57,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "Primitive",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/Primitive.olean",
+        "NLS/Articles/DNLSEstimates/Primitive.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:28.820672+00:00",
+      "elapsed_seconds": 3.293,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "ComplexActions",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/ComplexActions.olean",
+        "NLS/Articles/DNLSEstimates/ComplexActions.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:32.113969+00:00",
+      "elapsed_seconds": 2.536,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "ConverseEstimate",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/ConverseEstimate.olean",
+        "NLS/Articles/DNLSEstimates/ConverseEstimate.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:34.649828+00:00",
+      "elapsed_seconds": 4.488,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "FiniteGap",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/FiniteGap.olean",
+        "NLS/Articles/DNLSEstimates/FiniteGap.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:39.137666+00:00",
+      "elapsed_seconds": 2.271,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "aggregate",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS.olean",
+        "NLS.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:41.409767+00:00",
+      "elapsed_seconds": 2.291,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "article-audit",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "scripts/CheckDNLSEstimates.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:43.701251+00:00",
+      "elapsed_seconds": 3.004,
+      "warnings": 0,
+      "output_sha256": "c3f5c0c0748965f1078a4f12cf1df76701a24896da08be16c89134f7e96cf603",
+      "output_bytes": 10386
+    },
+    {
+      "name": "full-axiom-audit",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "scripts/CheckAxioms.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:46.712708+00:00",
+      "elapsed_seconds": 3.626,
+      "warnings": 0,
+      "output_sha256": "cef360d1cb9aa71195e5aac8cce200cf6c435903fdac1d81791da9a37e53b78f",
+      "output_bytes": 47
+    },
+    {
+      "name": "public-examples",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "scripts/CheckExamples.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-06T22:15:50.338531+00:00",
+      "elapsed_seconds": 1258.241,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    }
+  ],
+  "build_method": "Direct pinned Lean compilation of all nine article modules and the updated aggregate, then the unchanged public examples and both transitive audits. Unchanged dependency oleans are imported from the canonical snapshot. This is not a fresh rebuild of all dependencies. All article and aggregate outputs are private to this worktree. No writing Lake build is used.",
+  "shared_lock": "/tmp/diss-lean-article-build.lock",
+  "completed_utc": "2026-11-06T22:36:48.588680+00:00",
+  "public_examples": 7729,
+  "article_axiom_declarations": 111,
+  "all_imported_NLS_axiom_declarations": 45357,
+  "worktree": {
+    "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-dnls-estimates/outputs/dnls",
+    "kind": "separate_git_worktree",
+    "branch": "articles/dnls-estimates"
+  },
+  "scope": "Validated expanded statement milestone; full-paper verification remains incomplete.",
+  "coverage_ledger": "coverage/articles/dnls-estimates/full-paper-claims.json",
+  "coverage_ledger_sha256": "f7f441fb77660448b7ce90c6a66ff5d0c2096913a0197319408aeb191a582652",
+  "named_statement_summary": {
+    "exact_statements_checked": 24,
+    "corrected_statements_checked": 2,
+    "partially_checked": 1,
+    "proof_passage_review_complete": false
+  },
+  "auxiliary_group_count": 50,
+  "auxiliary_reference_check": {
+    "shared_names": 173,
+    "exit_code": 0,
+    "warnings": 0,
+    "generated_source_sha256": "c2af6b1bdf56f1fa4ee0d53d57e1ab4b0f6b9dbb9d57320918022694ff0e566d",
+    "output_sha256": "f43a53dbf6721c84f1d1267e79003b9ec1c93d7780eaa04c976183262d7d1c2b",
+    "method": "Generated import NLS and one #check for each exact shared reference listed in reviewed_auxiliary_assertion_groups. All references resolve against the validated aggregate. This is an integrity check, not a semantic source-completeness certificate."
+  },
+  "source_inventory_integrity": {
+    "named_statement_count": 27,
+    "body_paragraph_blocks": 350,
+    "all_block_hashes_rechecked": true,
+    "inventory_complete": false,
+    "open_obligation_groups": 4
+  },
+  "main_milestone_validation_preserved": true,
+  "main_milestone_validation_sha256": "1ff8647893baf2e8506f2850bfad6255618765a7bc388733eba0a0716c186968",
+  "progress_report_sha256": "dc9b2a38553a0c2c6b62279cea0d4d2be65198ee8759ddc840158a5bd8b241a5"
+}

@@ -128,5 +128,8 @@
     "Sequential integration of articles/dnls-estimates into main is a separate repository operation."
   ],
   "missing_mathematical_dependencies_found": [],
-  "scope_note": "Verified main statements of the pinned arXiv v2 source under the accepted Birkhoff-map reference; no journal-edition identity or audit of every intermediate statement is claimed."
+  "scope_note": "Verified main statements of the pinned arXiv v2 source under the accepted Birkhoff-map reference; no journal-edition identity or audit of every intermediate statement is claimed.",
+  "scope": "Main-theorem milestone; the required full-paper scope is tracked separately.",
+  "full_paper_status": "in_progress",
+  "full_paper_inventory": "coverage/articles/dnls-estimates/full-paper-claims.json"
 }

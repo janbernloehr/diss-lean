@@ -1,4 +1,9 @@
-# dNLS Fourier estimates: main-theorem verification
+# dNLS Fourier estimates: verification milestones
+
+The required scope was expanded on 2026-11-06 to every mathematical assertion
+in the paper. **Full-paper verification is in progress**, tracked in
+[FULL_PAPER.md](FULL_PAPER.md) and `full-paper-claims.json`. The main-theorem
+result below is a completed milestone and does not complete the expanded task.
 
 Theorems 1–3 and introductory Corollary 1 of arXiv:1403.1369v2 are verified
 under the accepted Birkhoff-map reference and the conventions below. Each

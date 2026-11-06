@@ -1,4 +1,12 @@
 import NLS.Articles.DNLSEstimates.MainEstimates
+import NLS.Articles.DNLSEstimates.Hierarchy
+import NLS.Articles.DNLSEstimates.HigherActions
+import NLS.Articles.DNLSEstimates.SpectralEstimates
+import NLS.Articles.DNLSEstimates.ActionEstimates
+import NLS.Articles.DNLSEstimates.Primitive
+import NLS.Articles.DNLSEstimates.ComplexActions
+import NLS.Articles.DNLSEstimates.ConverseEstimate
+import NLS.Articles.DNLSEstimates.FiniteGap
 import Lean.Util.CollectAxioms
 
 open Lean in
