@@ -2944,8 +2944,7 @@
       "topology": "Fourier-Lebesgue and weighted sequence Banach norm topologies; not weak-star endpoints.",
       "status": "not_verified",
       "remaining": [
-        "Prove the exact Fourier-Lebesgue regularity criterion for the SAME actual physical signed KdV Birkhoff map and actual canonical spectral packets.",
-        "Prove its analytic inverse, all restricted derivative inverses and surjectivity in every original Fourier-Lebesgue norm."
+        "Prove real analyticity of the SAME actual physical Birkhoff restriction and its SAME fixed inverse in both original Fourier-Lebesgue norms, and derive the actual restricted derivative inverse identities. These are the remaining fields of Theorem12PhysicalData."
       ],
       "checked_preparation": [
         "NLS.ComplexAnalysis.quadratic_resolvent_properties_preimage",
@@ -2981,7 +2980,58 @@
         "NLS.exists_analytic_fourierLebesgue_periodOneMiura_branch",
         "NLS.exists_real_periodOneMiura_chart_all_fourierLebesgue_restrictions",
         "NLS.KdV.exists_hillHminus_real_Miura_all_fourierLebesgue_chart",
-        "NLS.KdV.HillHminusMiuraChart.fourierLebesgue_iff"
+        "NLS.KdV.HillHminusMiuraChart.fourierLebesgue_iff",
+        "NLS.Coeff.memlp_positive_product_iff_exponent",
+        "NLS.KdV.hillHminus_fourierLebesgue_iff_real_miuraDirac_gap_mem",
+        "NLS.KdV.HillHminusMiuraChart.fourierLebesgue_iff_real_Dirac_gap_mem",
+        "NLS.KdV.HillHminusPsiChart.fourierLebesgue_iff_positive_eta_mem",
+        "NLS.Articles.KdVKdV2Frequencies.RoughAbelianFourierDataAt.fourierLebesgue_iff_weighted_packet_mem",
+        "NLS.Articles.KdVKdV2Frequencies.PhysicallyOrientedRoughPacketAt.fourierLebesgue_iff_weighted_positive_mem",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgue_iff_positive_mem",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgue_iff_signed_mem",
+        "NLS.WeightedCoeff.finiteFourierLebesgueWeakInclusion",
+        "NLS.WeightedCoeff.finiteFourierLebesgueWeakInclusion_apply",
+        "NLS.WeightedCoeff.finiteFourierLebesgueWeakInclusion_injective",
+        "NLS.physicalRealMeanZeroWeightedExponent",
+        "NLS.mem_physicalRealMeanZeroWeightedExponent",
+        "NLS.isClosed_physicalRealMeanZeroWeightedExponent",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueSourceInclusion",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueSourceInclusion_apply",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueTargetInclusion",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueTargetInclusion_apply",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueSourceInclusion_real",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueForward",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueForward_apply",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueForward_signed",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueForward_bijective",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueEquiv",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueSourceNormalization",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueSourceNormalization_val",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueTargetNormalization",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueTargetNormalization_val",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueForward_weak_commuting",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueEquiv_symm_weak_commuting",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueEquiv_symm_signed",
+        "NLS.ComplexAnalysis.affine_quadratic_resolvent_properties_preimage",
+        "NLS.KdV.HillHminusPsiChart.exists_fourierLebesgue_native_Miura_lift",
+        "NLS.Articles.KdVConvexity.Theorem12PhysicalData",
+        "NLS.Articles.KdVConvexity.theorem_1_2_bijection_and_fixed_inverse",
+        "NLS.Articles.KdVConvexity.exists_actual_physical_fourierLebesgue_miura_lift"
+      ],
+      "statement_record": "NLS.Articles.KdVConvexity.Theorem12PhysicalData",
+      "verified_bijection_declaration": "NLS.Articles.KdVConvexity.theorem_1_2_bijection_and_fixed_inverse",
+      "partial_status": "global_bijection_and_fixed_inverse_proved_native_analyticity_open",
+      "verified_statement_components": [
+        {
+          "assertion": "Exact Fourier-Lebesgue criterion, entire native target bijection and fixed inverse compatibility",
+          "result": "proved",
+          "declaration": "NLS.Articles.KdVConvexity.theorem_1_2_bijection_and_fixed_inverse"
+        },
+        {
+          "assertion": "Native real analytic diffeomorphism in both original norms",
+          "result": "not_verified",
+          "statement_record": "NLS.Articles.KdVConvexity.Theorem12PhysicalData"
+        }
       ]
     },
     {
@@ -6145,6 +6195,53 @@
     "remaining": [
       "Prove the exact Fourier-Lebesgue regularity criterion for the SAME actual physical signed KdV Birkhoff map and actual canonical spectral packets.",
       "Prove its analytic inverse, all restricted derivative inverses and surjectivity in every original Fourier-Lebesgue norm.",
+      "Prove Theorem 1.3 physical KdV global C0 well-posedness, including approximation, uniqueness and agreement with the referenced Hminus1 solution theory."
+    ]
+  },
+  "fourier_Lebesgue_Birkhoff_restriction_progress": {
+    "status": "actual_physical_Fourier_Lebesgue_global_bijection_and_fixed_inverse_proved",
+    "article_bijection": "NLS.Articles.KdVConvexity.theorem_1_2_bijection_and_fixed_inverse",
+    "full_remaining_statement_record": "NLS.Articles.KdVConvexity.Theorem12PhysicalData",
+    "new_authored_modules": [
+      "NLS.SequenceSpaces.PositiveReciprocalExponentMembership",
+      "NLS.KdV.HillHminusMiuraFourierLebesgueRegularity",
+      "NLS.KdV.HillHminusEtaFourierLebesgueRegularity",
+      "NLS.KdV.HillRoughPacketFourierLebesgueRegularity",
+      "NLS.KdV.HillRoughGlobalFourierLebesgueRegularity",
+      "NLS.SequenceSpaces.FiniteFourierLebesgueWeakInclusion",
+      "NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedExponent",
+      "NLS.KdV.HillRoughFourierLebesgueBijection",
+      "NLS.KdV.HillRoughFourierLebesgueInverseCompatibility",
+      "NLS.ComplexAnalysis.AnalyticAffineQuadraticResolvent",
+      "NLS.KdV.HillHminusRetainedFourierLebesgueMiuraGerms",
+      "NLS.Articles.KdVConvexity.MainTheorem12Preparation"
+    ],
+    "baseline_commit": "4111102f006bc5c90f44ea5fe6b9d8f5c134a5d2",
+    "baseline_proof_sources_preserved": 2547,
+    "regularity_criterion": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgue_iff_signed_mem",
+    "bijection": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueEquiv",
+    "fixed_inverse_diagram": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueEquiv_symm_weak_commuting",
+    "full_signed_inverse_recovery": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueEquiv_symm_signed",
+    "same_chosen_chart_native_analytic_lift": "NLS.Articles.KdVConvexity.exists_actual_physical_fourierLebesgue_miura_lift",
+    "finite_exponents": "Every finite p>=2, with the original native weighted lp norms.",
+    "orders": "Exact criterion and bijection hold for every s>=-1/2; the article declaration retains its precise -1/2<=s<=0 range.",
+    "same_actual_physical_signed_KdV_map_retained": true,
+    "canonical_Dirac_gaps_independent_of_comparison_exponent": true,
+    "arbitrary_real_Hminus1_inverse_source_allowed": true,
+    "exact_half_order_signed_target_shift": true,
+    "original_real_mean_zero_native_spaces_closed_and_complete": true,
+    "entire_stronger_target_surjectivity": true,
+    "infinite_support_closed_gaps_and_all_signed_coordinates_included": true,
+    "forward_and_inverse_weak_normalization_diagrams_commute_globally": true,
+    "actual_chosen_chart_native_analytic_Miura_lift_germs": true,
+    "native_forward_Birkhoff_analyticity_proved": false,
+    "native_inverse_Birkhoff_analyticity_proved": false,
+    "authored_heartbeat_linter_or_instance_overrides": false,
+    "main_Theorem_1_1_corrected_complete": true,
+    "main_Theorem_1_2_complete": false,
+    "main_Theorem_1_3_complete": false,
+    "remaining": [
+      "Prove real analyticity of the SAME actual physical Birkhoff restriction and its SAME fixed inverse in both original Fourier-Lebesgue norms, and derive the actual restricted derivative inverse identities. These are the remaining fields of Theorem12PhysicalData.",
       "Prove Theorem 1.3 physical KdV global C0 well-posedness, including approximation, uniqueness and agreement with the referenced Hminus1 solution theory."
     ]
   }
