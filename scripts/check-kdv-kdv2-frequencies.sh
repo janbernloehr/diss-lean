@@ -2960,6 +2960,13 @@ modules=(
   NLS/KdV/HillHminusPhysicalMomentIdentification
   NLS/KdV/HillOriginalSecondMomentSeries
   NLS/Articles/KdVKdV2Frequencies/NativeInfiniteGapKdVFrequency
+  NLS/KdV/HillHminusChartPhysicalNumeratorBall
+  NLS/KdV/HillOriginalSpectralSecondMomentSeries
+  NLS/Articles/KdVKdV2Frequencies/GlobalWeakInverseSource
+  NLS/Articles/KdVKdV2Frequencies/LocalWeakSpectralActionDescent
+  NLS/Articles/KdVKdV2Frequencies/NativeWeakActionCoordinates
+  NLS/SequenceSpaces/RealActionNormLowerBound
+  NLS/Articles/KdVKdV2Frequencies/LocalWeakKdVActionFrequency
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

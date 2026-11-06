@@ -1,3 +1,10 @@
+import NLS.Articles.KdVKdV2Frequencies.LocalWeakKdVActionFrequency
+import NLS.Articles.KdVKdV2Frequencies.LocalWeakSpectralActionDescent
+import NLS.Articles.KdVKdV2Frequencies.NativeWeakActionCoordinates
+import NLS.SequenceSpaces.RealActionNormLowerBound
+import NLS.KdV.HillOriginalSpectralSecondMomentSeries
+import NLS.Articles.KdVKdV2Frequencies.GlobalWeakInverseSource
+import NLS.KdV.HillHminusChartPhysicalNumeratorBall
 import NLS.Articles.KdVKdV2Frequencies.NativeInfiniteGapKdVFrequency
 import NLS.KdV.HillOriginalSecondMomentSeries
 import NLS.KdV.HillHminusPhysicalMomentIdentification
@@ -5103,7 +5110,14 @@ private def kdvFrequencyAuditChunk23 : Array Lean.Name := #[
   `NLS.KdV.HillIntrinsicFrequencyCircleMoments,
   `NLS.KdV.HillHminusPhysicalMomentIdentification,
   `NLS.KdV.HillOriginalSecondMomentSeries,
-  `NLS.Articles.KdVKdV2Frequencies.NativeInfiniteGapKdVFrequency
+  `NLS.Articles.KdVKdV2Frequencies.NativeInfiniteGapKdVFrequency,
+  `NLS.KdV.HillHminusChartPhysicalNumeratorBall,
+  `NLS.KdV.HillOriginalSpectralSecondMomentSeries,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalWeakInverseSource,
+  `NLS.Articles.KdVKdV2Frequencies.LocalWeakSpectralActionDescent,
+  `NLS.Articles.KdVKdV2Frequencies.NativeWeakActionCoordinates,
+  `NLS.SequenceSpaces.RealActionNormLowerBound,
+  `NLS.Articles.KdVKdV2Frequencies.LocalWeakKdVActionFrequency
 ]
 
 open Lean in
