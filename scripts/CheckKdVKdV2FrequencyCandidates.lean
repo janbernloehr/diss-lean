@@ -1,3 +1,10 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapFrequencyMoments
+import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapSpectralFrequencies
+import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapCoordinateJets
+import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapContinuousSources
+import NLS.KdV.HillPolynomialDirectionCoefficients
+import NLS.KdV.NativeHillContinuousSource
+import NLS.Articles.KdVKdV2Frequencies.OriginalRoughCoordinateGerms
 import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapPhysicalRealization
 import NLS.KdV.HillHminusFiniteGapSmooth
 import NLS.Articles.KdVKdV2Frequencies.FiniteGapPhysicalHamiltonianVectors
@@ -5044,7 +5051,14 @@ private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.NativeHamiltonianFourierCovectors,
   `NLS.Articles.KdVKdV2Frequencies.FiniteGapPhysicalHamiltonianVectors,
   `NLS.KdV.HillHminusFiniteGapSmooth,
-  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapPhysicalRealization
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapPhysicalRealization,
+  `NLS.KdV.HillPolynomialDirectionCoefficients,
+  `NLS.KdV.NativeHillContinuousSource,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalRoughCoordinateGerms,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapCoordinateJets,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapContinuousSources,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapSpectralFrequencies,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapFrequencyMoments
 ]
 
 open Lean in

@@ -2932,6 +2932,13 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/FiniteGapPhysicalHamiltonianVectors
   NLS/KdV/HillHminusFiniteGapSmooth
   NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapPhysicalRealization
+  NLS/KdV/HillPolynomialDirectionCoefficients
+  NLS/KdV/NativeHillContinuousSource
+  NLS/Articles/KdVKdV2Frequencies/OriginalRoughCoordinateGerms
+  NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapCoordinateJets
+  NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapContinuousSources
+  NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapSpectralFrequencies
+  NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapFrequencyMoments
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
