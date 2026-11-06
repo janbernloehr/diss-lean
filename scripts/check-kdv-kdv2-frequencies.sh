@@ -3174,6 +3174,17 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/LocalBoundedWeakSpectralActionDescent
   NLS/Articles/KdVKdV2Frequencies/ActualWeakKdVFrequencyPacket
   NLS/Articles/KdVKdV2Frequencies/ActualBoundedWeakHilbertAgreement
+  NLS/KdV/HillHminusOneWeightedPeriodOperator
+  NLS/KdV/HillHminusOneWeightedPeriodInverse
+  NLS/KdV/HillHminusOneWeightedMomentVector
+  NLS/SequenceSpaces/VectorHeadTailSummation
+  NLS/KdV/HillHminusOneHilbertFrequencySeries
+  NLS/KdV/HillHminusOneHilbertFrequencyPacket
+  NLS/KdV/HillHminusOnePhysicalHilbertFrequencyPacket
+  NLS/Articles/KdVKdV2Frequencies/NativeHilbertKdVFrequencyPacket
+  NLS/Articles/KdVKdV2Frequencies/LocalSequenceWeakSpectralActionDescent
+  NLS/Articles/KdVKdV2Frequencies/ActualWeakHilbertKdVFrequencyPacket
+  NLS/Articles/KdVKdV2Frequencies/ActualHilbertPacketAgreement
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
