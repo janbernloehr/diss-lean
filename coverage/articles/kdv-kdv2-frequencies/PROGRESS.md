@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest exact all-Sobolev endpoints of the actual rough inverse
+## Latest actual Miura charts analytic in every stronger Sobolev norm
+
+At EVERY real original H-minus-one Hill base, ONE actual real-preserving complex rough Miura chart is selected BEFORE ALL s>=-1 and ALL eligible complex native H^s sources. At EVERY eligible complex stronger source, its SAME literal lift, realized as an explicit native H^(s+1) function, agrees EXACTLY on an open neighborhood with a COMPLEX ANALYTIC native map. The positive outside-spectrum energy shift and EVERY original positive Hill endpoint label, including first and collapsed gaps, are retained. See `NATIVE_STRONG_MIURA_CHARTS.md`.
+
+The actual linearized Miura equation has full Sobolev regularity by a quarter-order bootstrap. A concrete mass-kernel Neumann bound verifies weak Jacobian bijectivity on the whole chosen rough domain; the actual stronger Jacobian then has a bounded inverse. Strong inverse germs are matched to the SAME supplied rough branch using actual weak local uniqueness. This proves stronger analyticity through native inverse charts, beyond the previously proved pointwise membership criterion.
+
+Prior strict evidence retained for all 2420 unchanged selected baseline sources. All nine new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2429 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2472 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these nine selections; no new shared-source import or adaptation is needed. No full 2429-module rebuild is claimed.
+
+Fresh audit: 19288 selected and 41358 imported NLS declarations; permitted axioms only. Nine new own modules contain 33 explicit theorems. Stronger Sobolev analyticity of the ACTUAL Birkhoff forward/inverse restrictions, arbitrary-base/global rough Birkhoff inversion and frequency/PDE main conclusions remain obligations. All eleven complete main theorem rows remain OPEN.
+
+## Earlier exact all-Sobolev endpoints of the actual rough inverse
 
 The SAME actual analytic rough inverse R now has EVERY native Sobolev endpoint on ONE open real-preserving target neighborhood, selected BEFORE ALL real targets of arbitrary support and ALL s>=-1: R(b) belongs to H^s IFF its literal signed target lift belongs to h^(s+1/2). The original exact L2 endpoint, ORIGINAL physical L2 representatives, fixed GLOBAL L2 Birkhoff coordinates and exact mass remain attached to this SAME R. See `NATIVE_ROUGH_ALL_SOBOLEV_INVERSE.md`.
 

@@ -2429,6 +2429,15 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/RoughActionAmplitudeBounds
   NLS/Articles/KdVKdV2Frequencies/RoughAbelianSobolevCriterion
   NLS/Articles/KdVKdV2Frequencies/NativeRoughAllSobolevInverse
+  NLS/SequenceSpaces/PeriodOneSobolevMiuraMap
+  NLS/SequenceSpaces/PeriodOneMiuraLinearRegularity
+  NLS/ComplexAnalysis/AnalyticInverseBetweenSpaces
+  NLS/SequenceSpaces/PeriodOneMiuraSobolevJacobian
+  NLS/SequenceSpaces/PeriodOneSobolevMiuraInverse
+  NLS/SequenceSpaces/PeriodOneMiuraStrongBranch
+  NLS/SequenceSpaces/PeriodOneMiuraStrongCharts
+  NLS/KdV/HillHminusStrongMiuraCharts
+  NLS/KdV/HillHminusNativeSobolevMiuraLift
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

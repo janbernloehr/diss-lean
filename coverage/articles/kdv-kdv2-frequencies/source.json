@@ -237,6 +237,11 @@
           "source_clause": "ALL exact native H^s/h^(s+1/2) membership endpoints of the SAME ACTUAL local rough inverse, on ONE target neighborhood before ALL s>=-1 and ALL real targets of arbitrary support; corresponding actual forward criterion and GLOBAL original Hill-gap Sobolev criterion",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_real_target_all_sobolev_inverse",
           "qualification": "The SAME ACTUAL analytic rough inverse family R from the physical L2 endpoint theorem has ALL exact native Sobolev endpoints on ONE open real-preserving target neighborhood, chosen BEFORE EVERY real target of arbitrary support and EVERY s>=-1: R(b) belongs to H^s IFF its LITERAL signed negative-half target lift belongs to h^(s+1/2). Exact complex right-inverse identities, zero and real forms are retained. The original L2 endpoint, ORIGINAL physical L2 representative, exact fixed GLOBAL L2 Birkhoff coordinates and norm squared sum 4*pi*n*|z_n|^2 are retained for the SAME R. R is analytic into H-minus-one; stronger Sobolev-valued analyticity/topology and arbitrary-base/global rough Birkhoff inversion are not asserted."
+        },
+        {
+          "source_clause": "Actual rough Hill Miura charts have complex analytic native H^s-to-H^(s+1) restrictions for ALL s>=-1, at EVERY real base with ONE rough chart before all orders/sources; original physical labels retained",
+          "lean_declaration": "NLS.KdV.exists_hillHminus_real_native_all_sobolev_analytic_Miura_germs",
+          "qualification": "An EXPLICIT native function uses the SAME literal actual rough Hill Miura lift coefficients on eligible H^(t-1) sources. For EVERY t>=0 and EVERY eligible complex native source, it agrees EXACTLY on an open neighborhood with a native H^t-valued COMPLEX ANALYTIC function. ONE rough chart is chosen at EVERY real base BEFORE all orders/sources, retaining real form, outside-spectrum shift and EVERY original positive Hill endpoint label. These are exact stronger analytic germs, not an inference from pointwise membership. This supports the stronger Birkhoff topology; it does not yet prove stronger Sobolev analyticity of the actual Abelian map or its inverse."
         }
       ]
     },
@@ -32205,12 +32210,120 @@
       "scope": "The SAME ACTUAL analytic rough inverse family R from the physical L2 endpoint theorem has ALL exact native Sobolev endpoints on ONE open real-preserving target neighborhood, chosen BEFORE EVERY real target of arbitrary support and EVERY s>=-1: R(b) belongs to H^s IFF its LITERAL signed negative-half target lift belongs to h^(s+1/2). Exact complex right-inverse identities, zero and real forms are retained. The original L2 endpoint, ORIGINAL physical L2 representative, exact fixed GLOBAL L2 Birkhoff coordinates and norm squared sum 4*pi*n*|z_n|^2 are retained for the SAME R. R is analytic into H-minus-one; stronger Sobolev-valued analyticity/topology and arbitrary-base/global rough Birkhoff inversion are not asserted.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "95109819290bcd16ce026cdb41284a4573d59e139f82894169d2bf64caae62ef"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneSobolevMiuraMap.lean",
+      "source_labels": [
+        "Actual complex Sobolev-analytic Miura charts supporting the stronger Birkhoff topology required by Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL complex shifted Miura map is analytic from native H^t to H^(t-1) for EVERY t>=0. Its actual bounded bilinear product, mass operator and exact native Frechet derivative are constructed; the derivative has the literal convolution coefficients and the original period-one Fourier normalization.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2bb15ad78149b68730ed647cae3c2ff12114db9b4992811a2cd1892548702e02"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraLinearRegularity.lean",
+      "source_labels": [
+        "Actual complex Sobolev-analytic Miura charts supporting the stronger Birkhoff topology required by Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Every ACTUAL weak shifted Miura solution of native H^s data lies in H^(s+1), ALL s>=-1. Every ACTUAL L2 solution of the literal linearized Miura equation gains the full required Sobolev order when its coefficient and datum have that regularity. A finite quarter-order bootstrap uses the actual distributional product, with no higher initial coefficient regularity or smallness premise.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "12acf097da2c94fa9073d839714dec3edfd9c4ef6a3bc5a473c72e4ad1316673"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticInverseBetweenSpaces.lean",
+      "source_labels": [
+        "Actual complex Sobolev-analytic Miura charts supporting the stronger Birkhoff topology required by Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual analytic local inverses between different native Banach spaces, with open source/target neighborhoods and both exact inverse identities. A separate matching theorem identifies a stronger analytic inverse germ with a GIVEN rough branch using weak local uniqueness and the commuting actual maps. No conclusion is inferred merely from stronger pointwise membership.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8f70dbcfd1b2ade6988a87d9417f15a20afc63c5d857cfa4aaf5e148fc2497b3"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraSobolevJacobian.lean",
+      "source_labels": [
+        "Actual complex Sobolev-analytic Miura charts supporting the stronger Birkhoff topology required by Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL weak and strong Miura Jacobians commute with native inclusions. Proved linearized regularity transfers actual weak bijectivity to strong bijectivity and a bounded native inverse. A concrete Neumann estimate verifies weak bijectivity from the actual mass-kernel bound; the final native charts do not assume an arbitrary Jacobian inverse.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9ab776c9cd0bfc0fc54c47d6eb97af5b1c3ef972483b2b6ce9d1bd8024774453"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneSobolevMiuraInverse.lean",
+      "source_labels": [
+        "Actual complex Sobolev-analytic Miura charts supporting the stronger Birkhoff topology required by Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL weak and native strong nonlinear shifted Miura maps commute under coefficient inclusions. Actual two-sided local complex analytic inverse charts exist in EVERY pair H^t and H^(t-1), t>=0, at a verified weak-bijective Jacobian. Weak inverse charts provide actual local uniqueness.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "884faa9319ee0756dc49ad2dcf215a0bcd81945ca11cadb0bd811daa1d207174"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraStrongBranch.lean",
+      "source_labels": [
+        "Actual complex Sobolev-analytic Miura charts supporting the stronger Birkhoff topology required by Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "An ACTUAL given rough analytic Miura branch has stronger complex analytic native Sobolev germs at EVERY eligible source with a verified actual weak Jacobian. Exact agreement with the SAME branch follows from proved weak local uniqueness; no independently selected lift replaces the supplied branch.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7ad68b4f0c2e9ff8127f2263c93bad6467a706aa4f610ca91563d3b6cb259cf3"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraStrongCharts.lean",
+      "source_labels": [
+        "Actual complex Sobolev-analytic Miura charts supporting the stronger Birkhoff topology required by Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY real H-minus-one base, ONE real-preserving complex rough shifted Miura chart and arbitrary sufficiently large mass are selected BEFORE ALL t>=0 and ALL eligible complex native sources. The concrete Neumann bound verifies its actual Jacobian on the WHOLE rough domain; the SAME branch has analytic native H^(t-1)-to-H^t restrictions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0d32e04c1817311687225d77650511cd0cc4e30b0eac0306ece80d49bb212c28"
+    },
+    {
+      "path": "NLS/KdV/HillHminusStrongMiuraCharts.lean",
+      "source_labels": [
+        "Actual complex Sobolev-analytic Miura charts supporting the stronger Birkhoff topology required by Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY real original rough Hill base, ONE ACTUAL complex Hill Miura chart, positive outside-spectrum energy shift and real-preserving lift precede ALL Sobolev orders and eligible complex sources. Stronger native analytic germs agree EXACTLY with the SAME lift. Every ORIGINAL positive Hill endpoint label is retained by actual Dirac endpoint squaring, including low and collapsed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "588b8e825e702b0e2d18dfb39828535dcfcffeca5f00b7d415bca9e86e2ac363"
+    },
+    {
+      "path": "NLS/KdV/HillHminusNativeSobolevMiuraLift.lean",
+      "source_labels": [
+        "Actual complex Sobolev-analytic Miura charts supporting the stronger Birkhoff topology required by Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "An EXPLICIT native function uses the SAME literal actual rough Hill Miura lift coefficients on eligible H^(t-1) sources. For EVERY t>=0 and EVERY eligible complex native source, it agrees EXACTLY on an open neighborhood with a native H^t-valued COMPLEX ANALYTIC function. ONE rough chart is chosen at EVERY real base BEFORE all orders/sources, retaining real form, outside-spectrum shift and EVERY original positive Hill endpoint label. These are exact stronger analytic germs, not an inference from pointwise membership.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "579f1a2b1950ccad04c1c611b3aca0d7902255c1cbe8804dfe703b97da41b216"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The ACTUAL local rough inverse R NOW has EVERY exact native Sobolev endpoint on ONE open real-preserving target neighborhood, selected BEFORE ALL real targets (arbitrary support) and ALL s>=-1: R(b) belongs to H^s IFF its literal signed target lift belongs to h^(s+1/2). The actual signed rough Abelian map has the corresponding criterion on ONE whole real mean-zero rough source ball. The proof uses a GLOBAL original Hill-energy-gap Sobolev characterization at EVERY real H-minus-one source, exact actual Miura labels and uniformly invertible physical amplitudes. The SAME R retains the exact physical L2 endpoint, ORIGINAL L2 representatives, fixed GLOBAL L2 Birkhoff matching and exact mass. NEXT stronger Sobolev-topology continuity/analyticity for the actual forward/inverse restrictions, arbitrary-base/global H-minus-one Birkhoff inversion, and the remaining frequency/PDE conclusions. Pointwise membership equivalence alone does not establish these topological/analytic or global assertions.",
+    "The ACTUAL local rough Birkhoff inverse R retains EVERY exact native Sobolev membership endpoint on ONE open real-preserving target neighborhood, before ALL real targets of arbitrary support and ALL s>=-1. The actual signed rough Abelian map retains the corresponding criterion on a whole real mean-zero rough source ball. NOW the ACTUAL Hill Miura lift has stronger COMPLEX ANALYTIC restrictions H^s-to-H^(s+1), for ALL s>=-1 and every eligible complex source, on ONE rough chart selected at EVERY real base BEFORE all orders/sources. This is proved using actual strong Jacobians, Neumann weak bijectivity, native inverse charts and exact matching to the SAME rough branch; original Hill labels and outside-spectrum shift are retained. NEXT transfer this stronger topology/analyticity to the ACTUAL Abelian/Birkhoff packets and their inverse restrictions, establish arbitrary-base/global H-minus-one Birkhoff inversion, and prove the remaining frequency/PDE conclusions. Stronger Miura analyticity is not yet stronger Birkhoff analyticity.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -32236,15 +32349,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 19192,
-    "total_declarations_audited": 41262,
+    "candidate_declarations_audited": 19288,
+    "total_declarations_audited": 41358,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2420,
+    "selected_modules": 2429,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -32321,7 +32434,8 @@
     "native_rough_L2_endpoint_validation_sequence": "Prior strict evidence retained for all 2367 unchanged selected baseline sources. All five new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2372 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2414 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these five selections; no new shared-source import is needed. No full 2372-module rebuild is claimed.",
     "physical_mass_divergence_validation_sequence": "Prior strict evidence retained for all 2372 unchanged selected baseline sources. All four new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2376 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2418 frozen source/checker/provenance/Mathlib-source hashes, all 39 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds exactly these four selections; no new shared-source import is needed. No full 2376-module rebuild is claimed.",
     "actual_miura_sobolev_validation_sequence": "Prior strict evidence retained for all 2376 unchanged selected baseline sources. ALL 38 new selections strictly rebuilt in dependency order: 34 byte-identical canonical sources, one canonical proof with its global heartbeat override removed, and three new own proof modules. A fresh combined transitive axiom audit covers all 2414 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2457 frozen source/checker/provenance/Mathlib-source hashes, 39 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The new reachable NLS import closure is EXACTLY these 38 selections. No full 2414-module rebuild is claimed.",
-    "native_rough_all_sobolev_validation_sequence": "Prior strict evidence retained for all 2414 unchanged selected baseline sources. All six new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2420 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2463 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these six selections; no new shared-source import or adaptation is needed. No full 2420-module rebuild is claimed."
+    "native_rough_all_sobolev_validation_sequence": "Prior strict evidence retained for all 2414 unchanged selected baseline sources. All six new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2420 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2463 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these six selections; no new shared-source import or adaptation is needed. No full 2420-module rebuild is claimed.",
+    "native_strong_miura_validation_sequence": "Prior strict evidence retained for all 2420 unchanged selected baseline sources. All nine new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2429 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2472 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these nine selections; no new shared-source import or adaptation is needed. No full 2429-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -33035,6 +33149,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "b128af3b92280e8a9925a0949bc0e84c169a0f10",
+      "description": "Actual rough Birkhoff inverse retains all-order Sobolev membership; now the actual Hill Miura lift has genuine stronger complex Sobolev analyticity at every real base, using verified Jacobians and exact matching of the SAME branch.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The ACTUAL local rough inverse R NOW has EVERY exact native Sobolev endpoint on ONE open real-preserving target neighborhood, selected BEFORE ALL real targets (arbitrary support) and ALL s>=-1: R(b) belongs to H^s IFF its literal signed target lift belongs to h^(s+1/2). The actual signed rough Abelian map has the corresponding criterion on ONE whole real mean-zero rough source ball. The proof uses a GLOBAL original Hill-energy-gap Sobolev characterization at EVERY real H-minus-one source, exact actual Miura labels and uniformly invertible physical amplitudes. The SAME R retains the exact physical L2 endpoint, ORIGINAL L2 representatives, fixed GLOBAL L2 Birkhoff matching and exact mass. NEXT stronger Sobolev-topology continuity/analyticity for the actual forward/inverse restrictions, arbitrary-base/global H-minus-one Birkhoff inversion, and the remaining frequency/PDE conclusions. Pointwise membership equivalence alone does not establish these topological/analytic or global assertions.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -33077,5 +33203,6 @@
   "physical_mass_divergence_record": "PHYSICAL_MASS_DIVERGENCE.md",
   "actual_miura_sobolev_record": "ACTUAL_MIURA_SOBOLEV_REGULARITY.md",
   "canonical_miura_sobolev_reuse_record": "CANONICAL_MIURA_SOBOLEV_REUSE.json",
-  "native_rough_all_sobolev_record": "NATIVE_ROUGH_ALL_SOBOLEV_INVERSE.md"
+  "native_rough_all_sobolev_record": "NATIVE_ROUGH_ALL_SOBOLEV_INVERSE.md",
+  "native_strong_miura_record": "NATIVE_STRONG_MIURA_CHARTS.md"
 }

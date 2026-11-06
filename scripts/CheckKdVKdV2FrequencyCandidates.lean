@@ -1,3 +1,12 @@
+import NLS.KdV.HillHminusNativeSobolevMiuraLift
+import NLS.SequenceSpaces.PeriodOneMiuraStrongCharts
+import NLS.KdV.HillHminusStrongMiuraCharts
+import NLS.SequenceSpaces.PeriodOneMiuraStrongBranch
+import NLS.SequenceSpaces.PeriodOneSobolevMiuraInverse
+import NLS.SequenceSpaces.PeriodOneMiuraSobolevJacobian
+import NLS.ComplexAnalysis.AnalyticInverseBetweenSpaces
+import NLS.SequenceSpaces.PeriodOneMiuraLinearRegularity
+import NLS.SequenceSpaces.PeriodOneSobolevMiuraMap
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevInverse
 import NLS.Articles.KdVKdV2Frequencies.RoughAbelianSobolevCriterion
 import NLS.Articles.KdVKdV2Frequencies.RoughActionAmplitudeBounds
@@ -3975,7 +3984,16 @@ run_cmd do
     `NLS.KdV.HillHminusSobolevGapRegularity,
     `NLS.Articles.KdVKdV2Frequencies.RoughActionAmplitudeBounds,
     `NLS.Articles.KdVKdV2Frequencies.RoughAbelianSobolevCriterion,
-    `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevInverse
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevInverse,
+    `NLS.SequenceSpaces.PeriodOneSobolevMiuraMap,
+    `NLS.SequenceSpaces.PeriodOneMiuraLinearRegularity,
+    `NLS.ComplexAnalysis.AnalyticInverseBetweenSpaces,
+    `NLS.SequenceSpaces.PeriodOneMiuraSobolevJacobian,
+    `NLS.SequenceSpaces.PeriodOneSobolevMiuraInverse,
+    `NLS.SequenceSpaces.PeriodOneMiuraStrongBranch,
+    `NLS.SequenceSpaces.PeriodOneMiuraStrongCharts,
+    `NLS.KdV.HillHminusStrongMiuraCharts,
+    `NLS.KdV.HillHminusNativeSobolevMiuraLift
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
