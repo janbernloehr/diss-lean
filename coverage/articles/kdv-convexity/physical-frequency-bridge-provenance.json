@@ -1,0 +1,2125 @@
+{
+  "source_branch": "articles/kdv-kdv2-frequencies",
+  "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+  "imports": [
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.SmoothKdVIdentities",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities.lean",
+      "source_sha256": "5d543fac7fe00c9e39c2ad84fb2a55bceecabb23c63231ad9acf62ccff30d0f4",
+      "private_sha256": "5d543fac7fe00c9e39c2ad84fb2a55bceecabb23c63231ad9acf62ccff30d0f4",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHamiltonianPolynomials",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHamiltonianPolynomials.lean",
+      "source_sha256": "faa0aef331e165cddfc5cefcd13f58a7383ee8dee6944ebe7e38ec73fb66b7dc",
+      "private_sha256": "faa0aef331e165cddfc5cefcd13f58a7383ee8dee6944ebe7e38ec73fb66b7dc",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Fourier.SobolevContinuousJetDerivative",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Fourier/SobolevContinuousJetDerivative.lean",
+      "source_sha256": "43d33aa60751a88dccc9cb433ba6e8199ebfc68823c637ece346fcb4532dbbfa",
+      "private_sha256": "43d33aa60751a88dccc9cb433ba6e8199ebfc68823c637ece346fcb4532dbbfa",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHamiltonianPhysicalIntegrals",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHamiltonianPhysicalIntegrals.lean",
+      "source_sha256": "4a40543b7c98f4564d05ceccaba10c5b33d9fffc2c90c52ba63963c653fc2f51",
+      "private_sha256": "4a40543b7c98f4564d05ceccaba10c5b33d9fffc2c90c52ba63963c653fc2f51",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.DifferentialPolynomial.EulerFiniteSum",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/DifferentialPolynomial/EulerFiniteSum.lean",
+      "source_sha256": "d24744756fae822af2b546636cf19bfa218a527adb9b25625b1b8c6663ba7450",
+      "private_sha256": "d24744756fae822af2b546636cf19bfa218a527adb9b25625b1b8c6663ba7450",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.SmoothPhysicalHamiltonianVariation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/SmoothPhysicalHamiltonianVariation.lean",
+      "source_sha256": "391110a3530ae6e05252337c055156cc66f284ee21db7c20e5bde817c90f7e57",
+      "private_sha256": "391110a3530ae6e05252337c055156cc66f284ee21db7c20e5bde817c90f7e57",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.SourceHilbertCentralEndpointBound",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/SourceHilbertCentralEndpointBound.lean",
+      "source_sha256": "08e17a4be65140e249d8d90180c93e49603467787e50623a33d1d9769157859a",
+      "private_sha256": "08e17a4be65140e249d8d90180c93e49603467787e50623a33d1d9769157859a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.SpectralModulation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/SpectralModulation.lean",
+      "source_sha256": "796f8382a49703dd1a3139dfd7b799d762217d71a2134f13d56ff9787e53be0e",
+      "private_sha256": "796f8382a49703dd1a3139dfd7b799d762217d71a2134f13d56ff9787e53be0e",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.SourceSpectralModulation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/SourceSpectralModulation.lean",
+      "source_sha256": "100726450f4555805f7b12492fbdf3073a87b22423367e91911d9a1d680bc7ce",
+      "private_sha256": "100726450f4555805f7b12492fbdf3073a87b22423367e91911d9a1d680bc7ce",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.SourceCentralSpectralPath",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/SourceCentralSpectralPath.lean",
+      "source_sha256": "e292b43d884da09e53f267ba0afd19f590a5e1eaed4f436fd4a3e324c1ddf0b3",
+      "private_sha256": "e292b43d884da09e53f267ba0afd19f590a5e1eaed4f436fd4a3e324c1ddf0b3",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.SourceHilbertUniformSpectralDisplacement",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/SourceHilbertUniformSpectralDisplacement.lean",
+      "source_sha256": "34d11183acc75006816ba6d3c2700340cb7c11ed4b0f43a8af3f7c1c155f84ef",
+      "private_sha256": "34d11183acc75006816ba6d3c2700340cb7c11ed4b0f43a8af3f7c1c155f84ef",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.SourceHilbertWeakActionComparison",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/SourceHilbertWeakActionComparison.lean",
+      "source_sha256": "08dbb5da808e658c636742173a06f81e81db095d9267d5164f19b1f6fdf1d34b",
+      "private_sha256": "08dbb5da808e658c636742173a06f81e81db095d9267d5164f19b1f6fdf1d34b",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughGroundActionTails",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughGroundActionTails.lean",
+      "source_sha256": "c1d1ae29fa6627229b0fe90ec04ff0aabedc5a0386afa5f9cda4f14d2ffeeda8",
+      "private_sha256": "c1d1ae29fa6627229b0fe90ec04ff0aabedc5a0386afa5f9cda4f14d2ffeeda8",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.SourceHilbertActionTailCompactness",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/SourceHilbertActionTailCompactness.lean",
+      "source_sha256": "bb763a944a6080a2835e17a21af48b1f4a12a4e2e541416cdee0a338fb3e801b",
+      "private_sha256": "bb763a944a6080a2835e17a21af48b1f4a12a4e2e541416cdee0a338fb3e801b",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionMajorantCompactness",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughActionMajorantCompactness.lean",
+      "source_sha256": "f2d96a116153093c50e039724273bb8668491d366f5c5461c5789f208d13f4ca",
+      "private_sha256": "f2d96a116153093c50e039724273bb8668491d366f5c5461c5789f208d13f4ca",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillMiuraFiniteSupportCompactness",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillMiuraFiniteSupportCompactness.lean",
+      "source_sha256": "6f8eec903f1bbbf625ae47c18ab3984244249b8d416fdf309a4182fc27893096",
+      "private_sha256": "6f8eec903f1bbbf625ae47c18ab3984244249b8d416fdf309a4182fc27893096",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteSupportCompactness",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteSupportCompactness.lean",
+      "source_sha256": "649e3a8deada27634cc5b38eb901dfbfec49d87221e764449f6fe2dd87571a14",
+      "private_sha256": "649e3a8deada27634cc5b38eb901dfbfec49d87221e764449f6fe2dd87571a14",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteTargetRecovery",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteTargetRecovery.lean",
+      "source_sha256": "3731d8ce27902b92ea25b46e47cf1cc7576e63646d4876cc520a3ac68feba078",
+      "private_sha256": "3731d8ce27902b92ea25b46e47cf1cc7576e63646d4876cc520a3ac68feba078",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughFiniteTargetProperness",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughFiniteTargetProperness.lean",
+      "source_sha256": "b08cfcb66fc856a785e4d52b054e222a3821d3094079bf42775fe0654d51991a",
+      "private_sha256": "b08cfcb66fc856a785e4d52b054e222a3821d3094079bf42775fe0654d51991a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughDenseImage",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughDenseImage.lean",
+      "source_sha256": "d5fa8f2f347a11f2d043fab9e527d414bddd2ed16b55aee28db7b6cbf3ae1ad5",
+      "private_sha256": "d5fa8f2f347a11f2d043fab9e527d414bddd2ed16b55aee28db7b6cbf3ae1ad5",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughSurjective",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughSurjective.lean",
+      "source_sha256": "4e3ed22df4aff7a47f1c886a48f461cb8aa79398b78c016067fd17718de5039d",
+      "private_sha256": "4e3ed22df4aff7a47f1c886a48f461cb8aa79398b78c016067fd17718de5039d",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeAbelianInverseRecovery",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeAbelianInverseRecovery.lean",
+      "source_sha256": "8265198365a3ced67b2d6d954ff09ce635132c0fc856379476f73aa791befad8",
+      "private_sha256": "8265198365a3ced67b2d6d954ff09ce635132c0fc856379476f73aa791befad8",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ComplexAnalysis.RealAnalyticInverseChart",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ComplexAnalysis/RealAnalyticInverseChart.lean",
+      "source_sha256": "3681db05093d55d94b82f9834d05c1cf94767277acfd28cadd7d03fc3b2207b5",
+      "private_sha256": "3681db05093d55d94b82f9834d05c1cf94767277acfd28cadd7d03fc3b2207b5",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ComplexAnalysis.LocalRightInverseMatching",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ComplexAnalysis/LocalRightInverseMatching.lean",
+      "source_sha256": "dfc31de9fcedc38a063287faf4b1d6cb657e22281fb06b487a7af3f9eed69f9f",
+      "private_sha256": "dfc31de9fcedc38a063287faf4b1d6cb657e22281fb06b487a7af3f9eed69f9f",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ComplexAnalysis.LocalRightInverseMatchingAt",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ComplexAnalysis/LocalRightInverseMatchingAt.lean",
+      "source_sha256": "cd1dd624e7b978c6ea930221eac07785a7b629833c54336436b57d0a33829daf",
+      "private_sha256": "cd1dd624e7b978c6ea930221eac07785a7b629833c54336436b57d0a33829daf",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseMatching",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInverseMatching.lean",
+      "source_sha256": "c3a19c72eb79b77dc0b8abe3beecf28bccd2214c8f4890e7e26c24a8a155e179",
+      "private_sha256": "c3a19c72eb79b77dc0b8abe3beecf28bccd2214c8f4890e7e26c24a8a155e179",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.PhysicalRealDeletedHilbert",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/PhysicalRealDeletedHilbert.lean",
+      "source_sha256": "0edfee15358c0ef6947842c28c2df81ec73e14e60fbdcd81a27a1978f7d7ebae",
+      "private_sha256": "0edfee15358c0ef6947842c28c2df81ec73e14e60fbdcd81a27a1978f7d7ebae",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughRealInverse",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughRealInverse.lean",
+      "source_sha256": "fe60304b4b5470c55c6f6d5849a16f7c79b383a0c0301d0a2a8f11b3bf529e2a",
+      "private_sha256": "fe60304b4b5470c55c6f6d5849a16f7c79b383a0c0301d0a2a8f11b3bf529e2a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.PhysicalRealSobolevInclusion",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/PhysicalRealSobolevInclusion.lean",
+      "source_sha256": "0bb3efccf70a187cf854bf8f6293fe46ccbf3fd5875b55f4b49d93e228551128",
+      "private_sha256": "0bb3efccf70a187cf854bf8f6293fe46ccbf3fd5875b55f4b49d93e228551128",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealForward",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealForward.lean",
+      "source_sha256": "17dbc087d6cc8db61a891dc3f7c813756fa651a3bbab334f65a85cbb4e612568",
+      "private_sha256": "17dbc087d6cc8db61a891dc3f7c813756fa651a3bbab334f65a85cbb4e612568",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealInverse",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealInverse.lean",
+      "source_sha256": "400e9fd0314058c37f0c050956fa625f9bd31e6c8853964a0960f748f6d2b50d",
+      "private_sha256": "400e9fd0314058c37f0c050956fa625f9bd31e6c8853964a0960f748f6d2b50d",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalNativeRealDiffeomorphisms",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalNativeRealDiffeomorphisms.lean",
+      "source_sha256": "81c04227495832dfde1bc0bc2e9ea41ac6947193a73ef153a30425f5a340c892",
+      "private_sha256": "81c04227495832dfde1bc0bc2e9ea41ac6947193a73ef153a30425f5a340c892",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalNativeIntegerInverse",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalNativeIntegerInverse.lean",
+      "source_sha256": "3498733cdf645e0be3bc2ef12f98479787c86b5c28841d5bf17bef0dbb5e59ea",
+      "private_sha256": "3498733cdf645e0be3bc2ef12f98479787c86b5c28841d5bf17bef0dbb5e59ea",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.PhysicalRealMeanZeroWeighted",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/PhysicalRealMeanZeroWeighted.lean",
+      "source_sha256": "060af25bde3c76468ccb9ba90933e8bf9d2b257ddd0bc3dca45548d57af1786a",
+      "private_sha256": "060af25bde3c76468ccb9ba90933e8bf9d2b257ddd0bc3dca45548d57af1786a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRawIntegerInverse",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRawIntegerInverse.lean",
+      "source_sha256": "f71482b30acb4ea3c860f887248adc1b9046faf1656bfc924d0e0ede49465b0c",
+      "private_sha256": "f71482b30acb4ea3c860f887248adc1b9046faf1656bfc924d0e0ede49465b0c",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHamiltonianReality",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHamiltonianReality.lean",
+      "source_sha256": "ae023d46cdfdfdc613b2512e4d107056fda895a3a0bebf42e3f6ab7e66542987",
+      "private_sha256": "ae023d46cdfdfdc613b2512e4d107056fda895a3a0bebf42e3f6ab7e66542987",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalNativeHamiltonians",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalNativeHamiltonians.lean",
+      "source_sha256": "2491b01a2c1b5eaacf4336b192fc17567715370fecfb9f4d4f5545146f48c3bb",
+      "private_sha256": "2491b01a2c1b5eaacf4336b192fc17567715370fecfb9f4d4f5545146f48c3bb",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughInverseSourceContinuity",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughInverseSourceContinuity.lean",
+      "source_sha256": "06a78f0f07eb23604d1c13125e4e048da1e9f0f2ad882828f0982ba4d2a1b497",
+      "private_sha256": "06a78f0f07eb23604d1c13125e4e048da1e9f0f2ad882828f0982ba4d2a1b497",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillActionPreservingCurves",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillActionPreservingCurves.lean",
+      "source_sha256": "30d80ca37ba529bf5f6ed0b00fa629685c3391061fee5e5fc611f145bf8d6687",
+      "private_sha256": "30d80ca37ba529bf5f6ed0b00fa629685c3391061fee5e5fc611f145bf8d6687",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.ComplexHilbertPhaseFiber",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/ComplexHilbertPhaseFiber.lean",
+      "source_sha256": "a2aead40fe0aae93fc10ab13a7ea2cfd0c3866f5300152b712d0cf40250ad101",
+      "private_sha256": "a2aead40fe0aae93fc10ab13a7ea2cfd0c3866f5300152b712d0cf40250ad101",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillBirkhoffIsospectral",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillBirkhoffIsospectral.lean",
+      "source_sha256": "b657b004755b1ffc0ca6bc22c0dbe9a69129271b551be87df303fa239bac30d9",
+      "private_sha256": "b657b004755b1ffc0ca6bc22c0dbe9a69129271b551be87df303fa239bac30d9",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughActionIsospectral",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughActionIsospectral.lean",
+      "source_sha256": "e92200bb7e2ccd61bb79aaac33633c0c9e2bfb7e57963f06fb668942dec79f4c",
+      "private_sha256": "e92200bb7e2ccd61bb79aaac33633c0c9e2bfb7e57963f06fb668942dec79f4c",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.ClassicalHamiltonianShifts",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/ClassicalHamiltonianShifts.lean",
+      "source_sha256": "c8deb7686133fa2f6f57fb5e7161a79ed8b887f006b37210634a4323469eacc1",
+      "private_sha256": "c8deb7686133fa2f6f57fb5e7161a79ed8b887f006b37210634a4323469eacc1",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHamiltonianShifts",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHamiltonianShifts.lean",
+      "source_sha256": "38771093ae70dc3ba3d380c0b9afbb5420f2ffe3dd8ca96f8cd810920d84260c",
+      "private_sha256": "38771093ae70dc3ba3d380c0b9afbb5420f2ffe3dd8ca96f8cd810920d84260c",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.DifferentialPolynomial.ScalarHillRiccatiLowOrders",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/DifferentialPolynomial/ScalarHillRiccatiLowOrders.lean",
+      "source_sha256": "a8284c305dc526207fe4db84bfa9970b8c5b048727dabd2604388c7a5d1fbed6",
+      "private_sha256": "a8284c305dc526207fe4db84bfa9970b8c5b048727dabd2604388c7a5d1fbed6",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.MiuraPhysicalHamiltonians",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/MiuraPhysicalHamiltonians.lean",
+      "source_sha256": "5f1276c1bd6800f066262fdfc9765cd2c0ebe7060e755f36bc765e6957a1e63b",
+      "private_sha256": "5f1276c1bd6800f066262fdfc9765cd2c0ebe7060e755f36bc765e6957a1e63b",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeMiuraPhysicalHamiltonians",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeMiuraPhysicalHamiltonians.lean",
+      "source_sha256": "85a5998c4f555ea6a157a9118da11e50e3d03a439f39e4181716a3ff6010e49b",
+      "private_sha256": "85a5998c4f555ea6a157a9118da11e50e3d03a439f39e4181716a3ff6010e49b",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillMiuraGroundIsospectral",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillMiuraGroundIsospectral.lean",
+      "source_sha256": "6e764d8be0f842adf3bf1b517bec9b90226770326777ac1b6f4f02accdd6986f",
+      "private_sha256": "6e764d8be0f842adf3bf1b517bec9b90226770326777ac1b6f4f02accdd6986f",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.SourceHigherActionIsospectral",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/SourceHigherActionIsospectral.lean",
+      "source_sha256": "5a093c7f9e399e297c4849605dd2ab1d6b901a4f6d5ff3f494e8a1d5c4479904",
+      "private_sha256": "5a093c7f9e399e297c4849605dd2ab1d6b901a4f6d5ff3f494e8a1d5c4479904",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.SobolevOddHamiltonianIsospectral",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/SobolevOddHamiltonianIsospectral.lean",
+      "source_sha256": "adb57f701a753b14ea9dc24b81b1441541724e86477c534eca7c98f873732723",
+      "private_sha256": "adb57f701a753b14ea9dc24b81b1441541724e86477c534eca7c98f873732723",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeMiuraSpectralInvariance",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeMiuraSpectralInvariance.lean",
+      "source_sha256": "e1aeb7036a9fa5e2ef6da4d954dc071bd816abc47313e20a91d60385fed6b74b",
+      "private_sha256": "e1aeb7036a9fa5e2ef6da4d954dc071bd816abc47313e20a91d60385fed6b74b",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeMiuraGroundFactors",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeMiuraGroundFactors.lean",
+      "source_sha256": "cd58b37bd2d7237720ceefc6d2898924891136a009b2ef6ad71dee1c0fb4dbc6",
+      "private_sha256": "cd58b37bd2d7237720ceefc6d2898924891136a009b2ef6ad71dee1c0fb4dbc6",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHamiltonianIsospectral",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHamiltonianIsospectral.lean",
+      "source_sha256": "64b05985a3c7294c9ab7adf0026c353ef8ca1a7431377096373754ff62213ca5",
+      "private_sha256": "64b05985a3c7294c9ab7adf0026c353ef8ca1a7431377096373754ff62213ca5",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalNativeHamiltonianActionInvariance",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalNativeHamiltonianActionInvariance.lean",
+      "source_sha256": "0c87e77a15aba23efe804265520376eabdfa4e185ad7df1f45269973d59aa371",
+      "private_sha256": "0c87e77a15aba23efe804265520376eabdfa4e185ad7df1f45269973d59aa371",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.SignedCartesianActions",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/SignedCartesianActions.lean",
+      "source_sha256": "c1ee648d0c7949339276b6417c3099bcd5412b41a3ef0862de85ead826dc4abb",
+      "private_sha256": "c1ee648d0c7949339276b6417c3099bcd5412b41a3ef0862de85ead826dc4abb",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.ScalarActionDescentFromRealGerms",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/ScalarActionDescentFromRealGerms.lean",
+      "source_sha256": "b692db8fe544fcccaac71ea80af77d1922a3a04fff59df25752db871a2e0f04c",
+      "private_sha256": "b692db8fe544fcccaac71ea80af77d1922a3a04fff59df25752db871a2e0f04c",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalNativeHamiltonianActionDescent",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalNativeHamiltonianActionDescent.lean",
+      "source_sha256": "b07db0a11205d6a9d96bc8f47dc9c4f1172917682118add6eea38f71c712842d",
+      "private_sha256": "b07db0a11205d6a9d96bc8f47dc9c4f1172917682118add6eea38f71c712842d",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.SobolevSignedActionSequence",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/SobolevSignedActionSequence.lean",
+      "source_sha256": "372719b9b9ca1fdc3f271bfb054da4a360d257e39ce9f915c8a40421ba6246c0",
+      "private_sha256": "372719b9b9ca1fdc3f271bfb054da4a360d257e39ce9f915c8a40421ba6246c0",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalWeightedHamiltonianActionFactors",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalWeightedHamiltonianActionFactors.lean",
+      "source_sha256": "36e2769425ab6200cbb93795c5e0796a23dda9483424f8d9f114f83eaec7f34a",
+      "private_sha256": "36e2769425ab6200cbb93795c5e0796a23dda9483424f8d9f114f83eaec7f34a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillRiccatiHierarchy",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillRiccatiHierarchy.lean",
+      "source_sha256": "fa4facfdca5de2762e0406e39cd7755a1f5bb797974a07feb03e6a92b38e21c5",
+      "private_sha256": "fa4facfdca5de2762e0406e39cd7755a1f5bb797974a07feb03e6a92b38e21c5",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHillHierarchyHamiltonian",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHillHierarchyHamiltonian.lean",
+      "source_sha256": "5f7054095dbcb3cbe1bd6d7ef38a113a1e8be32b19191847f822898a35a02897",
+      "private_sha256": "5f7054095dbcb3cbe1bd6d7ef38a113a1e8be32b19191847f822898a35a02897",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.DifferentialPolynomial.ScalarRiccatiConstantVariation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/DifferentialPolynomial/ScalarRiccatiConstantVariation.lean",
+      "source_sha256": "48a7c81521b37b123643d9162a4ac05420834d6dc25fa1f39bf8435bbe28b845",
+      "private_sha256": "48a7c81521b37b123643d9162a4ac05420834d6dc25fa1f39bf8435bbe28b845",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillHierarchyConstantVariation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillHierarchyConstantVariation.lean",
+      "source_sha256": "12bd6e57c513880c9c0de2593485283af8bf8110d90cde33db29be9714c6ac71",
+      "private_sha256": "12bd6e57c513880c9c0de2593485283af8bf8110d90cde33db29be9714c6ac71",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHillHierarchyConstantVariation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHillHierarchyConstantVariation.lean",
+      "source_sha256": "2ec32e12829eb33de4469e0a538621924aa18817beef6a0128bc7706c8d8676d",
+      "private_sha256": "2ec32e12829eb33de4469e0a538621924aa18817beef6a0128bc7706c8d8676d",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.DifferentialPolynomial.FieldJetSubstitution",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/DifferentialPolynomial/FieldJetSubstitution.lean",
+      "source_sha256": "ed32e6f065df2b018d82890e1e9fb3af7a17f4d33c74a2e159a0d9f732de492b",
+      "private_sha256": "ed32e6f065df2b018d82890e1e9fb3af7a17f4d33c74a2e159a0d9f732de492b",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillHierarchyMiuraRestriction",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillHierarchyMiuraRestriction.lean",
+      "source_sha256": "8fa06993eb53ea054ac26236e6330a4956aa7c63bfbb9c240ff467d5e62ba6ba",
+      "private_sha256": "8fa06993eb53ea054ac26236e6330a4956aa7c63bfbb9c240ff467d5e62ba6ba",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHillHierarchyIsospectral",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHillHierarchyIsospectral.lean",
+      "source_sha256": "9ed6a70114c39c722866e9fc867ebbadcbe8cd54d74320c8b6f71648305e431d",
+      "private_sha256": "9ed6a70114c39c722866e9fc867ebbadcbe8cd54d74320c8b6f71648305e431d",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHillHierarchyReality",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHillHierarchyReality.lean",
+      "source_sha256": "af3dbfa4e42f16801f9a4d91dfdd55b2ddcc7b8ca0015a6a4db280b1cb7cd4f4",
+      "private_sha256": "af3dbfa4e42f16801f9a4d91dfdd55b2ddcc7b8ca0015a6a4db280b1cb7cd4f4",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalKdVHierarchyActionFactors",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalKdVHierarchyActionFactors.lean",
+      "source_sha256": "b7d151a8d1c078c09425e16fbafccc3ebde65fe555dd8528c752ade7b7f7424d",
+      "private_sha256": "b7d151a8d1c078c09425e16fbafccc3ebde65fe555dd8528c752ade7b7f7424d",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ComplexAnalysis.ActionRayDerivative",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ComplexAnalysis/ActionRayDerivative.lean",
+      "source_sha256": "c7eeaa15510fbbe7af388d414080e568574a802a38dff037a7e42ed23335e38c",
+      "private_sha256": "c7eeaa15510fbbe7af388d414080e568574a802a38dff037a7e42ed23335e38c",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.WeightedPositiveActionDerivatives",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/WeightedPositiveActionDerivatives.lean",
+      "source_sha256": "883400fa6d940f22699030e339c4c122043dbc2486ef2fc7986dd777165c83c6",
+      "private_sha256": "883400fa6d940f22699030e339c4c122043dbc2486ef2fc7986dd777165c83c6",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.OriginalActionHamiltonians",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/OriginalActionHamiltonians.lean",
+      "source_sha256": "2e16688ce820a203f1bb3bcda9cd718fb23620a4e5a24aa80e73464c6bff5678",
+      "private_sha256": "2e16688ce820a203f1bb3bcda9cd718fb23620a4e5a24aa80e73464c6bff5678",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.OriginalHierarchyActionFrequencies",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/OriginalHierarchyActionFrequencies.lean",
+      "source_sha256": "01b87ff600a88bf62f09be74c75af1ea7857a3e3a87ace9ac3539247da988154",
+      "private_sha256": "01b87ff600a88bf62f09be74c75af1ea7857a3e3a87ace9ac3539247da988154",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.SobolevSignedComplexActions",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/SobolevSignedComplexActions.lean",
+      "source_sha256": "0b7ad8dab91bd9925cd97d6d809b1e11e2899eee5ebc6948a3b7b54ab67bc40e",
+      "private_sha256": "0b7ad8dab91bd9925cd97d6d809b1e11e2899eee5ebc6948a3b7b54ab67bc40e",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.WeightedPositiveFiniteSums",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/WeightedPositiveFiniteSums.lean",
+      "source_sha256": "89cd403714fb4fa990c21fc344cefc08c08f7df01dfb29919236d830e0d7ebca",
+      "private_sha256": "89cd403714fb4fa990c21fc344cefc08c08f7df01dfb29919236d830e0d7ebca",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.SobolevSignedFiniteActionDifferential",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/SobolevSignedFiniteActionDifferential.lean",
+      "source_sha256": "3d0b118862480975e90d1c511b30f5c3190bbcd2d6c467b995587a5f58b63d7c",
+      "private_sha256": "3d0b118862480975e90d1c511b30f5c3190bbcd2d6c467b995587a5f58b63d7c",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FiniteActionHamiltonianDifferential",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FiniteActionHamiltonianDifferential.lean",
+      "source_sha256": "b4e9ed40b2795c690e0bed5c4e17e6f06b278bab9748db624597a76f88e806eb",
+      "private_sha256": "b4e9ed40b2795c690e0bed5c4e17e6f06b278bab9748db624597a76f88e806eb",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRawSobolevDiffeomorphisms",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRawSobolevDiffeomorphisms.lean",
+      "source_sha256": "ff482a26dd347caaa91cc3cc324dbc0d360d24fee26302be6107aec433d917a3",
+      "private_sha256": "ff482a26dd347caaa91cc3cc324dbc0d360d24fee26302be6107aec433d917a3",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeRoughSignedAbelianCoordinates",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughSignedAbelianCoordinates.lean",
+      "source_sha256": "6d1a5a7491b056e314226f044b2c96ede0c3fa76d5ce7d164f4e8a0fe5603829",
+      "private_sha256": "6d1a5a7491b056e314226f044b2c96ede0c3fa76d5ce7d164f4e8a0fe5603829",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FreeFourierDifferential",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FreeFourierDifferential.lean",
+      "source_sha256": "07b18937db337cb1d458aecd53afa22b6a665d0072b2cb04f1e165827dc411d3",
+      "private_sha256": "07b18937db337cb1d458aecd53afa22b6a665d0072b2cb04f1e165827dc411d3",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillUnitRealSourceJetUniqueness",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillUnitRealSourceJetUniqueness.lean",
+      "source_sha256": "c969b295dbbd5d587cfe2f1cc5ea134098f89e4de4b76571a9f659bb8bbf07fa",
+      "private_sha256": "c969b295dbbd5d587cfe2f1cc5ea134098f89e4de4b76571a9f659bb8bbf07fa",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.PeriodOneHminusOneMeanZeroDensity",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/PeriodOneHminusOneMeanZeroDensity.lean",
+      "source_sha256": "50fe4675f78b7e826492975843c431189ff503dd80fb6804931d1180b2dc7c63",
+      "private_sha256": "50fe4675f78b7e826492975843c431189ff503dd80fb6804931d1180b2dc7c63",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeRoughFourierAbelianMap",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughFourierAbelianMap.lean",
+      "source_sha256": "b5d090ff6f43cb0e5d37c5b127acedb7b04c9a107c5e4caf11a2c086d16d30f9",
+      "private_sha256": "b5d090ff6f43cb0e5d37c5b127acedb7b04c9a107c5e4caf11a2c086d16d30f9",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.ActualRoughFourierDifferential",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/ActualRoughFourierDifferential.lean",
+      "source_sha256": "f475f2126f492b56909746caa45d0fdb78269802ff5ea53196f3ea8938ea8999",
+      "private_sha256": "f475f2126f492b56909746caa45d0fdb78269802ff5ea53196f3ea8938ea8999",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianOrigin",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianOrigin.lean",
+      "source_sha256": "4d2f0bde4f5c86a2471c73584184a1f73c2f07b6a428c3273f838475a1ccf820",
+      "private_sha256": "4d2f0bde4f5c86a2471c73584184a1f73c2f07b6a428c3273f838475a1ccf820",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeSourceFiniteActionVariation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeSourceFiniteActionVariation.lean",
+      "source_sha256": "864af16ac8199bc6c05e93e86165182078b5901ce5e71f51932f5621335a98f1",
+      "private_sha256": "864af16ac8199bc6c05e93e86165182078b5901ce5e71f51932f5621335a98f1",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ComplexAnalysis.AffineLineDerivative",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ComplexAnalysis/AffineLineDerivative.lean",
+      "source_sha256": "8b1fa0ef14b2beff90089b7b5c898071d647dc770027d0b71409e77c05ff2224",
+      "private_sha256": "8b1fa0ef14b2beff90089b7b5c898071d647dc770027d0b71409e77c05ff2224",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Fourier.PeriodOneAffineCoefficients",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Fourier/PeriodOneAffineCoefficients.lean",
+      "source_sha256": "0e8f56934f6b45e58a55fba4f55707f1b001d62b6a5bfe5b9fc854f61cf5e560",
+      "private_sha256": "0e8f56934f6b45e58a55fba4f55707f1b001d62b6a5bfe5b9fc854f61cf5e560",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativePhysicalHamiltonianVariations",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativePhysicalHamiltonianVariations.lean",
+      "source_sha256": "1251cb26a3dd18e53e70d155b4d50bd54632c5173348d03353a9afe58095c10e",
+      "private_sha256": "1251cb26a3dd18e53e70d155b4d50bd54632c5173348d03353a9afe58095c10e",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHillPhysicalSource",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHillPhysicalSource.lean",
+      "source_sha256": "5c75b41ad75517a8ee8e7d76fa3bbea4e6d9a292fdd1dcda6efc936101140264",
+      "private_sha256": "5c75b41ad75517a8ee8e7d76fa3bbea4e6d9a292fdd1dcda6efc936101140264",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapHamiltonianVariation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapHamiltonianVariation.lean",
+      "source_sha256": "55f2c787c692c2422aab1be0435f0abdcf44b69e9ee1ff6bc1cac8f99405d08a",
+      "private_sha256": "55f2c787c692c2422aab1be0435f0abdcf44b69e9ee1ff6bc1cac8f99405d08a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.OriginalRoughActionGerms",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/OriginalRoughActionGerms.lean",
+      "source_sha256": "4e0783c9ee60fff487258a59abe27dc2d91c85a3beabe559ba4d256f9dc1c06a",
+      "private_sha256": "4e0783c9ee60fff487258a59abe27dc2d91c85a3beabe559ba4d256f9dc1c06a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHillPhysicalDirection",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHillPhysicalDirection.lean",
+      "source_sha256": "53d73681aa481f4a1c908b0b33bc9e88cf0f727126c3c44eb949be7043f6fffd",
+      "private_sha256": "53d73681aa481f4a1c908b0b33bc9e88cf0f727126c3c44eb949be7043f6fffd",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeContourActionDifferentials",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeContourActionDifferentials.lean",
+      "source_sha256": "e98ad86d0a73924fe774e3b8fcb6fc76a8380cc85d4611695219aa21303ca303",
+      "private_sha256": "e98ad86d0a73924fe774e3b8fcb6fc76a8380cc85d4611695219aa21303ca303",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.PhysicalRealMeanZeroComplexSpan",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/PhysicalRealMeanZeroComplexSpan.lean",
+      "source_sha256": "1103f9288480c687fa8a06f01f3358a9396277c41aa5e741a3917c54991a45de",
+      "private_sha256": "1103f9288480c687fa8a06f01f3358a9396277c41aa5e741a3917c54991a45de",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FiniteGapRoughFirstVariation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapRoughFirstVariation.lean",
+      "source_sha256": "d277a0398a965211cdb24ebe2e1eaeb606e4c63452f8ad2c62eb7b5983652a2e",
+      "private_sha256": "d277a0398a965211cdb24ebe2e1eaeb606e4c63452f8ad2c62eb7b5983652a2e",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.HminusMeanZeroProjection",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/HminusMeanZeroProjection.lean",
+      "source_sha256": "46ed89960c4a67bfa17818a7417bf4feefe6a71b52d67371500cf3c4bfb2dd83",
+      "private_sha256": "46ed89960c4a67bfa17818a7417bf4feefe6a71b52d67371500cf3c4bfb2dd83",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianComplexCanonical",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianComplexCanonical.lean",
+      "source_sha256": "3e30cb0fe729d0931a41a21d762c7786320778d6ec53bc425a1be06da36ce397",
+      "private_sha256": "3e30cb0fe729d0931a41a21d762c7786320778d6ec53bc425a1be06da36ce397",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FiniteActionCoordinateRotations",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FiniteActionCoordinateRotations.lean",
+      "source_sha256": "5f6fdc55ee9f2c0597d06342e06b1a8679a1eb970b9608e29028c3f5faf297ae",
+      "private_sha256": "5f6fdc55ee9f2c0597d06342e06b1a8679a1eb970b9608e29028c3f5faf297ae",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Fourier.PeriodOneSingleMode",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Fourier/PeriodOneSingleMode.lean",
+      "source_sha256": "ed013f45b85125a65ad6a2afc1de77bd1019cc0ac7d969d56846ae7108a5cec3",
+      "private_sha256": "ed013f45b85125a65ad6a2afc1de77bd1019cc0ac7d969d56846ae7108a5cec3",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeHamiltonianFourierCovectors",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeHamiltonianFourierCovectors.lean",
+      "source_sha256": "da0ecfe0da88d677cf7ce0e8fc8c1eea7b8600cc1a96930b473335252fa557ae",
+      "private_sha256": "da0ecfe0da88d677cf7ce0e8fc8c1eea7b8600cc1a96930b473335252fa557ae",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FiniteGapPhysicalHamiltonianVectors",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapPhysicalHamiltonianVectors.lean",
+      "source_sha256": "290e97bb0973fdb3e162a561e726e15f104073f56c7b148e47b1cfd5c865e35e",
+      "private_sha256": "290e97bb0973fdb3e162a561e726e15f104073f56c7b148e47b1cfd5c865e35e",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillHminusFiniteGapSmooth",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillHminusFiniteGapSmooth.lean",
+      "source_sha256": "50b03abf2c3df55e7b71b382fc117856ac669f4ee88bcdf0c77e6300c8894841",
+      "private_sha256": "50b03abf2c3df55e7b71b382fc117856ac669f4ee88bcdf0c77e6300c8894841",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapPhysicalRealization",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapPhysicalRealization.lean",
+      "source_sha256": "efd448c14a57f54747eb39d047bc87fb742e6ce1890835676e93ee017aca232c",
+      "private_sha256": "efd448c14a57f54747eb39d047bc87fb742e6ce1890835676e93ee017aca232c",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.PhysicalRealMeanZeroSobolevInclusion",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/PhysicalRealMeanZeroSobolevInclusion.lean",
+      "source_sha256": "f8d6d9d809846db406d1329f181fcc92ee927adfdfe6c6fcf6c2f52de1183eaf",
+      "private_sha256": "f8d6d9d809846db406d1329f181fcc92ee927adfdfe6c6fcf6c2f52de1183eaf",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedRelift",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedRelift.lean",
+      "source_sha256": "26a7c401d563da4d243e8e1595019341ecdf463d721c7e488885300c733061a4",
+      "private_sha256": "26a7c401d563da4d243e8e1595019341ecdf463d721c7e488885300c733061a4",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.SequenceSpaces.SobolevSignedActionModeCurve",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/SequenceSpaces/SobolevSignedActionModeCurve.lean",
+      "source_sha256": "df4e76fca85811df23a9b4eab92c94d1c54d6eac15d827d3f930f17a634b6c24",
+      "private_sha256": "df4e76fca85811df23a9b4eab92c94d1c54d6eac15d827d3f930f17a634b6c24",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHillContinuousSource",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHillContinuousSource.lean",
+      "source_sha256": "a9fdedaf256d18ce15b13375c72b77e5e5eacffd79cd075b466a472c91cb2e70",
+      "private_sha256": "a9fdedaf256d18ce15b13375c72b77e5e5eacffd79cd075b466a472c91cb2e70",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.NativeHillSourceComparisons",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/NativeHillSourceComparisons.lean",
+      "source_sha256": "003744d3cbc05abd27283a9957271e23729c9c752d14f14e1be2f14672218866",
+      "private_sha256": "003744d3cbc05abd27283a9957271e23729c9c752d14f14e1be2f14672218866",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapModeOpening",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapModeOpening.lean",
+      "source_sha256": "423af2206da12234a4daacb17b32bd565fb8ea32b53a8b8cfe8d9d57c17aaf87",
+      "private_sha256": "423af2206da12234a4daacb17b32bd565fb8ea32b53a8b8cfe8d9d57c17aaf87",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.OriginalRoughCoordinateGerms",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/OriginalRoughCoordinateGerms.lean",
+      "source_sha256": "c9815bb7a2e20dcfbb329fdc71c71efaf27796ae1a2055def090a1ae7ed627cd",
+      "private_sha256": "c9815bb7a2e20dcfbb329fdc71c71efaf27796ae1a2055def090a1ae7ed627cd",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ComplexAnalysis.WeightedSquareRemainder",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ComplexAnalysis/WeightedSquareRemainder.lean",
+      "source_sha256": "a5e3427fa87d4c716f8c3290c62df9f0fbe07b4ebd547f2c7abd63ba8512b410",
+      "private_sha256": "a5e3427fa87d4c716f8c3290c62df9f0fbe07b4ebd547f2c7abd63ba8512b410",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillL2UpperEnergySquareAsymptotics",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillL2UpperEnergySquareAsymptotics.lean",
+      "source_sha256": "3e56660a7b683c7c5095fad6e87f7a9b55ac55c5b8792321d0b3ac4d1758e425",
+      "private_sha256": "3e56660a7b683c7c5095fad6e87f7a9b55ac55c5b8792321d0b3ac4d1758e425",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillL2EnergySquareCircleAsymptotics",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillL2EnergySquareCircleAsymptotics.lean",
+      "source_sha256": "f0fceb40aab375c96f24a4a53300b6fa658f6b95991c513f860f6b9a1eb41a2e",
+      "private_sha256": "742741869d658d35804454edf701fda6144049fde13888ee523c9ad8a9f303c9",
+      "byte_identical": false,
+      "adaptation": "Rename the conjugate-real energy calibration lemma to avoid a duplicate of the retained quartic module; the mathematical proof is unchanged."
+    },
+    {
+      "module": "NLS.ComplexAnalysis.UpperReflectionCircleIntegrability",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ComplexAnalysis/UpperReflectionCircleIntegrability.lean",
+      "source_sha256": "70a46b84da91495a6f294cf1be2637ec204caa2e497c1234f65df4aa700ad1af",
+      "private_sha256": "70a46b84da91495a6f294cf1be2637ec204caa2e497c1234f65df4aa700ad1af",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillSmoothQuarticEnergyCoefficient",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillSmoothQuarticEnergyCoefficient.lean",
+      "source_sha256": "d0a37dbaeb2ac3d568ed5c20bd13d6dfa5c9a2158e20869078209284991d6dcb",
+      "private_sha256": "b6f32a47734c9787e1cb84df3b32134f0f7f6387a67db221f36f22f2011caeb9",
+      "byte_identical": false,
+      "adaptation": "Import the retained identical quartic circle remainder instead of redeclaring it. Use RawQuarticContourCoefficient and its separately named raw normalized estimate, preserving the baseline physical-energy normalized estimate."
+    },
+    {
+      "module": "NLS.KdV.HillSmoothPhysicalQuartic",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillSmoothPhysicalQuartic.lean",
+      "source_sha256": "e1292df57c814a610a177bbfb6c1683193ceaf6f6fa9753ba8c8c4be3ee5f204",
+      "private_sha256": "e1292df57c814a610a177bbfb6c1683193ceaf6f6fa9753ba8c8c4be3ee5f204",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.SmoothSpectralStationarity",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/SmoothSpectralStationarity.lean",
+      "source_sha256": "534442182b431605ac7bf349538e925980d4c6a21487d810f31345741d0db7e9",
+      "private_sha256": "534442182b431605ac7bf349538e925980d4c6a21487d810f31345741d0db7e9",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillPolynomialDirectionCoefficients",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillPolynomialDirectionCoefficients.lean",
+      "source_sha256": "7386cc2ce6854d4beab2d167226aee6292d60840f12614f7bbe7ae335339ec6d",
+      "private_sha256": "7386cc2ce6854d4beab2d167226aee6292d60840f12614f7bbe7ae335339ec6d",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapCoordinateJets",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapCoordinateJets.lean",
+      "source_sha256": "180762b8b653d669ba04cedb2a6bbc099755f38027115d4ee31f18826d8d1c43",
+      "private_sha256": "180762b8b653d669ba04cedb2a6bbc099755f38027115d4ee31f18826d8d1c43",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapContinuousSources",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapContinuousSources.lean",
+      "source_sha256": "00462c80017ff5ef461463f449ae1edecbe654fa377bedfc6f2867b3ec8fbe15",
+      "private_sha256": "00462c80017ff5ef461463f449ae1edecbe654fa377bedfc6f2867b3ec8fbe15",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillTraceStationaryDeflatedRoot",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillTraceStationaryDeflatedRoot.lean",
+      "source_sha256": "4cc5d4b2d77b8f1dafcadc9c9465832a1dac3dd79b50100e8b825c30d6ef66ce",
+      "private_sha256": "4cc5d4b2d77b8f1dafcadc9c9465832a1dac3dd79b50100e8b825c30d6ef66ce",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillTraceStationaryTerminalAngle",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillTraceStationaryTerminalAngle.lean",
+      "source_sha256": "606436aa5ae60fb9433fcd76fa3b6ac2f9d11a02e12d96828951effca886987e",
+      "private_sha256": "606436aa5ae60fb9433fcd76fa3b6ac2f9d11a02e12d96828951effca886987e",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityData",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityData.lean",
+      "source_sha256": "534f7fb9fb910e945ba6c15cc767d10e88eda8d2429423105790182e133c924c",
+      "private_sha256": "534f7fb9fb910e945ba6c15cc767d10e88eda8d2429423105790182e133c924c",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.SmoothDirichletMotion",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/SmoothDirichletMotion.lean",
+      "source_sha256": "54fab7f58ff16f6355dc993cbe23519b33e49220fa7beb3a26273f5b857b82cf",
+      "private_sha256": "54fab7f58ff16f6355dc993cbe23519b33e49220fa7beb3a26273f5b857b82cf",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.SmoothDirichletVelocityData",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/SmoothDirichletVelocityData.lean",
+      "source_sha256": "4497c89f11dd3348b83d5a168833aaa1adb887749eea7c8187bdd21f1781e703",
+      "private_sha256": "4497c89f11dd3348b83d5a168833aaa1adb887749eea7c8187bdd21f1781e703",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillTraceStationaryPeriods",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillTraceStationaryPeriods.lean",
+      "source_sha256": "7afea5cbbdbbbb8364a4f6dfe6258c1242a3cff35dc26dea10a275c864086605",
+      "private_sha256": "7afea5cbbdbbbb8364a4f6dfe6258c1242a3cff35dc26dea10a275c864086605",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillTraceStationaryMixedPeriods",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillTraceStationaryMixedPeriods.lean",
+      "source_sha256": "7d9f4bf16211028bd00f51d4c62dd1d05f39f6e8f5fefc4a2a9c6302e65f3240",
+      "private_sha256": "7d9f4bf16211028bd00f51d4c62dd1d05f39f6e8f5fefc4a2a9c6302e65f3240",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillTraceStationaryNormalization",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillTraceStationaryNormalization.lean",
+      "source_sha256": "d8d38a515e8c021ef1e52133ab17746d94234b2bd25b9334d035e2d677801ba9",
+      "private_sha256": "d8d38a515e8c021ef1e52133ab17746d94234b2bd25b9334d035e2d677801ba9",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillTraceStationaryCanonicalDifferential",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillTraceStationaryCanonicalDifferential.lean",
+      "source_sha256": "e5b1cd55eb9b7b7245653ea977b258e1060f0ab1bfc3d06c0ea79f7128df1ef7",
+      "private_sha256": "e5b1cd55eb9b7b7245653ea977b258e1060f0ab1bfc3d06c0ea79f7128df1ef7",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillTraceStationaryFilledDifferential",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillTraceStationaryFilledDifferential.lean",
+      "source_sha256": "9ab873ff15ff6ac79c86a63dca2001d670af55e747c164c874e6ed50dd796917",
+      "private_sha256": "9ab873ff15ff6ac79c86a63dca2001d670af55e747c164c874e6ed50dd796917",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillTraceStationaryAbelianPrimitive",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillTraceStationaryAbelianPrimitive.lean",
+      "source_sha256": "5504702e37999e8ec9f13cdebd47674e494065f2bf188b527750973620d839c4",
+      "private_sha256": "5504702e37999e8ec9f13cdebd47674e494065f2bf188b527750973620d839c4",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityAbelianIntegral",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityAbelianIntegral.lean",
+      "source_sha256": "3b9518d756814dfe6dbd9fc82a8573b8a21f678553225a47cd75b8cea78d337a",
+      "private_sha256": "3b9518d756814dfe6dbd9fc82a8573b8a21f678553225a47cd75b8cea78d337a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityOpenCorrection",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityOpenCorrection.lean",
+      "source_sha256": "16f626ac0318a8140c703b71ebde6660fe640942600889494ea9717aa47cff2f",
+      "private_sha256": "16f626ac0318a8140c703b71ebde6660fe640942600889494ea9717aa47cff2f",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityClosedCorrection",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityClosedCorrection.lean",
+      "source_sha256": "bbf416181d4bc0668e7cb44c5a7a162738edbd22be6096dc7811630053cd7496",
+      "private_sha256": "bbf416181d4bc0668e7cb44c5a7a162738edbd22be6096dc7811630053cd7496",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityCorrection",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityCorrection.lean",
+      "source_sha256": "367e8d43e8c50fef0f5ac8d0d494ec6d1b5b84ecd554cd661acdd68414d731bc",
+      "private_sha256": "367e8d43e8c50fef0f5ac8d0d494ec6d1b5b84ecd554cd661acdd68414d731bc",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocitySummedCorrection",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocitySummedCorrection.lean",
+      "source_sha256": "2b6896b149b73d8a20bbfdfdc37a7a1d99c7c8fce541758d575b34c387051474",
+      "private_sha256": "2b6896b149b73d8a20bbfdfdc37a7a1d99c7c8fce541758d575b34c387051474",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityAbelianAngle",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityAbelianAngle.lean",
+      "source_sha256": "75b16a2357e55016883d90e9fdf69fa1640c4b7469c318c319bfc496f70aa1a8",
+      "private_sha256": "75b16a2357e55016883d90e9fdf69fa1640c4b7469c318c319bfc496f70aa1a8",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.SmoothAbelianAngleMotion",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/SmoothAbelianAngleMotion.lean",
+      "source_sha256": "49dc912d8a3d733f81806530eca3ea40cf43f20caee58f15b6e0a545b49b5ecb",
+      "private_sha256": "49dc912d8a3d733f81806530eca3ea40cf43f20caee58f15b6e0a545b49b5ecb",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityTerminalFactor",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityTerminalFactor.lean",
+      "source_sha256": "1709fe1b994211b44c3acdf46b01b5fd17656530b0bfc66847e106a4a2b26d58",
+      "private_sha256": "1709fe1b994211b44c3acdf46b01b5fd17656530b0bfc66847e106a4a2b26d58",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityClosedCoordinate",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityClosedCoordinate.lean",
+      "source_sha256": "d4735e1622a0154cc29a1ed7d3919e6e7edfc4488f546b1f6920c815ad73480a",
+      "private_sha256": "d4735e1622a0154cc29a1ed7d3919e6e7edfc4488f546b1f6920c815ad73480a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityPhase",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityPhase.lean",
+      "source_sha256": "ee11e4d25b418c4621e333b13ff144727ebb8a8ac4bd7fecf1942d9db4a0ec04",
+      "private_sha256": "ee11e4d25b418c4621e333b13ff144727ebb8a8ac4bd7fecf1942d9db4a0ec04",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityCoordinate",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityCoordinate.lean",
+      "source_sha256": "6e64e341a9200570bdf48873c268236f0426b736d592ea1dc96082be9137c0ec",
+      "private_sha256": "6e64e341a9200570bdf48873c268236f0426b736d592ea1dc96082be9137c0ec",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletVelocityFiniteGap",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletVelocityFiniteGap.lean",
+      "source_sha256": "e1f7242532fe1e6f376f1c15c43795d6466f60e144b7408ed82ef01ab846be5c",
+      "private_sha256": "e1f7242532fe1e6f376f1c15c43795d6466f60e144b7408ed82ef01ab846be5c",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.SmoothAbelianCoordinateMotion",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/SmoothAbelianCoordinateMotion.lean",
+      "source_sha256": "78c994df7ffc6bd1f29c5f7a0c6b537eba8e5a88704b5ae24f960cffa28533d1",
+      "private_sha256": "78c994df7ffc6bd1f29c5f7a0c6b537eba8e5a88704b5ae24f960cffa28533d1",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapSpectralFrequencies",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapSpectralFrequencies.lean",
+      "source_sha256": "5600355357e54f0157cb8400845217d9b92c5141fa0587c9d419775596e6c283",
+      "private_sha256": "5600355357e54f0157cb8400845217d9b92c5141fa0587c9d419775596e6c283",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillFiniteGapExterior",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillFiniteGapExterior.lean",
+      "source_sha256": "7f63773dadedb6ee24e2a68ba9a7223057d30e662e47988754b43e75f7e639e2",
+      "private_sha256": "7f63773dadedb6ee24e2a68ba9a7223057d30e662e47988754b43e75f7e639e2",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillFiniteGapDirichletInterpolation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillFiniteGapDirichletInterpolation.lean",
+      "source_sha256": "07327d76058f247526c72d350b7f356d7210a5911addeb741d76db7118c99942",
+      "private_sha256": "07327d76058f247526c72d350b7f356d7210a5911addeb741d76db7118c99942",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillFiniteGapDirichletMoments",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillFiniteGapDirichletMoments.lean",
+      "source_sha256": "7cd38614dbe895de95db460b5d06588d056e11faac89ce91e45fcb7d40c1c031",
+      "private_sha256": "7cd38614dbe895de95db460b5d06588d056e11faac89ce91e45fcb7d40c1c031",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FiniteGapDirichletVelocityContours",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapDirichletVelocityContours.lean",
+      "source_sha256": "83ab6f91b922ce3e5252e7460f8bb216c3a6a98a0313cfb25a60906ad5b60227",
+      "private_sha256": "83ab6f91b922ce3e5252e7460f8bb216c3a6a98a0313cfb25a60906ad5b60227",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillAnalyticDirichletGardnerKernel",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillAnalyticDirichletGardnerKernel.lean",
+      "source_sha256": "3d94367def20946dc9501fd16b1ddf2d600a6b0bb74899a696fd263658bc26d5",
+      "private_sha256": "3d94367def20946dc9501fd16b1ddf2d600a6b0bb74899a696fd263658bc26d5",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillDirichletDerivativeContinuity",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillDirichletDerivativeContinuity.lean",
+      "source_sha256": "8b4dd79ba2b0176a69c5bb9b89c268d7623d810bf78de1c0af58182107e1dfb1",
+      "private_sha256": "8b4dd79ba2b0176a69c5bb9b89c268d7623d810bf78de1c0af58182107e1dfb1",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.DirichletVelocityContinuity",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/DirichletVelocityContinuity.lean",
+      "source_sha256": "71147515f8253917b2b5a583333910fd75d55a0d31d5115cc4e6e2ec97baf504",
+      "private_sha256": "71147515f8253917b2b5a583333910fd75d55a0d31d5115cc4e6e2ec97baf504",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeDirichletFrequencyContinuity",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeDirichletFrequencyContinuity.lean",
+      "source_sha256": "1526375cc6c7dd594076f90a87f108d2b04a4a093f722def09d2fe7d1b6a952f",
+      "private_sha256": "1526375cc6c7dd594076f90a87f108d2b04a4a093f722def09d2fe7d1b6a952f",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeFrequencyContinuity",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeFrequencyContinuity.lean",
+      "source_sha256": "0ad20dccc305e3afb1ab575878aa457260633a4c217edc7b81df76393703f0fc",
+      "private_sha256": "0ad20dccc305e3afb1ab575878aa457260633a4c217edc7b81df76393703f0fc",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeClosedModeFrequencyIdentification",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeClosedModeFrequencyIdentification.lean",
+      "source_sha256": "1b545e2907b992e153dfc864ac9f8b19c0f4d66147b4eb0f5fd3359f71a60623",
+      "private_sha256": "1b545e2907b992e153dfc864ac9f8b19c0f4d66147b4eb0f5fd3359f71a60623",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillCubicKernelLocalContinuation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillCubicKernelLocalContinuation.lean",
+      "source_sha256": "87432755904c43a8f8fbbb1f96822edb9712d29188d0c4c912a0aa60a6a77c95",
+      "private_sha256": "87432755904c43a8f8fbbb1f96822edb9712d29188d0c4c912a0aa60a6a77c95",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ComplexAnalysis.NonrealCircleCongruence",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ComplexAnalysis/NonrealCircleCongruence.lean",
+      "source_sha256": "966879978e8da2cf817683669aebf5ef8548660e3d3890c297dae511589258e5",
+      "private_sha256": "966879978e8da2cf817683669aebf5ef8548660e3d3890c297dae511589258e5",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillCubicKernelFilledDomain",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillCubicKernelFilledDomain.lean",
+      "source_sha256": "1ee2cab90672943fe3ef71d6f4eeeb68e395631ef3032870fa482a1bdacabb6a",
+      "private_sha256": "1ee2cab90672943fe3ef71d6f4eeeb68e395631ef3032870fa482a1bdacabb6a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillCubicKernelExterior",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillCubicKernelExterior.lean",
+      "source_sha256": "2390c58ba4ab2382066be63e43db462c2896b3447aaae862d159c5b73483b34c",
+      "private_sha256": "2390c58ba4ab2382066be63e43db462c2896b3447aaae862d159c5b73483b34c",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillIntrinsicGapGeometry",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillIntrinsicGapGeometry.lean",
+      "source_sha256": "72bf6dc6fba5012230423559b13aa42127900e2de8e50f43d4010365920ca66f",
+      "private_sha256": "72bf6dc6fba5012230423559b13aa42127900e2de8e50f43d4010365920ca66f",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillShiftedDifferentialContinuation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillShiftedDifferentialContinuation.lean",
+      "source_sha256": "4042e463e54990944b765738cf9d8ecd447e3eaa0c6fb015577f2d0c09790a6b",
+      "private_sha256": "4042e463e54990944b765738cf9d8ecd447e3eaa0c6fb015577f2d0c09790a6b",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillIntrinsicFrequencyMoments",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillIntrinsicFrequencyMoments.lean",
+      "source_sha256": "b9f0002aaa62557eae972f92a90825eec8f08eea529789926b559503468d93c9",
+      "private_sha256": "b9f0002aaa62557eae972f92a90825eec8f08eea529789926b559503468d93c9",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillIntrinsicCubicFrequency",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillIntrinsicCubicFrequency.lean",
+      "source_sha256": "eb0010af1a51cfeba38aa6d8f1056cb8c563abd686935c899dc4b6957ef797f2",
+      "private_sha256": "eb0010af1a51cfeba38aa6d8f1056cb8c563abd686935c899dc4b6957ef797f2",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillFiniteGapIntrinsicDecomposition",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillFiniteGapIntrinsicDecomposition.lean",
+      "source_sha256": "9b0cc18bb48383120ee9f8352ff508280378b679508d0ffd6d0e3c450b3fab30",
+      "private_sha256": "9b0cc18bb48383120ee9f8352ff508280378b679508d0ffd6d0e3c450b3fab30",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.NLSWKBFullPlaneComparison",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/NLSWKBFullPlaneComparison.lean",
+      "source_sha256": "22167d3211f019789c947952e80a675b74d4a8a3ff47877d040f3c24aab7f559",
+      "private_sha256": "22167d3211f019789c947952e80a675b74d4a8a3ff47877d040f3c24aab7f559",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ZakharovShabat.NLSWKBTwoColumnComparison",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ZakharovShabat/NLSWKBTwoColumnComparison.lean",
+      "source_sha256": "80846e20745bc4c248ebb1c79bc5c4b2ff854e828681b31517fe483fc805c0f8",
+      "private_sha256": "80846e20745bc4c248ebb1c79bc5c4b2ff854e828681b31517fe483fc805c0f8",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillWKBDirichletComparison",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillWKBDirichletComparison.lean",
+      "source_sha256": "6904d80f85738ff63a0f3a94d8086900616be340bcb29902bb1a4fb4d59c97a6",
+      "private_sha256": "6904d80f85738ff63a0f3a94d8086900616be340bcb29902bb1a4fb4d59c97a6",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillWKBLocalResolventModel",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillWKBLocalResolventModel.lean",
+      "source_sha256": "bdaa6cf7702435d182a60da35e7f0e6bfa438fdb171f673c29d0e50c931ad1d8",
+      "private_sha256": "bdaa6cf7702435d182a60da35e7f0e6bfa438fdb171f673c29d0e50c931ad1d8",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillWKBRootComparison",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillWKBRootComparison.lean",
+      "source_sha256": "a456b9a2be9cf240c2e361a3bd3f80dcd5e0860a581fa4f8efb756480b03e463",
+      "private_sha256": "a456b9a2be9cf240c2e361a3bd3f80dcd5e0860a581fa4f8efb756480b03e463",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillRiccatiDirichletJet",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillRiccatiDirichletJet.lean",
+      "source_sha256": "bc3f772158f5c5f18aac56cccd205f82d9ea2e124cc6d932966b3cd83b667fa5",
+      "private_sha256": "bc3f772158f5c5f18aac56cccd205f82d9ea2e124cc6d932966b3cd83b667fa5",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillLocalDiagonalResolvent",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillLocalDiagonalResolvent.lean",
+      "source_sha256": "c34161eb4c398ad7b7a8caaeaff362f920342754161ce909d5c15abba78fc312",
+      "private_sha256": "c34161eb4c398ad7b7a8caaeaff362f920342754161ce909d5c15abba78fc312",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillCubicFrequencyKernel",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillCubicFrequencyKernel.lean",
+      "source_sha256": "6fde0ee96fa25c5f2de7288c7aa316e08d150debfed4d6cdc44b8f247b5fa229",
+      "private_sha256": "6fde0ee96fa25c5f2de7288c7aa316e08d150debfed4d6cdc44b8f247b5fa229",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillL2RealCutReflection",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillL2RealCutReflection.lean",
+      "source_sha256": "3a61e78e359179833ddcecfeede12bd817c5b36691a27e87b582aa9e8e20a822",
+      "private_sha256": "3a61e78e359179833ddcecfeede12bd817c5b36691a27e87b582aa9e8e20a822",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ComplexAnalysis.UpperArcReflectionIntegrability",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ComplexAnalysis/UpperArcReflectionIntegrability.lean",
+      "source_sha256": "c977d82892573e756cca42d61cf0651e7f68aa3004cf57084c32bdc54bafd06a",
+      "private_sha256": "c977d82892573e756cca42d61cf0651e7f68aa3004cf57084c32bdc54bafd06a",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillCubicFrequencyCircle",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillCubicFrequencyCircle.lean",
+      "source_sha256": "59e300ad209319fb213e66108bef60c956fb7b19c59948465f5bbf1775705f78",
+      "private_sha256": "59e300ad209319fb213e66108bef60c956fb7b19c59948465f5bbf1775705f78",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillCubicFrequencyContourComparison",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillCubicFrequencyContourComparison.lean",
+      "source_sha256": "6a8513833c3f8e6e846e4377436e76e19f09b4d32098c8fd02f8b4bbe67ab5b9",
+      "private_sha256": "6a8513833c3f8e6e846e4377436e76e19f09b4d32098c8fd02f8b4bbe67ab5b9",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityLimit",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapCubicVelocityLimit.lean",
+      "source_sha256": "94bd07cfa051b68dd016940fdf0cdf7264ea9e3cb88e71e1da7265ae6cb600a8",
+      "private_sha256": "94bd07cfa051b68dd016940fdf0cdf7264ea9e3cb88e71e1da7265ae6cb600a8",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityContours",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapCubicVelocityContours.lean",
+      "source_sha256": "070c0f85eb99b4af936db0b2a24a2ab6a0870bdded09472220f3e45e55b5c517",
+      "private_sha256": "070c0f85eb99b4af936db0b2a24a2ab6a0870bdded09472220f3e45e55b5c517",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FiniteGapKdVMomentIdentity",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapKdVMomentIdentity.lean",
+      "source_sha256": "9678570d017044524272b699883668c3a7d02fbd81ac4751fd41e43a2ad854ce",
+      "private_sha256": "9678570d017044524272b699883668c3a7d02fbd81ac4751fd41e43a2ad854ce",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillOddKernelContinuation",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillOddKernelContinuation.lean",
+      "source_sha256": "aef631ae7dd4e3d1b864e6822365c9b797fc5a26d59f5f59dd283479c8fa4b36",
+      "private_sha256": "aef631ae7dd4e3d1b864e6822365c9b797fc5a26d59f5f59dd283479c8fa4b36",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillOddKernelFiniteGapContours",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillOddKernelFiniteGapContours.lean",
+      "source_sha256": "895186b7a2c54bcf05b360cc8438b08d299d8baeb96ad0f4ade47d501bc894c3",
+      "private_sha256": "895186b7a2c54bcf05b360cc8438b08d299d8baeb96ad0f4ade47d501bc894c3",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillIntrinsicOddFrequencyPeriods",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillIntrinsicOddFrequencyPeriods.lean",
+      "source_sha256": "bc61d263625131f40c6eaa8fcd342c1802194a8bcbd6284a4b06adc917717fbc",
+      "private_sha256": "bc61d263625131f40c6eaa8fcd342c1802194a8bcbd6284a4b06adc917717fbc",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillQuinticLocalResolvent",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillQuinticLocalResolvent.lean",
+      "source_sha256": "ef29c2ccb55a1da04c9188ac4dcef74be4c9c182b6e6d31538e072e3409ac245",
+      "private_sha256": "ef29c2ccb55a1da04c9188ac4dcef74be4c9c182b6e6d31538e072e3409ac245",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillQuinticFrequencyKernel",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillQuinticFrequencyKernel.lean",
+      "source_sha256": "147718f5ec2026074c938773218fb167b66082fbee2a036dcbd3db8bf31cf696",
+      "private_sha256": "147718f5ec2026074c938773218fb167b66082fbee2a036dcbd3db8bf31cf696",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillQuinticFrequencyContourComparison",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillQuinticFrequencyContourComparison.lean",
+      "source_sha256": "80d040f6e25ab82f05ce05818b73e116516c3820386f791cf0107d43b39196a4",
+      "private_sha256": "80d040f6e25ab82f05ce05818b73e116516c3820386f791cf0107d43b39196a4",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillLinearFrequencyKernel",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillLinearFrequencyKernel.lean",
+      "source_sha256": "afb7736b97fd055dfeda0afbaa2f4491c06d4a2e6d599a06e28e1716388483b2",
+      "private_sha256": "afb7736b97fd055dfeda0afbaa2f4491c06d4a2e6d599a06e28e1716388483b2",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillLinearDirichletContourComparison",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillLinearDirichletContourComparison.lean",
+      "source_sha256": "3222ee72e48ee57772f49a89d2b1578f29c886199ca50f3ec26491a8e8eafe1f",
+      "private_sha256": "3222ee72e48ee57772f49a89d2b1578f29c886199ca50f3ec26491a8e8eafe1f",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.KdV.HillFiniteGapDirichletNormalization",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/KdV/HillFiniteGapDirichletNormalization.lean",
+      "source_sha256": "a9f1a99aec7b0edb26df5342ad30b3c82aa826eae8b9b396bf6d3b0c7bba8876",
+      "private_sha256": "a9f1a99aec7b0edb26df5342ad30b3c82aa826eae8b9b396bf6d3b0c7bba8876",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FiniteGapQuinticVelocityContours",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapQuinticVelocityContours.lean",
+      "source_sha256": "6400e75c3b61efcca2379a51efd7698a548741f78a286c8747a47906127cbce8",
+      "private_sha256": "6400e75c3b61efcca2379a51efd7698a548741f78a286c8747a47906127cbce8",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.FiniteGapKdV2MomentIdentity",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapKdV2MomentIdentity.lean",
+      "source_sha256": "f04a5692f56fc53bf044aa8c5e1b97667117a00fc90719786c43a61d8e4dc5a4",
+      "private_sha256": "f04a5692f56fc53bf044aa8c5e1b97667117a00fc90719786c43a61d8e4dc5a4",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.Articles.KdVKdV2Frequencies.NativeAllGapFrequencyMoments",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/Articles/KdVKdV2Frequencies/NativeAllGapFrequencyMoments.lean",
+      "source_sha256": "b8f558514c707c2b3a3020056d4062d73a5e5968511887c952c030ece86c8567",
+      "private_sha256": "b8f558514c707c2b3a3020056d4062d73a5e5968511887c952c030ece86c8567",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "module": "NLS.ComplexAnalysis.RawQuarticContourCoefficient",
+      "source_commit": "db2a50ca44740f22ad41b952ade19cf1985cab83",
+      "source_path": "NLS/ComplexAnalysis/QuarticContourCoefficient.lean",
+      "source_sha256": "68c449955e8b66d4a0163f7fba921b8e7cf7006b9d85509cc040e46a3b00bfc9",
+      "private_sha256": "b4dd02538b0b4815554b7b626779fd547d144fe2ba63d6ed7f60974f4a9d5e2b",
+      "byte_identical": false,
+      "adaptation": "Copy only the pinned raw contour coefficient proof into a separate module; rename norm_raw_quartic_circle_coefficient_sub_le and add autoImplicit=false. The two unused square-shift helpers are omitted."
+    }
+  ],
+  "retained_existing_source_differences": [
+    {
+      "module": "NLS.ZakharovShabat.ClassicalNLSHamiltonians",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398",
+      "private_sha256": "1ab05b74ffcd892bb75226b50d4517286a96f197100a7e86e453b3eecf82534b"
+    },
+    {
+      "module": "NLS.ComplexAnalysis.JointSpectralDerivative",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "615f051c204758d1ec0b4a9197560b0e779b6aed4d8926d6125f7a98cba6b541",
+      "private_sha256": "f988cb9c979c851d34ce56925c72b86e3a54ad88d2bd75f3bfdd856e1212147c"
+    },
+    {
+      "module": "NLS.ZakharovShabat.ClassicalForcedKernel",
+      "status": "different",
+      "selected_baseline": false,
+      "shared_sha256": "0fddb2dabc39ba876b978fc6b66d73a1f4fd64fced57a900171a55c22b05f100",
+      "private_sha256": "6ff5e6888d78b78d806799b89d8633313997e2dc5e3b52f7b506a5794ea3208a"
+    },
+    {
+      "module": "NLS.ZakharovShabat.ClassicalDiscriminantGradient",
+      "status": "different",
+      "selected_baseline": false,
+      "shared_sha256": "7c0e09401d5695aba3be006fae621f2238e348eecdf10dd656b86c69753f544e",
+      "private_sha256": "3742e6ce09b0630e40238fcae6700bff4bf3655e98d2ee5333c63fe688ed5a5f"
+    },
+    {
+      "module": "NLS.DifferentialPolynomial.EulerLagrange",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "44318ffa3231616fcf936a7d98948482d15e533a6201e4198e8e6c8de81b9baa",
+      "private_sha256": "fabe9650f9f92958f3f3be77cf8511c6b205ee84b68b917fc7ffcb9402997d3c"
+    },
+    {
+      "module": "NLS.ZakharovShabat.SingleSpectralProductRatioExterior",
+      "status": "different",
+      "selected_baseline": false,
+      "shared_sha256": "2f2ad902240ef0e00567ca77fc939c12c3b2100ebafc9bf55c25c17a6b9c57aa",
+      "private_sha256": "f33956302e20772c3e6d45f802e4c525032d314afcdc7122f83b89def719bd3e"
+    },
+    {
+      "module": "NLS.ZakharovShabat.SourceDistantCriticalPointsAnalyticNeighborhood",
+      "status": "different",
+      "selected_baseline": false,
+      "shared_sha256": "cecc3f386d896d8221cb0f5b1260b73d1fafc2ce9cfbff8c47e99fbf1bce0a1b",
+      "private_sha256": "ce5f1a89973129f9e5388bac29944a84a09825e318b6b9cff79e2fc2e426046c"
+    },
+    {
+      "module": "NLS.KdV.HillBilinearSymmetry",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "2b0e7f9ae07056c448603bbcb086776fcbbef4c4c90d3e870963e00bd3dc665b",
+      "private_sha256": "6cda4cd258aff982accd9383c415b763a1e455899ea30ede6408ff73d5149cff"
+    },
+    {
+      "module": "NLS.KdV.HillDiscriminantNecessity",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "c78b4bc2057447032ab29705cb0bb9255e15d87f330acc73e8e344ffd1b5675e",
+      "private_sha256": "b4dd08b58e8856e661f54bc478d525d71debb584fc4687ecee85302f1cdf1897"
+    },
+    {
+      "module": "NLS.KdV.ClassicalBranchPrimitive",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "f7107b18fc5df42b7525e38c6390d3d7b0113b039b4409270eaf3920fcafe72a",
+      "private_sha256": "9b23f82158ff2a6f4dc00d8fead2fa19601f40378c2de5bff6a7a7ec61f6759d"
+    },
+    {
+      "module": "NLS.KdV.ClassicalHillWholeGapSquares",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "807f79c97cd5116cf11344cd0984f5b91db04768ea35f41ccf6518082d87bf43",
+      "private_sha256": "054e7aefe03fbb3926743e7fdf76c43194a576670b2aeddab090635539f72350"
+    },
+    {
+      "module": "NLS.KdV.HillHminusOnePairUniqueness",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "ae601fb414cdee0938abc223c75cf3e67a08de24ccf8c06cb9a4445c8e3f541c",
+      "private_sha256": "9978a3e9efdf97127c2e8748104417e45300c9dfa3f7618fe2af2599ec6ac7c3"
+    },
+    {
+      "module": "NLS.KdV.ActionHamiltonianMoments",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "2bb6abfa6e912decb75ebf991312566b32d371680c1a44257ac73289e2e51feb",
+      "private_sha256": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8"
+    },
+    {
+      "module": "NLS.KdV.ClassicalL2PrimitiveAgreement",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "4a4edcf113081745705519dd833b936c772bfd2aaa9f1a34f3b9bdad4ef9556b",
+      "private_sha256": "e7a68da9bccb85a5555f97f41c187de235f966cbcfa86c6fda5bec9d6eea9416"
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneMomentRadius",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "9b04dccb5e0346d049e19f76eb3a42c1c439e3ffee97d8b98e206e17c0af9359",
+      "private_sha256": "9b8276a247239f9d2974cc0b3df7a41079209173646bd02c8432e78b6d68c87f"
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneLabelUniqueness",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "b4095ecec3367865b80d003c1314325facd7757110fe7c20ae62576a34463010",
+      "private_sha256": "316cd9f889a10dbca3d84b12063d4bcce5e2d471188b7b53130c5fea0a75304e"
+    },
+    {
+      "module": "NLS.KdV.HillL2GapCutRoots",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "6f777e5b30d10f5e9d449730cda25e180657f204b78ea9ac2963f519a2ad4718",
+      "private_sha256": "c1d01e28be113c0f2af5fcee23f74b7ad73f883fa39268ad8fe521ab3b6b150a"
+    },
+    {
+      "module": "NLS.KdV.HillL2GapCutPrimitives",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "b25527f55e32d7f8bfc44b70303d2688b40de4134e840ef1703402e6cf0aef4f",
+      "private_sha256": "a66b3a1eb2d89b97a3d59415584c0a9c6671fd174987c318174eb22841ff6fac"
+    },
+    {
+      "module": "NLS.ComplexAnalysis.JointSpectralDerivativeAnalytic",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "19ea0201c2b9eebffceca4ed8a184961f5f1993577e9a6be6b39c6ec3c548d76",
+      "private_sha256": "4e0e72b36d1026c2731d4eaefa421e30d1c40327437835c8e4066c77a92a654f"
+    },
+    {
+      "module": "NLS.KdV.HillL2DirichletCharacteristic",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "a8907e46c53674f5a8673ef1923626564e3c3da6e5adbe3faf0b12ad55a80f9b",
+      "private_sha256": "8ca0c2e19e7dda5eac7c68ee88ce912ab3f277a42c433ef015787a6a66a81cde"
+    },
+    {
+      "module": "NLS.KdV.HillL2Dirichlet",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "6d779eb6d2edb92574bd27d5585e83379aaa75dd63f80ac79271dea36713c3bb",
+      "private_sha256": "9ee79e1c78f80a018e486c6101cf5807fcd40ee71e44631c0d10f373462439bb"
+    },
+    {
+      "module": "NLS.KdV.HillFreeDirichlet",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "9051fb4061736982a304e7767c58f90f1a60f77f92ece8ed750e862f4b4d1ef7",
+      "private_sha256": "5806294091d2a4b57e5f97b0bcb87839f49a724b36345f16d41e2b11f23ae704"
+    },
+    {
+      "module": "NLS.KdV.ClassicalHillFreeDirichlet",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "5fc987f982b391ca85c76726ee4eddd9c9b9101b69aad93c6147b2e211ec8994",
+      "private_sha256": "9567e10f21873672522d567120968a37d5617c2420db1f3fc9fc32f0314ca452"
+    },
+    {
+      "module": "NLS.KdV.HillDirichletReality",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "3d650863cb1393dec99725c13840d8c9b4f91645fda2c0b1dc02eb96ef2c5316",
+      "private_sha256": "811ca6121a4160d02aa738a88300a94e505e13b3a9bd768f263255b1fc4cff72"
+    },
+    {
+      "module": "NLS.KdV.HillDirichletSimplicity",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "a49a408424f1eca609131808b7cf50dd900c74bfce83092b4f636de387dc5f48",
+      "private_sha256": "4ca05b7e066ede0972a780acfd2f952f1a3ffaa42a11f5ac15f66b01e4bca07e"
+    },
+    {
+      "module": "NLS.KdV.HillDirichletPotentialDerivative",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "9bbb3c875b1e900efa6f4327ce5e775547af7214f5b4e4cbab43f55cdf3df9c4",
+      "private_sha256": "914036fbf45a63f84641ca77917df3b088a3bf04a768a2371f595949679203b8"
+    },
+    {
+      "module": "NLS.KdV.HillDirichletSheetVariation",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "7cd6ef0b296d93a1644603a2c9ef4fd629042f8d46906e2051ce65ce43a2b6bf",
+      "private_sha256": "1c840eab9e60b290382219df5163bab9c73e2f7e4f41d2b350f2bfd271e1b0bb"
+    },
+    {
+      "module": "NLS.KdV.ClassicalCriticalPointBranch",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "75dedccd574c1dc84236fb1543868a9a42d304c2fc0b5833285e1fa81d1557dc",
+      "private_sha256": "4dbaef347a297db8a84e96611200d3c6fd7157c2ee392924cffba81cfa43cb61"
+    },
+    {
+      "module": "NLS.KdV.ClassicalHighCriticalPoints",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "f8c168845aeb2d2a7c6e22fb9b7254d7ed137456be22a50793bd069def46413f",
+      "private_sha256": "acc69a38c3040b9df30a552634af0ae91bfb805122b19898a3ca629c00b042a3"
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneCriticalPoints",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "b498f0375c8d1217cf5c32b22ca235c7641cd3bdfe3ca81f176e026254942cf8",
+      "private_sha256": "85a2d86ec9b5bdf4c715d1b3d22d9439e53c84e6f879aa4e34f7fb935224bafe"
+    },
+    {
+      "module": "NLS.ComplexAnalysis.AnalyticSimpleCriticalBranch",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "e76987ff2b193b2cdd9cd7aa5573f7c052a917bc290ea9ab3ba0696804b84cde",
+      "private_sha256": "32f181d430c69ecc7a14fff0403b6165730da2ef195e315979997942074b0aec"
+    },
+    {
+      "module": "NLS.ComplexAnalysis.ParametricDividedDifference",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "15e3f4170d836c65b397b823a6b23a2d122f728e46ad246b788fc2ef6fe69895",
+      "private_sha256": "780bce70c42416a345548fecff821fad69f6b1bf88d4dd0aa72606ca079d1ea3"
+    },
+    {
+      "module": "NLS.KdV.FrequencyPrimitiveContinuation",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "799b3f6fc340c5ad1956d5e6ba60cdf1ea1fe730326a39e3869c427b40118c4a",
+      "private_sha256": "ff0f962815b0e34394f6ab39dd2445208337f85ca4fa4e6c1ed07930ec94fd37"
+    },
+    {
+      "module": "NLS.KdV.ClassicalHillWholeGapQuotients",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "e2bd11218562ddcbdc1fdd97b19be6e4963a8cc9bebae17ba14dd8992725f2cb",
+      "private_sha256": "985add7ad5dfd17404dc28498dd26cd4c08e1de88b39ceca01bd72e1f8383052"
+    },
+    {
+      "module": "NLS.KdV.HillNativeTraceNumerator",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "e1f0d9af4dd4e92c82b2f0bad2f6a86e9dfe99d301c7b03db24e877b93fcb9c2",
+      "private_sha256": "3e127d9fdfabe84ba306f7150021af37a4d64862ac192738f26fe84eb56ab361"
+    },
+    {
+      "module": "NLS.KdV.HillNativeActionGapRatio",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "3daff454695ec616dfa60db11636abd04b242f1520d5d5d016e3c27ce311de40",
+      "private_sha256": "fd4e65289c9f9a8bc7e2dda223d9e236f417e7434e8dca8b18145e94a828754d"
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneRealMiuraCharts",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "52fb29455683b9163eafa29d2e7955b3f18cf9093002c58a1f89da17b5f18f34",
+      "private_sha256": "f85368d71c6f03ae2c0fa0f16d8025b79af8e85ee8e5a885a24be6428b066190"
+    },
+    {
+      "module": "NLS.KdV.HillHminusRealPhysicalChart",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "4fd7bdf3f53bbcdb3e37a6a854bae3e352fc9c8f856548b6e72e8a27fc6343aa",
+      "private_sha256": "3fb740dab218ddcf47336ef3e6742248c3721398a8892a4478630de5cf62575b"
+    },
+    {
+      "module": "NLS.ComplexAnalysis.TraceRootVariation",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "5ff0964bfccc7e1501b6076228b2546208c6c0ab2e32909bebcdfe0b66f0ea9c",
+      "private_sha256": "4f3a698b78a9efd136a91cec90ac58f86ee47aaecc7c4b36048b5803b832e0de"
+    },
+    {
+      "module": "NLS.ComplexAnalysis.TraceActionVariation",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "715f314ef62735ebfd313989a73c3f7e16bd343555268aaccd6b96253d6b8963",
+      "private_sha256": "47e64562012f82bcf3d268c90a8ad262fd326fd6cbd1c43aea2d3b6ee0c3d095"
+    },
+    {
+      "module": "NLS.KdV.HillLocalContourAction",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "a8e8529e79f99286b7db7aa0f74dc753500d8f434feaf9de54d0884642ffa6a5",
+      "private_sha256": "525dcd52cf2d56f7b3145260fd44ab945d0766f922fa18ef45ad4ed1706d7152"
+    },
+    {
+      "module": "NLS.KdV.HillTraceStationaryData",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "20a7ed4ccb5be06fd9db4cdc1a2574c14ff704d44b09f113f8474ada1c532a3b",
+      "private_sha256": "e550bf4b0bb2ddf4168adc6901370972fcddab6e6cecfcb4c74603f325d37d04"
+    },
+    {
+      "module": "NLS.SequenceSpaces.PeriodOneRealFormIdentity",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "3a4d03b1b952ca207c5b6ef216a43ab981b86b03b5876bf0e97e73816f4fd167",
+      "private_sha256": "2b5b3429e3c93f907dd5ddda5834a38386bed2a3715afe22b142c82534491d4f"
+    },
+    {
+      "module": "NLS.SequenceSpaces.PeriodOneRealFormIdentityAt",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "7e494abfa675cc8df83eab1be6793bf42ce03563a4d0fe10c4e61421837bf5c4",
+      "private_sha256": "1a0b6c2d67acc9ca597b9cec58f13fe53f6f57c039a5ade643760506d1c2f533"
+    },
+    {
+      "module": "NLS.SequenceSpaces.SignedCompletionLocalAnalytic",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "aec0067aeaed326637211eae0cefa7986320f14e09d98bfdf6a6aaab1b814208",
+      "private_sha256": "b3a517a60e7c57ce6b4e0730b6b3ba42919201e7446c6f7db0aef0dc49e003a0"
+    },
+    {
+      "module": "NLS.KdV.HillHminusIntrinsicActionGapRatio",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "5be5870ec76888369332eb36a5594603b988da6f25c41d301b66d0b722b77347",
+      "private_sha256": "eddb1bcb7bab8aed96a2667afee61e057832b288683f81434b19a9bcdcaa3dcc"
+    },
+    {
+      "module": "NLS.ComplexAnalysis.LogarithmicMomentSourceStationarity",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "c44c2dcb62cac190a6f729114484fab9419fc19a70753e6fa93caaaa664e2490",
+      "private_sha256": "f91ad5d767a4da485f448e2f898a954a3099d584fd8f21004676e1bf0e38d231"
+    },
+    {
+      "module": "NLS.KdV.HillCommonComplexDeflatedTrace",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "57483b1d948b0b12733832b966f569e8316fa695926bc939edebfda0506b61db",
+      "private_sha256": "9ebac5810b30fe1e107b96aaecf34a397c89443df98fb0173dd62ba36b678210"
+    },
+    {
+      "module": "NLS.ComplexAnalysis.QuadraticGapActionRatioDisc",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "c57fd66e248860047a056df5b890ebd3db8466063b44d25abfe36080732aee7a",
+      "private_sha256": "777ad6ad1f2217a48927c5930107ac898f1363f8df5bfe0c5901979fe94975b3"
+    },
+    {
+      "module": "NLS.ZakharovShabat.SourceResonantCenterGapBound",
+      "status": "different",
+      "selected_baseline": false,
+      "shared_sha256": "c7b36b1987ca8507d56cfae906aaff176842532321d194b9d909675b8c8f9fd7",
+      "private_sha256": "4f3d08d3a4976a1ba6d265beef00b487f5ea1c1977807dffc87ea2f3e1b79ad4"
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneDirichletLowerBound",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "bdd0029192cc41f0d6d9e66bec6eb7451a7b77641b25edfc601a7753b0c6b165",
+      "private_sha256": "d4538219fc65862cab3f14eb821ae57f75effa0cb9e583c5522d9417c5c28f26"
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneDirichletCommonAnalytic",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "b50410b9b8b90868c54ebef878bd7cb09894ef32357aad3f4901ffb84e085d05",
+      "private_sha256": "abdfd28bd4b36ff5dcfa515657425d24fbfa41704958c22ff48e6b6fede44e25"
+    },
+    {
+      "module": "NLS.KdV.SquaredCoshCriticalDisc",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "8eea01c21387b77dce43445c1956fbf32b8d8eca23887f4a4b9353a557a5161e",
+      "private_sha256": "d7fe4ce4aa1ac73c851f88c8a7823bf08e0823a805bec3ebd8850e723b56ce94"
+    },
+    {
+      "module": "NLS.ComplexAnalysis.QuarticContourCoefficient",
+      "status": "different",
+      "selected_baseline": true,
+      "shared_sha256": "68c449955e8b66d4a0163f7fba921b8e7cf7006b9d85509cc040e46a3b00bfc9",
+      "private_sha256": "0eb5441d861bc56aa4d7b9e5136496c8d95d4430ac55fb5f21e6fe2cf0764688"
+    }
+  ],
+  "all_baseline_proof_sources_unchanged": true,
+  "reference_checkout_modified": false
+}

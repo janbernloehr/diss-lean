@@ -3480,17 +3480,69 @@ topology, and the square-map pullback to the rough signed Miura sums
 remain open. No full KdV frequency formula or base action extension is
 asserted by this preparation.
 
+## Physical finite-gap frequency identification in the original actions
+
+The pinned shared bridge from `articles/kdv-kdv2-frequencies`, commit
+`db2a50ca44740f22ad41b952ade19cf1985cab83`, proves that actual intrinsic
+physical KdV frequencies equal the canonical weighted second moments at
+EVERY finite-gap source and EVERY selected mode, including a closed gap.
+This checkout strictly compiles 190 byte-identical imported sources and
+three documented compatibility modules. The compatibility modules retain
+our existing proofs and separate the raw quartic coefficient normalization
+from the physical-energy normalization. No baseline proof is overwritten.
+See `physical-frequency-bridge-provenance.json` for exact source hashes,
+retained branch differences, and each adaptation.
+
+`OriginalPositiveActionInsertion.lean` constructs the actual bounded
+complex-linear insertion from the article's enumerated positive actions
+to native positive integer slots. It retains the exact `(1+n)^3` weight,
+raw coefficients, nonnegative cone, zero nonpositive slots, and raw unit
+action directions. No action amplitude or derivative is rescaled.
+
+`NativeH1PhysicalCompatibility.lean` proves that the two original H1
+models have the same unit Fourier coefficients, independent physical
+KdV energy and actual raw actions. `NativeOriginalFrequencyCompatibility.lean`
+constructs a physical native source at EVERY original action point.
+Every genuine native action factor pulls back to the independently
+defined `originalPhysicalActionEnergy`. Analytic uniqueness on the whole
+nonnegative original cone identifies every native physical frequency with
+`originalPhysicalFrequency`, also at closed actions and infinite support.
+This compares two actual physical energy derivatives; a contour frequency
+is not substituted by definition.
+
+`HillPhysicalIntrinsicFrequencyMoments.lean` identifies the literal
+physical real-cut moments with the intrinsic canonical-product-root
+moments on the same counterclockwise circles, including the exact root
+sign. The index-weighted natural sums agree; the central term is zero.
+
+`FiniteGapPhysicalFrequencyIdentity.lean` gives the actual identity
+`originalPhysicalFrequency(b,n)-8*pi^3*n^3 = -12*sum_k k*Omega_nk^(2)`
+for every actual native H1 finite-gap source and every positive selected
+mode. No own-gap openness is required. Its unconditional realization
+factory gives the same exact physical formula at EVERY finitely supported
+original action sequence and EVERY selected mode. No Birkhoff inverse,
+physical frequency formula or action realization is a caller hypothesis.
+
+The missing step is now the exact shifted-Miura pullback of these physical
+Hill moments to the constructed analytic rough signed sums. Finite-gap
+density and native frequency continuity can then recover physical values
+at infinite-gap original sources. Rough chart independence, global
+intrinsic gluing and actual action-fiber descent remain necessary to
+construct `BasePhysicalFrequencyExtension`. The printed locally uniform
+`O(1)` base bound remains refuted and is not restored by this bridge.
+
 ## Remaining essential KdV work
 
-1. Pass the proved finite quartic cotangents to the full physical energy
-   and identify the exact coordinate phase with the physical frequency.
-   Match the physical Hill second moments to the constructed signed
-   Miura weighted sums, retaining the square-map Jacobian, root sign and
-   energy shift. Prove chart independence, global rough-source gluing
-   and actual action descent; construct a nonempty
-   `BasePhysicalFrequencyExtension` on the whole positive ell^(-1,1) cone.
-   Use the checked simultaneous-domain assembly to finish Theorem 1.1.
-   The incompatible printed `O(1)` estimate remains excluded.
+1. Match the actual physical Hill second moments to the constructed
+   signed Miura weighted sums, retaining the square-map Jacobian, root
+   sign and energy shift. The physical finite-gap frequency identity now
+   covers every selected mode and every finitely supported original action.
+   Use finite-gap density and native source frequency continuity for
+   physical recovery at infinite-gap original sources. Prove rough chart
+   independence, global intrinsic gluing and actual action descent;
+   construct a nonempty `BasePhysicalFrequencyExtension` on the whole
+   positive ell^(-1,1) cone and apply the common-domain assembly for
+   Theorem 1.1. The printed locally uniform `O(1)` estimate remains excluded.
 2. Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates
    and physical KdV well-posedness.
 
@@ -3549,19 +3601,20 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `d1abd50` contains 2310 proof sources, whose
-hashes remain unchanged. Seven authored modules pass strict Lean
-compilation with `warningAsError=true`, default authored limits and no
-linter overrides. Reproduction lists 2317 modules. The positive-index
-example, combined transitive axiom audit and 1886 coverage declaration
-checks pass. All 2850 remaining reference import sources agree byte-for-
+The validated baseline at `eb23510` contains 2317 proof sources, whose
+hashes remain unchanged. All 198 new modules pass strict Lean compilation:
+190 byte-identical shared imports, three documented shared compatibility
+modules and five authored modules, with default proof limits and no
+linter overrides. Reproduction lists 2515 modules. The positive-index
+example, combined transitive axiom audit and 2760 coverage declaration
+checks pass. All 2852 remaining reference import sources agree byte-for-
 byte and were not rebuilt. Earlier receipts remain in the parent commit.
 This is incremental validation, not a full repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 793 additional shared modules:
-17933 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 903 additional shared modules:
+19626 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
