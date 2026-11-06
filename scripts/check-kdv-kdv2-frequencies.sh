@@ -2950,6 +2950,12 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/NativeClosedModeFrequencyIdentification
   NLS/Articles/KdVKdV2Frequencies/NativeAllGapFrequencyMoments
   NLS/Articles/KdVKdV2Frequencies/NativeFreePhysicalFrequencies
+  NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedTruncation
+  NLS/Articles/KdVKdV2Frequencies/NativeFiniteGapApproximation
+  NLS/KdV/HillIntrinsicMomentContinuity
+  NLS/Articles/KdVKdV2Frequencies/NativeSpectralMomentApproximation
+  NLS/KdV/HillHminusMiuraPhysicalNumerators
+  NLS/KdV/HillHminusPhysicalMiuraFrequencySeries
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

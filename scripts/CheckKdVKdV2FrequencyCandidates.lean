@@ -1,3 +1,9 @@
+import NLS.KdV.HillHminusPhysicalMiuraFrequencySeries
+import NLS.Articles.KdVKdV2Frequencies.NativeSpectralMomentApproximation
+import NLS.KdV.HillHminusMiuraPhysicalNumerators
+import NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapApproximation
+import NLS.KdV.HillIntrinsicMomentContinuity
+import NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedTruncation
 import NLS.Articles.KdVKdV2Frequencies.NativeFreePhysicalFrequencies
 import NLS.Articles.KdVKdV2Frequencies.NativeAllGapFrequencyMoments
 import NLS.Articles.KdVKdV2Frequencies.NativeClosedModeFrequencyIdentification
@@ -5080,7 +5086,16 @@ private def kdvFrequencyAuditChunk22 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.NativeDirichletFrequencyContinuity,
   `NLS.Articles.KdVKdV2Frequencies.NativeClosedModeFrequencyIdentification,
   `NLS.Articles.KdVKdV2Frequencies.NativeAllGapFrequencyMoments,
-  `NLS.Articles.KdVKdV2Frequencies.NativeFreePhysicalFrequencies
+  `NLS.Articles.KdVKdV2Frequencies.NativeFreePhysicalFrequencies,
+  `NLS.SequenceSpaces.PhysicalRealMeanZeroWeightedTruncation,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFiniteGapApproximation,
+  `NLS.KdV.HillIntrinsicMomentContinuity
+]
+
+private def kdvFrequencyAuditChunk23 : Array Lean.Name := #[
+  `NLS.Articles.KdVKdV2Frequencies.NativeSpectralMomentApproximation,
+  `NLS.KdV.HillHminusMiuraPhysicalNumerators,
+  `NLS.KdV.HillHminusPhysicalMiuraFrequencySeries
 ]
 
 open Lean in
@@ -5109,7 +5124,8 @@ run_cmd do
     kdvFrequencyAuditChunk19,
     kdvFrequencyAuditChunk20,
     kdvFrequencyAuditChunk21,
-    kdvFrequencyAuditChunk22
+    kdvFrequencyAuditChunk22,
+    kdvFrequencyAuditChunk23
   ].flatten
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
