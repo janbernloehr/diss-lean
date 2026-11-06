@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.UnconditionalContourExtension
 import NLS.Articles.KdVConvexity.GlobalArnoldActionFibers
 import NLS.KdV.HillConstantActionCurves
 import NLS.Articles.KdVConvexity.GlobalArnoldSurjectivity
@@ -100,6 +101,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.SequenceSpaces.PositiveReindex,
+    `NLS.SequenceSpaces.LocalAtlasActionFamilyDescent,
+    `NLS.SequenceSpaces.SignedHilbertPairs,
+    `NLS.ComplexAnalysis.ScalarFamilyTransport,
     `NLS.SequenceSpaces.ModulusFiberInvariance,
     `NLS.SequenceSpaces.SingleCoordinatePhase,
     `NLS.ComplexAnalysis.TwoZeroRootEndpointBound,
