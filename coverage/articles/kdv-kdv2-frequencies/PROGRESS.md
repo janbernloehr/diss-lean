@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest global rough forward map with canonical physical signs
+## Latest full Jacobian units and inverse charts at every real rough base
+
+The SAME global signed map now has FULL actual mean-zero weak Jacobian units at EVERY real mean-zero HminusOne source, including NON-L2 bases. Actual canonical Hamiltonian directions hit every retained target unit vector, giving dense range; its ACTUAL compact principal then gives bijectivity. Exact inclusions transfer this to FULL native Jacobian units at EVERY real native base and EVERY nonnegative Sobolev order. Genuine TWO-SIDED analytic weak and native inverse charts now exist at ALL such bases, with OPEN source/target domains, full raw recovery and exact weak inclusion into THAT SAME global map. See `GLOBAL_ROUGH_JACOBIAN_INVERSE_CHARTS.md`.
+
+Global injectivity/surjectivity/properness and one global rough inverse, cross-order inverse matching, complex-neighborhood canonicality/origin Fourier matching and action-Hamiltonian/frequency/PDE conclusions still require proofs. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2726 unchanged selected baseline sources. All eight newly selected own modules strictly rebuilt in dependency order after freezing 2780 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2734 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2734-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2734-module rebuild is claimed.
+
+Fresh audit: 21352 selected and 43422 imported NLS declarations; permitted axioms only. Eight new own modules contain 16 explicit theorems.
+
+## Earlier global rough forward map with canonical physical signs
 
 Canonical physical signs are now fixed on each ENTIRE rough ball before all indices and orders. The actual oriented packets agree EXACTLY on their ENTIRE complex overlaps and glue to ONE native complex analytic positive and signed forward map on an OPEN conjugation-invariant neighborhood of the ENTIRE real HminusOne space, including non-L2 bases. The SAME global signed map has full literal ORIGINAL physical recovery at EVERY physical source, signed reality and central zero at every real rough source, and genuine native analytic forward germs at EVERY real native base and EVERY nonnegative Sobolev order. Each germ retains its actual Fourier principal plus compact remainder and bounded mean-zero principal equivalence. The FULL original Gardner matrix holds at EVERY real mean-zero rough source, with exact Abelian normalization and agreement with the fixed GLOBAL ORIGINAL L2 Birkhoff map. See `GLOBAL_ROUGH_ABELIAN_FORWARD.md`.
 

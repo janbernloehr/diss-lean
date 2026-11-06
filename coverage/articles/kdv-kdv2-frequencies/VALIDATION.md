@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest global rough forward map with canonical physical signs
+## Latest full Jacobian units and inverse charts at every real rough base
+
+The SAME global signed map now has FULL actual mean-zero weak Jacobian units at EVERY real mean-zero HminusOne source, including NON-L2 bases. Actual canonical Hamiltonian directions hit every retained target unit vector, giving dense range; its ACTUAL compact principal then gives bijectivity. Exact inclusions transfer this to FULL native Jacobian units at EVERY real native base and EVERY nonnegative Sobolev order. Genuine TWO-SIDED analytic weak and native inverse charts now exist at ALL such bases, with OPEN source/target domains, full raw recovery and exact weak inclusion into THAT SAME global map. See `GLOBAL_ROUGH_JACOBIAN_INVERSE_CHARTS.md`.
+
+Global injectivity/surjectivity/properness and one global rough inverse, cross-order inverse matching, complex-neighborhood canonicality/origin Fourier matching and action-Hamiltonian/frequency/PDE conclusions still require proofs. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2726 unchanged selected baseline sources. All eight newly selected own modules strictly rebuilt in dependency order after freezing 2780 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2734 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eight-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2734-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2734-module rebuild is claimed.
+
+Fresh audit: 21352 selected and 43422 imported NLS declarations; permitted axioms only. Eight new own modules contain 16 explicit theorems.
+
+## Earlier global rough forward map with canonical physical signs
 
 Canonical physical signs are now fixed on each ENTIRE rough ball before all indices and orders. The actual oriented packets agree EXACTLY on their ENTIRE complex overlaps and glue to ONE native complex analytic positive and signed forward map on an OPEN conjugation-invariant neighborhood of the ENTIRE real HminusOne space, including non-L2 bases. The SAME global signed map has full literal ORIGINAL physical recovery at EVERY physical source, signed reality and central zero at every real rough source, and genuine native analytic forward germs at EVERY real native base and EVERY nonnegative Sobolev order. Each germ retains its actual Fourier principal plus compact remainder and bounded mean-zero principal equivalence. The FULL original Gardner matrix holds at EVERY real mean-zero rough source, with exact Abelian normalization and agreement with the fixed GLOBAL ORIGINAL L2 Birkhoff map. See `GLOBAL_ROUGH_ABELIAN_FORWARD.md`.
 
@@ -800,7 +810,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2726 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2734 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1869,7 +1879,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2726 selected modules (including generated and private declarations)
+the 2734 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4815,4 +4825,18 @@ PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianNativeGerms
 PASS NLS/KdV/HillRoughAbelianGardnerOn
 PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianCanonical
 Axiom audit passed: 21319 candidate declarations; 43387 declarations total.
+```
+
+Latest global rough Jacobian units and inverse charts strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/DeletedDenseRange
+PASS NLS/FunctionalAnalysis/CompactEquivDenseRange
+PASS NLS/KdV/HillRoughAbelianHamiltonianRange
+PASS NLS/SequenceSpaces/MeanZeroSobolevIdentities
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianWeakJacobian
+PASS NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseNativeJacobianUnit
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianNativeJacobian
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInverseCharts
+Axiom audit passed: 21352 candidate declarations; 43422 declarations total.
 ```

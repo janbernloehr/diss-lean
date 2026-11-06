@@ -1,3 +1,11 @@
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseCharts
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianNativeJacobian
+import NLS.SequenceSpaces.MeanZeroSobolevIdentities
+import NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseNativeJacobianUnit
+import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianWeakJacobian
+import NLS.KdV.HillRoughAbelianHamiltonianRange
+import NLS.SequenceSpaces.DeletedDenseRange
+import NLS.FunctionalAnalysis.CompactEquivDenseRange
 import NLS.KdV.HillRoughAbelianGardnerOn
 import NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianCanonical
 import NLS.KdV.HillAbelianSignedPhysicalValues
@@ -4647,7 +4655,15 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.KdV.HillAbelianSignedPhysicalValues,
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianNativeGerms,
   `NLS.KdV.HillRoughAbelianGardnerOn,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianCanonical
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianCanonical,
+  `NLS.SequenceSpaces.DeletedDenseRange,
+  `NLS.FunctionalAnalysis.CompactEquivDenseRange,
+  `NLS.KdV.HillRoughAbelianHamiltonianRange,
+  `NLS.SequenceSpaces.MeanZeroSobolevIdentities,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianWeakJacobian,
+  `NLS.Articles.KdVKdV2Frequencies.ArbitraryBaseNativeJacobianUnit,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianNativeJacobian,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseCharts
 ]
 
 open Lean in

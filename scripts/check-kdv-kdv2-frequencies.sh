@@ -2735,6 +2735,14 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianNativeGerms
   NLS/KdV/HillRoughAbelianGardnerOn
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianCanonical
+  NLS/SequenceSpaces/DeletedDenseRange
+  NLS/FunctionalAnalysis/CompactEquivDenseRange
+  NLS/KdV/HillRoughAbelianHamiltonianRange
+  NLS/SequenceSpaces/MeanZeroSobolevIdentities
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianWeakJacobian
+  NLS/Articles/KdVKdV2Frequencies/ArbitraryBaseNativeJacobianUnit
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianNativeJacobian
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInverseCharts
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
