@@ -6629,3 +6629,6 @@ import NLS.KdV.PseudomeasureWideAnalyticCoefficients
 import NLS.Articles.KdVPseudomeasures.SourceThresholdNumerics
 import NLS.Articles.KdVPseudomeasures.SourceLemma216
 import NLS.Articles.KdVPseudomeasures.SourceLemma217
+import NLS.KdV.PseudomeasureSharpTailWeights
+import NLS.KdV.PseudomeasureSharpTailGaps
+import NLS.Articles.KdVPseudomeasures.SourceLemma212

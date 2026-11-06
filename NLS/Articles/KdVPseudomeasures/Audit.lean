@@ -2024,6 +2024,9 @@ import NLS.KdV.PseudomeasureWideAnalyticCoefficients
 import NLS.Articles.KdVPseudomeasures.SourceThresholdNumerics
 import NLS.Articles.KdVPseudomeasures.SourceLemma216
 import NLS.Articles.KdVPseudomeasures.SourceLemma217
+import NLS.KdV.PseudomeasureSharpTailWeights
+import NLS.KdV.PseudomeasureSharpTailGaps
+import NLS.Articles.KdVPseudomeasures.SourceLemma212
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11860,3 +11863,9 @@ import NLS.Articles.KdVPseudomeasures.SourceLemma217
 #print axioms NLS.Articles.KdVPseudomeasures.source_threshold35_radius
 #print axioms NLS.Articles.KdVPseudomeasures.source_threshold35_source_small
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_17_threshold35
+#print axioms NLS.KdV.negativeSobolev_mode_le_sqrt_two_double
+#print axioms NLS.KdV.negativeSobolev_fourierTail_coefficient
+#print axioms NLS.KdV.wideEndpointCouplings_tail_le
+#print axioms NLS.KdV.EndpointHillComplexPair.sharp_tail_gap_le
+#print axioms NLS.Articles.KdVPseudomeasures.source_weighted_gap_tail_point
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_12

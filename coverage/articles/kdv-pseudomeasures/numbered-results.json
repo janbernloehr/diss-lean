@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 37,
+    "proved": 38,
     "proved_corrected": 5,
-    "partial": 10,
+    "partial": 9,
     "not_found": 2
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -287,18 +287,24 @@
       "label": "Lemma 2.12",
       "line": 948,
       "statement": "Lemma 2.12 If q ∈ Fℓw,s,∞\n                    0,C   with w ∈ M and −1/2 < s ⩽ 0, then for any\nN ⩾ ns ,\n                                                      16cs       2\n        kTN γ(q)kw,s,∞ ⩽ 4kTN qkw,s,∞ +                       kqkw,s,∞ .   ⋊",
-      "status": "partial",
-      "comparison": "Weighted gap membership and uniform quantitative tail bounds exist; the literal displayed 4 and 16*c_s tail inequality for all complex weights and all N >= n_s is not separately verified.",
+      "status": "proved",
+      "comparison": "The literal original canonical complex-gap tail satisfies norm(R_N gamma)<=4*norm(R_N q)+16*c_s/N^(1/2-|s|)*norm(q)^2 for every N above one uniform source norm-ball cutoff. Arbitrary weights, the original infinity norm, the included |k|=N boundary, and the actual lexicographic physical eigenvalues are retained. One common cutoff also gives the printed-strip contraction and canonical labeling; no coarser gap bound is substituted.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean",
-        "NLS/Articles/KdVPseudomeasures/SpectralComplexGaps.lean"
+        "NLS/KdV/PseudomeasureSharpTailWeights.lean",
+        "NLS/KdV/PseudomeasureSharpTailGaps.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma212.lean"
       ],
-      "declarations": [],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_12",
+        "NLS.Articles.KdVPseudomeasures.source_weighted_gap_tail_point",
+        "NLS.KdV.EndpointHillComplexPair.sharp_tail_gap_le"
+      ],
       "source_page": 15,
       "statement_sha256": "fb9e670c94f4525f3f56272af4150d34742e8b4f43a59ce088e577f0584b436d",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean": "ab15c771dfb57907c97b997ccc61dc9650e41c07a2298991e724cc7cc88edebd",
-        "NLS/Articles/KdVPseudomeasures/SpectralComplexGaps.lean": "b93f1ab0a8d80b6cb090649d47a95601ecc2500135ecdea15dcf3999c88c9de3"
+        "NLS/KdV/PseudomeasureSharpTailWeights.lean": "2cb1440cb3b65d853f8ee3a204002d35898358dd9b568d60d614ad2a7924da23",
+        "NLS/KdV/PseudomeasureSharpTailGaps.lean": "d483c163664d5dad64120767cb2bcdf338b48d2b0304c1e9b97989bfc60fce53",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma212.lean": "7ed17661b89fc8c8d471d8bf43c619e82e9a2a5a5a6911edf1747577758374f6"
       }
     },
     {
@@ -1059,12 +1065,13 @@
       "line": 399,
       "statement": "Remark 2.3. For any −1/2 < s ⩽ 0, there are potentials q ∈ Fℓs,∞ so that\nIso(q) is not compact in Fℓs,∞ – see item (iii) in Lemma 3.5. ⊸",
       "status": "not_found",
-      "comparison": "Existence of endpoint potentials whose gap sequence fails the corresponding weighted ell-two condition requires an explicit example.",
+      "comparison": "The source asserts existence, for each endpoint order, of a potential with a strongly noncompact isospectral set. It requires an explicit non-c0 action-torus example and transfer through the endpoint Birkhoff map; the earlier weighted ell-two comparison was unrelated to this remark.",
       "providers": [],
       "declarations": [],
       "source_page": 7,
       "statement_sha256": "61d3036cd38093aa77727c7a4d4d6e5ebed78a253f8a7dc08236efee92fcb331",
-      "provider_sha256": {}
+      "provider_sha256": {},
+      "source_analysis_correction": "Retract the prior comparison requiring a gap sequence outside weighted ell-two. The literal remark concerns noncompactness of the isospectral set in the strong endpoint infinity norm."
     },
     {
       "label": "Remark 2.6",
