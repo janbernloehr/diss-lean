@@ -2031,6 +2031,13 @@ import NLS.SequenceSpaces.FourierRealTorusNoncompact
 import NLS.SequenceSpaces.FourierRealTorusExample
 import NLS.Articles.KdVPseudomeasures.SourceNoncompactTori
 import NLS.Articles.KdVPseudomeasures.SourceRemark15
+import NLS.SequenceSpaces.FourierRealPhaseNoncontinuity
+import NLS.SequenceSpaces.FourierRealC0Generic
+import NLS.FunctionalAnalysis.AnalyticInverseChart
+import NLS.Articles.KdVPseudomeasures.SourceFrequencyDivergence
+import NLS.Articles.KdVPseudomeasures.SourceStrongFlowObstruction
+import NLS.Articles.KdVPseudomeasures.SourceAiryFlowGeneric
+import NLS.Articles.KdVPseudomeasures.SourceRemark12
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11891,3 +11898,26 @@ import NLS.Articles.KdVPseudomeasures.SourceRemark15
 #print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_5_torus
 #print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_5_topologies
 #print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_5
+#print axioms NLS.WeightedCoeff.positiveWeightedC0_of_continuous_phases
+#print axioms NLS.WeightedCoeff.positiveWeightedC0_of_continuous_positive_phases
+#print axioms NLS.WeightedCoeff.positiveWeightedC0_iff_tendsto
+#print axioms NLS.WeightedCoeff.positiveWeightedC0Submodule
+#print axioms NLS.WeightedCoeff.fourierReal_weighted_norm_sub_le_dist
+#print axioms NLS.WeightedCoeff.isClosed_positiveWeightedC0Submodule
+#print axioms NLS.WeightedCoeff.isOpen_not_positiveWeightedC0
+#print axioms NLS.WeightedCoeff.dense_not_positiveWeightedC0
+#print axioms NLS.FunctionalAnalysis.exists_openPartialHomeomorph_of_equiv_fderiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_tendsto_atTop
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_native_coefficient
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_flow_positive
+#print axioms NLS.Articles.KdVPseudomeasures.sourceKdV_not_continuousAt_norm_of_not_c0
+#print axioms NLS.Articles.KdVPseudomeasures.exists_sourceKdV_not_continuousAt_norm
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAiryFrequency
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAiryFrequency_neg
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAiryFlow
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAiryFlow_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAiryFrequency_tendsto
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAiry_not_continuousAt_norm_of_not_c0
+#print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_2_Airy
+#print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_2_KdV
+#print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_2

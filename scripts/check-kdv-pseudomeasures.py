@@ -2065,6 +2065,13 @@ modules = [
     'NLS.SequenceSpaces.FourierRealTorusExample',
     'NLS.Articles.KdVPseudomeasures.SourceNoncompactTori',
     'NLS.Articles.KdVPseudomeasures.SourceRemark15',
+    'NLS.SequenceSpaces.FourierRealPhaseNoncontinuity',
+    'NLS.SequenceSpaces.FourierRealC0Generic',
+    'NLS.FunctionalAnalysis.AnalyticInverseChart',
+    'NLS.Articles.KdVPseudomeasures.SourceFrequencyDivergence',
+    'NLS.Articles.KdVPseudomeasures.SourceStrongFlowObstruction',
+    'NLS.Articles.KdVPseudomeasures.SourceAiryFlowGeneric',
+    'NLS.Articles.KdVPseudomeasures.SourceRemark12',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

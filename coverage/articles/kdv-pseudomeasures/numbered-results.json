@@ -10,10 +10,10 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 40,
+    "proved": 41,
     "proved_corrected": 6,
     "partial": 7,
-    "not_found": 1
+    "not_found": 0
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
   "results": [
@@ -1046,13 +1046,36 @@
       "label": "Remark 1.2",
       "line": 92,
       "statement": "Remark 1.2. It is easy to see that for generic initial data, the solution curve\nt 7→ SAiry (t, q) of the Airy equation, ∂t u = −∂x3 u, is not continuous with respect\nto the norm topology of Fℓs,∞ 0  . A similar result holds true for the KdV equation\nat least for small initial data – see Section 4. ⊸",
-      "status": "not_found",
-      "comparison": "Generic failure of strong norm continuity of solution curves; not inferred from weak-star wellposedness.",
-      "providers": [],
-      "declarations": [],
+      "status": "proved",
+      "comparison": "Full generic assertion: Airy strong norm discontinuity at t=0 holds on an open dense subset of the original endpoint physical source. KdV strong norm discontinuity holds on an open dense subset of an original norm-open neighborhood of zero, via the actual local Birkhoff chart. A proper closed real weighted-c0 subspace proves genericity. Divergence of the genuine rough KdV frequencies follows from the existing O(n) remainder against the cubic leading term; no unproved Lemma 3.9 uniform o(1) is assumed. The Airy flow has the exact free physical Fourier phases (2*pi*k)^3.",
+      "providers": [
+        "NLS/SequenceSpaces/FourierRealPhaseNoncontinuity.lean",
+        "NLS/SequenceSpaces/FourierRealC0Generic.lean",
+        "NLS/FunctionalAnalysis/AnalyticInverseChart.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceFrequencyDivergence.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceStrongFlowObstruction.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceAiryFlowGeneric.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceRemark12.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceRemark1_2",
+        "NLS.Articles.KdVPseudomeasures.sourceRemark1_2_Airy",
+        "NLS.Articles.KdVPseudomeasures.sourceRemark1_2_KdV",
+        "NLS.Articles.KdVPseudomeasures.sourceKdV_not_continuousAt_norm_of_not_c0",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_tendsto_atTop",
+        "NLS.WeightedCoeff.dense_not_positiveWeightedC0"
+      ],
       "source_page": 2,
       "statement_sha256": "b009a3ebf698671a39d3271a3af25fdbf8098fca1299d6bfa480d3d981ad8ef4",
-      "provider_sha256": {}
+      "provider_sha256": {
+        "NLS/SequenceSpaces/FourierRealPhaseNoncontinuity.lean": "1c6ece94ff37e4647aedb0c965b5c4f6618b1ec92fbaae1f081fe682bf36ff96",
+        "NLS/SequenceSpaces/FourierRealC0Generic.lean": "0b5b5dc7c26d551684b06378bc4b6a692d00c10b5af13e2899b05320eba3611c",
+        "NLS/FunctionalAnalysis/AnalyticInverseChart.lean": "dcfd9458a80010545d6c49c3338d013a4e2cbd2d5639ba6594d25a6ec3caaba2",
+        "NLS/Articles/KdVPseudomeasures/SourceFrequencyDivergence.lean": "fdb272ada8c4a859a856706c14e3a6f4ba9875e3ae68cd40362459079104014f",
+        "NLS/Articles/KdVPseudomeasures/SourceStrongFlowObstruction.lean": "af1a2264bb39d7c1d54991723841a6114913655a3158a41de8b5096a29db0913",
+        "NLS/Articles/KdVPseudomeasures/SourceAiryFlowGeneric.lean": "a1ceca2590cb329c5f36b19e0d41d9802ad0a7edb8774302587df8a0abf3b099",
+        "NLS/Articles/KdVPseudomeasures/SourceRemark12.lean": "2e8946c3508c1398e859979cca8234aded552d7a71be2c0326f2bda2834fe0ca"
+      }
     },
     {
       "label": "Remark 1.5",

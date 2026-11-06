@@ -22,7 +22,9 @@ labels={f'{kind} {n}' for kind,ns in expected.items() for n in ns}
 rows=d['results'];assert len(rows)==len(labels)==54
 assert {r['label'] for r in rows}==labels
 assert d['formal_results']==48 and d['remarks']==6 and d['total_numbered_results']==54
-assert d['status_counts']==dict(collections.Counter(r['status'] for r in rows))
+actual_counts = collections.Counter(r['status'] for r in rows)
+assert all(d['status_counts'].get(k, 0) == actual_counts.get(k, 0)
+           for k in set(d['status_counts']) | set(actual_counts))
 assert not d['complete_numbered_result_proof_coverage'] or all(r['status'] in {'proved','proved_corrected'} for r in rows)
 pages=a.paper_text.read_text().split('\f')
 api=set(re.findall(r'^#print axioms (\S+)',Path('NLS/Articles/KdVPseudomeasures/Audit.lean').read_text(),re.M))

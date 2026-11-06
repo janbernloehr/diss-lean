@@ -6636,3 +6636,10 @@ import NLS.SequenceSpaces.FourierRealTorusNoncompact
 import NLS.SequenceSpaces.FourierRealTorusExample
 import NLS.Articles.KdVPseudomeasures.SourceNoncompactTori
 import NLS.Articles.KdVPseudomeasures.SourceRemark15
+import NLS.SequenceSpaces.FourierRealPhaseNoncontinuity
+import NLS.SequenceSpaces.FourierRealC0Generic
+import NLS.FunctionalAnalysis.AnalyticInverseChart
+import NLS.Articles.KdVPseudomeasures.SourceFrequencyDivergence
+import NLS.Articles.KdVPseudomeasures.SourceStrongFlowObstruction
+import NLS.Articles.KdVPseudomeasures.SourceAiryFlowGeneric
+import NLS.Articles.KdVPseudomeasures.SourceRemark12
