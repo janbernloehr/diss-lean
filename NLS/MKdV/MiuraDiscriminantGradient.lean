@@ -43,7 +43,7 @@ theorem miuraHillDiscriminantGradient_bracket_eq_energy_first
     B.energyGradient.bracket (miuraHillDiscriminantGradient a E) =
       4*E*(∫ x in (0 : ℝ)..1,
         extend (hillDirichletGradientCurve (realSobolevMiuraHillPotential a ha) n hn) x*
-        extend (hillDiscriminantGradientSpatialCurve (sobolevMiuraHillPotential a) E) x) := by
+        extend (hillEnergyTraceGradientSpatialCurve (sobolevMiuraHillPotential a) E) x) := by
   rw [miuraHillDiscriminantGradient_bracket a ha n hn B E,
     hillDirichletDiscriminantMagriBracket_eq_energy_first,realSobolevMiuraHillPotential_toCoeff]
 

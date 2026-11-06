@@ -20,7 +20,7 @@ theorem HillRealHighGapPair.trace_parity
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) :
     hillL2Discriminant (SpectralWeight.one.toCoeff q) p.left = 2*(-1 : ℂ)^n ∧
     hillL2Discriminant (SpectralWeight.one.toCoeff q) p.right = 2*(-1 : ℂ)^n := by
@@ -33,7 +33,7 @@ theorem HillL2NormalizedCutPrimitive.endpoint_normalization
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F) :
@@ -47,7 +47,7 @@ theorem HillL2NormalizedCutPrimitive.endpoint_normalization
   have hparity := p.trace_parity q hq hreal n hn hcut
   have hphase := h.real_band_phases q hq hreal n hn1 hcut p R F
   have hmem := p.real_band_domain q hq n hn1 hcut
-  have hloc := p.localization q hq n hn1 (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n hn1 hcut
   have hl := abs_le.mp hloc.1
   have hr := abs_le.mp hloc.2
   let U := ball (freeHillValue n : ℂ) (7*(n : ℝ)/8) \ segment ℝ (p.left : ℂ) p.right
@@ -101,7 +101,7 @@ theorem HillL2NormalizedCutPrimitive.shifted_endpoint_normalization
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F) :

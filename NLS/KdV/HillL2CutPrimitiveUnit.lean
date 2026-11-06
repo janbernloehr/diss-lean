@@ -18,7 +18,7 @@ theorem HillL2NormalizedCutPrimitive.exists_unit_root
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F) :
@@ -50,7 +50,7 @@ theorem HillL2NormalizedCutPrimitive.exists_unit_root
     rcases (h.square_zero_iff q hq hreal n hn hcut p hopen R F z hz.1).mp hx with he | he
     · exact hz.2 (he ▸ left_mem_segment ℝ _ _)
     · exact hz.2 (he ▸ right_mem_segment ℝ _ _)
-  have hloc := p.localization q hq n (by omega) (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n (by omega) hcut
   have hl : (p.left : ℂ) ∈ Ω := by
     rw [mem_ball,dist_eq_norm,← ofReal_sub,norm_real,Real.norm_eq_abs]
     linarith [hloc.1]

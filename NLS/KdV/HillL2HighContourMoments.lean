@@ -24,7 +24,7 @@ def hillL2HighContourMoment (n m : ℕ) (q : Coeff 2) : ℂ :=
 theorem analyticAt_hillL2HighContourMoment
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
     AnalyticAt ℂ (hillL2HighContourMoment n m) (SpectralWeight.one.toCoeff q) := by
   obtain ⟨V,_,hqV,ha⟩ := hillL2SourceFamily.exists_analytic_contourMoment
     (freeHillValue n : ℂ) (n : ℝ) (by positivity) (SpectralWeight.one.toCoeff q)
@@ -40,7 +40,7 @@ theorem analyticAt_hillL2HighContourMoment
 theorem hillL2HighContourMoment_arnold_level
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
     hillL2HighContourMoment n m (SpectralWeight.one.toCoeff q) =
       ((m+1 : ℂ)*(Real.pi : ℂ))⁻¹ * ∮ z in C((freeHillValue n : ℂ),(n : ℝ)),
         z^(m+1)*deriv (hillL2Discriminant (SpectralWeight.one.toCoeff q)) z /
@@ -53,7 +53,7 @@ integrand and normalization on the whole checked high circle. -/
 theorem hillL2HighContourMoment_arnold
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     hillL2HighContourMoment n 0 (SpectralWeight.one.toCoeff q) =
       (Real.pi : ℂ)⁻¹ * ∮ z in C((freeHillValue n : ℂ),(n : ℝ)),
         z*deriv (hillL2Discriminant (SpectralWeight.one.toCoeff q)) z /

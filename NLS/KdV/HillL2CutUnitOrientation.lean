@@ -20,7 +20,7 @@ theorem HillL2NormalizedCutPrimitive.unit_root_real_sign
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F)
@@ -37,7 +37,7 @@ theorem HillL2NormalizedCutPrimitive.unit_root_real_sign
   let S := Ioo (freeHillValue n-7*(n : ℝ)/8) (freeHillValue n+7*(n : ℝ)/8)
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
   have hab : p.left < p.right := lt_of_le_of_ne p.ordered hopen
-  have hloc := p.localization q hq n (by omega) (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n (by omega) hcut
   have hl := abs_le.mp hloc.1
   have hr := abs_le.mp hloc.2
   have hmem (x : ℝ) : x ∈ S ↔ (x : ℂ) ∈ Ω := by

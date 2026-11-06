@@ -18,7 +18,7 @@ namespace NLS.MKdV
 def miuraDirichletTraceKernel (a : ScalarDomain 2) (ha : ∀ j,a.val j = conj (a.val (-j)))
     (m : ℕ) (hm : 1 ≤ m) (z : ℂ) : ℂ :=
   z*(∫ x in (0 : ℝ)..1,extend (hillDirichletGradientCurve (realSobolevMiuraHillPotential a ha) m hm) x*
-    extend (hillDiscriminantGradientSpatialCurve (sobolevMiuraHillPotential a) (z^2)) x)/
+    extend (hillEnergyTraceGradientSpatialCurve (sobolevMiuraHillPotential a) (z^2)) x)/
       sourceCanonicalRoot (by simp) (by norm_num) (sobolevSourceInclusion (a,a)) z
 
 theorem analyticAt_miuraDirichletTraceKernel (a : ScalarDomain 2)
@@ -88,7 +88,7 @@ theorem miuraSupportedAbelian_original_action_circle_contraction (a : ScalarDoma
     calc
       _ = z/R z*(∑ k ∈ F,ψ (hillDirichletEnergies q k)*
           (∫ x in (0 : ℝ)..1,extend (hillDirichletGradientCurve q (k+1) (by omega)) x*
-            extend (hillDiscriminantGradientSpatialCurve (sobolevMiuraHillPotential a) (z^2)) x)/
+            extend (hillEnergyTraceGradientSpatialCurve (sobolevMiuraHillPotential a) (z^2)) x)/
               hillDirichletSheetRoot (sobolevMiuraHillPotential a) (hillDirichletEnergies q k)) := by
         rw [Finset.mul_sum]
         apply Finset.sum_congr rfl

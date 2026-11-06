@@ -71,7 +71,7 @@ theorem hillL2HighContourMoment_im_eq_zero
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
     (hillL2HighContourMoment n m (SpectralWeight.one.toCoeff q)).im = 0 :=
   hillL2CircleMoment_im_eq_zero _ hreal (freeHillValue n) (n : ℝ)
     (by exact_mod_cast (show 0 < n by omega))

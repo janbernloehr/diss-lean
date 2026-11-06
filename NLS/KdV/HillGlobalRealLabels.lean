@@ -43,17 +43,14 @@ theorem HillRealHighGapPair.separated
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (n m : ℕ) (hn : 1 ≤ n) (hnm : n < m)
-    (hcn : 16*‖q‖ ≤ (n : ℝ)) (hcm : 8*‖q‖ ≤ (m : ℝ))
+    (hcn : 8*‖q‖ ≤ (n : ℝ)) (hcm : 8*‖q‖ ≤ (m : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n)
     (r : HillRealHighGapPair (SpectralWeight.one.toCoeff q) m) : p.right < r.left := by
   have hp := (p.localization q hq n hn (by linarith [norm_nonneg q])).2
   have hr := (r.localization q hq m (by omega) hcm).1
-  have hz : (freeHillValue n : ℂ) ∈ reducedHillStrip n := by
-    simp [reducedHillStrip]
-  have hs := freeHill_denominator_ge_index hn hz (k := (m : ℤ)) (by simpa using ne_of_gt hnm)
+  have hs := index_lt_freeHillValue_gap hn (k := (m : ℤ)) (by simpa using ne_of_gt hnm)
   have hmon := (strictMono_freeHillValue hnm).le
-  rw [← Complex.ofReal_sub, Complex.norm_real, Real.norm_eq_abs,
-    abs_of_nonpos (sub_nonpos.mpr hmon)] at hs
+  rw [abs_of_nonpos (sub_nonpos.mpr hmon)] at hs
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
   linarith [(abs_le.mp hp).2, (abs_le.mp hr).1]
 
@@ -64,7 +61,7 @@ theorem exists_hillRealCharacteristicLabels
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ)) :
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ)) :
     ∃ lambda : ℕ → ℝ, Monotone lambda ∧
       (∀ z : ℂ, hillL2Radicand (SpectralWeight.one.toCoeff q) z = 0 ↔
         ∃ j : ℕ, z = (lambda j : ℂ)) ∧

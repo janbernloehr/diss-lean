@@ -100,7 +100,7 @@ theorem hillL2HighContourMoment_eq_realContourMoment
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16 * ‖q‖ ≤ (n : ℝ)) (m : ℕ) :
+    (hcut : 8 * ‖q‖ ≤ (n : ℝ)) (m : ℕ) :
     hillL2HighContourMoment n m (SpectralWeight.one.toCoeff q) = hillL2RealContourMoment q hq hr n m := by
   rw [hillL2HighContourMoment_eq_gapIntegral q hq hr n hn hcut,
     hillL2RealContourMoment_eq_gapIntegral q hq hr n (by omega)]

@@ -1,3 +1,4 @@
+import NLS.MKdV.MiuraHillPhysicalTraceComparison
 import NLS.MKdV.NativeMiuraHillHamiltonian
 import NLS.MKdV.PhysicalHillDiscriminant
 import NLS.MKdV.QuasiHillZSComparison
@@ -14,18 +15,6 @@ noncomputable section
 open Complex NLS.LinearVolterra NLS.ZakharovShabat
 open scoped ContDiff
 namespace NLS.MKdV
-
-def miuraProfileCurve (f : ℝ → ℂ) (hf : Continuous f) : Curve ℂ :=
-  ⟨fun t => f t,hf.comp continuous_subtype_val⟩
-
-theorem physicalMiuraDiscriminant_profile_eq_ZS (f : ℝ → ℂ) (hf : Continuous f)
-    (hp : Function.Periodic f 1) (z : ℂ) :
-    physicalMiuraDiscriminant (miuraProfileCurve f hf) (z^2) =
-      classicalDiscriminant (classicalPotentialOfFunctions f f hf hf) z := by
-  rw [physicalMiuraDiscriminant_eq_quasiHill _ (by
-    change f 1 = f 0
-    simpa only [zero_add] using hp 0)]
-  exact quasiHillDiscriminant_eq_ZS _ _ (fun _ => rfl) z
 
 def miuraHillHamiltonianPhase (f : ℝ → ℂ) (N : ℕ) (z : ℂ) : ℂ :=
   -I*z+∑ j ∈ Finset.range N, I*(2*classicalMiuraHillHamiltonian f (j+1))/(2*z)^(2*j+1)

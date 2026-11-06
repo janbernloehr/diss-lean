@@ -12,10 +12,10 @@ theorem hillRealLabels_high_left_ge
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     (Real.pi^2-1)*(n : ℝ)^2 ≤ hillRealLabels q hq hr (2*n-1) := by
   obtain ⟨p,hL,_⟩ := hillRealLabels_high_pair q hq hr n hn hcut
-  have hloc := abs_le.mp (p.localization q hq n (by omega) (by linarith [norm_nonneg q])).1
+  have hloc := abs_le.mp (p.localization q hq n (by omega) hcut).1
   have hnR : (2 : ℝ) ≤ n := by exact_mod_cast hn
   rw [hL]
   dsimp only [freeHillValue] at hloc
@@ -26,7 +26,7 @@ theorem hillRealGapIntegral_high_power_lower
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
     (Real.pi^2-1)^m*(n : ℝ)^(2*m)*hillRealGapIntegral q hq hr n 0 ≤
       hillRealGapIntegral q hq hr n m := by
   have hL := hillRealLabels_high_left_ge q hq hr n hn hcut
@@ -43,9 +43,9 @@ theorem hillRealLabels_central_abs_le
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ)) (j : ℕ) (hj : j ≤ 2*N) :
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ)) (j : ℕ) (hj : j ≤ 2*N) :
     |hillRealLabels q hq hr j| ≤ (Real.pi^2+1)*(N : ℝ)^2 := by
-  have hlo := (hillLowestEnergy_mem_centralInterval q hq hr N hN (by linarith [norm_nonneg q])).1
+  have hlo := (hillLowestEnergy_mem_centralInterval q hq hr N hN hcut).1
   have hmono := monotone_hillRealLabels q hq hr
   have hlow := hmono (Nat.zero_le j)
   have hhigh := (hmono hj).trans (hillRealLabels_high_right_le q hq hr N hN hcut)
@@ -56,7 +56,7 @@ theorem hillRealGapIntegral_central_abs_bound
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ))
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ))
     (n : ℕ) (hn : 1 ≤ n) (hnN : n ≤ N) (m : ℕ) :
     |hillRealGapIntegral q hq hr n m| ≤
       ((Real.pi^2+1)*(N : ℝ)^2)^m*hillRealGapIntegral q hq hr n 0 := by

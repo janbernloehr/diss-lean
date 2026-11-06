@@ -19,7 +19,7 @@ theorem HillL2NormalizedCutPrimitive.gap_boundary_values
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F)
@@ -35,7 +35,7 @@ theorem HillL2NormalizedCutPrimitive.gap_boundary_values
   let Ω := ball (freeHillValue n : ℂ) (7*(n : ℝ)/8)
   obtain ⟨H,hH,hHsq,hmatch⟩ := h.exists_unit_root q hq hreal n hn hcut p hopen R F
   have hHsign := h.unit_root_real_sign q hq hreal n hn hcut p hopen R F H hH hHsq hmatch
-  have hloc := p.localization q hq n (by omega) (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n (by omega) hcut
   have hxΩ : (x : ℂ) ∈ Ω := by
     rw [mem_ball,dist_eq_norm,← ofReal_sub,norm_real,Real.norm_eq_abs,abs_lt]
     constructor <;> linarith [hx.1,hx.2,(abs_le.mp hloc.1).1,(abs_le.mp hloc.2).2]
@@ -113,7 +113,7 @@ theorem HillL2NormalizedCutPrimitive.gap_vertical_jump
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F)

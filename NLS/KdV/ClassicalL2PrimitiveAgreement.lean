@@ -97,7 +97,7 @@ theorem hillL2ContinuedPrimitive_eq_classical (Q : C(AddCircle (2 : ℝ), ℂ)) 
 theorem hillL2HighContourMoment_zero_eq_classicalPrimitiveAction
     (Q : C(AddCircle (2 : ℝ), ℂ))
     (hQ : Function.Periodic (fun x : ℝ => Q (x : AddCircle (2 : ℝ))) 1)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖hillContinuousCoefficients Q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖hillContinuousCoefficients Q‖ ≤ (n : ℝ)) :
     hillL2HighContourMoment n 0 (SpectralWeight.one.toCoeff (hillContinuousCoefficients Q)) =
       primitiveAction (fun z => classicalHillContinuedPrimitive (z,hillUnitPotentialCurve Q))
         (freeHillValue n : ℂ) (n : ℝ) := by
@@ -115,7 +115,7 @@ normalization F_n=F+i*n*pi, with its factor -1/pi unchanged. -/
 theorem hillL2HighContourMoment_zero_eq_shifted_classicalPrimitiveAction
     (Q : C(AddCircle (2 : ℝ), ℂ))
     (hQ : Function.Periodic (fun x : ℝ => Q (x : AddCircle (2 : ℝ))) 1)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖hillContinuousCoefficients Q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖hillContinuousCoefficients Q‖ ≤ (n : ℝ)) :
     hillL2HighContourMoment n 0 (SpectralWeight.one.toCoeff (hillContinuousCoefficients Q)) =
       primitiveAction (fun z => classicalHillContinuedPrimitive (z,hillUnitPotentialCurve Q)+I*(n : ℂ)*Real.pi)
         (freeHillValue n : ℂ) (n : ℝ) := by

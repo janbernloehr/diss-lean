@@ -17,7 +17,7 @@ namespace NLS.KdV
 theorem hillL2Continuation_high_annulus
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (r R : ℝ) (hr : 4*‖q‖ < r) (hR : R ≤ (n : ℝ))
     (z : ℂ) (hz : z ∈ closedBall (freeHillValue n : ℂ) R \ ball (freeHillValue n : ℂ) r) :
     (z,SpectralWeight.one.toCoeff q) ∈ hillL2ContinuationDomain := by
@@ -29,7 +29,7 @@ theorem hillL2Continuation_high_annulus
 theorem hillL2HighContourMoment_eq_radius
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (r : ℝ) (hr : 4*‖q‖ < r) (hrn : r ≤ (n : ℝ)) (m : ℕ) :
     hillL2HighContourMoment n m (SpectralWeight.one.toCoeff q) =
       -(Real.pi : ℂ)⁻¹ * ∮ z in C((freeHillValue n : ℂ),r),
@@ -41,7 +41,7 @@ theorem hillL2HighContourMoment_eq_radius
 theorem hillL2HighContourMoment_arnold_radius
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (r : ℝ) (hr : 4*‖q‖ < r) (hrn : r ≤ (n : ℝ)) (m : ℕ) :
     hillL2HighContourMoment n m (SpectralWeight.one.toCoeff q) =
       ((m+1 : ℂ)*(Real.pi : ℂ))⁻¹ * ∮ z in C((freeHillValue n : ℂ),r),
@@ -57,7 +57,7 @@ theorem hillL2HighContourMoment_arnold_radius
 theorem hillL2Continued_period_eq_zero_radius
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (r : ℝ) (hr : 4*‖q‖ < r) (hrn : r ≤ (n : ℝ)) :
     (∮ z in C((freeHillValue n : ℂ),r),
       deriv (hillL2Discriminant (SpectralWeight.one.toCoeff q)) z /

@@ -32,7 +32,7 @@ theorem memlp_hillGapRootScaledOffset
     · rw [if_pos hmp,Coeff.positivePuncturedLattice_apply,if_pos hmp]
       have hmcut : hillRealLabelCutoff q ≤ m.toNat := by omega
       have hmtwo : 2 ≤ m.toNat := (hillRealLabelCutoff_ge_two q).trans hmcut
-      have hmbound : 16*‖q‖ ≤ (m.toNat : ℝ) := (hillRealLabelCutoff_bound q).trans
+      have hmbound : 8*‖q‖ ≤ (m.toNat : ℝ) := (hillRealLabelCutoff_bound q).trans
         (by exact_mod_cast hmcut)
       have hloc := hillGapRoot_high_localization q hq hr σ hσ m.toNat hmtwo hmbound
       rw [norm_div,norm_real,Real.norm_eq_abs,norm_inv,div_eq_mul_inv]

@@ -20,7 +20,7 @@ theorem exists_hillRealGapIntegral_local_quadratic_tail_bound (q : Coeff 2) :
       ∀ hp0 : SpectralWeight.one.toCoeff p0 ∈ Coeff.paritySubspace 0,
       ∀ hr : IsRealHillPotential (SpectralWeight.one.toCoeff p0),
       SpectralWeight.one.toCoeff p0 ∈ V → ∀ n : ℕ, N ≤ n → 2 ≤ n →
-      16 * ‖p0‖ ≤ (n : ℝ) →
+      8 * ‖p0‖ ≤ (n : ℝ) →
       (n : ℝ) * hillRealGapIntegral p0 hp0 hr n 0 ≤
         (hillRealLabels p0 hp0 hr (2*n) - hillRealLabels p0 hp0 hr (2*n-1))^2 := by
   obtain ⟨r, hrpos, hrpi, hfamily⟩ := exists_hillL2_near_free_gap_units q
@@ -71,7 +71,7 @@ theorem exists_hillRealGapIntegral_local_quadratic_tail_bound (q : Coeff 2) :
     · rw [hl', hu'] at he
       rw [he]
       ring
-  have hloc := p.localization p0 hp0 n (by omega) (by linarith [norm_nonneg p0])
+  have hloc := p.localization p0 hp0 n (by omega) hcut
   have hLΩ : (p.left : ℂ) ∈ Ω := by
     rw [mem_ball, dist_eq_norm, ← ofReal_sub, norm_real, Real.norm_eq_abs]
     linarith [hloc.1]
@@ -124,7 +124,7 @@ theorem exists_hillRealGapIntegral_quadratic_tail_bound
 
   obtain ⟨N, V, _, hqV, hbound⟩ :=
     exists_hillRealGapIntegral_local_quadratic_tail_bound (SpectralWeight.one.toCoeff q)
-  obtain ⟨A, hA⟩ := exists_nat_ge (16 * ‖q‖)
+  obtain ⟨A, hA⟩ := exists_nat_ge (8 * ‖q‖)
   refine ⟨max 2 (max N A), le_max_left _ _, ?_⟩
   intro n hn
   have hn2 : 2 ≤ n := (le_max_left _ _).trans hn

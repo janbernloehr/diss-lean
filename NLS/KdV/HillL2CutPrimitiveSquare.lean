@@ -21,7 +21,7 @@ theorem HillL2NormalizedCutPrimitive.square_extension
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F) :
@@ -61,7 +61,7 @@ theorem HillL2NormalizedCutPrimitive.square_extension
     convert! (h.hasDerivAt z hz).add_const (I*(n : ℂ)*Real.pi) using 1
     dsimp only [g,S]
     field_simp [(hVsq z (hsub hz.1)).1,(h.root_data z (hUsub hz)).1]
-  have hloc := p.localization q hq n hn1 (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n hn1 hcut
   have hl : (p.left : ℂ) ∈ Ω := by
     rw [mem_ball,dist_eq_norm,← ofReal_sub,norm_real,Real.norm_eq_abs]
     linarith [hloc.1]
@@ -76,7 +76,7 @@ theorem HillL2NormalizedCutPrimitive.square_conj
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F) :
@@ -104,7 +104,7 @@ theorem HillL2NormalizedCutPrimitive.square_im_eq_zero
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F)

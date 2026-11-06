@@ -81,16 +81,16 @@ theorem hillGapCriticalPoint_sqrt_mem_centralCircle
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ)) (k : ℕ) (hk : k < N) :
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ)) (k : ℕ) (hk : k < N) :
     Complex.sqrt (hillGapCriticalPoint q hq hr (k+1)) ∈ ball 0 (centralCircleRadius N) := by
   let x := hillGapCriticalPoint q hq hr (k+1)
   have hgap := (hillGapCriticalPoint_spec q hq hr (k+1) (by omega)).1
-  have hground := (hillLowestEnergy_mem_centralInterval q hq hr N hN (by linarith [norm_nonneg q])).1
+  have hground := (hillLowestEnergy_mem_centralInterval q hq hr N hN hcut).1
   change -(N : ℝ)^2 < hillRealLabels q hq hr 0 at hground
   have hlo : -(N : ℝ)^2 < x := hground.trans_le
     ((monotone_hillRealLabels q hq hr (Nat.zero_le _)).trans hgap.1)
   obtain ⟨p,_,hu⟩ := hillRealLabels_high_pair q hq hr N hN hcut
-  have hp := (abs_le.mp (p.localization q hq N (by omega) (by linarith [norm_nonneg q])).2).2
+  have hp := (abs_le.mp (p.localization q hq N (by omega) hcut).2).2
   have htop : hillRealLabels q hq hr (2*N) ≤ Real.pi^2*(N : ℝ)^2+4*‖q‖ := by
     rw [hu]
     simpa only [freeHillValue,Int.cast_natCast] using (show p.right ≤ freeHillValue N+4*‖q‖ by linarith)
@@ -149,7 +149,7 @@ theorem hillCentralGapCriticalRoots_mem_centralCircle
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ)) (z : ℂ)
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ)) (z : ℂ)
     (hz : z ∈ hillCentralGapCriticalRoots q hq hr N) : z ∈ closedBall 0 (centralCircleRadius N) := by
   simp only [hillCentralGapCriticalRoots,Multiset.mem_add,Multiset.mem_singleton,Multiset.mem_sum,
     Multiset.insert_eq_cons,Multiset.mem_cons] at hz
@@ -167,7 +167,7 @@ theorem hillCentralGapCriticalRoots_le_original
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ)) :
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ)) :
     hillCentralGapCriticalRoots q hq hr N ≤ centralCriticalRoots
       (by simp : (2 : ℝ≥0∞) ≠ ⊤) (by norm_num : 1 < (2 : ℝ≥0∞))
       (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) (hillL2CoefficientPotential_even _) N := by
@@ -208,7 +208,7 @@ theorem hillCentralGapCriticalRoots_eq_original
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ))
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ))
     (hcount : analyticZeroCount (deriv (canonicalDiscriminant (by simp : (2 : ℝ≥0∞) ≠ ⊤)
       (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)))) (closedBall 0 (centralCircleRadius N)) = 2*N+1) :
     hillCentralGapCriticalRoots q hq hr N = centralCriticalRoots
@@ -223,7 +223,7 @@ theorem exists_hillCentralGapCriticalRoots_eq_original
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) :
-    ∃ N : ℕ, 2 ≤ N ∧ 16*‖q‖ ≤ (N : ℝ) ∧ ∀ M : ℕ, N ≤ M →
+    ∃ N : ℕ, 2 ≤ N ∧ 8*‖q‖ ≤ (N : ℝ) ∧ ∀ M : ℕ, N ≤ M →
       hillCentralGapCriticalRoots q hq hr M = centralCriticalRoots
         (by simp : (2 : ℝ≥0∞) ≠ ⊤) (by norm_num : 1 < (2 : ℝ≥0∞))
         (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) (hillL2CoefficientPotential_even _) M := by
@@ -234,7 +234,7 @@ theorem exists_hillCentralGapCriticalRoots_eq_original
   obtain ⟨_,hcount,_⟩ := hdata φ hφ (hillL2CoefficientPotential_even _)
   let N := max N0 (hillRealLabelCutoff q)
   have hN : 2 ≤ N := (hillRealLabelCutoff_ge_two q).trans (le_max_right _ _)
-  have hcut : 16*‖q‖ ≤ (N : ℝ) := (hillRealLabelCutoff_bound q).trans
+  have hcut : 8*‖q‖ ≤ (N : ℝ) := (hillRealLabelCutoff_bound q).trans
     (by exact_mod_cast (le_max_right N0 (hillRealLabelCutoff q)))
   refine ⟨N,hN,hcut,?_⟩
   intro M hM

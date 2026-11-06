@@ -17,21 +17,21 @@ def hillDirichletDiscriminantMagriBracket (q : RealPeriodOneHillPotential)
     (n : ℕ) (hn : 1 ≤ n) (E : ℂ) : ℂ :=
   hillWeakGradientMagri (SpectralWeight.one.toCoeff q.val) (hillDirichletGradientCurve q n hn)
     (hillDirichletGradientSpatialCurve q n hn) (hillDirichletGradientSecond q n hn)
-    (hillDiscriminantGradientCurve (SpectralWeight.one.toCoeff q.val) E)
-    (hillDiscriminantGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E)
+    (hillEnergyTraceGradientCurve (SpectralWeight.one.toCoeff q.val) E)
+    (hillEnergyTraceGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E)
 
 theorem hillDirichletDiscriminantMagriBracket_eq_energy_first
     (q : RealPeriodOneHillPotential) (n : ℕ) (hn : 1 ≤ n) (E : ℂ) :
     hillDirichletDiscriminantMagriBracket q n hn E =
       4*E*(∫ x in (0 : ℝ)..1,extend (hillDirichletGradientCurve q n hn) x*
-        extend (hillDiscriminantGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E) x) := by
+        extend (hillEnergyTraceGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E) x) := by
   have hb := hillWeakGradientMagri_Dirichlet_boundary q n hn
-    (hillDiscriminantGradientCurve (SpectralWeight.one.toCoeff q.val) E)
-    (hillDiscriminantGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E)
-    (absolutelyContinuousOnInterval_hillDiscriminantGradientCurve _ E)
-    (ae_hasDerivAt_hillDiscriminantGradientCurve _ E)
-  rw [(hillDiscriminantGradientCurve_endpoints _ E).1,
-    (hillDiscriminantGradientCurve_endpoints _ E).2] at hb
+    (hillEnergyTraceGradientCurve (SpectralWeight.one.toCoeff q.val) E)
+    (hillEnergyTraceGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E)
+    (absolutelyContinuousOnInterval_hillEnergyTraceGradientCurve _ E)
+    (ae_hasDerivAt_hillEnergyTraceGradientCurve _ E)
+  rw [(hillEnergyTraceGradientCurve_endpoints _ E).1,
+    (hillEnergyTraceGradientCurve_endpoints _ E).2] at hb
   have hp := integral_hillDirichletGradient_discriminantSpatial_energy q n hn E
   change hillDirichletDiscriminantMagriBracket q n hn E = _ at hb
   calc
@@ -42,7 +42,7 @@ theorem hillDirichletDiscriminantMagriBracket_div_energy
     (q : RealPeriodOneHillPotential) (n : ℕ) (hn : 1 ≤ n) (E : ℂ) (hE : E ≠ 0) :
     hillDirichletDiscriminantMagriBracket q n hn E/E =
       4*(∫ x in (0 : ℝ)..1,extend (hillDirichletGradientCurve q n hn) x*
-        extend (hillDiscriminantGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E) x) := by
+        extend (hillEnergyTraceGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E) x) := by
   rw [hillDirichletDiscriminantMagriBracket_eq_energy_first]
   field_simp
 

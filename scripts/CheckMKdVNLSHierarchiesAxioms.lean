@@ -3294,10 +3294,10 @@ private def mkdvNLSAuditPrefixes48 : Array Lean.Name := #[
 ]
 
 private def mkdvNLSAuditPrefixes49 : Array Lean.Name := #[
-  `NLS.KdV.hillDiscriminantGradientCurve,
-  `NLS.KdV.hillDiscriminantGradientCurve_eq_l2,
+  `NLS.KdV.hillEnergyTraceGradientCurve,
+  `NLS.KdV.hillEnergyTraceGradientCurve_eq_l2,
   `NLS.KdV.fderiv_hillL2Discriminant_potential_integral,
-  `_private.NLS.KdV.HillDiscriminantGradient,
+  `_private.NLS.KdV.HillEnergyTraceGradient,
   `NLS.ComplexAnalysis.integral_scalarHill_squared_product_derivative,
   `_private.NLS.ComplexAnalysis.ScalarHillProductPairing,
   `NLS.KdV.hillSolutionProductCurve,
@@ -3309,17 +3309,17 @@ private def mkdvNLSAuditPrefixes49 : Array Lean.Name := #[
   `NLS.KdV.ae_hasDerivAt_hillSolutionProductSpatialCurve,
   `NLS.KdV.memLp_hillSolutionProductSecond,
   `_private.NLS.KdV.HillSolutionProducts,
-  `NLS.KdV.hillDiscriminantGradientCurve_eq_products,
-  `NLS.KdV.hillDiscriminantGradientSpatialCurve,
-  `NLS.KdV.hillDiscriminantGradientSecond,
-  `NLS.KdV.absolutelyContinuousOnInterval_hillDiscriminantGradientCurve,
-  `NLS.KdV.absolutelyContinuousOnInterval_hillDiscriminantGradientSpatialCurve,
-  `NLS.KdV.ae_hasDerivAt_hillDiscriminantGradientCurve,
-  `NLS.KdV.ae_hasDerivAt_hillDiscriminantGradientSpatialCurve,
-  `NLS.KdV.memLp_hillDiscriminantGradientSecond,
-  `NLS.KdV.hillDiscriminantGradientCurve_endpoints,
-  `NLS.KdV.hillDiscriminantGradientSpatialCurve_endpoints,
-  `_private.NLS.KdV.HillDiscriminantGradientRegularity,
+  `NLS.KdV.hillEnergyTraceGradientCurve_eq_products,
+  `NLS.KdV.hillEnergyTraceGradientSpatialCurve,
+  `NLS.KdV.hillEnergyTraceGradientSecond,
+  `NLS.KdV.absolutelyContinuousOnInterval_hillEnergyTraceGradientCurve,
+  `NLS.KdV.absolutelyContinuousOnInterval_hillEnergyTraceGradientSpatialCurve,
+  `NLS.KdV.ae_hasDerivAt_hillEnergyTraceGradientCurve,
+  `NLS.KdV.ae_hasDerivAt_hillEnergyTraceGradientSpatialCurve,
+  `NLS.KdV.memLp_hillEnergyTraceGradientSecond,
+  `NLS.KdV.hillEnergyTraceGradientCurve_endpoints,
+  `NLS.KdV.hillEnergyTraceGradientSpatialCurve_endpoints,
+  `_private.NLS.KdV.HillEnergyTraceGradientRegularity,
   `NLS.KdV.integral_hillDirichletGradient_productSpatial_energy,
   `_private.NLS.KdV.HillDirichletProductPairings,
   `NLS.KdV.hillDiscriminantH2Data,
@@ -3710,6 +3710,14 @@ private def mkdvNLSAuditPrefixes57 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.IndependentAbelianAngleSum,
 ]
 
+/-- A scope is a component prefix exactly when it is one of the name's ancestors.
+Hash lookup keeps the audit scope while avoiding a full scope-array scan for
+ every imported declaration. -/
+private def hasAuditedPrefix (scopes : Lean.NameHashSet) : Lean.Name → Bool
+  | .anonymous => scopes.contains .anonymous
+  | name@(.str parent _) => scopes.contains name || hasAuditedPrefix scopes parent
+  | name@(.num parent _) => scopes.contains name || hasAuditedPrefix scopes parent
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
@@ -4083,13 +4091,14 @@ run_cmd do
     ``NLS.MKdV.physicalMiuraSolution_unique,
     ``NLS.MKdV.quasiHillDiscriminant_eq_ZS,
     ``NLS.LinearVolterra.trace_solutionMap_intertwine]
+  let scopeSet := prefixes.foldl (fun scopes name => scopes.insert name) ({} : NameHashSet)
   let env ← getEnv
   for name in expected do
     unless (env.find? name).isSome do
       throwError "Missing required checked declaration {name}"
   let mut checked : Nat := 0
   for (name, _) in env.constants do
-    if prefixes.any (fun scopeName => scopeName.isPrefixOf name) then
+    if hasAuditedPrefix scopeSet name then
       for ax in (← collectAxioms name) do
         unless allowed.contains ax do
           throwError "{name} depends transitively on disallowed axiom {ax}"

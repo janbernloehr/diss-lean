@@ -34,7 +34,7 @@ theorem HillRealHighGapPair.trace_deriv_zero_of_collapsed
 theorem HillRealHighGapPair.collapsed_moment_zero
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (he : p.left = p.right) (m : ℕ) :
     hillL2HighContourMoment n m (SpectralWeight.one.toCoeff q) = 0 := by
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
@@ -45,7 +45,7 @@ theorem HillRealHighGapPair.collapsed_moment_zero
     hnpos (hQ.mono ball_subset_closedBall) (fun z hz => hunit z (ball_subset_closedBall hz))
   let B : ℂ → ℂ := fun z => (z-p.left)*h z
   have hNa : N p.left = 0 := p.trace_deriv_zero_of_collapsed _ n he
-  have hloc := p.localization q hq n hn (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n hn hcut
   have ha : (p.left : ℂ) ∈ ball (freeHillValue n : ℂ) (n : ℝ) := by
     rw [mem_ball,dist_eq_norm,← ofReal_sub,norm_real,Real.norm_eq_abs]
     linarith [hloc.1]
@@ -124,7 +124,7 @@ theorem hillL2HighContourMoment_eq_gapIntegral_of_closed
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (hcut : 8*‖q‖ ≤ (n : ℝ))
     (hc : hillRealLabels q hq hr (2*n-1) = hillRealLabels q hq hr (2*n)) (m : ℕ) :
     hillL2HighContourMoment n m (SpectralWeight.one.toCoeff q) =
       (hillRealGapIntegral q hq hr n m : ℂ) := by

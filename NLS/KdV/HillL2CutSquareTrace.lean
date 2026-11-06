@@ -19,7 +19,7 @@ theorem HillL2NormalizedCutPrimitive.square_trace
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F) :
@@ -44,7 +44,7 @@ theorem HillL2NormalizedCutPrimitive.square_zero_iff
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F)
@@ -79,7 +79,7 @@ theorem HillL2NormalizedCutPrimitive.square_gap_profile
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F)
@@ -89,7 +89,7 @@ theorem HillL2NormalizedCutPrimitive.square_gap_profile
       ((hillRealGapProfile (SpectralWeight.one.toCoeff q) n x)^2 : ℝ) := by
   let X := hillL2CutPrimitiveSquare n p.left p.right F
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
-  have hloc := p.localization q hq n (by omega) (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n (by omega) hcut
   have hxΩ : (x : ℂ) ∈ ball (freeHillValue n : ℂ) (7*(n : ℝ)/8) := by
     rw [mem_ball,dist_eq_norm,← ofReal_sub,norm_real,Real.norm_eq_abs,abs_lt]
     constructor <;> linarith [(abs_le.mp hloc.1).1,(abs_le.mp hloc.2).2,hx.1,hx.2]

@@ -53,7 +53,7 @@ theorem hillPeriodOneAction_nonneg (w : SpectralWeight)
 theorem hillPeriodOneAction_eq_highContourMoment (w : SpectralWeight)
     (q : WeightedCoeff w.doubleIndex.toWeight 2)
     (hr : IsRealHillPotential (w.doubleIndex.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16 * ‖q‖ ≤ (n : ℝ)) :
+    (hcut : 8 * ‖q‖ ≤ (n : ℝ)) :
     hillL2HighContourMoment n 0 (w.toCoeff (hillPeriodOnePotential w q)) =
       (hillPeriodOneAction w q hr n : ℂ) := by
   rw [← toCoeff_hillPeriodOneUnitPotential]
@@ -64,7 +64,7 @@ theorem hillPeriodOneAction_eq_highContourMoment (w : SpectralWeight)
 theorem hillPeriodOneAction_weighted_tail_of_quadratic_bound
     (w : SpectralWeight) (p : WeightedCoeff w.doubleIndex.toWeight 2)
     (hr : IsRealHillPotential (w.doubleIndex.toCoeff p))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖p‖ ≤ (N : ℝ))
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖p‖ ≤ (N : ℝ))
     (haction : ∀ n : ℕ, N ≤ n → (n : ℝ) * hillPeriodOneAction w p hr n ≤
       hillPeriodOneGap w p hr n ^ 2) :
     Summable (fun k : ℕ => w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *
@@ -101,7 +101,7 @@ comparison with the corrected Appendix A.7 gap remainder. -/
 theorem exists_hillPeriodOneAction_weighted_tail_bound (w : SpectralWeight)
     (q : WeightedCoeff w.doubleIndex.toWeight 2)
     (hr : IsRealHillPotential (w.doubleIndex.toCoeff q)) :
-    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N → 16 * ‖q‖ ≤ (N : ℝ) →
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N → 8 * ‖q‖ ≤ (N : ℝ) →
       Summable (fun k : ℕ => w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *
         (2 * Real.pi * (k + N : ℕ)) * hillPeriodOneAction w q hr (k + N)) ∧
       (∑' k : ℕ, w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *
@@ -127,7 +127,7 @@ theorem summable_hillPeriodOneAction_weighted (w : SpectralWeight)
     Summable (fun k : ℕ => w (2 * ((k + 1 : ℕ) : ℤ)) ^ 2 *
       (2 * Real.pi * (k + 1 : ℕ)) * hillPeriodOneAction w q hr (k + 1)) := by
   obtain ⟨N₀, _, htail⟩ := exists_hillPeriodOneAction_weighted_tail_bound w q hr
-  obtain ⟨A, hA⟩ := exists_nat_ge (16 * ‖q‖)
+  obtain ⟨A, hA⟩ := exists_nat_ge (8 * ‖q‖)
   let N := max N₀ A
   have hs := (htail N (le_max_left _ _) (hA.trans (by exact_mod_cast le_max_right N₀ A))).1
   have hfull : Summable (fun k : ℕ => w (2 * (k : ℤ)) ^ 2 *

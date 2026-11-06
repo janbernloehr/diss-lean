@@ -69,7 +69,7 @@ theorem exists_hillEnergyCriticalFactor_bounded_majorant
   refine ⟨hillRealLabelCutoff q,u,hs,?_⟩
   intro k hk z hz
   have hn2 : 2 ≤ k+1 := by have h := hillRealLabelCutoff_ge_two q; omega
-  have hcut : 16*‖q‖ ≤ (k+1 : ℕ) := (hillRealLabelCutoff_bound q).trans (by exact_mod_cast (show hillRealLabelCutoff q ≤ k+1 by omega))
+  have hcut : 8*‖q‖ ≤ (k+1 : ℕ) := (hillRealLabelCutoff_bound q).trans (by exact_mod_cast (show hillRealLabelCutoff q ≤ k+1 by omega))
   have hloc := hillGapCriticalPoint_high_localization q hq hr (k+1) hn2 hcut
   have hnle : ((k+1 : ℕ) : ℝ)^2 ≤ freeHillValue (k+1 : ℕ) := by
     have h := mul_le_mul_of_nonneg_right (show (1 : ℝ) ≤ Real.pi^2 by nlinarith [Real.pi_gt_three])

@@ -1,3 +1,4 @@
+import NLS.KdV.HillDirichletQuadraticSystem
 import NLS.KdV.HillGradientSecondDerivatives
 
 /-! # Periodic first-derivative traces of the independent Hill cotangents
@@ -12,22 +13,6 @@ open Set Complex Filter Topology MeasureTheory
 open NLS.LinearVolterra NLS.ZakharovShabat NLS.ComplexAnalysis NLS.FunctionalAnalysis
 open scoped ENNReal
 namespace NLS.KdV
-
-theorem hillDirichletGradientSpatialCurve_endpoints (q : RealPeriodOneHillPotential) (n : ℕ) (hn : 1 ≤ n) :
-    hillDirichletGradientSpatialCurve q n hn ⟨0,by norm_num⟩ = 0 ∧
-      hillDirichletGradientSpatialCurve q n hn ⟨1,by norm_num⟩ = 0 := by
-  have h0 : (hillDirichletStateCurve q n hn ⟨0,by norm_num⟩).1 = 0 := by
-    dsimp only [hillDirichletStateCurve]
-    rw [hillL2FrequencyStateCurve_zero]
-  have h1 : (hillDirichletStateCurve q n hn ⟨1,by norm_num⟩).1 = 0 :=
-    hillDirichletEnergy_zero q.val q.property.1 q.property.2 n hn
-  constructor
-  · change (2/(scalarStateMass (hillDirichletStateCurve q n hn) : ℂ))*
-      ((hillDirichletStateCurve q n hn ⟨0,by norm_num⟩).1*(hillDirichletStateCurve q n hn ⟨0,by norm_num⟩).2) = 0
-    rw [h0,zero_mul,mul_zero]
-  · change (2/(scalarStateMass (hillDirichletStateCurve q n hn) : ℂ))*
-      ((hillDirichletStateCurve q n hn ⟨1,by norm_num⟩).1*(hillDirichletStateCurve q n hn ⟨1,by norm_num⟩).2) = 0
-    rw [h1,zero_mul,mul_zero]
 
 theorem hillLogNormingGradientSpatialCurve_endpoints (q : RealPeriodOneHillPotential) (n : ℕ) (hn : 1 ≤ n) :
     hillLogNormingGradientSpatialCurve q n hn ⟨0,by norm_num⟩ = 1 ∧

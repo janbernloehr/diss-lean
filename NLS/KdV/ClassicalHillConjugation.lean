@@ -1,5 +1,6 @@
-import NLS.KdV.ClassicalHillGreen
+import NLS.KdV.ClassicalHillFlow
 import NLS.KdV.ClassicalFreePrimitive
+import Mathlib.Analysis.Calculus.Deriv.Star
 
 /-! # Conjugation of the actual scalar Hill flow
 
@@ -18,7 +19,7 @@ theorem classicalHillFlow_conj (q : Curve ℂ) (hq : ∀ t, (q t).im = 0)
     (lambda : ℂ) (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
     classicalHillFlow q (conj lambda) (conj v.1,conj v.2) t =
       (conj (classicalHillFlow q lambda v t).1,conj (classicalHillFlow q lambda v t).2) := by
-  have hY := continuous_classicalHillFlow q lambda v
+  have hY : Continuous (classicalHillFlow q lambda v) := continuous_solution _ _
   apply Eq.symm
   apply solution_unique (classicalHillCoefficientCurve q (conj lambda))
     (conj v.1,conj v.2)

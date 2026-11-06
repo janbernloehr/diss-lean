@@ -37,7 +37,7 @@ theorem exists_hillWeightedActionTerm_small_tail
         (∑' k : ℕ, hillWeightedActionTerm w p (k+N)) ≤ ε := by
   obtain ⟨N₀, U₀, hN₀, hU₀, hqU₀, htail⟩ :=
     exists_hillPeriodOneAction_local_weighted_tail_bound w q
-  obtain ⟨A, hA⟩ := exists_nat_ge (16 * (‖q.val‖ + 1))
+  obtain ⟨A, hA⟩ := exists_nat_ge (8 * (‖q.val‖ + 1))
   have hbudget : ∀ᶠ N : ℕ in atTop, hillWeightedActionTailBudget w N q.val < ε :=
     (tendsto_hillWeightedActionTailBudget w q.val).eventually (gt_mem_nhds hε)
   obtain ⟨N, hNN₀, hNA, hBN⟩ :=
@@ -52,8 +52,8 @@ theorem exists_hillWeightedActionTerm_small_tail
   refine ⟨N, U, hN₀.trans hNN₀, hU, ⟨hqU₀, by dsimp; linarith, hBN⟩, ?_⟩
   intro p hp
   have hpn : ‖p.val‖ < ‖q.val‖ + 1 := hp.2.1
-  have hcut : 16 * ‖p.val‖ ≤ (N : ℝ) :=
-    (mul_le_mul_of_nonneg_left hpn.le (by norm_num : (0 : ℝ) ≤ 16)).trans
+  have hcut : 8 * ‖p.val‖ ≤ (N : ℝ) :=
+    (mul_le_mul_of_nonneg_left hpn.le (by norm_num : (0 : ℝ) ≤ 8)).trans
       (hA.trans (by exact_mod_cast hNA))
   obtain ⟨hs, hb⟩ := htail p hp.1 N hNN₀ hcut
   refine ⟨by simpa only [hillWeightedActionTerm] using hs, ?_⟩

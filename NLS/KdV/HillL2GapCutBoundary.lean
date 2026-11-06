@@ -19,7 +19,7 @@ namespace NLS.KdV
 theorem HillRealHighGapPair.primitive_endpoint_limits
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R P : ℂ → ℂ)
     (hR : AnalyticOnNhd ℂ R (ball (freeHillValue n : ℂ) (n : ℝ) \ segment ℝ (p.left : ℂ) p.right))
@@ -55,7 +55,7 @@ theorem HillRealHighGapPair.primitive_endpoint_limits
   have hg : AnalyticOnNhd ℂ (fun z => N z/R z) (Ω \ segment ℝ (p.left : ℂ) p.right) := by
     intro z hz
     exact (hN z (mem_univ _)).div (hR z (hsub hz)) (hsq z (hsub hz)).1
-  have hloc := p.localization q hq n hn (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n hn hcut
   have hl : (p.left : ℂ) ∈ Ω := by
     rw [mem_ball,dist_eq_norm,← ofReal_sub,norm_real,Real.norm_eq_abs]
     linarith [hloc.1]

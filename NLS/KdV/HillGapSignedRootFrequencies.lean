@@ -37,7 +37,7 @@ variable (q : WeightedCoeff SpectralWeight.one.toWeight 2)
 
 theorem hillGapRoot_sqrt_frequency_bound
     (roots : ℕ → ℝ) (hroots : roots ∈ hillGapRootBox q hq hr)
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     ‖Complex.sqrt (roots (n-1))-(Real.pi : ℂ)*n‖ ≤ 4*‖q‖/(Real.pi*n) := by
   have hloc := hillGapRoot_high_localization q hq hr roots hroots n hn hcut
   have hc : 0 < Real.pi*(n : ℝ) := mul_pos Real.pi_pos (by exact_mod_cast (show 0 < n by omega))
@@ -63,13 +63,13 @@ theorem memℓp_hillGapRoot_sqrt_displacement
   have hs : Summable (fun k : ℕ => (4*‖q‖/Real.pi)^2/((k+1 : ℕ) : ℝ)^2) := by
     simpa only [div_eq_mul_inv,one_mul] using ((summable_nat_add_iff 1).mpr hs0).mul_left ((4*‖q‖/Real.pi)^2)
   apply hs.of_norm_bounded_eventually_nat
-  obtain ⟨N,hN⟩ := exists_nat_gt (16*‖q‖+2)
+  obtain ⟨N,hN⟩ := exists_nat_gt (8*‖q‖+2)
   filter_upwards [eventually_ge_atTop N] with k hk
   have hkR : (N : ℝ) ≤ k := by exact_mod_cast hk
   have hn2 : 2 ≤ k+1 := by
     have hn : (2 : ℝ) < k := by linarith [norm_nonneg q]
     exact_mod_cast (show (2 : ℝ) ≤ (k+1 : ℕ) by push_cast; linarith)
-  have hcut : 16*‖q‖ ≤ (k+1 : ℕ) := by push_cast; linarith
+  have hcut : 8*‖q‖ ≤ (k+1 : ℕ) := by push_cast; linarith
   have hbound : ‖Complex.sqrt (roots k)-(Real.pi : ℂ)*(k+1 : ℕ)‖ ≤
       4*‖q‖/(Real.pi*(k+1 : ℕ)) := by
     exact hillGapRoot_sqrt_frequency_bound q hq hr roots hroots (k+1) hn2 hcut

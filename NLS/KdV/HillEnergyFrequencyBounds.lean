@@ -13,11 +13,11 @@ theorem hillRealLabels_sqrt_frequency_bound
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     ‖Complex.sqrt (hillRealLabels q hq hr (2*n-1))-(Real.pi : ℂ)*n‖ ≤ 4*‖q‖/(Real.pi*n) ∧
     ‖Complex.sqrt (hillRealLabels q hq hr (2*n))-(Real.pi : ℂ)*n‖ ≤ 4*‖q‖/(Real.pi*n) := by
   obtain ⟨p,hl,hu⟩ := hillRealLabels_high_pair q hq hr n hn hcut
-  have hloc := p.localization q hq n (by omega) (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n (by omega) hcut
   have hc : 0 < Real.pi*(n : ℝ) := mul_pos Real.pi_pos (by exact_mod_cast (show 0 < n by omega))
   have hlo : ‖(hillRealLabels q hq hr (2*n-1) : ℂ)-((Real.pi*(n : ℝ) : ℝ) : ℂ)^2‖ ≤ 4*‖q‖ := by
     rw [← ofReal_pow,← ofReal_sub,norm_real,Real.norm_eq_abs,hl]
@@ -48,13 +48,13 @@ theorem memℓp_hillEnergyFrequencyRoot_displacement
   have hs : Summable (fun k : ℕ => (4*‖q‖/Real.pi)^2/((k+1 : ℕ) : ℝ)^2) := by
     simpa only [div_eq_mul_inv,one_mul] using ((summable_nat_add_iff 1).mpr hs0).mul_left ((4*‖q‖/Real.pi)^2)
   apply hs.of_norm_bounded_eventually_nat
-  obtain ⟨N,hN⟩ := exists_nat_gt (16*‖q‖+2)
+  obtain ⟨N,hN⟩ := exists_nat_gt (8*‖q‖+2)
   filter_upwards [eventually_ge_atTop N] with k hk
   have hkR : (N : ℝ) ≤ k := by exact_mod_cast hk
   have hn2 : 2 ≤ k+1 := by
     have hn : (2 : ℝ) < k := by linarith [norm_nonneg q]
     exact_mod_cast (show (2 : ℝ) ≤ (k+1 : ℕ) by push_cast; linarith)
-  have hcut : 16*‖q‖ ≤ (k+1 : ℕ) := by push_cast; linarith
+  have hcut : 8*‖q‖ ≤ (k+1 : ℕ) := by push_cast; linarith
   have hbound : ‖hillEnergyFrequencyRoot q hq hr upper (k+1)-(Real.pi : ℂ)*(k+1 : ℕ)‖ ≤
       4*‖q‖/(Real.pi*(k+1 : ℕ)) := by
     have h := hillRealLabels_sqrt_frequency_bound q hq hr (k+1) hn2 hcut

@@ -1,3 +1,4 @@
+import NLS.KdV.HillDirichletFlowResidues
 import NLS.KdV.HillDirichletSheetRoot
 import NLS.KdV.HillDiscriminantDirichletPairing
 
@@ -12,26 +13,6 @@ open Set Complex Filter Topology MeasureTheory
 open NLS.LinearVolterra NLS.ZakharovShabat NLS.ComplexAnalysis
 open scoped ENNReal
 namespace NLS.KdV
-
-theorem hillDirichletSlope_mul_sheetRoot (q : Coeff 2) (E : ℂ)
-    (hzero : hillL2DirichletCharacteristic q E = 0) :
-    hillL2DirichletSlope q E*hillDirichletSheetRoot q E = (hillL2DirichletSlope q E)^2-1 := by
-  let z := Complex.sqrt E
-  let t : Icc (0 : ℝ) 1 := ⟨1,by norm_num⟩
-  let c := (hillL2FrequencyStateCurve q z (1,0) t).1
-  let d := hillL2DirichletSlope q E
-  have hb : (hillL2FrequencyStateCurve q z (0,1) t).1 = 0 := hzero
-  have hw := hillL2FrequencyStateCurve_wronskian q z t
-  rw [hb,zero_mul,sub_zero] at hw
-  have hprod : c*d = 1 := hw
-  have htrace : c+d = hillL2Discriminant q E := by
-    have ht := hillL2FrequencyStateCurve_trace q z
-    rw [← hillL2Discriminant_sq,complex_sqrt_sq E] at ht
-    exact ht
-  unfold hillDirichletSheetRoot
-  rw [← htrace]
-  change d*(2*d-(c+d)) = d^2-1
-  linear_combination -hprod
 
 theorem hillDirichlet_sheet_mass_ratio (q : RealPeriodOneHillPotential) (n : ℕ) (hn : 1 ≤ n) :
     let μ : ℂ := hillDirichletEnergy q.val q.property.1 q.property.2 n hn
@@ -59,7 +40,7 @@ theorem integral_hillDirichletGradient_discriminantSpatial_sheet_energy
     let μ : ℂ := hillDirichletEnergy q.val q.property.1 q.property.2 n hn
     let s := hillL2DirichletCharacteristic (SpectralWeight.one.toCoeff q.val)
     2*(μ-E)*(∫ x in (0 : ℝ)..1,extend (hillDirichletGradientCurve q n hn) x*
-      extend (hillDiscriminantGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E) x) =
+      extend (hillEnergyTraceGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E) x) =
         hillDirichletSheetRoot (SpectralWeight.one.toCoeff q.val) μ*s E/deriv s μ := by
   dsimp only
   rw [integral_hillDirichletGradient_discriminantSpatial_energy]
@@ -74,7 +55,7 @@ theorem integral_hillDirichletGradient_discriminantSpatial_sheet_resolvent
     let μ : ℂ := hillDirichletEnergy q.val q.property.1 q.property.2 n hn
     let s := hillL2DirichletCharacteristic (SpectralWeight.one.toCoeff q.val)
     (∫ x in (0 : ℝ)..1,extend (hillDirichletGradientCurve q n hn) x*
-      extend (hillDiscriminantGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E) x) =
+      extend (hillEnergyTraceGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E) x) =
         hillDirichletSheetRoot (SpectralWeight.one.toCoeff q.val) μ*s E/(2*(μ-E)*deriv s μ) := by
   have hs := integral_hillDirichletGradient_discriminantSpatial_sheet_energy q n hn E
   dsimp only at hs ⊢

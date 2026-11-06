@@ -97,7 +97,7 @@ theorem hillL2ContinuedPrimitive_high_real_crossing_phases
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     (hillL2ContinuedPrimitive ((freeHillValue n-3*(n : ℝ)/4 : ℝ),SpectralWeight.one.toCoeff q)).im ∈
       Ioo (-Real.pi*n) (-Real.pi*((n : ℝ)-1)) ∧
     (hillL2ContinuedPrimitive ((freeHillValue n+3*(n : ℝ)/4 : ℝ),SpectralWeight.one.toCoeff q)).im ∈

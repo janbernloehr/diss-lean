@@ -53,7 +53,7 @@ theorem independent_Abelian_interior_trace_contraction (a : ScalarDomain 2)
     let ψ := hillAbelianSelectedGlobalPsi q.val q.property.1 q.property.2 n hn
     (∑ k ∈ Finset.range K,ψ (hillDirichletEnergies q k)*
       (∫ x in (0 : ℝ)..1,extend (hillDirichletGradientCurve q (k+1) (by omega)) x*
-        extend (hillDiscriminantGradientSpatialCurve (sobolevMiuraHillPotential a) E) x)/
+        extend (hillEnergyTraceGradientSpatialCurve (sobolevMiuraHillPotential a) E) x)/
           hillDirichletSheetRoot (sobolevMiuraHillPotential a) (hillDirichletEnergies q k)) = -ψ E/2 :=
   miuraSelectedAbelianPsi_trace_contraction a ha n hn K hK hclosed hsheet E hE
 

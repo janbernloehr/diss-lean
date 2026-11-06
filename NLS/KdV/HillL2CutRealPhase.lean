@@ -31,14 +31,14 @@ private theorem real_exterior_mem_cut (c r l u x : ℝ) (hlu : l ≤ u)
 theorem HillRealHighGapPair.real_band_domain
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) :
     (∀ x ∈ Ioo (freeHillValue n-7*(n : ℝ)/8) p.left,
       (x : ℂ) ∈ ball (freeHillValue n : ℂ) (7*(n : ℝ)/8) \ segment ℝ (p.left : ℂ) p.right) ∧
     (∀ x ∈ Ioo p.right (freeHillValue n+7*(n : ℝ)/8),
       (x : ℂ) ∈ ball (freeHillValue n : ℂ) (7*(n : ℝ)/8) \ segment ℝ (p.left : ℂ) p.right) := by
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
-  have hloc := p.localization q hq n hn (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n hn hcut
   have hl := abs_le.mp hloc.1
   have hr := abs_le.mp hloc.2
   constructor
@@ -51,7 +51,7 @@ theorem HillL2NormalizedCutPrimitive.real_phase_on_connected
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F)
     (S : Set ℝ) (hS : IsPreconnected S)
@@ -81,7 +81,7 @@ theorem HillL2NormalizedCutPrimitive.real_band_phases
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F) :
     (∀ x ∈ Ioo (freeHillValue n-7*(n : ℝ)/8) p.left,
@@ -89,7 +89,7 @@ theorem HillL2NormalizedCutPrimitive.real_band_phases
     (∀ x ∈ Ioo p.right (freeHillValue n+7*(n : ℝ)/8),
       (F x).im ∈ Ioo (-Real.pi*((n : ℝ)+1)) (-Real.pi*n)) := by
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
-  have hloc := p.localization q hq n hn (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n hn hcut
   have hl := abs_le.mp hloc.1
   have hr := abs_le.mp hloc.2
   have hsource := hillL2ContinuedPrimitive_high_real_crossing_phases q hq hreal n hn hcut

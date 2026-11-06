@@ -1,91 +1,114 @@
-import NLS.KdV.HillStateMonodromy
-import NLS.KdV.HillDirichletGradients
-import NLS.ZakharovShabat.L2CharacteristicGradients
+import NLS.KdV.HillPhysicalDirectionPairing
+import NLS.ZakharovShabat.L2GradientCurves
 import NLS.ZakharovShabat.L2DiscriminantCotangent
 
-/-! # The actual scalar Hill discriminant gradient at every complex energy
-
-The trace gradient is written in the original scalar cosine/sine basis.
-Its full L² potential derivative is the physical unconjugated integral,
-with the original lower-component sign retained explicitly.
--/
 noncomputable section
+set_option autoImplicit false
 open Set Complex Filter Topology MeasureTheory
 open NLS.LinearVolterra NLS.ZakharovShabat NLS.ComplexAnalysis
-open scoped ENNReal
+open scoped ENNReal ComplexConjugate Classical
+
 namespace NLS.KdV
 
-def hillDiscriminantGradientCurve (q : Coeff 2) (E : ℂ) : Curve ℂ :=
-  let C := hillL2FrequencyStateCurve q (Complex.sqrt E) (1,0)
-  let S := hillL2FrequencyStateCurve q (Complex.sqrt E) (0,1)
-  let c := (ContinuousMap.fst : C(ℂ × ℂ,ℂ)).comp C
-  let s := (ContinuousMap.fst : C(ℂ × ℂ,ℂ)).comp S
-  (S ⟨1,by norm_num⟩).1 • c^2+
-    ((S ⟨1,by norm_num⟩).2-(C ⟨1,by norm_num⟩).1) • (c*s)-
-      (C ⟨1,by norm_num⟩).2 • s^2
 
-theorem hillDiscriminantGradientCurve_eq_l2 (q : Coeff 2) (E : ℂ) (t : Icc (0 : ℝ) 1) :
-    hillDiscriminantGradientCurve q E t =
-      -(l2DiscriminantGradient (physicalRestrictionL2 (hillFirstOrderPotential q)) (Complex.sqrt E) t).2 := by
-  let z := Complex.sqrt E
-  let u := physicalRestrictionL2 (hillFirstOrderPotential q)
-  let A := l2SolutionCurve u z (1,0)
-  let B := l2SolutionCurve u z (0,1)
-  have hC (r : Icc (0 : ℝ) 1) :
-      hillL2FrequencyStateCurve q z (1,0) r = constantUpperStateMap z (A r-z • B r) := by
-    have h := congrArg (fun Y : Curve (ℂ × ℂ) => Y r)
-      (l2SolutionCurve_linearCombination u z (constantUpperInitialVector z (1,0)))
-    simpa only [hillL2FrequencyStateCurve_apply,constantUpperInitialVector,one_mul,mul_one,mul_zero,
-      zero_sub,zero_add,ContinuousMap.add_apply,ContinuousMap.smul_apply,one_smul,neg_smul,sub_eq_add_neg] using
-      congrArg (constantUpperStateMap z) h
-  have hS (r : Icc (0 : ℝ) 1) :
-      hillL2FrequencyStateCurve q z (0,1) r = constantUpperStateMap z (I • B r) := by
-    have h := congrArg (fun Y : Curve (ℂ × ℂ) => Y r)
-      (l2SolutionCurve_linearCombination u z (constantUpperInitialVector z (0,1)))
-    simpa only [hillL2FrequencyStateCurve_apply,constantUpperInitialVector,mul_one,mul_zero,
-      sub_zero,ContinuousMap.add_apply,ContinuousMap.smul_apply,zero_smul,zero_add] using
-      congrArg (constantUpperStateMap z) h
-  dsimp only [hillDiscriminantGradientCurve]
-  change _ = -(l2DiscriminantGradient u z t).2
-  simp only [ContinuousMap.sub_apply,ContinuousMap.add_apply,ContinuousMap.smul_apply,
-    ContinuousMap.pow_apply,ContinuousMap.mul_apply,ContinuousMap.comp_apply,ContinuousMap.fst_apply,smul_eq_mul]
-  change (hillL2FrequencyStateCurve q z (0,1) ⟨1,by norm_num⟩).1*
-      (hillL2FrequencyStateCurve q z (1,0) t).1^2+
-    ((hillL2FrequencyStateCurve q z (0,1) ⟨1,by norm_num⟩).2-
-      (hillL2FrequencyStateCurve q z (1,0) ⟨1,by norm_num⟩).1)*
-      ((hillL2FrequencyStateCurve q z (1,0) t).1*(hillL2FrequencyStateCurve q z (0,1) t).1)-
-    (hillL2FrequencyStateCurve q z (1,0) ⟨1,by norm_num⟩).2*
-      (hillL2FrequencyStateCurve q z (0,1) t).1^2 = _
-  rw [hC t,hS t,hC ⟨1,by norm_num⟩,hS ⟨1,by norm_num⟩]
-  simp only [l2DiscriminantGradient,l2EndpointGradient,Prod.snd_add,ContinuousLinearMap.coe_fst',
-    ContinuousLinearMap.coe_snd',constantUpperStateMap_apply,Prod.fst_sub,Prod.snd_sub,
-    Prod.smul_fst,Prod.smul_snd,smul_eq_mul,extend_coe]
-  change _ = -(I*((A ⟨1,by norm_num⟩).1*(B t).1-(B ⟨1,by norm_num⟩).1*(A t).1)*(A t).1+
-    I*((A ⟨1,by norm_num⟩).2*(B t).1-(B ⟨1,by norm_num⟩).2*(A t).1)*(B t).1)
-  ring_nf
-  simp only [show I^3 = -I by norm_num [pow_succ,I_sq]]
-  ring
 
-theorem fderiv_hillL2Discriminant_potential_integral (q h : Coeff 2) (E : ℂ) :
-    (fderiv ℂ (fun p : Coeff 2 => hillL2Discriminant p E) q) h =
-      ∫ x in (0 : ℝ)..1,-(hillPhysicalDirection h).ofLp.2 x*
-        extend (hillDiscriminantGradientCurve q E) x := by
-  let z := Complex.sqrt E
-  let u := physicalRestrictionL2 (hillFirstOrderPotential q)
-  have hd := (analyticOnNhd_l2Discriminant_potential z u (mem_univ _)).differentiableAt.hasFDerivAt.comp q
-    (hasFDerivAt_hillPhysicalPotential q)
-  have he := congrArg (fun L : Coeff 2 →L[ℂ] ℂ => L h) hd.fderiv
-  change (fderiv ℂ (fun p : Coeff 2 => hillL2Discriminant p E) q) h =
-    (fderiv ℂ (fun w : IntervalPairL2 => l2Discriminant w z) u) (hillPhysicalDirection h) at he
-  rw [he,fderiv_l2Discriminant_eq_gradient_integral]
+/-- The scalar Hill trace cotangent, retaining the minus sign in the
+constant-upper physical-potential embedding. -/
+def hillDiscriminantGradientCurve (q : Coeff 2) (z : ℂ) : Curve ℂ :=
+  -((ContinuousMap.snd : C(ℂ × ℂ,ℂ)).comp
+    (l2DiscriminantGradientCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z))
+
+theorem fderiv_hillL2FrequencyDiscriminant_potential (q h : Coeff 2) (z : ℂ) :
+    (fderiv ℂ (fun p : Coeff 2 => hillL2FrequencyDiscriminant p z) q) h=
+      (fderiv ℂ (fun u : IntervalPairL2 => l2Discriminant u z)
+        (physicalRestrictionL2 (hillFirstOrderPotential q))) (hillPhysicalDirection h) := by
+  have hd := ((analyticOnNhd_l2Discriminant_potential z _ (mem_univ _)).differentiableAt.hasFDerivAt).comp
+    q (hasFDerivAt_hillPhysicalPotential q)
+  exact congrArg (fun L : Coeff 2 →L[ℂ] ℂ => L h) hd.fderiv
+
+theorem hillDiscriminantGradient_represents_potential
+    (q h : Coeff 2) (z : ℂ) :
+    (fderiv ℂ (fun p : Coeff 2 => hillL2FrequencyDiscriminant p z) q) h=
+      hillPhysicalDirectionPairing h (hillDiscriminantGradientCurve q z) := by
+  rw [fderiv_hillL2FrequencyDiscriminant_potential,fderiv_l2Discriminant_eq_gradient_integral,
+    hillPhysicalDirectionPairing_apply]
   apply intervalIntegral.integral_congr_ae_restrict
-  rw [uIoc_of_le (by norm_num : (0 : ℝ) ≤ 1)]
-  filter_upwards [hillPhysicalDirection_upper_zero_ae h,ae_restrict_mem measurableSet_Ioc] with x hx hxmem
-  have ht : x ∈ Icc (0 : ℝ) 1 := ⟨hxmem.1.le,hxmem.2⟩
-  have hg := hillDiscriminantGradientCurve_eq_l2 q E ⟨x,ht⟩
-  change (hillPhysicalDirection h).ofLp.1 x = 0 at hx
+  rw [uIoc_of_le (by norm_num : (0 : ℝ)≤1)]
+  filter_upwards [hillPhysicalDirection_upper_zero_ae h] with x hx
+  change (hillPhysicalDirection h).ofLp.1 x=0 at hx
   rw [hx,mul_zero,zero_add]
-  rw [NLS.LinearVolterra.extend,projIcc_of_mem _ ht,hg]
+  change _= -(hillPhysicalDirection h).ofLp.2 x*
+    (-((NLS.LinearVolterra.extend (l2DiscriminantGradientCurve
+      (physicalRestrictionL2 (hillFirstOrderPotential q)) z) x).2))
+  rw [extend_l2DiscriminantGradientCurve]
   ring
+
+theorem continuous_hillDiscriminantGradientCurve_spectral (q : Coeff 2) :
+    Continuous (hillDiscriminantGradientCurve q) :=
+  (((ContinuousMap.snd : C(ℂ × ℂ,ℂ)).continuous_postcomp).comp
+    (continuous_l2DiscriminantGradientCurve_spectral (physicalRestrictionL2 (hillFirstOrderPotential q)))).neg
+
+private theorem trace_gradient_basis (q : Coeff 2) (z : ℂ) (t : Icc (0 : ℝ) 1) :
+    hillDiscriminantGradientCurve q z t=
+      -(I*((l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) ⟨1,by norm_num⟩).1*
+          (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) t).1-
+        (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) ⟨1,by norm_num⟩).1*
+          (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) t).1)*
+          (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) t).1+
+        I*((l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) ⟨1,by norm_num⟩).2*
+          (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) t).1-
+        (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) ⟨1,by norm_num⟩).2*
+          (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) t).1)*
+          (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) t).1) := by
+  simp only [hillDiscriminantGradientCurve,ContinuousMap.neg_apply,ContinuousMap.comp_apply,
+    ContinuousMap.snd_apply,l2DiscriminantGradientCurve,
+    ContinuousMap.add_apply,l2EndpointGradientCurve,l2EndpointGradient,Prod.snd_add,
+    ContinuousLinearMap.coe_fst',ContinuousLinearMap.coe_snd',extend_coe]
+  rfl
+
+private theorem scalar_state_basis
+    (q : Coeff 2) (z : ℂ) (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    hillL2FrequencyStateCurve q z v t=
+      (v.1*(l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) t).1+
+        (I*v.2-z*v.1)*(l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) t).1,
+      (-I*z)*(v.1*(l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) t).1+
+        (I*v.2-z*v.1)*(l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) t).1)+
+      (-I)*(v.1*(l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) t).2+
+        (I*v.2-z*v.1)*(l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) t).2)) := by
+  have he := congrArg (fun Y : Curve (ℂ × ℂ) => Y t)
+    (l2SolutionCurve_linearCombination (physicalRestrictionL2 (hillFirstOrderPotential q)) z (constantUpperInitialVector z v))
+  rw [hillL2FrequencyStateCurve_apply,he]
+  rfl
+
+private theorem trace_gradient_polynomial_algebra (z a b A B E F : ℂ) :
+    -(I*(A*b-B*a)*a+I*(E*b-F*a)*b)=
+      (I*B)*(a+ -z*b)^2+
+      (((-I*z)*(I*B)+(-I)*(I*F))-(A+ -z*B))*(a+ -z*b)*(I*b)-
+      ((-I*z)*(A+ -z*B)+(-I)*(E+ -z*F))*(I*b)^2 := by
+  ring_nf
+  rw [I_pow_three]
+  ring
+
+/-- The actual scalar trace cotangent is the squared-solution
+polynomial with the genuine endpoint monodromy coefficients. -/
+theorem hillDiscriminantGradientCurve_eq_scalar_polynomial
+    (q : Coeff 2) (z : ℂ) (t : Icc (0 : ℝ) 1) :
+    hillDiscriminantGradientCurve q z t=
+      (hillL2FrequencyStateCurve q z (0,1) ⟨1,by norm_num⟩).1*
+        (hillL2FrequencyStateCurve q z (1,0) t).1^2+
+      ((hillL2FrequencyStateCurve q z (0,1) ⟨1,by norm_num⟩).2-
+        (hillL2FrequencyStateCurve q z (1,0) ⟨1,by norm_num⟩).1)*
+        (hillL2FrequencyStateCurve q z (1,0) t).1*(hillL2FrequencyStateCurve q z (0,1) t).1-
+      (hillL2FrequencyStateCurve q z (1,0) ⟨1,by norm_num⟩).2*
+        (hillL2FrequencyStateCurve q z (0,1) t).1^2 := by
+  rw [trace_gradient_basis]
+  simp only [scalar_state_basis,mul_zero,mul_one,sub_zero,zero_sub,one_mul,zero_mul,zero_add]
+  exact trace_gradient_polynomial_algebra z
+    (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) t).1
+    (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) t).1
+    (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) ⟨1,by norm_num⟩).1
+    (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) ⟨1,by norm_num⟩).1
+    (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (1,0) ⟨1,by norm_num⟩).2
+    (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z (0,1) ⟨1,by norm_num⟩).2
 
 end NLS.KdV

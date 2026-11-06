@@ -1,3 +1,4 @@
+import NLS.MKdV.PeriodOneMiuraSourceComparison
 import NLS.MKdV.QuasiHillPrimitiveComparison
 import NLS.MKdV.SobolevQuasiHill
 import NLS.ZakharovShabat.ClassicalNLSSobolevEnergy
@@ -17,18 +18,6 @@ namespace NLS.MKdV
 
 /-- The physical period-one representative is a bounded complex-linear
 map in the original H¹ norm. -/
-def periodOneMiuraCurveCLM : ScalarDomain 2 →L[ℂ] Curve ℂ :=
-  (ContinuousMap.compCLM ℂ ℂ
-    (⟨fun t : Icc (0 : ℝ) 1 => (t.val : AddCircle (2 : ℝ)),
-      (AddCircle.continuous_mk' (2 : ℝ)).comp continuous_subtype_val⟩ :
-        C(Icc (0 : ℝ) 1,AddCircle (2 : ℝ)))).comp periodOneSobolevSynthesis
-
-@[simp] theorem periodOneMiuraCurveCLM_apply (a : ScalarDomain 2) :
-    periodOneMiuraCurveCLM a = periodOneMiuraCurve a := by
-  apply ContinuousMap.ext
-  intro t
-  exact (periodOneMiuraCurve_apply a t).symm
-
 theorem analyticAt_sobolevMiuraPrimitive (a : ScalarDomain 2) (μ : ℂ)
     (ht : (μ,periodOneMiuraCurve a) ∈ miuraHillContinuationDomain) :
     AnalyticAt ℂ (fun b : ScalarDomain 2 => miuraHillPrimitive (μ,periodOneMiuraCurve b)) a := by
@@ -57,26 +46,6 @@ def realDiagonalH1Source (a : ScalarDomain 2) (ha : ∀ n, a.val n = conj (a.val
     change (sobolevSourceInclusion (a,a)).snd n =
       conj ((sobolevSourceInclusion (a,a)).fst (-n))
     simpa only [sobolevSourceInclusion_fst,sobolevSourceInclusion_snd] using ha n⟩
-
-theorem miuraDiagonalSource_periodOneMiuraCurve (a : ScalarDomain 2) :
-    miuraDiagonalSourceCLM (periodOneMiuraCurve a) = sobolevSourceInclusion (a,a) := by
-  let c : Domain 2 := (Coeff.periodDoubleSobolev a,Coeff.periodDoubleSobolev a)
-  have hper : periodOnePotential (sobolevSourceInclusion (a,a)) = domainInclusion c := by
-    apply Prod.ext <;> ext n <;>
-      simp [periodOnePotential_apply,domainInclusion_apply,c,scalarInclusion_apply,
-        Coeff.periodDoubleSobolev_apply,sobolevSourceInclusion]
-  have hcurve : physicalDomainCurve c = miuraDiagonalCurveCLM (periodOneMiuraCurve a) := rfl
-  have hp : physicalBase (periodOnePotential (sobolevSourceInclusion (a,a)))
-      =ᵐ[volume.restrict (Ioc (0 : ℝ) 1)]
-        extend (miuraDiagonalCurveCLM (periodOneMiuraCurve a)) := by
-    rw [hper,← hcurve]
-    exact physicalBase_eq_extend_physicalDomainCurve c
-  apply sourcePhysicalL2Equiv.injective
-  change sourcePhysicalL2Equiv (sourcePhysicalL2Equiv.symm
-    (continuousPotentialL2CLM (miuraDiagonalCurveCLM (periodOneMiuraCurve a)))) = _
-  rw [LinearIsometryEquiv.apply_symm_apply,sourcePhysicalL2Equiv_apply,
-    continuousPotentialL2CLM_apply]
-  exact (physicalRestrictionL2_of_continuous _ _ hp).symm
 
 theorem periodOneMiura_sheets_eq_NLS (a : ScalarDomain 2)
     (ha : ∀ n, a.val n = conj (a.val (-n))) (z : ℂ) (hzr : 0 < z.re) (hzi : z.im ≠ 0) :

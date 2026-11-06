@@ -13,14 +13,14 @@ open scoped Classical
 namespace NLS.KdV
 
 def hillRealLabelCutoff (q : WeightedCoeff SpectralWeight.one.toWeight 2) : ℕ :=
-  max 2 ⌈16*‖q‖⌉₊
+  max 2 ⌈8*‖q‖⌉₊
 
 theorem hillRealLabelCutoff_ge_two (q : WeightedCoeff SpectralWeight.one.toWeight 2) :
     2 ≤ hillRealLabelCutoff q := le_max_left _ _
 
 theorem hillRealLabelCutoff_bound (q : WeightedCoeff SpectralWeight.one.toWeight 2) :
-    16*‖q‖ ≤ (hillRealLabelCutoff q : ℝ) :=
-  (Nat.le_ceil _).trans (by exact_mod_cast (le_max_right 2 ⌈16*‖q‖⌉₊))
+    8*‖q‖ ≤ (hillRealLabelCutoff q : ℝ) :=
+  (Nat.le_ceil _).trans (by exact_mod_cast (le_max_right 2 ⌈8*‖q‖⌉₊))
 
 /-- The intrinsic one-sided real characteristic labels, with repetitions
 equal to the analytic multiplicities of the physical characteristic. -/
@@ -54,7 +54,7 @@ theorem hillRealLabels_spec_at
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ)) :
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ)) :
     HillRealCharacteristicLabeling q N (hillRealLabels q hq hreal) := by
   obtain ⟨lambda,h⟩ := exists_hillRealCharacteristicLabeling q hq hreal N hN hcut
   have he := h.unique (hillRealLabels_spec q hq hreal) hq
@@ -87,7 +87,7 @@ theorem hillRealLabels_high_pair
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     ∃ p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n,
       hillRealLabels q hq hreal (2*n-1) = p.left ∧ hillRealLabels q hq hreal (2*n) = p.right :=
   (hillRealLabels_spec_at q hq hreal n hn hcut).high_pair n le_rfl

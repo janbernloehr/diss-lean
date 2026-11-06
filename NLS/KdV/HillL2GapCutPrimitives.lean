@@ -19,7 +19,7 @@ namespace NLS.KdV
 theorem HillRealHighGapPair.exists_source_cut_primitive
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) :
     ∃ R P : ℂ → ℂ,
       AnalyticOnNhd ℂ R (ball (freeHillValue n : ℂ) (n : ℝ) \ segment ℝ (p.left : ℂ) p.right) ∧
@@ -43,7 +43,7 @@ theorem HillRealHighGapPair.exists_source_cut_primitive
     dsimp only [K]
     rw [segment_eq_image_lineMap]
     exact isCompact_Icc.image AffineMap.lineMap_continuous
-  have hloc := p.localization q hq n hn (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n hn hcut
   have hL : (p.left : ℂ) ∈ ball (freeHillValue n : ℂ) (3*(n : ℝ)/4) := by
     rw [mem_ball,dist_eq_norm,← ofReal_sub,norm_real,Real.norm_eq_abs]
     linarith [hloc.1]

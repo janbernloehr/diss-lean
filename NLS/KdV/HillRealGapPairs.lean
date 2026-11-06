@@ -34,7 +34,7 @@ theorem exists_hillRealHighGapPair
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     Nonempty (HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) := by
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
   obtain ⟨b,hb⟩ := (NormedSpace.sphere_nonempty (E := ℂ)

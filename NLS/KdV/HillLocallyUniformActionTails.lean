@@ -66,7 +66,7 @@ theorem exists_hillPeriodOneAction_local_weighted_tail_bound
     (w : SpectralWeight) (q : RealHillWeightedPotential w) :
     ∃ N₀ : ℕ, ∃ U : Set (RealHillWeightedPotential w),
       2 ≤ N₀ ∧ IsOpen U ∧ q ∈ U ∧ ∀ p ∈ U,
-      ∀ N : ℕ, N₀ ≤ N → 16 * ‖p.val‖ ≤ (N : ℝ) →
+      ∀ N : ℕ, N₀ ≤ N → 8 * ‖p.val‖ ≤ (N : ℝ) →
       Summable (fun k : ℕ => w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *
         (2 * Real.pi * (k + N : ℕ)) * hillPeriodOneAction w p.val p.property (k + N)) ∧
       (∑' k : ℕ, w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *

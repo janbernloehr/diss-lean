@@ -16,10 +16,10 @@ theorem hillRealLabels_high_left_pos
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     0 < hillRealLabels q hq hr (2*n-1) := by
   obtain ⟨p, hL, _⟩ := hillRealLabels_high_pair q hq hr n hn hcut
-  have hloc := abs_le.mp (p.localization q hq n (by omega) (by linarith [norm_nonneg q])).1
+  have hloc := abs_le.mp (p.localization q hq n (by omega) hcut).1
   have hnR : (2 : ℝ) ≤ n := by exact_mod_cast hn
   have hpi : 1 ≤ Real.pi^2 := by nlinarith [Real.pi_gt_three]
   have hfree : (n : ℝ)/2 < freeHillValue n := by
@@ -34,7 +34,7 @@ theorem hillRealGapIntegral_high_nonneg
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
     0 ≤ hillRealGapIntegral q hq hr n m := by
   have hl := (hillRealLabels_high_left_pos q hq hr n hn hcut).le
   have hI : 0 ≤ hillRealGapIntegral q hq hr n 0 := by
@@ -47,7 +47,7 @@ theorem eventually_hillRealGapIntegral_nonneg
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) :
     ∀ᶠ n : ℕ in atTop, ∀ m : ℕ, 0 ≤ hillRealGapIntegral q hq hr n m := by
-  obtain ⟨A, hA⟩ := exists_nat_ge (16*‖q‖)
+  obtain ⟨A, hA⟩ := exists_nat_ge (8*‖q‖)
   filter_upwards [eventually_ge_atTop (max 2 A)] with n hn
   intro m
   apply hillRealGapIntegral_high_nonneg q hq hr n ((le_max_left _ _).trans hn)

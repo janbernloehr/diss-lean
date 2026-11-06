@@ -1,7 +1,10 @@
-import NLS.MKdV.SobolevMiuraPotential
 import NLS.MKdV.SobolevMiuraPrimitive
 import NLS.MKdV.MiuraHillSpectralBridge
+import NLS.MKdV.SobolevMiuraPotential
+import NLS.MKdV.PeriodOneMiuraCurveCLM
+import NLS.MKdV.MiuraHillPhysicalTraceComparison
 import NLS.KdV.HillL2EnergyDiscriminant
+import NLS.MKdV.QuasiHillJointAnalytic
 import NLS.ZakharovShabat.SobolevScalarSmoothDensity
 import NLS.Fourier.PeriodOneFourierUniqueness
 

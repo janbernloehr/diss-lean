@@ -131,9 +131,9 @@ theorem hillGapCriticalPoint_high_localization
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16*‖q‖ ≤ (n : ℝ)) : |hillGapCriticalPoint q hq hr n-freeHillValue n| ≤ 4*‖q‖ := by
+    (hcut : 8*‖q‖ ≤ (n : ℝ)) : |hillGapCriticalPoint q hq hr n-freeHillValue n| ≤ 4*‖q‖ := by
   obtain ⟨p,hl,hu⟩ := hillRealLabels_high_pair q hq hr n hn hcut
-  obtain ⟨hpl,hpu⟩ := p.localization q hq n (by omega) (by linarith [norm_nonneg q])
+  obtain ⟨hpl,hpu⟩ := p.localization q hq n (by omega) hcut
   have hc := (hillGapCriticalPoint_spec q hq hr n (by omega)).1
   rw [hl,hu] at hc
   rcases abs_le.mp hpl with ⟨hpl0,hpl1⟩
@@ -144,7 +144,7 @@ theorem hillGapCriticalPoint_sqrt_frequency_bound
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     ‖Complex.sqrt (hillGapCriticalPoint q hq hr n)-(Real.pi : ℂ)*n‖ ≤ 4*‖q‖/(Real.pi*n) := by
   have hloc := hillGapCriticalPoint_high_localization q hq hr n hn hcut
   have hc : 0 < Real.pi*(n : ℝ) := mul_pos Real.pi_pos (by exact_mod_cast (show 0 < n by omega))

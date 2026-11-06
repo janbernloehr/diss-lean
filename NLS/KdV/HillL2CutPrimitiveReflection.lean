@@ -19,7 +19,7 @@ theorem HillL2NormalizedCutPrimitive.reflection
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F) :
     ∀ z ∈ ball (freeHillValue n : ℂ) (7*(n : ℝ)/8) \ segment ℝ (p.left : ℂ) p.right,
@@ -30,7 +30,7 @@ theorem HillL2NormalizedCutPrimitive.reflection
   have ha : a ∈ sphere (freeHillValue n : ℂ) (3*(n : ℝ)/4) := by
     simp only [a,mem_sphere,dist_eq_norm,add_sub_cancel_left,norm_real,Real.norm_eq_abs,
       abs_of_pos (by positivity : 0 < 3*(n : ℝ)/4)]
-  have hloc := p.localization q hq n hn (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n hn hcut
   have hL : (p.left : ℂ) ∈ ball (freeHillValue n : ℂ) (7*(n : ℝ)/8) := by
     rw [mem_ball,dist_eq_norm,← ofReal_sub,norm_real,Real.norm_eq_abs]
     linarith [hloc.1]
@@ -74,7 +74,7 @@ theorem HillL2NormalizedCutPrimitive.re_eq_zero
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F)
     (x : ℝ) (hx : (x : ℂ) ∈ ball (freeHillValue n : ℂ) (7*(n : ℝ)/8) \ segment ℝ (p.left : ℂ) p.right) :

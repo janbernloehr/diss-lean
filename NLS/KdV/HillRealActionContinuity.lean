@@ -106,7 +106,7 @@ theorem exists_hillRealGapIntegral_uniform_local_tail
             hillRealLabels p.val p.property.1 p.property.2 (2*n-1))^2 := by
   obtain ⟨N₀, V, hV, hqV, hbound⟩ :=
     exists_hillRealGapIntegral_local_quadratic_tail_bound (SpectralWeight.one.toCoeff q.val)
-  obtain ⟨A, hA⟩ := exists_nat_ge (16 * (‖q.val‖ + 1))
+  obtain ⟨A, hA⟩ := exists_nat_ge (8 * (‖q.val‖ + 1))
   let N := max 2 (max N₀ A)
   let U : Set RealPeriodOneHillPotential :=
     {p | SpectralWeight.one.toCoeff p.val ∈ V} ∩ {p | ‖p.val‖ < ‖q.val‖ + 1}
@@ -120,8 +120,8 @@ theorem exists_hillRealGapIntegral_uniform_local_tail
   have hnN : N₀ ≤ n := (le_max_left N₀ A).trans ((le_max_right 2 _).trans hn)
   have hnA : A ≤ n := (le_max_right N₀ A).trans ((le_max_right 2 _).trans hn)
   have hpn : ‖p.val‖ < ‖q.val‖ + 1 := hp.2
-  have hcut : 16 * ‖p.val‖ ≤ (n : ℝ) :=
-    (mul_le_mul_of_nonneg_left hpn.le (by norm_num : (0 : ℝ) ≤ 16)).trans
+  have hcut : 8 * ‖p.val‖ ≤ (n : ℝ) :=
+    (mul_le_mul_of_nonneg_left hpn.le (by norm_num : (0 : ℝ) ≤ 8)).trans
       (hA.trans (by exact_mod_cast hnA))
   exact hbound p.val p.property.1 p.property.2 hp.1 n hnN hn2 hcut
 

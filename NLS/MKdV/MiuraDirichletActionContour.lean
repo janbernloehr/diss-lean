@@ -24,7 +24,7 @@ theorem miuraDirichlet_physicalAction_generator_circle
       -(2/(Real.pi : ℂ))*(∮ z in C(C.cauchy.discs.center n,C.contourRadius n),
         z*(∫ x in (0 : ℝ)..1,
           extend (hillDirichletGradientCurve (realSobolevMiuraHillPotential a ha) m hm) x*
-          extend (hillDiscriminantGradientSpatialCurve (sobolevMiuraHillPotential a) (z^2)) x)/
+          extend (hillEnergyTraceGradientSpatialCurve (sobolevMiuraHillPotential a) (z^2)) x)/
             sourceCanonicalRoot (by simp) (by norm_num) (sobolevSourceInclusion (a,a)) z) := by
   let φ : realDiagonalSourceLocus 2 :=
     ⟨(realDiagonalH1Source a ha).val,⟨(realDiagonalH1Source a ha).property,rfl⟩⟩
@@ -51,7 +51,7 @@ theorem miuraDirichlet_physicalAction_generator_circle
       2*(∮ z in C(C.cauchy.discs.center n,C.contourRadius n),
         z*(∫ x in (0 : ℝ)..1,
           extend (hillDirichletGradientCurve (realSobolevMiuraHillPotential a ha) m hm) x*
-          extend (hillDiscriminantGradientSpatialCurve (sobolevMiuraHillPotential a) (z^2)) x)/
+          extend (hillEnergyTraceGradientSpatialCurve (sobolevMiuraHillPotential a) (z^2)) x)/
             sourceCanonicalRoot (by simp) (by norm_num) (sobolevSourceInclusion (a,a)) z) := by
     rw [← circleIntegral.integral_const_mul]
     apply circleIntegral.integral_congr (C.contourRadius_pos n).le

@@ -44,19 +44,19 @@ theorem hillSignedEnergyRoot_mem_centralSpectrum
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ))
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ))
     (upper : Bool) (n : ℤ) (hn : n.natAbs ≤ N) :
     hillSignedEnergyRoot q hq hr upper n ∈ centralPeriodicSpectrum
       (by simp : (2 : ℝ≥0∞) ≠ ⊤) (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) N := by
   let j := if n = 0 then 0 else if upper then 2*n.natAbs else 2*n.natAbs-1
   have hj : j ≤ 2*N := by dsimp only [j]; split_ifs <;> omega
   have hw : hillSignedEnergyRoot q hq hr upper n^2 = (hillRealLabels q hq hr j : ℂ) := hillSignedEnergyRoot_sq q hq hr upper n
-  have hground := (hillLowestEnergy_mem_centralInterval q hq hr N hN (by linarith [norm_nonneg q])).1
+  have hground := (hillLowestEnergy_mem_centralInterval q hq hr N hN hcut).1
   change -(N : ℝ)^2 < hillRealLabels q hq hr 0 at hground
   have hlo : -(N : ℝ)^2 < hillRealLabels q hq hr j :=
     hground.trans_le (monotone_hillRealLabels q hq hr (Nat.zero_le j))
   obtain ⟨p,_,hu⟩ := hillRealLabels_high_pair q hq hr N hN hcut
-  have hp := (abs_le.mp (p.localization q hq N (by omega) (by linarith [norm_nonneg q])).2).2
+  have hp := (abs_le.mp (p.localization q hq N (by omega) hcut).2).2
   have htop : hillRealLabels q hq hr (2*N) ≤ Real.pi^2*(N : ℝ)^2+4*‖q‖ := by
     rw [hu]
     simpa only [freeHillValue,Int.cast_natCast] using (show p.right ≤ freeHillValue N+4*‖q‖ by linarith)
@@ -118,7 +118,7 @@ theorem hillSignedCentralRoots_le_original
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ)) :
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ)) :
     hillSignedCentralRoots q hq hr N ≤ centralPeriodicRoots
       (by simp : (2 : ℝ≥0∞) ≠ ⊤) (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) N := by
   classical
@@ -158,7 +158,7 @@ theorem hillSignedCentralRoots_eq_original
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ))
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ))
     (hcount : PeriodicCountingData (by simp : (2 : ℝ≥0∞) ≠ ⊤) (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) N) :
     hillSignedCentralRoots q hq hr N = centralPeriodicRoots
       (by simp : (2 : ℝ≥0∞) ≠ ⊤) (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) N := by
@@ -171,7 +171,7 @@ theorem hillSignedEnergyRoot_centralLabeling
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ))
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ))
     (hcount : PeriodicCountingData (by simp : (2 : ℝ≥0∞) ≠ ⊤) (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) N) :
     CentralPeriodicLabeling (by simp : (2 : ℝ≥0∞) ≠ ⊤) (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) N
       (hillSignedEnergyRoot q hq hr false) (hillSignedEnergyRoot q hq hr true) :=
@@ -181,14 +181,14 @@ theorem exists_hillSignedEnergyRoot_centralLabeling
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) :
-    ∃ N : ℕ, 2 ≤ N ∧ 16*‖q‖ ≤ (N : ℝ) ∧ ∀ M : ℕ, N ≤ M →
+    ∃ N : ℕ, 2 ≤ N ∧ 8*‖q‖ ≤ (N : ℝ) ∧ ∀ M : ℕ, N ≤ M →
       CentralPeriodicLabeling (by simp : (2 : ℝ≥0∞) ≠ ⊤) (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) M
         (hillSignedEnergyRoot q hq hr false) (hillSignedEnergyRoot q hq hr true) := by
   let φ := hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)
   obtain ⟨N0,U,_,_,_,hφ,_,_,_,hd⟩ := exists_uniform_periodicCountingData (by simp : (2 : ℝ≥0∞) ≠ ⊤) φ
   let N := max N0 (hillRealLabelCutoff q)
   have hN : 2 ≤ N := (hillRealLabelCutoff_ge_two q).trans (le_max_right _ _)
-  have hcut : 16*‖q‖ ≤ (N : ℝ) := (hillRealLabelCutoff_bound q).trans (by exact_mod_cast (le_max_right N0 (hillRealLabelCutoff q)))
+  have hcut : 8*‖q‖ ≤ (N : ℝ) := (hillRealLabelCutoff_bound q).trans (by exact_mod_cast (le_max_right N0 (hillRealLabelCutoff q)))
   refine ⟨N,hN,hcut,?_⟩
   intro M hM
   exact hillSignedEnergyRoot_centralLabeling q hq hr M (hN.trans hM)

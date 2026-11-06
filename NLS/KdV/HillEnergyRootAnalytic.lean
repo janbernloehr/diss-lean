@@ -23,7 +23,7 @@ theorem exists_hillEnergyRootFactor_bounded_majorant
   have hs0 : Summable (fun n : ℕ => 1/(n : ℝ)^2) := Real.summable_one_div_nat_pow.mpr (by norm_num)
   have hs : Summable (fun k : ℕ => C/(k+1 : ℕ)^2) := by
     simpa only [div_eq_mul_inv,one_mul] using ((summable_nat_add_iff 1).mpr hs0).mul_left C
-  obtain ⟨N,hN⟩ := exists_nat_gt (16*‖q‖+2*(D+R)+2)
+  obtain ⟨N,hN⟩ := exists_nat_gt (8*‖q‖+2*(D+R)+2)
   refine ⟨N,fun k : ℕ => C/(k+1 : ℕ)^2,hs,?_⟩
   intro k hk z hz
   have hkR : (N : ℝ) ≤ k := by exact_mod_cast hk
@@ -31,9 +31,9 @@ theorem exists_hillEnergyRootFactor_bounded_majorant
     have hn : (2 : ℝ) < k := by linarith [norm_nonneg q,norm_nonneg z]
     exact_mod_cast (show (2 : ℝ) ≤ (k+1 : ℕ) by push_cast; linarith)
   have hn : (1 : ℝ) ≤ (k+1 : ℕ) := by exact_mod_cast (show 1 ≤ k+1 by omega)
-  have hcut : 16*‖q‖ ≤ (k+1 : ℕ) := by push_cast; linarith [norm_nonneg z]
+  have hcut : 8*‖q‖ ≤ (k+1 : ℕ) := by push_cast; linarith [norm_nonneg z]
   obtain ⟨p,hl,hu⟩ := hillRealLabels_high_pair q hq hr (k+1) hn2 hcut
-  have hloc := p.localization q hq (k+1) (by omega) (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq (k+1) (by omega) hcut
   have hlo : |hillRealLabels q hq hr (2*(k+1)-1)-freeHillValue (k+1)| ≤ D := by simpa only [hl,D,Nat.cast_add,Nat.cast_one] using hloc.1
   have hup : |hillRealLabels q hq hr (2*(k+1))-freeHillValue (k+1)| ≤ D := by simpa only [hu,D,Nat.cast_add,Nat.cast_one] using hloc.2
   have hnle : (k+1 : ℝ)^2 ≤ freeHillValue (k+1) := by

@@ -150,7 +150,7 @@ the free-normalized sheet, uniformly along the potential segment. -/
 theorem mem_hillL2ContinuationDomain_of_high_distance
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (z : ℂ) (hz : z ∈ closedBall (freeHillValue n : ℂ) (n : ℝ))
     (hfar : 4*‖q‖ < ‖z-(freeHillValue n : ℂ)‖) :
     (z,SpectralWeight.one.toCoeff q) ∈ hillL2ContinuationDomain := by
@@ -175,7 +175,7 @@ sheet, including its two real crossings. This also holds for complex q. -/
 theorem mem_hillL2ContinuationDomain_high_sphere
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (z : ℂ) (hz : z ∈ sphere (freeHillValue n : ℂ) (n : ℝ)) :
     (z,SpectralWeight.one.toCoeff q) ∈ hillL2ContinuationDomain := by
   rw [mem_hillL2ContinuationDomain_iff]
@@ -188,14 +188,14 @@ theorem mem_hillL2ContinuationDomain_high_sphere
     rw [map_smul]
     exact (Coeff.paritySubspace 0).smul_mem _ hq
   have he := hillL2Radicand_ne_zero_on_sphere ((s : ℂ) • q) hp n hn
-    (show 16*‖(s : ℂ) • q‖ ≤ (n : ℝ) by linarith) z hz
+    (show 8*‖(s : ℂ) • q‖ ≤ (n : ℝ) by linarith) z hz
   simpa only [map_smul] using he
 
 /-- One open complex L2 neighborhood works for the full compact contour. -/
 theorem exists_hillL2Continuation_high_contour_neighborhood
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     ∃ V : Set (Coeff 2), IsOpen V ∧ SpectralWeight.one.toCoeff q ∈ V ∧
       sphere (freeHillValue n : ℂ) (n : ℝ) ×ˢ V ⊆ hillL2ContinuationDomain :=
   hillL2SourceFamily.exists_continuation_neighborhood _ (isCompact_sphere _ _) _

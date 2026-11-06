@@ -18,7 +18,7 @@ theorem hillL2HighContourMoment_eq_gapIntegral
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16 * ‖q‖ ≤ (n : ℝ)) (m : ℕ) :
+    (hcut : 8 * ‖q‖ ≤ (n : ℝ)) (m : ℕ) :
     hillL2HighContourMoment n m (SpectralWeight.one.toCoeff q) =
       (hillRealGapIntegral q hq hr n m : ℂ) := by
   by_cases hc : hillRealLabels q hq hr (2 * n - 1) = hillRealLabels q hq hr (2 * n)
@@ -40,7 +40,7 @@ theorem hillL2HighContourMoment_nonneg_even
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16 * ‖q‖ ≤ (n : ℝ)) (m : ℕ) :
+    (hcut : 8 * ‖q‖ ≤ (n : ℝ)) (m : ℕ) :
     0 ≤ (hillL2HighContourMoment n (2 * m) (SpectralWeight.one.toCoeff q)).re := by
   rw [hillL2HighContourMoment_eq_gapIntegral q hq hr n hn hcut, ofReal_re]
   exact hillRealGapIntegral_nonneg_even q hq hr n (by omega) m
@@ -49,7 +49,7 @@ theorem hillL2HighContourMoment_pos_iff
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16 * ‖q‖ ≤ (n : ℝ)) :
+    (hcut : 8 * ‖q‖ ≤ (n : ℝ)) :
     0 < (hillL2HighContourMoment n 0 (SpectralWeight.one.toCoeff q)).re ↔
       hillRealLabels q hq hr (2 * n - 1) < hillRealLabels q hq hr (2 * n) := by
   rw [hillL2HighContourMoment_eq_gapIntegral q hq hr n hn hcut, ofReal_re]
@@ -60,7 +60,7 @@ theorem hillL2HighContourMoment_mean_value
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16 * ‖q‖ ≤ (n : ℝ)) (m : ℕ) :
+    (hcut : 8 * ‖q‖ ≤ (n : ℝ)) (m : ℕ) :
     ∃ c ∈ Icc (hillRealLabels q hq hr (2 * n - 1)) (hillRealLabels q hq hr (2 * n)),
       hillL2HighContourMoment n m (SpectralWeight.one.toCoeff q) =
         (c : ℂ) ^ m * hillL2HighContourMoment n 0 (SpectralWeight.one.toCoeff q) := by

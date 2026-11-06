@@ -57,7 +57,7 @@ theorem HillRealHighGapPair.deflated_unit
 theorem HillRealHighGapPair.exists_source_normalized_cut_root
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) :
     ∃ R : ℂ → ℂ,
       AnalyticOnNhd ℂ R (ball (freeHillValue n : ℂ) (n : ℝ) \ segment ℝ (p.left : ℂ) p.right) ∧
@@ -74,7 +74,7 @@ theorem HillRealHighGapPair.exists_source_normalized_cut_root
     p.left p.right (freeHillValue n : ℂ) (n : ℝ) hnpos
     (hQ.mono ball_subset_closedBall) (fun z hz => hunit z (ball_subset_closedBall hz))
     (fun z _ => hfactor z)
-  have hloc := p.localization q hq n hn (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n hn hcut
   have hL : (p.left : ℂ) ∈ closedBall (freeHillValue n : ℂ) (4*‖q‖) := by
     simpa only [mem_closedBall,dist_eq_norm,← ofReal_sub,norm_real,Real.norm_eq_abs] using hloc.1
   have hU : (p.right : ℂ) ∈ closedBall (freeHillValue n : ℂ) (4*‖q‖) := by

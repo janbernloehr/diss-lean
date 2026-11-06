@@ -1,3 +1,4 @@
+import NLS.MKdV.PeriodOneMiuraSourceComparison
 import NLS.MKdV.QuasiHillJointAnalytic
 import NLS.ComplexAnalysis.SourceDiscriminantPrimitive
 import NLS.ZakharovShabat.ContinuousPotentialSource
@@ -31,26 +32,12 @@ def miuraHillContinuationDomain : Set (ℂ × Curve ℂ) := quasiHillPrimitiveDa
 def miuraHillRoot : ℂ × Curve ℂ → ℂ := quasiHillPrimitiveData.root
 def miuraHillPrimitive : ℂ × Curve ℂ → ℂ := quasiHillPrimitiveData.primitive
 
-def miuraDiagonalCurveCLM : Curve ℂ →L[ℂ] Curve (ℂ × ℂ) :=
-  ContinuousLinearMap.compLeftContinuous ℂ (Icc (0 : ℝ) 1)
-    ((ContinuousLinearMap.id ℂ ℂ).prod (ContinuousLinearMap.id ℂ ℂ))
-
-def miuraDiagonalSourceCLM : Curve ℂ →L[ℂ] CoeffPair 2 :=
-  continuousPotentialSource.comp miuraDiagonalCurveCLM
-
 theorem miuraDiagonalSource_realType (U : Curve ℂ) (hr : ∀ t, (U t).im = 0) :
     miuraDiagonalSourceCLM U ∈ realTypeSourceSubmodule 2 :=
   continuousPotentialSource_realType _ (fun t => (conj_eq_iff_im.mpr (hr t)).symm)
 
 def miuraRealDiagonalSource (U : Curve ℂ) (hr : ∀ t, (U t).im = 0) :
     realTypeSourceSubmodule 2 := ⟨miuraDiagonalSourceCLM U,miuraDiagonalSource_realType U hr⟩
-
-theorem canonicalDiscriminant_miuraDiagonalSource (U : Curve ℂ) (z : ℂ) :
-    canonicalDiscriminant (by simp) (periodOnePotential (miuraDiagonalSourceCLM U)) z =
-      quasiHillDiscriminant U (z^2) := by
-  rw [miuraDiagonalSourceCLM,ContinuousLinearMap.comp_apply,
-    canonicalDiscriminant_continuousPotentialSource]
-  exact (quasiHillDiscriminant_eq_ZS U _ (fun _ => rfl) z).symm
 
 theorem miuraHillRadicand_ne_zero_of_real (U : Curve ℂ) (hr : ∀ t, (U t).im = 0)
     (z : ℂ) (hi : z.im ≠ 0) : quasiHillDiscriminant U (z^2)^2-4 ≠ 0 := by

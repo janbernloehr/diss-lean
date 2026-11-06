@@ -15,7 +15,7 @@ theorem hillSignedEnergyRoot_mem_high_disc
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) (upper : Bool) (n : ℤ)
-    (hn : 2 ≤ n.natAbs) (hcut : 16*‖q‖ ≤ (n.natAbs : ℝ)) :
+    (hn : 2 ≤ n.natAbs) (hcut : 8*‖q‖ ≤ (n.natAbs : ℝ)) :
     hillSignedEnergyRoot q hq hr upper n ∈ refinedResonantDisk n := by
   obtain ⟨k,hk⟩ := Nat.exists_eq_succ_of_ne_zero (by omega : n.natAbs ≠ 0)
   have hk' : n.natAbs = k+1 := hk
@@ -76,7 +76,7 @@ theorem hillSignedEnergyRoot_distantPair
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) (n : ℤ)
-    (hn : 2 ≤ n.natAbs) (hcut : 16*‖q‖ ≤ (n.natAbs : ℝ))
+    (hn : 2 ≤ n.natAbs) (hcut : 8*‖q‖ ≤ (n.natAbs : ℝ))
     (hcanon : canonicalPeriodicCutoff (by simp : (2 : ℝ≥0∞) ≠ ⊤) (by norm_num : 1 < (2 : ℝ≥0∞))
       (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) (hillL2CoefficientPotential_even _) < n.natAbs) :
     PeriodicEndpointPair (by simp : (2 : ℝ≥0∞) ≠ ⊤) (hillL2CoefficientPotential (SpectralWeight.one.toCoeff q)) n
@@ -105,7 +105,7 @@ theorem exists_hillSignedEnergyRoot_endpointLabeling
   have hK : K ≤ N := (le_max_left _ _).trans (le_max_right _ _)
   have hL : hillRealLabelCutoff q ≤ N := (le_max_right _ _).trans (le_max_right _ _)
   have hN : 2 ≤ N := (hillRealLabelCutoff_ge_two q).trans hL
-  have hcut : 16*‖q‖ ≤ (N : ℝ) := (hillRealLabelCutoff_bound q).trans (by exact_mod_cast hL)
+  have hcut : 8*‖q‖ ≤ (N : ℝ) := (hillRealLabelCutoff_bound q).trans (by exact_mod_cast hL)
   have hcount := hd φ hφ N h0
   refine ⟨N,hcount,hillSignedEnergyRoot_centralLabeling q hq hr N hN hcut hcount,?_,
     memℓp_hillSignedEnergyRoot_displacement q hq hr false,

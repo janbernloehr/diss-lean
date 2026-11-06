@@ -1,5 +1,5 @@
 import NLS.KdV.HillDirichletProductPairings
-import NLS.KdV.HillDiscriminantGradientRegularity
+import NLS.KdV.HillEnergyTraceGradientRegularity
 
 /-! # Exact Dirichlet pairing with the actual periodic trace gradient -/
 noncomputable section
@@ -43,7 +43,7 @@ theorem integral_hillDirichletGradient_discriminantSpatial_energy
     (q : RealPeriodOneHillPotential) (n : ℕ) (hn : 1 ≤ n) (E : ℂ) :
     2*((hillDirichletEnergy q.val q.property.1 q.property.2 n hn : ℂ)-E)*
       (∫ x in (0 : ℝ)..1,extend (hillDirichletGradientCurve q n hn) x*
-        extend (hillDiscriminantGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E) x) =
+        extend (hillEnergyTraceGradientSpatialCurve (SpectralWeight.one.toCoeff q.val) E) x) =
       ((hillL2DirichletSlope (SpectralWeight.one.toCoeff q.val)
         (hillDirichletEnergy q.val q.property.1 q.property.2 n hn))^2-1)*
           hillL2DirichletCharacteristic (SpectralWeight.one.toCoeff q.val) E/
@@ -54,11 +54,11 @@ theorem integral_hillDirichletGradient_discriminantSpatial_energy
   have hSS := integral_hillDirichletGradient_productSpatial_energy q n hn E (0,1) (0,1)
   have hM : (scalarStateMass (hillDirichletStateCurve q n hn) : ℂ) ≠ 0 :=
     ofReal_ne_zero.mpr (hillDirichletState_mass_pos q n hn).ne'
-  have hg0 := (hillDiscriminantGradientCurve_endpoints r E).1
-  have hg1 := (hillDiscriminantGradientCurve_endpoints r E).2
-  rw [hillDiscriminantGradientCurve_eq_products] at hg0 hg1
+  have hg0 := (hillEnergyTraceGradientCurve_endpoints r E).1
+  have hg1 := (hillEnergyTraceGradientCurve_endpoints r E).2
+  rw [hillEnergyTraceGradientCurve_eq_products] at hg0 hg1
   dsimp only [ContinuousMap.sub_apply,ContinuousMap.add_apply,ContinuousMap.smul_apply,smul_eq_mul] at hg0 hg1
-  rw [hillDiscriminantGradientSpatialCurve,curve_pairing_sub,curve_pairing_add,
+  rw [hillEnergyTraceGradientSpatialCurve,curve_pairing_sub,curve_pairing_add,
     curve_pairing_smul,curve_pairing_smul,curve_pairing_smul]
   rw [eq_div_iff hM] at hCC hCS hSS ⊢
   linear_combination

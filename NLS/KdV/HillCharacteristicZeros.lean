@@ -125,7 +125,7 @@ in each high-energy disc at the linear L2 cutoff. -/
 theorem hillL2Radicand_two_zeros
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     ComplexAnalysis.analyticZeroCount (hillL2Radicand (SpectralWeight.one.toCoeff q))
       (closedBall (freeHillValue n : ℂ) (n : ℝ)) = 2 := by
   let F : Icc (0 : ℝ) 1 → ℂ → ℂ := fun t z =>
@@ -172,7 +172,7 @@ theorem hillL2Radicand_two_zeros
 theorem hillL2Radicand_ne_zero_on_sphere
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
     (z : ℂ) (hz : z ∈ sphere (freeHillValue n : ℂ) (n : ℝ)) :
     hillL2Radicand (SpectralWeight.one.toCoeff q) z ≠ 0 := by
   intro hd
@@ -190,7 +190,7 @@ theorem hillL2Radicand_ne_zero_on_sphere
 theorem hillL2Radicand_strip_two_zeros
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     ComplexAnalysis.analyticZeroCount (hillL2Radicand (SpectralWeight.one.toCoeff q))
       (reducedHillStrip n) = 2 := by
   have he : ComplexAnalysis.analyticZeroCount (hillL2Radicand (SpectralWeight.one.toCoeff q))
@@ -234,7 +234,7 @@ theorem hillReduced_order_eq_l2Radicand
       linarith [norm_nonneg q]
     obtain ⟨b,hb⟩ := (NormedSpace.sphere_nonempty (E := ℂ)
       (x := (freeHillValue n : ℂ))).mpr (show 0 ≤ (n : ℝ) by positivity)
-    have hbD := hillL2Radicand_ne_zero_on_sphere q hq n hn hcut b hb
+    have hbD := hillL2Radicand_ne_zero_on_sphere q hq n hn hcut' b hb
     have hbf : hillReducedDeterminant SpectralWeight.one n (q,b) ≠ 0 :=
       fun hb0 => hbD ((heq b (openHillStrip_subset n
         (hillClosedBall_subset_openStrip n hn (sphere_subset_closedBall hb)))).mp hb0)
@@ -244,7 +244,7 @@ theorem hillReduced_order_eq_l2Radicand
         (hillClosedBall_subset_openStrip n hn))
       ((analyticOnNhd_hillL2Radicand _).mono (subset_univ _))
       (sphere_subset_closedBall hb) hbf hbD (hillReducedDeterminant_two_zeros q n hn hcut)
-      (hillL2Radicand_two_zeros q hq n hn hcut)
+      (hillL2Radicand_two_zeros q hq n hn hcut')
       (fun y hy => heq y (openHillStrip_subset n (hillClosedBall_subset_openStrip n hn hy))) hzk
   · have hD : hillL2Radicand (SpectralWeight.one.toCoeff q) z ≠ 0 :=
       fun hD => hd ((heq z hz).mpr hD)

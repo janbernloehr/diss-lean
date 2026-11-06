@@ -54,7 +54,7 @@ theorem HillL2NormalizedCutPrimitive.square_eq_on_of_trace_and_zero
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16 * ‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8 * ‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hopen : p.left ≠ p.right)
     (R F : ℂ → ℂ) (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F)
     (K : ℂ → ℂ) (U : Set ℂ) (hU : IsOpen U) (hconn : IsPreconnected U)

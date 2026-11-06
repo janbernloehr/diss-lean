@@ -20,10 +20,10 @@ theorem hillRealLabels_high_right_le
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     hillRealLabels q hq hr (2*n) ≤ (Real.pi^2+1)*(n : ℝ)^2 := by
   obtain ⟨p, _, hR⟩ := hillRealLabels_high_pair q hq hr n hn hcut
-  have hloc := abs_le.mp (p.localization q hq n (by omega) (by linarith [norm_nonneg q])).2
+  have hloc := abs_le.mp (p.localization q hq n (by omega) hcut).2
   have hnR : (2 : ℝ) ≤ n := by exact_mod_cast hn
   rw [hR]
   dsimp only [freeHillValue] at hloc
@@ -34,7 +34,7 @@ theorem hillRealGapIntegral_high_power_bound
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ)) (m : ℕ) :
     hillRealGapIntegral q hq hr n m ≤
       (Real.pi^2+1)^m * (n : ℝ)^(2*m) * hillRealGapIntegral q hq hr n 0 := by
   have hL := (hillRealLabels_high_left_pos q hq hr n hn hcut).le
@@ -55,12 +55,12 @@ def hillHierarchyMomentTerm (w : SpectralWeight) (p : RealHillWeightedPotential 
 
 theorem hillHierarchyMomentTerm_high_bound
     (w : SpectralWeight) (p : RealHillWeightedPotential w) (m n : ℕ)
-    (hn : 2 ≤ n) (hcut : 16*‖p.val‖ ≤ (n : ℝ))
+    (hn : 2 ≤ n) (hcut : 8*‖p.val‖ ≤ (n : ℝ))
     (hGrowth : (n : ℝ)^m ≤ w (2*(n : ℤ))) :
     0 ≤ hillHierarchyMomentTerm w p m n ∧
       hillHierarchyMomentTerm w p m n ≤ (Real.pi^2+1)^m * hillWeightedActionTerm w p n := by
   let q := hillPeriodOneUnitPotential w p.val
-  have hcutq : 16*‖q‖ ≤ (n : ℝ) :=
+  have hcutq : 8*‖q‖ ≤ (n : ℝ) :=
     (mul_le_mul_of_nonneg_left (norm_hillPeriodOneUnitPotential_le w p.val) (by norm_num)).trans hcut
   have hsign := hillRealGapIntegral_high_nonneg q (hillPeriodOneUnitPotential_even w p.val)
     (hillPeriodOneUnitPotential_real w p.val p.property) n hn hcutq m
@@ -89,7 +89,7 @@ theorem summable_hillHierarchyMomentTerm
     (w : SpectralWeight) (p : RealHillWeightedPotential w) (m : ℕ)
     (hGrowth : ∀ n : ℕ, 1 ≤ n → (n : ℝ)^m ≤ w (2*(n : ℤ))) :
     Summable (hillHierarchyMomentTerm w p m) := by
-  obtain ⟨A, hA⟩ := exists_nat_ge (16*‖p.val‖)
+  obtain ⟨A, hA⟩ := exists_nat_ge (8*‖p.val‖)
   let N := max 2 A
   have hb (k : ℕ) := hillHierarchyMomentTerm_high_bound w p m (k+N)
     (by dsimp [N]; omega) (hA.trans (by exact_mod_cast (show A ≤ k+N by dsimp [N]; omega)))
@@ -110,15 +110,15 @@ theorem exists_hillHierarchyMomentTerm_small_tail
   have hD : 0 < D := by dsimp [D]; positivity
   obtain ⟨N₀, U₀, hN₀, hU₀, hqU₀, htail⟩ :=
     exists_hillWeightedActionTerm_small_tail w q (ε/D) (div_pos hε hD)
-  obtain ⟨A, hA⟩ := exists_nat_ge (16*(‖q.val‖+1))
+  obtain ⟨A, hA⟩ := exists_nat_ge (8*(‖q.val‖+1))
   let N := max N₀ A
   let U : Set (RealHillWeightedPotential w) := U₀ ∩ {p | ‖p.val‖ < ‖q.val‖+1}
   have hU : IsOpen U := hU₀.inter (isOpen_lt continuous_subtype_val.norm continuous_const)
   refine ⟨N, U, hN₀.trans (le_max_left _ _), hU, ⟨hqU₀, by dsimp; linarith⟩, ?_⟩
   intro p hp
   have hpn : ‖p.val‖ < ‖q.val‖+1 := hp.2
-  have hcutN : 16*‖p.val‖ ≤ (N : ℝ) :=
-    (mul_le_mul_of_nonneg_left hpn.le (by norm_num : (0 : ℝ) ≤ 16)).trans
+  have hcutN : 8*‖p.val‖ ≤ (N : ℝ) :=
+    (mul_le_mul_of_nonneg_left hpn.le (by norm_num : (0 : ℝ) ≤ 8)).trans
       (hA.trans (by exact_mod_cast le_max_right N₀ A))
   have hb (k : ℕ) := hillHierarchyMomentTerm_high_bound w p m (k+N)
     (by dsimp [N]; omega) (hcutN.trans (by exact_mod_cast (show N ≤ k+N by omega)))

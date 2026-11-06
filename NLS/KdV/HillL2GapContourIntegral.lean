@@ -19,7 +19,7 @@ theorem HillL2NormalizedCutPrimitive.circleIntegral_shifted_eq_gap
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (n : ℕ) (hn : 2 ≤ n) (hcut : 16 * ‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 2 ≤ n) (hcut : 8 * ‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (hgap : p.left ≠ p.right)
     (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F) (m : ℕ) :
@@ -40,7 +40,7 @@ theorem HillL2NormalizedCutPrimitive.circleIntegral_shifted_eq_gap
   have hd : 0 < d := by dsimp [d]; linarith [lt_of_le_of_ne p.ordered hgap]
   have hl : c - d = p.left := by dsimp [c, d]; ring
   have hu : c + d = p.right := by dsimp [c, d]; ring
-  have hloc := p.localization q hq n (by omega) (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n (by omega) hcut
   have hcenter : |c - freeHillValue n| + d ≤ 4 * ‖q‖ := by
     have he : |c - freeHillValue n| ≤ 4 * ‖q‖ - d := by
       rw [abs_le]
@@ -150,14 +150,14 @@ theorem HillL2NormalizedCutPrimitive.circleIntegral_shifted_eq_gap
 theorem HillL2NormalizedCutPrimitive.circleIntegral_shifted_eq
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (n : ℕ) (hn : 1 ≤ n) (hcut : 16 * ‖q‖ ≤ (n : ℝ))
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8 * ‖q‖ ≤ (n : ℝ))
     (p : HillRealHighGapPair (SpectralWeight.one.toCoeff q) n) (R F : ℂ → ℂ)
     (h : HillL2NormalizedCutPrimitive (SpectralWeight.one.toCoeff q) n p R F) (m : ℕ) :
     (∮ z in C((freeHillValue n : ℂ), 3 * (n : ℝ) / 4),
       z ^ m * (F z + I * (n : ℂ) * Real.pi)) =
       ∮ z in C((freeHillValue n : ℂ), 3 * (n : ℝ) / 4), z ^ m * F z := by
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
-  have hloc := p.localization q hq n hn (by linarith [norm_nonneg q])
+  have hloc := p.localization q hq n hn hcut
   have hK : segment ℝ (p.left : ℂ) p.right ⊆
       ball (freeHillValue n : ℂ) (3 * (n : ℝ) / 4) := by
     apply (convex_ball _ _).segment_subset

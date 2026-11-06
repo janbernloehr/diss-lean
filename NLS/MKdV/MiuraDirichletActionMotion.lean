@@ -59,7 +59,7 @@ theorem hasDerivAt_miuraNativeDirichletEnergy_actionFlow_circle
       (-(2/(Real.pi : ℂ))*(∮ z in C(C.cauchy.discs.center n,C.contourRadius n),
         z*(∫ x in (0 : ℝ)..1,
           extend (hillDirichletGradientCurve (realSobolevMiuraHillPotential b hb) m hm) x*
-          extend (hillDiscriminantGradientSpatialCurve (sobolevMiuraHillPotential b) (z^2)) x)/
+          extend (hillEnergyTraceGradientSpatialCurve (sobolevMiuraHillPotential b) (z^2)) x)/
             sourceCanonicalRoot (by simp) (by norm_num) (sobolevSourceInclusion (b,b)) z)) t := by
   let b := hierarchySobolevToScalarDomain s hs (miuraNativeRealActionFlow s a n t).val
   let hb := miuraNativeH1Profile_real s hs (miuraNativeRealActionFlow s a n t)

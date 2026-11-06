@@ -19,7 +19,7 @@ theorem independent_Dirichlet_discriminant_physical_Gardner
     B.energyGradient.bracket (miuraHillDiscriminantGradient a E) =
       4*E*(∫ x in (0 : ℝ)..1,
         extend (hillDirichletGradientCurve (realSobolevMiuraHillPotential a ha) n hn) x*
-        extend (hillDiscriminantGradientSpatialCurve (sobolevMiuraHillPotential a) E) x) :=
+        extend (hillEnergyTraceGradientSpatialCurve (sobolevMiuraHillPotential a) E) x) :=
   miuraHillDiscriminantGradient_bracket_eq_energy_first a ha n hn B E
 
 theorem independent_Dirichlet_original_action_contour
@@ -33,7 +33,7 @@ theorem independent_Dirichlet_original_action_contour
       -(2/(Real.pi : ℂ))*(∮ z in C(C.cauchy.discs.center n,C.contourRadius n),
         z*(∫ x in (0 : ℝ)..1,
           extend (hillDirichletGradientCurve (realSobolevMiuraHillPotential a ha) m hm) x*
-          extend (hillDiscriminantGradientSpatialCurve (sobolevMiuraHillPotential a) (z^2)) x)/
+          extend (hillEnergyTraceGradientSpatialCurve (sobolevMiuraHillPotential a) (z^2)) x)/
             sourceCanonicalRoot (by simp) (by norm_num) (sobolevSourceInclusion (a,a)) z) :=
   miuraDirichlet_physicalAction_generator_circle a ha m hm B n hn
 
@@ -49,7 +49,7 @@ theorem independent_Dirichlet_energy_complete_action_motion
       (-(2/(Real.pi : ℂ))*(∮ z in C(C.cauchy.discs.center n,C.contourRadius n),
         z*(∫ x in (0 : ℝ)..1,
           extend (hillDirichletGradientCurve (realSobolevMiuraHillPotential b hb) m hm) x*
-          extend (hillDiscriminantGradientSpatialCurve (sobolevMiuraHillPotential b) (z^2)) x)/
+          extend (hillEnergyTraceGradientSpatialCurve (sobolevMiuraHillPotential b) (z^2)) x)/
             sourceCanonicalRoot (by simp) (by norm_num) (sobolevSourceInclusion (b,b)) z)) t :=
   hasDerivAt_miuraNativeDirichletEnergy_actionFlow_circle s hs a n hn m hm t
 
