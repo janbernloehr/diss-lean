@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.OriginalBirkhoffActionCompatibility
 import NLS.Articles.KdVConvexity.SmoothPhysicalHamiltonianIdentity
 import NLS.KdV.HillFiniteGapPhysicalEnergyContour
 import NLS.Articles.KdVConvexity.UnconditionalContourExtension
@@ -103,6 +104,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.Fourier.PeriodOneSobolev,
+    `NLS.Fourier.PeriodOneContinuousMean,
+    `NLS.SequenceSpaces.HilbertReindexIsometry,
+    `NLS.SequenceSpaces.PositiveSupportedMembership,
+    `NLS.SequenceSpaces.SummableCoordinateNormContinuity,
     `NLS.ComplexAnalysis.LaurentQuarticRemainder,
     `NLS.ComplexAnalysis.QuarticContourCoefficient,
     `NLS.ZakharovShabat.NLSWKBApproximation,
