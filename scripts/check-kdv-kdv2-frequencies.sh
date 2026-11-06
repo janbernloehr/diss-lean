@@ -2967,6 +2967,11 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/NativeWeakActionCoordinates
   NLS/SequenceSpaces/RealActionNormLowerBound
   NLS/Articles/KdVKdV2Frequencies/LocalWeakKdVActionFrequency
+  NLS/SequenceSpaces/LocalScalarActionFamily
+  NLS/Articles/KdVKdV2Frequencies/LocalWeakSpectralActionFamily
+  NLS/KdV/NativeRealRoughDensity
+  NLS/KdV/HillRoughScalarReality
+  NLS/Articles/KdVKdV2Frequencies/CommonWeakKdVActionFrequency
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

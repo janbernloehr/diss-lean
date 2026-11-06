@@ -1,3 +1,8 @@
+import NLS.Articles.KdVKdV2Frequencies.CommonWeakKdVActionFrequency
+import NLS.KdV.HillRoughScalarReality
+import NLS.KdV.NativeRealRoughDensity
+import NLS.Articles.KdVKdV2Frequencies.LocalWeakSpectralActionFamily
+import NLS.SequenceSpaces.LocalScalarActionFamily
 import NLS.Articles.KdVKdV2Frequencies.LocalWeakKdVActionFrequency
 import NLS.Articles.KdVKdV2Frequencies.LocalWeakSpectralActionDescent
 import NLS.Articles.KdVKdV2Frequencies.NativeWeakActionCoordinates
@@ -5117,7 +5122,12 @@ private def kdvFrequencyAuditChunk23 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.LocalWeakSpectralActionDescent,
   `NLS.Articles.KdVKdV2Frequencies.NativeWeakActionCoordinates,
   `NLS.SequenceSpaces.RealActionNormLowerBound,
-  `NLS.Articles.KdVKdV2Frequencies.LocalWeakKdVActionFrequency
+  `NLS.Articles.KdVKdV2Frequencies.LocalWeakKdVActionFrequency,
+  `NLS.SequenceSpaces.LocalScalarActionFamily,
+  `NLS.Articles.KdVKdV2Frequencies.LocalWeakSpectralActionFamily,
+  `NLS.KdV.NativeRealRoughDensity,
+  `NLS.KdV.HillRoughScalarReality,
+  `NLS.Articles.KdVKdV2Frequencies.CommonWeakKdVActionFrequency
 ]
 
 open Lean in
