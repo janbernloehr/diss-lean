@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest GLOBAL real Miura properness and attained least energy
+## Latest ACTUAL mean-zero least-energy rough Miura factors
+
+EVERY real mean-zero HminusOne source now has an ACTUAL physically real MEAN-ZERO L2 factor at its ATTAINED LEAST admissible Miura energy e>=0, with squared norm exactly e and the literal corrected Miura equation. Minimality contradicts an actual real local inverse, so the full Fredholm derivative has a derived nonzero Fourier kernel. Exact physical L2 product coefficients reconstruct a genuine nonzero periodic AC solution, and an actual real L1 integrating factor forces the factor mean to vanish. No normalized or ground factor is assumed. See `GLOBAL_MINIMAL_MEAN_ZERO_MIURA.md`.
+
+Zero-mean normalization is CLOSED. The spectral estimate of e by actual weak target actions and rough Birkhoff SURJECTIVITY still require proofs, together with global inverse/action-Hamiltonian/frequency/PDE conclusions. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2753 unchanged selected baseline sources. All seven newly selected own modules strictly rebuilt in dependency order after freezing 2806 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2760 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact seven-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2760-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2760-module rebuild is claimed.
+
+Fresh audit: 21470 selected and 43540 imported NLS declarations; permitted axioms only. Seven new own modules contain 19 explicit theorems.
+
+## Earlier GLOBAL real Miura properness and attained least energy
 
 The ACTUAL real Miura map is now GLOBALLY proper into HminusOne and has CLOSED image. Its zero output coefficient equals the squared L2 source norm; the full nonlinear correction is uniformly norm-precompact on bounded L2 families. Every real mean-zero rough source now has an ACTUAL real L2 factor at the ATTAINED LEAST admissible constant energy shift e>=0, with squared norm exactly e. Fixed universal operator constants bound the actual source norm by sqrt(e)+e. See `GLOBAL_REAL_MIURA_PROPERNESS_ENERGY.md`.
 
@@ -850,7 +860,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2753 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2760 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1919,7 +1929,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2753 selected modules (including generated and private declarations)
+the 2760 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4922,4 +4932,17 @@ PASS NLS/SequenceSpaces/PeriodOneMiuraGlobalCompactness
 PASS NLS/SequenceSpaces/PeriodOneRealMiuraProperness
 PASS NLS/SequenceSpaces/PeriodOneMiuraMinimalEnergy
 Axiom audit passed: 21445 candidate declarations; 43515 declarations total.
+```
+
+Latest actual mean-zero least-energy Miura factor strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/PeriodOneMiuraFrechetDerivative
+PASS NLS/SequenceSpaces/PeriodOneRealMiuraLocalInverse
+PASS NLS/SequenceSpaces/PeriodOneMiuraMinimalCritical
+PASS NLS/Fourier/UnitIntervalL2ProductCoefficients
+PASS NLS/SequenceSpaces/PeriodOneMiuraKernelAC
+PASS NLS/FunctionalAnalysis/PeriodicScalarACMean
+PASS NLS/KdV/HillMiuraMinimalMeanZero
+Axiom audit passed: 21470 candidate declarations; 43540 declarations total.
 ```

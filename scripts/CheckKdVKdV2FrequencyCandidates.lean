@@ -1,3 +1,10 @@
+import NLS.KdV.HillMiuraMinimalMeanZero
+import NLS.FunctionalAnalysis.PeriodicScalarACMean
+import NLS.Fourier.UnitIntervalL2ProductCoefficients
+import NLS.SequenceSpaces.PeriodOneMiuraKernelAC
+import NLS.SequenceSpaces.PeriodOneMiuraFrechetDerivative
+import NLS.SequenceSpaces.PeriodOneRealMiuraLocalInverse
+import NLS.SequenceSpaces.PeriodOneMiuraMinimalCritical
 import NLS.SequenceSpaces.PeriodOneMiuraMinimalEnergy
 import NLS.SequenceSpaces.PeriodOneRealMiuraProperness
 import NLS.SequenceSpaces.PeriodOneMiuraGlobalCompactness
@@ -4701,7 +4708,14 @@ private def kdvFrequencyAuditChunk21 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianInverseMatching,
   `NLS.SequenceSpaces.PeriodOneMiuraGlobalCompactness,
   `NLS.SequenceSpaces.PeriodOneRealMiuraProperness,
-  `NLS.SequenceSpaces.PeriodOneMiuraMinimalEnergy
+  `NLS.SequenceSpaces.PeriodOneMiuraMinimalEnergy,
+  `NLS.SequenceSpaces.PeriodOneMiuraFrechetDerivative,
+  `NLS.SequenceSpaces.PeriodOneRealMiuraLocalInverse,
+  `NLS.SequenceSpaces.PeriodOneMiuraMinimalCritical,
+  `NLS.Fourier.UnitIntervalL2ProductCoefficients,
+  `NLS.SequenceSpaces.PeriodOneMiuraKernelAC,
+  `NLS.FunctionalAnalysis.PeriodicScalarACMean,
+  `NLS.KdV.HillMiuraMinimalMeanZero
 ]
 
 open Lean in

@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest GLOBAL real Miura properness and attained least energy
+## Latest ACTUAL mean-zero least-energy rough Miura factors
+
+EVERY real mean-zero HminusOne source now has an ACTUAL physically real MEAN-ZERO L2 factor at its ATTAINED LEAST admissible Miura energy e>=0, with squared norm exactly e and the literal corrected Miura equation. Minimality contradicts an actual real local inverse, so the full Fredholm derivative has a derived nonzero Fourier kernel. Exact physical L2 product coefficients reconstruct a genuine nonzero periodic AC solution, and an actual real L1 integrating factor forces the factor mean to vanish. No normalized or ground factor is assumed. See `GLOBAL_MINIMAL_MEAN_ZERO_MIURA.md`.
+
+Zero-mean normalization is CLOSED. The spectral estimate of e by actual weak target actions and rough Birkhoff SURJECTIVITY still require proofs, together with global inverse/action-Hamiltonian/frequency/PDE conclusions. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2753 unchanged selected baseline sources. All seven newly selected own modules strictly rebuilt in dependency order after freezing 2806 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2760 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact seven-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2760-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2760-module rebuild is claimed.
+
+Fresh audit: 21470 selected and 43540 imported NLS declarations; permitted axioms only. Seven new own modules contain 19 explicit theorems.
+
+## Earlier GLOBAL real Miura properness and attained least energy
 
 The ACTUAL real Miura map is now GLOBALLY proper into HminusOne and has CLOSED image. Its zero output coefficient equals the squared L2 source norm; the full nonlinear correction is uniformly norm-precompact on bounded L2 families. Every real mean-zero rough source now has an ACTUAL real L2 factor at the ATTAINED LEAST admissible constant energy shift e>=0, with squared norm exactly e. Fixed universal operator constants bound the actual source norm by sqrt(e)+e. See `GLOBAL_REAL_MIURA_PROPERNESS_ENERGY.md`.
 

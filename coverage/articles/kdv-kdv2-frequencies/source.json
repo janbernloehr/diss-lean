@@ -407,6 +407,21 @@
           "source_clause": "A genuine real Miura energy controls the actual rough source norm with UNIVERSAL constants",
           "lean_declaration": "NLS.norm_source_le_of_realMiura_energy",
           "qualification": "For ANY actual real L2 factor of a mean-zero rough q with energy shift e, norm(q) is bounded by (norm(massOperator0)+norm(L2Inclusion))*sqrt(e)+(norm(MiuraProduct)+norm(L2Inclusion))*e. All operator constants are FIXED independent of q, u and e. The least factor is unconditionally constructed separately. The essential spectral upper bound for e by actual weak target actions remains OPEN; no such estimate is assumed."
+        },
+        {
+          "source_clause": "Global rough surjectivity dependency: ACTUAL real MEAN-ZERO least-energy factor for EVERY real mean-zero rough source",
+          "lean_declaration": "NLS.KdV.exists_periodOneMiura_minimal_meanZero_factor",
+          "qualification": "EVERY actual least-energy real Miura factor of a real rough source has zero central Fourier coefficient. Its actual nonzero Fourier kernel reconstructs a periodic AC solution; verified physical realness makes the coefficient real almost everywhere, and the actual scalar integrating-factor theorem forces its mean to vanish. Consequently EVERY real mean-zero HminusOne source, including NON-L2/arbitrary-size sources, has an ACTUAL real MEAN-ZERO L2 factor at the LEAST admissible energy e>=0, with exact squared norm=e and the literal corrected Miura equation. No normalized or ground factor is assumed. The identification with the lowest Hill energy and the bound of e by actual weak target actions remain open; rough Birkhoff surjectivity is NOT yet proved."
+        },
+        {
+          "source_clause": "Least-energy factors are ACTUALLY critical and possess a derived NONZERO literal Fourier kernel",
+          "lean_declaration": "NLS.exists_periodOneMiura_kernel_of_minimal",
+          "qualification": "EVERY actual LEAST-energy real Miura factor is CRITICAL: its actual full derivative cannot be bijective, since an actual real-preserving local inverse would yield a genuine factor at strictly smaller energy. The full compact Fredholm principal then supplies a NONZERO literal Fourier kernel solving v-prime+2*u*v=0 at EVERY integer coefficient. No kernel, criticality or spectral minimum is assumed."
+        },
+        {
+          "source_clause": "The original Fourier kernel reconstructs a genuine nonzero periodic AC solution, without assumed kernel regularity",
+          "lean_declaration": "NLS.exists_periodOneMiura_minimal_energy_AC_kernel",
+          "qualification": "A NONZERO actual literal Fourier Miura kernel is synthesized in the ACTUAL unit-interval L2 space and reconstructed as a continuous absolutely continuous representative. It is genuinely periodic, nonzero somewhere on [0,1], and solves F-prime=-2*u*F almost everywhere. Initial continuity, differentiability or nonvanishing everywhere is NOT assumed. The existing unconditional least-energy factor factory therefore supplies this actual nonzero periodic AC kernel for EVERY real mean-zero rough source."
         }
       ]
     },
@@ -36371,12 +36386,96 @@
       "scope": "At EVERY physically real mean-zero HminusOne source, including NON-L2 sources and arbitrary sizes, there is a LEAST admissible real constant energy shift e>=0 and an ACTUAL physically real L2 factor u with periodOneMiura(u)=q+e*single-zero and squared norm EXACTLY e. Closedness of the real Miura image makes the energy infimum ATTAINED; existing actual outside charts prove nonemptiness. Minimality compares with EVERY actual real L2 factor and EVERY real admissible energy, with no initial ground-state factor assumed. The source norm is bounded by fixed universal operator constants times sqrt(e) and e. A zero-mean factor, identification with the lowest Hill energy, the estimate of e by actual weak target actions, and rough Birkhoff surjectivity remain unproved.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "1c91f6766e9334a364bfda050152dcb7824876de3f8bdb2e322558134e5f818f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraFrechetDerivative.lean",
+      "source_labels": [
+        "Unconditional ACTUAL mean-zero least-energy Miura factors, necessary dependency toward rough surjectivity in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL full unshifted Miura derivative L2->HminusOne is the literal massive Jacobian minus the original L2 inclusion. Its exact derivative, native analyticity, all raw Fourier coefficients and conjugation equivariance are proved. It is a compact perturbation of the ACTUAL free mass equivalence. Actual failure of bijectivity therefore yields a NONZERO actual kernel vector by the verified compact Fredholm alternative; no nontrivial kernel or failed-injectivity premise is added.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "07349da410e6c490925ea60272b5fe7736ef56beab1e123c943db05722f1f29e"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneRealMiuraLocalInverse.lean",
+      "source_labels": [
+        "Unconditional ACTUAL mean-zero least-energy Miura factors, necessary dependency toward rough surjectivity in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At ANY actual real L2 source where the full unshifted Miura derivative is bijective, construct a genuine native complex analytic inverse on an OPEN HminusOne neighborhood with exact base value and FULL literal right recovery. Source and target are the actual DIFFERENT Banach spaces. Exact local injectivity and actual source/target conjugation ensure physical real preservation on the whole chosen target neighborhood. No global inverse, smallness or zero-base is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0eb1a9dea5aa4020317fea1284353ad801510882595a20eab76b5c3e43b4fc85"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraMinimalCritical.lean",
+      "source_labels": [
+        "Unconditional ACTUAL mean-zero least-energy Miura factors, necessary dependency toward rough surjectivity in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "EVERY actual LEAST-energy real Miura factor is CRITICAL: its actual full derivative cannot be bijective, since an actual real-preserving local inverse would yield a genuine factor at strictly smaller energy. The full compact Fredholm principal then supplies a NONZERO literal Fourier kernel solving v-prime+2*u*v=0 at EVERY integer coefficient. No kernel, criticality or spectral minimum is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3c7442d07e55ca9d60f9417119eb71b0d63d8b888081d589db33d72478d21115"
+    },
+    {
+      "path": "NLS/Fourier/UnitIntervalL2ProductCoefficients.lean",
+      "source_labels": [
+        "Unconditional ACTUAL mean-zero least-energy Miura factors, necessary dependency toward rough surjectivity in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ACTUAL unit-interval L1 product of ANY two L2 representatives has EXACT convolution Fourier coefficients with the original period-one normalization. Proof modulates one original L2 representative and applies verified bilinear Parseval; no continuity or endpoint hypothesis is required. Constant scalar multiplication retains exact coefficients.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0bd4908a5f8320c5212d34a95745e07dbab028816fd5a8595a88325722e1dcf4"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraKernelAC.lean",
+      "source_labels": [
+        "Unconditional ACTUAL mean-zero least-energy Miura factors, necessary dependency toward rough surjectivity in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A NONZERO actual literal Fourier Miura kernel is synthesized in the ACTUAL unit-interval L2 space and reconstructed as a continuous absolutely continuous representative. It is genuinely periodic, nonzero somewhere on [0,1], and solves F-prime=-2*u*F almost everywhere. Initial continuity, differentiability or nonvanishing everywhere is NOT assumed. The existing unconditional least-energy factor factory therefore supplies this actual nonzero periodic AC kernel for EVERY real mean-zero rough source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "529302a7f8963fd7e1bffbf42e944447dac93196f0a4ecfcc8307a4614271ba2"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/PeriodicScalarACMean.lean",
+      "source_labels": [
+        "Unconditional ACTUAL mean-zero least-energy Miura factors, necessary dependency toward rough surjectivity in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "A reusable interval composition bound proves absolute continuity under an actual bounded Lipschitz comparison and under real exponentiation. For ANY real L1 coefficient alpha, ANY complex AC solution of F-prime=alpha*F which is periodic and nonzero somewhere has integral(alpha)=0. The actual integrating factor exp(-integral alpha)*F is constant; this also proves the initial value is nonzero rather than assuming it. No smooth coefficient, everywhere differentiability or initial nonvanishing premise is needed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "991e4692e3269da4f38f06573f313190e4b0585ecfba96170abf13029b44a1a7"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraMinimalMeanZero.lean",
+      "source_labels": [
+        "Unconditional ACTUAL mean-zero least-energy Miura factors, necessary dependency toward rough surjectivity in Theorem 1.1(i)"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "EVERY actual least-energy real Miura factor of a real rough source has zero central Fourier coefficient. Its actual nonzero Fourier kernel reconstructs a periodic AC solution; verified physical realness makes the coefficient real almost everywhere, and the actual scalar integrating-factor theorem forces its mean to vanish. Consequently EVERY real mean-zero HminusOne source, including NON-L2/arbitrary-size sources, has an ACTUAL real MEAN-ZERO L2 factor at the LEAST admissible energy e>=0, with exact squared norm=e and the literal corrected Miura equation. No normalized or ground factor is assumed. The identification with the lowest Hill energy and the bound of e by actual weak target actions remain open; rough Birkhoff surjectivity is NOT yet proved.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "913f16af8681bdfb566fb7f819a95c2cee6352d46dba4a7a0ffddac51303c050"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The SAME global signed forward map retains physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact all-order nonlinear Sobolev membership equivalence, GLOBAL real mean-zero rough injectivity, common COMPLEX canonicality and exact origin/Fourier normalization. ONE real-preserving weak inverse chart is chosen before ALL native orders, with actual complex strong inverse matching at every eligible real base. NEW GLOBAL auxiliary dependencies: the ENTIRE nonlinear Miura correction is uniformly norm-precompact on bounded complex L2 sets. The zero coefficient of the ACTUAL real Miura image equals the squared real L2 source norm, giving GLOBAL properness and CLOSED image of the real Miura map without a preimage-bound hypothesis. EVERY real mean-zero rough q has an ATTAINED LEAST admissible energy e>=0 and ACTUAL real L2 factor, squared norm=e; fixed universal operator constants bound norm(q) by sqrt(e)+e. NEXT derive zero-mean/lowest-energy identification for the minimal factor and the actual spectral bound of e in terms of weak target actions, then the actual compactness/no-loss argument proving rough Birkhoff SURJECTIVITY. Auxiliary real Miura properness is NOT rough Birkhoff properness or surjectivity. Construct ONE global real rough inverse/all-order global real analytic diffeomorphisms and establish global action-Hamiltonian identifications, full frequency formulas/sharp estimates/action descent/fixed-mass corrections/actual KdV-KdV2 PDE conclusions. All eleven complete main rows remain OPEN.",
+    "The SAME global signed forward map retains physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact all-order nonlinear Sobolev equivalence, GLOBAL real mean-zero rough injectivity, common COMPLEX canonicality, exact origin/Fourier normalization and ONE weak inverse before ALL native orders with full actual complex matching. GLOBAL auxiliary real Miura properness/closed image and ATTAINED least energy factors are proved, with fixed universal source norm bounds in sqrt(e)+e. NEW: EVERY actual least real Miura factor is critical. Its ACTUAL compact Fredholm derivative has a derived NONZERO literal Fourier kernel; exact L2 product coefficients reconstruct a genuinely periodic nonzero AC solution. An actual real L1 integrating-factor argument forces zero mean. Thus EVERY real mean-zero HminusOne q unconditionally has an ACTUAL real MEAN-ZERO L2 factor at its LEAST admissible energy e, squared norm=e, with the literal corrected Miura equation. The zero-mean normalization obstruction is CLOSED. NEXT identify e with the actual lowest Hill energy as needed and derive its spectral bound by weak target actions, then an actual compactness/no-loss or reconstruction argument proving rough Birkhoff SURJECTIVITY. Auxiliary Miura results are NOT rough Birkhoff onto. Construct ONE global real rough inverse/global all-order diffeomorphisms and establish action-Hamiltonian identifications, frequency formulas/sharp estimates/action descent/fixed-mass corrections/actual KdV-KdV2 PDE conclusions. All eleven complete main rows remain OPEN.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -36402,15 +36501,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 21445,
-    "total_declarations_audited": 43515,
+    "candidate_declarations_audited": 21470,
+    "total_declarations_audited": 43540,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2753,
+    "selected_modules": 2760,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -36506,7 +36605,8 @@
     "global_injective_validation_sequence": "Prior strict evidence retained for all 2734 unchanged selected baseline sources. All eleven newly selected own modules strictly rebuilt in dependency order after freezing 2791 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2745 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact eleven-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2745-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2745-module rebuild is claimed.",
     "complex_canonical_validation_sequence": "Prior strict evidence retained for all 2745 unchanged selected baseline sources. All three newly selected own modules strictly rebuilt in dependency order after freezing 2794 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2748 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact three-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2748-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2748-module rebuild is claimed.",
     "inverse_matching_validation_sequence": "Prior strict evidence retained for all 2748 unchanged selected baseline sources. Both newly selected own modules strictly rebuilt in dependency order after freezing 2796 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2750 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact two-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2750-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2750-module rebuild is claimed.",
-    "miura_proper_validation_sequence": "Prior strict evidence retained for all 2750 unchanged selected baseline sources. All three newly selected own modules strictly rebuilt in dependency order after freezing 2799 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2753 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact three-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2753-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2753-module rebuild is claimed."
+    "miura_proper_validation_sequence": "Prior strict evidence retained for all 2750 unchanged selected baseline sources. All three newly selected own modules strictly rebuilt in dependency order after freezing 2799 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2753 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact three-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2753-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2753-module rebuild is claimed.",
+    "miura_critical_validation_sequence": "Prior strict evidence retained for all 2753 unchanged selected baseline sources. All seven newly selected own modules strictly rebuilt in dependency order after freezing 2806 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2760 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact seven-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2760-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2760-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -37448,6 +37548,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "24ac8656b398fb77015c4e330152a645cded1b4a",
+      "description": "Prove actual least Miura factors critical, derive a NONZERO Fourier kernel and genuine periodic AC solution, and construct ACTUAL MEAN-ZERO minimal-energy factors at EVERY real mean-zero rough source.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The SAME global signed forward map retains physical recovery/signs, central zero/reality, full weak/all-native Jacobian units, exact all-order nonlinear Sobolev membership equivalence, GLOBAL real mean-zero rough injectivity, common COMPLEX canonicality and exact origin/Fourier normalization. ONE real-preserving weak inverse chart is chosen before ALL native orders, with actual complex strong inverse matching at every eligible real base. NEW GLOBAL auxiliary dependencies: the ENTIRE nonlinear Miura correction is uniformly norm-precompact on bounded complex L2 sets. The zero coefficient of the ACTUAL real Miura image equals the squared real L2 source norm, giving GLOBAL properness and CLOSED image of the real Miura map without a preimage-bound hypothesis. EVERY real mean-zero rough q has an ATTAINED LEAST admissible energy e>=0 and ACTUAL real L2 factor, squared norm=e; fixed universal operator constants bound norm(q) by sqrt(e)+e. NEXT derive zero-mean/lowest-energy identification for the minimal factor and the actual spectral bound of e in terms of weak target actions, then the actual compactness/no-loss argument proving rough Birkhoff SURJECTIVITY. Auxiliary real Miura properness is NOT rough Birkhoff properness or surjectivity. Construct ONE global real rough inverse/all-order global real analytic diffeomorphisms and establish global action-Hamiltonian identifications, full frequency formulas/sharp estimates/action descent/fixed-mass corrections/actual KdV-KdV2 PDE conclusions. All eleven complete main rows remain OPEN.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -37509,5 +37621,6 @@
   "global_rough_injectivity_regularity_record": "GLOBAL_ROUGH_INJECTIVITY_REGULARITY.md",
   "global_rough_complex_canonical_origin_record": "GLOBAL_ROUGH_COMPLEX_CANONICAL_ORIGIN.md",
   "global_rough_inverse_matching_record": "GLOBAL_ROUGH_INVERSE_MATCHING.md",
-  "global_real_miura_properness_energy_record": "GLOBAL_REAL_MIURA_PROPERNESS_ENERGY.md"
+  "global_real_miura_properness_energy_record": "GLOBAL_REAL_MIURA_PROPERNESS_ENERGY.md",
+  "global_minimal_mean_zero_miura_record": "GLOBAL_MINIMAL_MEAN_ZERO_MIURA.md"
 }

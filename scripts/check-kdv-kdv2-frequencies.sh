@@ -2762,6 +2762,13 @@ modules=(
   NLS/SequenceSpaces/PeriodOneMiuraGlobalCompactness
   NLS/SequenceSpaces/PeriodOneRealMiuraProperness
   NLS/SequenceSpaces/PeriodOneMiuraMinimalEnergy
+  NLS/SequenceSpaces/PeriodOneMiuraFrechetDerivative
+  NLS/SequenceSpaces/PeriodOneRealMiuraLocalInverse
+  NLS/SequenceSpaces/PeriodOneMiuraMinimalCritical
+  NLS/Fourier/UnitIntervalL2ProductCoefficients
+  NLS/SequenceSpaces/PeriodOneMiuraKernelAC
+  NLS/FunctionalAnalysis/PeriodicScalarACMean
+  NLS/KdV/HillMiuraMinimalMeanZero
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
