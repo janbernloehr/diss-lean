@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-06",
-  "milestone": "Construct unconditional analytic action descent of actual cubic Hill moments and their contour Hamiltonian near the entire positive ell2 quadrant",
+  "milestone": "Construct actual rough finite-gap Hill analytic phases and prove their smooth physical Hamiltonian coefficients and exact weighted quartic contour",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -13,7 +13,7 @@
   "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
   "mathlib_version": "v4.33.1",
   "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
-  "autoImplicit": "Source-declared per module; authored modules disable autoImplicit, imported shared sources retain their pinned settings.",
+  "autoImplicit": "Source-declared per module; authored declarations use explicit binders, and imported shared sources retain their pinned settings.",
   "warningAsError": true,
   "focused_command": "ELAN_HOME=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/tooling/elan NLS_REFERENCE_CHECKOUT=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls bash scripts/check-kdv-convexity.sh",
   "focused_exit_code": 0,
@@ -2234,11 +2234,26 @@
     "NLS.ComplexAnalysis.ScalarFamilyTransport",
     "NLS.Articles.KdVConvexity.ActionMomentNormalization",
     "NLS.Articles.KdVConvexity.GlobalActionMomentDescent",
-    "NLS.Articles.KdVConvexity.UnconditionalContourExtension"
+    "NLS.Articles.KdVConvexity.UnconditionalContourExtension",
+    "NLS.ZakharovShabat.NLSWKBApproximation",
+    "NLS.ZakharovShabat.NLSWKBCarrierBounds",
+    "NLS.ZakharovShabat.NLSWKBComparison",
+    "NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics",
+    "NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial",
+    "NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients",
+    "NLS.ZakharovShabat.SourceFullAbelianHamiltonianReduction",
+    "NLS.ZakharovShabat.SourceFiniteGapDiscriminantPhase",
+    "NLS.ComplexAnalysis.AnalyticPhaseEnergyShift",
+    "NLS.KdV.HillHminusFiniteGapDiscriminantPhase",
+    "NLS.KdV.ClassicalHillPhaseCoefficients",
+    "NLS.ComplexAnalysis.QuarticInversionRemainder",
+    "NLS.KdV.HillFiniteGapPhysicalPhase",
+    "NLS.ComplexAnalysis.QuarticInversionContour",
+    "NLS.KdV.HillFiniteGapPhysicalEnergyContour"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 17168,
+    "declarations": 17242,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -2279,6 +2294,17 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.ZakharovShabat.NLSWKBApproximation",
+      "NLS.ZakharovShabat.NLSWKBCarrierBounds",
+      "NLS.ZakharovShabat.NLSWKBComparison",
+      "NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics",
+      "NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial",
+      "NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients",
+      "NLS.ZakharovShabat.SourceFullAbelianHamiltonianReduction",
+      "NLS.ZakharovShabat.SourceFiniteGapDiscriminantPhase",
+      "NLS.ComplexAnalysis.AnalyticPhaseEnergyShift",
+      "NLS.ComplexAnalysis.QuarticInversionRemainder",
+      "NLS.ComplexAnalysis.QuarticInversionContour",
       "NLS.SequenceSpaces.PositiveReindex",
       "NLS.SequenceSpaces.LocalAtlasActionFamilyDescent",
       "NLS.SequenceSpaces.SignedHilbertPairs",
@@ -3140,6 +3166,7 @@
     "NLS/ComplexAnalysis/AnalyticLogarithmicMoments.lean": "95419da806b0cc770fa28720824cb9bafa4b7351bd5815259171e33640f9f87b",
     "NLS/ComplexAnalysis/AnalyticOpenGluing.lean": "95e477ae62d2b9f558ce7e0cf7fab716b0ebf0b828c87622483a42baaa8fffab",
     "NLS/ComplexAnalysis/AnalyticOpenInverse.lean": "81bae69d1bb0fe99647ac9789b1b66a7924ac68f925960a4b5e7b97884100941",
+    "NLS/ComplexAnalysis/AnalyticPhaseEnergyShift.lean": "07f89e7c0c82ff83a211810edce0e682ed1a3639fc6293e40ffba74c250840a0",
     "NLS/ComplexAnalysis/AnalyticSimpleCriticalBranch.lean": "32f181d430c69ecc7a14fff0403b6165730da2ef195e315979997942074b0aec",
     "NLS/ComplexAnalysis/AnalyticSquarePullback.lean": "a1f77f382502536bfc197f3c67dd201dff5ac8b268c0fa4ab43d77ba503eeff6",
     "NLS/ComplexAnalysis/AnalyticTwoZeroRoot.lean": "c770ee26b8bb2bf1ce4272b9e07fa0eb20aacae8989983249607215279e38f22",
@@ -3299,6 +3326,8 @@
     "NLS/ComplexAnalysis/QuadraticPuncturedLimit.lean": "39894438de36641ec17fe8346b32ba756782fd8d7269277d7d63f900afe9fdbb",
     "NLS/ComplexAnalysis/QuadraticRootContourPeriod.lean": "897fcfbc64f02b6232e117913bb775ca6024cb4737ae5ba034bebb5787daa75d",
     "NLS/ComplexAnalysis/QuantitativeNeumannAnalyticInverse.lean": "453b4e7baf7ee9267cc6f1286437bb335d900bb2b1b2476d3d46f1d37b0988a3",
+    "NLS/ComplexAnalysis/QuarticInversionContour.lean": "d15ad0dbd8691555f00e88f3a8cc1e0a278d8a5dcb6a10ef296d21f90cbf8a17",
+    "NLS/ComplexAnalysis/QuarticInversionRemainder.lean": "860dc979ed911fcd069c885a673830945e50de913bf416adffa8dc88339c7a91",
     "NLS/ComplexAnalysis/RealAffineComplexPrimitive.lean": "86ed059b17afd1129e1ded1961b22b1a3ccf6c18ef2ee9c1b430682a48c88225",
     "NLS/ComplexAnalysis/RealAnalyticGermSign.lean": "ad1aae38b2aadcb5841e02886a30562d656dfbc05c95f0dc519a35c05314783f",
     "NLS/ComplexAnalysis/RealArsinhExtension.lean": "975052bc0fb438bba0a22312d3d9998098d48e0420536d664a7a97940853c7f5",
@@ -3547,6 +3576,7 @@
     "NLS/KdV/ClassicalHillMomentReality.lean": "28634829d60a4078de9f536625e982d0df158f8f30c76ccffa8f0a09106d46a3",
     "NLS/KdV/ClassicalHillMultipliers.lean": "a3605c650ee4c1390cd54a297ad944a3aa50b748ce80a2bc05747258ab28ec68",
     "NLS/KdV/ClassicalHillOddDifferentialMoments.lean": "a23df32778c9a15ca6fe3371907d8136be723d0274884a80927057d5af9d5c9a",
+    "NLS/KdV/ClassicalHillPhaseCoefficients.lean": "c367c502f019ac02cf5b60de1928503edb3fc0be578f24a449d8f6b6889a7a06",
     "NLS/KdV/ClassicalHillPositionFreeError.lean": "b37c5861a0d92d9eb95111770ff8623cf1129ad13bf590eeacd67d626bb5fa9a",
     "NLS/KdV/ClassicalHillPrimitiveReflection.lean": "baf154f2a26608f7be7c6312404e833b4a48048c091f2fb4c4bd16efbd479cc4",
     "NLS/KdV/ClassicalHillPrimitiveSheets.lean": "9a8c1dea2892bda9513bed0f3b78102a25875b24f901a879a27361818796f3a8",
@@ -3920,6 +3950,8 @@
     "NLS/KdV/HillFiniteBandCover.lean": "60b1b1e7b0325359aa5fd63a9a97da49a033e8551eb728cedd2489a798092764",
     "NLS/KdV/HillFiniteCartesianAnalyticHead.lean": "c3ddd7e04e43a44b57a8df172f2a353169378c4a725c5fd58af7245d4d5b2cb9",
     "NLS/KdV/HillFiniteEndpointTransport.lean": "cbb886f09d056d46d5c99186aaf93832282eb29470a60a7e3acfb85cdcd0f52f",
+    "NLS/KdV/HillFiniteGapPhysicalEnergyContour.lean": "1fa09aa92e8df5210f3f434a59eff52ed396987fbf8948b86a0f44717ea5e4a5",
+    "NLS/KdV/HillFiniteGapPhysicalPhase.lean": "68faa501b786559104e31efafdf920237fc121dfc94f97bf44e8df57404484da",
     "NLS/KdV/HillFiniteGapUniformRegularCorrections.lean": "1803231b41e6fb2fad4f71153d0d1565634842fb5651ddfe71df90ae148bb75b",
     "NLS/KdV/HillFiniteIntrinsicPeriodMap.lean": "434ffc31ca53713a923f75532808f680e5f985d2961c3c5a1bc8f5f608cc547c",
     "NLS/KdV/HillFiniteNormingGradients.lean": "047cd1c34d2347774e8f7fcfa15cbfbba372a4dce88629aaa7b2196e87e23650",
@@ -4109,6 +4141,7 @@
     "NLS/KdV/HillHminusEndpointPhaseGardner.lean": "f8d6ca6bf11752542f1d25e2fafb6dc912a995e11d688a3ce8e17e5fbbca4d6a",
     "NLS/KdV/HillHminusEnergyPeriods.lean": "bda2b01fcfdca440deb5401993df2e25ace6ae2cd9180d2b522a546f4883dcbe",
     "NLS/KdV/HillHminusEtaGapRegularity.lean": "a4f9e9a0708cc27910bc1deaa5964da91e2d97908642e3dbf580f42b49974898",
+    "NLS/KdV/HillHminusFiniteGapDiscriminantPhase.lean": "ce30f84c6c2cfef15c808faa3540a21314fb695d13e8625e67f45438596c73fa",
     "NLS/KdV/HillHminusFiniteGapSobolev.lean": "a636d72b81b10a8f2d229bf860924cb39d662d66cc9fdf0cab361602f9f051b8",
     "NLS/KdV/HillHminusFixedPhysicalNumerators.lean": "6d7c8b783e7066910305625838de9a087abac4b46f7f189d89f13e0abe92981a",
     "NLS/KdV/HillHminusGapMidpointSequence.lean": "476ece957be5792e4317ecb724daaae05a1d12fdaee8ac3a3e0157a2e234ddfc",
@@ -5207,11 +5240,17 @@
     "NLS/ZakharovShabat/L2BoundaryMultipliers.lean": "3be41a68482d61a868a6169bc6e0fa56a94ef8cb1273bb507322a9e6d9e5e06b",
     "NLS/ZakharovShabat/L2InitialValueACUniqueness.lean": "f468e5e6163cc6eaa4eae30c437792242403bc15e9c03c657333ac5b63603c07",
     "NLS/ZakharovShabat/L2SolutionNonvanishing.lean": "a2a7e3982e17dba92cf32daaf533735001e8fdcb3837cce7c8aaf8bbd88b283c",
+    "NLS/ZakharovShabat/NLSHamiltonianDiscriminantAsymptotics.lean": "35f76034a734ca6b400700eec50d7e9001352e85fab95b6ae8970117a2bb92a5",
+    "NLS/ZakharovShabat/NLSHamiltonianPhasePolynomial.lean": "a0f6ea523b8959b13a486ba040b7bdeec952d5c1bf1fc5d42905b0c44634e374",
+    "NLS/ZakharovShabat/NLSHamiltonianPrimitiveCoefficients.lean": "f0053388602225c52b08c627d436e2d9bdd83b0c2252b3ce90ae1c8e44c8b52f",
     "NLS/ZakharovShabat/NLSHamiltonianWeightedAsymptotics.lean": "95a898e5714820c95510228a50913701bbbea451709e5b5fb7bc3cfa327276fb",
     "NLS/ZakharovShabat/NLSRiccatiResolvent.lean": "b738cf2502d7bb1912309606d96096c78a390ec284edf3fc01962061a9b0320c",
     "NLS/ZakharovShabat/NLSRiccatiResolventGradient.lean": "32a77884a27801aca020a735f7222d8e7d2675044dbcaefca5dd9ef4aba97d6b",
     "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean": "9ca27b6be4097a6cbcd8d421aea360180978b75f961e3d97809c6a9ba449a576",
+    "NLS/ZakharovShabat/NLSWKBApproximation.lean": "aedb92866bd948333e49974ce95587f065fce969ea3b790c94d009d3b5f0643f",
+    "NLS/ZakharovShabat/NLSWKBCarrierBounds.lean": "03a6eacf3cdf6f6e0690058208fa69e38f14c5615e49d622a5182df621b06805",
     "NLS/ZakharovShabat/NLSWKBCarrierWeightedBounds.lean": "598627c6fdfe298720a1bdaf13f12fecc481348881d3f4fbb5aca3edd05bdcb9",
+    "NLS/ZakharovShabat/NLSWKBComparison.lean": "209b1d5b02b9b331d07455ce5766b90c2f8ef97419fa5a5ebfb5fa126ba5be1b",
     "NLS/ZakharovShabat/NLSWKBWeightedComparison.lean": "f2c462bd99522f7ce2f3c33807ba05e132dc1adfc3fd93021de9d5ac0c5ec95e",
     "NLS/ZakharovShabat/NormalizedWeightedBirkhoffDifferential.lean": "9be8d3163f07c2a19c15190d78bd0aebe8807c5ec413b6b39ecb97db69bafdc4",
     "NLS/ZakharovShabat/PeriodicEndpointCandidates.lean": "07364deb72a782eee64e761a10c1dc006d92247f020c681b95868eee2c9e87de",
@@ -5235,6 +5274,8 @@
     "NLS/ZakharovShabat/SourceEtaNormalizationSymbol.lean": "bc8d8e3794f95f70524c372b2b3a1da2881317b7fa8fb58527cda2c95fec6f2b",
     "NLS/ZakharovShabat/SourceEtaPrescribedModelAngle.lean": "cb29a844512ecbff4df04a4d0d9c81869f432c93fc49646afbb9821dfd33c58d",
     "NLS/ZakharovShabat/SourceEtaPrescribedRepresentative.lean": "fb033fc3b334bba0666f90da5906352734840daeacc27b180f7edbd27b6187bd",
+    "NLS/ZakharovShabat/SourceFiniteGapDiscriminantPhase.lean": "2733cb00e6c1cb3b00b38546f1bb63c02cfe6c43c299219371d5a7ab712e23a7",
+    "NLS/ZakharovShabat/SourceFullAbelianHamiltonianReduction.lean": "7529d04f3d6f6d3681942436b77c87044b1d72d3e4db78ec61d81b73ec0f6422",
     "NLS/ZakharovShabat/SourceFullAbelianInverseMoment.lean": "302fca0a7791181a38ccb802f9c53c5054fafa52b6b1b09fba8a51c8ba625237",
     "NLS/ZakharovShabat/SourceFullAbelianInverseMomentReal.lean": "a75395d68769772805a6b2768084cdda5ebbedcd0eeb26127df557e7e918ef4e",
     "NLS/ZakharovShabat/SourceFullAbelianMassContour.lean": "c4538d08a14ca4b76119689807c58635ccb53d4b6cff4314b90bd81771d44c07",
@@ -5258,7 +5299,7 @@
     "NLS/ZakharovShabat/SourceWeightedEtaFactorization.lean": "c22fd5e2ec86b9e571506f9d1b64a0b6f047171bfb0bc6aa920763d4cdeb74bb",
     "NLS/ZakharovShabat/SourceZeroGapActionBound.lean": "4fb1acc2f217e87f0e65d53828ba7f2cc2c266064f918e2ad0e8dd22fcda307e",
     "NLS/ZakharovShabat/SourceZeroGapMassEstimate.lean": "6b656c4b26c06b37ec752562aa81be67147fba7d3dd14cb254afd3090a3484d3",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "569a248d35468deac06ffb0874ad3ee835c3bfecee08f168acd0bb56274a54b5",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "c2401681e57af5895c6f6025bdb801366c67808c0303cbc76cf41a1f950feca7",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/action-sequence-library-reuse.json": "9126c713dd2dbd5eb3b1d902df1cea7bdd35cbbd75a6ee13e21fd9d7fd49827e",
@@ -5281,13 +5322,14 @@
     "coverage/articles/kdv-convexity/miura-shared-imports.json": "03ff17c03499d952d3bc9ad51743ae761db5416ca4f93426e2e731fac0a39b00",
     "coverage/articles/kdv-convexity/physical-cut-shared-imports.json": "c6adf4965416cc426fc385ce324b4afb1aae45fec50e499debfbd5c2a2c5997f",
     "coverage/articles/kdv-convexity/physical-multiplicity-library-reuse.json": "7d1c8a377416df2565220cb470a9dfdfc4fdddbef0bba93ac3151584ba69ead7",
+    "coverage/articles/kdv-convexity/physical-phase-library-reuse.json": "7a4ca9fe64598657908b68be57b0ba268cae4c17d7e01cc722da56db025dbb94",
     "coverage/articles/kdv-convexity/physical-spectrum-library-reuse.json": "e36082bd809d71f7ff753f6dd3740433709f156e0f113b4e55189be868c78132",
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
-    "scripts/check-kdv-convexity.sh": "56c99085110a975ea3f78117411fb42dfe9a8ef51d91224a6df6f93f8705f95e"
+    "scripts/check-kdv-convexity.sh": "a4b25148754ee64c73e5dc5bf337b837c28cb827fa6e5e0f531eb196bb44237d"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -5305,7 +5347,7 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "Global potential-space gluing is now proved: one complex-open neighborhood of the entire real H^-1 space carries all canonical polynomial and cubic moments, agrees with every actual real period, and retains locally uniform complex-tail quadratic bounds. Finite-gap exterior matching, the normalized inversion remainder of Lemma 4.4 and the physical energy/frequency identities remain open.",
-    "Identify the constructed actual analytic contour Hamiltonian with the physical renormalized KdV Hamiltonian on its original weighted ell^(3,1) action domain. Establish the physical exterior quartic residue/energy identity, use finite-gap contour decomposition, and pass the physical identity by density. Identify the bilinear Hilbert gradient with the physical KdV frequencies minus 8*pi^3*n^3 on the full common domain V intersect V0. Prove the exact KdV quadratic Taylor coefficients giving the full bounded derivative -6*Id at zero. Complete the positive-index real-cone Hessian transport, local diffeomorphism and single-radius strict concavity statement, then complete the remaining main Theorems 1.2-1.3 with their original domains and quantifiers.",
+    "Match the constructed analytic finite-gap Hill phase to the actual normalized source primitive; transfer its checked weighted frequency-circle coefficient to the original energy-circle quartic period, instantiate finite-gap contour decomposition, and pass the physical renormalized Hstar identity by density on the original weighted ell^(3,1) action domain. Identify the bilinear Hilbert gradient with physical KdV frequencies minus 8*pi^3*n^3 on the full common domain V intersect V0. Prove the exact quadratic Taylor coefficients -3*sum(I_n^2), hence the full bounded derivative -6*Id at zero. Complete the original positive-index local inverse and single-radius strict concavity statement, then main Theorems 1.2-1.3 with their original domains and quantifiers.",
     "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. Even polynomial Arnold periods are nonnegative; the level-zero Arnold and cubic zero sets equal the closed-gap set. These signs and zero criteria hold for the common all-index family and its matched source tail at every real input. Global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
@@ -5332,9 +5374,10 @@
     "The global energy/source estimates now hold in the actual original weighted Arnold-action norm at every real mean-zero Hminus1 source. These bounds and bounded-coefficient continuity of higher Dirac actions do not by themselves establish action-cone or Cartesian coordinate surjectivity, global analytic action descent, the physical Hamiltonian identity or any main theorem.",
     "Action-cone surjectivity is proved without strong factor compactness or an assumed inverse. Global analytic action descent, equality of discriminants on action fibers and the main theorems remain open.",
     "Equal actual intrinsic Arnold actions now determine the entire mean-zero rough Hill discriminant. Constructing and gluing analytic action germs, the physical Hamiltonian identity and every main theorem remain open.",
-    "The actual cubic contour family now descends and glues analytically near the entire nonnegative weighted cone, and its literal sum is analytic near the entire positive ell2 quadrant without an unproved global inverse input. Its identification with the physical renormalized Hamiltonian, the physical frequencies and the -6*Id Taylor coefficient are not yet proved; all main theorem flags remain false."
+    "The actual cubic contour family now descends and glues analytically near the entire nonnegative weighted cone, and its literal sum is analytic near the entire positive ell2 quadrant without an unproved global inverse input. Its identification with the physical renormalized Hamiltonian, the physical frequencies and the -6*Id Taylor coefficient are not yet proved; all main theorem flags remain false.",
+    "An actual finite-gap Hill discriminant phase and its exact physical weighted frequency-circle energy coefficient are now constructed. Identification with the normalized source primitive and original energy-circle contour, the Hstar density argument, physical frequencies and -6*Id remain open; all main flags remain false."
   ],
-  "previous_progress_commit": "b7eed592183e92c03c0320a92a127884f683b1c8",
+  "previous_progress_commit": "fc9460c2dcaebca890fb673edd45fba7490940d9",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -5826,7 +5869,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation against b7eed59: all 2206 baseline proof-source hashes unchanged. Eleven authored modules pass strict Lean 4.33.1/mathlib v4.33.1 compilation with default proof limits and no authored heartbeat/linter overrides. The actual local inverse normalization, uniform moment charts, independent local action-germ gluing and unconditional positive-ell2 analytic contour extension are checked. Positive-index example, combined transitive axiom audit and 1585 coverage-name checks pass, with 757 additional audited module origins. Reproduction lists 2217 modules; no full repository rebuild.",
+  "focused_validation_scope": "Incremental validation against fc9460c: all 2217 baseline proof-source hashes unchanged. Seven exact shared sources and eight authored modules pass strict Lean 4.33.1/mathlib v4.33.1 compilation. Authored proofs use default limits without heartbeat/linter overrides. Positive-index example, combined transitive axiom audit and 1594 coverage-name checks pass, with 768 additional audited module origins. Reproduction lists 2232 modules. The remaining 2825 reference import sources match byte-for-byte and were not rebuilt. No full repository rebuild.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -6136,9 +6179,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 1585,
-    "audit_modules_present": 757,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/LocalChartsCoverageNames.log"
+    "declarations": 1594,
+    "audit_modules_present": 768,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/PhysicalPhaseCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -6227,133 +6270,193 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "b7eed592183e92c03c0320a92a127884f683b1c8",
-    "baseline_modules": 2206,
+    "baseline_commit": "fc9460c2dcaebca890fb673edd45fba7490940d9",
+    "baseline_modules": 2217,
     "baseline_source_hashes_unchanged": true,
-    "newly_checked_authored_modules": 11,
+    "newly_checked_exact_shared_modules": 7,
+    "newly_checked_authored_modules": 8,
     "completed_module_checks": [
       {
-        "module": "NLS.SequenceSpaces.PositiveReindex",
-        "source_sha256": "6e9c87c3c0eb088a9ddb16173b33a5a7a0ef25a975b93dee12dd5ddb95941e88",
-        "olean_sha256": "770f354e6c0943af158776aa296d9992dfe3a84ab3a8f686b55ba4bb664252eb",
+        "module": "NLS.ZakharovShabat.NLSWKBApproximation",
+        "source_sha256": "aedb92866bd948333e49974ce95587f065fce969ea3b790c94d009d3b5f0643f",
+        "olean_sha256": "04ea110a718fbb53d872dd05b5ae95e74e61245700d52505da9838ba8037f31d",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.SequenceSpaces.PositiveReindex.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ZakharovShabat.NLSWKBApproximation.log",
+        "authored_here": false
       },
       {
-        "module": "NLS.SequenceSpaces.LocalAtlasActionFamilyDescent",
-        "source_sha256": "62f9d43f23bfa6b15bc6d67cce04ecb0ff72a7c8311ebe58154ea1a2e0220f36",
-        "olean_sha256": "b46cd4e7bf26c3d6a660ed3b22fa526666ac1ea78a2dba6062499ea9de0f4aa8",
+        "module": "NLS.ZakharovShabat.NLSWKBCarrierBounds",
+        "source_sha256": "03a6eacf3cdf6f6e0690058208fa69e38f14c5615e49d622a5182df621b06805",
+        "olean_sha256": "ea7b5e66af9d55e4f17149d64bcfd9960e5e51ffa5c84cd78e3e51c8467b6c30",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.ZakharovShabat.NLSWKBApproximation": "04ea110a718fbb53d872dd05b5ae95e74e61245700d52505da9838ba8037f31d"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ZakharovShabat.NLSWKBCarrierBounds.log",
+        "authored_here": false
+      },
+      {
+        "module": "NLS.ZakharovShabat.NLSWKBComparison",
+        "source_sha256": "209b1d5b02b9b331d07455ce5766b90c2f8ef97419fa5a5ebfb5fa126ba5be1b",
+        "olean_sha256": "36e84090a9e1bc60bacc87318b3ee302e97a47c7464f1c45ceb8f3af01fddf8f",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.ZakharovShabat.NLSWKBCarrierBounds": "ea7b5e66af9d55e4f17149d64bcfd9960e5e51ffa5c84cd78e3e51c8467b6c30"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ZakharovShabat.NLSWKBComparison.log",
+        "authored_here": false
+      },
+      {
+        "module": "NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics",
+        "source_sha256": "35f76034a734ca6b400700eec50d7e9001352e85fab95b6ae8970117a2bb92a5",
+        "olean_sha256": "0742d13b6f594d7576a5485e8da5996930fbb0d3a0de9594dc4fd4a74fe2d8b2",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.ZakharovShabat.NLSWKBComparison": "36e84090a9e1bc60bacc87318b3ee302e97a47c7464f1c45ceb8f3af01fddf8f"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics.log",
+        "authored_here": false
+      },
+      {
+        "module": "NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial",
+        "source_sha256": "a0f6ea523b8959b13a486ba040b7bdeec952d5c1bf1fc5d42905b0c44634e374",
+        "olean_sha256": "7a76449cd41a8fa9a5194ca1051c4870173262df90e7ea341ab2f8b233ec06c1",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics": "0742d13b6f594d7576a5485e8da5996930fbb0d3a0de9594dc4fd4a74fe2d8b2"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial.log",
+        "authored_here": false
+      },
+      {
+        "module": "NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients",
+        "source_sha256": "f0053388602225c52b08c627d436e2d9bdd83b0c2252b3ce90ae1c8e44c8b52f",
+        "olean_sha256": "a091c30d3c91ce7a7118bdabec4d2cac20639ed2f33be0657a773924f65e21c6",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial": "7a76449cd41a8fa9a5194ca1051c4870173262df90e7ea341ab2f8b233ec06c1"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients.log",
+        "authored_here": false
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianHamiltonianReduction",
+        "source_sha256": "7529d04f3d6f6d3681942436b77c87044b1d72d3e4db78ec61d81b73ec0f6422",
+        "olean_sha256": "1c324e5cc12b724c72fd1c27e9b848733299aaad804ab1c21074bd75ff9bfabb",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients": "a091c30d3c91ce7a7118bdabec4d2cac20639ed2f33be0657a773924f65e21c6"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ZakharovShabat.SourceFullAbelianHamiltonianReduction.log",
+        "authored_here": false
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFiniteGapDiscriminantPhase",
+        "source_sha256": "2733cb00e6c1cb3b00b38546f1bb63c02cfe6c43c299219371d5a7ab712e23a7",
+        "olean_sha256": "24f21aee2990bb418d54fe3077d7d104f63329aea9866ab0b8ba9faee80a9e1d",
+        "selected_direct_dependency_object_hashes": {
+          "NLS.ZakharovShabat.SourceFullAbelianHamiltonianReduction": "1c324e5cc12b724c72fd1c27e9b848733299aaad804ab1c21074bd75ff9bfabb"
+        },
+        "warningAsError": true,
+        "result": "passed",
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ZakharovShabat.SourceFiniteGapDiscriminantPhase.log",
+        "authored_here": true
+      },
+      {
+        "module": "NLS.ComplexAnalysis.AnalyticPhaseEnergyShift",
+        "source_sha256": "07f89e7c0c82ff83a211810edce0e682ed1a3639fc6293e40ffba74c250840a0",
+        "olean_sha256": "547437f764ad7c6b4d7e8696babf5e63e1764eb8b6c7a1100831c9b29116afb9",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.SequenceSpaces.LocalAtlasActionFamilyDescent.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ComplexAnalysis.AnalyticPhaseEnergyShift.log",
+        "authored_here": true
       },
       {
-        "module": "NLS.SequenceSpaces.SignedHilbertPairs",
-        "source_sha256": "c77ea59d701fb7e19d5e7cf5e72e6f0c3ea3ac1998b2aca0bad5076e985036eb",
-        "olean_sha256": "813679c6bb3e8af964013e337593effc6b2b9e9950992ad44ef4a8849425b1b7",
+        "module": "NLS.KdV.HillHminusFiniteGapDiscriminantPhase",
+        "source_sha256": "ce30f84c6c2cfef15c808faa3540a21314fb695d13e8625e67f45438596c73fa",
+        "olean_sha256": "9c17f6dd8d4123a886666b5379c10520c72e83966b9b04630e27591c3194f8c1",
         "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.PositiveReindex": "770f354e6c0943af158776aa296d9992dfe3a84ab3a8f686b55ba4bb664252eb"
+          "NLS.ZakharovShabat.SourceFiniteGapDiscriminantPhase": "24f21aee2990bb418d54fe3077d7d104f63329aea9866ab0b8ba9faee80a9e1d",
+          "NLS.ComplexAnalysis.AnalyticPhaseEnergyShift": "547437f764ad7c6b4d7e8696babf5e63e1764eb8b6c7a1100831c9b29116afb9"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.SequenceSpaces.SignedHilbertPairs.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.KdV.HillHminusFiniteGapDiscriminantPhase.log",
+        "authored_here": true
       },
       {
-        "module": "NLS.KdV.HillRoughPairInverse",
-        "source_sha256": "24bf097cc0e2bbd0cc30ab92a25f364836da382948a4ca7bb23b38ef96078477",
-        "olean_sha256": "6dcb55f5254b3b55c7a3b41ad0e106e352fa5ac6387789407943c3c1ae67d96f",
+        "module": "NLS.KdV.ClassicalHillPhaseCoefficients",
+        "source_sha256": "c367c502f019ac02cf5b60de1928503edb3fc0be578f24a449d8f6b6889a7a06",
+        "olean_sha256": "986a5e4744eb3dade96713f31da82b5bcbec517170a203873667e26fed6b2f3b",
         "selected_direct_dependency_object_hashes": {
-          "NLS.SequenceSpaces.SignedHilbertPairs": "813679c6bb3e8af964013e337593effc6b2b9e9950992ad44ef4a8849425b1b7"
+          "NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients": "a091c30d3c91ce7a7118bdabec4d2cac20639ed2f33be0657a773924f65e21c6"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.KdV.HillRoughPairInverse.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.KdV.ClassicalHillPhaseCoefficients.log",
+        "authored_here": true
       },
       {
-        "module": "NLS.Articles.KdVConvexity.LocalSpectralPairCharts",
-        "source_sha256": "0fc7f64cb086533b08b20b08a4b4804586347eab353e0d9a15aaf3eca78131c9",
-        "olean_sha256": "1a2f44c9a85494a54b0914a042639ce1049b69e5e1297c8a49b56602f0370172",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.KdV.HillRoughPairInverse": "6dcb55f5254b3b55c7a3b41ad0e106e352fa5ac6387789407943c3c1ae67d96f"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.Articles.KdVConvexity.LocalSpectralPairCharts.log"
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.LocalCubicPairCharts",
-        "source_sha256": "00a89a44cd521899faaa719a4d251325052a2518919d27c07cc71b5770c0dd8f",
-        "olean_sha256": "951bef0d2ece4d3310445d821a5571cc9b3390726de8bf6eb06431dc6f535484",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.Articles.KdVConvexity.LocalSpectralPairCharts": "1a2f44c9a85494a54b0914a042639ce1049b69e5e1297c8a49b56602f0370172"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.Articles.KdVConvexity.LocalCubicPairCharts.log"
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.ArnoldConeMomentGerms",
-        "source_sha256": "3d026d5090765b6164403985fc262439500579a89fe2d44e7d83dbe47fd2aede",
-        "olean_sha256": "5615d7fbe73d45e7a717fc36f41deb496bf01ae3b403ec2358774f9e11d57193",
-        "selected_direct_dependency_object_hashes": {
-          "NLS.Articles.KdVConvexity.LocalCubicPairCharts": "951bef0d2ece4d3310445d821a5571cc9b3390726de8bf6eb06431dc6f535484"
-        },
-        "warningAsError": true,
-        "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.Articles.KdVConvexity.ArnoldConeMomentGerms.log"
-      },
-      {
-        "module": "NLS.ComplexAnalysis.ScalarFamilyTransport",
-        "source_sha256": "94e2b7c6d9b12dd52cd7044a86b2dbe24f8de4bf11bc1e7d295d507d1284ba95",
-        "olean_sha256": "1872fc9ff78e0f28ef3fffd49febdcd80a7c926c34094bd7215eea77975b9d1d",
+        "module": "NLS.ComplexAnalysis.QuarticInversionRemainder",
+        "source_sha256": "860dc979ed911fcd069c885a673830945e50de913bf416adffa8dc88339c7a91",
+        "olean_sha256": "24b2845e78c4f30976ddad018c41691cf44cf2ec1bc5ae7981834334e8735d3c",
         "selected_direct_dependency_object_hashes": {},
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.ComplexAnalysis.ScalarFamilyTransport.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ComplexAnalysis.QuarticInversionRemainder.log",
+        "authored_here": true
       },
       {
-        "module": "NLS.Articles.KdVConvexity.ActionMomentNormalization",
-        "source_sha256": "f56a545ccf078b4035e2a87d5a3f8aa743daef5062036be1348d2194d397eb1d",
-        "olean_sha256": "4a5813a80f066eab3d6840da966b460f78f7bbd7e23b32eeb8af5fe90e254347",
+        "module": "NLS.KdV.HillFiniteGapPhysicalPhase",
+        "source_sha256": "68faa501b786559104e31efafdf920237fc121dfc94f97bf44e8df57404484da",
+        "olean_sha256": "3f0209719ae9ca549a1e9fa275c7388c08cea4bd840565b46cf84a3439809fba",
         "selected_direct_dependency_object_hashes": {
-          "NLS.ComplexAnalysis.ScalarFamilyTransport": "1872fc9ff78e0f28ef3fffd49febdcd80a7c926c34094bd7215eea77975b9d1d",
-          "NLS.Articles.KdVConvexity.ArnoldConeMomentGerms": "5615d7fbe73d45e7a717fc36f41deb496bf01ae3b403ec2358774f9e11d57193"
+          "NLS.KdV.HillHminusFiniteGapDiscriminantPhase": "9c17f6dd8d4123a886666b5379c10520c72e83966b9b04630e27591c3194f8c1",
+          "NLS.KdV.ClassicalHillPhaseCoefficients": "986a5e4744eb3dade96713f31da82b5bcbec517170a203873667e26fed6b2f3b"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.Articles.KdVConvexity.ActionMomentNormalization.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.KdV.HillFiniteGapPhysicalPhase.log",
+        "authored_here": true
       },
       {
-        "module": "NLS.Articles.KdVConvexity.GlobalActionMomentDescent",
-        "source_sha256": "a2f74d3f9e07e26ee7e11324052539c0e072b549560143161099cd87eb762431",
-        "olean_sha256": "bc992dfdf9f4f7fde2110ccd27ff903b402869a259585510c6dc87e0c9c13cef",
+        "module": "NLS.ComplexAnalysis.QuarticInversionContour",
+        "source_sha256": "d15ad0dbd8691555f00e88f3a8cc1e0a278d8a5dcb6a10ef296d21f90cbf8a17",
+        "olean_sha256": "9d9b50c773d9928cc0c75c49cbb74374f4d62013dda315a563c18a927568d6d8",
         "selected_direct_dependency_object_hashes": {
-          "NLS.Articles.KdVConvexity.ActionMomentNormalization": "4a5813a80f066eab3d6840da966b460f78f7bbd7e23b32eeb8af5fe90e254347",
-          "NLS.Articles.KdVConvexity.ArnoldConeMomentGerms": "5615d7fbe73d45e7a717fc36f41deb496bf01ae3b403ec2358774f9e11d57193",
-          "NLS.Articles.KdVConvexity.LocalCubicPairCharts": "951bef0d2ece4d3310445d821a5571cc9b3390726de8bf6eb06431dc6f535484",
-          "NLS.SequenceSpaces.LocalAtlasActionFamilyDescent": "b46cd4e7bf26c3d6a660ed3b22fa526666ac1ea78a2dba6062499ea9de0f4aa8"
+          "NLS.ComplexAnalysis.QuarticInversionRemainder": "24b2845e78c4f30976ddad018c41691cf44cf2ec1bc5ae7981834334e8735d3c"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.Articles.KdVConvexity.GlobalActionMomentDescent.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.ComplexAnalysis.QuarticInversionContour.log",
+        "authored_here": true
       },
       {
-        "module": "NLS.Articles.KdVConvexity.UnconditionalContourExtension",
-        "source_sha256": "8ceebbe1f0b908e5954634ce87f6f9d379cdcdc65989e77ac3fd723721c34602",
-        "olean_sha256": "ae351fc42ed070341a760d33883de47ac844eac14364880c38da3557e4406655",
+        "module": "NLS.KdV.HillFiniteGapPhysicalEnergyContour",
+        "source_sha256": "1fa09aa92e8df5210f3f434a59eff52ed396987fbf8948b86a0f44717ea5e4a5",
+        "olean_sha256": "b4ea09d22f9404dc24b92e86c628323465e8181c02f00baa84ceca78db172aaf",
         "selected_direct_dependency_object_hashes": {
-          "NLS.Articles.KdVConvexity.GlobalActionMomentDescent": "bc992dfdf9f4f7fde2110ccd27ff903b402869a259585510c6dc87e0c9c13cef"
+          "NLS.KdV.HillFiniteGapPhysicalPhase": "3f0209719ae9ca549a1e9fa275c7388c08cea4bd840565b46cf84a3439809fba",
+          "NLS.ComplexAnalysis.QuarticInversionContour": "9d9b50c773d9928cc0c75c49cbb74374f4d62013dda315a563c18a927568d6d8"
         },
         "warningAsError": true,
         "result": "passed",
-        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-NLS.Articles.KdVConvexity.UnconditionalContourExtension.log"
+        "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-NLS.KdV.HillFiniteGapPhysicalEnergyContour.log",
+        "authored_here": true
       }
     ],
-    "combined_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/local-charts-validation.log",
+    "combined_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-phase-validation.log",
     "baseline_build_receipts_preserved_in_parent_commit": true,
+    "reference_import_source_manifest": "coverage/articles/kdv-convexity/physical-phase-library-reuse.json",
     "inherited_reference_import_closure_rebuilt": false
   },
   "Hminus1_real_spectral_progress": {
@@ -8042,5 +8145,44 @@
     "physical_frequency_gradient_identification_proved": false,
     "KdV_Taylor_coefficient_minus_six_proved": false,
     "main_Theorem_1_1_complete": false
+  },
+  "finite_gap_physical_phase_energy_progress": {
+    "status": "proved_and_strictly_validated",
+    "new_authored_modules": [
+      "NLS.ZakharovShabat.SourceFiniteGapDiscriminantPhase",
+      "NLS.ComplexAnalysis.AnalyticPhaseEnergyShift",
+      "NLS.KdV.HillHminusFiniteGapDiscriminantPhase",
+      "NLS.KdV.ClassicalHillPhaseCoefficients",
+      "NLS.ComplexAnalysis.QuarticInversionRemainder",
+      "NLS.KdV.HillFiniteGapPhysicalPhase",
+      "NLS.ComplexAnalysis.QuarticInversionContour",
+      "NLS.KdV.HillFiniteGapPhysicalEnergyContour"
+    ],
+    "exact_shared_modules_rechecked": [
+      "NLS.ZakharovShabat.NLSWKBApproximation",
+      "NLS.ZakharovShabat.NLSWKBCarrierBounds",
+      "NLS.ZakharovShabat.NLSWKBComparison",
+      "NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics",
+      "NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial",
+      "NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients",
+      "NLS.ZakharovShabat.SourceFullAbelianHamiltonianReduction"
+    ],
+    "actual_normalized_Dirac_finite_gap_phase_constructed": true,
+    "analytic_phase_preserved_under_constant_squared_frequency_energy_translation": true,
+    "actual_rough_Hill_phase_constructed_at_every_real_mean_zero_eventually_closed_gap_source": true,
+    "actual_smooth_finite_gap_Hill_phase_first_five_coefficients_are_physical_integrals": true,
+    "phase_Taylor_normalization": "A(w)=i*H0*w^3/4+i*Hkdv*w^5/16+O(w^6), where H0=integral(q^2)/2 and Hkdv=integral((q_prime)^2/2+q^3).",
+    "quartic_remainder_analytic_at_inverse_frequency_zero": true,
+    "quartic_expansion": "(-i*z+A(1/z))^4=z^4-H0-Hkdv/(4*z^2)+z^(-3)*B(1/z), with B analytic at zero.",
+    "exact_frequency_circle_energy_identity": "integral_C(0,R) (-i*z+A(1/z))^4*(2*z) dz=-pi*i*Hkdv for every sufficiently large R.",
+    "physical_energy_contour_factory": "NLS.KdV.exists_hill_finiteGap_physical_energy_contour",
+    "phase_or_physical_coefficient_assumed_in_actual_factory": false,
+    "normalized_source_primitive_matching_proved": false,
+    "original_energy_circle_residue_and_gap_decomposition_instantiated": false,
+    "physical_Hstar_identity_by_density_proved": false,
+    "main_Theorem_1_1_complete": false,
+    "authored_heartbeat_or_linter_overrides": false,
+    "reference_import_closure_sources_byte_identical": 2825,
+    "reference_import_closure_rebuilt": false
   }
 }

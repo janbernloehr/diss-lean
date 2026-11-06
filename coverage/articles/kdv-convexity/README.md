@@ -3125,12 +3125,42 @@ renormalized KdV Hamiltonian. The physical frequency identity and the
 Taylor coefficient `-6*Id` also remain open. Consequently no main
 Theorem 1.1-1.3 is marked complete.
 
+## Constructed finite-gap physical phase and energy coefficient
+
+`SourceFiniteGapDiscriminantPhase.lean` constructs the normalized analytic
+inversion phase of every real finite-gap Dirac source from the actual
+Abelian primitive. `AnalyticPhaseEnergyShift.lean` constructs its exact
+transport under a constant energy translation. Combined with the actual
+ground Miura factor, `HillHminusFiniteGapDiscriminantPhase.lean` gives an
+analytic inversion phase for every real mean-zero rough Hill source with
+eventually closed gaps, without assuming a phase or an expansion.
+
+For smooth physical sources, `ClassicalHillPhaseCoefficients.lean` and
+`HillFiniteGapPhysicalPhase.lean` identify its first five Taylor
+coefficients with the independently defined physical integrals:
+`A(w)=i*H0*w^3/4+i*Hkdv*w^5/16+O(w^6)`. The actual integral definitions
+are `H0=integral(q^2)/2` and `Hkdv=integral((q_prime)^2/2+q^3)`.
+`QuarticInversionRemainder.lean` proves the exact expansion
+`(-i*z+A(1/z))^4=z^4-H0-Hkdv/(4*z^2)+z^(-3)*B(1/z)`, with `B`
+analytic at zero. `QuarticInversionContour.lean` extracts the exact
+weighted frequency-circle period `-pi*i*Hkdv`. The unconditional actual
+smooth finite-gap factory is
+`NLS.KdV.exists_hill_finiteGap_physical_energy_contour`.
+
+This coefficient belongs to the constructed actual discriminant phase.
+Matching that phase to the globally normalized source primitive, changing
+to the original energy circle, instantiating finite-gap contour
+decomposition, and passing the physical identity by density remain open.
+No physical Hstar identity, physical frequency identity or `-6*Id`
+coefficient is asserted. All main theorem flags remain false.
+
 ## Remaining essential KdV work
 
 1. Identify the actual analytic contour sum with physical renormalized
    KdV energy. The finite-gap contour decomposition is checked, but the
-   exterior quartic primitive residue must be identified with physical
-   energy and the resulting identity passed by density.
+   constructed phase must be matched to the normalized source primitive
+   and original energy-circle quartic period. Then instantiate the gap
+   decomposition and pass the physical identity by density.
 2. Identify its bilinear Hilbert gradient with the physical frequencies
    minus `8*pi^3*n^3` on the full common domain.
 3. Prove the exact quadratic Taylor coefficients giving `-6*Id`, finish
@@ -3192,19 +3222,20 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `b7eed59` contains 2206 source modules, whose
-source hashes remain unchanged. Eleven new authored modules pass strict
-Lean 4.33.1/mathlib v4.33.1 compilation with `warningAsError=true` and
-default proof limits. The reproduction script lists 2217 NLS modules.
-The positive-index example, combined transitive axiom audit and 1585
-coverage declaration checks pass. Earlier dependency-build receipts
-remain in the parent commit. Inherited reference imports were not rebuilt.
-This is incremental dependency validation, not a full repository rebuild.
+The validated baseline at `fc9460c` contains 2217 proof sources, whose
+hashes remain unchanged. Seven exact shared sources and eight authored
+modules pass strict Lean compilation with `warningAsError=true`. Authored
+proofs retain default limits and linters. Reproduction lists 2232 modules.
+The positive-index example, combined transitive axiom audit and 1594
+coverage declaration checks pass. All 2825 remaining reference import
+sources match the read-only compiled reference byte-for-byte and were not
+rebuilt. Earlier build receipts remain in the parent commit. This is
+incremental validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 757 additional shared modules:
-17168 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 768 additional shared modules:
+17242 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

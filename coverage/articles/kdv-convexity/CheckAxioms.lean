@@ -1,3 +1,4 @@
+import NLS.KdV.HillFiniteGapPhysicalEnergyContour
 import NLS.Articles.KdVConvexity.UnconditionalContourExtension
 import NLS.Articles.KdVConvexity.GlobalArnoldActionFibers
 import NLS.KdV.HillConstantActionCurves
@@ -101,6 +102,17 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.ZakharovShabat.NLSWKBApproximation,
+    `NLS.ZakharovShabat.NLSWKBCarrierBounds,
+    `NLS.ZakharovShabat.NLSWKBComparison,
+    `NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics,
+    `NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial,
+    `NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients,
+    `NLS.ZakharovShabat.SourceFullAbelianHamiltonianReduction,
+    `NLS.ZakharovShabat.SourceFiniteGapDiscriminantPhase,
+    `NLS.ComplexAnalysis.AnalyticPhaseEnergyShift,
+    `NLS.ComplexAnalysis.QuarticInversionRemainder,
+    `NLS.ComplexAnalysis.QuarticInversionContour,
     `NLS.SequenceSpaces.PositiveReindex,
     `NLS.SequenceSpaces.LocalAtlasActionFamilyDescent,
     `NLS.SequenceSpaces.SignedHilbertPairs,

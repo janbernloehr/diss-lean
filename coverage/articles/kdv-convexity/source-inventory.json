@@ -1634,13 +1634,22 @@
         "NLS.Articles.KdVConvexity.ArnoldConeSourceFamily.unscaledCubicRecovery",
         "NLS.Articles.KdVConvexity.exists_normalized_cubic_action_family",
         "NLS.Articles.KdVConvexity.global_cubic_moment_action_descent",
-        "NLS.Articles.KdVConvexity.exists_global_analytic_actual_contour_extension"
+        "NLS.Articles.KdVConvexity.exists_global_analytic_actual_contour_extension",
+        "NLS.ZakharovShabat.exists_sourceFiniteGap_discriminant_phase",
+        "NLS.ComplexAnalysis.exists_analytic_phase_energy_shift",
+        "NLS.KdV.exists_hillHminus_finiteGap_discriminant_phase",
+        "NLS.KdV.iteratedDeriv_classicalHill_phase",
+        "NLS.KdV.classicalHill_phase_first_five",
+        "NLS.ComplexAnalysis.exists_phase_fourth_analytic_remainder",
+        "NLS.KdV.exists_hill_finiteGap_physical_phase",
+        "NLS.ComplexAnalysis.exists_phase_fourth_weighted_contour",
+        "NLS.KdV.exists_hill_finiteGap_physical_energy_contour"
       ],
       "remaining": [
-        "Identify the constructed actual analytic contour Hamiltonian with the physical renormalized KdV Hamiltonian on its original weighted ell^(3,1) action domain. Establish the physical exterior quartic residue/energy identity, use finite-gap contour decomposition, and pass the physical identity by density.",
-        "Identify the bilinear Hilbert gradient with the physical KdV frequencies minus 8*pi^3*n^3 on the full common domain V intersect V0.",
-        "Prove the exact KdV quadratic Taylor coefficients giving the full bounded derivative -6*Id at zero.",
-        "Complete the positive-index real-cone Hessian transport, local diffeomorphism and single-radius strict concavity statement, then complete the remaining main Theorems 1.2-1.3 with their original domains and quantifiers."
+        "Match the constructed analytic finite-gap Hill phase to the actual normalized source primitive; transfer its checked weighted frequency-circle coefficient to the original energy-circle quartic period, instantiate finite-gap contour decomposition, and pass the physical renormalized Hstar identity by density on the original weighted ell^(3,1) action domain.",
+        "Identify the bilinear Hilbert gradient with physical KdV frequencies minus 8*pi^3*n^3 on the full common domain V intersect V0.",
+        "Prove the exact quadratic Taylor coefficients -3*sum(I_n^2), hence the full bounded derivative -6*Id at zero.",
+        "Complete the original positive-index local inverse and single-radius strict concavity statement, then main Theorems 1.2-1.3 with their original domains and quantifiers."
       ]
     },
     {
@@ -4237,5 +4246,44 @@
     "physical_frequency_gradient_identification_proved": false,
     "KdV_Taylor_coefficient_minus_six_proved": false,
     "main_Theorem_1_1_complete": false
+  },
+  "finite_gap_physical_phase_energy_progress": {
+    "status": "proved_and_strictly_validated",
+    "new_authored_modules": [
+      "NLS.ZakharovShabat.SourceFiniteGapDiscriminantPhase",
+      "NLS.ComplexAnalysis.AnalyticPhaseEnergyShift",
+      "NLS.KdV.HillHminusFiniteGapDiscriminantPhase",
+      "NLS.KdV.ClassicalHillPhaseCoefficients",
+      "NLS.ComplexAnalysis.QuarticInversionRemainder",
+      "NLS.KdV.HillFiniteGapPhysicalPhase",
+      "NLS.ComplexAnalysis.QuarticInversionContour",
+      "NLS.KdV.HillFiniteGapPhysicalEnergyContour"
+    ],
+    "exact_shared_modules_rechecked": [
+      "NLS.ZakharovShabat.NLSWKBApproximation",
+      "NLS.ZakharovShabat.NLSWKBCarrierBounds",
+      "NLS.ZakharovShabat.NLSWKBComparison",
+      "NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics",
+      "NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial",
+      "NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients",
+      "NLS.ZakharovShabat.SourceFullAbelianHamiltonianReduction"
+    ],
+    "actual_normalized_Dirac_finite_gap_phase_constructed": true,
+    "analytic_phase_preserved_under_constant_squared_frequency_energy_translation": true,
+    "actual_rough_Hill_phase_constructed_at_every_real_mean_zero_eventually_closed_gap_source": true,
+    "actual_smooth_finite_gap_Hill_phase_first_five_coefficients_are_physical_integrals": true,
+    "phase_Taylor_normalization": "A(w)=i*H0*w^3/4+i*Hkdv*w^5/16+O(w^6), where H0=integral(q^2)/2 and Hkdv=integral((q_prime)^2/2+q^3).",
+    "quartic_remainder_analytic_at_inverse_frequency_zero": true,
+    "quartic_expansion": "(-i*z+A(1/z))^4=z^4-H0-Hkdv/(4*z^2)+z^(-3)*B(1/z), with B analytic at zero.",
+    "exact_frequency_circle_energy_identity": "integral_C(0,R) (-i*z+A(1/z))^4*(2*z) dz=-pi*i*Hkdv for every sufficiently large R.",
+    "physical_energy_contour_factory": "NLS.KdV.exists_hill_finiteGap_physical_energy_contour",
+    "phase_or_physical_coefficient_assumed_in_actual_factory": false,
+    "normalized_source_primitive_matching_proved": false,
+    "original_energy_circle_residue_and_gap_decomposition_instantiated": false,
+    "physical_Hstar_identity_by_density_proved": false,
+    "main_Theorem_1_1_complete": false,
+    "authored_heartbeat_or_linter_overrides": false,
+    "reference_import_closure_sources_byte_identical": 2825,
+    "reference_import_closure_rebuilt": false
   }
 }
