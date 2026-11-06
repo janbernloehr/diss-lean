@@ -13,9 +13,13 @@ The physical energy is defined through actual mean-zero H1 sources and
 proved independent of every such representative. Their actions are
 literally the fixed original Birkhoff actions `(x_n^2+y_n^2)/2`. Actual
 Sobolev density and inverse regularity are proved, rather than assumed.
-The physical frequency identity, the zero-gradient and `-6*Id` Taylor
-normalization, the resulting local inverse/Hessian assertions, and main
-Theorems 1.2-1.3 remain open.
+The physical frequency identity now holds on the full original positive
+ell^(3,1) action cone, as an intrinsic derivative of the actual physical
+energy. Physical extensions have identical complex germs at every positive
+ell2 point. The larger original ell^(-1,1) frequency extension V0 and its
+full common-domain identity, the zero-gradient and `-6*Id` Taylor
+normalization, the local inverse/Hessian assertions, and main Theorems
+1.2-1.3 remain open.
 
 On potential space, the actual unit-period Hill discriminant is jointly
 entire in energy and complex H^-1 potentials. Local analytic shifted-Miura
@@ -49,7 +53,7 @@ analytic contour-period germs are now proved below. Their identification
 with the nearby canonical real families is proved in the latest milestone. Indexed endpoint limits and
 energy-analytic filled squares are proved below.
 
-Physical frequency identification, the -6*Id quadratic coefficient
+Full base-domain physical frequency identification, the -6*Id quadratic coefficient
 and the Fourier-Lebesgue assertions in Theorems 1.2–1.3 remain open.
 The earlier verified local concavity and inverse-function consequences
 are retained as conditional preparation. This record does not reopen the
@@ -81,7 +85,7 @@ See `source-inventory.json` for statement domains, quantifiers and pages.
 
 | Statement | Required content | Status |
 | --- | --- | --- |
-| Theorem 1.1, pp. 3–4 | A complex open extension around the entire nonnegative ell2 action quadrant; physical energy and frequency identifications; gradient zero and derivative -6*Id at zero; an analytic local inverse; a local Hessian bound <= -norm(J)^2 for every real ell2 direction. | The global physical analytic extension is proved, with exact original weighted action domain and agreement with every physical H1 source and the fixed original Birkhoff actions. Physical frequencies, the zero-gradient and -6*Id coefficient, and the local inverse/Hessian conclusions remain open. |
+| Theorem 1.1, pp. 3–4 | A complex open extension around the entire nonnegative ell2 action quadrant; physical energy and frequency identifications; gradient zero and derivative -6*Id at zero; an analytic local inverse; a local Hessian bound <= -norm(J)^2 for every real ell2 direction. | The global physical analytic extension is proved, with exact original weighted action domain and agreement with every physical H1 source and the fixed original Birkhoff actions. The physical frequency identity is proved on the full original positive ell^(3,1) cone. The original base frequency domain V0, zero-gradient and -6*Id coefficient, and local inverse/Hessian conclusions remain open. |
 | Theorem 1.2, p. 4 | For each -1/2<=s<=0 and finite p>=2, the same global H^-1 physical KdV Birkhoff map restricts to a real analytic diffeomorphism L_0^(s,p) -> ell_0^(s+1/2,p). | Not verified. Consume the shared Hill/KdV construction; prove the Fourier-Lebesgue restriction, derivative invertibility and surjectivity. |
 | Theorem 1.3, p. 5 | Global C0 well-posedness of physical KdV on every such real Fourier-Lebesgue space, with the solution notion referenced by the paper. | Not verified. Sequence phase-flow results alone do not establish this PDE assertion. |
 
@@ -3257,16 +3261,55 @@ surjectivity is neither assumed nor required. No main Theorem 1.1-1.3 is
 marked complete: the physical frequency and exact Taylor assertions still
 need proof.
 
+## Intrinsic physical frequencies and uniqueness of the Hilbert extension
+
+`PhysicalActionDifferential.lean` restores the exact bounded linear
+functional `sum 8*pi^3*n^3*I_n` on the original weighted action space. The
+full energy extends analytically there and agrees with the literal
+physical H1 integral at every mean-zero representative. Its coordinate
+derivative uses a RAW unit action, without multiplication or division by
+the norm weight `(1+n)^3`.
+
+`IntrinsicPhysicalFrequencies.lean` defines the physical frequencies from
+the independently defined full energy's intrinsic analytic cotangent.
+Weighted-cone holomorphic uniqueness proves independence of EVERY local
+analytic extension, even at arbitrary zero coordinates. The identity
+`omega_n = 8*pi^3*n^3 + actionGradient(Hstar)_n` holds on the ENTIRE
+original positive ell^(3,1) cone, with all positive indices and infinite
+supports. The gradient is analytic into the original positive-index
+ell2 space on the same global domain as Hstar. Its literal bilinear sum
+represents the full differential on every Hilbert direction, including
+infinite directions.
+
+`PhysicalExtensionUniqueness.lean` proves finite original action density
+in the entire positive Hilbert cone, then holomorphic germ equality for
+any two physical Hstar extensions at every positive ell2 point. Hence
+their Hilbert gradients agree even outside the original weighted cone.
+
+`BaseFrequencyContinuation.lean` proves the remaining domain-continuation
+step with the actual original base-frequency family as an explicit input.
+Coordinatewise base analyticity and physical recovery imply ALL coordinate
+identities on ONE open Hilbert neighborhood of the ENTIRE positive cone.
+Each common ball is fixed before the index; no unproved uniform coordinate
+germ radius or Hilbert-valued base-frequency realization is assumed.
+
+The actual coordinatewise analytic frequency extension on the larger
+ell^(-1,1) action neighborhood V0 is NOT yet constructed. Consequently
+the full `V intersect V0` clause of Theorem 1.1 is not marked complete.
+The physical zero-gradient and minus-six Taylor coefficient also remain
+open. This milestone completes the original-domain physical derivative
+bridge corresponding to the last assertion of Corollary 4.8.
+
 ## Remaining essential KdV work
 
-1. Identify the bilinear Hilbert gradient of the proved physical Hstar
-   extension with the physical frequencies minus `8*pi^3*n^3` on the full
-   common domain `V intersect V0`.
-2. Prove the physical quadratic Taylor coefficients `-3*sum(I_n^2)`, hence
-   the gradient value zero and its full bounded derivative `-6*Id`.
-3. Complete the original positive-index local diffeomorphism and single
-   Hessian-radius statement, then the Fourier-Lebesgue Birkhoff and
-   physical KdV well-posedness claims of main Theorems 1.2-1.3.
+1. Construct the actual coordinatewise analytic physical KdV frequency
+   family on the original ell^(-1,1) neighborhood V0. Apply the proved
+   continuation bridge to complete the full common-domain identity.
+2. Prove the physical quadratic Taylor coefficients `-3*sum(I_n^2)`,
+   zero gradient and full bounded derivative `-6*Id` at zero.
+3. Complete the positive-index local inverse and single Hessian radius,
+   then main Theorems 1.2-1.3 on Fourier-Lebesgue coordinates and physical
+   KdV well-posedness.
 
 The `kdv-estimates` branch was re-inspected through commit `05e5530`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
@@ -3323,19 +3366,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `003935b` contains 2242 proof sources, whose
-hashes remain unchanged. Two exact shared sources and 21 authored modules
+The validated baseline at `49d9b15` contains 2265 proof sources, whose
+hashes remain unchanged. Six authored modules and one exact shared module
 pass strict Lean compilation with `warningAsError=true`, default authored
-limits and no linter overrides. Reproduction lists 2265 modules. The
-positive-index example, combined transitive axiom audit and 1709 coverage
-declaration checks pass. All 2823 remaining reference import sources agree
-byte-for-byte and were not rebuilt. Earlier build receipts remain in the
-parent commit. This is incremental validation, not a full repository build.
+limits and no linter overrides. Reproduction lists 2272 modules. The
+positive-index example, combined transitive axiom audit and 1756 coverage
+declaration checks pass. All 2829 remaining reference import sources agree
+byte-for-byte and were not rebuilt. Earlier receipts remain in the parent
+commit. This is incremental validation, not a full repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 775 additional shared modules:
-17525 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 776 additional shared modules:
+17662 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
