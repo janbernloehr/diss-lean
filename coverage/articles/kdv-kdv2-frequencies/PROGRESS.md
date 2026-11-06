@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest GLOBAL rough injectivity and all-order nonlinear regularity
+## Latest common complex canonical neighborhood and exact origin
+
+The SAME global signed map now has the FULL original Gardner matrix on the COMPLEX mean-zero slice of ONE OPEN neighborhood containing the ENTIRE real mean-zero rough source space, including NON-L2 sources and closed gaps. This neighborhood is chosen before ALL coordinate indices. The exact Abelian normalization gives {z_n,z_-m}=i delta_nm and zero same-sign brackets. Every original physical local extension near zero agrees with this global map on a genuine complex ball; D.signed(0)=0 and its full mean-zero rough Fourier differential has exactly the paper factor (2*|j|*pi)^(-1/2). See `GLOBAL_ROUGH_COMPLEX_CANONICAL_ORIGIN.md`.
+
+Global SURJECTIVITY, ONE global inverse with native inverse matching, global action-Hamiltonian identifications and frequency/PDE conclusions remain open. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2745 unchanged selected baseline sources. All three newly selected own modules strictly rebuilt in dependency order after freezing 2794 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2748 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact three-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2748-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2748-module rebuild is claimed.
+
+Fresh audit: 21402 selected and 43472 imported NLS declarations; permitted axioms only. Three new own modules contain 14 explicit theorems.
+
+## Earlier GLOBAL rough injectivity and all-order nonlinear regularity
 
 The SAME actual global signed map is now GLOBALLY INJECTIVE on the ENTIRE real mean-zero HminusOne space, including NON-L2 sources and closed gaps. It has the exact ALL-order nonlinear criterion q in H^s IFF its actual target lies in h^(s+1/2), EVERY real rough q and EVERY s>=-1, with no initial strong membership assumed. Actual local inverse branches preserve reality. Two branches at a common rough target agree on symmetric finite real target approximants by recovered physical L2 regularity and ORIGINAL global L2 injectivity; continuity identifies their original rough preimages. See `GLOBAL_ROUGH_INJECTIVITY_REGULARITY.md`.
 

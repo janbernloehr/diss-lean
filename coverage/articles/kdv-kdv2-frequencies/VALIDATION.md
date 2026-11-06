@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest GLOBAL rough injectivity and all-order nonlinear regularity
+## Latest common complex canonical neighborhood and exact origin
+
+The SAME global signed map now has the FULL original Gardner matrix on the COMPLEX mean-zero slice of ONE OPEN neighborhood containing the ENTIRE real mean-zero rough source space, including NON-L2 sources and closed gaps. This neighborhood is chosen before ALL coordinate indices. The exact Abelian normalization gives {z_n,z_-m}=i delta_nm and zero same-sign brackets. Every original physical local extension near zero agrees with this global map on a genuine complex ball; D.signed(0)=0 and its full mean-zero rough Fourier differential has exactly the paper factor (2*|j|*pi)^(-1/2). See `GLOBAL_ROUGH_COMPLEX_CANONICAL_ORIGIN.md`.
+
+Global SURJECTIVITY, ONE global inverse with native inverse matching, global action-Hamiltonian identifications and frequency/PDE conclusions remain open. All eleven COMPLETE main rows remain OPEN.
+
+Prior strict evidence retained for all 2745 unchanged selected baseline sources. All three newly selected own modules strictly rebuilt in dependency order after freezing 2794 source/checker/provenance/Mathlib-source hashes, followed by a fresh combined transitive axiom audit of all 2748 selected modules. Exact checker/audit/coverage/evidence selection, dependency order, reachability and exact three-module increase in NLS import closure verified. All 43 prior verified provenance records remain byte-for-byte unchanged; no new canonical prerequisite or provenance record is selected. The selection retains 22 private chunks of at most 128 names. The ENTIRE transitive audit loop, including the bidirectional NameSet guard, collectAxioms traversal, permitted axioms and full imported NLS scope, is BYTE-FOR-BYTE identical to the published baseline. A 2748-name runtime probe rejects extra and missing module sets. Private fresh outputs, clean unchanged canonical main and pinned Mathlib verified. Default heartbeat/recursion limits remain in force. No full 2748-module rebuild is claimed.
+
+Fresh audit: 21402 selected and 43472 imported NLS declarations; permitted axioms only. Three new own modules contain 14 explicit theorems.
+
+## Earlier GLOBAL rough injectivity and all-order nonlinear regularity
 
 The SAME actual global signed map is now GLOBALLY INJECTIVE on the ENTIRE real mean-zero HminusOne space, including NON-L2 sources and closed gaps. It has the exact ALL-order nonlinear criterion q in H^s IFF its actual target lies in h^(s+1/2), EVERY real rough q and EVERY s>=-1, with no initial strong membership assumed. Actual local inverse branches preserve reality. Two branches at a common rough target agree on symmetric finite real target approximants by recovered physical L2 regularity and ORIGINAL global L2 injectivity; continuity identifies their original rough preimages. See `GLOBAL_ROUGH_INJECTIVITY_REGULARITY.md`.
 
@@ -820,7 +830,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2745 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2748 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1889,7 +1899,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2745 selected modules (including generated and private declarations)
+the 2748 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4866,4 +4876,13 @@ PASS NLS/SequenceSpaces/DeletedRealFiniteApprox
 PASS NLS/KdV/HillBirkhoffAbelianInjective
 PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInjective
 Axiom audit passed: 21389 candidate declarations; 43453 declarations total.
+```
+
+Latest complex canonical/origin strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/HminusMeanZeroProjection
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianComplexCanonical
+PASS NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianOrigin
+Axiom audit passed: 21402 candidate declarations; 43472 declarations total.
 ```

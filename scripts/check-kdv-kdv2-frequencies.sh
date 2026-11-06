@@ -2754,6 +2754,9 @@ modules=(
   NLS/SequenceSpaces/DeletedRealFiniteApprox
   NLS/KdV/HillBirkhoffAbelianInjective
   NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianInjective
+  NLS/SequenceSpaces/HminusMeanZeroProjection
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianComplexCanonical
+  NLS/Articles/KdVKdV2Frequencies/GlobalRoughAbelianOrigin
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
