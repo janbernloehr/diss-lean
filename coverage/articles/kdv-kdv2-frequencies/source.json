@@ -247,6 +247,11 @@
           "source_clause": "The SAME ACTUAL original positive Abelian map has native complex analytic Sobolev sequence restrictions near every eligible real source in ONE common rough ball, before ALL s>=-1 and all sources, retaining exact physical coordinates and normalization",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_actual_all_sobolev_positive_abelian",
           "qualification": "The SAME ACTUAL original positive rough Abelian map from the native physical recovery theorem has genuine COMPLEX ANALYTIC native Sobolev sequence restrictions near EVERY eligible REAL source in ONE common rough ball, for ALL s>=-1. The ball and map precede every order and source; original physical recovery, zero, nonpositive zeros and weak linear bounds are retained. Its normalized coefficients are original z_n/sqrt(1+n); the literal weighted realization uses W_(s+1). Complex rough norm comparison with the actual stronger packet gives locally uniform sequence bounds, then scalar analyticity gives stronger Banach analyticity. This proves the positive-coordinate restriction; full signed Sobolev forward/inverse charts and arbitrary-base/global rough Birkhoff inversion remain separate obligations."
+        },
+        {
+          "source_clause": "ALL stronger native COMPLEX ANALYTIC full signed H^s-to-h^(s+1/2) forward germs of the SAME actual Z, ALL s>=-1, on ONE common rough ball, attached to the SAME actual inverse R with exact complex inverse/real membership/physical L2/global-coordinate/mass identities",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_all_sobolev_forward_inverse",
+          "qualification": "The SAME actual signed Z and rough inverse R retain their exact complex right-inverse identities, zero and real forms, all real native Sobolev membership endpoints, original physical L2 representatives, fixed GLOBAL original Birkhoff coordinates and exact squared L2 mass sum 4*pi*n*|target_n|^2. The SAME Z NOW has COMPLEX ANALYTIC native H^s-to-h^(s+1/2) germs for ALL s>=-1 at EVERY eligible real source in ONE common rough ball. The rough chart and open target neighborhood precede all orders and real sources/targets of arbitrary support. R remains analytic with H-minus-one values; stronger inverse topology/analyticity and arbitrary-base/global rough inversion are not asserted."
         }
       ]
     },
@@ -34315,12 +34320,108 @@
       "scope": "The SAME ACTUAL original positive rough Abelian map from the native physical recovery theorem has genuine COMPLEX ANALYTIC native Sobolev sequence restrictions near EVERY eligible REAL source in ONE common rough ball, for ALL s>=-1. The ball and map precede every order and source; original physical recovery, zero, nonpositive zeros and weak linear bounds are retained. Its normalized coefficients are original z_n/sqrt(1+n); the literal weighted realization uses W_(s+1). Complex rough norm comparison with the actual stronger packet gives locally uniform sequence bounds, then scalar analyticity gives stronger Banach analyticity. This proves the positive-coordinate restriction; full signed Sobolev forward/inverse charts and arbitrary-base/global rough Birkhoff inversion remain separate obligations.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "c25ced0b3c242ee2550515751369a67214c251f65d7e223912d172de00f08c2a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SignedCompletionLocalAnalytic.lean",
+      "source_labels": [
+        "Actual full signed Sobolev complex analytic forward restrictions attached to the SAME rough inverse, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Reusable signed completion is genuinely COMPLEX ANALYTIC on an actual local domain where the positive map is analytic at both conjugate source points. No zero-base or zero-value premise is required. Native weighted-source transport retains exact coefficient reflection, physical source conjugation, local norm bounds and equality with the established weighted target completion.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aec0067aeaed326637211eae0cefa7986320f14e09d98bfdf6a6aaab1b814208"
+    },
+    {
+      "path": "NLS/KdV/HillRoughPhysicalUniqueness.lean",
+      "source_labels": [
+        "Actual full signed Sobolev complex analytic forward restrictions attached to the SAME rough inverse, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual original physical real L2 recovery uniquely determines the scalar and full native weighted map on the WHOLE common COMPLEX rough ball. A genuine physical real germ fixes native complex L2 germs; dense complex linear continuation then reaches every rough source. No physical L2 norm bound, coordinate-radius choice or weaker real-only identification is substituted.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2aa6734d951791869bbafa9a8b99b8068febfff49c2bc1cf67b7bfd39b707fef"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SobolevSignedCompletion.lean",
+      "source_labels": [
+        "Actual full signed Sobolev complex analytic forward restrictions attached to the SAME rough inverse, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Exact native full signed target lifts retain the SAME established signed completion. Native Sobolev source conjugation commutes EXACTLY with the literal rough inclusion, and every actual real native source is fixed. Symmetric weights give exact signed normalized coefficients and literal target inclusion h^(t-1/2) into h^(-1/2), using W_(t-1/2)=W_t*W_(-1/2), including the central and negative indices.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7a697359cc9a3875db1cf210040115b8a7e1e564466ce530e08996c4cb38f4a6"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianSignedPhysicalRecovery.lean",
+      "source_labels": [
+        "Actual full signed Sobolev complex analytic forward restrictions attached to the SAME rough inverse, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ANY actual normalized positive rough map with original physical recovery and nonpositive zeros yields the FULL ORIGINAL signed physical Abelian sequence after exact half-order target transport. Positive, negative and central coordinates retain their original normalization, with no physical L2 norm bound and no exclusion of low or collapsed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8c02722c7984d09bce697fb25c0fbf50ee3fe77a422f4032d9c786488e9bd170"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SobolevSignedAnalyticGerms.lean",
+      "source_labels": [
+        "Actual full signed Sobolev complex analytic forward restrictions attached to the SAME rough inverse, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual stronger positive germs give COMPLEX ANALYTIC full signed H^(t-1)-to-h^(t-1/2) germs at EVERY eligible real native source, ALL t>=0. The explicit open intersection U intersect J^(-1)(U) contains the real base. One native norm bound works before all signed indices; target inclusion is EXACTLY the SAME rough signed completion.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "159a7ca94b412a9701a38cd6a2344f9191c78212f27673be7f5fc8e8fc8c21fc"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughSobolevSignedAbelian.lean",
+      "source_labels": [
+        "Actual full signed Sobolev complex analytic forward restrictions attached to the SAME rough inverse, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ONE ACTUAL full signed rough Abelian map and common rough ball precede EVERY order t>=0 and EVERY eligible real native H^(t-1) source. Actual native h^(t-1/2)-valued COMPLEX ANALYTIC germs retain EXACT rough target inclusion for EVERY complex source of each open neighborhood. Original full signed physical recovery, weak zero, central zero and physical real form are retained, including low/closed gaps and arbitrary support.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a6d5fa21b87e9ca9a6a7b5667ddb21e9377c3ce0af0d58108d667aadc4d0289d"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualSignedSobolevRestriction.lean",
+      "source_labels": [
+        "Actual full signed Sobolev complex analytic forward restrictions attached to the SAME rough inverse, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ANY GIVEN actual signed rough map with original full physical recovery has ALL stronger native complex Sobolev germs on ONE smaller rough ball before ALL orders and eligible real sources. Physical uniqueness identifies the constructed full complex map with that SAME supplied map, preserving its existing inverse/canonical identities. The actual map is not replaced by an independent existential family.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b8ec699a55967912f5112e08c986f73f566731de8b3deec728d3c70c338558df"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughAllSobolevForwardInverse.lean",
+      "source_labels": [
+        "Actual full signed Sobolev complex analytic forward restrictions attached to the SAME rough inverse, supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The SAME actual signed Z and rough inverse R retain their exact complex right-inverse identities, zero and real forms, all real native Sobolev membership endpoints, original physical L2 representatives, fixed GLOBAL original Birkhoff coordinates and exact squared L2 mass sum 4*pi*n*|target_n|^2. The SAME Z NOW has COMPLEX ANALYTIC native H^s-to-h^(s+1/2) germs for ALL s>=-1 at EVERY eligible real source in ONE common rough ball. The rough chart and open target neighborhood precede all orders and real sources/targets of arbitrary support. R remains analytic with H-minus-one values; stronger inverse topology/analyticity and arbitrary-base/global rough inversion are not asserted.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9ebe99169ad3180c4aa3a96029a74f9180c60fa7d542f2be173fdae8915016de"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The SAME ACTUAL original positive rough Abelian map NOW has genuine COMPLEX ANALYTIC native Sobolev sequence restrictions near EVERY eligible REAL source in ONE common rough ball, before ALL s>=-1 and all such sources. Its original positive physical coordinates are normalized by sqrt(1+n); actual weighted sequence realizations use W_(s+1), the exact normalization corresponding to h^(s+1/2) of the original positive coordinates. This follows from actual weighted complex eta estimates, stronger SAME Miura germs, the full physical amplitude/midpoint/noncentral phase packet, and a COMPLEX rough norm identity fixed by physical square germs, L2 analytic continuation and rough density. ONE eta chart is also available at EVERY real rough base before all orders/sources. The previous all-order membership endpoints of the SAME actual signed Z and inverse R are retained. NEXT complete the full signed Sobolev forward restriction and stronger inverse topology/analyticity, arbitrary-base/global rough Birkhoff inversion, and the remaining Hamiltonian/frequency/PDE conclusions. Positive-coordinate analyticity alone does not assert these remaining full Birkhoff conclusions.",
+    "The SAME ACTUAL full signed Z used by the retained actual rough inverse R NOW has COMPLEX ANALYTIC native H^s-to-h^(s+1/2) forward germs, ALL s>=-1, at EVERY eligible real source in ONE common rough ball selected BEFORE all orders and sources. Native source conjugation, exact half-order target transport and physical uniqueness retain the SAME Z, including positive/negative/central coefficients. ONE open real-preserving target neighborhood retains the SAME R, exact complex Z(R(b)) identities, EVERY real Sobolev membership endpoint, original physical L2 representatives, fixed GLOBAL original Birkhoff matching and exact mass, before all orders and targets of arbitrary support. R remains complex analytic into H-minus-one. NEXT prove stronger inverse topology/analyticity via actual strong Jacobian regularity/invertibility, extend to arbitrary-base/global rough Birkhoff inversion, and establish the remaining Hamiltonian/frequency/PDE conclusions. Stronger forward analyticity plus pointwise inverse membership alone does not prove a stronger analytic inverse.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
@@ -34346,15 +34447,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 20451,
-    "total_declarations_audited": 42523,
+    "candidate_declarations_audited": 20496,
+    "total_declarations_audited": 42566,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 2595,
+    "selected_modules": 2603,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -34433,7 +34534,8 @@
     "actual_miura_sobolev_validation_sequence": "Prior strict evidence retained for all 2376 unchanged selected baseline sources. ALL 38 new selections strictly rebuilt in dependency order: 34 byte-identical canonical sources, one canonical proof with its global heartbeat override removed, and three new own proof modules. A fresh combined transitive axiom audit covers all 2414 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2457 frozen source/checker/provenance/Mathlib-source hashes, 39 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The new reachable NLS import closure is EXACTLY these 38 selections. No full 2414-module rebuild is claimed.",
     "native_rough_all_sobolev_validation_sequence": "Prior strict evidence retained for all 2414 unchanged selected baseline sources. All six new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2420 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2463 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these six selections; no new shared-source import or adaptation is needed. No full 2420-module rebuild is claimed.",
     "native_strong_miura_validation_sequence": "Prior strict evidence retained for all 2420 unchanged selected baseline sources. All nine new own proof modules strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 2429 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2472 frozen source/checker/provenance/Mathlib-source hashes, all 40 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these nine selections; no new shared-source import or adaptation is needed. No full 2429-module rebuild is claimed.",
-    "native_strong_abelian_validation_sequence": "Prior strict evidence retained for all 2429 unchanged selected baseline sources. All 155 newly selected canonical prerequisites strictly checked at their unchanged pinned source bytes; all eleven new own modules then strictly rebuilt in dependency order after freezing the complete proof/checker/provenance selection, followed by a fresh combined transitive axiom audit of all 2595 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2639 frozen source/checker/provenance/Mathlib-source hashes, 41 verified provenance records (40 unchanged, one new), private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY 155 unchanged canonical selections and eleven own modules. The checker selection is assembled from 128-name private data chunks in the SAME order, preserving its transitive axiom loop unchanged and passing a runtime 2595-name selection probe at default recursion limits. No full 2595-module rebuild is claimed."
+    "native_strong_abelian_validation_sequence": "Prior strict evidence retained for all 2429 unchanged selected baseline sources. All 155 newly selected canonical prerequisites strictly checked at their unchanged pinned source bytes; all eleven new own modules then strictly rebuilt in dependency order after freezing the complete proof/checker/provenance selection, followed by a fresh combined transitive axiom audit of all 2595 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2639 frozen source/checker/provenance/Mathlib-source hashes, 41 verified provenance records (40 unchanged, one new), private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY 155 unchanged canonical selections and eleven own modules. The checker selection is assembled from 128-name private data chunks in the SAME order, preserving its transitive axiom loop unchanged and passing a runtime 2595-name selection probe at default recursion limits. No full 2595-module rebuild is claimed.",
+    "native_signed_forward_validation_sequence": "Prior strict evidence retained for all 2595 unchanged selected baseline sources. All eight new own modules strictly rebuilt in dependency order after freezing the complete proof/checker/provenance selection, followed by a fresh combined transitive axiom audit of all 2603 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2647 frozen source/checker/provenance/Mathlib-source hashes, all 41 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these eight own modules; no new shared-source import or adaptation is needed. The SAME ordered selection uses a NameSet for candidate membership, with a runtime bidirectional equivalence guard; final 2603-name adversarial probes reject extra and missing entries. Removing that exact guard/index optimization restores the baseline audit loop byte-for-byte, preserving transitive collectAxioms, allowed axioms and full imported NLS scope. Default heartbeat/recursion limits remain in force. No full 2603-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -35171,6 +35273,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "117534c19593eb55128b7e4553bcf625651f78ce",
+      "description": "Actual positive Sobolev analyticity now extends to the FULL SIGNED native forward map, identified with ANY SAME supplied actual signed rough map and attached to the SAME earlier inverse R with exact right-inverse, all membership endpoints and original physical L2/global-coordinate/mass identities.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The SAME ACTUAL original positive rough Abelian map NOW has genuine COMPLEX ANALYTIC native Sobolev sequence restrictions near EVERY eligible REAL source in ONE common rough ball, before ALL s>=-1 and all such sources. Its original positive physical coordinates are normalized by sqrt(1+n); actual weighted sequence realizations use W_(s+1), the exact normalization corresponding to h^(s+1/2) of the original positive coordinates. This follows from actual weighted complex eta estimates, stronger SAME Miura germs, the full physical amplitude/midpoint/noncentral phase packet, and a COMPLEX rough norm identity fixed by physical square germs, L2 analytic continuation and rough density. ONE eta chart is also available at EVERY real rough base before all orders/sources. The previous all-order membership endpoints of the SAME actual signed Z and inverse R are retained. NEXT complete the full signed Sobolev forward restriction and stronger inverse topology/analyticity, arbitrary-base/global rough Birkhoff inversion, and the remaining Hamiltonian/frequency/PDE conclusions. Positive-coordinate analyticity alone does not assert these remaining full Birkhoff conclusions.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -35215,5 +35329,6 @@
   "canonical_miura_sobolev_reuse_record": "CANONICAL_MIURA_SOBOLEV_REUSE.json",
   "native_rough_all_sobolev_record": "NATIVE_ROUGH_ALL_SOBOLEV_INVERSE.md",
   "native_strong_miura_record": "NATIVE_STRONG_MIURA_CHARTS.md",
-  "native_strong_abelian_record": "NATIVE_STRONG_ABELIAN_CHARTS.md"
+  "native_strong_abelian_record": "NATIVE_STRONG_ABELIAN_CHARTS.md",
+  "native_signed_forward_record": "NATIVE_STRONG_SIGNED_FORWARD.md"
 }

@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest stronger analyticity of the SAME actual positive Abelian map
+## Latest full signed Sobolev analyticity of the SAME actual forward map
+
+The SAME ACTUAL full signed Z used by the retained actual rough inverse R now has genuine COMPLEX ANALYTIC native H^s-to-h^(s+1/2) forward germs for ALL s>=-1, at EVERY eligible real source in ONE common rough ball. Original positive, negative and central coordinates retain exact physical normalization. Each germ is analytic on a native OPEN COMPLEX neighborhood, has a common native norm bound before all signed indices, and includes EXACTLY to the SAME weak Z at every complex source of that neighborhood. See `NATIVE_STRONG_SIGNED_FORWARD.md`.
+
+ONE actual Z,R family and open target neighborhood precede ALL orders and real sources/targets of arbitrary support. Exact complex right-inverse identities, zero and real forms, every inverse Sobolev MEMBERSHIP endpoint, original physical L2 representatives, fixed GLOBAL original Birkhoff coordinates and exact mass remain attached to the SAME functions. Physical recovery proves full complex uniqueness, so an unrelated map is not substituted for the earlier inverse family. R is still analytic with H-minus-one values; stronger inverse topology/analyticity and arbitrary-base/global rough inversion remain obligations.
+
+Prior strict evidence retained for all 2595 unchanged selected baseline sources. All eight new own modules strictly rebuilt in dependency order after freezing the complete proof/checker/provenance selection, followed by a fresh combined transitive axiom audit of all 2603 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2647 frozen source/checker/provenance/Mathlib-source hashes, all 41 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these eight own modules; no new shared-source import or adaptation is needed. The SAME ordered selection uses a NameSet for candidate membership, with a runtime bidirectional equivalence guard; final 2603-name adversarial probes reject extra and missing entries. Removing that exact guard/index optimization restores the baseline audit loop byte-for-byte, preserving transitive collectAxioms, allowed axioms and full imported NLS scope. Default heartbeat/recursion limits remain in force. No full 2603-module rebuild is claimed.
+
+Fresh audit: 20496 selected and 42566 imported NLS declarations; permitted axioms only. Eight new own modules contain 26 explicit theorems. All eleven complete main theorem rows remain OPEN.
+
+## Earlier stronger analyticity of the SAME actual positive Abelian map
 
 ONE ACTUAL original positive rough Abelian map and ONE common complex rough ball now precede ALL s>=-1 and ALL eligible REAL native H^s sources. Near EVERY such source, its LITERAL weighted normalized coordinate sequence is COMPLEX ANALYTIC into the native Hilbert target, with exact coefficients and a common local norm bound before all signed output indices. Exact original physical recovery, zero, nonpositive zeros and weak linear bounds remain attached to the SAME map. See `NATIVE_STRONG_ABELIAN_CHARTS.md`.
 
@@ -680,7 +690,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 2595 selected modules compile with pinned **Lean 4.33.1**, commit
+All 2603 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1749,7 +1759,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 2595 selected modules (including generated and private declarations)
+the 2603 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -4493,3 +4503,17 @@ PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughSobolevPositiveAbelian
 Axiom audit passed: 20451 candidate declarations; 42523 declarations total.
 ```
 The 155 unchanged canonical prerequisite checks are certified by `CANONICAL_STRONG_ETA_REUSE.json`.
+
+Latest full signed forward strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/SignedCompletionLocalAnalytic
+PASS NLS/KdV/HillRoughPhysicalUniqueness
+PASS NLS/SequenceSpaces/SobolevSignedCompletion
+PASS NLS/KdV/HillAbelianSignedPhysicalRecovery
+PASS NLS/SequenceSpaces/SobolevSignedAnalyticGerms
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughSobolevSignedAbelian
+PASS NLS/Articles/KdVKdV2Frequencies/ActualSignedSobolevRestriction
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughAllSobolevForwardInverse
+Axiom audit passed: 20496 candidate declarations; 42566 declarations total.
+```

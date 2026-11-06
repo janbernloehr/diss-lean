@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest stronger analyticity of the SAME actual positive Abelian map
+## Latest full signed Sobolev analyticity of the SAME actual forward map
+
+The SAME ACTUAL full signed Z used by the retained actual rough inverse R now has genuine COMPLEX ANALYTIC native H^s-to-h^(s+1/2) forward germs for ALL s>=-1, at EVERY eligible real source in ONE common rough ball. Original positive, negative and central coordinates retain exact physical normalization. Each germ is analytic on a native OPEN COMPLEX neighborhood, has a common native norm bound before all signed indices, and includes EXACTLY to the SAME weak Z at every complex source of that neighborhood. See `NATIVE_STRONG_SIGNED_FORWARD.md`.
+
+ONE actual Z,R family and open target neighborhood precede ALL orders and real sources/targets of arbitrary support. Exact complex right-inverse identities, zero and real forms, every inverse Sobolev MEMBERSHIP endpoint, original physical L2 representatives, fixed GLOBAL original Birkhoff coordinates and exact mass remain attached to the SAME functions. Physical recovery proves full complex uniqueness, so an unrelated map is not substituted for the earlier inverse family. R is still analytic with H-minus-one values; stronger inverse topology/analyticity and arbitrary-base/global rough inversion remain obligations.
+
+Prior strict evidence retained for all 2595 unchanged selected baseline sources. All eight new own modules strictly rebuilt in dependency order after freezing the complete proof/checker/provenance selection, followed by a fresh combined transitive axiom audit of all 2603 selected modules. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 2647 frozen source/checker/provenance/Mathlib-source hashes, all 41 unchanged verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS import closure adds EXACTLY these eight own modules; no new shared-source import or adaptation is needed. The SAME ordered selection uses a NameSet for candidate membership, with a runtime bidirectional equivalence guard; final 2603-name adversarial probes reject extra and missing entries. Removing that exact guard/index optimization restores the baseline audit loop byte-for-byte, preserving transitive collectAxioms, allowed axioms and full imported NLS scope. Default heartbeat/recursion limits remain in force. No full 2603-module rebuild is claimed.
+
+Fresh audit: 20496 selected and 42566 imported NLS declarations; permitted axioms only. Eight new own modules contain 26 explicit theorems. All eleven complete main theorem rows remain OPEN.
+
+## Earlier stronger analyticity of the SAME actual positive Abelian map
 
 ONE ACTUAL original positive rough Abelian map and ONE common complex rough ball now precede ALL s>=-1 and ALL eligible REAL native H^s sources. Near EVERY such source, its LITERAL weighted normalized coordinate sequence is COMPLEX ANALYTIC into the native Hilbert target, with exact coefficients and a common local norm bound before all signed output indices. Exact original physical recovery, zero, nonpositive zeros and weak linear bounds remain attached to the SAME map. See `NATIVE_STRONG_ABELIAN_CHARTS.md`.
 

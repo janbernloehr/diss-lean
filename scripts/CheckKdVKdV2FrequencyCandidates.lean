@@ -1,3 +1,11 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevForwardInverse
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughSobolevSignedAbelian
+import NLS.Articles.KdVKdV2Frequencies.ActualSignedSobolevRestriction
+import NLS.SequenceSpaces.SobolevSignedAnalyticGerms
+import NLS.KdV.HillAbelianSignedPhysicalRecovery
+import NLS.SequenceSpaces.SobolevSignedCompletion
+import NLS.KdV.HillRoughPhysicalUniqueness
+import NLS.SequenceSpaces.SignedCompletionLocalAnalytic
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughSobolevPositiveAbelian
 import NLS.KdV.HillRoughAbelianSquareComparison
 import NLS.SequenceSpaces.WeightedAnalyticNormComparison
@@ -4382,7 +4390,15 @@ private def kdvFrequencyAuditChunk20 : Array Lean.Name := #[
   `NLS.SequenceSpaces.PeriodOneHminusAnalyticContinuation,
   `NLS.KdV.HillRoughAbelianSquareComparison,
   `NLS.SequenceSpaces.WeightedAnalyticNormComparison,
-  `NLS.Articles.KdVKdV2Frequencies.NativeRoughSobolevPositiveAbelian
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughSobolevPositiveAbelian,
+  `NLS.SequenceSpaces.SignedCompletionLocalAnalytic,
+  `NLS.KdV.HillRoughPhysicalUniqueness,
+  `NLS.SequenceSpaces.SobolevSignedCompletion,
+  `NLS.KdV.HillAbelianSignedPhysicalRecovery,
+  `NLS.SequenceSpaces.SobolevSignedAnalyticGerms,
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughSobolevSignedAbelian,
+  `NLS.Articles.KdVKdV2Frequencies.ActualSignedSobolevRestriction,
+  `NLS.Articles.KdVKdV2Frequencies.NativeRoughAllSobolevForwardInverse
 ]
 
 open Lean in
@@ -4413,8 +4429,11 @@ run_cmd do
   ].flatten
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
+  let moduleSet : NameSet := modules.foldl (fun names name => names.insert name) {}
+  unless modules.all moduleSet.contains && moduleSet.toArray.all modules.contains do
+    throwError "The audit module set differs from its exact ordered selection."
   for (name, _) in (← getEnv).constants do
-    let candidate := ((← findModuleOf? name).map modules.contains).getD false
+    let candidate := ((← findModuleOf? name).map moduleSet.contains).getD false
     if (`NLS).isPrefixOf name || candidate then
       let axioms ← collectAxioms name
       for ax in axioms do
