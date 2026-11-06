@@ -2022,6 +2022,11 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SourceTheorem53SpectralBound',
     'NLS.Articles.KdVPseudomeasures.SourceTheorem53',
     'NLS.Articles.KdVPseudomeasures.SourceTheorem53Positive',
+    'NLS.SequenceSpaces.SubcriticalPowerSum',
+    'NLS.SequenceSpaces.SubcriticalTwoScaleSum',
+    'NLS.SequenceSpaces.QuadraticReciprocalPower',
+    'NLS.Articles.KdVPseudomeasures.SourceLemmaA1',
+    'NLS.Articles.KdVPseudomeasures.SourceLemmaA1Statement',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

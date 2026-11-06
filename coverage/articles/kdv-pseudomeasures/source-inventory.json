@@ -9239,9 +9239,9 @@
     "five_main_theorems_proved": true,
     "all_numbered_results_proved": false,
     "status_counts": {
-      "proved": 29,
+      "proved": 30,
       "proved_corrected": 4,
-      "partial": 19,
+      "partial": 18,
       "not_found": 2
     },
     "historical_milestones": "Earlier *_followup, verified_*, validation and publication snapshots are historical; consult the numbered-result audit for present full-paper scope. A main-theorem completion claim is not full-paper completion.",

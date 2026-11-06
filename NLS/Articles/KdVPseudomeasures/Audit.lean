@@ -1988,6 +1988,11 @@ import NLS.Articles.KdVPseudomeasures.SourceLemmaA3Hilbert
 import NLS.Articles.KdVPseudomeasures.SourceTheorem53SpectralBound
 import NLS.Articles.KdVPseudomeasures.SourceTheorem53
 import NLS.Articles.KdVPseudomeasures.SourceTheorem53Positive
+import NLS.SequenceSpaces.SubcriticalPowerSum
+import NLS.SequenceSpaces.SubcriticalTwoScaleSum
+import NLS.SequenceSpaces.QuadraticReciprocalPower
+import NLS.Articles.KdVPseudomeasures.SourceLemmaA1
+import NLS.Articles.KdVPseudomeasures.SourceLemmaA1Statement
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11657,3 +11662,19 @@ import NLS.Articles.KdVPseudomeasures.SourceTheorem53Positive
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_3_signed
 #print axioms NLS.Articles.KdVPseudomeasures.original_signed_gap_membership_of_positive_summable
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_3
+#print axioms NLS.ReciprocalSeries.sum_range_succ_negative_power_le
+#print axioms NLS.ReciprocalSeries.subcritical_twoScale_sum
+#print axioms NLS.ReciprocalSeries.quadraticPowerKernel
+#print axioms NLS.ReciprocalSeries.twoScalePower
+#print axioms NLS.ReciprocalSeries.twoScalePower_positive
+#print axioms NLS.ReciprocalSeries.twoScalePower_neg
+#print axioms NLS.ReciprocalSeries.summable_twoScalePower
+#print axioms NLS.ReciprocalSeries.tsum_twoScalePower
+#print axioms NLS.ReciprocalSeries.quadraticPowerKernel_le_twoScale
+#print axioms NLS.ReciprocalSeries.quadraticPowerKernel_twoScale_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA_1_subcritical
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA_1_supercritical
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA_1_harmonic
+#print axioms NLS.Articles.KdVPseudomeasures.sourceQuadraticReciprocal
+#print axioms NLS.Articles.KdVPseudomeasures.sourceQuadraticReciprocal_eq_kernel
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA_1

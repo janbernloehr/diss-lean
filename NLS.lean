@@ -6593,3 +6593,8 @@ import NLS.Articles.KdVPseudomeasures.SourceLemmaA3Hilbert
 import NLS.Articles.KdVPseudomeasures.SourceTheorem53SpectralBound
 import NLS.Articles.KdVPseudomeasures.SourceTheorem53
 import NLS.Articles.KdVPseudomeasures.SourceTheorem53Positive
+import NLS.SequenceSpaces.SubcriticalPowerSum
+import NLS.SequenceSpaces.SubcriticalTwoScaleSum
+import NLS.SequenceSpaces.QuadraticReciprocalPower
+import NLS.Articles.KdVPseudomeasures.SourceLemmaA1
+import NLS.Articles.KdVPseudomeasures.SourceLemmaA1Statement

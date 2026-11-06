@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 29,
+    "proved": 30,
     "proved_corrected": 4,
-    "partial": 19,
+    "partial": 18,
     "not_found": 2
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -787,13 +787,31 @@
       "label": "Lemma A.1",
       "line": 2334,
       "statement": "Lemma A.1 For any 1/2 < σ < ∞ there exists a constant Cσ > 0 so that for\n                        1                          2σ−1\n                                                        if 1/2 < σ < 1, Cσ loghni\n            P\nany n ⩾ 1, |m|6=n |m2 −n  2 |σ is bounded by Cσ /n                            n\nif σ = 1, and Cσ /nσ if σ > 1. ⋊",
-      "status": "partial",
-      "comparison": "Reciprocal separation estimates exist in the library, but the literal sum over all |m| != n and all sigma > 1/2, including the sigma=1 logarithmic transition, has not been matched to a public declaration.",
-      "providers": [],
-      "declarations": [],
+      "status": "proved",
+      "comparison": "Literal sum of 1/|m²-n²|^sigma over all integers m except ±n, absolutely summable for every sigma>1/2. A constant depending only on sigma precedes all n≥1. Proves all three exact regimes: n^(-(2*sigma-1)) for sigma<1, log(1+n)/n at sigma=1, and n^(-sigma) for sigma>1. The subcritical proof uses a sharp finite power sum and an integral-test tail; the logarithmic transition includes every low index.",
+      "providers": [
+        "NLS/SequenceSpaces/SubcriticalPowerSum.lean",
+        "NLS/SequenceSpaces/SubcriticalTwoScaleSum.lean",
+        "NLS/SequenceSpaces/QuadraticReciprocalPower.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA1.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA1Statement.lean"
+      ],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA_1",
+        "NLS.Articles.KdVPseudomeasures.sourceQuadraticReciprocal_eq_kernel",
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA_1_subcritical",
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA_1_harmonic",
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaA_1_supercritical"
+      ],
       "source_page": 36,
       "statement_sha256": "5a22514be908c9071da26af41bb75000280aaa5f634670a5ec8d2f3675736c68",
-      "provider_sha256": {}
+      "provider_sha256": {
+        "NLS/SequenceSpaces/SubcriticalPowerSum.lean": "6cf604521d6041d6d55fc174e8bce56bdde39522e208060dae702794963deb0d",
+        "NLS/SequenceSpaces/SubcriticalTwoScaleSum.lean": "0ff70f45a41e285b9f46ef7ee8763489be6d763e634cc477ec66ce23e85fae95",
+        "NLS/SequenceSpaces/QuadraticReciprocalPower.lean": "295458b4ea5e3fde3639126088711e28479199483497eca9f2b89a43d1259f62",
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA1.lean": "608d5544c46d61aaed48a612cad522172cf923b7b9085e59c31c6480bde814ec",
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaA1Statement.lean": "f55d80e14c109f99cd2a6c8ebfb041d95ead133e45f0bbc5c2bf4921af30866b"
+      }
     },
     {
       "label": "Lemma A.2",
