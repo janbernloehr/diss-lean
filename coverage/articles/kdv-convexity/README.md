@@ -3398,12 +3398,53 @@ The [source correction](BASE_FREQUENCY_CORRECTION.md) gives the exact
 formal scope, verified PDF provenance and independent published
 corroboration. No replacement upper estimate is proved here.
 
+## Constructed analytic weighted moment sums in rough source charts
+
+`WeightedCubicRows.lean` proves the reusable signed-index estimate
+`abs(k/(n-k)) <= abs(n)+1` for k different from n. Combining it with
+actual cubic-gap second-moment rows gives a Hilbert quadratic majorant
+for the literal weighted coefficients `k*M(n,k)`, including the diagonal
+and collapsed gaps. This constructs their ell1 membership and norm bound.
+
+`SourceWeightedSecondMomentSequences.lean` upgrades scalar coordinate
+analyticity and local ell1 norm bounds to the FULL analytic ell1 row.
+The zero fallback is ruled out by exact coefficient recovery.
+`SourceWeightedSecondMomentSums.lean` constructs the ACTUAL normalized
+moment atlas and compatible squared-gap branch, and proves analyticity,
+absolute convergence and locally uniform symmetric cutoffs for the
+literal signed sum `sum_{k in Z} k*M(n,k)`. One connected complex-open
+Hilbert source domain contains every real source and supports every n.
+
+`MiuraWeightedSecondMoments.lean` retains the SAME actual root family
+and normalized numerator. `HillHminusWeightedSecondMoments.lean` constructs
+one actual complex-open rough-source neighborhood at every real Hminus1
+source, valid for all selected indices, with one linear-index bound.
+
+The article interface `WeightedFrequencyMomentPreparation.lean` proves
+absolute convergence and analyticity of the positive-gap paired sum
+`sum_{k>=1} k*(M(n,k)-M(n,-k))`, and its exact equality with the signed
+integer sum. The central mode contributes zero. The same chart preserves
+literal agreement of its normalized energy numerator with the fixed
+original physical normalized numerator, at EVERY energy, for every real
+L2 source whose rough image lies in the chart. The local bound is
+`norm(sum_n) <= (1+n)*C`, with C and the complex-open neighborhood chosen
+before n. This bound concerns the constructed moment precursor; physical
+KdV frequency identification remains open.
+
+The next work must prove the exact Hill energy-contour pullback and
+physical frequency coefficient, independence of the shifted Miura chart,
+global intrinsic rough-source gluing, and actual action-fiber descent.
+No nonempty `BasePhysicalFrequencyExtension` is asserted yet.
+
 ## Remaining essential KdV work
 
-1. Construct an actual `BasePhysicalFrequencyExtension` on the original
-   ell^(-1,1) domain V0 and prove that the record is nonempty. Use the
-   checked simultaneous-domain assembly to finish Theorem 1.1. The
-   incompatible printed `O(1)` estimate is excluded from this target.
+1. Identify the constructed weighted moment precursor with the physical
+   Hill frequency correction, retaining exact contour and energy-shift
+   constants. Prove Miura-chart independence, global rough-source gluing
+   and actual action descent; construct a nonempty
+   `BasePhysicalFrequencyExtension` on the whole positive ell^(-1,1) cone.
+   Use the checked simultaneous-domain assembly to finish Theorem 1.1.
+   The incompatible printed `O(1)` estimate remains excluded.
 2. Complete main Theorems 1.2-1.3 on Fourier-Lebesgue Birkhoff coordinates
    and physical KdV well-posedness.
 
@@ -3462,19 +3503,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `2ccac43` contains 2299 proof sources, whose
-hashes remain unchanged. Four authored modules pass strict Lean
+The validated baseline at `93e7752` contains 2303 proof sources, whose
+hashes remain unchanged. Seven authored modules pass strict Lean
 compilation with `warningAsError=true`, default authored limits and no
-linter overrides. Reproduction lists 2303 modules. The positive-index
-example, combined transitive axiom audit and 1836 coverage declaration
-checks pass. All 2830 remaining reference import sources agree byte-for-
+linter overrides. Reproduction lists 2310 modules. The positive-index
+example, combined transitive axiom audit and 1849 coverage declaration
+checks pass. All 2850 remaining reference import sources agree byte-for-
 byte and were not rebuilt. Earlier receipts remain in the parent commit.
 This is incremental validation, not a full repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 787 additional shared modules:
-17848 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 791 additional shared modules:
+17870 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
