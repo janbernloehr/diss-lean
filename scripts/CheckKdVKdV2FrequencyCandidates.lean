@@ -1,3 +1,7 @@
+import NLS.SequenceSpaces.WeightedCubicFrequencyPacket
+import NLS.ZakharovShabat.SourceSobolevSecondMomentPacket
+import NLS.KdV.PhysicalSobolevLpFrequencyChart
+import NLS.Articles.KdVKdV2Frequencies.NativeSobolevLpKdVFrequencyGerms
 import NLS.SequenceSpaces.WeightedAnalyticPullback
 import NLS.Articles.KdVKdV2Frequencies.Theorem12WeakEndpoint
 import NLS.Articles.KdVKdV2Frequencies.WeakKdVAllExponents
@@ -5699,7 +5703,11 @@ private def kdvFrequencyAuditChunk25 : Array Lean.Name := #[
   `NLS.SequenceSpaces.PositiveIndexWeakLift,
   `NLS.Articles.KdVKdV2Frequencies.WeakKdVAllExponents,
   `NLS.SequenceSpaces.WeightedAnalyticPullback,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12WeakEndpoint
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12WeakEndpoint,
+  `NLS.SequenceSpaces.WeightedCubicFrequencyPacket,
+  `NLS.ZakharovShabat.SourceSobolevSecondMomentPacket,
+  `NLS.KdV.PhysicalSobolevLpFrequencyChart,
+  `NLS.Articles.KdVKdV2Frequencies.NativeSobolevLpKdVFrequencyGerms
 ]
 
 open Lean in

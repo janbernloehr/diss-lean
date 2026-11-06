@@ -1,0 +1,13 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "scope": "Canonical actual full weighted squared-gap sequence bound for compatible complex Hilbert source maps, privately rebuilt at default limits and transitively audited. The source was already in the prior transitive import closure and remains byte-identical to canonical main. It remains an unselected transitive dependency and supplies the summable one-index gap majorant for the unweighted physical KdV ellr frequency germs at H^(-1/2).",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedGapBound.lean",
+      "source_sha256": "89d61b9502832c4040c176ad41861be72ff55a6a5ec5ba071081aa31d6cb1a67",
+      "local_sha256": "89d61b9502832c4040c176ad41861be72ff55a6a5ec5ba071081aa31d6cb1a67",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

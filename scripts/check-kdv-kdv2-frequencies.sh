@@ -3255,6 +3255,10 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/WeakKdVAllExponents
   NLS/SequenceSpaces/WeightedAnalyticPullback
   NLS/Articles/KdVKdV2Frequencies/Theorem12WeakEndpoint
+  NLS/SequenceSpaces/WeightedCubicFrequencyPacket
+  NLS/ZakharovShabat/SourceSobolevSecondMomentPacket
+  NLS/KdV/PhysicalSobolevLpFrequencyChart
+  NLS/Articles/KdVKdV2Frequencies/NativeSobolevLpKdVFrequencyGerms
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
