@@ -2027,6 +2027,15 @@ modules = [
     'NLS.SequenceSpaces.QuadraticReciprocalPower',
     'NLS.Articles.KdVPseudomeasures.SourceLemmaA1',
     'NLS.Articles.KdVPseudomeasures.SourceLemmaA1Statement',
+    'NLS.Articles.KdVPseudomeasures.SourceWideStripContraction',
+    'NLS.Articles.KdVPseudomeasures.SourceWideStripReduction',
+    'NLS.Articles.KdVPseudomeasures.SourceWideStripSpectralResults',
+    'NLS.KdV.FreeHillWideAnalytic',
+    'NLS.KdV.PseudomeasureWideAnalytic',
+    'NLS.KdV.PseudomeasureWideComplexPairs',
+    'NLS.KdV.PseudomeasureWideCouplingRadius',
+    'NLS.KdV.PseudomeasureWideReduction',
+    'NLS.KdV.PseudomeasureWideZeroCount',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

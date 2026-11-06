@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 30,
+    "proved": 33,
     "proved_corrected": 4,
-    "partial": 18,
+    "partial": 15,
     "not_found": 2
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -119,19 +119,24 @@
       "line": 523,
       "statement": "Lemma 2.4 Let −1/2 < s ⩽ 0, w ∈ M, and n ⩾ 1 be given. For any\nq ∈ Fℓw,s,∞\n      0,C   and λ ∈ Sn ,\n\n       Tn (λ) : Fℓw,s,∞\n                  ⋆,C   → Fℓw,s,∞\n                            ⋆,C\n\nis a bounded linear operator satisfying the estimate\n                                         cs\n       kTn (λ)kw,s,∞;±n ⩽              1/2−|s|\n                                               kqkw,s,∞ ,                                                     (12)\n                                     n\nwhere cs ⩾ 1 is a constant depending only on and decreasing monotonically in\ns. In particular, cs does not depend on q nor on the weight w. ⋊",
       "status": "partial",
-      "comparison": "All weights, shifted infinity norm, monotone constant and physical operator identification are proved on radius-6n strips. The printed radius-12n strip is not covered by that interface.",
+      "comparison": "Both the radius-6n/all-n≥1 version and the full printed radius-12n/n≥2 version are proved, including the same physical H1 inverse and both shifted infinity norms. The printed n=1 wide-strip inverse is formally refuted. The choice of source repair remains pending; this row does not claim the false printed all-n statement.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean"
+        "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceWideStripContraction.lean",
+        "NLS/KdV/PseudomeasureWideComparison.lean"
       ],
       "declarations": [
         "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_shiftedNorm_bounds",
         "NLS.Articles.KdVPseudomeasures.spectralEndpointConstant_antitone",
-        "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_physical_identification"
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_physical_identification",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_wide"
       ],
       "source_page": 9,
       "statement_sha256": "c5bad70849b953a392314296edbdcca384592d22060006d2eb9851dfd685fb5e",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean": "62c67807890561beb0cdecd5f27538f68a43e2a8d2a7dbe1be7e5b1e9f40f8b4"
+        "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean": "62c67807890561beb0cdecd5f27538f68a43e2a8d2a7dbe1be7e5b1e9f40f8b4",
+        "NLS/Articles/KdVPseudomeasures/SourceWideStripContraction.lean": "763780b5db95a34a869268abbf94579b4b8f7d8bc2e6bbdef22070a0fcb31318",
+        "NLS/KdV/PseudomeasureWideComparison.lean": "cf39e15288d70abb1ef0b860b9387607e38d45ca940addb85c01a049bf0676ac"
       },
       "printed_domain_defect": "At n=1 the printed radius-12n strip contains lambda=0. The constant Fourier mode is a nonzero vector in Q_1 annihilated by the free operator. The inverse used to define T_1 therefore does not exist at that point, and its constant-mode reciprocal is unbounded near zero. See the checked source-strip counterexample. The existing radius-6n formulation avoids this defect.",
       "counterexample_providers": [
@@ -146,38 +151,47 @@
       "label": "Corollary 2.5",
       "line": 600,
       "statement": "Corollary 2.5 For any q ∈ Fℓw,s,∞\n                                0,C with −1/2 < s ⩽ 0 and w ∈ M, there\nexists ns = ns (q) ⩾ 1 so that,\n\n       2cs kqkw,s,∞ ⩽ ns1/2−|s| ,                                                         (14)\n\nwith cs ⩾ 1 the constant in (12) implying that for any λ ∈ Sn , Tn (λ) is a 1/2\ncontraction on Fℓw,s,∞\n                  ⋆,C  with respect to the norms shifted by ±n, kTn (λ)kw,s,∞;±n ⩽\n1/2. The threshold ns (q) can be chosen uniformly in q on bounded subsets\n     w,s,∞\nof Fℓ0,C   . As a consequence, for n ⩾ ns (q), equation (11) and (8) can be\nuniquely solved for any given u ∈ Pn , λ ∈ Sn ,\n\n       v̌u,λ = Kn (λ)Tn (λ)V u ∈ Fℓs,∞\n                                   ⋆,C ,               Kn ≡ Kn (λ) := (Id − Tn (λ))−1 ,\n                                                                                          (15)\n                                                         s+2,∞\n       vu,λ = A−1          −1            −1\n               λ Qn V u + Aλ Qn v̌u,λ = Aλ Qn Kn V u ∈ Fℓ⋆,C   ∩ Qn .                     (16)\n\nIn particular, one has v̌u,λ = V vu,λ .            ⋊",
-      "status": "partial",
-      "comparison": "Uniform tail inverse and physical inhomogeneous reconstruction exist on the corrected radius-6n strip. Audit does not equate this with the entire printed strip.",
+      "status": "proved",
+      "comparison": "The complete printed radius-12n strip is retained. A uniform cutoff N≥2 precedes every spectral weight, every potential in a source norm ball and every spectral parameter. The same physical tail inverse is two-sided and bounded by two in both original shifted norms. No low-index strip repair is needed for this existential cutoff statement.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean",
-        "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean"
+        "NLS/Articles/KdVPseudomeasures/SourceWideStripContraction.lean",
+        "NLS/KdV/PseudomeasureWideComparison.lean",
+        "NLS/KdV/PseudomeasureWideTail.lean"
       ],
       "declarations": [
-        "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible"
+        "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_wide"
       ],
       "source_page": 10,
       "statement_sha256": "b84784f4d9e7b33c13ced51aaaf37adca0497f1e38a92b3941a266c637a825a8",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean": "62c67807890561beb0cdecd5f27538f68a43e2a8d2a7dbe1be7e5b1e9f40f8b4",
-        "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean": "7979cae356f20afbab1b4a20847373c86b42f0e84f2d679eec37f6d9c6aaf85b"
+        "NLS/Articles/KdVPseudomeasures/SourceWideStripContraction.lean": "763780b5db95a34a869268abbf94579b4b8f7d8bc2e6bbdef22070a0fcb31318",
+        "NLS/KdV/PseudomeasureWideComparison.lean": "cf39e15288d70abb1ef0b860b9387607e38d45ca940addb85c01a049bf0676ac",
+        "NLS/KdV/PseudomeasureWideTail.lean": "733a83b9565726527d458a70dd95fc269566474e3996b4100a9af98dec38e59d"
       }
     },
     {
       "label": "Lemma 2.7",
       "line": 662,
       "statement": "Lemma 2.7 Assume that q ∈ Fℓs,∞  0,C with −1/2 < s ⩽ 0. Then for any n ⩾ ns\nwith ns given by Corollary 2.5, λ ∈ Sn is an eigenvalue of L(q) if and only if\ndet(Bn (λ)) = 0. ⋊",
-      "status": "partial",
-      "comparison": "Exact full H1-domain eigenvalue/determinant equivalence; radius-6n strip, rather than the complete printed radius-12n strip.",
+      "status": "proved",
+      "comparison": "One uniform cutoff N≥2 gives the full printed radius-12n determinant/eigenvector equivalence on the entire original H1 domain, for every original complex endpoint potential in a norm ball. The determinant is the same proof-independent analytic source family; it agrees with the actual wide physical two-mode operator.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean"
+        "NLS/Articles/KdVPseudomeasures/SourceWideStripReduction.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceWideStripSpectralResults.lean",
+        "NLS/KdV/PseudomeasureWideReduction.lean",
+        "NLS/KdV/PseudomeasureWideAnalytic.lean"
       ],
       "declarations": [
-        "NLS.Articles.KdVPseudomeasures.sourceLemma2_7_uniform_physical_reduction"
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_7_fullPrintedStrip",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_7_wide"
       ],
       "source_page": 11,
       "statement_sha256": "34c3811f9d216eb2687936ebf365fccfcc7c7946b9ec78043a7f746e8bb36975",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean": "fab4636881beb929d63dfc108d2f1dcccb4a378d9fa13a6fbce180ed1cbaec31"
+        "NLS/Articles/KdVPseudomeasures/SourceWideStripReduction.lean": "66bbabe7f46e6d1aa5bc3a5bfe23354d50c48f0a6599179e1b70021851fbbea7",
+        "NLS/Articles/KdVPseudomeasures/SourceWideStripSpectralResults.lean": "f6e615b307a80cbe821c30e27b8b5f7bf36c520af12b587b0fcb471b948104ba",
+        "NLS/KdV/PseudomeasureWideReduction.lean": "4ff3eced0473c9e394960990d96d7561f3b78ab9f1cc3e4dd98d61230b35966d",
+        "NLS/KdV/PseudomeasureWideAnalytic.lean": "5e81e812e6de4d23bb10864663f44076d1c37f5ac9ac66694afd34256814cc07"
       }
     },
     {
@@ -185,10 +199,11 @@
       "line": 749,
       "statement": "Lemma 2.9 Suppose q ∈ Fℓw,s,∞ 0,C   with −1/2 < s ⩽ 0 and w ∈ M. Then for\nany n ⩾ ns , with ns as in Corollary 2.5, the coefficients an (λ) and b±n (λ) are\nanalytic functions on the strip Sn and for any λ ∈ Sn\n\n        (i)    |an (λ)| ⩽ 2kTn (λ)kw,s,∞;±n kqks,∞ ,\n                              s\n       (ii)    w2n h2ni |b±n (λ) − q±2n | ⩽ 2kTn (λ)kw,s,∞;±n kqkw,s,∞ .           ⋊",
       "status": "partial",
-      "comparison": "Joint analyticity and weighted off-diagonal errors proved. The sharp arbitrary-weight diagonal estimate using the unweighted q norm is not established by the unit-weight theorem; strip discrepancy also remains.",
+      "comparison": "Joint analytic determinant and operator families are now proved on the complete printed strip above a uniform cutoff, as well as the earlier weighted off-diagonal error estimates. The sharp arbitrary-weight diagonal inequality with the unweighted potential norm still needs proof; no weighted norm is silently substituted.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean",
-        "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean"
+        "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean",
+        "NLS/KdV/PseudomeasureWideAnalytic.lean"
       ],
       "declarations": [
         "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_unit",
@@ -199,7 +214,8 @@
       "statement_sha256": "43334f3bebe620cf97903cbb1a116accf0a511f7df9fbb937d078e30d18b398b",
       "provider_sha256": {
         "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean": "36579b70fe03c0416a74ae900a9844090bd2689e788b43bd398eeff66d4d1841",
-        "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean": "dc7f287262a33e797f9717ddbcc7fabc8dee068b99aae811c515db6dfcb600cd"
+        "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean": "dc7f287262a33e797f9717ddbcc7fabc8dee068b99aae811c515db6dfcb600cd",
+        "NLS/KdV/PseudomeasureWideAnalytic.lean": "5e81e812e6de4d23bb10864663f44076d1c37f5ac9ac66694afd34256814cc07"
       }
     },
     {
@@ -224,23 +240,32 @@
       "label": "Lemma 2.11",
       "line": 841,
       "statement": "Lemma 2.11 Suppose q ∈ Fℓs,∞  0,C with −1/2 < s ⩽ 0. Choose ns = ns (q) ⩾ 1\nas in Corollary 2.5. Then for any n ⩾ ns , det(Bn (λ)) has exactly two roots\nξn,1 and ξn,2 in Sn counted with multiplicity. They are contained in\n\n       Dn := {λ : |λ − n2 π 2 | ⩽ 4n1/2 } ⊂ Sn\n\nand satisfy\n                          √\n       |ξn,1 − ξn,2 | ⩽       6 sup |bn (λ)b−n (λ)|1/2 .    ⋊                            (23)",
-      "status": "partial",
-      "comparison": "Exact two-count, physical multiplicity, localization and separation are proved on corrected radius-6n strips. The full printed-strip count is not inferred.",
+      "status": "proved",
+      "comparison": "The entire printed radius-12n strip has exactly two roots of the same analytic determinant, counted with analytic orders equal to full physical algebraic multiplicities. The actual complex pair exhausts all roots, lies in the printed radius-4*sqrt(n) disc, and satisfies the literal sqrt(6) separation bound with the coupling supremum over the full printed strip. A cutoff N≥2 is chosen uniformly on each original potential norm ball.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean",
-        "NLS/Articles/KdVPseudomeasures/SpectralAnalytic.lean",
-        "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean"
+        "NLS/Articles/KdVPseudomeasures/SourceWideStripSpectralResults.lean",
+        "NLS/KdV/PseudomeasureWideZeroCount.lean",
+        "NLS/KdV/PseudomeasureWideCouplingRadius.lean",
+        "NLS/KdV/PseudomeasureWideComplexPairs.lean",
+        "NLS/KdV/PseudomeasureWideAnalytic.lean"
       ],
       "declarations": [
-        "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform",
-        "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_algebraic_count"
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_wide",
+        "NLS.Articles.KdVPseudomeasures.source_rootDisc_subset_printedStrip",
+        "NLS.KdV.WideEndpointSpectralResult",
+        "NLS.KdV.wideEndpointSpectralResult",
+        "NLS.KdV.endpointReducedDeterminant_wide_two_zeros",
+        "NLS.KdV.endpointHillAlgebraicMultiplicity_eq_analyticOrderNatAt_wide",
+        "NLS.KdV.endpointReduced_roots_separation_sqrt_wide"
       ],
       "source_page": 14,
       "statement_sha256": "6193a9f79957d2add6458abe231bb42fc660a56a495e1557c86b7dbd73c69dbf",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean": "36579b70fe03c0416a74ae900a9844090bd2689e788b43bd398eeff66d4d1841",
-        "NLS/Articles/KdVPseudomeasures/SpectralAnalytic.lean": "adfb2bfa36acc624c77753f9b1756b6b14602e5a17c364d5dd5f948f6378bf1c",
-        "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean": "75f077ae23bb8f7369bcb6ff58d2d358552b382c4182e82f7a84acce520b21f2"
+        "NLS/Articles/KdVPseudomeasures/SourceWideStripSpectralResults.lean": "f6e615b307a80cbe821c30e27b8b5f7bf36c520af12b587b0fcb471b948104ba",
+        "NLS/KdV/PseudomeasureWideZeroCount.lean": "102abe378901e17c5c032ac6138d5c1f5591dbebae2abea6fd0a06d0e95a3aa8",
+        "NLS/KdV/PseudomeasureWideCouplingRadius.lean": "1124f09c8801ad0204a196d7d5a4fddfae34041abbe3553eccbcbf3ca408b1e0",
+        "NLS/KdV/PseudomeasureWideComplexPairs.lean": "d30fd4d0b268e1407e4604012b8188b036dc67b625f028b0af8c7301bbc1771d",
+        "NLS/KdV/PseudomeasureWideAnalytic.lean": "5e81e812e6de4d23bb10864663f44076d1c37f5ac9ac66694afd34256814cc07"
       }
     },
     {
@@ -1026,7 +1051,7 @@
       "line": 623,
       "statement": "Remark 2.6. By the same approach, one can study the inhomogeneous equation\n\n       (L − λ)f = g,            g ∈ Fℓs,∞\n                                      ⋆,C ,\n\nfor λ ∈ Sn and n ⩾ ns . Writing f = u + v and g = Pn g + Qn g, the Q-equation\nbecomes\n\n       Aλ v = Qn V (u + v) − Qn g = Qn V v + Qn (V u − g)\n\nleading for any given u ∈ Pn and λ ∈ Sn to the unique solution v̌ of the\nequation corresponding to (11)\n\n       v̌ = V v = Kn Tn (V u − g) ∈ Fℓs,∞\n                                      ⋆,C ,\n\nand, in turn, to the unique solution v ∈ Fℓs+2,∞\n                                           ⋆,C   ∩ Qn of the Q-equation\n\n     v = A−1                −1                      −1\n          λ Qn (V u − g) + Aλ Qn Kn Tn (V u − g) = Aλ Qn Kn (V u − g).                     ⊸",
       "status": "partial",
-      "comparison": "Inhomogeneous physical reconstruction exists; exact printed strip qualification remains.",
+      "comparison": "Existing exact inhomogeneous physical reconstruction is available on the narrow strip. The full printed-strip statement and the explicit s+2,infinity regularity and uniqueness of the complementary response still need a source wrapper.",
       "providers": [],
       "declarations": [],
       "source_page": 10,
@@ -1038,7 +1063,7 @@
       "line": 683,
       "statement": "Remark 2.8. Solutions of the inhomogeneous equation (L − λ)f = g for g ∈\nFℓs,∞\n  ⋆,C , λ ∈ Sn , and n ⩾ ns can be obtained by substituting into the P -equation\n\n       Aλ u = Pn V u + Pn V v − Pn g\n\nthe expression for V v obtained in Remark 2.6, V v = Kn Tn (V u − g), to get\n\n       Aλ u = Pn V u + Pn Kn Tn V u − Pn g − Pn Kn Tn g\n              = Pn (Id + Kn Tn )V u − Pn (Id + Kn Tn )g.\n\nUsing that Id + Kn Tn = Kn one concludes that\n\n       Bn (λ)u = −Pn Kn (λ)g.                                               (18)\n\nConversely, for any solution u of (18), f = u + v, with v being the element in\nFℓs+2,∞\n  ⋆,C   given in Remark 2.6, satisfies (L − λ)f = g and f ∈ Fℓs+2,∞\n                                                                ⋆,C   . ⊸",
       "status": "partial",
-      "comparison": "Effective resolvent formulas exist; literal meromorphic-inverse assertion and pole multiplicities need a source wrapper.",
+      "comparison": "The source remark asserts exact inhomogeneous reconstruction and the finite equation B_n u=-P_n K_n g; it makes no meromorphic-inverse or pole-multiplicity assertion. Existing reconstruction proves the full original H1-domain identity on the narrow strip. Extending this to the complete printed strip and proving the stated s+2,infinity regularity of the reconstructed solution remain obligations.",
       "providers": [],
       "declarations": [],
       "source_page": 11,

@@ -6598,3 +6598,12 @@ import NLS.SequenceSpaces.SubcriticalTwoScaleSum
 import NLS.SequenceSpaces.QuadraticReciprocalPower
 import NLS.Articles.KdVPseudomeasures.SourceLemmaA1
 import NLS.Articles.KdVPseudomeasures.SourceLemmaA1Statement
+import NLS.Articles.KdVPseudomeasures.SourceWideStripContraction
+import NLS.Articles.KdVPseudomeasures.SourceWideStripReduction
+import NLS.Articles.KdVPseudomeasures.SourceWideStripSpectralResults
+import NLS.KdV.FreeHillWideAnalytic
+import NLS.KdV.PseudomeasureWideAnalytic
+import NLS.KdV.PseudomeasureWideComplexPairs
+import NLS.KdV.PseudomeasureWideCouplingRadius
+import NLS.KdV.PseudomeasureWideReduction
+import NLS.KdV.PseudomeasureWideZeroCount

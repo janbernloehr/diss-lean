@@ -1993,6 +1993,15 @@ import NLS.SequenceSpaces.SubcriticalTwoScaleSum
 import NLS.SequenceSpaces.QuadraticReciprocalPower
 import NLS.Articles.KdVPseudomeasures.SourceLemmaA1
 import NLS.Articles.KdVPseudomeasures.SourceLemmaA1Statement
+import NLS.Articles.KdVPseudomeasures.SourceWideStripContraction
+import NLS.Articles.KdVPseudomeasures.SourceWideStripReduction
+import NLS.Articles.KdVPseudomeasures.SourceWideStripSpectralResults
+import NLS.KdV.FreeHillWideAnalytic
+import NLS.KdV.PseudomeasureWideAnalytic
+import NLS.KdV.PseudomeasureWideComplexPairs
+import NLS.KdV.PseudomeasureWideCouplingRadius
+import NLS.KdV.PseudomeasureWideReduction
+import NLS.KdV.PseudomeasureWideZeroCount
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11678,3 +11687,56 @@ import NLS.Articles.KdVPseudomeasures.SourceLemmaA1Statement
 #print axioms NLS.Articles.KdVPseudomeasures.sourceQuadraticReciprocal
 #print axioms NLS.Articles.KdVPseudomeasures.sourceQuadraticReciprocal_eq_kernel
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaA_1
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWideEndpointConstant
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWideEndpointConstant_one_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWideEndpointConstant_antitone
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_4_wide
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_wide
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_7_wide
+#print axioms NLS.Articles.KdVPseudomeasures.source_rootDisc_subset_printedStrip
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_7_fullPrintedStrip
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_11_wide
+#print axioms NLS.KdV.freeHill_denominator_near_wide
+#print axioms NLS.KdV.hillOrderTwoSymbolFamily_eq_wide_symbol
+#print axioms NLS.KdV.analyticAt_hillOrderTwoSymbolFamily_wide
+#print axioms NLS.KdV.endpointWienerSymbolFamily_apply_wide
+#print axioms NLS.KdV.analyticAt_endpointWienerSymbolFamily_wide
+#print axioms NLS.KdV.endpointWienerResolventFamily_apply_wide
+#print axioms NLS.KdV.analyticAt_endpointWienerResolventFamily_wide
+#print axioms NLS.KdV.endpointTailFamily_eq_wide
+#print axioms NLS.KdV.analyticAt_endpointTailFamily_wide
+#print axioms NLS.KdV.isUnit_one_sub_endpointTailFamily_wide
+#print axioms NLS.KdV.endpointInverseFamily_eq_wide
+#print axioms NLS.KdV.analyticAt_endpointInverseFamily_wide
+#print axioms NLS.KdV.endpointReducedFamily_eq_wide
+#print axioms NLS.KdV.analyticAt_endpointReducedFamily_wide
+#print axioms NLS.KdV.analyticAt_endpointReducedDeterminant_wide
+#print axioms NLS.KdV.endpointReducedDeterminant_eq_zero_iff_wide
+#print axioms NLS.KdV.EndpointHillComplexPair.wide_spectrum_iff
+#print axioms NLS.KdV.EndpointHillComplexPair.wide_multiplicities
+#print axioms NLS.KdV.EndpointHillComplexPair.wide_analytic_orders
+#print axioms NLS.KdV.EndpointHillComplexPair.wide_separation
+#print axioms NLS.KdV.WideEndpointSpectralResult
+#print axioms NLS.KdV.wideEndpointSpectralResult
+#print axioms NLS.KdV.endpointEffectiveFamily_eq_wide
+#print axioms NLS.KdV.sqrt_endpointCouplingProduct_le_weight_norm_wide
+#print axioms NLS.KdV.wideEndpointCouplingRadius
+#print axioms NLS.KdV.bddAbove_wideEndpointCouplingRadii
+#print axioms NLS.KdV.endpointCouplingRadius_le_wide
+#print axioms NLS.KdV.endpointReduced_roots_separation_sqrt_wide
+#print axioms NLS.KdV.wideEndpointHillReducedOperator
+#print axioms NLS.KdV.wideEndpointHillReconstruct
+#print axioms NLS.KdV.wideEndpointHillReconstruct_coefficient
+#print axioms NLS.KdV.endpointHillH1Coordinates_wideReconstruct
+#print axioms NLS.KdV.wideEndpointHillReconstruct_injective
+#print axioms NLS.KdV.endpointH1Multiplication_wideReconstruct
+#print axioms NLS.KdV.wideEndpointHillReconstruct_isEigenvector
+#print axioms NLS.KdV.singularHillEigenvector_wide_reduced
+#print axioms NLS.KdV.singularHillEigenvector_wide_reconstruct
+#print axioms NLS.KdV.exists_singularHillEigenvector_wide_iff
+#print axioms NLS.KdV.wideEndpointHillReduced_det_eq_zero_iff
+#print axioms NLS.KdV.reducedHillStrip_subset_wide
+#print axioms NLS.KdV.endpointReducedDeterminant_wide_zero_localization
+#print axioms NLS.KdV.endpointReducedDeterminant_wide_two_zeros
+#print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_eq_analyticOrderNatAt_wide
+#print axioms NLS.KdV.endpointHill_wide_strip_algebraic_count_two
