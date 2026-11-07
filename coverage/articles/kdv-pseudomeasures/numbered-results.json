@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 43,
+    "proved": 44,
     "proved_corrected": 6,
-    "partial": 5,
+    "partial": 4,
     "not_found": 0
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -1082,20 +1082,28 @@
       "label": "Lemma C.4",
       "line": 2846,
       "statement": "Lemma C.4 Assume that q ∈ H0,C        with kqkt,2 < ∞ and −1 < t < −1/2.\nThen there exist constants Ct > 0 (only depending on t) and N ′ ⩾ N (with N\nas above) so that for any n ⩾ N the following holds\n                                         (log n)2\n  (i)          kPn,q − Pn kL2 →L∞ ⩽ Ct            kqkt,2\n                                          n1−|t|\n                                                (log n)2\n (ii)          kΠn,q − Πn kL2 (I)→L∞ (I) ⩽ Ct            kqkt,2\n                                                 n1−|t|\nThe constant N ′ can be chosen locally uniformly in q.            ⋊",
-      "status": "partial",
-      "comparison": "Part (i) is fully proved for ALL original complex H^t inputs in -1<t<-1/2, on the literal source circles, with the exact squared-log rate and one norm-ball cutoff. The periodic estimate is actually stronger by one logarithm. General complex H-minus-one Dirichlet projection convergence is also proved, but part (ii) still lacks the quantitative H^t squared-log bound. Earlier wording that restricted both parts to endpoint inputs was inaccurate and is retracted.",
+      "status": "proved",
+      "comparison": "Both printed estimates are fully proved for all original complex H^t potentials in -1<t<-1/2, on the literal source circles and in the original physical L2-to-Linfinity operator norms. One positive constant is chosen before every potential, and one original Sobolev neighborhood and common cutoff work before all nearby physical period-one potentials and all subsequent indices. The exact squared-log rate and linear original potential norm are retained, including near zero. The Dirichlet proof uses quantitative fractional Miura regularity, Fourier truncation, actual auxiliary roots and native eigenfunctions, actual contour projection comparison and a Banach analytic zero bound; no supplied lift or projection estimate remains.",
       "providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaC4.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceDirichletAppendixC4.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceDirichletFractionalPower.lean",
         "NLS/Articles/KdVPseudomeasures/PeriodicProjectionConvergence.lean",
         "NLS/Articles/KdVPseudomeasures/EndpointDirichletProjectionConvergence.lean",
         "NLS/Articles/KdVPseudomeasures/OriginalDirichletProjectionConvergence.lean"
       ],
       "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemmaC_4",
+        "NLS.Articles.KdVPseudomeasures.sourceDirichletProjection_appendixC4",
         "NLS.Articles.KdVPseudomeasures.sourcePeriodicProjection_appendixC4",
         "NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicProjection_log_bound"
       ],
       "source_page": 43,
       "statement_sha256": "bcf6f6005aae7fc231d06313640d652c20949a8a693ab7c1a29dc54ccf0743d9",
       "provider_sha256": {
+        "NLS/Articles/KdVPseudomeasures/SourceLemmaC4.lean": "b5d94117289d94688ce52163e7a88f666ea5098aeeb5f4e5b89c640ad313773f",
+        "NLS/Articles/KdVPseudomeasures/SourceDirichletAppendixC4.lean": "f932887dab7568c265b3fbd50bd2f62c96cbca022c49691f6f60db5621d86a2a",
+        "NLS/Articles/KdVPseudomeasures/SourceDirichletFractionalPower.lean": "5815e0496cad3fb5d8dc4572b6b4d2fc5f3e185ca72af67410ca582b6600ba62",
         "NLS/Articles/KdVPseudomeasures/PeriodicProjectionConvergence.lean": "f774cea248279388120d573a3bdf6cf67a85922a0f694a68d8bd79d4aec57403",
         "NLS/Articles/KdVPseudomeasures/EndpointDirichletProjectionConvergence.lean": "6876199d948cce3289397a7e54493fe31696e0c04c884a6962b8f4ac3f603deb",
         "NLS/Articles/KdVPseudomeasures/OriginalDirichletProjectionConvergence.lean": "b8cfa37d002378c928c6b2c573460f05acc50d75a70f0d9e2c85cea63b0c674b"

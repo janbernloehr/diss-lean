@@ -2064,6 +2064,21 @@ import NLS.Articles.KdVPseudomeasures.SourceLocalEndpointFrequencyDecay
 import NLS.Articles.KdVPseudomeasures.SourceUniformEndpointFrequencyDecay
 import NLS.Articles.KdVPseudomeasures.SourceEndpointActionDecay
 import NLS.Articles.KdVPseudomeasures.SourceLemma39
+import NLS.ZakharovShabat.ClassicalUniformRemainderL2Budget
+import NLS.ZakharovShabat.PeriodicH1UniformRemainderL2Budget
+import NLS.SequenceSpaces.SobolevFrequencyTruncation
+import NLS.KdV.MiuraFractionalFreeComparison
+import NLS.SequenceSpaces.PeriodOneMiuraRegularityBound
+import NLS.KdV.MiuraFractionalDirichletComparison
+import NLS.KdV.HillMiuraFractionalLiftBound
+import NLS.KdV.HminusOneFractionalDirichletEigenfunctions
+import NLS.KdV.HminusOneFractionalDirichletProjections
+import NLS.KdV.SingularDirichletProjectionAnalytic
+import NLS.ComplexAnalysis.LocalPowerToLogLinearBound
+import NLS.KdV.HillFractionalPeriodOneExtraction
+import NLS.Articles.KdVPseudomeasures.SourceDirichletFractionalPower
+import NLS.Articles.KdVPseudomeasures.SourceDirichletAppendixC4
+import NLS.Articles.KdVPseudomeasures.SourceLemmaC4
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -12028,3 +12043,50 @@ import NLS.Articles.KdVPseudomeasures.SourceLemma39
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_action_power_bound
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_action_decay
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_9
+#print axioms NLS.ZakharovShabat.classicalNormalizedRemainder_le_uniform_firstBorn_L2
+#print axioms NLS.ZakharovShabat.classicalNormalizedRemainder_le_inverse_frequency_L2
+#print axioms NLS.ZakharovShabat.norm_periodicH1SolutionCurve_sub_free_L2_budget
+#print axioms NLS.WeightedCoeff.sobolev_head_weight_bound
+#print axioms NLS.WeightedCoeff.sobolevHeadToH1
+#print axioms NLS.WeightedCoeff.sobolevHeadToH1_apply
+#print axioms NLS.WeightedCoeff.norm_sobolevHeadToH1_le
+#print axioms NLS.WeightedCoeff.scalarInclusion_sobolevHeadToH1
+#print axioms NLS.WeightedCoeff.norm_scalarInclusion_sobolevHeadToH1_le
+#print axioms NLS.WeightedCoeff.norm_sobolevHeadToH1_remainder_le
+#print axioms NLS.KdV.norm_hillMiuraDiagonal_le_two
+#print axioms NLS.KdV.miuraFractionalFreeConstant
+#print axioms NLS.KdV.miuraFractionalFreeConstant_nonneg
+#print axioms NLS.KdV.norm_miuraL2SolutionCurve_sub_free_fractional
+#print axioms NLS.negativeSobolevL2Kernel
+#print axioms NLS.boundedNegativeSobolevL2
+#print axioms NLS.norm_boundedNegativeSobolevL2_le
+#print axioms NLS.norm_sobolev_gain_of_mass_equation
+#print axioms NLS.exists_periodOneMiura_sobolev_lift_bound
+#print axioms NLS.KdV.norm_miuraDirichletSineCurve_sub_free_le
+#print axioms NLS.KdV.exists_miura_fractional_dirichlet_comparison_constant
+#print axioms NLS.KdV.sobolevToL2_eq_of_raw_coefficients
+#print axioms NLS.KdV.HillHminusMiuraChart.exists_local_lift_norm_bound
+#print axioms NLS.KdV.HillHminusMiuraChart.fractional_lift_bound_of_norm_bounds
+#print axioms NLS.KdV.HillHminusMiuraChart.exists_local_fractional_lift_bound
+#print axioms NLS.KdV.HillHminusMiuraChart.exists_uniform_fractional_dirichletEigenfunction_bound
+#print axioms NLS.KdV.exists_local_fractional_hillHminusDirichletProjection_bound
+#print axioms NLS.KdV.analyticOnNhd_singularDirichletRieszToH1
+#print axioms NLS.KdV.analyticOnNhd_singularDirichletContinuousRieszProjection
+#print axioms NLS.KdV.analyticOnNhd_singularDirichletRieszToH1_comp
+#print axioms NLS.KdV.analyticOnNhd_singularDirichletContinuousRieszProjection_comp
+#print axioms NLS.ComplexAnalysis.exists_local_linear_power_bound
+#print axioms NLS.ComplexAnalysis.exists_local_log_squared_linear_power_bound
+#print axioms NLS.KdV.fractional_periodOne_weight_bound
+#print axioms NLS.KdV.hillFractionalPeriodOneExtract
+#print axioms NLS.KdV.hillFractionalPeriodOneExtract_apply
+#print axioms NLS.KdV.norm_hillFractionalPeriodOneExtract_le
+#print axioms NLS.KdV.hillFractionalPeriodOneExtract_native
+#print axioms NLS.Articles.KdVPseudomeasures.sourceFractionalNative
+#print axioms NLS.Articles.KdVPseudomeasures.sourceFractionalPeriodOneCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.sourceFractionalNative_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceFractionalPeriodOneCoefficients_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceFractionalDirichletProjectionError
+#print axioms NLS.Articles.KdVPseudomeasures.sourceFractionalDirichletProjectionError_zero
+#print axioms NLS.Articles.KdVPseudomeasures.exists_local_sourceFractionalDirichletProjection_power_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourceDirichletProjection_appendixC4
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaC_4
