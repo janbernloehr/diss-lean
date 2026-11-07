@@ -3837,6 +3837,17 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/ActualL2FixedFourierIdentification
   NLS/Articles/KdVKdV2Frequencies/ActualL2RawFixedFourierRemainder
   NLS/Articles/KdVKdV2Frequencies/GlobalL2FixedFourierRemainder
+  NLS/ComplexAnalysis/LinearObservationsDerivative
+  NLS/ComplexAnalysis/AnalyticRemainderLinearization
+  NLS/KdV/OriginalL2MeanZeroSource
+  NLS/Articles/KdVKdV2Frequencies/ActualL2FourierLinearization
+  NLS/SequenceSpaces/SignedFourierCoreDerivative
+  NLS/Articles/KdVKdV2Frequencies/GlobalL2CanonicalFourierRemainder
+  NLS/Articles/KdVKdV2Frequencies/GlobalL2MeanZeroFourierSmoothing
+  NLS/ComplexAnalysis/RestrictAnalyticRealNeighborhood
+  NLS/Articles/KdVKdV2Frequencies/ActualL2MeanZeroDomain
+  NLS/Articles/KdVKdV2Frequencies/GlobalL2OriginalForwardSmoothing
+  NLS/Articles/KdVKdV2Frequencies/CanonicalL2ForwardReality
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

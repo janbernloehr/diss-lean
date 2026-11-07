@@ -1,3 +1,14 @@
+import NLS.Articles.KdVKdV2Frequencies.CanonicalL2ForwardReality
+import NLS.ComplexAnalysis.RestrictAnalyticRealNeighborhood
+import NLS.Articles.KdVKdV2Frequencies.ActualL2MeanZeroDomain
+import NLS.Articles.KdVKdV2Frequencies.GlobalL2OriginalForwardSmoothing
+import NLS.Articles.KdVKdV2Frequencies.GlobalL2MeanZeroFourierSmoothing
+import NLS.Articles.KdVKdV2Frequencies.GlobalL2CanonicalFourierRemainder
+import NLS.ComplexAnalysis.LinearObservationsDerivative
+import NLS.ComplexAnalysis.AnalyticRemainderLinearization
+import NLS.KdV.OriginalL2MeanZeroSource
+import NLS.Articles.KdVKdV2Frequencies.ActualL2FourierLinearization
+import NLS.SequenceSpaces.SignedFourierCoreDerivative
 import NLS.Articles.KdVKdV2Frequencies.GlobalL2FixedFourierRemainder
 import NLS.SequenceSpaces.AnalyticFiniteSignCorrection
 import NLS.Articles.KdVKdV2Frequencies.ActualL2FixedFourierIdentification
@@ -6875,7 +6886,18 @@ private def kdvFrequencyAuditChunk29 : Array Lean.Name := #[
   `NLS.SequenceSpaces.AnalyticFiniteSignCorrection,
   `NLS.Articles.KdVKdV2Frequencies.ActualL2FixedFourierIdentification,
   `NLS.Articles.KdVKdV2Frequencies.ActualL2RawFixedFourierRemainder,
-  `NLS.Articles.KdVKdV2Frequencies.GlobalL2FixedFourierRemainder
+  `NLS.Articles.KdVKdV2Frequencies.GlobalL2FixedFourierRemainder,
+  `NLS.ComplexAnalysis.LinearObservationsDerivative,
+  `NLS.ComplexAnalysis.AnalyticRemainderLinearization,
+  `NLS.KdV.OriginalL2MeanZeroSource,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2FourierLinearization,
+  `NLS.SequenceSpaces.SignedFourierCoreDerivative,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalL2CanonicalFourierRemainder,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalL2MeanZeroFourierSmoothing,
+  `NLS.ComplexAnalysis.RestrictAnalyticRealNeighborhood,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2MeanZeroDomain,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalL2OriginalForwardSmoothing,
+  `NLS.Articles.KdVKdV2Frequencies.CanonicalL2ForwardReality
 ]
 
 open Lean in
