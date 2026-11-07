@@ -1,3 +1,13 @@
+import NLS.SequenceSpaces.SignedHalfOriginalFourierCore
+import NLS.Articles.KdVKdV2Frequencies.ActualL2OriginalFourierRemainder
+import NLS.Articles.KdVKdV2Frequencies.ActualL2OriginalFourierIdentification
+import NLS.Articles.KdVKdV2Frequencies.ActualL2RawOriginalFourierRemainder
+import NLS.SequenceSpaces.SobolevConvolutionBounds
+import NLS.ComplexAnalysis.BoundedAnalyticGerm
+import NLS.SequenceSpaces.AnalyticBracketPacketRefinement
+import NLS.KdV.HillHminusMiuraNonzeroEquation
+import NLS.KdV.HillHminusL2MiuraNonlinear
+import NLS.KdV.HillRawFreeFourierNormalization
 import NLS.ComplexAnalysis.CriticalPhaseLocalComparison
 import NLS.ComplexAnalysis.ExponentialIncrementRemainder
 import NLS.ComplexAnalysis.IntegerSinhShift
@@ -6831,7 +6841,17 @@ private def kdvFrequencyAuditChunk29 : Array Lean.Name := #[
   `NLS.SequenceSpaces.AnalyticSpectralPacketRefinement,
   `NLS.Articles.KdVKdV2Frequencies.ActualL2MiuraFourierRemainder,
   `NLS.Articles.KdVKdV2Frequencies.ActualL2MiuraFourierIdentification,
-  `NLS.Articles.KdVKdV2Frequencies.ActualL2RawMiuraFourierRemainder
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2RawMiuraFourierRemainder,
+  `NLS.SequenceSpaces.SobolevConvolutionBounds,
+  `NLS.ComplexAnalysis.BoundedAnalyticGerm,
+  `NLS.SequenceSpaces.AnalyticBracketPacketRefinement,
+  `NLS.KdV.HillHminusMiuraNonzeroEquation,
+  `NLS.KdV.HillHminusL2MiuraNonlinear,
+  `NLS.KdV.HillRawFreeFourierNormalization,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2OriginalFourierRemainder,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2OriginalFourierIdentification,
+  `NLS.SequenceSpaces.SignedHalfOriginalFourierCore,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2RawOriginalFourierRemainder
 ]
 
 open Lean in

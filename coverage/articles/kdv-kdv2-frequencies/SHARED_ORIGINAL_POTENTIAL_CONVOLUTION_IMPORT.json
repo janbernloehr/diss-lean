@@ -1,0 +1,12 @@
+{
+  "source_commit": "334579e6fb05cfac349f0a25d87640cebf24005c",
+  "files": [
+    {
+      "path": "NLS/SequenceSpaces/SobolevConvolutionBounds.lean",
+      "source_sha256": "4a607fc257db00cb10d991efe25cb91334054ed66703ba3ad8f8e85d248a6564",
+      "local_sha256": "4a607fc257db00cb10d991efe25cb91334054ed66703ba3ad8f8e85d248a6564",
+      "disposition": "imported_unchanged"
+    }
+  ],
+  "scope": "Unchanged verified H1 Sobolev convolution norm bounds and bounded bilinear multiplication from a shared dissertation branch. Used for the actual retained Miura correction in the ORIGINAL L2 Fourier comparison. All newly reached dependencies are selected and strictly rebuilt and axiom audited."
+}
