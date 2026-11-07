@@ -1,3 +1,12 @@
+import NLS.SequenceSpaces.CompactCorrectedFrequencyBound
+import NLS.Articles.KdVKdV2Frequencies.NativeSourceSobolevCompatibility
+import NLS.Articles.KdVKdV2Frequencies.MainCorollary15
+import NLS.Articles.KdVKdV2Frequencies.Corollary15BoundedL2
+import NLS.Articles.KdVKdV2Frequencies.OriginalL2ActionBound
+import NLS.Articles.KdVKdV2Frequencies.NativeActionPhysicalCounterterm
+import NLS.Articles.KdVKdV2Frequencies.NativeCorrectedFrequencyBounds
+import NLS.SequenceSpaces.PhysicalRealCompactSobolevInclusion
+import NLS.SequenceSpaces.CompactUniformFrequencyBounds
 import NLS.Articles.KdVKdV2Frequencies.Corollary15Sharpness
 import NLS.SequenceSpaces.LiteralPowerSharpness
 import NLS.Articles.KdVKdV2Frequencies.NativeFrequencySharpness
@@ -6201,7 +6210,16 @@ private def kdvFrequencyAuditChunk27 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.NativeActionLocalImage,
   `NLS.SequenceSpaces.LiteralPowerSharpness,
   `NLS.Articles.KdVKdV2Frequencies.NativeFrequencySharpness,
-  `NLS.Articles.KdVKdV2Frequencies.Corollary15Sharpness
+  `NLS.Articles.KdVKdV2Frequencies.Corollary15Sharpness,
+  `NLS.SequenceSpaces.PhysicalRealCompactSobolevInclusion,
+  `NLS.SequenceSpaces.CompactUniformFrequencyBounds,
+  `NLS.Articles.KdVKdV2Frequencies.NativeActionPhysicalCounterterm,
+  `NLS.Articles.KdVKdV2Frequencies.NativeCorrectedFrequencyBounds,
+  `NLS.Articles.KdVKdV2Frequencies.NativeSourceSobolevCompatibility,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalL2ActionBound,
+  `NLS.SequenceSpaces.CompactCorrectedFrequencyBound,
+  `NLS.Articles.KdVKdV2Frequencies.Corollary15BoundedL2,
+  `NLS.Articles.KdVKdV2Frequencies.MainCorollary15
 ]
 
 open Lean in

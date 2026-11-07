@@ -3503,6 +3503,15 @@ modules=(
   NLS/SequenceSpaces/LiteralPowerSharpness
   NLS/Articles/KdVKdV2Frequencies/NativeFrequencySharpness
   NLS/Articles/KdVKdV2Frequencies/Corollary15Sharpness
+  NLS/SequenceSpaces/PhysicalRealCompactSobolevInclusion
+  NLS/SequenceSpaces/CompactUniformFrequencyBounds
+  NLS/Articles/KdVKdV2Frequencies/NativeActionPhysicalCounterterm
+  NLS/Articles/KdVKdV2Frequencies/NativeCorrectedFrequencyBounds
+  NLS/Articles/KdVKdV2Frequencies/NativeSourceSobolevCompatibility
+  NLS/Articles/KdVKdV2Frequencies/OriginalL2ActionBound
+  NLS/SequenceSpaces/CompactCorrectedFrequencyBound
+  NLS/Articles/KdVKdV2Frequencies/Corollary15BoundedL2
+  NLS/Articles/KdVKdV2Frequencies/MainCorollary15
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

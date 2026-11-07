@@ -1101,9 +1101,9 @@
       "pdf_pages": [
         5
       ],
-      "status": "open",
+      "status": "verified",
       "role": "physical KdV frequency asymptotics and sharpness",
-      "current_support_summary": "COMPLETE Corollary 1.5(ii) is proved in the source proof's precise locally-uniform sense on the ORIGINAL real mean-zero H^s space for EVERY -1<s<0. ONE actual global weak frequency G is chosen BEFORE ALL orders, exponents and base potentials. For EVERY exponent gamma<-2s-1, EVERY base q0, EVERY open neighborhood T of q0 in the ORIGINAL H^s norm, EVERY M>=0 and EVERY cutoff K, there are an ACTUAL real mean-zero q in that SAME T and a positive n>=K with n^(-gamma)*norm(omega_n(q)-8*pi^3*n^3)>M. Thus no stronger O(n^gamma) estimate holds locally uniformly anywhere. In particular O(1) fails in EVERY such neighborhood for -1<s<-1/2. The frequency agrees with EVERY compatible physical Miura chart and the ACTUAL native H1 Hamiltonian frequency. The construction uses proved actual native inverse maps, nearby real action lifts and positive high-label packets; no inverse or asymptotic is assumed. Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. Corollary 1.5(i) and (ii) are now verified; its uniformity on bounded L2 sets in clause (iii) remains essential, so the full corollary stays OPEN. Theorem 1.2(iii) retains full ORIGINAL ACTION complex local uniformity for every s>-1; its s=-1 UNIFORM little-o endpoint and consolidation remain open. Global Hessian nonpositivity, smoothing/PDE conclusions and KdV2 main statements also remain open. Sharpness does not assert that EVERY individual potential has a bad pointwise bound; finite-gap potentials need not. The source proof on PDF page35 explicitly says the improved estimate does not hold locally uniformly on H^s.",
+      "current_support_summary": "COMPLETE Corollary 1.5 is VERIFIED with ALL THREE source clauses for ONE ACTUAL physical frequency family G, chosen BEFORE ALL source orders, base potentials, sharpness exponents and bounded sets. Clause(i): on ORIGINAL real mean-zero H^s, -1<=s<=0, one original-norm open neighborhood and one constant control the literal n^(2s+1)-weighted error for ALL positive n; the error tends to zero POINTWISE for s<0, and s=0 has O(1/n). Clause(ii): EVERY stronger exponent gamma<-2s-1 fails locally uniformly in EVERY original H^s neighborhood for -1<s<0, beyond EVERY cutoff; O(1) fails below -1/2. NEW clause(iii): for EVERY bounded subset S of ORIGINAL real mean-zero L2, ONE B>=0 controls n*norm(omega_n(q)-8*pi^3*n^3) for ALL q in S and ALL positive n. EVERY compatible physical Miura chart and the ACTUAL native H1 Hamiltonian frequency are recovered. All source norms, quantifier orders, positive labels and the literal 8*pi^3*n^3 normalization are retained. Complete main rows are NOW 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Theorem 1.2(iii) retains full ORIGINAL ACTION complex local uniformity for every s>-1; its s=-1 UNIFORM little-o endpoint and full-theorem consolidation remain essential. Global Hessian nonpositivity, smoothing/PDE conclusions and KdV2 main statements remain open. The complete Corollary 1.5 does not settle the stronger complex fixed-neighborhood weak-endpoint assertion of Theorem 1.2. The goal remains ACTIVE and incomplete.",
       "verified_main_clauses": [
         {
           "source_clause": "COMPLETE Corollary1.5(i): original real mean-zero H^s, -1<=s<=0, physical KdV frequency asymptotics with local ALL-label constant",
@@ -1118,8 +1118,19 @@
           "lean_source": "NLS/Articles/KdVKdV2Frequencies/Corollary15Sharpness.lean",
           "status": "verified",
           "qualification": "COMPLETE Corollary 1.5(ii) is proved in the source proof's precise locally-uniform sense on the ORIGINAL real mean-zero H^s space for EVERY -1<s<0. ONE actual global weak frequency G is chosen BEFORE ALL orders, exponents and base potentials. For EVERY exponent gamma<-2s-1, EVERY base q0, EVERY open neighborhood T of q0 in the ORIGINAL H^s norm, EVERY M>=0 and EVERY cutoff K, there are an ACTUAL real mean-zero q in that SAME T and a positive n>=K with n^(-gamma)*norm(omega_n(q)-8*pi^3*n^3)>M. Thus no stronger O(n^gamma) estimate holds locally uniformly anywhere. In particular O(1) fails in EVERY such neighborhood for -1<s<-1/2. The frequency agrees with EVERY compatible physical Miura chart and the ACTUAL native H1 Hamiltonian frequency. The construction uses proved actual native inverse maps, nearby real action lifts and positive high-label packets; no inverse or asymptotic is assumed. Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. Corollary 1.5(i) and (ii) are now verified; its uniformity on bounded L2 sets in clause (iii) remains essential, so the full corollary stays OPEN. Theorem 1.2(iii) retains full ORIGINAL ACTION complex local uniformity for every s>-1; its s=-1 UNIFORM little-o endpoint and consolidation remain open. Global Hessian nonpositivity, smoothing/PDE conclusions and KdV2 main statements also remain open. Sharpness does not assert that EVERY individual potential has a bad pointwise bound; finite-gap potentials need not. The source proof on PDF page35 explicitly says the improved estimate does not hold locally uniformly on H^s."
+        },
+        {
+          "source_clause": "COMPLETE Corollary1.5(iii): uniform O(1/n) on EVERY bounded subset of ORIGINAL real mean-zero L2",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.corollary_1_5_iii",
+          "lean_source": "NLS/Articles/KdVKdV2Frequencies/Corollary15BoundedL2.lean",
+          "status": "verified",
+          "qualification": "ONE actual global G precedes EVERY bounded S in the ORIGINAL real mean-zero L2 norm. For EACH S choose ONE B>=0 BEFORE ALL q in S and ALL positive n: n*norm(omega_n(q)-8*pi^3*n^3)<=B. The compactness of L2 inclusion into H^(-1/3) controls only the corrected frequency; the independently proved exact quadratic action trace controls the leading literal 6I_n term. The original L2 norm is preserved by an exact real linear isometry. The final main theorem consolidates (i),(ii),(iii) for the SAME actual physical frequency and includes exact native H1 Hamiltonian recovery."
         }
-      ]
+      ],
+      "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.corollary_1_5",
+      "lean_source": "NLS/Articles/KdVKdV2Frequencies/MainCorollary15.lean",
+      "qualification": "Clause(i) has POINTWISE little-o with a locally uniform ALL-label bound, as in its source formulation. Clause(ii) uses the source proof on PDF page35: improved powers do not hold LOCALLY UNIFORMLY; witnesses occur in EVERY original neighborhood beyond EVERY cutoff. It does not assert every individual potential has bad pointwise decay. Clause(iii) quantifies EVERY bounded L2 set, not merely compact subsets in the L2 norm. The consolidated theorem chooses ONE actual frequency family before all clauses.",
+      "historical_clause_records_note": "The first two clause records and their qualifications are retained byte-identically from their earlier milestones; any remaining-obligation wording there describes that earlier snapshot. The CURRENT status and consolidated main declaration above verify ALL THREE clauses."
     },
     {
       "label": "Corollary 1.7",
@@ -46868,14 +46879,131 @@
       "scope": "COMPLETE Corollary1.5(ii), including failure of O(1) for -1<s<-1/2, in ORIGINAL real mean-zero H^s norms. ONE actual global G precedes ALL orders/exponents/base potentials; exact physical and native Hamiltonian recovery. Quantifies witnesses in EVERY original open neighborhood beyond EVERY cutoff. Clause(iii) stays OPEN.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "02a205061615f3563845e565552b29144e23b96b12999453f3bbd1ead8b723af"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealCompactSobolevInclusion.lean",
+      "source_labels": [
+        "Corollary 1.5 COMPLETE ALL THREE clauses for ONE actual frequency; NEW uniform O(1/n) on EVERY bounded ORIGINAL real L2 set"
+      ],
+      "source_pages": [
+        5,
+        35
+      ],
+      "scope": "Strict Sobolev inclusion is COMPACT in the exact normalized physical real mean-zero source norms, obtained from the actual weighted inclusion and the proved closed real subspace.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "03b1c921f40a2f6cc301d21101bbaeeda3886435ac35d1b9e2db2d3d9169d22d"
+    },
+    {
+      "path": "NLS/SequenceSpaces/CompactUniformFrequencyBounds.lean",
+      "source_labels": [
+        "Corollary 1.5 COMPLETE ALL THREE clauses for ONE actual frequency; NEW uniform O(1/n) on EVERY bounded ORIGINAL real L2 set"
+      ],
+      "source_pages": [
+        5,
+        35
+      ],
+      "scope": "A reusable finite-cover theorem turns local bounds for ALL positive frequency labels into ONE bound on an ENTIRE compact source set.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9e90c65b5c787c0c9e1d7225b145e06b37e30cb2292accf0b5735e7f3333cbad"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeActionPhysicalCounterterm.lean",
+      "source_labels": [
+        "Corollary 1.5 COMPLETE ALL THREE clauses for ONE actual frequency; NEW uniform O(1/n) on EVERY bounded ORIGINAL real L2 set"
+      ],
+      "source_pages": [
+        5,
+        35
+      ],
+      "scope": "The normalized native action divided by its literal Sobolev weight equals the ACTUAL original signed Birkhoff product at EVERY source order and positive physical label, with no extra factor.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "79ba8b7ae6385d94963f687f053498a12eb6e457f884da771b1769b2747c8b49"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeCorrectedFrequencyBounds.lean",
+      "source_labels": [
+        "Corollary 1.5 COMPLETE ALL THREE clauses for ONE actual frequency; NEW uniform O(1/n) on EVERY bounded ORIGINAL real L2 set"
+      ],
+      "source_pages": [
+        5,
+        35
+      ],
+      "scope": "Three theorems identify the corrected native frequency with the ACTUAL physical frequency plus literal 6I, prove an ALL-label locally uniform O(1/n) bound in H^(-1/3), and extend it to EVERY compact set in that source norm.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aa31a62116c58a5e404354a1d88f7cd51f075c7af0b5650d9eaeaad9e72a62d7"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeSourceSobolevCompatibility.lean",
+      "source_labels": [
+        "Corollary 1.5 COMPLETE ALL THREE clauses for ONE actual frequency; NEW uniform O(1/n) on EVERY bounded ORIGINAL real L2 set"
+      ],
+      "source_pages": [
+        5,
+        35
+      ],
+      "scope": "Four exact source identities preserve all original Fourier coefficients under normalized Sobolev inclusions, identify the H^(-1/3) inclusion of native L2, and retain the original raw L2 source via its exact real isometry.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4d51af5cadfa5201ed067cb4f5b12312541c65570d40a990f33d5130cdecfb23"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/OriginalL2ActionBound.lean",
+      "source_labels": [
+        "Corollary 1.5 COMPLETE ALL THREE clauses for ONE actual frequency; NEW uniform O(1/n) on EVERY bounded ORIGINAL real L2 set"
+      ],
+      "source_pages": [
+        5,
+        35
+      ],
+      "scope": "Two theorems use the EXISTING exact quadratic physical action trace to bound w_1(n)*norm(I_n(q)) by the ORIGINAL L2 norm squared, and transfer the same bound to normalized real L2 coordinates. No new spectral asymptotic is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e7428907b767556ab027e9c660525043a138b5905df9f7584086af4b1948a189"
+    },
+    {
+      "path": "NLS/SequenceSpaces/CompactCorrectedFrequencyBound.lean",
+      "source_labels": [
+        "Corollary 1.5 COMPLETE ALL THREE clauses for ONE actual frequency; NEW uniform O(1/n) on EVERY bounded ORIGINAL real L2 set"
+      ],
+      "source_pages": [
+        5,
+        35
+      ],
+      "scope": "Two reusable opaque Banach-source theorems combine a COMPACT source inclusion, compact corrected-frequency bounds and a quadratic leading-action estimate into an ALL-label uniform bound on EVERY bounded source set, then transport through an EXACT real linear isometry. DEFAULT checking limits are retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9bc4172e3155fd5c8ed1906567f7dc704dd5097c79e9de75469b3211343d53cd"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/Corollary15BoundedL2.lean",
+      "source_labels": [
+        "Corollary 1.5 COMPLETE ALL THREE clauses for ONE actual frequency; NEW uniform O(1/n) on EVERY bounded ORIGINAL real L2 set"
+      ],
+      "source_pages": [
+        5,
+        35
+      ],
+      "scope": "Three theorems prove COMPLETE Corollary1.5(iii): for EVERY bounded set of ORIGINAL real mean-zero L2 potentials, ONE constant controls the literal n-weighted ACTUAL frequency error for ALL potentials and ALL positive labels. Physical calibration and native Hamiltonian recovery remain exact.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e7950e18b48359b9ae39ecac8b6bfc6cd37721ed656ca0e7ffc8257c40634618"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/MainCorollary15.lean",
+      "source_labels": [
+        "Corollary 1.5 COMPLETE ALL THREE clauses for ONE actual frequency; NEW uniform O(1/n) on EVERY bounded ORIGINAL real L2 set"
+      ],
+      "source_pages": [
+        5,
+        35
+      ],
+      "scope": "Consolidates ALL THREE clauses of COMPLETE Corollary1.5 for ONE ACTUAL global weak frequency family in ORIGINAL source norms. Equality is proved on every actual real rough potential through physical calibration; it is not inferred from a non-spanning complex action cone.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6775b41fe990b14d3deb6b94e922be6489e5cc2ce119fd893dac775019e5c85b"
     }
   ],
   "dependencies_needed": [
-    "COMPLETE Corollary 1.5(ii) is proved in the source proof's precise locally-uniform sense on the ORIGINAL real mean-zero H^s space for EVERY -1<s<0. ONE actual global weak frequency G is chosen BEFORE ALL orders, exponents and base potentials. For EVERY exponent gamma<-2s-1, EVERY base q0, EVERY open neighborhood T of q0 in the ORIGINAL H^s norm, EVERY M>=0 and EVERY cutoff K, there are an ACTUAL real mean-zero q in that SAME T and a positive n>=K with n^(-gamma)*norm(omega_n(q)-8*pi^3*n^3)>M. Thus no stronger O(n^gamma) estimate holds locally uniformly anywhere. In particular O(1) fails in EVERY such neighborhood for -1<s<-1/2. The frequency agrees with EVERY compatible physical Miura chart and the ACTUAL native H1 Hamiltonian frequency. The construction uses proved actual native inverse maps, nearby real action lifts and positive high-label packets; no inverse or asymptotic is assumed. Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. Corollary 1.5(i) and (ii) are now verified; its uniformity on bounded L2 sets in clause (iii) remains essential, so the full corollary stays OPEN. Theorem 1.2(iii) retains full ORIGINAL ACTION complex local uniformity for every s>-1; its s=-1 UNIFORM little-o endpoint and consolidation remain open. Global Hessian nonpositivity, smoothing/PDE conclusions and KdV2 main statements also remain open. Sharpness does not assert that EVERY individual potential has a bad pointwise bound; finite-gap potentials need not. The source proof on PDF page35 explicitly says the improved estimate does not hold locally uniformly on H^s.",
+    "COMPLETE Corollary 1.5 is VERIFIED with ALL THREE source clauses for ONE ACTUAL physical frequency family G, chosen BEFORE ALL source orders, base potentials, sharpness exponents and bounded sets. Clause(i): on ORIGINAL real mean-zero H^s, -1<=s<=0, one original-norm open neighborhood and one constant control the literal n^(2s+1)-weighted error for ALL positive n; the error tends to zero POINTWISE for s<0, and s=0 has O(1/n). Clause(ii): EVERY stronger exponent gamma<-2s-1 fails locally uniformly in EVERY original H^s neighborhood for -1<s<0, beyond EVERY cutoff; O(1) fails below -1/2. NEW clause(iii): for EVERY bounded subset S of ORIGINAL real mean-zero L2, ONE B>=0 controls n*norm(omega_n(q)-8*pi^3*n^3) for ALL q in S and ALL positive n. EVERY compatible physical Miura chart and the ACTUAL native H1 Hamiltonian frequency are recovered. All source norms, quantifier orders, positive labels and the literal 8*pi^3*n^3 normalization are retained. Complete main rows are NOW 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Theorem 1.2(iii) retains full ORIGINAL ACTION complex local uniformity for every s>-1; its s=-1 UNIFORM little-o endpoint and full-theorem consolidation remain essential. Global Hessian nonpositivity, smoothing/PDE conclusions and KdV2 main statements remain open. The complete Corollary 1.5 does not settle the stronger complex fixed-neighborhood weak-endpoint assertion of Theorem 1.2. The goal remains ACTIVE and incomplete.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
-    "Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. Corollary 1.5(i) and (ii) are now verified; its uniformity on bounded L2 sets in clause (iii) remains essential, so the full corollary stays OPEN. Theorem 1.2(iii) retains full ORIGINAL ACTION complex local uniformity for every s>-1; its s=-1 UNIFORM little-o endpoint and consolidation remain open. Global Hessian nonpositivity, smoothing/PDE conclusions and KdV2 main statements also remain open. Sharpness does not assert that EVERY individual potential has a bad pointwise bound; finite-gap potentials need not. The source proof on PDF page35 explicitly says the improved estimate does not hold locally uniformly on H^s.",
+    "Complete main rows are NOW 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Theorem 1.2(iii) retains full ORIGINAL ACTION complex local uniformity for every s>-1; its s=-1 UNIFORM little-o endpoint and full-theorem consolidation remain essential. Global Hessian nonpositivity, smoothing/PDE conclusions and KdV2 main statements remain open. The complete Corollary 1.5 does not settle the stronger complex fixed-neighborhood weak-endpoint assertion of Theorem 1.2. The goal remains ACTIVE and incomplete.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
   ],
   "workspace": {
@@ -46899,8 +47027,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 26446,
-    "total_declarations_audited": 48516,
+    "candidate_declarations_audited": 26483,
+    "total_declarations_audited": 48552,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -46908,9 +47036,10 @@
     ],
     "main_theorems_verified": [
       "Theorem 1.1",
-      "Corollary 1.4"
+      "Corollary 1.4",
+      "Corollary 1.5"
     ],
-    "selected_modules": 3494,
+    "selected_modules": 3503,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -47075,7 +47204,8 @@
     "native_uniform_frequency_decay_validation_sequence": "All 3461 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is ten own modules containing fourteen explicit public theorems. No canonical module or provenance record is newly selected. All ten modules were strictly rebuilt in dependency order AFTER freezing 3529 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3471 selections and EVERY imported NLS declaration: 26323 selected declarations and 48393 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3471-name set probe with insertion/deletion rejection are verified. The 3479 historical strict PASS records cover 3471 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a ten-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "original_uniform_frequency_decay_validation_sequence": "All 3471 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is seven own modules containing eight explicit public theorems. No canonical module or provenance record is newly selected. All seven modules were strictly rebuilt in dependency order AFTER freezing 3536 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3478 selections and EVERY imported NLS declaration: 26363 selected declarations and 48433 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3478-name set probe with insertion/deletion rejection are verified. The 3486 historical strict PASS records cover 3478 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a seven-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "corollary15_decay_validation_sequence": "All 3478 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is nine own modules with 21 explicit public theorems. No canonical module or provenance record is newly selected. All nine modules were strictly rebuilt in dependency order AFTER freezing 3545 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3487 selections and EVERY imported NLS declaration: 26422 selected declarations and 48492 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and bidirectional 3487-name set probe with insertion/deletion rejection are verified. The 3495 historical strict PASS records cover 3487 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a nine-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
-    "corollary15_sharpness_validation_sequence": "All 3487 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is seven own modules with eight explicit public theorems. No canonical module or provenance record is newly selected. All seven modules were strictly rebuilt in dependency order AFTER freezing 3552 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3494 selections and EVERY imported NLS declaration: 26446 selected declarations and 48516 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and bidirectional 3494-name set probe with insertion/deletion rejection are verified. The 3502 historical strict PASS records cover 3494 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a seven-module incremental rebuild retaining prior strict evidence, not a full rebuild."
+    "corollary15_sharpness_validation_sequence": "All 3487 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is seven own modules with eight explicit public theorems. No canonical module or provenance record is newly selected. All seven modules were strictly rebuilt in dependency order AFTER freezing 3552 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3494 selections and EVERY imported NLS declaration: 26446 selected declarations and 48516 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and bidirectional 3494-name set probe with insertion/deletion rejection are verified. The 3502 historical strict PASS records cover 3494 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a seven-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
+    "corollary15_complete_validation_sequence": "All 3494 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is nine own modules with 19 explicit public theorems. No canonical module or provenance record is newly selected. All nine modules were strictly rebuilt in dependency order AFTER freezing 3561 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3503 selections and EVERY imported NLS declaration: 26483 selected declarations and 48552 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and bidirectional 3503-name set probe with insertion/deletion rejection are verified. The 3511 historical strict PASS records cover 3503 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a nine-module incremental rebuild retaining prior strict evidence, not a full rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -48647,6 +48777,18 @@
         "Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. Corollary 1.5(i) is now verified; its sharpness clause (ii) for -1<s<0 and uniformity on bounded L2 sets in clause (iii) remain essential. Theorem 1.2(iii) retains full ORIGINAL ACTION complex local uniformity for every s>-1; its s=-1 UNIFORM little-o endpoint and consolidation of the full theorem remain open. Global Hessian nonpositivity, smoothing/PDE conclusions and KdV2 main statements also remain open. Pointwise Corollary 1.5(i) does not resolve the fixed-neighborhood complex uniformity required by Theorem 1.2 at s=-1.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "a853c9c888b5d77f0cd542821141d109fb476a5a",
+      "description": "COMPLETE Corollary 1.5 is VERIFIED with ALL THREE source clauses for ONE ACTUAL physical frequency family G, chosen BEFORE ALL source orders, base potentials, sharpness exponents and bounded sets. Clause(i): on ORIGINAL real mean-zero H^s, -1<=s<=0, one original-norm open neighborhood and one constant control the literal n^(2s+1)-weighted error for ALL positive n; the error tends to zero POINTWISE for s<0, and s=0 has O(1/n). Clause(ii): EVERY stronger exponent gamma<-2s-1 fails locally uniformly in EVERY original H^s neighborhood for -1<s<0, beyond EVERY cutoff; O(1) fails below -1/2. NEW clause(iii): for EVERY bounded subset S of ORIGINAL real mean-zero L2, ONE B>=0 controls n*norm(omega_n(q)-8*pi^3*n^3) for ALL q in S and ALL positive n. EVERY compatible physical Miura chart and the ACTUAL native H1 Hamiltonian frequency are recovered. All source norms, quantifier orders, positive labels and the literal 8*pi^3*n^3 normalization are retained.",
+      "entries": [
+        "COMPLETE Corollary 1.5(ii) is proved in the source proof's precise locally-uniform sense on the ORIGINAL real mean-zero H^s space for EVERY -1<s<0. ONE actual global weak frequency G is chosen BEFORE ALL orders, exponents and base potentials. For EVERY exponent gamma<-2s-1, EVERY base q0, EVERY open neighborhood T of q0 in the ORIGINAL H^s norm, EVERY M>=0 and EVERY cutoff K, there are an ACTUAL real mean-zero q in that SAME T and a positive n>=K with n^(-gamma)*norm(omega_n(q)-8*pi^3*n^3)>M. Thus no stronger O(n^gamma) estimate holds locally uniformly anywhere. In particular O(1) fails in EVERY such neighborhood for -1<s<-1/2. The frequency agrees with EVERY compatible physical Miura chart and the ACTUAL native H1 Hamiltonian frequency. The construction uses proved actual native inverse maps, nearby real action lifts and positive high-label packets; no inverse or asymptotic is assumed. Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. Corollary 1.5(i) and (ii) are now verified; its uniformity on bounded L2 sets in clause (iii) remains essential, so the full corollary stays OPEN. Theorem 1.2(iii) retains full ORIGINAL ACTION complex local uniformity for every s>-1; its s=-1 UNIFORM little-o endpoint and consolidation remain open. Global Hessian nonpositivity, smoothing/PDE conclusions and KdV2 main statements also remain open. Sharpness does not assert that EVERY individual potential has a bad pointwise bound; finite-gap potentials need not. The source proof on PDF page35 explicitly says the improved estimate does not hold locally uniformly on H^s.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. Corollary 1.5(i) and (ii) are now verified; its uniformity on bounded L2 sets in clause (iii) remains essential, so the full corollary stays OPEN. Theorem 1.2(iii) retains full ORIGINAL ACTION complex local uniformity for every s>-1; its s=-1 UNIFORM little-o endpoint and consolidation remain open. Global Hessian nonpositivity, smoothing/PDE conclusions and KdV2 main statements also remain open. Sharpness does not assert that EVERY individual potential has a bad pointwise bound; finite-gap potentials need not. The source proof on PDF page35 explicitly says the improved estimate does not hold locally uniformly on H^s.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -48765,5 +48907,6 @@
   "native_uniform_frequency_decay_record": "NATIVE_UNIFORM_FREQUENCY_DECAY.md",
   "original_uniform_frequency_decay_record": "ORIGINAL_UNIFORM_FREQUENCY_DECAY.md",
   "corollary15_decay_record": "COROLLARY15_DECAY.md",
-  "corollary15_sharpness_record": "COROLLARY15_SHARPNESS.md"
+  "corollary15_sharpness_record": "COROLLARY15_SHARPNESS.md",
+  "corollary15_complete_record": "COROLLARY15_COMPLETE.md"
 }
