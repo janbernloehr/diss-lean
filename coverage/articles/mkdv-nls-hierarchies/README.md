@@ -357,6 +357,30 @@ reviews. The exact validation evidence is in
 [`geometric-multiplicity-validation.json`](geometric-multiplicity-validation.json).
 Whole-paper semantic decomposition and proof coverage remain in progress.
 
+## 2026-11-07 — Corrected nonlocal Hamiltonian recurrence at all smooth orders
+
+For every m>=1 and arbitrary smooth complex periodic profiles satisfying
+T*phi=+phi or T*phi=-phi, the actual physical Hamiltonian gradients now obey
+
+    R*grad S_(2m) = D grad S_(2m-1)
+      + 2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).
+
+The positive sign and the J*phi vector factor are forced by the independently
+constructed Riccati resolvent. Before reflection the general all-order identity
+retains a scalar boundary term c(0). Its actual derivative and genuine physical
+integral are checked. Signed spatial jet reflection and simultaneous field
+negation prove c_even(0)=0 for both printed reflection signs. The result holds
+at every real spatial point, with no finite-gap, real-type or component
+proportionality restriction. The gradients are those of the actual physical
+Hamiltonians, as proved by independent smooth periodic variations.
+
+Six strict modules add 24 theorems and 4 definitions. This is the full smooth
+all-order correction; the original H^(2m-1) extension remains open. The entire
+named Proposition 11 retains partial status, and no full original-domain source
+passage is marked complete on the basis of this smooth proof. Exact evidence
+is in [`smooth-nonlocal-validation.json`](smooth-nonlocal-validation.json).
+Whole-paper proof coverage and semantic decomposition remain in progress.
+
 ## Pinned source
 
 - Authors: Jan-Cornelius Molnar and Yannick Widmer.

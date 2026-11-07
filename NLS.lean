@@ -6828,3 +6828,9 @@ import NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraEigenfunction
 import NLS.KdV.HillL2EigenspaceEquiv
 import NLS.MKdV.MiuraH2Eigenspace
 import NLS.Articles.MKdVNLSHierarchies.GeometricMultiplicity
+import NLS.DifferentialPolynomial.RiccatiResolventReflection
+import NLS.DifferentialPolynomial.SignedSpatialJetReflection
+import NLS.ZakharovShabat.NLSHierarchyNonlocalRecurrence
+import NLS.ZakharovShabat.NLSHierarchyReflectionCoupling
+import NLS.ZakharovShabat.NLSHierarchyReflectionNonlocal
+import NLS.Articles.MKdVNLSHierarchies.NonlocalHamiltonianReflection

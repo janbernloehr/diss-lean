@@ -19,7 +19,7 @@
   "scope_last_line": 1327,
   "named_statement_count": 18,
   "numbered_equation_count": 25,
-  "assertion_count": 124,
+  "assertion_count": 126,
   "passage_count": 241,
   "semantic_inventory_complete": false,
   "assertions": [
@@ -342,10 +342,11 @@
       "obligation": "All three full-source identities, including pure T in i and nonlocal T-even/T-odd recurrence in iii. Part ii uses corrected R.",
       "declarations": [
         "NLS.Articles.MKdVNLSHierarchies.proposition11_i",
-        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.proposition11_iii_smooth_corrected"
       ],
       "existing_details": "source-map.json",
-      "certified_part": "Full original-domain part(i), including pure T, and corrected-R part(ii). Nonlocal part(iii) remains open."
+      "certified_part": "Full original-domain part(i), including pure T, and corrected-R part(ii). Part(iii) now has an all-order corrected proof for arbitrary smooth complex periodic profiles under both T signs: R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)). The actual scalar coupling is independently constructed; its boundary value vanishes for both reflection signs. Extending this equality to the full original H^(2m-1) domain remains open, so the named proposition stays partial."
     },
     {
       "id": "lemma-13",
@@ -1528,6 +1529,36 @@
         "NLS.MKdV.finrank_miuraH2Eigenspace",
         "NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_endpoints",
         "NLS.Articles.MKdVNLSHierarchies.lemma3_independent_eigenfunctions_iff"
+      ]
+    },
+    {
+      "id": "proposition-11-iii-smooth-correction",
+      "kind": "certified_smooth_named_statement_clause",
+      "line": 1201,
+      "page": 17,
+      "status": "proved_correction",
+      "obligation": "For every m>=1 and arbitrary smooth complex periodic profiles with either T*phi=+phi or T*phi=-phi, the actual Hamiltonian gradients satisfy the corrected nonlocal identity at every real spatial point. The right side has +2*i*(J*phi) times the genuine zero-initial integral of R*phi dot grad S_(2m-1); the printed formula has the opposite sign and omits the vector factor. This assertion certifies only the smooth domain. Full original H^(2m-1) extension is separately pending.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.proposition11_iii_smooth_corrected",
+        "NLS.ZakharovShabat.classicalNLSHierarchyGradient_reflection_nonlocal",
+        "NLS.ZakharovShabat.classicalNLSHierarchyCoupling_zero_of_midpointReflection"
+      ]
+    },
+    {
+      "id": "all-order-physical-lenard-coupling",
+      "kind": "certified_proof_support",
+      "line": 1203,
+      "page": 17,
+      "status": "proved",
+      "obligation": "At every hierarchy order and smooth complex periodic pair, the independently constructed Riccati resolvent coefficient c gives R*grad S_(n+2)=D grad S_(n+1)+2*(J*phi)*c. Its actual derivative is i*(R*phi dot grad S_(n+1)), so c(x)=c(0)+i*integral_0^x(...). The exact boundary term is retained before reflection. Signed spatial jet reflection and simultaneous field negation prove c_even(0)=0 under either printed reflection sign. No resolvent identity or primitive equation is assumed as a caller hypothesis.",
+      "declarations": [
+        "NLS.ZakharovShabat.classicalNLSHierarchyGradient_coupled_recurrence",
+        "NLS.ZakharovShabat.hasDerivAt_classicalNLSHierarchyCoupling",
+        "NLS.ZakharovShabat.classicalNLSHierarchyCoupling_eq_integral",
+        "NLS.ZakharovShabat.signedSpatialJetReflection_evenCoupling",
+        "NLS.ZakharovShabat.classicalNLSHierarchyCoupling_zero_of_midpointReflection",
+        "NLS.DifferentialPolynomial.evaluate_signedSpatialJetReflection",
+        "NLS.DifferentialPolynomial.coeff_riccatiResolventCoupling_even_neg_derivation"
       ]
     }
   ],
@@ -3978,7 +4009,10 @@
       "last_line": 1204,
       "source_sha256": "f1ca05dd248fe72006a3127e2c1b8d56b892584120b6f7594fd850cf65024225",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "proposition-11-iii-smooth-correction",
+        "all-order-physical-lenard-coupling"
+      ]
     },
     {
       "id": "passage-217",
@@ -4274,7 +4308,7 @@
   "known_open_obligations": [
     "Theorem6, corrected Corollaries8-9 and corrected Lemma13 named statements are complete with explicit xi sign, source-gradient spectral-domain and Appendix component-order/phase qualifications. Their separately recorded printed proof intermediates still require individual correspondence review; the operator adapter itself is now checked.",
     "Lemma2 now has full original H1 physical matrix clauses and arbitrary AC physical-eigenfunction intertwining; its native interval H2-to-AC input-space identification remains explicit. Full Lemma3, including actual original-domain geometric eigenspace multiplicities, is now proved.",
-    "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
+    "Full Lemma10 higher-action gradient symmetries and recurrences. Proposition11(iii) now has an all-order smooth proof with +2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)); its full original H^(2m-1) extension remains open.",
     "Remaining printed proof intermediates, including squared-Floquet-product algebra and the actual contour-change steps in symmetry proofs, unless individually matched by an existing assertion. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter are now complete.",
     "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
     "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."

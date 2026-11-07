@@ -1,3 +1,9 @@
+import NLS.DifferentialPolynomial.RiccatiResolventReflection
+import NLS.DifferentialPolynomial.SignedSpatialJetReflection
+import NLS.ZakharovShabat.NLSHierarchyNonlocalRecurrence
+import NLS.ZakharovShabat.NLSHierarchyReflectionCoupling
+import NLS.ZakharovShabat.NLSHierarchyReflectionNonlocal
+import NLS.Articles.MKdVNLSHierarchies.NonlocalHamiltonianReflection
 import NLS.KdV.HillL2EigenspaceEquiv
 import NLS.MKdV.MiuraH2Eigenspace
 import NLS.Articles.MKdVNLSHierarchies.GeometricMultiplicity
@@ -4256,11 +4262,77 @@ private def mkdvNLSAuditPrefixes68 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.GeometricMultiplicity,
 ]
 
+private def mkdvNLSAuditPrefixes69 : Array Lean.Name := #[
+  `NLS.DifferentialPolynomial.differentialRiccatiSequence_neg_fields,
+  `NLS.DifferentialPolynomial.differentialRiccatiSeries_neg_fields,
+  `NLS.DifferentialPolynomial.riccatiResolventDenominator_neg_fields,
+  `NLS.DifferentialPolynomial.riccatiResolventCoupling_neg_fields,
+  `NLS.DifferentialPolynomial.rescale_riccatiResolventDenominator,
+  `NLS.DifferentialPolynomial.rescale_riccatiResolventInverse,
+  `NLS.DifferentialPolynomial.rescale_riccatiResolventCoupling,
+  `NLS.DifferentialPolynomial.coeff_riccatiResolventCoupling_even_neg_derivation,
+  `_private.NLS.DifferentialPolynomial.RiccatiResolventReflection,
+  `NLS.DifferentialPolynomial.signedSpatialJetReflection,
+  `NLS.DifferentialPolynomial.signedSpatialJetReflection_C,
+  `NLS.DifferentialPolynomial.signedSpatialJetReflection_X,
+  `NLS.DifferentialPolynomial.signedSpatialJetReflection_spatialDerivative,
+  `NLS.DifferentialPolynomial.evaluate_signedSpatialJetReflection,
+  `_private.NLS.DifferentialPolynomial.SignedSpatialJetReflection,
+  `NLS.ZakharovShabat.nlsResolventCoefficientCoupling,
+  `NLS.ZakharovShabat.nlsResolventCoefficientA_succ,
+  `NLS.ZakharovShabat.nlsResolventCoefficientB_succ,
+  `NLS.ZakharovShabat.spatialDerivative_nlsResolventCoefficientCoupling,
+  `NLS.ZakharovShabat.classicalNLSHierarchyCoupling,
+  `NLS.ZakharovShabat.classicalNLSHierarchyRPairing,
+  `NLS.ZakharovShabat.deriv_classicalNLSHierarchyGradient_resolvent,
+  `NLS.ZakharovShabat.classicalNLSHierarchyGradient_coupled_recurrence,
+  `NLS.ZakharovShabat.hasDerivAt_classicalNLSHierarchyCoupling,
+  `NLS.ZakharovShabat.classicalNLSHierarchyCoupling_eq_integral,
+  `_private.NLS.ZakharovShabat.NLSHierarchyNonlocalRecurrence,
+  `NLS.ZakharovShabat.signedSpatialJetReflection_evenCoupling,
+  `NLS.ZakharovShabat.classicalNLSHierarchyCoupling_midpointReflection,
+  `NLS.ZakharovShabat.classicalNLSHierarchyCoupling_zero_of_midpointReflection,
+  `_private.NLS.ZakharovShabat.NLSHierarchyReflectionCoupling,
+  `NLS.ZakharovShabat.classicalNLSHierarchyGradient_reflection_nonlocal,
+  `_private.NLS.ZakharovShabat.NLSHierarchyReflectionNonlocal,
+  `NLS.Articles.MKdVNLSHierarchies.proposition11_iii_smooth_corrected,
+  `_private.NLS.Articles.MKdVNLSHierarchies.NonlocalHamiltonianReflection,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65, mkdvNLSAuditPrefixes66, mkdvNLSAuditPrefixes67, mkdvNLSAuditPrefixes68] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65, mkdvNLSAuditPrefixes66, mkdvNLSAuditPrefixes67, mkdvNLSAuditPrefixes68, mkdvNLSAuditPrefixes69] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.DifferentialPolynomial.differentialRiccatiSequence_neg_fields,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSeries_neg_fields,
+    ``NLS.DifferentialPolynomial.riccatiResolventDenominator_neg_fields,
+    ``NLS.DifferentialPolynomial.riccatiResolventCoupling_neg_fields,
+    ``NLS.DifferentialPolynomial.rescale_riccatiResolventDenominator,
+    ``NLS.DifferentialPolynomial.rescale_riccatiResolventInverse,
+    ``NLS.DifferentialPolynomial.rescale_riccatiResolventCoupling,
+    ``NLS.DifferentialPolynomial.coeff_riccatiResolventCoupling_even_neg_derivation,
+    ``NLS.DifferentialPolynomial.signedSpatialJetReflection,
+    ``NLS.DifferentialPolynomial.signedSpatialJetReflection_C,
+    ``NLS.DifferentialPolynomial.signedSpatialJetReflection_X,
+    ``NLS.DifferentialPolynomial.signedSpatialJetReflection_spatialDerivative,
+    ``NLS.DifferentialPolynomial.evaluate_signedSpatialJetReflection,
+    ``NLS.ZakharovShabat.nlsResolventCoefficientCoupling,
+    ``NLS.ZakharovShabat.nlsResolventCoefficientA_succ,
+    ``NLS.ZakharovShabat.nlsResolventCoefficientB_succ,
+    ``NLS.ZakharovShabat.spatialDerivative_nlsResolventCoefficientCoupling,
+    ``NLS.ZakharovShabat.classicalNLSHierarchyCoupling,
+    ``NLS.ZakharovShabat.classicalNLSHierarchyRPairing,
+    ``NLS.ZakharovShabat.deriv_classicalNLSHierarchyGradient_resolvent,
+    ``NLS.ZakharovShabat.classicalNLSHierarchyGradient_coupled_recurrence,
+    ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHierarchyCoupling,
+    ``NLS.ZakharovShabat.classicalNLSHierarchyCoupling_eq_integral,
+    ``NLS.ZakharovShabat.signedSpatialJetReflection_evenCoupling,
+    ``NLS.ZakharovShabat.classicalNLSHierarchyCoupling_midpointReflection,
+    ``NLS.ZakharovShabat.classicalNLSHierarchyCoupling_zero_of_midpointReflection,
+    ``NLS.ZakharovShabat.classicalNLSHierarchyGradient_reflection_nonlocal,
+    ``NLS.Articles.MKdVNLSHierarchies.proposition11_iii_smooth_corrected,
+
     ``NLS.KdV.hillSobolevEigenspace,
     ``NLS.KdV.mem_hillSobolevEigenspace,
     ``NLS.KdV.hillL2EigenspaceToOriginal,

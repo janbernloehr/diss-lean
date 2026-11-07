@@ -1220,6 +1220,12 @@ modules = [
     'NLS/KdV/HillL2EigenspaceEquiv.lean',
     'NLS/MKdV/MiuraH2Eigenspace.lean',
     'NLS/Articles/MKdVNLSHierarchies/GeometricMultiplicity.lean',
+    'NLS/DifferentialPolynomial/RiccatiResolventReflection.lean',
+    'NLS/DifferentialPolynomial/SignedSpatialJetReflection.lean',
+    'NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean',
+    'NLS/ZakharovShabat/NLSHierarchyReflectionCoupling.lean',
+    'NLS/ZakharovShabat/NLSHierarchyReflectionNonlocal.lean',
+    'NLS/Articles/MKdVNLSHierarchies/NonlocalHamiltonianReflection.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

@@ -3643,3 +3643,29 @@ have correspondence reviews. The ledger retains all 124 assertion records
 and 241 source passages. Whole-paper semantic decomposition and proof coverage
 remain in progress; the completion gate still rejects 73 open assertions
 and 192 open passages.
+
+
+## 2026-11-07 — All-order smooth nonlocal Hamiltonian correction
+
+For every m>=1 and arbitrary smooth complex periodic profiles satisfying
+T*phi=+phi or T*phi=-phi, the actual Hamiltonian gradients obey
+R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1))
+at every real spatial point. The independently constructed Riccati resolvent
+fixes both the positive sign and the J*phi vector factor. Its scalar coupling
+has the proved actual derivative and genuine zero-initial integral, with the
+boundary value retained before reflection. Signed spatial jet reflection and
+simultaneous field negation prove c_even(0)=0 for both reflection signs.
+The physical gradients are identified by independent periodic variations.
+
+Six strict modules add 24 theorems and 4 definitions. The full original
+H^(2m-1) extension remains open; the named proposition stays partial. No
+original-domain source passage is marked complete from this smooth result.
+Both audits pass: 13,597 article declarations and auxiliaries; 76,832 combined
+NLS declarations. Only propext, Classical.choice and Quot.sound are permitted.
+All 9,169 frozen inputs, 1,184 reused checker-prefix outputs and 9,089
+source-verified incoming compiled modules retain their hashes. Default limits
+and linters are unchanged; no fresh full repository rebuild is claimed.
+Evidence is in smooth-nonlocal-validation.json.
+
+All 126 assertion records and 241 source passages remain in the ledger.
+Whole-paper semantic decomposition and proof coverage remain in progress.

@@ -1677,13 +1677,13 @@
     ]
   },
   "latest_validation": {
-    "report": "geometric-multiplicity-validation.json",
+    "report": "smooth-nonlocal-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
-    "base_commit": "5077d067d79b0298ecf3e3f2e778551793c39d42",
+    "base_commit": "41bebf6c7f4cb88c783d9feac111ecbdb30af6fd",
     "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
-    "article_audit": 13558,
-    "combined_audit": 76795
+    "article_audit": 13597,
+    "combined_audit": 76832
   },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
@@ -1717,7 +1717,7 @@
     "named_statements": 18,
     "numbered_equations": 25,
     "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
-    "initial_semantic_assertions": 124,
+    "initial_semantic_assertions": 126,
     "source_passages": 241
   },
   "full_paper_expansion": {
@@ -1846,5 +1846,14 @@
     "completed_statement": "Full named Lemma3 including actual full-domain geometric multiplicities at every positive-index endpoint, even closed gaps.",
     "method": "Explicit linear equivalence of entire original Dirac H1 and actual Hill H2 eigenspaces; exact native Miura potential coefficients and full H2 recovery. Complex H1 sources and all nonzero frequencies included.",
     "not_claimed": "Zero-frequency eigenspace equivalence; native interval H2-to-AC input-space bridge for Lemma2; full Lemma10 or Proposition11(iii); whole-paper completion."
+  },
+  "whole_paper_smooth_nonlocal_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 24,
+    "new_definitions": 4,
+    "source_modules": 6,
+    "certified": "All-order corrected smooth Proposition11(iii), both reflection signs, every real x. Actual physical gradients, independent coupling, exact primitive and vanishing boundary constant.",
+    "correction": "R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).",
+    "remaining": "Full original H^(2m-1) extension; no source passage is marked fully covered from this smooth-only proof."
   }
 }
