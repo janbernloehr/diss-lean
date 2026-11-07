@@ -1485,6 +1485,16 @@ import NLS.KdV.HillOriginalBirkhoffWeightedRestriction
 import NLS.KdV.HillOriginalBirkhoffSobolevRestriction
 import NLS.KdV.HillOriginalBirkhoffActions
 import NLS.Articles.KdVEstimates.MainBirkhoffEstimates
+import NLS.KdV.ClassicalKdVDifferenceEstimate
+import NLS.KdV.ClassicalKdVUniqueness
+import NLS.KdV.HillWeightedPhysicalLimit
+import NLS.KdV.KdVFourierField
+import NLS.KdV.SmoothKdVFourierEquation
+import NLS.KdV.SmoothKdVWeakEquivalence
+import NLS.KdV.KdVWeakLimit
+import NLS.KdV.KdVPhysicalWeakSolution
+import NLS.KdV.KdVSmoothApproximation
+import NLS.Articles.KdVEstimates.SobolevLimitPersistence
 
 import NLS.ComplexAnalysis.RealComplexificationIdentity
 import NLS.KdV.HillSharpComplement

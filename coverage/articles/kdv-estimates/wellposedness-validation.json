@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "article_id": "kdv-estimates",
+  "date": "2026-11-07",
+  "status": "strict_modules_and_aggregate_passed_axiom_audit_running",
+  "baseline": {
+    "commit": "7fb1a979efaf1396053fa21160d21d0b74d8bbd5",
+    "focused_modules": 1509,
+    "all_focused_sources_byte_identical": true,
+    "source_hash_map_sha256": "05a905de13bffd30fd63b26c18a2b408be9f9581a274b107501fedae3adb326d"
+  },
+  "focused_modules": 1519,
+  "new_modules": [
+    {
+      "module": "NLS.KdV.ClassicalKdVDifferenceEstimate",
+      "source": "NLS/KdV/ClassicalKdVDifferenceEstimate.lean",
+      "sha256": "c278bc403fe91e2490305411c765441d4f0ff19e86b6220da9667f17fe22c4b2",
+      "exit_code": 0,
+      "seconds": 3.86,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.ClassicalKdVUniqueness",
+      "source": "NLS/KdV/ClassicalKdVUniqueness.lean",
+      "sha256": "a71fa1d19de162b076a7fc19d19b7d1d32e9c57532243cf01335acbd6339da36",
+      "exit_code": 0,
+      "seconds": 4.24,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.HillWeightedPhysicalLimit",
+      "source": "NLS/KdV/HillWeightedPhysicalLimit.lean",
+      "sha256": "27af1ac70f23e9b44166844e075b8a6a00a9129f3e1aa81c20f53688c35cd341",
+      "exit_code": 0,
+      "seconds": 3.66,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVFourierField",
+      "source": "NLS/KdV/KdVFourierField.lean",
+      "sha256": "d07fb2aa14da89fa5a7c599dda8e1914bc612c54d1d32d5846861ce9d15e4fd4",
+      "exit_code": 0,
+      "seconds": 4.2,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.SmoothKdVFourierEquation",
+      "source": "NLS/KdV/SmoothKdVFourierEquation.lean",
+      "sha256": "e42f47bfd4aff179a4976df43a1e2fd512f154b06f39e78ecbd786e774794db5",
+      "exit_code": 0,
+      "seconds": 3.44,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.SmoothKdVWeakEquivalence",
+      "source": "NLS/KdV/SmoothKdVWeakEquivalence.lean",
+      "sha256": "77f4cbe2bd98b141b28b2dcc9df4c4c02ae22bc0c77cf0cfb48a7d0c79987766",
+      "exit_code": 0,
+      "seconds": 4.77,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVWeakLimit",
+      "source": "NLS/KdV/KdVWeakLimit.lean",
+      "sha256": "4aaffee54cb84731b464b4bf8681d58066ee5a1a8877fd4c9d0edd43a26f175f",
+      "exit_code": 0,
+      "seconds": 4.32,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVPhysicalWeakSolution",
+      "source": "NLS/KdV/KdVPhysicalWeakSolution.lean",
+      "sha256": "b3bb0b204e40791af50efb445d3b178bd8df7ff2e78c98d8df6b36eaa6f4382a",
+      "exit_code": 0,
+      "seconds": 4.54,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVSmoothApproximation",
+      "source": "NLS/KdV/KdVSmoothApproximation.lean",
+      "sha256": "0841fafc47d8980a6a8cc9a8c18bcad7765b28010e70dc9184556f65d3148451",
+      "exit_code": 0,
+      "seconds": 3.9,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.Articles.KdVEstimates.SobolevLimitPersistence",
+      "source": "NLS/Articles/KdVEstimates/SobolevLimitPersistence.lean",
+      "sha256": "33976ba6e12dac8d862e36dbc339636bcc8df368968a2d4737bccc94ec433071",
+      "exit_code": 0,
+      "seconds": 2.53,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "aggregate": {
+    "exit_code": 0,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "sorry_or_new_axioms": false,
+  "raised_proof_limits": false,
+  "disabled_linters": false,
+  "proved": [
+    {
+      "declaration": "NLS.KdV.IsSmoothPhysicalKdVTrajectory.eq_of_eq_at",
+      "result": "Real smooth periodic physical KdV trajectories equal at one time agree at every real time. The PDE yields the exact difference-energy coefficient 6*v_x-3*u_x, bound 18*R, and compact-time Gronwall uniqueness."
+    },
+    {
+      "declaration": "NLS.KdV.isFourierWeakKdVCoefficients_iff",
+      "result": "An independently defined continuous-L2, integrated Fourier weak equation is equivalent to its mode derivative identities, with absolutely convergent quadratic convolutions and physical frequency 2*pi*n."
+    },
+    {
+      "declaration": "NLS.KdV.isFourierWeakPhysicalKdV_iff_equation",
+      "result": "For profiles differentiable in the continuous-function norm, smooth and periodic in space, the integrated Fourier equation is equivalent to the actual physical differential equation. Reality and continuous first-derivative families give the classical uniqueness regularity class."
+    },
+    {
+      "declaration": "NLS.KdV.isFourierWeakKdVTrajectory_of_locallyUniformLimit",
+      "result": "The independent weak equation on the original real physical L2 potential space is closed under locally uniform L2 limits with continuous limit. The proof uses continuity of the L2 bilinear coefficient pairing, compact-time bounds and dominated convergence."
+    },
+    {
+      "declaration": "NLS.KdV.IsKdVSolutionBySmoothPhysicalApproximation.fourierWeak",
+      "result": "Actual smooth physical approximation implies the independent integrated Fourier weak equation and the prior classical-approximation conservation solution concept. Both directions are not asserted at low regularity."
+    },
+    {
+      "declaration": "NLS.KdV.IsKdVSolutionByClassicalApproximation.continuous",
+      "result": "The previous classical-approximation solution concept implies continuity in the original physical L2 norm."
+    },
+    {
+      "declaration": "NLS.KdV.exists_hillRealWeighted_of_bounded_tendsto",
+      "result": "A uniformly bounded sequence in any original real weighted space converging in physical L2 has a limit in that weighted space, with the same bound; limit membership is concluded, not assumed."
+    },
+    {
+      "declaration": "NLS.Articles.KdVEstimates.sobolev_membership_of_convergent_initial_approximation",
+      "result": "For m>=1, mean-zero classical H^m approximants with H^m-convergent initial data and physical L2 convergence at each time have a physical limit in H^m at every time, with a uniform-in-time H^m bound. The limit path is not typed in H^m as a premise."
+    }
+  ],
+  "remaining_obligations": [
+    "Construct genuine global KdV trajectories for every datum in the corollary Sobolev domains and the required classical approximating families; no general-data flow existence is asserted by these modules.",
+    "Prove uniqueness for the full intended low-regularity weak or classical-approximation class, rather than only the smooth physical class.",
+    "Prove strong H^m continuity and continuous dependence of the limit flow; bounded H^m membership alone does not establish these claims.",
+    "Identify the intended full spacetime distributional weak formulation with the integrated Fourier equation, and prove the converse from arbitrary intended weak solutions to classical approximation.",
+    "The broad existing PeriodicKdVJet approximation class is not asserted equivalent to the new independent weak equation. Smooth physical approximation is explicitly bridged in the forward direction."
+  ],
+  "source_corrections": {
+    "A.3": "The radius-six correction to the printed radius-twelve strip and its formal zero-mode obstruction are unchanged.",
+    "D.1": "The nonempty-real-slice qualification and its necessity proof are unchanged.",
+    "additional_source_corrections": []
+  },
+  "whole_paper_verified": false,
+  "axiom_audit": {
+    "status": "running"
+  },
+  "fresh_complete_focused_script_run": false,
+  "full_lake_rebuild_or_examples_run": false
+}

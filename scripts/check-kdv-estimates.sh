@@ -239,6 +239,7 @@ modules+=(NLS/KdV/HillOriginalRealBirkhoffCoordinates NLS/Poisson/RealCartesianS
 modules+=(NLS/ComplexAnalysis/RealComplexificationIdentity NLS/KdV/HillSharpComplement NLS/Articles/KdVEstimates/Lemma7 NLS/Articles/KdVEstimates/AppendixA3 NLS/Articles/KdVEstimates/AppendixD1)
 modules+=(NLS/SequenceSpaces/RealWeightedNatPairInclusion NLS/SequenceSpaces/SobolevCorollaryWeights NLS/SequenceSpaces/ConservedSobolevBootstrap NLS/KdV/HillRealWeightedInclusion NLS/KdV/HillRealSobolevSourceNorm NLS/KdV/HillRealSobolevBirkhoffTarget NLS/KdV/HillOriginalBirkhoffRealSobolevRestriction NLS/KdV/HillBirkhoffIntegerLowerNorms NLS/Articles/KdVEstimates/RealSobolevCorollary NLS/Articles/KdVEstimates/DynamicalCorollaryEstimate)
 modules+=(NLS/ComplexAnalysis/QuadraticHillKdVFlux NLS/KdV/ClassicalKdVJet NLS/KdV/SmoothPeriodicKdVJet NLS/KdV/ClassicalKdVConservation NLS/KdV/ClassicalKdVPhysicalAdapter NLS/KdV/KdVClassicalApproximation NLS/KdV/KdVWeightedApproximation NLS/Articles/KdVEstimates/DynamicalCorollary)
+modules+=(NLS/KdV/ClassicalKdVDifferenceEstimate NLS/KdV/ClassicalKdVUniqueness NLS/KdV/HillWeightedPhysicalLimit NLS/KdV/KdVFourierField NLS/KdV/SmoothKdVFourierEquation NLS/KdV/SmoothKdVWeakEquivalence NLS/KdV/KdVWeakLimit NLS/KdV/KdVPhysicalWeakSolution NLS/KdV/KdVSmoothApproximation NLS/Articles/KdVEstimates/SobolevLimitPersistence)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

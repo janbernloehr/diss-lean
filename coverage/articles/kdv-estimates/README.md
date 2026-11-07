@@ -41,13 +41,26 @@ target-norm-conservation premise. Original Sobolev-norm approximation is
 proved sufficient for the physical-L2 approximation used here.
 
 This solution concept is explicit in `IsKdVSolutionByClassicalApproximation`.
-The corollary trajectory is typed in the stated Sobolev space throughout.
-Existence/uniqueness and regularity persistence for every Sobolev datum, and
-equivalence with arbitrary distributional solution formulations, are separate
-background obligations;
-they are not asserted by this milestone. This is a scope qualification,
-not an additional source correction. The A.3 and D.1 corrections above remain
-unchanged.
+The new [flow-foundation validation](wellposedness-validation.json) proves:
+
+- Uniqueness of real smooth physical trajectories, from the actual PDE and
+  the difference-energy bound `18*R`, in both time directions.
+- An independent integrated Fourier weak equation on physical L2, with an
+  absolutely convergent quadratic convolution and exact `2*pi*n` multiplier.
+  It is equivalent to the physical PDE for smooth profiles and closed under
+  locally uniform L2 limits. Smooth physical approximation implies this weak
+  equation and the previous conservation solution concept.
+- Sobolev membership and a uniform-in-time bound for physical L2 limits of
+  classical H^m approximants with H^m-convergent initial data. Membership of
+  the limit in H^m is now a conclusion in this theorem.
+
+General-data global flow existence, uniqueness in the full low-regularity
+class, strong H^m continuity and continuous dependence, and equivalence with
+all intended spacetime distributional weak solutions remain open. In
+particular, a phase rotation is not identified as KdV without the actual PDE
+bridge, and existence of classical approximants is not supplied as a proof.
+These are scope qualifications, not source corrections. The A.3 and D.1
+corrections above remain unchanged.
 
 The exact leading coefficients in Lemma 8 and Theorem 4, the remaining named
 results and unnumbered claims still need source comparison and missing proofs.

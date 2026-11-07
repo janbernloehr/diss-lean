@@ -19560,5 +19560,59 @@
   },
   "whole_paper_verified": false,
   "whole_paper_coverage": "coverage/articles/kdv-estimates/whole-paper.json",
-  "dynamical_corollary_completed_for_declared_solution_concept": true
+  "dynamical_corollary_completed_for_declared_solution_concept": true,
+  "kdv_flow_foundations": {
+    "status": "validated_partial_flow_foundations",
+    "validation_report": "coverage/articles/kdv-estimates/wellposedness-validation.json",
+    "proved": [
+      {
+        "declaration": "NLS.KdV.IsSmoothPhysicalKdVTrajectory.eq_of_eq_at",
+        "result": "Real smooth periodic physical KdV trajectories equal at one time agree at every real time. The PDE yields the exact difference-energy coefficient 6*v_x-3*u_x, bound 18*R, and compact-time Gronwall uniqueness."
+      },
+      {
+        "declaration": "NLS.KdV.isFourierWeakKdVCoefficients_iff",
+        "result": "An independently defined continuous-L2, integrated Fourier weak equation is equivalent to its mode derivative identities, with absolutely convergent quadratic convolutions and physical frequency 2*pi*n."
+      },
+      {
+        "declaration": "NLS.KdV.isFourierWeakPhysicalKdV_iff_equation",
+        "result": "For profiles differentiable in the continuous-function norm, smooth and periodic in space, the integrated Fourier equation is equivalent to the actual physical differential equation. Reality and continuous first-derivative families give the classical uniqueness regularity class."
+      },
+      {
+        "declaration": "NLS.KdV.isFourierWeakKdVTrajectory_of_locallyUniformLimit",
+        "result": "The independent weak equation on the original real physical L2 potential space is closed under locally uniform L2 limits with continuous limit. The proof uses continuity of the L2 bilinear coefficient pairing, compact-time bounds and dominated convergence."
+      },
+      {
+        "declaration": "NLS.KdV.IsKdVSolutionBySmoothPhysicalApproximation.fourierWeak",
+        "result": "Actual smooth physical approximation implies the independent integrated Fourier weak equation and the prior classical-approximation conservation solution concept. Both directions are not asserted at low regularity."
+      },
+      {
+        "declaration": "NLS.KdV.IsKdVSolutionByClassicalApproximation.continuous",
+        "result": "The previous classical-approximation solution concept implies continuity in the original physical L2 norm."
+      },
+      {
+        "declaration": "NLS.KdV.exists_hillRealWeighted_of_bounded_tendsto",
+        "result": "A uniformly bounded sequence in any original real weighted space converging in physical L2 has a limit in that weighted space, with the same bound; limit membership is concluded, not assumed."
+      },
+      {
+        "declaration": "NLS.Articles.KdVEstimates.sobolev_membership_of_convergent_initial_approximation",
+        "result": "For m>=1, mean-zero classical H^m approximants with H^m-convergent initial data and physical L2 convergence at each time have a physical limit in H^m at every time, with a uniform-in-time H^m bound. The limit path is not typed in H^m as a premise."
+      }
+    ],
+    "remaining_obligations": [
+      "Construct genuine global KdV trajectories for every datum in the corollary Sobolev domains and the required classical approximating families; no general-data flow existence is asserted by these modules.",
+      "Prove uniqueness for the full intended low-regularity weak or classical-approximation class, rather than only the smooth physical class.",
+      "Prove strong H^m continuity and continuous dependence of the limit flow; bounded H^m membership alone does not establish these claims.",
+      "Identify the intended full spacetime distributional weak formulation with the integrated Fourier equation, and prove the converse from arbitrary intended weak solutions to classical approximation.",
+      "The broad existing PeriodicKdVJet approximation class is not asserted equivalent to the new independent weak equation. Smooth physical approximation is explicitly bridged in the forward direction."
+    ],
+    "general_flow_existence_verified": false,
+    "full_weak_uniqueness_verified": false,
+    "strong_sobolev_persistence_verified": false,
+    "full_weak_solution_equivalence_verified": false,
+    "source_corrections": {
+      "A.3": "The radius-six correction to the printed radius-twelve strip and its formal zero-mode obstruction are unchanged.",
+      "D.1": "The nonempty-real-slice qualification and its necessity proof are unchanged.",
+      "additional_source_corrections": []
+    }
+  }
 }

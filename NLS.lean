@@ -6466,3 +6466,13 @@ import NLS.KdV.ClassicalKdVPhysicalAdapter
 import NLS.KdV.KdVClassicalApproximation
 import NLS.KdV.KdVWeightedApproximation
 import NLS.Articles.KdVEstimates.DynamicalCorollary
+import NLS.KdV.ClassicalKdVDifferenceEstimate
+import NLS.KdV.ClassicalKdVUniqueness
+import NLS.KdV.HillWeightedPhysicalLimit
+import NLS.KdV.KdVFourierField
+import NLS.KdV.SmoothKdVFourierEquation
+import NLS.KdV.SmoothKdVWeakEquivalence
+import NLS.KdV.KdVWeakLimit
+import NLS.KdV.KdVPhysicalWeakSolution
+import NLS.KdV.KdVSmoothApproximation
+import NLS.Articles.KdVEstimates.SobolevLimitPersistence
