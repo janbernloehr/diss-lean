@@ -3436,6 +3436,14 @@ modules=(
   NLS/ZakharovShabat/SourceDiagonalCancellationFractionalBound
   NLS/KdV/PhysicalFractionalDiagonalCancellation
   NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalCancellationDecay
+  NLS/SequenceSpaces/WeightedFrequencyRemainders
+  NLS/KdV/PhysicalSharpDiagonalCancellation
+  NLS/KdV/PhysicalSharpFrequencyDecayData
+  NLS/KdV/PhysicalSharpOffDiagonalParameterization
+  NLS/KdV/PhysicalSharpFrequencyDecay
+  NLS/KdV/PhysicalFrequencyDecayPullback
+  NLS/KdV/PhysicalHighRegularityFrequencyDecay
+  NLS/Articles/KdVKdV2Frequencies/Theorem12NativeFullFrequencyDecay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
