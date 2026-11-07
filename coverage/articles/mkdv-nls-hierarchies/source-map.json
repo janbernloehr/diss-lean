@@ -1677,13 +1677,13 @@
     ]
   },
   "latest_validation": {
-    "report": "invariant-primitive-validation.json",
+    "report": "whole-line-matrix-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
-    "base_commit": "334579e6fb05cfac349f0a25d87640cebf24005c",
+    "base_commit": "241a2f8e7c44825badf0b66ee4f375335555869a",
     "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
-    "article_audit": 13404,
-    "combined_audit": 76641
+    "article_audit": 13481,
+    "combined_audit": 76718
   },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
@@ -1717,7 +1717,7 @@
     "named_statements": 18,
     "numbered_equations": 25,
     "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
-    "initial_semantic_assertions": 118,
+    "initial_semantic_assertions": 120,
     "source_passages": 241
   },
   "full_paper_expansion": {
@@ -1810,6 +1810,22 @@
       "Full Lemma10 and nonlocal Proposition11(iii), including exact higher-action gradient recurrences and original Sobolev endpoint domains. Corollaries8-9 have actual full-primitive interfaces with no assumed gradient identification.",
       "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
       "Lemma13 full fundamental matrices at all real spatial points and the p5/Appendix-vs-Section2 operator adapter. Full unit-interval matrices and all endpoint monodromy matrices now have original complex H0 P/PT/arbitrary-phase interfaces.",
+      "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
+      "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
+    ]
+  },
+  "whole_paper_whole_line_matrix_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 41,
+    "new_definitions": 8,
+    "source_modules": 8,
+    "completed_statement": "Lemma13 at every real spatial point on original complex H0 (hence real-type H0), with explicit component-order/phase correction and a real-type printed-statement counterexample.",
+    "convention_adapter": "Page5/Appendix upper-phi2 equals Section2 at P*phi; lambda and integer labels reflect and signed slots exchange. Either correct the local operator order or use the proved inverse phase.",
+    "remaining": [
+      "Theorem6, corrected Corollaries8-9 and corrected Lemma13 named statements are complete with explicit xi sign, source-gradient spectral-domain and Appendix component-order/phase qualifications. Their separately recorded printed proof intermediates still require individual correspondence review; the operator adapter itself is now checked.",
+      "Full Lemma10 and nonlocal Proposition11(iii), including exact higher-action gradient recurrences and original Sobolev endpoint domains. Corollaries8-9 have actual full-primitive interfaces with no assumed gradient identification.",
+      "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
+      "Remaining printed proof intermediates, including squared-Floquet-product algebra and the actual contour-change steps in symmetry proofs, unless individually matched by an existing assertion. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter are now complete.",
       "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
       "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
     ]

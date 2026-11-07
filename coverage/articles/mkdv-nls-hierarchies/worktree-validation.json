@@ -38151,10 +38151,10 @@
   },
   "merge_validation": "merge-validation.json",
   "latest_full_paper_progress": {
-    "report": "invariant-primitive-validation.json",
+    "report": "whole-line-matrix-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
     "date": "2026-11-07",
-    "note": "Earlier fields are historical; current proof scope and inherited merged-main validation are in the invariant-primitive report."
+    "note": "Earlier fields are historical; current proof scope and inherited merged-main validation are in the whole-line-matrix report."
   }
 }

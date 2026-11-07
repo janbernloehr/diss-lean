@@ -1204,6 +1204,14 @@ modules = [
     'NLS/ZakharovShabat/SourceAbelianPrimitiveFilledSymmetries.lean',
     'NLS/ZakharovShabat/SourcePrimitiveCollapsedDomain.lean',
     'NLS/Articles/MKdVNLSHierarchies/PrimitiveValueSymmetries.lean',
+    'NLS/FunctionalAnalysis/FloquetPeriodUniqueness.lean',
+    'NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean',
+    'NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean',
+    'NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean',
+    'NLS/ZakharovShabat/ClassicalDiagonalConstantMonodromy.lean',
+    'NLS/ZakharovShabat/AppendixOperatorConvention.lean',
+    'NLS/ZakharovShabat/AppendixPhaseConventionCounterexample.lean',
+    'NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

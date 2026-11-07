@@ -19,7 +19,7 @@
   "scope_last_line": 1327,
   "named_statement_count": 18,
   "numbered_equation_count": 25,
-  "assertion_count": 118,
+  "assertion_count": 120,
   "passage_count": 241,
   "semantic_inventory_complete": false,
   "assertions": [
@@ -345,19 +345,19 @@
       "label": "Lemma 13",
       "line": 1291,
       "page": 19,
-      "status": "partial",
+      "status": "proved_correction_and_counterexample",
       "obligation": "All three actual fundamental-matrix symmetries, every real x and lambda, original real-type L2 source, plus reflected monodromy. Unit-interval continuous profiles alone are insufficient.",
       "declarations": [
-        "NLS.ZakharovShabat.l2Monodromy_sourceComponentSwap",
-        "NLS.ZakharovShabat.l2Monodromy_sourceSpatialReflection",
-        "NLS.ZakharovShabat.l2Monodromy_sourceMidpointReflection",
-        "NLS.ZakharovShabat.l2Monodromy_sourceReciprocalScaling",
-        "NLS.ZakharovShabat.l2FundamentalMatrix_sourceComponentSwap",
-        "NLS.ZakharovShabat.l2FundamentalMatrix_sourceSpatialReflection",
-        "NLS.ZakharovShabat.l2FundamentalMatrix_sourceReciprocalScaling"
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_componentSwap",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_phase",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_phase_entries",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_reflected_monodromy",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_phase_false"
       ],
       "existing_details": "source-map.json",
-      "certified_part": "All actual endpoint monodromy entries under P, pure T, combined PT and every nonzero complex reciprocal scaling are proved on the original complex H0 space in the Section 2 operator convention. This includes all real phases and real-type sources. Full fundamental matrices at every real x and the separate Appendix operator convention adapter remain open. The actual full unit-interval fundamental matrices now have P, combined PT and arbitrary reciprocal scaling symmetries at original complex H0 sources; all-real-x full matrix continuation and Appendix operator matching remain open."
+      "certified_part": "All full fundamental-matrix P, pure T and arbitrary-phase identities hold at every real spatial point, spectral parameter and original complex H0 source, hence on the original real-type H0 domain. The matrices are actual physical normalized solutions, with exact inverse monodromy and half-phase conjugating matrix. For the Section2 upper-phi1 operator the printed matrix forms hold. Retaining the local Appendix upper-phi2 operator requires the inverse phase factor; P/T and reflected-monodromy forms remain true. An actual real-type H0 witness from the smooth constant profile(1,1) refutes the literal Appendix operator combined with the printed positive phase. Both interpretations and the signed spectral-label adapter are explicit."
     },
     {
       "id": "lemma-14",
@@ -745,9 +745,15 @@
       "kind": "unnumbered_or_proof_claim",
       "line": 260,
       "page": 5,
-      "status": "pending_individual_correspondence_review",
-      "obligation": "Reconcile swapped off-diagonal potential entries across p5, p8 and Appendix A, including spectral reflection and integer labels.",
-      "declarations": []
+      "status": "proved_correction_and_counterexample",
+      "obligation": "The page5 and Appendix upper-phi2 operator is exactly the Section2 upper-phi1 operator at P*phi, including actual physical source fields. The fundamental-matrix adapter reflects lambda and conjugates by J; signed integer labels reverse n and interchange the +/- slots. Its actual phase factor is inverse to the printed Appendix one. A real-type original H0 counterexample refutes combining that local operator literally with the printed positive phase. Either use the Section2 component order with the printed matrices, or retain the local operator and use the proved inverse phase; both are checked.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.appendix_operator_source_adapter",
+        "NLS.Articles.MKdVNLSHierarchies.appendix_fundamental_spectral_adapter",
+        "NLS.Articles.MKdVNLSHierarchies.appendix_signed_label_adapter",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_phase_false"
+      ]
     },
     {
       "id": "proof1-intro-factors",
@@ -1081,9 +1087,17 @@
       "kind": "unnumbered_or_proof_claim",
       "line": 1285,
       "page": 19,
-      "status": "pending_individual_correspondence_review",
-      "obligation": "All appendix identities identify actual normalized whole-line fundamental solutions, including inverse monodromy at reflected times.",
-      "declarations": []
+      "status": "proved_correction",
+      "obligation": "All full matrix identities identify the actual original L2 normalized whole-line fundamental solutions, at every positive/negative time and every period seam, with true determinant-one inverse monodromy at reflected times. The local Appendix component-order/phase mismatch is explicitly corrected and refuted as printed by a real-type source, rather than silently switching operator conventions.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_componentSwap",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_phase",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.appendix_operator_source_adapter",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_corrected",
+        "NLS.ZakharovShabat.l2WholeLineSolution_unique_AC",
+        "NLS.ZakharovShabat.l2WholeLineSolution_eq_integral"
+      ]
     },
     {
       "id": "lemma14-proof",
@@ -1249,8 +1263,8 @@
       "kind": "certified_partial_named_clause",
       "line": 1305,
       "page": 19,
-      "status": "proved_partial_source_interface",
-      "obligation": "Original complex H0 actual full monodromy endpoint matrices under P, pure T, combined PT and nonzero complex reciprocal scaling, in the literal Section2 convention; this proves the endpoint algebra needed for the corrected boundary quotient. Full-real-x Appendix source matching remains open.",
+      "status": "proved_correction",
+      "obligation": "All actual endpoint monodromy matrices at original complex H0 sources under P, pure T, combined PT and nonzero complex reciprocal scaling in the Section2 convention, plus the explicit Appendix operator adapter and its inverse phase. All-real-x full matrices are now proved by the later milestone.",
       "declarations": [
         "NLS.ZakharovShabat.l2Monodromy_sourceComponentSwap",
         "NLS.ZakharovShabat.l2Monodromy_sourceSpatialReflection",
@@ -1333,8 +1347,8 @@
       "kind": "certified_partial_named_clause",
       "line": 1291,
       "page": 19,
-      "status": "proved_partial_source_interface",
-      "obligation": "Actual normalized full fundamental matrices on the complete unit interval for original complex H0 sources: P, combined PT and arbitrary nonzero complex reciprocal scaling. This strengthens endpoint-only proofs; it does not assert all-real-x full matrix or Appendix operator-convention matching.",
+      "status": "proved",
+      "obligation": "Actual normalized full unit-interval fundamental matrices at original complex H0 sources under P, combined PT and arbitrary nonzero complex reciprocal scaling. The actual whole-line extension and explicit Appendix operator correspondence are now proved by the later full matrix milestone.",
       "declarations": [
         "NLS.ZakharovShabat.l2FundamentalMatrix_sourceComponentSwap",
         "NLS.ZakharovShabat.l2FundamentalMatrix_sourceSpatialReflection",
@@ -1397,6 +1411,37 @@
         "NLS.Articles.MKdVNLSHierarchies.exists_corollary8_corrected",
         "NLS.Articles.MKdVNLSHierarchies.corollary8_collapsed_source_domain_obstruction",
         "NLS.ZakharovShabat.source_filled_primitive_zero_slice_not_nhds"
+      ]
+    },
+    {
+      "id": "lemma13-full-original-H0-matrices",
+      "kind": "certified_named_statement_with_convention_correction",
+      "line": 1291,
+      "page": 19,
+      "status": "proved_correction",
+      "obligation": "Actual full fundamental matrices for every real x, every spectral parameter and every original complex H0 source. Literal J, half-phase R and PJ/reflected-time/inverse-monodromy conjugacies and explicit entries are proved for the Section2 operator; the literal local Appendix operator has the complete corrected inverse-phase form. The original real-type domain is included without smoothness or generic-entry hypotheses.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_componentSwap",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_phase",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_phase_entries",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_reflected_monodromy",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_corrected"
+      ]
+    },
+    {
+      "id": "appendix-positive-phase-counterexample",
+      "kind": "certified_source_convention_counterexample",
+      "line": 1298,
+      "page": 19,
+      "status": "proved_correction_and_counterexample",
+      "obligation": "At an actual original real-type H0 source from smooth constant physical profile(1,1), lambda0=0,x=1,alpha=pi/2, the literal local Appendix upper-phi2 operator has upper-right monodromy+sinh(1), while the printed positive phase predicts-sinh(1). The source convention must be repaired; exact spectral reflection and signed-index/endpoint adapters for page5/Appendix are proved.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_phase_false",
+        "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.appendix_signed_label_adapter",
+        "NLS.ZakharovShabat.appendixRealConstantWitness_realType",
+        "NLS.ZakharovShabat.appendixRealConstantWitness_monodromy"
       ]
     }
   ],
@@ -3870,10 +3915,23 @@
       "first_line": 1281,
       "last_line": 1287,
       "source_sha256": "b7a982eb1f03242b7be5284326cc2759160917b4e130cca0a1c12cd29759a0c0",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved_with_correction",
       "assertion_ids": [
         "lemma13-ode-identification"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "operator-conventions",
+          "lemma13-ode-identification"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.appendix_operator_source_adapter",
+          "NLS.Articles.MKdVNLSHierarchies.appendix_fundamental_spectral_adapter",
+          "NLS.Articles.MKdVNLSHierarchies.appendix_signed_label_adapter"
+        ],
+        "comparison": "The local upper-phi2 operator is identified exactly as the Section2 operator at P*phi, with actual physical source fields and the real-line normalized fundamental matrix. The spectral and signed-slot/index adapter is explicit; the subsequent positive-phase mismatch is corrected rather than hidden."
+      }
     },
     {
       "id": "passage-235",
@@ -3881,8 +3939,12 @@
       "first_line": 1289,
       "last_line": 1289,
       "source_sha256": "4a96fe4b26a95ea0d694ae4daee2dac511a4efeecb305a6d3de50db891ae1175",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "nonmathematical_metadata",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "comparison": "Continuation of a bibliographic attribution to reference[3] and a cross-reference to Section4; no additional mathematical assertion beyond the adjacent fully tracked Lemma13 statement."
+      }
     },
     {
       "id": "passage-236",
@@ -3890,11 +3952,30 @@
       "first_line": 1291,
       "last_line": 1300,
       "source_sha256": "9aef2726b0eda4a8070819cd1d8feae917bd06b7fce56fdac0df9fa7e04fb13d",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved_with_correction",
       "assertion_ids": [
         "lemma-13",
-        "original-L2-unit-fundamental-symmetries"
-      ]
+        "original-L2-unit-fundamental-symmetries",
+        "lemma13-full-original-H0-matrices",
+        "appendix-positive-phase-counterexample"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma-13",
+          "lemma13-full-original-H0-matrices",
+          "appendix-positive-phase-counterexample"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma13_componentSwap",
+          "NLS.Articles.MKdVNLSHierarchies.lemma13_phase",
+          "NLS.Articles.MKdVNLSHierarchies.lemma13_phase_entries",
+          "NLS.Articles.MKdVNLSHierarchies.lemma13_reflection",
+          "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_corrected",
+          "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_phase_false"
+        ],
+        "comparison": "The entire original real-type H0/all-real-x matrix statement is covered by a stronger original complex H0 proof. Keeping the Section2 operator yields the printed J/half-phase/PJ matrix forms; retaining the literal local Appendix operator requires inverse phase, with P/T unchanged. A real-type counterexample refutes the literal positive-phase combination."
+      }
     },
     {
       "id": "passage-237",
@@ -3902,10 +3983,20 @@
       "first_line": 1302,
       "last_line": 1306,
       "source_sha256": "404aee3b142da840085725bab879673f0759602640448e09d398bffc05ac2ea9",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "original-L2-endpoint-monodromy-symmetries"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "original-L2-endpoint-monodromy-symmetries"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma13_reflected_monodromy"
+        ],
+        "comparison": "The exact reflected endpoint monodromy entries hold on original complex H0 and hence on the original real-type domain. The local Appendix version also holds, by appendixMonodromy_midpointReflection; the phase convention does not alter this T identity."
+      }
     },
     {
       "id": "passage-238",
@@ -3949,10 +4040,10 @@
     }
   ],
   "known_open_obligations": [
-    "Theorem6 and corrected Corollaries8-9 named statements are now complete in the literal Section2 convention, with explicit xi sign and source-gradient spectral-domain qualifications. Their separately recorded printed proof intermediates and the p5/Appendix operator adapter still require individual correspondence review.",
+    "Theorem6, corrected Corollaries8-9 and corrected Lemma13 named statements are complete with explicit xi sign, source-gradient spectral-domain and Appendix component-order/phase qualifications. Their separately recorded printed proof intermediates still require individual correspondence review; the operator adapter itself is now checked.",
     "Full Lemma10 and nonlocal Proposition11(iii), including exact higher-action gradient recurrences and original Sobolev endpoint domains. Corollaries8-9 have actual full-primitive interfaces with no assumed gradient identification.",
     "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
-    "Lemma13 full fundamental matrices at all real spatial points and the p5/Appendix-vs-Section2 operator adapter. Full unit-interval matrices and all endpoint monodromy matrices now have original complex H0 P/PT/arbitrary-phase interfaces.",
+    "Remaining printed proof intermediates, including squared-Floquet-product algebra and the actual contour-change steps in symmetry proofs, unless individually matched by an existing assertion. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter are now complete.",
     "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
     "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
   ]

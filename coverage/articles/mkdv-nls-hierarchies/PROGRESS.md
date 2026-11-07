@@ -3547,3 +3547,39 @@ ledger has 118 assertion records and all 241 source passages. Whole-paper
 semantic decomposition and proof coverage remain in progress; separately
 recorded printed proof intermediates, Lemmas2,3,10,13, Proposition11(iii)
 and remaining background claims still need work.
+
+
+## 2026-11-07 — Full real-line Lemma 13 and explicit operator convention adapter
+
+All full fundamental matrices have their actual P/T/arbitrary-phase
+identities at every real spatial point, including negative periods and every
+seam, on original complex H0 and hence original real-type H0. Exact invertible
+Floquet transport extends the actual unit-interval solutions. Literal J,
+half-phase and PJ/reflected-time/true-inverse-monodromy conjugacies, explicit
+entries and the reflected endpoint monodromy are checked without a smoothness
+or generic-entry assumption.
+
+The page5/Appendix upper-phi2 operator is exactly Section2 at P*phi, including
+its actual physical source fields. The fundamental matrix reflects lambda
+and conjugates by J; signed integer labels reverse n and swap +/- slots.
+Keeping the Section2 component order gives the printed Lemma13 matrices.
+Retaining the literal local Appendix operator instead gives the complete
+corrected inverse-phase form, with P/T unchanged. An actual original
+real-type H0 witness from smooth physical profile(1,1) at lambda0=0,x=1,
+alpha=pi/2 has upper-right monodromy+sinh(1); the printed positive phase
+predicts-sinh(1). Both interpretations and this obstruction are formally proved.
+
+Eight fresh strict modules add 41 theorems and 8 definitions. Aggregate
+compilation and both transitive audits pass: 13,481 article declarations
+and auxiliaries; 76,718 combined NLS declarations. Only propext,
+Classical.choice and Quot.sound are permitted. All 9,155 frozen inputs,
+1,168 reused checker-prefix outputs and 9,089 source-verified incoming
+compiled modules retain their hashes. Limits and linters are unchanged; no
+full fresh repository rebuild is claimed. Exact evidence is recorded in
+whole-line-matrix-validation.json.
+
+Three further complete mathematical passages and one bibliographic metadata
+passage have correspondence reviews. All 120 assertion records and 241
+source passages remain in the ledger. Whole-paper semantic decomposition
+and proof coverage remain in progress, including Lemmas2,3,10,
+Proposition11(iii), proof intermediates and remaining background claims.

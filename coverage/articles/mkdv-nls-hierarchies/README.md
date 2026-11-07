@@ -59,12 +59,12 @@ explicitly **incomplete**. A pending passage cannot be silently treated as prove
 The source locator convention and exact private-source hashes are in the ledger.
 
 The main theorems remain proved with the earlier corrections, but important
-whole-paper work remains: the full discriminant/primitive/action symmetry
-packages (Theorem 6, Corollaries 8–9, Lemma 10 and Proposition 11); the physical
-matrix clause in Lemma 2; geometric multiplicities in Lemma 3; whole-line L2
-fundamental-matrix symmetries in Lemma 13; and background claims including
-independent cross-mode mKdV Cartesian canonicity. Analytic zero orders do not
-certify geometric multiplicities.
+whole-paper work remains: full Lemma 10 and nonlocal Proposition 11(iii);
+the physical matrix clause in Lemma 2; geometric multiplicities in Lemma 3;
+printed proof intermediates; and background claims including independent
+cross-mode mKdV Cartesian canonicity. Theorem 6, Corollaries 8–9 and Lemma 13
+now have the corrected source interfaces described in the later milestones.
+Analytic zero orders do not certify geometric multiplicities.
 
 The P and pure T clauses of Theorem 6(i)–(iii) now have source interfaces
 for the actual discriminant, spectral derivative and full Fréchet cotangent
@@ -272,6 +272,39 @@ The ledger has 118 assertion records and all 241 source passages. Four further
 complete source passages have explicit correspondence reviews. Whole-paper
 semantic decomposition and proof coverage remain in progress, including
 Lemmas 2,3,10,13, Proposition 11(iii), proof intermediates and background claims.
+
+## 2026-11-07 — Full real-line Lemma 13 and explicit Appendix operator correction
+
+All full fundamental-matrix identities now hold at every real spatial point,
+including negative periods and every seam, on the original complex H0 space.
+This includes the original real-type H0 domain without a smoothness or generic
+spectral-parameter hypothesis. Exact invertible Floquet transport extends the
+actual unit-interval identities. The true determinant-one inverse monodromy,
+literal J and PJ conjugacies, half-phase matrix and explicit entries are checked.
+
+The page 5 and Appendix displays put phi2 in the upper off-diagonal position;
+Section 2 puts phi1 there. Their operator is exactly the Section 2 operator at
+P*phi, with actual physical source fields. The fundamental-matrix adapter
+reflects lambda and conjugates by J; signed integer labels reverse n and
+exchange their +/- slots. Retaining the literal local Appendix operator reverses
+the phase factor, while its P and T matrix forms remain true. Both complete
+versions are proved, without silently changing operator conventions.
+
+An actual original real-type H0 witness from the smooth constant physical
+profile(1,1), at lambda=0, x=1 and alpha=pi/2, formally refutes combining the
+literal Appendix operator with the printed positive phase. Its actual
+upper-right monodromy is +sinh(1), while the printed formula predicts -sinh(1).
+Thus either the local operator component order or its phase formula must be
+corrected. All-real-x Lemma 13 and the operator convention adapter are now
+covered with that explicit correction and counterexample.
+
+Eight new strict modules add 41 theorems and 8 definitions. Exact evidence is
+in [`whole-line-matrix-validation.json`](whole-line-matrix-validation.json).
+Three complete mathematical passages and one bibliographic metadata passage
+have additional correspondence reviews. The ledger has 120 assertion records
+and all 241 source passages. Whole-paper semantic decomposition and proof
+coverage remain in progress, including Lemmas 2,3,10, Proposition 11(iii),
+printed proof intermediates and remaining background claims.
 
 ## Pinned source
 
