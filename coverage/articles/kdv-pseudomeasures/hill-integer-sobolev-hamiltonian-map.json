@@ -1,0 +1,198 @@
+{
+  "source": "arXiv:1610.00278v1 actual canonical map/Hamiltonian dependencies for remaining main1.1,1.3,5.1,5.9",
+  "status": "Actual canonical Hill global real analytic equivalences on every integer Hilbert Sobolev scale, strong finite-gap approximation, and physical unit-period KdV Hamiltonian with full H1 first variation.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-integer-sobolev-hamiltonian-map.json",
+    "generic_analytic_spatial_successor_lift_PROVED": true,
+    "all_integer_actual_Hill_Hilbert_global_analytic_equivalences_PROVED": true,
+    "all_integer_rough_source_native_regularity_equivalence_PROVED": true,
+    "all_integer_actual_finiteGap_strong_approximation_PROVED": true,
+    "actual_physical_complex_H1_KdV_Hamiltonian_PROVED": true,
+    "actual_H1_KdV_first_variation_PROVED": true,
+    "actual_canonical_Hthreehalves_KdV_Hamiltonian_analytic_PROVED": true,
+    "actual_KdV_Hamiltonian_action_dependence_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "literal_Wiener_ellOne_main5_1_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "SignedSobolevRealScale provides bounded adjacent-order inclusions and exact physical spatial generator/recovery maps on the real zero-mode form. SignedSobolevSpatialLift proves that ANY globally analytic spatially covariant map lifts analytically by one full Sobolev order, retaining its SAME entire output. The construction uses Df applied to the original 2*pi*k generator and its bounded inverse symbol; no independent spectral regularity premise.",
+    "SignedSobolevAnalyticEquiv lifts BOTH directions of a genuine spatially covariant real analytic equivalence. SignedSobolevAnalyticLadder iterates this at ALL nonnegative integer orders, with exact coefficientwise agreement after bounded inclusion. The step order is proved exactly s+N, rather than left as an unspecified stronger space.",
+    "OriginalHillSobolevDiffeomorph applies the construction to the SAME actual original L2 Hill map and its verified analytic global inverse. At EVERY N>=0 the physical real zero-mode signed Hilbert source of order N and actual signed target of order N+1/2 are globally real analytically equivalent. All actual native coordinates are IDENTICAL, including zero and collapsed modes. The weights are literal max(1,abs(k)); no assertion of the distinct Wiener ell-one statement is made.",
+    "OriginalHillIntegerRegularity proves exact source/native integer regularity equivalence for ANY actual rough Hminus source, by full native injectivity and the constructed stronger global inverse. OriginalHillIntegerFiniteGapApproximation gives ACTUAL finite-gap approximants converging in EACH full integer Hilbert Sobolev norm, with EXACT symmetric native truncations as their outputs; the true finite-gap locus is dense in EACH such topology.",
+    "PeriodOneHamiltonian constructs the ACTUAL KdV energy on the ENTIRE complex physical H1 domain: H(q)=integral_0^1 ((q_x)^2/2+q^3). It is genuinely complex Banach analytic. Its original unit-period integral and full first variation are PROVED. PeriodOneHamiltonianVariation gives EXACT derivative integral q_x*h_x+3*q^2*h, including arbitrary complex H1 directions and the square-integrable classical almost-everywhere derivatives. No KdV flow or spectral frequency is assumed.",
+    "OriginalHillH1Hamiltonian retains the ENTIRE physical coefficients when passing from literal signed H1 to the original 1+abs H1 representative. It defines the actual real physical KdV Hamiltonian and pulls it back by the SAME canonical global H1 inverse to ALL real signed H^(3/2), including collapsed gaps. The transformed actual energy is globally real Banach analytic and has its exact original physical integral; action dependence and normalized KdV frequencies remain OPEN.",
+    "Main1.4 remains PROVED and freshly recompiled. Main1.1,1.3,5.1,5.9 remain UNPROVED. Integer Hilbert-scale equivalences do not supply Wiener ell-one spectral estimates. A physical analytic Hamiltonian alone does not supply its action dependence, rough frequency extension, actual KdV evolution or convergence from every smooth approximation. Goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.WeightedCoeff.signedRealInclusion",
+    "NLS.WeightedCoeff.signedRealSpatialRecovery",
+    "NLS.WeightedCoeff.signedRealInclusion_apply",
+    "NLS.WeightedCoeff.signedRealSpatialRecovery_apply",
+    "NLS.WeightedCoeff.signedRealInclusion_injective",
+    "NLS.WeightedCoeff.signedRealSpatialRecovery_generator",
+    "NLS.WeightedCoeff.signedRealInclusion_recovery",
+    "NLS.WeightedCoeff.fourierRealZeroSpatialTranslation",
+    "NLS.WeightedCoeff.fourierRealZeroSpatialTranslation_apply",
+    "NLS.WeightedCoeff.fourierRealZeroSpatialTranslation_zero",
+    "NLS.WeightedCoeff.signedSpatialLift",
+    "NLS.WeightedCoeff.analyticAt_signedSpatialLift",
+    "NLS.WeightedCoeff.signedSpatialLift_inclusion",
+    "NLS.WeightedCoeff.signedSpatialLift_apply",
+    "NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.spatial_apply",
+    "NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.spatial_symm",
+    "NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.spatial_symm_apply",
+    "NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.succEquiv",
+    "NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.succEquiv_inclusion",
+    "NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.succEquiv_apply",
+    "NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.succ",
+    "NLS.WeightedCoeff.signedStepOrder",
+    "NLS.WeightedCoeff.signedStepOrder_eq",
+    "NLS.WeightedCoeff.signedIteratedInclusion",
+    "NLS.WeightedCoeff.signedIteratedInclusion_apply",
+    "NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.iterate",
+    "NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.iterate_inclusion_apply",
+    "NLS.Articles.KdVPseudomeasures.hillL2NativeMap_spatial_covariance",
+    "NLS.Articles.KdVPseudomeasures.hillL2SpatialAnalyticEquiv",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolev_source_order",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolev_target_order",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_apply",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillIntegerSobolevEquiv",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillIntegerSobolevEquiv_symm",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSourceInclusion",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerTargetInclusion",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSourceInclusion_apply",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerTargetInclusion_apply",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSourceInclusion_injective",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerTargetInclusion_injective",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_inclusion",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_symm_inclusion",
+    "NLS.Articles.KdVPseudomeasures.hillReal_integer_source_iff_native",
+    "NLS.KdV.periodOneKdVHamiltonian",
+    "NLS.KdV.analyticAt_periodOneKdVHamiltonian",
+    "NLS.KdV.periodOneKdVHamiltonian_eq_integral",
+    "NLS.KdV.periodOneSobolevKinetic_symm",
+    "NLS.KdV.hasDerivAt_periodOneKdVHamiltonian",
+    "NLS.Articles.KdVPseudomeasures.signedOneRealToScalarDomain",
+    "NLS.Articles.KdVPseudomeasures.signedOneRealToScalarDomain_apply",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVHamiltonian",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1CanonicalHamiltonian",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_actual_coordinates",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_physical",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_tendsto",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_native",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_mem",
+    "NLS.Articles.KdVPseudomeasures.dense_hillIntegerFiniteGapLocus",
+    "NLS.KdV.periodOneKdVHamiltonian_variation_eq_integral",
+    "NLS.KdV.hasDerivAt_periodOneKdVHamiltonian_integral"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/SignedSobolevRealScale.lean",
+    "NLS/SequenceSpaces/SignedSobolevSpatialLift.lean",
+    "NLS/SequenceSpaces/SignedSobolevAnalyticEquiv.lean",
+    "NLS/SequenceSpaces/SignedSobolevAnalyticLadder.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSobolevDiffeomorph.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerRegularity.lean",
+    "NLS/KdV/PeriodOneHamiltonian.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1Hamiltonian.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerFiniteGapApproximation.lean",
+    "NLS/KdV/PeriodOneHamiltonianVariation.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "ef504ab95fced5e00d49b17ad12322490d528ffe",
+    "baseline_modules": 1708,
+    "baseline_non_audit_sources_verified_unchanged": 1707,
+    "new_modules_compiled": 10,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.PeriodOneSobolevHamiltonian",
+        "source": "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean",
+        "source_sha256": "8ec9db0c737d7b8acc9b2401f85d0ffdaf9db719683e6d8c94dc85ef9e73bc4f"
+      },
+      {
+        "module": "NLS.Fourier.PeriodOneCircleMean",
+        "source": "NLS/Fourier/PeriodOneCircleMean.lean",
+        "source_sha256": "b45b78d2d16048ad444643364f807b053f87cdb79d30f3097ba3e024e68f5056"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.FourierRealZeroSpatialGenerator",
+        "source": "NLS/SequenceSpaces/FourierRealZeroSpatialGenerator.lean",
+        "source_sha256": "505f69eb6110935356b2701198b24dedac5d861ece582bac6bf43eba5b4bf476",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.FunctionalAnalysis.AnalyticGeneratorRecovery",
+        "source": "NLS/FunctionalAnalysis/AnalyticGeneratorRecovery.lean",
+        "source_sha256": "27b7577f1d6c8a66226441f496f9318fc66428598e9ef444879773d9758656f1",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillL2GlobalInverse",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillL2GlobalInverse.lean",
+        "source_sha256": "da2dbee73d8b07884ca031e45d63d5e17d02ec314def0fb94456a72965ce5d3b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillSpatialNormalization",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillSpatialNormalization.lean",
+        "source_sha256": "1b100362110452a9c2578280a7e88f6fbab6429bcbae04d393c859882789780b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1718,
+    "audited_declarations": 8625,
+    "theorems": 7265,
+    "definitions": 1360,
+    "new_theorems": 46,
+    "new_definitions": 18,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-integer-sobolev-hamiltonian.log",
+    "log_sha256": "b787b5e9738b9eabde37f43649a59ed0966635caf250a75f8fe76281b69f6414"
+  },
+  "remaining_obligations": [
+    "Prove isospectral/action dependence of the ACTUAL transformed physical H1 KdV Hamiltonian. Identify its normalized gradients/frequencies, extend the ACTUAL frequencies to the original rough domain, and construct KdV evolution with convergence from EVERY smooth approximation. The genuine physical energy H=integral(q_x^2/2+q^3), its full H1 first variation and its analytic canonical H^(3/2) transform are NOW PROVED.",
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), preserving all original domains/labels/roots/normalization. Existing scalar uniqueness/analyticity and actual numerator zero/product/period results do not determine that constant.",
+    "Prove the literal weighted ell-one forward/inverse spectral regularity and full global real analytic Wiener diffeomorphism/Birkhoff conclusion of main5.1 for EVERY N>=0. Newly proved ALL-integer Hilbert Sobolev global analytic equivalences and actual finite-gap approximation are dependencies, not a substitute for ell-one estimates.",
+    "Prove main1.1,1.3,5.9 from the actual original KdV evolution with the required topologies and analyticity. Main1.4 is complete; FOUR main theorems remain UNPROVED and goal ACTIVE."
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "source": "arXiv:1610.00278v1 Appendix C and Section2: actual full-domain algebraic root spaces, compact-resolvent multiplicities and equality with actual two-mode determinant analytic orders on the corrected high strips.",
+  "main_theorems_verified": false,
+  "domains": {
+    "potential": "Every complex original period-two FourierLebesgueSpace(2,-r,infinity) distribution,0<=r<1/2. In particular this includes the real mean-zero physically one-periodic source potentials.",
+    "base": "The entire original period-two H-minus-one distribution space.",
+    "operator_domain": "The unchanged original H1 domain at every application of the actual physical operator. Root chains are not defined using an arbitrary bounded substitute.",
+    "spectral_parameter": "Every complex lambda in the finiteness, stabilization, algebraic multiplicity support and endpoint regularity results.",
+    "resolvent_transport": "Any actual physical resolvent point a, with lambda!=a, at the transformed nonzero compact-resolvent eigenvalue1/(lambda-a). At lambda=a the full physical root space is proved zero.",
+    "generic_algebra": "The new resolvent root-space theorem is algebraic on complex modules. It requires an injective domain inclusion and an actual domain-to-base pencil isomorphism at the resolvent point; both are proved for the physical operator."
+  },
+  "actual_chain_definition": {
+    "zero": "RootSpace(0)=0",
+    "successor": "x belongs at level n+1 iff x=J*f for an original H1 vector f and (L(q)-lambda*J)f belongs at level n.",
+    "top": "The increasing union of all actual finite domain-preserving root chains.",
+    "native_partial_operator": "Finite levels and the full root space are proved equal to those of the actual standard LinearPMap partial operator with the native lambda*J-L pencil sign. Nonzero scalar normalization does not change root spaces.",
+    "multiplicity": "The natural dimension of the full physical root space, with finite dimensionality proved before defining or interpreting the multiplicity."
+  },
+  "declarations": {
+    "generic_exact_finite_chain_transport": "NLS.FunctionalAnalysis.pencilRootSpace_eq_resolvent_genEigenspace",
+    "generic_exact_full_root_space_transport": "NLS.FunctionalAnalysis.pencilRootSpaceTop_eq_resolvent_genEigenspace",
+    "nonzero_pencil_scaling": "NLS.FunctionalAnalysis.pencilRootSpace_smul",
+    "actual_original_finite_root_spaces": "NLS.KdV.singularHillRootSpace",
+    "actual_original_full_root_space": "NLS.KdV.singularHillRootSpaceTop",
+    "actual_partial_operator_equality": "NLS.KdV.singularHillRootSpace_eq_partial",
+    "full_actual_partial_operator_equality": "NLS.KdV.singularHillRootSpaceTop_eq_partial",
+    "all_root_vectors_stay_in_original_domain": "NLS.KdV.singularHillRootSpaceTop_le_domain",
+    "full_H1_chain_right_hand_side": "NLS.KdV.exists_H1_chain_rhs_of_mem_singularHillRootSpaceTop",
+    "actual_resolvent_pencil_isomorphism": "NLS.KdV.endpointHillPencilEquiv",
+    "same_actual_compact_base_resolvent": "NLS.KdV.pencilResolvent_endpointHillPencilEquiv",
+    "finite_physical_root_chain_transport": "NLS.KdV.endpointHillRootSpace_eq_resolvent",
+    "full_physical_algebraic_root_space_transport": "NLS.KdV.endpointHillRootSpaceTop_eq_resolvent",
+    "global_finite_algebraic_root_spaces": "NLS.KdV.finiteDimensional_endpointHillRootSpaceTop",
+    "eventual_stabilization": "NLS.KdV.endpointHillRootSpace_stabilizes",
+    "actual_physical_algebraic_multiplicity": "NLS.KdV.endpointHillAlgebraicMultiplicity",
+    "multiplicity_equals_compact_resolvent_multiplicity": "NLS.KdV.endpointHillAlgebraicMultiplicity_eq_resolvent",
+    "multiplicity_positive_exactly_on_spectrum": "NLS.KdV.endpointHillAlgebraicMultiplicity_pos_iff",
+    "all_physical_algebraic_root_vectors_gain_two_endpoint_orders": "NLS.KdV.endpointHillRootSpaceTop_regular",
+    "source_global_finiteness": "NLS.Articles.KdVPseudomeasures.finiteDimensional_sourceHillRootSpaceTop",
+    "source_actual_multiplicity": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity",
+    "source_multiplicity_support": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_pos_iff",
+    "source_all_finite_chain_transport": "NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_eq_resolvent",
+    "source_compact_resolvent_multiplicity": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_resolvent",
+    "source_all_generalized_eigenvectors_endpoint_regularity": "NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_regular"
+  },
+  "proof_details": [
+    "For an actual domain inclusion J and isomorphism e=L-a*J, the base resolvent is exactly J*e^-1. The identity R_a*(L-lambda*J)=-c*(R_a-c^-1)*J, c=lambda-a, intertwines actual root chains.",
+    "The injectivity of the original domain inclusion makes the actual base resolvent injective. Applying an injective operator preserves and reflects every generalized eigenspace. Nonzero generalized eigenvectors lie in the actual resolvent range, so the converse transport retains the full physical domain.",
+    "Induction gives equality of every finite physical root-chain level with the compact-resolvent generalized eigenspace, and taking increasing unions gives equality of the complete algebraic root spaces.",
+    "The verified shared compact generalized-eigenspace theorem proves global finite dimensionality and finite stabilization. The original physical multiplicity is defined from that actual finite root space and is proved positive exactly on the actual physical spectrum.",
+    "Every actual root vector has an H1 representative whose inhomogeneous right-hand side is also represented by an original H1 vector. The previously verified AppendixC.2 regularity theorem therefore gives order2-r infinity regularity for the entire algebraic root space, preserving the whole original distribution."
+  ],
+  "reuse": {
+    "verified_shared_imports": [
+      "NLS/FunctionalAnalysis/LinearPMapRootSpace.lean",
+      "NLS/FunctionalAnalysis/CompactGeneralized.lean"
+    ],
+    "new_modules": [
+      "NLS/FunctionalAnalysis/ResolventRootSpace.lean",
+      "NLS/KdV/SingularHillRootSpace.lean",
+      "NLS/KdV/PseudomeasureRootSpaces.lean",
+      "NLS/Articles/KdVPseudomeasures/SpectralMultiplicity.lean"
+    ],
+    "new_public_definitions_and_theorems": 46,
+    "new_theorems": 40,
+    "new_definitions": 6,
+    "shared_declarations_copied": 0,
+    "inspected_for_next_determinant_order_step": [
+      "NLS/ComplexAnalysis/MatrixTaylorJets.lean",
+      "NLS/ComplexAnalysis/MatrixTaylorNullity.lean",
+      "NLS/ComplexAnalysis/MatrixTaylorEquivalence.lean"
+    ]
+  },
+  "qualifications": [
+    "The geometric rank bound and the multiplicity/order correspondence have distinct proofs. The latter uses exact finite-chain/Taylor-kernel equivalence and eventual dimensions. No semisimplicity hypothesis is imposed or inferred for complex potentials.",
+    "Canonical real global labels, asymptotic high slot enumeration and eventual corrected-strip assignment are now proved downstream. Physical periodic/antiperiodic parity remains open.",
+    "The full physical algebraic conclusions apply to the endpoint range needed by the main theorems; arbitrary H-minus-one potentials outside that range are not claimed.",
+    "All main Theorems1.1,1.3,1.4,5.1,5.9 remain incomplete. Physical gap/Dirichlet estimates, inverse spectral regularity, Birkhoff maps and actual KdV constructions are still required."
+  ],
+  "verified_analytic_reconstruction_dependencies": {
+    "coverage": "spectral-reconstruction-map.json",
+    "results": [
+      "The order-two infinity symbol multiplied by the inverse Sobolev order1-r weight in l2 gives a total operator-norm analytic complementary inverse from endpoint data into the original full H1 space. It equals the existing physical inverse and agrees with the analytic Wiener realization.",
+      "The original physical pencil lambda*J-L(q) is jointly operator-norm analytic. The actual reconstruction from two amplitudes into original H1 is jointly analytic at every closed-strip parameter allowed by the existing cutoff, including effective determinant zeros.",
+      "Reconstruction has the exact constant resonant-coordinate left inverse and the exact physical residual J*Modes*B. The complementary response is analytic, has zero resonant coordinates and its physical residual is the original forcing minus the solved finite resonant defect.",
+      "Every original H1 solution with arbitrary endpoint right-hand side has the exact reconstruction f=F(lambda)*C*f+G(lambda)*g. Its two coordinates satisfy B(lambda)*C*f=C_endpoint*K(lambda)*g. Conversely these two conditions imply the full original physical equation, including at singular effective matrices.",
+      "Actual determinant zeros lie strictly inside the corrected6n strip by the proved sqrt(n)/4 localization. The physical residual and constant-coordinate identities hold as spectral germs near every such zero, rather than only pointwise.",
+      "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization."
+    ],
+    "comparison_status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
+  },
+  "verified_finite_physical_chain_jet_dependencies": {
+    "coverage": "spectral-chain-jets-map.json",
+    "results": [
+      "For arbitrary complex modules, an injective original domain inclusion identifies each finite chain coefficient space linearly with the actual pencil root-space level by its last included vector. Empty chains are retained. No operator-domain assumptions are dropped.",
+      "A finite chain polynomial satisfies the affine pencil exactly with the chain-length monomial times the final included coefficient as its forcing, for every complex increment. For the singular Hill operator all polynomial coefficients belong to original H1 and the forcing is the identical original H-minus-one distribution of endpoint data.",
+      "Physical finite H1 coefficient chain spaces are finite dimensional in the source endpoint range. Their dimensions eventually equal the actual original algebraic multiplicity by the exact root-space equivalence and the already proved finite stabilization.",
+      "The full inhomogeneous reduction gives analytic powered remainders for the actual reduced residual and original H1 reconstruction error of every finite chain. All their derivatives of order below the chain length vanish. The generic Banach-valued helper also recovers finite polynomial coefficients with exact factorial normalization.",
+      "The coefficientwise projection of every physical finite chain onto its two resonant modes is injective under the existing cutoff at interior strip points. The proof uses the full original H1 reconstruction germ and the vanishing polynomial coefficient theorem, without any inverse of the effective matrix.",
+      "Original complex source wrappers retain exact norm and distribution normalization. At every actual determinant zero the existing localization proves the required strict strip interior, so the finite-chain coordinate injectivity and reduced derivative vanishing need no extra interior premise."
+    ],
+    "comparison_status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
+  },
+  "verified_multiplicity_order": {
+    "coverage": "spectral-multiplicity-order-map.json",
+    "results": [
+      "Normalized finite jets of Banach-valued analytic functions retain exact factorial normalization and commute with continuous linear observations, addition and subtraction. Actual scalar multiplication agrees with the existing formal scalar Taylor convolution.",
+      "The existing formal matrix Taylor action is exactly the normalized finite jet of the actual analytic two-mode matrix acting on an amplitude polynomial. Its kernel is equivalent to vanishing of all retained residual derivatives.",
+      "Vanishing affine-pencil residual derivatives imply that the actual Banach-domain Taylor coefficients form a domain-preserving physical chain. The proof retains every original domain coefficient, including the empty chain.",
+      "At every allowed interior strip point and every finite length, the original physical chain space is linearly equivalent to the actual effective-matrix Taylor kernel. The forward map is the original two-mode coefficient projection. Surjectivity uses the actual norm-analytic H1 reconstruction of an arbitrary kernel amplitude polynomial, and its original H1 Taylor coefficients.",
+      "The actual determinant has finite analytic order everywhere on the full corrected closed strip. Convexity of the strip and a proved actual physical resolvent point exclude the zero germ; no finite-order premise is supplied by a caller.",
+      "Eventual physical finite-chain dimensions and the verified shared eventual matrix Taylor-nullity theorem prove that the actual full original operator algebraic multiplicity equals the actual effective determinant analytic order. The equality holds on the entire corrected closed strip, including its boundary and nonroots.",
+      "The entire corrected strip contains exactly two actual physical eigenvalues counted with their full original algebraic multiplicities. This is the proved analytic two-zero count transported through the exact multiplicity/order correspondence.",
+      "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
+    ],
+    "status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
+  },
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-complex-labels-map.json",
+      "results": [
+        "Sided free-lattice separation places every tight complex high-mode disk wholly below or wholly above each sufficiently high separator. On every such disk,norm membership and real-part membership both mean n<N.",
+        "The actual original complex central disk is proved to select EXACTLY the source real-part central sublevel. Equality of the ACTUAL finite spectral sets and actual full algebraic counts gives source_uniform_all_complex_central_counts: ONE cutoff BEFORE q on each original complex norm ball gives the exact count2n-1 at EVERY subsequent separator,plus the uniform wide contraction.",
+        "Native EndpointHillComplexPair constructs an intrinsic source-lexicographic physical pair from the ACTUAL determinant zeros,retaining actual full physical algebraic repetitions,including nontrivial Jordan chains. Its entire corrected strip is exhausted;both endpoints are tightly localized;distinct modes are strictly separated in real part. Each pair is unique. Real pairs map literally to the same complex physical pairs.",
+        "The actual original complex central multiset repeats every value by its full physical algebraic multiplicity. Sorting in the explicit source lexicographic relation keeps every repetition. Appending actual ordered high pairs gives an enumeration of the ENTIRE original complex spectrum,with the high pair exactly in slots2n-1,2n.",
+        "Every occurrence fiber is finite and its occurrence count equals the ACTUAL full physical algebraic multiplicity. Intrinsic pair uniqueness and finite ordered-enumeration uniqueness prove equality of ENTIRE labelings across all admissible cutoffs and construction choices.",
+        "sourceHillComplexLabels is the intrinsic global complex labeling in the exact source order(real part first,imaginary part second). It exhausts the entire original spectrum,has exact full algebraic multiplicities,has a lexicographically least actual value at index0,and puts each high actual pair in its required slots. One cutoff is uniform BEFORE every potential in an original complex norm ball. No ground-state simplicity or physical boundary parity is inferred.",
+        "sourceHillComplexLabels_ofPotential proves literal pointwise equality with the existing real canonical labels on the original real mean-zero period-one source. This is the same physical spectral model,not a compatible alternative.",
+        "Actual complex high gaps obey the original full-strip coupling estimate and the exact endpoint Sobolev weighted bound6*sqrt(6)*norm(q). The complete sourceComplexCanonicalGaps,including its finite central prefix,belongs to the genuine infinity Sobolev space of order-r. The full gap map is bounded on EVERY exact original complex endpoint norm ball,with one constant chosen BEFORE q. Its coefficients agree literally with the existing original real gaps."
+      ]
+    }
+  ],
+  "remaining": [
+    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct physical Dirichlet spectral comparisons. Original complex canonical ordering,actual multiplicities,global high slots and full complex unit-extra-weight direct gap regularity are now proved.",
+    "Complete the arbitrary-extra-weight direct estimates in source Theorem2.1 where required;unit extra weight w=1 is proved for all original COMPLEX endpoint potentials. Prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets.",
+    "Construct and verify the original Birkhoff maps with global bijectivity,real analyticity and the stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
+    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses,quantifiers,normalizations and topology. All remain unproved."
+  ]
+}

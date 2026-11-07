@@ -81,7 +81,23 @@
       "module_directory": "NLS/Articles/KdVPseudomeasures",
       "coverage_directory": "coverage/articles/kdv-pseudomeasures",
       "initial_responsibility": "Own weak-star pseudomeasure and Wiener endpoint analysis. Consume the shared Hill/KdV foundation; do not substitute strong-norm or finite-p statements for weak-star endpoint theorems.",
-      "status": "not_yet_verified"
+      "status": "main_theorems_verified",
+      "verification_record": "coverage/articles/kdv-pseudomeasures/validation.json",
+      "source_inventory": "coverage/articles/kdv-pseudomeasures/source-inventory.json",
+      "main_theorem_modules": [
+        "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
+        "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
+        "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "NLS/Articles/KdVPseudomeasures/MainTheorem51.lean",
+        "NLS/Articles/KdVPseudomeasures/MainTheorem59.lean"
+      ],
+      "verified_source_statements": [
+        "Theorem1.1",
+        "Theorem1.3",
+        "Theorem1.4 (codomain corrected to s+1/2)",
+        "Theorem5.1",
+        "Theorem5.9"
+      ]
     }
   ]
 }

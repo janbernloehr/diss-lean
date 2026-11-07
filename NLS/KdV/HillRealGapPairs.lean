@@ -39,13 +39,13 @@ theorem exists_hillRealHighGapPair
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
   obtain ⟨b,hb⟩ := (NormedSpace.sphere_nonempty (E := ℂ)
     (x := (freeHillValue n : ℂ))).mpr hnpos.le
-  have hb0 := hillL2Radicand_ne_zero_on_sphere q hq n hn hcut b hb
+  have hb0 := hillL2Radicand_ne_zero_on_sphere q hq n hn (by linarith [norm_nonneg q]) b hb
   have ha := (analyticOnNhd_hillL2Radicand (SpectralWeight.one.toCoeff q)).mono
     (subset_univ (closedBall (freeHillValue n : ℂ) (n : ℝ)))
   obtain ⟨x,hx,y,hy,hx0,hy0,horder⟩ := ComplexAnalysis.exists_two_analytic_zeros
     (ComplexAnalysis.analyticZeroCount_hasFiniteSupport (isCompact_closedBall _ _)
       (isConnected_closedBall hnpos.le) ha (sphere_subset_closedBall hb) hb0)
-    (hillL2Radicand_two_zeros q hq n hn hcut)
+    (hillL2Radicand_two_zeros q hq n hn (by linarith [norm_nonneg q]))
   have hxi := hillL2Discriminant_root_im_zero q hq hreal x (sub_eq_zero.mp hx0)
   have hyi := hillL2Discriminant_root_im_zero q hq hreal y (sub_eq_zero.mp hy0)
   have hxc : (x.re : ℂ) = x := by apply Complex.ext <;> simp [hxi]

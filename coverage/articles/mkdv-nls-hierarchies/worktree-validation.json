@@ -38151,10 +38151,10 @@
   },
   "merge_validation": "merge-validation.json",
   "latest_full_paper_progress": {
-    "report": "symmetry-validation.json",
+    "report": "nonlocal-sign-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
     "date": "2026-11-07",
-    "note": "Earlier top-level fields record historical main-theorem validation. Current whole-paper scope and validation are in the ledger and symmetry report."
+    "note": "Earlier fields are historical; latest scope and merged-main validation are in the nonlocal-sign report."
   }
 }

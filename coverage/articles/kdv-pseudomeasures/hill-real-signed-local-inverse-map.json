@@ -1,0 +1,175 @@
+{
+  "source": "arXiv:1610.00278v1 Theorem3.1/3.2 and Lemma3.3 necessary dependencies: ACTUAL real signed Banach map and real analytic local inverse",
+  "status": "Construct the ACTUAL signed coordinate map on the closed physical real mean-zero Banach source and target, prove real analyticity everywhere, exact real Fourier derivative equivalence and analytic local inversion at0. Gardner/invertibility away from0/global/nonlinear-scales/flow and ALL FIVE MAIN remain OPEN.",
+  "modules": [
+    "NLS/FunctionalAnalysis/ComplexEquivRealRestriction.lean",
+    "NLS/SequenceSpaces/FourierRealZeroSubmodule.lean",
+    "NLS/SequenceSpaces/FourierRealZeroProjection.lean",
+    "NLS/SequenceSpaces/RealMeanZeroHalfFourierEquiv.lean",
+    "NLS/KdV/HillNativeRealSignedMap.lean",
+    "NLS/FunctionalAnalysis/AnalyticEquivalenceInverse.lean",
+    "NLS/KdV/HillNativeRealLocalInverse.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRealSignedCoordinates.lean"
+  ],
+  "declarations": [
+    "NLS.FunctionalAnalysis.complexEquivRealRestriction",
+    "NLS.FunctionalAnalysis.complexEquivRealRestriction_apply",
+    "NLS.FunctionalAnalysis.complexEquivRealRestriction_symm_apply",
+    "NLS.WeightedCoeff.fourierRealZeroSubmodule",
+    "NLS.WeightedCoeff.mem_fourierRealZeroSubmodule",
+    "NLS.WeightedCoeff.isClosed_fourierRealZeroSubmodule",
+    "NLS.WeightedCoeff.zeroMode_add_val",
+    "NLS.WeightedCoeff.zeroMode_real_smul_val",
+    "NLS.WeightedCoeff.zeroModeConjugation",
+    "NLS.WeightedCoeff.zeroModeConjugation_apply",
+    "NLS.WeightedCoeff.zeroModeConjugationCLM",
+    "NLS.WeightedCoeff.zeroModeSymmetricPartCLM",
+    "NLS.WeightedCoeff.zeroModeSymmetricPartCLM_apply",
+    "NLS.WeightedCoeff.zeroModeSymmetricPartCLM_mem",
+    "NLS.WeightedCoeff.fourierRealZeroProjection",
+    "NLS.WeightedCoeff.fourierRealZeroProjection_coe",
+    "NLS.WeightedCoeff.fourierRealZeroProjection_inclusion",
+    "NLS.WeightedCoeff.halfFourierSymbol_conj",
+    "NLS.WeightedCoeff.halfFourierInverseSymbol_neg",
+    "NLS.WeightedCoeff.halfFourierInverseSymbol_conj",
+    "NLS.WeightedCoeff.meanZeroHalfFourierEquiv_real",
+    "NLS.WeightedCoeff.meanZeroHalfFourierEquiv_symm_real",
+    "NLS.WeightedCoeff.meanZeroHalfFourierEquiv_map_real",
+    "NLS.WeightedCoeff.realMeanZeroHalfFourierEquiv",
+    "NLS.WeightedCoeff.realMeanZeroHalfFourierEquiv_apply",
+    "NLS.WeightedCoeff.realMeanZeroHalfFourierEquiv_symm_apply",
+    "NLS.KdV.hillMeanZeroComplexMap_mem_real",
+    "NLS.KdV.hillRealSignedMap",
+    "NLS.KdV.hillRealSignedMap_coe",
+    "NLS.KdV.analyticAt_hillRealSignedMap",
+    "NLS.KdV.analyticOnNhd_hillRealSignedMap",
+    "NLS.KdV.hillRealSignedMap_zero",
+    "NLS.KdV.fderiv_hillRealSignedMap_zero",
+    "NLS.FunctionalAnalysis.exists_localInverse_of_equiv_fderiv",
+    "NLS.KdV.fderiv_hillRealSignedMap_zero_apply",
+    "NLS.KdV.exists_hillRealSignedMap_localInverse",
+    "NLS.Articles.KdVPseudomeasures.originalHillRealSource",
+    "NLS.Articles.KdVPseudomeasures.originalHillRealSource_same_distribution",
+    "NLS.Articles.KdVPseudomeasures.originalHillRealSignedCoordinates",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_matches_complex",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_analytic",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_action",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_derivative_equiv",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_derivative_even_modes",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_localInverse"
+  ],
+  "new_public_theorems": 35,
+  "new_public_definitions": 10,
+  "results": [
+    "FourierRealZeroSubmodule defines the EXACT physical real form of a weighted ZERO-mode kernel as a REAL linear submodule with a(-k)=conj(a(k)) at EVERY signed index. It proves this real submodule is closed and Banach complete, with the inherited weighted norm. It explicitly supplies the real normed-space structures compatible with complex scalar restriction. This is not the unrelated componentwise-real sequence locus.",
+    "FourierRealZeroSubmodule packages ACTUAL coefficient conjugate reflection as a bounded REAL linear map on the zero-mode space for any symmetric positive weight and EVERY Banach exponent. Its norm is preserved by the already verified conjugateReflection norm theorem. FourierRealZeroProjection constructs the bounded real linear projection (a+conjugateReflection(a))/2 onto the physical real form, proves its range condition, and proves it fixes EVERY real Fourier sequence EXACTLY.",
+    "ComplexEquivRealRestriction is a reusable scalar restriction of a continuous complex linear equivalence BETWEEN DIFFERENT spaces. It retains both forward and inverse functions. The existing scalar-restriction endomorphism API alone does not cover the different Hminus source and signed minus-half target.",
+    "RealMeanZeroHalfFourierEquiv proves BOTH exact Fourier symbols are REAL and EVEN, so the ACTUAL verified mean-zero complex Fourier equivalence and its bounded inverse preserve physical signed conjugacy. It restricts them to a genuine REAL continuous linear equivalence between the physical real mean-zero source and signed target, at EVERY Banach exponent including infinity, with the literal forward and inverse coefficients. This is a linear multiplier result; no nonlinear endpoint-scale mapping conclusion is inferred.",
+    "HillNativeRealSignedMap proves the ACTUAL complex map evaluated at ANY real mean-zero source lies in the physical real target. It defines hillRealSignedMap by the verified target projection and proves the projection leaves the entire actual sequence UNCHANGED. The actual real map is FULL Banach real analytic at EVERY point of its entire real source and fixes0. Its Frechet derivative at0 is EXACTLY realMeanZeroHalfFourierEquiv2 as a REAL continuous linear map, by the proved complex derivative, scalar restriction and actual source/target inclusion/projection chain rule.",
+    "AnalyticEquivalenceInverse proves the analytic inverse theorem between different Banach spaces over ANY nontrivially normed field, retaining the explicit derivative equivalence, both local inverse identities and exact inverse derivative. HillNativeRealLocalInverse applies this verified theorem over REAL scalars to the ACTUAL real signed map: there exists g real analytic at0 with g0=0, g(Phi(q))=q on a source neighborhood, Phi(g(z))=z on a target neighborhood, and Dg0 EXACTLY the bounded real Fourier inverse. Inverse preservation of the real form is NOT assumed from an arbitrary complex inverse.",
+    "OriginalHillRealSignedCoordinates realizes EVERY original real mean-zero potential in the new closed real Banach source and PROVES it represents the SAME physical original distribution on all tests. Its actual real signed coordinates agree as WHOLE sequences with the previously constructed actual original signed complex coordinates. It exports real Banach analyticity, exact original action identity, REAL derivative equivalence, ORIGINAL positive and negative even-mode derivative formulas with exact sqrt(2*pi*n), and BOTH real analytic local inverse identities with exact Fourier inverse derivative.",
+    "Eight new modules contain35 theorems and10 definitions. Canonical Gardner brackets, invertibility away from0/global Birkhoff bijection, remaining ORIGINAL nonlinear Sobolev/pseudomeasure scales including infinity, boundedness/weak-star/flow, universal actual numerator scalar, sharp KMT kernel and ALL FIVE MAIN remain OPEN. This milestone proves a real local inverse at0, not any global main theorem."
+  ],
+  "fidelity": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-real-signed-local-inverse-map.json",
+    "EXACT_closed_physical_REAL_mean_zero_Banach_source_and_signed_target_PROVED": true,
+    "physical_real_form_is_signed_conjugacy_NOT_componentwise_reality": true,
+    "real_linear_conjugate_reflection_and_fixed_projection_ALL_exponents_PROVED": true,
+    "actual_real_map_projection_leaves_whole_actual_sequence_UNCHANGED_PROVED": true,
+    "actual_real_map_FULL_Banach_real_analytic_at_EVERY_real_source_PROVED": true,
+    "Fourier_equivalence_and_inverse_preserve_real_form_ALL_exponents_PROVED": true,
+    "actual_real_derivative_EQUALS_real_Fourier_Banach_equivalence_PROVED": true,
+    "actual_REAL_analytic_local_inverse_at_zero_BOTH_identities_PROVED": true,
+    "actual_real_inverse_derivative_EXACT_bounded_Fourier_inverse_PROVED": true,
+    "original_real_source_SAME_physical_distribution_PROVED": true,
+    "original_real_map_EQUALS_actual_complex_signed_coordinates_PROVED": true,
+    "original_real_even_mode_Fourier_derivative_normalization_EXACT_PROVED": true,
+    "real_Banach_corestriction_and_real_local_inverse_PROVED": true,
+    "Gardner_canonicality_PROVED": false,
+    "invertibility_at_EVERY_source_PROVED": false,
+    "all_other_original_source_target_scales_PROVED": false,
+    "full_Birkhoff_bijection_PROVED": false,
+    "universal_actual_product_scalar_PROVED": false,
+    "all_five_main_theorems_proved": false
+  },
+  "essential_remaining": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NEXT canonical Gardner brackets and invertibility away from0, remaining ORIGINAL nonlinear Sobolev/pseudomeasure scales including infinity, and the global bijection/boundedness/weak-star/flow obligations. The ACTUAL REAL signed map is NOW CONSTRUCTED on the exact CLOSED physical real mean-zero Banach source and signed target, defined by signed conjugacy a(-k)=conj(a(k)). It is FULL Banach real analytic at EVERY real source, fixes0, and AGREES as a WHOLE sequence with the actual complex signed map on real sources. Its REAL Frechet derivative at0 is EXACTLY the bounded real Fourier equivalence, with coefficient h_(plus/minus n)/sqrt(2*pi*n), and the ACTUAL REAL map has an ANALYTIC LOCAL INVERSE at0 with BOTH neighborhood inverse identities and EXACT bounded Fourier inverse derivative. The real linear Fourier equivalence and its inverse are verified at ALL Banach exponents including infinity; this does NOT prove nonlinear mapping at those endpoint scales. Every original real potential is retained as the SAME physical distribution, and original even-mode formulas are exported. Prior complex map/local inverse, action identities, AppendixB and actual spectral/phase estimates remain COMPLETE. Real local inversion at0 does not prove canonicality, global Birkhoff bijection, all original nonlinear scales, universal actual numerator scalar, sharp KMT kernel, flow or ANY of the FIVE MAIN THEOREMS.",
+    "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions and native complex ACTUAL scalar Cartesian formula analyticity/ORIGINAL-energy estimate are proved. The ACTUAL native Cartesian H-minus-one -> exact positive h-minus-one-half sequence map is constructed and FULL Banach-analytic, with exact source norm/action identities and real coefficients. Exact Fourier/Gardner identification, the remaining scales and global Birkhoff map remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "af87ce9098b7bb0d8cb2b90fa9ca8e93c7e09f32",
+    "baseline_modules": 1298,
+    "baseline_non_audit_sources_verified_unchanged": 1297,
+    "new_modules_compiled": 8,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.ConjugateReflection",
+        "source": "NLS/SequenceSpaces/ConjugateReflection.lean",
+        "source_sha256": "785b7915c423f963d41847357061e92b194d42a5a46bda4b07b92a2faa03c101"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedMultiplier",
+        "source": "NLS/SequenceSpaces/WeightedMultiplier.lean",
+        "source_sha256": "f3c9c977eff213926904f5db8b27bf03b7b85b47fcba5eb1baa4973beee52807"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.AnalyticUnitDerivativeInverse",
+        "source": "NLS/ComplexAnalysis/AnalyticUnitDerivativeInverse.lean",
+        "source_sha256": "c7a7a97f7064a002da575f4df2d86039b2b12daa2320932662320482cd74dff1"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.ComplexAnalysis.OddSquareDescent",
+        "source": "NLS/ComplexAnalysis/OddSquareDescent.lean",
+        "source_sha256": "63533e2817d9126a562077fe711e53e1e3f8d13c0d71163e922ffcd8f7bd3976",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1306,
+    "audited_declarations": 6911,
+    "theorems": 5800,
+    "definitions": 1111,
+    "new_theorems": 35,
+    "new_definitions": 10,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-real-signed-local-inverse.log",
+    "log_sha256": "2ab8ce43891971d9153e89031d2a21c1925ef902a80ea1ca9eb838da8bfd404f"
+  },
+  "output_sha256": {
+    "NLS/FunctionalAnalysis/ComplexEquivRealRestriction.lean": "a6a6fe3fd0490c436b391cee83412d40a524aabf0c58dbb2a544a81da104064b",
+    "NLS/SequenceSpaces/FourierRealZeroSubmodule.lean": "bba6bd0aaf5daa50e32ea6a033e7d309bebbe6d7a92309f5a2d7e15eaf4fe3e9",
+    "NLS/SequenceSpaces/FourierRealZeroProjection.lean": "61a87656641343c7e3e58a291ad979151a9c595ffa324aab1399e3475000ac41",
+    "NLS/SequenceSpaces/RealMeanZeroHalfFourierEquiv.lean": "40351fcb4142245afaea3e3380f8602199a86b9b63929944486980cfbd5487cc",
+    "NLS/KdV/HillNativeRealSignedMap.lean": "fd74529ed81de2a568d8a65b85a08bc0ea64d937e948f4ce258a51fb9cb56453",
+    "NLS/FunctionalAnalysis/AnalyticEquivalenceInverse.lean": "e231812f7057c7f444a3c9c92866278db179d4d03e464c1c4f1f2c1b39eaca5d",
+    "NLS/KdV/HillNativeRealLocalInverse.lean": "6daf17e0dc0fe63682916c0f2a21d328a2197fbd6c11f7708060a0932d1e64a3",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRealSignedCoordinates.lean": "ca06d184dee55a1e33d27ae5385589462f47c41ed13f2a55efc689ebb8b33d13"
+  },
+  "canonical_checkout_written": false,
+  "canonical_state": {
+    "head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+    "status": ""
+  },
+  "workspace_decision": "pending; all writes private",
+  "git_isolation": {
+    "metadata": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/appendix-b-milestones.git",
+    "base_commit": "af87ce9098b7bb0d8cb2b90fa9ca8e93c7e09f32",
+    "branch": "articles/kdv-pseudomeasures",
+    "shared_canonical_git_written": false
+  },
+  "main_theorems_verified": false
+}

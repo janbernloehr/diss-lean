@@ -49,7 +49,7 @@ theorem classicalRegularity_of_jointly_smooth
   let v := periodicContinuousFamily 2 vt hpt hct
   let d := periodicContinuousFamily 2 vx hpx hcx
   have hv : Continuous v := continuous_periodicContinuousFamily 2 vt hpt hct
-  refine ⟨fun t => (hasDerivAt_continuousMap_of_pointwise u v hv ?_ t).differentiableAt,
+  refine ⟨fun t => (hasDerivAt_continuousMap_of_pointwise_real_banach u v hv ?_ t).differentiableAt,
     d,continuous_periodicContinuousFamily 2 vx hpx hcx,fun t x => (hx t x).deriv.symm⟩
   intro t x
   induction x using QuotientAddGroup.induction_on with

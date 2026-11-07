@@ -23,7 +23,7 @@ theorem HillHminusPsiChart.numerator_full_product_decay (P : HillHminusPsiChart)
   obtain ⟨B,hB,hBbound⟩ := exists_bound_sine_quotient_near_separated
   let δ : ℝ := ε/(4*B)
   have hδ : 0<δ := div_pos hε (by positivity)
-  obtain ⟨Rs,hRs⟩ := exists_threshold_sourceOddPsiCandidate_sub_sine
+  obtain ⟨Rs,hRs⟩ := exists_threshold_sourceOddPsiCandidate_sub_sine_quarter_pi
     (by norm_num) (by norm_num) ((n:ℕ):ℤ) a δ hδ
   obtain ⟨Rg,hRg⟩ := exists_threshold_free_div_entireSingleSpectralProduct_le_two
     (by norm_num : (2:ℝ≥0∞)≠⊤) (hillGapSignedRootFrequency roots)

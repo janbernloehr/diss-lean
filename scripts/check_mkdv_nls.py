@@ -1172,6 +1172,14 @@ modules = [
     'NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean',
     'NLS/Articles/MKdVNLSHierarchies/DiscriminantSpatialEquation.lean',
     'NLS/Articles/MKdVNLSHierarchies/GenericEntryCorrection.lean',
+    'NLS/ZakharovShabat/ClassicalRationalMonodromy.lean',
+    'NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean',
+    'NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean',
+    'NLS/ZakharovShabat/L2PrintedNonlocalSign.lean',
+    'NLS/ZakharovShabat/SourceL2MonodromySymmetries.lean',
+    'NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean',
+    'NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean',
+    'NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

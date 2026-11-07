@@ -1,0 +1,123 @@
+{
+  "source": "Intrinsic source spectrum/labels used across Section2.7 endpoint regularity gain and AppendixB compactness;arXiv:1610.00278v1.",
+  "main_theorems_verified": false,
+  "source_theorem_2_2_verified": false,
+  "cross_order_original_operator_spectrum_and_multiplicity_verified": true,
+  "cross_order_real_canonical_labels_and_gaps_verified": true,
+  "cross_order_complex_canonical_labels_and_gaps_verified": true,
+  "endpoint_bootstrap_preserves_entire_canonical_spectrum_verified": true,
+  "original_finite_p_inverse_spectral_input_verified": false,
+  "modules": [
+    "NLS/SequenceSpaces/OrderedNatEnumerationUnique.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCrossOrder.lean"
+  ],
+  "declarations": [
+    "NLS.multiplicity_lt_of_first_ordered_discrepancy",
+    "NLS.ordered_nat_enumeration_eq_of_multiplicity",
+    "NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillOperator_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabels_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillComplexLabels_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceComplexCanonicalGapValues_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_bootstrap_preserves_spectrum"
+  ],
+  "results": [
+    "Shared ordered_nat_enumeration_eq_of_multiplicity proves that two monotone natural-number enumerations in ANY linear order,with finite fibers and equal global multiplicities,are identical. No common tail or cutoff is assumed. The proof uses the first strict discrepancy and counts occurrences in the finite preceding prefix,including repeated entries.",
+    "For any TWO admissible predual orders r,t,and original complex endpoint realizations with ENTIRE smooth-test distribution equality,the original H-minus-one potentials and full original H1-to-H-minus-one operators are equal. Consequently the entire physical complex spectra,every finite root-chain level,the full algebraic root spaces,and their ACTUAL finite multiplicities are equal.",
+    "The ENTIRE real canonical label enumerations of the same original physical distribution agree across arbitrary admissible orders,with all actual algebraic repetitions and NO shared cutoff assumption. This follows from the physical multiplicity equality and the new shared global ordered-count uniqueness theorem.",
+    "The complete COMPLEX canonical labels also agree across arbitrary admissible endpoint orders. The order is exactly the source lexicographic order(real part first,imaginary part second),implemented locally by lifting the injective existing complexLexKey;the standard complex partial order is not substituted.",
+    "Both real and complex entire signed canonical gap sequences agree across endpoint orders,including zero and negative modes and every collapsed gap. Exact period-two Fourier normalization and canonical slots2n-1,2n are retained.",
+    "source_uniform_endpoint_bootstrap_preserves_spectrum now DERIVES the target Potential(t),its uniform original norm bound,ENTIRE distribution equality,and equality of the ENTIRE canonical label and gap sequences. Constants are still chosen BEFORE q;no target membership,open-gap assumption,shared root table or common cutoff is supplied."
+  ],
+  "domains": {
+    "orders": "ANY two admissible orders0<=r<1/2 and0<=t<1/2;neither order inequality nor common cutoff is required for intrinsic equality.",
+    "complex_potentials": "Original complex period-two FourierLebesgueSpace(2,-r,infinity) and FourierLebesgueSpace(2,-t,infinity),with ENTIRE smooth-test distribution equality.",
+    "real_potentials": "Original real,mean-zero,physically period-one Potential(r) and Potential(t) representing that SAME entire distribution.",
+    "operator": "Original singularHillOperator on unchanged original H1 domain with original H-minus-one codomain. All finite root-chain levels and full root spaces remain literally equal.",
+    "labels": "Entire natural-number canonical enumerations,not merely high pairs. Multiplicities are dimensions of the ACTUAL full physical algebraic root spaces. Complex order is real-first,imaginary-second lexicographic.",
+    "gaps": "Entire signed sequences,zero mode0,even extension to negative modes,and original slots2n-1,2n;closed gaps included.",
+    "bootstrap": "0<=t<=r<1/2,original base norm<=R and actual stronger canonical gap boundG. Target membership and bound are derived,with constants before q."
+  },
+  "conclusions": {
+    "sourceComplexHminusOne_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_eq_of_distribution_eq",
+    "sourceHillOperator_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillOperator_eq_of_distribution_eq",
+    "sourceHillSpectrum_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_eq_of_distribution_eq",
+    "sourceHillRootSpace_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_eq_of_distribution_eq",
+    "sourceHillRootSpaceTop_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_eq_of_distribution_eq",
+    "sourceHillAlgebraicMultiplicity_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_of_distribution_eq",
+    "sourceHillLabels_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillLabels_eq_of_distribution_eq",
+    "sourceCanonicalGapValues_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_eq_of_distribution_eq",
+    "sourceHillComplexLabels_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillComplexLabels_eq_of_distribution_eq",
+    "sourceComplexCanonicalGapValues_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceComplexCanonicalGapValues_eq_of_distribution_eq",
+    "source_uniform_endpoint_bootstrap_preserves_spectrum": "NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_bootstrap_preserves_spectrum"
+  },
+  "shared_uniqueness": "NLS.ordered_nat_enumeration_eq_of_multiplicity",
+  "qualifications": [
+    "Equality of ENTIRE original distributions is the hypothesis. This is not an inverse uniqueness assertion from spectra to potentials.",
+    "No common cutoff,common supplied tail,open-gap or simple-root premise is used. The ordered-count proof handles all repeated entries.",
+    "The actual original finite-p inverse spectral/isospectral compactness input is still missing. Source Theorem2.2,full Lemma2.21 and ALL MAINs remain open."
+  ],
+  "remaining": [
+    "Match the newly proved FULL original H-minus-one operator spectrum/multiplicities with the shared hillHminusRadicand characteristic. First identify original H1-domain eigenvectors with the shared physical H2 Hill eigenvectors at L2 potentials,using genuine L2 elliptic regularity and exact Fourier normalization. Then use real H-minus-one L2 density,actual norm-resolvent/Riesz-rank stability and characteristic zero stability to extend the match. Shared exhaustive H-minus-one characteristic labels must not be substituted before this identification.",
+    "Full source Theorem2.2/Lemma2.21 remain unproved:construct the actual full original H-minus-one isospectral family in a suitable base endpoint/finite-p space and prove the UNIFORM bound needed by the verified endpoint bootstrap. The ORIGINAL finite-p inverse spectral regularity/isospectral compactness input[7 Cor3-4] remains missing,or requires a direct replacement. The original domain and actual physical isospectral set are now defined without assuming endpoint membership.",
+    "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform endpoint bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed fibers and all AppendixB clauses remain proved. General complex-ratio2.20 is not yet proved.",
+    "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 178,
+    "audited_declarations": 1524,
+    "theorems": 1260,
+    "definitions": 264,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "log": ".lake/article-check/logs/validation-cross-order.log"
+  },
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-weak-star-resolvent-map.json",
+      "results": [
+        "The shared full original H-minus-one physical pencil is normalized by the same fixed free H1-to-H-minus-one isomorphism. Its invertibility is EXACTLY physical full-domain bijectivity. Joint operator-norm analyticity uses the already-verified hminusOneMultiplicationFamily on the ENTIRE original H-minus-one potential space;no new endpoint convergence assumption is imposed.",
+        "The full original joint resolvent locus in H-minus-one times C is open. The actual H1-valued inverse and compact H-minus-one base resolvent are jointly norm analytic at every physical resolvent pair and satisfy both full-domain inverse identities,for ALL original H-minus-one data. These total inverse families agree EXACTLY with the previously verified endpoint inverses,on and off their resolvent sets.",
+        "A whole compact spectral circle remains in the full original resolvent on an OPEN set of H-minus-one potentials. The original circular Riesz projection is operator-norm continuous along every original H-minus-one continuous family with a common valid circle,and agrees literally with the verified actual endpoint projection.",
+        "On EVERY original endpoint norm-bounded physical weak-star set,the exact original H-minus-one realization is continuous. Consequently the JOINT physical source resolvent locus is weak-star-times-C open,and the full original H1-valued inverse and compact H-minus-one resolvent are norm continuous at each valid pair. Membership of each fixed actual complex spectral value is weak-star closed within the bounded set.",
+        "Validity of the ENTIRE compact physical resolvent circle is weak-star OPEN within every original endpoint norm-bounded set. The SAME ACTUAL projection varies continuously in operator norm on that full locus. It is an actual finite-rank idempotent;its rank is locally constant and both circle validity and rank persist throughout a weak-star neighborhood. No simple-eigenvalue or noncollapsed-gap assumption is imposed.",
+        "The finite ACTUAL physical spectrum inside any disk is constructed from existing full-spectrum local finiteness,without a supplied root list. The projection range is EXACTLY the sum of all enclosed original full physical algebraic root spaces. Their independence identifies projection rank with the sum of ACTUAL algebraic multiplicities,and this entire enclosed count is weak-star locally stable on bounded physical sets."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-label-continuity-map.json",
+      "results": [
+        "Reused and privately rebuilt the shared OrderedFiniteContinuity module from articles/kdv-convexity at its pinned recorded commit. Its three theorems and one definition prove continuity of finite ordered real entries from cumulative-count stability away from limiting entries,including repeated values. No source change was needed.",
+        "For the ACTUAL real original physical source spectrum,a real-diameter circle is in the full physical resolvent when its left endpoint is below the entire spectrum and its right endpoint is not spectral. The ACTUAL disk algebraic count is EXACTLY finiteLowerCount of the intrinsic canonical central prefix,including every full physical algebraic repetition. This is proved by finite double counting,not by assuming a supplied root list.",
+        "Every ACTUAL intrinsic canonical real label is now weak-star continuous on EVERY original endpoint norm-bounded physical set. The proof chooses one uniform norm-ball cutoff before the family,uses actual original spectral lower bounds,and applies the proved physical disk-count stability to the exact canonical cumulative counts. All repeated entries and closed gaps are included.",
+        "Every ACTUAL signed canonical gap is weak-star continuous on every bounded original physical set. The entire canonical label sequence and entire signed gap sequence are continuous in their product topologies. No continuity in the weighted infinity norm is asserted.",
+        "sourceCanonicalSpectralFiber prescribes the ENTIRE actual canonical spectrum with ALL algebraic repetitions. Such a fiber is relatively weak-star closed on EVERY bounded original physical set,and its intersection with each specified original endpoint norm ball is weak-star compact.",
+        "An ENTIRE original endpoint canonical spectral fiber is weak-star compact IFF it is bounded in the EXACT original endpoint norm. A globally bounded fiber is closed in the ENTIRE physical weak-star space. Actual spectrum exhaustion and all physical algebraic multiplicities are explicitly identified from the prescribed labels. Fiber membership is invariant under endpoint-order reinterpretation of the SAME entire original distribution."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-spectrum-map.json",
+      "results": [
+        "Actual multiplication by EVERY original complex H-minus-one potential is compact from the ENTIRE original H1 domain into original H-minus-one. The proof uses the already-verified continuous full H-minus-one multiplication family,the norm-closed compact-operator locus,and genuine finite-Fourier density. Each finite approximation is identified with the SAME original distribution as an r=0 endpoint input;no endpoint regularity is assumed of the limit.",
+        "For EVERY original complex H-minus-one q and EVERY complex spectral parameter,the normalized full original H1-to-H-minus-one pencil is identity plus compact and Fredholm of index ZERO. Its kernel is exactly the original full-domain eigen-equation,and injectivity implies full physical bijectivity.",
+        "The original full H-minus-one spectrum consists exactly of ACTUAL original H1 eigenvalues. The explicit form bound proves that the entire half-plane Re(z)<-singularHillLowerBoundConstant(norm(q)) lies in the full resolvent. In particular,a concrete resolvent point -singularHillLowerBoundConstant(norm(q))-1 is CONSTRUCTED for EVERY original complex H-minus-one q;nonempty resolvent is not a caller premise.",
+        "The full original operator graph and partial-linear-map realization are closed for EVERY original H-minus-one q. Actual spectral points transport to nonzero eigenvalues of the ACTUAL compact base resolvent,so every bounded complex spectral region contains only finitely many physical eigenvalues. Real original potentials have entirely REAL actual spectrum. The full spectrum agrees EXACTLY with every earlier endpoint realization.",
+        "For ALL original complex H-minus-one potentials,every finite physical root-chain level and the FULL original algebraic root space equal corresponding generalized eigenspaces of any ACTUAL compact resolvent. Full root spaces are finite dimensional,attained at a finite chain length,and stabilize. Actual algebraic multiplicity is the full physical root-space dimension and is positive EXACTLY on the physical spectrum;it agrees literally with the earlier endpoint multiplicity.",
+        "The ACTUAL Riesz projection for arbitrary original H-minus-one potentials is a compact finite-rank idempotent on original H-minus-one. Every enclosed physical eigenvector is fixed and every exterior one annihilated. For real q its range is exactly the sum of ALL enclosed full physical root spaces. A full original H-minus-one norm neighborhood,allowing arbitrary nearby COMPLEX potentials,preserves each valid circle and its ACTUAL projection rank;no endpoint membership is supplied.",
+        "The article now defines OriginalHminusOnePotential as its FULL original real,mean-zero,physically period-one H-minus-one domain,and originalIsospectralSet by equality of ALL ACTUAL physical algebraic multiplicities at every complex value. Endpoint membership is NOT built into this original type or isospectral set. The original set fixes the entire physical spectrum. For ANY two admissible endpoint orders,its endpoint realizations belong to the SAME original isospectral set IFF their ENTIRE intrinsic canonical label sequences agree."
+      ]
+    }
+  ]
+}

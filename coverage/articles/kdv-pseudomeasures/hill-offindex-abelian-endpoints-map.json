@@ -1,0 +1,163 @@
+{
+  "source": "arXiv:1610.00278v1 source3.2(ii): actual Hill off-index Abelian endpoint normalization and improper integrals",
+  "status": "PROVED actual off-index primitive existence on full complex cut discs, both full endpoint limits/zero normalization including collapsed gaps, analytic collapsed removal preserving values, uniqueness, genuine improper endpoint integrals and physical energy/label fidelity. Normalized-family source analyticity, divisor-sheet evaluation, on-index phase, infinite sums, coordinates/flow and ALL FIVE MAIN remain OPEN.",
+  "modules": [
+    "NLS/KdV/HillAbelianFrequencyDifferentials.lean",
+    "NLS/ComplexAnalysis/QuadraticRootPrimitiveEndpointLimits.lean",
+    "NLS/KdV/HillOffIndexAbelianPrimitives.lean",
+    "NLS/KdV/HillAbelianGapEndpointLimits.lean",
+    "NLS/ComplexAnalysis/PrimitiveDiscCutExtension.lean",
+    "NLS/KdV/HillAbelianCollapsedGapExtension.lean",
+    "NLS/KdV/HillAbelianPhysicalEnergyPullback.lean",
+    "NLS/KdV/HillOffIndexAbelianEndpointIntegrals.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillOffIndexAbelianEndpoints.lean"
+  ],
+  "declarations": [
+    "NLS.KdV.HillProductEquationPatch.abelianFrequencyNumerator",
+    "NLS.KdV.HillProductEquationPatch.abelianFrequencyDifferential",
+    "NLS.KdV.HillProductEquationPatch.abelianGapNumerator",
+    "NLS.KdV.HillProductEquationPatch.analytic_abelianFrequencyNumerator",
+    "NLS.KdV.HillProductEquationPatch.abelianFrequencyNumerator_eq_local",
+    "NLS.KdV.HillProductEquationPatch.abelianFrequencyDifferential_period",
+    "NLS.KdV.HillProductEquationPatch.abelianFrequencyDifferential_eq_gap_quotient",
+    "NLS.KdV.HillProductEquationPatch.exists_common_analytic_abelianGapNumerator_neighborhood",
+    "NLS.ComplexAnalysis.quadratic_root_ne_zero_off_segment",
+    "NLS.ComplexAnalysis.quadratic_root_endpoint_norm_lower_bound",
+    "NLS.ComplexAnalysis.exists_quadratic_root_primitive_endpoint_limits",
+    "NLS.KdV.HillProductEquationPatch.abelianGapDisc",
+    "NLS.KdV.HillProductEquationPatch.analytic_abelianFrequencyDifferential_on_closed_cut_disc",
+    "NLS.KdV.HillProductEquationPatch.exists_offIndex_abelian_cutDisc_primitive",
+    "NLS.KdV.HillProductEquationPatch.exists_offIndex_abelianGapDisc_primitive",
+    "NLS.KdV.HillProductEquationPatch.abelianGapDisc_primitive_common_endpoint_limit",
+    "NLS.KdV.HillProductEquationPatch.exists_common_offIndex_abelian_endpoint_normalization",
+    "NLS.ComplexAnalysis.exists_primitive_disc_cut_extension",
+    "NLS.KdV.HillProductEquationPatch.abelianGapNumerator_zero_at_collapsed_gap",
+    "NLS.KdV.HillProductEquationPatch.abelianGapDisc_primitive_extension_of_collapsed",
+    "NLS.KdV.HillProductEquationPatch.exists_common_ALL_gap_offIndex_abelian_endpoint_normalization",
+    "NLS.KdV.HillHminusDirichletBall.positive_frequency_energy_mem_domain",
+    "NLS.KdV.HillHminusDirichletBall.canonical_root_at_positive_frequency_of_real",
+    "NLS.KdV.HillProductEquationPatch.abelianFrequencyDifferential_physical_energy_pullback",
+    "NLS.KdV.HillProductEquationPatch.abelianGapDisc_re_pos_of_real",
+    "NLS.KdV.HillProductEquationPatch.abelian_gap_endpoint_energies_eq_original_labels",
+    "NLS.KdV.HillProductEquationPatch.offIndexAbelianEndpointIntegral",
+    "NLS.KdV.HillProductEquationPatch.abelianGapDisc_open",
+    "NLS.KdV.HillProductEquationPatch.abelianGapDisc_connected",
+    "NLS.KdV.HillProductEquationPatch.abelianGap_leftEndpoint_mem_closure",
+    "NLS.KdV.HillProductEquationPatch.offIndexAbelianEndpointIntegral_eq_normalized_primitive",
+    "NLS.KdV.HillProductEquationPatch.offIndexAbelian_normalized_primitive_unique",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_common_offIndex_Abelian_endpoint_normalization",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_Abelian_physical_energy_pullback",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_Abelian_endpoint_energies"
+  ],
+  "new_public_theorems": 30,
+  "new_public_definitions": 5,
+  "results": [
+    "The ACTUAL intrinsic Hill numerator has a fixed-frequency differential with the literal 2*z Jacobian. Deleting the selected canonical standard-root factor gives an actual regular numerator. ONE open complex native source neighborhood of EVERY real source is chosen BEFORE BOTH n,m; all these numerators are jointly analytic across the ENTIRE original closed gap discs.",
+    "For EVERY complex source in the existing product patch and every off-index positive gap, the EXACT zero Hill period supplies a single-valued actual primitive on the ENTIRE original disc minus the selected complex gap. The proof retains the full original radius and includes collapsed gaps; no zero period is assumed.",
+    "A reusable theorem proves full relative endpoint limits for primitives of a continuous numerator divided by ANY continuous root of a nondegenerate complex quadratic. The lower bound uses BOTH endpoint distances. Applying it to actual Hill differentials and the existing opposite cosine-sheet coefficients makes the two endpoint limits equal for EVERY primitive on a noncollapsed original cut disc.",
+    "At EVERY off-index COMPLEX collapsed gap, the exact zero period and the actual collapsed-root Cauchy formula force the regular numerator to vanish at the collapsed midpoint. Its divided difference fills the derivative analytically. A reusable cut-disc extension theorem then extends EVERY primitive through the collapsed cut while preserving EVERY value on its original cut disc.",
+    "ONE complex native source neighborhood chosen BEFORE ALL n,m gives an actual off-index primitive normalized to zero at BOTH original gap endpoints, including ALL low/collapsed/nonreal gaps. The limits hold along the FULL cut disc, not just along a chosen connector. This is an existence/normalization theorem; joint source analyticity of the endpoint-normalized family itself is not inferred.",
+    "The original cut discs are open and connected, and their endpoints are actual closure points, so the endpoint limits are nonvacuous. Endpoint normalization determines the primitive uniquely on the full cut disc. The primitive equals the GENUINE improper endpoint integral defined as a limit of finite literal polygonal path integrals.",
+    "At every REAL native source and ALL admissible positive frequencies, including real band values, the new frequency differential is EXACTLY 2*z times the ACTUAL canonical Hill energy differential on its canonical sheet. The squared frequency endpoints minus the actual Miura shift equal the ORIGINAL Hill labels 2*m-1 and 2*m, including low/collapsed pairs.",
+    "The article exposes common off-index normalization with literal improper endpoint integrals for original potentials, exact physical energy pullback and the original endpoint labels. These results do not evaluate a real Dirichlet point on a removed gap cut or the on-index angle, and do not sum the infinite off-index phases.",
+    "Nine new modules (30 theorems and 5 definitions), three byte-identical canonical omitted-product/endpoint-boundary/cut-disc dependencies and the exact 6055-declaration transitive axiom audit compiled privately without warnings, tactic suggestions or added axioms. All 1092 baseline non-audit sources are unchanged. A direct typed domain proof resolved a kernel timeout without raising heartbeats. Canonical checkout and shared Git metadata remain read-only.",
+    "Off-index actual complex endpoint limits/normalization, collapsed-cut removal, uniqueness, genuine improper endpoint integrals and original physical energy fidelity are NOW PROVED. Source analyticity and physical Dirichlet-sheet evaluation of the normalized family, on-index phase, infinite off-index sums, collapsed Cartesian coordinates and source3.2 bound, universal scalar, Gardner/Birkhoff/flow and ALL FIVE MAIN remain OPEN; goal ACTIVE."
+  ],
+  "fidelity": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-offindex-abelian-endpoints-map.json",
+    "ACTUAL_Hill_frequency_differential_EXACT_two_z_Jacobian_PROVED": true,
+    "ONE_complex_source_neighborhood_BEFORE_ALL_n_m_regular_gap_numerators_joint_analytic_PROVED": true,
+    "ENTIRE_original_cut_disc_offIndex_primitives_from_PROVED_zero_period_PROVED": true,
+    "FULL_relative_complex_endpoint_limits_for_noncollapsed_gaps_PROVED": true,
+    "BOTH_endpoint_limits_equal_for_EVERY_noncollapsed_cut_disc_primitive_PROVED": true,
+    "offIndex_COLLAPSED_regular_numerator_vanishes_from_EXACT_period_PROVED": true,
+    "COLLAPSED_derivative_and_primitive_analytic_extension_preserving_ALL_original_values_PROVED": true,
+    "ONE_common_complex_source_neighborhood_ALL_offIndex_gaps_BOTH_endpoints_zero_PROVED": true,
+    "low_collapsed_nonreal_gaps_included": true,
+    "endpoint_limits_nonvacuous_and_normalized_primitive_unique_PROVED": true,
+    "GENUINE_improper_polygonal_endpoint_integral_equals_normalized_primitive_PROVED": true,
+    "REAL_source_pullback_equals_ACTUAL_canonical_energy_differential_including_bands_PROVED": true,
+    "squared_endpoints_minus_shift_equal_ORIGINAL_ALL_positive_Hill_labels_PROVED": true,
+    "joint_source_analyticity_of_normalized_endpoint_family_proved": false,
+    "physical_Dirichlet_sheet_evaluation_of_endpoint_family_proved": false,
+    "on_index_Abelian_phase_constructed": false,
+    "off_index_infinite_Abelian_sums_constructed": false,
+    "collapsed_Cartesian_extension_and_source3_2_bound_proved": false,
+    "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "all_five_main_theorems_proved": false
+  },
+  "essential_remaining": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete physical Abelian phases and Cartesian coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "Complete joint source analyticity and physical Dirichlet-sheet evaluation of the actual endpoint-normalized OFF-INDEX Abelian integrals, the ON-INDEX phase, infinite off-index sums and collapsed-gap Cartesian coordinates for source3.2(ii), retaining the locally uniform bound(abs(original gamma_n)+abs(original mu_n-original tau_n))/sqrt(n). NEW: actual off-index primitives exist on ENTIRE original complex cut discs from PROVED exact zero periods; BOTH full relative endpoint limits agree, including all low/collapsed/nonreal gaps. ONE complex native source neighborhood works BEFORE ALL n,m, with primitives normalized to ZERO at BOTH endpoints. At collapsed gaps actual regular numerator vanishes by zero-period Cauchy formula; derivative and EVERY primitive fill analytically preserving ALL original values. Endpoint limits are nonvacuous, normalization UNIQUE, primitive equals genuine improper finite-polygonal endpoint integral. Actualfrequency differential equals 2*z times canonicalenergy differential atREAL sources inclbands; squaredfrequencyendpoints minusshift equalORIGINALALLpositiveHilllabels. Do NOT redo these endpoint existence/limit/collapse/normalization results. A remaining issue is constructing the endpoint-normalized family jointly analytically in the complex source and evaluating on the actual physical Dirichlet/norming sheet inside the removed cut; the current existence theorem does not assert that analyticity. Use shared parametric cosine/root-sheet gluing libraries and actual DirichletSheet. ON-INDEX period is nonzero so do not apply off-index zero-period primitives there. Formalize literal KMT y-tilde gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
+    "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "19d5737af2719e439b46a7e9362db22dfe3b658b",
+    "baseline_modules": 1093,
+    "baseline_non_audit_sources_verified_unchanged": 1092,
+    "new_modules_compiled": 9,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceStandardRootOmittedJointAnalytic",
+        "source": "NLS/ZakharovShabat/SourceStandardRootOmittedJointAnalytic.lean",
+        "source_sha256": "0086691aec15ff1df5d54ed4a9f6fb9f67f5ab2d49b2b14d278c8dcb1dc83ead"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.SegmentPrimitiveBoundary",
+        "source": "NLS/ComplexAnalysis/SegmentPrimitiveBoundary.lean",
+        "source_sha256": "11dde93aa1daae99340729eb42b07262fd1c4c7076d56337ca58fc0494a2a1ce"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.PrimitiveOnDiscComplement",
+        "source": "NLS/ComplexAnalysis/PrimitiveOnDiscComplement.lean",
+        "source_sha256": "cb1b5a46815816dab3a8a4bc333f977ef854198a6ec4014e3ba50ee28c953ea6"
+      }
+    ],
+    "modules_in_exact_inventory": 1102,
+    "audited_declarations": 6055,
+    "theorems": 5060,
+    "definitions": 995,
+    "new_theorems": 30,
+    "new_definitions": 5,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-offindex-abelian-endpoints.log",
+    "log_sha256": "51e59c39ca5d5e8ec8edf721406c7b0107df1339c7506d2d4647fc5f84215db0"
+  },
+  "output_sha256": {
+    "NLS/KdV/HillAbelianFrequencyDifferentials.lean": "768114523a851cabb98f91205280c6114e821f926121ba93b5f10562fea9162f",
+    "NLS/ComplexAnalysis/QuadraticRootPrimitiveEndpointLimits.lean": "3114d682c8a0cb1c6349eeca6d5ed81ac06c203ab1ff161d88573561d686cad0",
+    "NLS/KdV/HillOffIndexAbelianPrimitives.lean": "e5adf35a3590051964776fe5f34386ecf4fa4cfefc5ed49e048a52c299723734",
+    "NLS/KdV/HillAbelianGapEndpointLimits.lean": "cb792b7d690e4e46ace2014110cd2c47613103baca7c950a8c87e3c7ffe2f826",
+    "NLS/ComplexAnalysis/PrimitiveDiscCutExtension.lean": "a99bae1b7de11549ea057b23188c23ae646f87b7dba0d27b38303e7d2befec84",
+    "NLS/KdV/HillAbelianCollapsedGapExtension.lean": "07cc56b5a658e9622dfa555bf514d65aed9b17dc85b7a69bba64365ce04e2cc3",
+    "NLS/KdV/HillAbelianPhysicalEnergyPullback.lean": "a7ff30d51d943e0027c4507a71a213782999ada2ff68b33fa22f32bfd7711ee9",
+    "NLS/KdV/HillOffIndexAbelianEndpointIntegrals.lean": "2384e76cba130ba86060acb85ccbffc35885a75a23ab0cffdc8dd5f4e7aca575",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillOffIndexAbelianEndpoints.lean": "d1796015f57375b8b9d8ffaab4cd344b24aacd92d43eb0b3df1af246642ef1f0"
+  },
+  "canonical_checkout_written": false,
+  "canonical_state": {
+    "head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+    "status": ""
+  },
+  "workspace_decision": "pending; all writes private",
+  "git_isolation": {
+    "metadata": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/appendix-b-milestones.git",
+    "base_commit": "19d5737af2719e439b46a7e9362db22dfe3b658b",
+    "branch": "articles/kdv-pseudomeasures",
+    "shared_canonical_git_written": false
+  },
+  "main_theorems_verified": false
+}

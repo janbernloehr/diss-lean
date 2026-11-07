@@ -11,13 +11,13 @@ open scoped ENNReal
 open NLS.LinearVolterra NLS.ZakharovShabat
 namespace NLS.KdV
 
-def hillL2FrequencyDirichlet (q : Coeff 2) (z : ℂ) : ℂ :=
+def hillL2FrequencyStateDirichlet (q : Coeff 2) (z : ℂ) : ℂ :=
   (constantUpperStateMap z
     (l2SolutionCurve (physicalRestrictionL2 (hillFirstOrderPotential q)) z
       (constantUpperInitialVector z (0,1)) ⟨1,by norm_num⟩)).1
 
-theorem analyticOnNhd_hillL2FrequencyDirichlet_joint :
-    AnalyticOnNhd ℂ (fun p : ℂ × Coeff 2 => hillL2FrequencyDirichlet p.2 p.1) univ := by
+theorem analyticOnNhd_hillL2FrequencyStateDirichlet_joint :
+    AnalyticOnNhd ℂ (fun p : ℂ × Coeff 2 => hillL2FrequencyStateDirichlet p.2 p.1) univ := by
   intro p _
   have hphi : AnalyticAt ℂ (fun a : ℂ × Coeff 2 => hillFirstOrderPotential a.2) p :=
     analyticAt_const.prod analyticAt_snd.neg
@@ -28,55 +28,55 @@ theorem analyticOnNhd_hillL2FrequencyDirichlet_joint :
       (analyticAt_fst.prod hu)
   have he := ((ContinuousMap.evalCLM ℂ (⟨1,by norm_num⟩ : Icc (0 : ℝ) 1)).analyticAt _).comp hh
   convert! analyticAt_fst.comp he using 1
-  simp only [hillL2FrequencyDirichlet,constantUpperStateMap_apply,constantUpperInitialVector,
+  simp only [hillL2FrequencyStateDirichlet,constantUpperStateMap_apply,constantUpperInitialVector,
     mul_zero,mul_one,sub_zero]
   rfl
 
-theorem hillL2FrequencyDirichlet_eq_classical (Q : C(AddCircle (2 : ℝ),ℂ)) (z : ℂ) :
-    hillL2FrequencyDirichlet (SpectralWeight.one.toCoeff (hillContinuousCoefficients Q)) z =
+theorem hillL2FrequencyStateDirichlet_eq_classical (Q : C(AddCircle (2 : ℝ),ℂ)) (z : ℂ) :
+    hillL2FrequencyStateDirichlet (SpectralWeight.one.toCoeff (hillContinuousCoefficients Q)) z =
       (classicalHillFlow (hillUnitPotentialCurve Q) (z^2) (0,1) 1).1 := by
-  rw [hillL2FrequencyDirichlet,physicalRestrictionL2_of_continuous _ _
+  rw [hillL2FrequencyStateDirichlet,physicalRestrictionL2_of_continuous _ _
     (hillFirstOrder_continuous_compatibility Q),l2SolutionCurve_of_continuous,classicalSolutionCurve_apply]
   have h := classicalHillFlow_eq_constantUpper (hillUnitPotentialCurve Q) z (0,1) ⟨1,by norm_num⟩
   exact (congrArg Prod.fst h).symm
 
-theorem hillL2FrequencyDirichlet_even (q : Coeff 2) (z : ℂ) :
-    hillL2FrequencyDirichlet q (-z)=hillL2FrequencyDirichlet q z := by
-  have hc (y : ℂ) : Continuous (fun a : Coeff 2 => hillL2FrequencyDirichlet a y) := by
-    have h : Continuous (fun p : ℂ × Coeff 2 => hillL2FrequencyDirichlet p.2 p.1) := continuous_iff_continuousAt.mpr
-      (fun p : ℂ × Coeff 2 => (analyticOnNhd_hillL2FrequencyDirichlet_joint p (mem_univ _)).continuousAt)
+theorem hillL2FrequencyStateDirichlet_even (q : Coeff 2) (z : ℂ) :
+    hillL2FrequencyStateDirichlet q (-z)=hillL2FrequencyStateDirichlet q z := by
+  have hc (y : ℂ) : Continuous (fun a : Coeff 2 => hillL2FrequencyStateDirichlet a y) := by
+    have h : Continuous (fun p : ℂ × Coeff 2 => hillL2FrequencyStateDirichlet p.2 p.1) := continuous_iff_continuousAt.mpr
+      (fun p : ℂ × Coeff 2 => (analyticOnNhd_hillL2FrequencyStateDirichlet_joint p (mem_univ _)).continuousAt)
     have hm : Continuous (fun a : Coeff 2 => (y,a)) := continuous_const.prodMk continuous_id
     simpa only [Function.comp_def] using h.comp hm
-  have hfinite (a : ℤ →₀ ℂ) : hillL2FrequencyDirichlet (Coeff.ofFinsupp (p := 2) a) (-z) =
-      hillL2FrequencyDirichlet (Coeff.ofFinsupp (p := 2) a) z := by
+  have hfinite (a : ℤ →₀ ℂ) : hillL2FrequencyStateDirichlet (Coeff.ofFinsupp (p := 2) a) (-z) =
+      hillL2FrequencyStateDirichlet (Coeff.ofFinsupp (p := 2) a) z := by
     let Q := Fourier.continuousSynthesis (Coeff.ofFinsupp (p := 1) a)
     have he : SpectralWeight.one.toCoeff (hillContinuousCoefficients Q)=Coeff.ofFinsupp (p := 2) a := by
       ext k
       simp only [SpectralWeight.toCoeff_apply,hillContinuousCoefficients_apply]
       exact Fourier.fourierCoeff_continuousSynthesis _ k
-    rw [← he,hillL2FrequencyDirichlet_eq_classical,hillL2FrequencyDirichlet_eq_classical]
+    rw [← he,hillL2FrequencyStateDirichlet_eq_classical,hillL2FrequencyStateDirichlet_eq_classical]
     congr 2
     ring
-  have he : (fun a : Coeff 2 => hillL2FrequencyDirichlet a (-z)) =
-      (fun a : Coeff 2 => hillL2FrequencyDirichlet a z) := (Coeff.denseRange_ofFinsupp (p := 2) (by simp)).equalizer (hc (-z)) (hc z) (funext hfinite)
+  have he : (fun a : Coeff 2 => hillL2FrequencyStateDirichlet a (-z)) =
+      (fun a : Coeff 2 => hillL2FrequencyStateDirichlet a z) := (Coeff.denseRange_ofFinsupp (p := 2) (by simp)).equalizer (hc (-z)) (hc z) (funext hfinite)
   exact congrFun he q
 
 def hillL2DirichletCharacteristic (q : Coeff 2) (energy : ℂ) : ℂ :=
-  hillL2FrequencyDirichlet q (Complex.sqrt energy)
+  hillL2FrequencyStateDirichlet q (Complex.sqrt energy)
 
 theorem analyticOnNhd_hillL2DirichletCharacteristic_joint :
     AnalyticOnNhd ℂ (fun p : ℂ × Coeff 2 => hillL2DirichletCharacteristic p.2 p.1) univ :=
   NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent
-    (fun p : ℂ × Coeff 2 => hillL2FrequencyDirichlet p.2 p.1)
-    analyticOnNhd_hillL2FrequencyDirichlet_joint hillL2FrequencyDirichlet_even
+    (fun p : ℂ × Coeff 2 => hillL2FrequencyStateDirichlet p.2 p.1)
+    analyticOnNhd_hillL2FrequencyStateDirichlet_joint hillL2FrequencyStateDirichlet_even
     Complex.sqrt NLS.ComplexAnalysis.complex_sqrt_sq
 
 theorem hillL2DirichletCharacteristic_sq (q : Coeff 2) (z : ℂ) :
-    hillL2DirichletCharacteristic q (z^2)=hillL2FrequencyDirichlet q z := by
+    hillL2DirichletCharacteristic q (z^2)=hillL2FrequencyStateDirichlet q z := by
   have hs : (Complex.sqrt (z^2))^2=z^2 := NLS.ComplexAnalysis.complex_sqrt_sq _
   rcases eq_or_eq_neg_of_sq_eq_sq (Complex.sqrt (z^2)) z hs with h | h
   · simp only [hillL2DirichletCharacteristic,h]
-  · simp only [hillL2DirichletCharacteristic,h,hillL2FrequencyDirichlet_even]
+  · simp only [hillL2DirichletCharacteristic,h,hillL2FrequencyStateDirichlet_even]
 
 theorem analyticOnNhd_hillL2DirichletCharacteristic (q : Coeff 2) :
     AnalyticOnNhd ℂ (hillL2DirichletCharacteristic q) univ := by
@@ -88,7 +88,7 @@ theorem hillL2DirichletCharacteristic_eq_classical (Q : C(AddCircle (2 : ℝ),�
     hillL2DirichletCharacteristic (SpectralWeight.one.toCoeff (hillContinuousCoefficients Q)) energy =
       (classicalHillFlow (hillUnitPotentialCurve Q) energy (0,1) 1).1 := by
   obtain ⟨z,rfl⟩ := IsAlgClosed.exists_pow_nat_eq energy (by norm_num : 0<2)
-  rw [hillL2DirichletCharacteristic_sq,hillL2FrequencyDirichlet_eq_classical]
+  rw [hillL2DirichletCharacteristic_sq,hillL2FrequencyStateDirichlet_eq_classical]
 
 theorem classicalHillFlow_energy_im_eq_zero_of_dirichlet
     (q : Curve ℂ) (hq : ∀ t, (q t).im=0) (energy : ℂ)

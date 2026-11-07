@@ -80,7 +80,7 @@ theorem exists_local_sourceNormalizedActionDeviation_twoExponentDecomposition_al
   · have hqr : q < r := lt_of_not_ge hrq
     have hr1 : 1 < r := hq1.trans hqr
     have hrTop : r ≠ ⊤ := by simp [r]
-    letI : Fact (1 ≤ r) := ⟨hr1.le⟩
+    let : Fact (1 ≤ r) := ⟨hr1.le⟩
     obtain ⟨V,hVopen,hφV,M,hfull⟩ :=
       exists_local_sourceNormalizedActionDeviation_coeff_uniformNorm
         (p := p) (q := r) hp hp1 hr1 hrTop le_rfl φ hreal

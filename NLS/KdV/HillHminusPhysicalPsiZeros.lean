@@ -73,7 +73,7 @@ theorem HillHminusPsiChart.original_labels_eq_squared_miuraDirac
     simpa only [ofReal_pow] using h
   have ho : hillHminusRadicand (hillOriginalHminusSource q.val) (-((c^2 : ℝ) : ℂ))≠0 := by
     simpa only [hshift,ofReal_pow] using houtside
-  have h := hillHminusLabels_eq_squared_miuraDirac (hillOriginalHminusSource q.val)
+  have h := hillHminusLabels_eq_squared_miuraDirac_of_radicand_ne_zero (hillOriginalHminusSource q.val)
     (hillOriginalHminusSource_real q.val q.property.2) u (c^2) hi ho
   simpa only [hillHminusLabels_original_source q] using h
 

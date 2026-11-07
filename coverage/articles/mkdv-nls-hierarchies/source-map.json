@@ -447,9 +447,11 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_gradient_agreement",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral"
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false"
       ],
-      "remaining": "Theorem6: source pointwise gradient symmetry correspondence, invariant W and gap-segment interfaces, source nonlocal sign comparison and xi covariance."
+      "remaining": "Theorem6: source pointwise gradient symmetry correspondence, invariant W and gap-segment interfaces, and xi covariance. The literal Section2 nonlocal sign is corrected and the printed sign refuted."
     },
     {
       "label": "Lemma 10",
@@ -1670,12 +1672,13 @@
     ]
   },
   "latest_validation": {
-    "report": "symmetry-validation.json",
+    "report": "nonlocal-sign-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
-    "base_commit": "ca1c629faa62d3aea01c55e9a8a2053927cc718c",
-    "article_audit": 9923,
-    "combined_audit": 61420
+    "base_commit": "73bf8303a316a0877a0b04b59debc3030d0060a1",
+    "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+    "article_audit": 13250,
+    "combined_audit": 76497
   },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
@@ -1709,7 +1712,7 @@
     "named_statements": 18,
     "numbered_equations": 25,
     "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
-    "initial_semantic_assertions": 106,
+    "initial_semantic_assertions": 108,
     "source_passages": 241
   },
   "full_paper_expansion": {
@@ -1747,6 +1750,15 @@
       "Original L2 whole-line physical gradient spatial equation, scalar integral and periodicity; no monodromy-entry division.",
       "Smooth H1 counterexample refuting the unrestricted generic upper-right monodromy-entry claim."
     ],
-    "remaining": "See full-paper-coverage.json; source normalization comparison of the spatial nonlocal sign remains open."
+    "remaining": "Historical milestone; the later nonlocal-sign milestone resolves its sign obligation. Other open claims are in full-paper-coverage.json."
+  },
+  "whole_paper_nonlocal_sign_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 42,
+    "new_definitions": 9,
+    "source_modules": 8,
+    "correction": "xi=delta-2*i*integral(R*phi dot grad Delta) in the literal Section2 convention. Actual original H0 counterexample refutes printed plus, even almost everywhere.",
+    "further_progress": "Correct typed canonical-root-normalized actual-gradient nonlocal reflection residual and original H0 endpoint monodromy matrices.",
+    "remaining": "Primitive F interface, full xi covariance, all-real-x fundamental symmetry, and all other pending source claims."
   }
 }

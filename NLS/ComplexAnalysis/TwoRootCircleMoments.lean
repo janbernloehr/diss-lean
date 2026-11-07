@@ -1,4 +1,3 @@
-import NLS.ComplexAnalysis.AnalyticLogarithmicMoments
 import NLS.ComplexAnalysis.WeightedArgumentPrinciple
 import NLS.ComplexAnalysis.ParametricCircleIntegralHigher
 import NLS.ComplexAnalysis.JointSpectralDerivative
@@ -15,6 +14,41 @@ open Set Metric Complex
 open scoped Classical
 namespace NLS.ComplexAnalysis
 variable {A : Type} [NormedAddCommGroup A] [NormedSpace ℂ A]
+
+/-- The original logarithmic-derivative contour, with its residue normalization. -/
+def logarithmicCircleMoment (F : ℂ × A → ℂ) (c : ℂ) (R : ℝ) (k : ℕ) (a : A) : ℂ :=
+  (2*Real.pi*I : ℂ)⁻¹ * ∮ z in C(c,R), z^k * logDeriv (fun w => F (w,a)) z
+
+/-- Nonvanishing on a fixed contour makes its power moments analytic in
+the Banach parameter. No root labeling is needed. -/
+theorem analyticOnNhd_logarithmicCircleMoment
+    (F : ℂ × A → ℂ) (hF : AnalyticOnNhd ℂ F univ)
+    (c : ℂ) (R : ℝ) (hR : 0 ≤ R) (k : ℕ)
+    (V : Set A) (hV : IsOpen V)
+    (hb : ∀ a ∈ V, ∀ z ∈ sphere c R, F (z,a) ≠ 0) :
+    AnalyticOnNhd ℂ (logarithmicCircleMoment F c R k) V := by
+  let D : Set (ℂ × A) := {t | F t ≠ 0}
+  have hD : IsOpen D := isOpen_ne_fun hF.continuous continuous_const
+  let ev : ((ℂ × A) →L[ℂ] ℂ) →L[ℂ] ℂ := ContinuousLinearMap.apply ℂ ℂ (1,0)
+  have hd : AnalyticOnNhd ℂ (fun t => (fderiv ℂ F t) (1,0)) univ :=
+    ev.comp_analyticOnNhd hF.fderiv
+  let G : ℂ × A → ℂ := fun t => t.1^k * (fderiv ℂ F t) (1,0) / F t
+  have hG : AnalyticOnNhd ℂ G D := by
+    intro t ht
+    exact (((analyticAt_fst.pow k).mul (hd t (mem_univ _))).div
+      (hF t (mem_univ _)) ht)
+  have hc := analyticOnNhd_circleIntegral_of_jointAnalytic G hD hG c R hR hV hb
+  intro a ha
+  apply (analyticAt_const.mul (hc a ha)).congr
+  apply Filter.Eventually.of_forall
+  intro b
+  change (2*Real.pi*I : ℂ)⁻¹ * (∮ z in C(c,R), G (z,b)) = _
+  congr 1
+  apply circleIntegral.integral_congr hR
+  intro z _
+  dsimp [G, logDeriv]
+  rw [deriv_spectral_section_eq_fderiv F z b (hF (z,b) (mem_univ _)).differentiableAt]
+  ring
 
 omit [NormedAddCommGroup A] [NormedSpace ℂ A] in
 /-- The contour moment is the sum of the two actual root powers,
@@ -80,8 +114,8 @@ theorem analyticOnNhd_momentPairPolynomial
     (c : ℂ) (R : ℝ) (hR : 0 ≤ R) (V : Set A) (hV : IsOpen V)
     (hb : ∀ a ∈ V, ∀ z ∈ sphere c R, F (z,a) ≠ 0) :
     AnalyticOnNhd ℂ (momentPairPolynomial F c R) (univ ×ˢ V) := by
-  have h₁ := analyticOnNhd_logarithmicCircleMoment F hF c R hR 1 (V := V) hV hb
-  have h₂ := analyticOnNhd_logarithmicCircleMoment F hF c R hR 2 (V := V) hV hb
+  have h₁ := analyticOnNhd_logarithmicCircleMoment F hF c R hR 1 V hV hb
+  have h₂ := analyticOnNhd_logarithmicCircleMoment F hF c R hR 2 V hV hb
   intro t ht
   have h₁t := (h₁ t.2 ht.2).comp (analyticAt_snd (p := t))
   have h₂t := (h₂ t.2 ht.2).comp (analyticAt_snd (p := t))

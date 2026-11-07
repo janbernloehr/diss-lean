@@ -1,0 +1,171 @@
+{
+  "source": "arXiv:1610.00278v1 global native KdV Birkhoff/momentum foundation: actual unit-period Gardner translation symmetry and complete canonical-action flow commutation",
+  "status": "Prove ACTUAL Gardner Poisson spatial covariance, full complex action-invariance germs, actual action-field/complete-flow spatial commutation and invariant unimodular native spatial quotients. Actual spatial phase/winding/momentum trace/native closedness/global inverse/actualKdV and ALL MAIN statements remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-action-spatial-commutation-map.json",
+    "ACTUAL_scalar_Gardner_tensor_spatial_translation_invariance_PROVED": true,
+    "EXACT_full_Hminus_cotangent_pullback_is_opposite_H1_translation_PROVED": true,
+    "proved_invariance_GERM_IMPLIES_ACTUAL_gradient_and_field_spatial_covariance_PROVED": true,
+    "FULL_REAL_Hminus_actions_translation_invariance_NO_zero_mean_hypothesis_PROVED": true,
+    "ONE_common_complex_ball_BEFORE_ALL_action_index_invariance_germs_PROVED": true,
+    "ACTUAL_action_Hamiltonian_field_spatial_covariance_EVERY_physical_real_Hminus_source_PROVED": true,
+    "actual_physical_real_source_translation_isometric_group_exact_spatial_period_ONE_PROVED": true,
+    "generic_COMPLETE_C1_flow_linear_symmetry_equivariance_by_ODE_uniqueness_PROVED": true,
+    "ACTUAL_COMPLETE_indexed_action_flows_commute_with_spatial_translation_EVERY_source_displacement_time_PROVED": true,
+    "SAME_ENTIRE_original_distribution_spatial_translation_bridge_PROVED": true,
+    "actual_NATIVE_spatial_coordinate_quotients_invariant_under_EVERY_complete_indexed_action_flow_PROVED": true,
+    "actual_positive_NATIVE_coordinate_moduli_spatial_invariant_PROVED": true,
+    "actual_open_coordinate_spatial_quotients_UNIMODULAR_PROVED": true,
+    "actual_Birkhoff_spatial_phase_velocity_2_pi_i_n_PROVED": false,
+    "actual_spatial_quotient_winding_number_n_PROVED": false,
+    "actual_action_source_flow_period_2_pi_PROVED": false,
+    "actual_KdV_momentum_action_trace_PROVED": false,
+    "actual_native_closed_map_PROVED": false,
+    "actual_native_properness_PROVED": false,
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "GardnerSpatialTranslation proves the ACTUAL unit-period scalar Gardner derivative and H1 bivector commute with spatial translation. Full Hminus-one cotangent pullback is the EXACT opposite H1 translation, by actual unit-mode evaluations. The full-dual Gardner tensor is invariant under simultaneous pullback. A PROVED local functional-invariance germ transports the ACTUAL scalar gradient and ACTUAL Hamiltonian vector with the source translation. No transformation is inferred from equality at only one point; the original2*pi scalar Gardner symbol is retained.",
+    "HillActionSpatialTranslation.hillHminusLabels_eq_of_discriminant_eq proves equality of the complete intrinsic ordered real Hill lists from equality of the ENTIRE discriminant, retaining ALL characteristic multiplicities. hillHminusCanonicalAction_spatialTranslation_real proves actual action invariance on the FULL physical real Hminus-one space, without a zero-mean hypothesis. Actual canonical real gap integrals and the complete ordered labels fix every low and collapsed index.",
+    "exists_hillHminusCanonicalActions_spatialTranslation_germ proves ONE complex source ball BEFORE ALL action indices, on which actual action composition with the fixed spatial translation equals the actual action. Analyticity on the intersection of the actual source and translated source domains and physical-real uniqueness supply the FULL complex germ. Thus the actual full Hminus-one action cotangents transform; the conclusion is not assumed from physical pointwise value equality.",
+    "hillHminusActionHamiltonianVector_spatialTranslation proves exact covariance of the ACTUAL canonical-action Hamiltonian vector at EVERY physical real Hminus-one input. hillRealSpatialTranslation constructs literal bounded real-linear translation on the SAME physical mean-zero Banach source; its projection is PROVED inactive. It is an isometric group with EXACT spatial period1. hillRealActionHamiltonianVector_spatialTranslation proves the SAME actual physical real action field is spatially covariant. The spatial period1 is NOT a claim that an action Hamiltonian flow has source period2*pi.",
+    "CompactInvariantFlowEquivariance proves a shared theorem: every bounded real-linear symmetry of an ACTUAL C1 vector field commutes with its complete constructed flow at EVERY real time, by actual integral-curve uniqueness. OriginalHillActionSpatialCommutation applies it to EVERY actual indexed action field, EVERY physical real mean-zero Hminus-one source, EVERY spatial displacement and EVERY real action-flow time. The original distributional spatial translation and the native coefficient translation are proved to give the SAME original input.",
+    "originalHill_spatialCoordinateRatio_actionFlow_invariant proves the ACTUAL native spatial coordinate quotient is invariant under EVERY complete actual indexed action flow. It uses PROVED source-flow commutation and the previously PROVED exact native output rotations, canceling only their nonzero exponential factor. It does not assume source action-flow periods, global injectivity or native spatial covariance. Actual action invariance also proves EVERY positive native coordinate modulus is spatially invariant; every open-coordinate spatial quotient is unimodular.",
+    "Actual native Birkhoff spatial phase velocity2*pi*i*n, its winding number, the KdV momentum action trace, varying-action a-priori control/native properness/closedness and actual global bijectivity remain UNPROVED. The new invariant unimodular quotients do NOT determine their specific winding number. The full sourceTheorem1.4Statement remains conditional on its SINGLE actual native closedness hypothesis. These complete action flows and spatial translations are NOT identified with actual KdV evolution. ALL FIVE MAIN THEOREMS remain UNPROVED."
+  ],
+  "declarations": [
+    "NLS.Poisson.gardnerDerivative_spatialTranslation",
+    "NLS.Poisson.gardnerBivector_spatialTranslation",
+    "NLS.Poisson.hminusCotangentCLM_comp_spatialTranslation",
+    "NLS.Poisson.gardnerHamiltonianDirection_comp_spatialTranslation",
+    "NLS.Poisson.gardnerCotangentBivector_comp_spatialTranslation",
+    "NLS.Poisson.hminusScalarGradient_spatialTranslation_of_germ",
+    "NLS.Poisson.gardnerHamiltonianVector_spatialTranslation_of_germ",
+    "NLS.KdV.hillHminusLabels_eq_of_discriminant_eq",
+    "NLS.KdV.hillHminusCanonicalAction_spatialTranslation_real",
+    "NLS.KdV.exists_hillHminusCanonicalActions_spatialTranslation_germ",
+    "NLS.KdV.hillHminusActionHamiltonianVector_spatialTranslation",
+    "NLS.KdV.hillRealSpatialTranslation",
+    "NLS.KdV.hillRealSpatialTranslation_inclusion",
+    "NLS.KdV.norm_hillRealSpatialTranslation",
+    "NLS.KdV.hillRealSpatialTranslation_zero",
+    "NLS.KdV.hillRealSpatialTranslation_add",
+    "NLS.KdV.hillRealSpatialTranslation_one",
+    "NLS.KdV.hillRealSpatialTranslation_periodic",
+    "NLS.KdV.hillRealActionHamiltonianVector_spatialTranslation",
+    "NLS.FunctionalAnalysis.CompactInvariantVectorField.globalCurve_equivariant",
+    "NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_spatialTranslation",
+    "NLS.Articles.KdVPseudomeasures.originalHillRealMeanZeroSource_spatialTranslation",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_action_flow_spatial_commutation",
+    "NLS.Articles.KdVPseudomeasures.originalHill_spatialCoordinateRatio_actionFlow_invariant",
+    "NLS.Articles.KdVPseudomeasures.norm_hillRealNativeCoordinate_spatialTranslation",
+    "NLS.Articles.KdVPseudomeasures.norm_hillRealSpatialCoordinateRatio"
+  ],
+  "files": [
+    "NLS/Poisson/GardnerSpatialTranslation.lean",
+    "NLS/KdV/HillActionSpatialTranslation.lean",
+    "NLS/FunctionalAnalysis/CompactInvariantFlowEquivariance.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionSpatialCommutation.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "1137d4bcd13550d4027cffa6fc253dddc36f3092",
+    "baseline_modules": 1606,
+    "baseline_non_audit_sources_verified_unchanged": 1605,
+    "new_modules_compiled": 4,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.FunctionalAnalysis.IntegralCurveUniqueness",
+        "source": "NLS/FunctionalAnalysis/IntegralCurveUniqueness.lean",
+        "source_sha256": "548b2037502a74eb0c46424d781c781d45d7ee79544ed38288f8991729e8cdcd"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Poisson.GardnerBivector",
+        "source": "NLS/Poisson/GardnerBivector.lean",
+        "source_sha256": "026574503a2e2861fca6e7915752e7ddfaedac97610515baa5d0fcb4dc40a1fc",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Poisson.HminusGardnerBracket",
+        "source": "NLS/Poisson/HminusGardnerBracket.lean",
+        "source_sha256": "0c2ec3465cdc823ef7364a1bd601c1faac22e9d37b1e0e8ac44a54d055423285",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Poisson.GardnerHamiltonianDirection",
+        "source": "NLS/Poisson/GardnerHamiltonianDirection.lean",
+        "source_sha256": "4d6fc9539616ee5b64afb4145e8ad96fd27c80b11a1bda150cd33ecb73c136da",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedSpatialTranslationDerivative",
+        "source": "NLS/SequenceSpaces/WeightedSpatialTranslationDerivative.lean",
+        "source_sha256": "2bb10c5e0d078e3deb2d0b6bc513c66d224197223b1b184735bd81c1f312e802",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillSpatialTranslationDiscriminant",
+        "source": "NLS/KdV/HillSpatialTranslationDiscriminant.lean",
+        "source_sha256": "2424a801f36f289eba676685bed8b68118e6740cc5f639e32410182391ce7183",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillActionHamiltonianField",
+        "source": "NLS/KdV/HillActionHamiltonianField.lean",
+        "source_sha256": "dc228a0b061b777e55eae408c1941222b9ed2042cecb6daeee3ca9d3aae452b7",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillActionRotation",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillActionRotation.lean",
+        "source_sha256": "725dad295dc885c80d3ce9c9d9ab34220e23aefa98bcfb0c45baf684070898cd",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillSpatialStationarity",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillSpatialStationarity.lean",
+        "source_sha256": "68d4e4e2fae516e2469b8ddcbd85be589112571e03d9b3633e9c4bf938234b96",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.FunctionalAnalysis.CompactInvariantGlobalCurve",
+        "source": "NLS/FunctionalAnalysis/CompactInvariantGlobalCurve.lean",
+        "source_sha256": "99d98c89a1b8aa963217a1ac3d23fe1b7b732eef43bd0c0d20699347a9f3692e",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1610,
+    "audited_declarations": 8207,
+    "theorems": 6903,
+    "definitions": 1304,
+    "new_theorems": 25,
+    "new_definitions": 1,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-action-spatial-commutation.log",
+    "log_sha256": "6cdd1679c6351b8bfab1e29e50641d73da58e80c395942b4c17c71e376828445"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED actual full real Hminus-one Hill BORG potential constancy for ALL canonical gaps closed, zero-mean uniqueness and EXACT singleton ACTUAL native zero fiber. Proof uses unconditional ACTUAL Dirac central-gap constancy from physical momentum/spatial translation+ACTUAL Dirac Jacobian injectivity, genuine all-index Miura gap comparison/reflection and SAME actual distributional Miura lift. GLOBAL actual native bijectivity IFF ACTUAL native map closedness now PROVED, using actual local homeomorphism+singletonzero. Actual closedness/properness/globalbijection, L2/smooth nativeinjectivity/arbitrary action realization and allmain still OPEN. Prior actual finite-gap smoothness/L2 reduction and full endpoint3.5i/ii/literalnorm/localinverse/forwardweakstar remain PROVED. NOW PROVED exact physical Miura spatial covariance, entire-complex native Hill discriminant spatial invariance, FULL original physical spectral/multiplicity/label/gap/action translation invariance and actual L2 spatial DF stationarity with2*pi factors. Actual Birkhoff spatial phase velocities and KdV momentum-action trace remain UNPROVED; stationarity alone supplies no varying-action properness bound. NOW additionally PROVED actual Gardner tensor spatial invariance; ONE common complex action-invariance ball before ALL indices; actual action-field covariance and COMPLETE indexed action-flow commutation with spatial translation on EVERY original physical real Hminus-one source. Actual native spatial quotients are unimodular at open coordinates and invariant under EVERY actual indexed action flow. Spatial source period1 proved; specific native spatial winding/speed, source action-flow periods and momentum trace remain UNPROVED.",
+    "FULL precise sourceTheorem1.4 is NOW declared as sourceTheorem1_4Statement and PROVED CONDITIONAL ONLY on IsClosedMap hillRealSignedMap by sourceTheorem1_4_of_native_isClosedMap. Actual endpoint inverse regularity is unconditional for ANY actual native preimage of endpoint output. Native onto/injectivity transfer to endpoints; native injectivity supplies full weak-star homeomorphism on EVERY bounded subset, including nonclosed subsets. Actual native CLOSEDNESS/PROPERNESS/GLOBALBIJECTION remains UNPROVED, so sourceTheorem1.4 remains UNPROVED. Actual native globalbijectionIFFactualclosedmap is already proved via actual localhomeomorphism+genuine singletonzero. Other nonlinear scales and actualKdV still required; ALL MAIN statements remain UNPROVED.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}

@@ -55,7 +55,9 @@ theorem classicalSolution_auxiliaryPhase (Φ : Curve (ℂ × ℂ)) (z : ℂ)
     apply Prod.ext <;> simp only [u, classicalSourcePhase_apply, auxiliaryPhase_apply,
       classicalODECoefficient_apply, ContinuousLinearMap.comp_apply,
       ContinuousLinearMap.toSpanSingleton_apply, one_smul] <;>
-      dsimp <;> ring_nf <;> simp only [I_sq, I_pow_three] <;> ring
+      (dsimp; ring_nf)
+    simp only [I_sq, I_pow_three]
+    ring
   exact (classicalSolution_unique Φ z (auxiliaryPhase ℂ v) u hu h0 hd t.property).symm
 
 private theorem phase_first_column (Φ : Curve (ℂ × ℂ)) (z : ℂ) :

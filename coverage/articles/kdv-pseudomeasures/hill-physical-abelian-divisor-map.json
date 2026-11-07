@@ -1,0 +1,152 @@
+{
+  "source": "arXiv:1610.00278v1 source3.2(ii): actual physical Hill off-index Abelian Dirichlet-divisor evaluation",
+  "status": "PROVED local physical divisor evaluation on one OPEN native complex domain before ALL indices containing the entire real part of the patch; exact auxiliary phase, original energy, physical sheet sign, analytic zero-sheet extension and regular spectral germ. Cross-patch intrinsic gluing, on-index angle, infinite sums, Cartesian coordinates/flow and ALL FIVE MAIN remain OPEN.",
+  "modules": [
+    "NLS/ZakharovShabat/AuxiliaryGapSegmentPlacement.lean",
+    "NLS/KdV/HillPhysicalDirichletPlacement.lean",
+    "NLS/KdV/HillPhysicalDirichletSheetCoefficient.lean",
+    "NLS/KdV/HillPhysicalOffIndexAbelianValue.lean",
+    "NLS/KdV/HillPhysicalAbelianRegularGerm.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalAbelianDivisor.lean"
+  ],
+  "declarations": [
+    "NLS.ZakharovShabat.canonicalAuxiliaryPeriodOneRoots_mem_sourcePeriodicSegment_of_realType",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichletFrequency",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichletSource",
+    "NLS.KdV.HillProductEquationPatch.analytic_physicalDirichletFrequency",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichlet_displacement_restores_frequency",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichletSource_open",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichletFrequency_mem_disc",
+    "NLS.KdV.HillProductEquationPatch.real_mem_physicalDirichletSource",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichletFrequency_energy",
+    "NLS.KdV.HillProductEquationPatch.abelianGapRootMultiplier",
+    "NLS.KdV.HillProductEquationPatch.abelianGapRootMultiplier_ne_zero",
+    "NLS.KdV.HillProductEquationPatch.analytic_abelianGapRootMultiplier",
+    "NLS.KdV.HillProductEquationPatch.abelianGapRootMultiplier_sq_mul_polynomial",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient",
+    "NLS.KdV.HillProductEquationPatch.source_subset_canonicalDirichlet",
+    "NLS.KdV.HillProductEquationPatch.analytic_physicalDirichletRootCoefficient",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichletSheet_sq_frequency",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient_sq",
+    "NLS.KdV.HillProductEquationPatch.norm_physicalDirichletRootCoefficient_le",
+    "NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianValue",
+    "NLS.KdV.HillProductEquationPatch.analytic_physicalOffIndexAbelianValue",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient_preserves_sheet",
+    "NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianValue_zero_of_sheet_zero",
+    "NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient_zero_iff_endpoint",
+    "NLS.KdV.HillProductEquationPatch.norm_physicalOffIndexAbelianValue_le",
+    "NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianValue_eq_improper_integral_on_cut_complement",
+    "NLS.KdV.HillProductEquationPatch.exists_physicalAbelian_regular_germ",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_common_physical_divisor_source",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_actual_Dirichlet_root_sheet",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_physical_offIndex_Abelian_value_analytic"
+  ],
+  "new_public_theorems": 25,
+  "new_public_definitions": 5,
+  "results": [
+    "A reusable auxiliary-boundary placement theorem retains the exact sourcePhase conversion and invariance of periodic endpoints. Every real-type source and signed auxiliary boundary root lies in the original periodic gap segment; ordinary unrotated NLS Dirichlet roots are not substituted.",
+    "ONE OPEN complex native source domain, using the full l2 auxiliary displacement and original ALL-index root placement, contains EVERY real point of the original product patch. ALL signed actual auxiliary frequencies lie in the assigned discs on this SAME domain, chosen BEFORE ALL n,m. Frequencies are analytic; their squares minus the Miura shift equal the ACTUAL canonical Hill Dirichlet energies.",
+    "The jointly analytic multiplier K_m=2i times the omitted root product is nonzero across the assigned disc times the original patch. K_m squared times the selected frequency quadratic is EXACTLY the native Hill radicand at frequency squared minus shift, including ON the cut, by actual Miura trace and discriminant product factorization.",
+    "The physical terminal root coefficient is the ACTUAL Hill Dirichlet norming sheet divided by K_m at the actual auxiliary frequency. It is analytic on the SAME source domain and squares to the selected quadratic. K_m times the coefficient equals the ACTUAL physical sheet, retaining its sign. No division by a gap or physical sheet occurs.",
+    "The physical coefficient times the existing filled off-index quotient at the ACTUAL auxiliary frequency gives a local physical Abelian divisor value, analytic for ALL off-index n,m on that common source domain, including zero-sheet/branch-point values. It vanishes when the actual sheet vanishes. The coefficient is zero exactly at a selected endpoint; no COMPLEX collapsed-gap Dirichlet endpoint identity is inferred.",
+    "On the cut complement with nonzero physical coefficient, the divisor value is EXACTLY the selected-root/physical-coefficient ratio times the GENUINE improper endpoint integral, retaining the physical sheet sign.",
+    "At every nonzero-sheet divisor, a prescribed analytic spectral root germ attains the EXACT physical coefficient. The full denominator K_m times this germ squares to the native Hill radicand and equals the ACTUAL norming sheet at the divisor. The primitive germ has EXACT derivative 2z times canonical Hill Psi divided by this denominator and agrees with the physical divisor value and genuine endpoint integral continuation.",
+    "The physical coefficient is bounded by the frequency half-gap plus auxiliary-frequency deviation from the midpoint. Multiplication by the filled quotient norm bounds the physical Abelian value. These qualitative bounds do NOT establish the locally uniform infinite-index source3.2 Cartesian estimate.",
+    "Six new modules (25 theorems and 5 definitions), three byte-identical canonical auxiliary-boundary/root-placement/square-root dependencies and the exact 6126-declaration transitive axiom audit compiled privately without warnings, tactic suggestions or added axioms. All 1109 baseline non-audit registered sources are unchanged; no heartbeat increase. Canonical checkout and shared Git metadata read-only.",
+    "Local ACTUAL physical divisor evaluation, common analytic source domain, original energy, physical sheet sign and regular spectral continuation NOW PROVED. Compatibility across DIFFERENT product patches/Miura lifts/shifts, intrinsic global beta, on-index angle, infinite sums, Cartesian extension/source3.2 bound, universal ACTUAL scalar, Gardner/Birkhoff/flow and ALL FIVE MAIN remain OPEN; goal ACTIVE."
+  ],
+  "fidelity": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-physical-abelian-divisor-map.json",
+    "ACTUAL_auxiliary_boundary_sourcePhase_conversion_retained": true,
+    "ONE_OPEN_native_source_domain_before_ALL_n_m_PROVED": true,
+    "ENTIRE_real_part_of_original_patch_contained_PROVED": true,
+    "ALL_signed_auxiliary_frequencies_in_original_discs_PROVED": true,
+    "ACTUAL_frequency_squared_minus_shift_equals_original_Dirichlet_energy_PROVED": true,
+    "NONZERO_joint_analytic_multiplier_and_EXACT_Hill_radicand_factorization_PROVED": true,
+    "ACTUAL_norming_sheet_SIGN_retained_by_multiplier_identity_PROVED": true,
+    "physical_terminal_coefficient_analytic_with_exact_quadratic_square_PROVED": true,
+    "local_physical_offIndex_Abelian_value_analytic_including_ZERO_sheet_PROVED": true,
+    "GENUINE_improper_endpoint_integral_root_ratio_identity_PROVED": true,
+    "regular_spectral_germ_matches_ACTUAL_sheet_and_EXACT_Hill_differential_PROVED": true,
+    "qualitative_gap_displacement_times_filled_quotient_bound_PROVED": true,
+    "complex_collapsed_Dirichlet_endpoint_identity_assumed": false,
+    "different_product_patch_Miura_lift_shift_compatibility_proved": false,
+    "intrinsic_global_physical_beta_constructed": false,
+    "on_index_Abelian_phase_constructed": false,
+    "off_index_infinite_Abelian_sums_constructed": false,
+    "collapsed_Cartesian_extension_and_source3_2_bound_proved": false,
+    "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "all_five_main_theorems_proved": false
+  },
+  "essential_remaining": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete physical Abelian phases and Cartesian coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "Prove compatibility and intrinsic gluing of ACTUAL physical off-index Abelian divisor values across DIFFERENT original product patches, Miura lifts and shifts; construct the ON-INDEX angle with its nonzero period and physical norming/log gauge, infinite off-index sums and collapsed-gap Cartesian coordinates for source3.2(ii). Retain the locally uniform bound (abs(original gamma_n)+abs(original mu_n-original tau_n))/sqrt(n). LOCAL PHYSICAL DIVISOR EVALUATION IS NOW PROVED: ONE OPEN native complex source domain per patch contains its ENTIRE real part and places ALL signed ACTUAL AUXILIARY Dirichlet frequencies in the assigned discs BEFORE ALL n,m. The auxiliary-boundary sourcePhase conversion is retained; frequency squared minus shift equals ACTUAL canonical Hill Dirichlet energy. K_m=2i times the omitted root product is jointly analytic/nonzero and K_m squared times selected quadratic equals ACTUAL native Hill radicand. ACTUAL norming sheet divided by K_m is an analytic terminal root coefficient with exact quadratic square and SIGN-preserving identity. Coefficient times filled quotient at ACTUAL auxiliary frequency is analytic even at ZERO sheet and equals the root-ratio continuation of the GENUINE improper endpoint integral on the cut complement. A regular spectral germ through each nonzero-sheet divisor has EXACT physical denominator, original radicand and canonical Hill differential derivative. Do NOT redo local physical identification, common source placement, normalized endpoint family analyticity or complex collapse removal. Current qualitative frequency-gap/displacement times quotient bounds are NOT the uniform source3.2 estimate. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint. Do not substitute ordinary NLS angles or Birkhoff coordinates.",
+    "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "f4e2146207adc55d6702b23003d2574d6b76a46b",
+    "baseline_modules": 1110,
+    "baseline_non_audit_sources_verified_unchanged": 1109,
+    "new_modules_compiled": 6,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing",
+        "source": "NLS/ZakharovShabat/AuxiliaryPeriodOneBoundaryInterlacing.lean",
+        "source_sha256": "39027cc7dff32ad6044c95edbf6d4a40c4bb180cda7062d48d19b0f7ff412d3c"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourcePsiOriginalOmega",
+        "source": "NLS/ZakharovShabat/SourcePsiOriginalOmega.lean",
+        "source_sha256": "f074367e3113da047b9c3b3d6f62a36be10384828ef8958bf3e1a663c8fc7534"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.PrescribedAnalyticSquareRoot",
+        "source": "NLS/ComplexAnalysis/PrescribedAnalyticSquareRoot.lean",
+        "source_sha256": "eb4188b46714e5c3a556ffde4d5eb8b0b30576dbdc9ecd4559f28d1ba41a740d"
+      }
+    ],
+    "modules_in_exact_inventory": 1116,
+    "audited_declarations": 6126,
+    "theorems": 5119,
+    "definitions": 1007,
+    "new_theorems": 25,
+    "new_definitions": 5,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-physical-abelian-divisor.log",
+    "log_sha256": "367903b2dfb2c5658344408858a09e2e5e2ffc32f0e5a0726fba09ecfb2a4fd3"
+  },
+  "output_sha256": {
+    "NLS/ZakharovShabat/AuxiliaryGapSegmentPlacement.lean": "7e68d2174cacfb154ae71d8db5362fdcf685da6841cfee994aa8607dd8f412c6",
+    "NLS/KdV/HillPhysicalDirichletPlacement.lean": "bd557859c46d5e274e260cdc654ade192441d3b5419830f01e27d6ff0f38f3f5",
+    "NLS/KdV/HillPhysicalDirichletSheetCoefficient.lean": "ccac8ec430a0a4163d8bbb14f703a27a43314573015f6ffa097d1f07b81ab512",
+    "NLS/KdV/HillPhysicalOffIndexAbelianValue.lean": "239033fa1f3d64d0f8256bde9eb91751dbce5613fdce5833bafecb06d5464b63",
+    "NLS/KdV/HillPhysicalAbelianRegularGerm.lean": "1a631670bb57c376d52aef78e454d4feb991cec72e00264c4226b5dd40efbff9",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalAbelianDivisor.lean": "0cc5c753a033c56fc370b5b15648bb9ae0425912ad28bd8ae7bb261eae9d59dc"
+  },
+  "canonical_checkout_written": false,
+  "canonical_state": {
+    "head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+    "status": ""
+  },
+  "workspace_decision": "pending; all writes private",
+  "git_isolation": {
+    "metadata": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/appendix-b-milestones.git",
+    "base_commit": "f4e2146207adc55d6702b23003d2574d6b76a46b",
+    "branch": "articles/kdv-pseudomeasures",
+    "shared_canonical_git_written": false
+  },
+  "main_theorems_verified": false
+}

@@ -100,7 +100,8 @@ Additional checked corrections:
 Other issues remain audit obligations: scalar nonlocal integrals subtracted from
 vector gradients in Corollary 9(ii), Lemma 10(iii) and Proposition 11(iii); the
 spectral domain in Corollary 9; high-energy Hill neighborhoods and mean shifts;
-and the nonlocal sign/source-convention comparison. The generic-entry assertion
+and the separate operator-convention adapter. The nonlocal sign is resolved below.
+The generic-entry assertion
 now has a checked complex triangular counterexample and a division-free replacement.
 No corrected formula for these is counted as proved until its actual
 mathematical statement and original domain have been validated.
@@ -132,13 +133,50 @@ upper-right monodromy entry is identically zero for all spectral parameters.
 Thus the unrestricted generic-entry assertion in the page-14 proof is false.
 The replacement proof avoids it. The physical convention gives
 `xi = M11-M22 - 2*i*integral(R*phi dot grad Delta)`, with R=diag(i,-i).
-The printed plus sign is retained as an explicit source-convention review
-obligation; no full Theorem 6(v) source completion is claimed yet.
+At that milestone the printed plus sign was still a source-convention review
+obligation. The following milestone resolves it; full xi covariance remains open.
 
 This increment adds 73 theorems and 12 definitions in 17 modules. Its strict
 compilation, aggregate import and transitive-audit evidence is recorded in
 [`symmetry-validation.json`](symmetry-validation.json). Whole-paper coverage
 remains **in progress**, including the unfinished passage decomposition.
+
+## 2026-11-07 — Nonlocal sign resolved on the original H0 domain
+
+For the literal Section 2 operator, the identity-normalized fundamental matrix
+and the actual unconjugated Frechet gradient G=grad Delta, the correct formula is
+
+`xi(x) = M11-M22 - 2*i*integral_0^x (R*phi dot G)`, `R=diag(i,-i)`.
+
+The minus sign is now proved and the printed plus-sign spatial equation is
+formally refuted even almost everywhere in the original complex H0 space.
+Take the periodic L2 class of `phi(x)=(-2*i,i/(1+x^2))` on [0,1], at lambda=0.
+The actual normalized ODE gives
+`M(1)=[[2,1+pi/2],[1,1+pi/4]]`.
+The actual xi derivative at zero is `2-pi`, while the printed definition gives
+`pi-2`. The proof extends the obstruction to a positive-measure set and
+transfers it through the physical/Fourier L2 equivalence. The periodic source
+is not claimed to be H1; no endpoint smoothness is assumed by Theorem 6(v).
+
+For normalized actual gradients g=G/root, the correctly typed residual is
+`Dg - 2*lambda*R*g + 2*i*J*phi*integral_0^x(R*phi dot g)`.
+It equals `(M11-M22)/root * J*phi` almost everywhere. At pure T-even or
+T-odd sources the quotient is even in lambda, proving the corrected
+Corollary 9(ii) identity for these normalized actual discriminant gradients.
+Identifying them with the original primitive F gradients on the source cut
+complement remains open. This does not close full Corollary 9 or Proposition 11(iii).
+
+Actual endpoint monodromy matrix symmetries are also proved for every original
+complex H0 source under P, pure T, combined PT and all nonzero complex
+reciprocal scalings. They include arbitrary real phases and imply the exact
+boundary quotient parity used above. All-real-x fundamental-matrix symmetries
+and the separate p5/Appendix-vs-Section2 operator adapter remain open.
+
+Eight new modules add 42 theorems and 9 definitions. Current main is integrated
+with the exact union of aggregate imports. Validation is recorded in
+[`nonlocal-sign-validation.json`](nonlocal-sign-validation.json).
+The ledger has 108 assertion records and all 241 source passages; semantic
+decomposition and whole-paper coverage remain **in progress**.
 
 ## Pinned source
 

@@ -1,0 +1,177 @@
+{
+  "source": "arXiv:1610.00278v1 Main1.1,1.3,5.9 dependencies: actual canonical strong regularity, cubic frequency generator and all-time source differentiation; physical smooth PDE vector identification remains unproved",
+  "status": "The SAME canonical KdV flow preserves EVERY integer Sobolev stratum and has genuine strong source derivatives at EVERY time with exactly three additional Sobolev orders; its actual native Jacobian image is the exact cubic-frequency velocity.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "SAME_canonical_flow_preserves_EVERY_integer_Sobolev_stratum_PROVED": true,
+    "ENTIRE_original_rough_inclusion_identity_PROVED": true,
+    "joint_continuity_and_group_law_in_EVERY_original_strong_norm_PROVED": true,
+    "actual_frequency_cubic_growth_from_verified_endpoint_renormalized_sequence_PROVED": true,
+    "actual_cubic_frequency_multiplier_loses_three_orders_EVERY_real_s_EVERY_p_including_infinity_PROVED": true,
+    "shared_strong_physical_real_phase_derivative_with_unbounded_rates_PROVED": true,
+    "arbitrary_integer_source_target_native_flow_compatibility_PROVED": true,
+    "genuine_H_N_source_derivative_from_EVERY_H_N_plus3_input_PROVED": true,
+    "strong_source_derivative_at_EVERY_real_time_PROVED": true,
+    "ACTUAL_native_Jacobian_of_source_tangent_EQUALS_exact_canonical_phase_velocity_PROVED": true,
+    "ALL_signed_modes_including_collapsed_and_zero_retained_PROVED": true,
+    "physical_smooth_PDE_vector_equals_canonical_source_tangent_PROVED": false,
+    "actual_smooth_PDE_trajectory_identification_PROVED": false,
+    "universal_smooth_PDE_approximation_TRAJECTORY_convergence_PROVED": false,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-strong-canonical-flow-map.json"
+  },
+  "results": [
+    "OriginalHillIntegerCanonicalFlow restricts the SAME canonical rough flow to EVERY nonnegative integer Sobolev space, using the SAME actual global strong native equivalence. The entire original rough inclusion agrees exactly with hillRoughCanonicalKdVFlow. Every strong restriction has the true nonlinear group law, preserves actual frequencies and is jointly continuous in time and its ORIGINAL strong source norm. The actual strong target inclusion commutes with the same literal physical odd-frequency phases.",
+    "OriginalHillRoughFrequencyGrowth proves the actual weighted endpoint renormalized frequency bounds the correction by norm(actualRenormalizedSequenceInfinity)*n. Consequently the genuine positive frequencies and their literal odd signed extension obey a cubic growth bound with explicit positive constant (2*pi)^3+norm(actualRenormalizedSequenceInfinity). No supplied frequency-growth hypothesis is used.",
+    "Shared FourierRealPhaseDerivative REUSES Coeff.hasDerivAt_phaseFlow and the actual physical full real projection. It proves strong weighted phase differentiation and strong differentiation on the GENUINE Fourier conjugate-reflected real zero-mean form whenever the actual coefficient velocity belongs to the SAME space; rates may be unbounded. Shared SignedSobolevOrderInclusion gives a coefficient-preserving real continuous linear inclusion between ANY two ordered signed Sobolev spaces and proves injectivity.",
+    "OriginalHillCanonicalFrequencyGenerator constructs the GENUINE actual frequency multiplier i*odd(omega) as a real continuous linear map from order s+3 to order s on the physical real form, for EVERY real s and EVERY Banach exponent p>=1, including infinity. It proves the exact full signed coefficients and the cubic growth-constant norm bound. The conjugate-reflection law is proved from actual frequency reality and odd extension.",
+    "OriginalHillIntegerOrderInclusion defines genuine coefficient-preserving source and target inclusions between arbitrary ordered nonnegative integer Sobolev scales. Their ENTIRE rough inclusions commute, the SAME actual native maps commute, and the SAME actual strong canonical flows commute with these inclusions. No alternative map or assumed stronger membership replaces the actual source.",
+    "OriginalHillIntegerCanonicalDerivative uses the actual cubic multiplier domain and strong native equivalences to prove the native phase curve has a genuine strong derivative at zero in the LOWER signed target for EVERY H^(N+3) input. The SAME actual inverse differential defines hillIntegerCanonicalKdVVector N q, and the actual strong source trajectory included into H^N has exactly this derivative. It includes ALL native modes, positive, negative, zero and collapsed.",
+    "OriginalHillIntegerCanonicalTimeDerivative uses the true canonical group law to prove the actual H^N-valued trajectory derivative at EVERY real time equals hillIntegerCanonicalKdVVector N of the current H^(N+3) source. It also proves that the ACTUAL full strong native Jacobian sends this genuine source tangent EXACTLY to the actual canonical phase velocity. No time differentiability or regularity is merely assumed.",
+    "Physical PDE identification remains OPEN: these now-proved genuine source tangents must still be identified with the literal Gardner KdV vector -q_xxx+6*q*q_x. Accordingly universal convergence of CANONICAL trajectories is not yet called convergence of ACTUAL smooth PDE trajectories. Endpoint weak-star trajectory results and literal Wiener ell-one regularity also remain OPEN. Appendix B/Main1.4 complete; Main1.1,1.3,5.1,5.9 UNPROVED; goalACTIVE."
+  ],
+  "declarations": [
+    "NLS.Articles.KdVPseudomeasures.hillIntegerTargetInclusion_phaseFlow",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_native",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_inclusion",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_zero",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_add",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_frequency",
+    "NLS.Articles.KdVPseudomeasures.continuous_hillIntegerCanonicalKdVFlow",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequencyGrowthConstant",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequencyGrowthConstant_pos",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_remainder_bound",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_cubic_bound",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVSignedFrequency_cubic_bound",
+    "NLS.WeightedCoeff.hasDerivAt_weightedPhaseFlow",
+    "NLS.WeightedCoeff.fourierRealZeroPhaseFlow_eq_projection",
+    "NLS.WeightedCoeff.hasDerivAt_fourierRealZeroPhaseFlow",
+    "NLS.WeightedCoeff.signedRealOrderInclusion",
+    "NLS.WeightedCoeff.signedRealOrderInclusion_apply",
+    "NLS.WeightedCoeff.signedRealOrderInclusion_injective",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_multiplier_bound",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_multiplier_real",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequencyGenerator",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequencyGenerator_apply",
+    "NLS.Articles.KdVPseudomeasures.norm_hillRoughKdVFrequencyGenerator_le",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSourceOrderInclusion",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerTargetOrderInclusion",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSourceOrderInclusion_apply",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerTargetOrderInclusion_apply",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSourceOrderInclusion_rough",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerTargetOrderInclusion_rough",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_order_compatibility",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_order_compatibility",
+    "NLS.Articles.KdVPseudomeasures.exists_actual_frequency_generator_at_orders",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalNativeVelocity",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalNativeVelocity_apply",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillIntegerCanonicalFlow_native_zero",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVVector",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillIntegerCanonicalKdVFlow_zero",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillIntegerCanonicalKdVFlow",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVVector_nativeJacobian"
+  ],
+  "files": [
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerCanonicalFlow.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyGrowth.lean",
+    "NLS/SequenceSpaces/FourierRealPhaseDerivative.lean",
+    "NLS/SequenceSpaces/SignedSobolevOrderInclusion.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCanonicalFrequencyGenerator.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerOrderInclusion.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerCanonicalDerivative.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerCanonicalTimeDerivative.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "73becccb16e259b916967e0f983cb0678fae5f23",
+    "baseline_modules": 1845,
+    "baseline_non_audit_sources_verified_unchanged": 1844,
+    "new_modules_compiled": 8,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.PhaseFlowDerivative",
+        "source": "NLS/SequenceSpaces/PhaseFlowDerivative.lean",
+        "source_sha256": "744332744ef7add536fce57fbef8419e5fa68c573b161cdb3a4fe0061565e5f3"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillIntegerRegularity",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerRegularity.lean",
+        "source_sha256": "593f9c3d891e8036ebd764da763857ba2f2abd1180112a19160c55c16f1c5b51",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillRoughCanonicalFlow",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillRoughCanonicalFlow.lean",
+        "source_sha256": "48d9f10f3b793840034876aa5a5314f9bc479103caef6e4c2aa6d2e9e2214dfe",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencySequence",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencySequence.lean",
+        "source_sha256": "641eb83b7c114aab89dab11ac9beab3181dbc9e1c4e6bd46b90072f0d7a29b2c",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.FourierRealZeroSpatialGenerator",
+        "source": "NLS/SequenceSpaces/FourierRealZeroSpatialGenerator.lean",
+        "source_sha256": "505f69eb6110935356b2701198b24dedac5d861ece582bac6bf43eba5b4bf476",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.FourierRealZeroMultiplier",
+        "source": "NLS/SequenceSpaces/FourierRealZeroMultiplier.lean",
+        "source_sha256": "230fdf6675bc3cfe2d46f4889837bca92d153b5a9ee5d64388526deb5514a52d",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1853,
+    "audited_declarations": 9078,
+    "theorems": 7650,
+    "definitions": 1428,
+    "new_theorems": 32,
+    "new_definitions": 8,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-strong-canonical-flow.log",
+    "log_sha256": "ff3805356774e44b2bfde567205607ee72372dc18713779dae6efe1c7bc61e66"
+  },
+  "remaining_obligations": [
+    "Identify the NOW PROVED actual strong canonical source tangent with the literal physical Gardner KdV field -q_xxx+6*q*q_x on actual smooth sources. The flow preserves EVERY genuine integer Sobolev stratum and has a strong H^N derivative for every H^(N+3) input at EVERY time; actual native Jacobian of that tangent is the exact signed i*omega*Z velocity. Prove the physical PDE vector has the SAME full native velocity, using actual canonical Gardner matrix and actual physical energy variation. Actual H1 energy mode gradient and ALL-mode physical frequency identity are verified; next bridge may use arbitrary selected-coordinate H1 inverse curves, including collapsed modes, to obtain H1 representatives of the needed real native-coordinate Hamiltonian directions.",
+    "After smooth physical PDE identification, use the ALREADY PROVED canonical uniform compact-time approximation for EVERY rough-convergent source family to establish the original EVERY-smooth-PDE-approximation solution quantifier. Establish the exact bounded endpoint weak-star canonical trajectory continuity and analytic trajectory statements required by Main1.1,1.3,5.9 using the actual endpoint native homeomorphism and genuine frequency map.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 complete; FOUR main theorems UNPROVED; goalACTIVE."
+  ]
+}

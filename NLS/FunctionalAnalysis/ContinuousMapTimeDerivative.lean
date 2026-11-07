@@ -13,7 +13,7 @@ set_option autoImplicit false
 open Set MeasureTheory
 namespace NLS.FunctionalAnalysis
 
-theorem hasDerivAt_continuousMap_of_pointwise
+theorem hasDerivAt_continuousMap_of_pointwise_real_banach
     {K E : Type*} [TopologicalSpace K] [CompactSpace K]
     [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     (u v : ℝ → C(K,E)) (hv : Continuous v)

@@ -1,0 +1,157 @@
+{
+  "source": "arXiv:1610.00278v1 Lemma3.9/5.7 frequency dependencies for main1.1,1.3,5.9; actual moment-series analyticity ingredients for arXiv:1605.06690v1 Section3.1",
+  "reference": "https://arxiv.org/html/1605.06690v1#S3.SS1",
+  "status": "Actual weighted rough Hill second-moment l1 rows and literal infinite sums are Banach-source analytic on one common complex neighborhood before all rows, with uniform convergence of actual partial sums on compact source sets.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-series-analytic-map.json",
+    "quantitative_finite_head_plus_full_l2_gap_square_absolute_row_bound_PROVED": true,
+    "ACTUAL_l1_row_with_exact_coefficients_norm_and_sum_PROVED": true,
+    "local_absolute_row_sum_bounds_at_EVERY_COMPLEX_source_PROVED": true,
+    "FULL_Banach_source_analyticity_of_ACTUAL_l1_moment_row_PROVED": true,
+    "FULL_Banach_source_analyticity_of_LITERAL_infinite_weighted_moment_series_PROVED": true,
+    "ONE_common_open_complex_neighborhood_BEFORE_ALL_rows_PROVED": true,
+    "exact_TWO_PI_normalization_between_l1_row_and_raw_series_PROVED": true,
+    "same_product_patch_primitive_ambient_independence_of_series_PROVED": true,
+    "ACTUAL_partial_sums_uniformly_converge_on_EVERY_COMPACT_source_subset_PROVED": true,
+    "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
+    "weighted_ALL_row_sequence_bound_PROVED": false,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "PositiveSquaredGapMomentBound proves the quantitative absolute-row bound: the sum of norm(m*u_m) is at most its ACTUAL finite low block plus3*C*norm(gap)^2 for any squared-full-l2-gap signed reciprocal tail estimate. Both diagonal and low terms are unrestricted. The exact factor3 follows from m*(1/abs(n-m)+1/(n+m))<=3 for m>2*n; the full integer-lattice l2 norm bounds the positive-index squared-gap sum.",
+    "PositiveSummableAnalyticAssembly constructs an ACTUAL Coeff1 realization of every absolutely summable positive-index sequence, with exact coefficients, EXACT l1 norm equal to the positive absolute sum, and exact total complex sum. For scalar analytic coordinates with locally bounded absolute sums, the map into Coeff1 is FULL Banach-source analytic by the verified bounded-coordinate Taylor assembly theorem. Applying the continuous linear summation functional proves full analyticity of the literal positive-index infinite series. Pointwise absolute convergence is not used as an analyticity certificate.",
+    "HillPrimitiveMomentSeriesNeighborhood packages the NOW PROVED actual spectral tail bounds on a common open native complex source, and its factory constructs such a neighborhood at EVERY real original source of EVERY retained family patch. The actual normalized weighted second moments define a literal Coeff1 row and the raw weighted series is DEFINED as sum_m m*ACTUAL centeredMoment(P,W,n,m,1,q). Its exact relation to the l1 row retains the factor2*pi; no replacement moments or assumed analytic sum data are introduced.",
+    "HillPrimitiveMomentSeriesLocalBound proves the full absolute-row sum is LOCALLY BOUNDED at EVERY COMPLEX point of the common neighborhood, including collapsed gaps. The actual gap-sequence local norm bound controls the tail; continuity of the finitely many ACTUAL analytic low moments controls the head. HillPrimitiveMomentSeriesAnalytic consequently proves FULL Banach-source analyticity of BOTH the ACTUAL Coeff1 row and its literal raw weighted infinite sum for EVERY row n on the SAME neighborhood. The series agrees across different primitive ambient neighborhoods within the SAME product/Miura patch.",
+    "HillPrimitiveMomentSeriesCompactConvergence defines ACTUAL finite positive-index moment partial sums through zero extension and literal symmetric integer truncation. Every coefficient is identified with its ACTUAL contour moment after the exact2*pi normalization. Continuity of the analytic l1 row proves the ACTUAL partial sums converge UNIFORMLY on EVERY compact complex source subset to the LITERAL raw infinite series. No fixed-open-Banach-ball uniform-tail claim is made or needed for the separately proved analytic assembly.",
+    "OriginalHillMomentSeriesAnalytic constructs the retained family and neighborhood at EVERY ORIGINAL real mean-zero rough Fourier source. ONE open complex neighborhood is chosen BEFORE ALL row indices, and supports actual Coeff1-row analyticity, scalar raw-series analyticity and compact uniform convergence of actual partial sums for every row. Weighted ALL-row ell(-1,r) bounds, equality of the sum with genuine H1 Hamiltonian frequency, and gluing across DIFFERENT Miura/product patches remain OPEN. Main1.4 and Appendix B remain COMPLETE; Main1.1,1.3,5.1,5.9 remain UNPROVED and goalACTIVE."
+  ],
+  "declarations": [
+    "NLS.Coeff.positive_weighted_signed_reciprocal_le_three",
+    "NLS.Coeff.sum_norm_positive_weighted_le_of_squared_gap_tail",
+    "NLS.Coeff.positiveSummableRealization",
+    "NLS.Coeff.positiveSummableRealization_apply",
+    "NLS.Coeff.norm_positiveSummableRealization",
+    "NLS.Coeff.tsum_positiveSummableRealization",
+    "NLS.Coeff.analyticOnNhd_positiveSummableRealization",
+    "NLS.Coeff.analyticOnNhd_positive_tsum_of_locally_bounded_absolute",
+    "NLS.KdV.HillProductEquationPatch.exists_momentSeriesNeighborhood",
+    "NLS.KdV.HillProductEquationPatch.normalizedWeightedSecondMoment",
+    "NLS.KdV.HillProductEquationPatch.centeredSecondMomentRow",
+    "NLS.KdV.HillProductEquationPatch.centeredSecondMomentSeries",
+    "NLS.KdV.HillProductEquationPatch.summable_normalizedWeightedSecondMoment",
+    "NLS.KdV.HillProductEquationPatch.analytic_normalizedWeightedSecondMoment",
+    "NLS.KdV.HillProductEquationPatch.centeredSecondMomentSeries_eq_row_sum",
+    "NLS.KdV.HillProductEquationPatch.exists_local_normalizedWeightedSecondMoment_sum_bound",
+    "NLS.KdV.HillProductEquationPatch.analytic_centeredSecondMomentRow",
+    "NLS.KdV.HillProductEquationPatch.analytic_centeredSecondMomentSeries",
+    "NLS.KdV.HillProductEquationPatch.centeredSecondMomentSeries_independent_primitive_neighborhood",
+    "NLS.KdV.HillProductEquationPatch.centeredSecondMomentPartialSum",
+    "NLS.KdV.HillProductEquationPatch.two_pi_mul_centeredSecondMomentRow_apply",
+    "NLS.KdV.HillProductEquationPatch.centeredSecondMomentPartialSum_eq_row_sum",
+    "NLS.KdV.HillProductEquationPatch.tendstoUniformlyOn_centeredSecondMomentPartialSum_of_isCompact",
+    "NLS.Articles.KdVPseudomeasures.originalHill_exists_analytic_frequency_moment_series"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/PositiveSquaredGapMomentBound.lean",
+    "NLS/SequenceSpaces/PositiveSummableAnalyticAssembly.lean",
+    "NLS/KdV/HillPrimitiveMomentSeriesNeighborhood.lean",
+    "NLS/KdV/HillPrimitiveMomentSeriesLocalBound.lean",
+    "NLS/KdV/HillPrimitiveMomentSeriesAnalytic.lean",
+    "NLS/KdV/HillPrimitiveMomentSeriesCompactConvergence.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillMomentSeriesAnalytic.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "33c65c5eb5a193c42c245f7196663ee413e81463",
+    "baseline_modules": 1770,
+    "baseline_non_audit_sources_verified_unchanged": 1769,
+    "new_modules_compiled": 7,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourcePeriodicGapTails",
+        "source": "NLS/ZakharovShabat/SourcePeriodicGapTails.lean",
+        "source_sha256": "5b4bb4209434fb49a849946fb909cca4064f1320d0e289f532be5cd4076e72bc"
+      },
+      {
+        "module": "NLS.SequenceSpaces.BoundedCoordinateAnalytic",
+        "source": "NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean",
+        "source_sha256": "8f1a24d202eee0c765e1fff265c358b0f0672367e352e84864a1decc3b622aab"
+      },
+      {
+        "module": "NLS.SequenceSpaces.LocallyUniformSummation",
+        "source": "NLS/SequenceSpaces/LocallyUniformSummation.lean",
+        "source_sha256": "c4619f0cd18fcd31b3b22757cef9a889e396d489bd4e9c33b50408a02bd7e2b4"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.KdV.HillPrimitiveMomentTailBound",
+        "source": "NLS/KdV/HillPrimitiveMomentTailBound.lean",
+        "source_sha256": "5f928ebe7fcdc8171bbc18a7c01dccb214466f7f1ba6f71c34d8c95d562c3c28",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillPrimitiveMomentAbsoluteSummability",
+        "source": "NLS/KdV/HillPrimitiveMomentAbsoluteSummability.lean",
+        "source_sha256": "5854a653f3a53e82f56f3d71e848cc071b06c282847dbe5b36985a108b590864",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAtZero",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyAtZero.lean",
+        "source_sha256": "55ca5d3716bba770274395135b331b65f852f05eb184753d87c3cb36a2e55c1d",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1777,
+    "audited_declarations": 8846,
+    "theorems": 7449,
+    "definitions": 1397,
+    "new_theorems": 19,
+    "new_definitions": 5,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-rough-moment-series-analytic.log",
+    "log_sha256": "e44d9abbb31fe11cc163f05bff5f4bd169912473a37409ad472bdf0adba36336"
+  },
+  "remaining_obligations": [
+    "Prove the required WEIGHTED ALL-row sequence bounds for the NOW ANALYTIC actual moment series, e.g. rough correction in ell(-1,r), r>1. Each gap-index-weighted row is already absolutely convergent and FULL Banach-source analytic on ONE common complex neighborhood before all rows, and actual partial sums converge uniformly on compact source sets. These completed facts must not be reproved or treated as assumptions. For all-row bounds, obtain actual diagonal gap numerator bounds and finite low-gap all-row bounds, then apply squared-gap ell1 and signed reciprocal convolution estimates.",
+    "Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. Glue the NOW ANALYTIC local rough sums by genuine H1 agreement/density, or prove cross-Miura/product-patch independence directly. Exact free H1 frequency, global H1 analyticity including collapse, actual original contour/sheet normalization, scalar moment analyticity and same-product-patch ambient independence remain PROVED. The analytic moment sums have NOT yet been identified as actual rough KdV frequencies.",
+    "Prove ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

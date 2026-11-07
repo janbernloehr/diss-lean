@@ -1,13 +1,11 @@
 import NLS.Poisson.HminusGardnerBracket
 
+/-! The actual bounded Gardner Hamiltonian direction on H-minus-one:
+the unit-period spatial derivative of the unique H1 cotangent. -/
 noncomputable section
-set_option autoImplicit false
 open Complex
 open scoped ENNReal
-
 namespace NLS.Poisson
-
-
 
 def gardnerCotangentBivector :
     (WeightedCoeff (Weight.sobolev (-1)) 2 →L[ℂ] ℂ) →L[ℂ]

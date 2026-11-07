@@ -1,0 +1,162 @@
+{
+  "source": "arXiv:1610.00278v1 exact original physical KdV frequency normalization dependencies for remaining main1.1,1.3,5.9",
+  "status": "Exact original free KdV frequency omega_n(0)=(2*pi*n)^3 derived from the ACTUAL physical H1 Hamiltonian, all-integer canonical inverse free derivative and original period-one kinetic form.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-free-frequency-normalization-map.json",
+    "actual_all_integer_forward_and_inverse_maps_fix_zero_PROVED": true,
+    "actual_all_integer_forward_free_derivative_literal_halfFourierSymbol_PROVED": true,
+    "actual_all_integer_inverse_free_derivative_literal_halfFourierInverseSymbol_PROVED": true,
+    "actual_original_H1_canonical_inverse_and_physical_mode_curves_PROVED": true,
+    "actual_physical_H1_real_curve_second_energy_variation_at_zero_PROVED": true,
+    "actual_original_period_one_kinetic_two_sided_mode_normalization_PROVED": true,
+    "actual_H1_frequency_analytic_at_collapsed_modes_PROVED": true,
+    "actual_free_H1_frequency_2pi_n_cubed_PROVED": true,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "DifferentialCommutingSquare proves exact derivative transport through an actual commuting square with continuous linear vertical maps, the differentiable inverse derivative identity, actual real-ray derivatives and continuous-linear postcomposition. OriginalHillIntegerFreeDerivative uses the verified SAME map inclusion identities to prove the actual forward and inverse canonical maps fix0 and have the literal halfFourierSymbol and halfFourierInverseSymbol derivatives at EVERY signed index, on EVERY integer Hilbert scale. No strong free-derivative identification is assumed.",
+    "PeriodOneHamiltonianCurveJet proves the FULL original complex Frechet energy derivative from the previously verified physical first variation. Along ANY real analytic H1 coefficient curve q(t) through0, the derivative at0 of its ACTUAL energy first variation equals Re(periodOneSobolevKinetic(q_prime(0),q_prime(0))). The physical cubic gradient contributes0, and inverse-curve acceleration multiplies the zero base potential and contributes0. This is a genuine physical second-variation identity, without discarding the nonlinear inverse.",
+    "OriginalHillH1CanonicalPotential constructs the SAME actual canonical inverse in ORIGINAL physical H1 coefficient space, proves its global real analyticity, zero value and exact literal free derivative. Actual native real-mode rays give real analytic physical H1 curves with Fourier derivative coefficients halfFourierInverseSymbol(k) at +/-n, zero elsewhere. No separate realization curve is supplied.",
+    "HalfFourierInverseNormalization proves the exact positive inverse-symbol square equals2*pi*n and REUSES the existing signed symmetry theorem. PeriodOneKineticModePair proves the ACTUAL original period-one kinetic energy of a two-sided Fourier mode of raw amplitude c is2*(2*pi*n)^2*c^2. For the actual canonical inverse mode derivative this is EXACTLY2*(2*pi*n)^3, with every Fourier derivative, signed index and unit-period factor retained.",
+    "OriginalHillH1FrequencyAtZero.hillH1KdVFrequency_zero proves the ACTUAL normalized physical KdV frequency omega_n(0)=(2*pi*n)^3 for EVERY positive mode. The original physical energy variation along the SAME inverse mode curve equals2*t*omega_n(t*e_n) by the already proved full action-gradient identity. Differentiating at0 and comparing with the physical second variation gives the claimed exact normalization. This is not an arbitrary frequency definition or a claimed original KdV evolution.",
+    "Main1.4 remains PROVED and freshly recompiled. Main1.1,1.3,5.1,5.9 remain UNPROVED. Actual H1 frequencies are already globally real analytic INCLUDING collapsed modes, and the original freefrequency normalization is now PROVED. Rough signed H^(-1/2) frequency extension/estimates, ACTUAL original KdV evolution/every-smooth-approximation convergence, literal Wiener ell-one spectral estimates and universal actual numerator scalar remain OPEN. Appendix B B.1(i)-(iv) remains COMPLETE. Goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.FunctionalAnalysis.fderiv_commuting_square",
+    "NLS.FunctionalAnalysis.fderiv_inverse_apply",
+    "NLS.FunctionalAnalysis.hasDerivAt_map_real_ray",
+    "NLS.FunctionalAnalysis.fderiv_clm_after_apply",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_zero",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_symm_zero",
+    "NLS.Articles.KdVPseudomeasures.fderiv_hillIntegerSobolevEquiv_inclusion",
+    "NLS.Articles.KdVPseudomeasures.fderiv_hillIntegerSobolevEquiv_zero_apply",
+    "NLS.Articles.KdVPseudomeasures.fderiv_hillIntegerSobolevEquiv_symm_zero_apply",
+    "NLS.KdV.fderiv_periodOneKdVHamiltonian_apply",
+    "NLS.KdV.hasDerivAt_periodOneKdV_real_curve",
+    "NLS.KdV.hasDerivAt_periodOneKdV_real_curve_variation_zero",
+    "NLS.WeightedCoeff.halfFourierInverseSymbol_positive_sq",
+    "NLS.KdV.periodOneSobolevKinetic_mode_pair",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalPotential",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1CanonicalPotential",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalPotential_zero",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_eq_physical",
+    "NLS.Articles.KdVPseudomeasures.fderiv_hillH1CanonicalPotential_zero_apply",
+    "NLS.Articles.KdVPseudomeasures.hillH1PhysicalModeCurve",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1PhysicalModeCurve",
+    "NLS.Articles.KdVPseudomeasures.hillH1PhysicalModeCurve_zero",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1PhysicalModeCurve_zero",
+    "NLS.Articles.KdVPseudomeasures.deriv_hillH1PhysicalModeCurve_zero_apply",
+    "NLS.Articles.KdVPseudomeasures.periodOneSobolevKinetic_hillH1PhysicalModeCurve_zero",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1Canonical_mode_energy",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_zero"
+  ],
+  "files": [
+    "NLS/FunctionalAnalysis/DifferentialCommutingSquare.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerFreeDerivative.lean",
+    "NLS/KdV/PeriodOneHamiltonianCurveJet.lean",
+    "NLS/SequenceSpaces/HalfFourierInverseNormalization.lean",
+    "NLS/KdV/PeriodOneKineticModePair.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1CanonicalPotential.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyAtZero.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "b0e4d742a1d2f8c885dd3c79568a4a98befb4a2b",
+    "baseline_modules": 1751,
+    "baseline_non_audit_sources_verified_unchanged": 1750,
+    "new_modules_compiled": 7,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.PeriodOneSobolevHamiltonian",
+        "source": "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean",
+        "source_sha256": "8ec9db0c737d7b8acc9b2401f85d0ffdaf9db719683e6d8c94dc85ef9e73bc4f"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.HalfFourierEquiv",
+        "source": "NLS/SequenceSpaces/HalfFourierEquiv.lean",
+        "source_sha256": "80a63ee4374337def7a6056a4447296ee34f7d1560947933e113ada9bc4112c9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.RealMeanZeroHalfFourierEquiv",
+        "source": "NLS/SequenceSpaces/RealMeanZeroHalfFourierEquiv.lean",
+        "source_sha256": "40351fcb4142245afaea3e3380f8602199a86b9b63929944486980cfbd5487cc",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.PeriodOneHamiltonian",
+        "source": "NLS/KdV/PeriodOneHamiltonian.lean",
+        "source_sha256": "389833b3229dbaa24944a23450faa44577294053034002a4199e98378db405a9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillIntegerRegularity",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerRegularity.lean",
+        "source_sha256": "593f9c3d891e8036ebd764da763857ba2f2abd1180112a19160c55c16f1c5b51",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1Hamiltonian",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1Hamiltonian.lean",
+        "source_sha256": "69f87502c7b4a845d9bae75acea4e26b8bfe6a5e4fc10df78f8f3fa14f5ad69e",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAnalytic",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyAnalytic.lean",
+        "source_sha256": "948b48fe64dc624393f38818ac29172aa6e85265e5da96797f848c3d147bf862",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1758,
+    "audited_declarations": 8793,
+    "theorems": 7406,
+    "definitions": 1387,
+    "new_theorems": 25,
+    "new_definitions": 2,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-h1-free-frequency-normalization.log",
+    "log_sha256": "a59cc43751d646884b24c220ac81845598dce3cf1c1611131a98eb6554259ac5"
+  },
+  "remaining_obligations": [
+    "Extend the SAME genuine normalized KdV frequencies from signed H^(3/2) to the original rough signed H^(-1/2) domain, with required uniform estimates. Their ENTIRE-domain H1 real analyticity INCLUDING all collapsed modes, FULL literal native action-gradient identity, ENTIRE action-fiber invariance AND exact original freefrequency omega_n(0)=(2*pi*n)^3 are now PROVED; do not redo them.",
+    "Construct ACTUAL original Hminus KdV evolution with convergence from EVERY original smooth approximation and required weak-star trajectory continuity/analyticity, then prove main1.1,1.3,5.9. Actual physical H1 Hamiltonian/frequencies and their original time normalization are proved; equation identification, actual physical evolution and rough extension remain necessary. An arbitrary frequency flow or indexed action flow is not a proof of physical KdV.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms remain necessary dependencies, not substitutes. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

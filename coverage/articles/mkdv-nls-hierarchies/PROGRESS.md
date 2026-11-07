@@ -3420,3 +3420,32 @@ remain unchanged. The existing real-type endpoint reflection theorem is
 preserved; the stronger complex theorem has a distinct name. Exact hashes
 and proof scope are in symmetry-validation.json. Whole-paper coverage
 remains in progress, with 106 assertion records and 241 source passages.
+
+
+## 2026-11-07 — Nonlocal sign resolved; current main integrated
+
+The literal Section2 operator and actual Frechet gradient require
+`xi=delta-2*i*integral(R*phi dot grad Delta)`. The printed plus-sign spatial
+equation is formally false even almost everywhere at an original complex
+H0 source. The explicit unit-interval profile `(-2*i,i/(1+x^2))` has exact
+monodromy `[[2,1+pi/2],[1,1+pi/4]]` at zero spectral parameter. Actual xi
+has derivative `2-pi` at zero; the printed formula gives `pi-2`. Continuity
+propagates the obstruction, and the proof transfers to the original Fourier
+source space. No smooth-periodic H1 assumption is made for this counterexample.
+
+The corrected typed normalized-gradient nonlocal reflection residual is
+proved at all original H0 sources with pure T phi=+/-phi. Endpoint monodromy
+matrices have their full original H0 P/T/reciprocal-scaling symmetries. The
+primitive F gradient interface, full xi covariance, all-real-x fundamental
+symmetries and all other pending claims remain open. Whole-paper coverage
+is still in progress: 108 assertion records and 241 source passages.
+
+Current main is merged, resolving the aggregate conflict by the exact import
+union. Eight fresh modules add 42 theorems and 9 definitions. Strict Lean 4.33.1
+compilation and both transitive audits pass: 13,250 article declarations and
+76,497 combined NLS declarations, with only propext, Classical.choice and
+Quot.sound allowed. All 9,123 frozen source/checker inputs, 1,136 reused
+checker-prefix outputs, and 9,089 source-verified incoming compiled modules
+retain their hashes. No full fresh repository source rebuild is claimed.
+Exact hashes, inherited import provenance and limits are recorded in
+nonlocal-sign-validation.json.

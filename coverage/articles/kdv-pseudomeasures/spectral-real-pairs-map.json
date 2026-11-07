@@ -1,0 +1,158 @@
+{
+  "source": "arXiv:1610.00278v1 Section2 high periodic/antiperiodic spectral pairs and Lemma2.11(23); direct high-tail endpoint gap regularity needed for main Theorem1.4 and inverse spectral regularity Theorem5.1.",
+  "main_theorems_verified": false,
+  "phase": "Actual ordered singular high pairs, exact physical multiplicities, strict tail ordering and infinity-Sobolev regularity of the actual high-gap tail",
+  "modules": [
+    "NLS/KdV/PseudomeasureRealPairs.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralPairs.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralGapTail.lean"
+  ],
+  "modified_shared_module": "NLS/KdV/PseudomeasureRootSeparation.lean",
+  "declarations": [
+    "NLS.KdV.endpointReducedDeterminant_strip_hasFiniteSupport",
+    "NLS.KdV.exists_endpointHillRealPair",
+    "NLS.KdV.EndpointHillRealPair.endpoints_unique",
+    "NLS.KdV.EndpointHillRealPair.unique",
+    "NLS.KdV.endpointHillRealPair",
+    "NLS.KdV.EndpointHillRealPair.left_multiplicity",
+    "NLS.KdV.EndpointHillRealPair.right_multiplicity",
+    "NLS.KdV.EndpointHillRealPair.collapsed_iff_multiplicity_two",
+    "NLS.KdV.EndpointHillRealPair.gap",
+    "NLS.KdV.EndpointHillRealPair.midpoint",
+    "NLS.KdV.EndpointHillRealPair.gap_nonneg",
+    "NLS.KdV.EndpointHillRealPair.gap_eq_zero_iff",
+    "NLS.KdV.EndpointHillRealPair.gap_le",
+    "NLS.KdV.EndpointHillRealPair.midpoint_localized",
+    "NLS.KdV.EndpointHillRealPair.analytic_orders",
+    "NLS.KdV.EndpointHillRealPair.left_geometric_multiplicity",
+    "NLS.KdV.EndpointHillRealPair.right_geometric_multiplicity",
+    "NLS.KdV.EndpointHillRealPair.left_zero",
+    "NLS.KdV.EndpointHillRealPair.right_zero",
+    "NLS.KdV.EndpointHillRealPair.left_has_eigenvector",
+    "NLS.KdV.EndpointHillRealPair.right_has_eigenvector",
+    "NLS.KdV.EndpointHillRealPair.gap_le_couplingRadius",
+    "NLS.KdV.EndpointHillRealPair.gap_le_weight_norm",
+    "NLS.KdV.EndpointHillRealPair.normalized_gap_le",
+    "NLS.KdV.EndpointHillRealPair.weighted_gap_le",
+    "NLS.KdV.EndpointHillRealPair.right_lt_left",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair",
+    "NLS.Articles.KdVPseudomeasures.sourceHillRealPair",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.spectrum_iff",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.multiplicities",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.unique",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.left_has_eigenvector",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.right_has_eigenvector",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.left_multiplicity",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.right_multiplicity",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.gap_le_couplingRadius",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.normalized_gap_le",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.right_lt_left",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail",
+    "NLS.Articles.KdVPseudomeasures.sourceHighGapTailValues",
+    "NLS.Articles.KdVPseudomeasures.sourceHighGapTailValues_neg",
+    "NLS.Articles.KdVPseudomeasures.sourceHighGapTailValues_im",
+    "NLS.Articles.KdVPseudomeasures.norm_sourceHighGapTailValues_le",
+    "NLS.Articles.KdVPseudomeasures.sourceHighGapTail",
+    "NLS.Articles.KdVPseudomeasures.sourceHighGapTail_apply",
+    "NLS.Articles.KdVPseudomeasures.norm_sourceHighGapTail_le",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail_with_gap_space",
+    "NLS.KdV.sqrt_endpointCouplingProduct_le_weight_norm",
+    "NLS.KdV.endpointCouplingRadius_le_weight_norm"
+  ],
+  "domains": {
+    "endpoint": "Original real H-minus-one realization of order-r infinity endpoint potentials,0<=r<1/2. Generic pair existence does not impose mean-zero or physical period-one.",
+    "source": "Original real mean-zero physically period-one Potential(r), whose distribution is unchanged by the verified coefficient and H-minus-one identifications.",
+    "domain": "The entire original period-two H1 space; actual endpoint eigenvectors solve the original H-minus-one operator equation.",
+    "strip": "The full corrected closed strip |Re(lambda)-pi^2*n^2|<=6*n,n>=1, under the existing half-contraction cutoff.",
+    "uniformity": "A single cutoff is chosen before q on every exact original endpoint norm ball, then n and lambda; all high pairs and signed high-gap coefficients use that cutoff.",
+    "gap_scale": "Weight.sobolev(-r) at signed mode numbers, genuine exponent infinity. High gaps are the widths of actual ordered pairs, evenly extended to signed indices; all indices below the cutoff are explicitly zero."
+  },
+  "conclusions": {
+    "intrinsic_actual_pair": "NLS.KdV.EndpointHillRealPair",
+    "existence": "NLS.KdV.exists_endpointHillRealPair",
+    "uniqueness": "NLS.KdV.EndpointHillRealPair.unique",
+    "full_strip_multiplicities": "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.multiplicities",
+    "actual_gap_coupling_bound": "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.gap_le_couplingRadius",
+    "ordered_original_tail": "NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail",
+    "actual_high_gap_space": "NLS.Articles.KdVPseudomeasures.sourceHighGapTail",
+    "uniform_original_tail_with_gap_space": "NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail_with_gap_space"
+  },
+  "constants": {
+    "root_localization": "sqrt(n)/4",
+    "pair_gap_localization": "sqrt(n)/2",
+    "source_coupling_gap": "sqrt(6)*actual full-strip coupling radius",
+    "doubled_frequency_normalization": "(1+2n)^(-r)*gap <=2*sqrt(6)*norm(q)",
+    "ordinary_mode_normalization": "(1+n)^(-r)*gap <=6*sqrt(6)*norm(q)",
+    "weighted_tail_norm": "norm(g)<=6*sqrt(6)*norm(q); g_k=gap_{|k|} for |k|>=N and0 otherwise"
+  },
+  "shared_method": {
+    "branch": "articles/kdv-estimates",
+    "method": "Read-only inspection of regular L2 HillRealGapPairs. The reusable generic zero-multiset construction and elementary uniqueness strategy are reused after proving the actual singular hypotheses. Regular L2 physical conclusions are not instantiated as singular conclusions.",
+    "copied_files": 0
+  },
+  "results": [
+    "The actual analytic-order count has finite support on the entire unbounded corrected tail strip: physical spectral discreteness and the proved root localization place its support in a bounded actual physical spectral set.",
+    "The verified generic analytic zero-multiset theorem constructs two actual singular endpoint roots with their exact repetitions. Native spectral reality and sorting give an intrinsic ordered real pair; both endpoints are actual eigenvalues with nonzero vectors in the entire original H1 domain.",
+    "Each actual pair exhausts the full corrected closed strip, with actual original physical algebraic multiplicity equal to Multiset{left,right}.count at every strip point. The ordered pair is unique independently of its construction.",
+    "Distinct endpoints have actual algebraic multiplicity1, and a collapsed pair has actual multiplicity2. Native real semisimplicity gives the same geometric dimensions in the unchanged H1 domain.",
+    "Actual pair endpoints lie within sqrt(n)/4 of pi^2*n^2. Their gap is nonnegative and at most sqrt(n)/2, and their midpoint lies within sqrt(n)/4. The actual pairs are strictly separated across distinct high mode numbers, also for different potentials whenever both pairs have been constructed.",
+    "The full-strip actual coupling radius has explicit bound2*(1+2n)^r*norm(q), reusing one common pointwise coupling-product bound. The actual physical gap obeys the source square-root-six coupling estimate, hence the doubled-frequency normalized bound2*sqrt6*norm(q) and ordinary mode-number weighted bound6*sqrt6*norm(q).",
+    "Original physical source wrappers retain the complete original potential distribution, exact original norm, real mean-zero period-one constraints and full original H1 eigenvectors. One cutoff chosen before the potential on each original norm ball constructs an actual ordered high-pair family.",
+    "The actual high-gap sequence, evenly extended to signed indices and explicitly zero below the cutoff, belongs to WeightedCoeff(Weight.sobolev(-r),infinity) with its true infinity-exponent norm at most6*sqrt6*norm(q). A single original norm-ball cutoff gives the ordered family and this weighted sequence, without a finite-p substitute."
+  ],
+  "qualifications": [
+    "These are actual physical eigenvalue pairs, not freely specified roots, arbitrary frequency maps or auxiliary model spectra.",
+    "Global canonical labels, the low-mode offset and periodic/antiperiodic parity are not inferred from local pair counts or strict ordering.",
+    "This local weighted gap result concerns the explicitly truncated actual high-pair tail. SpectralCanonicalGaps now proves the complete real unit-extra-weight canonical gap sequence estimate. Inverse spectral regularity remains open.",
+    "The potential norm remains the full original infinity endpoint norm; no vanishing-tail, smaller regular potential class or finite-p substitution is assumed."
+  ],
+  "remaining": [
+    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct physical Dirichlet spectral comparisons. Original complex canonical ordering,actual multiplicities,global high slots and full complex unit-extra-weight direct gap regularity are now proved.",
+    "Complete the arbitrary-extra-weight direct estimates in source Theorem2.1 where required;unit extra weight w=1 is proved for all original COMPLEX endpoint potentials. Prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets.",
+    "Construct and verify the original Birkhoff maps with global bijectivity,real analyticity and the stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
+    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses,quantifiers,normalizations and topology. All remain unproved."
+  ],
+  "validation": {
+    "modules_checked": 94,
+    "audited_declarations": 947,
+    "theorems": 761,
+    "definitions": 186,
+    "newly_audited_declarations": 49,
+    "new_theorems": 42,
+    "new_definitions": 7,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fresh_build": true,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "log": ".lake/article-check/logs/validation-real-pairs.log"
+  },
+  "subsequent_progress": [
+    "The actual original central Riesz range/root-space equality, rank/count equality and EXACT real central algebraic count2n-1 at EVERY sufficiently high separator are now proved,uniformly on original real norm balls. Canonical global slots/parity and main theorem constructions remain open; see spectral-central-count-map.json.",
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-canonical-labels-map.json",
+      "results": [
+        "The actual finite central spectral multiset repeats each native real singular eigenvalue according to its ACTUAL full original physical algebraic multiplicity and has cardinality2N-1. Sorting and appending the actual ordered high pairs produces a global monotone enumeration of the entire original spectrum.",
+        "Every global spectral fiber is finite and its cardinality equals the ACTUAL physical algebraic multiplicity. Intrinsic high-pair uniqueness and monotonicity prove that the entire labeling is independent of cutoff and enumeration choices.",
+        "Canonical sourceHillLabels exhaust the entire original real spectrum, put every sufficiently high actual pair in the exact slots2n-1,2n, and have an actual lowest value at index0, without any ground-state simplicity assertion.",
+        "The full signed canonical real gap sequence, including its finite central prefix, belongs to the genuine endpoint infinity Sobolev space of order-r. One explicit full-gap norm bound is uniform on each exact original real endpoint norm ball, with constants and cutoff chosen before q."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-complex-labels-map.json",
+      "results": [
+        "Sided free-lattice separation places every tight complex high-mode disk wholly below or wholly above each sufficiently high separator. On every such disk,norm membership and real-part membership both mean n<N.",
+        "The actual original complex central disk is proved to select EXACTLY the source real-part central sublevel. Equality of the ACTUAL finite spectral sets and actual full algebraic counts gives source_uniform_all_complex_central_counts: ONE cutoff BEFORE q on each original complex norm ball gives the exact count2n-1 at EVERY subsequent separator,plus the uniform wide contraction.",
+        "Native EndpointHillComplexPair constructs an intrinsic source-lexicographic physical pair from the ACTUAL determinant zeros,retaining actual full physical algebraic repetitions,including nontrivial Jordan chains. Its entire corrected strip is exhausted;both endpoints are tightly localized;distinct modes are strictly separated in real part. Each pair is unique. Real pairs map literally to the same complex physical pairs.",
+        "The actual original complex central multiset repeats every value by its full physical algebraic multiplicity. Sorting in the explicit source lexicographic relation keeps every repetition. Appending actual ordered high pairs gives an enumeration of the ENTIRE original complex spectrum,with the high pair exactly in slots2n-1,2n.",
+        "Every occurrence fiber is finite and its occurrence count equals the ACTUAL full physical algebraic multiplicity. Intrinsic pair uniqueness and finite ordered-enumeration uniqueness prove equality of ENTIRE labelings across all admissible cutoffs and construction choices.",
+        "sourceHillComplexLabels is the intrinsic global complex labeling in the exact source order(real part first,imaginary part second). It exhausts the entire original spectrum,has exact full algebraic multiplicities,has a lexicographically least actual value at index0,and puts each high actual pair in its required slots. One cutoff is uniform BEFORE every potential in an original complex norm ball. No ground-state simplicity or physical boundary parity is inferred.",
+        "sourceHillComplexLabels_ofPotential proves literal pointwise equality with the existing real canonical labels on the original real mean-zero period-one source. This is the same physical spectral model,not a compatible alternative.",
+        "Actual complex high gaps obey the original full-strip coupling estimate and the exact endpoint Sobolev weighted bound6*sqrt(6)*norm(q). The complete sourceComplexCanonicalGaps,including its finite central prefix,belongs to the genuine infinity Sobolev space of order-r. The full gap map is bounded on EVERY exact original complex endpoint norm ball,with one constant chosen BEFORE q. Its coefficients agree literally with the existing original real gaps."
+      ]
+    }
+  ]
+}

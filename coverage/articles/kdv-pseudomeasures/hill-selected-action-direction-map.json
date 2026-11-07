@@ -1,0 +1,174 @@
+{
+  "source": "arXiv:1610.00278v1 Lemma3.9/5.7 frequency dependencies for main1.1,1.3,5.9; physical energy contour ingredient of arXiv:1605.06690v1 Section3.1 Lemma3.2 proof, with actual frequency identification still unproved",
+  "reference": "https://arxiv.org/html/1605.06690v1#S3.SS1",
+  "status": "The actual canonical-phase Hamiltonian vector is the source tangent of a genuine selected-action H1 curve that preserves actual finite-gap membership and differentiates the physical energy to the actual frequency.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-selected-action-direction-map.json",
+    "ACTUAL_phase_cotangent_from_selected_native_pair_PROVED": true,
+    "ACTUAL_complete_phase_Hamiltonian_vector_real_and_zero_mean_PROVED": true,
+    "ALL_signed_native_coordinate_velocities_including_OTHER_COLLAPSED_modes_PROVED": true,
+    "genuine_original_H1_selected_action_curve_constructed_PROVED": true,
+    "EXACT_same_native_inverse_and_selected_pair_image_PROVED": true,
+    "ACTUAL_finite_gap_membership_preserved_for_EVERY_real_curve_parameter_PROVED": true,
+    "genuine_physical_H1_energy_curve_derivative_equals_ACTUAL_frequency_PROVED": true,
+    "ACTUAL_phase_Hamiltonian_vector_EQUALS_genuine_curve_source_tangent_PROVED": true,
+    "ACTUAL_phase_Hamiltonian_vector_genuine_H1_regular_representative_PROVED": true,
+    "existing_general_mean_zero_complex_Jacobian_coordinate_lemma_REUSED": true,
+    "common_exterior_radius_energy_identity_on_action_curve_germ_PROVED": false,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "SelectedPhaseCotangent proves the full continuous-linear phase cotangent from the two signed coordinate cotangents, without a chosen phase branch or square root. HillNativeSelectedPhaseCotangent applies it to the ACTUAL full native action product and phase ratio, obtaining completePhaseCotangent=(i/2)*(Z_positive^-1*dZ_positive-Z_negative^-1*dZ_negative) at every real open selected gap. Every actual local phase chart has exactly this full cotangent.",
+    "HillCompletePhaseHamiltonianVector proves that the ACTUAL complete local phase Hamiltonian vector preserves the physical conjugate-reflected real form, has literal Fourier mode zero equal to zero, and has action velocities exactly Kronecker(k,n) with the actual Gardner sign. No source regularity beyond its proved rough-space definition is initially assumed.",
+    "OriginalHillSelectedActionDirection combines the exact selected-pair cotangent with the VERIFIED FULL actual signed-coordinate Gardner matrix. It proves the ACTUAL coordinate velocity at EVERY signed k is 1/(2*Z_negative) for k=n, 1/(2*Z_positive) for k=-n, and ZERO for every other k, including ALL other COLLAPSED gaps and zero. Zero action derivative at a collapsed mode is never substituted for its coordinate velocity.",
+    "OriginalHillH1ActionCurve constructs an explicit genuine analytic curve in the ORIGINAL H1 source by the SAME actual global H1 inverse applied to z+t*hillH1ModeCLM(n,1/(2*conj(z_n))). It starts at the original source and its actual native image is exactly that selected-pair line. The ACTUAL original finite-gap locus is preserved for EVERY real curve parameter, with cutoff max(originalCutoff,n+1); the proof uses exact native coordinate zero iff original gap-square zero. At an open selected gap the derivative at zero of the GENUINE physical H1 KdV energy along this curve is EXACTLY the actual normalized hillH1KdVFrequency n at the original canonical output.",
+    "OriginalHillH1ActionTangent differentiates the actual strong-to-rough source inclusion and EVERY native coordinate along this genuine inverse curve. It REUSES the existing verified general complex mean-zero Jacobian coordinate lemma and its actual injectivity at every physical source. Equality of ALL signed coordinate velocities then proves the actual rough source tangent is EXACTLY gardnerHamiltonianVector completePhase. Consequently that ACTUAL phase Hamiltonian vector has a genuine ORIGINAL H1 representative at every original H1 source covered by its open selected phase chart, without a supplied regularity assumption.",
+    "The final physical frequency-to-moment comparison remains UNPROVED: a single exterior radius must support the physical quartic energy identity along a whole germ of this now-constructed genuine finite-gap action curve BEFORE differentiating it. Pointwise finite-gap energy/contour equality does not suffice. The source tangent identification, physical energy curve derivative, actual contour phase bracket, finite-hole deformation and exact moment-series contour formula are COMPLETE. Actual rough KdV frequencies/evolution and cross-Miura gluing remain OPEN. Appendix B/Main1.4 COMPLETE; Main1.1,1.3,5.1,5.9 UNPROVED; goalACTIVE."
+  ],
+  "declarations": [
+    "NLS.ComplexAnalysis.phaseCotangent_eq_of_signed_pair",
+    "NLS.KdV.hillHminusCompletePhaseCotangent_eq_selected_pair",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_fderiv_eq_selected_pair",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_HamiltonianVector_real",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_HamiltonianVector_zero_mode",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_HamiltonianVector_action_velocity",
+    "NLS.Articles.KdVPseudomeasures.hillRealNativeCoordinate_completePhase_Gardner",
+    "NLS.Articles.KdVPseudomeasures.hillRealNativeCoordinate_phase_Hamiltonian_velocity",
+    "NLS.Articles.KdVPseudomeasures.hillH1ActionDirection",
+    "NLS.Articles.KdVPseudomeasures.hillH1ActionCurve",
+    "NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_zero",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1ActionCurve",
+    "NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_native_image",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_positive_eq_zero_iff_gapSquare",
+    "NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_finiteGap",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1ActionCurve_energy",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_eq_nativeCoordinate",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1ActionCurve_rough_zero",
+    "NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_native_velocity",
+    "NLS.Articles.KdVPseudomeasures.hillH1ActionDirection_apply",
+    "NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_tangent_eq_phase_HamiltonianVector",
+    "NLS.Articles.KdVPseudomeasures.phase_HamiltonianVector_has_genuine_H1_representative"
+  ],
+  "files": [
+    "NLS/ComplexAnalysis/SelectedPhaseCotangent.lean",
+    "NLS/KdV/HillNativeSelectedPhaseCotangent.lean",
+    "NLS/KdV/HillCompletePhaseHamiltonianVector.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSelectedActionDirection.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ActionCurve.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ActionTangent.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "30c3d3c6bce263bfde5775057507a928e44bed63",
+    "baseline_modules": 1817,
+    "baseline_non_audit_sources_verified_unchanged": 1816,
+    "new_modules_compiled": 6,
+    "reused_canonical_modules_freshly_compiled": [],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.ComplexAnalysis.ProductPhaseCotangents",
+        "source": "NLS/ComplexAnalysis/ProductPhaseCotangents.lean",
+        "source_sha256": "78e9ec9b7cfc6a59fe7ba201232b68da320f89291a8aac0e688505d65145d429",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillNativeProductPhase",
+        "source": "NLS/KdV/HillNativeProductPhase.lean",
+        "source_sha256": "1c8ab7e77dbebb219814ae29cead37833ec1aad23d9a928efa85da70c506fb76",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Poisson.GardnerRealForm",
+        "source": "NLS/Poisson/GardnerRealForm.lean",
+        "source_sha256": "8b11befd0465bf56df0035b51741bb84fbea59843e5abdf07ce12f1338ca3d37",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillNativeMeanZeroDerivative",
+        "source": "NLS/KdV/HillNativeMeanZeroDerivative.lean",
+        "source_sha256": "3c38b5eaa486483f14b601587d5dc26a2dffacce506fb16b8ce6471dc9ed4ca6",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeSignedGardner",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeSignedGardner.lean",
+        "source_sha256": "e927a0911457f1a282f3bd686cad1efbcfa6ce39df9ab8d913e28f9d298254e0",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeJacobianInverse",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeJacobianInverse.lean",
+        "source_sha256": "19a83ad431e241ae2e3401588af617a649eab7ff397a9b0a01368c23c50c39e0",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillIntegerFreeDerivative",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerFreeDerivative.lean",
+        "source_sha256": "c8b70ba80d1fd37259a68ffe648d388ce5dae90326891ef41382734ce5e032ab",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeFrequency",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeFrequency.lean",
+        "source_sha256": "3678198af4dc79fa3c366fc11bef4a20cb0303cf964f8230b166dceba43aebab",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMiura",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapMiura.lean",
+        "source_sha256": "c30dfffdb1bf7b60c0ebca466c1ab90892629fad4cfda981c18ae455572eae63",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1823,
+    "audited_declarations": 8954,
+    "theorems": 7546,
+    "definitions": 1408,
+    "new_theorems": 20,
+    "new_definitions": 2,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-selected-action-direction.log",
+    "log_sha256": "01ca2487385b9312686692d60509f745e668fb2d019ba92e25a0ea5155a6292a"
+  },
+  "remaining_obligations": [
+    "Prove a COMMON exterior radius for the physical quartic energy/contour equality on a WHOLE germ of the NOW CONSTRUCTED genuine selected-action H1 curve. The curve preserves actual finite native support for EVERY real parameter, so all open Dirac gaps remain in a fixed finite collection of assigned P discs plus the central block. Prove exterior-radius invariance of the weighted quartic contour outside these open cuts, using actual primitive analyticity on the open-gap complement (closed gaps filled), and transport each pointwise sufficiently-large-radius physical identity down to one fixed radius. Moving-root-domain openness and compactness keep that fixed sphere admissible near the base. THEN differentiate the germ identity: the NOW PROVED actual curve tangent equals the phase Hamiltonian vector, and its physical energy derivative is the actual frequency. Retain complex-energy reality/normalization when comparing with the complex contour bracket.",
+    "After physical finite-gap frequency identification at OPEN selected modes, extend to collapsed selected modes by actual finite-gap action perturbations and continuity, then to ALL H1 by verified strong finite-gap approximation. Glue the ALREADY weighted-Banach-analytic local rough moment sums across DIFFERENT Miura/product patches by genuine dense H1 agreement, or prove cross-patch independence directly. Actual rough KdV frequencies remain UNPROVED.",
+    "Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

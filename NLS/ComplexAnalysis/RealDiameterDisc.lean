@@ -18,6 +18,14 @@ theorem ofReal_mem_realDiameter_closedBall_iff (a b x : ℝ) :
   rw [abs_le]
   constructor <;> rintro ⟨h₁,h₂⟩ <;> constructor <;> linarith
 
+/-- The open diameter disk corresponds to the strict real interval. -/
+theorem ofReal_mem_realDiameter_ball_iff (a b x : ℝ) :
+    (x : ℂ) ∈ ball (((a+b)/2 : ℝ) : ℂ) ((b-a)/2) ↔ x ∈ Ioo a b := by
+  simp only [mem_ball,dist_eq_norm,← Complex.ofReal_sub,Complex.norm_real,Real.norm_eq_abs,
+    mem_Ioo]
+  rw [abs_lt]
+  constructor <;> rintro ⟨h₁,h₂⟩ <;> constructor <;> linarith
+
 theorem ofReal_mem_realDiameter_sphere_iff (a b x : ℝ) (hab : a ≤ b) :
     (x : ℂ) ∈ sphere (((a+b)/2 : ℝ) : ℂ) ((b-a)/2) ↔ x = a ∨ x = b := by
   simp only [mem_sphere, dist_eq_norm, ← Complex.ofReal_sub, Complex.norm_real, Real.norm_eq_abs]

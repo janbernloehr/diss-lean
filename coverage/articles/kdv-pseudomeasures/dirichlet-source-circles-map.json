@@ -1,0 +1,152 @@
+{
+  "source": "arXiv:1610.00278v1, equation (6), Section 2.5 actual Pi_(n,q), contour/operator input to (31), and Appendix C; dependencies of Theorem 2.1(ii)",
+  "date": "2026-11-03",
+  "status": "COMPLETE uniform LITERAL Dirichlet source-circle validity, original-index CLOSED-disk isolation and actual rank-one physical L2 projection/range/residual on original complex H-minus-one norm neighborhoods. Quantitative C.4, full (31)/(32), complex weighted midpoint theorem and ALL MAIN theorems remain OPEN.",
+  "modules": [
+    "NLS/ZakharovShabat/CanonicalBoundarySmallDisks.lean",
+    "NLS/ComplexAnalysis/SquaredFrequencyDisks.lean",
+    "NLS/KdV/HminusOneDirichletUniformDisplacement.lean",
+    "NLS/KdV/HminusOneDirichletSourceCircles.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletSourceCircles.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletUniformRiesz.lean"
+  ],
+  "declarations": [
+    "NLS.ZakharovShabat.exists_uniform_small_canonicalBoundaryDisks",
+    "NLS.ComplexAnalysis.norm_squared_shift_displacement_le",
+    "NLS.ComplexAnalysis.squaredFrequencyCircle_isolates_of_monotone",
+    "NLS.KdV.HillHminusMiuraChart.exists_uniform_small_dirichletDisplacement",
+    "NLS.KdV.exists_uniform_small_hillHminusDirichletDisplacement",
+    "NLS.KdV.hillHminusDirichlet_sourceCircle_of_displacement",
+    "NLS.KdV.exists_uniform_hillHminusDirichlet_sourceCircles",
+    "NLS.Articles.KdVPseudomeasures.exists_uniform_small_originalComplexDirichletDisplacement",
+    "NLS.Articles.KdVPseudomeasures.exists_uniform_originalComplexDirichlet_sourceCircles",
+    "NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletRiesz_normalized_range_and_residual"
+  ],
+  "results": [
+    "For EVERY full complex reflected finite-p source with 1<p<infinity, arbitrarily small positive frequency disks contain BOTH actual canonical boundary root sequences at ALL sufficiently large signed indices, UNIFORMLY on ONE open convex complex-source neighborhood containing the original source and zero. The common canonical cutoff and arbitrary-radius actual spectral localization prove the SAME free index; no real-type hypothesis or unproved displacement power bound is used.",
+    "An explicit elementary shifted-square displacement bound converts small frequency errors to energy errors. For ANY positive delta and ANY fixed complex original H-minus-one source, ONE original norm neighborhood and cutoff give |mu_n-(pi*n)^2|<delta*n for ALL nearby sources and ALL subsequent ORIGINAL positive indices. The local complex Miura chart is auxiliary; its fixed energy shift is absorbed uniformly.",
+    "Monotone real parts of the intrinsic lexicographic list and small errors at the two neighboring high labels separate the n-th source disk from EVERY other actual label, including the ENTIRE central block with all complex repetitions. No boundedness, continuity or simplicity of the low labels is supplied.",
+    "The LITERAL circle |z-(pi*n)^2|=n is entirely in the ACTUAL full native Dirichlet resolvent for ALL sufficiently high n on ONE original complex H-minus-one norm neighborhood. Its CLOSED disk contains EXACTLY the actual same-index eigenvalue, which lies in its OPEN disk and has ACTUAL native algebraic multiplicity one. Every high label is analytic on that SAME neighborhood.",
+    "The original adapter pulls the neighborhood back to an OPEN set in the ORIGINAL period-two Fourier-Lebesgue H-minus-one norm. Native assertions apply to ALL physically period-one complex distributions in that neighborhood, with their ENTIRE original distribution unchanged and arbitrary mean allowed. Analytic extensions use the ambient neighborhood; no physically nonperiodic distribution is substituted into native source assertions.",
+    "On ONE original norm neighborhood, the ACTUAL ordinary physical L2 source contour projection at EVERY sufficiently high original n is a bounded idempotent of EXACT rank ONE. Its FULL range is the line of an ACTUAL zero-trace H1 eigenfunction with unit unnormalized [0,1] L2 norm and literal squared integral one. No contour-validity, isolated-eigenvalue, rank or abstract-projection hypothesis remains.",
+    "For EVERY native H1 test vector G and EVERY complex lambda, the ACTUAL physical L2 projection coefficient nu gives the exact original native projected residual nu*(mu_n-lambda)*J*g and its ACTUAL L2 operator-norm bound on that SAME uniform neighborhood and cutoff. This removes the source-circle hypotheses from the previous native operator step in (31); the full periodic eta/gamma residual representation and overlap bound (32) remain OPEN."
+  ],
+  "verified": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-source-circles-map.json",
+    "uniform_full_complex_small_canonical_frequency_disks": true,
+    "uniform_original_HminusOne_scaled_Dirichlet_error_arbitrarily_small": true,
+    "literal_source_circle_resolvent_validity": true,
+    "uniform_same_original_index_closed_disk_isolation": true,
+    "all_central_labels_excluded": true,
+    "uniform_actual_algebraic_multiplicity_one": true,
+    "original_ambient_norm_open_neighborhood": true,
+    "entire_original_distribution_unchanged": true,
+    "uniform_actual_physical_L2_projection_idempotent": true,
+    "uniform_actual_projection_rank_one": true,
+    "uniform_actual_normalized_native_eigenfunction_range": true,
+    "uniform_actual_projected_residual_scalar_factor": true,
+    "supplied_source_circle_conditions": false,
+    "quantitative_AppendixC4_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "essential_remaining": [
+    "Prove quantitative Appendix C.4 convergence of the ACTUAL periodic and Dirichlet projections in the source L2-to-Linfinity norm. Uniform LITERAL Dirichlet source-circle validity, closed-disk same-index isolation, actual simplicity and rank-one physical L2 Riesz ranges are NOW PROVED in the ORIGINAL complex H-minus-one norm neighborhoods.",
+    "Prove source Lemma 2.13 actual two-dimensional periodic basis/off-diagonal estimate and the periodic-to-Dirichlet eta/gamma residual representation; complete source Lemma 2.15 full identity (31) and overlap bound (32). Its actual native projected scalar factor and uniform actual Dirichlet source projections/ranges are NOW PROVED without supplied source-circle conditions.",
+    "Prove FULL COMPLEX source Theorem 2.1(ii) general-weight midpoint membership/local boundedness; complete low periodic simplicity/interlacing/parity and complex ratio 2.20 where used; construct ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation flow. ALL FIVE MAIN THEOREMS 1.1,1.3,1.4,5.1,5.9 remain UNPROVED; goal ACTIVE. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved."
+  ],
+  "source_correspondence": {
+    "potential": "Full original COMPLEX physically period-one H-minus-one distributions; arbitrary mean is retained, hence the source complex mean-zero subclass is included.",
+    "topology": "ONE OPEN neighborhood in the ORIGINAL ambient Fourier-Lebesgue H-minus-one norm, with ONE cutoff chosen before nearby potentials and labels.",
+    "indices": "Original positive index n; the intrinsic complete lexicographic list fixes the central multiplicity offset before localization.",
+    "source_circle": "LITERAL center (pi*n)^2 and radius n; ENTIRE circle is in the ACTUAL original native resolvent; its CLOSED disk isolates EXACTLY mu_n.",
+    "projection": "ACTUAL contour integral on the FULL ordinary physical L2([0,1],C) space via the faithful full native dual/H1 lift; original full native operator domain and base are preserved.",
+    "range": "EXACT finite rank ONE range, with original zero-trace H1 eigenfunction normalized in unnormalized physical L2 and literal integral from 0 to 1.",
+    "residual": "nu is the ACTUAL physical L2 projection coefficient; actual original native projected residual equals nu*(mu_n-lambda)*J*g. Its ACTUAL L2 operator bound is proved.",
+    "quantitative": "Uniform qualitative circle validity/isolation and exact rank/range/residual are proved. Quantitative L2-to-Linfinity convergence to free projections and source overlap lower bound are NOT inferred."
+  },
+  "qualifications": [
+    "The native spectrum is exhausted using the proved COMPLETE original positive-index complex list, including every central associated-vector multiplicity.",
+    "Monotone real parts exclude all other labels from the CLOSED disk; no real-potential hypothesis is used.",
+    "The fixed local Miura shift is absorbed uniformly before the final cutoff; it does not move the literal source circles.",
+    "Every original native assertion retains the ENTIRE physically period-one original distribution. Analytic extensions are separately defined on the open ambient neighborhood.",
+    "No additional axiom, assumed circle validity, assumed isolated eigenvalue, smaller native domain/base, or changed physical L2 normalization is used.",
+    "The full source (31) still requires periodic eta/gamma residual representation; (32) and C.4 still require quantitative projection comparison. All five main theorems remain unproved."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "2cb12d8470ee2e787804033a9137573bf9faef6f",
+    "baseline_modules": 550,
+    "baseline_non_audit_sources_verified_unchanged": 549,
+    "new_modules_compiled": 6,
+    "modules_in_exact_inventory": 556,
+    "audited_declarations": 3853,
+    "theorems": 3195,
+    "definitions": 658,
+    "new_theorems": 10,
+    "new_definitions": 0,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-dirichlet-source-circles.log",
+    "phases": [
+      "Six new modules prove arbitrarily small full-complex canonical frequency disks, squared-energy isolation geometry, locally uniform original H-minus-one Dirichlet o(n) displacement, actual literal source-circle validity and same-index closed-disk isolation, original distribution adapters, and uniform actual physical L2 rank-one Riesz projections with normalized range and projected residual. All six freshly compiled in dependency order; exact full audit of 556 selected modules and 3853 theorem/definition declarations passed without warnings or suggestions. All 549 baseline non-Audit Lean sources remain byte-identical to private commit 2cb12d8."
+    ]
+  },
+  "output_sha256": {
+    "NLS/ZakharovShabat/CanonicalBoundarySmallDisks.lean": "8cc0d21f7b2e89f70349cbe4ef82e770778bfc3f10ba6c37b412ce6a000a31b6",
+    "NLS/ComplexAnalysis/SquaredFrequencyDisks.lean": "fd8e244d056c644e0f2de82b76be8c14a66e2384b85465e82c4f492b95bd4787",
+    "NLS/KdV/HminusOneDirichletUniformDisplacement.lean": "fdc18578b32ec0e5ba849f873cd8d6b506677aa8e806cee3103153a619fd5675",
+    "NLS/KdV/HminusOneDirichletSourceCircles.lean": "224c42291da399b69d2db835721d056d60eb6e6736338aabbf0b99d53c619df9",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletSourceCircles.lean": "17557fef7cda357b28bf043f9473d53aebc3a3e315a4427125ea108682eda287",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletUniformRiesz.lean": "55d778e91d6db50a233e08e7d36e6db4d3e7646b427a0d2cbd9449dc50077cbd"
+  },
+  "canonical_checkout_written": false,
+  "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "workspace_decision": "pending; source/build/Git milestone writes remain private",
+  "git_isolation": {
+    "metadata": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/appendix-b-milestones.git",
+    "base_commit": "2cb12d8470ee2e787804033a9137573bf9faef6f",
+    "branch": "articles/kdv-pseudomeasures",
+    "shared_canonical_git_written": false
+  },
+  "main_theorems_verified": false,
+  "actual_physical_kernel_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-physical-kernel-map.json",
+    "actual_full_native_resolvent_bilinear_Green_symmetry": true,
+    "actual_H1_contour_lift_bilinear_Green_symmetry": true,
+    "actual_simple_isolated_bilinear_mass_proved_nonzero": true,
+    "actual_full_dual_projection_coefficient_formula": true,
+    "literal_unnormalized_physical_L2_pairing": true,
+    "physical_Holder_constant_one": true,
+    "entire_native_domain_continuous_representative_inclusion": true,
+    "actual_L2_to_uniform_contour_operator_constructed": true,
+    "identical_original_L2_projection_representative": true,
+    "exact_physical_pointwise_kernel_on_closed_interval": true,
+    "actual_strong_operator_norm_bound": true,
+    "actual_projection_comparison_from_physical_eigenfunction_errors": true,
+    "uniform_original_source_circle_physical_kernels": true,
+    "supplied_source_circle_or_bilinear_nonvanishing_conditions": false,
+    "high_frequency_eigenfunction_comparison_proved": false,
+    "uniform_bilinear_mass_lower_bound_proved": false,
+    "source_AppendixC4_rate_proved": false,
+    "source_AppendixC4_free_projection_convergence_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
+}

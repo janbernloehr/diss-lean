@@ -1,6 +1,65 @@
+import NLS.KdV.HillDiscriminantGardnerGradient
+import NLS.KdV.ClassicalHillTraceGradientCommutation
+import NLS.KdV.HillFinitePotentialDifferentiability
+import NLS.Poisson.GardnerIntegralCoefficients
 import NLS.KdV.HillDiscriminantQuadraticSystem
 import NLS.ComplexAnalysis.QuadraticHillSystemPairing
 import NLS.KdV.HillDirichletLagrange
+
+/-! The ACTUAL Hill discriminants Poisson-commute at EVERY complex
+H-minus-one source and every pair of energies. Physical finite Fourier
+potentials supply a dense set; analytic H1 cotangents supply continuity.
+No abstract involution hypothesis, finite-gap density or reality is assumed. -/
+noncomputable section
+open Set Complex MeasureTheory NLS.LinearVolterra NLS.Fourier
+open scoped ENNReal
+namespace NLS.KdV
+
+def hillHminusDiscriminantGardnerBracket (μ ν : ℂ) (q : PeriodOneHminusOne) : ℂ :=
+  NLS.Poisson.gardnerBivector (hillHminusDiscriminantGradient μ q) (hillHminusDiscriminantGradient ν q)
+
+theorem analyticOnNhd_hillHminusDiscriminantGardnerBracket (μ ν : ℂ) :
+    AnalyticOnNhd ℂ (hillHminusDiscriminantGardnerBracket μ ν) univ :=
+  NLS.Poisson.analyticOnNhd_gardnerBivector _ _
+    (analyticOnNhd_hillHminusDiscriminantGradient μ) (analyticOnNhd_hillHminusDiscriminantGradient ν)
+
+theorem hillHminusDiscriminantGardnerBracket_L1_eq_integral (a : Coeff 1) (μ ν : ℂ) :
+    hillHminusDiscriminantGardnerBracket μ ν (periodOneL1Inclusion a)=
+      ∫ x in (0:ℝ)..1, classicalHillTraceGradient (periodOneL1PotentialCurve a) μ x*
+        classicalHillTraceGradientPrime (periodOneL1PotentialCurve a) ν x := by
+  exact NLS.Poisson.gardnerBivector_eq_integral_of_coefficients
+    (hillHminusDiscriminantGradient μ (periodOneL1Inclusion a))
+    (hillHminusDiscriminantGradient ν (periodOneL1Inclusion a))
+    (classicalHillTraceGradient (periodOneL1PotentialCurve a) μ)
+    (classicalHillTraceGradient (periodOneL1PotentialCurve a) ν)
+    (classicalHillTraceGradientPrime (periodOneL1PotentialCurve a) ν)
+    (continuous_classicalHillTraceGradient (periodOneL1PotentialCurve a) μ)
+    (continuous_classicalHillTraceGradient (periodOneL1PotentialCurve a) ν)
+    (continuous_classicalHillTraceGradientPrime (periodOneL1PotentialCurve a) ν)
+    (fun t ht => hasDerivAt_classicalHillTraceGradient (periodOneL1PotentialCurve a) ν ⟨t,ht.1.le,ht.2.le⟩)
+    (classicalHillTraceGradient_boundary (periodOneL1PotentialCurve a) ν).1
+    (hillHminusDiscriminantGradient_L1_coefficients μ a) (hillHminusDiscriminantGradient_L1_coefficients ν a)
+
+theorem hillHminusDiscriminantGardnerBracket_finite (a : ℤ →₀ ℂ) (μ ν : ℂ) :
+    hillHminusDiscriminantGardnerBracket μ ν
+      (WeightedCoeff.ofFinsupp (Weight.sobolev (-1)) 2 a)=0 := by
+  rw [← periodOneL1Inclusion_ofFinsupp,hillHminusDiscriminantGardnerBracket_L1_eq_integral]
+  exact integral_classicalHillTraceGradients_eq_zero _ (deriv (polynomial a))
+    (hasDerivAt_finiteHillPotentialCurve a) (periodOneL1PotentialCurve_endpoints (Coeff.ofFinsupp a)) μ ν
+
+theorem hillHminusDiscriminantGardnerBracket_eq_zero (q : PeriodOneHminusOne) (μ ν : ℂ) :
+    hillHminusDiscriminantGardnerBracket μ ν q=0 := by
+  exact (WeightedCoeff.denseRange_ofFinsupp (Weight.sobolev (-1)) 2 (by norm_num)).induction_on q
+    (p := fun a : PeriodOneHminusOne => hillHminusDiscriminantGardnerBracket μ ν a=0)
+    (isClosed_eq (analyticOnNhd_hillHminusDiscriminantGardnerBracket μ ν).continuous continuous_const)
+    (fun a => hillHminusDiscriminantGardnerBracket_finite a μ ν)
+
+theorem hillHminusDiscriminants_Gardner_commute (q : PeriodOneHminusOne) (μ ν : ℂ) :
+    NLS.Poisson.hminusGardnerBracket (fun p => hillHminusDiscriminant p μ)
+      (fun p => hillHminusDiscriminant p ν) q=0 :=
+  hillHminusDiscriminantGardnerBracket_eq_zero q μ ν
+
+end NLS.KdV
 
 noncomputable section
 set_option autoImplicit false

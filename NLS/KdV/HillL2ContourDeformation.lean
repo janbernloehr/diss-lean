@@ -23,7 +23,7 @@ theorem hillL2Continuation_high_annulus
     (z,SpectralWeight.one.toCoeff q) ∈ hillL2ContinuationDomain := by
   have hzR := mem_closedBall.mp hz.1
   have hzr : r ≤ dist z (freeHillValue n : ℂ) := not_lt.mp (by simpa only [mem_ball] using hz.2)
-  exact mem_hillL2ContinuationDomain_of_high_distance q hq n hn hcut z
+  exact mem_hillL2ContinuationDomain_of_high_distance q hq n hn (by linarith [norm_nonneg q]) z
     (mem_closedBall.mpr (hzR.trans hR)) (by simpa only [dist_eq_norm] using hr.trans_le hzr)
 
 theorem hillL2HighContourMoment_eq_radius

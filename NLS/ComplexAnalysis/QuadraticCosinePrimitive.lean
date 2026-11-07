@@ -39,7 +39,7 @@ theorem hasDerivAt_quadraticCosinePrimitive
     dsimp only [quadraticRootPolynomial,cosineGapPoint]
     linear_combination δ^2*(Complex.sin_sq_add_cos_sq θ)
   rw [hpoly] at heq
-  convert! hd using 1 <;> try rfl
+  convert! hd using 1; try rfl
   dsimp only [cosineGapPoint,Function.comp_def] at heq ⊢
   linear_combination I*heq
 

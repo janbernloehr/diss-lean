@@ -31,7 +31,7 @@ theorem quasiHillDiscriminant_miura_zero (a : ScalarDomain 2) :
   have h := quasiHillDiscriminant_eq_ZS (periodOneMiuraCurve a)
     (miuraDiagonalCurveCLM (periodOneMiuraCurve a)) (by intro t; rfl) 0
   simp only [zero_pow (by decide : 2 ≠ 0)] at h
-  rw [h,classicalDiscriminant_diagonal_zero (periodOneMiuraCurve a) _ (by intro t; rfl),
+  rw [h,classicalDiscriminant_diagonal_zero_of_curve (periodOneMiuraCurve a) _ (by intro t; rfl),
     unitIntervalMean_periodOneMiuraCurve]
 
 theorem canonicalDiscriminant_miura_zero (a : ScalarDomain 2) :

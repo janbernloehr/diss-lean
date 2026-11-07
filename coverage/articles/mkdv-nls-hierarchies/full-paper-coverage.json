@@ -19,7 +19,7 @@
   "scope_last_line": 1327,
   "named_statement_count": 18,
   "numbered_equation_count": 25,
-  "assertion_count": 106,
+  "assertion_count": 108,
   "passage_count": 241,
   "semantic_inventory_complete": false,
   "assertions": [
@@ -264,10 +264,12 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_gradient_agreement",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral"
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false"
       ],
       "existing_details": "source-map.json",
-      "certified_part": "All discriminant and spectral-derivative identities; all full Frechet-cotangent variants; all signed endpoint slots; complete canonical-root part(iv); physical whole-line L2 spatial core and periodic scalar coefficient with its ODE-fixed integral sign. Still open: full source pointwise gradient correspondence, invariant W/gap-segment interfaces, source nonlocal sign comparison and xi covariance."
+      "certified_part": "All discriminant and spectral-derivative identities; all full Frechet-cotangent variants; all signed endpoint slots; complete canonical-root part(iv); physical whole-line L2 spatial core and periodic scalar coefficient with its ODE-fixed integral sign. Still open: full source pointwise gradient correspondence, invariant W/gap-segment interfaces, xi covariance. The source nonlocal sign is now corrected and its printed version refuted at original H0, in the literal Section 2 convention."
     },
     {
       "id": "corollary-8",
@@ -286,10 +288,13 @@
       "label": "Corollary 9",
       "line": 1058,
       "page": 15,
-      "status": "pending_full_statement",
+      "status": "partial",
       "obligation": "Both symmetry-constrained spatial primitive-gradient recurrences. Restrict spectral domain; part ii requires J*phi on the nonlocal scalar term.",
-      "declarations": [],
-      "existing_details": "source-map.json"
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.corollary9_ii_corrected_normalized_discriminant_gradients"
+      ],
+      "existing_details": "source-map.json",
+      "certified_part": "The corrected typed part(ii) residual is even in lambda for actual physical discriminant gradients normalized by the canonical root at every original complex H0 source with pure T phi=+/-phi. Its nonlocal term is +2*i*J*phi*integral(R*phi dot normalized gradient) on the left. The original primitive F gradient identification on the cut complement and the full part(i) are still open."
     },
     {
       "id": "lemma-10",
@@ -326,10 +331,16 @@
       "label": "Lemma 13",
       "line": 1291,
       "page": 19,
-      "status": "pending_full_statement",
+      "status": "partial",
       "obligation": "All three actual fundamental-matrix symmetries, every real x and lambda, original real-type L2 source, plus reflected monodromy. Unit-interval continuous profiles alone are insufficient.",
-      "declarations": [],
-      "existing_details": "source-map.json"
+      "declarations": [
+        "NLS.ZakharovShabat.l2Monodromy_sourceComponentSwap",
+        "NLS.ZakharovShabat.l2Monodromy_sourceSpatialReflection",
+        "NLS.ZakharovShabat.l2Monodromy_sourceMidpointReflection",
+        "NLS.ZakharovShabat.l2Monodromy_sourceReciprocalScaling"
+      ],
+      "existing_details": "source-map.json",
+      "certified_part": "All actual endpoint monodromy entries under P, pure T, combined PT and every nonzero complex reciprocal scaling are proved on the original complex H0 space in the Section 2 operator convention. This includes all real phases and real-type sources. Full fundamental matrices at every real x and the separate Appendix operator convention adapter remain open."
     },
     {
       "id": "lemma-14",
@@ -966,9 +977,11 @@
       "obligation": "Actual xi integral, boundary constant, periodicity and P,T,Ralpha covariance for every real spatial point.",
       "declarations": [
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral"
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false"
       ],
-      "certified_part": "Whole-line original L2 periodicity and exact physical integral are proved, including negative times; source xi symmetry and sign correspondence remain open."
+      "certified_part": "Whole-line original L2 periodicity and exact corrected minus-sign integral are proved, including negative times, and the printed plus sign is refuted. Full source xi P/T/phase covariance remains open."
     },
     {
       "id": "primitive-gradient-domains",
@@ -1188,10 +1201,41 @@
       "kind": "source_convention_review",
       "line": 947,
       "page": 14,
-      "status": "pending_source_normalization_comparison",
-      "obligation": "The actual physical ODE with R=diag(i,-i) and its unconjugated Frechet gradient gives xi=delta-2*i*integral(R*phi dot gradient), whereas the printed Theorem6(v) has plus. Compare the full source operator conventions and exhibit a formal printed-statement obstruction before marking the source clause complete.",
+      "status": "proved_correction_and_counterexample",
+      "obligation": "In the literal Section 2 (page 8) operator convention, with actual identity-normalized monodromy and actual unconjugated Frechet gradient, xi=delta-2*i*integral(R*phi dot gradient). The printed plus-sign spatial equation is false even almost everywhere for an original complex H0 source. The original H0 test is the periodic L2 class of (-2*i,i/(1+x^2)) on [0,1]; no smooth-periodic or H1 claim is made. This resolves this sign issue; the separate p5/Appendix operator adapter remains open.",
       "declarations": [
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral"
+        "NLS.Articles.MKdVNLSHierarchies.section2_operator_convention",
+        "NLS.Articles.MKdVNLSHierarchies.nonlocal_sign_actual_gradient_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false",
+        "NLS.Articles.MKdVNLSHierarchies.nonlocal_sign_test_monodromy",
+        "NLS.Articles.MKdVNLSHierarchies.nonlocal_sign_test_derivatives"
+      ]
+    },
+    {
+      "id": "corrected-normalized-nonlocal-reflection",
+      "kind": "certified_partial_named_clause",
+      "line": 1065,
+      "page": 16,
+      "status": "proved_partial_source_interface",
+      "obligation": "Correct typed nonlocal Corollary9(ii) residual for actual canonical-root-normalized discriminant gradients, original H0, pure T-even or T-odd source. Primitive F gradient identification and its spectral domain still require a separate proof.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.corollary9_ii_corrected_normalized_discriminant_gradients"
+      ]
+    },
+    {
+      "id": "original-L2-endpoint-monodromy-symmetries",
+      "kind": "certified_partial_named_clause",
+      "line": 1310,
+      "page": 19,
+      "status": "proved_partial_source_interface",
+      "obligation": "Original complex H0 actual full monodromy endpoint matrices under P, pure T, combined PT and nonzero complex reciprocal scaling, in the literal Section2 convention; this proves the endpoint algebra needed for the corrected boundary quotient. Full-real-x Appendix source matching remains open.",
+      "declarations": [
+        "NLS.ZakharovShabat.l2Monodromy_sourceComponentSwap",
+        "NLS.ZakharovShabat.l2Monodromy_sourceSpatialReflection",
+        "NLS.ZakharovShabat.l2Monodromy_sourceMidpointReflection",
+        "NLS.ZakharovShabat.l2Monodromy_sourceReciprocalScaling",
+        "NLS.ZakharovShabat.source_reflection_normalized_boundary_even"
       ]
     }
   ],
@@ -3046,7 +3090,9 @@
       "last_line": 1075,
       "source_sha256": "3d6d85d75306fe2c17667c3537fcdd7ce532a98787e6feba9d1d1c39c78ea81c",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "corrected-normalized-nonlocal-reflection"
+      ]
     },
     {
       "id": "passage-189",
@@ -3551,10 +3597,10 @@
     }
   ],
   "known_open_obligations": [
-    "Theorem6: source pointwise gradient symmetry correspondence, invariant W and gap-segment interfaces, source nonlocal sign comparison and xi covariance.",
-    "Corollaries8 and9, full Lemma10, and nonlocal Proposition11(iii). Proposition11(i) is now complete on its exact original domain; part(ii) was already proved with corrected R.",
+    "Theorem6: source pointwise gradient symmetry correspondence, invariant W and gap-segment interfaces, and xi covariance. The literal Section2 nonlocal sign is corrected and the printed sign refuted.",
+    "Corollaries8 and9, full Lemma10, and nonlocal Proposition11(iii). The canonical-root-normalized actual-gradient version of corrected typed Corollary9(ii) is proved; the primitive F gradient interface on the source cut domain remains open.",
     "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
-    "Lemma13 at all real spatial points and original L2 sources, including all arbitrary phases.",
+    "Lemma13 fundamental matrices at all real spatial points and original L2 sources, plus the p5/Appendix-vs-Section2 operator adapter. All Section2 endpoint monodromy matrices now have original complex H0 P/T/arbitrary-phase interfaces.",
     "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
     "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
   ]
