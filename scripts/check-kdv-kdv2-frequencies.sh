@@ -3480,6 +3480,13 @@ modules=(
   NLS/ZakharovShabat/SourceUniformOffDiagonalDecay
   NLS/KdV/PhysicalUniformFrequencyDecay
   NLS/Articles/KdVKdV2Frequencies/Theorem12NativeUniformFrequencyDecay
+  NLS/KdV/PhysicalUniformFrequencyPairPullback
+  NLS/Articles/KdVKdV2Frequencies/SobolevUniformFrequencyPairCharts
+  NLS/SequenceSpaces/UniformFrequencyTransfer
+  NLS/Articles/KdVKdV2Frequencies/UniformSobolevActionFrequencyDecay
+  NLS/Articles/KdVKdV2Frequencies/UniformFrequencyActionModel
+  NLS/Articles/KdVKdV2Frequencies/OriginalUniformActionFrequencyDecay
+  NLS/Articles/KdVKdV2Frequencies/Theorem12InteriorUniformActionDecay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

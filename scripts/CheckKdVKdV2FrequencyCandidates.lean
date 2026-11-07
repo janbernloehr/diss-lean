@@ -1,3 +1,10 @@
+import NLS.Articles.KdVKdV2Frequencies.Theorem12InteriorUniformActionDecay
+import NLS.Articles.KdVKdV2Frequencies.UniformSobolevActionFrequencyDecay
+import NLS.Articles.KdVKdV2Frequencies.UniformFrequencyActionModel
+import NLS.Articles.KdVKdV2Frequencies.OriginalUniformActionFrequencyDecay
+import NLS.KdV.PhysicalUniformFrequencyPairPullback
+import NLS.Articles.KdVKdV2Frequencies.SobolevUniformFrequencyPairCharts
+import NLS.SequenceSpaces.UniformFrequencyTransfer
 import NLS.KdV.PhysicalUniformFrequencyDecay
 import NLS.Articles.KdVKdV2Frequencies.Theorem12NativeUniformFrequencyDecay
 import NLS.ZakharovShabat.SourceUniformOffDiagonalDecay
@@ -6155,7 +6162,14 @@ private def kdvFrequencyAuditChunk27 : Array Lean.Name := #[
   `NLS.SequenceSpaces.UniformSharpCubicSums,
   `NLS.ZakharovShabat.SourceUniformOffDiagonalDecay,
   `NLS.KdV.PhysicalUniformFrequencyDecay,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12NativeUniformFrequencyDecay
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12NativeUniformFrequencyDecay,
+  `NLS.KdV.PhysicalUniformFrequencyPairPullback,
+  `NLS.Articles.KdVKdV2Frequencies.SobolevUniformFrequencyPairCharts,
+  `NLS.SequenceSpaces.UniformFrequencyTransfer,
+  `NLS.Articles.KdVKdV2Frequencies.UniformSobolevActionFrequencyDecay,
+  `NLS.Articles.KdVKdV2Frequencies.UniformFrequencyActionModel,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalUniformActionFrequencyDecay,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12InteriorUniformActionDecay
 ]
 
 open Lean in
