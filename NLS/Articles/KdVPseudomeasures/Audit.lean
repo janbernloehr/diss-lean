@@ -2055,6 +2055,15 @@ import NLS.SequenceSpaces.SignedRealCartesianParameters
 import NLS.Articles.KdVPseudomeasures.SourceHamiltonianActionDescent
 import NLS.Articles.KdVPseudomeasures.SourceH1Actions
 import NLS.Articles.KdVPseudomeasures.SourceTheorem31Hamiltonian
+import NLS.SequenceSpaces.UniformShiftedHolderDecay
+import NLS.SequenceSpaces.ReciprocalMomentRowDecay
+import NLS.KdV.HillMomentGapDecay
+import NLS.KdV.HillMomentUniformPowerDecay
+import NLS.Articles.KdVPseudomeasures.SourceEndpointGapSquareBound
+import NLS.Articles.KdVPseudomeasures.SourceLocalEndpointFrequencyDecay
+import NLS.Articles.KdVPseudomeasures.SourceUniformEndpointFrequencyDecay
+import NLS.Articles.KdVPseudomeasures.SourceEndpointActionDecay
+import NLS.Articles.KdVPseudomeasures.SourceLemma39
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -12003,3 +12012,19 @@ import NLS.Articles.KdVPseudomeasures.SourceTheorem31Hamiltonian
 #print axioms NLS.Articles.KdVPseudomeasures.sourceH1CanonicalActions_mem_positive
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_iii_complex
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_iii
+#print axioms NLS.Coeff.exists_uniform_two_shift_holder_decay
+#print axioms NLS.Coeff.reciprocalMomentLattice
+#print axioms NLS.Coeff.norm_reciprocalMomentLattice
+#print axioms NLS.Coeff.positiveMomentKernel
+#print axioms NLS.Coeff.positiveMomentKernel_le_shifted
+#print axioms NLS.Coeff.exists_uniform_polynomial_moment_row_decay
+#print axioms NLS.KdV.HillProductEquationPatch.norm_canonical_gapSquare_eq_midpoint_gap
+#print axioms NLS.KdV.HillProductEquationPatch.weighted_dirac_gap_power_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_uniform_centeredMomentSeries_power_decay
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodOneCoefficients_sourceOriginalPotential
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_canonical_gapSquare_bound
+#print axioms NLS.Articles.KdVPseudomeasures.exists_local_source_endpoint_frequency_decay
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_frequency_remainder
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_action_power_bound
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_action_decay
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_9

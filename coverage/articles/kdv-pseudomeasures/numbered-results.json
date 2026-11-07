@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 42,
+    "proved": 43,
     "proved_corrected": 6,
-    "partial": 6,
+    "partial": 5,
     "not_found": 0
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -680,18 +680,35 @@
       "label": "Lemma 3.9",
       "line": 2057,
       "statement": "Lemma 3.9 Uniformly on k·ks,∞ -norm bounded subsets of Fℓs,∞\n                                                         0   , −1/2 < s ⩽\n0,\n\n       ωn = (2nπ)3 − 6In + o(1).        ⋊",
-      "status": "partial",
-      "comparison": "Existing inverse-index weighted lp frequency remainder is weaker than the displayed omega_n=(2*pi*n)^3-6*I_n+o(1), uniformly on every endpoint norm-bounded set. The sharp action subtraction and uniform o(1) are not claimed.",
+      "status": "proved",
+      "comparison": "The full printed expansion is proved for the genuine rough KdV frequencies and original canonical actions, uniformly on EVERY original endpoint norm ball for 0 <= r < 1/2 (s=-r). Exact all-index squared Hill/Dirac gap identities and midpoint lower bounds convert the uniform Hill-gap bound into m*DiracGap(m)^2 <= C*(1+m)^(-(1-2r)); opposite shifted Holder sums give a uniform vanishing moment majorant. A finite cover of the norm-compact native envelope supplies one cutoff before every potential in the ball. Original canonical actions also vanish uniformly, retaining the literal -6 I_n correction.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencySequence.lean",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyGrowth.lean"
+        "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyGrowth.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma39.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceUniformEndpointFrequencyDecay.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceEndpointActionDecay.lean",
+        "NLS/KdV/HillMomentUniformPowerDecay.lean",
+        "NLS/SequenceSpaces/ReciprocalMomentRowDecay.lean"
       ],
-      "declarations": [],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma3_9",
+        "NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_frequency_remainder",
+        "NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_action_power_bound",
+        "NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_action_decay",
+        "NLS.KdV.HillProductEquationPatch.exists_uniform_centeredMomentSeries_power_decay",
+        "NLS.Coeff.exists_uniform_polynomial_moment_row_decay"
+      ],
       "source_page": 32,
       "statement_sha256": "90fe420dea6c08936b24f1f32f6827328f02d42958de20f781c280b99a93365e",
       "provider_sha256": {
         "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencySequence.lean": "641eb83b7c114aab89dab11ac9beab3181dbc9e1c4e6bd46b90072f0d7a29b2c",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyGrowth.lean": "55823c22b9799f8ee2c597e2b8e0a3b09984970d0ed3bb4979a9e5bd30f68958"
+        "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyGrowth.lean": "55823c22b9799f8ee2c597e2b8e0a3b09984970d0ed3bb4979a9e5bd30f68958",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma39.lean": "1bed4cdc532ae90abeed27d94fed154f55b494165ef4d2040c751e5fad8299f8",
+        "NLS/Articles/KdVPseudomeasures/SourceUniformEndpointFrequencyDecay.lean": "fe8e008628646df83ef133b27c775486682fa9dcf56542bceb14e56a853c54c9",
+        "NLS/Articles/KdVPseudomeasures/SourceEndpointActionDecay.lean": "8c4b965d38542693b06703c644cc1ef7a6786c417c82ee9cc122a6d250b18f7f",
+        "NLS/KdV/HillMomentUniformPowerDecay.lean": "feb6ef8b2a77de4fed4e283658d38c7d6c0a881e1d71b4fced11233c57d87ec4",
+        "NLS/SequenceSpaces/ReciprocalMomentRowDecay.lean": "f563c44bae78b67f1b16e65ae2acbb386adff44a45e470d6fae3928cefe27536"
       }
     },
     {

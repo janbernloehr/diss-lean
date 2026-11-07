@@ -6660,3 +6660,12 @@ import NLS.SequenceSpaces.SignedRealCartesianParameters
 import NLS.Articles.KdVPseudomeasures.SourceHamiltonianActionDescent
 import NLS.Articles.KdVPseudomeasures.SourceH1Actions
 import NLS.Articles.KdVPseudomeasures.SourceTheorem31Hamiltonian
+import NLS.SequenceSpaces.UniformShiftedHolderDecay
+import NLS.SequenceSpaces.ReciprocalMomentRowDecay
+import NLS.KdV.HillMomentGapDecay
+import NLS.KdV.HillMomentUniformPowerDecay
+import NLS.Articles.KdVPseudomeasures.SourceEndpointGapSquareBound
+import NLS.Articles.KdVPseudomeasures.SourceLocalEndpointFrequencyDecay
+import NLS.Articles.KdVPseudomeasures.SourceUniformEndpointFrequencyDecay
+import NLS.Articles.KdVPseudomeasures.SourceEndpointActionDecay
+import NLS.Articles.KdVPseudomeasures.SourceLemma39

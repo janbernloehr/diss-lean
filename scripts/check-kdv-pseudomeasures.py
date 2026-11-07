@@ -2089,6 +2089,15 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SourceHamiltonianActionDescent',
     'NLS.Articles.KdVPseudomeasures.SourceH1Actions',
     'NLS.Articles.KdVPseudomeasures.SourceTheorem31Hamiltonian',
+    'NLS.SequenceSpaces.UniformShiftedHolderDecay',
+    'NLS.SequenceSpaces.ReciprocalMomentRowDecay',
+    'NLS.KdV.HillMomentGapDecay',
+    'NLS.KdV.HillMomentUniformPowerDecay',
+    'NLS.Articles.KdVPseudomeasures.SourceEndpointGapSquareBound',
+    'NLS.Articles.KdVPseudomeasures.SourceLocalEndpointFrequencyDecay',
+    'NLS.Articles.KdVPseudomeasures.SourceUniformEndpointFrequencyDecay',
+    'NLS.Articles.KdVPseudomeasures.SourceEndpointActionDecay',
+    'NLS.Articles.KdVPseudomeasures.SourceLemma39',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
