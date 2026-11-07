@@ -119,19 +119,26 @@
       "source_page": 14,
       "source_line": 859,
       "claim": "Convergent exterior Laurent expansion of the primitive for every complex finite-gap source, with independently defined Hamiltonian coefficients.",
-      "status": "complex_laurent_and_smooth_complex_physical_coefficients_checked_nonsmooth_coefficients_open",
+      "status": "corrected_statement_kernel_checked",
       "checked_article_declarations": [
         "NLS.Articles.DNLSEstimates.lemma_four_real",
         "NLS.Articles.DNLSEstimates.laurent_coefficient",
         "NLS.Articles.DNLSEstimates.complex_finiteGap_laurent",
         "NLS.Articles.DNLSEstimates.complex_finiteGap_inversion_remainder",
         "NLS.Articles.DNLSEstimates.complex_finiteGap_physical_domain",
-        "NLS.Articles.DNLSEstimates.complex_finiteGap_smooth_hamiltonians"
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_smooth_hamiltonians",
+        "NLS.Articles.DNLSEstimates.finiteGapHamiltonianExtension_eq_physical",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_extended_hamiltonian_inversion",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_extended_hamiltonian_laurent",
+        "NLS.Articles.DNLSEstimates.finiteGapArticleHamiltonian_eq_hierarchy",
+        "NLS.Articles.DNLSEstimates.finiteGapArticleHamiltonian_coefficient",
+        "NLS.Articles.DNLSEstimates.exists_complex_finiteGap_extended_hamiltonian_domain",
+        "NLS.Articles.DNLSEstimates.finiteGapHamiltonianExtension_eq_odd_physical"
       ],
       "candidate_shared_modules": [],
       "candidate_is_not_coverage": false,
       "proof_passage_review_complete": false,
-      "remaining": "The actual convergent Laurent expansion now holds for all complex finite-gap sources on constructed common neighborhoods. Its coefficients are identified with independently defined physical Riccati Hamiltonians for every smooth complex representative with matching original Fourier coefficients. For nonsmooth complex finite-gap sources, the physical interpretation of every coefficient remains unresolved. No smoothness premise has been hidden or discharged by the finite-gap condition."
+      "qualification": "At nonsmooth complex finite-gap sources, use the independently defined finite trace of original higher action contours as an explicit spectral extension of the hierarchy. Every coefficient is identified and physical Sobolev agreement is proved wherever the physical Riccati Hamiltonian is defined. The classical derivative-integral formula is not asserted at rough inputs."
     },
     {
       "label": "Theorem 5",
@@ -456,8 +463,31 @@
       "line_start": 26,
       "line_end": 28,
       "text_sha256": "e25d8cab5c65bf0925c20664d0adb3331c1559556b8f9318f90cb872191833ea",
-      "review_status": "semantic_review_pending",
-      "page_end": 1
+      "review_status": "assertions_compared",
+      "page_end": 1,
+      "assertions": [
+        {
+          "id": "p01-b06-a01",
+          "claim": "The displayed scalar equation is the defocusing NLS equation with the physical Hamiltonian signs.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-PHYSICAL-NLS-ENERGY"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+            "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_fst",
+            "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_snd",
+            "NLS.ZakharovShabat.physicalHamiltonianDirection",
+            "NLS.ZakharovShabat.apply_physicalHamiltonianDirection",
+            "NLS.ZakharovShabat.classicalNLSVectorField_real",
+            "NLS.ZakharovShabat.classicalNLSVectorField_scalar",
+            "NLS.ZakharovShabat.classicalNLS_equation_of_hasDerivAt"
+          ],
+          "qualification": "The variation formulas retain smooth periodic hypotheses and the physical energy identity retains its Sobolev domain. This does not assert an L2 gradient of the unbounded energy at every L2 point."
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p01-b07",
@@ -519,8 +549,26 @@
       "line_start": 59,
       "line_end": 59,
       "text_sha256": "db001cc338240fd4f27f896580f0ec2032610b36be833fce046461bf15b895db",
-      "review_status": "semantic_review_pending",
-      "page_end": 2
+      "review_status": "assertions_compared",
+      "page_end": 2,
+      "assertions": [
+        {
+          "id": "p02-b03-a01",
+          "claim": "Real type is the conjugate-pair fixed real subspace, including at the level of physical a.e. classes.",
+          "status": "compared",
+          "evidence_group_ids": [
+            "SETUP-PHYSICAL-REAL-FORM"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.sourcePhysicalL2_realType_iff",
+            "NLS.ZakharovShabat.mem_physicalRealSubmodule",
+            "NLS.ZakharovShabat.realSourcePhysicalL2Equiv",
+            "NLS.ZakharovShabat.physicalHamiltonianVector_mem_real"
+          ]
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p02-b04",
@@ -528,8 +576,31 @@
       "line_start": 61,
       "line_end": 61,
       "text_sha256": "59967086a9885bfa83103e8c1718d607639af594a0d1504025c6fb5c226b3665",
-      "review_status": "semantic_review_pending",
-      "page_end": 2
+      "review_status": "assertions_compared",
+      "page_end": 2,
+      "assertions": [
+        {
+          "id": "p02-b04-a01",
+          "claim": "A conjugate-pair source gives the scalar restriction of the two-field Hamiltonian direction.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-PHYSICAL-NLS-ENERGY"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+            "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_fst",
+            "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_snd",
+            "NLS.ZakharovShabat.physicalHamiltonianDirection",
+            "NLS.ZakharovShabat.apply_physicalHamiltonianDirection",
+            "NLS.ZakharovShabat.classicalNLSVectorField_real",
+            "NLS.ZakharovShabat.classicalNLSVectorField_scalar",
+            "NLS.ZakharovShabat.classicalNLS_equation_of_hasDerivAt"
+          ],
+          "qualification": "The variation formulas retain smooth periodic hypotheses and the physical energy identity retains its Sobolev domain. This does not assert an L2 gradient of the unbounded energy at every L2 point."
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p02-b05",
@@ -537,8 +608,31 @@
       "line_start": 63,
       "line_end": 63,
       "text_sha256": "0f159b1dc0690055e3775f76afac18d88143f1a18c42a7b89db7df9655345570",
-      "review_status": "semantic_review_pending",
-      "page_end": 2
+      "review_status": "assertions_compared",
+      "page_end": 2,
+      "assertions": [
+        {
+          "id": "p02-b05-a01",
+          "claim": "The scalar Hamiltonian equation has the printed minus-dispersion plus-defocusing-cubic sign.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-PHYSICAL-NLS-ENERGY"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+            "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_fst",
+            "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_snd",
+            "NLS.ZakharovShabat.physicalHamiltonianDirection",
+            "NLS.ZakharovShabat.apply_physicalHamiltonianDirection",
+            "NLS.ZakharovShabat.classicalNLSVectorField_real",
+            "NLS.ZakharovShabat.classicalNLSVectorField_scalar",
+            "NLS.ZakharovShabat.classicalNLS_equation_of_hasDerivAt"
+          ],
+          "qualification": "The variation formulas retain smooth periodic hypotheses and the physical energy identity retains its Sobolev domain. This does not assert an L2 gradient of the unbounded energy at every L2 point."
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p02-b06",
@@ -759,12 +853,99 @@
       "line_start": 176,
       "line_end": 193,
       "text_sha256": "8dfdc76193be4d54423fb108295c800aeacd0d3a13bbf5e8c3831a23c3ae2d99",
-      "review_status": "semantic_review_pending",
+      "review_status": "assertions_compared",
       "page_end": 4,
       "related_auxiliary_groups": [
         "SETUP-WEIGHTS",
         "SETUP-ABEL-STRIP"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p03-b10-a01",
+          "claim": "The model weighted target norm is the sum of the two weighted component energies.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-WEIGHT-DEFINITIONS"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.SpectralWeight",
+            "NLS.SpectralWeight.piSobolev",
+            "NLS.SpectralWeight.abel_apply",
+            "NLS.SpectralWeight.gevrey_apply",
+            "NLS.SpectralWeight.logarithmic_apply",
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.SpectralWeight.hasLinearFactor_sobolev",
+            "NLS.SpectralWeight.hasLinearFactor_abel",
+            "NLS.SpectralWeight.hasLinearFactor_gevrey",
+            "NLS.SpectralWeight.realExtension",
+            "NLS.SpectralWeight.realExtension_pos"
+          ],
+          "qualification": "The exact paper norm, domain and radius qualifications in the cited groups are retained. In particular the Gevrey equivalence is a union over positive radii; no unchanged numerical radius is inferred from a derivative growth bound."
+        },
+        {
+          "id": "p03-b10-a02",
+          "claim": "The pi-scaled Sobolev weight evaluated at even Fourier indices is the original physical Sobolev convention.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-WEIGHT-DEFINITIONS"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.SpectralWeight",
+            "NLS.SpectralWeight.piSobolev",
+            "NLS.SpectralWeight.abel_apply",
+            "NLS.SpectralWeight.gevrey_apply",
+            "NLS.SpectralWeight.logarithmic_apply",
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.SpectralWeight.hasLinearFactor_sobolev",
+            "NLS.SpectralWeight.hasLinearFactor_abel",
+            "NLS.SpectralWeight.hasLinearFactor_gevrey",
+            "NLS.SpectralWeight.realExtension",
+            "NLS.SpectralWeight.realExtension_pos"
+          ],
+          "qualification": "The exact paper norm, domain and radius qualifications in the cited groups are retained. In particular the Gevrey equivalence is a union over positive radii; no unchanged numerical radius is inferred from a derivative growth bound."
+        },
+        {
+          "id": "p03-b10-a03",
+          "claim": "The Abel-weighted physical data have the printed analytic strip extension and Sobolev boundary traces; the stronger exact-width comparison has its separate qualification.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-ABEL-STRIP"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.source_abel_range_iff_physical_strip_extensions",
+            "NLS.ZakharovShabat.source_abel_printed_strip_forward"
+          ],
+          "qualification": "The exact paper norm, domain and radius qualifications in the cited groups are retained. In particular the Gevrey equivalence is a union over positive radii; no unchanged numerical radius is inferred from a derivative growth bound."
+        },
+        {
+          "id": "p03-b10-a04",
+          "claim": "The positive stretched-exponential weights are the Gevrey weights and their periodic physical representatives have the classical factorial derivative-growth characterization.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-PHYSICAL-GEVREY"
+          ],
+          "checked_article_declarations": [
+            "NLS.Articles.DNLSEstimates.stretched_moment_bound",
+            "NLS.Articles.DNLSEstimates.summable_stretched_exponential",
+            "NLS.Articles.DNLSEstimates.gevrey_synthesis",
+            "NLS.Articles.DNLSEstimates.weighted_gevrey_synthesis",
+            "NLS.Articles.DNLSEstimates.gevrey_moments_decay",
+            "NLS.Articles.DNLSEstimates.periodOneCoefficient_norm_le",
+            "NLS.Articles.DNLSEstimates.periodOneCoefficient_iteratedDeriv",
+            "NLS.Articles.DNLSEstimates.gevrey_coefficients_decay",
+            "NLS.Articles.DNLSEstimates.memlp_gevrey_of_decay",
+            "NLS.Articles.DNLSEstimates.physical_gevrey_iff",
+            "NLS.Articles.DNLSEstimates.gevrey_even_frequency_radius_iff",
+            "NLS.Articles.DNLSEstimates.paper_physical_gevrey_iff"
+          ],
+          "checked_shared_declarations": [],
+          "qualification": "The exact paper norm, domain and radius qualifications in the cited groups are retained. In particular the Gevrey equivalence is a union over positive radii; no unchanged numerical radius is inferred from a derivative growth bound."
+        }
+      ],
+      "review_note": "Each mathematical assertion in this block has been decomposed and compared; other setup paragraphs remain independently pending."
     },
     {
       "id": "p04-b01",
@@ -772,11 +953,69 @@
       "line_start": 195,
       "line_end": 203,
       "text_sha256": "e51099c90b1b2521c40b0b4de935a19e33681233cc869042106a9250cc3a0202",
-      "review_status": "semantic_review_pending",
+      "review_status": "assertions_compared",
       "page_end": 4,
       "related_auxiliary_groups": [
         "SETUP-WEIGHTS"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p04-b01-a01",
+          "claim": "The displayed logarithmic exponential is a spectral weight.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-WEIGHTS"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.SpectralWeight.abel_apply",
+            "NLS.SpectralWeight.gevrey_apply",
+            "NLS.SpectralWeight.logarithmic_apply",
+            "NLS.SpectralWeight.hasLinearFactor_abel",
+            "NLS.SpectralWeight.hasLinearFactor_gevrey",
+            "NLS.SpectralWeight.hasLinearFactor_logarithmic"
+          ],
+          "qualification": "The exact paper norm, domain and radius qualifications in the cited groups are retained. In particular the Gevrey equivalence is a union over positive radii; no unchanged numerical radius is inferred from a derivative growth bound."
+        },
+        {
+          "id": "p04-b01-a02",
+          "claim": "Its ratio to any positive Abel weight vanishes, and every sublinear Gevrey weight has vanishing ratio to it, including arbitrary fixed polynomial factors.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-WEIGHT-RATE-HIERARCHY"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.SpectralWeight.gevrey_div_logarithmic_tendsto_zero",
+            "NLS.SpectralWeight.logarithmic_div_abel_tendsto_zero"
+          ],
+          "qualification": "The exact paper norm, domain and radius qualifications in the cited groups are retained. In particular the Gevrey equivalence is a union over positive radii; no unchanged numerical radius is inferred from a derivative growth bound."
+        },
+        {
+          "id": "p04-b01-a03",
+          "claim": "The subsequent estimates use the exact M1 linear-factor condition stated in the next display.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-WEIGHT-DEFINITIONS"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.SpectralWeight",
+            "NLS.SpectralWeight.piSobolev",
+            "NLS.SpectralWeight.abel_apply",
+            "NLS.SpectralWeight.gevrey_apply",
+            "NLS.SpectralWeight.logarithmic_apply",
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.SpectralWeight.hasLinearFactor_sobolev",
+            "NLS.SpectralWeight.hasLinearFactor_abel",
+            "NLS.SpectralWeight.hasLinearFactor_gevrey",
+            "NLS.SpectralWeight.realExtension",
+            "NLS.SpectralWeight.realExtension_pos"
+          ],
+          "qualification": "The exact paper norm, domain and radius qualifications in the cited groups are retained. In particular the Gevrey equivalence is a union over positive radii; no unchanged numerical radius is inferred from a derivative growth bound."
+        }
+      ],
+      "review_note": "Each mathematical assertion in this block has been decomposed and compared; other setup paragraphs remain independently pending."
     },
     {
       "id": "p04-b02",
@@ -784,11 +1023,37 @@
       "line_start": 205,
       "line_end": 205,
       "text_sha256": "e4cc6a871a8342ffc63f13c4232cf31b70e042e630249d2d28e3bfc2d3c56a40",
-      "review_status": "semantic_review_pending",
+      "review_status": "assertions_compared",
       "page_end": 4,
       "related_auxiliary_groups": [
         "SETUP-WEIGHTS"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p04-b02-a01",
+          "claim": "M1 consists exactly of spectral weights with the linear bracket factor and a residual spectral weight.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-WEIGHT-DEFINITIONS"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.SpectralWeight",
+            "NLS.SpectralWeight.piSobolev",
+            "NLS.SpectralWeight.abel_apply",
+            "NLS.SpectralWeight.gevrey_apply",
+            "NLS.SpectralWeight.logarithmic_apply",
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.SpectralWeight.hasLinearFactor_sobolev",
+            "NLS.SpectralWeight.hasLinearFactor_abel",
+            "NLS.SpectralWeight.hasLinearFactor_gevrey",
+            "NLS.SpectralWeight.realExtension",
+            "NLS.SpectralWeight.realExtension_pos"
+          ],
+          "qualification": "The Abel strip width correction is retained in the earlier strip comparison. The classical derivative-growth interpretation of the named Gevrey spaces is not inferred from the weight definition alone."
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p04-b03",
@@ -796,11 +1061,37 @@
       "line_start": 207,
       "line_end": 208,
       "text_sha256": "f3d460a3700d1d212722f3d668ea299aea6055ebbf272185548f8b1dc384dc16",
-      "review_status": "semantic_review_pending",
+      "review_status": "assertions_compared",
       "page_end": 4,
       "related_auxiliary_groups": [
         "SETUP-WEIGHTS"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p04-b03-a01",
+          "claim": "Weights have a positive piecewise-linear real extension used in the estimates.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "SETUP-WEIGHT-DEFINITIONS"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.SpectralWeight",
+            "NLS.SpectralWeight.piSobolev",
+            "NLS.SpectralWeight.abel_apply",
+            "NLS.SpectralWeight.gevrey_apply",
+            "NLS.SpectralWeight.logarithmic_apply",
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.SpectralWeight.hasLinearFactor_sobolev",
+            "NLS.SpectralWeight.hasLinearFactor_abel",
+            "NLS.SpectralWeight.hasLinearFactor_gevrey",
+            "NLS.SpectralWeight.realExtension",
+            "NLS.SpectralWeight.realExtension_pos"
+          ],
+          "qualification": "The Abel strip width correction is retained in the earlier strip comparison. The classical derivative-growth interpretation of the named Gevrey spaces is not inferred from the weight definition alone."
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p04-b04",
@@ -1180,8 +1471,29 @@
       "line_start": 441,
       "line_end": 442,
       "text_sha256": "9a472d2103b2355cdd288908a03c3041ef9a2eba4c2c53f14bdc44421ffcc5a6",
-      "review_status": "semantic_review_pending",
-      "page_end": 8
+      "review_status": "assertions_compared",
+      "page_end": 8,
+      "assertions": [
+        {
+          "id": "p08-b06-a01",
+          "claim": "Closed real-centered isolating discs exist at every real source on a common neighborhood.",
+          "status": "compared",
+          "evidence_group_ids": [
+            "SETUP-CLOSED-ISOLATING-DISCS"
+          ],
+          "checked_article_declarations": [
+            "NLS.Articles.DNLSEstimates.distance_bounds_closure",
+            "NLS.Articles.DNLSEstimates.isolating_closed_discs"
+          ],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.cluster",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.set_distance",
+            "NLS.ZakharovShabat.sourceLemma10_1",
+            "NLS.ZakharovShabat.spectralSetDistance_comparison_of_pointwise"
+          ]
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p08-b07",
@@ -1189,8 +1501,29 @@
       "line_start": 444,
       "line_end": 445,
       "text_sha256": "a1e1a8bea16ae0f178691ccfc323bcfaeab76834d1eb239a3608b769b472dc70",
-      "review_status": "semantic_review_pending",
-      "page_end": 8
+      "review_status": "assertions_compared",
+      "page_end": 8,
+      "assertions": [
+        {
+          "id": "p08-b07-a01",
+          "claim": "The periodic pair and critical point of every nearby source lie in the interior of the nth closed isolating disc.",
+          "status": "compared",
+          "evidence_group_ids": [
+            "SETUP-CLOSED-ISOLATING-DISCS"
+          ],
+          "checked_article_declarations": [
+            "NLS.Articles.DNLSEstimates.distance_bounds_closure",
+            "NLS.Articles.DNLSEstimates.isolating_closed_discs"
+          ],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.cluster",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.set_distance",
+            "NLS.ZakharovShabat.sourceLemma10_1",
+            "NLS.ZakharovShabat.spectralSetDistance_comparison_of_pointwise"
+          ]
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p08-b08",
@@ -1198,8 +1531,29 @@
       "line_start": 447,
       "line_end": 447,
       "text_sha256": "a00e0ed4c319db06c0eedec027e89f8db963472d31eb6202a2d366bc0e1dba68",
-      "review_status": "semantic_review_pending",
-      "page_end": 8
+      "review_status": "assertions_compared",
+      "page_end": 8,
+      "assertions": [
+        {
+          "id": "p08-b08-a01",
+          "claim": "One separation constant c at least one works for all distinct indices.",
+          "status": "compared",
+          "evidence_group_ids": [
+            "SETUP-CLOSED-ISOLATING-DISCS"
+          ],
+          "checked_article_declarations": [
+            "NLS.Articles.DNLSEstimates.distance_bounds_closure",
+            "NLS.Articles.DNLSEstimates.isolating_closed_discs"
+          ],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.cluster",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.set_distance",
+            "NLS.ZakharovShabat.sourceLemma10_1",
+            "NLS.ZakharovShabat.spectralSetDistance_comparison_of_pointwise"
+          ]
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p08-b09",
@@ -1207,8 +1561,29 @@
       "line_start": 449,
       "line_end": 449,
       "text_sha256": "1b5ba4f5c9c1fcceb7fad008696180510fa2fc44ea3656986e26101d69060325",
-      "review_status": "semantic_review_pending",
-      "page_end": 8
+      "review_status": "assertions_compared",
+      "page_end": 8,
+      "assertions": [
+        {
+          "id": "p08-b09-a01",
+          "claim": "The set distance of the closed isolating discs has both printed linear bounds.",
+          "status": "compared",
+          "evidence_group_ids": [
+            "SETUP-CLOSED-ISOLATING-DISCS"
+          ],
+          "checked_article_declarations": [
+            "NLS.Articles.DNLSEstimates.distance_bounds_closure",
+            "NLS.Articles.DNLSEstimates.isolating_closed_discs"
+          ],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.cluster",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.set_distance",
+            "NLS.ZakharovShabat.sourceLemma10_1",
+            "NLS.ZakharovShabat.spectralSetDistance_comparison_of_pointwise"
+          ]
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p08-b10",
@@ -1216,8 +1591,29 @@
       "line_start": 451,
       "line_end": 451,
       "text_sha256": "2168cc33333c472b383c2e55c2a7b243f9a7f69860d2b0398697531578d0a520",
-      "review_status": "semantic_review_pending",
-      "page_end": 8
+      "review_status": "assertions_compared",
+      "page_end": 8,
+      "assertions": [
+        {
+          "id": "p08-b10-a01",
+          "claim": "The closed isolating discs have the exact pi/4 free tail.",
+          "status": "compared",
+          "evidence_group_ids": [
+            "SETUP-CLOSED-ISOLATING-DISCS"
+          ],
+          "checked_article_declarations": [
+            "NLS.Articles.DNLSEstimates.distance_bounds_closure",
+            "NLS.Articles.DNLSEstimates.isolating_closed_discs"
+          ],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.cluster",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.set_distance",
+            "NLS.ZakharovShabat.sourceLemma10_1",
+            "NLS.ZakharovShabat.spectralSetDistance_comparison_of_pointwise"
+          ]
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p08-b11",
@@ -1252,11 +1648,29 @@
       "line_start": 486,
       "line_end": 489,
       "text_sha256": "77d92f614c6b55aeac8144f3ddea6d09ef199b4d5f8d1e5ba2eb9cd460b6e82f",
-      "review_status": "semantic_review_pending",
+      "review_status": "assertions_compared",
       "page_end": 9,
       "related_auxiliary_groups": [
         "SETUP-STANDARD-ROOT"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p09-b02-a01",
+          "claim": "The midpoint and squared-gap formula defines the standard root, correcting the missing denominator square.",
+          "status": "compared",
+          "evidence_group_ids": [
+            "SETUP-STANDARD-ROOT"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.normalizedStandardRoot",
+            "NLS.ZakharovShabat.sourceStandardRoot",
+            "NLS.ZakharovShabat.sourceStandardRoot_sq_of_not_mem_segment",
+            "NLS.ZakharovShabat.sourceStandardRoot_of_zeroGap"
+          ]
+        }
+      ],
+      "review_note": "The assertions in this block were individually compared with the cited checked evidence. Cross-block proof passages retain their independent pending status."
     },
     {
       "id": "p09-b03",
@@ -4224,11 +4638,48 @@
       "line_start": 2339,
       "line_end": 2342,
       "text_sha256": "36e7a095c534cf5b9794c6185ad8ddf44a673a0113da4cfced8072b7a91b350b",
-      "review_status": "semantic_review_pending",
+      "review_status": "assertions_compared",
       "page_end": 35,
       "related_auxiliary_groups": [
         "B-RECURRENCE"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p35-b06-a01",
+          "claim": "The initial Riccati density is minus the second field.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-RECURRENCE"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiPolynomial_recurrence",
+            "NLS.ZakharovShabat.sobolevRiccatiDensity_succ_succ",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_eq_classical_coefficients",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_unique",
+            "NLS.ZakharovShabat.nlsRiccatiDensity_zero"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        },
+        {
+          "id": "p35-b06-a02",
+          "claim": "Every following density satisfies the displayed derivative-plus-convolution recurrence.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-RECURRENCE"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiPolynomial_recurrence",
+            "NLS.ZakharovShabat.sobolevRiccatiDensity_succ_succ",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_eq_classical_coefficients",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_unique",
+            "NLS.ZakharovShabat.nlsRiccatiDensity_zero"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        }
+      ],
+      "review_note": "Individually compared recurrence, polynomial structure, rescaling or physical integral assertions. The neighboring monomial extraction argument retains its separate pending review."
     },
     {
       "id": "p35-b07",
@@ -4236,7 +4687,7 @@
       "line_start": 2344,
       "line_end": 2346,
       "text_sha256": "a37dd19466819675a35ab9d3510fbdfa17941d10f0c296de549316ee5cec959f",
-      "review_status": "statement_compared",
+      "review_status": "assertions_compared",
       "page_end": 35,
       "named_statement": "Lemma 21",
       "checked_declarations": [
@@ -4247,7 +4698,44 @@
       "qualification": "Proof passages require their own semantic comparison.",
       "related_auxiliary_groups": [
         "B-STRUCTURE"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p35-b07-a01",
+          "claim": "The leading term is the negative kth derivative of the second field.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-STRUCTURE"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_vars",
+            "NLS.ZakharovShabat.sourceLemmaH1_weak",
+            "NLS.ZakharovShabat.sourceLemmaH1_distribution",
+            "NLS.ZakharovShabat.sourceH1RemainderDistribution_coefficient"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        },
+        {
+          "id": "p35-b07-a02",
+          "claim": "The remainder involves only jets through order k-2 and has the stated actual distributional interpretation on H^(k-1).",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-STRUCTURE"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_vars",
+            "NLS.ZakharovShabat.sourceLemmaH1_weak",
+            "NLS.ZakharovShabat.sourceLemmaH1_distribution",
+            "NLS.ZakharovShabat.sourceH1RemainderDistribution_coefficient"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        }
+      ],
+      "review_note": "Individually compared recurrence, polynomial structure, rescaling or physical integral assertions. The neighboring monomial extraction argument retains its separate pending review."
     },
     {
       "id": "p35-b08",
@@ -4255,7 +4743,7 @@
       "line_start": 2348,
       "line_end": 2351,
       "text_sha256": "5b39f706da49101d95c060cb98f3d4f2571616fdbfc0cf1299f29a7fe8360c6e",
-      "review_status": "statement_compared",
+      "review_status": "assertions_compared",
       "page_end": 35,
       "named_statement": "Lemma 21",
       "checked_declarations": [
@@ -4266,7 +4754,44 @@
       "qualification": "Proof passages require their own semantic comparison.",
       "related_auxiliary_groups": [
         "B-STRUCTURE"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p35-b08-a01",
+          "claim": "The remainder has homogeneous total degree k+1.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-STRUCTURE"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_vars",
+            "NLS.ZakharovShabat.sourceLemmaH1_weak",
+            "NLS.ZakharovShabat.sourceLemmaH1_distribution",
+            "NLS.ZakharovShabat.sourceH1RemainderDistribution_coefficient"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        },
+        {
+          "id": "p35-b08-a02",
+          "claim": "Every Hamiltonian remainder monomial has at most k-2 derivatives and balanced field counts.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-STRUCTURE"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_vars",
+            "NLS.ZakharovShabat.sourceLemmaH1_weak",
+            "NLS.ZakharovShabat.sourceLemmaH1_distribution",
+            "NLS.ZakharovShabat.sourceH1RemainderDistribution_coefficient"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        }
+      ],
+      "review_note": "Individually compared recurrence, polynomial structure, rescaling or physical integral assertions. The neighboring monomial extraction argument retains its separate pending review."
     },
     {
       "id": "p35-b09",
@@ -4274,11 +4799,44 @@
       "line_start": 2355,
       "line_end": 2359,
       "text_sha256": "56a2efbe28793de329ea69f29c47c0c8851df18e2a1ff59b29057990078bc2de",
-      "review_status": "semantic_review_pending",
+      "review_status": "assertions_compared",
       "page_end": 36,
       "related_auxiliary_groups": [
         "B-FIELD-RESCALING"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p35-b09-a01",
+          "claim": "The density is homogeneous of degree k and contains no jet beyond k-1.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-PROOF-DEGREES"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiPolynomial_totalWeight",
+            "NLS.ZakharovShabat.nlsRiccatiPolynomial_derivativeOrder",
+            "NLS.ZakharovShabat.nlsRiccatiPolynomial_fieldCharge",
+            "NLS.ZakharovShabat.nlsRiccatiDensity_field_rescaling"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        },
+        {
+          "id": "p35-b09-a02",
+          "claim": "The exact field-rescaling identity holds for every complex scalar, including zero.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-FIELD-RESCALING"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiDensity_field_rescaling",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_field_rescaling"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        }
+      ],
+      "review_note": "Individually compared recurrence, polynomial structure, rescaling or physical integral assertions. The neighboring monomial extraction argument retains its separate pending review."
     },
     {
       "id": "p36-b01",
@@ -4286,11 +4844,65 @@
       "line_start": 2361,
       "line_end": 2366,
       "text_sha256": "bd16954d749764a631859d48f9946be874209554d616e522cdecadaa8546972d",
-      "review_status": "semantic_review_pending",
+      "review_status": "assertions_compared",
       "page_end": 36,
       "related_auxiliary_groups": [
         "B-JET-REDUCTION"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p36-b01-a01",
+          "claim": "The smooth real odd Hamiltonian has the squared mth-derivative leading energy.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-UNREDUCED-PHASE"
+          ],
+          "checked_article_declarations": [
+            "NLS.Articles.DNLSEstimates.articleOddHamiltonian_normalized",
+            "NLS.Articles.DNLSEstimates.articleOddHamiltonian_eq_riccati_integral"
+          ],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_real_H1_remainder",
+            "NLS.ZakharovShabat.appendixH_odd_remainder_phase"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        },
+        {
+          "id": "p36-b01-a02",
+          "claim": "Its fixed Lemma-21 remainder is multiplied by (-1)^(m+1), correcting the unreduced display.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-UNREDUCED-PHASE"
+          ],
+          "checked_article_declarations": [
+            "NLS.Articles.DNLSEstimates.articleOddHamiltonian_normalized",
+            "NLS.Articles.DNLSEstimates.articleOddHamiltonian_eq_riccati_integral"
+          ],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_real_H1_remainder",
+            "NLS.ZakharovShabat.appendixH_odd_remainder_phase"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        },
+        {
+          "id": "p36-b01-a03",
+          "claim": "The unreduced remainder uses jets only through 2m-2.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-STRUCTURE"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_vars",
+            "NLS.ZakharovShabat.sourceLemmaH1_weak",
+            "NLS.ZakharovShabat.sourceLemmaH1_distribution",
+            "NLS.ZakharovShabat.sourceH1RemainderDistribution_coefficient"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        }
+      ],
+      "review_note": "Individually compared recurrence, polynomial structure, rescaling or physical integral assertions. The neighboring monomial extraction argument retains its separate pending review."
     },
     {
       "id": "p36-b02",
@@ -4310,7 +4922,7 @@
       "line_start": 2374,
       "line_end": 2378,
       "text_sha256": "47f7aa78a743aabd7edf70992cdce3bd157a045d58a2aa54d9f9e24c0420e322",
-      "review_status": "statement_compared",
+      "review_status": "assertions_compared",
       "page_end": 36,
       "named_statement": "Corollary 22",
       "checked_declarations": [
@@ -4321,7 +4933,27 @@
       "qualification": "Proof passages require their own semantic comparison.",
       "related_auxiliary_groups": [
         "B-JET-REDUCTION"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p36-b03-a01",
+          "claim": "One polynomial, chosen before the real H^m source, represents the physical odd Hamiltonian integral with every nonlinear jet at most m-1.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-JET-REDUCTION"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.exists_nlsOddRemainder_jet_reduction",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_leading_remainder",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_reduced_polynomial",
+            "NLS.ZakharovShabat.sourceCorollaryH2_integral",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_unique_continuous"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        }
+      ],
+      "review_note": "Individually compared recurrence, polynomial structure, rescaling or physical integral assertions. The neighboring monomial extraction argument retains its separate pending review."
     },
     {
       "id": "p36-b04",
@@ -4329,7 +4961,7 @@
       "line_start": 2380,
       "line_end": 2382,
       "text_sha256": "ab5cd1d025dc6787a35289accf46f82258ba33c70ae08b03941c9e90712dd844",
-      "review_status": "statement_compared",
+      "review_status": "assertions_compared",
       "page_end": 36,
       "named_statement": "Corollary 22",
       "checked_declarations": [
@@ -4340,7 +4972,27 @@
       "qualification": "Proof passages require their own semantic comparison.",
       "related_auxiliary_groups": [
         "B-JET-REDUCTION"
-      ]
+      ],
+      "assertions": [
+        {
+          "id": "p36-b04-a01",
+          "claim": "The chosen reduced polynomial has degree 2m+2 and every supported monomial has balanced field counts.",
+          "status": "compared_with_explicit_qualification",
+          "evidence_group_ids": [
+            "B-JET-REDUCTION"
+          ],
+          "checked_article_declarations": [],
+          "checked_shared_declarations": [
+            "NLS.ZakharovShabat.exists_nlsOddRemainder_jet_reduction",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_leading_remainder",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_reduced_polynomial",
+            "NLS.ZakharovShabat.sourceCorollaryH2_integral",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_unique_continuous"
+          ],
+          "qualification": "The positive H1 convention and the raw higher-Hamiltonian phase are retained. The fixed unreduced remainder keeps its phase; the final reduced polynomial can absorb it. Weak identities retain the stated Sobolev/distributional domains."
+        }
+      ],
+      "review_note": "Individually compared recurrence, polynomial structure, rescaling or physical integral assertions. The neighboring monomial extraction argument retains its separate pending review."
     }
   ],
   "coverage_policy": "Each block must be classified and every mathematical assertion mapped to an exact checked declaration or an explicit unresolved obligation. Statement-level kernel checks do not complete the review of its proof passages. The 350 blocks are a mechanical source inventory, not 350 independently reviewed claims.",
@@ -4625,36 +5277,37 @@
       "page": 9,
       "claim": "The printed affine spectral curve is stated as a subset of C.",
       "qualification": "Use the actual ambient complex plane squared C x C. The two coordinates, Jacobian and complex manifold atlas are constructed explicitly."
+    },
+    {
+      "page": 14,
+      "claim": "All-order Hamiltonian coefficients of Lemma 4 at nonsmooth complex finite-gap sources.",
+      "qualification": "Use the explicit finite trace of original higher action contours as a spectral extension. The actual Laurent coefficients equal this trace and it agrees with independently defined physical Riccati Hamiltonians on every admissible complex Sobolev domain. No smoothness follows from complex finite-gap data, and classical derivative products are not assigned to rough inputs."
+    },
+    {
+      "page": 36,
+      "claim": "The unreduced odd-Hamiltonian display before Corollary 22, with q_(2m) fixed by Lemma 21.",
+      "qualification": "The remainder integral also needs the factor (-1)^(m+1). The positive physical identity is proved by classicalNLSHamiltonian_odd_real_H1_remainder and the article phase conversion. The final reduced polynomial absorbs the phase, so Corollary 22 is unchanged."
     }
   ],
   "open_obligations": [
-    {
-      "id": "FULL-L4-COMPLEX",
-      "source_pages": [
-        14
-      ],
-      "claim": "Lemma 4 for every complex finite-gap source with physical Hamiltonian coefficients.",
-      "remaining": "Only the all-order physical Hamiltonian interpretation at nonsmooth complex finite-gap sources remains. Exterior analyticity, the normalized convergent Laurent series, and physical coefficient agreement for smooth complex sources are now checked. Finite-gap spectral data alone do not imply complex source smoothness.",
-      "status": "open",
-      "checked_article_declarations": [
-        "NLS.Articles.DNLSEstimates.complex_finiteGap_laurent",
-        "NLS.Articles.DNLSEstimates.complex_finiteGap_smooth_hamiltonians"
-      ]
-    },
     {
       "id": "FULL-CURVE",
       "source_pages": [
         9
       ],
       "claim": "The spectral curve and the Riemann-surface/infinite-genus assertion.",
-      "remaining": "Global connectedness and the topological infinite-genus assertion remain unresolved, as does the exclusion of an induced complex-surface structure at multiple points. The actual affine curve in C^2, spectral invariance, nonsingularity iff all periodic roots are simple, analytic local uniformizers, double-point branches with distinct tangents, an actual Mathlib complex analytic one-dimensional manifold structure for simple spectrum in the unchanged subspace topology, noncompactness, and infinitely many distinct regular branch points are checked. Infinite ramification has not been substituted for a proof of genus.",
+      "remaining": "The genuine topological infinite-genus assertion remains unresolved. Global connectedness is now proved for all affine spectral curves. The original-topology surface iff simple-spectrum statement on the isolating domains, including exclusion of all topological charts at double points, is now checked. Infinite regular ramification has not been substituted for a proof of genus.",
       "status": "open",
       "checked_article_declarations": [
         "NLS.Articles.DNLSEstimates.spectralCurve_regular_iff_simple",
         "NLS.Articles.DNLSEstimates.spectralCurve_complex_surface",
         "NLS.Articles.DNLSEstimates.spectralCurve_not_compact",
         "NLS.Articles.DNLSEstimates.spectralCurve_double_point",
-        "NLS.Articles.DNLSEstimates.spectralCurve_infinite_regular_branch_points"
+        "NLS.Articles.DNLSEstimates.spectralCurve_infinite_regular_branch_points",
+        "NLS.Articles.DNLSEstimates.spectralCurve_connected",
+        "NLS.Articles.DNLSEstimates.spectralCurve_double_point_not_charted",
+        "NLS.Articles.DNLSEstimates.spectralCurve_surface_iff_simple",
+        "NLS.Articles.DNLSEstimates.spectralCurve_eq_of_periodic_spectral_data"
       ]
     },
     {
@@ -4671,7 +5324,7 @@
         9
       ],
       "claim": "All unnumbered setup and background assertions, including Birkhoff dynamics, weight examples, Fourier strip characterizations, and spectral products.",
-      "remaining": "The original oscillator equations and conserved frequencies, physical weighted-action Hamiltonian and its frequency derivatives, Hilbert and higher-Sobolev analytic inverses, canonical coordinate brackets, exact physical Parseval identities, Fourier derivative at zero, uniform smoothing, full discriminant and critical products, and local isolating comparisons have now been explicitly compared. Remaining assertions include the classical derivative-growth characterization of the Gevrey examples and the exact common closed-disc and full filled complex-root domain comparisons. The groups are not an exhaustive semantic review of all setup paragraphs.",
+      "remaining": "The classical Gevrey derivative-growth characterization, including the paper's even-frequency scaling, is now checked. Exact closed isolating discs and the full filled spectral complex-root domain are checked, as are physical Poisson gradients, NLS energy variations and the scalar real-form restriction with their actual domains. The exhaustive assertion-by-assertion review of the remaining setup text is still pending.",
       "status": "open"
     },
     {
@@ -4713,8 +5366,8 @@
   "checked_declarations_validation": "full-paper-validation.json (separate from the historical main-theorem validation)",
   "named_statement_summary": {
     "exact_statements_checked": 24,
-    "corrected_statements_checked": 2,
-    "partially_checked": 1,
+    "corrected_statements_checked": 3,
+    "partially_checked": 0,
     "proof_passage_review_complete": false
   },
   "reviewed_auxiliary_assertion_groups": [
@@ -5419,7 +6072,8 @@
         "NLS.ZakharovShabat.nlsRiccatiPolynomial_recurrence",
         "NLS.ZakharovShabat.sobolevRiccatiDensity_succ_succ",
         "NLS.ZakharovShabat.weakSobolevRiccatiDensity_eq_classical_coefficients",
-        "NLS.ZakharovShabat.weakSobolevRiccatiDensity_unique"
+        "NLS.ZakharovShabat.weakSobolevRiccatiDensity_unique",
+        "NLS.ZakharovShabat.nlsRiccatiDensity_zero"
       ]
     },
     {
@@ -5793,16 +6447,280 @@
         "NLS.ZakharovShabat.scalarNonlinearFourier_hasSum_norm_sq"
       ],
       "qualification": "Both rectangular components are retained in the pair norm. Scalar coordinates use (x-i*y)/sqrt(2); the generic product-space maximum norm is not substituted for the article Hilbert pair norm."
+    },
+    {
+      "id": "L4-NONSMOOTH-TRACE-EXTENSION",
+      "source_lines": [
+        859,
+        910
+      ],
+      "claim": "For every complex finite-gap source on constructed common neighborhoods, a finite trace of the original higher action contours defines all-order Hamiltonian extensions independently of the Laurent series. These equal the independently defined physical Sobolev Riccati Hamiltonians throughout every admissible complex Sobolev domain. The actual exterior Cauchy moments identify every Laurent coefficient with this trace. The resulting series converges, with the printed exceptional minus sign on H1 and powers of 2i. Agreement also holds at odd order 2m+1 on the sharp complex H^m domain.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.finiteGapPeriodCircle",
+        "NLS.Articles.DNLSEstimates.finiteGap_higherActions_sum",
+        "NLS.Articles.DNLSEstimates.finiteGapHamiltonianExtension",
+        "NLS.Articles.DNLSEstimates.finiteGapHamiltonianExtension_eq_physical",
+        "NLS.Articles.DNLSEstimates.finiteGap_trace_exterior_contour",
+        "NLS.Articles.DNLSEstimates.inversionPrimitive_circle_coefficient",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_extended_hamiltonian_inversion",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_extended_hamiltonian_laurent",
+        "NLS.Articles.DNLSEstimates.finiteGapArticleHamiltonian",
+        "NLS.Articles.DNLSEstimates.finiteGapArticleHamiltonian_eq_hierarchy",
+        "NLS.Articles.DNLSEstimates.finiteGapArticleHamiltonian_coefficient",
+        "NLS.Articles.DNLSEstimates.exists_complex_finiteGap_extended_hamiltonian_domain",
+        "NLS.Articles.DNLSEstimates.finiteGapHamiltonianExtension_eq_odd_physical"
+      ],
+      "checked_shared_declarations": [],
+      "qualification": "At rough complex finite-gap inputs these are explicitly spectral extensions, not classical products of nonexistent derivatives. Agreement with the physical hierarchy is proved wherever that hierarchy is defined; no smoothness implication or uniqueness of arbitrary rough extensions is asserted."
+    },
+    {
+      "id": "CURVE-CONNECTED-PROPER",
+      "source_lines": [
+        466,
+        473
+      ],
+      "claim": "The actual double-cover projection is continuous, open and proper. Every nonempty clopen part projects onto all of C; a singleton fiber above a zero forces connectedness. Consequently every actual affine spectral curve is connected, including nodal curves. The entire affine curve is an invariant of the original complex periodic spectrum with algebraic multiplicities, by the actual normalized endpoint product.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.doubleCoverProjection",
+        "NLS.Articles.DNLSEstimates.continuous_doubleCoverProjection",
+        "NLS.Articles.DNLSEstimates.doubleCoverProjection_local_sections",
+        "NLS.Articles.DNLSEstimates.isOpenMap_doubleCoverProjection",
+        "NLS.Articles.DNLSEstimates.isProperMap_doubleCoverProjection",
+        "NLS.Articles.DNLSEstimates.doubleCoverProjection_image_clopen",
+        "NLS.Articles.DNLSEstimates.connectedSpace_doubleCover_of_zero",
+        "NLS.Articles.DNLSEstimates.spectralCurve_connected",
+        "NLS.Articles.DNLSEstimates.spectralCurve_eq_of_periodic_spectral_data"
+      ],
+      "checked_shared_declarations": []
+    },
+    {
+      "id": "CURVE-NODES-NO-CHART",
+      "source_lines": [
+        469,
+        473
+      ],
+      "claim": "A punctured complex disc is connected. At an analytic double zero the ratio of the fiber coordinate to the local branch function has values +1 and -1 on both branches of every neighborhood. It cannot be continuous on a punctured chart disc. Thus no charted-space structure over C exists in the inherited topology at a double spectral point. On the constructed almost-real isolating domains, the actual curve admits an analytic complex surface structure if and only if the full periodic spectrum is simple.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.complex_punctured_ball_preconnected",
+        "NLS.Articles.DNLSEstimates.doubleCover_no_chart_of_crossing",
+        "NLS.Articles.DNLSEstimates.doubleCover_double_zero_no_chart",
+        "NLS.Articles.DNLSEstimates.doubleCover_double_zero_not_charted",
+        "NLS.Articles.DNLSEstimates.spectralCurve_double_point_not_charted",
+        "NLS.Articles.DNLSEstimates.periodicMultiplicity_le_two_of_disjoint_segments",
+        "NLS.Articles.DNLSEstimates.spectralCurve_surface_iff_simple"
+      ],
+      "checked_shared_declarations": [],
+      "qualification": "The iff uses the paper's isolating domain, which forces multiplicity at most two. It is not extended to arbitrary complex sources with higher multiplicities. Infinite genus remains unproved."
+    },
+    {
+      "id": "SETUP-CLOSED-ISOLATING-DISCS",
+      "source_lines": [
+        441,
+        457
+      ],
+      "claim": "Closing the original open isolating discs preserves disjointness, the same two-sided pointwise distance bounds and the exact closed free tail of radius pi/4. Cluster inclusion in the original open discs places the spectral points in the interiors of the closed discs.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.distance_bounds_closure",
+        "NLS.Articles.DNLSEstimates.isolating_closed_discs",
+        "NLS.Articles.DNLSEstimates.isolating_closed_discs_set_distance"
+      ],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.cluster",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.set_distance",
+        "NLS.ZakharovShabat.sourceLemma10_1",
+        "NLS.ZakharovShabat.spectralSetDistance_comparison_of_pointwise"
+      ]
+    },
+    {
+      "id": "SETUP-FILLED-COMPLEX-ROOT",
+      "source_lines": [
+        486,
+        506
+      ],
+      "claim": "At each fixed complex potential in a constructed common open connected neighborhood of the real locus, the actual canonical root is analytic outside only the noncollapsed cuts. Joint analyticity is retained on the literal complement of the union of the fixed closed isolating discs times the same local source neighborhood.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.canonicalRoot_filled_complex",
+        "NLS.Articles.DNLSEstimates.exists_filled_canonicalRoot_domain"
+      ],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceLemma10_2Data.standardRoot_joint",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.standardRoot_local",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalJoint",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalClosedFixed"
+      ],
+      "qualification": "Filling collapsed gaps is a spectral statement at a fixed source. Joint analyticity across a gap which opens under source variation is not asserted."
+    },
+    {
+      "id": "SETUP-PHYSICAL-POISSON",
+      "source_lines": [
+        38,
+        42
+      ],
+      "claim": "Every continuous complex cotangent has a unique physical L2 gradient for the unconjugated integral duality. The actual physical bracket is the literal minus-i cross-gradient integral and agrees with the source bracket under the physical Fourier isometry.",
+      "comparison_status": "compared_reuse",
+      "checked_article_declarations": [],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.physicalCotangentGradient_pairing",
+        "NLS.ZakharovShabat.physicalCotangentGradient_unique",
+        "NLS.ZakharovShabat.physicalCotangentBivector",
+        "NLS.ZakharovShabat.physicalCotangentBivector_eq_source",
+        "NLS.ZakharovShabat.physicalBracket",
+        "NLS.ZakharovShabat.physicalBracket_eq_source"
+      ],
+      "qualification": "The differential is a complex Frechet differential on the physical L2 space. The unbounded NLS energy is treated on its actual Sobolev/smooth domain rather than declared C1 on all L2."
+    },
+    {
+      "id": "SETUP-PHYSICAL-NLS-ENERGY",
+      "source_lines": [
+        44,
+        63
+      ],
+      "claim": "The period-one NLS Hamiltonian equals the actual integral of the kinetic and quartic densities. For smooth periodic fields its variational derivatives have the displayed second-derivative and cubic terms; the Hamiltonian direction has cross-gradient factors (-i,+i). Conjugate-pair velocities preserve real type and the first component satisfies the displayed defocusing scalar equation.",
+      "comparison_status": "compared_reuse",
+      "checked_article_declarations": [],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+        "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_fst",
+        "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_snd",
+        "NLS.ZakharovShabat.physicalHamiltonianDirection",
+        "NLS.ZakharovShabat.apply_physicalHamiltonianDirection",
+        "NLS.ZakharovShabat.classicalNLSVectorField_real",
+        "NLS.ZakharovShabat.classicalNLSVectorField_scalar",
+        "NLS.ZakharovShabat.classicalNLS_equation_of_hasDerivAt"
+      ],
+      "qualification": "The variation formulas retain smooth periodic hypotheses and the physical energy identity retains its Sobolev domain. This does not assert an L2 gradient of the unbounded energy at every L2 point."
+    },
+    {
+      "id": "SETUP-PHYSICAL-REAL-FORM",
+      "source_lines": [
+        56,
+        63
+      ],
+      "claim": "The physical L2 real submodule is exactly the almost-everywhere conjugate-pair condition and is isometrically equivalent to the original real source. Real differentiable Hamiltonians have physical Hamiltonian directions in that submodule.",
+      "comparison_status": "compared_reuse",
+      "checked_article_declarations": [],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourcePhysicalL2_realType_iff",
+        "NLS.ZakharovShabat.mem_physicalRealSubmodule",
+        "NLS.ZakharovShabat.realSourcePhysicalL2Equiv",
+        "NLS.ZakharovShabat.physicalHamiltonianVector_mem_real"
+      ]
+    },
+    {
+      "id": "SETUP-WEIGHT-DEFINITIONS",
+      "source_lines": [
+        157,
+        208
+      ],
+      "claim": "The weight class is implemented by positive even monotone submultiplicative spectral weights. Exact pi-Sobolev, Abel, Gevrey and logarithmic formulas and the exact M1 linear factor are constructed; piecewise-linear real extension preserves positivity.",
+      "comparison_status": "compared_reuse",
+      "checked_article_declarations": [],
+      "checked_shared_declarations": [
+        "NLS.SpectralWeight",
+        "NLS.SpectralWeight.piSobolev",
+        "NLS.SpectralWeight.abel_apply",
+        "NLS.SpectralWeight.gevrey_apply",
+        "NLS.SpectralWeight.logarithmic_apply",
+        "NLS.SpectralWeight.HasLinearFactor",
+        "NLS.SpectralWeight.hasLinearFactor_sobolev",
+        "NLS.SpectralWeight.hasLinearFactor_abel",
+        "NLS.SpectralWeight.hasLinearFactor_gevrey",
+        "NLS.SpectralWeight.realExtension",
+        "NLS.SpectralWeight.realExtension_pos"
+      ],
+      "qualification": "The Abel strip width correction is retained in the earlier strip comparison. The independent classical Gevrey derivative-growth characterization is supplied by SETUP-PHYSICAL-GEVREY."
+    },
+    {
+      "id": "SETUP-PHYSICAL-GEVREY",
+      "source_lines": [
+        183,
+        200
+      ],
+      "claim": "Stretched-exponential Fourier decay produces a smooth period-one physical function whose kth derivative is bounded by C R^k (k!)^(1/sigma). Integer derivative-order optimization proves a positive stretched-exponential Fourier decay radius conversely. For each prescribed polynomial Sobolev order, the union over positive radii equals the classical Gevrey class. The paper's even-frequency w(2n) convention is converted explicitly, retaining the physical 2pi derivative multiplier.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.stretched_moment_bound",
+        "NLS.Articles.DNLSEstimates.summable_stretched_exponential",
+        "NLS.Articles.DNLSEstimates.gevrey_synthesis",
+        "NLS.Articles.DNLSEstimates.weighted_gevrey_synthesis",
+        "NLS.Articles.DNLSEstimates.gevrey_moments_decay",
+        "NLS.Articles.DNLSEstimates.periodOneCoefficient_norm_le",
+        "NLS.Articles.DNLSEstimates.periodOneCoefficient_iteratedDeriv",
+        "NLS.Articles.DNLSEstimates.gevrey_coefficients_decay",
+        "NLS.Articles.DNLSEstimates.memlp_gevrey_of_decay",
+        "NLS.Articles.DNLSEstimates.physical_gevrey_iff",
+        "NLS.Articles.DNLSEstimates.gevrey_even_frequency_radius_iff",
+        "NLS.Articles.DNLSEstimates.paper_physical_gevrey_iff"
+      ],
+      "checked_shared_declarations": [],
+      "qualification": "The characterization is for continuous periodic representatives, with fixed-radius forward bounds and a smaller positive Fourier radius in the converse. It does not equate arbitrary numerical radius parameters. Weighted coefficient data also construct the smooth representative explicitly."
+    },
+    {
+      "id": "B-PROOF-DEGREES",
+      "source_lines": [
+        2355,
+        2359
+      ],
+      "claim": "The recursively defined u_k is homogeneous of total field-plus-derivative degree k; its total derivative order is at most k-1 and hence no individual jet exceeds k-1. The field charge is one, and the exact field-rescaling identity holds even at scalar zero.",
+      "comparison_status": "compared_reuse",
+      "checked_article_declarations": [],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.nlsRiccatiPolynomial_totalWeight",
+        "NLS.ZakharovShabat.nlsRiccatiPolynomial_derivativeOrder",
+        "NLS.ZakharovShabat.nlsRiccatiPolynomial_fieldCharge",
+        "NLS.ZakharovShabat.nlsRiccatiDensity_field_rescaling"
+      ]
+    },
+    {
+      "id": "B-UNREDUCED-PHASE",
+      "source_lines": [
+        2361,
+        2366
+      ],
+      "claim": "With q_(2m) kept as the fixed remainder of Lemma 21, the smooth real odd-Hamiltonian display has the phase (-1)^(m+1) on the unreduced remainder integral as well. The reduced polynomial in Corollary 22 can absorb this phase.",
+      "comparison_status": "compared_with_positive_correction",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.articleOddHamiltonian_normalized",
+        "NLS.Articles.DNLSEstimates.articleOddHamiltonian_eq_riccati_integral"
+      ],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_real_H1_remainder",
+        "NLS.ZakharovShabat.appendixH_odd_remainder_phase"
+      ],
+      "qualification": "The display before Corollary 22 is corrected when q_(2m) retains its earlier definition. No new refutation is needed; the positive identity gives the required phase. The named Corollary 22 is unchanged."
     }
   ],
   "auxiliary_group_policy": "These explicitly compared groups identify proved mathematical content and positive replacements for named proof steps. They are not asserted to exhaust the mathematics in their line spans. Any printed intermediates listed as not closed, and all other paragraph assertions, remain in the open proof-passage inventory.",
-  "auxiliary_assertion_group_count": 70,
+  "auxiliary_assertion_group_count": 82,
   "reference_policy": "A related auxiliary group is a navigation link and does not automatically close all assertions in an overlapping paragraph. Only the explicitly stated mathematical content and qualifications of the group have been compared.",
   "continuation_date": "2026-11-07",
   "paragraph_review_summary": {
     "reviewed_no_mathematical_assertion": 7,
-    "semantic_review_pending": 309,
-    "statement_compared": 34,
+    "semantic_review_pending": 292,
+    "assertions_compared": 21,
+    "statement_compared": 30,
     "all_assertions_reviewed": false
-  }
+  },
+  "resolved_obligation_groups": [
+    {
+      "id": "FULL-L4-COMPLEX",
+      "source_pages": [
+        14
+      ],
+      "claim": "Lemma 4 for every complex finite-gap source with physical Hamiltonian coefficients.",
+      "remaining": "No unresolved Laurent coefficient identity on the finite-gap locus. The explicit rough extension and its exact agreement with the physical hierarchy on every admissible Sobolev domain are checked; classical derivative products at rough sources are not claimed.",
+      "status": "resolved_by_qualified_spectral_extension",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.finiteGapHamiltonianExtension_eq_physical",
+        "NLS.Articles.DNLSEstimates.finiteGapArticleHamiltonian_eq_hierarchy",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_extended_hamiltonian_laurent",
+        "NLS.Articles.DNLSEstimates.exists_complex_finiteGap_extended_hamiltonian_domain"
+      ]
+    }
+  ]
 }

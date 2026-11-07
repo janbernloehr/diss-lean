@@ -4935,3 +4935,8 @@ import NLS.Articles.DNLSEstimates.FiniteGap
 import NLS.Articles.DNLSEstimates.ComplexFiniteGap
 import NLS.Articles.DNLSEstimates.SpectralCurve
 import NLS.Articles.DNLSEstimates.SpectralSurface
+import NLS.Articles.DNLSEstimates.NonsmoothHamiltonians
+import NLS.Articles.DNLSEstimates.SpectralConnectedness
+import NLS.Articles.DNLSEstimates.SpectralNodes
+import NLS.Articles.DNLSEstimates.RootDomains
+import NLS.Articles.DNLSEstimates.Gevrey

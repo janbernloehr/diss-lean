@@ -10,7 +10,7 @@ The source is the 38-page arXiv:1403.1369v2 PDF, SHA-256
 [full-paper-claims.json](full-paper-claims.json) records all 27 named results
 and 350 mechanical paragraph blocks before the references, with source line
 spans and text hashes. These blocks have not all been decomposed and reviewed
-as individual assertions. The ledger also records 70 explicitly compared
+as individual assertions. The ledger also records 82 explicitly compared
 auxiliary groups from the setup, Sections 3–6 and both appendices, with direct corrections
 and exact shared declarations. These groups are not asserted to exhaust their
 source spans. A checked theorem does not automatically certify
@@ -20,8 +20,8 @@ every displayed intermediate claim in its printed proof.
 
 The table describes statement-level correspondence. It is not a claim that
 the associated proof passages or the whole paper are fully covered. There are
-24 checked named statements (including the four earlier main statements),
-two checked corrected statements, and one partially covered statement.
+24 checked named statements (including the four earlier main statements) and
+three checked corrected statements. Each keeps its explicit qualification.
 Full declaration names and exact qualifications are in the JSON ledger.
 
 | Statement | PDF page | Current statement coverage | Article declarations |
@@ -33,7 +33,7 @@ Full declaration names and exact qualifications are in the JSON ledger.
 | Theorem 4 | 10 | Statement checked | `theorem_four`, `exists_theorem_four_domain` |
 | Lemma 2 | 10 | Statement checked | `lemma_two_domain`, `lemma_two_joint` |
 | Lemma 3 | 12 | Statement checked | `proposition_twenty`, `lemma_three_spectral` |
-| Lemma 4 | 14 | Complex Laurent expansion checked; nonsmooth physical coefficients open | `complex_finiteGap_laurent`, `complex_finiteGap_smooth_hamiltonians` |
+| Lemma 4 | 14 | Checked with explicit nonsmooth spectral extension | `exists_complex_finiteGap_extended_hamiltonian_domain`, `finiteGapArticleHamiltonian_eq_hierarchy` |
 | Theorem 5 | 15 | Statement checked | `theorem_five`, `theorem_five_spectrum` |
 | Lemma 5 | 16 | Statement checked | `lemma_five` |
 | Lemma 6 | 17 | Statement checked | `lemma_six` |
@@ -63,7 +63,7 @@ statements; no result relies on a default value of a divergent Lean sum.
 
 ## New mathematical work
 
-Eleven modules extend the original [MainEstimates](../../../NLS/Articles/DNLSEstimates/MainEstimates.lean)
+Sixteen modules extend the original [MainEstimates](../../../NLS/Articles/DNLSEstimates/MainEstimates.lean)
 interface:
 
 - [HigherActions](../../../NLS/Articles/DNLSEstimates/HigherActions.lean):
@@ -111,7 +111,7 @@ interface:
   tail endpoint values fix the additive constant. Matching Fourier coefficients
   identify every coefficient with the physical Riccati Hamiltonians at smooth
   complex sources. The common neighborhoods and complex discriminant identity
-  are constructed. Nonsmooth complex Hamiltonian interpretation remains open.
+  are constructed. The nonsmooth extension is supplied separately below.
 - [SpectralCurve](../../../NLS/Articles/DNLSEstimates/SpectralCurve.lean):
   the actual affine curve in C², analytic local uniformizers at unramified and
   simple branch points, two branches with distinct tangents at double spectral
@@ -123,7 +123,42 @@ interface:
   one, on the original subspace topology, for simple periodic spectrum. The
   proof constructs open charts, both inverse identities, continuity and analytic
   transitions. Surjectivity of the spectral projection proves noncompactness.
-  Connectedness and the topological infinite-genus assertion remain separate.
+  Connectedness and the converse at nodes are supplied below; infinite genus
+  remains unproved.
+
+- [NonsmoothHamiltonians](../../../NLS/Articles/DNLSEstimates/NonsmoothHamiltonians.lean):
+  an explicit all-order spectral extension at rough complex finite-gap sources,
+  defined by finite traces of the original higher action contours, independently
+  of Laurent coefficients. Finite-hole contour decomposition and exterior Cauchy
+  coefficients prove the actual convergent series. The extension agrees exactly
+  with the independently defined physical Riccati Hamiltonians on every admissible
+  complex Sobolev domain. The article phase, positive H1, exceptional first minus
+  sign and powers of 2i are checked. At rough inputs this is a spectral extension;
+  it does not assign classical derivatives or assert uniqueness of arbitrary extensions.
+  Odd-order agreement is also proved on the sharp complex H^m domain.
+- [SpectralConnectedness](../../../NLS/Articles/DNLSEstimates/SpectralConnectedness.lean):
+  the actual projection is continuous, open and proper. Every nonempty clopen part
+  projects onto C, and the singleton fiber above a zero proves connectedness.
+  This applies to all affine spectral curves, including nodal curves.
+- [SpectralNodes](../../../NLS/Articles/DNLSEstimates/SpectralNodes.lean):
+  a punctured complex disc is connected, but the two punctured local branches at
+  a node have opposite continuous discrete labels. Both occur in every neighborhood,
+  ruling out any topological complex chart there. On the paper's isolating domains,
+  existence of a complex analytic surface structure in the inherited topology is
+  equivalent to simplicity of the full periodic spectrum.
+- [RootDomains](../../../NLS/Articles/DNLSEstimates/RootDomains.lean):
+  closing the original isolating discs preserves disjointness, separation and the
+  exact free tail. The canonical root is spectrally analytic on the complement of
+  only the noncollapsed cuts at each complex source. The literal joint complement
+  of the fixed closed discs uses the same constructed local neighborhoods.
+
+- [Gevrey](../../../NLS/Articles/DNLSEstimates/Gevrey.lean):
+  the actual classical derivative-growth meaning of the Fourier weights. Stretched
+  exponential decay gives a smooth periodic representative with bounds
+  `C*R^k*(k!)^(1/sigma)`; optimizing the integer derivative order gives a positive
+  Fourier decay radius conversely. The union over positive radii is exactly the
+  classical Gevrey class with any fixed polynomial Sobolev factor. The paper's
+  even-frequency weight and physical 2pi derivative convention are explicit.
 
 These reuse established equation-specific and generic proofs. The zero-mode
 repair in `ConverseEstimate`, simultaneous endpoint continuity, complex finite-gap
@@ -156,50 +191,60 @@ module or dissertation verification record has been changed.
   `128*(abs(n)+N+2/5)/(abs(n)-N+3/10)` and includes the boundary cutoff.
   The source remains complex H¹ on a constructed neighborhood of the real locus.
 
+- At nonsmooth complex finite-gap inputs in Lemma 4, use the explicit spectral
+  extension from finite traces of the original higher action contours. Every
+  Laurent coefficient is identified, and agreement with the independently defined
+  physical hierarchy is proved throughout its complex Sobolev domains. Classical
+  derivative products at rough inputs and finite-gap-implies-smoothness are not claimed.
+
+- The unreduced display before Corollary 22 needs the factor `(-1)^(m+1)`
+  on its remainder integral when `q_(2m)` keeps the definition from Lemma 21.
+  The positive physical identity and article phase conversion supply this correction.
+  Corollary 22's final reduced polynomial absorbs the phase and is unchanged.
+
 Existing physical norm and Fourier conventions from the
 [main milestone](README.md) remain in force. Any narrower source domain or
 changed constant must remain explicit. No new refutations were added.
 
 ## Outstanding work
 
-1. **Lemma 4:** interpret every Laurent coefficient as an independently
-   meaningful physical Hamiltonian at nonsmooth complex finite-gap sources.
-   The full complex normalized convergent Laurent expansion and physical
-   coefficient agreement at smooth complex sources are now checked. Complex
-   finite-gap data alone do not imply smoothness.
-2. **Spectral-curve geometry on p. 9:** prove global connectedness, infinite
-   topological genus, and the exclusion of an induced complex-surface structure
-   at multiple points. The actual nonsingular complex analytic manifold,
-   noncompactness, local double-point branches and infinite regular ramification
-   are checked. Counting branch points is not a proof of genus. This claim
-   remains mathematical scope, not historical context.
-3. **Unnumbered setup and background:** finish the remaining comparisons,
-   including the classical derivative-growth meaning of the Gevrey examples
-   and exact closed-disc and filled complex-root domains. The original oscillator
-   equations, physical action Hamiltonian and its frequency derivatives, exact
-   physical Parseval identities, Fourier derivative, analytic Sobolev inverses,
-   canonical brackets, uniform smoothing and main spectral products are now
-   explicitly compared. The groups do not exhaust every setup paragraph.
-4. **All proof passages:** finish the assertion-by-assertion semantic inventory.
+1. **Spectral-curve infinite genus on p. 9:** prove genuine infinite topological
+   genus of the simple-spectrum surface. Connectedness, noncompactness, the actual
+   complex manifold and its converse on the isolating domains, and infinite regular
+   ramification are checked. Counting branch points is not a proof of genus.
+2. **Unnumbered setup and background:** finish the assertion-by-assertion review
+   of the remaining setup text. The classical Gevrey characterization, physical Poisson
+   gradients, the NLS energy variations and scalar real-form restriction now have
+   explicit comparisons with their actual domains. Closed-disc isolation and filled
+   complex spectral-root analyticity are checked. The compared groups do not exhaust
+   every setup paragraph.
+3. **All proof passages:** finish the assertion-by-assertion semantic inventory.
    The JSON retains pending blocks explicitly, including proof-only inequalities
    that need not follow from a different proof of the named result.
 
 ## Validation and publication
 
-The 2026-11-07 run passed all twelve article module compilations and the
-aggregate with zero warnings, all 7,729 existing public examples,
-and the transitive audits of 181 article declarations and
-45,427 imported NLS declarations. All 222 exact shared declaration
-references and all 350 source-block hashes passed integrity checks. The ledger
-contains 70 compared auxiliary groups; its paragraph review still has
-309 blocks pending semantic review. These checks do not certify complete
-source coverage. The validation record explicitly says `full_paper_complete: false`.
+The 2026-11-07 validation passed all seventeen final article module compilations
+and the final aggregate with zero warnings. Both final transitive audits passed:
+278 article declarations and 45,524 imported NLS declarations.
+All 259 exact shared declaration references and all 350 source-block hashes
+passed integrity checks. The ledger contains 82 compared auxiliary groups;
+292 paragraph blocks remain pending semantic review.
+
+All 7,729 existing public examples passed on the initial sixteen-module
+aggregate. The independent Gevrey module and three additional compatibility
+theorems were added afterward; they change no existing declaration, instance,
+simp attribute or example source. All final modules and the aggregate were then
+compiled again and both transitive audits rerun. This records one public-example
+run, with its original source hashes preserved, and does not claim a second
+example run on the final aggregate. These checks do not certify complete source
+coverage. The validation record explicitly says `full_paper_complete: false`.
 
 The new record is [full-paper-validation.json](full-paper-validation.json),
 with separate expanded [article](full-paper-axiom-audit.log) and
 [whole-NLS](full-paper-full-axiom-audit.log) audit logs. The historical
 [main-theorem validation](validation.json) and its counts remain unchanged.
-The current source imports all twelve article modules in `NLS.lean` and in
+The current source imports all seventeen article modules in `NLS.lean` and in
 `scripts/CheckDNLSEstimates.lean`.
 
 Validation compiles the article modules and aggregate with pinned Lean 4.33.1
