@@ -10,10 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 44,
+    "proved": 45,
     "proved_corrected": 6,
-    "partial": 4,
-    "not_found": 0
+    "partial": 3
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
   "results": [
@@ -507,8 +506,8 @@
       "label": "Theorem 3.1",
       "line": 1795,
       "statement": "Theorem 3.1 ([10, 15]) There exists a complex neighborhood W of H0−1 within\n  −1                                   −1/2\nH0,C  and an analytic map Φ : W → h0,C , q 7→ (zn (q))n∈Z with the following\nproperties:\n                                                     R1\n  (i) Φ is canonical in the sense that {zn , z−n } = 0 ∂u zn ∂x ∂u z−n dx = i for\n      all n ⩾ 1, whereas all other brackets between coordinate functions vanish.\n                                                                                s+1/2\n (ii) For any s ⩾ −1, the restriction Φ|H0s is a map Φ|H0s : H0s → h0                   which\n      is a bianalytic diffeomorphism.\n\n(iii) The KdV Hamiltonian H ◦ Φ−1 , expressed in the new variables, is defined\n          3/2\n      on h0 and depends on the action variables alone. In fact, it is a real\n      analytic function of the actions on the positive quadrant ℓ3,1\n                                                                 + (N),\n\n            ℓ3,1\n                                                     X\n             + (N) := {(In )n⩾1 : In ⩾ 0 ∀ n ⩾ 1,        n3 In < ∞}. ⋊",
-      "status": "partial",
-      "comparison": "The genuine canonical H-minus-one Birkhoff map and all integer Sobolev diffeomorphisms are proved. Every NONNEGATIVE REAL order s>=0 has the actual canonical analytic equivalence H^s to signed h^(s+1/2) and analytic inverse, with exact coefficient agreement. For every -1<s<0 the SAME actual full native complex map has a strong analytic target realization near every real H^s input, retaining the full physical amplitude and phases. GLOBAL inverse regularity in that interval is now also proved: every actual native preimage of a weighted Hilbert output lies in the exact original H^s source, using original Hill gaps, exact Miura/Dirac comparison, NLS inverse regularity and the literal Miura formula. Part (iii) is fully proved on one ambient neighborhood of the entire original positive weighted action cone. The remaining part (ii) obligation is INVERSE ANALYTICITY on -1<s<0 and its final packaged original Sobolev diffeomorphism; membership of the inverse alone does not establish analyticity. The actual strong fractional Fourier derivative defect is now proved compact at EVERY real H^s source in this interval, using dyadic endpoint output interpolation at L2 sources and norm continuity plus Fourier density. The physical mean-zero derivative equivalence, inverse analyticity and final packaged diffeomorphism remain to be checked.",
+      "status": "proved",
+      "comparison": "The SAME actual canonical map is proved, including its full complex rough realization and original Gardner brackets. Part (ii) is proved for EVERY real order s>=-1, with target s+1/2, exact coefficient-preserving original physical source inclusion, bijection, and analytic maps in BOTH directions. The strict negative interval uses actual strong complex realizations, global inverse regularity, dyadic endpoint interpolation proving compactness of the actual derivative defect at every real source, the compact Fredholm alternative and analytic inversion. Every nonnegative real order follows from the actual integer one-smoothing remainders. Part (iii) is fully proved on one ambient complex neighborhood of the entire original positive n^3-weighted l1 action cone.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/OriginalHillGlobalNativeInverse.lean",
         "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerRegularity.lean",
@@ -520,7 +519,10 @@
         "NLS/Articles/KdVPseudomeasures/OriginalHillNonnegativeSobolevEquiv.lean",
         "NLS/KdV/HillFractionalNativeMap.lean",
         "NLS/Articles/KdVPseudomeasures/SourceNegativeFractionalInverseRegularity.lean",
-        "NLS/KdV/HillFractionalDerivativeCompact.lean"
+        "NLS/KdV/HillFractionalDerivativeCompact.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem31Sobolev.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNegativeEquivalence.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNegativeJacobian.lean"
       ],
       "declarations": [
         "NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_iii",
@@ -530,7 +532,10 @@
         "NLS.Articles.KdVPseudomeasures.exists_hillNonnegativeSobolevEquiv",
         "NLS.KdV.exists_hillFractionalNativeMap_analytic",
         "NLS.Articles.KdVPseudomeasures.original_negative_sobolev_of_native_output",
-        "NLS.KdV.isCompactOperator_fractionalFourierDefect_fderiv"
+        "NLS.KdV.isCompactOperator_fractionalFourierDefect_fderiv",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_ii",
+        "NLS.Articles.KdVPseudomeasures.exists_hillNegativeNativeEquiv",
+        "NLS.Articles.KdVPseudomeasures.exists_hillNegativeNativeJacobianEquiv"
       ],
       "source_page": 28,
       "statement_sha256": "b343852282463f953e3857c764999d3cb5148f3e2ebd395bbe06b711ac946bcc",
@@ -545,7 +550,10 @@
         "NLS/Articles/KdVPseudomeasures/OriginalHillNonnegativeSobolevEquiv.lean": "dd7e990bf67641446e6288e97e22d214eec68c5869a894a7abcc50a070742a5f",
         "NLS/KdV/HillFractionalNativeMap.lean": "242f28b899609a1863c388fbbab132a48f4ff89b51d084db79bbacdcd248f17b",
         "NLS/Articles/KdVPseudomeasures/SourceNegativeFractionalInverseRegularity.lean": "2cdb028f9ffa9fc3cf4485ed6967d5295ab72a8ec5fd01cd36a1c53a01998883",
-        "NLS/KdV/HillFractionalDerivativeCompact.lean": "470044d8f005042cc7aa4d8ca486737322af33feb8fb7579a1f730c42e769dc5"
+        "NLS/KdV/HillFractionalDerivativeCompact.lean": "470044d8f005042cc7aa4d8ca486737322af33feb8fb7579a1f730c42e769dc5",
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem31Sobolev.lean": "8240fac40704e79e3413d26264fe8598604ec103a2876b13301854b9f74182ab",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNegativeEquivalence.lean": "d8463f1457dddc1b0002f72087f3e5b432b0d9d84ce1297339edc58d7b2e1745",
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNegativeJacobian.lean": "de32c10f2e876fdcb887a0d381a9641b68b401ad5be994b745d956ef84208c65"
       }
     },
     {

@@ -2105,6 +2105,16 @@ import NLS.SequenceSpaces.NegativeSobolevFrequencyBands
 import NLS.SequenceSpaces.SignedSobolevNegativeEquivalence
 import NLS.SequenceSpaces.WeightedFrequencyProjections
 import NLS.SequenceSpaces.WeightedHilbertInterpolation
+import NLS.Articles.KdVPseudomeasures.OriginalHillNegativeEquivalence
+import NLS.Articles.KdVPseudomeasures.OriginalHillNegativeJacobian
+import NLS.Articles.KdVPseudomeasures.OriginalHillNegativeModels
+import NLS.Articles.KdVPseudomeasures.OriginalHillNegativeNativeMap
+import NLS.Articles.KdVPseudomeasures.SourceNegativeNativeInverseMembership
+import NLS.Articles.KdVPseudomeasures.SourceTheorem31Sobolev
+import NLS.FunctionalAnalysis.AnalyticCompactRestriction
+import NLS.FunctionalAnalysis.AnalyticEquivTransport
+import NLS.SequenceSpaces.FourierRealWeightRegularity
+import NLS.SequenceSpaces.SignedRealEqualOrderEquiv
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -12212,3 +12222,46 @@ import NLS.SequenceSpaces.WeightedHilbertInterpolation
 #print axioms NLS.WeightedCoeff.norm_le_of_weighted_coefficients
 #print axioms NLS.WeightedCoeff.norm_le_weighted_geometric
 #print axioms NLS.WeightedCoeff.norm_signedSobolev_geometric
+#print axioms NLS.Articles.KdVPseudomeasures.injective_hillNegativeNativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.surjective_hillNegativeNativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeNativeEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillNegativeNativeEquiv_symm
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillNegativeNativeEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.isCompactOperator_hillNegativeNativeJacobian_defect
+#print axioms NLS.Articles.KdVPseudomeasures.injective_hillNegativeNativeJacobian
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillNegativeNativeJacobianEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeNativeMap_localInverse
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeSourceCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeSourceCoefficients_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeSourceInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeSourceInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeSourceInclusion_injective
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillNegativeSource_of_memlp
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeSourceCoefficients_rough
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeSourceCoefficients_real
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeTargetInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeTargetInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeTargetInclusion_injective
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeFreeFourierEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeFreeFourierEquiv_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeNativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeNativeMap_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillNegativeNativeMap_inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillNegativeNativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillReal_negative_sobolev_of_native_output
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHilbertNativeEquivalenceAt
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHilbertNativeEquivalenceAt_nonnegative
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHilbertNativeEquivalenceAt_negative
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHilbertNativeEquivalenceAt_minus_one
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_ii
+#print axioms NLS.FunctionalAnalysis.isCompactOperator_fderiv_linear_add_restricted_defect
+#print axioms NLS.FunctionalAnalysis.fderiv_injective_of_compatible_inclusions
+#print axioms NLS.FunctionalAnalysis.linearTransportEquiv
+#print axioms NLS.FunctionalAnalysis.analyticAt_linearTransportEquiv
+#print axioms NLS.FunctionalAnalysis.analyticAt_linearTransportEquiv_symm
+#print axioms NLS.WeightedCoeff.fourierRealZeroFullProjection_apply
+#print axioms NLS.WeightedCoeff.physicalWeightRealization
+#print axioms NLS.WeightedCoeff.physicalWeightRealization_apply
+#print axioms NLS.WeightedCoeff.exists_physicalWeightRealization
+#print axioms NLS.WeightedCoeff.signedRealEqualOrderEquiv
+#print axioms NLS.WeightedCoeff.signedRealEqualOrderEquiv_apply

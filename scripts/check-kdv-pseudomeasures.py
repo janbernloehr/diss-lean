@@ -2139,6 +2139,16 @@ modules = [
     'NLS.SequenceSpaces.SignedSobolevNegativeEquivalence',
     'NLS.SequenceSpaces.WeightedFrequencyProjections',
     'NLS.SequenceSpaces.WeightedHilbertInterpolation',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNegativeEquivalence',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNegativeJacobian',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNegativeModels',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNegativeNativeMap',
+    'NLS.Articles.KdVPseudomeasures.SourceNegativeNativeInverseMembership',
+    'NLS.Articles.KdVPseudomeasures.SourceTheorem31Sobolev',
+    'NLS.FunctionalAnalysis.AnalyticCompactRestriction',
+    'NLS.FunctionalAnalysis.AnalyticEquivTransport',
+    'NLS.SequenceSpaces.FourierRealWeightRegularity',
+    'NLS.SequenceSpaces.SignedRealEqualOrderEquiv',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
