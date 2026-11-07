@@ -5,8 +5,8 @@
   "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
   "canonical_checkout_read_only_and_clean": true,
   "all_five_main_theorem_sources_unchanged": true,
-  "modules_in_validated_closure": 9018,
-  "freshly_compiled_during_this_request": 177,
+  "modules_in_validated_closure": 9019,
+  "freshly_compiled_during_this_request": 178,
   "dependency_fingerprint_verified_reused": 8841,
   "fresh_module_names": [
     "NLS",
@@ -60,6 +60,7 @@
     "NLS.Articles.KdVPseudomeasures.OriginalHillIntegerOrderInclusion",
     "NLS.Articles.KdVPseudomeasures.OriginalHillNativeBoundedLimits",
     "NLS.Articles.KdVPseudomeasures.OriginalHillNativeODEUniqueness",
+    "NLS.Articles.KdVPseudomeasures.OriginalHillNonnegativeSobolevEquiv",
     "NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalCanonicalVector",
     "NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalClassicalRoughSolution",
     "NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalRoughFlow",
@@ -187,11 +188,11 @@
     "NLS.ZakharovShabat.ClassicalUniformRemainderL2Budget",
     "NLS.ZakharovShabat.PeriodicH1UniformRemainderL2Budget"
   ],
-  "registered_article_modules": 2082,
-  "exact_public_theorems": 8394,
-  "exact_public_definitions": 1614,
+  "registered_article_modules": 2083,
+  "exact_public_theorems": 8397,
+  "exact_public_definitions": 1615,
   "axiom_audits": {
-    "article_public_declarations": 10008,
+    "article_public_declarations": 10012,
     "below_l2_declarations": 1007,
     "hierarchy_declarations": 13010,
     "estimates_foundation_declarations": 13032,
@@ -233,11 +234,12 @@
     "coverage.articles.kdv-estimates.CheckPrivateAxioms",
     "NLS.Articles.KdVEstimates.MainBirkhoffEstimates"
   ],
-  "source_fingerprint_digest": "95b4ab24419a58cda1ea8baab01238ba5d377d2584983fdf7a84743ebba5f718",
-  "source_sha256_digest": "231c191b8bfcd335112aecd61aa8371bf4d2e6f7ca544583657b23773ce05e54",
+  "source_fingerprint_digest": "bca3ec45fc9231bb69071c479be797d33ed396dd08766877968bce3c9daccc99",
+  "source_sha256_digest": "e4d4ef0d44e8aa22623460c8f556dde30bb184bd594700ed56a61d6e44b14edf",
   "new_source_modules": [
     "NLS.Articles.KdVPseudomeasures.Lemma57CommonNeighborhood",
     "NLS.Articles.KdVPseudomeasures.Lemma57FrequencyCharts",
+    "NLS.Articles.KdVPseudomeasures.OriginalHillNonnegativeSobolevEquiv",
     "NLS.Articles.KdVPseudomeasures.SourceAiryFlowGeneric",
     "NLS.Articles.KdVPseudomeasures.SourceAppendixC1",
     "NLS.Articles.KdVPseudomeasures.SourceComplexCouplingComparison",
@@ -350,6 +352,7 @@
   "new_source_sha256": {
     "NLS/Articles/KdVPseudomeasures/Lemma57CommonNeighborhood.lean": "328db036db47e2dbfa1d81a5b0718fddf3a1bc8f6b6099afa59d6eb0ad0ff5d3",
     "NLS/Articles/KdVPseudomeasures/Lemma57FrequencyCharts.lean": "22907741ead289c7a787481f4e778580ec778133b6bafde52ee6b5388733673b",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNonnegativeSobolevEquiv.lean": "dd7e990bf67641446e6288e97e22d214eec68c5869a894a7abcc50a070742a5f",
     "NLS/Articles/KdVPseudomeasures/SourceAiryFlowGeneric.lean": "a1ceca2590cb329c5f36b19e0d41d9802ad0a7edb8774302587df8a0abf3b099",
     "NLS/Articles/KdVPseudomeasures/SourceAppendixC1.lean": "052be38dd703796c4d21a568914280d2a9f98d2d425d45838a00b52751e07a2a",
     "NLS/Articles/KdVPseudomeasures/SourceComplexCouplingComparison.lean": "1c6433c323c5ef368d2d838772e400bf0ddd1d549620cad8566d2eaa46c4d747",

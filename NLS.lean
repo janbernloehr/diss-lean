@@ -6684,3 +6684,4 @@ import NLS.KdV.HillFractionalPeriodOneExtraction
 import NLS.Articles.KdVPseudomeasures.SourceDirichletFractionalPower
 import NLS.Articles.KdVPseudomeasures.SourceDirichletAppendixC4
 import NLS.Articles.KdVPseudomeasures.SourceLemmaC4
+import NLS.Articles.KdVPseudomeasures.OriginalHillNonnegativeSobolevEquiv

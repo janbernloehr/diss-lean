@@ -2079,6 +2079,7 @@ import NLS.KdV.HillFractionalPeriodOneExtraction
 import NLS.Articles.KdVPseudomeasures.SourceDirichletFractionalPower
 import NLS.Articles.KdVPseudomeasures.SourceDirichletAppendixC4
 import NLS.Articles.KdVPseudomeasures.SourceLemmaC4
+import NLS.Articles.KdVPseudomeasures.OriginalHillNonnegativeSobolevEquiv
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -12090,3 +12091,7 @@ import NLS.Articles.KdVPseudomeasures.SourceLemmaC4
 #print axioms NLS.Articles.KdVPseudomeasures.exists_local_sourceFractionalDirichletProjection_power_bound
 #print axioms NLS.Articles.KdVPseudomeasures.sourceDirichletProjection_appendixC4
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaC_4
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillSobolev_equiv_between_integer_orders
+#print axioms NLS.Articles.KdVPseudomeasures.hillNonnegativeSobolevSourceInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillNonnegativeSobolevSourceInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillNonnegativeSobolevEquiv

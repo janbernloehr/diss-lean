@@ -2113,6 +2113,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SourceDirichletFractionalPower',
     'NLS.Articles.KdVPseudomeasures.SourceDirichletAppendixC4',
     'NLS.Articles.KdVPseudomeasures.SourceLemmaC4',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNonnegativeSobolevEquiv',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
