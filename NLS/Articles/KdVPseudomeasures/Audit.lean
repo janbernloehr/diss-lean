@@ -2124,6 +2124,19 @@ import NLS.KdV.HillWienerTailDomination
 import NLS.SequenceSpaces.PositiveConvolutionEnvelope
 import NLS.SequenceSpaces.PositiveNeumannDomination
 import NLS.SequenceSpaces.WeightedConvolutionRowBound
+import NLS.Articles.KdVPseudomeasures.SourceTheorem52
+import NLS.Articles.KdVPseudomeasures.SourceWienerCouplingEnvelope
+import NLS.Articles.KdVPseudomeasures.SourceWienerHighSpectralEnvelope
+import NLS.Articles.KdVPseudomeasures.SourceWienerSobolevSpectralModels
+import NLS.Articles.KdVPseudomeasures.SourceWienerSpectralAdapter
+import NLS.Articles.KdVPseudomeasures.SourceWienerSpectralL1Bound
+import NLS.Articles.KdVPseudomeasures.SourceWienerSpectralValues
+import NLS.Fourier.PeriodicEqualWeightIsometry
+import NLS.Fourier.PeriodicWeightedExponentInclusion
+import NLS.SequenceSpaces.DoubledPairL1Majorant
+import NLS.SequenceSpaces.EvenWeightedTailEnvelope
+import NLS.SequenceSpaces.FiniteTailL1Bound
+import NLS.SequenceSpaces.PositiveWeightedL1Bound
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -12313,3 +12326,53 @@ import NLS.SequenceSpaces.WeightedConvolutionRowBound
 #print axioms NLS.Coeff.neumannVectorSeries_apply_dominated
 #print axioms NLS.Coeff.exists_uniform_neumann_summable_majorant
 #print axioms NLS.norm_weighted_convolution_term_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_2_uniform_realizations
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_2
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_2_membership
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourceWienerCoupling_envelope
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourceWienerHighSpectral_envelope
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerSobolevWeight
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerSobolevWeight_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerSobolevWeight_negative_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerSobolevInput
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerSobolevInput_val
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerSobolevGapValues
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerSobolevMidpointValues
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerSobolevPlain_same_distribution
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerEndpointCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWienerEndpointCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerInfinity
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerInfinity_val
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWienerInfinity_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerInfinity_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerPlain
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerPlain_val
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWienerPlain_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerPlain_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerSpectralSequences_uniform_l1
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerAdmissible
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerGapValues
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerMidpointValues
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerGapValues_nat
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerMidpointValues_nat
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerGapValues_neg
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerMidpointValues_neg
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWienerSpectralValues_uniform_infinity
+#print axioms NLS.Weight.eq_of_values
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.equalWeightIsometry
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.equalWeightIsometry_val
+#print axioms NLS.WeightedCoeff.equalWeightIsometry
+#print axioms NLS.WeightedCoeff.equalWeightIsometry_apply
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.weightedExponentInclusion
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.weightedExponentInclusion_coefficients
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.weightedExponentInclusion_val
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.norm_weightedExponentInclusion_le
+#print axioms NLS.Coeff.doubledPairMajorant
+#print axioms NLS.Coeff.norm_doubledPairMajorant_le
+#print axioms NLS.Coeff.norm_doubledPairMajorant_apply
+#print axioms NLS.Coeff.norm_doubledPairMajorant_natAbs
+#print axioms NLS.even_weighted_tail_envelope
+#print axioms NLS.Coeff.norm_truncate_one_le_card_bound
+#print axioms NLS.Coeff.exists_l1_of_uniform_prefix_and_tail
+#print axioms NLS.WeightedCoeff.exists_weighted_l1_of_uniform_prefix_and_tail
+#print axioms NLS.WeightedCoeff.positive_weighted_l1_bound

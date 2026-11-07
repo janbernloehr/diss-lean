@@ -6729,3 +6729,16 @@ import NLS.KdV.HillWienerTailDomination
 import NLS.SequenceSpaces.PositiveConvolutionEnvelope
 import NLS.SequenceSpaces.PositiveNeumannDomination
 import NLS.SequenceSpaces.WeightedConvolutionRowBound
+import NLS.Articles.KdVPseudomeasures.SourceTheorem52
+import NLS.Articles.KdVPseudomeasures.SourceWienerCouplingEnvelope
+import NLS.Articles.KdVPseudomeasures.SourceWienerHighSpectralEnvelope
+import NLS.Articles.KdVPseudomeasures.SourceWienerSobolevSpectralModels
+import NLS.Articles.KdVPseudomeasures.SourceWienerSpectralAdapter
+import NLS.Articles.KdVPseudomeasures.SourceWienerSpectralL1Bound
+import NLS.Articles.KdVPseudomeasures.SourceWienerSpectralValues
+import NLS.Fourier.PeriodicEqualWeightIsometry
+import NLS.Fourier.PeriodicWeightedExponentInclusion
+import NLS.SequenceSpaces.DoubledPairL1Majorant
+import NLS.SequenceSpaces.EvenWeightedTailEnvelope
+import NLS.SequenceSpaces.FiniteTailL1Bound
+import NLS.SequenceSpaces.PositiveWeightedL1Bound

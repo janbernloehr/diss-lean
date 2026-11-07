@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 45,
+    "proved": 46,
     "proved_corrected": 6,
-    "partial": 3
+    "partial": 2
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
   "results": [
@@ -753,17 +753,25 @@
       "label": "Theorem 5.2",
       "line": 2145,
       "statement": "Theorem 5.2 ([21, Theorem 1 & 4]) Let N ∈ Z⩾0 .\n\n\n\n\nSeptember 18, 2018                                                             33\n\n  (i) For any q ∈ FℓN,1\n                    0,C , the sequence of gap lengths (γn (q))n⩾1 , defined in (5)\n             N,1\n      is in ℓC (N) and the map\n\n               FℓN,1    N,1\n                 0,C → ℓC (N),              q 7→ (γn (q))n⩾1 ,\n\n        is uniformly bounded on bounded subsets.\n\n (ii) For any q ∈ FℓN,1\n                    0,C , the sequence (τn − µn (q))n⩾1 – cf. (5)-(6) – is in\n       N,1\n      ℓC (N) and the map\n\n               FℓN,1    N,1\n                 0,C → ℓC (N),              q 7→ (τn (q) − µn (q))n⩾1 ,\n\n        is uniformly bounded on bounded subsets.                 ⋊",
-      "status": "partial",
-      "comparison": "Partial direct complex Wiener proof: one cutoff precedes every arbitrary spectral weight and every complex Wiener potential in its norm ball; one summable coefficient envelope, of norm at most twice the potential Wiener norm, precedes every high mode, both resonant signs and every spectral parameter on the full reduced strip. It bounds BOTH actual physical off-diagonal couplings. The actual complex gap inherits any such common coupling envelope, with the printed sqrt(6) root-separation estimate. Remaining: transfer to the original distributional complex spectral sequences, combine the midpoint coupling estimate, and include the uniformly bounded finite central prefix to prove both complete weighted ell-one maps uniformly on all norm balls. Real Wiener diffeomorphisms alone are not claimed to prove this.",
+      "status": "proved",
+      "comparison": "FULL original complex Wiener spectral theorem. For every integer N>=0, both COMPLETE actual positive-index sequences (canonical lexicographic gap lengths and tau_n-minus-Dirichlet labels) are in ordinary Sobolev-weighted ell-one, with ONE uniform bound on EVERY norm ball of the original complex FL^(N,1) physical period-one source. There is no reality or local-neighborhood premise. The proof preserves the ENTIRE original distribution isometrically, constructs one summable envelope before all high modes and all parameters for both actual couplings, transfers it to actual gaps and midpoints, and includes the uniformly bounded finite central prefix. Strong full signed target realizations and exact positive-index ell-one norm bounds are also proved.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/OriginalHillL2OneSmoothing.lean",
         "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean",
         "NLS/KdV/HillWienerCouplingEnvelope.lean",
-        "NLS/KdV/HillGapFromCouplingEnvelope.lean"
+        "NLS/KdV/HillGapFromCouplingEnvelope.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem52.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceWienerSpectralL1Bound.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceWienerHighSpectralEnvelope.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceWienerSobolevSpectralModels.lean"
       ],
       "declarations": [
         "NLS.KdV.exists_uniform_hillWienerCoupling_envelope",
-        "NLS.KdV.EndpointHillComplexPair.gap_le_of_coupling_envelope"
+        "NLS.KdV.EndpointHillComplexPair.gap_le_of_coupling_envelope",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_2",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_2_uniform_realizations",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem5_2_membership",
+        "NLS.Articles.KdVPseudomeasures.sourceWienerSobolevPlain_same_distribution"
       ],
       "source_page": 33,
       "statement_sha256": "a8253e9c58095d2d9529571d1fc39b5a105555c144152b198a5e134c57633c62",
@@ -771,7 +779,11 @@
         "NLS/Articles/KdVPseudomeasures/OriginalHillL2OneSmoothing.lean": "944d84047e97ea3c6ea04a6f8777705056075dc5fa127d85ffa9d136b766b4ed",
         "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean": "d71f57ecc07f97cdace2b5a73951cf8aa46213457d66e0aa55f4482b681bce7c",
         "NLS/KdV/HillWienerCouplingEnvelope.lean": "6660517892b5bde6e125ce03f242d04c890b71a1423a973360403ec6b7131307",
-        "NLS/KdV/HillGapFromCouplingEnvelope.lean": "7bfb74ac8ab387a812dfdbf96000b1e2c0effa2edb4c07b0d274939e0c70792a"
+        "NLS/KdV/HillGapFromCouplingEnvelope.lean": "7bfb74ac8ab387a812dfdbf96000b1e2c0effa2edb4c07b0d274939e0c70792a",
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem52.lean": "a7c1374cf1e7b4b4c066736cb982d32cc216788b7b513c566ce779d722c34cc5",
+        "NLS/Articles/KdVPseudomeasures/SourceWienerSpectralL1Bound.lean": "9ef8b3113fe1ffd75d3ded54b4e4a10cea460dd00c0b913fb2873be7279ec329",
+        "NLS/Articles/KdVPseudomeasures/SourceWienerHighSpectralEnvelope.lean": "e2c701d4d0b618316e946da97063d0c9a6cb59c4bfd7243f6add312e16009a2b",
+        "NLS/Articles/KdVPseudomeasures/SourceWienerSobolevSpectralModels.lean": "eaacec78a5cd57ded32f9b8a6a61f0be7ecf923f195955767f6f5ece749cf61d"
       }
     },
     {

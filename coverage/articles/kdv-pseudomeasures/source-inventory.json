@@ -9239,9 +9239,9 @@
     "five_main_theorems_proved": true,
     "all_numbered_results_proved": false,
     "status_counts": {
-      "proved": 45,
+      "proved": 46,
       "proved_corrected": 6,
-      "partial": 3
+      "partial": 2
     },
     "historical_milestones": "Earlier *_followup, verified_*, validation and publication snapshots are historical; consult the numbered-result audit for present full-paper scope. A main-theorem completion claim is not full-paper completion.",
     "Lemma5_7": "Proved in full, including every p>1 and a common complex Wiener neighborhood; see hill-L2-Wiener-lp-frequency-map.json.",
