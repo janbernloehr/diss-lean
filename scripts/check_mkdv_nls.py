@@ -1217,6 +1217,9 @@ modules = [
     'NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean',
     'NLS/MKdV/MiuraTransformedColumns.lean',
     'NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraEigenfunction.lean',
+    'NLS/KdV/HillL2EigenspaceEquiv.lean',
+    'NLS/MKdV/MiuraH2Eigenspace.lean',
+    'NLS/Articles/MKdVNLSHierarchies/GeometricMultiplicity.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

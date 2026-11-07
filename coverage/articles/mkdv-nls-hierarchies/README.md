@@ -60,7 +60,7 @@ The source locator convention and exact private-source hashes are in the ledger.
 
 The main theorems remain proved with the earlier corrections, but important
 whole-paper work remains: full Lemma 10 and nonlocal Proposition 11(iii);
-the native interval H2-to-AC source bridge in Lemma 2; geometric multiplicities in Lemma 3;
+the native interval H2-to-AC source bridge in Lemma 2; remaining printed proof intermediates;
 printed proof intermediates; and background claims including independent
 cross-mode mKdV Cartesian canonicity. Theorem 6, Corollaries 8–9 and Lemma 13
 now have the corrected source interfaces described in the later milestones.
@@ -333,6 +333,29 @@ not claimed. The ledger retains partial status for the entire named Lemma 2
 until this bridge is certified. Whole-paper proof coverage and semantic
 decomposition remain in progress. Validation is recorded in
 [`physical-miura-validation.json`](physical-miura-validation.json).
+
+## 2026-11-07 — Full geometric eigenspace multiplicities in Lemma 3
+
+Lemma 3 is now complete, including its geometric multiplicity clause at every
+positive index and both signed endpoints. An explicit linear equivalence
+compares the entire original Dirac H1 eigenspace with the actual Hill H2
+eigenspace. The weak Miura potential is identified with the unchanged actual
+L2 potential coefficient by coefficient, and every weak eigenvector gains
+the full H2 domain. This proves dimensions and the existence of two independent
+eigenfunctions; equality of discriminant zero orders is not used as a substitute.
+
+The comparison actually holds for every complex H1 source and every nonzero
+frequency. On the original real H1 domain, strict positivity supplies the
+nonzero condition for both endpoints at every n>=1, including closed gaps
+and zero-mean sources. The existing ground endpoint, indexed square-image
+and collapse identities finish the named statement. No zero-frequency
+eigenspace equivalence is asserted.
+
+Three strict modules add 10 theorems and 4 definitions. Four further complete
+source passages, including the entire Lemma 3 proof, have correspondence
+reviews. The exact validation evidence is in
+[`geometric-multiplicity-validation.json`](geometric-multiplicity-validation.json).
+Whole-paper semantic decomposition and proof coverage remain in progress.
 
 ## Pinned source
 

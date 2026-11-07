@@ -19,7 +19,7 @@
   "scope_last_line": 1327,
   "named_statement_count": 18,
   "numbered_equation_count": 25,
-  "assertion_count": 123,
+  "assertion_count": 124,
   "passage_count": 241,
   "semantic_inventory_complete": false,
   "assertions": [
@@ -162,7 +162,7 @@
       "label": "Lemma 3",
       "line": 682,
       "page": 10,
-      "status": "partial",
+      "status": "proved",
       "obligation": "Indexed squared endpoints, squared gaps and vanishing equivalence; GEOMETRIC eigenspace multiplicities must also be proved (analytic zero orders alone do not settle this clause).",
       "declarations": [
         "NLS.Articles.MKdVNLSHierarchies.lemma3_spectral_set",
@@ -175,9 +175,13 @@
         "NLS.Articles.MKdVNLSHierarchies.lemma3_ground_endpoints",
         "NLS.Articles.MKdVNLSHierarchies.lemma3_indexed_endpoints",
         "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_square_image",
-        "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_collapsed_iff"
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_collapsed_iff",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_nonzero",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_endpoints",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_independent_eigenfunctions_iff"
       ],
-      "existing_details": "source-map.json"
+      "existing_details": "source-map.json",
+      "certified_part": "Entire named Lemma3: original real H1 ground endpoints and every positive-index signed squared endpoint, gap square images and collapse equivalence, plus actual GEOMETRIC multiplicities on the full H2 Hill and original H1 Dirac domains. An explicit linear equivalence of whole eigenspaces holds even for complex H1 inputs at every nonzero frequency. Strict positivity applies it at both original endpoints for every n>=1, including closed gaps. The exact coefficient Miura adapter and full H2 domain recovery are proved; equality of analytic zero orders is not used as a surrogate. No zero-frequency eigenspace equivalence is asserted."
     },
     {
       "id": "lemma-4",
@@ -573,9 +577,11 @@
       "label": "(20)",
       "line": 678,
       "page": 10,
-      "status": "pending_individual_correspondence_review",
-      "obligation": "Diagonal spectral endpoint reflection for every integer label, including the central pair.",
-      "declarations": []
+      "status": "proved",
+      "obligation": "All signed endpoint slots reflect exactly under lambda negation and integer index reversal, for every original complex H1 diagonal source, including the central pair.",
+      "declarations": [
+        "NLS.MKdV.miuraNLSEndpoints_reflection"
+      ]
     },
     {
       "id": "equation-21",
@@ -913,9 +919,20 @@
       "kind": "unnumbered_or_proof_claim",
       "line": 697,
       "page": 11,
-      "status": "pending_individual_correspondence_review",
-      "obligation": "Real Miura Hill spectrum nonnegative; endpoint squaring preserves positive-index order, including zero mean.",
-      "declarations": []
+      "status": "proved",
+      "obligation": "Nonnegative real Miura Hill spectrum, exact real signed NLS ordering, ground and positive-index squaring, literal gap images and collapse equivalence. Actual full-domain linear eigenspace equivalence proves the printed existence-of-two-independent-eigenfunctions equivalence at every positive-index endpoint, including closed gaps and zero-mean sources.",
+      "declarations": [
+        "NLS.MKdV.miuraHillRadicand_root_nonnegative",
+        "NLS.MKdV.miuraNLSEndpoints_real",
+        "NLS.MKdV.miuraNLSEndpoints_within",
+        "NLS.MKdV.miuraNLSEndpoints_between",
+        "NLS.MKdV.miuraNLSRight_zero_nonnegative",
+        "NLS.MKdV.miuraNLSLeft_pos",
+        "NLS.MKdV.monotone_miuraSquaredNLS",
+        "NLS.MKdV.miuraHillLabels_eq_squaredNLS",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_endpoints",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_independent_eigenfunctions_iff"
+      ]
     },
     {
       "id": "central-gap-positivity",
@@ -1496,6 +1513,21 @@
         "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_determinant",
         "NLS.MKdV.isUnit_miuraTransformedColumns_iff",
         "NLS.MKdV.miura_equation_classicalSolution"
+      ]
+    },
+    {
+      "id": "lemma3-full-domain-geometric-equivalence",
+      "kind": "certified_named_statement_clause",
+      "line": 688,
+      "page": 10,
+      "status": "proved",
+      "obligation": "Actual full original H1 Dirac eigenspace is linearly equivalent to the independent actual H2 Hill eigenspace at squared energy for every complex H1 source and nonzero frequency. The singular Miura potential equals the unchanged L2 Miura potential coefficient by coefficient; surjectivity recovers the full H2 domain. Both positive-index real endpoints are strictly positive, so their geometric multiplicities and two-independent-eigenfunction conditions coincide without an open-gap or simplicity assumption.",
+      "declarations": [
+        "NLS.MKdV.sobolevMiuraHillPotential_original",
+        "NLS.MKdV.miuraH2EigenspaceEquiv",
+        "NLS.MKdV.finrank_miuraH2Eigenspace",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_endpoints",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_independent_eigenfunctions_iff"
       ]
     }
   ],
@@ -2825,10 +2857,20 @@
       "first_line": 677,
       "last_line": 678,
       "source_sha256": "91d82cfafd76d422ac400d0f8fb7cd1e0c11fb3bf2b23bcbe45cd49d775b281c",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "equation-20"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "equation-20"
+        ],
+        "declarations": [
+          "NLS.MKdV.miuraNLSEndpoints_reflection"
+        ],
+        "comparison": "Every original complex H1 source and signed integer endpoint slot is retained, including n=0."
+      }
     },
     {
       "id": "passage-127",
@@ -2845,10 +2887,22 @@
       "first_line": 682,
       "last_line": 686,
       "source_sha256": "e8b9b86862772fec4c019a63d45bb4e6332b407a5a51ee1f8cc274e2debb22b4",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "lemma-3"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma-3"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_ground_endpoints",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_indexed_endpoints",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_endpoints"
+        ],
+        "comparison": "Original real H1 ground and all positive-index signed squared endpoints, with the geometric clause completed in the following passage."
+      }
     },
     {
       "id": "passage-129",
@@ -2856,8 +2910,24 @@
       "first_line": 688,
       "last_line": 690,
       "source_sha256": "10d4c2f8e8135b5f9a6bc80476245559fbf8d1177903506f229977930a3a84e4",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved",
+      "assertion_ids": [
+        "lemma3-full-domain-geometric-equivalence"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma-3",
+          "lemma3-full-domain-geometric-equivalence"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_endpoints",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_square_image",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_collapsed_iff",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_independent_eigenfunctions_iff"
+        ],
+        "comparison": "The complete geometric/gap/collapse paragraph is now covered on the actual original domains. Full eigenspace linear equivalence, rather than analytic zero-order equality, proves geometric multiplicities at every n>=1, including closed gaps."
+      }
     },
     {
       "id": "passage-130",
@@ -2874,10 +2944,33 @@
       "first_line": 694,
       "last_line": 714,
       "source_sha256": "5872272897938e08309369386e878ed4b88374a223182ad26126e176cdc01f81",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "lemma3-proof-ordering"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma3-proof-ordering",
+          "lemma3-full-domain-geometric-equivalence"
+        ],
+        "declarations": [
+          "NLS.MKdV.miuraHill_eigenvector_iff_ZS",
+          "NLS.MKdV.miuraHillRadicand_root_nonnegative",
+          "NLS.MKdV.miuraNLSEndpoints_reflection",
+          "NLS.MKdV.miuraNLSEndpoints_real",
+          "NLS.MKdV.miuraNLSEndpoints_within",
+          "NLS.MKdV.miuraNLSEndpoints_between",
+          "NLS.MKdV.miuraHillLabels_eq_squaredNLS",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_ground_endpoints",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_indexed_endpoints",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_square_image",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_collapsed_iff",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_endpoints",
+          "NLS.Articles.MKdVNLSHierarchies.lemma3_independent_eigenfunctions_iff"
+        ],
+        "comparison": "Every eigenvalue/order/square-image/collapse step and the final two-independent-eigenfunctions assertion are covered. The eigenspace comparison explicitly retains the original H1 Dirac and full H2 Hill domains, and strictly positive endpoints supply the necessary nonzero parameter. No geometric multiplicity conclusion is inferred merely from discriminant orders."
+      }
     },
     {
       "id": "passage-132",
@@ -4180,7 +4273,7 @@
   ],
   "known_open_obligations": [
     "Theorem6, corrected Corollaries8-9 and corrected Lemma13 named statements are complete with explicit xi sign, source-gradient spectral-domain and Appendix component-order/phase qualifications. Their separately recorded printed proof intermediates still require individual correspondence review; the operator adapter itself is now checked.",
-    "Lemma2 now has the full original H1 physical matrix clauses and arbitrary AC physical-eigenfunction intertwining; its native interval H2-to-AC input-space identification remains explicit. Lemma3 still needs original geometric eigenspace multiplicities, not only analytic zero orders.",
+    "Lemma2 now has full original H1 physical matrix clauses and arbitrary AC physical-eigenfunction intertwining; its native interval H2-to-AC input-space identification remains explicit. Full Lemma3, including actual original-domain geometric eigenspace multiplicities, is now proved.",
     "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
     "Remaining printed proof intermediates, including squared-Floquet-product algebra and the actual contour-change steps in symmetry proofs, unless individually matched by an existing assertion. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter are now complete.",
     "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",

@@ -1,0 +1,197 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "article_parent": "5077d067d79b0298ecf3e3f2e778551793c39d42",
+  "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "new_modules": [
+    "NLS/KdV/HillL2EigenspaceEquiv.lean",
+    "NLS/MKdV/MiuraH2Eigenspace.lean",
+    "NLS/Articles/MKdVNLSHierarchies/GeometricMultiplicity.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "def",
+      "name": "hillSobolevEigenspace",
+      "qualified_name": "NLS.KdV.hillSobolevEigenspace",
+      "file": "NLS/KdV/HillL2EigenspaceEquiv.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_hillSobolevEigenspace",
+      "qualified_name": "NLS.KdV.mem_hillSobolevEigenspace",
+      "file": "NLS/KdV/HillL2EigenspaceEquiv.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2EigenspaceToOriginal",
+      "qualified_name": "NLS.KdV.hillL2EigenspaceToOriginal",
+      "file": "NLS/KdV/HillL2EigenspaceEquiv.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2EigenspaceToOriginal_bijective",
+      "qualified_name": "NLS.KdV.hillL2EigenspaceToOriginal_bijective",
+      "file": "NLS/KdV/HillL2EigenspaceEquiv.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2EigenspaceOriginalEquiv",
+      "qualified_name": "NLS.KdV.hillL2EigenspaceOriginalEquiv",
+      "file": "NLS/KdV/HillL2EigenspaceEquiv.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finrank_hillSobolevEigenspace_eq_original",
+      "qualified_name": "NLS.KdV.finrank_hillSobolevEigenspace_eq_original",
+      "file": "NLS/KdV/HillL2EigenspaceEquiv.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiuraHillPotential_factorization",
+      "qualified_name": "NLS.MKdV.sobolevMiuraHillPotential_factorization",
+      "file": "NLS/MKdV/MiuraH2Eigenspace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiuraHillPotential_original",
+      "qualified_name": "NLS.MKdV.sobolevMiuraHillPotential_original",
+      "file": "NLS/MKdV/MiuraH2Eigenspace.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraH2EigenspaceEquiv",
+      "qualified_name": "NLS.MKdV.miuraH2EigenspaceEquiv",
+      "file": "NLS/MKdV/MiuraH2Eigenspace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finrank_miuraH2Eigenspace",
+      "qualified_name": "NLS.MKdV.finrank_miuraH2Eigenspace",
+      "file": "NLS/MKdV/MiuraH2Eigenspace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finiteDimensional_miuraH2Eigenspace",
+      "qualified_name": "NLS.MKdV.finiteDimensional_miuraH2Eigenspace",
+      "file": "NLS/MKdV/MiuraH2Eigenspace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_geometric_multiplicity_nonzero",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_nonzero",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GeometricMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_independent_eigenfunctions_iff",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma3_independent_eigenfunctions_iff",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GeometricMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_geometric_multiplicity_endpoints",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_endpoints",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GeometricMultiplicity.lean"
+    }
+  ],
+  "new_theorems": 10,
+  "new_definitions": 4,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "ELAN_HOME and PATH use pinned tooling; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/KdV/HillL2EigenspaceEquiv.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/KdV/HillL2EigenspaceEquiv.lean",
+    "NLS/MKdV/MiuraH2Eigenspace.lean",
+    "NLS/Articles/MKdVNLSHierarchies/GeometricMultiplicity.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1184,
+  "article_transitive_axiom_declarations": 13558,
+  "combined_NLS_transitive_axiom_declarations": 76795,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 68,
+    "old_scopes_preserved": 3882,
+    "added_blocks": 1,
+    "added_scopes": 17,
+    "total_scopes": 3899,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 9163,
+    "scope": "All current NLS/**/*.lean, NLS.lean and the article/combined checkers. All unchanged after validation.",
+    "source_map_digest_sha256": "bc32fbc414cec7e826f9a4f59998a0a9973ef326ce72c572aa94511e2e0ed93b",
+    "private_manifest": "work/geometric-multiplicity-validation-inputs.json",
+    "private_manifest_sha256": "a62b9e941a9289dbd2bdb6449cb69ae5a5ef3995eed898d8b47a73c5bde3f632",
+    "reused_checker_prefix_outputs": 1181,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/KdV/HillL2EigenspaceEquiv.lean": "909510ac991840d65f05789e2a148b164858e62b2d443e0158ecfffc0b02bbe5",
+    "NLS/MKdV/MiuraH2Eigenspace.lean": "85e0e9e21017f2aa291646860ba821c783c11aa23982f0647c9b51c8646e5783",
+    "NLS/Articles/MKdVNLSHierarchies/GeometricMultiplicity.lean": "6d720119381b052283585a016202cc6cdc9b062909d4bcc7a232007221f2d986",
+    "NLS.lean": "6b9e574a1e66f86634b2f768a6f7e5915008d74e7bf924957aad710b40c96921",
+    "scripts/check_mkdv_nls.py": "2ca889051aa86e33aff916c490d338d8e4d1b4186f33574cf06a0f959b726138",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "cc1edd95498ee0ed1862dd706488afdb5d4c8469bce665fa626d2e0ca60904ba",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/KdV/HillL2EigenspaceEquiv.lean": "f0b52327a8c561b39b287c5848c7b004a0e748a31f79e1a9cfc30f889f21e428",
+    "NLS/MKdV/MiuraH2Eigenspace.lean": "247286ebb64d1c95703a614b746c9a2472b4dbd63c9e31cf4939b8c8cc0cff12",
+    "NLS/Articles/MKdVNLSHierarchies/GeometricMultiplicity.lean": "4ee6c8b8278dcd488385bf049b41ee29d7ebb8c056e98f4134ea9c5bd8dfdc47"
+  },
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "head": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "validated_source_modules": 9089,
+    "validation_report": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation_report_sha256": "6f9f2757468d008417280b5ce7ec68fceff49a1447bba886ff79dadbe7a80742",
+    "private_provenance_manifest": "work/nonlocal-incoming-cache-provenance.json",
+    "manifest_sha256": "7eff8b2f05f21402a7391c21f401cc5f5145c6a70503fd11d62e5737d4a95dc2",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently.",
+    "all_source_and_output_hashes_rechecked_after_validation": true
+  },
+  "validation_scope": "Fresh strict compilation of all three new modules and the combined aggregate; targeted and combined transitive audits. All 1,181 reused checker-prefix outputs and all 9,089 source-verified incoming compiled modules retain their hashes. This is not a fresh full repository source rebuild.",
+  "proof_scope": {
+    "completed_statement": "Full named Lemma3, including the geometric multiplicity clause for both signed positive-index endpoints on the original real H1 domain, including collapsed gaps and zero-mean sources.",
+    "method": "Exact linear equivalence of the entire original H1 Dirac and actual H2 Hill eigenspaces. The original weak Miura potential equals the unchanged actual L2 Miura potential coefficient by coefficient; full H2 eigenvector regularity supplies surjectivity. The comparison holds even for complex H1 sources at every nonzero frequency. Strict positivity supplies nonzero frequency at both endpoints for each n>=1. Dimensions and existence of two independent eigenfunctions are formal statements, not deductions merely from analytic zero orders.",
+    "not_claimed": [
+      "Zero-frequency eigenspace equivalence.",
+      "Native interval H2-to-AC input-space bridge for Lemma2, full Lemma10 or nonlocal Proposition11(iii), every printed proof intermediate or background assertion.",
+      "Whole-paper semantic decomposition or full proof coverage."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "assertion_records": 124,
+    "source_passages": 241,
+    "new_complete_source_passages_reviewed": 4,
+    "source_passages_reviewed": [
+      "passage-126",
+      "passage-128",
+      "passage-129",
+      "passage-131"
+    ],
+    "all_assertion_line_locators_nonblank_and_page_correct": true,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f",
+  "previous_validated_progress": "physical-miura-validation.json"
+}

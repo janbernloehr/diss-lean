@@ -1,3 +1,6 @@
+import NLS.KdV.HillL2EigenspaceEquiv
+import NLS.MKdV.MiuraH2Eigenspace
+import NLS.Articles.MKdVNLSHierarchies.GeometricMultiplicity
 import NLS.MKdV.PhysicalMiuraFundamentalMatrix
 import NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraMatrix
 import NLS.MKdV.MiuraAbsolutelyContinuousEigenfunction
@@ -4233,11 +4236,46 @@ private def mkdvNLSAuditPrefixes67 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraEigenfunction,
 ]
 
+private def mkdvNLSAuditPrefixes68 : Array Lean.Name := #[
+  `NLS.KdV.hillSobolevEigenspace,
+  `NLS.KdV.mem_hillSobolevEigenspace,
+  `NLS.KdV.hillL2EigenspaceToOriginal,
+  `NLS.KdV.hillL2EigenspaceToOriginal_bijective,
+  `NLS.KdV.hillL2EigenspaceOriginalEquiv,
+  `NLS.KdV.finrank_hillSobolevEigenspace_eq_original,
+  `_private.NLS.KdV.HillL2EigenspaceEquiv,
+  `NLS.MKdV.sobolevMiuraHillPotential_factorization,
+  `NLS.MKdV.sobolevMiuraHillPotential_original,
+  `NLS.MKdV.miuraH2EigenspaceEquiv,
+  `NLS.MKdV.finrank_miuraH2Eigenspace,
+  `NLS.MKdV.finiteDimensional_miuraH2Eigenspace,
+  `_private.NLS.MKdV.MiuraH2Eigenspace,
+  `NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_nonzero,
+  `NLS.Articles.MKdVNLSHierarchies.lemma3_independent_eigenfunctions_iff,
+  `NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_endpoints,
+  `_private.NLS.Articles.MKdVNLSHierarchies.GeometricMultiplicity,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65, mkdvNLSAuditPrefixes66, mkdvNLSAuditPrefixes67] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65, mkdvNLSAuditPrefixes66, mkdvNLSAuditPrefixes67, mkdvNLSAuditPrefixes68] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.KdV.hillSobolevEigenspace,
+    ``NLS.KdV.mem_hillSobolevEigenspace,
+    ``NLS.KdV.hillL2EigenspaceToOriginal,
+    ``NLS.KdV.hillL2EigenspaceToOriginal_bijective,
+    ``NLS.KdV.hillL2EigenspaceOriginalEquiv,
+    ``NLS.KdV.finrank_hillSobolevEigenspace_eq_original,
+    ``NLS.MKdV.sobolevMiuraHillPotential_factorization,
+    ``NLS.MKdV.sobolevMiuraHillPotential_original,
+    ``NLS.MKdV.miuraH2EigenspaceEquiv,
+    ``NLS.MKdV.finrank_miuraH2Eigenspace,
+    ``NLS.MKdV.finiteDimensional_miuraH2Eigenspace,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_nonzero,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma3_independent_eigenfunctions_iff,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma3_geometric_multiplicity_endpoints,
+
     ``NLS.MKdV.physicalMiuraFundamentalMatrix,
     ``NLS.MKdV.miuraPositionGauge,
     ``NLS.MKdV.miuraPaperGauge,

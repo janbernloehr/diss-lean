@@ -6825,3 +6825,6 @@ import NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraMatrix
 import NLS.MKdV.MiuraAbsolutelyContinuousEigenfunction
 import NLS.MKdV.MiuraTransformedColumns
 import NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraEigenfunction
+import NLS.KdV.HillL2EigenspaceEquiv
+import NLS.MKdV.MiuraH2Eigenspace
+import NLS.Articles.MKdVNLSHierarchies.GeometricMultiplicity

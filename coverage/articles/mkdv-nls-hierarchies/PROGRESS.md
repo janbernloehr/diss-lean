@@ -3613,3 +3613,33 @@ is claimed. Evidence is in physical-miura-validation.json.
 Seven more complete source passages have correspondence reviews. All 123
 assertion records and 241 source passages remain in the ledger. Whole-paper
 semantic decomposition and proof coverage remain in progress.
+
+
+## 2026-11-07 — Full geometric multiplicities in Lemma 3
+
+The entire named Lemma3 is complete. An explicit linear equivalence compares
+the full original H1 Dirac eigenspace with the actual H2 Hill eigenspace.
+The weak Miura potential is identified with the unchanged actual L2 potential
+coefficient by coefficient; full H2 regularity proves surjectivity. Both
+geometric dimensions and the existence of two independent eigenfunctions
+are proved, without treating analytic zero orders as geometric multiplicities.
+
+The result holds for all complex H1 sources and nonzero frequencies. Strict
+positivity applies it at both real endpoints for every n>=1, including closed
+gaps and zero-mean sources. Existing exact ground, indexed squared endpoint,
+gap-image and collapse identities finish the statement. No zero-frequency
+eigenspace equivalence is asserted.
+
+Three strict modules add 10 theorems and 4 definitions. Both transitive
+audits pass: 13,558 article declarations and auxiliaries; 76,795 combined NLS
+declarations. Only propext, Classical.choice and Quot.sound are permitted.
+All 9,163 frozen inputs, 1,181 reused checker-prefix outputs and 9,089
+source-verified incoming compiled modules retain their hashes. Default limits
+and linters are unchanged; no fresh full repository rebuild is claimed.
+Evidence is in geometric-multiplicity-validation.json.
+
+Four additional complete source passages, including the entire Lemma3 proof,
+have correspondence reviews. The ledger retains all 124 assertion records
+and 241 source passages. Whole-paper semantic decomposition and proof coverage
+remain in progress; the completion gate still rejects 73 open assertions
+and 192 open passages.
