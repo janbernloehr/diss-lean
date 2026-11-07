@@ -2080,6 +2080,17 @@ import NLS.Articles.KdVPseudomeasures.SourceDirichletFractionalPower
 import NLS.Articles.KdVPseudomeasures.SourceDirichletAppendixC4
 import NLS.Articles.KdVPseudomeasures.SourceLemmaC4
 import NLS.Articles.KdVPseudomeasures.OriginalHillNonnegativeSobolevEquiv
+import NLS.FunctionalAnalysis.LocalRealizationBound
+import NLS.SequenceSpaces.FractionalMiuraRecovery
+import NLS.KdV.HillMiuraFractionalAnalytic
+import NLS.KdV.HillMiuraThirdOrderLift
+import NLS.KdV.HillMiuraFullFractionalLift
+import NLS.KdV.HillRotatedDiracFractionalRegularity
+import NLS.KdV.HillRotatedDiracFractionalWeight
+import NLS.ZakharovShabat.SourceWeightedSignedTerminal
+import NLS.ZakharovShabat.SourceFractionalHillTerminal
+import NLS.KdV.HillFractionalSpectralCore
+import NLS.KdV.HillFractionalNativeMap
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -12095,3 +12106,49 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNonnegativeSobolevEquiv
 #print axioms NLS.Articles.KdVPseudomeasures.hillNonnegativeSobolevSourceInclusion
 #print axioms NLS.Articles.KdVPseudomeasures.hillNonnegativeSobolevSourceInclusion_apply
 #print axioms NLS.Articles.KdVPseudomeasures.exists_hillNonnegativeSobolevEquiv
+#print axioms NLS.FunctionalAnalysis.exists_local_realization_on_ball
+#print axioms NLS.l2ToNegativeSobolev
+#print axioms NLS.l2ToNegativeSobolev_apply
+#print axioms NLS.miuraThirdToFourThirds
+#print axioms NLS.miuraThirdToFourThirds_apply
+#print axioms NLS.miuraThirdL2Product
+#print axioms NLS.miuraThirdL2Product_apply
+#print axioms NLS.analyticAt_miuraThirdL2Product
+#print axioms NLS.fractionalMiuraRecovery
+#print axioms NLS.fractionalMiuraRecovery_apply
+#print axioms NLS.analyticAt_fractionalMiuraRecovery
+#print axioms NLS.fractionalMiuraRecovery_eq_of_equation
+#print axioms NLS.KdV.HillHminusMiuraChart.fractionalLift
+#print axioms NLS.KdV.HillHminusMiuraChart.exists_local_fractionalLift_bound
+#print axioms NLS.KdV.HillHminusMiuraChart.fractionalLift_analytic_and_coefficients
+#print axioms NLS.KdV.HillHminusMiuraChart.thirdOrderLift
+#print axioms NLS.KdV.HillHminusMiuraChart.thirdOrderLift_analytic_and_coefficients
+#print axioms NLS.KdV.HillHminusMiuraChart.fullFractionalLift
+#print axioms NLS.KdV.HillHminusMiuraChart.thirdOrderLift_miura_equation
+#print axioms NLS.KdV.HillHminusMiuraChart.fullFractionalLift_analytic_and_coefficients
+#print axioms NLS.KdV.HillHminusMiuraActionBall.fractionalChart
+#print axioms NLS.KdV.HillProductEquationPatch.rotatedDiracFractionalLift
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_rotatedDiracFractionalLift
+#print axioms NLS.KdV.HillProductEquationPatch.rotatedDiracFractionalLift_coefficients
+#print axioms NLS.KdV.fractionalDiracWeightCoordinates
+#print axioms NLS.KdV.fractionalDiracWeightCoordinates_fst
+#print axioms NLS.KdV.fractionalDiracWeightCoordinates_snd
+#print axioms NLS.KdV.normalizedWeightedSource_realType_of_decode_realType
+#print axioms NLS.KdV.HillProductEquationPatch.rotatedDiracFractionalWeightCoordinates
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_rotatedDiracFractionalWeightCoordinates
+#print axioms NLS.KdV.HillProductEquationPatch.rotatedDiracFractionalWeightCoordinates_decode
+#print axioms NLS.KdV.HillProductEquationPatch.rotatedDiracFractionalWeightCoordinates_real
+#print axioms NLS.ZakharovShabat.normalizedWeightedSignedTerminal
+#print axioms NLS.ZakharovShabat.exists_local_weighted_signedTerminal_bound
+#print axioms NLS.ZakharovShabat.exists_local_normalizedWeightedSignedTerminal_analytic
+#print axioms NLS.ZakharovShabat.fractionalHillTerminal_symbol_bound
+#print axioms NLS.ZakharovShabat.fractionalHillTerminalCLM
+#print axioms NLS.ZakharovShabat.fractionalHillTerminalCLM_apply
+#print axioms NLS.ZakharovShabat.sourceFractionalHillTerminal
+#print axioms NLS.ZakharovShabat.sourceFractionalHillTerminal_apply_of_terminal
+#print axioms NLS.ZakharovShabat.exists_local_sourceFractionalHillTerminal_analytic
+#print axioms NLS.KdV.HillProductEquationPatch.fractionalSpectralCore
+#print axioms NLS.KdV.HillProductEquationPatch.exists_retained_fractionalSpectralCore_analytic
+#print axioms NLS.KdV.HillProductEquationPatch.fractionalNativeMap
+#print axioms NLS.KdV.HillProductEquationPatch.exists_retained_fractionalNativeMap_analytic
+#print axioms NLS.KdV.exists_hillFractionalNativeMap_analytic

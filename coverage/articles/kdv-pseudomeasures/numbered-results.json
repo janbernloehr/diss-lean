@@ -508,7 +508,7 @@
       "line": 1795,
       "statement": "Theorem 3.1 ([10, 15]) There exists a complex neighborhood W of H0−1 within\n  −1                                   −1/2\nH0,C  and an analytic map Φ : W → h0,C , q 7→ (zn (q))n∈Z with the following\nproperties:\n                                                     R1\n  (i) Φ is canonical in the sense that {zn , z−n } = 0 ∂u zn ∂x ∂u z−n dx = i for\n      all n ⩾ 1, whereas all other brackets between coordinate functions vanish.\n                                                                                s+1/2\n (ii) For any s ⩾ −1, the restriction Φ|H0s is a map Φ|H0s : H0s → h0                   which\n      is a bianalytic diffeomorphism.\n\n(iii) The KdV Hamiltonian H ◦ Φ−1 , expressed in the new variables, is defined\n          3/2\n      on h0 and depends on the action variables alone. In fact, it is a real\n      analytic function of the actions on the positive quadrant ℓ3,1\n                                                                 + (N),\n\n            ℓ3,1\n                                                     X\n             + (N) := {(In )n⩾1 : In ⩾ 0 ∀ n ⩾ 1,        n3 In < ∞}. ⋊",
       "status": "partial",
-      "comparison": "The genuine canonical H-minus-one Birkhoff map and all integer Sobolev diffeomorphisms are proved. In addition, every NONNEGATIVE REAL Sobolev order s>=0 now has the actual canonical analytic equivalence H^s to signed h^(s+1/2) and its analytic inverse, with exact coefficient agreement. The proof restricts the proved integer one-smoothing defect to each intermediate Hilbert scale, and does not assume fractional inverse regularity. Part (iii) is fully proved on a single ambient neighborhood of the entire original weighted positive action cone. The remaining part (ii) gap is the strict negative fractional interval -1<s<0; neither the integer ladder nor the nonnegative result claims that interval.",
+      "comparison": "The genuine canonical H-minus-one Birkhoff map and all integer Sobolev diffeomorphisms are proved. Every NONNEGATIVE REAL order s>=0 now has the actual canonical analytic equivalence H^s to signed h^(s+1/2) and its analytic inverse, with exact coefficient agreement, by restriction of the integer one-smoothing defect. For every -1<s<0 the SAME actual full native complex map now has a strong analytic h^(s+1/2) realization near every real H^s input; all physical Miura coefficients, signed terminals, normalized amplitude and complete on-/off-index phases are retained. Part (iii) is fully proved on one ambient neighborhood of the entire original positive weighted action cone. The remaining part (ii) gap is GLOBAL INVERSE REGULARITY AND INVERSE ANALYTICITY in -1<s<0; the forward fractional realization alone does not prove a diffeomorphism.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/OriginalHillGlobalNativeInverse.lean",
         "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerRegularity.lean",
@@ -517,14 +517,16 @@
         "NLS/Articles/KdVPseudomeasures/SourceTheorem31Hamiltonian.lean",
         "NLS/Articles/KdVPseudomeasures/SourceH1Actions.lean",
         "NLS/Articles/KdVPseudomeasures/SourceHamiltonianActionDescent.lean",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillNonnegativeSobolevEquiv.lean"
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNonnegativeSobolevEquiv.lean",
+        "NLS/KdV/HillFractionalNativeMap.lean"
       ],
       "declarations": [
         "NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_iii",
         "NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_iii_complex",
         "NLS.Articles.KdVPseudomeasures.sourceH1CanonicalActions_apply",
         "NLS.Articles.KdVPseudomeasures.sourceH1CanonicalActions_mem_positive",
-        "NLS.Articles.KdVPseudomeasures.exists_hillNonnegativeSobolevEquiv"
+        "NLS.Articles.KdVPseudomeasures.exists_hillNonnegativeSobolevEquiv",
+        "NLS.KdV.exists_hillFractionalNativeMap_analytic"
       ],
       "source_page": 28,
       "statement_sha256": "b343852282463f953e3857c764999d3cb5148f3e2ebd395bbe06b711ac946bcc",
@@ -536,7 +538,8 @@
         "NLS/Articles/KdVPseudomeasures/SourceTheorem31Hamiltonian.lean": "92d9f46b032aca4a3f6d89d034de4504351429590ee5f408c1dbca1a3dc0ee7c",
         "NLS/Articles/KdVPseudomeasures/SourceH1Actions.lean": "adb1d5affbc9fdbe66888d88b65f107ef46562bb5867ec64df21da3eebfb86ce",
         "NLS/Articles/KdVPseudomeasures/SourceHamiltonianActionDescent.lean": "61b941b31416e905911f5d8ec26b471c0a5a77f8127bee21be3419538057d980",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillNonnegativeSobolevEquiv.lean": "dd7e990bf67641446e6288e97e22d214eec68c5869a894a7abcc50a070742a5f"
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNonnegativeSobolevEquiv.lean": "dd7e990bf67641446e6288e97e22d214eec68c5869a894a7abcc50a070742a5f",
+        "NLS/KdV/HillFractionalNativeMap.lean": "242f28b899609a1863c388fbbab132a48f4ff89b51d084db79bbacdcd248f17b"
       }
     },
     {

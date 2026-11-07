@@ -2114,6 +2114,17 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SourceDirichletAppendixC4',
     'NLS.Articles.KdVPseudomeasures.SourceLemmaC4',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNonnegativeSobolevEquiv',
+    'NLS.FunctionalAnalysis.LocalRealizationBound',
+    'NLS.SequenceSpaces.FractionalMiuraRecovery',
+    'NLS.KdV.HillMiuraFractionalAnalytic',
+    'NLS.KdV.HillMiuraThirdOrderLift',
+    'NLS.KdV.HillMiuraFullFractionalLift',
+    'NLS.KdV.HillRotatedDiracFractionalRegularity',
+    'NLS.KdV.HillRotatedDiracFractionalWeight',
+    'NLS.ZakharovShabat.SourceWeightedSignedTerminal',
+    'NLS.ZakharovShabat.SourceFractionalHillTerminal',
+    'NLS.KdV.HillFractionalSpectralCore',
+    'NLS.KdV.HillFractionalNativeMap',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
