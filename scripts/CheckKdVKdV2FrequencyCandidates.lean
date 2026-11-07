@@ -1,3 +1,19 @@
+import NLS.SequenceSpaces.WeightedConeCalibrationUniqueness
+import NLS.Articles.KdVKdV2Frequencies.StrongWeakFrequencyCompatibility
+import NLS.Articles.KdVKdV2Frequencies.Theorem12StrongRegularities
+import NLS.Articles.KdVKdV2Frequencies.RawEllOneKdVFrequency
+import NLS.SequenceSpaces.NonnegativeSobolevActionInclusion
+import NLS.Articles.KdVKdV2Frequencies.Theorem12StrongEndpoint
+import NLS.Articles.KdVKdV2Frequencies.StrongPairHilbertFrequencyCalibration
+import NLS.KdV.HillNativePairInverse
+import NLS.Articles.KdVKdV2Frequencies.RawPairArnoldActions
+import NLS.SequenceSpaces.AnalyticPacketPullback
+import NLS.Articles.KdVKdV2Frequencies.StrongLpFrequencyPairCharts
+import NLS.KdV.HillRawPairFiniteSupport
+import NLS.Articles.KdVKdV2Frequencies.RawPairPhysicalRecovery
+import NLS.Articles.KdVKdV2Frequencies.StrongLpFrequencyPairInvariance
+import NLS.Articles.KdVKdV2Frequencies.GlobalStrongLpFrequencyActionCharts
+import NLS.Articles.KdVKdV2Frequencies.RawActionHilbertInclusion
 import NLS.SequenceSpaces.WeightedCubicFrequencyPacket
 import NLS.ZakharovShabat.SourceSobolevSecondMomentPacket
 import NLS.KdV.PhysicalSobolevLpFrequencyChart
@@ -5707,7 +5723,23 @@ private def kdvFrequencyAuditChunk25 : Array Lean.Name := #[
   `NLS.SequenceSpaces.WeightedCubicFrequencyPacket,
   `NLS.ZakharovShabat.SourceSobolevSecondMomentPacket,
   `NLS.KdV.PhysicalSobolevLpFrequencyChart,
-  `NLS.Articles.KdVKdV2Frequencies.NativeSobolevLpKdVFrequencyGerms
+  `NLS.Articles.KdVKdV2Frequencies.NativeSobolevLpKdVFrequencyGerms,
+  `NLS.KdV.HillNativePairInverse,
+  `NLS.Articles.KdVKdV2Frequencies.RawPairArnoldActions,
+  `NLS.SequenceSpaces.AnalyticPacketPullback,
+  `NLS.Articles.KdVKdV2Frequencies.StrongLpFrequencyPairCharts,
+  `NLS.KdV.HillRawPairFiniteSupport,
+  `NLS.Articles.KdVKdV2Frequencies.RawPairPhysicalRecovery,
+  `NLS.Articles.KdVKdV2Frequencies.StrongLpFrequencyPairInvariance,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalStrongLpFrequencyActionCharts,
+  `NLS.Articles.KdVKdV2Frequencies.RawActionHilbertInclusion,
+  `NLS.Articles.KdVKdV2Frequencies.StrongPairHilbertFrequencyCalibration,
+  `NLS.Articles.KdVKdV2Frequencies.RawEllOneKdVFrequency,
+  `NLS.SequenceSpaces.NonnegativeSobolevActionInclusion,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12StrongEndpoint,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12StrongRegularities,
+  `NLS.SequenceSpaces.WeightedConeCalibrationUniqueness,
+  `NLS.Articles.KdVKdV2Frequencies.StrongWeakFrequencyCompatibility
 ]
 
 open Lean in

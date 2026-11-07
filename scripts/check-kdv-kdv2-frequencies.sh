@@ -3259,6 +3259,22 @@ modules=(
   NLS/ZakharovShabat/SourceSobolevSecondMomentPacket
   NLS/KdV/PhysicalSobolevLpFrequencyChart
   NLS/Articles/KdVKdV2Frequencies/NativeSobolevLpKdVFrequencyGerms
+  NLS/KdV/HillNativePairInverse
+  NLS/Articles/KdVKdV2Frequencies/RawPairArnoldActions
+  NLS/SequenceSpaces/AnalyticPacketPullback
+  NLS/Articles/KdVKdV2Frequencies/StrongLpFrequencyPairCharts
+  NLS/KdV/HillRawPairFiniteSupport
+  NLS/Articles/KdVKdV2Frequencies/RawPairPhysicalRecovery
+  NLS/Articles/KdVKdV2Frequencies/StrongLpFrequencyPairInvariance
+  NLS/Articles/KdVKdV2Frequencies/GlobalStrongLpFrequencyActionCharts
+  NLS/Articles/KdVKdV2Frequencies/RawActionHilbertInclusion
+  NLS/Articles/KdVKdV2Frequencies/StrongPairHilbertFrequencyCalibration
+  NLS/Articles/KdVKdV2Frequencies/RawEllOneKdVFrequency
+  NLS/SequenceSpaces/NonnegativeSobolevActionInclusion
+  NLS/Articles/KdVKdV2Frequencies/Theorem12StrongEndpoint
+  NLS/Articles/KdVKdV2Frequencies/Theorem12StrongRegularities
+  NLS/SequenceSpaces/WeightedConeCalibrationUniqueness
+  NLS/Articles/KdVKdV2Frequencies/StrongWeakFrequencyCompatibility
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
