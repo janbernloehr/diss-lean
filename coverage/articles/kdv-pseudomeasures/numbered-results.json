@@ -199,23 +199,30 @@
       "line": 749,
       "statement": "Lemma 2.9 Suppose q ∈ Fℓw,s,∞ 0,C   with −1/2 < s ⩽ 0 and w ∈ M. Then for\nany n ⩾ ns , with ns as in Corollary 2.5, the coefficients an (λ) and b±n (λ) are\nanalytic functions on the strip Sn and for any λ ∈ Sn\n\n        (i)    |an (λ)| ⩽ 2kTn (λ)kw,s,∞;±n kqks,∞ ,\n                              s\n       (ii)    w2n h2ni |b±n (λ) − q±2n | ⩽ 2kTn (λ)kw,s,∞;±n kqkw,s,∞ .           ⋊",
       "status": "partial",
-      "comparison": "Joint analytic determinant and operator families are now proved on the complete printed strip above a uniform cutoff, as well as the earlier weighted off-diagonal error estimates. The sharp arbitrary-weight diagonal inequality with the unweighted potential norm still needs proof; no weighted norm is silently substituted.",
+      "comparison": "Joint analyticity and the literal actual shifted-operator-norm inequalities in part (ii), for both physical couplings and all source weights, are proved on the complete printed strip above one uniform norm-ball cutoff. Earlier explicit-majorant estimates remain available. Part (i), with the arbitrary-weight operator norm but the unweighted potential norm, remains unproved; neither norm is silently replaced.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean",
         "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean",
-        "NLS/KdV/PseudomeasureWideAnalytic.lean"
+        "NLS/KdV/PseudomeasureWideAnalytic.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma29OperatorNorm.lean",
+        "NLS/KdV/PseudomeasureWideOperatorErrors.lean"
       ],
       "declarations": [
         "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_unit",
         "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_weighted_errors",
-        "NLS.Articles.KdVPseudomeasures.analyticAt_sourceWeightedEndpointEntries"
+        "NLS.Articles.KdVPseudomeasures.analyticAt_sourceWeightedEndpointEntries",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_ii",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_sourceWeightedEndpointEntries_wide",
+        "NLS.KdV.wideEndpointCouplings_opNorm_errors"
       ],
       "source_page": 12,
       "statement_sha256": "43334f3bebe620cf97903cbb1a116accf0a511f7df9fbb937d078e30d18b398b",
       "provider_sha256": {
         "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean": "36579b70fe03c0416a74ae900a9844090bd2689e788b43bd398eeff66d4d1841",
         "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean": "dc7f287262a33e797f9717ddbcc7fabc8dee068b99aae811c515db6dfcb600cd",
-        "NLS/KdV/PseudomeasureWideAnalytic.lean": "5e81e812e6de4d23bb10864663f44076d1c37f5ac9ac66694afd34256814cc07"
+        "NLS/KdV/PseudomeasureWideAnalytic.lean": "5e81e812e6de4d23bb10864663f44076d1c37f5ac9ac66694afd34256814cc07",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma29OperatorNorm.lean": "e5e4510ebd69409a8e262097f5800cf16b52e8b7a3925b3acd10d1b0bec4192a",
+        "NLS/KdV/PseudomeasureWideOperatorErrors.lean": "2500f0bbedfdff0a619d9df145a2f658746c994aa3602dd352abd0611bc4d0b3"
       }
     },
     {
@@ -501,21 +508,32 @@
       "line": 1795,
       "statement": "Theorem 3.1 ([10, 15]) There exists a complex neighborhood W of H0−1 within\n  −1                                   −1/2\nH0,C  and an analytic map Φ : W → h0,C , q 7→ (zn (q))n∈Z with the following\nproperties:\n                                                     R1\n  (i) Φ is canonical in the sense that {zn , z−n } = 0 ∂u zn ∂x ∂u z−n dx = i for\n      all n ⩾ 1, whereas all other brackets between coordinate functions vanish.\n                                                                                s+1/2\n (ii) For any s ⩾ −1, the restriction Φ|H0s is a map Φ|H0s : H0s → h0                   which\n      is a bianalytic diffeomorphism.\n\n(iii) The KdV Hamiltonian H ◦ Φ−1 , expressed in the new variables, is defined\n          3/2\n      on h0 and depends on the action variables alone. In fact, it is a real\n      analytic function of the actions on the positive quadrant ℓ3,1\n                                                                 + (N),\n\n            ℓ3,1\n                                                     X\n             + (N) := {(In )n⩾1 : In ⩾ 0 ∀ n ⩾ 1,        n3 In < ∞}. ⋊",
       "status": "partial",
-      "comparison": "Canonical H-minus-one Birkhoff map and integer regularity foundations exist. The complete cited theorem quantifies over every real Sobolev exponent s >= -1 and asserts Hamiltonian analyticity on the full action quadrant; no complete single statement/evidence match recorded.",
+      "comparison": "The genuine canonical H-minus-one Birkhoff map and integer Sobolev diffeomorphisms are proved. Part (iii) is now fully proved: the actual physical H1 Hamiltonian has a single holomorphic extension near the ENTIRE positive n^3-weighted l1 action quadrant, including all zero actions, with literal canonical products and a real analytic real-valued restriction. The remaining gap is part (ii) at every noninteger real Sobolev order s >= -1; integer orders do not establish that quantifier.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/OriginalHillGlobalNativeInverse.lean",
         "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerRegularity.lean",
         "NLS/Articles/KdVPseudomeasures/OriginalHillH1PhysicalFrequency.lean",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeGardnerCanonicality.lean"
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeGardnerCanonicality.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem31Hamiltonian.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceH1Actions.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceHamiltonianActionDescent.lean"
       ],
-      "declarations": [],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_iii",
+        "NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_iii_complex",
+        "NLS.Articles.KdVPseudomeasures.sourceH1CanonicalActions_apply",
+        "NLS.Articles.KdVPseudomeasures.sourceH1CanonicalActions_mem_positive"
+      ],
       "source_page": 28,
       "statement_sha256": "b343852282463f953e3857c764999d3cb5148f3e2ebd395bbe06b711ac946bcc",
       "provider_sha256": {
         "NLS/Articles/KdVPseudomeasures/OriginalHillGlobalNativeInverse.lean": "51f97989acd7bfabcb033c1a0b64406c33580944d4712e546cb3c02ab095b8c3",
         "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerRegularity.lean": "593f9c3d891e8036ebd764da763857ba2f2abd1180112a19160c55c16f1c5b51",
         "NLS/Articles/KdVPseudomeasures/OriginalHillH1PhysicalFrequency.lean": "f12a1086f5861c49831b0d35ed73413b30874a93f7f626e6de31f5ae912d10e0",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeGardnerCanonicality.lean": "8614c206b02cc8b5a0a11da5f7ea3143d7e9f50abfa4f0918644d3f7ba76b864"
+        "NLS/Articles/KdVPseudomeasures/OriginalHillNativeGardnerCanonicality.lean": "8614c206b02cc8b5a0a11da5f7ea3143d7e9f50abfa4f0918644d3f7ba76b864",
+        "NLS/Articles/KdVPseudomeasures/SourceTheorem31Hamiltonian.lean": "92d9f46b032aca4a3f6d89d034de4504351429590ee5f408c1dbca1a3dc0ee7c",
+        "NLS/Articles/KdVPseudomeasures/SourceH1Actions.lean": "adb1d5affbc9fdbe66888d88b65f107ef46562bb5867ec64df21da3eebfb86ce",
+        "NLS/Articles/KdVPseudomeasures/SourceHamiltonianActionDescent.lean": "61b941b31416e905911f5d8ec26b471c0a5a77f8127bee21be3419538057d980"
       }
     },
     {
@@ -1048,17 +1066,22 @@
       "line": 2846,
       "statement": "Lemma C.4 Assume that q ∈ H0,C        with kqkt,2 < ∞ and −1 < t < −1/2.\nThen there exist constants Ct > 0 (only depending on t) and N ′ ⩾ N (with N\nas above) so that for any n ⩾ N the following holds\n                                         (log n)2\n  (i)          kPn,q − Pn kL2 →L∞ ⩽ Ct            kqkt,2\n                                          n1−|t|\n                                                (log n)2\n (ii)          kΠn,q − Πn kL2 (I)→L∞ (I) ⩽ Ct            kqkt,2\n                                                 n1−|t|\nThe constant N ′ can be chosen locally uniformly in q.            ⋊",
       "status": "partial",
-      "comparison": "Actual periodic/Dirichlet Riesz convergence is proved on endpoint inputs. The printed arbitrary H^t potential, -1<t<-1/2, exact log-squared rate and locally uniform cutoff require a full statement match; endpoint restrictions do not count as full coverage.",
+      "comparison": "Part (i) is fully proved for ALL original complex H^t inputs in -1<t<-1/2, on the literal source circles, with the exact squared-log rate and one norm-ball cutoff. The periodic estimate is actually stronger by one logarithm. General complex H-minus-one Dirichlet projection convergence is also proved, but part (ii) still lacks the quantitative H^t squared-log bound. Earlier wording that restricted both parts to endpoint inputs was inaccurate and is retracted.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/PeriodicProjectionConvergence.lean",
-        "NLS/Articles/KdVPseudomeasures/EndpointDirichletProjectionConvergence.lean"
+        "NLS/Articles/KdVPseudomeasures/EndpointDirichletProjectionConvergence.lean",
+        "NLS/Articles/KdVPseudomeasures/OriginalDirichletProjectionConvergence.lean"
       ],
-      "declarations": [],
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourcePeriodicProjection_appendixC4",
+        "NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicProjection_log_bound"
+      ],
       "source_page": 43,
       "statement_sha256": "bcf6f6005aae7fc231d06313640d652c20949a8a693ab7c1a29dc54ccf0743d9",
       "provider_sha256": {
         "NLS/Articles/KdVPseudomeasures/PeriodicProjectionConvergence.lean": "f774cea248279388120d573a3bdf6cf67a85922a0f694a68d8bd79d4aec57403",
-        "NLS/Articles/KdVPseudomeasures/EndpointDirichletProjectionConvergence.lean": "6876199d948cce3289397a7e54493fe31696e0c04c884a6962b8f4ac3f603deb"
+        "NLS/Articles/KdVPseudomeasures/EndpointDirichletProjectionConvergence.lean": "6876199d948cce3289397a7e54493fe31696e0c04c884a6962b8f4ac3f603deb",
+        "NLS/Articles/KdVPseudomeasures/OriginalDirichletProjectionConvergence.lean": "b8cfa37d002378c928c6b2c573460f05acc50d75a70f0d9e2c85cea63b0c674b"
       }
     },
     {

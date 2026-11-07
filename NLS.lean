@@ -6652,3 +6652,11 @@ import NLS.Articles.KdVPseudomeasures.SourceThreshold36StripBounds
 import NLS.KdV.WideStripCouplingCauchy
 import NLS.Articles.KdVPseudomeasures.SourceComplexCouplingComparison
 import NLS.Articles.KdVPseudomeasures.SourceLemma220
+import NLS.KdV.PseudomeasureWideOperatorErrors
+import NLS.Articles.KdVPseudomeasures.SourceLemma29OperatorNorm
+import NLS.SequenceSpaces.RealPairComplexification
+import NLS.SequenceSpaces.RealAnalyticScalarActionDescent
+import NLS.SequenceSpaces.SignedRealCartesianParameters
+import NLS.Articles.KdVPseudomeasures.SourceHamiltonianActionDescent
+import NLS.Articles.KdVPseudomeasures.SourceH1Actions
+import NLS.Articles.KdVPseudomeasures.SourceTheorem31Hamiltonian

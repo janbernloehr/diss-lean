@@ -2081,6 +2081,14 @@ modules = [
     'NLS.KdV.WideStripCouplingCauchy',
     'NLS.Articles.KdVPseudomeasures.SourceComplexCouplingComparison',
     'NLS.Articles.KdVPseudomeasures.SourceLemma220',
+    'NLS.KdV.PseudomeasureWideOperatorErrors',
+    'NLS.Articles.KdVPseudomeasures.SourceLemma29OperatorNorm',
+    'NLS.SequenceSpaces.RealPairComplexification',
+    'NLS.SequenceSpaces.RealAnalyticScalarActionDescent',
+    'NLS.SequenceSpaces.SignedRealCartesianParameters',
+    'NLS.Articles.KdVPseudomeasures.SourceHamiltonianActionDescent',
+    'NLS.Articles.KdVPseudomeasures.SourceH1Actions',
+    'NLS.Articles.KdVPseudomeasures.SourceTheorem31Hamiltonian',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

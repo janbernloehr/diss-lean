@@ -2047,6 +2047,14 @@ import NLS.Articles.KdVPseudomeasures.SourceThreshold36StripBounds
 import NLS.KdV.WideStripCouplingCauchy
 import NLS.Articles.KdVPseudomeasures.SourceComplexCouplingComparison
 import NLS.Articles.KdVPseudomeasures.SourceLemma220
+import NLS.KdV.PseudomeasureWideOperatorErrors
+import NLS.Articles.KdVPseudomeasures.SourceLemma29OperatorNorm
+import NLS.SequenceSpaces.RealPairComplexification
+import NLS.SequenceSpaces.RealAnalyticScalarActionDescent
+import NLS.SequenceSpaces.SignedRealCartesianParameters
+import NLS.Articles.KdVPseudomeasures.SourceHamiltonianActionDescent
+import NLS.Articles.KdVPseudomeasures.SourceH1Actions
+import NLS.Articles.KdVPseudomeasures.SourceTheorem31Hamiltonian
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11952,3 +11960,46 @@ import NLS.Articles.KdVPseudomeasures.SourceLemma220
 #print axioms NLS.Articles.KdVPseudomeasures.source_exists_threshold36
 #print axioms NLS.Articles.KdVPseudomeasures.SourceLemma220OmegaComparison
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_20
+#print axioms NLS.KdV.wideEndpointShiftedOperatorNorm
+#print axioms NLS.KdV.negativeShiftedNorm_wideEndpointHillPerturbation_opNorm_le
+#print axioms NLS.KdV.wideEndpointHillCorrectedMode_coefficient_opNorm_error
+#print axioms NLS.KdV.wideEndpointCouplings_opNorm_errors
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_sourceWeightedEndpointEntries_wide
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_9_ii
+#print axioms NLS.Coeff.imCLM
+#print axioms NLS.Coeff.norm_reCLM_le
+#print axioms NLS.Coeff.norm_imCLM_le
+#print axioms NLS.Coeff.realPairContractiveComplexification
+#print axioms NLS.Coeff.real_pairAction_eq_of_quadraticActions_eq
+#print axioms NLS.Coeff.exists_analytic_scalar_action_factor_of_real_analytic
+#print axioms NLS.WeightedCoeff.signedCartesianDecoder
+#print axioms NLS.WeightedCoeff.signedCartesianDecoder_positive
+#print axioms NLS.WeightedCoeff.signedCartesianDecoder_negative
+#print axioms NLS.WeightedCoeff.signedCartesianDecoder_zero
+#print axioms NLS.WeightedCoeff.signedCartesianDecoder_real
+#print axioms NLS.WeightedCoeff.signedRealCartesianDecoder
+#print axioms NLS.WeightedCoeff.signedRealCartesianDecoder_coe
+#print axioms NLS.WeightedCoeff.signedRealCartesianDecoder_products
+#print axioms NLS.WeightedCoeff.signedRealCartesianParameters
+#print axioms NLS.WeightedCoeff.signedRealCartesianParameters_fst
+#print axioms NLS.WeightedCoeff.signedRealCartesianParameters_snd
+#print axioms NLS.WeightedCoeff.signedRealCartesianDecoder_parameters
+#print axioms NLS.WeightedCoeff.signedRealCartesianParameters_actions
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1CartesianHamiltonian
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_sourceH1CartesianHamiltonian
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1CartesianHamiltonian_action_invariant
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1Hamiltonian_normalized_action_extension
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1NormalizedActions
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1NormalizedActions_apply
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1NormalizedActions_positive
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1NormalizedActions_neg
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1NormalizedActions_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1_action_weight_square
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1CanonicalActions
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1CanonicalActions_apply
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1CanonicalActions_normalized
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1NormalizedActions_nonnegative
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1PositiveActions
+#print axioms NLS.Articles.KdVPseudomeasures.sourceH1CanonicalActions_mem_positive
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_iii_complex
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem3_1_iii
