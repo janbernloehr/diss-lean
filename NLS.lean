@@ -6844,3 +6844,8 @@ import NLS.ZakharovShabat.SobolevHierarchyReflectionIntegral
 import NLS.ZakharovShabat.SobolevHierarchyReflectionDerivative
 import NLS.ZakharovShabat.SobolevHierarchyReflectionNonlocal
 import NLS.Articles.MKdVNLSHierarchies.SharpNonlocalHamiltonianReflection
+import NLS.FunctionalAnalysis.CompactUnitIntervalPrimitive
+import NLS.FunctionalAnalysis.WeakDerivativeUnitIntervalConstant
+import NLS.FunctionalAnalysis.WeakDerivativeUnitIntervalAC
+import NLS.Fourier.WeakIntervalH2
+import NLS.Articles.MKdVNLSHierarchies.WeakIntervalMiura

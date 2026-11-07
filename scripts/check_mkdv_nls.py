@@ -1236,6 +1236,11 @@ modules = [
     'NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean',
     'NLS/ZakharovShabat/SobolevHierarchyReflectionNonlocal.lean',
     'NLS/Articles/MKdVNLSHierarchies/SharpNonlocalHamiltonianReflection.lean',
+    'NLS/FunctionalAnalysis/CompactUnitIntervalPrimitive.lean',
+    'NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalConstant.lean',
+    'NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalAC.lean',
+    'NLS/Fourier/WeakIntervalH2.lean',
+    'NLS/Articles/MKdVNLSHierarchies/WeakIntervalMiura.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

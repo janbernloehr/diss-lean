@@ -1,3 +1,8 @@
+import NLS.FunctionalAnalysis.CompactUnitIntervalPrimitive
+import NLS.FunctionalAnalysis.WeakDerivativeUnitIntervalConstant
+import NLS.FunctionalAnalysis.WeakDerivativeUnitIntervalAC
+import NLS.Fourier.WeakIntervalH2
+import NLS.Articles.MKdVNLSHierarchies.WeakIntervalMiura
 import NLS.FunctionalAnalysis.CurveL2IntegralGraph
 import NLS.ZakharovShabat.SobolevHierarchyPhysicalFields
 import NLS.ZakharovShabat.SobolevHierarchyNonlocalFields
@@ -4376,11 +4381,38 @@ private def mkdvNLSAuditPrefixes70 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.SharpNonlocalHamiltonianReflection,
 ]
 
+private def mkdvNLSAuditPrefixes71 : Array Lean.Name := #[
+  `NLS.FunctionalAnalysis.exists_compact_unitInterval_primitive,
+  `_private.NLS.FunctionalAnalysis.CompactUnitIntervalPrimitive,
+  `NLS.FunctionalAnalysis.ae_eq_const_on_unitInterval_of_weak_derivative_zero,
+  `_private.NLS.FunctionalAnalysis.WeakDerivativeUnitIntervalConstant,
+  `NLS.FunctionalAnalysis.HasUnitIntervalWeakDerivative,
+  `NLS.FunctionalAnalysis.exists_unitInterval_ac_of_weak_derivative,
+  `_private.NLS.FunctionalAnalysis.WeakDerivativeUnitIntervalAC,
+  `NLS.Fourier.WeakIntervalH2,
+  `NLS.Fourier.WeakIntervalH2.exists_ac_representative,
+  `NLS.Fourier.WeakIntervalH2.exists_ac_derivative_representative,
+  `NLS.Fourier.WeakIntervalH2.continuous_representative_unique,
+  `_private.NLS.Fourier.WeakIntervalH2,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_weak_intervalH2,
+  `_private.NLS.Articles.MKdVNLSHierarchies.WeakIntervalMiura,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65, mkdvNLSAuditPrefixes66, mkdvNLSAuditPrefixes67, mkdvNLSAuditPrefixes68, mkdvNLSAuditPrefixes69, mkdvNLSAuditPrefixes70] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65, mkdvNLSAuditPrefixes66, mkdvNLSAuditPrefixes67, mkdvNLSAuditPrefixes68, mkdvNLSAuditPrefixes69, mkdvNLSAuditPrefixes70, mkdvNLSAuditPrefixes71] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.FunctionalAnalysis.exists_compact_unitInterval_primitive,
+    ``NLS.FunctionalAnalysis.ae_eq_const_on_unitInterval_of_weak_derivative_zero,
+    ``NLS.FunctionalAnalysis.HasUnitIntervalWeakDerivative,
+    ``NLS.FunctionalAnalysis.exists_unitInterval_ac_of_weak_derivative,
+    ``NLS.Fourier.WeakIntervalH2,
+    ``NLS.Fourier.WeakIntervalH2.exists_ac_representative,
+    ``NLS.Fourier.WeakIntervalH2.exists_ac_derivative_representative,
+    ``NLS.Fourier.WeakIntervalH2.continuous_representative_unique,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_weak_intervalH2,
+
     ``NLS.FunctionalAnalysis.unitCurve_regular_of_L2_integral_graph,
     ``NLS.ZakharovShabat.sobolevNLSHierarchyContinuousGradient,
     ``NLS.ZakharovShabat.sobolevNLSHierarchyCircleGradient,

@@ -38151,10 +38151,10 @@
   },
   "merge_validation": "merge-validation.json",
   "latest_full_paper_progress": {
-    "report": "sharp-nonlocal-validation.json",
+    "report": "weak-interval-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
     "date": "2026-11-07",
-    "note": "Earlier fields are historical; current scope and validation provenance are in sharp-nonlocal-validation.json."
+    "note": "Earlier fields are historical; current scope and validation provenance are in weak-interval-validation.json."
   }
 }

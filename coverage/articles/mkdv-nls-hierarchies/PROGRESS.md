@@ -3705,3 +3705,34 @@ Lemma2 native interval H2-to-AC bridge, full Lemma10 and remaining proof or
 background claims stay open. The completion gate still rejects 72 assertion
 records and 187 passages; whole-paper semantic decomposition and proof
 coverage remain in progress.
+
+
+## 2026-11-07 — Lemma 2 on the full weak interval H2 input domain
+
+The native interval input is the full weak H2 graph of actual Lebesgue L2
+classes for value and its two distributional derivatives. Only compact
+interior tests occur in its definition. A zero-mean test has a compact
+interior primitive; vanishing weak derivative implies constancy AE. Subtracting
+the actual weak-derivative integral constructs continuous AC representatives
+for both the value and its first derivative class. Continuous value
+representatives agree on the closed interval. No endpoint matching or
+periodicity is assumed. The original weak ZS eigen-equation transfers to
+that constructed physical representative, giving the scalar Miura equation
+at lambda^2 including lambda=0. The independently constructed physical
+matrix identities keep their necessary nonzero-lambda condition.
+
+Full named Lemma2 is now covered. Its printed proof energy and fundamental
+basis qualifications remain recorded corrections. Nine additional source
+passages have exact-domain correspondence reviews. Seventeen of eighteen
+named statements are covered; full Lemma10 and all other remaining claims
+stay open. The completion gate correctly rejects 69 assertion records and
+178 passages; semantic decomposition and whole-paper coverage remain in progress.
+
+Five modules add seven theorems, one definition and one weak-domain structure.
+Fresh strict compilation and both transitive audits pass: 13,724 article
+declarations/auxiliaries and 76,961 combined NLS declarations. All 9,184 frozen
+inputs, 1,200 reused checker-prefix outputs and 9,089 source-verified incoming
+compiled modules retain their hashes. Only propext, Classical.choice and
+Quot.sound are allowed. Default limits and linters are unchanged. This reuses
+validated dependencies and is not a fresh whole-repository source rebuild.
+Evidence: weak-interval-validation.json.
