@@ -1,3 +1,16 @@
+import NLS.Articles.KdVKdV2Frequencies.Theorem12CompactDerivative
+import NLS.Articles.KdVKdV2Frequencies.OriginalPositiveFrequencyCompact
+import NLS.SequenceSpaces.WeightedPositiveActionSpace
+import NLS.SequenceSpaces.CompactCorrectedDerivativeConjugate
+import NLS.Articles.KdVKdV2Frequencies.GlobalCorrectedFrequencyCompact
+import NLS.SequenceSpaces.CompactAnalyticLinearTransport
+import NLS.Articles.KdVKdV2Frequencies.DiagonalGlobalFrequencyAgreement
+import NLS.Articles.KdVKdV2Frequencies.DiagonalActionRealizationNormalization
+import NLS.Articles.KdVKdV2Frequencies.CorrectedFrequencyCompactGerms
+import NLS.SequenceSpaces.WeightedPositiveActionModel
+import NLS.Articles.KdVKdV2Frequencies.CompatibleDiagonalPairCharts
+import NLS.Articles.KdVKdV2Frequencies.OffDiagonalPairOriginalEstimates
+import NLS.KdV.PhysicalOffDiagonalFrequencyEstimates
 import NLS.Articles.KdVKdV2Frequencies.DiagonalActionCompactFactory
 import NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalActionCompact
 import NLS.Articles.KdVKdV2Frequencies.DiagonalRawActionCompact
@@ -5912,7 +5925,20 @@ private def kdvFrequencyAuditChunk26 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.DiagonalOriginalActionRecovery,
   `NLS.Articles.KdVKdV2Frequencies.DiagonalRawActionCompact,
   `NLS.Articles.KdVKdV2Frequencies.DiagonalActionCompactFactory,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalActionCompact
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalActionCompact,
+  `NLS.KdV.PhysicalOffDiagonalFrequencyEstimates,
+  `NLS.Articles.KdVKdV2Frequencies.OffDiagonalPairOriginalEstimates,
+  `NLS.SequenceSpaces.WeightedPositiveActionModel,
+  `NLS.Articles.KdVKdV2Frequencies.CompatibleDiagonalPairCharts,
+  `NLS.SequenceSpaces.CompactAnalyticLinearTransport,
+  `NLS.Articles.KdVKdV2Frequencies.DiagonalGlobalFrequencyAgreement,
+  `NLS.Articles.KdVKdV2Frequencies.DiagonalActionRealizationNormalization,
+  `NLS.Articles.KdVKdV2Frequencies.CorrectedFrequencyCompactGerms,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalCorrectedFrequencyCompact,
+  `NLS.SequenceSpaces.WeightedPositiveActionSpace,
+  `NLS.SequenceSpaces.CompactCorrectedDerivativeConjugate,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalPositiveFrequencyCompact,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12CompactDerivative
 ]
 
 open Lean in

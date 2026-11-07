@@ -3360,6 +3360,19 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/DiagonalRawActionCompact
   NLS/Articles/KdVKdV2Frequencies/DiagonalActionCompactFactory
   NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalActionCompact
+  NLS/KdV/PhysicalOffDiagonalFrequencyEstimates
+  NLS/Articles/KdVKdV2Frequencies/OffDiagonalPairOriginalEstimates
+  NLS/SequenceSpaces/WeightedPositiveActionModel
+  NLS/Articles/KdVKdV2Frequencies/CompatibleDiagonalPairCharts
+  NLS/SequenceSpaces/CompactAnalyticLinearTransport
+  NLS/Articles/KdVKdV2Frequencies/DiagonalGlobalFrequencyAgreement
+  NLS/Articles/KdVKdV2Frequencies/DiagonalActionRealizationNormalization
+  NLS/Articles/KdVKdV2Frequencies/CorrectedFrequencyCompactGerms
+  NLS/Articles/KdVKdV2Frequencies/GlobalCorrectedFrequencyCompact
+  NLS/SequenceSpaces/WeightedPositiveActionSpace
+  NLS/SequenceSpaces/CompactCorrectedDerivativeConjugate
+  NLS/Articles/KdVKdV2Frequencies/OriginalPositiveFrequencyCompact
+  NLS/Articles/KdVKdV2Frequencies/Theorem12CompactDerivative
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
