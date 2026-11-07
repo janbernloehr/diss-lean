@@ -210,7 +210,7 @@ theorem SourcePsiGapSolution.unique_of_realType
     a = b := by
   let S : Set (realTypeSourceLocus p) :=
     {x | SourcePsiGapMultiple hp hp1 n x.val}
-  letI : ConnectedSpace (realTypeSourceLocus p) :=
+  let : ConnectedSpace (realTypeSourceLocus p) :=
     Subtype.connectedSpace (isConnected_realTypeSourceLocus (p := p))
   have hSclopen : IsClopen S :=
     ⟨isClosed_sourcePsiGapMultiple_on_realType hp hp1 n,

@@ -1,0 +1,156 @@
+{
+  "source": "arXiv:1610.00278v1 Lemma3.9/5.7 frequency dependencies for main1.1,1.3,5.9; actual even moment ingredients of arXiv:1605.06690v1 Section3.1 Lemmas3.1-3.2",
+  "reference": "https://arxiv.org/html/1605.06690v1#S3.SS1",
+  "status": "Actual local rough Hill centered primitive moments: common-source Banach analyticity for every row/gap/even order, exact original energy-loop integrals, primitive sheet normalization and vanishing at original collapsed gaps/actions.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-centered-frequency-moments-map.json",
+    "actual_rough_centered_even_moments_DEFINED_as_original_contour_integrals": true,
+    "one_common_complex_source_neighborhood_BEFORE_all_rows_gaps_even_orders_PROVED": true,
+    "full_Banach_source_analyticity_of_EVERY_local_moment_PROVED": true,
+    "exact_zeroth_moment_two_pi_Kronecker_normalization_PROVED": true,
+    "same_patch_moments_independent_of_primitive_ambient_neighborhood_PROVED": true,
+    "actual_original_Hminus_primitive_sheet_and_log_period_integrand_identity_PROVED": true,
+    "literal_original_energy_loop_moment_identity_with_exact_two_z_Jacobian_PROVED": true,
+    "ALL_positive_even_moments_vanish_at_ORIGINAL_collapsed_gap_or_action_PROVED": true,
+    "moment_factory_at_EVERY_original_real_mean_zero_rough_source_PROVED": true,
+    "global_moment_independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "absolute_convergent_analytic_infinite_weighted_second_moment_series_PROVED": false,
+    "actual_H1_Hamiltonian_frequency_eq_weighted_moment_series_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "HillCenteredPrimitiveMoments defines ACTUAL even centered moments on the positive original-frequency contours of a verified original rough Hill product patch. The integrand is the EXISTING full centered Dirac primitive raised to2*d times the ACTUAL pulled-back normalized Hill differential, retaining its2*z energy Jacobian. One OPEN complex source neighborhood supports EVERY numerator row n, EVERY positive gap m and EVERY even order2*d simultaneously, and each moment is FULL Banach-source analytic there. The zero-order moment has the EXACT normalization moment/(2*pi)=Kronecker(m,n).",
+    "The same actual moments are independent of the ambient primitive neighborhood on overlaps within the SAME native product patch: actual spectral chart compatibility identifies full primitives before contour integration. At EVERY real rough source of EVERY patch a genuine full Cauchy family and common open source neighborhood are constructed. No supplied abstract moment values or analytic certificates remain as assumptions in the existence theorem.",
+    "HillPrimitiveMomentsPhysical identifies the integrand at EVERY positive-real-part nonreal frequency with the ACTUAL original free-normalized Hminus Hill primitive centered by i*pi*m, to the same even power, times2*z*canonicalPsi divided by the ACTUAL original physical continued root. The existing genuine rough Miura sheet theorem fixes BOTH root sign and logarithm period. The same moment equals the contour integral of the actual FILLED centered square, including selected endpoint collisions.",
+    "HillPrimitiveMomentsEnergyContour proves the moments are LITERAL integrals over the EXISTING ORIGINAL Hill energy loops, using the canonical normalized energy differential. The quadratic change E=z^2-c retains its EXACT2*z Jacobian on the ENTIRE contour, including its real band points. This reuses the actual energy-sheet pullback and is not an approximate or replacement contour identity.",
+    "HillPrimitiveMomentsClosedGap proves EVERY positive even-order moment vanishes when the actual selected Miura gap collapses, including the diagonal n=m row, by the actual filled-square zero and exact standard-root cosine-average formula. For real original rough sources it proves the SAME zero conclusion directly from vanishing of the ORIGINAL canonical Hill gap square or ORIGINAL canonical Hill action. The original-to-Miura collapse implication is proved using the genuine full gap-label identity and strict positivity of the positive Dirac endpoints; no extra collapse assumption is retained.",
+    "OriginalHillFrequencyMoments exports the common-neighborhood existence theorem at EVERY actual original real mean-zero rough Fourier source, with one neighborhood before ALL rows/gaps/even orders. These are verified spectral ingredients for the rough KdV frequency extension. GLOBAL independence between different Miura/product patches, absolute convergence and analytic assembly of the infinite weighted second-moment series, and equality of that series with the genuine H1 Hamiltonian frequency remain OPEN. No rough frequency extension or original KdV evolution is claimed.",
+    "Main1.4 remains PROVED and freshly recompiled. Main1.1,1.3,5.1,5.9 remain UNPROVED. Actual globally real-analytic H1 frequencies including collapse and their exact free normalization remain proved. Rough frequency series/identification, ACTUAL original KdV evolution/every-smooth-approximation convergence, literal Wiener ell-one spectral estimates and universal actual numerator scalar remain OPEN. Appendix B B.1(i)-(iv) remains COMPLETE. Goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.KdV.HillProductEquationPatch.momentSource",
+    "NLS.KdV.HillProductEquationPatch.momentSource_open",
+    "NLS.KdV.HillProductEquationPatch.momentJointDomain",
+    "NLS.KdV.HillProductEquationPatch.momentJointDomain_open",
+    "NLS.KdV.HillProductEquationPatch.centeredMomentIntegrand",
+    "NLS.KdV.HillProductEquationPatch.centeredMoment",
+    "NLS.KdV.HillProductEquationPatch.analytic_centeredMomentIntegrand",
+    "NLS.KdV.HillProductEquationPatch.analytic_centeredMoment",
+    "NLS.KdV.HillProductEquationPatch.centeredMoment_zero_order",
+    "NLS.KdV.HillProductEquationPatch.exists_centeredMoment_neighborhood",
+    "NLS.KdV.HillProductEquationPatch.centeredMoment_independent_primitive_neighborhood",
+    "NLS.KdV.HillProductEquationPatch.centeredMomentIntegrand_eq_physical",
+    "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_square_contour",
+    "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_zero_of_selected_gap_zero",
+    "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_zero_of_original_gapSquare_zero",
+    "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_zero_of_original_action_zero",
+    "NLS.KdV.HillProductEquationPatch.centeredEnergySquare",
+    "NLS.KdV.HillProductEquationPatch.centeredMoment_eq_original_energy_contour",
+    "NLS.Articles.KdVPseudomeasures.originalHill_exists_frequency_moment_neighborhood"
+  ],
+  "files": [
+    "NLS/KdV/HillCenteredPrimitiveMoments.lean",
+    "NLS/KdV/HillPrimitiveMomentsPhysical.lean",
+    "NLS/KdV/HillPrimitiveMomentsClosedGap.lean",
+    "NLS/KdV/HillPrimitiveMomentsEnergyContour.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFrequencyMoments.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "c2fb5a6b89151e185b48d99768a3f1ccfd5c0421",
+    "baseline_modules": 1758,
+    "baseline_non_audit_sources_verified_unchanged": 1757,
+    "new_modules_compiled": 5,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily",
+        "source": "NLS/ZakharovShabat/SourceFullAbelianUniformCauchyFamily.lean",
+        "source_sha256": "e8408808497ed0de6d3e57d4c9935521c511060ef16b6abca64bfc75e018fa3b"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianSquare",
+        "source": "NLS/ZakharovShabat/SourceFullAbelianSquare.lean",
+        "source_sha256": "0721bcd6f4bee211c83c48686f47b3bf138d18d504e880f5f04718624b941124"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceStandardRootOriginalLocalPeriod",
+        "source": "NLS/ZakharovShabat/SourceStandardRootOriginalLocalPeriod.lean",
+        "source_sha256": "fb988f3638599d55ea0efe3d0656f09c6326d106bc1ab5caf877369bbbbc6d97"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.KdV.HillHminusOneMiuraSheets",
+        "source": "NLS/KdV/HillHminusOneMiuraSheets.lean",
+        "source_sha256": "371b2bbfd726bb336c6ebb9ec25a1ce12af5130a9f12e3f5185d501857e56858",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillAbelianPhysicalEnergyPullback",
+        "source": "NLS/KdV/HillAbelianPhysicalEnergyPullback.lean",
+        "source_sha256": "a7ff30d51d943e0027c4507a71a213782999ada2ff68b33fa22f32bfd7711ee9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillCanonicalEnergyLoopPeriods",
+        "source": "NLS/KdV/HillCanonicalEnergyLoopPeriods.lean",
+        "source_sha256": "3e0eb52477a72b520bb3648dc200516b2ef1f3ae85e966fdf159f525d6d1888d",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAtZero",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyAtZero.lean",
+        "source_sha256": "55ca5d3716bba770274395135b331b65f852f05eb184753d87c3cb36a2e55c1d",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1763,
+    "audited_declarations": 8812,
+    "theorems": 7420,
+    "definitions": 1392,
+    "new_theorems": 14,
+    "new_definitions": 5,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-rough-centered-frequency-moments.log",
+    "log_sha256": "42c2c70158bfdcfa05dadc30d1c73faaa79f6c67537ed83f5d2e0fc7c7acf73c"
+  },
+  "remaining_obligations": [
+    "Use the NOW CONSTRUCTED ACTUAL original rough centered second moments to prove the frequency representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for genuine finite-gap H1 inputs, and pass it to all H1 by the verified strong finite-gap approximation. Prove independence across different Miura/product patches and local absolute sequence bounds/analytic assembly of the weighted moment series on the rough Hminus domain. Current moment values are actual local contour integrals, analytic on one common neighborhood and vanish at every original collapsed gap/action; these proved facts must not be replaced by assumed moment data.",
+    "Prove the SAME genuine frequencies extend to the original rough signed H^(-1/2) domain with required estimates, then ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity, establishing main1.1,1.3,5.9. ENTIRE-domain H1 real analyticity including collapse, FULL literal action-gradient normalization, action-fiber invariance and exact freefrequency(2*pi*n)^3 remain PROVED. An arbitrary frequency flow or indexed action flow is not physical KdV.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms remain necessary dependencies, not substitutes. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

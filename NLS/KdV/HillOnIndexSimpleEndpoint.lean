@@ -1,0 +1,59 @@
+import NLS.KdV.HillOnIndexNativeBranchSystem
+
+/-! The ORIGINAL left endpoint of every REAL OPEN Hill gap is a simple
+native radicand zero. The proof differentiates the actual omitted-root
+factorization; every low gap and arbitrary Miura shift is retained. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.ComplexAnalysis NLS.ZakharovShabat
+open scoped ENNReal Classical
+namespace NLS.KdV.HillProductEquationPatch
+
+theorem native_radicand_deriv_at_real_open_gap_left_ne_zero (P : HillProductEquationPatch) (n : ℕ+)
+    (q : PeriodOneHminusOne) (hq : q ∈ P.source) (hr : IsRealPeriodOneHminusOne q)
+    (hgap : hillHminusCanonicalGapSquare n q ≠ 0) :
+    deriv (hillHminusRadicand q) (hillHminusLabels q hr (2*(n:ℕ)-1):ℂ) ≠ 0 := by
+  let l := canonicalPeriodicLeft (by norm_num) (by norm_num) (periodOnePotential (P.sourcePsi q)) (periodOnePotential_mem _) ((n:ℕ):ℤ)
+  let τ := sourceStandardRootMidpoint (by norm_num) (by norm_num) (P.sourcePsi q) ((n:ℕ):ℤ)
+  let d := (canonicalPeriodicGap (by norm_num) (by norm_num) (periodOnePotential (P.sourcePsi q)) (periodOnePotential_mem _) ((n:ℕ):ℤ))^2/4
+  let Q := quadraticRootPolynomial τ d
+  let K : ℂ → ℂ := fun z => P.abelianGapRootMultiplier n (z,q)
+  let c : ℂ := P.parent.parent.miuraBall.actionBall.shift
+  have hlD : l ∈ ball (P.centers ((n:ℕ):ℤ):ℂ) (P.radii ((n:ℕ):ℤ)) := by
+    rw [← P.discs_eq]
+    exact P.isolating.gap (P.sourcePsi q) (P.image q hq).2 _ (left_mem_segment ℝ _ _)
+  have hK : AnalyticAt ℂ K l := (P.analytic_abelianGapRootMultiplier n (l,q) ⟨hlD,hq⟩).comp
+    (f := fun z : ℂ => (z,q)) (analyticAt_id.prod analyticAt_const)
+  have hKne : K l ≠ 0 := P.abelianGapRootMultiplier_ne_zero n (l,q) ⟨hlD,hq⟩
+  have hQzero : Q l = 0 := by
+    change sourceAngularSelectedPolynomial (by norm_num) (by norm_num) (P.sourcePsi q) ((n:ℕ):ℤ) l = 0
+    rw [sourceAngularSelectedPolynomial_eq_endpoint_factor]
+    change (l-l)*_ = 0
+    rw [sub_self,zero_mul]
+  have hfreqgap : canonicalPeriodicGap (by norm_num) (by norm_num) (periodOnePotential (P.sourcePsi q)) (periodOnePotential_mem _) ((n:ℕ):ℤ) ≠ 0 := by
+    intro he
+    have h := P.frequency_half_gap_square_ne_zero_of_original_gap n q (P.real_mem_physicalDirichletSource q hq hr) hgap
+    apply h
+    rw [he,zero_pow (by decide : (2:ℕ) ≠ 0),zero_div]
+  have hQprime : 2*(l-τ) ≠ 0 := by
+    have he : 2*(l-τ) = -canonicalPeriodicGap (by norm_num) (by norm_num) (periodOnePotential (P.sourcePsi q)) (periodOnePotential_mem _) ((n:ℕ):ℤ) := by
+      dsimp only [l,τ,sourceStandardRootMidpoint,canonicalPeriodicMidpoint,canonicalPeriodicGap]
+      ring
+    rw [he]
+    exact neg_ne_zero.mpr hfreqgap
+  have hQd : HasDerivAt Q (2*(l-τ)) l := hasDerivAt_quadraticRootPolynomial τ d l
+  have hd := (hK.differentiableAt.hasDerivAt.pow 2).fun_mul hQd
+  have hd' : HasDerivAt (fun z => K z^2*Q z) (K l^2*(2*(l-τ))) l := by
+    simpa only [Pi.pow_apply,hQzero,mul_zero,zero_add] using hd
+  have hnear : (fun z => hillHminusRadicand q (z^2-c)) =ᶠ[𝓝 l] (fun z => K z^2*Q z) := by
+    filter_upwards [isOpen_ball.mem_nhds hlD] with z hz
+    exact (P.abelianGapRootMultiplier_sq_mul_polynomial n (z,q) ⟨hz,hq⟩).symm
+  have hnative := hd'.congr_of_eventuallyEq hnear
+  have hD := (analyticOnNhd_hillHminusRadicand q (l^2-c) (mem_univ _)).differentiableAt.hasDerivAt.comp l
+    (((hasDerivAt_id l).pow 2).sub_const c)
+  have he := hnative.unique hD
+  have hend : l^2-c = (hillHminusLabels q hr (2*(n:ℕ)-1):ℂ) := (P.abelian_gap_endpoint_energies_eq_original_labels n q hq hr).1
+  intro hzero
+  rw [hend,hzero,zero_mul] at he
+  exact mul_ne_zero (pow_ne_zero 2 hKne) hQprime he
+
+end NLS.KdV.HillProductEquationPatch

@@ -1,0 +1,76 @@
+{
+  "source": "arXiv:1610.00278v1, Appendix B; compact trajectory consequences of the already proved Lemma B.1(i)-(iv)",
+  "date": "2026-11-03",
+  "status": "proved",
+  "modules": [
+    "NLS/FunctionalAnalysis/CompactCoordinateEquicontinuity.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarAscoli.lean"
+  ],
+  "declarations": [
+    "NLS.equicontinuousAt_observable_of_coordinates",
+    "NLS.equicontinuous_observable_of_coordinates",
+    "NLS.exists_subseq_tendstoUniformly_of_equicontinuous_compact_range",
+    "NLS.Articles.KdVPseudomeasures.equicontinuous_sourceLowerDistribution_iff_coefficients",
+    "NLS.Articles.KdVPseudomeasures.equicontinuous_sourceLowerDistribution_iff_other_lower",
+    "NLS.Articles.KdVPseudomeasures.exists_sourceTrajectory_subseq_all_lower_of_equicontinuous_coefficients",
+    "NLS.Articles.KdVPseudomeasures.exists_sourceTrajectory_subseq_tendsto_of_equicontinuous_coefficients",
+    "NLS.Articles.KdVPseudomeasures.equicontinuous_originalHminusOne_iff_coefficients",
+    "NLS.Articles.KdVPseudomeasures.isCompact_sourceTrajectory_of_isClosed_equicontinuous_coefficients",
+    "NLS.Articles.KdVPseudomeasures.isCompact_closure_sourceTrajectory_of_equicontinuous_coefficients"
+  ],
+  "results": [
+    "On a compact target, equicontinuity of each continuous separating metric-valued coordinate implies equicontinuity of every continuous metric-valued observable. Finitely many coordinates are chosen for each requested tolerance.",
+    "Under a common original endpoint norm bound, equicontinuity of each original Fourier coefficient is equivalent to equicontinuity in every admissible original lower finite-p norm. The choice of admissible lower norm does not change this property.",
+    "On any compact topological time domain, a sequence of endpoint-bounded physical families with equicontinuous Fourier coefficients has one strictly increasing subsequence and one continuous physical weak-star limit trajectory in the same original endpoint norm ball. The subsequence is selected before every admissible lower norm exponent and converges uniformly in every such norm.",
+    "For continuous trajectories in the original endpoint norm ball, that same subsequence converges in the compact-open physical weak-star topology, and the limit lies in the closure of the original sequence range.",
+    "Every closed Fourier-equicontinuous family of continuous trajectories in a common original endpoint norm ball is compact in the compact-open weak-star topology. Every such equicontinuous family has compact closure.",
+    "In the article range, Fourier equicontinuity is equivalent to equicontinuity in the norm of the identical original physical H-minus-one distributions."
+  ],
+  "qualifications": [
+    "The common bound is the exact original FourierLebesgueSpace(2,-r,infinity) norm for all family indices and all times. No bound in a substituted norm is assumed.",
+    "Lower spaces retain finite p>=1 and the exact strict threshold 1<(-r-t)*p.toReal. All real r are allowed; the H-minus-one specialization retains AdmissiblePredualOrder.",
+    "Equicontinuity is imposed separately for each Fourier mode. No single modulus across all modes is required. A common endpoint bound alone does not imply equicontinuity or trajectory compactness.",
+    "The time domain is compact for uniform subsequence extraction and trajectory compactness. Equicontinuity equivalences hold on arbitrary topological domains.",
+    "The physical limit retains the entire original distribution, reality, mean zero and physical period one, with the same endpoint bound. No endpoint norm convergence or global metrizability of the unbounded weak-star space is asserted.",
+    "These are Appendix B consequences. They add no remaining source B.1 obligations and do not prove a KdV flow, the missing uniform isospectral bound, source Theorem 2.2(iii), or any still-open main theorem."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "8fd085c21296348499c01a7dcb044817a0b5c1ed",
+    "baseline_sources_verified_unchanged": true,
+    "new_modules_compiled": 2,
+    "modules_in_exact_inventory": 387,
+    "audited_declarations": 3060,
+    "theorems": 2513,
+    "definitions": 547,
+    "new_theorems": 10,
+    "new_definitions": 0,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-ascoli.log"
+  },
+  "private_mathlib_dependency": {
+    "module": "Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli",
+    "reference_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "source_sha256": "999b52f01003c82317fb85b709121ef2fe1be026ff5a08fbfb7e6dfe0fa99cc1",
+    "reason": "No prebuilt reference olean exists for this pinned source; the checker compiles it into its private Mathlib overlay.",
+    "reference_source_and_build_read_only": true
+  },
+  "output_sha256": {
+    "NLS/FunctionalAnalysis/CompactCoordinateEquicontinuity.lean": "27dc98a7f7d63593cd1db3c64ed4442bcf759e78d5f5fec0af6eab1c55befb9e",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarAscoli.lean": "6390aa1577b92909e6e19e71d389dae70a359800020586f414361f2c8b8145ea"
+  },
+  "canonical_checkout_written": false,
+  "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "main_theorems_verified": false,
+  "workspace_decision": "pending; all edits and compiler outputs remain in the private folder",
+  "preserved_work_in_progress": "Unrelated HermitianDualPositivity.lean is preserved and excluded from the validated module inventory. Its pending checker is saved in work/check-kdv-pseudomeasures-pending-rayleigh.py. No push attempted."
+}

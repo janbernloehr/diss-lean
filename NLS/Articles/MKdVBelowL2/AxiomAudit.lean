@@ -1117,7 +1117,7 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthScalarImageFlow_of_smooth
 #print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_unique_smooth_approximation
 
-#print axioms NLS.FunctionalAnalysis.hasDerivAt_continuousMap_of_pointwise
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_continuousMap_of_pointwise_real_banach
 #print axioms NLS.FunctionalAnalysis.continuous_periodic_lift_family
 #print axioms NLS.FunctionalAnalysis.periodicContinuousFamily
 #print axioms NLS.FunctionalAnalysis.periodicContinuousFamily_apply

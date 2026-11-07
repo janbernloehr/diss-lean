@@ -1,13 +1,11 @@
 import NLS.Poisson.GardnerHamiltonianDirection
 
+/-! Every actual native Gardner Hamiltonian direction has zero raw
+constant Fourier coefficient, independently of its cotangent. -/
 noncomputable section
-set_option autoImplicit false
 open Complex
 open scoped ENNReal
-
 namespace NLS.Poisson
-
-
 
 theorem gardnerHamiltonianDirection_zero_mode
     (L : WeightedCoeff (Weight.sobolev (-1)) 2 →L[ℂ] ℂ) :

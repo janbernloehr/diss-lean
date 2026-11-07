@@ -1,0 +1,97 @@
+{
+  "source": "arXiv:1610.00278v1, Section2 original singular Hill spectral labels; free baseline required for the central count and global label offset.",
+  "main_theorems_verified": false,
+  "modules": [
+    "NLS/KdV/SingularHillFreeSpectrum.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean"
+  ],
+  "declarations": [
+    "NLS.KdV.freeHillValue_eq_iff",
+    "NLS.KdV.singularHill_zero_eigen_iff",
+    "NLS.KdV.singularHill_zero_eigen_iff_support",
+    "NLS.KdV.singularHillFreeMode",
+    "NLS.KdV.singularHillFreeMode_coefficient",
+    "NLS.KdV.singularHillFreeMode_apply",
+    "NLS.KdV.singularHillFreeMode_ne_zero",
+    "NLS.KdV.singularHillFreeMode_eigen",
+    "NLS.KdV.singularHill_zero_eigenvalue_iff",
+    "NLS.KdV.singularHillFreeConstantMap",
+    "NLS.KdV.singularHillFreeConstantMap_bijective",
+    "NLS.KdV.finrank_singularHillEigenspace_zero",
+    "NLS.KdV.singularHillFreePairMap",
+    "NLS.KdV.singularHillFreePairMap_bijective",
+    "NLS.KdV.finrank_singularHillEigenspace_free",
+    "NLS.KdV.strictMono_freeHillValues",
+    "NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_zero",
+    "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_zero_mem_iff",
+    "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_zero_zero",
+    "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_zero_free",
+    "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_zero_formula",
+    "NLS.Articles.KdVPseudomeasures.sourceFreeValue_lt_centralEdge_iff",
+    "NLS.Articles.KdVPseudomeasures.mem_sourceCentralSpectrum_zero_iff",
+    "NLS.Articles.KdVPseudomeasures.sourceCentralSpectrum_zero_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceCentralAlgebraicCount_zero"
+  ],
+  "domains": {
+    "potential": "Exactly zero in the original complex endpoint potential space, for every0<=r<1/2.",
+    "operator": "The original full period-two H1 to H-minus-one singular Hill pencil.",
+    "multiplicity": "The finrank of the actual full original physical algebraic root space, using proved native real semisimplicity.",
+    "normalization": "Original physical Fourier modes exp(i*pi*k*x),free values pi^2*k^2.",
+    "central_region": "Re(z)<pi^2*N^2-12N, for every integer N>=2."
+  },
+  "conclusions": {
+    "spectrum": "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_zero_mem_iff",
+    "geometric_zero": "NLS.KdV.finrank_singularHillEigenspace_zero",
+    "geometric_positive": "NLS.KdV.finrank_singularHillEigenspace_free",
+    "actual_multiplicities": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_zero_formula",
+    "finite_central_spectrum": "NLS.Articles.KdVPseudomeasures.sourceCentralSpectrum_zero_eq",
+    "actual_central_count": "NLS.Articles.KdVPseudomeasures.sourceCentralAlgebraicCount_zero"
+  },
+  "results": [
+    "On the entire original period-two H1 domain, the zero-potential eigen-equation is exactly diagonal. A nonzero eigenvector exists exactly at a genuine free value pi^2*n^2, n>=0. No additional free spectral values exist in the original physical endpoint realization.",
+    "Actual physical unit modes are constructed from the original smooth Fourier modes. Scalar amplitudes biject with the full constant eigenspace; two signed amplitudes biject with every full positive free eigenspace. Their complex dimensions are exactly one and two.",
+    "Native real semisimplicity transfers these geometric dimensions to the ACTUAL full physical algebraic multiplicities of the original zero source potential. The complete free multiplicity sequence is one at n=0 and two at every n>=1.",
+    "For N>=2, the already verified central edge pi^2*N^2-12N cuts the actual free spectrum exactly at n<N. The actual finite source central spectrum equals the image of range(N) under n->pi^2*n^2.",
+    "sourceCentralAlgebraicCount_zero proves that the existing sum of ACTUAL original physical algebraic multiplicities in the free central spectrum is exactly2N-1. This is the free baseline; its invariance under a change of original potential remains unproved."
+  ],
+  "qualifications": [
+    "The count2N-1 is proved for the ACTUAL zero-potential central spectrum. It is not asserted for a nonzero potential without a proved invariance theorem.",
+    "The signed positive Fourier modes are independent only for n>=1; the constant mode is treated separately and has multiplicity one.",
+    "Canonical real perturbed labels are now proved in SpectralCanonicalLabels using the downstream actual perturbed count. Source parity, Birkhoff maps, KdV frequencies and actual KdV flow remain open."
+  ],
+  "remaining": [
+    "Prove original periodic/antiperiodic boundary-condition parity and any required low ground-state simplicity/interlacing. Global real canonical enumeration, actual multiplicities, cutoff independence and full real unit-extra-weight direct gap regularity are now proved.",
+    "Complete physical Dirichlet comparisons, complex-potential and arbitrary extra-weight spectral estimates as needed for the full source Theorem2.1, endpoint inverse regularity and original norm-bounded isospectral sets.",
+    "Construct the original Birkhoff maps with global bijectivity, real analyticity and the stated weak-star homeomorphisms, and identify the actual H-minus-one smooth-approximation KdV flow.",
+    "Prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses and quantifiers. All remain unproved."
+  ],
+  "validation": {
+    "modules_checked": 109,
+    "audited_declarations": 1089,
+    "theorems": 880,
+    "definitions": 209,
+    "new_theorems": 22,
+    "new_definitions": 3,
+    "fresh_build": true,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "log": ".lake/article-check/logs/validation-free-count.log"
+  },
+  "subsequent_progress": [
+    "The actual original central Riesz range/root-space equality, rank/count equality and EXACT real central algebraic count2n-1 at EVERY sufficiently high separator are now proved,uniformly on original real norm balls. Canonical global slots/parity and main theorem constructions remain open; see spectral-central-count-map.json.",
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-canonical-labels-map.json",
+      "results": [
+        "The actual finite central spectral multiset repeats each native real singular eigenvalue according to its ACTUAL full original physical algebraic multiplicity and has cardinality2N-1. Sorting and appending the actual ordered high pairs produces a global monotone enumeration of the entire original spectrum.",
+        "Every global spectral fiber is finite and its cardinality equals the ACTUAL physical algebraic multiplicity. Intrinsic high-pair uniqueness and monotonicity prove that the entire labeling is independent of cutoff and enumeration choices.",
+        "Canonical sourceHillLabels exhaust the entire original real spectrum, put every sufficiently high actual pair in the exact slots2n-1,2n, and have an actual lowest value at index0, without any ground-state simplicity assertion.",
+        "The full signed canonical real gap sequence, including its finite central prefix, belongs to the genuine endpoint infinity Sobolev space of order-r. One explicit full-gap norm bound is uniform on each exact original real endpoint norm ball, with constants and cutoff chosen before q."
+      ]
+    }
+  ]
+}

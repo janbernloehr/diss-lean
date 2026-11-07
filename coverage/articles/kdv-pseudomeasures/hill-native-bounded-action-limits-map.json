@@ -1,0 +1,192 @@
+{
+  "source": "arXiv:1610.00278v1 actual bounded-source Hill action compactness and native bounded-limit recovery; extended KdV reference Proposition3.1/Lemma8.3 proof dependency",
+  "status": "Prove ACTUAL bounded-source Hill action sequential compactness, bounded native output-limit recovery and an exact compact-preimage norm criterion for native properness. The genuine varying-action compact-preimage norm bound, native onto/properness and ALL FIVE MAIN statements remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-native-bounded-action-limits-map.json",
+    "EVERY_actual_indexed_higher_action_bounded_REAL_L2_coefficient_continuity_PROVED": true,
+    "ACTUAL_Miura_action_factor_2_and_indexed_endpoint_coefficient_continuity_PROVED": true,
+    "uniform_central_Dirac_gap_lower_bound_and_limit_zero_frequency_exclusion_PROVED": true,
+    "explicit_original_mean_zero_normalization_of_real_Miura_limit_PROVED": true,
+    "EVERY_bounded_native_source_sequence_SIMULTANEOUS_actual_action_subsequence_source_PROVED": true,
+    "ENTIRE_original_distribution_domain_original_norm_actual_action_sequential_compactness_PROVED": true,
+    "bounded_source_convergent_NATIVE_OUTPUT_has_ACTUAL_original_preimage_PROVED": true,
+    "WHOLE_bounded_source_sequence_STRONG_Hminus_convergence_from_native_output_convergence_PROVED": true,
+    "actual_native_properness_IFF_bounded_preimages_of_EVERY_compact_target_set_PROVED": true,
+    "full_sourceTheorem1_4_CONDITIONAL_pure_compact_preimage_norm_bound_PROVED": true,
+    "limit_source_asserted_original_weak_limit": false,
+    "actual_L2_scale_global_REAL_ANALYTIC_homeomorphism_and_inverse_PROVED": true,
+    "actual_native_global_injectivity_PROVED": true,
+    "actual_native_compact_target_preimages_norm_bound_PROVED": false,
+    "universal_actual_action_gap_min_lower_bound_PROVED": false,
+    "actual_Hminus_norm_vs_gap_coercivity_PROVED": false,
+    "actual_native_closed_map_PROVED": false,
+    "actual_native_properness_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "SourceHigherActionCoefficientContinuity proves that ALL actual indexed Dirac higher actions preserve bounded real L2 coefficient limits, for EVERY natural spectral-power level and countably generated filter. ONE common isolating circle is constructed for each selected index along ALL eventual interpolation segments; the entire polynomial spectral weight and root normalization are retained, including collapsed gaps.",
+    "HillMiuraCoefficientContinuity transfers this to the ACTUAL indexed Miura actions, with the VERIFIED exact factor2 times the original Dirac level-two action, and to each actual indexed Dirac endpoint. RealCoefficientCompactness supplies REAL L2 coefficient subsequences without imposing a zero mean on the Miura lifts. No generic NLS action is substituted for a Hill action.",
+    "HillMiuraCentralLowerBound proves that a single exterior original Hill shift keeps the selected central Dirac right endpoint at least1 on the entire source norm ball. Bounded coefficient limits preserve that bound. Full original endpoint ordering and reflection then exclude zero Dirac frequency at the limit, without an unproved mean-based spectral criterion. The reverse exact characteristic bridge gives the needed outside-spectrum Hill shift for the limit source.",
+    "HillRealMeanZeroNormalization removes EXACTLY the real constant Fourier coefficient of an arbitrary physical real Hminus source and retains every original nonzero mode. This is necessary after taking a weak Miura limit: its original energy shift need not remain the normalization constant. The proof supplies an ACTUAL mean-zero source and its exact constant decomposition.",
+    "exists_hillReal_canonicalAction_subseq_of_bounded proves: EVERY norm-bounded sequence of genuine physical real mean-zero Hminus sources has ONE subsequence and ONE genuine physical source whose ACTUAL canonical actions are the simultaneous limits at EVERY positive index. Uniform real shifted Miura lifts are selected before all sequence terms; real L2 coefficient compactness, actual higher-action continuity, central zero exclusion and explicit mean normalization prove the result. The resulting source is NOT asserted to be the weak limit of the original potentials.",
+    "originalCanonicalHillAction_subseq_of_bounded exports the SAME actual simultaneous action compactness statement on the ENTIRE original distribution domain, using the ORIGINAL period-two Hminus norm and identical distribution realization. No endpoint-space membership, stronger regularity, supplied compact set or assumed inverse occurs.",
+    "OriginalHillNativeBoundedLimits proves that convergent FULL actual native outputs of norm-bounded original sources have an ACTUAL original preimage: the action subsequence limit matches every target product, and the VERIFIED entire native action-torus image supplies the exact signed output. NOW PROVED native injectivity/open embedding then gives STRONG Hminus convergence of the WHOLE bounded source sequence to that preimage, not merely convergence of actions.",
+    "isProperMap_hillRealSignedMap_iff_bounded_compact_preimages proves the remaining ACTUAL native properness obligation is EXACTLY a norm bound on the preimage of EVERY compact target set. The FULL sourceTheorem1.4 follows CONDITIONAL on this pure norm-bound obligation. The norm bound itself is NOT proved or assumed globally in any unconditional result.",
+    "Source evidence audit: the extended KdV reference Lemma8.3 uses a UNIVERSAL actual action-gap min lower bound and a genuine Hminus norm-versus-gap coercivity estimate (Theorem2.3) to bound L2 approximating preimages. Neither estimate has been verified here. Fixed-isoset compactness, the L2 trace, actual L2 global inverse and local inverses do NOT supply these varying-action bounds. Native onto/closedness/properness and ALL FIVE MAIN remain UNPROVED; goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.exists_periodOneRealL2_coefficientwise_subseq",
+    "NLS.ZakharovShabat.tendsto_sourceHigherActionCircle_of_bounded_coefficientwise",
+    "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_enclosingCircle",
+    "NLS.ZakharovShabat.tendsto_sourceIndexedHigherAction_of_bounded_coefficientwise",
+    "NLS.KdV.bounded_hillMiuraDiagonal",
+    "NLS.KdV.tendsto_hillHminusMiuraIndexedAction_of_bounded_coefficients",
+    "NLS.KdV.tendsto_hillMiuraDiracRight_of_bounded_coefficients",
+    "NLS.KdV.zero_not_mem_hillMiura_spectrum_of_central_right_pos",
+    "NLS.KdV.exists_hillRealMeanZero_normalization",
+    "NLS.KdV.hillMiura_central_right_ge_one_of_shifted_image",
+    "NLS.KdV.shift_outside_of_zero_not_mem_hillMiura_spectrum",
+    "NLS.Articles.KdVPseudomeasures.exists_hillReal_canonicalAction_subseq_of_bounded",
+    "NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_subseq_of_bounded",
+    "NLS.Articles.KdVPseudomeasures.exists_hillReal_preimage_of_bounded_nativeMap_tendsto",
+    "NLS.Articles.KdVPseudomeasures.exists_hillReal_source_limit_of_bounded_nativeMap_tendsto",
+    "NLS.Articles.KdVPseudomeasures.isProperMap_hillRealSignedMap_iff_bounded_compact_preimages",
+    "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4_of_bounded_compact_native_preimages"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/RealCoefficientCompactness.lean",
+    "NLS/ZakharovShabat/SourceHigherActionCoefficientContinuity.lean",
+    "NLS/KdV/HillMiuraCoefficientContinuity.lean",
+    "NLS/KdV/HillRealMeanZeroNormalization.lean",
+    "NLS/KdV/HillMiuraCentralLowerBound.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillBoundedActionCompactness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionSequentialCompactness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeBoundedLimits.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "908e07bb6a848583b038408e8826314c1e761ee9",
+    "baseline_modules": 1665,
+    "baseline_non_audit_sources_verified_unchanged": 1664,
+    "new_modules_compiled": 8,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.CoefficientCompactness",
+        "source": "NLS/SequenceSpaces/CoefficientCompactness.lean",
+        "source_sha256": "c89e1ac9b3990ebb84603d565f8bcd965871c1ea169453cfc04297a26872bce5"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceActionCoefficientContinuity",
+        "source": "NLS/ZakharovShabat/SourceActionCoefficientContinuity.lean",
+        "source_sha256": "250fe0ecb76996ce2ced31a46aaf66bef08f5f8a804f46d8939ea1a7fe3f65d5"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceActionCoefficientCircle",
+        "source": "NLS/ZakharovShabat/SourceActionCoefficientCircle.lean",
+        "source_sha256": "907f6cd759f8dbf534fb9525e15824fb04c1b66cd91408bdcb4c3b2dd1dc321f"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceIndexedHigherActionAnalytic",
+        "source": "NLS/ZakharovShabat/SourceIndexedHigherActionAnalytic.lean",
+        "source_sha256": "da4b313365bd56912772e02e7eeb612fbbb3791c869f08e81cd739009995aca0"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceCanonicalCoefficientContinuity",
+        "source": "NLS/ZakharovShabat/SourceCanonicalCoefficientContinuity.lean",
+        "source_sha256": "9c0472c622a4de494a0079e74f2edbdbf3b8039574c1d9bf80b14a0a7acf5535"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.PeriodOneMiuraUniformRealLift",
+        "source": "NLS/SequenceSpaces/PeriodOneMiuraUniformRealLift.lean",
+        "source_sha256": "dd342a520b9c845f29dced32ee7a58716f8e2cb17a69428a111b02e6bae424c3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillHminusOneCanonicalActions",
+        "source": "NLS/KdV/HillHminusOneCanonicalActions.lean",
+        "source_sha256": "883d1d1b6e5aa70b8d6b17d883e7f9e5e30d2927213446746f08609590ad1c0b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillHminusOneMiuraOutsideShift",
+        "source": "NLS/KdV/HillHminusOneMiuraOutsideShift.lean",
+        "source_sha256": "d41b308fa85e6f821b87f3ecb9005e0b0f066236604e51be93cb7816d85250a4",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.SingularHillSemibounded",
+        "source": "NLS/KdV/SingularHillSemibounded.lean",
+        "source_sha256": "cb97a27a233bc71e0b54f06bc94893a0b91d1d9a7a870e2860bb323784eb0b51",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.MiuraPeriodicReflection",
+        "source": "NLS/KdV/MiuraPeriodicReflection.lean",
+        "source_sha256": "e52ec2758e4115b41476a2472899851abe3da7cfcce22e4657dfd190262dae61",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeTorusImage",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeTorusImage.lean",
+        "source_sha256": "8367dff3e88f962f47fb28f0ea6ac856ab0a4d69adc96636f45e61620bd1a58f",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeInjectivity",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeInjectivity.lean",
+        "source_sha256": "bd0622d8798566fbefb40a16bcc96ef235e0fbdfefb3d70a7dfd93d8645a7d31",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14WeakStar",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14WeakStar.lean",
+        "source_sha256": "4e761f0d5a6eacd028ddf3ca42467bd03888442ccdad937e7d4709c476963b33",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeCompactFibers",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeCompactFibers.lean",
+        "source_sha256": "370dd95993e677648896a9b5e42b07c232c36aa90d2e387d29cf198d633b55fa",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalCanonicalActions",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalCanonicalActions.lean",
+        "source_sha256": "8625b4ed0fbf9aa1934f3f27efd0f52520a8aa78193cecca6d999d314ce2d6d5",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1673,
+    "audited_declarations": 8453,
+    "theorems": 7121,
+    "definitions": 1332,
+    "new_theorems": 17,
+    "new_definitions": 0,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-native-bounded-action-limits.log",
+    "log_sha256": "6a908890fd7c205689927d89551c929953e0c941b4abab51ebe8da8f37ae8666"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED actual L2 global REAL-ANALYTIC homeomorphism/properness, FULL native Hminus/original/endpoint injectivity and bounded literal Wiener weak-star inverse topology. NEW actual bounded-source action compactness on ENTIRE original distribution domain: ONE source realizes simultaneous limits of ALL indexed actual actions along ONE subsequence. Uniform shifted real Miura lifts, all-level Dirac higher-action coefficient continuity, central spectral separation and explicit mean normalization are VERIFIED. NEW bounded-source convergent FULL native outputs have actual preimages and the WHOLE source sequence converges STRONGLY Hminus. Native properness IFF norm-bounded preimages of EVERY compact target set is NOW PROVED. That varying-action NORM BOUND remains OPEN. Extended reference Lemma8.3 supplies it using universal action-gap min estimate + actual Hminus norm-vs-gap coercivity (Theorem2.3); BOTH estimates still require faithful Lean proofs. Native onto/closedness/properness, actual KdV and ALL FIVE MAIN remain OPEN; goal ACTIVE.",
+    "FULL sourceTheorem1.4 remains UNPROVED because actual native SURJECTIVITY and equivalent native compact-preimage norm bound remain OPEN. NEW sourceTheorem1_4_of_bounded_compact_native_preimages proves the FULL precise main conclusion CONDITIONAL on that PURE NORM obligation; sourceTheorem1_4_of_native_surjective remains proved. Full native/original/endpoint INJECTIVITY and literal physical REAL Wiener weak-star homeomorphism onto EXACT IMAGE on EVERY bounded endpoint subset (including nonclosed) and full original isospectral endpoint sets are UNCONDITIONAL. Forward analytic mapping, original norm bounds, full-isoset bounds and inverse endpoint regularity for ANY actual native preimage remain proved. Do NOT promote conditional norm-bound/surjectivity reductions to completed main statements.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}

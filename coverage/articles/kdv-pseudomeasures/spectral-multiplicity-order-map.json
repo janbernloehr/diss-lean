@@ -1,0 +1,128 @@
+{
+  "source": "arXiv:1610.00278v1 Section2, especially Lemma2.11, and Appendix C: actual physical eigenvalues counted with algebraic multiplicity.",
+  "main_theorems_verified": false,
+  "phase": "Exact physical finite-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order, and uniform physical algebraic two-count",
+  "modules": [
+    "NLS/ComplexAnalysis/BanachFiniteJets.lean",
+    "NLS/ComplexAnalysis/AffinePencilJets.lean",
+    "NLS/ComplexAnalysis/MatrixAnalyticJetAction.lean",
+    "NLS/KdV/PseudomeasureTaylorKernel.lean",
+    "NLS/KdV/PseudomeasureMultiplicityOrder.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean"
+  ],
+  "declarations": [
+    "NLS.ComplexAnalysis.analyticFiniteJet",
+    "NLS.ComplexAnalysis.analyticAt_chainPolynomial",
+    "NLS.ComplexAnalysis.analyticFiniteJet_eq_series",
+    "NLS.ComplexAnalysis.analyticFiniteJet_chainPolynomial",
+    "NLS.ComplexAnalysis.analyticFiniteJet_compCLM",
+    "NLS.ComplexAnalysis.analyticFiniteJet_add",
+    "NLS.ComplexAnalysis.analyticFiniteJet_sub",
+    "NLS.ComplexAnalysis.analyticFiniteJet_eq_zero_iff",
+    "NLS.ComplexAnalysis.factorial_mul_scalarTaylorJetMap",
+    "NLS.ComplexAnalysis.chainPolynomial_compCLM",
+    "NLS.ComplexAnalysis.analyticFiniteJet_prod",
+    "NLS.ComplexAnalysis.analyticFiniteJet_congr",
+    "NLS.ComplexAnalysis.analyticFiniteJet_scalarProduct",
+    "NLS.ComplexAnalysis.analyticAt_operatorApply",
+    "NLS.ComplexAnalysis.iteratedDeriv_t_smul_succ",
+    "NLS.ComplexAnalysis.normalized_iteratedDeriv_t_smul_succ",
+    "NLS.ComplexAnalysis.analyticFiniteJet_mem_pencilChainSpace",
+    "NLS.ComplexAnalysis.analyticOrderAt_const_add_zero",
+    "NLS.ComplexAnalysis.pairOperatorMatrixCLM",
+    "NLS.ComplexAnalysis.matrixPairAction",
+    "NLS.ComplexAnalysis.matrixPairAction_pairOperator",
+    "NLS.ComplexAnalysis.det_pairOperatorMatrix",
+    "NLS.ComplexAnalysis.matrixTaylorJetMap_eq_analyticFiniteJet",
+    "NLS.ComplexAnalysis.mem_matrixTaylorKernel_iff_derivatives",
+    "NLS.ComplexAnalysis.mem_pairOperatorTaylorKernel_iff_derivatives",
+    "NLS.KdV.endpointReducedMatrixSpectral",
+    "NLS.KdV.analyticAt_endpointReduced_increment",
+    "NLS.KdV.analyticAt_endpointReducedMatrixSpectral",
+    "NLS.KdV.analyticAt_endpointReconstruction_increment",
+    "NLS.KdV.endpointChainCoordinates_mem_TaylorKernel",
+    "NLS.KdV.endpointChainToTaylorKernel",
+    "NLS.KdV.endpointChainToTaylorKernel_injective",
+    "NLS.KdV.endpointChainToTaylorKernel_surjective",
+    "NLS.KdV.endpointChainTaylorKernelEquiv",
+    "NLS.KdV.finrank_endpointHillRootSpace_eq_TaylorKernel",
+    "NLS.KdV.convex_reducedHillStrip",
+    "NLS.KdV.endpointReducedDeterminant_order_ne_top",
+    "NLS.KdV.endpointReducedDeterminant_zero_interior",
+    "NLS.KdV.endpointHillAlgebraicMultiplicity_eq_order_interior",
+    "NLS.KdV.endpointHillAlgebraicMultiplicity_eq_analyticOrderAt",
+    "NLS.KdV.endpointHillAlgebraicMultiplicity_eq_analyticOrderNatAt",
+    "NLS.KdV.endpointHill_strip_algebraic_count_two",
+    "NLS.Articles.KdVPseudomeasures.sourceHillRootTaylorKernelEquiv",
+    "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderAt",
+    "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderNatAt",
+    "NLS.Articles.KdVPseudomeasures.sourceHill_strip_algebraic_count_two",
+    "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_algebraic_count"
+  ],
+  "domains": {
+    "potential": "Every original complex period-two endpoint potential of order-r,0<=r<1/2; includes all original real mean-zero physically period-one source potentials.",
+    "domain": "The unchanged full original H1 domain at every application and in every finite chain coefficient.",
+    "base": "The entire original H-minus-one distribution space with its proved domain inclusion.",
+    "spectral": "Every complex point on the corrected closed radius6n strip,n>=1, under the existing half-contraction cutoff. Actual zeros are proved interior. Full multiplicity/order equality also holds at boundary points and nonroots.",
+    "uniformity": "One cutoff is chosen before the potential on every exact original source norm ball, and before n and lambda.",
+    "topology": "Norm analyticity uses the original endpoint potential Banach norm, original H1 reconstruction norm, and original pair-valued modes. No weak/full-dual substitution is made."
+  },
+  "finite_level_equivalence": {
+    "forward": "Every original physical finite chain maps to its two resonant coefficients, which lie in the actual formal matrix Taylor kernel.",
+    "inverse": "For every kernel amplitude polynomial u(t), reconstruct the actual analytic H1 function F(lambda0+t)u(t). Its normalized H1 Taylor coefficients form a physical chain because the full physical affine residual jet vanishes.",
+    "recovery": "The exact constant coordinate left inverse C*F=id recovers every original amplitude coefficient, proving surjectivity.",
+    "all_lengths": "Every natural N, including the empty chain; no chain domain is dropped."
+  },
+  "conclusions": {
+    "source_full_multiplicity_order": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderAt",
+    "source_natural_order": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderNatAt",
+    "source_finite_root_Taylor_equivalence": "NLS.Articles.KdVPseudomeasures.sourceHillRootTaylorKernelEquiv",
+    "source_physical_algebraic_count": "NLS.Articles.KdVPseudomeasures.sourceHill_strip_algebraic_count_two",
+    "uniform_original_source_statement": "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_algebraic_count"
+  },
+  "proof_details": [
+    "Normalized finite jets of Banach-valued analytic functions retain exact factorial normalization and commute with continuous linear observations, addition and subtraction. Actual scalar multiplication agrees with the existing formal scalar Taylor convolution.",
+    "The existing formal matrix Taylor action is exactly the normalized finite jet of the actual analytic two-mode matrix acting on an amplitude polynomial. Its kernel is equivalent to vanishing of all retained residual derivatives.",
+    "Vanishing affine-pencil residual derivatives imply that the actual Banach-domain Taylor coefficients form a domain-preserving physical chain. The proof retains every original domain coefficient, including the empty chain.",
+    "At every allowed interior strip point and every finite length, the original physical chain space is linearly equivalent to the actual effective-matrix Taylor kernel. The forward map is the original two-mode coefficient projection. Surjectivity uses the actual norm-analytic H1 reconstruction of an arbitrary kernel amplitude polynomial, and its original H1 Taylor coefficients.",
+    "The actual determinant has finite analytic order everywhere on the full corrected closed strip. Convexity of the strip and a proved actual physical resolvent point exclude the zero germ; no finite-order premise is supplied by a caller.",
+    "Eventual physical finite-chain dimensions and the verified shared eventual matrix Taylor-nullity theorem prove that the actual full original operator algebraic multiplicity equals the actual effective determinant analytic order. The equality holds on the entire corrected closed strip, including its boundary and nonroots.",
+    "The entire corrected strip contains exactly two actual physical eigenvalues counted with their full original algebraic multiplicities. This is the proved analytic two-zero count transported through the exact multiplicity/order correspondence.",
+    "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
+  ],
+  "new_theorems": 40,
+  "new_definitions": 7,
+  "new_audited_declarations": 47,
+  "verified_shared_imports": [
+    "NLS/ComplexAnalysis/ScalarTaylorAlgebra.lean",
+    "NLS/ComplexAnalysis/FinitePowerSeriesJets.lean",
+    "NLS/ComplexAnalysis/MatrixTaylorDeterminant.lean",
+    "NLS/ComplexAnalysis/MatrixTaylorNullity.lean"
+  ],
+  "qualifications": [
+    "No semisimplicity hypothesis is imposed or inferred, including for complex potentials.",
+    "The two-count concerns the actual original period-two physical operator. Canonical real individual labels and high slot assignment are now proved downstream; physical periodic/antiperiodic parity remains open.",
+    "The source interval is0<=r<1/2. General H-minus-one potentials outside this endpoint range are not claimed."
+  ],
+  "remaining": [
+    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct physical Dirichlet spectral comparisons. Original complex canonical ordering,actual multiplicities,global high slots and full complex unit-extra-weight direct gap regularity are now proved.",
+    "Complete the arbitrary-extra-weight direct estimates in source Theorem2.1 where required;unit extra weight w=1 is proved for all original COMPLEX endpoint potentials. Prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets.",
+    "Construct and verify the original Birkhoff maps with global bijectivity,real analyticity and the stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
+    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses,quantifiers,normalizations and topology. All remain unproved."
+  ],
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-complex-labels-map.json",
+      "results": [
+        "Sided free-lattice separation places every tight complex high-mode disk wholly below or wholly above each sufficiently high separator. On every such disk,norm membership and real-part membership both mean n<N.",
+        "The actual original complex central disk is proved to select EXACTLY the source real-part central sublevel. Equality of the ACTUAL finite spectral sets and actual full algebraic counts gives source_uniform_all_complex_central_counts: ONE cutoff BEFORE q on each original complex norm ball gives the exact count2n-1 at EVERY subsequent separator,plus the uniform wide contraction.",
+        "Native EndpointHillComplexPair constructs an intrinsic source-lexicographic physical pair from the ACTUAL determinant zeros,retaining actual full physical algebraic repetitions,including nontrivial Jordan chains. Its entire corrected strip is exhausted;both endpoints are tightly localized;distinct modes are strictly separated in real part. Each pair is unique. Real pairs map literally to the same complex physical pairs.",
+        "The actual original complex central multiset repeats every value by its full physical algebraic multiplicity. Sorting in the explicit source lexicographic relation keeps every repetition. Appending actual ordered high pairs gives an enumeration of the ENTIRE original complex spectrum,with the high pair exactly in slots2n-1,2n.",
+        "Every occurrence fiber is finite and its occurrence count equals the ACTUAL full physical algebraic multiplicity. Intrinsic pair uniqueness and finite ordered-enumeration uniqueness prove equality of ENTIRE labelings across all admissible cutoffs and construction choices.",
+        "sourceHillComplexLabels is the intrinsic global complex labeling in the exact source order(real part first,imaginary part second). It exhausts the entire original spectrum,has exact full algebraic multiplicities,has a lexicographically least actual value at index0,and puts each high actual pair in its required slots. One cutoff is uniform BEFORE every potential in an original complex norm ball. No ground-state simplicity or physical boundary parity is inferred.",
+        "sourceHillComplexLabels_ofPotential proves literal pointwise equality with the existing real canonical labels on the original real mean-zero period-one source. This is the same physical spectral model,not a compatible alternative.",
+        "Actual complex high gaps obey the original full-strip coupling estimate and the exact endpoint Sobolev weighted bound6*sqrt(6)*norm(q). The complete sourceComplexCanonicalGaps,including its finite central prefix,belongs to the genuine infinity Sobolev space of order-r. The full gap map is bounded on EVERY exact original complex endpoint norm ball,with one constant chosen BEFORE q. Its coefficients agree literally with the existing original real gaps."
+      ]
+    }
+  ]
+}

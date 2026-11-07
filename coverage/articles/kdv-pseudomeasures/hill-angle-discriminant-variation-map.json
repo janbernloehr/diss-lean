@@ -1,0 +1,201 @@
+{
+  "source": "arXiv:1610.00278v1 Theorem3.1(i), actual on-index and complete Abelian symplectic dependencies for mainTheorem1.4",
+  "status": "Prove actual complete angle/discriminant Gardner variations and native spectral constraints on the angle/angle bracket. Identical-zero spectral variation, angle/angle commutation, signed canonicality away from zero and ALL FIVE MAIN THEOREMS remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-angle-discriminant-variation-map.json",
+    "actual_complete_Abelian_angle_discriminant_Gardner_identity_PROVED": true,
+    "angle_discriminant_normalization": "positive one half of the actual intrinsic normalized Hill numerator",
+    "one_complex_source_ball_before_ALL_discriminant_energies_PROVED": true,
+    "actual_discriminant_Dirichlet_velocity_joint_analytic_through_zero_sheets_PROVED": true,
+    "actual_complete_phase_Gardner_series_for_any_native_functional_PROVED": true,
+    "actual_angle_pair_action_Hamiltonian_stationarity_PROVED": true,
+    "actual_angle_pair_discriminant_variation_entire_PROVED": true,
+    "actual_angle_pair_discriminant_variation_antisymmetric_numerator_formula_PROVED": true,
+    "actual_angle_pair_discriminant_variation_ALL_prescribed_periods_zero_PROVED": true,
+    "actual_angle_pair_discriminant_variation_IDENTICALLY_ZERO_PROVED": false,
+    "actual_angle_angle_Gardner_commutation_PROVED": false,
+    "onIndex_original_selected_gaps_required": true,
+    "physical_zero_sheets_and_closed_other_gaps_allowed": true,
+    "signed_coordinate_canonicality_away_from_zero_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "GardnerConstantBracketStationarity proves native Gardner Jacobi consequences for locally constant mixed-bracket germs and for arbitrary identified mixed-bracket germs, plus scalar multiplication in the second argument. HillAnglePairActionStationarity defines the ACTUAL complete local phase-pair bracket, proves its full Banach analyticity, and proves its stationarity under EVERY actual action Hamiltonian on ONE common complex ball before ALL action indices.",
+    "HillDiscriminantDirichletVelocity proves full analyticity of the ACTUAL simple Dirichlet energy derivative and of the joint filled velocity V_m(E,q)=filledQ_m(E,q)/(2*d_m(q)). It proves {lambda_m,Delta(E)}=delta_m*V_m(E,q) on the ENTIRE existing complex Dirichlet domain, including every resonant energy and every physical zero sheet. It divides only the proved NONZERO simple energy derivative.",
+    "HillAbelianDiscriminantVariation proves every native fixed-energy discriminant Hamiltonian is isospectral. The ACTUAL off-index Abelian value and on-index phase satisfy their cleared divisor-motion laws by native isospectral variation and real-form uniqueness. Actual analytic sheet cancellation then gives {beta_nm,Delta(E)}=Psi_n(lambda_m)*V_m(E,q) on the ENTIRE physical Abelian domain and {alpha_n,Delta(E)}=Psi_n(lambda_n)*V_n(E,q) on the ENTIRE actual selected-open-gap phase chart, including physical zero sheets.",
+    "HillCompletePhaseFunctionalSeries proves the COMPLETE local actual phase/Gardner series for ANY native scalar functional, using the exact signed positive cutoffs and the already proved full correction cotangent convergence. No derivative/sum interchange or absolute derivative summability is assumed.",
+    "HillCompletePhaseDiscriminant evaluates this full series by the proved actual filled Dirichlet interpolation, with exact factor ONE HALF. It proves {ACTUAL completeTheta_n,ACTUAL Delta(E)}=Psi_n(E)/2 at EVERY real source in an actual selected-open-gap phase chart. Continuity across the COUNTABLE actual auxiliary divisor fills ALL resonant energies and the ramification energy; no nonzero energy-sheet or divisor denominator hypothesis remains. Real-form continuation yields ONE complex source ball BEFORE ALL energies E.",
+    "HillAnglePairDiscriminantVariation proves the ACTUAL phase-pair spectral variation H_nm(E)={{completeTheta_n,completeTheta_m},Delta(E)} is ENTIRE in energy. On ONE complex source ball BEFORE ALL energies, native Jacobi gives 2*H_nm(E)={completeTheta_n,Psi_m(E)}-{completeTheta_m,Psi_n(E)}. The actual intrinsic normalized numerators and complete infinite correction are retained. This is a spectral constraint; H_nm(E)=0 is NOT yet proved.",
+    "HillFunctionalActionPrescribedContour proves the native scalar functional/action bracket is -2/pi times the integral of (z/actualDiracRoot(z))*{F,Delta(z^2-c)} on the ACTUAL cycle-labelled patch circle. HillAnglePairDiscriminantPeriods combines it with actual action stationarity: H_nm has ZERO weighted period on EVERY prescribed actual action circle. Cycle labels, Miura lift, energy shift, factor two and sign are retained.",
+    "OriginalHillAngleDiscriminant exports the original physical-potential exact complete angle/discriminant law on ONE complex neighborhood BEFORE ALL energies, and simultaneous phase-pair action stationarity/spectral-variation formulas on ONE neighborhood BEFORE ALL action indices and energies, with every actual weighted period zero at the real base. The selected ORIGINAL angle gaps are open; physical sheets may vanish and all other gaps may be closed. Neither the entire pair spectral variation nor the angle/angle bracket itself is claimed zero. ALL FIVE MAIN THEOREMS remain UNPROVED."
+  ],
+  "declarations": [
+    "NLS.Poisson.hminusGardnerBracket_pair_stationary_of_constant_germs",
+    "NLS.Poisson.hminusGardnerBracket_pair_of_mixed_germs",
+    "NLS.Poisson.hminusGardnerBracket_const_mul_right",
+    "NLS.KdV.analyticOnNhd_hillHminusDirichletEnergyDerivative",
+    "NLS.KdV.hillHminusDiscriminantDirichletVelocity",
+    "NLS.KdV.analyticOnNhd_hillHminusDiscriminantDirichletVelocity",
+    "NLS.KdV.hillHminus_Dirichlet_discriminant_velocity",
+    "NLS.KdV.hillHminusDiscriminant_Hamiltonian_isospectral",
+    "NLS.KdV.analyticOnNhd_hillHminusPsiDirichletSample",
+    "NLS.KdV.hillHminusPhysicalOffIndexAbelianValue_discriminant_Gardner_cleared",
+    "NLS.KdV.hillHminusPhysicalOffIndexAbelianValue_discriminant_Gardner",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.phase_discriminant_Gardner_cleared",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.phase_discriminant_Gardner",
+    "NLS.KdV.tendsto_hillHminusOffIndex_functional_velocity_sums",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.tendsto_completePhase_functional_series",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhasePairBracket",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.analytic_completePhasePairBracket",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_local_completePhasePair_action_stationary",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_discriminant_Gardner_of_frequency_ne",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_discriminant_Gardner_of_real",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_local_completePhase_discriminant_Gardner",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhasePairDiscriminantBracket",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.analytic_completePhasePairDiscriminantBracket_energy",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_local_completePhasePair_discriminant_variation",
+    "NLS.KdV.HillProductEquationPatch.functional_action_prescribed_circle",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhasePair_action_Gardner_of_real",
+    "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhasePairDiscriminant_prescribed_period_eq_zero",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_local_Abelian_angle_discriminant_bracket",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_local_angle_pair_spectral_constraints"
+  ],
+  "files": [
+    "NLS/Poisson/GardnerConstantBracketStationarity.lean",
+    "NLS/KdV/HillDiscriminantDirichletVelocity.lean",
+    "NLS/KdV/HillAbelianDiscriminantVariation.lean",
+    "NLS/KdV/HillCompletePhaseFunctionalSeries.lean",
+    "NLS/KdV/HillAnglePairActionStationarity.lean",
+    "NLS/KdV/HillCompletePhaseDiscriminant.lean",
+    "NLS/KdV/HillAnglePairDiscriminantVariation.lean",
+    "NLS/KdV/HillFunctionalActionPrescribedContour.lean",
+    "NLS/KdV/HillAnglePairDiscriminantPeriods.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillAngleDiscriminant.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "9363a11994b5d9f24bdbbfc4ec5909953e58ec95",
+    "baseline_modules": 1449,
+    "baseline_non_audit_sources_verified_unchanged": 1448,
+    "new_modules_compiled": 10,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.SobolevFullDuality",
+        "source": "NLS/SequenceSpaces/SobolevFullDuality.lean",
+        "source_sha256": "ff858c1ed47a9b6e91c5c266030b2ccf2ff8d17419938da54695318a42ddf647"
+      },
+      {
+        "module": "NLS.SequenceSpaces.SobolevScalarGradient",
+        "source": "NLS/SequenceSpaces/SobolevScalarGradient.lean",
+        "source_sha256": "3290513c4e4eeeba43b1bde405899ce1990a42c0badddee285a5670fda6fa731"
+      },
+      {
+        "module": "NLS.Poisson.SobolevBivector",
+        "source": "NLS/Poisson/SobolevBivector.lean",
+        "source_sha256": "9873f41cb3f57752dc14fd1009c7e0566ccc8a571b11ed26652c1f10495bff49"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.MixedSpectralSourceDerivative",
+        "source": "NLS/ComplexAnalysis/MixedSpectralSourceDerivative.lean",
+        "source_sha256": "cbfe3ec7dfef0447932b8cb751870eba10b1dd4993f456a0b0f35aef508bf141"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.ParametricCircleIntegralHigher",
+        "source": "NLS/ComplexAnalysis/ParametricCircleIntegralHigher.lean",
+        "source_sha256": "507648a6dc1423d8cc4d64be50cec61ff26822bcc6af7866030279bb9ca9d91b"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.BoundedUniformMultiplier",
+        "source": "NLS/ComplexAnalysis/BoundedUniformMultiplier.lean",
+        "source_sha256": "afdcea5877135178e7da87e9171d6c289b2115feab21093c0cec0348e60f5839"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourcePsiDirichletInterpolation",
+        "source": "NLS/ZakharovShabat/SourcePsiDirichletInterpolation.lean",
+        "source_sha256": "1712348bb4a837785e30e8f238030a5f8b062641b82542650783734c9f01a36b"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourcePhaseCompatibility",
+        "source": "NLS/ZakharovShabat/SourcePhaseCompatibility.lean",
+        "source_sha256": "1f5682e2d3acdfb1a7bd7807047e04aab709caffd5d3bff0d80d5218b3272aba"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Poisson.GardnerHamiltonianDirection",
+        "source": "NLS/Poisson/GardnerHamiltonianDirection.lean",
+        "source_sha256": "4d6fc9539616ee5b64afb4145e8ad96fd27c80b11a1bda150cd33ecb73c136da",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Poisson.GardnerBracketJacobi",
+        "source": "NLS/Poisson/GardnerBracketJacobi.lean",
+        "source_sha256": "d68b64f5d3da935fa0ff31a327caab5cd19aef1b7a8a7dac3b3e6471e81bb936",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.AnalyticProductCancellation",
+        "source": "NLS/ComplexAnalysis/AnalyticProductCancellation.lean",
+        "source_sha256": "96d0966e975a13910e9038e9f1c08f2a58868a71295239f5ee0d91ccce9c709b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PositiveScalarExtension",
+        "source": "NLS/SequenceSpaces/PositiveScalarExtension.lean",
+        "source_sha256": "dd74548cfabeac8c04a3516a7abc65b162010c76a16f938e50aa285d3ba2688c",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.OddSquareDescent",
+        "source": "NLS/ComplexAnalysis/OddSquareDescent.lean",
+        "source_sha256": "63533e2817d9126a562077fe711e53e1e3f8d13c0d71163e922ffcd8f7bd3976",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ZakharovShabat.AuxiliaryGapSegmentPlacement",
+        "source": "NLS/ZakharovShabat/AuxiliaryGapSegmentPlacement.lean",
+        "source_sha256": "7e68d2174cacfb154ae71d8db5362fdcf685da6841cfee994aa8607dd8f412c6",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceHigherActionCircleGradient",
+        "source": "NLS/ZakharovShabat/SourceHigherActionCircleGradient.lean",
+        "source_sha256": "67b864abff169440566469fb01b62f4bb57a6900338300e0638fd8cadf990676",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceIndexedHigherActionGradient",
+        "source": "NLS/ZakharovShabat/SourceIndexedHigherActionGradient.lean",
+        "source_sha256": "89af67bc821ac61675a61a3450aa6b60a201fd5c8d927cb7e0dc65f9edfcf2d1",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1459,
+    "audited_declarations": 7499,
+    "theorems": 6303,
+    "definitions": 1196,
+    "new_theorems": 26,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-angle-discriminant-variation.log",
+    "log_sha256": "80a571d7ab4becc1865a81f738e70432832136b14d3d5c43b4790565fef93750"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NEXT prove the actual entire phase-pair discriminant variation H_nm(E) is IDENTICALLY ZERO, then transport the actual angle/angle bracket to a proved zero basepoint or give another verified native argument for its zero value. NOW PROVED: complete angle/discriminant identity {Theta_n,Delta(E)}=Psi_n(E)/2 on ONE complex ball before ALL E; native Jacobi action stationarity of the pair bracket; H_nm entire; 2*H_nm={Theta_n,Psi_m}-{Theta_m,Psi_n}; ALL actual prescribed weighted action periods of H_nm zero. These constraints do NOT yet prove H_nm=0 or {Theta_n,Theta_m}=0. Actual complete angle/action Kronecker matrix remains proved. Do not assume native finite-open-gap density or identify the Miura lift with a Poisson map.",
+    "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates: prove signed-coordinate Gardner canonicality away fromzero, derivative invertibility at every source, remaining nonlinear source/target scales, global bijectivity and boundedness, and bounded-set weak-star homeomorphism. The exact Fourier differential atzero, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses atzero are COMPLETE, as are the nonlinear infinity endpoint analytic maps and original endpoint norm-topology adapters. Actual action-gradient contours and action involution on the common complex action domain are NOWPROVED. The remaining coordinate brackets and global conclusions are OPEN. Do not substitute ordinary NLS coordinates or componentwise-real sequences for the actual signed-conjugate KdV target.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}

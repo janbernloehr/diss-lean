@@ -1,3 +1,4 @@
+import NLS.FunctionalAnalysis.PeriodicIntegrationByParts
 import NLS.DifferentialPolynomial.PeriodicEvaluation
 import Mathlib.Algebra.MvPolynomial.PDeriv
 

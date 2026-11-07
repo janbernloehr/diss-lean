@@ -1,0 +1,124 @@
+{
+  "source": "arXiv:1610.00278v1 actual native KdV Birkhoff spatial covariance: original exact2*pi*k phase from the genuine free derivative",
+  "status": "Normalize the ACTUAL native spatial character to EXACT exp(2*pi*i*n*s), on the entire original physical real mean-zero Hminus-one source, by period averaging, real-analytic uniqueness and the genuine free derivative. Momentum trace, native global injectivity/closedness/properness, actualKdV and ALL MAIN statements remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-spatial-normalization-map.json",
+    "nonzero_period_average_IMPLIES_period_one_character_trivial_PROVED": true,
+    "jointly_continuous_unitary_period_one_character_families_LOCALLY_CONSTANT_ALL_displacements_PROVED": true,
+    "no_source_local_compactness_or_integer_character_classification_assumption": true,
+    "actual_open_native_mode_spatial_phase_locally_source_independent_PROVED": true,
+    "actual_REAL_ANALYTIC_uniqueness_extends_phase_covariance_to_ENTIRE_physical_source_PROVED": true,
+    "genuine_FREE_Fourier_derivative_FIXES_spatial_character_exp_2_pi_i_n_s_PROVED": true,
+    "actual_spatial_quotient_winding_number_n_PROVED": true,
+    "actual_Birkhoff_spatial_phase_velocity_2_pi_i_n_PROVED": true,
+    "actual_positive_native_spatial_phase_EVERY_source_including_COLLAPSED_modes_PROVED": true,
+    "ALL_SIGNED_native_coordinates_spatial_covariance_exact_2_pi_k_PROVED": true,
+    "FULL_native_signed_target_Banach_space_spatial_covariance_PROVED": true,
+    "SAME_ENTIRE_original_distribution_spatial_phase_exact_2_pi_k_PROVED": true,
+    "actual_KdV_momentum_action_trace_PROVED": false,
+    "actual_native_closed_map_PROVED": false,
+    "actual_native_properness_PROVED": false,
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "PeriodicCharacterAveraging.periodic_character_eq_one_of_integral_ne_zero proves a period-one complex character with nonzero one-period average is trivial. Nonzero averaged correlation identifies two unitary period-one characters. Dominated convergence, with the global unit norm bound, proves every jointly continuous family of such characters is LOCALLY CONSTANT in the source parameter for ALL real displacements simultaneously. No character classification, integer winding assumption or local compactness of the source parameter is used.",
+    "LinearSourceDerivative.fderiv_clm_comp_apply supplies shared full Banach derivative composition through a bounded linear source map. HillNativeSpatialLinearization identifies the ACTUAL physical positive native coordinate and proves its free spatial derivative at zero retains the exact exp((s*(2*pi*n))*I) factor, using the genuine half-Fourier derivative and literal source translation.",
+    "exists_open_hillRealSpatial_phase applies averaging rigidity to the actual spatial character on the OPEN actual nonzero-coordinate locus. Near ANY actual open coordinate, one source character gives the native spatial covariance at ALL nearby sources and ALL real displacements. Joint continuity and the actual unimodular character law are PROVED dependencies; no global connectedness of the nonzero locus is assumed.",
+    "hillRealPositiveCoordinate_spatialTranslation_eq_character uses REAL-ANALYTIC UNIQUENESS on the full connected physical real mean-zero Hminus-one Banach source to extend that local covariance to EVERY source, including sources with the selected gap collapsed. Only after this global equality is proved is it differentiated at zero.",
+    "hillRealSpatialCoordinateRatio_eq_exp cancels the PROVED nonzero genuine free derivative in the literal physical cosine direction and fixes the character to EXACT exp((s*(2*pi*n))*I). Thus the specific original positive-mode spatial frequency and winding normalization are NOW PROVED. This is not inferred from periodicity or unimodularity alone.",
+    "hillRealPositiveCoordinate_spatialTranslation proves exact spatial covariance at EVERY actual physical mean-zero Hminus-one source without an open-mode premise. hillRealSignedMap_spatialTranslation_apply retains EVERY positive, negative and zero signed coefficient by physical conjugacy and zero mode. hillRealSignedMap_spatialTranslation proves equality in the FULL actual signed native target Banach space. original_Hill_native_spatialTranslation exports the SAME exact2*pi*k formula for the ENTIRE original physical distribution source.",
+    "Actual spatial phase/winding normalization is NOW PROVED. KdV momentum-action trace, varying-action native properness/closedness, global native injectivity/surjectivity, actual KdV evolution and ALL FIVE MAIN THEOREMS remain UNPROVED. Spatial translation is not identified with KdV evolution. Goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.ComplexAnalysis.periodic_character_eq_one_of_integral_ne_zero",
+    "NLS.ComplexAnalysis.periodic_characters_eq_of_correlation_ne_zero",
+    "NLS.ComplexAnalysis.exists_open_eq_periodic_character_family",
+    "NLS.FunctionalAnalysis.fderiv_clm_comp_apply",
+    "NLS.KdV.hillRealPositiveCoordinate_eq_native",
+    "NLS.KdV.fderiv_hillRealPositiveCoordinate_spatialTranslation_zero",
+    "NLS.Articles.KdVPseudomeasures.exists_open_hillRealSpatial_phase",
+    "NLS.Articles.KdVPseudomeasures.hillRealPositiveCoordinate_spatialTranslation_eq_character",
+    "NLS.Articles.KdVPseudomeasures.hillRealSpatialCoordinateRatio_eq_exp",
+    "NLS.Articles.KdVPseudomeasures.hillRealPositiveCoordinate_spatialTranslation",
+    "NLS.Articles.KdVPseudomeasures.hillRealSignedMap_spatialTranslation_apply",
+    "NLS.Articles.KdVPseudomeasures.hillRealSignedMap_spatialTranslation",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_native_spatialTranslation"
+  ],
+  "files": [
+    "NLS/ComplexAnalysis/PeriodicCharacterAveraging.lean",
+    "NLS/FunctionalAnalysis/LinearSourceDerivative.lean",
+    "NLS/KdV/HillNativeSpatialLinearization.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSpatialNormalization.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "b0223fdd7d7c18b6e90448ac5c678a97499bf3fd",
+    "baseline_modules": 1620,
+    "baseline_non_audit_sources_verified_unchanged": 1619,
+    "new_modules_compiled": 4,
+    "reused_canonical_modules_freshly_compiled": [],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.FunctionalAnalysis.LinearTargetDerivative",
+        "source": "NLS/FunctionalAnalysis/LinearTargetDerivative.lean",
+        "source_sha256": "2963900029f7e6d60153fadce2e8428d60b942f94bdd934265ce3a98b1c79a81",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillRealCoordinateNontrivial",
+        "source": "NLS/KdV/HillRealCoordinateNontrivial.lean",
+        "source_sha256": "d2eab7f953734d400af25b6252c0a9e0d1601c0aa88b538ae934474164f61e0d",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillNativeGardnerCoordinates",
+        "source": "NLS/KdV/HillNativeGardnerCoordinates.lean",
+        "source_sha256": "1099f139385654f8add2fba392f0baf51553373f29a2545c01c3b97cda87cb2a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillRealSpatialTranslationContinuity",
+        "source": "NLS/KdV/HillRealSpatialTranslationContinuity.lean",
+        "source_sha256": "f6f9890ea43496e4e3e10f72ac8a05370d1ddd8c05fe36ca401b059c20e6e250",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillSpatialCharacter",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillSpatialCharacter.lean",
+        "source_sha256": "5978883861dfe1799271645a05b9bc40ac25c5c1e3bbf0e3c2e6ad933c236406",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1624,
+    "audited_declarations": 8255,
+    "theorems": 6949,
+    "definitions": 1306,
+    "new_theorems": 13,
+    "new_definitions": 0,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-spatial-normalization.log",
+    "log_sha256": "18352848ea9e1c0c7097ce563fa2692e7e8bc966f33b1bb5a3be983937230fbe"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED actual full real Hminus-one Hill BORG constancy for all closed gaps, mean-zero uniqueness and EXACT singleton native zero fiber. Actual native global bijectivity IFF actual closed-map property is proved, using the actual local homeomorphism and singleton zero. Actual finite-gap smoothness and global injectivity IFF actual L2/smooth/finite-gap injectivity remain proved. Complete actual indexed action flows map each original compact isoset ONTO its ENTIRE native action torus. Specified local inverse preservation of FULL infinite-support tori in SAME original isosets, local action/discriminant fiber equivalence, relative local constancy of continuous action-flow invariants and exact complete-action-flow/spatial commutation are proved. NOW PROVED FULL actual spatial covariance with EXACT exp((s*(2*pi*k))*I) at EVERY signed native coordinate and EVERY original physical mean-zero Hminus-one input, including collapsed modes. Averaging gives local source-parameter character rigidity, real-analytic uniqueness extends covariance to ALL sources, and the genuine free cosine-direction derivative fixes the original winding/frequency. Specific spatial phase/winding is NO LONGER an open obligation. NEXT prove the actual KdV momentum-action trace and genuine varying-action a-priori estimates, or actual ordinary L2 injectivity/arbitrary action realization. Actual native CLOSEDNESS/PROPERNESS/GLOBAL INJECTIVITY/SURJECTIVITY and actual KdV evolution remain UNPROVED; full sourceTheorem1.4 remains conditional only on actual native closedness. ALL FIVE MAIN remain UNPROVED; goal ACTIVE.",
+    "FULL precise sourceTheorem1.4 is NOW declared as sourceTheorem1_4Statement and PROVED CONDITIONAL ONLY on IsClosedMap hillRealSignedMap by sourceTheorem1_4_of_native_isClosedMap. Actual endpoint inverse regularity is unconditional for ANY actual native preimage of endpoint output. Native onto/injectivity transfer to endpoints; native injectivity supplies full weak-star homeomorphism on EVERY bounded subset, including nonclosed subsets. Actual native CLOSEDNESS/PROPERNESS/GLOBALBIJECTION remains UNPROVED, so sourceTheorem1.4 remains UNPROVED. Actual native globalbijectionIFFactualclosedmap is already proved via actual localhomeomorphism+genuine singletonzero. Other nonlinear scales and actualKdV still required; ALL MAIN statements remain UNPROVED.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}

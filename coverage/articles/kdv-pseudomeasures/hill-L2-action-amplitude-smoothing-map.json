@@ -1,0 +1,200 @@
+{
+  "source": "arXiv:1610.00278v1 Section5, Main5.1/Lemma5.6 dependencies: actual GLOBAL normalized ACTION amplitude one-order WEIGHTED-NORM analyticity and original native DIAGONAL L2 one-smoothing. Actual OFF-index phase one-order estimate remains open",
+  "status": "ACTUAL GLOBAL normalized ACTION amplitude-minus1 is analytic in one-order weighted infinity norm near EVERY real L2 source. The actual native DIAGONAL map has a patch-independent analytic H3/2 Fourier remainder and H1/2 realization with ALL original coefficients on ONE complex neighborhood. Actual OFF-index phase one-order estimate, full native smoothing and Main5.1/5.9 remain OPEN.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.1",
+    "1.3",
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "actual_positive_H1_Dirichlet_midpoint_and_gap_common_weight_bounds_PROVED": true,
+    "SAME_Hill_auxiliary_divisor_and_phase_rotated_Dirichlet_midpoint_identity_PROVED": true,
+    "actual_on_index_correction_FULL_head_and_tail_one_order_bound_PROVED": true,
+    "ACTUAL_on_index_signed_exponent_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "ACTUAL_on_index_exponential_factor_minus_one_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "actual_on_index_patch_and_original_family_estimates_FACTORY_UNCONDITIONAL": true,
+    "original_signed_coefficients_central_zero_and_complex_collapsed_gaps_retained_PROVED": true,
+    "generic_weighted_infinity_exponential_remainder_analytic_PROVED": true,
+    "ACTUAL_physical_Hill_spectral_core_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "SAME_patch_core_on_index_assembly_COMPLETE": true,
+    "ACTUAL_native_normalized_ACTION_amplitude_one_order_estimate_PROVED": true,
+    "ACTUAL_native_off_index_exponent_one_order_estimate_PROVED": false,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "ACTUAL_intrinsic_diagonal_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "GLOBAL_patch_independent_intrinsic_Fourier_remainder_Hthreehalves_analytic_PROVED": true,
+    "GLOBAL_actual_intrinsic_diagonal_Hhalf_analytic_realization_PROVED": true,
+    "ALL_original_intrinsic_coefficients_on_ONE_complex_neighborhood_PROVED": true,
+    "generic_weighted_infinity_Hilbert_signed_order_product_PROVED": true,
+    "ACTUAL_first_higher_action_common_free_circle_complex_agreement_PROVED": true,
+    "ACTUAL_filled_first_higher_action_centered_moment_uniform_tail_bound_PROVED": true,
+    "ACTUAL_local_Miura_normalized_action_ratio_complex_H1_one_order_scalar_TAIL_PROVED": true,
+    "ACTUAL_retained_Miura_gap_ball_ratio_complex_L2_one_order_scalar_TAIL_PROVED": true,
+    "ACTUAL_GLOBAL_action_amplitude_minus_one_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "GLOBAL_canonical_ratio_Miura_formula_OR_IDENTICALLY_CLOSED_CONVENTION_on_ONE_native_neighborhood_before_ALL_high_n_PROVED": true,
+    "GLOBAL_canonical_action_ratio_FULL_one_order_scalar_bound_PROVED": true,
+    "ACTUAL_native_DIAGONAL_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "GLOBAL_patch_independent_native_diagonal_Fourier_remainder_Hthreehalves_analytic_PROVED": true,
+    "GLOBAL_actual_native_diagonal_Hhalf_analytic_realization_PROVED": true,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-action-amplitude-smoothing-map.json"
+  },
+  "results": [
+    "SourceHigherActionOneCommonAnalytic proves the ACTUAL filled first higher-action quotient is analytic on ONE complex source neighborhood BEFORE ALL sufficiently high signed indices. It multiplies the already-verified common rationalized integrand by the original z+critical weight and differentiates the actual contour integral; the common-circle identity retains complex collapsed gaps.",
+    "HillCommonMiuraRatioIdentity proves the local Miura normalized action ratio analytic on ONE native Hminus complex neighborhood BEFORE ALL high positive indices. Its denominator is nonzero there by the actual free-circle midpoint geometry. A fixed-index canonical/Miura germ is continued on one connected native ball to identify every high GLOBAL canonical ratio with the SAME local Miura formula, except the explicit globally identically closed-gap convention where the global ratio is exactly1. The convention is handled directly, without a density assumption or gap division.",
+    "HillL2CanonicalActionRatioBound combines that common native comparison with the actual local L2 Miura one-order tail. The finite head uses the verified locally uniform principal square-root bound. On ONE complex L2 neighborhood of EVERY real source, (1+n)*norm(hillHminusCanonicalActionRatio_n-1) is uniformly bounded BEFORE ALL positive n, including closed gaps and the globally trivial convention.",
+    "HillL2AmplitudeOneSmoothing uses the principal-square-root deviation inequality, actual even signed amplitude coefficients and exact unit central mode to bound EVERY original normalized ACTION amplitude-minus1 coefficient in Sobolev1 weighted infinity norm. The verified weighted analytic realization yields hillL2AmplitudeSobolevRemainder complex analytic in that STRONGER norm, with uniform bound and ALL original raw coefficients on ONE complex L2 neighborhood of EVERY real source. This is the actual action amplitude, not the distinct Dirac midpoint factor.",
+    "HillL2NativeDiagonalOneSmoothing restores the ACTUAL action amplitude on the already-proved global intrinsic strong map. Its patch-independent hillL2NativeDiagonalFourierRemainder is complex analytic into native H3/2 near EVERY real L2 source and equals ORIGINAL hillHminusNativeDiagonalMap minus ORIGINAL halfFourierSymbol*q at EVERY signed raw mode on ONE complex neighborhood. hillL2StrongNativeDiagonal is analytic into native H1/2 with ALL actual native diagonal coefficients. The proof uses the exact original amplitude reconstruction and weighted infinity/Hilbert product.",
+    "ACTUAL normalized ACTION amplitude one-order WEIGHTED-NORM analyticity and ACTUAL native DIAGONAL L2 one-smoothing are now PROVED. Full nativeComplex one-smoothing still requires the ACTUAL signed OFF-index exponent/exponential-minus1 one-order weighted norm estimate. Main1.1/1.3/1.4 proved; Main5.1/5.9 unproved; goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_common_analytic",
+    "NLS.KdV.HillHminusMiuraGapBall.exists_local_normalizedRatio_common_analytic",
+    "NLS.KdV.HillHminusMiuraGapBall.exists_local_canonicalRatio_Miura_alternative",
+    "NLS.KdV.exists_local_hillL2CanonicalActionRatio_weighted_bound",
+    "NLS.KdV.hillL2AmplitudeSobolevRemainder",
+    "NLS.KdV.exists_local_hillL2Amplitude_one_smoothing",
+    "NLS.KdV.analyticAt_hillL2AmplitudeSobolevRemainder",
+    "NLS.KdV.eventually_hillL2AmplitudeSobolevRemainder_apply",
+    "NLS.KdV.hillL2AmplitudeSobolevRemainder_apply",
+    "NLS.KdV.hillL2NativeDiagonalFourierRemainder",
+    "NLS.KdV.analyticAt_hillL2NativeDiagonalFourierRemainder",
+    "NLS.KdV.eventually_hillL2NativeDiagonalFourierRemainder_apply",
+    "NLS.KdV.hillL2NativeDiagonalFourierRemainder_apply",
+    "NLS.KdV.hillL2StrongNativeDiagonal",
+    "NLS.KdV.analyticAt_hillL2StrongNativeDiagonal",
+    "NLS.KdV.eventually_hillL2StrongNativeDiagonal_apply",
+    "NLS.KdV.hillL2StrongNativeDiagonal_apply"
+  ],
+  "files": [
+    "NLS/ZakharovShabat/SourceHigherActionOneCommonAnalytic.lean",
+    "NLS/KdV/HillCommonMiuraRatioIdentity.lean",
+    "NLS/KdV/HillL2CanonicalActionRatioBound.lean",
+    "NLS/KdV/HillL2AmplitudeOneSmoothing.lean",
+    "NLS/KdV/HillL2NativeDiagonalOneSmoothing.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "65832ccfacac987954bc3ba545dc38f7f69770e7",
+    "baseline_modules": 1936,
+    "baseline_non_audit_sources_verified_unchanged": 1935,
+    "new_modules_compiled": 5,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceDistantNormalizedActionCircleIntegrandAnalytic",
+        "source": "NLS/ZakharovShabat/SourceDistantNormalizedActionCircleIntegrandAnalytic.lean",
+        "source_sha256": "c03aaa679eae6b5bf8fdf6d6747aa8df8968fbeb465867d29dd4b3c82ad821ea"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem11",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
+        "source_sha256": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem13",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
+        "source_sha256": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillL2IntrinsicFourierRemainder",
+        "source": "NLS/KdV/HillL2IntrinsicFourierRemainder.lean",
+        "source_sha256": "b6ee6efb5a4db524f488691e5665cd411260762aaa59ea7a86dc61215e7ce323",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillL2MiuraActionRatioTail",
+        "source": "NLS/KdV/HillL2MiuraActionRatioTail.lean",
+        "source_sha256": "e42d26a41279d5f72f83e5d25fa3064a3b00259500f175360d524bd119fc426a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMiuraNormalizedRatioLocalData",
+        "source": "NLS/KdV/HillMiuraNormalizedRatioLocalData.lean",
+        "source_sha256": "90cfe7e423be9dbf2456ac8ee259c5062b84db9685613f8f76595357aec183d6",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillHminusOneCanonicalQuotients",
+        "source": "NLS/KdV/HillHminusOneCanonicalQuotients.lean",
+        "source_sha256": "66115fb23b70014e81b75055614ab392c9b8184fdb187c25d02ce54dd772b38b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillNormalizedAmplitudeSymbols",
+        "source": "NLS/KdV/HillNormalizedAmplitudeSymbols.lean",
+        "source_sha256": "d0bcd7adf48f4da34d0d4f7d8c30183c22e023255a865297b0b3e7fe1531bd51",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillIntrinsicDiagonalSequence",
+        "source": "NLS/KdV/HillIntrinsicDiagonalSequence.lean",
+        "source_sha256": "1122d20910e70cf20840b6929c3bd75acf52a7e07b247ce76fb1d865b9df8901",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceHigherActionOneUniformCircle",
+        "source": "NLS/ZakharovShabat/SourceHigherActionOneUniformCircle.lean",
+        "source_sha256": "cdfb90b16385043773746b017901d647aba619b75316b2f61a0fb6a7d34da3a2",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedInfinityAnalyticRealization",
+        "source": "NLS/SequenceSpaces/WeightedInfinityAnalyticRealization.lean",
+        "source_sha256": "d357c2ef5c81368a795fa64061f476004bd430938203e57044087cd95db31ab6",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedInfinityPointwiseProduct",
+        "source": "NLS/SequenceSpaces/WeightedInfinityPointwiseProduct.lean",
+        "source_sha256": "9cfbdcb7b865a956bdfd2ef388e8dba6427ff00f4a181d0e58273b37f62d03c0",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1941,
+    "audited_declarations": 9446,
+    "theorems": 7931,
+    "definitions": 1515,
+    "new_theorems": 14,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-action-amplitude-smoothing.log",
+    "log_sha256": "55857fa78baa40763c6858c4343f3159cfba17ae27741289361e18c8fb58f2d2"
+  },
+  "remaining_obligations": [
+    "Prove ACTUAL HillIntegerNativeOneSmoothing0 with SAME original e0 and halfFourierSymbol at EVERY signed mode. ALREADY PROVED: actual hillL2NativeDiagonalFourierRemainder is complex analytic into native H3/2 near EVERY real L2 source, with analytic H1/2 realization hillL2StrongNativeDiagonal and ALL ORIGINAL native diagonal coefficients on ONE complex neighborhood. This includes SAME-patch core/on-index assembly and now ACTUAL GLOBAL normalized ACTION amplitude-minus1 one-order WEIGHTED-INFINITY norm analyticity. NEXT prove ACTUAL hillHminusSignedOffIndexExponent and exp(exponent)-1 one-order weighted infinity norm estimates on complex L2 neighborhoods. Existing rough bounded/unit-tail/compact assertions do NOT imply these stronger estimates. Use exact nativeComplex=exp(signedOffIndex)*nativeDiagonal, then Rfull=Rdiag+(exp(offIndex)-1)*strongDiagonal via WeightedInfinityPointwiseProduct. Preserve original native/real coefficient adapters and all signed/central modes. Once actual base R0 is proved, reuse OriginalHillWienerBaseSmoothing to lift all integer orders and then complete original physical Wiener transport/Main5.1.",
+    "Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates.",
+    "For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement.",
+    "Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE."
+  ]
+}

@@ -85,7 +85,7 @@ theorem multipliable_sourceStandardRootOmittedPairedFactor
   convert multipliable_one_add_of_summable
     (summable_norm_sourceStandardRootOmittedPairedFactor_sub_one hp hp1 ψ z n) using 1
   funext j
-  ring
+  ring_nf
 
 /-- Every omitted paired factor is nonzero away from all unomitted gaps. -/
 theorem sourceStandardRootOmittedPairedFactor_ne_zero
@@ -166,7 +166,7 @@ theorem sourceStandardRootOmittedPartialProduct_eq_paired
   simp only [sourceStandardRootOmittedPairedFactor]
   have hzero : singleSpectralDenominator 0 = 1 := by simp [singleSpectralDenominator]
   rw [hzero]
-  ring
+  ring_nf
 
 /-- The literal cutoffs converge to the arbitrary-index infinite product
 at every source potential and spectral parameter. -/

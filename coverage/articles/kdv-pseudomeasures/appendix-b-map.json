@@ -1,0 +1,545 @@
+{
+  "source": "arXiv:1610.00278v1, Appendix B, PDF/printed pp.37-38",
+  "parameter_convention": "r is Wiener predual order; data regularity s=-r. p is ENNReal with 1<=p and p!=top; threshold (s-t)*p.toReal>1. No substitution of finite-p topology for endpoint weak-star topology.",
+  "B.1(i)": [
+    "image_wienerDualRealization_closedBall",
+    "isCompact_weakStarBall",
+    "metrizable_weakStarBall",
+    "isSeqCompact_weakStarBall",
+    "isCompact_realMeanZeroWeakStarBall",
+    "metrizable_realMeanZeroWeakStarBall",
+    "isSeqCompact_realMeanZeroWeakStarBall"
+  ],
+  "B.1(ii)(a)-(b)": [
+    "tendsto_weakStar_seq_iff_bounded_coordinates"
+  ],
+  "B.1(ii)(a)-(c)": [
+    "tendsto_weakStar_seq_iff_bounded_lower",
+    "tendsto_weakStar_seq_iff_bounded_some_lower"
+  ],
+  "B.1(iii)(a)-(b)-(c)": [
+    "isCompact_weakStar_iff_isSeqCompact",
+    "isCompact_weakStar_iff_bounded_closed"
+  ],
+  "B.1(iii)(a)-(d)": [
+    "isCompact_weakStar_iff_bounded_lower_compact",
+    "isCompact_weakStar_iff_bounded_some_lower_compact"
+  ],
+  "B.1(iv)": [
+    "isEmbedding_lowerWeakStarRealization_on_bounded"
+  ],
+  "qualification": "Generalized endpoint Appendix B.1(i)-(iv) and their direct original physical source statements are proved. Literal existential lower-exponent clauses, exact original endpoint norm bounds, entire-distribution inclusions, bounded real-Wiener testing, closures, subsequences and compact-open trajectories are retained. This completes these Appendix B dependencies, not the physical KdV main theorem constructions.",
+  "namespace": "NLS.WeightedCoeff",
+  "new_modules": [
+    "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean",
+    "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean"
+  ],
+  "physical_weak_star_adapter": "NLS/Fourier/PeriodicWeightedWeakStar.lean",
+  "source_constraints_adapter": [
+    "NLS/Fourier/PeriodicDistributionParity.lean",
+    "NLS/Fourier/RealMeanZeroPeriodOne.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceSpaces.lean",
+    "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean",
+    "NLS/Fourier/PeriodicWeakStarLowerTopology.lean"
+  ],
+  "bounded_closure_and_subsequences": [
+    "isCompact_closure_weakStar_of_bounded",
+    "exists_weakStar_subseq_of_bounded",
+    "closure_lowerWeakStarRealization_image",
+    "isClosed_weakStar_iff_lower_image"
+  ],
+  "original_lower_distribution_topology": {
+    "module": "NLS/Fourier/PeriodicWeakStarLowerTopology.lean",
+    "exact_distribution": [
+      "lowerWeakStarDistribution_val",
+      "lowerWeakStarDistribution_realization"
+    ],
+    "topology": [
+      "isEmbedding_lowerWeakStarDistribution_on_bounded",
+      "tendsto_weakStar_subtype_iff_lowerDistribution"
+    ],
+    "compactness_and_closure": [
+      "isCompact_weakStar_iff_bounded_lowerDistribution_compact",
+      "closure_lowerWeakStarDistribution_image"
+    ],
+    "compact_open_trajectories": [
+      "isEmbedding_lowerWeakStarDistributionTrajectory",
+      "continuous_weakStarTrajectory_iff_lowerDistribution"
+    ]
+  },
+  "real_source_lower_topology": [
+    "tendsto_originalRealWienerTests_iff_lowerDistribution",
+    "lowerWeakStarDistribution_source_conditions",
+    "continuous_trajectory_iff_originalHminusOne"
+  ],
+  "quantifier_check": "The source existential formulations for some sigma<s and finite p>=1 are explicit theorems. The forward witnesses are sigma=s-2 and p=1 for every real s. Reverse implications accept every admissible witness. Norm boundedness is retained. Fixed-exponent theorems establish the stronger result for every admissible pair.",
+  "original_source_topology": {
+    "module": "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean",
+    "type": "NLS.Articles.KdVPseudomeasures.WeakStarPotential",
+    "representation": "A wrapper of the original Potential(r), retaining the entire original distribution and all reality, mean-zero and physical period-one conditions. The topology is explicitly induced from the full complex Wiener weak dual. It is identified with all original real Wiener tests on bounded subsets.",
+    "norm_boundedness": "PotentialNormBounded quantifies the exact original FourierLebesgueSpace(2,-r,infinity) norm; it is proved equivalent to the norm bornology of the coordinate image.",
+    "B.1(i)": [
+      "isCompact_sourceNormBall",
+      "metrizable_sourceNormBall",
+      "isSeqCompact_sourceNormBall"
+    ],
+    "B.1(ii)": [
+      "tendsto_source_seq_iff_bounded_coefficients",
+      "tendsto_source_seq_iff_bounded_lower",
+      "tendsto_source_seq_iff_bounded_some_lower"
+    ],
+    "B.1(iii)": [
+      "isCompact_source_iff_isSeqCompact",
+      "isCompact_source_iff_bounded_closed",
+      "isCompact_source_iff_bounded_lower_compact",
+      "isCompact_source_iff_bounded_some_lower_compact"
+    ],
+    "B.1(iv)": [
+      "isEmbedding_sourceLowerDistribution_on_bounded",
+      "tendsto_source_iff_lowerDistribution"
+    ],
+    "closure_and_subsequences": [
+      "isCompact_closure_source_of_bounded",
+      "exists_source_subseq_of_bounded",
+      "closure_sourceLowerDistribution_image",
+      "isClosed_source_iff_lower_image"
+    ],
+    "real_original_predual": [
+      "isEmbedding_sourceRealWienerTests_on_bounded",
+      "tendsto_source_iff_realWienerTests"
+    ],
+    "same_original_distribution": [
+      "sourceLowerDistribution_val",
+      "sourceLowerDistribution_source_conditions",
+      "sourceLowerDistribution_eq_potentialHminusOne"
+    ],
+    "compact_open_trajectories": [
+      "isEmbedding_sourceLowerDistributionTrajectory",
+      "continuous_sourceTrajectory_iff_lowerDistribution"
+    ],
+    "quantifiers": "All real r in the Appendix B results. Every finite p>=1 satisfying (-r-t)*p.toReal>1 in fixed-exponent statements; literal existential statements also require t<-r and use the uniform witness t=-r-2,p=1. Boundedness is derived for convergent sequences and compact sets; no global bounded-range claim is made for arbitrary convergent nets.",
+    "new_public_definitions_and_theorems": 31,
+    "main_theorems_verified": false
+  },
+  "bounded_physical_limits_and_trajectory_criteria": {
+    "modules": [
+      "NLS/Articles/KdVPseudomeasures/SourceWeakStarLimits.lean",
+      "NLS/Articles/KdVPseudomeasures/SourceWeakStarTrajectories.lean"
+    ],
+    "new_public_theorems": 18,
+    "declarations": [
+      "isClosed_sourceNormBall",
+      "lowerSemicontinuous_sourceNorm",
+      "sourceNorm_le_of_tendsto",
+      "sourceNorm_le_of_mem_closure",
+      "potentialNormBounded_closure_iff",
+      "exists_source_of_tendsto_lower_normBound",
+      "continuous_source_iff_coefficients",
+      "continuous_source_iff_lowerDistribution",
+      "continuous_from_source_iff_seqContinuous",
+      "mem_closure_source_iff_seq_limit",
+      "isClosed_source_iff_seq_limits",
+      "exists_source_subseq_all_lower_of_bounded",
+      "tendsto_sourceTrajectory_iff_lowerDistribution",
+      "tendsto_sourceTrajectory_iff_uniformOn_compacts",
+      "tendsto_sourceTrajectory_iff_uniform_lower",
+      "continuous_sourceTrajectory_iff_uniform_lower",
+      "continuous_sourceTrajectory_iff_seq_uniform_lower",
+      "tendsto_sourceTrajectory_iff_uniform_originalHminusOne"
+    ],
+    "results": [
+      "The original physical endpoint norm is weak-star lower semicontinuous. Any specified bound is retained under weak-star closure and under limits of eventually bounded nets.",
+      "A lower finite-p norm limit of eventually endpoint-bounded original physical potentials is the identical lower distribution of an endpoint potential with the same norm bound and all physical conditions.",
+      "For bounded original physical source sets, ambient closure consists exactly of sequential limits within the set; ambient weak-star closedness can be checked with sequences. Maps out of such bounded sets are continuous iff sequentially continuous.",
+      "One physical weak-star subsequence converges in every admissible original lower finite-p norm space, with the subsequence chosen before the exponents.",
+      "Continuity into bounded physical sets can be tested using all original Fourier coefficients or any admissible lower norm realization.",
+      "Arbitrary-filter compact-open weak-star trajectory convergence equals uniform lower norm convergence on every compact time set. On compact domains it has the explicit single-eventual-error-bound-for-all-times criterion.",
+      "On bounded physical initial-data sets, sequential uniform lower norm dependence suffices for continuity into the full compact-time weak-star trajectory space. In the article range the lower norm can be the identical original H-minus-one norm."
+    ],
+    "qualifications": "Sequential closure and continuity criteria require endpoint norm-bounded source sets. Limit-bound statements for arbitrary filters require a nontrivial filter; uniform compact-time criteria retain a common endpoint-bounded target. No global bounded-range assertion is made for arbitrary convergent nets. All lower exponents retain the exact strict finite-p threshold."
+  },
+  "eventually_bounded_physical_nets": {
+    "module": "NLS/Articles/KdVPseudomeasures/SourceWeakStarNets.lean",
+    "new_public_theorems": 7,
+    "declarations": [
+      "NLS.Articles.KdVPseudomeasures.tendsto_source_iff_coefficients_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.tendsto_source_iff_coefficients_of_eventually_normBound",
+      "NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_coefficients_normBound",
+      "NLS.Articles.KdVPseudomeasures.tendsto_source_iff_lowerDistribution_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.tendsto_source_iff_lowerDistribution_of_eventually_normBound",
+      "NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_lower_normBound",
+      "NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_originalHminusOne_normBound"
+    ],
+    "results": [
+      "Arbitrary-filter weak-star convergence of norm-bounded original physical families is equivalent to convergence of every original Fourier coefficient and to convergence in each admissible original lower finite-p norm.",
+      "Both convergence criteria remain valid under only an eventual specified endpoint norm bound. No global bounded-range or eventual-boundedness conclusion is claimed for arbitrary weak-star convergent nets.",
+      "Pointwise Fourier limits of eventually endpoint-bounded nets uniquely represent an original real mean-zero period-one endpoint potential with the same bound, and the entire net converges weak-star to it.",
+      "A lower finite-p norm limit of an eventually endpoint-bounded net uniquely recovers the identical original physical endpoint distribution, preserves the specified bound and gives convergence of the entire net. In the article range this applies directly to the original H-minus-one norm."
+    ],
+    "qualifications": "Topology equivalences accept arbitrary filters, assuming eventual membership in a specified original endpoint norm ball. Existence and specified-bound retention require a nontrivial filter. All lower norm exponents satisfy finite p>=1 and (-r-t)*p.toReal>1. Weak-star convergence alone is not asserted to imply eventual endpoint norm boundedness."
+  },
+  "completion_review": {
+    "status": "All clauses of Lemma B.1(i)-(iv) are proved; no remaining Appendix B proof obligation was found in the source clause review.",
+    "source_checked": "Private local text of arXiv:1610.00278v1, Appendix B, printed pages 37-38.",
+    "parameters": "All real s (represented by r=-s), finite p>=1 and the exact strict threshold (s-sigma)*p>1. Existential clauses retain sigma<s and choose sigma=s-2,p=1 in the forward direction.",
+    "source_topology": "The exact original physical distribution is retained. Bounded original real Wiener tests induce the same weak-star topology. Lower norm topology is identified only on norm-bounded sets.",
+    "net_qualification": "Arbitrary-filter statements require specified eventual endpoint bounds; no inference that arbitrary weak-star convergent nets are eventually norm bounded is used.",
+    "validation": {
+      "fresh_build": true,
+      "modules_checked": 217,
+      "audited_declarations": 1906,
+      "theorems": 1567,
+      "definitions": 339,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "log": ".lake/article-check/logs/validation-l2-characteristic.log"
+    },
+    "canonical_checkout": "Sources and build outputs kept read-only.",
+    "main_theorems_verified": false,
+    "clause_signature_review": {
+      "date": "2026-11-02",
+      "source_pages": "printed pages 37-38",
+      "source_text_sha256": "1e1a9238da5d4b0fbe16d6e7e8df1b8698ae35f0b81df612cc6af910c16e1b7e",
+      "module": "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean",
+      "clauses": {
+        "B.1(i)": [
+          "isCompact_sourceNormBall",
+          "metrizable_sourceNormBall",
+          "isSeqCompact_sourceNormBall"
+        ],
+        "B.1(ii)(a)-(b)": [
+          "tendsto_source_seq_iff_bounded_coefficients"
+        ],
+        "B.1(ii)(a)-(c)": [
+          "tendsto_source_seq_iff_bounded_some_lower"
+        ],
+        "B.1(iii)(a)-(b)": [
+          "isCompact_source_iff_isSeqCompact"
+        ],
+        "B.1(iii)(a)-(c)": [
+          "isCompact_source_iff_bounded_closed"
+        ],
+        "B.1(iii)(a)-(d)": [
+          "isCompact_source_iff_bounded_some_lower_compact"
+        ],
+        "B.1(iv)": [
+          "isEmbedding_sourceLowerDistribution_on_bounded"
+        ]
+      },
+      "remaining_appendix_b_obligations": [],
+      "result": "All original Appendix B clauses are already implemented. Source signatures, original endpoint norms, physical constraints, literal existential lower exponents and strict finite-p threshold were reviewed; the fresh private build and declaration audit include these theorems.",
+      "net_hypotheses": "Arbitrary-filter extensions retain a specified eventual endpoint norm bound; weak-star convergence alone is not claimed to imply eventual norm boundedness.",
+      "new_lean_declarations_needed": false,
+      "canonical_checkout_written": false,
+      "workspace_decision": "pending; continue using only the private checkout"
+    },
+    "private_recheck_2026_11_03": {
+      "private_baseline_commit": "378014bfcecd07212b39c7e3bcdc51c4e8306291",
+      "registered_modules_verified_unchanged": 458,
+      "source_text_sha256": "1e1a9238da5d4b0fbe16d6e7e8df1b8698ae35f0b81df612cc6af910c16e1b7e",
+      "date": "2026-11-03",
+      "source_pages": "Appendix B, printed pages 37-38",
+      "source_clauses_rechecked": {
+        "B.1(i)": [
+          "isCompact_sourceNormBall",
+          "metrizable_sourceNormBall",
+          "isSeqCompact_sourceNormBall"
+        ],
+        "B.1(ii)(a)-(b)": [
+          "tendsto_source_seq_iff_bounded_coefficients"
+        ],
+        "B.1(ii)(a)-(c)": [
+          "tendsto_source_seq_iff_bounded_some_lower"
+        ],
+        "B.1(iii)(a)-(b)": [
+          "isCompact_source_iff_isSeqCompact"
+        ],
+        "B.1(iii)(a)-(c)": [
+          "isCompact_source_iff_bounded_closed"
+        ],
+        "B.1(iii)(a)-(d)": [
+          "isCompact_source_iff_bounded_some_lower_compact"
+        ],
+        "B.1(iv)": [
+          "isEmbedding_sourceLowerDistribution_on_bounded"
+        ]
+      },
+      "remaining_appendix_b_obligations": [],
+      "result": "All Lemma B.1(i)-(iv) clauses were already proved; source statements and quantifiers rechecked. No additional Lean declarations needed.",
+      "freshly_compiled_modules": [
+        "NLS.SequenceSpaces.WeightedWeakStarCompactness",
+        "NLS.SequenceSpaces.WeightedWeakStarLowerTopology",
+        "NLS.Fourier.PeriodicWeightedWeakStar",
+        "NLS.Fourier.PeriodicWeakStarLowerTopology",
+        "NLS.Articles.KdVPseudomeasures.AppendixBWeakStar",
+        "NLS.Articles.KdVPseudomeasures.AppendixBLowerTopology",
+        "NLS.Articles.KdVPseudomeasures.RealPredualTopology",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarLimits",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarNets",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarCompactSets",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarTrajectories",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarIntersections",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarClosedGraph",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarAscoli",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarUniformControl",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchy",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchyTrajectories",
+        "NLS.Articles.KdVPseudomeasures.Audit"
+      ],
+      "freshly_compiled_module_count": 19,
+      "axiom_audited_public_declarations": 3316,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-recheck-20261103.log",
+      "log_sha256": "b253d86fa3cee155b807a3efd4ed7dd1de7774bced5f35a1222a4d65273b706e",
+      "canonical_checkout_written": false,
+      "canonical_head_before_and_after": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+      "canonical_status_after": "clean",
+      "workspace_decision": "pending; private checkout and private Git metadata only",
+      "main_theorems_verified": false
+    }
+  },
+  "compact_sets_and_closed_fourier_constraints": {
+    "module": "NLS/Articles/KdVPseudomeasures/SourceWeakStarCompactSets.lean",
+    "new_public_theorems": 8,
+    "declarations": [
+      "NLS.Articles.KdVPseudomeasures.isCompact_closure_source_iff_bounded",
+      "NLS.Articles.KdVPseudomeasures.isSeqCompact_closure_source_iff_bounded",
+      "NLS.Articles.KdVPseudomeasures.continuous_sourceCoefficient",
+      "NLS.Articles.KdVPseudomeasures.isClosed_sourceCoefficientConstraints",
+      "NLS.Articles.KdVPseudomeasures.isCompact_sourceNormBall_coefficientConstraints",
+      "NLS.Articles.KdVPseudomeasures.isClosedEmbedding_sourceLowerDistribution_on_closed_bounded",
+      "NLS.Articles.KdVPseudomeasures.isClosedEmbedding_sourceLowerDistribution_on_normBall",
+      "NLS.Articles.KdVPseudomeasures.exists_source_subseq_coefficientConstraints"
+    ],
+    "results": [
+      "Weak-star closure is compact iff the original physical endpoint norm is bounded; the same equivalence holds for sequential compactness of the closure.",
+      "Every original Fourier coefficient is continuous on the full physical weak-star space. Any family of closed coefficient constraints is weak-star closed, and its intersection with a specified original endpoint norm ball is compact.",
+      "Every closed endpoint-bounded physical set is a closed embedding into each admissible original lower finite-p norm space. In particular the original endpoint norm ball has a closed lower-norm image, with its weak-star topology retained.",
+      "A sequence in a specified original norm ball satisfying arbitrary closed Fourier constraints has a strictly increasing subsequence whose original physical limit retains both the same norm bound and all constraints. That single subsequence converges in every admissible lower finite-p original distribution norm."
+    ],
+    "parameters": "All real r; every finite p>=1 with1<(-r-t)*p.toReal. The original endpoint norm, reality, mean zero and physical period one are retained.",
+    "qualification": "Follow-on consequences of the already complete Lemma B.1. Closed lower images require endpoint boundedness and weak-star closedness. No global boundedness of arbitrary weak-star convergent nets is asserted.",
+    "validation": {
+      "fresh_build": true,
+      "modules_checked": 125,
+      "audited_declarations": 1216,
+      "theorems": 993,
+      "definitions": 223,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "log": ".lake/article-check/logs/validation-compact-sets.log"
+    }
+  },
+  "endpoint_regularity_compactness_application": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-endpoint-bootstrap-map.json",
+    "conditional_application_verified": true,
+    "lower_compact_realization_required": true,
+    "original_finite_p_inverse_spectral_input_verified": false,
+    "results": [
+      "sourceReinterpretationSet contains exactly the target physical representatives of a supplied original family. The Appendix B compactness transfer proves it weak-star compact from a proved uniform target bound and a compact lower finite-p realization with the SAME ENTIRE distribution range. Every original family member has a target representative.",
+      "A compact original finite-p realization at base order-r supplies the base endpoint norm bound via all-p coefficient bounds. Combining this with the actual gap bootstrap gives target weak-star compactness whenever1<(r-t)*p.toReal,p finite>=1,and the compact realization has the exact original distribution range. The missing original isospectral compactness result is retained as an EXPLICIT hypothesis rather than claimed as proved."
+    ],
+    "validation": {
+      "fresh_build": true,
+      "modules_checked": 176,
+      "audited_declarations": 1511,
+      "theorems": 1247,
+      "definitions": 264,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "log": ".lake/article-check/logs/validation-endpoint-bootstrap.log"
+    }
+  },
+  "actual_spectral_count_application": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-weak-star-resolvent-map.json",
+    "bounded_original_weak_star_resolvent_and_actual_count_stability_verified": true,
+    "individual_canonical_label_continuity_verified": false,
+    "full_isospectral_closedness_verified": false,
+    "results": [
+      "On EVERY original endpoint norm-bounded physical weak-star set,the exact original H-minus-one realization is continuous. Consequently the JOINT physical source resolvent locus is weak-star-times-C open,and the full original H1-valued inverse and compact H-minus-one resolvent are norm continuous at each valid pair. Membership of each fixed actual complex spectral value is weak-star closed within the bounded set.",
+      "Validity of the ENTIRE compact physical resolvent circle is weak-star OPEN within every original endpoint norm-bounded set. The SAME ACTUAL projection varies continuously in operator norm on that full locus. It is an actual finite-rank idempotent;its rank is locally constant and both circle validity and rank persist throughout a weak-star neighborhood. No simple-eigenvalue or noncollapsed-gap assumption is imposed.",
+      "The finite ACTUAL physical spectrum inside any disk is constructed from existing full-spectrum local finiteness,without a supplied root list. The projection range is EXACTLY the sum of all enclosed original full physical algebraic root spaces. Their independence identifies projection rank with the sum of ACTUAL algebraic multiplicities,and this entire enclosed count is weak-star locally stable on bounded physical sets."
+    ],
+    "validation": {
+      "fresh_build": true,
+      "modules_checked": 180,
+      "audited_declarations": 1564,
+      "theorems": 1292,
+      "definitions": 272,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "log": ".lake/article-check/logs/validation-spectral-topology.log"
+    }
+  },
+  "canonical_label_continuity_and_fibers": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-label-continuity-map.json",
+    "bounded_original_weak_star_labels_and_gaps_continuous": true,
+    "bounded_canonical_spectral_fibers_closed": true,
+    "entire_endpoint_canonical_fiber_compact_iff_bounded": true,
+    "full_original_HminusOne_isospectral_endpoint_bound_proved": false,
+    "results": [
+      "Every ACTUAL intrinsic canonical real label is now weak-star continuous on EVERY original endpoint norm-bounded physical set. The proof chooses one uniform norm-ball cutoff before the family,uses actual original spectral lower bounds,and applies the proved physical disk-count stability to the exact canonical cumulative counts. All repeated entries and closed gaps are included.",
+      "Every ACTUAL signed canonical gap is weak-star continuous on every bounded original physical set. The entire canonical label sequence and entire signed gap sequence are continuous in their product topologies. No continuity in the weighted infinity norm is asserted.",
+      "sourceCanonicalSpectralFiber prescribes the ENTIRE actual canonical spectrum with ALL algebraic repetitions. Such a fiber is relatively weak-star closed on EVERY bounded original physical set,and its intersection with each specified original endpoint norm ball is weak-star compact.",
+      "An ENTIRE original endpoint canonical spectral fiber is weak-star compact IFF it is bounded in the EXACT original endpoint norm. A globally bounded fiber is closed in the ENTIRE physical weak-star space. Actual spectrum exhaustion and all physical algebraic multiplicities are explicitly identified from the prescribed labels. Fiber membership is invariant under endpoint-order reinterpretation of the SAME entire original distribution."
+    ],
+    "validation": {
+      "fresh_build": true,
+      "modules_checked": 184,
+      "audited_declarations": 1583,
+      "theorems": 1309,
+      "definitions": 274,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "log": ".lake/article-check/logs/validation-label-continuity.log"
+    }
+  },
+  "closed_graph_and_compact_constraints": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-follow-on-map.json",
+    "new_theorems": [
+      "NLS.continuous_iff_isClosed_graph_compact_target",
+      "NLS.Articles.KdVPseudomeasures.continuous_source_iff_isClosed_graph_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_graph_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_lower_graph_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_originalHminusOne_graph_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.exists_source_mem_all_of_finite_constraints",
+      "NLS.Articles.KdVPseudomeasures.exists_finite_source_constraints_obstruction",
+      "NLS.Articles.KdVPseudomeasures.exists_source_coefficients_of_finite_constraints",
+      "NLS.Articles.KdVPseudomeasures.exists_source_mem_all_of_antitone",
+      "NLS.Articles.KdVPseudomeasures.exists_source_norm_minimizer_on_closed"
+    ],
+    "scope": "Consequences of the previously verified Appendix B compactness and bounded-set topology results. These are additional tools, not newly uncovered clauses of Lemma B.1.",
+    "remaining_lemma_B1_obligations": [],
+    "main_theorems_verified": false
+  },
+  "uniform_fourier_control_and_limits": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-uniform-map.json",
+    "modules": [
+      "NLS/FunctionalAnalysis/CompactCoordinateControl.lean",
+      "NLS/Articles/KdVPseudomeasures/SourceWeakStarUniformControl.lean"
+    ],
+    "new_public_theorems": 10,
+    "summary": "Finite original Fourier tests uniformly control every admissible lower norm on endpoint balls. Uniform coefficient convergence, including eventual common endpoint bounds, uniquely reconstructs physical limit families and is equivalent to uniform lower norm convergence; original H-minus-one specializations included.",
+    "remaining_lemma_B1_obligations": []
+  },
+  "fourier_equicontinuity_and_trajectory_compactness": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-ascoli-map.json",
+    "status": "proved",
+    "new_public_theorems": 10,
+    "source_B1_obligations_remain": false,
+    "canonical_checkout_written": false
+  },
+  "cauchy_limits_and_uniform_cauchy_topology": {
+    "modules": [
+      "NLS/FunctionalAnalysis/UniformCauchyLimit.lean",
+      "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean"
+    ],
+    "declarations": [
+      "NLS.exists_limit_of_uniformCauchyOn",
+      "NLS.Articles.KdVPseudomeasures.existsUnique_source_of_cauchy_coefficients_normBound",
+      "NLS.Articles.KdVPseudomeasures.cauchy_sourceLowerDistribution_iff_coefficients",
+      "NLS.Articles.KdVPseudomeasures.cauchy_sourceLowerDistribution_iff_other_lower",
+      "NLS.Articles.KdVPseudomeasures.existsUnique_sourceFamily_of_uniformCauchy_coefficients_normBound",
+      "NLS.Articles.KdVPseudomeasures.existsUnique_sourceFamily_of_uniformCauchy_lower_normBound",
+      "NLS.Articles.KdVPseudomeasures.uniformCauchy_sourceLowerDistribution_iff_coefficients"
+    ],
+    "new_public_theorems": 7,
+    "results": [
+      "Cauchy Fourier coefficients and an eventual specified original endpoint norm bound give a unique physical weak-star limit retaining that bound. The same limit converges in every admissible lower norm, with exponents selected after the limit.",
+      "Under that eventual endpoint bound, being Cauchy in any one admissible lower finite-p norm is equivalent to being Cauchy in each Fourier coefficient and is independent of the admissible lower norm chosen.",
+      "Uniformly Cauchy Fourier tests, with one eventual endpoint bound for all testing parameters, give a unique physical limit family, pointwise weak-star convergence, and uniform convergence in every admissible lower norm. No time continuity is assumed.",
+      "Uniform Cauchy control in one admissible lower norm is equivalent to uniform Cauchy control of each Fourier mode under the same eventual endpoint bound. It also produces the unique limit family and convergence in every admissible lower norm.",
+      "The reusable uniform Cauchy existence theorem permits arbitrary nontrivial convergence filters and arbitrary testing sets in nonempty complete uniform spaces. Testing sets may be empty."
+    ],
+    "qualifications": [
+      "All real predual orders r are allowed. Bounds use the exact original FourierLebesgueSpace(2,-r,infinity) norm. Limits retain the entire original distribution, reality, zero mean and physical period one.",
+      "The convergence filter is nontrivial. Arbitrary filters and testing parameter sets are allowed; no topology on the testing set is required.",
+      "Every lower norm retains finite p>=1 and the strict threshold 1<(-r-t)*p.toReal. One common eventual bound is required across all testing parameters in the uniform-family statements.",
+      "No endpoint norm convergence, metrizability of the unbounded weak-star space, or eventual endpoint bound for arbitrary weak-star convergent nets is asserted.",
+      "Lemma B.1(i)-(iv) was already complete. These are follow-on compactness and topology tools. All five main article theorems and the uniform endpoint isospectral bound remain unproved."
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-cauchy-map.json",
+    "validation": {
+      "result": "passed",
+      "fresh_full_build_this_increment": false,
+      "baseline_commit": "2e62fb5265c602f94910a0da74c80c1e03c87670",
+      "baseline_modules": 397,
+      "baseline_sources_verified_unchanged": true,
+      "new_modules_compiled": 2,
+      "modules_in_exact_inventory": 399,
+      "audited_declarations": 3107,
+      "theorems": 2557,
+      "definitions": 550,
+      "new_theorems": 7,
+      "new_definitions": 0,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "directory": ".lake/full-original-label-check-20261103",
+      "log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-cauchy.log"
+    }
+  },
+  "compact_set_inverse_continuity_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-inverse-map.json",
+    "closed_bounded_domain_inverse_continuity": true,
+    "homeomorphism_onto_exact_image": true,
+    "coefficient_continuity_criterion_with_bounded_image": true,
+    "arbitrary_filter_inverse_convergence": true,
+    "independent_lower_norms": true,
+    "original_HminusOne_distributions": true,
+    "remaining_lemma_B1_obligations": [],
+    "main_theorems_verified": false
+  },
+  "current_private_recheck": {
+    "report": "coverage/articles/kdv-pseudomeasures/appendix-b-current-recheck.json",
+    "baseline_commit": "e48efd39dddfe2ec9bfd9ea8573296fe93987111",
+    "freshly_compiled_appendix_b_modules": 19,
+    "current_transitive_axiom_audit_declarations": 4942,
+    "remaining_lemma_B1_obligations": [],
+    "new_lean_declarations": 0,
+    "canonical_checkout_written": false,
+    "main_theorems_verified": false
+  }
+}

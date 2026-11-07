@@ -1,0 +1,199 @@
+{
+  "source": "arXiv:1610.00278v1 Theorem3.1(i), actual derivative inverse dependencies for mainTheorem1.4",
+  "status": "Prove actual on-index phase zero tails and compact derivative removal; construct exact spectral-core neighborhoods at every physical source. Spectral core/Fourier derivative estimate and ALL FIVE MAIN THEOREMS remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-onindex-spectral-core-map.json",
+    "reusable_odd_bounded_sequence_analytic_realization_PROVED": true,
+    "reusable_zero_tail_exponential_symbol_UNIT_TAIL_PROVED": true,
+    "reusable_zero_tail_gauge_derivative_difference_COMPACT_PROVED": true,
+    "actual_onIndex_correction_l2_weighted_tail_bound_PROVED": true,
+    "actual_onIndex_correction_ZERO_TAIL_PROVED": true,
+    "actual_signed_onIndex_exponent_bounded_sequence_analytic_PROVED": true,
+    "actual_signed_onIndex_exponent_ZERO_TAIL_PROVED": true,
+    "actual_spectral_core_same_weighted_target_analytic_PROVED": true,
+    "actual_spectral_core_EXACT_original_polynomial_coordinates_PROVED": true,
+    "actual_onIndex_Jacobian_difference_COMPACT_PROVED": true,
+    "actual_mean_zero_onIndex_Jacobian_difference_COMPACT_PROVED": true,
+    "actual_native_minus_offIndex_phase_times_spectral_core_Jacobian_COMPACT_PROVED": true,
+    "constructed_COMMON_complex_spectral_core_neighborhood_at_EVERY_real_source_PROVED": true,
+    "scope": "EVERY complex point of the retained physical divisor domain for the on-index exponent/tail; EVERY complex point also in the native domain for derivative compactness. A verified factory supplies ONE common complex neighborhood at EVERY original physical real Hminus-one source, before ALL indices. Exact complex mean-zero source and original signed Sobolev -1/2 zero-mode target, original square-root constants, all collapsed gaps.",
+    "actual_spectral_core_Jacobian_Fourier_remainder_COMPACT_PROVED": false,
+    "native_compact_Fourier_derivative_remainder_PROVED": false,
+    "all_source_Birkhoff_derivative_closed_range_PROVED": false,
+    "all_source_Birkhoff_derivative_invertibility_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "OddBoundedAnalyticRealization proves that locally uniformly bounded analytic positive samples have their LITERAL odd extension analytic into the bounded signed-sequence Banach space. CompactZeroTailGauge proves that a bounded exponent with vanishing signed tails has an exponential symbol with unit tail; removing an ANALYTIC bounded zero-tail exponent from an analytic weighted sequence map changes its FULL complex Banach derivative by an ACTUAL COMPACT operator at finite exponent. The principal linear map is unchanged by this removal.",
+    "HillOnIndexCorrectionZeroTail strengthens the actual enclosing-circle estimate: on ONE native complex source neighborhood before ALL high indices, the actual physical on-index Abelian correction is bounded by C times the sum of the ACTUAL auxiliary-Dirichlet-minus-midpoint displacement and ACTUAL periodic gap displacement. Both are genuine l2 sequences. This proves the on-index correction samples tend to ZERO at EVERY complex source of the retained physical divisor domain, including collapsed gaps. The proof uses the actual filled equation and auxiliary sheet, with no gap/sheet division and no unproved asymptotic premise.",
+    "HillOnIndexBoundedExponent realizes the ENTIRE actual on-index correction as a bounded analytic signed exponent: positive mode=-i*correction_n, negative mode=+i*correction_n, central mode0. It proves its signed zero tails from the preceding actual l2 spectral estimate. Analyticity is in Coeff infinity on the existing open physical divisor domain, using the prior proved local uniform ALL-index correction bound. All numerator-family estimates used here are verified SourceLemma12_12Data, later supplied by the proved original family factory.",
+    "HillSpectralCoreSequence removes this actual on-index phase from the actual intrinsic diagonal sequence. The resulting SPECTRAL CORE is analytic in the SAME signed Sobolev -1/2 Hilbert target, with literal central0. Its EXACT positive raw coordinate is -4*tau_n*(muFreq_n-tau_n+rootCoeff_n) divided by (2*sqrt(pi)*sqrt(n))*sqrt(2); negative uses MINUS rootCoeff_n. Here tau is the ACTUAL sourceStandardRootMidpoint, muFreq the ACTUAL physical auxiliary Dirichlet frequency, and rootCoeff the ACTUAL original Hill terminal-sheet coefficient. The removal changes the actual full complex derivative by a COMPACT operator, not merely by an invertible phase factor.",
+    "HillMeanZeroSpectralCore proves the SAME on-index derivative difference compact on the EXACT complex mean-zero source and signed Sobolev -1/2 zero-mode target. Combining it with the verified amplitude/off-index reductions proves D(meanNative)-M_exp(offIndexExponent)*D(meanSpectralCore) ACTUALLY COMPACT. The actual multiplier is a genuine Banach equivalence on the exact target. Inclusion/projection formulas for the actual core derivative are proved, and all source/target norms and original constants are unchanged.",
+    "HillSpectralCoreNeighborhood constructs a patch and ONE COMMON OPEN COMPLEX neighborhood at EVERY native real source, before ALL indices. On it the analytic actual core has the exact two signed raw spectral-polynomial formulas, the on-index derivative difference is compact, and the combined mean-zero native/core remainder is compact. The required original-family estimates, patch, and equality of glued intrinsic coordinates with physical patch coordinates are ALL CONSTRUCTED from verified results; none is assumed from the user. OriginalHillSpectralCoreReduction exports the same exact common-neighborhood reduction at EVERY original physical Hminus-one potential, including zero and arbitrary collapsed gaps.",
+    "The remaining SPECTRAL CORE/Fourier derivative estimate is NOT proved. Full native compact-Fourier remainder, all-source Fredholmness and derivative injectivity/closedrange/bijectivity remain UNPROVED. Prior actual dense derivative range, signed Gardner canonicality, intrinsic angle-pair zero, amplitude compactness, off-index phase compactness and original isospectral norm compactness remain verified. Universal numerator scalar, remaining nonlinear scales, global bijectivity/boundedness, bounded-set weak-star homeomorphism, actual KdV flow and ALL FIVE MAIN THEOREMS remain UNPROVED."
+  ],
+  "declarations": [
+    "NLS.Coeff.norm_oddPositiveScalarExtension_le",
+    "NLS.Coeff.analyticOnNhd_positiveScalarExtension",
+    "NLS.Coeff.analyticOnNhd_oddPositiveScalarExtension",
+    "NLS.Coeff.analytic_odd_realization_of_local_bounds",
+    "NLS.Coeff.infty_exp_unit_tail",
+    "NLS.WeightedCoeff.isCompactOperator_removeZeroTailExponentialSymbol_difference",
+    "NLS.KdV.HillProductEquationPatch.exists_local_uniform_physicalOnIndexCorrection_weighted_tail_bound",
+    "NLS.KdV.HillProductEquationPatch.physicalOnIndexAbelianCorrection_zero_tail",
+    "NLS.KdV.HillProductEquationPatch.physicalOnIndexSignedExponent",
+    "NLS.KdV.HillProductEquationPatch.physicalOnIndexOddSequence_data",
+    "NLS.KdV.HillProductEquationPatch.analytic_physicalOnIndexSignedExponent",
+    "NLS.KdV.HillProductEquationPatch.physicalOnIndexSignedExponent_positive",
+    "NLS.KdV.HillProductEquationPatch.physicalOnIndexSignedExponent_negative",
+    "NLS.KdV.HillProductEquationPatch.physicalOnIndexSignedExponent_zero_mode",
+    "NLS.KdV.HillProductEquationPatch.physicalOnIndexSignedExponent_zero_tail",
+    "NLS.KdV.HillProductEquationPatch.physicalSpectralFactorPlus",
+    "NLS.KdV.HillProductEquationPatch.physicalSpectralFactorMinus",
+    "NLS.KdV.HillProductEquationPatch.physicalSpectralCoreMap",
+    "NLS.KdV.HillProductEquationPatch.analytic_physicalSpectralCoreMap",
+    "NLS.KdV.HillProductEquationPatch.physicalSpectralCoreMap_zero_mode",
+    "NLS.KdV.HillProductEquationPatch.physicalSpectralCoreMap_positive",
+    "NLS.KdV.HillProductEquationPatch.physicalSpectralCoreMap_negative",
+    "NLS.KdV.HillProductEquationPatch.isCompactOperator_physicalOnIndexJacobianDifference",
+    "NLS.KdV.HillProductEquationPatch.physicalMeanZeroSpectralCoreMap",
+    "NLS.KdV.HillProductEquationPatch.physicalMeanZeroSpectralCoreMap_coe",
+    "NLS.KdV.HillProductEquationPatch.analytic_physicalMeanZeroSpectralCoreMap",
+    "NLS.KdV.HillProductEquationPatch.fderiv_physicalMeanZeroSpectralCoreMap_eq_comp",
+    "NLS.KdV.HillProductEquationPatch.isCompactOperator_physicalMeanZeroOnIndexJacobianDifference",
+    "NLS.KdV.HillProductEquationPatch.physicalMeanZeroSpectralCoreRemainder",
+    "NLS.KdV.HillProductEquationPatch.isCompactOperator_physicalMeanZeroSpectralCoreRemainder",
+    "NLS.KdV.exists_hillSpectralCoreNeighborhood",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_spectral_core_reduction"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/OddBoundedAnalyticRealization.lean",
+    "NLS/SequenceSpaces/CompactZeroTailGauge.lean",
+    "NLS/KdV/HillOnIndexCorrectionZeroTail.lean",
+    "NLS/KdV/HillOnIndexBoundedExponent.lean",
+    "NLS/KdV/HillSpectralCoreSequence.lean",
+    "NLS/KdV/HillMeanZeroSpectralCore.lean",
+    "NLS/KdV/HillSpectralCoreNeighborhood.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSpectralCoreReduction.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "2cd76876e4bb9ce74e8211002f88a29b7734abb3",
+    "baseline_modules": 1523,
+    "baseline_non_audit_sources_verified_unchanged": 1522,
+    "new_modules_compiled": 8,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.LocallyBoundedRealization",
+        "source": "NLS/SequenceSpaces/LocallyBoundedRealization.lean",
+        "source_sha256": "0f57395af182636a2841237f97a3e0501cd5abbc9a7ed89fa646f4b441213456"
+      },
+      {
+        "module": "NLS.SequenceSpaces.FiniteExponentTail",
+        "source": "NLS/SequenceSpaces/FiniteExponentTail.lean",
+        "source_sha256": "3dcc14b385404150e9048328da6ce2fd18dcb733c27d4d53e8fe1adec5d6f232"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.OddPositiveScalarExtension",
+        "source": "NLS/SequenceSpaces/OddPositiveScalarExtension.lean",
+        "source_sha256": "0f34588bbe42255b2e5bf6ca59637111756f3d15d05ab08f3eebb8cc4ab0342a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PositiveScalarInfinity",
+        "source": "NLS/SequenceSpaces/PositiveScalarInfinity.lean",
+        "source_sha256": "f34bbedcd1e4f17d2410289ae177204986bcdb30245a8a7455dbc5fb31a37638",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.CompactUnitSymbolDerivative",
+        "source": "NLS/SequenceSpaces/CompactUnitSymbolDerivative.lean",
+        "source_sha256": "114cc2aa96793dd52250ddbc35663af7d4d7a12e89cee956d3848ed39fb38674",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.CompactGaugeDerivative",
+        "source": "NLS/SequenceSpaces/CompactGaugeDerivative.lean",
+        "source_sha256": "181e37760397d9f6f6066afb7f496030df9d888ccdc87b54772d819a3decc9b4",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillOnIndexUniformCorrectionTail",
+        "source": "NLS/KdV/HillOnIndexUniformCorrectionTail.lean",
+        "source_sha256": "621ee2214c167ece6b0e015dea7ba35ce26380f717390036a4518b77cf88e5de",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillOnIndexCircleBound",
+        "source": "NLS/KdV/HillOnIndexCircleBound.lean",
+        "source_sha256": "38055c68c99382098b09e96fdd46c41808f76fb146f609071c90018aa44b4c9f",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillAbelianWeightNormBound",
+        "source": "NLS/KdV/HillAbelianWeightNormBound.lean",
+        "source_sha256": "d68995aed14a269b29fed929e2dac2a5348490c450487c9d8eb497f6c0a1e64d",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillOnIndexUniformCorrectionBound",
+        "source": "NLS/KdV/HillOnIndexUniformCorrectionBound.lean",
+        "source_sha256": "55a20490badefaff2a2e1243dd3428fe12733aa648f004fb43e231e89afbcc4b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillIntrinsicDiagonalSequence",
+        "source": "NLS/KdV/HillIntrinsicDiagonalSequence.lean",
+        "source_sha256": "1122d20910e70cf20840b6929c3bd75acf52a7e07b247ce76fb1d865b9df8901",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMeanZeroIntrinsicCompact",
+        "source": "NLS/KdV/HillMeanZeroIntrinsicCompact.lean",
+        "source_sha256": "8062d22cd8dd3d9564ffa5132983fa19592bf1ec663ed594d15c208b2c1ff48a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillProductEquationFamilyFactory",
+        "source": "NLS/KdV/HillProductEquationFamilyFactory.lean",
+        "source_sha256": "aa396447976bf43273f635f638992f1783ebc352bc7a567954bd5d2c5bdce7c5",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicJacobianCompact",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillIntrinsicJacobianCompact.lean",
+        "source_sha256": "bff9d26e781a187c6a33185935ca509a22c7a2993e6569a949c7bc535b9d116c",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1531,
+    "audited_declarations": 7829,
+    "theorems": 6589,
+    "definitions": 1240,
+    "new_theorems": 26,
+    "new_definitions": 6,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-onindex-spectral-core.log",
+    "log_sha256": "9eed5fa350fdc2d377522e3c16ab71e5723793639733d19d9ddb947b613f9a6d"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NEXT prove the remaining ACTUAL SPECTRAL CORE Jacobian has the needed compact half-Fourier remainder or another genuine Fredholm/inverse property. The actual ON-INDEX phase now has proved signed ZERO TAILS and removing it changes the intrinsic diagonal derivative by an ACTUAL COMPACT operator. Normalized action-amplitude and off-index phase derivative contributions were already proved compact. ONE COMMON COMPLEX neighborhood at EVERY physical real source now carries an analytic actual spectral core with EXACT positive coordinate -4*tau_n*(muFreq_n-tau_n+rootCoeff_n)/[(2*sqrt(pi)*sqrt(n))*sqrt(2)], negative uses MINUS rootCoeff_n, central0. The patch, original-family estimates and ALL-index scalar identifications are CONSTRUCTED from verified results. On the exact complex mean-zero source and signed Sobolev -1/2 zero-mode target, D(native)=M_exp(offIndexExponent)*D(spectralCore)+K with M a genuine bounded invertible diagonal map and K ACTUALLY COMPACT. Remaining core/Fourier and native/Fourier estimates, all-source DF closedrange/injectivity/bijectivity remain OPEN. Prior denseRange/raw Hamiltonian preimages, full signed Gardner matrix and intrinsic anglepairzero remain verified. Do not infer core/Fourier estimates from removal of the phases/amplitude or transfer NLS finite-gap density. ALL FIVE MAIN THEOREMS remain UNPROVED.",
+    "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff map: derivative invertibility at EVERY source, remaining nonlinear source/target scales, global bijectivity/boundedness and bounded-set weak-star homeomorphism. FULL actual signed-coordinate Gardner Poisson canonicality is NOW PROVED on the ENTIRE original physical real mean-zero Hminus-one domain, including collapsed gaps andzero. Full complex-source cotangents are used at those real sources; no arbitrary-complex-source claim is made. Exact Fourier DF0, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses at0 remain complete. Do not infer a strong symplectic Banach isomorphism or global diffeomorphism from scalar canonical brackets alone, or substitute ordinary NLS coordinates/componentwise-real targets.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}

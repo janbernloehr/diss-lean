@@ -1,0 +1,69 @@
+{
+  "source": "arXiv:1610.00278v1, Section 2.2, equation (17) and Lemma 2.7 (PDF/printed p.11); Appendix C Lemma C.2 (p.42)",
+  "main_theorems_verified": false,
+  "domains": {
+    "predual_order": "0<=r<1/2, source regularity s=-r, including s=0",
+    "potential": "Original Potential(r): real, mean-zero, physically period-one FL^(s,infinity) distributions. The coefficient-domain theorems hold for arbitrary complex endpoint potentials, without reality, mean-zero or parity assumptions.",
+    "physical_domain": "The entire original period-two FourierLebesgueSpace 2 1 2, identified by the full original H1/H^-1 duality and actual distributional derivatives. No endpoint regularity premise is imposed on an eigenvector.",
+    "rhs_C2": "Every original complex period-two FL^(-r,infinity) right-hand side, without mean, reality or parity restrictions.",
+    "lambda_C2": "Every complex lambda, without strip or tail hypotheses.",
+    "endpoint_reduction_weight": "Unit spectral weight, exactly the unweighted endpoint scale of the main Birkhoff theorems. Existing arbitrary-weight tail bounds and physical identifications remain available; the new full-domain determinant converse is stated in the unit-weight scale."
+  },
+  "quantifier_order": "For every admissible r and norm bound R, one N>=1 precedes every original source potential q with norm(q)<=R, every n>=N and every lambda in the corrected strip. The numerical half-contraction proof is produced by the uniform cutoff theorem.",
+  "normalization": "Period two, modes exp(i*pi*k*x), coefficient q(mode(-k)), free symbol pi^2*k^2, normalized original dual action with factor 1/2. Original distributions and the exact source endpoint norm are preserved.",
+  "correction": "The shared corrected strip abs(Re(lambda)-pi^2*n^2)<=6*n replaces printed12*n. Actual spectral labels and their eventual inclusion must still be established.",
+  "declarations": {
+    "physical_multiplication_full_domain": "NLS.KdV.endpointH1Multiplication_physical",
+    "actual_source_potential_norm": "NLS.Articles.KdVPseudomeasures.norm_sourceEndpointCoefficients",
+    "actual_source_potential_HminusOne": "NLS.Articles.KdVPseudomeasures.sourceEndpointCoefficients_HminusOne",
+    "tail_inverse_on_original_carrier": "NLS.KdV.endpointHillTailInverse",
+    "explicit_effective_operator": "NLS.KdV.endpointHillReducedOperator",
+    "physical_reconstruction": "NLS.KdV.endpointHillReconstruct",
+    "all_physical_eigenvectors_recovered": "NLS.KdV.singularHillEigenvector_reconstruct",
+    "determinant_criterion": "NLS.KdV.endpointHillReduced_det_eq_zero_iff",
+    "uniform_original_source_criterion": "NLS.Articles.KdVPseudomeasures.sourceLemma2_7_uniform_physical_reduction",
+    "physical_eigenspace_linear_equivalence": "NLS.KdV.endpointHillKernelEquiv",
+    "geometric_multiplicity_at_most_two": "NLS.KdV.finrank_singularHillEigenspace_le_two",
+    "global_inhomogeneous_regularization": "NLS.KdV.singularHill_inhomogeneous_memlp",
+    "original_source_C2": "NLS.Articles.KdVPseudomeasures.sourceLemmaC_2"
+  },
+  "regularity_C2": "If (L(q)-lambda)f=g holds as equality of original distributions with f in H1 and g of endpoint order s, an actual original FL^(s+2,infinity) distribution with identical smooth-test action is constructed.",
+  "shared_reuse": [
+    {
+      "file": "NLS/KdV/HillComplement.lean",
+      "commit": "194ec4bd1254f88305d8743f13197fa775e97931",
+      "branch": "articles/kdv-estimates",
+      "byte_identical": true,
+      "sha256": "abf8fbb912e4e629f97cc6b2b44a060382f5945fc8793fede162227bd49326fd"
+    },
+    {
+      "file": "NLS/KdV/HillReduction.lean",
+      "commit": "194ec4bd1254f88305d8743f13197fa775e97931",
+      "branch": "articles/kdv-estimates",
+      "byte_identical": true,
+      "sha256": "5fdcf6cb4585f9bbf67e31a617f257b727eb481e4b6577590e45396fac65717f"
+    }
+  ],
+  "remaining": [
+    "Prove canonical spectral labels, asymptotic enumeration and eventual corrected-strip assignment. The closed actual operator, full compact resolvent and global point-spectrum criterion are proved.",
+    "Prove physical gap/Dirichlet bounds and inverse spectral regularity after establishing actual spectral labels.",
+    "Construct the Birkhoff maps and actual KdV main theorem proofs."
+  ],
+  "qualification": "The determinant criterion concerns the physical point eigen-equation, not an asserted equality between the full spectrum and a labeled sequence. The rank bound is geometric; no equality between algebraic multiplicity and determinant-zero order is inferred.",
+  "further_verified_dependencies": "Joint closed-strip endpoint-norm analyticity, actual equal-diagonal determinant factorization, coefficient bounds and full Lemma2.11 analytic-zero count/localization/root separation are proved; see spectral-analytic-map.json and spectral-coefficients-map.json.",
+  "full_physical_resolvent_dependencies": "See spectral-resolvent-map.json for the actual closed dense original operator, nonempty compact full H-minus-one resolvent, global point-spectrum criterion, finite bounded spectral regions and uniform determinant/invertibility equivalence.",
+  "verified_multiplicity_order": {
+    "coverage": "spectral-multiplicity-order-map.json",
+    "results": [
+      "Normalized finite jets of Banach-valued analytic functions retain exact factorial normalization and commute with continuous linear observations, addition and subtraction. Actual scalar multiplication agrees with the existing formal scalar Taylor convolution.",
+      "The existing formal matrix Taylor action is exactly the normalized finite jet of the actual analytic two-mode matrix acting on an amplitude polynomial. Its kernel is equivalent to vanishing of all retained residual derivatives.",
+      "Vanishing affine-pencil residual derivatives imply that the actual Banach-domain Taylor coefficients form a domain-preserving physical chain. The proof retains every original domain coefficient, including the empty chain.",
+      "At every allowed interior strip point and every finite length, the original physical chain space is linearly equivalent to the actual effective-matrix Taylor kernel. The forward map is the original two-mode coefficient projection. Surjectivity uses the actual norm-analytic H1 reconstruction of an arbitrary kernel amplitude polynomial, and its original H1 Taylor coefficients.",
+      "The actual determinant has finite analytic order everywhere on the full corrected closed strip. Convexity of the strip and a proved actual physical resolvent point exclude the zero germ; no finite-order premise is supplied by a caller.",
+      "Eventual physical finite-chain dimensions and the verified shared eventual matrix Taylor-nullity theorem prove that the actual full original operator algebraic multiplicity equals the actual effective determinant analytic order. The equality holds on the entire corrected closed strip, including its boundary and nonroots.",
+      "The entire corrected strip contains exactly two actual physical eigenvalues counted with their full original algebraic multiplicities. This is the proved analytic two-zero count transported through the exact multiplicity/order correspondence.",
+      "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
+    ],
+    "status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
+  }
+}

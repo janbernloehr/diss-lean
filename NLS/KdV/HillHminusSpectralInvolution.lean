@@ -1,3 +1,4 @@
+import NLS.KdV.HillDiscriminantGardnerCommutation
 import NLS.KdV.HillHminusSpectralDifferentials
 import NLS.Fourier.ACPeriodicUnitCoefficients
 
@@ -43,23 +44,5 @@ theorem hillHminusDiscriminants_Gardner_hilbert_zero
   filter_upwards [ae_hasDerivAt_hillEnergyDiscriminantGradientCurve
     (hillNativeHilbertDirection q) F] with x hx
   rw [hx.deriv]
-
-/-- The actual Hill discriminants Poisson commute at every complex H-minus-one
-source and every pair of complex energies. Actual L2 density and continuity
-of the genuine Gardner bracket extend the original physical identity. -/
-theorem hillHminusDiscriminants_Gardner_commute (q : PeriodOneHminusOne) (E F : ℂ) :
-    NLS.Poisson.hminusGardnerBracket (fun r => hillHminusDiscriminant r E)
-      (fun r => hillHminusDiscriminant r F) q=0 := by
-  have hE : AnalyticOnNhd ℂ (fun r => hillHminusDiscriminant r E) univ :=
-    fun r _ => analyticAt_hillHminusDiscriminant_source r E
-  have hF : AnalyticOnNhd ℂ (fun r => hillHminusDiscriminant r F) univ :=
-    fun r _ => analyticAt_hillHminusDiscriminant_source r F
-  have hc := (NLS.Poisson.analyticOnNhd_hminusGardnerBracket _ _ hE hF).continuous
-  have he := denseRange_periodOneL2Inclusion.equalizer hc continuous_const (by
-    funext a
-    change NLS.Poisson.hminusGardnerBracket _ _ (periodOneL2Inclusion a)=0
-    rw [periodOneL2Inclusion_eq_hilbertToHminus]
-    exact hillHminusDiscriminants_Gardner_hilbert_zero a E F)
-  exact congrFun he q
 
 end NLS.KdV

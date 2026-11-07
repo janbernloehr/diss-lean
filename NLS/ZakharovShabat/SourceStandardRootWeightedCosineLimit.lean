@@ -66,7 +66,7 @@ theorem sourceStandardRoot_weighted_cosineIntegral_tendsto_boundary
         (periodOnePotential_mem ψ) n).re)/2
   let L : Filter ℝ := if upper then 𝓝[Set.Ioi 0] (0:ℝ)
     else 𝓝[Set.Iio 0] (0:ℝ)
-  letI : L.IsCountablyGenerated := by
+  let : L.IsCountablyGenerated := by
     cases upper <;> dsimp [L] <;> infer_instance
   have hδ : δ = (d:ℂ) :=
     sourceStandardRootHalfGap_eq_ofReal_affineJacobian hp hp1 ψ hreal n

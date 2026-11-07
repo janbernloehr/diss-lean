@@ -1,0 +1,194 @@
+{
+  "source": "arXiv:1610.00278v1 Section2 periodic/antiperiodic spectral labeling and Lemma2.11; AppendixC original H-minus-one operator on its full H1 domain. Necessary global spectral localization dependency for the main theorems.",
+  "main_theorems_verified": false,
+  "phase": "Actual wide singular endpoint localization and exhaustion of the entire high real source spectrum",
+  "modules": [
+    "NLS/FunctionalAnalysis/EquivalentNormNeumann.lean",
+    "NLS/KdV/FreeHillWideGeometry.lean",
+    "NLS/KdV/PseudomeasureWideComparison.lean",
+    "NLS/KdV/PseudomeasureWideTail.lean",
+    "NLS/KdV/PseudomeasureWideLocalization.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralWideLocalization.lean"
+  ],
+  "modified_shared_module": "NLS/KdV/FreeHill.lean",
+  "declarations": [
+    "NLS.FunctionalAnalysis.norm_equiv_solution_le_two",
+    "NLS.FunctionalAnalysis.exists_equivalentNorm_neumann_inverse",
+    "NLS.FunctionalAnalysis.equivalentNormNeumannInverse",
+    "NLS.FunctionalAnalysis.equivalentNormNeumannInverse_left",
+    "NLS.FunctionalAnalysis.equivalentNormNeumannInverse_right",
+    "NLS.KdV.wideHillStrip",
+    "NLS.KdV.freeHill_denominator_lower_wide",
+    "NLS.KdV.exists_wideHillStrip_of_ge",
+    "NLS.KdV.exists_wideHillStrip_of_ge_lower_edge",
+    "NLS.KdV.wideHillCenter",
+    "NLS.KdV.wideHillCenter_mem",
+    "NLS.KdV.norm_wideHillCenter_sub_le",
+    "NLS.KdV.wideHillSymbol",
+    "NLS.KdV.wideHillRatio",
+    "NLS.KdV.wideHill_denominator_ge",
+    "NLS.KdV.wideHill_denominator_ne_zero",
+    "NLS.KdV.norm_wideHillRatio_le",
+    "NLS.KdV.reducedHillSymbol_mul_wideHillRatio",
+    "NLS.KdV.wideHillMultiplier",
+    "NLS.KdV.wideHillMultiplier_apply",
+    "NLS.KdV.negativeShiftedNorm_wideHillMultiplier_le",
+    "NLS.KdV.wideEndpointHillResolventH1",
+    "NLS.KdV.wideEndpointHillResolventH1_coefficient",
+    "NLS.KdV.wideEndpointHillPerturbation",
+    "NLS.KdV.wideEndpointHillPerturbation_apply",
+    "NLS.KdV.endpointH1Multiplication_wideResolvent",
+    "NLS.KdV.negativeShiftedNorm_wideEndpointHillPerturbation_le",
+    "NLS.KdV.exists_wideEndpointHill_cutoff",
+    "NLS.KdV.norm_wideEndpointHillPerturbation_conjugate_le",
+    "NLS.KdV.wideEndpointHillTailInverse",
+    "NLS.KdV.wideEndpointHillTailInverse_left",
+    "NLS.KdV.wideEndpointHillTailInverse_right",
+    "NLS.KdV.wideEndpointHillTailInverse_unique",
+    "NLS.KdV.negativeShiftedNorm_wideEndpointHillTailInverse_le",
+    "NLS.KdV.wideEndpointHillEffectivePotential",
+    "NLS.KdV.singularHillEigenvector_decompose_wide",
+    "NLS.KdV.singularHillEigenvector_potential_wide",
+    "NLS.KdV.singularHillEigenvector_wide_coordinates_ne_zero",
+    "NLS.KdV.singularHillEigenvector_wide_equation",
+    "NLS.KdV.wideEndpointHillEffectivePotential_basis_shifted",
+    "NLS.KdV.wideEndpointHillEffectiveCorrection_columns_le",
+    "NLS.KdV.singularHillEigenvector_localization_wide_raw",
+    "NLS.KdV.endpointHill_small_of_wide_small",
+    "NLS.KdV.singularHillEigenvector_localization_wide",
+    "NLS.KdV.endpointHillSpectrum_wide_localization",
+    "NLS.KdV.endpointHillSpectrum_real_high_cover",
+    "NLS.KdV.endpointHillSpectrum_high_iff_pair",
+    "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_wide_localization",
+    "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_real_high_cover",
+    "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_high_iff_pair",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_exhaustive_real_tail",
+    "NLS.KdV.two_mul_nat_sub_one_le_abs_sq_sub_sq"
+  ],
+  "domains": {
+    "potential": "Full original complex endpoint distributions of order-r infinity,0<=r<1/2, for wide localization. Native reality for exhaustion of the high real spectrum. Original source wrappers retain real mean-zero physical period-one constraints.",
+    "domain": "The entire original period-two H1 domain; no extra eigenvector endpoint regularity premise. Actual potential terms have the previously proved endpoint regularity on every H1 input.",
+    "base": "The unchanged original period-two H-minus-one space.",
+    "wide": "|Re(z)-pi^2*n^2|<=12*n with n>=2. The n=1 case is deliberately excluded; the original corrected radius6n strip remains unchanged.",
+    "normalization": "Original modes exp(i*pi*k*x),free symbol pi^2*k^2,normalized original distribution and Sobolev duality conventions.",
+    "uniformity": "One cutoff N>=2 is chosen before q on each exact original endpoint norm ball, then before n and z. The criterion is13*C_r*n^(r-1/2)*norm(q)<=1/2.",
+    "high_region": "Every actual source spectral point with Re(z)>=pi^2*N^2-12*N. Source spectral reality is already proved globally.",
+    "gap_space": "Actual ordered pair widths, evenly extended to signed indices and zero below N,in the genuine Weight.sobolev(-r),infinity space,with norm<=6*sqrt6*norm(q)."
+  },
+  "comparison": {
+    "center": "mu=pi^2*n^2+i*Im(z)",
+    "diagonal_ratio": "(mu-free_k)/(z-free_k) off the two resonances;1 at the resonances",
+    "multiplier_bound": 13,
+    "inverse": "Actual original-H1 narrow inverse at mu composed with the diagonal comparison.",
+    "perturbation": "The same Fourier V*A_z^(-1)*Q on the original endpoint carrier;both shifted bounds multiplied by13.",
+    "tail_inverse": "Two-sided inverse of the actual original wide equation;bound2 in BOTH opposite shifted norms for that same inverse."
+  },
+  "conclusions": {
+    "wide_complex_localization": "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_wide_localization",
+    "high_real_cover": "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_real_high_cover",
+    "high_source_exhaustion": "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_high_iff_pair",
+    "uniform_exhaustive_original_tail": "NLS.Articles.KdVPseudomeasures.source_uniform_exhaustive_real_tail",
+    "generic_equivalent_norm_inverse": "NLS.FunctionalAnalysis.equivalentNormNeumannInverse"
+  },
+  "shared_geometry": {
+    "branch": "articles/kdv-estimates",
+    "head": "1cca5123c8c2713a6072d9e90b8a755636f414a7",
+    "copied_declarations": 5,
+    "copied_theorems": 4,
+    "copied_definitions": 1,
+    "files": [
+      "NLS/KdV/FreeHill.lean",
+      "NLS/KdV/HillWideLocalization.lean"
+    ],
+    "qualification": "Only potential-independent lattice/covering proofs are reused. No regular L2-potential or H2-domain physical spectral conclusion is imported or instantiated as a singular result."
+  },
+  "results": [
+    "Shared lattice geometry supplies the exact nearest-neighbor squared-mode gap and radius12n wide strips for n>=2. These overlapping strips cover the high real half-line from free_N-12N. Only potential-independent geometry is reused from the regular branch.",
+    "At a wide-strip point z, the comparison center mu=free_n+i*Im(z) belongs to the existing narrow strip. The diagonal ratio(mu-free_k)/(z-free_k), with harmless resonant identities, has norm at most13 in every original weighted exponent and every translated endpoint norm.",
+    "The actual wide complementary inverse is the original narrow H1 inverse composed with that diagonal comparison. It retains the full original H1 codomain and exactly the wide reciprocal Fourier coefficients. Actual original potential multiplication after it equals the constructed wide endpoint perturbation.",
+    "The actual wide perturbation has both opposite shifted bounds13*C_r*n^(r-1/2)*norm(q). A reusable equivalent-norm Neumann theorem constructs a two-sided inverse on the unchanged original carrier. The very same inverse has bound2 in both opposite shifted endpoint norms.",
+    "Every nonzero original H1 eigenvector on a wide strip decomposes into its actual two resonant modes plus the original H1 wide inverse of its proved endpoint potential term. Its resonant coordinates are nonzero and satisfy the actual finite equation; no additional eigenvector regularity premise is assumed.",
+    "Under the explicit wide cutoff13*C_r*n^(r-1/2)*norm(q)<=1/2, every actual singular wide-strip eigenvalue lies within sqrt(n)/4 of the free center and therefore lies in its corrected narrow strip. This holds for full original complex endpoint potentials and all complex parameters on the wide strip.",
+    "For native real endpoint potentials, wide covering and actual spectral reality prove that every physical spectral point with Re(z)>=free_N-12N lies in a corrected narrow strip with n>=N. There are no additional sufficiently high real spectral values between those strips.",
+    "Original source wrappers preserve the entire real mean-zero physically period-one potential distribution, exact original norm and original H-minus-one/H1 operator. One cutoff chosen before q on each original norm ball gives an ordered physical pair family that exhausts the entire high source spectrum and retains the genuine infinity-Sobolev gap-tail bound6*sqrt6*norm(q)."
+  ],
+  "qualifications": [
+    "The entire sufficiently HIGH real spectrum is now exhausted. This does not establish a global lower spectral bound, finite central cluster or its exact algebraic count.",
+    "The old radius6n strips are unchanged; radius12n strips are supplementary geometric regions used only n>=2. No refutation theorem is introduced.",
+    "The local module constructs a truncated gap tail. Downstream SpectralCanonicalLabels proves actual real global slots and offset, and SpectralCanonicalGaps bounds the entire actual real gap sequence. Physical source parity remains open.",
+    "No actual KdV frequency, Birkhoff map or physical solution flow is inferred from these spectral dependencies."
+  ],
+  "remaining": [
+    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct the physical Dirichlet comparison and complete source Theorem2.1(ii) for the actual Dirichlet midpoint differences. The FULL arbitrary-weight complex direct canonical-gap theorem2.1(i) is now proved.",
+    "Construct the actual adapted Fourier-coordinate map Omega^(m) of source Sections2.6-2.7 and its weighted analytic inverse;prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets. General-weight actual coefficient errors and joint norm analyticity are now available.",
+    "Construct and verify the ORIGINAL Birkhoff maps with global bijectivity,real analyticity and stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
+    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses,quantifiers,normalizations and topology. All remain unproved."
+  ],
+  "validation": {
+    "modules_checked": 100,
+    "audited_declarations": 999,
+    "theorems": 803,
+    "definitions": 196,
+    "newly_audited_declarations": 52,
+    "new_theorems": 42,
+    "new_definitions": 10,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fresh_build": true,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "log": ".lake/article-check/logs/validation-wide-spectrum.log"
+  },
+  "subsequent_progress": [
+    "The actual original central Riesz range/root-space equality, rank/count equality and EXACT real central algebraic count2n-1 at EVERY sufficiently high separator are now proved,uniformly on original real norm balls. Canonical global slots/parity and main theorem constructions remain open; see spectral-central-count-map.json.",
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-canonical-labels-map.json",
+      "results": [
+        "The actual finite central spectral multiset repeats each native real singular eigenvalue according to its ACTUAL full original physical algebraic multiplicity and has cardinality2N-1. Sorting and appending the actual ordered high pairs produces a global monotone enumeration of the entire original spectrum.",
+        "Every global spectral fiber is finite and its cardinality equals the ACTUAL physical algebraic multiplicity. Intrinsic high-pair uniqueness and monotonicity prove that the entire labeling is independent of cutoff and enumeration choices.",
+        "Canonical sourceHillLabels exhaust the entire original real spectrum, put every sufficiently high actual pair in the exact slots2n-1,2n, and have an actual lowest value at index0, without any ground-state simplicity assertion.",
+        "The full signed canonical real gap sequence, including its finite central prefix, belongs to the genuine endpoint infinity Sobolev space of order-r. One explicit full-gap norm bound is uniform on each exact original real endpoint norm ball, with constants and cutoff chosen before q."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-complex-count-map.json",
+      "results": [
+        "A shared algebraic theorem proves that a commuting idempotent annihilating an ordinary eigenspace annihilates every finite generalized chain and the full algebraic root space. Applying it to1-P proves identity on the full root space from identity on ordinary eigenvectors. No finite-dimensional ambient space or semisimplicity is assumed.",
+        "For every original COMPLEX endpoint potential, the actual operator-valued Riesz projection fixes ALL enclosed physical algebraic root vectors and kills ALL root vectors outside the closed disk. The actual finite-dimensional projection range equals the sum of enclosed full physical algebraic root spaces. The full original H1 domain in H-minus-one is unchanged.",
+        "The actual finite enclosed spectrum and its actual algebraic count are constructed for every complex original potential. Independence of full root spaces identifies the actual projection rank with that count, including nontrivial Jordan chains. Hence the ACTUAL count is invariant on any preconnected continuous complex potential family with a common physical resolvent circle.",
+        "The wide-strip covering and tight sqrt(n)/4 localization hold for the ENTIRE sufficiently high complex spectrum, without a reality hypothesis. Pure free-lattice geometry shows every such localized complex disk avoids every high separator circle of radius pi^2*N^2-12N.",
+        "For each EXACT ORIGINAL complex endpoint norm ball, ONE zero-centered physical resolvent circle is chosen BEFORE q. Low real parts are excluded using the proved uniform full spectral sector bound; all remaining spectral points are excluded by complex high localization and separator geometry.",
+        "The ACTUAL free enclosed count on that circle is proved equal to the existing physical count2N-1, by equality of the actual finite spectral sets and actual full algebraic multiplicities. The ORIGINAL homotopy t*q transports the actual complex count. source_uniform_complex_algebraic_count gives exactly2N-1 on every original complex norm ball, with a common circle and index chosen before q."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-complex-labels-map.json",
+      "results": [
+        "Sided free-lattice separation places every tight complex high-mode disk wholly below or wholly above each sufficiently high separator. On every such disk,norm membership and real-part membership both mean n<N.",
+        "The actual original complex central disk is proved to select EXACTLY the source real-part central sublevel. Equality of the ACTUAL finite spectral sets and actual full algebraic counts gives source_uniform_all_complex_central_counts: ONE cutoff BEFORE q on each original complex norm ball gives the exact count2n-1 at EVERY subsequent separator,plus the uniform wide contraction.",
+        "Native EndpointHillComplexPair constructs an intrinsic source-lexicographic physical pair from the ACTUAL determinant zeros,retaining actual full physical algebraic repetitions,including nontrivial Jordan chains. Its entire corrected strip is exhausted;both endpoints are tightly localized;distinct modes are strictly separated in real part. Each pair is unique. Real pairs map literally to the same complex physical pairs.",
+        "The actual original complex central multiset repeats every value by its full physical algebraic multiplicity. Sorting in the explicit source lexicographic relation keeps every repetition. Appending actual ordered high pairs gives an enumeration of the ENTIRE original complex spectrum,with the high pair exactly in slots2n-1,2n.",
+        "Every occurrence fiber is finite and its occurrence count equals the ACTUAL full physical algebraic multiplicity. Intrinsic pair uniqueness and finite ordered-enumeration uniqueness prove equality of ENTIRE labelings across all admissible cutoffs and construction choices.",
+        "sourceHillComplexLabels is the intrinsic global complex labeling in the exact source order(real part first,imaginary part second). It exhausts the entire original spectrum,has exact full algebraic multiplicities,has a lexicographically least actual value at index0,and puts each high actual pair in its required slots. One cutoff is uniform BEFORE every potential in an original complex norm ball. No ground-state simplicity or physical boundary parity is inferred.",
+        "sourceHillComplexLabels_ofPotential proves literal pointwise equality with the existing real canonical labels on the original real mean-zero period-one source. This is the same physical spectral model,not a compatible alternative.",
+        "Actual complex high gaps obey the original full-strip coupling estimate and the exact endpoint Sobolev weighted bound6*sqrt(6)*norm(q). The complete sourceComplexCanonicalGaps,including its finite central prefix,belongs to the genuine infinity Sobolev space of order-r. The full gap map is bounded on EVERY exact original complex endpoint norm ball,with one constant chosen BEFORE q. Its coefficients agree literally with the existing original real gaps."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-weighted-gap-map.json",
+      "results": [
+        "Norm-decreasing inclusions between arbitrary source spectral weights preserve every raw Fourier coefficient,the full original H-minus-one potential,and the full original H1 reduced resolvent. The actual perturbation commutes with inclusion;uniqueness proves equality of weighted tail inverses and corrected resonant modes under inclusion.",
+        "The original physical unit-weight effective diagonal and both couplings are proved equal to the weighted corrected-mode coefficients. The full-strip general-weight diagonal/coupling error estimates and coupling size bounds therefore concern the SAME original singular operator,not a replacement weighted characteristic.",
+        "The actual full-strip coupling radius retains the entire arbitrary spectral weight. Every actual complex physical high pair satisfies the DOUBLE-frequency bound W(2n)*abs(gap)<=2*sqrt(6)*norm(q),and the mode-number bound W(n)*abs(gap)<=6*sqrt(6)*norm(q),where W(k)=w(k)*(1+abs(k))^(-r). No cutoff or constant depends on w.",
+        "SourceWeightedSpectral realizes the original general-weight complex distributions isometrically. Forgetting only the extra weight decreases the exact original norm with constant1 and preserves EVERY smooth-test action,so mean-zero,reality and physical period-one constraints remain unchanged on restriction. The coefficient adapter and original H-minus-one inclusion agree exactly with the verified native physical operator.",
+        "Source Lemma2.9 weighted diagonal/coupling errors hold for the literal original physical entries and source Fourier coefficients on the whole corrected strip. Those entries are jointly complex analytic in the EXACT original weighted norm and spectral parameter.",
+        "The actual sourceWeightedCanonicalGaps is the COMPLETE canonical lexicographic gap sequence,including its central prefix,for the SAME original weighted source distribution. It belongs to the genuine general-weight endpoint infinity space. Positive-index values are explicitly lambda_(2n)-lambda_(2n-1);the signed extension is even and zero at0.",
+        "One cutoff is chosen BEFORE BOTH the source spectral weight and original potential on every exact original weighted norm ball. The explicit full bound is abs(w(N)*(8*sourceSpectralBound(r,R)+4*pi^2*N^2)+6*sqrt(6)*R),with N independent of w. The statement retains N in this bound. Literal local boundedness is proved in the original weighted norm topology.",
+        "sourceTheorem2_1_i proves the general-weight direct gap regularity and norm-ball boundedness of source Theorem2.1(i),with the exact original period-two Fourier normalization explicitly used by the paper. The proof applies to the full period-two complex weighted distribution space,so in particular to the original complex mean-zero physically period-one source. Theorem2.1(ii),inverse Theorem2.2 and every main theorem remain open."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "source": "arXiv:1610.00278v1 Appendix C, pp.41-42: L(q) acts on original period-two H-minus-one with full original H1 domain. This continuation verifies the closed compact-resolvent/discreteness dependencies for every potential in the endpoint range needed by the main theorems.",
+  "main_theorems_verified": false,
+  "domains": {
+    "order": "0<=r<1/2, source potential order s=-r, including s=0",
+    "potential": "Every complex original FourierLebesgueSpace(2,-r,infinity) distribution; the statements include its real, mean-zero and physically period-one source subspace.",
+    "base": "The entire original period-two FourierLebesgueSpace(2,-1,2), with its original H-minus-one norm.",
+    "domain": "The entire original period-two FourierLebesgueSpace(2,1,2). Its unchanged-distribution inclusion into the base is proved injective, compact and dense.",
+    "inhomogeneous_rhs": "Every original H-minus-one distribution, with no endpoint regularity or finite Fourier support assumption.",
+    "spectral_parameter": "Every complex lambda in the Fredholm, global point-spectrum, finite-eigenspace, closedness and bounded-region-finiteness statements. The explicit two-mode determinant criterion uses the corrected closed6n high strip and the existing uniform cutoff."
+  },
+  "normalization": "Modes exp(i*pi*k*x), original coefficient q(mode(-k)), free symbol pi^2*k^2, and the original normalized smooth-test distribution action. The H-minus-one potential is proved equal as an entire original distribution to the original endpoint potential.",
+  "actual_operator": {
+    "partial_map": "NLS.KdV.singularHillPartialOperator",
+    "domain_equivalence": "NLS.KdV.singularHillDomainEquiv",
+    "physical_action": "NLS.KdV.singularHillPartialOperator_apply",
+    "actual_graph": "NLS.KdV.singularHillPartialOperator_graph",
+    "dense_domain": "NLS.KdV.dense_domain_singularHillPartialOperator",
+    "closed_in_standard_API": "NLS.KdV.isClosed_endpointHillPartialOperator"
+  },
+  "declarations": {
+    "generic_strong_endpoint_compact_lower_inclusion": "NLS.WeightedCoeff.isCompactOperator_endpointLowerInclusion",
+    "free_physical_Banach_isomorphism": "NLS.KdV.singularHillFreeIsomorphism",
+    "compact_endpoint_to_original_HminusOne": "NLS.KdV.isCompactOperator_endpointHillHminusOne",
+    "compact_physical_potential_on_full_H1": "NLS.KdV.isCompactOperator_endpointH1Multiplication_physical",
+    "actual_normalized_pencil": "NLS.KdV.endpointHillNormalizedPencil",
+    "global_Fredholm_index_zero": "NLS.KdV.endpointHillNormalizedPencil_fredholm_index_zero",
+    "global_finite_dimensional_physical_eigenspaces": "NLS.KdV.finiteDimensional_endpointHillEigenspace",
+    "local_analytic_Fredholm_determinant": "NLS.KdV.exists_local_endpointHillPencil_determinant",
+    "full_physical_resolvent_set": "NLS.KdV.endpointHillResolventSet",
+    "global_spectrum_equals_point_spectrum": "NLS.KdV.mem_endpointHillSpectrum_iff",
+    "full_determinant_invertibility_criterion": "NLS.KdV.mem_endpointHillSpectrum_iff_determinant",
+    "actual_inverse_into_H1": "NLS.KdV.endpointHillResolventToH1",
+    "left_inverse_full_domain": "NLS.KdV.endpointHillResolventToH1_left",
+    "right_inverse_all_original_HminusOne_data": "NLS.KdV.endpointHillResolventToH1_right",
+    "actual_base_resolvent": "NLS.KdV.endpointHillBaseResolvent",
+    "compact_base_resolvent": "NLS.KdV.isCompactOperator_endpointHillBaseResolvent",
+    "norm_analytic_resolvent": "NLS.KdV.analyticAt_endpointHillResolventToH1",
+    "nonempty_physical_resolvent": "NLS.KdV.endpointHillResolventSet_nonempty",
+    "actual_physical_resolvent_identity": "NLS.KdV.endpointHillBaseResolvent_sub",
+    "closed_original_graph": "NLS.KdV.isClosed_endpointHillGraph",
+    "bounded_spectrum_regions_finite": "NLS.KdV.finite_endpointHillSpectrum_norm_le",
+    "source_same_complex_distribution": "NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_val",
+    "source_actual_spectrum": "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum",
+    "source_actual_closed_operator": "NLS.Articles.KdVPseudomeasures.source_singularHill_closed",
+    "source_compact_resolvent": "NLS.Articles.KdVPseudomeasures.source_singularHill_compact_resolvent",
+    "source_global_point_spectrum": "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_mem_iff",
+    "source_spectrum_finite_on_bounded_regions": "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_finite_norm_le",
+    "source_uniform_full_determinant_criterion": "NLS.Articles.KdVPseudomeasures.source_uniform_full_resolvent_criterion"
+  },
+  "proof_details": [
+    "The strong endpoint unit ball has compact image in each admissible lower norm space, by the verified full Wiener weak dual and AppendixB lower-topology theorem. This proves compactness of the actual strong endpoint inclusion without claiming vanishing infinity tails.",
+    "The physical free operator -d^2/dx^2+1 is a proved bounded isomorphism H1 to H-minus-one on the full original distribution spaces, with reciprocal symbol1/(1+pi^2*k^2).",
+    "Endpoint multiplication on the entire H1 domain lands in the original endpoint space, whose H-minus-one inclusion is compact. The domain inclusion is also compact. The fixed free normalization of L(q)-lambda is therefore identity plus compact at every lambda.",
+    "Verified shared Fredholm theory gives index zero, finite-dimensional physical eigenspaces and bijectivity from injectivity; shared analytic Schur theory provides a local analytic determinant at every parameter. No physical algebraic-multiplicity identity is inferred from this local determinant.",
+    "The existing high-strip determinant criterion is upgraded from the physical point eigen-equation to full operator pencil invertibility. A concrete point pi^2*n^2+i*n is proved to be in the resolvent set at each admissible large mode.",
+    "The total ring inverse of the normalized pencil defines a bounded inverse from all original H-minus-one right-hand sides into original H1. Both inverse identities, the full physical resolvent identity and local norm analyticity are proved on the actual resolvent set.",
+    "Composition with the original domain inclusion gives the actual compact base-space resolvent. Its closed-equation characterization proves closedness of the physical graph and closedness of the standard LinearPMap operator.",
+    "Every physical eigenvalue lambda becomes the eigenvalue1/(lambda-a) of one actual compact base resolvent. The shared finite-eigenvalues-away-from-zero theorem proves that every bounded spectral region has finitely many actual physical spectral values."
+  ],
+  "reuse": {
+    "imported_verified_shared_modules": [
+      "NLS/FunctionalAnalysis/CompactFredholm.lean",
+      "NLS/FunctionalAnalysis/CompactScalarPerturbation.lean",
+      "NLS/FunctionalAnalysis/CompactAnalyticDeterminant.lean",
+      "NLS/FunctionalAnalysis/CompactSpectrum.lean"
+    ],
+    "new_modules": [
+      "NLS/SequenceSpaces/EndpointCompactInclusion.lean",
+      "NLS/KdV/SingularHillFreeIsomorphism.lean",
+      "NLS/KdV/SingularHillOperatorDomain.lean",
+      "NLS/KdV/PseudomeasureFredholm.lean",
+      "NLS/KdV/PseudomeasureResolvent.lean",
+      "NLS/KdV/PseudomeasureSpectrum.lean",
+      "NLS/Articles/KdVPseudomeasures/SpectralResolvent.lean"
+    ],
+    "new_public_definitions_and_theorems": 68,
+    "qualification": "The shared regular-L2-potential monodromy criterion was inspected but is not imported as a theorem about singular endpoint potentials. Generic compact/Fredholm/Schur facts are applied only after their hypotheses are proved for the actual physical singular operator."
+  },
+  "qualifications": [
+    "This verifies the AppendixC closed compact-resolvent/discreteness dependencies for the endpoint potential range needed by the main theorems, not for every arbitrary H-minus-one potential stated in the source background.",
+    "Finite-dimensional eigenspaces and finitely many spectral values on bounded regions do not identify determinant zero order with physical algebraic multiplicity.",
+    "Canonical real global labels, asymptotic high slot enumeration and corrected-strip assignment are now proved downstream. Physical periodic/antiperiodic parity decomposition remains open.",
+    "Physical gap/Dirichlet estimates, inverse spectral regularity, Birkhoff maps and actual KdV main theorem constructions remain open. Main Theorems1.1,1.3,1.4,5.1,5.9 are not marked complete."
+  ],
+  "further_verified_dependencies": "Actual physical algebraic root spaces, global finite dimensionality/stabilization, exact compact-resolvent transport and generalized-eigenvector endpoint regularity are proved. The actual effective determinant order now equals actual physical algebraic multiplicity, with uniform physical algebraic two-count on corrected high strips; see spectral-multiplicity-order-map.json. Canonical labels remain open.",
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-complex-labels-map.json",
+      "results": [
+        "Sided free-lattice separation places every tight complex high-mode disk wholly below or wholly above each sufficiently high separator. On every such disk,norm membership and real-part membership both mean n<N.",
+        "The actual original complex central disk is proved to select EXACTLY the source real-part central sublevel. Equality of the ACTUAL finite spectral sets and actual full algebraic counts gives source_uniform_all_complex_central_counts: ONE cutoff BEFORE q on each original complex norm ball gives the exact count2n-1 at EVERY subsequent separator,plus the uniform wide contraction.",
+        "Native EndpointHillComplexPair constructs an intrinsic source-lexicographic physical pair from the ACTUAL determinant zeros,retaining actual full physical algebraic repetitions,including nontrivial Jordan chains. Its entire corrected strip is exhausted;both endpoints are tightly localized;distinct modes are strictly separated in real part. Each pair is unique. Real pairs map literally to the same complex physical pairs.",
+        "The actual original complex central multiset repeats every value by its full physical algebraic multiplicity. Sorting in the explicit source lexicographic relation keeps every repetition. Appending actual ordered high pairs gives an enumeration of the ENTIRE original complex spectrum,with the high pair exactly in slots2n-1,2n.",
+        "Every occurrence fiber is finite and its occurrence count equals the ACTUAL full physical algebraic multiplicity. Intrinsic pair uniqueness and finite ordered-enumeration uniqueness prove equality of ENTIRE labelings across all admissible cutoffs and construction choices.",
+        "sourceHillComplexLabels is the intrinsic global complex labeling in the exact source order(real part first,imaginary part second). It exhausts the entire original spectrum,has exact full algebraic multiplicities,has a lexicographically least actual value at index0,and puts each high actual pair in its required slots. One cutoff is uniform BEFORE every potential in an original complex norm ball. No ground-state simplicity or physical boundary parity is inferred.",
+        "sourceHillComplexLabels_ofPotential proves literal pointwise equality with the existing real canonical labels on the original real mean-zero period-one source. This is the same physical spectral model,not a compatible alternative.",
+        "Actual complex high gaps obey the original full-strip coupling estimate and the exact endpoint Sobolev weighted bound6*sqrt(6)*norm(q). The complete sourceComplexCanonicalGaps,including its finite central prefix,belongs to the genuine infinity Sobolev space of order-r. The full gap map is bounded on EVERY exact original complex endpoint norm ball,with one constant chosen BEFORE q. Its coefficients agree literally with the existing original real gaps."
+      ]
+    }
+  ],
+  "remaining": [
+    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct physical Dirichlet spectral comparisons. Original complex canonical ordering,actual multiplicities,global high slots and full complex unit-extra-weight direct gap regularity are now proved.",
+    "Complete the arbitrary-extra-weight direct estimates in source Theorem2.1 where required;unit extra weight w=1 is proved for all original COMPLEX endpoint potentials. Prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets.",
+    "Construct and verify the original Birkhoff maps with global bijectivity,real analyticity and the stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
+    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses,quantifiers,normalizations and topology. All remain unproved."
+  ]
+}

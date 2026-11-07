@@ -1,5 +1,5 @@
 import NLS.ComplexAnalysis.PrincipalSquareRootSheet
-import NLS.ComplexAnalysis.DenseNonreal
+import NLS.ComplexAnalysis.DenseSegmentComplement
 
 /-! The right frequency half-plane fixes the actual principal quadratic
 energy sheet. Nonreal energies are dense, so continuous sheet identities
@@ -37,5 +37,19 @@ theorem quadraticEnergyMap_injOn_right (c : ℂ) :
   · have hr := congrArg Complex.re h
     simp only [neg_re] at hr
     linarith
+
+theorem dense_complex_nonreal : Dense {z : ℂ | z.im ≠ 0} := by
+  intro z
+  by_cases hz : z.im = 0
+  · let ray : ℝ → ℂ := fun y => z+(y:ℂ)*I
+    have ht : Tendsto ray (𝓝[>] (0:ℝ)) (𝓝 z) := by
+      have hc : ContinuousAt ray 0 := by dsimp only [ray]; fun_prop
+      simpa only [ray,ofReal_zero,zero_mul,add_zero] using hc.tendsto.mono_left nhdsWithin_le_nhds
+    apply mem_closure_of_tendsto ht
+    filter_upwards [self_mem_nhdsWithin] with y hy
+    change (z+(y:ℂ)*I).im ≠ 0
+    simpa only [add_im,mul_im,ofReal_re,ofReal_im,I_im,I_re,mul_one,mul_zero,
+      add_zero,hz,zero_add] using ne_of_gt hy
+  · exact subset_closure hz
 
 end NLS.ComplexAnalysis

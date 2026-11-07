@@ -1,4 +1,4 @@
-import NLS.KdV.ClassicalL2PrimitiveAgreement
+import NLS.KdV.ClassicalSourcePrimitive
 import NLS.KdV.HillClassicalIdentification
 import NLS.ComplexAnalysis.TracePrimitiveFunctoriality
 
@@ -13,8 +13,23 @@ set_option autoImplicit false
 open Set Complex NLS.LinearVolterra NLS.ComplexAnalysis
 namespace NLS.KdV
 
+def classicalHillTraceFamily : TracePrimitiveFamily (Curve ℂ) where
+  trace := fun t => classicalHillDiscriminant t.2 t.1
+  analytic_trace := analyticOnNhd_classicalHillDiscriminant_joint
+  freePrimitive := classicalHillFreePrimitive
+  freeDomain := slitPlane
+  isOpen_freeDomain := isOpen_slitPlane
+  analytic_freePrimitive := analyticOnNhd_classicalHillFreePrimitive
+  free_trace := two_cosh_classicalHillFreePrimitive
+
 theorem classicalHillTraceFamily_continuationDomain :
     classicalHillTraceFamily.continuationDomain = classicalHillContinuationDomain := rfl
+
+theorem classicalHillTraceFamily_root :
+    classicalHillTraceFamily.root = classicalHillContinuedRoot := rfl
+
+theorem classicalHillTraceFamily_primitive :
+    classicalHillTraceFamily.primitive = classicalHillContinuedPrimitive := rfl
 
 def hillUnitPotentialCurveCLM : C(AddCircle (2 : ℝ), ℂ) →L[ℂ] Curve ℂ :=
   ContinuousMap.compCLM ℂ ℂ

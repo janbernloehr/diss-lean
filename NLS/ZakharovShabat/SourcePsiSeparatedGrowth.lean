@@ -10,7 +10,7 @@ variable {p : ℝ≥0∞} [Fact (1≤p)]
 
 /-- The actual deleted numerator is sub-sine on the FULL large
 free-separated exterior, beyond the special expanding circles. -/
-theorem exists_threshold_sourcePsiCandidate_sub_sine
+theorem exists_threshold_sourcePsiCandidate_sub_sine_quarter_pi
     (hp : p≠⊤) (hp1 : 1<p) (n : ℤ) (a : Coeff p) (ε : ℝ) (hε : 0<ε) :
     ∃ R : ℝ, ∀ z : ℂ, R≤‖z‖ →
       (∀ m : ℤ, Real.pi/4≤‖z-(Real.pi:ℂ)*m‖) →
@@ -45,12 +45,12 @@ theorem exists_threshold_sourcePsiCandidate_sub_sine
   apply le_of_mul_le_mul_left (a := ‖displacedRoots a n-z‖) _ hdistpos
   nlinarith
 
-theorem exists_threshold_sourceOddPsiCandidate_sub_sine
+theorem exists_threshold_sourceOddPsiCandidate_sub_sine_quarter_pi
     (hp : p≠⊤) (hp1 : 1<p) (n : ℤ) (a : Coeff p) (ε : ℝ) (hε : 0<ε) :
     ∃ R : ℝ, ∀ z : ℂ, R≤‖z‖ →
       (∀ m : ℤ, Real.pi/4≤‖z-(Real.pi:ℂ)*m‖) →
       ‖sourceOddPsiCandidate n (z,a)/(-2*sin z)‖≤ε := by
-  obtain ⟨R,hR⟩ := exists_threshold_sourcePsiCandidate_sub_sine hp hp1 n a (ε/2) (by positivity)
+  obtain ⟨R,hR⟩ := exists_threshold_sourcePsiCandidate_sub_sine_quarter_pi hp hp1 n a (ε/2) (by positivity)
   refine ⟨R,?_⟩
   intro z hz hsep
   have hsepneg (m : ℤ) : Real.pi/4≤‖-z-(Real.pi:ℂ)*m‖ := by

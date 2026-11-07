@@ -1,0 +1,152 @@
+{
+  "source": "arXiv:1610.00278v1 source3.2(ii), Section5 ACTUAL scalar Cartesian formulas: ORIGINAL-energy spectral estimate",
+  "status": "Prove the ORIGINAL Hill energy-weight spectral estimate for the ACTUAL scalar Cartesian coordinates, locally uniformly ALL n on ONE common OPEN CONNECTED native complex domain containing the ENTIRE real form. Target sequence mapping/canonicality, full Birkhoff map and ALL FIVE MAIN remain OPEN.",
+  "modules": [
+    "NLS/ComplexAnalysis/QuadraticEnergyWeightBound.lean",
+    "NLS/KdV/HillAuxiliaryMidpointSumLowerBound.lean",
+    "NLS/KdV/HillAuxiliaryEnergyWeightBound.lean",
+    "NLS/KdV/HillCanonicalCartesianWeight.lean",
+    "NLS/KdV/HillOnIndexUniformEnergyBound.lean",
+    "NLS/KdV/HillActionAngleOriginalEnergyBound.lean",
+    "NLS/KdV/HillActionAngleEnergyDomain.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianSpectralEstimate.lean"
+  ],
+  "declarations": [
+    "NLS.ComplexAnalysis.norm_frequency_weight_le_quadratic_energy_weight",
+    "NLS.KdV.HillProductEquationPatch.norm_physicalDirichletFrequency_add_midpoint_ge_of_real",
+    "NLS.KdV.HillProductEquationPatch.exists_real_physicalDirichletFrequency_add_midpoint_index_lower_bound",
+    "NLS.KdV.HillProductEquationPatch.exists_uniform_physicalDirichletFrequency_add_midpoint_index_lower_bound",
+    "NLS.KdV.HillProductEquationPatch.exists_local_uniform_physicalDirichlet_quadratic_energy_weight_bound",
+    "NLS.KdV.hillHminusCanonicalCartesianWeight",
+    "NLS.KdV.hillHminusCanonicalCartesianWeight_nonneg",
+    "NLS.KdV.hillHminusCanonicalCartesianWeight_eq_real",
+    "NLS.KdV.HillProductEquationPatch.exists_local_uniform_physicalDirichlet_original_energy_weight_bound",
+    "NLS.KdV.HillProductEquationPatch.exists_local_uniform_physicalOnIndexCartesian_original_energy_bound",
+    "NLS.KdV.norm_hillHminusActionAngleXY_le_of_factor_bounds",
+    "NLS.KdV.exists_local_uniform_actionAngle_original_energy_bound",
+    "NLS.KdV.HillActionAngleEnergyBall.source",
+    "NLS.KdV.HillActionAngleEnergyBall.source_open",
+    "NLS.KdV.exists_hillActionAngleEnergyBall",
+    "NLS.KdV.hillHminusActionAngleEnergyDomain",
+    "NLS.KdV.isOpen_hillHminusActionAngleEnergyDomain",
+    "NLS.KdV.real_mem_hillHminusActionAngleEnergyDomain",
+    "NLS.KdV.hillHminusActionAngleEnergyDomain_subset",
+    "NLS.KdV.analyticOnNhd_hillHminusActionAngle_on_energy_domain",
+    "NLS.KdV.exists_locally_uniform_actionAngle_original_energy_bound",
+    "NLS.KdV.isConnected_hillHminusActionAngleEnergyDomain",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_energy_estimate_common_domain",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_energy_estimate_UNIFORM_ALL_n",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_energy_estimate_real"
+  ],
+  "new_public_theorems": 22,
+  "new_public_definitions": 3,
+  "results": [
+    "Reusable quadratic energy-weight algebra: if normtau<=K*norm(mu+tau) and normgamma<=G*normtau, then normtau*(normgamma+norm(mu-tau))<=(1+K+K*G)*(norm(2*tau*gamma)+norm(mu squared-tau squared-gamma squared/4)). No gap, action or sheet is divided by, and collapse is included.",
+    "At every real native patch point, the ACTUAL AUXILIARY frequency lies in its positive selected periodic gap. Thus norm(ACTUAL AUXmu+tau)>=normtau, at ALL positive indices including low/closed gaps. The existing positive midpoint index lower bound transfers to this sum. FULL-l2 continuity of AUX displacement plus midpoint displacement preserves a lower bound a*n on ONE native complex ball BEFORE ALL n, without a new cutoff or disc-label assumption.",
+    "Uniform midpoint upper/lower index bounds, the actual sum lower bound and the local full-l2 gap norm bound give ONE neighborhood and constants BEFORE ALL n for the reusable quadratic weight conversion. The physical AUXILIARY divisor is retained. The canonical original energy midpoint is identified by its verified full period equation, the actual original Dirichlet energy by its squared AUX frequency minus shift, and the original squared energy gap by (2*tau*gamma) squared.",
+    "hillHminusCanonicalCartesianWeight is exactly sqrt(norm ACTUAL canonicalGapSquare)+norm(ACTUAL canonicalDirichlet-ACTUAL canonicalEnergyMidpoint). It is independent of ordering complex endpoints. At EVERY real source it equals the literal original periodic gap width plus abs(original Dirichlet energy-original periodic energy midpoint). The actual frequency weight is bounded by ONE constant times this original energy weight before ALL n, including complex collapse.",
+    "The ACTUAL physical diagonal Cartesian factors now obey a local C*originalEnergyWeight bound before ALL n. Applying the already proved uniform normalized amplitude and full infinite phase multiplier bounds yields BOTH complete factors and BOTH scalar Cartesian X,Y bounded by (C/sqrt n)*originalEnergyWeight. ONE complex neighborhood and constant precede ALL n. Actual original spectral normalization, AUX divisor, physical norming sheet and complete infinite phase are preserved.",
+    "hillHminusActionAngleEnergyDomain is ONE OPEN CONNECTED complex native neighborhood of the ENTIRE real form BEFORE ALL n, contained in the positive-amplitude, canonical zero-sequence and canonical Dirichlet domains. The scalar X,Y are analytic there. At EVERY COMPLEX point there is ONE local source neighborhood/constant BEFORE ALL n giving the original-energy/sqrt(n) estimate for BOTH factors and BOTH X,Y. The article interface includes the exact real original-label estimate.",
+    "Eight new modules (22 theorems and 3 definitions), three canonical-byte-identical shared dependencies, one unchanged private shared dependency and the exact 6513-declaration transitive axiom audit compile CLEAN. All 1209 baseline non-audit registered sources unchanged. Canonical checkout/shared metadata read-only; no heartbeat increase or new axiom. The full target sequence map, Gardner/Fourier/flow/bijection and ALL FIVE MAIN remain OPEN; goal ACTIVE."
+  ],
+  "fidelity": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-cartesian-energy-estimate-map.json",
+    "ACTUAL_AUXILIARY_frequency_plus_midpoint_uniform_index_lower_bound_PROVED": true,
+    "ONE_complex_source_ball_before_ALL_n_including_low_closed_gaps_PROVED": true,
+    "frequency_to_ORIGINAL_Hill_energy_weight_conversion_PROVED": true,
+    "canonical_weight_exact_original_real_gap_and_Dirichlet_midpoint_displacement_PROVED": true,
+    "ACTUAL_diagonal_Cartesian_ORIGINAL_energy_weight_bound_UNIFORMLY_ALL_n_PROVED": true,
+    "complete_ACTUAL_scalar_Cartesian_ORIGINAL_energy_over_sqrt_n_bound_PROVED": true,
+    "ONE_OPEN_CONNECTED_energy_domain_contains_ENTIRE_native_real_form_before_ALL_n_PROVED": true,
+    "local_uniform_energy_bound_at_EVERY_COMPLEX_energy_domain_point_PROVED": true,
+    "scalar_formula_source3_2_ii_analyticity_and_spectral_estimate_PROVED": true,
+    "ACTUAL_AUXILIARY_divisor_and_norming_sheet_preserved": true,
+    "ordinary_NLS_Dirichlet_divisor_substituted": false,
+    "normalized_action_ratio_amplitude_previously_applied": true,
+    "target_sequence_regularity_PROVED": false,
+    "Gardner_canonicality_PROVED": false,
+    "full_Birkhoff_coordinates_constructed": false,
+    "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "essential_remaining": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete target sequence regularity and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NEXT prove target sequence regularity and full Banach-source analyticity of the ACTUAL Cartesian sequence, starting at native H-minus-one -> h-minus-one-half, then all required original source/target Sobolev and pseudomeasure scales including infinity. Scalar ACTUAL X,Y and complete factors are now analytic through complex collapse on ONE OPEN CONNECTED hillHminusActionAngleEnergyDomain containing ENTIRE native real form BEFORE ALL n. At EVERY COMPLEX point ONE local U,C before ALL n gives norm BOTH complete factors and BOTH X,Y <=(C/sqrt n)*(sqrt(norm ACTUAL original canonicalGapSquare)+norm(ACTUAL original canonicalDirichlet-ACTUAL original canonicalEnergyMidpoint)). This weight equals literal original gap width+abs(original mu-original tau) at EVERY real source. Frequency-to-original-energy conversion is COMPLETE, including all low/closed/complex collapsed gaps: ACTUAL AUXmu+tau has common a*n lower bound by real positive gap placement and full-l2 sum continuity; midpoint scales and full-l2 gap weights supply uniform conversion constants. ACTUAL diagonal correction/phase and off-index infinite correction bounds, positive action amplitude branch, physical sign/gluing and scalar original-energy estimate are COMPLETE; do NOT redo them. Product and X squared+Y squared EXACTLY 2*actualAction, real conjugacy/realness and REAL closed-gap zeros are already proved. Native target sequence assembly must be justified, not inferred from scalar analyticity. Then Gardner/Fourier canonicality, full Birkhoff map/bijection/weak-star homeomorphism/KdV flow and ALL FIVE MAIN. Literal sharper KMT energy kernel and universal ACTUAL product scalar remain OPEN.",
+    "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions and native complex ACTUAL scalar Cartesian formula analyticity/ORIGINAL-energy estimate are proved. The full target sequence map, its Gardner/Fourier identification and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "ab156c0e4178a6f2961acf8cc566d8a8671197ec",
+    "baseline_modules": 1210,
+    "baseline_non_audit_sources_verified_unchanged": 1209,
+    "new_modules_compiled": 8,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ComplexAnalysis.QuadraticRootPrimitive",
+        "source": "NLS/ComplexAnalysis/QuadraticRootPrimitive.lean",
+        "source_sha256": "cfd4738608c41e500cb1a8fb44c2f2e026805fa3faf8b66e2d2b779493899b70"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.AnalyticZeroCount",
+        "source": "NLS/ComplexAnalysis/AnalyticZeroCount.lean",
+        "source_sha256": "e561f68398c9f7fd92c66facd4cda7ab38b7373f43491d3968cc3db20194543c"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.QuadraticCauchyUniqueness",
+        "source": "NLS/ComplexAnalysis/QuadraticCauchyUniqueness.lean",
+        "source_sha256": "8f6f48b1560ef21afce0c1d2f0df3b74c879923931c450185bcb904f4a444cd2"
+      }
+    ],
+    "modules_in_exact_inventory": 1218,
+    "audited_declarations": 6513,
+    "theorems": 5452,
+    "definitions": 1061,
+    "new_theorems": 22,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-cartesian-energy-estimate.log",
+    "log_sha256": "915c2c588aaefc88f89ae54ff4ca35a82a919476b566774c5b5aa0bb5fe787c4",
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.ComplexAnalysis.OddSquareDescent",
+        "source": "NLS/ComplexAnalysis/OddSquareDescent.lean",
+        "source_sha256": "63533e2817d9126a562077fe711e53e1e3f8d13c0d71163e922ffcd8f7bd3976",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ]
+  },
+  "output_sha256": {
+    "NLS/ComplexAnalysis/QuadraticEnergyWeightBound.lean": "060add12fd23c294700eeac840ae75a41d574a3e3a415875caf9681f255b791d",
+    "NLS/KdV/HillAuxiliaryMidpointSumLowerBound.lean": "9592a3f947eb19678d86a0bae0bf7d90a8ac4985d68507dd6db91ebd5d817dca",
+    "NLS/KdV/HillAuxiliaryEnergyWeightBound.lean": "0396fa6a24ff15fd2b39d6f709991b519bed0c102765ccbdb83b4f582c25d8d0",
+    "NLS/KdV/HillCanonicalCartesianWeight.lean": "94ce8c5ce17e6fc4e7d6b997578400c6f9a86a17785d8e670e2ed1acaf0ad5de",
+    "NLS/KdV/HillOnIndexUniformEnergyBound.lean": "5f678f5d0b30c21a2f73b529cac7956cc479d88baefb87c0e13878a59833eb47",
+    "NLS/KdV/HillActionAngleOriginalEnergyBound.lean": "db160c77aa23f90cc442d775dd688099914e9cad332d4b4e46c7c9eef27c1af9",
+    "NLS/KdV/HillActionAngleEnergyDomain.lean": "8601d6701f7fc88219b24259f80b891c573c0c630a73305430c5c4d26d798278",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianSpectralEstimate.lean": "8ec1697946a30abe5a2b3ea7ead91f7940943a74decf2b40bf5f0350eac9335a"
+  },
+  "canonical_checkout_written": false,
+  "canonical_state": {
+    "head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+    "status": ""
+  },
+  "workspace_decision": "pending; all writes private",
+  "git_isolation": {
+    "metadata": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/appendix-b-milestones.git",
+    "base_commit": "ab156c0e4178a6f2961acf8cc566d8a8671197ec",
+    "branch": "articles/kdv-pseudomeasures",
+    "shared_canonical_git_written": false
+  },
+  "main_theorems_verified": false
+}

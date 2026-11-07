@@ -1,3 +1,4 @@
+import NLS.KdV.HminusOneCharacteristicOrder
 import NLS.KdV.HillHminusOneCanonicalRealLabels
 import NLS.KdV.HillMiuraTraceOrder
 import NLS.KdV.MiuraCanonicalEndpoints
@@ -11,10 +12,28 @@ The fixed Dirac canonical endpoints are squared and translated at the same
 index. Original physical algebraic multiplicities retain collapsed pairs.
 -/
 noncomputable section
-open Set Metric Complex
+open Set Metric Complex NLS.ZakharovShabat
 open scoped ENNReal Classical
 namespace NLS.KdV
-open NLS.ZakharovShabat
+
+/-- A literal shifted real Miura representation identifies actual full-domain
+physical multiplicities at every nonzero frequency. The shift may be complex. -/
+theorem singularHillAlgebraicMultiplicity_shifted_miura (q : PeriodOneHminusOne)
+    (u : PeriodOneRealL2) (c z : ℂ) (hz : z ≠ 0)
+    (himage : periodOneMiura u.val = q+periodOneL2Inclusion (lp.single 2 0 c)) :
+    singularHillAlgebraicMultiplicity (periodOneOriginal q) (z^2-c) =
+      periodicAlgebraicMultiplicity (by norm_num)
+        (periodOnePotential (hillMiuraDiagonal u.val)) z := by
+  have hpot : singularHillMiuraPotential (Coeff.periodDouble u.val) =
+      periodOneOriginal q+l2OriginalHminus (lp.single 2 0 c) := by
+    exact (singularHillMiuraPotential_periodDouble u.val).trans
+      ((congrArg periodOneOriginal himage).trans (periodOneOriginal_add_constant q c))
+  have hs := singularHillAlgebraicMultiplicity_add_constant (periodOneOriginal q) c (z^2-c)
+  rw [sub_add_cancel,← hpot,singularHillAlgebraicMultiplicity_miura_dirac
+    (Coeff.periodDouble u.val) (periodDouble_realType_diagonal u) z hz] at hs
+  rw [periodOnePotential_apply,hillMiuraDiagonal_fst,hillMiuraDiagonal_snd]
+  exact hs.symm
+
 
 /-- Two ordered roots in an actual real high pair exhaust its two slots
 if a repeated candidate is counted at least twice. -/

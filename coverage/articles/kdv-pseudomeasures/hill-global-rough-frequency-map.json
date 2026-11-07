@@ -1,0 +1,148 @@
+{
+  "source": "arXiv:1610.00278v1 Lemma3.9/5.7 frequency dependencies for Main1.1,1.3,5.9; actual globally defined rough KdV frequency extension and weighted Banach analytic renormalization",
+  "status": "Globally defined genuine rough KdV frequencies are real analytic, uniquely extend the actual physical H1 frequencies, and have an analytic renormalized sequence in the literal inverse-index weighted lp target for EVERY p>1 including infinity.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-global-rough-frequency-map.json",
+    "globally_defined_genuine_rough_KdV_frequencies_PROVED": true,
+    "independence_of_ALL_local_Miura_product_Cauchy_choices_PROVED": true,
+    "ALL_rough_sources_FULL_COMPLEX_free_cubic_minus12_moment_SUM_formula_PROVED": true,
+    "real_analytic_actual_rough_mode_frequencies_PROVED": true,
+    "exact_ACTUAL_physical_H1_frequency_agreement_ALL_modes_PROVED": true,
+    "UNIQUE_continuous_extension_of_actual_physical_H1_frequency_PROVED": true,
+    "actual_free_cubic_at_zero_PROVED": true,
+    "frequency_convergence_from_EVERY_H1_family_converging_in_original_rough_norm_PROVED": true,
+    "literal_inverse_index_weighted_lp_renormalized_frequency_membership_EVERY_p_above_one_including_infinity_PROVED": true,
+    "exact_raw_renormalized_frequency_coefficients_PROVED": true,
+    "full_weighted_Banach_target_real_analyticity_PROVED": true,
+    "common_complex_neighborhood_BEFORE_ALL_p_and_local_gap_squared_norm_estimate_PROVED": true,
+    "rough_frequency_action_fiber_invariance_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "physical_smooth_PDE_flow_identification_PROVED": false,
+    "universal_smooth_approximation_TRAJECTORY_convergence_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "OriginalHillRoughKdVFrequency defines a genuine globally defined real rough frequency from chosen actual local Miura/product/Cauchy moment data. The VERIFIED cross-patch raw SUM identity proves equality with EVERY actual local expression at EVERY original rough real source. Every mode is real analytic in the original physical rough Banach source and agrees EXACTLY with the genuine physical H1 Hamiltonian frequency on its original H1 domain, including ALL collapsed modes.",
+    "OriginalHillRoughFrequencyReality proves the FULL COMPLEX local identity (omega_n(q):Complex)=(2*pi*n)^3-12*sum_m m*Omega_nm^(2)(q) at EVERY original rough real source in EVERY actual moment-series neighborhood. Actual rough finite-gap approximation, actual H1 representatives and the GENUINE physical H1 identity prove that taking a real part in the total global definition discards NO imaginary component.",
+    "OriginalHillRoughFrequencySequence defines the genuine renormalized frequency sequence by its literal raw coefficients: omega_n-(2*pi*n)^3 for positive n and zero for nonpositive indices. For EVERY p>1, INCLUDING infinity, it proves actual membership in WeightedCoeff(Weight.signedSobolev(-1))p, exact coefficient identity, agreement with -12 times the actual local moment sequence, and an explicit local norm estimate 12*(2*pi*D.constant)*(1+3*norm(puncturedLattice p))*norm(actualDiracGapSequence)^2. One actual complex neighborhood is chosen BEFORE ALL p>1. The globally defined sequence is real analytic into the FULL literal weighted Banach target, not just coordinatewise analytic.",
+    "OriginalHillRoughFrequencyExtension proves every genuine rough frequency is continuous, is the UNIQUE continuous extension of the actual normalized physical H1 frequency to the original rough source, and has the exact free cubic (2*pi*n)^3 at zero. For EVERY index type/filter and EVERY H1 family whose included original potentials converge in the rough norm, the ACTUAL physical H1 frequencies converge to this SAME rough frequency. No selected finite-gap approximation or extra boundedness hypothesis replaces the universal approximation quantifier.",
+    "This proves actual rough FREQUENCIES and their weighted analytic renormalization. Actual rough KdV EVOLUTION, its identification with the physical PDE for smooth sources, universal trajectory approximation and the required endpoint weak-star dynamics remain UNPROVED. Appendix B/Main1.4 are complete; Main1.1,1.3,5.1,5.9 remain UNPROVED and the goal stays ACTIVE."
+  ],
+  "declarations": [
+    "NLS.Articles.KdVPseudomeasures.hillRoughFrequencyPatch",
+    "NLS.Articles.KdVPseudomeasures.hillRoughFrequencyNeighborhood",
+    "NLS.Articles.KdVPseudomeasures.mem_hillRoughFrequencyNeighborhood",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_local",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_physical_H1",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillRoughKdVFrequency",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_complex_eq_local",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVRenormalizedFrequencySequence",
+    "NLS.Articles.KdVPseudomeasures.hillRoughFrequency_local_sequence_coefficients",
+    "NLS.Articles.KdVPseudomeasures.hillRoughFrequencySequence_eq_local",
+    "NLS.Articles.KdVPseudomeasures.originalHill_exists_weighted_rough_frequency_neighborhood",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillRoughKdVRenormalizedFrequencySequence",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVRenormalizedFrequencySequence_coefficients",
+    "NLS.Articles.KdVPseudomeasures.continuous_hillRoughKdVFrequency",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_unique_continuous_extension",
+    "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_zero",
+    "NLS.Articles.KdVPseudomeasures.tendsto_physical_H1_frequency_of_rough_convergence"
+  ],
+  "files": [
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughKdVFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyReality.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencySequence.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRoughFrequencyExtension.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "1a3db115c320262b1c2f2b9164cb8e6223165fb2",
+    "baseline_modules": 1834,
+    "baseline_non_audit_sources_verified_unchanged": 1833,
+    "new_modules_compiled": 4,
+    "reused_canonical_modules_freshly_compiled": [],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillMomentPatchGluing",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillMomentPatchGluing.lean",
+        "source_sha256": "7e7a256d33e2154270f4bd57c131b7f64b8e21add8e1097bdf619f49d60b5352",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1PhysicalFrequency",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1PhysicalFrequency.lean",
+        "source_sha256": "f12a1086f5861c49831b0d35ed73413b30874a93f7f626e6de31f5ae912d10e0",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapH1Realization",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapH1Realization.lean",
+        "source_sha256": "3d8b2d2f31d13b6d29fa35aa1a84699e0cf37b69db1c0697dc581a009da938c4",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillWeightedMomentSeries",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillWeightedMomentSeries.lean",
+        "source_sha256": "53c51b774317257f67531760d706898b0a77f597367f9b292ff91bc735ae219c",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAtZero",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyAtZero.lean",
+        "source_sha256": "55ca5d3716bba770274395135b331b65f852f05eb184753d87c3cb36a2e55c1d",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMomentWeightedSeriesAnalytic",
+        "source": "NLS/KdV/HillMomentWeightedSeriesAnalytic.lean",
+        "source_sha256": "61ed6549761d21d4e21e4f49d02c3913a225070edac10b7f507fadd33eb2a640",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1838,
+    "audited_declarations": 8997,
+    "theorems": 7584,
+    "definitions": 1413,
+    "new_theorems": 14,
+    "new_definitions": 4,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-global-rough-frequency.log",
+    "log_sha256": "0ab30801bda4c3763dbb0f47945364b1552ff7b63268c6b7e0e55c4c8692f26c"
+  },
+  "remaining_obligations": [
+    "Construct ACTUAL original rough KdV evolution from the NOW DEFINED genuine rough frequencies and the verified actual native global inverse. Prove rough frequency invariance on action fibers (H1 physical action-fiber invariance and actual matched finite-gap approximations are available), actual flow group properties and smooth physical PDE identification. Prove convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for Main1.1,1.3,5.9. Genuine scalar rough frequencies, their uniqueness/H1 agreement, full complex free-minus12moments formula and EVERY p>1 including infinity weighted Banach analytic renormalization are NOW COMPLETE.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

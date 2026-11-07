@@ -1,0 +1,158 @@
+{
+  "source": "arXiv:1610.00278v1 Section2.2 equations (20)-(21), Lemma2.9 pp.12-13, Lemma2.11 pp.14-15 including estimate (23)",
+  "main_theorems_verified": false,
+  "parameter_domain": {
+    "predual_order": "0<=r<1/2; source data order s=-r, including s=0",
+    "potential": "Every complex original period-two FourierLebesgueSpace(2,-r,infinity) distribution, with its exact original endpoint norm. This includes the source complex mean-zero period-one subspace and the real physical source. No reality or mean-zero hypothesis is needed for the proved determinant conclusion.",
+    "spectral_domain": "The entire corrected CLOSED strip abs(Re(lambda)-pi^2*n^2)<=6*n; boundary points and all imaginary parts included.",
+    "cutoff": "The existing numerical criterion C_r*n^(r-1/2)*norm(q)<=1/2. sourceLemma2_11_uniform chooses N before q,n,lambda on each exact original norm ball; no new smallness hypothesis.",
+    "weighted_estimates": "endpointHillCorrectedMode_coefficient_error and the shifted spectral Lipschitz bounds allow every source SpectralWeight w. The full original H1 reconstruction, source scalar families and determinant conclusions are in the unit-weight main-theorem scale."
+  },
+  "normalization": "Physical period two, exp(i*pi*k*x), original coefficient q(mode(-k)), normalized original dual action with factor1/2. The upper source coupling is at q(mode(-2*n)) and the lower coupling is at q(mode(2*n)); the factor2 is retained.",
+  "declarations": {
+    "actual_H1_product_commutativity": "NLS.Fourier.PeriodicFourierLebesgue.h1Product_comm",
+    "full_singular_physical_Green_identity": "NLS.KdV.singularHillPencil_bilinear",
+    "actual_reconstruction_finite_residual": "NLS.KdV.endpointHillReconstruct_residual_equation",
+    "effective_Green_symmetry": "NLS.KdV.endpointHillReduced_bilinearSymmetry",
+    "equal_diagonals_for_complex_potentials": "NLS.KdV.endpointHillEffectivePotential_diagonals_eq",
+    "arbitrary_weight_coefficient_error": "NLS.KdV.endpointHillCorrectedMode_coefficient_error",
+    "actual_diagonal_error": "NLS.KdV.endpointDiagonal_error_le",
+    "actual_off_diagonal_error": "NLS.KdV.endpointCoupling_errors_le",
+    "joint_coefficient_analyticity": "NLS.KdV.analyticAt_endpointCoefficients",
+    "original_distribution_coefficient_interface": "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_unit",
+    "endpoint_resolvent_identity": "NLS.KdV.unshiftedEndpointHillPerturbation_sub",
+    "both_shifted_spectral_Lipschitz_bounds": "NLS.KdV.negativeShiftedNorm_endpointHillCorrectedMode_sub_le",
+    "diagonal_Lipschitz_eighth_under_existing_cutoff": "NLS.KdV.endpointDiagonal_sub_le_eighth",
+    "actual_equal_diagonal_factorization": "NLS.KdV.endpointReducedDeterminant_factorization",
+    "finite_actual_full_strip_supremum": "NLS.KdV.bddAbove_endpointCouplingRadii",
+    "literal_constant6_squared_bound": "NLS.KdV.endpointReduced_roots_separation",
+    "literal_sqrt6_bound": "NLS.KdV.endpointReduced_roots_separation_sqrt",
+    "original_source_factorization": "NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_factorization",
+    "source_full_Lemma2_11_uniform_original_complex_norm_balls": "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform"
+  },
+  "proof_details": [
+    "Full original H-minus-one/H1 duality and commutativity of actual H1 multiplication give the singular Green identity for every complex H-minus-one potential. No endpoint sum interchange is postulated.",
+    "Every reconstructed H1 amplitude satisfies the actual physical spectral pencil with exactly its finite two-mode residual. The inherited off-diagonal bilinear symmetry forces equality of the two actual diagonal corrections.",
+    "The original two-sided endpoint tail inverse and both opposite shifted norms yield the uniform coefficient error 2*C_r*n^(r-1/2)*norm(q)^2, with every source spectral weight retained.",
+    "The genuine complementary Fourier resolvent identity controls spectral variation globally on the corrected closed strip, using absolutely convergent original rows and both shifted inverse bounds.",
+    "The existing cutoff makes the actual diagonal a Lipschitz contraction with constant1/8. No Cauchy estimate based on the printed12n strip is needed.",
+    "The actual determinant factors as (lambda-pi^2*n^2-a_n)^2-b_n*b_-n. Its full-strip coupling supremum is proved finite. Each root shift is bounded by that actual supremum; diagonal contraction and the triangle inequality yield the literal source sqrt6 root-separation constant.",
+    "sourceLemma2_11_uniform combines the existing two-zero analytic-order counts on the source4sqrt(n) disc and entire strip, the stronger sqrt(n)/4 localization, and the full source root-separation estimate. The cutoff precedes every original complex potential in the norm ball."
+  ],
+  "qualifications": [
+    "Analytic determinant orders are proved equal to the full actual physical algebraic multiplicities on the corrected closed strip, so the two-zero count is now also the actual algebraic operator count; see spectral-multiplicity-order-map.json.",
+    "Actual global singular spectrum,complex canonical labels and eventual corrected-strip assignments are now proved. Physical periodic/antiperiodic boundary-condition parity remains open.",
+    "The scalar original-distribution Lemma2.9 wrapper is explicitly the unit spectral weight scale. The arbitrary-weight coefficient error is proved separately; the sharper source weighted diagonal bound involving the unweighted potential norm is not claimed here.",
+    "Main Theorems1.1,1.3,1.4,5.1,5.9 remain incomplete. Full arbitrary-weight canonical gap regularity is now proved;actual Dirichlet comparisons,inverse regularity,original Birkhoff maps and actual KdV constructions remain required."
+  ],
+  "shared_method_reuse": {
+    "branch": "articles/kdv-estimates",
+    "commit": "b2097376825d45ff2468d2c2db239c95b61dea59",
+    "inspected": [
+      "NLS/KdV/HillBilinearSymmetry.lean",
+      "NLS/KdV/HillWeightedCoefficients.lean",
+      "NLS/KdV/HillSpectralLipschitz.lean",
+      "NLS/KdV/HillRootSeparation.lean"
+    ],
+    "qualification": "Their regular L2-potential proofs are not imported as singular-potential assertions. New singular proofs reuse the physical Green/resolvent strategy and already verified shared finite-dimensional determinant formula. All52 public declarations added in this continuation are newly authored."
+  },
+  "verified_multiplicity_order": {
+    "coverage": "spectral-multiplicity-order-map.json",
+    "results": [
+      "Normalized finite jets of Banach-valued analytic functions retain exact factorial normalization and commute with continuous linear observations, addition and subtraction. Actual scalar multiplication agrees with the existing formal scalar Taylor convolution.",
+      "The existing formal matrix Taylor action is exactly the normalized finite jet of the actual analytic two-mode matrix acting on an amplitude polynomial. Its kernel is equivalent to vanishing of all retained residual derivatives.",
+      "Vanishing affine-pencil residual derivatives imply that the actual Banach-domain Taylor coefficients form a domain-preserving physical chain. The proof retains every original domain coefficient, including the empty chain.",
+      "At every allowed interior strip point and every finite length, the original physical chain space is linearly equivalent to the actual effective-matrix Taylor kernel. The forward map is the original two-mode coefficient projection. Surjectivity uses the actual norm-analytic H1 reconstruction of an arbitrary kernel amplitude polynomial, and its original H1 Taylor coefficients.",
+      "The actual determinant has finite analytic order everywhere on the full corrected closed strip. Convexity of the strip and a proved actual physical resolvent point exclude the zero germ; no finite-order premise is supplied by a caller.",
+      "Eventual physical finite-chain dimensions and the verified shared eventual matrix Taylor-nullity theorem prove that the actual full original operator algebraic multiplicity equals the actual effective determinant analytic order. The equality holds on the entire corrected closed strip, including its boundary and nonroots.",
+      "The entire corrected strip contains exactly two actual physical eigenvalues counted with their full original algebraic multiplicities. This is the proved analytic two-zero count transported through the exact multiplicity/order correspondence.",
+      "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
+    ],
+    "status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
+  },
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-weighted-gap-map.json",
+      "results": [
+        "Norm-decreasing inclusions between arbitrary source spectral weights preserve every raw Fourier coefficient,the full original H-minus-one potential,and the full original H1 reduced resolvent. The actual perturbation commutes with inclusion;uniqueness proves equality of weighted tail inverses and corrected resonant modes under inclusion.",
+        "The original physical unit-weight effective diagonal and both couplings are proved equal to the weighted corrected-mode coefficients. The full-strip general-weight diagonal/coupling error estimates and coupling size bounds therefore concern the SAME original singular operator,not a replacement weighted characteristic.",
+        "The actual full-strip coupling radius retains the entire arbitrary spectral weight. Every actual complex physical high pair satisfies the DOUBLE-frequency bound W(2n)*abs(gap)<=2*sqrt(6)*norm(q),and the mode-number bound W(n)*abs(gap)<=6*sqrt(6)*norm(q),where W(k)=w(k)*(1+abs(k))^(-r). No cutoff or constant depends on w.",
+        "SourceWeightedSpectral realizes the original general-weight complex distributions isometrically. Forgetting only the extra weight decreases the exact original norm with constant1 and preserves EVERY smooth-test action,so mean-zero,reality and physical period-one constraints remain unchanged on restriction. The coefficient adapter and original H-minus-one inclusion agree exactly with the verified native physical operator.",
+        "Source Lemma2.9 weighted diagonal/coupling errors hold for the literal original physical entries and source Fourier coefficients on the whole corrected strip. Those entries are jointly complex analytic in the EXACT original weighted norm and spectral parameter.",
+        "The actual sourceWeightedCanonicalGaps is the COMPLETE canonical lexicographic gap sequence,including its central prefix,for the SAME original weighted source distribution. It belongs to the genuine general-weight endpoint infinity space. Positive-index values are explicitly lambda_(2n)-lambda_(2n-1);the signed extension is even and zero at0.",
+        "One cutoff is chosen BEFORE BOTH the source spectral weight and original potential on every exact original weighted norm ball. The explicit full bound is abs(w(N)*(8*sourceSpectralBound(r,R)+4*pi^2*N^2)+6*sqrt(6)*R),with N independent of w. The statement retains N in this bound. Literal local boundedness is proved in the original weighted norm topology.",
+        "sourceTheorem2_1_i proves the general-weight direct gap regularity and norm-ball boundedness of source Theorem2.1(i),with the exact original period-two Fourier normalization explicitly used by the paper. The proof applies to the full period-two complex weighted distribution space,so in particular to the original complex mean-zero physically period-one source. Theorem2.1(ii),inverse Theorem2.2 and every main theorem remain open."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-diagonal-root-map.json",
+      "results": [
+        "A shared norm comparison bounds the difference of two actual fixed points using contraction only at those points. It proves continuity of a selected fixed-point family from a uniform local contraction and parameter continuity at the fixed base vector.",
+        "The original endpoint cutoff implies norm(q)<=n/16. The ACTUAL physical diagonal is bounded by2norm(q) on the WHOLE corrected strip. Its fixed-point map preserves the complete disk centered pi^2*n^2 of radius2norm(q),strictly inside the strip. Banach contraction constructs an ACTUAL scalar diagonal root with no root supplied by the caller.",
+        "endpointHillDiagonalRoot is the intrinsic actual root on the cutoff region. The ACTUAL equation,strict strip interior,quantitative original diagonal error and uniqueness on the ENTIRE corrected strip are proved. The total definition has a fallback outside the cutoff region;no root property is asserted there.",
+        "Under the strict cutoff criterion,the actual root is norm continuous. Its spectral diagonal derivative has norm<=1/8,so the derivative of lambda-free_n-a_n is nonzero. The checked analytic implicit-function theorem then proves COMPLEX analyticity of the actual root in the full endpoint potential,without an assumed branch or continuity hypothesis.",
+        "The article adapter retains original distributions and EXACT original endpoint norms. It proves the literal source equation,whole-strip uniqueness,mean-coefficient error,complex analyticity and real analyticity by scalar restriction. The same actual root is analytic on every stronger original source-weight space.",
+        "One cutoff BEFORE the original norm-ball potentials gives analytic root families with error2*C_r*n^(r-1/2)*R^2 relative to free_n+q0,and mean-zero displacement<=R/8. With R=2m this is exactly the source Lemma2.17 form8*C_r*n^(r-1/2)*m^2 and displacement<=m/4. Whole-strip uniqueness is retained. One cutoff also works BEFORE BOTH weight and potential in every original weighted norm ball.",
+        "sourceAdaptedCouplings defines the ACTUAL physical b_plus/minus evaluated at the proved intrinsic root. These coefficients are analytic in the EXACT original weighted norm,retain the full general-weight error bound,and have one uniform cutoff BEFORE BOTH weight and potential with shrinking error2*C_r*n^(r-1/2)*R^2.",
+        "At the proved actual diagonal root,the ORIGINAL physical effective determinant is exactly minus the product of the two actual adapted coefficients. The auxiliary diagonal root is not asserted to be a spectral eigenvalue or a spectral midpoint. The full adapted Fourier map Omega and its analytic inverse are not yet constructed."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-adapted-fourier-map.json",
+      "results": [
+        "The shared evenTailReplacement replaces only signed even Fourier modes +/-2n for n>=N,n>=1,retaining every low and odd mode and the mean. Actual pairwise weighted errors assemble into a genuine weighted endpoint sequence with the SAME uniform error bound.",
+        "sourceAdaptedFourierValues uses the ACTUAL physical b_plus/minus at the constructed intrinsic alpha_n(q). sourceWeightedAdaptedFourier realizes these coefficients in the EXACT original weighted distribution Banach space; on the proved balls its total-constructor fallback is excluded by an actual membership proof.",
+        "Every actual raw coefficient is complex analytic. The verified shared weighted analytic-realization theorem upgrades this to BANACH-VALUED complex analyticity,including exponent infinity. Analyticity is proved on an actual open norm ball,not merely coordinatewise or in a weaker topology.",
+        "ONE cutoff is chosen BEFORE BOTH w and q. For all original weighted norm balls of radius R>0,the ACTUAL Fourier map has error at most R/64,including on the closed ball boundary. Its value at zero is exactly zero. High pairs are exactly the physical adapted couplings;all low modes,all odd modes and the original mean are preserved.",
+        "The adapted map preserves original physical period one in BOTH directions and preserves the exact original mean. Changing source weights leaves the ENTIRE adapted distribution unchanged whenever the original input distribution is the same and both verified norm bounds hold.",
+        "The shared NearIdentityBallInverse theorem derives the1/16 operator derivative bound on the CLOSED radius-m ball from the actual m/32 error on the OPEN double ball,using Cauchy. It proves source injectivity by the error Lipschitz bound,constructs genuine inverse images by Banach contraction,and proves their local complex analyticity via the checked Banach implicit-function theorem.",
+        "source_uniform_adaptedFourier_inverse constructs the actual weighted analytic inverse with ONE cutoff BEFORE BOTH weights and potentials. The forward map is analytic on the open radius2m ball,its derivative differs from Id by at most1/16 on the CLOSED radius-m ball,and its norm is between one half and twice the exact original input norm.",
+        "The actual map is injective on the CLOSED source radius-m ball. Its proved inverse is analytic on the OPEN target radius3m/4 ball and has genuine inverse images in the OPEN radius-m source ball for EVERY target of norm<=3m/4. This includes the source CLOSED half-ball coverage and a neighborhood of every such target. Both inverse identities hold on their stated domains;the inverse preserves zero mean and period one for targets of norm<=m/2."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-real-adapted-map.json",
+      "results": [
+        "Physical endpointConjugate is the verified conjugate reflection of ORIGINAL Fourier coefficients,with norm preservation,involution and exact subtraction. The full corrected real-part strip and free complementary Fourier symbol obey physical conjugation.",
+        "The ACTUAL infinite Fourier perturbation commutes with physical conjugation at conjugate(q),conjugate(lambda),by the exact Fourier row formula and index reversal. Applying this to the actual tail equation and using endpointHillTailInverse_unique proves conjugation of the bounded tail inverse. No spectral reality assertion substitutes for this operator identity.",
+        "Physical conjugation swaps the two resonant modulation forcings and the ACTUAL corrected Fourier columns. Existing physical bilinear Green symmetry supplies equality of the two diagonals. Consequently the actual diagonal satisfies a(conjugate(q),conjugate(lambda))=conjugate(a(q,lambda)),and the upper/lower physical couplings swap and conjugate.",
+        "Uniqueness on the ENTIRE corrected strip proves endpointHillDiagonalRoot_conj for the actual constructed root. In particular the actual alpha has zero imaginary part for real potentials. Alpha is still an auxiliary diagonal root,not asserted to be an eigenvalue or midpoint.",
+        "The article adapter proves these identities for the ENTIRE original smooth-test distributions and exact original norms. sourceDiagonalRoot_im_eq_zero_of_real and sourceWeightedDiagonalRoot_im_eq_zero_of_real now prove the previously open physical real-valuedness of alpha in every source spectral weight. These complement the already proved source Lemma2.17 equation,analyticity,bounds and uniqueness.",
+        "sourceAdaptedCouplings_conj proves conjugate-swap symmetry at the ACTUAL alpha. For real original potentials,the actual lower coupling equals the conjugate upper coupling. The shared even-tail replacement conjugation lemma requires this symmetry only for the ACTUALLY REPLACED high pairs,not for unused low spectral slots.",
+        "sourceWeightedAdaptedFourier_conj proves that the ACTUAL adapted Fourier map commutes with physical conjugation on EVERY original smooth test. Hence it preserves real original distributions. The common cutoff is still chosen BEFORE BOTH weights and potentials;mean-zero and period-one preservation are unchanged.",
+        "On the verified injective CLOSED radius-m source ball,reality of the adapted image is EQUIVALENT to reality of the original source. source_uniform_real_adapted_inverse constructs the SAME complex analytic inverse near the CLOSED target half-ball and proves that its original distribution is real,mean-zero and period-one iff the target is. It is the actual inverse,not a separately postulated real inverse."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-inverse-restriction-map.json",
+      "results": [
+        "The shared PeriodicFourierLebesgue.weightCongr identifies pointwise equal weights isometrically while retaining EVERY original smooth-test action. sourceUnitWeightEquiv therefore identifies the original FourierLebesgueSpace(2,-r,infinity) with the unit extra-weight source carrier,with no norm or frequency change. sourceForgetWeight(one) is exactly the inverse.",
+        "sourceAdaptedFourier defines the ACTUAL adapted map on the EXACT original unweighted endpoint Banach space. Its normalized Fourier coefficients are the SAME physical adapted b_plus/minus(alpha_n(q),q),with all low/odd/mean modes unchanged. Its complex analyticity is in the original endpoint norm. Every stronger weighted restriction is the SAME entire original output distribution.",
+        "source_uniform_weighted_inverse_restriction proves GENUINE inverse regularity gain. For a supplied merely BASE-SPACE original q with norm<=m,and a STRONGER-weight original y with norm<=m/2 equal to the actual adapted image,the proved weighted inverse constructs p in the stronger space. Entire-distribution weight compatibility and actual BASE-SPACE injectivity identify p.val=q.val,and the stronger norm is<=m. No stronger membership of q is assumed.",
+        "sourceProposition2_19 states the source result in literal ORIGINAL-distribution membership and norm form:if the actual original adapted image belongs to the stronger weighted CLOSED half-ball,then the identical original source distribution belongs to the stronger weighted CLOSED source ball. One cutoff precedes BOTH w and q. The stronger complex period-two result includes all original mean-zero physical period-one source potentials unchanged.",
+        "The shared AnalyticInjectiveImage theorem glues verified local analytic inverse branches by source injectivity to obtain ONE analytic inverse on the ENTIRE OPEN image of an injective open analytic domain with invertible derivative. Openness of that image and both inverse identities are proved,not assumed.",
+        "NearIdentityImageInverse derives a1/8 derivative difference from Id on the intermediate radius3m/2 source ball,using the actual m/32 error on the double ball and Cauchy radiusm/2. It proves injectivity and derivative invertibility there,then gives ONE analytic inverse on the ENTIRE actual OPEN intermediate image. This contains every image point of the CLOSED radiusm source ball,including boundary points.",
+        "sourceProposition2_18 gives the actual original weighted adapted Fourier diffeomorphism with ONE cutoff BEFORE weights/potentials. An OPEN V contains the ENTIRE image of the CLOSED radiusm source ball and carries a complex analytic inverse. The CLOSED target half-ball is contained in the image of the CLOSED source ball. Forward analyticity on the double ball,source derivative difference<=1/16,and original norm bounds1/2 and2 are retained.",
+        "The full-image actual inverse has both inverse identities and preserves the ENTIRE original real,mean-zero,physical period-one locus on V. This resolves the previous full-image inverse obligation,not merely the earlier inverse near the target half-ball. The endpoint is infinity throughout;isolated p labels in the source coverage display are read with the stated infinity domain,and no additional finite-p theorem is claimed."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-real-gap-comparison-map.json",
+      "results": [
+        "The shared real scalar split-root theorem CONSTRUCTS both branch roots by IVT from actual small Lipschitz diagonal/splitting coefficients. Strict monotonicity proves uniqueness of EACH branch throughout the full closed interval. The actual diagonal root brackets the two roots,and b(alpha)<=right-left<=3b(alpha),including every collapsed pair.",
+        "The ACTUAL physical upper coupling retains the correct off-diagonal Sobolev factor in its global spectral variation. The existing half-contraction cutoff and endpoint_effective_column_small imply absolute coupling1/8-Lipschitz continuity on the ENTIRE corrected strip. No additional cutoff or small-coupling assumption is imposed.",
+        "Physical conjugation proves that at real original q and real lambda,the actual diagonal is real and the lower coupling is the conjugate upper coupling. The ACTUAL original determinant factors into the two real scalar branches lambda-free_n-a(lambda)+/-norm(b(lambda)). This is a physical determinant identity,not an assumed root model.",
+        "EndpointHillRealPair.adapted_gap_comparison constructs both scalar branch roots on the full corrected real interval,then identifies them with the ACTUAL physical spectral endpoints using the verified determinant/eigenvector criterion and complete pair spectrum. The actual alpha is BETWEEN the actual endpoints,and norm(b(alpha))<=actual_gap<=3norm(b(alpha)). Alpha is not asserted to be the midpoint.",
+        "SourceHillRealPair.adapted_gap_comparison retains the ENTIRE original distribution and exact source norms. source_canonical_adapted_gap_comparison identifies the ACTUAL intrinsic canonical slots2n-1,2n,including all algebraic repetitions. It proves the two-sided coupling comparison and brackets alpha by those SAME canonical labels.",
+        "sourceLemma2_20_real proves the exact real-case squared source bounds: norm(b_plus(alpha)*b_minus(alpha))<=norm(gamma_n)^2<=9norm(b_plus(alpha)*b_minus(alpha)). It requires no open-gap,nonzero-coupling or ratio hypothesis,because real physical data make the couplings conjugates. Thus every collapsed gap is included. The general complex-ratio version is NOT claimed.",
+        "source_uniform_real_coupling_gap_comparison chooses ONE cutoff BEFORE original real potentials on every exact norm ball,then proves both norm and squared-product comparisons at EVERY later high mode. No pair table,root branch or canonical-label hypothesis is supplied by the caller in this uniform theorem.",
+        "sourceAdaptedFourier_tail_le_canonical_gap bounds BOTH signed high coefficients of the ACTUAL original adapted Fourier map by the ACTUAL canonical gap at mode n. source_uniform_adapted_fourier_tail_gap_bound chooses its cutoff BEFORE original potentials and all later modes,retaining the quantitative construction criterion. This supplies the inverse-spectral Omega tail estimate for Section2.7."
+      ]
+    }
+  ],
+  "remaining": [
+    "Combine the now-proved REAL adapted-coefficient gap LOWER comparison and actual Omega tail estimate with source Proposition2.19 to prove endpoint regularity/norm-boundedness of original isospectral sets. Formalize a suitable small-head polynomial-weight family and the full original-distribution bootstrap. The original finite-p inverse spectral regularity/isospectral compactness input used by source[7,Corollaries3-4] still requires a verified proof/import. Source Theorem2.2 remains open.",
+    "Complete physical periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual original Dirichlet comparison source Theorem2.1(ii). Full direct general-weight Theorem2.1(i),endpoint Propositions2.18-2.19,actual real-type symmetry and all AppendixB clauses remain complete. The general complex-ratio source Lemma2.20 is not claimed by the proved real case.",
+    "Construct and verify the ORIGINAL Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original hypotheses,normalizations,quantifiers and topology. All MAIN theorems remain unproved."
+  ]
+}

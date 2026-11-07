@@ -1,0 +1,185 @@
+{
+  "source": "arXiv:1610.00278v1 Section5, Main5.1/Lemma5.6 dependencies: actual analytic L2-to-H1 Miura and rotated Dirac source; H2 massive-linear Miura remainder. Actual native base smoothing remains open",
+  "status": "Actual complex L2 Hill Miura lifts analytically take values in H1; their exact massive-linear remainder is analytic in H2. The SAME rotated Dirac source has an analytic H1 representative. Native base one-smoothing and Main5.1/5.9 remain open.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.1",
+    "1.3",
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "actual_complex_L2_Miura_lift_H1_analytic_PROVED": true,
+    "explicit_analytic_weak_Miura_exponent_and_H1_recovery_PROVED": true,
+    "original_massive_resolvent_all_Sobolev_orders_PROVED": true,
+    "actual_Miura_massive_linear_remainder_H2_analytic_PROVED": true,
+    "SAME_actual_phase_rotated_Dirac_source_H1_analytic_PROVED": true,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-miura-l2-regularity-map.json"
+  },
+  "results": [
+    "PeriodOneMassSobolevInverse proves that the original massive inverse symbol gains ONE full Sobolev order at EVERY real order and every Banach exponent, uniformly in mass, retaining all raw coefficients. Its L2-to-H1 form uses the original period-one 2*pi*i*k symbol.",
+    "AnalyticMiuraExponentRecovery gives an explicit analytic polynomial L2 x L2 -> ell^(4/3), using the fixed massive kernel, Holder and Young maps. Whenever v satisfies the original weak Miura equation v' + v*v = q, EVERY recovered coefficient is exactly v_k.",
+    "AnalyticMiuraH1Recovery gives an explicit entire complex analytic H1 representative from L2 forcing and an L2 weak solution. The original equation proves coefficientwise identity and equality under the original scalar inclusion. Stronger-norm analyticity is PROVED by bounded formulas, rather than inferred from pointwise regularity.",
+    "AnalyticMiuraSmoothingRemainder constructs the analytic H2 polynomial M^-1(u-u*u) for H1 lifts. Under the original weak equation its ENTIRE raw sequence is u_k - M(k)^-1*q_k. H1 convolution is the existing actual bounded Sobolev algebra product.",
+    "HillMiuraL2AnalyticRegularity applies the explicit recovery to EVERY actual Hill Miura action ball on its complex L2 source preimage. Its H1 lift is analytic and equals the SAME original rough lift in every coefficient. The H2 remainder after M^-1 times q plus the ORIGINAL fixed energy shift is analytic, with exact raw identity.",
+    "HillRotatedDiracL2Regularity proves that the SAME phase-rotated Dirac source used by the actual Hill spectral-core bridge has an analytic H1 representative on the actual complex L2 patch preimage. The original Sobolev inclusion yields the entire original two-component source, with phases +i and -i unchanged.",
+    "This closes the actual analytic Miura/rotated-source H1 input obligation for the L2 native smoothing route. It does NOT prove terminal-coordinate, normalized-amplitude or signed off-index one-smoothing. Actual native base smoothing and Main5.1/5.9 remain OPEN; Main1.1/1.3/1.4 remain proved."
+  ],
+  "declarations": [
+    "NLS.periodOneMassInverse_sobolev_bound",
+    "NLS.periodOneMassSobolevInverse",
+    "NLS.periodOneMassSobolevInverse_apply",
+    "NLS.periodOneMassL2ToH1",
+    "NLS.periodOneMassL2ToH1_apply",
+    "NLS.periodOneMiuraExponentRecovery",
+    "NLS.periodOneMiuraExponentRecovery_apply",
+    "NLS.analyticAt_periodOneMiuraExponentRecovery",
+    "NLS.periodOneMiuraExponentRecovery_eq_of_equation",
+    "NLS.periodOneMiuraH1Recovery",
+    "NLS.analyticAt_periodOneMiuraH1Recovery",
+    "NLS.periodOneMiuraH1Recovery_apply_of_equation",
+    "NLS.scalarInclusion_periodOneMiuraH1Recovery_of_equation",
+    "NLS.periodOneMiura_equation_of_image",
+    "NLS.analyticAt_periodOneMiuraH1Recovery_comp",
+    "NLS.analyticAt_comp_periodOneL2Inclusion",
+    "NLS.periodOneMiuraSmoothingRemainder",
+    "NLS.analyticAt_periodOneMiuraSmoothingRemainder",
+    "NLS.periodOneMiuraSmoothingRemainder_apply",
+    "NLS.periodOneMiuraSmoothingRemainder_apply_of_equation",
+    "NLS.KdV.HillHminusMiuraActionBall.l2Source_open",
+    "NLS.KdV.HillHminusMiuraActionBall.l2Forcing",
+    "NLS.KdV.HillHminusMiuraActionBall.l2WeakEquation",
+    "NLS.KdV.HillHminusMiuraActionBall.l2Lift",
+    "NLS.KdV.HillHminusMiuraActionBall.analytic_l2Lift",
+    "NLS.KdV.HillHminusMiuraActionBall.l2Lift_apply",
+    "NLS.KdV.HillHminusMiuraActionBall.scalarInclusion_l2Lift",
+    "NLS.KdV.HillHminusMiuraActionBall.l2Lift_equation",
+    "NLS.KdV.HillHminusMiuraActionBall.l2SmoothingRemainder",
+    "NLS.KdV.HillHminusMiuraActionBall.analytic_l2SmoothingRemainder",
+    "NLS.KdV.HillHminusMiuraActionBall.l2SmoothingRemainder_apply",
+    "NLS.KdV.HillProductEquationPatch.l2Source_open",
+    "NLS.KdV.HillProductEquationPatch.rotatedDiracL2Lift",
+    "NLS.KdV.HillProductEquationPatch.analytic_rotatedDiracL2Lift",
+    "NLS.KdV.HillProductEquationPatch.sobolevSourceInclusion_rotatedDiracL2Lift"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/PeriodOneMassSobolevInverse.lean",
+    "NLS/SequenceSpaces/AnalyticMiuraExponentRecovery.lean",
+    "NLS/SequenceSpaces/AnalyticMiuraH1Recovery.lean",
+    "NLS/SequenceSpaces/AnalyticMiuraSmoothingRemainder.lean",
+    "NLS/KdV/HillMiuraL2AnalyticRegularity.lean",
+    "NLS/KdV/HillRotatedDiracL2Regularity.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "8333bb8c2acaa0e76d507ea07f1c7f9b12848256",
+    "baseline_modules": 1897,
+    "baseline_non_audit_sources_verified_unchanged": 1896,
+    "new_modules_compiled": 6,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.HolderEmbedding",
+        "source": "NLS/SequenceSpaces/HolderEmbedding.lean",
+        "source_sha256": "85e8da4db876e375315477b28ba33d26cea2b235619f22c4c0afbc1cce30187e"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceSobolevEmbedding",
+        "source": "NLS/ZakharovShabat/SourceSobolevEmbedding.lean",
+        "source_sha256": "9d3324efc032b7b3dac55da62e477124e047eb4aff5cdbeb293884161857dc96"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem11",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
+        "source_sha256": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem13",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
+        "source_sha256": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PeriodOneMassResolvent",
+        "source": "NLS/SequenceSpaces/PeriodOneMassResolvent.lean",
+        "source_sha256": "7e8c64a8b535962849b44aefa64aba1d7359db3a1aec67a060a30800e8a906bb",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PeriodOneMiuraRegularity",
+        "source": "NLS/SequenceSpaces/PeriodOneMiuraRegularity.lean",
+        "source_sha256": "abe78ffb8b2f41e983def118242a3c36ac189b82abe29c7645b0b2592de3d6d1",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PeriodOneMiuraShift",
+        "source": "NLS/SequenceSpaces/PeriodOneMiuraShift.lean",
+        "source_sha256": "aa461cff521373d50348323027d894ac73cff4b03c9bc01542afee633f81cdf8",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.SobolevConvolutionBounds",
+        "source": "NLS/SequenceSpaces/SobolevConvolutionBounds.lean",
+        "source_sha256": "4a607fc257db00cb10d991efe25cb91334054ed66703ba3ad8f8e85d248a6564",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillHminusOneMiuraActionBalls",
+        "source": "NLS/KdV/HillHminusOneMiuraActionBalls.lean",
+        "source_sha256": "853967935992da18413b2ddeb9a60f98ee11037cd30481631ff30e87f29a177a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillRotatedDiracSource",
+        "source": "NLS/KdV/HillRotatedDiracSource.lean",
+        "source_sha256": "f2175ab1b847dea838fb6e2848b7e84829620e62636b87fda23e3b426712a4af",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1903,
+    "audited_declarations": 9323,
+    "theorems": 7841,
+    "definitions": 1482,
+    "new_theorems": 26,
+    "new_definitions": 9,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-miura-l2-regularity.log",
+    "log_sha256": "939ce301b889ff3953bf3c40d2521e7b9afcf7bb46d0f36e5f599bb5a3f80c46"
+  },
+  "remaining_obligations": [
+    "Prove the ACTUAL base estimate HillIntegerNativeOneSmoothing0: a real analytic map R from genuine physical real zero-mean L2 to genuine signed H^(3/2), with EVERY raw coefficient R(q)_k equal to the SAME actual hillIntegerSobolevEquiv0(q)_k minus halfFourierSymbol(k)*q_k. The all-integer lift and literal Wiener diffeomorphism/inverse consequences are now proved CONDITIONALLY. Existing rough compact Jacobian results do not imply this one-order smoothing estimate. The actual L2-to-H1 analytic Miura lift, its H2 massive-linear remainder and the SAME rotated Dirac H1 source are now proved. Next upgrade the actual sourceHillTerminalModel, normalized midpoint amplitude and signed off-index phase defects; do not substitute the distinct NLS Birkhoff map. A concrete possible terminal route is to COMBINE the proved NLS Birkhoff-minus-Fourier H2 remainder (SourceBirkhoffNativeRealRemainders / SourceSobolevNativeProjection) with the EXACT Birkhoff-minus-terminal H2 identity (SourceBirkhoffComplexSpectralTerminalAnalytic); subtracting those actual coefficient identities could prove terminal-minus-Fourier H2 without identifying the two Birkhoff maps. Check signed rectangular-coordinate conversion and all source adapters explicitly. This deduction has NOT yet been proved.",
+    "Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates.",
+    "For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement.",
+    "Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE."
+  ]
+}

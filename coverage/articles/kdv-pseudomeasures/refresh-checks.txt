@@ -1,0 +1,12 @@
+Advanced main integration: passed
+Published pre-rebase head: acf922cc4c231c6102b8d878bece92a41527a443
+Integrated main: a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa
+Import closure: 8908; fresh this refresh: 2821; source-verified reused: 6087.
+All five pseudomeasure main proofs, incoming estimates main file and NLS aggregate: passed.
+Pseudomeasure public API audit: 9607 declarations; all 9586 previous public names retained.
+Other transitive audits: hierarchy 13010; below-L2 1007; estimates foundation 13032.
+Only propext, Classical.choice and Quot.sound permitted.
+Compiler warnings/errors:0. Informational tactic hints in validated outputs: 10.
+No new resource limits or linter suppressions. No full fresh dependency rebuild claimed.
+Canonical checkout and shared Git metadata remained read-only and unchanged.
+Literal rebase completed; validated source tree preserved in final reconciliation commit.
