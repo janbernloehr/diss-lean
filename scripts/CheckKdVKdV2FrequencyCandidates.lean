@@ -1,3 +1,11 @@
+import NLS.Articles.KdVKdV2Frequencies.RealL2ForwardRemainder
+import NLS.SequenceSpaces.PhysicalMeanZeroFourierInverse
+import NLS.Articles.KdVKdV2Frequencies.OriginalL2InverseSmoothing
+import NLS.ComplexAnalysis.AnalyticHomeomorphDerivativeEquiv
+import NLS.ComplexAnalysis.AnalyticInverseSmoothing
+import NLS.SequenceSpaces.PhysicalRealMeanZeroProjection
+import NLS.ComplexAnalysis.AnalyticRealLinearTransport
+import NLS.Articles.KdVKdV2Frequencies.OriginalNativeFourierEquivs
 import NLS.Articles.KdVKdV2Frequencies.CanonicalL2ForwardReality
 import NLS.ComplexAnalysis.RestrictAnalyticRealNeighborhood
 import NLS.Articles.KdVKdV2Frequencies.ActualL2MeanZeroDomain
@@ -6897,7 +6905,18 @@ private def kdvFrequencyAuditChunk29 : Array Lean.Name := #[
   `NLS.ComplexAnalysis.RestrictAnalyticRealNeighborhood,
   `NLS.Articles.KdVKdV2Frequencies.ActualL2MeanZeroDomain,
   `NLS.Articles.KdVKdV2Frequencies.GlobalL2OriginalForwardSmoothing,
-  `NLS.Articles.KdVKdV2Frequencies.CanonicalL2ForwardReality
+  `NLS.Articles.KdVKdV2Frequencies.CanonicalL2ForwardReality,
+  `NLS.ComplexAnalysis.AnalyticHomeomorphDerivativeEquiv
+]
+
+private def kdvFrequencyAuditChunk30 : Array Lean.Name := #[
+  `NLS.ComplexAnalysis.AnalyticInverseSmoothing,
+  `NLS.SequenceSpaces.PhysicalRealMeanZeroProjection,
+  `NLS.ComplexAnalysis.AnalyticRealLinearTransport,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalNativeFourierEquivs,
+  `NLS.Articles.KdVKdV2Frequencies.RealL2ForwardRemainder,
+  `NLS.SequenceSpaces.PhysicalMeanZeroFourierInverse,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalL2InverseSmoothing
 ]
 
 open Lean in
@@ -6933,7 +6952,8 @@ run_cmd do
     kdvFrequencyAuditChunk26,
     kdvFrequencyAuditChunk27,
     kdvFrequencyAuditChunk28,
-    kdvFrequencyAuditChunk29
+    kdvFrequencyAuditChunk29,
+    kdvFrequencyAuditChunk30
   ].flatten
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

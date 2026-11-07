@@ -3848,6 +3848,14 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/ActualL2MeanZeroDomain
   NLS/Articles/KdVKdV2Frequencies/GlobalL2OriginalForwardSmoothing
   NLS/Articles/KdVKdV2Frequencies/CanonicalL2ForwardReality
+  NLS/ComplexAnalysis/AnalyticHomeomorphDerivativeEquiv
+  NLS/ComplexAnalysis/AnalyticInverseSmoothing
+  NLS/SequenceSpaces/PhysicalRealMeanZeroProjection
+  NLS/ComplexAnalysis/AnalyticRealLinearTransport
+  NLS/Articles/KdVKdV2Frequencies/OriginalNativeFourierEquivs
+  NLS/Articles/KdVKdV2Frequencies/RealL2ForwardRemainder
+  NLS/SequenceSpaces/PhysicalMeanZeroFourierInverse
+  NLS/Articles/KdVKdV2Frequencies/OriginalL2InverseSmoothing
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
