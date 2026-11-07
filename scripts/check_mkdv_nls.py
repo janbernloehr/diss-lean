@@ -1226,6 +1226,16 @@ modules = [
     'NLS/ZakharovShabat/NLSHierarchyReflectionCoupling.lean',
     'NLS/ZakharovShabat/NLSHierarchyReflectionNonlocal.lean',
     'NLS/Articles/MKdVNLSHierarchies/NonlocalHamiltonianReflection.lean',
+    'NLS/FunctionalAnalysis/CurveL2IntegralGraph.lean',
+    'NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean',
+    'NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean',
+    'NLS/ZakharovShabat/SobolevHierarchyNonlocalIntegral.lean',
+    'NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean',
+    'NLS/ZakharovShabat/ClassicalHierarchyReflectionIntegral.lean',
+    'NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean',
+    'NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean',
+    'NLS/ZakharovShabat/SobolevHierarchyReflectionNonlocal.lean',
+    'NLS/Articles/MKdVNLSHierarchies/SharpNonlocalHamiltonianReflection.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

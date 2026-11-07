@@ -3669,3 +3669,39 @@ Evidence is in smooth-nonlocal-validation.json.
 
 All 126 assertion records and 241 source passages remain in the ledger.
 Whole-paper semantic decomposition and proof coverage remain in progress.
+
+
+## 2026-11-07 — Full original-domain corrected Proposition 11
+
+The entire named Proposition11 is covered with the recorded corrections.
+Part(iii) holds for every m>=1 and original complex H^(2m-1) source under
+either T*phi=+phi or T*phi=-phi, as a genuine AE identity on the physical unit
+period: R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).
+The upper gradient retains its actual original Fourier/L2 representative.
+The lower gradient has its proved continuous representative with exact
+coefficients, AC and actual spatial derivative AE. The primitive is the
+literal physical zero-initial integral.
+
+A bounded signed-reflection projection preserves the exact constraint
+through smooth approximation in the unchanged Sobolev norm. Bounded continuous
+fields, L2 top fields and true primitive operators pass the integral graph to
+every original nonsmooth input. Its closed derivative graph recovers AC and
+actual AE HasDerivAt. No extra smoothness, finite-gap, reality or component
+proportionality restriction is used.
+
+Ten strict modules add 39 theorems and 15 definitions. Both audits pass:
+13,691 article declarations and auxiliaries; 76,928 combined NLS declarations.
+Only propext, Classical.choice and Quot.sound are permitted. All 9,179 frozen
+inputs, 1,190 reused checker-prefix outputs and 9,089 source-verified incoming
+compiled modules retain their hashes. Default limits and linters are unchanged;
+no fresh full repository rebuild is claimed. Evidence is in
+sharp-nonlocal-validation.json.
+
+Five full source passages covering the entire named Proposition11 have
+correspondence reviews; its printed proof intermediates stay individually
+tracked. The ledger retains 128 assertions and all 241 source passages.
+Sixteen of eighteen named statements are covered with recorded corrections.
+Lemma2 native interval H2-to-AC bridge, full Lemma10 and remaining proof or
+background claims stay open. The completion gate still rejects 72 assertion
+records and 187 passages; whole-paper semantic decomposition and proof
+coverage remain in progress.

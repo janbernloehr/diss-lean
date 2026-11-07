@@ -19,7 +19,7 @@
   "scope_last_line": 1327,
   "named_statement_count": 18,
   "numbered_equation_count": 25,
-  "assertion_count": 126,
+  "assertion_count": 128,
   "passage_count": 241,
   "semantic_inventory_complete": false,
   "assertions": [
@@ -338,15 +338,15 @@
       "label": "Proposition 11",
       "line": 1193,
       "page": 17,
-      "status": "partial",
+      "status": "proved_correction",
       "obligation": "All three full-source identities, including pure T in i and nonlocal T-even/T-odd recurrence in iii. Part ii uses corrected R.",
       "declarations": [
         "NLS.Articles.MKdVNLSHierarchies.proposition11_i",
         "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected",
-        "NLS.Articles.MKdVNLSHierarchies.proposition11_iii_smooth_corrected"
+        "NLS.Articles.MKdVNLSHierarchies.proposition11_iii_corrected"
       ],
       "existing_details": "source-map.json",
-      "certified_part": "Full original-domain part(i), including pure T, and corrected-R part(ii). Part(iii) now has an all-order corrected proof for arbitrary smooth complex periodic profiles under both T signs: R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)). The actual scalar coupling is independently constructed; its boundary value vanishes for both reflection signs. Extending this equality to the full original H^(2m-1) domain remains open, so the named proposition stays partial."
+      "certified_part": "Entire named Proposition11: all P/T/arbitrary-phase gradient identities on original complex H^(k-1); phase-proportional recurrence on original H^(2m-1) with R=diag(i,-i), correcting the printed -iJ; and full original H^(2m-1) nonlocal recurrence for both T signs, with +2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)). The upper gradient is the actual original Fourier/L2 gradient, the lower one has its proved continuous representative, AC and genuine AE derivative on the physical unit period. All orders m>=1 and arbitrary complex sources under exactly the printed constraints are included. Reflection-preserving projection and bounded integral-graph closure supply the full nonsmooth domain; no finite-gap or reality restriction is added. Printed proof intermediates remain individually tracked."
     },
     {
       "id": "lemma-13",
@@ -1559,6 +1559,35 @@
         "NLS.ZakharovShabat.classicalNLSHierarchyCoupling_zero_of_midpointReflection",
         "NLS.DifferentialPolynomial.evaluate_signedSpatialJetReflection",
         "NLS.DifferentialPolynomial.coeff_riccatiResolventCoupling_even_neg_derivation"
+      ]
+    },
+    {
+      "id": "proposition-11-iii-original-domain",
+      "kind": "certified_full_named_statement_clause",
+      "line": 1201,
+      "page": 17,
+      "status": "proved_correction",
+      "obligation": "For every m>=1 and every original complex H^(2m-1) source under either T*phi=+phi or T*phi=-phi, the actual Hamiltonian gradients satisfy R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)) AE on the original physical unit period. The top gradient remains only L2; the lower continuous representative, AC and actual spatial derivative are proved. The primitive is the genuine physical zero-initial integral. No smoothness, finite-gap, real-type or component-proportionality strengthening is imposed.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.proposition11_iii_corrected",
+        "NLS.ZakharovShabat.hierarchyReflection_physical_nonlocal",
+        "NLS.ZakharovShabat.hierarchyPhysicalGradient_represents",
+        "NLS.ZakharovShabat.sobolevNLSHierarchyCircleGradient_represents"
+      ]
+    },
+    {
+      "id": "sharp-nonlocal-spatial-derivative-graph",
+      "kind": "certified_domain_and_derivative_identification",
+      "line": 1203,
+      "page": 17,
+      "status": "proved",
+      "obligation": "The exact signed-reflection projection preserves the constraint through smooth approximation in the unchanged H^(2m-1) norm. Continuous lower-gradient fields, L2 top-gradient fields and bounded true primitive operators give a closed integral identity on the full domain. Its actual derivative graph supplies AC and AE HasDerivAt, retaining the original unconjugated Fourier/L2 gradient coefficients and the literal physical integral.",
+      "declarations": [
+        "NLS.ZakharovShabat.hierarchyFTC_eq_of_reflection",
+        "NLS.ZakharovShabat.hierarchyReflection_unit_regular",
+        "NLS.ZakharovShabat.hierarchyReflection_physical_hasDerivAt",
+        "NLS.ZakharovShabat.hierarchyNonlocalPrimitive_eq_native_physical",
+        "NLS.FunctionalAnalysis.unitCurve_regular_of_L2_integral_graph"
       ]
     }
   ],
@@ -3969,11 +3998,21 @@
       "first_line": 1193,
       "last_line": 1193,
       "source_sha256": "3052ad3807cc89f291a5c4579e7d206f55f9d4d6735789339ef929a24ce90645",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "proposition-11",
         "proposition-11-i"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "proposition-11-i"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.proposition11_i"
+        ],
+        "comparison": "The original k>=1 complex H^(k-1) input and arbitrary real phase are exactly retained by the full P/T/phase gradient interface."
+      }
     },
     {
       "id": "passage-213",
@@ -3981,8 +4020,18 @@
       "first_line": 1195,
       "last_line": 1195,
       "source_sha256": "b3c5a992e5e523a76ca9b9ebbdcd685c92ffdd67a239df26caf5207c0832b0d9",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "proposition-11-i"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.proposition11_i"
+        ],
+        "comparison": "All three displayed symmetries hold for actual L2 gradients, including pure midpoint T, on the exact original complex Sobolev domain."
+      }
     },
     {
       "id": "passage-214",
@@ -3990,8 +4039,18 @@
       "first_line": 1197,
       "last_line": 1197,
       "source_sha256": "2b2250a3020fb3065e9c2f86fe580ee5bc7e3e613a80e33698af15524d2b9fc3",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved_with_correction",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "proposition-11"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
+        ],
+        "comparison": "The full original complex H^(2m-1) phase-proportional source condition is retained; the recurrence matrix is corrected from the printed -iJ to the actual R=diag(i,-i)."
+      }
     },
     {
       "id": "passage-215",
@@ -3999,8 +4058,18 @@
       "first_line": 1199,
       "last_line": 1199,
       "source_sha256": "8df513db31a17e7e19dcfc48ae2820b60f87f3d38c511fe78a810813d07d38e8",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved_with_correction",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "proposition-11"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
+        ],
+        "comparison": "The actual spatial derivative recurrence on the full original complex H^(2m-1) domain uses R=diag(i,-i), correcting the printed -iJ. The physical derivative is certified, not supplied as an assumption."
+      }
     },
     {
       "id": "passage-216",
@@ -4008,11 +4077,28 @@
       "first_line": 1201,
       "last_line": 1204,
       "source_sha256": "f1ca05dd248fe72006a3127e2c1b8d56b892584120b6f7594fd850cf65024225",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved_with_correction",
       "assertion_ids": [
         "proposition-11-iii-smooth-correction",
-        "all-order-physical-lenard-coupling"
-      ]
+        "all-order-physical-lenard-coupling",
+        "proposition-11-iii-original-domain",
+        "sharp-nonlocal-spatial-derivative-graph"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "proposition-11-iii-original-domain",
+          "sharp-nonlocal-spatial-derivative-graph"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.proposition11_iii_corrected",
+          "NLS.ZakharovShabat.hierarchyPhysicalGradient_represents",
+          "NLS.ZakharovShabat.sobolevNLSHierarchyCircleGradient_represents",
+          "NLS.ZakharovShabat.hierarchyReflection_unit_regular",
+          "NLS.ZakharovShabat.hierarchyNonlocalPrimitive_eq_native_physical"
+        ],
+        "comparison": "The entire printed original H^(2m-1) / both T signs clause is now covered with its explicit sign/vector correction. The upper gradient remains the actual original L2 gradient; the lower gradient has a continuous representative and genuine AC/AE spatial derivative. The exact physical zero-initial integral gives +2*i*(J*phi) on the right. Smooth reflection-preserving approximation and closed integral-graph passage prove the nonsmooth extension without additional hypotheses."
+      }
     },
     {
       "id": "passage-217",
@@ -4308,7 +4394,7 @@
   "known_open_obligations": [
     "Theorem6, corrected Corollaries8-9 and corrected Lemma13 named statements are complete with explicit xi sign, source-gradient spectral-domain and Appendix component-order/phase qualifications. Their separately recorded printed proof intermediates still require individual correspondence review; the operator adapter itself is now checked.",
     "Lemma2 now has full original H1 physical matrix clauses and arbitrary AC physical-eigenfunction intertwining; its native interval H2-to-AC input-space identification remains explicit. Full Lemma3, including actual original-domain geometric eigenspace multiplicities, is now proved.",
-    "Full Lemma10 higher-action gradient symmetries and recurrences. Proposition11(iii) now has an all-order smooth proof with +2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)); its full original H^(2m-1) extension remains open.",
+    "Full Lemma10 higher-action gradient symmetries and local/nonlocal recurrences, including its printed lower-level-zero case. Full corrected Proposition11 is now proved on all original complex Sobolev domains; its separately recorded printed proof intermediates still require individual correspondence review.",
     "Remaining printed proof intermediates, including squared-Floquet-product algebra and the actual contour-change steps in symmetry proofs, unless individually matched by an existing assertion. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter are now complete.",
     "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
     "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."

@@ -59,8 +59,8 @@ explicitly **incomplete**. A pending passage cannot be silently treated as prove
 The source locator convention and exact private-source hashes are in the ledger.
 
 The main theorems remain proved with the earlier corrections, but important
-whole-paper work remains: full Lemma 10 and nonlocal Proposition 11(iii);
-the native interval H2-to-AC source bridge in Lemma 2; remaining printed proof intermediates;
+whole-paper work remains: full Lemma 10;
+the native interval H2-to-AC source bridge in Lemma 2;
 printed proof intermediates; and background claims including independent
 cross-mode mKdV Cartesian canonicity. Theorem 6, Corollaries 8–9 and Lemma 13
 now have the corrected source interfaces described in the later milestones.
@@ -380,6 +380,38 @@ named Proposition 11 retains partial status, and no full original-domain source
 passage is marked complete on the basis of this smooth proof. Exact evidence
 is in [`smooth-nonlocal-validation.json`](smooth-nonlocal-validation.json).
 Whole-paper proof coverage and semantic decomposition remain in progress.
+
+## 2026-11-07 — Full sharp-domain nonlocal Hamiltonian recurrence
+
+The entire named Proposition 11 is now covered with the recorded corrections.
+Part(iii) holds at every original complex H^(2m-1) source, for every m>=1 and
+both T*phi=+phi and T*phi=-phi, as an actual AE identity on the physical unit
+period. The correction is
+
+    R*grad S_(2m) = D grad S_(2m-1)
+      + 2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).
+
+The top gradient retains its actual original L2 representative. The lower
+gradient has the proved continuous representative with exact original
+coefficients, absolute continuity and the genuine spatial derivative AE.
+The primitive is the literal physical zero-initial integral. A bounded signed
+reflection projection preserves the exact constraint through smooth
+approximation. Bounded continuous fields and physical primitive operators
+pass the integral identity to the entire original Sobolev domain; its closed
+L2 derivative graph recovers AC and actual differentiation. No extra smoothness,
+finite-gap, reality or component-proportionality hypothesis is used.
+
+Ten strict modules add 39 theorems and 15 definitions. Five complete original
+source passages, covering the full Proposition 11 statement, now have
+correspondence reviews. The printed proof intermediates remain individually
+tracked. Exact evidence is in
+[`sharp-nonlocal-validation.json`](sharp-nonlocal-validation.json).
+
+The ledger now has 128 assertion records and all 241 source passages. Sixteen
+of the eighteen named statements are covered, with recorded corrections where
+needed. The native interval H2-to-AC bridge in Lemma 2, full Lemma 10 and
+remaining proof/background assertions are still open. Whole-paper proof
+coverage and semantic decomposition remain in progress.
 
 ## Pinned source
 

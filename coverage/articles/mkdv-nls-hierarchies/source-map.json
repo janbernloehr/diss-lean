@@ -1677,13 +1677,13 @@
     ]
   },
   "latest_validation": {
-    "report": "smooth-nonlocal-validation.json",
+    "report": "sharp-nonlocal-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
-    "base_commit": "41bebf6c7f4cb88c783d9feac111ecbdb30af6fd",
+    "base_commit": "15a17ee4f1c48c77fb96dbae8c8a6178c56234a2",
     "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
-    "article_audit": 13597,
-    "combined_audit": 76832
+    "article_audit": 13691,
+    "combined_audit": 76928
   },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
@@ -1717,7 +1717,7 @@
     "named_statements": 18,
     "numbered_equations": 25,
     "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
-    "initial_semantic_assertions": 126,
+    "initial_semantic_assertions": 128,
     "source_passages": 241
   },
   "full_paper_expansion": {
@@ -1855,5 +1855,23 @@
     "certified": "All-order corrected smooth Proposition11(iii), both reflection signs, every real x. Actual physical gradients, independent coupling, exact primitive and vanishing boundary constant.",
     "correction": "R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).",
     "remaining": "Full original H^(2m-1) extension; no source passage is marked fully covered from this smooth-only proof."
+  },
+  "whole_paper_sharp_nonlocal_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 39,
+    "new_definitions": 15,
+    "source_modules": 10,
+    "completed_statement": "Entire corrected Proposition11, including nonlocal part(iii) at every original complex H^(2m-1) source under either T sign.",
+    "derivative_and_gradient": "Actual original L2 upper gradient; continuous lower representative with exact original coefficients, AC and genuine spatial derivative AE on the physical unit period.",
+    "method": "Bounded signed-reflection projection preserves the constraint through smooth approximation. Bounded physical primitives and the L2 integral graph pass to the full nonsmooth Sobolev domain.",
+    "correction": "R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)). Part(ii) retains its already checked correction to R=diag(i,-i).",
+    "remaining": [
+      "Theorem6, corrected Corollaries8-9 and corrected Lemma13 named statements are complete with explicit xi sign, source-gradient spectral-domain and Appendix component-order/phase qualifications. Their separately recorded printed proof intermediates still require individual correspondence review; the operator adapter itself is now checked.",
+      "Lemma2 now has full original H1 physical matrix clauses and arbitrary AC physical-eigenfunction intertwining; its native interval H2-to-AC input-space identification remains explicit. Full Lemma3, including actual original-domain geometric eigenspace multiplicities, is now proved.",
+      "Full Lemma10 higher-action gradient symmetries and local/nonlocal recurrences, including its printed lower-level-zero case. Full corrected Proposition11 is now proved on all original complex Sobolev domains; its separately recorded printed proof intermediates still require individual correspondence review.",
+      "Remaining printed proof intermediates, including squared-Floquet-product algebra and the actual contour-change steps in symmetry proofs, unless individually matched by an existing assertion. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter are now complete.",
+      "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
+      "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
+    ]
   }
 }
