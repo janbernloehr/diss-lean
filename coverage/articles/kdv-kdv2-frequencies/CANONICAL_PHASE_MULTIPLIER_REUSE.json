@@ -1,0 +1,12 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/SequenceSpaces/WeightedReciprocalDecay.lean",
+      "source_sha256": "b1f8e84ead262088d54fd82ae71e8bd0f70e5b6f5174b9b281c556ad2a774fd4",
+      "local_sha256": "b1f8e84ead262088d54fd82ae71e8bd0f70e5b6f5174b9b281c556ad2a774fd4",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Unchanged canonical inverse-bracket weighted multiplier theorem. Reused to turn the actual KdV phase-minus-Airy frequency bound into an exact one-derivative Sobolev gain with linear time bound. Strictly rebuilt at default checking limits and transitively axiom audited."
+}

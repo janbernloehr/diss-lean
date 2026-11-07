@@ -3512,6 +3512,15 @@ modules=(
   NLS/SequenceSpaces/CompactCorrectedFrequencyBound
   NLS/Articles/KdVKdV2Frequencies/Corollary15BoundedL2
   NLS/Articles/KdVKdV2Frequencies/MainCorollary15
+  NLS/SequenceSpaces/PhysicalRealPhaseRotation
+  NLS/SequenceSpaces/WeightedReciprocalDecay
+  NLS/SequenceSpaces/RealPhaseSmoothing
+  NLS/Articles/KdVKdV2Frequencies/ActualNativeTargetFrequency
+  NLS/Articles/KdVKdV2Frequencies/ActualNativePhaseFlow
+  NLS/Articles/KdVKdV2Frequencies/ActualNativeSourceFlow
+  NLS/Articles/KdVKdV2Frequencies/OriginalKdVBirkhoffFlow
+  NLS/Articles/KdVKdV2Frequencies/ActualNativeFlowCompatibility
+  NLS/Articles/KdVKdV2Frequencies/ActualKdVPhaseSmoothing
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
