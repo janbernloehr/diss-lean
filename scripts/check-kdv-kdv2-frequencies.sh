@@ -3487,6 +3487,15 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/UniformFrequencyActionModel
   NLS/Articles/KdVKdV2Frequencies/OriginalUniformActionFrequencyDecay
   NLS/Articles/KdVKdV2Frequencies/Theorem12InteriorUniformActionDecay
+  NLS/SequenceSpaces/SignedPairSobolevActions
+  NLS/Articles/KdVKdV2Frequencies/NativeActionNormalization
+  NLS/Articles/KdVKdV2Frequencies/RoughFrequencySourceRecovery
+  NLS/SequenceSpaces/FrequencyLeadingAction
+  NLS/SequenceSpaces/UniformFrequencyFiniteHeads
+  NLS/SequenceSpaces/LeadingActionFrequencyTransfer
+  NLS/Articles/KdVKdV2Frequencies/UncorrectedSobolevActionFrequencyDecay
+  NLS/SequenceSpaces/PositiveSobolevPowerComparison
+  NLS/Articles/KdVKdV2Frequencies/Corollary15Decay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
