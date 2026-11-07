@@ -3387,6 +3387,20 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/HilbertFrequencyCompactFromIntermediate
   NLS/Articles/KdVKdV2Frequencies/PhysicalHilbertFrequencyCompact
   NLS/Articles/KdVKdV2Frequencies/Theorem12HilbertCompact
+  NLS/SequenceSpaces/WeightedRayZeroDerivative
+  NLS/Articles/KdVConvexity/NormalizedPhysicalTaylor
+  NLS/Articles/KdVKdV2Frequencies/IntermediateHilbertActionRays
+  NLS/Articles/KdVKdV2Frequencies/IntermediateFrequencyOrigin
+  NLS/SequenceSpaces/CoefficientModulus
+  NLS/SequenceSpaces/NonnegativeRealAnalyticExtension
+  NLS/SequenceSpaces/RealDerivativeEntries
+  NLS/ComplexAnalysis/LocalInverseClosedSubspace
+  NLS/SequenceSpaces/NonnegativeRealLocalInverse
+  NLS/SequenceSpaces/CompactScalarConeLocalInverse
+  NLS/SequenceSpaces/WeightedPositiveActionCoordinates
+  NLS/SequenceSpaces/RealConeInverseCoordinates
+  NLS/Articles/KdVKdV2Frequencies/IntermediateRealFrequencyInverse
+  NLS/Articles/KdVKdV2Frequencies/Corollary14
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -1,3 +1,17 @@
+import NLS.SequenceSpaces.CoefficientModulus
+import NLS.SequenceSpaces.NonnegativeRealAnalyticExtension
+import NLS.SequenceSpaces.RealDerivativeEntries
+import NLS.ComplexAnalysis.LocalInverseClosedSubspace
+import NLS.SequenceSpaces.NonnegativeRealLocalInverse
+import NLS.Articles.KdVKdV2Frequencies.Corollary14
+import NLS.SequenceSpaces.RealConeInverseCoordinates
+import NLS.Articles.KdVKdV2Frequencies.IntermediateRealFrequencyInverse
+import NLS.SequenceSpaces.CompactScalarConeLocalInverse
+import NLS.SequenceSpaces.WeightedPositiveActionCoordinates
+import NLS.SequenceSpaces.WeightedRayZeroDerivative
+import NLS.Articles.KdVConvexity.NormalizedPhysicalTaylor
+import NLS.Articles.KdVKdV2Frequencies.IntermediateHilbertActionRays
+import NLS.Articles.KdVKdV2Frequencies.IntermediateFrequencyOrigin
 import NLS.Articles.KdVConvexity.ActionHilbertCompactTransfer
 import NLS.Articles.KdVKdV2Frequencies.HilbertFrequencyCompactFromIntermediate
 import NLS.Articles.KdVKdV2Frequencies.Theorem12HilbertCompact
@@ -5966,7 +5980,21 @@ private def kdvFrequencyAuditChunk26 : Array Lean.Name := #[
   `NLS.Articles.KdVConvexity.ActionHilbertCompactTransfer,
   `NLS.Articles.KdVKdV2Frequencies.HilbertFrequencyCompactFromIntermediate,
   `NLS.Articles.KdVKdV2Frequencies.PhysicalHilbertFrequencyCompact,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12HilbertCompact
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12HilbertCompact,
+  `NLS.SequenceSpaces.WeightedRayZeroDerivative,
+  `NLS.Articles.KdVConvexity.NormalizedPhysicalTaylor,
+  `NLS.Articles.KdVKdV2Frequencies.IntermediateHilbertActionRays,
+  `NLS.Articles.KdVKdV2Frequencies.IntermediateFrequencyOrigin,
+  `NLS.SequenceSpaces.CoefficientModulus,
+  `NLS.SequenceSpaces.NonnegativeRealAnalyticExtension,
+  `NLS.SequenceSpaces.RealDerivativeEntries,
+  `NLS.ComplexAnalysis.LocalInverseClosedSubspace,
+  `NLS.SequenceSpaces.NonnegativeRealLocalInverse,
+  `NLS.SequenceSpaces.CompactScalarConeLocalInverse,
+  `NLS.SequenceSpaces.WeightedPositiveActionCoordinates,
+  `NLS.SequenceSpaces.RealConeInverseCoordinates,
+  `NLS.Articles.KdVKdV2Frequencies.IntermediateRealFrequencyInverse,
+  `NLS.Articles.KdVKdV2Frequencies.Corollary14
 ]
 
 open Lean in

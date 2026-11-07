@@ -1,0 +1,36 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/SequenceSpaces/CoefficientModulus.lean",
+      "source_sha256": "48cdd1426887a2e88e21984e7f960e5e48c6346e66ba3abf9810cfbe2160d416",
+      "local_sha256": "48cdd1426887a2e88e21984e7f960e5e48c6346e66ba3abf9810cfbe2160d416",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeRealAnalyticExtension.lean",
+      "source_sha256": "d5c3809face07bfb19c7777de69cb970794f302dbc945540e2198476733cffe0",
+      "local_sha256": "d5c3809face07bfb19c7777de69cb970794f302dbc945540e2198476733cffe0",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RealDerivativeEntries.lean",
+      "source_sha256": "142129431167e4e71c3c2531c29b8c213606ce7f34bf35a260a174a025739343",
+      "local_sha256": "142129431167e4e71c3c2531c29b8c213606ce7f34bf35a260a174a025739343",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocalInverseClosedSubspace.lean",
+      "source_sha256": "cab80e88aaf0dcb51367f5cb6fa4aff4dc2e37587c0a2713bb9fa81c4015288f",
+      "local_sha256": "cab80e88aaf0dcb51367f5cb6fa4aff4dc2e37587c0a2713bb9fa81c4015288f",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeRealLocalInverse.lean",
+      "source_sha256": "55ac278d16b569bee6f2de202ccddf7530ce032fc6e1227f3d23e5bfd811f56e",
+      "local_sha256": "55ac278d16b569bee6f2de202ccddf7530ce032fc6e1227f3d23e5bfd811f56e",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Unchanged canonical REAL cone extension and inverse machinery. Reality on the nonnegative cone determines the full nearby real extension, including boundary actions. Real derivative entries, real inverse preservation, and both genuine real inverse identities are proved at default limits. All five newly reached dependencies are added to strict selected-module validation and the full imported-NLS axiom audit."
+}
