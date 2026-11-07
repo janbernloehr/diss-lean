@@ -2149,6 +2149,15 @@ modules = [
     'NLS.FunctionalAnalysis.AnalyticEquivTransport',
     'NLS.SequenceSpaces.FourierRealWeightRegularity',
     'NLS.SequenceSpaces.SignedRealEqualOrderEquiv',
+    'NLS.FunctionalAnalysis.NeumannVectorSeries',
+    'NLS.KdV.HillGapFromCouplingEnvelope',
+    'NLS.KdV.HillWienerCorrectedModeEnvelope',
+    'NLS.KdV.HillWienerCouplingEnvelope',
+    'NLS.KdV.HillWienerNormalizedTail',
+    'NLS.KdV.HillWienerTailDomination',
+    'NLS.SequenceSpaces.PositiveConvolutionEnvelope',
+    'NLS.SequenceSpaces.PositiveNeumannDomination',
+    'NLS.SequenceSpaces.WeightedConvolutionRowBound',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

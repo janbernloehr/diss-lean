@@ -754,17 +754,24 @@
       "line": 2145,
       "statement": "Theorem 5.2 ([21, Theorem 1 & 4]) Let N ∈ Z⩾0 .\n\n\n\n\nSeptember 18, 2018                                                             33\n\n  (i) For any q ∈ FℓN,1\n                    0,C , the sequence of gap lengths (γn (q))n⩾1 , defined in (5)\n             N,1\n      is in ℓC (N) and the map\n\n               FℓN,1    N,1\n                 0,C → ℓC (N),              q 7→ (γn (q))n⩾1 ,\n\n        is uniformly bounded on bounded subsets.\n\n (ii) For any q ∈ FℓN,1\n                    0,C , the sequence (τn − µn (q))n⩾1 – cf. (5)-(6) – is in\n       N,1\n      ℓC (N) and the map\n\n               FℓN,1    N,1\n                 0,C → ℓC (N),              q 7→ (τn (q) − µn (q))n⩾1 ,\n\n        is uniformly bounded on bounded subsets.                 ⋊",
       "status": "partial",
-      "comparison": "Wiener Birkhoff equivalences do not by themselves prove both complex spectral sequences are uniformly bounded on every bounded Wiener subset. Full direct spectral statement not located.",
+      "comparison": "Partial direct complex Wiener proof: one cutoff precedes every arbitrary spectral weight and every complex Wiener potential in its norm ball; one summable coefficient envelope, of norm at most twice the potential Wiener norm, precedes every high mode, both resonant signs and every spectral parameter on the full reduced strip. It bounds BOTH actual physical off-diagonal couplings. The actual complex gap inherits any such common coupling envelope, with the printed sqrt(6) root-separation estimate. Remaining: transfer to the original distributional complex spectral sequences, combine the midpoint coupling estimate, and include the uniformly bounded finite central prefix to prove both complete weighted ell-one maps uniformly on all norm balls. Real Wiener diffeomorphisms alone are not claimed to prove this.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/OriginalHillL2OneSmoothing.lean",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean"
+        "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean",
+        "NLS/KdV/HillWienerCouplingEnvelope.lean",
+        "NLS/KdV/HillGapFromCouplingEnvelope.lean"
       ],
-      "declarations": [],
+      "declarations": [
+        "NLS.KdV.exists_uniform_hillWienerCoupling_envelope",
+        "NLS.KdV.EndpointHillComplexPair.gap_le_of_coupling_envelope"
+      ],
       "source_page": 33,
       "statement_sha256": "a8253e9c58095d2d9529571d1fc39b5a105555c144152b198a5e134c57633c62",
       "provider_sha256": {
         "NLS/Articles/KdVPseudomeasures/OriginalHillL2OneSmoothing.lean": "944d84047e97ea3c6ea04a6f8777705056075dc5fa127d85ffa9d136b766b4ed",
-        "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean": "d71f57ecc07f97cdace2b5a73951cf8aa46213457d66e0aa55f4482b681bce7c"
+        "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean": "d71f57ecc07f97cdace2b5a73951cf8aa46213457d66e0aa55f4482b681bce7c",
+        "NLS/KdV/HillWienerCouplingEnvelope.lean": "6660517892b5bde6e125ce03f242d04c890b71a1423a973360403ec6b7131307",
+        "NLS/KdV/HillGapFromCouplingEnvelope.lean": "7bfb74ac8ab387a812dfdbf96000b1e2c0effa2edb4c07b0d274939e0c70792a"
       }
     },
     {

@@ -2115,6 +2115,15 @@ import NLS.FunctionalAnalysis.AnalyticCompactRestriction
 import NLS.FunctionalAnalysis.AnalyticEquivTransport
 import NLS.SequenceSpaces.FourierRealWeightRegularity
 import NLS.SequenceSpaces.SignedRealEqualOrderEquiv
+import NLS.FunctionalAnalysis.NeumannVectorSeries
+import NLS.KdV.HillGapFromCouplingEnvelope
+import NLS.KdV.HillWienerCorrectedModeEnvelope
+import NLS.KdV.HillWienerCouplingEnvelope
+import NLS.KdV.HillWienerNormalizedTail
+import NLS.KdV.HillWienerTailDomination
+import NLS.SequenceSpaces.PositiveConvolutionEnvelope
+import NLS.SequenceSpaces.PositiveNeumannDomination
+import NLS.SequenceSpaces.WeightedConvolutionRowBound
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -12265,3 +12274,42 @@ import NLS.SequenceSpaces.SignedRealEqualOrderEquiv
 #print axioms NLS.WeightedCoeff.exists_physicalWeightRealization
 #print axioms NLS.WeightedCoeff.signedRealEqualOrderEquiv
 #print axioms NLS.WeightedCoeff.signedRealEqualOrderEquiv_apply
+#print axioms NLS.FunctionalAnalysis.norm_neumann_power_apply_le
+#print axioms NLS.FunctionalAnalysis.summable_norm_neumann_power_apply
+#print axioms NLS.FunctionalAnalysis.neumannVectorSeries
+#print axioms NLS.FunctionalAnalysis.conjugate_vector_sub_equation
+#print axioms NLS.FunctionalAnalysis.neumannVectorSeries_eq_add
+#print axioms NLS.FunctionalAnalysis.norm_neumannVectorSeries_le_two
+#print axioms NLS.FunctionalAnalysis.eq_neumannVectorSeries_of_sub_eq
+#print axioms NLS.KdV.EndpointHillComplexPair.gap_le_of_coupling_envelope
+#print axioms NLS.KdV.exists_hillWienerCorrectedMode_envelope
+#print axioms NLS.KdV.exists_uniform_hillWienerCoupling_envelope
+#print axioms NLS.KdV.hillWienerNormalize
+#print axioms NLS.KdV.hillWienerNormalize_apply
+#print axioms NLS.KdV.hillWienerNormalize_symm_apply
+#print axioms NLS.KdV.hillWienerNormalize_modulation
+#print axioms NLS.KdV.norm_hillWienerNormalize
+#print axioms NLS.KdV.hillWienerNormalizedTail
+#print axioms NLS.KdV.hillWienerNormalizedTail_apply
+#print axioms NLS.KdV.norm_hillWienerNormalizedTail_le
+#print axioms NLS.KdV.hillWienerMagnitude
+#print axioms NLS.KdV.norm_hillWienerMagnitude
+#print axioms NLS.KdV.norm_hillWienerMagnitude_apply
+#print axioms NLS.KdV.hillWienerNormalizedTail_row_bound
+#print axioms NLS.KdV.hillWienerNormalizedTail_positive_domination
+#print axioms NLS.Coeff.isNonnegative_convolution
+#print axioms NLS.Coeff.positiveConvolutionOperator
+#print axioms NLS.Coeff.positiveConvolutionOperator_apply
+#print axioms NLS.Coeff.norm_positiveConvolutionOperator_le
+#print axioms NLS.Coeff.isNonnegative_positiveConvolutionOperator
+#print axioms NLS.Coeff.norm_positiveConvolutionOperator_apply_of_nonnegative
+#print axioms NLS.Coeff.exists_convolution_neumann_envelope
+#print axioms NLS.Coeff.IsNonnegative
+#print axioms NLS.Coeff.isNonnegative_magnitude
+#print axioms NLS.Coeff.magnitude_eq_of_isNonnegative
+#print axioms NLS.Coeff.isNonnegative_operator_power
+#print axioms NLS.Coeff.norm_neumannVectorSeries_apply_of_nonnegative
+#print axioms NLS.Coeff.summable_norm_neumann_coordinate
+#print axioms NLS.Coeff.neumannVectorSeries_apply_dominated
+#print axioms NLS.Coeff.exists_uniform_neumann_summable_majorant
+#print axioms NLS.norm_weighted_convolution_term_le

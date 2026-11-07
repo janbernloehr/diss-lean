@@ -6720,3 +6720,12 @@ import NLS.FunctionalAnalysis.AnalyticCompactRestriction
 import NLS.FunctionalAnalysis.AnalyticEquivTransport
 import NLS.SequenceSpaces.FourierRealWeightRegularity
 import NLS.SequenceSpaces.SignedRealEqualOrderEquiv
+import NLS.FunctionalAnalysis.NeumannVectorSeries
+import NLS.KdV.HillGapFromCouplingEnvelope
+import NLS.KdV.HillWienerCorrectedModeEnvelope
+import NLS.KdV.HillWienerCouplingEnvelope
+import NLS.KdV.HillWienerNormalizedTail
+import NLS.KdV.HillWienerTailDomination
+import NLS.SequenceSpaces.PositiveConvolutionEnvelope
+import NLS.SequenceSpaces.PositiveNeumannDomination
+import NLS.SequenceSpaces.WeightedConvolutionRowBound
