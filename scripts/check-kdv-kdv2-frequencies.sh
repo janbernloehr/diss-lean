@@ -3521,6 +3521,10 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/OriginalKdVBirkhoffFlow
   NLS/Articles/KdVKdV2Frequencies/ActualNativeFlowCompatibility
   NLS/Articles/KdVKdV2Frequencies/ActualKdVPhaseSmoothing
+  NLS/SequenceSpaces/PhysicalRealPositiveEnergy
+  NLS/Articles/KdVKdV2Frequencies/OriginalL2ActionTrace
+  NLS/Articles/KdVKdV2Frequencies/ActualL2FlowEnergy
+  NLS/Articles/KdVKdV2Frequencies/ActualKdVPhaseError
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

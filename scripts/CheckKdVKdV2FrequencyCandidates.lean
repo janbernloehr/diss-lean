@@ -1,3 +1,7 @@
+import NLS.Articles.KdVKdV2Frequencies.ActualKdVPhaseError
+import NLS.Articles.KdVKdV2Frequencies.ActualL2FlowEnergy
+import NLS.SequenceSpaces.PhysicalRealPositiveEnergy
+import NLS.Articles.KdVKdV2Frequencies.OriginalL2ActionTrace
 import NLS.SequenceSpaces.WeightedReciprocalDecay
 import NLS.Articles.KdVKdV2Frequencies.ActualNativeFlowCompatibility
 import NLS.Articles.KdVKdV2Frequencies.ActualKdVPhaseSmoothing
@@ -6237,7 +6241,11 @@ private def kdvFrequencyAuditChunk27 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.ActualNativeSourceFlow,
   `NLS.Articles.KdVKdV2Frequencies.OriginalKdVBirkhoffFlow,
   `NLS.Articles.KdVKdV2Frequencies.ActualNativeFlowCompatibility,
-  `NLS.Articles.KdVKdV2Frequencies.ActualKdVPhaseSmoothing
+  `NLS.Articles.KdVKdV2Frequencies.ActualKdVPhaseSmoothing,
+  `NLS.SequenceSpaces.PhysicalRealPositiveEnergy,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalL2ActionTrace,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2FlowEnergy,
+  `NLS.Articles.KdVKdV2Frequencies.ActualKdVPhaseError
 ]
 
 open Lean in
