@@ -431,7 +431,7 @@
     {
       "label": "Theorem 6",
       "page": 13,
-      "status": "parts_ii_iii_iv_and_corrected_v_proved_part_i_interfaces_open",
+      "status": "proved_with_minus_sign_xi_correction_in_Section2_convention",
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_i_reflection",
@@ -451,9 +451,12 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_pointwise",
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries"
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_gap_segments",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_neighborhood_inside",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_root_primitive_neighborhood"
       ],
-      "remaining": "Theorem6 part(i): invariant W and explicit source gap-segment interfaces. Parts(ii), original H0 pointwise(iii), (iv), and complete corrected physical(v) are proved. The separate p5/Appendix operator adapter remains open."
+      "remaining": "Separate printed proof intermediates and operator adapter are tracked in the full-paper ledger."
     },
     {
       "label": "Lemma 10",
@@ -1674,13 +1677,13 @@
     ]
   },
   "latest_validation": {
-    "report": "pointwise-symmetry-validation.json",
+    "report": "invariant-primitive-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
-    "base_commit": "a2df0885c96a095a7ed2fc14461caffd5c2b2bd9",
+    "base_commit": "334579e6fb05cfac349f0a25d87640cebf24005c",
     "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
-    "article_audit": 13330,
-    "combined_audit": 76572
+    "article_audit": 13404,
+    "combined_audit": 76641
   },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
@@ -1714,7 +1717,7 @@
     "named_statements": 18,
     "numbered_equations": 25,
     "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
-    "initial_semantic_assertions": 114,
+    "initial_semantic_assertions": 118,
     "source_passages": 241
   },
   "full_paper_expansion": {
@@ -1786,6 +1789,25 @@
     "remaining": [
       "Theorem6 part(i): invariant W and explicit source gap-segment interfaces. Parts(ii), original H0 pointwise(iii), (iv), and complete corrected physical(v) are proved. The separate p5/Appendix operator adapter remains open.",
       "Corollary8, full Lemma10 and nonlocal Proposition11(iii). Both corrected Corollary9 clauses are complete for the same actual full primitive and common original complex H0 neighborhood on the entire moving cut complement, with no extra primitive-gradient assumption.",
+      "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
+      "Lemma13 full fundamental matrices at all real spatial points and the p5/Appendix-vs-Section2 operator adapter. Full unit-interval matrices and all endpoint monodromy matrices now have original complex H0 P/PT/arbitrary-phase interfaces.",
+      "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
+      "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
+    ]
+  },
+  "whole_paper_invariant_primitive_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 53,
+    "new_definitions": 5,
+    "source_modules": 12,
+    "completed_clauses": [
+      "Complete corrected Theorem6, including invariant connected source neighborhood and explicit signed gap segments.",
+      "Corollary8 actual value symmetries throughout the original filled spectral domain, with source-gradient identities on the true open joint moving-cut complement."
+    ],
+    "domain_obstruction": "At lambda0=0 and source0 the filled fixed-source spectral domain contains lambda0, but the source slice is not a neighborhood of0. No blanket nondifferentiability or arbitrary-extension claim is made.",
+    "remaining": [
+      "Theorem6 and corrected Corollaries8-9 named statements are now complete in the literal Section2 convention, with explicit xi sign and source-gradient spectral-domain qualifications. Their separately recorded printed proof intermediates and the p5/Appendix operator adapter still require individual correspondence review.",
+      "Full Lemma10 and nonlocal Proposition11(iii), including exact higher-action gradient recurrences and original Sobolev endpoint domains. Corollaries8-9 have actual full-primitive interfaces with no assumed gradient identification.",
       "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
       "Lemma13 full fundamental matrices at all real spatial points and the p5/Appendix-vs-Section2 operator adapter. Full unit-interval matrices and all endpoint monodromy matrices now have original complex H0 P/PT/arbitrary-phase interfaces.",
       "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",

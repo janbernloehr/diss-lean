@@ -3508,3 +3508,42 @@ ledger locators formerly aimed at blank lines or metadata are corrected; all
 assertion locators are nonblank and page-correct. The ledger has 114 assertion
 records and retains all 241 source passages. Whole-paper semantic decomposition
 and proof coverage remain in progress.
+
+
+## 2026-11-07 — Complete corrected Theorem 6 and qualified Corollary 8
+
+The literal gap-segment and invariant-neighborhood interfaces complete the
+named Theorem6 in the Section2 convention, with the documented minus-sign
+xi correction. A compact-circle phase core is open; its zero connected
+component retains the whole connected real locus. It is invariant under
+P/T/all phases, fits inside any given open almost-real source neighborhood,
+and supports the actual root and full primitive differential together.
+
+Actual full primitive values have all three P/T/phase symmetries throughout
+the original complement of noncollapsed cuts, including every collapsed
+point. The full joint derivative, connected spectral fibers over the source
+neighborhood, and actual zero-source normalization fix the value constants.
+Density and spectral continuity fill all collapsed cuts. No value symmetry
+or logarithm branch is assumed.
+
+Corollary8's gradient identities are checked on the full open joint moving
+cut complement, in every original Hilbert direction with a unique continuous
+periodic physical representative. This source-domain qualification is
+explicit: at source0, lambda0=0 is in the larger filled spectral domain, but
+its fixed-lambda source slice is formally not a neighborhood of0. Small
+diagonal constants produce the obstructing actual central gaps. No blanket
+nondifferentiability or arbitrary gradient-extension assertion is made.
+
+Twelve new strict modules add 53 theorems and 5 definitions. The aggregate
+and both transitive audits pass: 13,404 article declarations and auxiliaries;
+76,641 combined NLS declarations. Only propext, Classical.choice and
+Quot.sound are allowed. All 9,147 frozen inputs, 1,156 reused checker-prefix
+outputs and 9,089 source-verified incoming compiled modules retain their
+hashes. No limits or linters changed and no full fresh repository rebuild
+is claimed. Exact evidence is in invariant-primitive-validation.json.
+
+Four further source passages have complete correspondence reviews. The
+ledger has 118 assertion records and all 241 source passages. Whole-paper
+semantic decomposition and proof coverage remain in progress; separately
+recorded printed proof intermediates, Lemmas2,3,10,13, Proposition11(iii)
+and remaining background claims still need work.

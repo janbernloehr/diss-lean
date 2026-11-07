@@ -1,3 +1,15 @@
+import NLS.ZakharovShabat.SourceGapSymmetries
+import NLS.ZakharovShabat.SourceSymmetryCore
+import NLS.ZakharovShabat.SourceInvariantNeighborhood
+import NLS.ZakharovShabat.SourcePrimitiveGradientSymmetries
+import NLS.Articles.MKdVNLSHierarchies.InvariantSpectralDomain
+import NLS.FunctionalAnalysis.OpenConnectedFibers
+import NLS.ZakharovShabat.SourcePrimitiveJointConnected
+import NLS.ZakharovShabat.SourcePrimitiveJointCovariance
+import NLS.ZakharovShabat.SourceAbelianPrimitiveSymmetries
+import NLS.ZakharovShabat.SourceAbelianPrimitiveFilledSymmetries
+import NLS.ZakharovShabat.SourcePrimitiveCollapsedDomain
+import NLS.Articles.MKdVNLSHierarchies.PrimitiveValueSymmetries
 import NLS.ZakharovShabat.ClassicalFundamentalMatrixSymmetries
 import NLS.ZakharovShabat.DiscriminantMatrixSymmetries
 import NLS.ZakharovShabat.SourceL2UnitFundamentalSymmetries
@@ -4030,11 +4042,146 @@ private def mkdvNLSAuditPrefixes63 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.PrimitiveLocalReflection,
 ]
 
+private def mkdvNLSAuditPrefixes64 : Array Lean.Name := #[
+  `NLS.ZakharovShabat.sourcePeriodicSegment_componentSwap,
+  `NLS.ZakharovShabat.sourcePeriodicSegment_midpointReflection,
+  `NLS.ZakharovShabat.sourcePeriodicSegment_reciprocalScaling,
+  `NLS.ZakharovShabat.sourceCanonicalRootDomain_componentSwap,
+  `NLS.ZakharovShabat.sourceCanonicalRootDomain_midpointReflection,
+  `NLS.ZakharovShabat.sourceCanonicalRootDomain_reciprocalScaling,
+  `NLS.ZakharovShabat.sourcePeriodicGap_midpointReflection,
+  `NLS.ZakharovShabat.sourcePeriodicGap_reciprocalScaling,
+  `NLS.ZakharovShabat.sourceOpenGapComplement_componentSwap,
+  `NLS.ZakharovShabat.sourceOpenGapComplement_midpointReflection,
+  `NLS.ZakharovShabat.sourceOpenGapComplement_reciprocalScaling,
+  `_private.NLS.ZakharovShabat.SourceGapSymmetries,
+  `NLS.ZakharovShabat.sourceCircleRotation,
+  `NLS.ZakharovShabat.sourceCircleRotation_one,
+  `NLS.ZakharovShabat.sourceCircleRotation_mul,
+  `NLS.ZakharovShabat.sourceComponentSwap_circleRotation,
+  `NLS.ZakharovShabat.sourceMidpointReflection_circleRotation,
+  `NLS.ZakharovShabat.sourceComponentSwap_midpointReflection,
+  `NLS.ZakharovShabat.continuous_sourceCircleRotation,
+  `NLS.ZakharovShabat.sourceCircleCore,
+  `NLS.ZakharovShabat.isOpen_sourceCircleCore,
+  `NLS.ZakharovShabat.sourceSymmetryCore,
+  `NLS.ZakharovShabat.isOpen_sourceSymmetryCore,
+  `NLS.ZakharovShabat.sourceSymmetryCore_subset,
+  `NLS.ZakharovShabat.realTypeSourceLocus_subset_sourceSymmetryCore,
+  `NLS.ZakharovShabat.sourceSymmetryCore_componentSwap,
+  `NLS.ZakharovShabat.sourceSymmetryCore_midpointReflection,
+  `NLS.ZakharovShabat.sourceSymmetryCore_circleRotation,
+  `_private.NLS.ZakharovShabat.SourceSymmetryCore,
+  `NLS.ZakharovShabat.sourceConnectedSymmetryCore,
+  `NLS.ZakharovShabat.sourceConnectedSymmetryCore_subset,
+  `NLS.ZakharovShabat.isOpen_sourceConnectedSymmetryCore,
+  `NLS.ZakharovShabat.realTypeSourceLocus_subset_sourceConnectedSymmetryCore,
+  `NLS.ZakharovShabat.isConnected_sourceConnectedSymmetryCore,
+  `NLS.ZakharovShabat.sourceConnectedSymmetryCore_componentSwap,
+  `NLS.ZakharovShabat.sourceConnectedSymmetryCore_midpointReflection,
+  `NLS.ZakharovShabat.sourceConnectedSymmetryCore_circleRotation,
+  `NLS.ZakharovShabat.exists_sourceInvariantPrimitiveNeighborhood,
+  `_private.NLS.ZakharovShabat.SourceInvariantNeighborhood,
+  `NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_componentSwap,
+  `NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_midpointReflection,
+  `NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_reciprocalScaling,
+  `_private.NLS.ZakharovShabat.SourcePrimitiveGradientSymmetries,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_neighborhood_inside,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_i_gap_segments,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_root_primitive_neighborhood,
+  `NLS.Articles.MKdVNLSHierarchies.corollary8_physical_gradient_symmetries,
+  `_private.NLS.Articles.MKdVNLSHierarchies.InvariantSpectralDomain,
+  `NLS.FunctionalAnalysis.isPreconnected_open_product_of_fibers,
+  `_private.NLS.FunctionalAnalysis.OpenConnectedFibers,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData.isConnected_jointDomain,
+  `_private.NLS.ZakharovShabat.SourcePrimitiveJointConnected,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_covariance,
+  `_private.NLS.ZakharovShabat.SourcePrimitiveJointCovariance,
+  `NLS.ZakharovShabat.sourceSignedJointMap,
+  `NLS.ZakharovShabat.sourceSignedJointMap_apply,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_componentSwap,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_midpointReflection,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_circleRotation,
+  `_private.NLS.ZakharovShabat.SourceAbelianPrimitiveSymmetries,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_componentSwap_filled,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_midpointReflection_filled,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_circleRotation_filled,
+  `_private.NLS.ZakharovShabat.SourceAbelianPrimitiveFilledSymmetries,
+]
+
+private def mkdvNLSAuditPrefixes65 : Array Lean.Name := #[
+  `NLS.ZakharovShabat.source_filled_primitive_zero_slice_not_nhds,
+  `NLS.ZakharovShabat.source_filled_primitive_zero_slice_contains_zero,
+  `_private.NLS.ZakharovShabat.SourcePrimitiveCollapsedDomain,
+  `NLS.Articles.MKdVNLSHierarchies.exists_corollary8_corrected,
+  `NLS.Articles.MKdVNLSHierarchies.corollary8_collapsed_source_domain_obstruction,
+  `_private.NLS.Articles.MKdVNLSHierarchies.PrimitiveValueSymmetries,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.ZakharovShabat.sourcePeriodicSegment_componentSwap,
+    ``NLS.ZakharovShabat.sourcePeriodicSegment_midpointReflection,
+    ``NLS.ZakharovShabat.sourcePeriodicSegment_reciprocalScaling,
+    ``NLS.ZakharovShabat.sourceCanonicalRootDomain_componentSwap,
+    ``NLS.ZakharovShabat.sourceCanonicalRootDomain_midpointReflection,
+    ``NLS.ZakharovShabat.sourceCanonicalRootDomain_reciprocalScaling,
+    ``NLS.ZakharovShabat.sourcePeriodicGap_midpointReflection,
+    ``NLS.ZakharovShabat.sourcePeriodicGap_reciprocalScaling,
+    ``NLS.ZakharovShabat.sourceOpenGapComplement_componentSwap,
+    ``NLS.ZakharovShabat.sourceOpenGapComplement_midpointReflection,
+    ``NLS.ZakharovShabat.sourceOpenGapComplement_reciprocalScaling,
+    ``NLS.ZakharovShabat.sourceCircleRotation,
+    ``NLS.ZakharovShabat.sourceCircleRotation_one,
+    ``NLS.ZakharovShabat.sourceCircleRotation_mul,
+    ``NLS.ZakharovShabat.sourceComponentSwap_circleRotation,
+    ``NLS.ZakharovShabat.sourceMidpointReflection_circleRotation,
+    ``NLS.ZakharovShabat.sourceComponentSwap_midpointReflection,
+    ``NLS.ZakharovShabat.continuous_sourceCircleRotation,
+    ``NLS.ZakharovShabat.sourceCircleCore,
+    ``NLS.ZakharovShabat.isOpen_sourceCircleCore,
+    ``NLS.ZakharovShabat.sourceSymmetryCore,
+    ``NLS.ZakharovShabat.isOpen_sourceSymmetryCore,
+    ``NLS.ZakharovShabat.sourceSymmetryCore_subset,
+    ``NLS.ZakharovShabat.realTypeSourceLocus_subset_sourceSymmetryCore,
+    ``NLS.ZakharovShabat.sourceSymmetryCore_componentSwap,
+    ``NLS.ZakharovShabat.sourceSymmetryCore_midpointReflection,
+    ``NLS.ZakharovShabat.sourceSymmetryCore_circleRotation,
+    ``NLS.ZakharovShabat.sourceConnectedSymmetryCore,
+    ``NLS.ZakharovShabat.sourceConnectedSymmetryCore_subset,
+    ``NLS.ZakharovShabat.isOpen_sourceConnectedSymmetryCore,
+    ``NLS.ZakharovShabat.realTypeSourceLocus_subset_sourceConnectedSymmetryCore,
+    ``NLS.ZakharovShabat.isConnected_sourceConnectedSymmetryCore,
+    ``NLS.ZakharovShabat.sourceConnectedSymmetryCore_componentSwap,
+    ``NLS.ZakharovShabat.sourceConnectedSymmetryCore_midpointReflection,
+    ``NLS.ZakharovShabat.sourceConnectedSymmetryCore_circleRotation,
+    ``NLS.ZakharovShabat.exists_sourceInvariantPrimitiveNeighborhood,
+    ``NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_componentSwap,
+    ``NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_midpointReflection,
+    ``NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_reciprocalScaling,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_neighborhood_inside,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_i_gap_segments,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_root_primitive_neighborhood,
+    ``NLS.Articles.MKdVNLSHierarchies.corollary8_physical_gradient_symmetries,
+    ``NLS.FunctionalAnalysis.isPreconnected_open_product_of_fibers,
+    ``NLS.ZakharovShabat.SourceFullAbelianDifferentialData.isConnected_jointDomain,
+    ``NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_covariance,
+    ``NLS.ZakharovShabat.sourceSignedJointMap,
+    ``NLS.ZakharovShabat.sourceSignedJointMap_apply,
+    ``NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_componentSwap,
+    ``NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_midpointReflection,
+    ``NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_circleRotation,
+    ``NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_componentSwap_filled,
+    ``NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_midpointReflection_filled,
+    ``NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_circleRotation_filled,
+    ``NLS.ZakharovShabat.source_filled_primitive_zero_slice_not_nhds,
+    ``NLS.ZakharovShabat.source_filled_primitive_zero_slice_contains_zero,
+    ``NLS.Articles.MKdVNLSHierarchies.exists_corollary8_corrected,
+    ``NLS.Articles.MKdVNLSHierarchies.corollary8_collapsed_source_domain_obstruction,
+
     ``NLS.ZakharovShabat.classicalFundamentalMatrix_componentSwap,
     ``NLS.ZakharovShabat.classicalFundamentalMatrix_spatialReflection,
     ``NLS.ZakharovShabat.componentSwapMatrix,

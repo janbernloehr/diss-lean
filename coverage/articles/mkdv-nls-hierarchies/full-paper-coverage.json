@@ -19,7 +19,7 @@
   "scope_last_line": 1327,
   "named_statement_count": 18,
   "numbered_equation_count": 25,
-  "assertion_count": 114,
+  "assertion_count": 118,
   "passage_count": 241,
   "semantic_inventory_complete": false,
   "assertions": [
@@ -247,7 +247,7 @@
       "label": "Theorem 6",
       "line": 918,
       "page": 13,
-      "status": "partial",
+      "status": "proved_correction",
       "obligation": "Five parts: discriminants, eigenvalue/gap labels and invariant W; spectral derivatives; source gradients; canonical roots; spatial gradient equation and periodic xi with all three symmetries.",
       "declarations": [
         "NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap",
@@ -268,10 +268,13 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_pointwise",
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries"
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_gap_segments",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_neighborhood_inside",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_root_primitive_neighborhood"
       ],
       "existing_details": "source-map.json",
-      "certified_part": "All actual discriminant/spectral-derivative identities; original H0 pointwise P/T/phase physical gradient symmetries at every real spatial point; signed endpoint slots; canonical-root part(iv); complete corrected part(v), including original L2 whole-line spatial equation, actual normalized minus-sign integral, period-one xi and its P/T/arbitrary-phase covariance. Invariant W and explicit source gap-segment interfaces in part(i) remain open, as does the separate p5/Appendix operator adapter."
+      "certified_part": "The complete named statement is proved in the literal Section2 operator convention, with the corrected minus-sign xi integral in part(v) and its original H0 counterexample. All P/T/arbitrary-phase discriminant, signed endpoint, explicit gap-segment, spectral derivative, actual pointwise physical gradient, canonical-root and xi identities hold on the original domains. The source neighborhood can be shrunk inside any supplied open neighborhood of the entire real locus to one open connected P/T/all-phase invariant neighborhood; actual root and primitive differential data coexist there. Separate printed proof intermediates and the p5/Appendix operator adapter remain independently tracked."
     },
     {
       "id": "corollary-8",
@@ -279,10 +282,15 @@
       "label": "Corollary 8",
       "line": 1035,
       "page": 15,
-      "status": "pending_full_statement",
+      "status": "proved_correction",
       "obligation": "Primitive and gradient symmetries for P, pure T and every real phase, on the precise cut complement.",
-      "declarations": [],
-      "existing_details": "source-map.json"
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.exists_corollary8_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.corollary8_physical_gradient_symmetries",
+        "NLS.Articles.MKdVNLSHierarchies.corollary8_collapsed_source_domain_obstruction"
+      ],
+      "existing_details": "source-map.json",
+      "certified_part": "All three actual full primitive value identities hold on the original full fixed-source complement of noncollapsed cuts, including every collapsed cut. Actual Frechet-gradient identities hold on the full open joint complement of all moving cuts, with every original Hilbert variation and a unique continuous periodic physical representative. One common open connected complex H0 neighborhood contains the entire real locus and is invariant under P/T/every phase. This explicitly qualifies the printed shared gradient domain: the free filled spectral point lambda=0 is allowed at source0, but its source slice is formally not a neighborhood of0. No claim that every closed-gap gradient is nonexistent or that a further gradient continuation has been constructed is made."
     },
     {
       "id": "corollary-9",
@@ -997,9 +1005,13 @@
       "kind": "unnumbered_or_proof_claim",
       "line": 1058,
       "page": 15,
-      "status": "pending_individual_correspondence_review",
-      "obligation": "Corollary 9 must use the cut complement or an explicitly proved continuation; F is not defined on every lambda as printed.",
-      "declarations": []
+      "status": "proved_correction_and_domain_obstruction",
+      "obligation": "Corollary9 uses the entire true moving cut complement instead of all of C. Corollary8 retains the larger filled fixed-source domain for values but qualifies its ordinary source-gradient domain by the open joint moving-cut complement. At lambda0=0 and source0, the filled spectral point is included while its source slice is not a neighborhood, as formally shown by arbitrarily small diagonal constant potentials. This is a domain obstruction, not an assertion of nondifferentiability of every possible extension.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.exists_corollary9_complete_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.exists_corollary8_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.corollary8_collapsed_source_domain_obstruction"
+      ]
     },
     {
       "id": "higher-action-contour-symmetries",
@@ -1327,6 +1339,64 @@
         "NLS.ZakharovShabat.l2FundamentalMatrix_sourceComponentSwap",
         "NLS.ZakharovShabat.l2FundamentalMatrix_sourceSpatialReflection",
         "NLS.ZakharovShabat.l2FundamentalMatrix_sourceReciprocalScaling"
+      ]
+    },
+    {
+      "id": "theorem-6-i-gap-segments",
+      "kind": "certified_named_clause",
+      "line": 927,
+      "page": 13,
+      "status": "proved",
+      "obligation": "Literal signed closed gap-segment transport for P, pure T and arbitrary real phases, with actual original endpoints, all complex finite p>1 source data and every integer slot; both full-cut and noncollapsed-cut complements have exact transport interfaces.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_gap_segments",
+        "NLS.ZakharovShabat.sourceCanonicalRootDomain_componentSwap",
+        "NLS.ZakharovShabat.sourceCanonicalRootDomain_midpointReflection",
+        "NLS.ZakharovShabat.sourceCanonicalRootDomain_reciprocalScaling",
+        "NLS.ZakharovShabat.sourceOpenGapComplement_componentSwap",
+        "NLS.ZakharovShabat.sourceOpenGapComplement_midpointReflection",
+        "NLS.ZakharovShabat.sourceOpenGapComplement_reciprocalScaling"
+      ]
+    },
+    {
+      "id": "theorem-6-invariant-source-neighborhood",
+      "kind": "certified_named_clause",
+      "line": 929,
+      "page": 13,
+      "status": "proved",
+      "obligation": "Inside any supplied open complex source neighborhood of the entire real locus, an open connected P/T/all-phase invariant neighborhood exists. Compactness of the phase circle proves openness of the universal phase core; its zero component retains the whole connected real locus. Root joint analyticity and the actual full primitive differential coexist on one such neighborhood.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_neighborhood_inside",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_root_primitive_neighborhood"
+      ]
+    },
+    {
+      "id": "corollary-8-filled-values",
+      "kind": "certified_named_clause",
+      "line": 1037,
+      "page": 15,
+      "status": "proved",
+      "obligation": "All literal P/T/arbitrary-phase symmetries of actual full primitive values hold throughout the complement of noncollapsed cuts, including collapsed gaps. The proof uses the actual full joint derivative, connectedness of the full moving-cut domain, actual zero-source normalization and spectral continuity. No primitive symmetry or new logarithm branch is assumed.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.exists_corollary8_corrected",
+        "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_covariance",
+        "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.isConnected_jointDomain",
+        "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_componentSwap_filled",
+        "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_midpointReflection_filled",
+        "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_circleRotation_filled"
+      ]
+    },
+    {
+      "id": "corollary-8-gradient-domain-obstruction",
+      "kind": "certified_domain_correction_and_obstruction",
+      "line": 1038,
+      "page": 15,
+      "status": "proved_correction_and_domain_obstruction",
+      "obligation": "The source-gradient clause is proved on the true open joint moving-cut domain with actual Frechet derivatives, while the larger filled domain is retained for fixed-source values. At source0, lambda0=0 is in the filled spectral domain, but the fixed-lambda source slice is not a neighborhood of0, by an actual small constant-potential central gap argument. Further derivative extensions at closed cuts are not assumed or asserted.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.exists_corollary8_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.corollary8_collapsed_source_domain_obstruction",
+        "NLS.ZakharovShabat.source_filled_primitive_zero_slice_not_nhds"
       ]
     }
   ],
@@ -2910,10 +2980,23 @@
       "first_line": 918,
       "last_line": 918,
       "source_sha256": "3458dcb78811ad0cd403bdbccd6653de45c3eca27705b7917d841ba53e66a702",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved_with_correction",
       "assertion_ids": [
         "theorem-6"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "theorem-6"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_i_gap_segments",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_neighborhood_inside",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_pointwise",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries"
+        ],
+        "comparison": "The named statement is complete in the literal Section2 convention with the minus-sign xi correction; its separately recorded proof intermediates remain distinct obligations."
+      }
     },
     {
       "id": "passage-161",
@@ -2965,8 +3048,20 @@
       "first_line": 927,
       "last_line": 927,
       "source_sha256": "68d635aa5d7898999629573b5397f7690d02801cedfc9cc168b8b7e77ecf5c86",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved",
+      "assertion_ids": [
+        "theorem-6-i-gap-segments"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "theorem-6-i-gap-segments"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_i_gap_segments"
+        ],
+        "comparison": "Literal closed gap segments reflect with reversed integer slot under P and T and are phase invariant, including collapsed segments and arbitrary complex original H0 sources."
+      }
     },
     {
       "id": "passage-164",
@@ -2974,8 +3069,21 @@
       "first_line": 929,
       "last_line": 929,
       "source_sha256": "e9b1dd4d87855ad7b363f0e89e82334d6db3652ef3b56056d15d547a908a6116",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved",
+      "assertion_ids": [
+        "theorem-6-invariant-source-neighborhood"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "theorem-6-invariant-source-neighborhood"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_neighborhood_inside",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_root_primitive_neighborhood"
+        ],
+        "comparison": "An invariant open connected neighborhood is constructed inside any supplied open almost-real source domain, retaining all inherited setup properties. The actual root and full primitive differential coexist on one such domain."
+      }
     },
     {
       "id": "passage-165",
@@ -3234,8 +3342,23 @@
       "first_line": 1037,
       "last_line": 1038,
       "source_sha256": "cc747cb2c31c9323349dfd842e44c16d21a1ae9b655f70dd7aa16dc628c3495c",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved_with_correction",
+      "assertion_ids": [
+        "corollary-8-filled-values",
+        "corollary-8-gradient-domain-obstruction"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "corollary-8",
+          "corollary-8-gradient-domain-obstruction"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.exists_corollary8_corrected",
+          "NLS.Articles.MKdVNLSHierarchies.corollary8_collapsed_source_domain_obstruction"
+        ],
+        "comparison": "The literal full primitive value chain holds on the full complement of noncollapsed cuts, including collapsed points. The actual source-gradient chain holds on the full open moving-cut complement; the zero-source non-neighborhood obstruction explicitly qualifies the printed larger shared gradient domain. No unproved closed-cut derivative continuation is claimed."
+      }
     },
     {
       "id": "passage-185",
@@ -3826,8 +3949,8 @@
     }
   ],
   "known_open_obligations": [
-    "Theorem6 part(i): invariant W and explicit source gap-segment interfaces. Parts(ii), original H0 pointwise(iii), (iv), and complete corrected physical(v) are proved. The separate p5/Appendix operator adapter remains open.",
-    "Corollary8, full Lemma10 and nonlocal Proposition11(iii). Both corrected Corollary9 clauses are complete for the same actual full primitive and common original complex H0 neighborhood on the entire moving cut complement, with no extra primitive-gradient assumption.",
+    "Theorem6 and corrected Corollaries8-9 named statements are now complete in the literal Section2 convention, with explicit xi sign and source-gradient spectral-domain qualifications. Their separately recorded printed proof intermediates and the p5/Appendix operator adapter still require individual correspondence review.",
+    "Full Lemma10 and nonlocal Proposition11(iii), including exact higher-action gradient recurrences and original Sobolev endpoint domains. Corollaries8-9 have actual full-primitive interfaces with no assumed gradient identification.",
     "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
     "Lemma13 full fundamental matrices at all real spatial points and the p5/Appendix-vs-Section2 operator adapter. Full unit-interval matrices and all endpoint monodromy matrices now have original complex H0 P/PT/arbitrary-phase interfaces.",
     "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",

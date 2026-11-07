@@ -236,6 +236,43 @@ transitive audit evidence is in
 Whole-paper coverage remains in progress, with 114 assertion records and all
 241 source passages; semantic decomposition remains incomplete.
 
+## 2026-11-07 — Complete corrected Theorem 6 and Corollary 8 with explicit domains
+
+Theorem 6's remaining gap-segment and invariant-neighborhood clauses now check.
+Literal closed segments have the exact P/T/reflected-index and phase identities.
+Inside any given open complex source neighborhood containing all real sources,
+a compact-circle phase core and its zero connected component give an open
+connected P/T/all-phase invariant neighborhood. It retains the entire real
+locus and all inherited setup properties. Actual root joint analyticity and
+full primitive differential data coexist on one such domain. This completes
+the named Theorem 6 in the literal Section 2 convention, with the documented
+minus-sign xi correction. Its separately recorded proof intermediates and the
+p5/Appendix operator adapter are still reviewed individually.
+
+Corollary 8's actual primitive-value identities now hold on the original full
+complement of noncollapsed cuts, including all collapsed spectral points.
+The proof uses the actual full joint differential, connected vertical spectral
+fibers over a connected open source neighborhood, and the actual zero-source
+normalization. No value symmetry or new logarithm branch is assumed. Spectral
+continuity extends the identities through every collapsed cut.
+
+The actual source-gradient identities hold on the full open joint complement
+of all moving cuts, in every original Hilbert direction, with a unique
+continuous periodic physical representative. This domain qualification is
+explicit: at source 0, lambda=0 is in the filled fixed-source spectral domain,
+but the fixed-lambda source slice is formally not a neighborhood of 0. Small
+diagonal constant potentials put 0 inside an open central cut. This does not
+assert nondifferentiability of every possible extension; no further gradient
+continuation through closed cuts is claimed. The larger domain is retained
+for primitive values.
+
+Twelve strictly checked modules add 53 theorems and 5 definitions. Evidence is
+in [`invariant-primitive-validation.json`](invariant-primitive-validation.json).
+The ledger has 118 assertion records and all 241 source passages. Four further
+complete source passages have explicit correspondence reviews. Whole-paper
+semantic decomposition and proof coverage remain in progress, including
+Lemmas 2,3,10,13, Proposition 11(iii), proof intermediates and background claims.
+
 ## Pinned source
 
 - Authors: Jan-Cornelius Molnar and Yannick Widmer.
