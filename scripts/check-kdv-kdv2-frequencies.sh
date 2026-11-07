@@ -3470,6 +3470,16 @@ modules=(
   NLS/ZakharovShabat/SourceDiagonalCancellationSobolevUniformLittleO
   NLS/KdV/PhysicalUniformDiagonalCancellation
   NLS/Articles/KdVKdV2Frequencies/Theorem12UniformDiagonalDecay
+  NLS/SequenceSpaces/UniformKernelMultiplierTails
+  NLS/ZakharovShabat/SourceSobolevMidpointUniformTail
+  NLS/ZakharovShabat/SourceSobolevGapUniformTail
+  NLS/ZakharovShabat/SourcePsiChiSobolevUniformTail
+  NLS/SequenceSpaces/CubicOffsetSmallBound
+  NLS/ZakharovShabat/SourceOffDiagonalCubicUniformTail
+  NLS/SequenceSpaces/UniformSharpCubicSums
+  NLS/ZakharovShabat/SourceUniformOffDiagonalDecay
+  NLS/KdV/PhysicalUniformFrequencyDecay
+  NLS/Articles/KdVKdV2Frequencies/Theorem12NativeUniformFrequencyDecay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

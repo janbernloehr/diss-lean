@@ -1,3 +1,13 @@
+import NLS.KdV.PhysicalUniformFrequencyDecay
+import NLS.Articles.KdVKdV2Frequencies.Theorem12NativeUniformFrequencyDecay
+import NLS.ZakharovShabat.SourceUniformOffDiagonalDecay
+import NLS.SequenceSpaces.UniformSharpCubicSums
+import NLS.ZakharovShabat.SourceOffDiagonalCubicUniformTail
+import NLS.SequenceSpaces.CubicOffsetSmallBound
+import NLS.ZakharovShabat.SourceSobolevGapUniformTail
+import NLS.ZakharovShabat.SourcePsiChiSobolevUniformTail
+import NLS.SequenceSpaces.UniformKernelMultiplierTails
+import NLS.ZakharovShabat.SourceSobolevMidpointUniformTail
 import NLS.KdV.PhysicalUniformDiagonalCancellation
 import NLS.Articles.KdVKdV2Frequencies.Theorem12UniformDiagonalDecay
 import NLS.ZakharovShabat.SourceDiagonalCancellationSobolevUniformLittleO
@@ -6135,7 +6145,17 @@ private def kdvFrequencyAuditChunk27 : Array Lean.Name := #[
   `NLS.ZakharovShabat.SourceFirstWeightedActionSobolevUniformLittleO,
   `NLS.ZakharovShabat.SourceDiagonalCancellationSobolevUniformLittleO,
   `NLS.KdV.PhysicalUniformDiagonalCancellation,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12UniformDiagonalDecay
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12UniformDiagonalDecay,
+  `NLS.SequenceSpaces.UniformKernelMultiplierTails,
+  `NLS.ZakharovShabat.SourceSobolevMidpointUniformTail,
+  `NLS.ZakharovShabat.SourceSobolevGapUniformTail,
+  `NLS.ZakharovShabat.SourcePsiChiSobolevUniformTail,
+  `NLS.SequenceSpaces.CubicOffsetSmallBound,
+  `NLS.ZakharovShabat.SourceOffDiagonalCubicUniformTail,
+  `NLS.SequenceSpaces.UniformSharpCubicSums,
+  `NLS.ZakharovShabat.SourceUniformOffDiagonalDecay,
+  `NLS.KdV.PhysicalUniformFrequencyDecay,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12NativeUniformFrequencyDecay
 ]
 
 open Lean in
