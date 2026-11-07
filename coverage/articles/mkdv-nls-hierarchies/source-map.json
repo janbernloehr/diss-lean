@@ -1672,13 +1672,13 @@
     ]
   },
   "latest_validation": {
-    "report": "nonlocal-sign-validation.json",
+    "report": "primitive-nonlocal-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
-    "base_commit": "73bf8303a316a0877a0b04b59debc3030d0060a1",
+    "base_commit": "46f31b5471eb7bffcbac544ba50aefedb0458e6b",
     "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
-    "article_audit": 13250,
-    "combined_audit": 76497
+    "article_audit": 13271,
+    "combined_audit": 76517
   },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
@@ -1712,7 +1712,7 @@
     "named_statements": 18,
     "numbered_equations": 25,
     "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
-    "initial_semantic_assertions": 108,
+    "initial_semantic_assertions": 110,
     "source_passages": 241
   },
   "full_paper_expansion": {
@@ -1759,6 +1759,15 @@
     "source_modules": 8,
     "correction": "xi=delta-2*i*integral(R*phi dot grad Delta) in the literal Section2 convention. Actual original H0 counterexample refutes printed plus, even almost everywhere.",
     "further_progress": "Correct typed canonical-root-normalized actual-gradient nonlocal reflection residual and original H0 endpoint monodromy matrices.",
-    "remaining": "Primitive F interface, full xi covariance, all-real-x fundamental symmetry, and all other pending source claims."
+    "remaining": "Historical milestone; the primitive-gradient interface and corrected Corollary9(ii) are completed by the next milestone. Full xi covariance, all-real-x fundamental symmetry and other pending claims remain open."
+  },
+  "whole_paper_primitive_nonlocal_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 9,
+    "new_definitions": 2,
+    "source_modules": 4,
+    "completed_clause": "Corrected Corollary9(ii), actual full primitive, common original complex H0 neighborhood containing every real source, entire moving cut complement.",
+    "interface": "Every original Hilbert variation, unique continuous periodic physical gradient. No extra primitive-gradient hypothesis.",
+    "remaining": "Corollary8, Corollary9(i), full Lemma10 and nonlocal Proposition11(iii). Corrected Corollary9(ii) is complete for the actual full primitive on its common original complex H0 neighborhood and entire moving cut complement; it has no extra primitive-gradient assumption."
   }
 }

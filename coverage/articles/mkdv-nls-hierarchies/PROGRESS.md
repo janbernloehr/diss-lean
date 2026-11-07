@@ -3449,3 +3449,29 @@ checker-prefix outputs, and 9,089 source-verified incoming compiled modules
 retain their hashes. No full fresh repository source rebuild is claimed.
 Exact hashes, inherited import provenance and limits are recorded in
 nonlocal-sign-validation.json.
+
+
+## 2026-11-07 — Corrected Corollary 9(ii), actual full primitive
+
+The constructed full primitive's actual Frechet derivative is represented
+by the canonical-root-normalized whole-line physical discriminant gradient
+in every original complex Hilbert direction. Continuous periodic gradient
+representatives of that cotangent are unique pointwise, including every
+period seam. No formal-gradient identification is assumed.
+
+On one common open complex H0 neighborhood containing every real source,
+every pure T-even or T-odd source has a negation-invariant full spectral cut
+complement. Corrected Corollary9(ii) follows for the actual full primitive
+gradients at every spectral point in that complement, almost everywhere on
+the entire real spatial line. The scalar nonlocal integral multiplies J*phi
+and has a positive sign on the residual left side. Corollary9(i), full xi
+covariance and the remaining source claims stay open.
+
+Four new strict modules add 9 theorems and 2 definitions. The aggregate and
+both transitive audits pass: 13,271 article declarations and auxiliaries,
+and 76,517 combined NLS declarations, with only propext, Classical.choice
+and Quot.sound permitted. All 9,127 frozen inputs, 1,144 reused checker
+prefix outputs and 9,089 source-verified incoming compiled modules retain
+their hashes. Exact evidence is in primitive-nonlocal-validation.json.
+Whole-paper coverage remains in progress, with 110 assertion records and
+241 source passages; semantic decomposition is incomplete.

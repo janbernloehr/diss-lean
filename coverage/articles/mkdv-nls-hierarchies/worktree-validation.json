@@ -38151,10 +38151,10 @@
   },
   "merge_validation": "merge-validation.json",
   "latest_full_paper_progress": {
-    "report": "nonlocal-sign-validation.json",
+    "report": "primitive-nonlocal-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
     "date": "2026-11-07",
-    "note": "Earlier fields are historical; latest scope and merged-main validation are in the nonlocal-sign report."
+    "note": "Earlier fields are historical; current scope and inherited merged-main validation are in the primitive-nonlocal report."
   }
 }

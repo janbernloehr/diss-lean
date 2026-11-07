@@ -1180,6 +1180,10 @@ modules = [
     'NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean',
     'NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean',
     'NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean',
+    'NLS/ZakharovShabat/L2PhysicalGradientUniqueness.lean',
+    'NLS/ZakharovShabat/L2FullAbelianGradient.lean',
+    'NLS/ZakharovShabat/SourceReflectionCutDomain.lean',
+    'NLS/Articles/MKdVNLSHierarchies/PrimitiveNonlocalReflection.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

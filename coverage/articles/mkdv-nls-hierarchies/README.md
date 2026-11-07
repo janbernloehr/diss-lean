@@ -163,8 +163,9 @@ For normalized actual gradients g=G/root, the correctly typed residual is
 It equals `(M11-M22)/root * J*phi` almost everywhere. At pure T-even or
 T-odd sources the quotient is even in lambda, proving the corrected
 Corollary 9(ii) identity for these normalized actual discriminant gradients.
-Identifying them with the original primitive F gradients on the source cut
-complement remains open. This does not close full Corollary 9 or Proposition 11(iii).
+At this milestone, identifying them with the original primitive F gradients
+was still open. The next milestone closes that interface and corrected part(ii);
+full Corollary 9 and Proposition 11(iii) remain open.
 
 Actual endpoint monodromy matrix symmetries are also proved for every original
 complex H0 source under P, pure T, combined PT and all nonzero complex
@@ -177,6 +178,30 @@ with the exact union of aggregate imports. Validation is recorded in
 [`nonlocal-sign-validation.json`](nonlocal-sign-validation.json).
 The ledger has 108 assertion records and all 241 source passages; semantic
 decomposition and whole-paper coverage remain **in progress**.
+
+## 2026-11-07 — Corrected Corollary 9(ii) for the actual full primitive
+
+The constructed full Abelian primitive now has exactly the normalized physical
+field `grad F = grad Delta/root` as its actual Frechet gradient. The integral
+formula holds for every original complex Hilbert direction. A separate
+uniqueness proof shows that every continuous periodic representative of that
+cotangent equals this field pointwise, including all period seams.
+
+One common open complex H0 neighborhood contains every real source and covers
+the entire moving cut complement. At any pure T-even or T-odd source in that
+neighborhood, negating lambda preserves the complete cut complement. The
+corrected typed nonlocal reflection identity is therefore proved for both
+actual primitive gradients throughout their proper spectral domain. No
+primitive-gradient hypothesis is assumed in the final existence theorem.
+
+This completes **corrected Corollary 9(ii)**: the scalar nonlocal integral
+multiplies `J*phi` and has a positive sign on the residual's left side, and
+lambda is restricted to the domain where the primitive gradient exists.
+Part(i), full xi covariance and the remaining ledger obligations stay open.
+Four strictly checked modules add 9 theorems and 2 definitions; validation is
+recorded in [`primitive-nonlocal-validation.json`](primitive-nonlocal-validation.json).
+The ledger now has 110 assertion records and 241 source passages. Whole-paper
+semantic decomposition and proof coverage remain **in progress**.
 
 ## Pinned source
 

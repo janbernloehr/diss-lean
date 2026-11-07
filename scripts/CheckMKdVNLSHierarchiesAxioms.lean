@@ -1,3 +1,7 @@
+import NLS.ZakharovShabat.L2PhysicalGradientUniqueness
+import NLS.ZakharovShabat.L2FullAbelianGradient
+import NLS.ZakharovShabat.SourceReflectionCutDomain
+import NLS.Articles.MKdVNLSHierarchies.PrimitiveNonlocalReflection
 import NLS.ZakharovShabat.ClassicalRationalMonodromy
 import NLS.ZakharovShabat.ClassicalDiscriminantXiIntegral
 import NLS.ZakharovShabat.DiscriminantNonlocalSignCounterexample
@@ -3955,11 +3959,41 @@ private def mkdvNLSAuditPrefixes61 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.NonlocalSign,
 ]
 
+private def mkdvNLSAuditPrefixes62 : Array Lean.Name := #[
+  `NLS.ZakharovShabat.eq_of_continuous_periodic_physical_L2_pairings,
+  `_private.NLS.ZakharovShabat.L2PhysicalGradientUniqueness,
+  `NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient,
+  `NLS.ZakharovShabat.continuous_sourceFullAbelianPhysicalGradient,
+  `NLS.ZakharovShabat.periodic_sourceFullAbelianPhysicalGradient,
+  `NLS.ZakharovShabat.sourceFullAbelianPrimitive_fderiv_eq_physical_integral,
+  `NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_unique,
+  `_private.NLS.ZakharovShabat.L2FullAbelianGradient,
+  `NLS.ZakharovShabat.sourcePeriodicReflection_of_midpoint_even_or_odd,
+  `NLS.ZakharovShabat.source_midpoint_even_or_odd_neg_mem_rootDomain_iff,
+  `_private.NLS.ZakharovShabat.SourceReflectionCutDomain,
+  `NLS.Articles.MKdVNLSHierarchies.primitiveNonlocalResidual,
+  `NLS.Articles.MKdVNLSHierarchies.primitiveNonlocalResidual_eq_normalized,
+  `NLS.Articles.MKdVNLSHierarchies.exists_corollary9_ii_corrected,
+  `_private.NLS.Articles.MKdVNLSHierarchies.PrimitiveNonlocalReflection,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.ZakharovShabat.eq_of_continuous_periodic_physical_L2_pairings,
+    ``NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient,
+    ``NLS.ZakharovShabat.continuous_sourceFullAbelianPhysicalGradient,
+    ``NLS.ZakharovShabat.periodic_sourceFullAbelianPhysicalGradient,
+    ``NLS.ZakharovShabat.sourceFullAbelianPrimitive_fderiv_eq_physical_integral,
+    ``NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_unique,
+    ``NLS.ZakharovShabat.sourcePeriodicReflection_of_midpoint_even_or_odd,
+    ``NLS.ZakharovShabat.source_midpoint_even_or_odd_neg_mem_rootDomain_iff,
+    ``NLS.Articles.MKdVNLSHierarchies.primitiveNonlocalResidual,
+    ``NLS.Articles.MKdVNLSHierarchies.primitiveNonlocalResidual_eq_normalized,
+    ``NLS.Articles.MKdVNLSHierarchies.exists_corollary9_ii_corrected,
+
     ``NLS.ZakharovShabat.classicalRationalPotential,
     ``NLS.ZakharovShabat.classicalRational_first_column,
     ``NLS.ZakharovShabat.classicalRational_second_column,

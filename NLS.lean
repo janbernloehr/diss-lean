@@ -6788,3 +6788,7 @@ import NLS.ZakharovShabat.SourceL2MonodromySymmetries
 import NLS.ZakharovShabat.SourceReflectionBoundaryConstant
 import NLS.ZakharovShabat.L2NormalizedNonlocalGradient
 import NLS.Articles.MKdVNLSHierarchies.NonlocalSign
+import NLS.ZakharovShabat.L2PhysicalGradientUniqueness
+import NLS.ZakharovShabat.L2FullAbelianGradient
+import NLS.ZakharovShabat.SourceReflectionCutDomain
+import NLS.Articles.MKdVNLSHierarchies.PrimitiveNonlocalReflection
