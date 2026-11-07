@@ -3401,6 +3401,15 @@ modules=(
   NLS/SequenceSpaces/RealConeInverseCoordinates
   NLS/Articles/KdVKdV2Frequencies/IntermediateRealFrequencyInverse
   NLS/Articles/KdVKdV2Frequencies/Corollary14
+  NLS/SequenceSpaces/SharpReciprocalKernel
+  NLS/SequenceSpaces/SharpReciprocalSums
+  NLS/SequenceSpaces/SharpCubicOffDiagonalDecay
+  NLS/ZakharovShabat/SourceSharpOffDiagonalDecay
+  NLS/SequenceSpaces/PositiveFrequencyDecayNormalization
+  NLS/ComplexAnalysis/CommonPullbackDomain
+  NLS/KdV/PhysicalSharpOffDiagonalTransport
+  NLS/KdV/PhysicalSharpOffDiagonalDecay
+  NLS/Articles/KdVKdV2Frequencies/Theorem12OffDiagonalSharpDecay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

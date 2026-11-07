@@ -1,3 +1,12 @@
+import NLS.KdV.PhysicalSharpOffDiagonalTransport
+import NLS.KdV.PhysicalSharpOffDiagonalDecay
+import NLS.Articles.KdVKdV2Frequencies.Theorem12OffDiagonalSharpDecay
+import NLS.ComplexAnalysis.CommonPullbackDomain
+import NLS.SequenceSpaces.PositiveFrequencyDecayNormalization
+import NLS.ZakharovShabat.SourceSharpOffDiagonalDecay
+import NLS.SequenceSpaces.SharpCubicOffDiagonalDecay
+import NLS.SequenceSpaces.SharpReciprocalSums
+import NLS.SequenceSpaces.SharpReciprocalKernel
 import NLS.SequenceSpaces.CoefficientModulus
 import NLS.SequenceSpaces.NonnegativeRealAnalyticExtension
 import NLS.SequenceSpaces.RealDerivativeEntries
@@ -5994,7 +6003,16 @@ private def kdvFrequencyAuditChunk26 : Array Lean.Name := #[
   `NLS.SequenceSpaces.WeightedPositiveActionCoordinates,
   `NLS.SequenceSpaces.RealConeInverseCoordinates,
   `NLS.Articles.KdVKdV2Frequencies.IntermediateRealFrequencyInverse,
-  `NLS.Articles.KdVKdV2Frequencies.Corollary14
+  `NLS.Articles.KdVKdV2Frequencies.Corollary14,
+  `NLS.SequenceSpaces.SharpReciprocalKernel,
+  `NLS.SequenceSpaces.SharpReciprocalSums,
+  `NLS.SequenceSpaces.SharpCubicOffDiagonalDecay,
+  `NLS.ZakharovShabat.SourceSharpOffDiagonalDecay,
+  `NLS.SequenceSpaces.PositiveFrequencyDecayNormalization,
+  `NLS.ComplexAnalysis.CommonPullbackDomain,
+  `NLS.KdV.PhysicalSharpOffDiagonalTransport,
+  `NLS.KdV.PhysicalSharpOffDiagonalDecay,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12OffDiagonalSharpDecay
 ]
 
 open Lean in
