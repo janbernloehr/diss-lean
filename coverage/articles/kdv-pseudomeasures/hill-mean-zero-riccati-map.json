@@ -1,0 +1,158 @@
+{
+  "source": "arXiv:1610.00278v1 actual rough Hill/Miura dependency; global original physical mean-zero Riccati lift construction",
+  "status": "Global genuine mean-zero real L2 Riccati lift existence for EVERY original rough physical Hill source, via strong compactness, attained minimal energy and actual real-preserving local Miura inversion. Actual lift action bound/native coercivity/onto/properness and ALL FIVE MAIN remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-mean-zero-riccati-map.json",
+    "ACTUAL_complex_Miura_compact_preimages_after_L2_bound_PROVED": true,
+    "ENTIRE_real_Riccati_lift_family_strong_L2_compact_bounded_slices_PROVED": true,
+    "global_minimal_real_Miura_energy_shift_attained_PROVED": true,
+    "ACTUAL_Miura_linearization_injective_every_real_nonzero_mean_lift_PROVED": true,
+    "ACTUAL_Miura_linearization_Banach_equivalence_every_real_nonzero_mean_lift_PROVED": true,
+    "TRUE_real_preserving_two_sided_analytic_local_Miura_inverse_nonzero_mean_PROVED": true,
+    "minimal_real_Riccati_lift_MUST_have_mean_zero_PROVED": true,
+    "global_mean_zero_Riccati_lift_existence_ENTIRE_original_domain_PROVED": true,
+    "mean_zero_normalized_real_Miura_surjectivity_PROVED": true,
+    "SAME_mean_zero_lift_ALL_actual_Hill_actions_and_inverse_action_sum_PROVED": true,
+    "removed_energy_ACTUAL_original_periodic_spectral_point_PROVED": true,
+    "removed_energy_asserted_LOWEST_original_eigenvalue": false,
+    "global_quasimomentum_inverse_frequency_moment_identity_PROVED": false,
+    "mean_zero_lift_L2_bound_by_actual_inverse_action_mass_PROVED": false,
+    "actual_native_varying_action_norm_coercivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false
+  },
+  "results": [
+    "CompactPerturbationBoundedPreimages proves a reusable Banach-space compactness theorem for maps equal to an actual isomorphism plus two relatively compact remainders on a closed set. PeriodOneMiuraBoundedCompactness applies it to the ACTUAL complex L2-to-original-Hminus Miura map. The genuine quadratic convolution sends bounded L2 sets into relatively compact Hminus sets through the VERIFIED compact bounded-coefficient inclusion. Thus preimages of compact Hminus target sets, intersected with ANY L2 closed ball, are STRONGLY L2 compact. Weak continuity of quadratic coefficients is NOT assumed.",
+    "HillRiccatiMinimum defines the ENTIRE actual real L2 lift family of a given physical real mean-zero Hminus source, with exact energy shift norm(u)^2. Its bounded slices are strongly L2 compact. Existing large-shift charts supply nonemptiness. A global real lift minimizing the L2 norm and the literal real energy shift among ALL actual real shifted lifts is attained, without small-ball restrictions, cutoffs, or stronger source regularity.",
+    "HillMiuraLinearizationKernel proves that a weak kernel of the original L2-to-Hminus Miura linearization gives a genuine zero-frequency periodic Dirac eigenvector. It reuses VERIFIED weak first-order maximal-domain regularity to recover the full original H1 domain and retains EXACT period doubling and factor2 in the diagonal source. The exact zero-frequency trace criterion therefore proves the ACTUAL complex Miura linearization injective at EVERY real L2 lift with NONZERO mean.",
+    "CompactPerturbationInjectiveInverse supplies the reusable different-Banach-space Fredholm inverse from actual injectivity and compact difference from an explicit isomorphism. LocalInverseFixedPoints proves that a genuine local inverse of an equivariant map preserves symmetry fixed points. HillMiuraRealLocalInverse combines these with the ACTUAL compact Miura derivative, analytic inverse theorem and VERIFIED physical Fourier conjugation to obtain a TRUE two-sided complex analytic inverse at EVERY physical real NONZERO-MEAN lift, preserving physical reality for nearby real sources.",
+    "HillRiccatiMeanZeroLift proves a minimizing energy lift MUST have zero mean. Otherwise the ACTUAL real-preserving local Miura inverse allows a small NEGATIVE constant perturbation of its energy shift, contradicting global minimality. Hence EVERY physical real mean-zero Hminus source has a GENUINE physical real MEAN-ZERO L2 Riccati lift with EXACT image Miura(u)=q+constant(norm(u)^2). Surjectivity of the explicit normalized rough Miura map after restricting to MEAN-ZERO real lifts is NOW PROVED. No unverified Riccati onto theorem or positive ground-state eigenfunction is imported.",
+    "OriginalHillMeanZeroMiuraLift exports this on the ENTIRE original distribution domain with ORIGINAL Fourier conventions. The SAME mean-zero lift realizes ALL actual positive indexed original Hill actions and their complete inverse-frequency sum, retaining exact native output norm squared/(2*pi). Its removed energy -norm(u)^2 is proved an ACTUAL original periodic Hill spectral point, including the zero-energy case. No stronger lowest-eigenvalue assertion is made.",
+    "Global mean-zero Riccati lift existence is no longer an open obligation. The direct quantitative route still needs the GENUINE actual inverse-frequency quasimomentum/action estimate controlling the mean-zero lift L2 squared norm by sum I_n/(pi*n). The already proved universal original Hminus polynomial source bound from the lift and exact action-mass/native-norm identity would then give source coercivity. That spectral estimate, native onto/properness, actualKdV and ALL FIVE main statements remain UNPROVED; goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.FunctionalAnalysis.isCompact_preimage_inter_of_compact_remainders",
+    "NLS.CompactSpectrum.bijective_of_injective_compact_difference",
+    "NLS.CompactSpectrum.equivOfInjectiveCompactDifference",
+    "NLS.FunctionalAnalysis.eventually_localInverse_fixedPoints",
+    "NLS.isCompact_closure_periodOneMiuraProduct_image",
+    "NLS.isCompact_periodOneMiura_preimage_inter_closedBall",
+    "NLS.KdV.hillRealMiuraLiftSet",
+    "NLS.KdV.isClosed_hillRealMiuraLiftSet",
+    "NLS.KdV.isCompact_hillRealMiuraLiftSet_inter_closedBall",
+    "NLS.KdV.surjective_hillRealNormalizedMiura",
+    "NLS.KdV.exists_minimal_real_Miura_lift",
+    "NLS.KdV.exists_minimal_real_Miura_energy_shift",
+    "NLS.KdV.zero_mem_diagonalSpectrum_of_weakFirstOrder",
+    "NLS.KdV.periodOneMiuraLinearization_injective_of_real_mean_ne_zero",
+    "NLS.KdV.realMeanNonzeroMiuraLinearizationEquiv",
+    "NLS.KdV.periodOneMiura_realConjugation",
+    "NLS.KdV.exists_real_preserving_localInverse_periodOneMiura",
+    "NLS.KdV.mean_zero_of_minimal_real_Miura_energy_shift",
+    "NLS.KdV.exists_mean_zero_real_Miura_lift",
+    "NLS.KdV.surjective_hillRealNormalizedMiura_mean_zero",
+    "NLS.Articles.KdVPseudomeasures.exists_original_mean_zero_real_Miura_lift",
+    "NLS.Articles.KdVPseudomeasures.exists_original_mean_zero_Miura_action_lift",
+    "NLS.Articles.KdVPseudomeasures.original_mean_zero_Miura_shift_mem_spectrum"
+  ],
+  "files": [
+    "NLS/FunctionalAnalysis/CompactPerturbationBoundedPreimages.lean",
+    "NLS/FunctionalAnalysis/CompactPerturbationInjectiveInverse.lean",
+    "NLS/FunctionalAnalysis/LocalInverseFixedPoints.lean",
+    "NLS/SequenceSpaces/PeriodOneMiuraBoundedCompactness.lean",
+    "NLS/KdV/HillRiccatiMinimum.lean",
+    "NLS/KdV/HillMiuraLinearizationKernel.lean",
+    "NLS/KdV/HillMiuraRealLocalInverse.lean",
+    "NLS/KdV/HillRiccatiMeanZeroLift.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillMeanZeroMiuraLift.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "cafb53b662d012c7c759a0000f1e7fa049578d23",
+    "baseline_modules": 1680,
+    "baseline_non_audit_sources_verified_unchanged": 1679,
+    "new_modules_compiled": 9,
+    "reused_canonical_modules_freshly_compiled": [],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.PeriodOneMiuraCompactDerivative",
+        "source": "NLS/SequenceSpaces/PeriodOneMiuraCompactDerivative.lean",
+        "source_sha256": "95cf518103c8dc5e57192601a31c1bc78def07d9b2f1c02506bdaca9a0e3dac5",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeakFirstOrderRegularity",
+        "source": "NLS/SequenceSpaces/WeakFirstOrderRegularity.lean",
+        "source_sha256": "0803d24d6bbdd72deea0b070d41c13eb3579d2cca81c1680b9b6e9b7b6e72db0",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PeriodOneMiuraRealCharts",
+        "source": "NLS/SequenceSpaces/PeriodOneMiuraRealCharts.lean",
+        "source_sha256": "9888510b856c9f469a9c0483013e2154b64e8fb818830b5a3a4a136ee8d01dbb",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMiuraCentralMean",
+        "source": "NLS/KdV/HillMiuraCentralMean.lean",
+        "source_sha256": "819743c6e237cfc1837327074baab844975f935329cf3def5a04b33ed564d9dd",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMiuraMeanNormalization",
+        "source": "NLS/KdV/HillMiuraMeanNormalization.lean",
+        "source_sha256": "a8d2544179315681f4660b7ead991c3eaa65d91d2f30d0e9201da9a2e00b3977",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.SingularDirichletMiuraEquation",
+        "source": "NLS/KdV/SingularDirichletMiuraEquation.lean",
+        "source_sha256": "34febf2effe7dd8d60c4db9fde7d056b73b92f7314244a278348cd4646d2bcd5",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionTrace",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillInverseActionTrace.lean",
+        "source_sha256": "fd1bf827846ecda809482d606b1ac70260bb6f6888cb94cb373eadfcbfc11e46",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.AnalyticEquivDerivativeInverse",
+        "source": "NLS/ComplexAnalysis/AnalyticEquivDerivativeInverse.lean",
+        "source_sha256": "fa4769a76e3030ce322ea10b7ab8acf7831adfb6ba8f1e1044ab355c534d8342",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1689,
+    "audited_declarations": 8518,
+    "theorems": 7178,
+    "definitions": 1340,
+    "new_theorems": 20,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-mean-zero-riccati.log",
+    "log_sha256": "55e26e42c2ffb20eb62f7cce49e0ce8507d5dfbd2c547b6cbc9184287ec16513"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED actual L2 global REAL-ANALYTIC homeomorphism/properness, FULL native Hminus/original/endpoint injectivity and bounded literal Wiener weak-star inverse topology. NEW actual bounded-source action compactness on ENTIRE original distribution domain: ONE source realizes simultaneous limits of ALL indexed actual actions along ONE subsequence. Uniform shifted real Miura lifts, all-level Dirac higher-action coefficient continuity, central spectral separation and explicit mean normalization are VERIFIED. NEW bounded-source convergent FULL native outputs have actual preimages and the WHOLE source sequence converges STRONGLY Hminus. Native properness IFF norm-bounded preimages of EVERY compact target set is NOW PROVED. That varying-action NORM BOUND remains OPEN. Extended reference Lemma8.3 supplies it using universal action-gap min estimate + actual Hminus norm-vs-gap coercivity (Theorem2.3); BOTH estimates still require faithful Lean proofs. Native onto/closedness/properness, actual KdV and ALL FIVE MAIN remain OPEN; goal ACTIVE.",
+    "FULL sourceTheorem1.4 remains UNPROVED because actual native SURJECTIVITY and equivalent native compact-preimage norm bound remain OPEN. NEW sourceTheorem1_4_of_bounded_compact_native_preimages proves the FULL precise main conclusion CONDITIONAL on that PURE NORM obligation; sourceTheorem1_4_of_native_surjective remains proved. Full native/original/endpoint INJECTIVITY and literal physical REAL Wiener weak-star homeomorphism onto EXACT IMAGE on EVERY bounded endpoint subset (including nonclosed) and full original isospectral endpoint sets are UNCONDITIONAL. Forward analytic mapping, original norm bounds, full-isoset bounds and inverse endpoint regularity for ANY actual native preimage remain proved. Do NOT promote conditional norm-bound/surjectivity reductions to completed main statements.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+    "NOW PROVED exact zero-frequency Dirac trace/mean criterion, actual Hill/Miura action comparison INCLUDING central collapse, exact inverse-frequency native action normalization, universal original Hminus source bound from a lift, and GLOBAL genuine MEAN-ZERO real L2 Riccati lift existence for EVERY original rough source. Remaining direct coercivity obligation: actual inverse-frequency quasimomentum/action estimate for the mean-zero lift L2 norm. Native varying-action source coercivity/onto/properness and ALL FIVE MAIN remain UNPROVED.",
+    "NOW PROVED exact zero-frequency Dirac trace/mean criterion, actual Hill/Miura action comparison INCLUDING central collapse, exact inverse-frequency native action normalization, universal original Hminus source bound from a lift, and GLOBAL genuine MEAN-ZERO real L2 Riccati lift existence for EVERY original rough source. Remaining direct coercivity obligation: actual inverse-frequency quasimomentum/action estimate for the mean-zero lift L2 norm. Native varying-action source coercivity/onto/properness and ALL FIVE MAIN remain UNPROVED.",
+    "NEW global mean-zero real Riccati lift existence is PROVED on the ENTIRE original distribution domain. Strong compactness of bounded actual lift families, attained global minimum energy, actual nonzero-mean Miura derivative inverse, real-preserving genuine two-sided analytic inverse and energy-lowering contradiction are VERIFIED. SAME lift retains ALL actual Hill actions and inverse-frequency sum, and its removed energy is an actual original periodic spectral point. The actual quasimomentum/action mass bound for its L2 norm remains OPEN; no native global Birkhoff surjectivity or main theorem completion follows yet."
+  ]
+}

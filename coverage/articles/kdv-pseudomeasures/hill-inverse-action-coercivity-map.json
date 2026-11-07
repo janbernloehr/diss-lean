@@ -1,0 +1,159 @@
+{
+  "source": "arXiv:1610.00278v1 Theorem1.4 and actual rough Hill inverse-action coercivity dependencies",
+  "status": "Complete original Theorem 1.4 from actual inverse-action coercivity, native properness and surjectivity; literal bounded-set Wiener weak-star topology retained.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-inverse-action-coercivity-map.json",
+    "actual_inverse_primitive_real_boundary_PROVED": true,
+    "actual_signed_higher_action_reflection_PROVED": true,
+    "finiteGap_inverse_action_Cauchy_Schwarz_lift_bound_PROVED": true,
+    "actual_native_varying_action_norm_coercivity_PROVED": true,
+    "actual_native_global_properness_PROVED": true,
+    "actual_native_global_surjectivity_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "actual_KdV_evolution_PROVED": false,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "Actual weighted primitive contour boundary formula with arbitrary analytic spectral weight, retaining the original operator, branch and normalization. Its inverse-frequency specialization includes collapsed gaps and proves integral(F_n/z)=-pi*J_n,-1 on every selected filled disc excluding zero.",
+    "The finite-gap real inverse moment is physicalMass=pi*sum_signed n*J_n,-1. The original nonzero signed gap coordinates have sign n for every real scalar diagonal lift. Weighted integral Cauchy-Schwarz gives J_n,0^2 <= (n*J_n,-1)*(J_n,1/n), with both factors nonnegative.",
+    "All actual diagonal real higher actions obey J_-n,k=(-1)^k*J_n,k. The finite-gap physical mass and Cauchy-Schwarz imply norm(u)^2<=sum_signed J_n,1/(pi*n). Closed gaps vanish, reflection doubles the positive sum, and the exact Hill I_n=2*J_n,1 converts this to the literal native inverse-action mass P(q).",
+    "Every original rough real mean-zero source q satisfies norm(q)<=C*(sqrt(P(q))+P(q)), where P(q)=norm(Phi(q))^2/(2*pi) and C is the verified universal rough Miura polynomial constant. The finite-gap bound uses actual global mean-zero lifts and the actual finite-gap Hill-to-Dirac transfer; strong native finite-gap approximation and continuity of P pass the SOURCE inequality to the entire domain.",
+    "Continuous scalar norm control bounds preimages of every compact native target set. The verified native bounded-limit theorem yields properness, and native local homeomorphism plus closedness yields surjectivity.",
+    "MainTheorem14.sourceTheorem1_4 proves ALL precise original clauses for every -1/2<s<=0: bijectivity, original norm boundedness, real analyticity, local inverse at zero with exact differential, literal physical Wiener weak-star homeomorphism onto the exact image on EVERY bounded subset, and full original Hminus isospectral membership/bounds/topology. Printed first codomain corrected to s+1/2 as already documented in the source inventory. No native closedness/onto/coercivity premise remains.",
+    "Appendix B B.1(i)-(iv) remains complete. Main 1.4 is now proved; main 1.1,1.3,5.1,5.9 remain unproved. Actual KdV evolution, normalized Hamiltonian/frequencies and convergence from every smooth approximation remain essential open work; goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.KdV.hillMiura_realGapAffinePoint_neg",
+    "NLS.KdV.hillMiura_realGapArcoshProfile_neg",
+    "NLS.KdV.hillMiura_realGapCosineProfile_neg",
+    "NLS.KdV.hillMiura_realHigherAction_neg",
+    "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.weighted_primitive_circle_eq_boundaryIntegral",
+    "NLS.ZakharovShabat.sourceRealInverseAction",
+    "NLS.ZakharovShabat.sourceRealInverseAction_of_collapsed",
+    "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.inverse_primitive_circle_eq_real_inverseAction",
+    "NLS.RealAnalysis.integral_inverse_moment_cauchySchwarz",
+    "NLS.ZakharovShabat.source_inverseAction_CauchySchwarz",
+    "NLS.ZakharovShabat.source_inverseAction_nonneg",
+    "NLS.KdV.hillMiura_gap_coordinate_div_index_pos",
+    "NLS.KdV.hillMiura_inverseAction_CauchySchwarz",
+    "NLS.KdV.hillMiura_inverseAction_nonneg",
+    "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.zero_not_mem_selected_disc_of_central_zero",
+    "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.inverse_primitive_circle_eq_neg_pi_inverseAction",
+    "NLS.ZakharovShabat.sourceFiniteGap_real_inverse_moment_balance",
+    "NLS.KdV.norm_sq_hillMiura_finiteGap_le_signed_inverse_actions",
+    "NLS.Articles.KdVPseudomeasures.hillMiura_signed_inverse_actions_eq_mass",
+    "NLS.Articles.KdVPseudomeasures.norm_sq_mean_zero_finiteGap_lift_le_inverseActionMass",
+    "NLS.Articles.KdVPseudomeasures.continuous_hillNativeInverseActionMass",
+    "NLS.Articles.KdVPseudomeasures.norm_hillReal_finiteGap_le_inverseActionMass",
+    "NLS.Articles.KdVPseudomeasures.norm_hillReal_le_inverseActionMass",
+    "NLS.FunctionalAnalysis.bounded_preimage_of_continuous_norm_control",
+    "NLS.Articles.KdVPseudomeasures.bounded_hillRealSignedMap_preimage_of_isCompact",
+    "NLS.Articles.KdVPseudomeasures.isProperMap_hillRealSignedMap",
+    "NLS.Articles.KdVPseudomeasures.surjective_hillRealSignedMap",
+    "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4"
+  ],
+  "files": [
+    "NLS/KdV/HillMiuraActionReflection.lean",
+    "NLS/ZakharovShabat/SourceWeightedPrimitiveBoundaryIntegral.lean",
+    "NLS/ZakharovShabat/SourceRealInverseAction.lean",
+    "NLS/RealAnalysis/InverseMomentCauchySchwarz.lean",
+    "NLS/ZakharovShabat/SourceInverseActionCauchySchwarz.lean",
+    "NLS/KdV/HillMiuraInverseCauchySchwarz.lean",
+    "NLS/ZakharovShabat/SourceFiniteGapRealInverseMoment.lean",
+    "NLS/KdV/HillMiuraFiniteGapInverseBound.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapRiccatiBound.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillInverseActionCoercivity.lean",
+    "NLS/FunctionalAnalysis/BoundedPreimagesOfNormControl.lean",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "a2f38d0f226e27f156e12715eaa03c5c6c8d1a38",
+    "baseline_modules": 1696,
+    "baseline_non_audit_sources_verified_unchanged": 1695,
+    "new_modules_compiled": 12,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceHigherActionBoundary",
+        "source": "NLS/ZakharovShabat/SourceHigherActionBoundary.lean",
+        "source_sha256": "c14772190c3f9753ee99469393bb2b06e6991195224bd206c22b393688f8bb70"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceWeightedPrimitiveBoundary",
+        "source": "NLS/ZakharovShabat/SourceWeightedPrimitiveBoundary.lean",
+        "source_sha256": "065ac62f5475b965086e8c28bae2823dc35a6ad1611ece2a279a80d5b0260241"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFiniteGapHigherActionTrace",
+        "source": "NLS/ZakharovShabat/SourceFiniteGapHigherActionTrace.lean",
+        "source_sha256": "6f782558f16988df1e24706bd77f50b433558ba7ea7d4b44b84f2544021a80b2"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMiura",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapMiura.lean",
+        "source_sha256": "c30dfffdb1bf7b60c0ebca466c1ab90892629fad4cfda981c18ae455572eae63",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionTrace",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillInverseActionTrace.lean",
+        "source_sha256": "fd1bf827846ecda809482d606b1ac70260bb6f6888cb94cb373eadfcbfc11e46",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeBoundedLimits",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeBoundedLimits.lean",
+        "source_sha256": "57936f00a7020afcb156d26bcd58ce40fa6a7ec006e2a04e1810dda665397368",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillRiccatiMeanZeroLift",
+        "source": "NLS/KdV/HillRiccatiMeanZeroLift.lean",
+        "source_sha256": "8730db8cd72401de5a6ee262174fac1f830c1e222298631994f29a17299b3f58",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1708,
+    "audited_declarations": 8561,
+    "theorems": 7219,
+    "definitions": 1342,
+    "new_theorems": 27,
+    "new_definitions": 1,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-inverse-action-coercivity.log",
+    "log_sha256": "a14de993c8179800b5d86eae96f9e8f7fc73692ea23572531a69af9a676e4c38"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n); retain original domains, labels, roots and normalization. Existing scalar uniqueness/analyticity and actual numerator zero/product/period results do not determine that constant.",
+    "Prove remaining nonlinear source/target scales, especially the full Wiener global real analytic diffeomorphism and Birkhoff clauses of main5.1.",
+    "Construct and identify ACTUAL original Hminus KdV evolution from EVERY original smooth approximation, with the original equation, Hamiltonian and frequency normalization. Indexed periodic action flows alone are not the KdV flow.",
+    "Prove main1.1,1.3,5.9 using the actual KdV evolution and its required topology/analyticity. Main1.4 is proved unconditionally; these FOUR main theorems remain UNPROVED and the goal remains ACTIVE."
+  ]
+}

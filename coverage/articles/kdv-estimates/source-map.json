@@ -19562,8 +19562,8 @@
   "whole_paper_coverage": "coverage/articles/kdv-estimates/whole-paper.json",
   "dynamical_corollary_completed_for_declared_solution_concept": true,
   "kdv_flow_foundations": {
-    "status": "validated_partial_flow_foundations",
-    "validation_report": "coverage/articles/kdv-estimates/wellposedness-validation.json",
+    "status": "global_flow_and_sobolev_persistence_proved_in_classical_approximation_class",
+    "validation_report": "coverage/articles/kdv-estimates/flow-integration-validation.json",
     "proved": [
       {
         "declaration": "NLS.KdV.IsSmoothPhysicalKdVTrajectory.eq_of_eq_at",
@@ -19596,23 +19596,52 @@
       {
         "declaration": "NLS.Articles.KdVEstimates.sobolev_membership_of_convergent_initial_approximation",
         "result": "For m>=1, mean-zero classical H^m approximants with H^m-convergent initial data and physical L2 convergence at each time have a physical limit in H^m at every time, with a uniform-in-time H^m bound. The limit path is not typed in H^m as a premise."
+      },
+      {
+        "declaration": "NLS.KdV.kdvOriginalSobolevHomeomorph",
+        "result": "A homeomorphism between the article exact mean-zero real H^m domain and the actual canonical-flow signed Sobolev model, preserving every original Fourier coefficient. Norms are compared with explicit weight inequalities rather than equated."
+      },
+      {
+        "declaration": "NLS.KdV.existsUnique_sobolevKdVSolution",
+        "result": "Global existence and uniqueness for every original real mean-zero H^m datum, m>=0, in the nonvacuous universal classical-approximation class. The flow has a group law and jointly continuous time/data dependence in the exact original H^m topology."
+      },
+      {
+        "declaration": "NLS.KdV.roughKdVSolution_has_unique_sobolev_lift",
+        "result": "A rough-typed classical-approximation solution whose initial datum lies in the original H^m space has a unique strongly continuous H^m lift for all real times. Higher-space membership and strong continuity are conclusions, not hypotheses on the rough path."
+      },
+      {
+        "declaration": "NLS.KdV.isSobolevKdVSolution_iff_eq_flow",
+        "result": "The original H^m solution formulation is equivalent to equality with the constructed actual physical flow; existence of classical approximants and the physical PDE bridge are proved in the imported main-branch construction."
       }
     ],
     "remaining_obligations": [
-      "Construct genuine global KdV trajectories for every datum in the corollary Sobolev domains and the required classical approximating families; no general-data flow existence is asserted by these modules.",
-      "Prove uniqueness for the full intended low-regularity weak or classical-approximation class, rather than only the smooth physical class.",
-      "Prove strong H^m continuity and continuous dependence of the limit flow; bounded H^m membership alone does not establish these claims.",
-      "Identify the intended full spacetime distributional weak formulation with the integrated Fourier equation, and prove the converse from arbitrary intended weak solutions to classical approximation.",
-      "The broad existing PeriodicKdVJet approximation class is not asserted equivalent to the new independent weak equation. Smooth physical approximation is explicitly bridged in the forward direction."
+      "Prove the full converse from arbitrary intended spacetime distributional weak L2 solutions to the nonvacuous classical-approximation formulation; no unconditional uniqueness for all such distributional solutions is asserted.",
+      "Connect the newly integrated universal rough classical-approximation class and the earlier existential PeriodicKdVJet approximation class in both directions. The smooth physical approximation-to-independent-Fourier-weak implication is proved.",
+      "Expose the earlier exact dynamical-corollary inequality directly on kdvSobolevFlow through the explicit physical action/approximation adapters; no additional conservation hypothesis should be introduced."
     ],
-    "general_flow_existence_verified": false,
+    "general_flow_existence_verified": true,
     "full_weak_uniqueness_verified": false,
-    "strong_sobolev_persistence_verified": false,
+    "strong_sobolev_persistence_verified": true,
     "full_weak_solution_equivalence_verified": false,
     "source_corrections": {
       "A.3": "The radius-six correction to the printed radius-twelve strip and its formal zero-mode obstruction are unchanged.",
       "D.1": "The nonempty-real-slice qualification and its necessity proof are unchanged.",
       "additional_source_corrections": []
+    },
+    "classical_approximation_existence_and_uniqueness_verified": true,
+    "classical_approximation_equivalence_verified": true,
+    "full_spacetime_distributional_equivalence_verified": false,
+    "intended_solution_scope": "The precise nonvacuous universal classical-approximation formulation from the merged physical KdV construction: every jointly smooth real mean-zero unit-period classical family with convergent initial data has the prescribed trajectory limits. No identification with every spacetime distributional weak solution is claimed.",
+    "main_integration": {
+      "commit": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+      "merged_pr": "https://github.com/janbernloehr/diss-lean/pull/5",
+      "only_conflict": "NLS.lean, resolved by preserving all imports from both sides",
+      "imported_flow_proofs": [
+        "NLS.Articles.KdVPseudomeasures.existsUnique_hillRoughSolutionByClassicalApproximation",
+        "NLS.Articles.KdVPseudomeasures.exists_hillClassical_approximating_solutions",
+        "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_inclusion",
+        "NLS.Articles.KdVPseudomeasures.continuous_hillIntegerCanonicalKdVFlow"
+      ]
     }
   }
 }

@@ -54,11 +54,23 @@ The new [flow-foundation validation](wellposedness-validation.json) proves:
   classical H^m approximants with H^m-convergent initial data. Membership of
   the limit in H^m is now a conclusion in this theorem.
 
-General-data global flow existence, uniqueness in the full low-regularity
-class, strong H^m continuity and continuous dependence, and equivalence with
-all intended spacetime distributional weak solutions remain open. In
-particular, a phase rotation is not identified as KdV without the actual PDE
-bridge, and existence of classical approximants is not supplied as a proof.
+The newly merged main-branch physical KdV construction is now integrated.
+`kdvOriginalSobolevHomeomorph` preserves every original Fourier coefficient
+and transports that construction to the article's exact real mean-zero H^m
+domains. `existsUnique_sobolevKdVSolution` proves global existence and
+uniqueness for every datum, with a group law and jointly continuous time/data
+dependence in that original norm topology. The approximation formulation is
+nonvacuous: genuine jointly smooth classical approximants are constructed.
+`roughKdVSolution_has_unique_sobolev_lift` starts with a rough-typed solution
+and concludes a unique strongly continuous H^m lift, so strong persistence
+is no longer assumed. See [the integration validation](flow-integration-validation.json).
+
+This uniqueness/equivalence is for the explicitly defined universal
+classical-approximation formulation. The converse from every spacetime
+distributional weak L2 solution, the two-way bridge to the earlier
+`PeriodicKdVJet` approximation class, and direct application of the printed
+dynamical bound to `kdvSobolevFlow` still require explicit adapters. No
+unconditional arbitrary-distributional-solution uniqueness is claimed.
 These are scope qualifications, not source corrections. The A.3 and D.1
 corrections above remain unchanged.
 
@@ -180,3 +192,11 @@ The corrected examples can be rechecked with pinned Lean 4.33.1:
 ```bash
 lean -DautoImplicit=false -DwarningAsError=true --run scripts/CheckExamplesSubset.lean scripts/CheckExamples.lean 6634,39060,41187,60632,61159,61164,61174,73723 7729
 ```
+
+The latest combined check covers 9128 source modules through fresh
+compilation or source/dependency-fingerprint-verified cached objects, including
+the full aggregate and all registered article/flow axiom audits. The focused
+article script registers 1,521 modules; no fresh full focused run, full Lake
+rebuild or full examples run is claimed for this additive integration.
+Prepare its private dependency view with `scripts/check-kdv-pseudomeasures-merge.py`
+using pinned Lean 4.33.1 before running `scripts/check-kdv-estimates.sh`.

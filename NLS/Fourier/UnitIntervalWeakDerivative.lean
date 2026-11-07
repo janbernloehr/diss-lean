@@ -2,15 +2,17 @@ import NLS.Fourier.AbsoluteContinuousCoefficients
 import NLS.Fourier.UnitIntervalL2Equiv
 import NLS.FunctionalAnalysis.LocallyIntegrablePrimitive
 
+/-! # Interval weak derivatives with the actual endpoint defect
+
+The Fourier derivative equation for an interval function includes a constant
+coefficient defect. This is the difference of endpoint values, rather than
+an extra periodicity condition. L2 data and an L1 forcing suffice to recover
+an absolutely continuous representative on the entire closed unit interval.
+-/
 noncomputable section
-set_option autoImplicit false
 open Set Complex MeasureTheory
 open scoped ENNReal
-
 namespace NLS.Fourier
-
-
-
 open NLS.FunctionalAnalysis
 
 /-- Integration by parts retains the endpoint jump at EVERY unit frequency. -/

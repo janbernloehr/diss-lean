@@ -1,0 +1,205 @@
+{
+  "source": "arXiv:1610.00278v1 Section5, Main5.1/Lemma5.6 dependencies: actual physical Hill spectral-core L2-to-native-H3/2 one-smoothing with original Fourier normalization. Full native amplitude and phase estimates remain open",
+  "status": "Actual physical Hill spectral-core-minus-original-free-Fourier one-smoothing is PROVED on a common complex L2 neighborhood of EVERY real source, analytic into native signed H3/2 with EVERY raw coefficient identified. Exact massive principal correction and both nonlinear terminal/Miura terms are retained. Full native action amplitude and phase multipliers still require stronger estimates. Main5.1/5.9 remain OPEN.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.1",
+    "1.3",
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "weighted_Hilbert_pointwise_product_adds_ALL_real_orders_PROVED": true,
+    "exact_original_native_half_weight_strong_transport_PROVED": true,
+    "SAME_actual_terminal_H1_sequence_and_H2_defect_analytic_PROVED": true,
+    "SAME_actual_Hill_terminal_model_H1_to_native_H3half_defect_PROVED": true,
+    "exact_original_massive_principal_L2_to_native_H3half_correction_PROVED": true,
+    "actual_Miura_H2_remainder_phase_diagonal_transport_PROVED": true,
+    "ACTUAL_physical_Hill_spectral_core_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "SAME_common_complex_open_L2_neighborhood_BEFORE_ALL_modes_PROVED": true,
+    "ACTUAL_native_on_index_exponent_one_order_estimate_PROVED": false,
+    "ACTUAL_native_normalized_ACTION_amplitude_one_order_estimate_PROVED": false,
+    "ACTUAL_native_off_index_exponent_one_order_estimate_PROVED": false,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "native_source_coefficient_chain_inspected": [
+      "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_apply",
+      "NLS.KdV.hillRealSignedMap_coe",
+      "NLS.KdV.hillMeanZeroComplexMap_coe"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-spectral-core-smoothing-map.json"
+  },
+  "results": [
+    "Shared SobolevHilbertPointwiseProduct proves analytic pointwise multiplication H^s x H^t -> H^(s+t) at EVERY real order, through the verified weighted Hilbert-to-ell-one product and exact exponent/weight inclusions. SobolevToSignedHalfLift applies the SAME inverse original native signed-minus-half weight to take nonnegative ordinary order s to native signed order s-1/2, with EVERY raw square-root multiplier retained.",
+    "SourceSignedTerminalH1Realization constructs the actual signed free Fourier map in H1, the actual terminal-minus-Fourier defect in H2 and the entire actual terminal sequence in H1 on ONE complex H1 neighborhood of EVERY real source. The raw formulas agree at EVERY signed mode, including zero, with SAME sourceSignedTerminalSequence and sourceSignedTerminalFourier.",
+    "SourceHillH1TerminalOneSmoothing constructs analytic native signed H3/2 remainder sourceHillH1TerminalRemainder = originalScale * originalNativeHalfLift(terminalH2Defect + actualMidpointH1Defect * actualTerminalH1Sequence). On ONE complex H1 neighborhood its EVERY raw coefficient is SAME sourceHillTerminalModel minus SAME sourceHillTerminalFourier. This includes the midpoint factor contribution in the stronger norm.",
+    "HillL2MassivePrincipalSmoothing reuses the ALREADY PROVED original signed normalization hillSpectralCoreDiracPrincipal_eq_halfFourier and upgrades its correction to an explicit L2 -> native signed H3/2 CLM. Its raw coefficient is -halfFourierSymbol(k)*periodOneMassSymbol(0,k)^-1*q_k, and equals the SAME actual massive principal minus original free Fourier map at EVERY signed mode.",
+    "HillMiuraH2TerminalFourier sends the actual scalar H2 nonlinear Miura remainder to native signed H3/2 by the SAME phase-diagonal signed Fourier map. Equality under EVERY nonzero raw coefficient is enough because the central signed Fourier mode vanishes. Thus the ORIGINAL fixed Miura energy shift contributes nothing; no shift or scalar is silently changed.",
+    "HillL2TerminalModelOneSmoothing combines exactly THREE stronger-target terms: spectral terminal defect, actual Miura H2 remainder and exact massive principal correction. At EVERY real L2 source in an actual patch, l2TerminalModelFourierRemainder is analytic into native signed H3/2. On ONE common complex L2 neighborhood, EVERY raw coefficient is SAME sourceHillTerminalModel(P.rotatedDiracSource(L2q)) minus original halfFourierSymbol(k)*q_k.",
+    "HillL2SpectralCoreOneSmoothing.exists_hillL2SpectralCore_one_smoothing is UNCONDITIONAL. At EVERY original real L2 source it constructs P and ONE complex open L2 neighborhood U inside original physical Dirichlet/native domains. The SAME l2TerminalModelFourierRemainder is analytic U -> actual native signed H3/2, and EVERY raw coefficient equals actual P.physicalSpectralCoreMap(L2q)_k-halfFourierSymbol(k)*q_k throughout U. This is norm one-smoothing of the ACTUAL physical spectral core, not merely a compact derivative assertion.",
+    "Full HillIntegerNativeOneSmoothing0 is STILL OPEN: the physical core must be multiplied by actual on-index exponent, actual normalized action amplitude and actual signed off-index exponent to recover the original native coordinates. Their stronger one-order norm estimates are NOT supplied by rough boundedness/unit tails or compact derivative facts. Main1.1/1.3/1.4 remain proved; Main5.1/5.9 remain OPEN; goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.WeightedCoeff.sobolevHilbertPointwiseProduct",
+    "NLS.WeightedCoeff.sobolevHilbertPointwiseProduct_apply",
+    "NLS.WeightedCoeff.analyticAt_sobolevHilbertPointwiseProduct",
+    "NLS.WeightedCoeff.sobolevToSignedHalfLift_bound",
+    "NLS.WeightedCoeff.sobolevToSignedHalfLift",
+    "NLS.WeightedCoeff.sobolevToSignedHalfLift_apply",
+    "NLS.ZakharovShabat.sourceSignedSobolevTerminalFourier",
+    "NLS.ZakharovShabat.sourceSignedSobolevTerminalFourier_apply",
+    "NLS.ZakharovShabat.sourceSignedTerminalH2Remainder",
+    "NLS.ZakharovShabat.sourceSignedTerminalH2Remainder_apply",
+    "NLS.ZakharovShabat.sourceSignedTerminalH1Sequence",
+    "NLS.ZakharovShabat.sourceSignedTerminalH1Sequence_apply",
+    "NLS.ZakharovShabat.exists_local_sourceSignedTerminal_H1_H2_realization",
+    "NLS.ZakharovShabat.sourceHillH1TerminalRemainder",
+    "NLS.ZakharovShabat.exists_local_sourceHillH1TerminalRemainder_analytic",
+    "NLS.KdV.hillL2PrincipalFourierRemainder",
+    "NLS.KdV.hillL2PrincipalFourierRemainder_apply",
+    "NLS.KdV.hillL2PrincipalFourierRemainder_eq_actual",
+    "NLS.KdV.hillMiuraH2TerminalFourier",
+    "NLS.KdV.hillMiuraH2TerminalFourier_apply",
+    "NLS.KdV.hillMiuraH2TerminalFourier_eq_actual",
+    "NLS.KdV.hillMiuraH2TerminalFourier_eq_difference",
+    "NLS.KdV.HillProductEquationPatch.l2MiuraTerminalRemainder",
+    "NLS.KdV.HillProductEquationPatch.l2MiuraTerminalRemainder_apply",
+    "NLS.KdV.HillProductEquationPatch.l2TerminalModelFourierRemainder",
+    "NLS.KdV.HillProductEquationPatch.analytic_l2TerminalModelFourierRemainder",
+    "NLS.KdV.HillProductEquationPatch.eventually_l2TerminalModelFourierRemainder_data",
+    "NLS.KdV.HillProductEquationPatch.eventually_l2TerminalModelFourierRemainder_apply",
+    "NLS.KdV.exists_hillL2SpectralCore_one_smoothing"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/SobolevHilbertPointwiseProduct.lean",
+    "NLS/SequenceSpaces/SobolevToSignedHalfLift.lean",
+    "NLS/ZakharovShabat/SourceSignedTerminalH1Realization.lean",
+    "NLS/ZakharovShabat/SourceHillH1TerminalOneSmoothing.lean",
+    "NLS/KdV/HillL2MassivePrincipalSmoothing.lean",
+    "NLS/KdV/HillMiuraH2TerminalFourier.lean",
+    "NLS/KdV/HillL2TerminalModelOneSmoothing.lean",
+    "NLS/KdV/HillL2SpectralCoreOneSmoothing.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "1f4f360dc8c0ef210b1fff77c70dde7b07e31624",
+    "baseline_modules": 1909,
+    "baseline_non_audit_sources_verified_unchanged": 1908,
+    "new_modules_compiled": 8,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.WeightedHilbertProduct",
+        "source": "NLS/SequenceSpaces/WeightedHilbertProduct.lean",
+        "source_sha256": "7ce918b85d484af5600683894bec94b1a85c383ea994c4a967e133dfde6371e6"
+      },
+      {
+        "module": "NLS.SequenceSpaces.ExponentEmbedding",
+        "source": "NLS/SequenceSpaces/ExponentEmbedding.lean",
+        "source_sha256": "3c0c0e8a67076ce71ee4c609535b970d8519ac54ff6e03e6218759ff70fcac10"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem11",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
+        "source_sha256": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem13",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
+        "source_sha256": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceNormalizedMidpointOneSmoothing",
+        "source": "NLS/ZakharovShabat/SourceNormalizedMidpointOneSmoothing.lean",
+        "source_sha256": "1cee65f692787699aaaf9fbbe8d0a636665e3c2f89952bd6bb7c7e0650c7e44a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceSignedTerminalOneSmoothing",
+        "source": "NLS/ZakharovShabat/SourceSignedTerminalOneSmoothing.lean",
+        "source_sha256": "f2304037b1fe7de635ecd0b809c30916865a5c7a89c30a6ad761a7543c4147b2",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMiuraL2AnalyticRegularity",
+        "source": "NLS/KdV/HillMiuraL2AnalyticRegularity.lean",
+        "source_sha256": "2c7010c104e2cb5de6f188c1ff7f27b6e82fa34c9a73715e252bc89954fa435b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillSpectralCoreFourierPrincipal",
+        "source": "NLS/KdV/HillSpectralCoreFourierPrincipal.lean",
+        "source_sha256": "7fba89276ef43666e24b8cb502d19bb71b80a6717088dcc0a7f734b2fa8f8009",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillSpectralCoreDiracModel",
+        "source": "NLS/KdV/HillSpectralCoreDiracModel.lean",
+        "source_sha256": "350675c7f2d28b2bb393583066e1c1e6e66e8fc054e9333f069b00a0683a2956",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillRotatedDiracL2Regularity",
+        "source": "NLS/KdV/HillRotatedDiracL2Regularity.lean",
+        "source_sha256": "707e6ef51335fd96f75c6a9027426eab97151f770ded3a0bef9e03d56d3f0316",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PeriodOneMassSobolevInverse",
+        "source": "NLS/SequenceSpaces/PeriodOneMassSobolevInverse.lean",
+        "source_sha256": "871c8875267f53403010d1d1bd33c2bba75fdbe9b0775b5c3567d2bb3c8d2f60",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.SignedOrderHalfFourierEquiv",
+        "source": "NLS/SequenceSpaces/SignedOrderHalfFourierEquiv.lean",
+        "source_sha256": "2b8fe3af93b9ca05b358432c63db3e2d4ff4c313b053cfdf91bb90967c375294",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1917,
+    "audited_declarations": 9373,
+    "theorems": 7874,
+    "definitions": 1499,
+    "new_theorems": 19,
+    "new_definitions": 10,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-spectral-core-smoothing.log",
+    "log_sha256": "3eb7ff96b6832e03702d811611300128f146b69663ae1d2bd3e0931ff514b92e"
+  },
+  "remaining_obligations": [
+    "Prove ACTUAL HillIntegerNativeOneSmoothing0: the ENTIRE actual real zero-mean L2 native Fourier defect is real analytic into actual signed H3/2, with EVERY raw coefficient equal to SAME e0(q)_k-halfFourierSymbol(k)*q_k. ACTUAL PHYSICAL SPECTRAL CORE STEP NOW COMPLETE: HillL2SpectralCoreOneSmoothing.exists_hillL2SpectralCore_one_smoothing gives common complex L2 neighborhoods, exact original free normalization and full strong-target coefficient identity. NEXT establish stronger one-order norm control for THREE actual factors and combine their exact identities: (1) P.physicalOnIndexSignedExponent in HillSpectralCoreSequence, recovering hillHminusIntrinsicDiagonalMap from physicalSpectralCoreMap; (2) hillHminusNormalizedAmplitudeSymbol minus1 in HillIntrinsicDiagonalSequence.hillHminusNativeDiagonalMap_from_intrinsic; (3) hillHminusSignedOffIndexExponent in HillNativeDiagonalGauge.hillHminusNativeComplexMap_from_diagonal. Existing rough bounded/unit-tail/compact assertions do NOT imply these estimates. The current source chain has been inspected: OriginalHillSobolevDiffeomorph.hillIntegerSobolevEquiv_apply retains hillRealSignedMap coefficients; HillNativeRealSignedMap.hillRealSignedMap_coe and HillNativeMeanZeroComplexMap.hillMeanZeroComplexMap_coe retain SAME hillHminusNativeComplexMap coefficients on the physical real mean-zero source. Use these proved adapters when transporting the completed stronger defect. No distinct NLS Birkhoff map substitution.",
+    "Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates.",
+    "For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement.",
+    "Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE."
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "source": "arXiv:1610.00278v1, Section 2, Lemma 2.4 (pp.9-10) and Corollary 2.5 (p.10)",
+  "main_theorems_verified": false,
+  "domains": {
+    "s": "-1/2<s<=0, including s=0",
+    "r": "r=-s, 0<=r<1/2",
+    "weight": "Every SpectralWeight w in the source class M. The product weight w(k)<k>^s need not itself be submultiplicative or bounded below by one.",
+    "source": "WeightedCoeff (w.negativeSobolev (-s)) infinity; exact equality to w(k)<k>^s is proved.",
+    "shifted_norm": "norm(negativeShiftEquiv w (-s) (+-n) f), on the same original unshifted coefficient space.",
+    "symbol": "Period-two symbol pi^2*k^2; resonant modes k=+-n deleted."
+  },
+  "correction": {
+    "printed_strip": "abs(Re(lambda)-pi^2*n^2)<=12*n",
+    "verified_strip": "abs(Re(lambda)-pi^2*n^2)<=6*n",
+    "reason": "The shared radius-6n strip supports the required denominator bound at every n>=1. The larger printed strip does not support that uniform statement. No separate refutation proof is added.",
+    "remaining_use_obligation": "Prove eventual inclusion of the actual singular-potential periodic eigenvalues in the corrected strip before using these estimates for spectral regularity."
+  },
+  "constant": "C_s=8+16/(1+2s), >=1 and decreasing with s; independent of w, q, lambda and n.",
+  "declarations": {
+    "kernel": "NLS.ReciprocalSeries.tsum_mixedHillKernel_le",
+    "negative_weight_ratio": "NLS.SpectralWeight.negativeSobolev_shift_ratio_le",
+    "same_source_space_shift_equivalence": "NLS.SpectralWeight.negativeShiftEquiv",
+    "actual_raw_operator": "NLS.KdV.unshiftedEndpointHillPerturbation_apply",
+    "both_shift_norms": "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_shiftedNorm_bounds",
+    "operator_norms_on_shifted_carriers": "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_coefficient_bounds",
+    "uniform_cutoff": "NLS.KdV.exists_endpointHill_uniform_contraction",
+    "bounded_tail_inverses": [
+      "NLS.KdV.exists_endpointHill_tail_inverse",
+      "NLS.KdV.exists_endpointHill_tail_inverseMinus"
+    ],
+    "uniform_tail_invertibility": "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible",
+    "two_derivative_resolvent_bound": "NLS.KdV.sobolev_two_reducedHillSymbol_bound",
+    "source_weighted_gain": "NLS.KdV.endpointReducedHillResolventGain",
+    "original_H1_domain": "NLS.KdV.endpointReducedHillResolventH1Original",
+    "physical_multiplication": "NLS.Fourier.PeriodicFourierLebesgue.hminusOneMultiplication",
+    "physical_multiplication_Fourier_product": "NLS.Fourier.PeriodicFourierLebesgue.hasFourierProduct_hminusOneProduct",
+    "endpoint_physical_operator_identification": "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_physical_identification",
+    "singular_Hill_operator": "NLS.KdV.singularHillOperator",
+    "actual_distributional_expression": "NLS.KdV.singularHillOperator_val",
+    "source_physical_eigen_equation": "NLS.Articles.KdVPseudomeasures.sourceHill_eigen_iff",
+    "physical_determinant_criterion": "NLS.Articles.KdVPseudomeasures.sourceLemma2_7_uniform_physical_reduction",
+    "global_inhomogeneous_regularity": "NLS.Articles.KdVPseudomeasures.sourceLemmaC_2"
+  },
+  "quantifier_order": "For each s and potential norm bound R, choose one N>=1 before w, q with norm(q)<=R, n>=N and lambda in the corrected strip. Both shifted operators are then half contractions and invertible.",
+  "verified_scope": "Actual weighted endpoint operators, absolute row summability, both shifted estimates, uniform tail inverses, two-derivative gain, original H1 resolvent domain, and equality with physical H-minus-one multiplication defined by full H1 duality. The singular Hill operator equals minus the genuine distributional second derivative plus the potential product, and its original H-minus-one eigen-equation is equivalent to the Fourier equation for every actual H1 domain element. No spectral enumeration, eigenvalue localization or Birkhoff map is assumed proved.",
+  "remaining_physical_obligations": [
+    "Prove canonical spectral labels, asymptotic enumeration and eventual corrected-strip assignment. The closed actual operator, full compact resolvent and global point-spectrum criterion are proved.",
+    "Complete physical gap/Dirichlet asymptotics and inverse regularity needed by Theorems2.1,2.2 and1.4 after establishing actual spectral labels."
+  ],
+  "physical_normalization": {
+    "period": 2,
+    "free_symbol": "pi^2*k^2",
+    "original_pairing": "Full native complex-linear distribution action; the bilinear H1 duality identity is (q*f)(g)=q(f*g). H1 multiplication is proved to be the pointwise product of original continuous representatives. Conjugating g gives the source sesquilinear convention.",
+    "resolvent_bound": "For every n>=1 and z in the corrected strip, sobolev(2,k)*norm(d_n(z,k)) <= 4+2*norm(z), valid for all imaginary parts.",
+    "orders": "All real r in the two-derivative gain; r<1/2 for endpoint-to-H1 and H-minus-one inclusion; 0<=r<1/2 for endpoint perturbation physical identification."
+  },
+  "further_verified_dependencies": "Joint closed-strip endpoint-norm analyticity, actual equal-diagonal determinant factorization, coefficient bounds and full Lemma2.11 analytic-zero count/localization/root separation are proved; see spectral-analytic-map.json and spectral-coefficients-map.json.",
+  "full_physical_resolvent_dependencies": "See spectral-resolvent-map.json for the actual closed dense original operator, nonempty compact full H-minus-one resolvent, global point-spectrum criterion, finite bounded spectral regions and uniform determinant/invertibility equivalence.",
+  "verified_multiplicity_order": {
+    "coverage": "spectral-multiplicity-order-map.json",
+    "results": [
+      "Normalized finite jets of Banach-valued analytic functions retain exact factorial normalization and commute with continuous linear observations, addition and subtraction. Actual scalar multiplication agrees with the existing formal scalar Taylor convolution.",
+      "The existing formal matrix Taylor action is exactly the normalized finite jet of the actual analytic two-mode matrix acting on an amplitude polynomial. Its kernel is equivalent to vanishing of all retained residual derivatives.",
+      "Vanishing affine-pencil residual derivatives imply that the actual Banach-domain Taylor coefficients form a domain-preserving physical chain. The proof retains every original domain coefficient, including the empty chain.",
+      "At every allowed interior strip point and every finite length, the original physical chain space is linearly equivalent to the actual effective-matrix Taylor kernel. The forward map is the original two-mode coefficient projection. Surjectivity uses the actual norm-analytic H1 reconstruction of an arbitrary kernel amplitude polynomial, and its original H1 Taylor coefficients.",
+      "The actual determinant has finite analytic order everywhere on the full corrected closed strip. Convexity of the strip and a proved actual physical resolvent point exclude the zero germ; no finite-order premise is supplied by a caller.",
+      "Eventual physical finite-chain dimensions and the verified shared eventual matrix Taylor-nullity theorem prove that the actual full original operator algebraic multiplicity equals the actual effective determinant analytic order. The equality holds on the entire corrected closed strip, including its boundary and nonroots.",
+      "The entire corrected strip contains exactly two actual physical eigenvalues counted with their full original algebraic multiplicities. This is the proved analytic two-zero count transported through the exact multiplicity/order correspondence.",
+      "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
+    ],
+    "status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
+  }
+}

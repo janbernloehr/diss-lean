@@ -105,7 +105,7 @@ theorem hillL2ContinuedPrimitive_high_real_crossing_phases
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
   have hsrc (x : ℝ) (hx : |x-freeHillValue n| = 3*(n : ℝ)/4) :
       ((x : ℂ),SpectralWeight.one.toCoeff q) ∈ hillL2ContinuationDomain := by
-    apply mem_hillL2ContinuationDomain_of_high_distance q hq n hn hcut x
+    apply mem_hillL2ContinuationDomain_of_high_distance q hq n hn (by linarith [norm_nonneg q]) x
     · rw [mem_closedBall,dist_eq_norm,← ofReal_sub,norm_real,Real.norm_eq_abs,hx]
       linarith
     · rw [← ofReal_sub,norm_real,Real.norm_eq_abs,hx]

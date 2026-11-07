@@ -1,0 +1,117 @@
+{
+  "source": "arXiv:1610.00278v1 Section2.7 Lemma2.20 REAL physical-potential case and actual Omega tail dependency used in Lemma2.21/Theorem2.2.",
+  "main_theorems_verified": false,
+  "real_case_source_lemma_2_20_verified": true,
+  "general_complex_ratio_source_lemma_2_20_verified": false,
+  "actual_alpha_brackets_actual_spectral_pair": true,
+  "actual_canonical_gap_lower_comparison_verified": true,
+  "actual_adapted_fourier_tail_bound_verified": true,
+  "modules": [
+    "NLS/RealAnalysis/SplitRootGap.lean",
+    "NLS/KdV/PseudomeasureCouplingLipschitz.lean",
+    "NLS/KdV/PseudomeasureRealGapComparison.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralInverseGapComparison.lean"
+  ],
+  "declarations": [
+    "NLS.RealAnalysis.exists_split_roots_gap_comparison",
+    "NLS.KdV.endpointUpperCoupling_sub_le",
+    "NLS.KdV.endpointUpperCoupling_sub_le_eighth",
+    "NLS.KdV.endpointRealDiagonal",
+    "NLS.KdV.endpointRealCoupling",
+    "NLS.KdV.endpointCoefficients_real_axis",
+    "NLS.KdV.endpointReducedDeterminant_real_zero_iff",
+    "NLS.KdV.EndpointHillRealPair.adapted_gap_comparison",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.adapted_gap_comparison",
+    "NLS.Articles.KdVPseudomeasures.source_canonical_adapted_gap_comparison",
+    "NLS.Articles.KdVPseudomeasures.sourceLemma2_20_real",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_real_coupling_gap_comparison",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_tail_le_canonical_gap",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_adapted_fourier_tail_gap_bound"
+  ],
+  "results": [
+    "The shared real scalar split-root theorem CONSTRUCTS both branch roots by IVT from actual small Lipschitz diagonal/splitting coefficients. Strict monotonicity proves uniqueness of EACH branch throughout the full closed interval. The actual diagonal root brackets the two roots,and b(alpha)<=right-left<=3b(alpha),including every collapsed pair.",
+    "The ACTUAL physical upper coupling retains the correct off-diagonal Sobolev factor in its global spectral variation. The existing half-contraction cutoff and endpoint_effective_column_small imply absolute coupling1/8-Lipschitz continuity on the ENTIRE corrected strip. No additional cutoff or small-coupling assumption is imposed.",
+    "Physical conjugation proves that at real original q and real lambda,the actual diagonal is real and the lower coupling is the conjugate upper coupling. The ACTUAL original determinant factors into the two real scalar branches lambda-free_n-a(lambda)+/-norm(b(lambda)). This is a physical determinant identity,not an assumed root model.",
+    "EndpointHillRealPair.adapted_gap_comparison constructs both scalar branch roots on the full corrected real interval,then identifies them with the ACTUAL physical spectral endpoints using the verified determinant/eigenvector criterion and complete pair spectrum. The actual alpha is BETWEEN the actual endpoints,and norm(b(alpha))<=actual_gap<=3norm(b(alpha)). Alpha is not asserted to be the midpoint.",
+    "SourceHillRealPair.adapted_gap_comparison retains the ENTIRE original distribution and exact source norms. source_canonical_adapted_gap_comparison identifies the ACTUAL intrinsic canonical slots2n-1,2n,including all algebraic repetitions. It proves the two-sided coupling comparison and brackets alpha by those SAME canonical labels.",
+    "sourceLemma2_20_real proves the exact real-case squared source bounds: norm(b_plus(alpha)*b_minus(alpha))<=norm(gamma_n)^2<=9norm(b_plus(alpha)*b_minus(alpha)). It requires no open-gap,nonzero-coupling or ratio hypothesis,because real physical data make the couplings conjugates. Thus every collapsed gap is included. The general complex-ratio version is NOT claimed.",
+    "source_uniform_real_coupling_gap_comparison chooses ONE cutoff BEFORE original real potentials on every exact norm ball,then proves both norm and squared-product comparisons at EVERY later high mode. No pair table,root branch or canonical-label hypothesis is supplied by the caller in this uniform theorem.",
+    "sourceAdaptedFourier_tail_le_canonical_gap bounds BOTH signed high coefficients of the ACTUAL original adapted Fourier map by the ACTUAL canonical gap at mode n. source_uniform_adapted_fourier_tail_gap_bound chooses its cutoff BEFORE original potentials and all later modes,retaining the quantitative construction criterion. This supplies the inverse-spectral Omega tail estimate for Section2.7."
+  ],
+  "domains": {
+    "potentials": "Original REAL,mean-zero,physically period-one endpoint distributions with0<=r<1/2,s=-r. Native physical comparison is stronger:it applies to all real complex period-two endpoint inputs under the verified cutoff.",
+    "normalization": "Exact original period-two exp(i*pi*k*x),free value pi^2*n^2,corrected radius6n strip,actual coupling Fourier slots+/-2n,and actual canonical gaps at spectral mode n. No frequency,norm or spectral-model substitution.",
+    "actual_coefficients": "Literal physical endpointDiagonal,endpointUpperCoupling,endpointLowerCoupling and ACTUAL constructed endpointHillDiagonalRoot. Original upper/lower couplings are conjugates on real data.",
+    "real_branches": "On the full REAL corrected strip,construct roots of x-free_n-a(x)+/-norm(b(x)). Actual diagonal and coupling1/8 Lipschitz estimates make both branches strictly increasing. IVT supplies both roots. The actual determinant criterion and physical pair spectrum identify them with the same actual physical pair.",
+    "alpha": "The actual alpha lies between actual left/right endpoints. It is an auxiliary diagonal root;no equality with the spectral midpoint or an eigenvalue is asserted.",
+    "canonical_slots": "Actual intrinsic sourceHillLabels(2n-1),sourceHillLabels(2n),with all actual physical algebraic repetitions and exact usual high slots. sourceCanonicalGapValues at n is their nonnegative real difference.",
+    "cutoff": "Native half-contraction criterion C_r*n^(r-1/2)*norm(q)<=1/2 ALREADY gives actual coupling1/8 spectral Lipschitz variation. Uniform source gap factories choose N BEFORE q on each exact original norm ball. The actual Omega tail factory retains C_r*n^(r-1/2)*(64R)<=1/2 and N>=2,before q and all later modes.",
+    "collapsed_gaps": "No nonzero-coupling or open-gap premise. Both scalar branches may have the SAME root;the comparison still holds,so b(alpha)=0 iff the actual gap is closed.",
+    "scope": "REAL source case needed for the real isospectral inverse theorem. The source general COMPLEX coupling-ratio case remains unproved and is not inferred from this theorem."
+  },
+  "constants": {
+    "norm": "norm(b_plus(alpha))<=actual_gap<=3norm(b_plus(alpha)).",
+    "squared": "norm(b_plus(alpha)*b_minus(alpha))<=norm(gamma_n)^2<=9norm(b_plus(alpha)*b_minus(alpha)).",
+    "native_variation": "Diagonal1/8 and upper coupling1/8 over the entire corrected strip. Scalar branches have error Lipschitz<=1/4.",
+    "source_tail": "BOTH signed actual adapted coefficients at +/-2n have norm<=the ACTUAL canonical gap at mode n."
+  },
+  "conclusions": {
+    "SourceHillRealPair.adapted_gap_comparison": "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.adapted_gap_comparison",
+    "source_canonical_adapted_gap_comparison": "NLS.Articles.KdVPseudomeasures.source_canonical_adapted_gap_comparison",
+    "sourceLemma2_20_real": "NLS.Articles.KdVPseudomeasures.sourceLemma2_20_real",
+    "source_uniform_real_coupling_gap_comparison": "NLS.Articles.KdVPseudomeasures.source_uniform_real_coupling_gap_comparison",
+    "sourceAdaptedFourier_tail_le_canonical_gap": "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_tail_le_canonical_gap",
+    "source_uniform_adapted_fourier_tail_gap_bound": "NLS.Articles.KdVPseudomeasures.source_uniform_adapted_fourier_tail_gap_bound"
+  },
+  "qualifications": [
+    "The actual scalar branch roots are CONSTRUCTED. They are then identified with actual physical spectral endpoints,not assumed to be those endpoints. Final uniform canonical source statements require no root table or labeling/pair assumption from the caller.",
+    "The lower gap estimate is new inverse-spectral content. It is not inferred from the earlier direct upper gap regularity theorem.",
+    "All original real closed gaps are included. The general complex-ratio version of source Lemma2.20 is not claimed.",
+    "Uniform original endpoint bootstrap and conditional AppendixB compactness transfer are now PROVED;the ACTUAL original compact finite-p isospectral realization remains missing. Source Theorem2.2,full Lemma2.21 and every MAIN theorem remain open."
+  ],
+  "remaining": [
+    "Source Theorem2.2 and full Lemma2.21 remain unproved. Uniform endpoint bootstrap,its ENTIRE canonical spectral invariance across predual orders,and conditional AppendixB compactness transfer are now PROVED. The verified ORIGINAL finite-p inverse spectral regularity and actual isospectral compactness input cited as[7,Corollaries3-4] is still required;construct the actual compact finite-p realization for the original H-minus-one isospectral set.",
+    "Complete original physical periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source Theorem2.1(ii). General-weight direct Theorem2.1(i),endpoint Propositions2.18-2.19,REAL source Lemma2.20 and all AppendixB clauses remain proved. The general complex-ratio Lemma2.20 remains unproved.",
+    "Construct and verify the ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 172,
+    "audited_declarations": 1494,
+    "theorems": 1232,
+    "definitions": 262,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "log": ".lake/article-check/logs/validation-real-gap-comparison.log"
+  },
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-endpoint-bootstrap-map.json",
+      "results": [
+        "Shared scaled polynomial weights w(k)=(1+c*abs(k))^(r-t),0<c<=1,are genuine symmetric monotone submultiplicative source weights. Their combined negative weight W satisfies c^(r-t)*Sob(-t,k)<=W(k)<=Sob(-t,k). For c=1/(2N+1),the finite head abs(k)<=2N has w(k)<=2. W(2n)<=Sob(-t,n) retains the exact coefficient/gap frequency normalization.",
+        "Shared original periodic endpoint membership is constructed directly on the ENTIRE supplied smooth-test distribution from pointwise weighted coefficient bounds. A positive lower weight comparison recovers target membership of that SAME distribution with an explicit norm bound. Weighted coefficient estimates are also available at every Banach exponent.",
+        "The cutoff returned by the actual inverse-restriction factory already has N>=2 when m>=1. The adapted map is not changed after choosing its inverse. For physical base q with norm<=R and actual canonical target gap bound G,the ACTUAL adapted image belongs to W with norm<=2R+G:the unchanged head is bounded by2R,the two even tails byG,and physical odd modes vanish.",
+        "source_uniform_endpoint_bootstrap proves stronger original endpoint membership and a uniform norm bound from base norm R and ACTUAL canonical gap bound G. Choose m=4*(R+G+1),N from the verified inverse,c=1/(2N+1),and C=m/c^(r-t),all BEFORE q. The genuine source Proposition2.19 inverse gains W-regularity;weight comparison yields a physical Potential(t) with ENTIRE value equal to the original Potential(r). No target membership of q is assumed.",
+        "sourceReinterpretationSet contains exactly the target physical representatives of a supplied original family. The Appendix B compactness transfer proves it weak-star compact from a proved uniform target bound and a compact lower finite-p realization with the SAME ENTIRE distribution range. Every original family member has a target representative.",
+        "A compact original finite-p realization at base order-r supplies the base endpoint norm bound via all-p coefficient bounds. Combining this with the actual gap bootstrap gives target weak-star compactness whenever1<(r-t)*p.toReal,p finite>=1,and the compact realization has the exact original distribution range. The missing original isospectral compactness result is retained as an EXPLICIT hypothesis rather than claimed as proved."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-cross-order-map.json",
+      "results": [
+        "Shared ordered_nat_enumeration_eq_of_multiplicity proves that two monotone natural-number enumerations in ANY linear order,with finite fibers and equal global multiplicities,are identical. No common tail or cutoff is assumed. The proof uses the first strict discrepancy and counts occurrences in the finite preceding prefix,including repeated entries.",
+        "For any TWO admissible predual orders r,t,and original complex endpoint realizations with ENTIRE smooth-test distribution equality,the original H-minus-one potentials and full original H1-to-H-minus-one operators are equal. Consequently the entire physical complex spectra,every finite root-chain level,the full algebraic root spaces,and their ACTUAL finite multiplicities are equal.",
+        "The ENTIRE real canonical label enumerations of the same original physical distribution agree across arbitrary admissible orders,with all actual algebraic repetitions and NO shared cutoff assumption. This follows from the physical multiplicity equality and the new shared global ordered-count uniqueness theorem.",
+        "The complete COMPLEX canonical labels also agree across arbitrary admissible endpoint orders. The order is exactly the source lexicographic order(real part first,imaginary part second),implemented locally by lifting the injective existing complexLexKey;the standard complex partial order is not substituted.",
+        "Both real and complex entire signed canonical gap sequences agree across endpoint orders,including zero and negative modes and every collapsed gap. Exact period-two Fourier normalization and canonical slots2n-1,2n are retained.",
+        "source_uniform_endpoint_bootstrap_preserves_spectrum now DERIVES the target Potential(t),its uniform original norm bound,ENTIRE distribution equality,and equality of the ENTIRE canonical label and gap sequences. Constants are still chosen BEFORE q;no target membership,open-gap assumption,shared root table or common cutoff is supplied."
+      ]
+    }
+  ]
+}

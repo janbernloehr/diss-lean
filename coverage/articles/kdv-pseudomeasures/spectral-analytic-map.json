@@ -1,0 +1,102 @@
+{
+  "source": "arXiv:1610.00278v1 Section2.2 analytic-family and Lemma2.11 zero-count/localization dependencies; see spectral-coefficients-map.json for equal diagonals and the completed root-separation estimate (23).",
+  "main_theorems_verified": false,
+  "parameter_domain": {
+    "r": "0<=r<1/2; exact source order s=-r, including s=0",
+    "complex_potential": "The full endpoint weighted coefficient Banach space in the unit spectral weight convention, and its exact original FourierLebesgueSpace(2,-r,infinity) realization.",
+    "physical_source": "Original Potential(r): real, mean-zero, physically period-one distributions.",
+    "spectral_parameter": "Every point of the corrected CLOSED strip abs(Re(lambda)-pi^2*n^2)<=6*n, including boundary points and determinant zeros.",
+    "cutoff": "The existing explicit half-contraction criterion C_r*n^(r-1/2)*norm(q)<=1/2. A single cutoff is chosen before q, n, lambda on every exact original source norm ball."
+  },
+  "normalization": "Period two, exp(i*pi*k*x) modes, original coefficient q(mode(-k)), source endpoint norm preserved exactly, free symbol pi^2*k^2. The determinant uses the actual constructed two-mode reduction and original H1/H^-1 physical multiplication.",
+  "declarations": {
+    "normalized_free_symbol_analyticity": "NLS.KdV.analyticAt_hillOrderTwoSymbolFamily",
+    "actual_endpoint_tail_family": "NLS.KdV.endpointTailFamily_eq",
+    "joint_endpoint_norm_analyticity": "NLS.KdV.analyticAt_endpointTailFamily",
+    "actual_inverse_family": "NLS.KdV.endpointInverseFamily_eq",
+    "analytic_effective_matrix": "NLS.KdV.analyticAt_endpointReducedFamily",
+    "analytic_actual_determinant": "NLS.KdV.analyticAt_endpointReducedDeterminant",
+    "original_distribution_norm_analyticity": "NLS.Articles.KdVPseudomeasures.analyticAt_sourceEndpointDeterminant",
+    "uniform_original_physical_criterion": "NLS.Articles.KdVPseudomeasures.source_uniform_analytic_physical_reduction",
+    "both_shifted_norm_inverse_bounds": "NLS.KdV.negativeShiftedNorm_endpointHillTailInverse_le",
+    "effective_matrix_column_bound": "NLS.KdV.endpointHillEffectiveCorrection_columns_le",
+    "determinant_free_error_bound": "NLS.KdV.endpointReducedDeterminant_free_error_le",
+    "disc_zero_count": "NLS.KdV.endpointReducedDeterminant_two_zeros",
+    "entire_strip_zero_count": "NLS.KdV.endpointReducedDeterminant_strip_two_zeros",
+    "zero_localization": "NLS.KdV.endpointReducedDeterminant_zero_localization",
+    "uniform_original_source_count": "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_zero_count"
+  },
+  "proof_details": [
+    "The free denominators retain a half-unit gap on a ball about every closed-strip point. Uniform local infinity bounds and the existing bounded-coordinate analytic theorem give Banach, not just scalar coordinate, analyticity.",
+    "The regular Wiener resolvent is assembled from its proved l1 reciprocal symbol; signed Sobolev convolution is a bounded bilinear map. The total tail family is jointly analytic and equals the existing Fourier/physical operator.",
+    "The total ring inverse equals the actual tail inverse wherever the already proved cutoff applies. The effective two-mode determinant remains analytic at its zeros; the singular effective matrix itself is not inverted.",
+    "The canonical inverse on the original endpoint carrier has norm at most two in BOTH opposite shifted norms, for every source spectral weight. Opposite modulation of each resonant source column exactly cancels its norm shift.",
+    "Each effective column has norm <=2*<2n>^r*norm(q). Since C_r>=24, the original half-contraction criterion implies that this is <=sqrt(n)/8. No extra norm-smallness or cutoff premise is imposed.",
+    "The shared two-dimensional determinant estimate and existing Rouche zero-count theorem prove exactly two zeros by analytic order in the source disc of radius4*sqrt(n). Localization puts every strip zero within sqrt(n)/4, so the same two zeros exhaust the whole unbounded corrected strip."
+  ],
+  "shared_reuse": {
+    "module": "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
+    "branch": "articles/kdv-estimates",
+    "commit": "b2097376825d45ff2468d2c2db239c95b61dea59",
+    "byte_identical": true,
+    "sha256": "e1242c43b5d115939c0335c4550df6159590b38352ad53810fd80c2a6256f56c",
+    "public_declarations": 2
+  },
+  "qualifications": [
+    "The full root-separation estimate(23), physical algebraic/analytic multiplicity equality and actual two-count are proved. Canonical real physical labels are now proved downstream; see spectral-canonical-labels-map.json.",
+    "Global singular spectrum, periodic/antiperiodic labels, eventual corrected-strip inclusion and the Birkhoff/KdV main theorem constructions remain open.",
+    "The analytic statement is in the exact endpoint NORM topology. It does not claim Banach analyticity in the weak-star topology or identify a real Banach manifold structure on the constrained source subtype."
+  ],
+  "full_H1_reconstruction_and_inhomogeneous_reduction": {
+    "coverage": "spectral-reconstruction-map.json",
+    "proof_details": [
+      "The order-two infinity symbol multiplied by the inverse Sobolev order1-r weight in l2 gives a total operator-norm analytic complementary inverse from endpoint data into the original full H1 space. It equals the existing physical inverse and agrees with the analytic Wiener realization.",
+      "The original physical pencil lambda*J-L(q) is jointly operator-norm analytic. The actual reconstruction from two amplitudes into original H1 is jointly analytic at every closed-strip parameter allowed by the existing cutoff, including effective determinant zeros.",
+      "Reconstruction has the exact constant resonant-coordinate left inverse and the exact physical residual J*Modes*B. The complementary response is analytic, has zero resonant coordinates and its physical residual is the original forcing minus the solved finite resonant defect.",
+      "Every original H1 solution with arbitrary endpoint right-hand side has the exact reconstruction f=F(lambda)*C*f+G(lambda)*g. Its two coordinates satisfy B(lambda)*C*f=C_endpoint*K(lambda)*g. Conversely these two conditions imply the full original physical equation, including at singular effective matrices.",
+      "Actual determinant zeros lie strictly inside the corrected6n strip by the proved sqrt(n)/4 localization. The physical residual and constant-coordinate identities hold as spectral germs near every such zero, rather than only pointwise.",
+      "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization."
+    ],
+    "modules": [
+      "NLS/KdV/PseudomeasureH1Analytic.lean",
+      "NLS/KdV/PseudomeasureReconstructionAnalytic.lean",
+      "NLS/KdV/PseudomeasureInhomogeneousReduction.lean",
+      "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean"
+    ]
+  },
+  "verified_multiplicity_order": {
+    "coverage": "spectral-multiplicity-order-map.json",
+    "results": [
+      "Normalized finite jets of Banach-valued analytic functions retain exact factorial normalization and commute with continuous linear observations, addition and subtraction. Actual scalar multiplication agrees with the existing formal scalar Taylor convolution.",
+      "The existing formal matrix Taylor action is exactly the normalized finite jet of the actual analytic two-mode matrix acting on an amplitude polynomial. Its kernel is equivalent to vanishing of all retained residual derivatives.",
+      "Vanishing affine-pencil residual derivatives imply that the actual Banach-domain Taylor coefficients form a domain-preserving physical chain. The proof retains every original domain coefficient, including the empty chain.",
+      "At every allowed interior strip point and every finite length, the original physical chain space is linearly equivalent to the actual effective-matrix Taylor kernel. The forward map is the original two-mode coefficient projection. Surjectivity uses the actual norm-analytic H1 reconstruction of an arbitrary kernel amplitude polynomial, and its original H1 Taylor coefficients.",
+      "The actual determinant has finite analytic order everywhere on the full corrected closed strip. Convexity of the strip and a proved actual physical resolvent point exclude the zero germ; no finite-order premise is supplied by a caller.",
+      "Eventual physical finite-chain dimensions and the verified shared eventual matrix Taylor-nullity theorem prove that the actual full original operator algebraic multiplicity equals the actual effective determinant analytic order. The equality holds on the entire corrected closed strip, including its boundary and nonroots.",
+      "The entire corrected strip contains exactly two actual physical eigenvalues counted with their full original algebraic multiplicities. This is the proved analytic two-zero count transported through the exact multiplicity/order correspondence.",
+      "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
+    ],
+    "status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
+  },
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-complex-labels-map.json",
+      "results": [
+        "Sided free-lattice separation places every tight complex high-mode disk wholly below or wholly above each sufficiently high separator. On every such disk,norm membership and real-part membership both mean n<N.",
+        "The actual original complex central disk is proved to select EXACTLY the source real-part central sublevel. Equality of the ACTUAL finite spectral sets and actual full algebraic counts gives source_uniform_all_complex_central_counts: ONE cutoff BEFORE q on each original complex norm ball gives the exact count2n-1 at EVERY subsequent separator,plus the uniform wide contraction.",
+        "Native EndpointHillComplexPair constructs an intrinsic source-lexicographic physical pair from the ACTUAL determinant zeros,retaining actual full physical algebraic repetitions,including nontrivial Jordan chains. Its entire corrected strip is exhausted;both endpoints are tightly localized;distinct modes are strictly separated in real part. Each pair is unique. Real pairs map literally to the same complex physical pairs.",
+        "The actual original complex central multiset repeats every value by its full physical algebraic multiplicity. Sorting in the explicit source lexicographic relation keeps every repetition. Appending actual ordered high pairs gives an enumeration of the ENTIRE original complex spectrum,with the high pair exactly in slots2n-1,2n.",
+        "Every occurrence fiber is finite and its occurrence count equals the ACTUAL full physical algebraic multiplicity. Intrinsic pair uniqueness and finite ordered-enumeration uniqueness prove equality of ENTIRE labelings across all admissible cutoffs and construction choices.",
+        "sourceHillComplexLabels is the intrinsic global complex labeling in the exact source order(real part first,imaginary part second). It exhausts the entire original spectrum,has exact full algebraic multiplicities,has a lexicographically least actual value at index0,and puts each high actual pair in its required slots. One cutoff is uniform BEFORE every potential in an original complex norm ball. No ground-state simplicity or physical boundary parity is inferred.",
+        "sourceHillComplexLabels_ofPotential proves literal pointwise equality with the existing real canonical labels on the original real mean-zero period-one source. This is the same physical spectral model,not a compatible alternative.",
+        "Actual complex high gaps obey the original full-strip coupling estimate and the exact endpoint Sobolev weighted bound6*sqrt(6)*norm(q). The complete sourceComplexCanonicalGaps,including its finite central prefix,belongs to the genuine infinity Sobolev space of order-r. The full gap map is bounded on EVERY exact original complex endpoint norm ball,with one constant chosen BEFORE q. Its coefficients agree literally with the existing original real gaps."
+      ]
+    }
+  ],
+  "remaining": [
+    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct physical Dirichlet spectral comparisons. Original complex canonical ordering,actual multiplicities,global high slots and full complex unit-extra-weight direct gap regularity are now proved.",
+    "Complete the arbitrary-extra-weight direct estimates in source Theorem2.1 where required;unit extra weight w=1 is proved for all original COMPLEX endpoint potentials. Prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets.",
+    "Construct and verify the original Birkhoff maps with global bijectivity,real analyticity and the stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
+    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses,quantifiers,normalizations and topology. All remain unproved."
+  ]
+}

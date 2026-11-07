@@ -72,7 +72,7 @@ theorem hillL2ContinuedPrimitive_re_nonneg
       intro t
       simp [P, hillUnitPotentialCurve, Complex.mul_im]
     have hd := mem_classicalHillContinuationDomain_of_im_ne_zero _ hreal z hz.ne'
-    rw [← hP, hillL2ContinuedPrimitive_eq_classical P z hd]
+    rw [← hP, hillL2ContinuedPrimitive_eq_classical_toCoeff P z hd]
     exact (classicalHillContinuedPrimitive_re_pos _ hreal z hz).le
   have hcl : SpectralWeight.one.toCoeff q ∈ closure (range (Coeff.ofFinsupp (p := 2))) := by
     rw [(Coeff.denseRange_ofFinsupp (p := 2) (by simp)).closure_range]

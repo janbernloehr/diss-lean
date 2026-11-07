@@ -6446,7 +6446,7 @@
       "scope": "All 1475 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 1468-module base has strict validation recorded at commit 16d0e19dbd9d136a62297e5f749e3b2024216c0b (complete 583-module strict focused run plus 885 isolated additions; all 1468 source hashes preserved, 9814-declaration audit and successful aggregate), and all 7 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 9853-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 1475-module focused script, full Lake rebuild and full repository examples were not rerun."
     }
   ],
-  "completion_status": "whole_paper_in_progress_dynamical_corollary_verified_for_declared_solution_concept",
+  "completion_status": "whole_paper_in_progress_global_kdv_flow_and_strong_sobolev_persistence_in_classical_approximation_class",
   "main_theorem_completion_audit": {
     "status": "passed_locally",
     "source_pdf_sha256": "b275b8c6770a650f614acd0788611044c6b0ee8da4506857294dc3ae617666dd",
@@ -6504,12 +6504,15 @@
   },
   "whole_paper_verified": false,
   "whole_paper_validation": {
-    "report": "coverage/articles/kdv-estimates/conservation-validation.json",
+    "report": "coverage/articles/kdv-estimates/flow-integration-validation.json",
     "status": "passed_for_recorded_scope",
-    "focused_modules": 1509,
-    "new_strict_modules": 8,
-    "transitive_axiom_declarations": 10134,
+    "focused_modules": 1521,
+    "new_strict_modules": 12,
+    "combined_dependency_closure": 9128,
+    "transitive_axiom_declarations": 13310,
+    "additional_flow_axiom_declarations": 29,
     "aggregate_exit_code": 0
   },
-  "dynamical_corollary_completed_for_declared_solution_concept": true
+  "dynamical_corollary_completed_for_declared_solution_concept": true,
+  "global_kdv_flow_and_strong_sobolev_persistence_verified_for_declared_solution_concept": true
 }

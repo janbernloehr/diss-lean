@@ -1,0 +1,31 @@
+import NLS.KdV.KdVOriginalSobolevFlow
+
+#print axioms NLS.KdV.KdVMeanZeroSobolev
+#print axioms NLS.KdV.kdv_signedWeight_le_original
+#print axioms NLS.KdV.kdvOriginalToSignedCLM
+#print axioms NLS.KdV.kdv_originalWeight_le_signed
+#print axioms NLS.KdV.kdvSignedToOriginalCLM
+#print axioms NLS.KdV.kdvOriginalToSignedCLM_apply
+#print axioms NLS.KdV.kdvSignedToOriginalCLM_apply
+#print axioms NLS.KdV.kdvOriginalToSigned
+#print axioms NLS.KdV.kdvSignedToOriginal
+#print axioms NLS.KdV.kdvOriginalToSigned_apply
+#print axioms NLS.KdV.kdvSignedToOriginal_apply
+#print axioms NLS.KdV.kdvOriginalSobolevHomeomorph
+#print axioms NLS.KdV.kdvSobolevRoughEmbedding
+#print axioms NLS.KdV.kdvSobolevRoughEmbedding_apply
+#print axioms NLS.KdV.kdvSobolevRoughEmbedding_injective
+#print axioms NLS.KdV.kdvSobolevFlow
+#print axioms NLS.KdV.kdvSobolevFlow_zero
+#print axioms NLS.KdV.kdvSobolevFlow_add
+#print axioms NLS.KdV.continuous_kdvSobolevFlow
+#print axioms NLS.KdV.continuous_kdvSobolevFlow_time
+#print axioms NLS.KdV.kdvSobolevFlow_rough
+#print axioms NLS.KdV.IsSobolevKdVSolution
+#print axioms NLS.KdV.kdvSobolevFlow_is_solution
+#print axioms NLS.KdV.existsUnique_sobolevKdVSolution
+#print axioms NLS.KdV.isSobolevKdVSolution_iff_eq_flow
+#print axioms NLS.KdV.roughKdVSolution_has_unique_sobolev_lift
+#print axioms NLS.KdV.kdvSobolevLower
+#print axioms NLS.KdV.kdvSobolevLower_rough
+#print axioms NLS.KdV.kdvSobolevFlow_order_compatibility

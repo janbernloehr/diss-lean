@@ -42,7 +42,7 @@ theorem sourcePsiGapSolvable_of_realType
       continuous_subtype_val.continuousAt.tendsto.comp hlim
     exact sourcePsiGapSolvable_of_tendsto hp hp1 n x.val x.property
       (fun k => (ψ k).val) hval hψ
-  letI : ConnectedSpace (realTypeSourceLocus p) :=
+  let : ConnectedSpace (realTypeSourceLocus p) :=
     Subtype.connectedSpace (isConnected_realTypeSourceLocus (p := p))
   have hSnonempty : S.Nonempty := by
     refine ⟨⟨0,by simp [realTypeSourceLocus]⟩,?_⟩

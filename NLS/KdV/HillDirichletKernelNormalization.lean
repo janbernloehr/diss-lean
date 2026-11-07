@@ -32,7 +32,7 @@ theorem hillL2DirichletDirectionKernel_normalization
     simpa only [zero_smul,zero_add,ContinuousMap.smul_apply] using hp
   have hC : C=(-I) • B := by rw [hB,smul_smul];simp
   have hzero : (B t).1=0 := by
-    simpa only [hillL2DirichletCharacteristic,hillL2FrequencyDirichlet,constantUpperStateMap_apply,
+    simpa only [hillL2DirichletCharacteristic,hillL2FrequencyStateDirichlet,constantUpperStateMap_apply,
       constantUpperInitialVector,mul_zero,mul_one,sub_zero] using hz
   have hCzero : (C t).1=0 := by
     have hh := congrArg (fun Y : Curve (ℂ × ℂ) => (Y t).1) hC

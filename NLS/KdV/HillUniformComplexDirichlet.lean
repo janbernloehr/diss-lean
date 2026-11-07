@@ -39,7 +39,7 @@ theorem exists_hillScaledDirichletRoot_bounded_complex_analytic_chart
     (hillRealGapContour_geometry 0 h0q h0r k (hN.trans hk)).2.1)
   have hpB (p : Coeff 2) (hp : p ∈ ball (0 : Coeff 2) B) : ‖p‖ ≤ B :=
     (show ‖p‖ < B by simpa only [mem_ball,dist_zero_right] using hp).le
-  have han := analyticOnNhd_logarithmicCircleMoment
+  have han := analyticOnNhd_logarithmicCircleMoment_of_isOpen
     (fun t : ℂ × Coeff 2 => hillL2DirichletCharacteristic t.2 t.1) analyticOnNhd_hillL2DirichletCharacteristic_joint
     (hillRealGapCenter 0 h0q h0r k : ℂ)
     (ρ*(hillRealGapHalfLength 0 h0q h0r k+hillRealGapCollar 0 h0q h0r k)) hR.le 1 isOpen_ball

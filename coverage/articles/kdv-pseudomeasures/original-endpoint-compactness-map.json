@@ -1,0 +1,110 @@
+{
+  "source": "arXiv:1610.00278v1, Theorem 2.2(i)-(iii) and Lemma 2.21",
+  "source_pages": {
+    "theorem2_2": 7,
+    "lemma2_21": [
+      27,
+      28
+    ],
+    "theorem2_2_proof": 28
+  },
+  "date": "2026-11-03",
+  "status": "Full source Theorem 2.2 and Lemma 2.21 proved on the entire original H-minus-one domain",
+  "modules": [
+    "NLS/SequenceSpaces/PeriodOneMiuraFamilyRegularity.lean",
+    "NLS/KdV/PeriodOneOriginalSobolev.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalFinitePCompactCover.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalEndpointBound.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalEndpointCompactness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalFinitePCompactness.lean"
+  ],
+  "declarations": [
+    "NLS.exists_continuous_periodOneMiura_finiteP_family",
+    "NLS.KdV.periodOneOriginalSobolev",
+    "NLS.KdV.periodOneOriginalSobolev_even",
+    "NLS.KdV.periodOneOriginalSobolev_odd",
+    "NLS.KdV.periodOneOriginalSobolev_val",
+    "NLS.Articles.KdVPseudomeasures.exists_originalIsospectral_compact_finiteP_cover",
+    "NLS.Articles.KdVPseudomeasures.exists_uniform_originalIsospectral_finiteP_bound",
+    "NLS.Articles.KdVPseudomeasures.exists_uniform_originalIsospectral_lower_finiteP_bound_of_endpoint_gaps",
+    "NLS.Articles.KdVPseudomeasures.sourceLemma2_21",
+    "NLS.Articles.KdVPseudomeasures.originalIsospectralEndpointSet",
+    "NLS.Articles.KdVPseudomeasures.mem_originalIsospectralEndpointSet_iff",
+    "NLS.Articles.KdVPseudomeasures.originalIsospectralEndpointSet_eq_spectralFiber",
+    "NLS.Articles.KdVPseudomeasures.potentialNormBounded_originalIsospectralEndpointSet",
+    "NLS.Articles.KdVPseudomeasures.sourceLowerDistribution_originalIsospectralEndpointSet",
+    "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_iii",
+    "NLS.Articles.KdVPseudomeasures.originalIsospectralRealizationSet",
+    "NLS.Articles.KdVPseudomeasures.isClosed_originalIsospectralRealizationSet",
+    "NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralRealizationSet_of_gap"
+  ],
+  "source_theorems": {
+    "2.2(i)": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_i",
+    "2.2(ii)": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_ii",
+    "2.2(iii)": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_iii",
+    "2.21": "NLS.Articles.KdVPseudomeasures.sourceLemma2_21"
+  },
+  "results": [
+    "Continuous L2 Miura families with a continuous stronger Sobolev realization at order 1-b have a norm-continuous shifted potential realization at order -b in finite p whenever b*p>1. The literal derivative, quadratic Fourier sum and physical constant shift are retained.",
+    "Unit-period negative Sobolev coefficients insert continuously and linearly into the identical original period-two Fourier-Lebesgue distribution space. Every even coefficient is unchanged and every odd coefficient vanishes.",
+    "Actual original gap regularity at -a supplies a compact finite-p potential cover at -b for the ENTIRE original H-minus-one isospectral set whenever a<b<=1, finite p>=2 and b*p>1. The norm bound is common to all exact original representatives.",
+    "Exact entire-distribution realization sets of the full original isospectral family are norm closed at EVERY real Sobolev order and every Banach exponent, including infinity. With the proved finite-p cover, the exact full finite-p realization set itself is norm compact in the stated strict-loss regime.",
+    "Source Lemma 2.21 is proved on the full original H-minus-one domain: the actual endpoint gap hypothesis alone gives ONE target endpoint norm bound before EVERY original isospectral member. No endpoint membership or uniform norm bound is a premise.",
+    "Source Theorem 2.2(iii) is proved with the exact original endpoint weak-star topology. The lower H-minus-one distribution image of the endpoint set is EXACTLY the entire original norm-compact isospectral family; Appendix B applies with the new uniform endpoint bound.",
+    "Endpoint-set membership is exactly actual full original physical isospectrality. The endpoint set equals the full intrinsic canonical spectral fiber, retaining every ordered spectral slot and all algebraic repetitions. Together with the already proved parts (i)-(ii), all clauses of source Theorem 2.2 are now verified."
+  ],
+  "qualifications": [
+    "All original physical constraints, entire distributions, actual original gaps and algebraic multiplicities are retained. The article convention is s=-r with 0<=r<1/2.",
+    "The finite-p cover/compactness theorem retains finite p>=2, a<b<=1 and the strict quadratic threshold b*p.toReal>1. Endpoint gaps first give finite-p gap regularity at an intermediate order a, leaving the strict loss required by compact lift regularity.",
+    "Compactness of an enlarged Miura cover is not identified with compactness of the exact family without proof: the exact realization set is proved closed via its full Fourier coefficient image before the compact-cover subset argument.",
+    "Lemma 2.21 uses the exact original FourierLebesgueSpace(2,-r,infinity) norm and quantifies a single constant before every member. The common base finite-p norm bound is proved, not assumed.",
+    "Theorem 2.2(iii) claims weak-star compactness, not compactness in the endpoint infinity norm. The topology is the explicit original Wiener weak-star topology already identified with the original real predual on bounded sets.",
+    "All five MAIN article theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain unproved. Original KdV Birkhoff maps and the actual smooth-approximation flow remain essential obligations."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "acf6c6b21c22769fd1cc1d40152f72ab8343472f",
+    "baseline_modules": 413,
+    "baseline_sources_verified_unchanged": true,
+    "new_modules_compiled": 6,
+    "modules_in_exact_inventory": 419,
+    "audited_declarations": 3145,
+    "theorems": 2592,
+    "definitions": 553,
+    "new_theorems": 15,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-original-endpoint-compactness.log"
+  },
+  "output_sha256": {
+    "NLS/SequenceSpaces/PeriodOneMiuraFamilyRegularity.lean": "1859b3627266bc1c4fb481a61c33ed61c8d606cd82c0ed4e389241cdb9e97005",
+    "NLS/KdV/PeriodOneOriginalSobolev.lean": "8f8a7b03a517e9e95d7667a9c26c6d91ef825d5bb13c3bb78e7d9f1557cbd43f",
+    "NLS/Articles/KdVPseudomeasures/OriginalFinitePCompactCover.lean": "265d0ff51761ab381e4437d84349b743a2b927fba7097acf12e397cd651f8d5e",
+    "NLS/Articles/KdVPseudomeasures/OriginalEndpointBound.lean": "ba48c2dd65f3525f98850817a0a4e7010fe9cf7c680f5a47a00a7853c2500805",
+    "NLS/Articles/KdVPseudomeasures/OriginalEndpointCompactness.lean": "f389390ad2ffa828dc122348e8573168d7cd3dec2654a3282731438cc7b56c2d",
+    "NLS/Articles/KdVPseudomeasures/OriginalFinitePCompactness.lean": "1b3a8eb561fc567af076e36198bdd93c66101cb55d74277f62c93d76e7eda5b6"
+  },
+  "source_text_sha256": "1e1a9238da5d4b0fbe16d6e7e8df1b8698ae35f0b81df612cc6af910c16e1b7e",
+  "canonical_checkout_written": false,
+  "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "main_theorems_verified": false,
+  "source_Lemma2_21_proved": true,
+  "full_source_Theorem2_2_proved": true,
+  "workspace_decision": "pending; all edits and compiler outputs remain private",
+  "remaining_main_theorems": [
+    "1.1",
+    "1.3",
+    "1.4",
+    "5.1",
+    "5.9"
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "article_id": "kdv-estimates",
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_scope",
+  "merge_main_commit": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "premerge_proof_commit": "903ffc9",
+  "only_merge_conflict": "NLS.lean; preserved every import from both developments",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "raised_proof_limits": false,
+  "disabled_linters": false,
+  "sorry_or_new_axioms": false,
+  "new_proof_modules": [
+    {
+      "module": "NLS.KdV.ClassicalKdVDifferenceEstimate",
+      "source": "NLS/KdV/ClassicalKdVDifferenceEstimate.lean",
+      "sha256": "c278bc403fe91e2490305411c765441d4f0ff19e86b6220da9667f17fe22c4b2",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.ClassicalKdVUniqueness",
+      "source": "NLS/KdV/ClassicalKdVUniqueness.lean",
+      "sha256": "a71fa1d19de162b076a7fc19d19b7d1d32e9c57532243cf01335acbd6339da36",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.HillWeightedPhysicalLimit",
+      "source": "NLS/KdV/HillWeightedPhysicalLimit.lean",
+      "sha256": "27af1ac70f23e9b44166844e075b8a6a00a9129f3e1aa81c20f53688c35cd341",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVFourierField",
+      "source": "NLS/KdV/KdVFourierField.lean",
+      "sha256": "d07fb2aa14da89fa5a7c599dda8e1914bc612c54d1d32d5846861ce9d15e4fd4",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.SmoothKdVFourierEquation",
+      "source": "NLS/KdV/SmoothKdVFourierEquation.lean",
+      "sha256": "e42f47bfd4aff179a4976df43a1e2fd512f154b06f39e78ecbd786e774794db5",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.SmoothKdVWeakEquivalence",
+      "source": "NLS/KdV/SmoothKdVWeakEquivalence.lean",
+      "sha256": "77f4cbe2bd98b141b28b2dcc9df4c4c02ae22bc0c77cf0cfb48a7d0c79987766",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVWeakLimit",
+      "source": "NLS/KdV/KdVWeakLimit.lean",
+      "sha256": "4aaffee54cb84731b464b4bf8681d58066ee5a1a8877fd4c9d0edd43a26f175f",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVPhysicalWeakSolution",
+      "source": "NLS/KdV/KdVPhysicalWeakSolution.lean",
+      "sha256": "b3bb0b204e40791af50efb445d3b178bd8df7ff2e78c98d8df6b36eaa6f4382a",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVSmoothApproximation",
+      "source": "NLS/KdV/KdVSmoothApproximation.lean",
+      "sha256": "0841fafc47d8980a6a8cc9a8c18bcad7765b28010e70dc9184556f65d3148451",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.Articles.KdVEstimates.SobolevLimitPersistence",
+      "source": "NLS/Articles/KdVEstimates/SobolevLimitPersistence.lean",
+      "sha256": "33976ba6e12dac8d862e36dbc339636bcc8df368968a2d4737bccc94ec433071",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVOriginalSobolevModel",
+      "source": "NLS/KdV/KdVOriginalSobolevModel.lean",
+      "sha256": "f10da75213611886bd0a9623fc98f09f3536aec088dcbaa6a9a5ee2fd44a63f6",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVOriginalSobolevFlow",
+      "source": "NLS/KdV/KdVOriginalSobolevFlow.lean",
+      "sha256": "2b1335bc40514894500b344d75fb6f61277280c1a8d0d8797df2d7a7e396dacf",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "focused_script_modules": 1521,
+  "fresh_full_focused_script_run": false,
+  "combined_dependency_closure": 9128,
+  "first_combined_run": {
+    "modules": 9125,
+    "freshly_compiled": 68,
+    "dependency_checked_reused": 9057,
+    "axiom_audits": {
+      "article_public_declarations": 10273,
+      "below_l2_declarations": 1007,
+      "hierarchy_declarations": 13010,
+      "estimates_foundation_declarations": 13310,
+      "allowed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    }
+  },
+  "final_combined_run": {
+    "freshly_compiled": 4,
+    "dependency_checked_reused": 9124,
+    "aggregate_exit_code": 0,
+    "axiom_audits": {
+      "article_public_declarations": 10273,
+      "below_l2_declarations": 1007,
+      "hierarchy_declarations": 13010,
+      "estimates_foundation_declarations": 13310,
+      "original_sobolev_flow_declarations": 29,
+      "allowed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "result_sha256": "d0ea10c3481d12d886ecddae2caa080d7d0c1ea6211a616830cdaac7ee1810a9",
+    "plan_sha256": "392ef33dcb014e0f9821f2a132798488223f294016776af548860cfd6c38b3c5",
+    "command_log_sha256": "a38323141fb6b282dfc56d3cdb0980f5be2f5761b263b29f88846a292e2116da"
+  },
+  "baseline_reuse": {
+    "imported_main_public_validation": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "imported_main_validation_closure": 9092,
+    "all_current_selected_source_hashes_verified": true,
+    "dependency_fingerprints_verified": true,
+    "previously_focused_sources_updated_by_validated_main": [
+      "NLS/KdV/HillRealGapPairs.lean",
+      "NLS/KdV/HillWideLocalization.lean",
+      "NLS/ComplexAnalysis/RealDiameterDisc.lean",
+      "NLS/KdV/HillL2HighContourMoments.lean",
+      "NLS/KdV/HillL2ContourDeformation.lean",
+      "NLS/KdV/HillL2PrimitiveReflection.lean",
+      "NLS/KdV/HillL2GapCutRoots.lean",
+      "NLS/ComplexAnalysis/RealCutConjugation.lean",
+      "NLS/KdV/HillL2NormalizedCutPrimitive.lean",
+      "NLS/KdV/HillL2CutPrimitiveReflection.lean",
+      "NLS/KdV/HillL2RealSourcePhase.lean",
+      "NLS/KdV/ClassicalL2PrimitiveAgreement.lean",
+      "NLS/KdV/HillL2HalfPlaneSheets.lean",
+      "NLS/KdV/HillL2DirichletCharacteristic.lean",
+      "NLS/KdV/HillDirichletPotentialDerivative.lean",
+      "NLS/KdV/HillDirichletKernelNormalization.lean",
+      "NLS/KdV/HillFreePeriodSequence.lean",
+      "NLS/ComplexAnalysis/DenseNonreal.lean",
+      "NLS/ComplexAnalysis/AnalyticLogarithmicMoments.lean",
+      "NLS/KdV/HillAllGapSymmetricData.lean",
+      "NLS/KdV/HillUniformComplexGapData.lean",
+      "NLS/KdV/HillUniformComplexDirichlet.lean",
+      "NLS/KdV/HillFullPeriodKernelInjectivity.lean",
+      "NLS/KdV/HillDiscriminantGardnerCommutation.lean",
+      "NLS/Poisson/GardnerBivector.lean",
+      "NLS/Poisson/HminusGardnerBracket.lean",
+      "NLS/Poisson/GardnerHamiltonianDirection.lean",
+      "NLS/Poisson/GardnerBracketJacobi.lean",
+      "NLS/Poisson/GardnerHamiltonianZeroMode.lean",
+      "NLS/Fourier/UnitIntervalWeakDerivative.lean",
+      "NLS/KdV/HillL2Dirichlet.lean",
+      "NLS/KdV/HillHminusSpectralInvolution.lean",
+      "NLS/ComplexAnalysis/TwoRootCircleMoments.lean",
+      "NLS/ComplexAnalysis/TwoEndpointRoot.lean",
+      "NLS/KdV/ClassicalHillTraceFamily.lean",
+      "NLS/KdV/HillContinuousPrimitiveComparison.lean",
+      "NLS/KdV/HminusOneMiuraHighPairs.lean",
+      "NLS/KdV/MiuraRealSource.lean",
+      "NLS/KdV/HillMiuraSquaredEnumeration.lean",
+      "NLS/KdV/HillHminusOneMiuraAllLabels.lean",
+      "NLS/KdV/HillHminusPhysicalPsiZeros.lean",
+      "NLS/ComplexAnalysis/QuadraticEnergySheet.lean",
+      "NLS/ZakharovShabat/SourcePsiSeparatedGrowth.lean",
+      "NLS/KdV/HillHminusNumeratorDecay.lean",
+      "NLS/ZakharovShabat/SourcePhaseCanonicalRoots.lean",
+      "NLS/KdV/HillHminusIntrinsicGapSymmetricData.lean",
+      "NLS/Fourier/UnitFourierTrigonometricProfiles.lean"
+    ],
+    "source_correction_modules_unchanged": true
+  },
+  "checker_fix": "Concurrent compilation now waits for forced transitive ancestors of reused imports, preventing consumers from loading an object before its required ancestor has been rebuilt. The new 29-declaration flow axiom audit is registered as an independent root.",
+  "proved": [
+    {
+      "declaration": "NLS.KdV.IsSmoothPhysicalKdVTrajectory.eq_of_eq_at",
+      "result": "Real smooth periodic physical KdV trajectories equal at one time agree at every real time. The PDE yields the exact difference-energy coefficient 6*v_x-3*u_x, bound 18*R, and compact-time Gronwall uniqueness."
+    },
+    {
+      "declaration": "NLS.KdV.isFourierWeakKdVCoefficients_iff",
+      "result": "An independently defined continuous-L2, integrated Fourier weak equation is equivalent to its mode derivative identities, with absolutely convergent quadratic convolutions and physical frequency 2*pi*n."
+    },
+    {
+      "declaration": "NLS.KdV.isFourierWeakPhysicalKdV_iff_equation",
+      "result": "For profiles differentiable in the continuous-function norm, smooth and periodic in space, the integrated Fourier equation is equivalent to the actual physical differential equation. Reality and continuous first-derivative families give the classical uniqueness regularity class."
+    },
+    {
+      "declaration": "NLS.KdV.isFourierWeakKdVTrajectory_of_locallyUniformLimit",
+      "result": "The independent weak equation on the original real physical L2 potential space is closed under locally uniform L2 limits with continuous limit. The proof uses continuity of the L2 bilinear coefficient pairing, compact-time bounds and dominated convergence."
+    },
+    {
+      "declaration": "NLS.KdV.IsKdVSolutionBySmoothPhysicalApproximation.fourierWeak",
+      "result": "Actual smooth physical approximation implies the independent integrated Fourier weak equation and the prior classical-approximation conservation solution concept. Both directions are not asserted at low regularity."
+    },
+    {
+      "declaration": "NLS.KdV.IsKdVSolutionByClassicalApproximation.continuous",
+      "result": "The previous classical-approximation solution concept implies continuity in the original physical L2 norm."
+    },
+    {
+      "declaration": "NLS.KdV.exists_hillRealWeighted_of_bounded_tendsto",
+      "result": "A uniformly bounded sequence in any original real weighted space converging in physical L2 has a limit in that weighted space, with the same bound; limit membership is concluded, not assumed."
+    },
+    {
+      "declaration": "NLS.Articles.KdVEstimates.sobolev_membership_of_convergent_initial_approximation",
+      "result": "For m>=1, mean-zero classical H^m approximants with H^m-convergent initial data and physical L2 convergence at each time have a physical limit in H^m at every time, with a uniform-in-time H^m bound. The limit path is not typed in H^m as a premise."
+    },
+    {
+      "declaration": "NLS.KdV.kdvOriginalSobolevHomeomorph",
+      "result": "A homeomorphism between the article exact mean-zero real H^m domain and the actual canonical-flow signed Sobolev model, preserving every original Fourier coefficient. Norms are compared with explicit weight inequalities rather than equated."
+    },
+    {
+      "declaration": "NLS.KdV.existsUnique_sobolevKdVSolution",
+      "result": "Global existence and uniqueness for every original real mean-zero H^m datum, m>=0, in the nonvacuous universal classical-approximation class. The flow has a group law and jointly continuous time/data dependence in the exact original H^m topology."
+    },
+    {
+      "declaration": "NLS.KdV.roughKdVSolution_has_unique_sobolev_lift",
+      "result": "A rough-typed classical-approximation solution whose initial datum lies in the original H^m space has a unique strongly continuous H^m lift for all real times. Higher-space membership and strong continuity are conclusions, not hypotheses on the rough path."
+    },
+    {
+      "declaration": "NLS.KdV.isSobolevKdVSolution_iff_eq_flow",
+      "result": "The original H^m solution formulation is equivalent to equality with the constructed actual physical flow; existence of classical approximants and the physical PDE bridge are proved in the imported main-branch construction."
+    }
+  ],
+  "solution_scope": "The precise nonvacuous universal classical-approximation formulation from the merged physical KdV construction: every jointly smooth real mean-zero unit-period classical family with convergent initial data has the prescribed trajectory limits. No identification with every spacetime distributional weak solution is claimed.",
+  "remaining_obligations": [
+    "Prove the full converse from arbitrary intended spacetime distributional weak L2 solutions to the nonvacuous classical-approximation formulation; no unconditional uniqueness for all such distributional solutions is asserted.",
+    "Connect the newly integrated universal rough classical-approximation class and the earlier existential PeriodicKdVJet approximation class in both directions. The smooth physical approximation-to-independent-Fourier-weak implication is proved.",
+    "Expose the earlier exact dynamical-corollary inequality directly on kdvSobolevFlow through the explicit physical action/approximation adapters; no additional conservation hypothesis should be introduced."
+  ],
+  "source_corrections": {
+    "A.3": "The radius-six correction to the printed radius-twelve strip and its formal zero-mode obstruction are unchanged.",
+    "D.1": "The nonempty-real-slice qualification and its necessity proof are unchanged.",
+    "additional_source_corrections": []
+  },
+  "whole_paper_verified": false,
+  "fresh_full_lake_rebuild_or_full_examples_run": false,
+  "checker_sources": {
+    "scripts/check-kdv-estimates.sh": "99a89d1340c7771cef0b7d2fb9de1ea87ae978c48c57c2ae8ba0b9089019fc8a",
+    "scripts/check-kdv-pseudomeasures-merge.py": "fcdeabdb117258e9a1a6127acea224e076eca96dd39a2572d44b02cd9f3b61fb",
+    "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "108eab76ee1f9e6c858a07f555e4d3e7dfcb30247e25e7e12a148f43df92e816",
+    "coverage/articles/kdv-estimates/CheckFlowAxioms.lean": "6f879fe9c11de9a708442a569fdf62b61861165dd7262c2fd7281df125d73f91"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "source": "arXiv:1610.00278v1 Theorem3.1(i), actual native inverse dependencies for mainTheorem1.4",
+  "status": "Prove actual normalized-amplitude Jacobian compactness and reduce the native derivative to the intrinsic diagonal sequence with its fixed original normalization. Intrinsic diagonal/Fourier derivative estimates and ALL FIVE MAIN THEOREMS remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-amplitude-jacobian-compact-map.json",
+    "reusable_uniform_nonzero_unit_tail_inverse_bounds_PROVED": true,
+    "reusable_even_unit_analytic_infinity_realization_PROVED": true,
+    "reusable_weighted_unit_tail_multiplier_minus_identity_COMPACT_PROVED": true,
+    "reusable_analytic_unit_symbol_derivative_difference_COMPACT_PROVED": true,
+    "actual_normalized_amplitude_AND_reciprocal_bounded_sequence_analytic_PROVED": true,
+    "actual_normalized_amplitude_UNIT_TAIL_PROVED": true,
+    "actual_intrinsic_diagonal_sequence_exact_original_normalization_PROVED": true,
+    "actual_intrinsic_diagonal_sequence_same_weighted_target_analytic_PROVED": true,
+    "actual_normalized_amplitude_Jacobian_difference_COMPACT_PROVED": true,
+    "actual_native_minus_phase_times_intrinsic_Jacobian_COMPACT_PROVED": true,
+    "actual_mean_zero_combined_intrinsic_Jacobian_remainder_COMPACT_PROVED": true,
+    "scope": "EVERY point of the existing complex native domain, including EVERY original physical Hminus-one source and arbitrary collapsed gaps; actual full complex Banach derivatives, exact mean-zero restrictions, original constants and unchanged signed Sobolev -1/2 target norm.",
+    "actual_intrinsic_diagonal_Jacobian_Fourier_remainder_COMPACT_PROVED": false,
+    "native_compact_Fourier_derivative_remainder_PROVED": false,
+    "all_source_Birkhoff_derivative_closed_range_PROVED": false,
+    "all_source_Birkhoff_derivative_invertibility_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "UniformUnitInverseBounds proves a reusable local uniform bound for an entire positive analytic scalar sequence AND its reciprocal from nonvanishing and one locally uniform half-unit tail. The finitely many low indices are explicitly retained. EvenUnitExtension realizes bounded positive analytic families as actual analytic signed infinity sequences with the same samples at BOTH signs and central coefficient1.",
+    "CompactUnitSymbolDerivative proves in EVERY actual weighted Banach coefficient space that a bounded symbol tending uniformly to1 outside finite sets differs from the identity by an ACTUAL COMPACT multiplier. For finite exponent, multiplying an analytic weighted sequence map by an analytic bounded symbol with that unit tail changes its FULL complex Banach derivative by an ACTUAL COMPACT operator. The exact derivative correction is the sum of the compact symbol-minus-identity multiplier composed with Dg and the compact fixed-vector symbol map composed with Ds. The unchanged actual weight isometry and verified row-majorant/tail compactness prove both terms.",
+    "HillNormalizedAmplitudeSymbols proves the ACTUAL normalized principal action-ratio square root is nonzero and tends LOCALLY UNIFORMLY to1 before ALL positive indices on the existing action-amplitude domain. This follows from the already verified ACTUAL canonical action-ratio tail and principal square-root estimate, including collapsed gaps. Its even signed extension, central coefficient1, AND the reciprocal extension are genuine ANALYTIC maps into the bounded-sequence Banach algebra, with exact product1 at EVERY signed index. Actual local uniform bounds precede ALL indices; no arbitrary positive lower bound or inverse is assumed.",
+    "HillIntrinsicDiagonalSequence removes the actual normalized amplitude from the already verified actual native diagonal sequence. The resulting map is ANALYTIC in the SAME signed Sobolev -1/2 Hilbert target. Its EXACT raw positive coordinate is intrinsicDiagonalCartesianMinus_n divided by (2*sqrt(pi)*sqrt(n))*sqrt(2); negative uses Plus, and mode0 is LITERALLY0. There is NO action amplitude or infinite off-index phase in these coordinates. The ACTUAL difference D(nativeDiagonal)-D(intrinsicDiagonal) is COMPACT at EVERY complex point of the full existing native domain. Combining this with the prior actual off-index phase theorem proves D(nativeMap)-M_exp(theta)*D(intrinsicDiagonal) COMPACT, with M_exp(theta) a genuine bounded invertible diagonal map.",
+    "HillMeanZeroIntrinsicCompact proves the SAME actual normalized-amplitude derivative difference and combined intrinsic Jacobian remainder are COMPACT on the EXACT complex mean-zero source and signed Sobolev -1/2 zero-mode target. The intrinsic sequence is the true projected map; its derivative is the full derivative composed with actual inclusion/projection, and all source/target norms and constants are unchanged. OriginalHillIntrinsicJacobianCompact exports these results and the exact intrinsic coordinate normalization at EVERY original physical Hminus-one potential, including zero and arbitrary collapsed gaps.",
+    "The remaining ACTUAL intrinsic diagonal Fourier derivative remainder is NOT yet proved compact. Full native Fredholmness and all-source derivative injectivity/closedrange/bijectivity remain UNPROVED. Prior all-physical-source dense derivative range, full signed Gardner canonicality, off-index phase compactness and original isospectral norm compactness remain verified. Universal numerator scalar, remaining nonlinear source/target scales, global bijectivity/boundedness, bounded-set weak-star homeomorphism, actual KdV flow and ALL FIVE MAIN THEOREMS remain UNPROVED."
+  ],
+  "declarations": [
+    "NLS.ComplexAnalysis.exists_local_uniform_unit_inverse_bounds",
+    "NLS.Coeff.evenUnitExtension",
+    "NLS.Coeff.evenUnitExtension_zero",
+    "NLS.Coeff.evenUnitExtension_positive",
+    "NLS.Coeff.evenUnitExtension_negative",
+    "NLS.Coeff.norm_evenUnitExtension_le",
+    "NLS.Coeff.evenUnitExtension_inv",
+    "NLS.Coeff.analyticOnNhd_evenUnitExtension",
+    "NLS.Coeff.analytic_evenUnit_realization_of_local_bounds",
+    "NLS.WeightedCoeff.isCompactOperator_boundedSymbol_sub_id",
+    "NLS.WeightedCoeff.fderiv_boundedSymbol_sub",
+    "NLS.WeightedCoeff.isCompactOperator_fderiv_boundedSymbol_sub",
+    "NLS.KdV.hillHminusActionRatioSqrt_ne_zero",
+    "NLS.KdV.exists_hillHminusActionRatioSqrt_uniform_high",
+    "NLS.KdV.exists_local_uniform_hillHminusActionRatioSqrt_inverse_bounds",
+    "NLS.KdV.hillHminusNormalizedAmplitudeSymbol",
+    "NLS.KdV.hillHminusInverseAmplitudeSymbol",
+    "NLS.KdV.hillHminusNormalizedAmplitudeSymbol_data",
+    "NLS.KdV.hillHminusInverseAmplitudeSymbol_data",
+    "NLS.KdV.hillHminusNormalizedAmplitudeSymbol_positive",
+    "NLS.KdV.hillHminusNormalizedAmplitudeSymbol_negative",
+    "NLS.KdV.hillHminusAmplitudeSymbols_product",
+    "NLS.KdV.hillHminusNormalizedAmplitudeSymbol_unit_tail",
+    "NLS.KdV.hillHminusActionAngleNativeDomain_subset_amplitude",
+    "NLS.KdV.hillHminusIntrinsicDiagonalMap",
+    "NLS.KdV.analyticOnNhd_hillHminusIntrinsicDiagonalMap",
+    "NLS.KdV.hillHminusNativeDiagonalMap_from_intrinsic",
+    "NLS.KdV.hillHminusIntrinsicDiagonalMap_positive",
+    "NLS.KdV.hillHminusIntrinsicDiagonalMap_negative",
+    "NLS.KdV.hillHminusIntrinsicDiagonalMap_zero_mode",
+    "NLS.KdV.isCompactOperator_hillHminusAmplitudeJacobianDifference",
+    "NLS.KdV.isCompactOperator_hillHminusIntrinsicJacobianRemainder",
+    "NLS.KdV.hillMeanZeroIntrinsicDiagonalMap",
+    "NLS.KdV.hillMeanZeroIntrinsicDiagonalMap_coe",
+    "NLS.KdV.analyticOnNhd_hillMeanZeroIntrinsicDiagonalMap",
+    "NLS.KdV.fderiv_hillMeanZeroIntrinsicDiagonalMap_eq_comp",
+    "NLS.KdV.isCompactOperator_hillMeanZeroAmplitudeJacobianDifference",
+    "NLS.KdV.hillMeanZeroIntrinsicJacobianRemainder",
+    "NLS.KdV.isCompactOperator_hillMeanZeroIntrinsicJacobianRemainder",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_normalized_amplitude_Jacobian_compact",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_Jacobian_remainder_compact",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_diagonal_coordinates"
+  ],
+  "files": [
+    "NLS/ComplexAnalysis/UniformUnitInverseBounds.lean",
+    "NLS/SequenceSpaces/EvenUnitExtension.lean",
+    "NLS/SequenceSpaces/CompactUnitSymbolDerivative.lean",
+    "NLS/KdV/HillNormalizedAmplitudeSymbols.lean",
+    "NLS/KdV/HillIntrinsicDiagonalSequence.lean",
+    "NLS/KdV/HillMeanZeroIntrinsicCompact.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntrinsicJacobianCompact.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "c81cc732d11e0a086d52c2156a086aedde206601",
+    "baseline_modules": 1516,
+    "baseline_non_audit_sources_verified_unchanged": 1515,
+    "new_modules_compiled": 7,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ComplexAnalysis.ReciprocalPerturbation",
+        "source": "NLS/ComplexAnalysis/ReciprocalPerturbation.lean",
+        "source_sha256": "e28c0912a45c6c037d1ddc8d6d68914ab15c8aaa3096257ef84ca2a67496f381"
+      },
+      {
+        "module": "NLS.SequenceSpaces.LocallyBoundedRealization",
+        "source": "NLS/SequenceSpaces/LocallyBoundedRealization.lean",
+        "source_sha256": "0f57395af182636a2841237f97a3e0501cd5abbc9a7ed89fa646f4b441213456"
+      },
+      {
+        "module": "NLS.SequenceSpaces.CompactOperatorTail",
+        "source": "NLS/SequenceSpaces/CompactOperatorTail.lean",
+        "source_sha256": "9c342d5fa12d53ae2a207395759b4e89ba04ffc89b02a4b5727e15ab5686e3ce"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedFiniteCoefficients",
+        "source": "NLS/SequenceSpaces/WeightedFiniteCoefficients.lean",
+        "source_sha256": "0e2f288406c36fe93b5882aa13a5cf081871bd8ecf75c1214e7586b4f2c244d9"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.ComplexAnalysis.QuadraticFrequencyShift",
+        "source": "NLS/ComplexAnalysis/QuadraticFrequencyShift.lean",
+        "source_sha256": "37c18d03966ef90450d03f953463762d154cdd5a84483fc6514095680a2ae8aa",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedSymbolGauge",
+        "source": "NLS/SequenceSpaces/WeightedSymbolGauge.lean",
+        "source_sha256": "6a229b642d47995b8b846fe78bb3c4408a5a48b8c080714bb57d1abf717956c6",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedZeroMode",
+        "source": "NLS/SequenceSpaces/WeightedZeroMode.lean",
+        "source_sha256": "32df90552723d77dd8c9cb03f4e2efbdce90c324a813f8f94148302ed295be59",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillCanonicalActionAmplitude",
+        "source": "NLS/KdV/HillCanonicalActionAmplitude.lean",
+        "source_sha256": "48f9d51445031b8ebd308fac1aba4db1a13766ab1e107336f9017c135664b513",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillNativeDiagonalGauge",
+        "source": "NLS/KdV/HillNativeDiagonalGauge.lean",
+        "source_sha256": "f23ea0a032fa94394a8834e4af5ad3319d93f65492cba8d144672394ff6990d1",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillNativeOffIndexCompact",
+        "source": "NLS/KdV/HillNativeOffIndexCompact.lean",
+        "source_sha256": "2e5c761ddef8cb50999f7049957b10ba10b6da9818ff820fb3dc1ca165c248d6",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexJacobianCompact",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillOffIndexJacobianCompact.lean",
+        "source_sha256": "a94e960fbed284c0ec50c54bee5d774a88d4bd1257df2686e21668fe7bb10560",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1523,
+    "audited_declarations": 7797,
+    "theorems": 6563,
+    "definitions": 1234,
+    "new_theorems": 36,
+    "new_definitions": 6,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-amplitude-jacobian-compact.log",
+    "log_sha256": "27d1b86401179c311f310177e6dad10aacc130313130076f23d58c5b7246b947"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NEXT prove the remaining ACTUAL INTRINSIC DIAGONAL Jacobian has the needed compact half-Fourier remainder, or another genuine Fredholm/inverse property. The ACTUAL normalized action-amplitude derivative difference is NOW PROVED COMPACT, as is the entire off-index phase contribution. The resulting exact compact reduction is D(native)=M_exp(theta)*D(intrinsicDiagonal)+K, with M an ACTUAL bounded invertible zero-mode diagonal multiplier and K ACTUALLY COMPACT on the FULL complex native domain and EXACT complex mean-zero source/signed Sobolev -1/2 zero-mode target. IntrinsicDiagonal raw positive/negative coordinates are intrinsicDiagonalCartesianMinus/Plus divided by (2*sqrt(pi)*sqrt(n))*sqrt(2); analytic in the same norm, central coefficient0. The normalized principal action-ratio sqrt and its reciprocal are actual analytic bounded signed sequences, and sqrt has the verified unit tail. Full intrinsic/Fourier and native/Fourier remainder compactness, all-source DF closedrange/injectivity/bijectivity remain OPEN. Prior actual dense derivative range, Hamiltonian raw mode preimages, full signed Gardner canonicality and anglepairzero remain PROVED. Do not infer missing intrinsic diagonal/Fourier estimates from removal of amplitude and off-index phase, or transfer NLS finite-gap density. ALL FIVE MAIN THEOREMS remain UNPROVED.",
+    "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff map: derivative invertibility at EVERY source, remaining nonlinear source/target scales, global bijectivity/boundedness and bounded-set weak-star homeomorphism. FULL actual signed-coordinate Gardner Poisson canonicality is NOW PROVED on the ENTIRE original physical real mean-zero Hminus-one domain, including collapsed gaps andzero. Full complex-source cotangents are used at those real sources; no arbitrary-complex-source claim is made. Exact Fourier DF0, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses at0 remain complete. Do not infer a strong symplectic Banach isomorphism or global diffeomorphism from scalar canonical brackets alone, or substitute ordinary NLS coordinates/componentwise-real targets.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}

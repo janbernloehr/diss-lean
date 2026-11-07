@@ -1,0 +1,140 @@
+{
+  "source": "arXiv:1610.00278v1 Lemma3.9/5.7 frequency dependencies for Main1.1,1.3,5.9; actual physical H1 frequency identification including ALL collapsed modes and cross-Miura rough moment SUM gluing",
+  "status": "Actual physical H1 KdV frequency equals free cubic minus twelve exact moments at ALL H1 sources and ALL modes; local sums agree across different Miura/product patches at every common real rough source.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-physical-frequency-map.json",
+    "actual_H1_mode_opening_curve_and_finiteGap_preservation_PROVED": true,
+    "finiteGap_CLOSED_mode_physical_frequency_formula_PROVED": true,
+    "ALL_H1_ALL_modes_physical_frequency_formula_PROVED": true,
+    "same_actual_moment_patch_BEFORE_ALL_H1_sources_and_modes_PROVED": true,
+    "genuine_H1_representative_of_every_actual_rough_finiteGap_source_PROVED": true,
+    "denseRange_genuine_H1_inclusion_in_original_rough_source_PROVED": true,
+    "independence_of_SUMS_across_DIFFERENT_Miura_product_patches_at_real_rough_sources_PROVED": true,
+    "individual_moment_cross_patch_identity_PROVED": false,
+    "globally_defined_actual_KdV_rough_frequency_map_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "OriginalHillH1ModeCurve constructs actual global H1 inverse curves that change one signed canonical coordinate pair by an arbitrary complex coefficient times a real parameter. They are genuine analytic H1 source curves, start at the original source, preserve actual finite-gap membership for EVERY real parameter and open a collapsed selected gap for EVERY nonzero real parameter with direction coefficient one.",
+    "OriginalHillFiniteGapClosedFrequency proves the exact physical frequency formula at EVERY mode of EVERY actual finite-gap H1 source covered by an actual moment-series neighborhood. At a collapsed selected mode the actual opening curve and a punctured limit use continuity of the GENUINE normalized physical frequency and the SAME exact analytic raw moment sum. No phase chart at the collapsed point and no division by its zero coordinate is assumed.",
+    "OriginalHillH1PhysicalFrequency uses the VERIFIED genuine strong H1 finite-gap approximation and continuity of the SAME local analytic moment sum to prove hillH1_physical_frequency_eq_moment_series at EVERY H1 source and EVERY mode, including every collapsed mode: ACTUAL omega_n=(2*pi*n)^3-12*sum_m m*Omega_nm^(2). originalHill_exists_physical_H1_frequency_moment_neighborhood gives one complex rough-source neighborhood at EVERY rough real base point, BEFORE quantifying over ALL H1 sources in it and ALL selected modes.",
+    "OriginalHillFiniteGapH1Realization constructs a genuine H1 representative of every actual finite-gap rough source with the SAME entire coefficient sequence, reality and zero mean. This uses a coefficient-preserving weight-comparison map and actual all-order finite-gap regularity. It also proves that the literal strong H1 inclusion has dense range in the original rough physical real source. No resource settings were increased.",
+    "OriginalHillMomentPatchGluing proves that the actual local second-moment SUMS agree at EVERY common real rough source across ARBITRARY DIFFERENT Miura/product patches and Cauchy families. Actual rough finite-gap approximations stay in BOTH open neighborhoods eventually; their genuine H1 representatives make BOTH sums equal the SAME actual physical H1 frequency. Continuity gives exact rough agreement. Individual cross-patch moment equality is not assumed or claimed.",
+    "A globally defined rough frequency map with its local real analyticity, full weighted target estimates and actual KdV dynamics is still to be assembled from these NOW GLUED local sums. Appendix B/Main1.4 are complete; Main1.1,1.3,5.1,5.9 remain UNPROVED and the goal stays ACTIVE."
+  ],
+  "declarations": [
+    "NLS.Articles.KdVPseudomeasures.hillH1ModeCurve",
+    "NLS.Articles.KdVPseudomeasures.hillH1ModeCurve_zero",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1ModeCurve",
+    "NLS.Articles.KdVPseudomeasures.hillH1ModeCurve_native_image",
+    "NLS.Articles.KdVPseudomeasures.hillH1ModeCurve_finiteGap",
+    "NLS.Articles.KdVPseudomeasures.hillH1ModeCurve_opens_closed_gap",
+    "NLS.Articles.KdVPseudomeasures.hillH1_finiteGap_open_frequency_eq_moment_series",
+    "NLS.Articles.KdVPseudomeasures.hillH1_finiteGap_ALL_frequency_eq_moment_series",
+    "NLS.Articles.KdVPseudomeasures.hillH1_physical_frequency_eq_moment_series",
+    "NLS.Articles.KdVPseudomeasures.originalHill_exists_physical_H1_frequency_moment_neighborhood",
+    "NLS.Articles.KdVPseudomeasures.hillReal_has_H1_representative_of_mem_sobolev",
+    "NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_has_H1_representative",
+    "NLS.Articles.KdVPseudomeasures.denseRange_hillIntegerSourceInclusion_one",
+    "NLS.Articles.KdVPseudomeasures.hillReal_centeredSecondMomentSeries_independent_product_patch"
+  ],
+  "files": [
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeCurve.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapClosedFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1PhysicalFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapH1Realization.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillMomentPatchGluing.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "07b461402d50b3d4bb4da33db41a919c77b587ff",
+    "baseline_modules": 1829,
+    "baseline_non_audit_sources_verified_unchanged": 1828,
+    "new_modules_compiled": 5,
+    "reused_canonical_modules_freshly_compiled": [],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAnalytic",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyAnalytic.lean",
+        "source_sha256": "948b48fe64dc624393f38818ac29172aa6e85265e5da96797f848c3d147bf862",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillPrimitiveMomentSeriesAnalytic",
+        "source": "NLS/KdV/HillPrimitiveMomentSeriesAnalytic.lean",
+        "source_sha256": "52cc56a8e1e6fd585a658c1e392fc4210511fdbbec1476be7404bab1a406d6be",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapPhysicalFrequency",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapPhysicalFrequency.lean",
+        "source_sha256": "91ea39862e9c42ad8599668db90232c6834979a8185ba8c3b046fb6a74d522f6",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillIntegerFiniteGapApproximation",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerFiniteGapApproximation.lean",
+        "source_sha256": "023f9bd57f8b0a921e5b82bd2378c56d7f4557a3e1b2fd8a6c4a19c5bb0938a4",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapRegularity",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapRegularity.lean",
+        "source_sha256": "a4df36416775cb26a4630eb3dd81d0d88dbc88a3129aa495f04f391599518cd2",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.SignedSobolevPositiveEquivalence",
+        "source": "NLS/SequenceSpaces/SignedSobolevPositiveEquivalence.lean",
+        "source_sha256": "e9d57dbfddf2218423343a2c1cb165176464982ebf65334a43a92648329c77e1",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1834,
+    "audited_declarations": 8979,
+    "theorems": 7570,
+    "definitions": 1409,
+    "new_theorems": 13,
+    "new_definitions": 1,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-h1-physical-frequency.log",
+    "log_sha256": "ee946737899229a4e12a5c7f11a279682e54c19d9a6d574cfb9fb03b1f433e2d"
+  },
+  "remaining_obligations": [
+    "Construct the globally defined actual rough KdV frequency extension from the NOW PROVED cross-Miura/product-independent local raw moment SUMS. Prove exact local expressions, real analyticity, literal weighted target bounds for every p>1 including infinity, and agreement with the ACTUAL physical H1 frequency. All H1/ALL selected mode physical identities and rough local SUM gluing are now COMPLETE.",
+    "Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for Main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

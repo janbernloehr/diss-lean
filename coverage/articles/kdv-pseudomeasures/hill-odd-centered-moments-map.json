@@ -1,0 +1,146 @@
+{
+  "source": "arXiv:1610.00278v1 Lemma3.9/5.7 frequency dependencies for main1.1,1.3,5.9; physical energy contour ingredient of arXiv:1605.06690v1 Section3.1 Lemma3.2 proof, with actual frequency identification still unproved",
+  "reference": "https://arxiv.org/html/1605.06690v1#S3.SS1",
+  "status": "ALL odd actual Hill centered moments vanish on the original assigned contours at complex sources, and the exact normalized cubic contour has its free cubic term and -12 second-moment coefficient.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-odd-centered-moments-map.json",
+    "filled_primitive_root_quotient_analytic_for_COMPLEX_sources_PROVED": true,
+    "arbitrary_analytic_numerator_and_admissible_circle_odd_contour_ZERO_PROVED": true,
+    "ACTUAL_Hill_ALL_odd_centered_moments_ZERO_PROVED": true,
+    "actual_Hill_FIRST_and_THIRD_centered_moments_ZERO_PROVED": true,
+    "complex_sources_and_collapsed_gaps_INCLUDED": true,
+    "original_assigned_contours_and_two_z_Jacobian_preserved": true,
+    "EXACT_shifted_cubic_contour_reduction_PROVED": true,
+    "EXACT_free_cubic_and_minus_twelve_second_moment_coefficients_PROVED": true,
+    "genuine_original_rough_source_factory_BEFORE_ALL_indices_and_complex_sources_PROVED": true,
+    "finite_gap_physical_energy_phase_bracket_differentiation_PROVED": false,
+    "outer_contour_gap_deformation_for_actual_frequency_integrand_PROVED": false,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "SourceFilledGapQuotientComplex proves that the existing actual normalized primitive/root quotient is analytic on the WHOLE omitted-root domain for EVERY complex source in the actual uniform Cauchy family. Near the selected cut it uses the already constructed local analytic quotient; elsewhere it uses the actual full primitive divided by the nonzero selected root. No reality assumption, dense-limit choice, larger Cauchy disc, or compatibility of the integration circle with that disc is assumed.",
+    "odd_primitive_div_root_eq_filled proves the exact algebraic cancellation of every power 2*l+1 as i times the continued square to power l times the normalized filled quotient, on the actual canonical root domain. SourceOddWeightedMomentCircle applies Cauchy to this actual analytic continuation with ANY numerator analytic on a whole closed disc omitting the other cuts and with ANY admissible boundary circle. This reusable result does not require a Dirac candidate numerator or noncollapsed gap.",
+    "HillOddCenteredPrimitiveMoments.odd_centeredMoment_eq_zero proves the LITERAL integral of actual sourceFullAbelianPrimitive_m^(2*l+1) times the ACTUAL Hill abelianFrequencyDifferential n vanishes on P's unchanged positive-frequency contour. It holds for ALL differential indices n, ALL selected m, ALL l>=0, and ALL COMPLEX q in P.momentSource C, including collapsed selected gaps. The original quadratic pullback retains its full 2*z Jacobian and actual canonical Hill numerator. Existing even-moment definitions and all baseline Lean sources are byte-identical.",
+    "ShiftedCubicWeightedCircle proves the exact shifted weighted cubic contour formula from actual circle continuity and the first/third moment cancellations, with all integral linearity and integrability justified. HillCubicPrimitiveMomentReduction then proves the actual shifted full primitive contour equals -3*i*pi*m times the second centered moment minus (i*pi*m)^3 times the zeroth moment. Its normalized_cubic_primitive_contour proves EXACTLY (4/(i*pi))*contour=(2*pi*n)^3*Kronecker(m,n)-12*m*actualSecondMoment. The free coefficient uses the already verified actual canonical differential period.",
+    "originalHill_exists_odd_moment_cancellation constructs P,W,C at EVERY original rough real mean-zero source BEFORE ALL complex sources in its open moment neighborhood, ALL n,m and ALL odd orders. It exports both the literal odd contour zeros and the exact normalized cubic formula on this SAME source neighborhood. This is the algebraic contour ingredient for the physical frequency formula, NOT an identification of that contour with the actual Hamiltonian frequency.",
+    "Physical finite-gap Hamiltonian-phase differentiation and outer-contour deformation/reflection remain UNPROVED. Consequently the physical frequency=-12*weightedMomentSum+free formula and actual rough KdV frequencies/evolution remain OPEN. Appendix B and Main1.4 remain COMPLETE; Main1.1,1.3,5.1,5.9 remain UNPROVED; goalACTIVE."
+  ],
+  "declarations": [
+    "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.filledGapQuotient_analytic_complex",
+    "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.odd_primitive_div_root_eq_filled",
+    "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.odd_weighted_moment_circle_eq_zero",
+    "NLS.ComplexAnalysis.circleIntegral_shifted_cube_of_odd_moments_zero",
+    "NLS.KdV.HillProductEquationPatch.odd_centeredMoment_eq_zero",
+    "NLS.KdV.HillProductEquationPatch.cubic_primitive_contour_eq_centeredMoment",
+    "NLS.KdV.HillProductEquationPatch.normalized_cubic_primitive_contour",
+    "NLS.Articles.KdVPseudomeasures.originalHill_exists_odd_moment_cancellation"
+  ],
+  "files": [
+    "NLS/ZakharovShabat/SourceFilledGapQuotientComplex.lean",
+    "NLS/ZakharovShabat/SourceOddWeightedMomentCircle.lean",
+    "NLS/ComplexAnalysis/ShiftedCubicWeightedCircle.lean",
+    "NLS/KdV/HillOddCenteredPrimitiveMoments.lean",
+    "NLS/KdV/HillCubicPrimitiveMomentReduction.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillOddMomentCancellation.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "614243ba4ad941a7512f7e5894df646d4a395580",
+    "baseline_modules": 1796,
+    "baseline_non_audit_sources_verified_unchanged": 1795,
+    "new_modules_compiled": 6,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceFilledGapQuotient",
+        "source": "NLS/ZakharovShabat/SourceFilledGapQuotient.lean",
+        "source_sha256": "cc764a1c764b458a89829dbfc2f5677d851c8ee88fe0e884ec1081c1b663b246"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianSquare",
+        "source": "NLS/ZakharovShabat/SourceFullAbelianSquare.lean",
+        "source_sha256": "0721bcd6f4bee211c83c48686f47b3bf138d18d504e880f5f04718624b941124"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianUniformNormalization",
+        "source": "NLS/ZakharovShabat/SourceFullAbelianUniformNormalization.lean",
+        "source_sha256": "6a4231aea7ca5f1aad1375f7fef2af2ab0da9f74fe54d00a5f94967181a953e4"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.KdV.HillAbelianJointFrequencyDomain",
+        "source": "NLS/KdV/HillAbelianJointFrequencyDomain.lean",
+        "source_sha256": "48c9fe349678cdcbed75761b3f71490550188f8668b9a856240adf0be5e88d82",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillCenteredPrimitiveMoments",
+        "source": "NLS/KdV/HillCenteredPrimitiveMoments.lean",
+        "source_sha256": "ac3de8aab0bd776be5044431268d055ec1160f52a5c6da11d6417940cfc9dce6",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillPrimitiveMomentsPhysical",
+        "source": "NLS/KdV/HillPrimitiveMomentsPhysical.lean",
+        "source_sha256": "e15ff5bf54a69b6b46ea6f47898750819650ac9fbaefd6a976d70064d25cc59b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillFrequencyMoments",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillFrequencyMoments.lean",
+        "source_sha256": "b45ddb1e9c6876edfdf374dbd53904d4b50cebda9a9b83f76a490c59854e89b1",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1802,
+    "audited_declarations": 8894,
+    "theorems": 7493,
+    "definitions": 1401,
+    "new_theorems": 8,
+    "new_definitions": 0,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-odd-centered-moments.log",
+    "log_sha256": "37744cca8b7e26568f535dcb186a833b22509c7e34af1e6169d64acde4f1e49d"
+  },
+  "remaining_obligations": [
+    "Identify the NOW PROVED normalized cubic contour and centered-moment reduction with the GENUINE physical Hamiltonian frequency. Transfer the normalized phase-discriminant bracket to the actual primitive, justify the physical energy contour derivative along genuine finite-gap canonical action directions with a common outer circle, and deform the outer frequency contour to the actual positive gap contours retaining central and negative-gap reflection factors. A pointwise finite-gap energy contour identity cannot be differentiated as an ambient Hminus identity or along arbitrary H1 perturbations opening high gaps.",
+    "After physical finite-gap frequency identification, extend to collapsed selected modes by actual finite-gap action perturbations and continuity, then to ALL H1 by the verified strong finite-gap approximation. Glue the ALREADY weighted-Banach-analytic rough local moment sums across DIFFERENT Miura/product patches using genuine dense H1 agreement, or prove cross-patch independence directly. Same-patch primitive-ambient independence, all-index moment estimates, absolute convergence and weighted Banach analyticity for EVERY p>1 including infinity are COMPLETE. Actual rough KdV frequencies remain UNPROVED.",
+    "Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

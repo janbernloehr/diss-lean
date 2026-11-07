@@ -1,14 +1,13 @@
 import NLS.Poisson.GardnerHamiltonianDirection
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
+/-! The literal scalar unit-period Gardner bracket satisfies Jacobi.
+The proof uses its actual bounded Hamiltonian directions and symmetry
+of the complete analytic Hessians on H-minus-one. -/
 noncomputable section
-set_option autoImplicit false
 open Complex
 open scoped ENNReal
-
 namespace NLS.Poisson
-
-
 
 theorem fderiv_hminusGardnerBracket_apply (F G : WeightedCoeff (Weight.sobolev (-1)) 2 → ℂ)
     (q v : WeightedCoeff (Weight.sobolev (-1)) 2) (hF : AnalyticAt ℂ F q) (hG : AnalyticAt ℂ G q) :

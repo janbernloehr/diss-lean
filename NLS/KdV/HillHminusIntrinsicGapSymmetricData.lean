@@ -66,7 +66,7 @@ theorem exists_hillHminusIntrinsicGapSymmetricData_analytic_neighborhood (k : �
   obtain ⟨V,hV,hqV,hpair⟩ := exists_hillHminusIntrinsicGapPair_neighborhood q hq hr k hk
   have hR := (add_pos_of_nonneg_of_pos (hillRealGapContour_geometry q hq hr k hk).1
     (hillRealGapContour_geometry q hq hr k hk).2.1).le
-  have hm (j : ℕ) := analyticOnNhd_logarithmicCircleMoment
+  have hm (j : ℕ) := analyticOnNhd_logarithmicCircleMoment_of_isOpen
     (fun t : ℂ × PeriodOneHminusOne => hillHminusRadicand t.2 t.1) analyticOnNhd_hillHminusRadicand_joint
     (hillRealGapCenter q hq hr k : ℂ)
     (hillRealGapHalfLength q hq hr k+hillRealGapCollar q hq hr k) hR j hV

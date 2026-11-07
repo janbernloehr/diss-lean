@@ -1,5 +1,83 @@
+import NLS.KdV.HillFreeMultiplierBounds
+import NLS.SequenceSpaces.PositiveCoordinateAnalytic
 import NLS.KdV.HillFreeScaledPeriodIdentity
 import NLS.SequenceSpaces.BoundedCoordinateAnalytic
+
+/-! The ACTUAL nonlinear weighted free Hill period equation with
+values in the original positive inverse-index l2 space. Uniform
+multiplier bounds justify membership and a norm estimate before ALL n. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.ZakharovShabat
+open scoped ENNReal Classical
+namespace NLS.KdV
+
+theorem memlp_hillFreePeriodEquation (n : ℕ+) (d : lp (fun _ : ℕ+ => ℂ) 2) :
+    Memℓp (fun m : ℕ+ => hillFreePeriodEquationRow n m (hillFreePeriodCircle m) d) 2 := by
+  apply ((lp.memℓp d).norm.const_mul (Real.exp (hillFreeInteractionConstant*‖d‖))).mono
+  intro m
+  simpa only [Real.norm_eq_abs,abs_of_nonneg (mul_nonneg (Real.exp_pos _).le (norm_nonneg _))] using
+    norm_hillFreePeriodEquationRow_le n m (hillFreePeriodCircle m) d
+
+def hillFreePeriodEquation (n : ℕ+) (d : lp (fun _ : ℕ+ => ℂ) 2) : lp (fun _ : ℕ+ => ℂ) 2 :=
+  ⟨fun m => hillFreePeriodEquationRow n m (hillFreePeriodCircle m) d,memlp_hillFreePeriodEquation n d⟩
+
+theorem hillFreePeriodEquation_apply (n m : ℕ+) (d : lp (fun _ : ℕ+ => ℂ) 2) :
+    hillFreePeriodEquation n d m = hillFreePeriodEquationRow n m (hillFreePeriodCircle m) d := rfl
+
+theorem hillFreePeriodEquation_apply_any_circle (n m : ℕ+)
+    (D : SourceCriticalRootPeriodCircle (by norm_num) (by norm_num) (0:CoeffPair 2) ((m:ℕ):ℤ))
+    (d : lp (fun _ : ℕ+ => ℂ) 2) :
+    hillFreePeriodEquation n d m = hillFreePeriodEquationRow n m D d := by
+  rw [hillFreePeriodEquation_apply,hillFreePeriodEquationRow_factor,hillFreePeriodEquationRow_factor]
+
+theorem norm_hillFreePeriodEquation_le (n : ℕ+) (d : lp (fun _ : ℕ+ => ℂ) 2) :
+    ‖hillFreePeriodEquation n d‖ ≤ Real.exp (hillFreeInteractionConstant*‖d‖)*‖d‖ := by
+  have h : ‖hillFreePeriodEquation n d‖ ≤ ‖(Real.exp (hillFreeInteractionConstant*‖d‖):ℂ) • d‖ := by
+    apply lp.norm_mono (by norm_num : (2:ℝ≥0∞) ≠ 0)
+    intro m
+    change ‖hillFreePeriodEquationRow n m (hillFreePeriodCircle m) d‖ ≤
+      ‖(Real.exp (hillFreeInteractionConstant*‖d‖):ℂ)*d m‖
+    rw [norm_mul,Complex.norm_real,Real.norm_eq_abs,abs_of_pos (Real.exp_pos _)]
+    exact norm_hillFreePeriodEquationRow_le n m _ d
+  simpa only [norm_smul,Complex.norm_real,Real.norm_eq_abs,abs_of_pos (Real.exp_pos _)] using h
+
+theorem norm_hillFreePeriodEquation_sub_id_le (n : ℕ+) (d : lp (fun _ : ℕ+ => ℂ) 2) :
+    ‖hillFreePeriodEquation n d-d‖ ≤ (Real.exp (hillFreeInteractionConstant*‖d‖)-1)*‖d‖ := by
+  let a := Real.exp (hillFreeInteractionConstant*‖d‖)-1
+  have ha : 0 ≤ a := sub_nonneg.mpr
+    (Real.one_le_exp (mul_nonneg hillFreeInteractionConstant_nonneg (norm_nonneg _)))
+  have h : ‖hillFreePeriodEquation n d-d‖ ≤ ‖(a:ℂ) • d‖ := by
+    apply lp.norm_mono (by norm_num : (2:ℝ≥0∞) ≠ 0)
+    intro m
+    change ‖hillFreePeriodEquationRow n m (hillFreePeriodCircle m) d-d m‖ ≤ ‖(a:ℂ)*d m‖
+    rw [norm_mul,Complex.norm_real,Real.norm_eq_abs,abs_of_nonneg ha]
+    exact norm_hillFreePeriodEquationRow_sub_coordinate_le n m _ d
+  simpa only [norm_smul,Complex.norm_real,Real.norm_eq_abs,abs_of_nonneg ha] using h
+
+theorem hillFreePeriodEquation_zero (n : ℕ+) : hillFreePeriodEquation n 0 = 0 := by
+  ext m
+  exact hillFreePeriodEquationRow_zero n m _
+
+theorem analyticAt_hillFreePeriodEquation (n : ℕ+) (c : lp (fun _ : ℕ+ => ℂ) 2) :
+    AnalyticAt ℂ (hillFreePeriodEquation n) c := by
+  let R := ‖c‖+1
+  have hcoord (m : ℕ+) : AnalyticOnNhd ℂ (fun d => hillFreePeriodEquation n d m) (ball c 1) := by
+    intro d _
+    exact analyticAt_hillFreePeriodEquationRow n m _ d
+  have hbound (d : lp (fun _ : ℕ+ => ℂ) 2) (hd : d ∈ ball c 1) :
+      ‖hillFreePeriodEquation n d‖ ≤ Real.exp (hillFreeInteractionConstant*R)*R := by
+    have hdR : ‖d‖ ≤ R := by
+      have he : ‖d-c‖ < 1 := by simpa only [mem_ball,dist_eq_norm] using hd
+      have hn := norm_le_norm_sub_add d c
+      dsimp only [R]
+      linarith
+    exact (norm_hillFreePeriodEquation_le n d).trans
+      (mul_le_mul (Real.exp_le_exp.mpr (mul_le_mul_of_nonneg_left hdR hillFreeInteractionConstant_nonneg))
+        hdR (norm_nonneg _) (Real.exp_pos _).le)
+  exact (LpSequence.analyticOnNhd_positiveL2_of_bounded_coordinatewise (hillFreePeriodEquation n)
+    isOpen_ball hcoord (Real.exp (hillFreeInteractionConstant*R)*R) hbound) c (mem_ball_self (by norm_num))
+
+end NLS.KdV
 
 noncomputable section
 set_option autoImplicit false

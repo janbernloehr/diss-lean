@@ -1,0 +1,182 @@
+{
+  "source": "arXiv:1610.00278v1 Main1.1,1.3,5.9 dependencies: actual smooth physical KdV PDE identification of the SAME canonical flow; arbitrary smooth-PDE trajectory uniqueness and endpoint/Wiener conclusions remain unproved",
+  "status": "The SAME genuine canonical flow from every spatially smooth original H4 source preserves smoothness and satisfies the LITERAL physical KdV PDE q_t=-q_xxx+6*q*q_x at EVERY real time and spatial point; its source tangent is identified using the actual full signed canonical matrix and a CONSTRUCTED rough energy cotangent.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "ALL_mode_native_Hamiltonian_directions_have_genuine_H1_curve_representatives_PROVED": true,
+    "ALL_signed_native_velocities_including_zero_negative_and_COLLAPSED_modes_PROVED": true,
+    "genuine_physical_H1_energy_variations_arbitrary_complex_mode_direction_PROVED": true,
+    "ACTUAL_smooth_physical_KdV_gradient_H1_coefficients_CONSTRUCTED": true,
+    "ACTUAL_bounded_rough_energy_cotangent_CONSTRUCTED": true,
+    "FULL_complex_H1_energy_differential_equals_restriction_of_actual_cotangent_PROVED": true,
+    "actual_Gardner_direction_has_LITERAL_physical_KdV_coefficients_PROVED": true,
+    "ACTUAL_canonical_source_tangent_EQUALS_physical_KdV_vector_at_smooth_H4_sources_PROVED": true,
+    "SAME_actual_canonical_flow_preserves_spatial_smooth_locus_PROVED": true,
+    "physical_spatial_smoothness_at_EVERY_real_time_DERIVED": true,
+    "SAME_actual_canonical_flow_solves_LITERAL_physical_KdV_PDE_EVERY_time_EVERY_point_PROVED": true,
+    "no_ambient_rough_energy_function_or_open_gap_assumption": true,
+    "uniqueness_among_arbitrary_smooth_physical_PDE_trajectories_PROVED": false,
+    "original_EVERY_smooth_PDE_approximation_solution_quantifier_PROVED": false,
+    "required_bounded_endpoint_weak_star_trajectory_results_PROVED": false,
+    "literal_Wiener_ell_one_native_diffeomorphism_and_analytic_trajectory_results_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-physical-canonical-PDE-map.json"
+  },
+  "results": [
+    "OriginalHillNativeModeVector constructs (-i*c)*GardnerVector(Z_negative)+(i*conj(c))*GardnerVector(Z_positive), proves zero original mean, and computes EVERY signed native velocity exactly as hillH1ModeCLM n c. No open-gap hypothesis appears. OriginalHillH1ModeTangent differentiates the GENUINE arbitrary selected-mode H1 inverse curve and proves its source tangent equals this ACTUAL physical real native-coordinate Hamiltonian combination by the verified full mean-zero complex Jacobian injectivity. Every mode, including a collapsed selected mode, has a GENUINE H1 representative of this direction.",
+    "OriginalHillH1ModeEnergyVariation proves genuine real and complex PHYSICAL energy derivatives along every such H1 inverse curve, for EVERY complex mode direction and ALL modes, using the VERIFIED actual physical frequency and complete mode gradient. Its full physical H1 differential evaluated on the genuine tangent equals omega_n*Re(2*conj(Z_n)*c). It also proves how ANY bounded rough cotangent agreeing with this ACTUAL H1 differential evaluates on the ACTUAL native-mode vector; no ambient rough energy function is postulated.",
+    "Shared HminusGradientPairing proves that the actual bounded opposite-index Sobolev pairing functional of an H1 gradient has EXACTLY that H1 cotangent, without conjugation or frequency renormalization. Shared PeriodOneSmoothEnergyCotangent CONSTRUCTS the ACTUAL smooth KdV gradient coefficient sequence -q_xx+3*q^2 in H1 from the genuine smooth physical function and its Fourier coefficients. Its actual rough pairing functional restricts to the FULL complex physical H1 energy differential: tests on EVERY signed scalar mode and verified full dual extensionality prove the whole functional identity. Its Gardner Hamiltonian direction has EXACTLY the physical Fourier coefficients of -q_xxx+6*q*q_x at ALL signed indices.",
+    "OriginalHillEnergyCotangentNativeVelocity uses the actual energy variations in directions c=1 and c=i and the VERIFIED Gardner antisymmetry to prove the FULL signed native velocity of an actual compatible energy cotangent is i*odd(omega)*Z. This includes zero, negative and ALL collapsed modes. The frequency is the genuine actual physical H1 frequency and its verified rough extension; the compatible cotangent is constructed in the smooth application, not left as a final hypothesis.",
+    "OriginalHillCanonicalRoughTangent REUSES the existing actual strong-to-rough derivative commuting square and actual real-to-complex native-coordinate derivative theorem. It proves that the NOW VERIFIED actual strong canonical source tangent has EXACTLY the FULL ambient complex rough native-coordinate velocity at EVERY signed k. OriginalHillPhysicalCanonicalVector compares these velocities with the CONSTRUCTED physical energy cotangent and uses full actual mean-zero Jacobian injectivity to identify the source vectors. Thus at EVERY smooth original H4 source the actual canonical source tangent has EXACTLY the physical KdV vector Fourier coefficients, with literal sign and coefficients -1 and 6.",
+    "OriginalHillCanonicalSmoothness realizes every actual rough source with a given integer Sobolev weight in the genuine strong source space, retaining its ENTIRE original coefficients. Conversely every genuine integer source inclusion belongs to every lower real Sobolev weight. It proves actual physical H1 synthesis is smooth on the original all-Sobolev smooth locus, and that smooth H1 physical synthesis gives this locus. The verified SAME canonical flow preserves this actual spatial smooth locus by ALL integer-scale restrictions; smoothness of the evolving physical representative is DERIVED at every time.",
+    "OriginalHillCanonicalSmoothPDE proves that for EVERY original H4 source whose actual H1 synthesis is spatially smooth, its SAME actual canonical strong trajectory remains spatially smooth at EVERY real time. Combining the genuine H1 source derivative, the identified physical vector coefficients, actual Fourier uniqueness and continuous physical point evaluation proves HasDerivAt at EVERY time and EVERY spatial point with derivative EXACTLY classicalKdVVectorField=-q_xxx+6*q*q_x. This is a proved literal physical PDE solution, not merely a spectral rotation with an assumed interpretation.",
+    "Uniqueness among arbitrary smooth physical PDE trajectories is still to be proved before using canonical universal approximation as the original EVERY-smooth-PDE-solution approximation statement. Bounded endpoint weak-star dynamics and literal weighted Wiener ell-one regularity/analyticity also remain OPEN. Appendix B/Main1.4 complete; Main1.1,1.3,5.1,5.9 UNPROVED; goalACTIVE."
+  ],
+  "declarations": [
+    "NLS.Articles.KdVPseudomeasures.hillNativeModeHamiltonianVector",
+    "NLS.Articles.KdVPseudomeasures.hillNativeModeHamiltonianVector_zero_mode",
+    "NLS.Articles.KdVPseudomeasures.hillNativeModeHamiltonianVector_native_velocity",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1ModeCurve_rough_zero",
+    "NLS.Articles.KdVPseudomeasures.hillH1ModeCurve_native_velocity",
+    "NLS.Articles.KdVPseudomeasures.hillH1ModeCurve_tangent_eq_native_HamiltonianVector",
+    "NLS.Articles.KdVPseudomeasures.native_mode_HamiltonianVector_has_genuine_H1_representative",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1ModeCurve_energy",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1ModeCurve_complex_energy",
+    "NLS.Articles.KdVPseudomeasures.fderiv_physical_H1_energy_mode_tangent",
+    "NLS.Articles.KdVPseudomeasures.energy_cotangent_on_native_mode_vector",
+    "NLS.Poisson.hminusCotangentCLM_sobolevBilinearPairing",
+    "NLS.KdV.contDiff_classicalKdVGradient",
+    "NLS.KdV.periodOneH1RoughInclusion",
+    "NLS.KdV.periodOneH1RoughInclusion_apply",
+    "NLS.KdV.periodOneSmoothKdVGradient",
+    "NLS.KdV.periodOneSmoothKdVGradient_apply",
+    "NLS.KdV.periodOneSmoothKdVEnergyCotangent",
+    "NLS.KdV.periodOneSmoothKdVEnergyCotangent_restrict",
+    "NLS.KdV.periodOneSmoothKdVEnergyCotangent_physical_vector",
+    "NLS.Articles.KdVPseudomeasures.energy_cotangent_native_Hamiltonian_pair",
+    "NLS.Articles.KdVPseudomeasures.energy_cotangent_native_positive_velocity",
+    "NLS.Articles.KdVPseudomeasures.energy_cotangent_native_negative_velocity",
+    "NLS.Articles.KdVPseudomeasures.energy_cotangent_native_signed_velocity",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_eq_nativeCoordinate_at_order",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVVector_rough_native_velocity",
+    "NLS.Articles.KdVPseudomeasures.periodOneH1RoughInclusion_signedOne",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVVector_eq_energy_cotangent",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVVector_physical_KdV_coefficients",
+    "NLS.Articles.KdVPseudomeasures.hillReal_has_integer_representative_of_mem_sobolev",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerSourceInclusion_mem_sobolev",
+    "NLS.Articles.KdVPseudomeasures.hillH1Smooth_mem_hillRealSmoothLocus",
+    "NLS.Articles.KdVPseudomeasures.contDiff_hillH1_physical_synthesis_of_smooth_locus",
+    "NLS.Articles.KdVPseudomeasures.hillRoughCanonicalKdVFlow_preserves_smooth_locus",
+    "NLS.Articles.KdVPseudomeasures.hillIntegerCanonicalKdVFlow_smooth_physical_synthesis",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillIntegerCanonicalKdVFlow_physical_PDE"
+  ],
+  "files": [
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeModeVector.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeTangent.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeEnergyVariation.lean",
+    "NLS/Poisson/HminusGradientPairing.lean",
+    "NLS/KdV/PeriodOneSmoothEnergyCotangent.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillEnergyCotangentNativeVelocity.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCanonicalRoughTangent.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalCanonicalVector.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCanonicalSmoothness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCanonicalSmoothPDE.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "8941839da63f9e40d667d66695f91510d2540eba",
+    "baseline_modules": 1853,
+    "baseline_non_audit_sources_verified_unchanged": 1852,
+    "new_modules_compiled": 10,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.Fourier.SmoothPeriodicCoefficients",
+        "source": "NLS/Fourier/SmoothPeriodicCoefficients.lean",
+        "source_sha256": "0f891852e1151f4776fc734b0e4c963b1f39f739cb7e1d2213cd013047cb1760"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeFrequency",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeFrequency.lean",
+        "source_sha256": "3678198af4dc79fa3c366fc11bef4a20cb0303cf964f8230b166dceba43aebab",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionTangent",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1ActionTangent.lean",
+        "source_sha256": "3fa39a3874e35098056101c18038cc38e3d0ceea21722e869ef89cf2413b7163",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeSignedGardner",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeSignedGardner.lean",
+        "source_sha256": "e927a0911457f1a282f3bd686cad1efbcfa6ce39df9ab8d913e28f9d298254e0",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillIntegerCanonicalTimeDerivative",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillIntegerCanonicalTimeDerivative.lean",
+        "source_sha256": "2dc8a30b87b3ec716f88d9de7d2af3558c596176913005bbdbe42f538a75a21e",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.PeriodOneHamiltonianGradient",
+        "source": "NLS/KdV/PeriodOneHamiltonianGradient.lean",
+        "source_sha256": "8e6e4215a82bb85d58cc0804572d9f2409e048d85dadcf9c91e1fd93d4ab61ab",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.SobolevModeDualExt",
+        "source": "NLS/SequenceSpaces/SobolevModeDualExt.lean",
+        "source_sha256": "fc3272bd6b3cbc639e2237cc562bd512341a12723fd94bd91692ff920c3a75e4",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1863,
+    "audited_declarations": 9114,
+    "theorems": 7682,
+    "definitions": 1432,
+    "new_theorems": 32,
+    "new_definitions": 4,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-physical-canonical-PDE.log",
+    "log_sha256": "3828013071e80f54bb27073c9df558f6c9c0bebd8bdf992c1178015dca67cbec"
+  },
+  "remaining_obligations": [
+    "Prove uniqueness of smooth physical KdV trajectories in the original strong physical source models. The SAME canonical flow NOW PROVABLY solves the literal physical PDE at EVERY real time/spatial point and preserves actual smoothness. A concrete route for any smooth H4-valued trajectory with actual H1 time derivative and literal physical PDE velocity: use the NOW PROVED constructed cotangent/native-velocity formula to get dZ_positive=i*omega(q(t))*Z_positive and dZ_negative=-i*omega(q(t))*Z_negative; differentiate all products to zero; actual rough action-fiber frequency invariance makes all frequencies constant; existing scalar exponential uniqueness then gives the EXACT canonical native trajectory, and actual global injectivity identifies sources. Do not assume isospectrality of an arbitrary PDE trajectory.",
+    "Use the ALREADY PROVED uniform compact-time canonical approximation for EVERY original rough-convergent source family, and smooth physical uniqueness/identification, to prove the source solution definition quantified over EVERY smooth approximation in Hminus-one. Establish the exact bounded endpoint weak-star trajectory continuity and analytic trajectory statements required by Main1.1,1.3,5.9 using the actual endpoint native homeomorphism and genuine frequency map.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0, and the corresponding Wiener analytic compact-time trajectory map for Main5.9. Integer Hilbert diffeomorphisms do not substitute for these. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 complete; FOUR main theorems UNPROVED; goalACTIVE."
+  ]
+}

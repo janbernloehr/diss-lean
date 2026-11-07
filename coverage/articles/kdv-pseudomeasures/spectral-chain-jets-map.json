@@ -1,0 +1,113 @@
+{
+  "source": "arXiv:1610.00278v1 Section2 and Appendix C: necessary finite-chain dependencies for comparison of original physical algebraic multiplicity with analytic determinant order.",
+  "main_theorems_verified": false,
+  "phase": "Exact finite physical chain/root-space equivalence, polynomial forcing, powered analytic jet remainders and injective two-mode chain coordinates",
+  "modules": [
+    "NLS/FunctionalAnalysis/PencilRootChains.lean",
+    "NLS/ComplexAnalysis/PoweredAnalyticJet.lean",
+    "NLS/KdV/SingularHillChains.lean",
+    "NLS/KdV/PseudomeasureChainJets.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralChainJets.lean"
+  ],
+  "declarations": [
+    "NLS.FunctionalAnalysis.pencilChainEndpoint",
+    "NLS.FunctionalAnalysis.pencilChainEndpoint_zero",
+    "NLS.FunctionalAnalysis.pencilChainEndpoint_succ",
+    "NLS.FunctionalAnalysis.pencilChainEndpoint_factor",
+    "NLS.FunctionalAnalysis.pencilChainSpace",
+    "NLS.FunctionalAnalysis.mem_pencilChainSpace_succ",
+    "NLS.FunctionalAnalysis.pencilChainEndpoint_mem",
+    "NLS.FunctionalAnalysis.exists_pencilChain_of_mem_rootSpace",
+    "NLS.FunctionalAnalysis.pencilChainEndpoint_injective",
+    "NLS.FunctionalAnalysis.pencilChainToRootSpace",
+    "NLS.FunctionalAnalysis.pencilChainRootEquiv",
+    "NLS.FunctionalAnalysis.pencilChainRootEquiv_apply",
+    "NLS.FunctionalAnalysis.finrank_pencilChainSpace",
+    "NLS.FunctionalAnalysis.pencilChainPolynomial",
+    "NLS.FunctionalAnalysis.pencilChainPolynomial_zero",
+    "NLS.FunctionalAnalysis.pencilChainPolynomial_succ",
+    "NLS.FunctionalAnalysis.pencilChainPolynomial_pencil",
+    "NLS.ComplexAnalysis.iteratedDeriv_pow_smul_zero",
+    "NLS.ComplexAnalysis.iteratedDeriv_eq_zero_of_powered_germ",
+    "NLS.ComplexAnalysis.iteratedDeriv_chainPolynomial",
+    "NLS.ComplexAnalysis.chainPolynomial_eq_zero_of_powered_germ",
+    "NLS.KdV.singularHillChainSpace",
+    "NLS.KdV.singularHillChainRootEquiv",
+    "NLS.KdV.finrank_singularHillChainSpace",
+    "NLS.KdV.analyticAt_singularHillChainPolynomial",
+    "NLS.KdV.singularHillChainPolynomial_pencil",
+    "NLS.KdV.finiteDimensional_endpointHillChainSpace",
+    "NLS.KdV.eventually_finrank_endpointHillChainSpace",
+    "NLS.KdV.endpointHillChainPolynomial_forcing",
+    "NLS.KdV.singularHillChainCoordinates",
+    "NLS.KdV.endpointHillChainForcing",
+    "NLS.KdV.endpointHillChainReducedRemainder",
+    "NLS.KdV.endpointHillChainReconstructionRemainder",
+    "NLS.KdV.analyticAt_endpointHillChainReducedRemainder",
+    "NLS.KdV.analyticAt_endpointHillChainReconstructionRemainder",
+    "NLS.KdV.eventually_shift_mem_reducedHillStrip",
+    "NLS.KdV.endpointHillChain_reduced_germ",
+    "NLS.KdV.endpointHillChain_reconstruction_germ",
+    "NLS.KdV.endpointHillChain_reduced_derivatives_zero",
+    "NLS.KdV.endpointHillChain_reconstruction_derivatives_zero",
+    "NLS.KdV.endpointHillChainCoordinates_injective",
+    "NLS.Articles.KdVPseudomeasures.sourceHillChainRootEquiv",
+    "NLS.Articles.KdVPseudomeasures.finiteDimensional_sourceHillChainSpace",
+    "NLS.Articles.KdVPseudomeasures.eventually_finrank_sourceHillChainSpace",
+    "NLS.Articles.KdVPseudomeasures.sourceHillChainCoordinates_injective",
+    "NLS.Articles.KdVPseudomeasures.sourceHillChain_reduced_derivatives_zero",
+    "NLS.Articles.KdVPseudomeasures.sourceHillChain_reconstruction_germ"
+  ],
+  "domains": {
+    "generic": "Complex modules with an injective actual domain inclusion; every finite chain length N including0.",
+    "physical": "The unchanged original period-two H1 domain and original H-minus-one base space, with the actual singular Hill pencil L-lambda*J at every step.",
+    "potential": "Every complex original endpoint potential of order-r,0<=r<1/2. Real mean-zero physically period-one source potentials are included.",
+    "norm_and_topology": "All analytic reconstruction remainders use the full original H1 Banach norm; finite physical root spaces are not replaced by an arbitrary bounded operator.",
+    "spectral": "Finite-chain equivalence, polynomial forcing, finite dimensionality and eventual multiplicity hold for every complex lambda. Reduced/reconstruction germs use the corrected6n strip and existing cutoff; actual determinant zeros are automatically interior."
+  },
+  "exact_chain_model": {
+    "coefficients": "v_0,...,v_(N-1) in original H1, stored in Taylor order.",
+    "recurrence": "P*v_0=0 and P*v_j=J*v_(j-1), P=L-lambda0*J. The empty coefficient function is included.",
+    "endpoint": "J*v_(N-1), or0 at N=0.",
+    "polynomial": "f(t)=sum_{j<N} t^j*v_j",
+    "exact_forcing": "((lambda0+t)*J-L)*f(t)=t^N*J*v_(N-1)",
+    "reduced_germ": "B(lambda0+t)*C*f(t)=t^N*H_reduced(t), with H_reduced analytic at0.",
+    "reconstruction_germ": "f(t)-F(lambda0+t)*C*f(t)=t^N*H_H1(t), with H_H1 analytic in original H1 at0.",
+    "finite_jet_injection": "v maps to (C*v_j)_(j<N) injectively on every physical chain space at every allowed interior point."
+  },
+  "results": [
+    "For arbitrary complex modules, an injective original domain inclusion identifies each finite chain coefficient space linearly with the actual pencil root-space level by its last included vector. Empty chains are retained. No operator-domain assumptions are dropped.",
+    "A finite chain polynomial satisfies the affine pencil exactly with the chain-length monomial times the final included coefficient as its forcing, for every complex increment. For the singular Hill operator all polynomial coefficients belong to original H1 and the forcing is the identical original H-minus-one distribution of endpoint data.",
+    "Physical finite H1 coefficient chain spaces are finite dimensional in the source endpoint range. Their dimensions eventually equal the actual original algebraic multiplicity by the exact root-space equivalence and the already proved finite stabilization.",
+    "The full inhomogeneous reduction gives analytic powered remainders for the actual reduced residual and original H1 reconstruction error of every finite chain. All their derivatives of order below the chain length vanish. The generic Banach-valued helper also recovers finite polynomial coefficients with exact factorial normalization.",
+    "The coefficientwise projection of every physical finite chain onto its two resonant modes is injective under the existing cutoff at interior strip points. The proof uses the full original H1 reconstruction germ and the vanishing polynomial coefficient theorem, without any inverse of the effective matrix.",
+    "Original complex source wrappers retain exact norm and distribution normalization. At every actual determinant zero the existing localization proves the required strict strip interior, so the finite-chain coordinate injectivity and reduced derivative vanishing need no extra interior premise."
+  ],
+  "new_theorems": 35,
+  "new_definitions": 12,
+  "new_audited_declarations": 47,
+  "verified_shared_imports": [
+    "NLS/FunctionalAnalysis/LinearPMapRootSpace.lean",
+    "NLS/KdV/PseudomeasureRootSpaces.lean",
+    "NLS/KdV/PseudomeasureInhomogeneousReduction.lean"
+  ],
+  "remaining": [
+    "Construct canonical periodic/antiperiodic spectral labels, asymptotic enumeration and eventual assignment to the corrected strips.",
+    "Prove the physical gap/Dirichlet and inverse spectral regularity estimates needed for the endpoint Birkhoff restrictions.",
+    "Construct the original Birkhoff maps and actual H-minus-one KdV flow, and complete all main Theorems1.1,1.3,1.4,5.1,5.9."
+  ],
+  "verified_multiplicity_order": {
+    "coverage": "spectral-multiplicity-order-map.json",
+    "results": [
+      "Normalized finite jets of Banach-valued analytic functions retain exact factorial normalization and commute with continuous linear observations, addition and subtraction. Actual scalar multiplication agrees with the existing formal scalar Taylor convolution.",
+      "The existing formal matrix Taylor action is exactly the normalized finite jet of the actual analytic two-mode matrix acting on an amplitude polynomial. Its kernel is equivalent to vanishing of all retained residual derivatives.",
+      "Vanishing affine-pencil residual derivatives imply that the actual Banach-domain Taylor coefficients form a domain-preserving physical chain. The proof retains every original domain coefficient, including the empty chain.",
+      "At every allowed interior strip point and every finite length, the original physical chain space is linearly equivalent to the actual effective-matrix Taylor kernel. The forward map is the original two-mode coefficient projection. Surjectivity uses the actual norm-analytic H1 reconstruction of an arbitrary kernel amplitude polynomial, and its original H1 Taylor coefficients.",
+      "The actual determinant has finite analytic order everywhere on the full corrected closed strip. Convexity of the strip and a proved actual physical resolvent point exclude the zero germ; no finite-order premise is supplied by a caller.",
+      "Eventual physical finite-chain dimensions and the verified shared eventual matrix Taylor-nullity theorem prove that the actual full original operator algebraic multiplicity equals the actual effective determinant analytic order. The equality holds on the entire corrected closed strip, including its boundary and nonroots.",
+      "The entire corrected strip contains exactly two actual physical eigenvalues counted with their full original algebraic multiplicities. This is the proved analytic two-zero count transported through the exact multiplicity/order correspondence.",
+      "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
+    ],
+    "status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
+  }
+}

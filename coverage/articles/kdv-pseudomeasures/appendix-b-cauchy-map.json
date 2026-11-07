@@ -1,0 +1,80 @@
+{
+  "source": "arXiv:1610.00278v1, Appendix B, Lemma B.1 consequences",
+  "date": "2026-11-03",
+  "scope": "Cauchy criteria and limit existence for eventually bounded physical nets and uniformly Cauchy families",
+  "remaining_lemma_B1_obligations": [],
+  "modules": [
+    "NLS/FunctionalAnalysis/UniformCauchyLimit.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean"
+  ],
+  "declarations": [
+    "NLS.exists_limit_of_uniformCauchyOn",
+    "NLS.Articles.KdVPseudomeasures.existsUnique_source_of_cauchy_coefficients_normBound",
+    "NLS.Articles.KdVPseudomeasures.cauchy_sourceLowerDistribution_iff_coefficients",
+    "NLS.Articles.KdVPseudomeasures.cauchy_sourceLowerDistribution_iff_other_lower",
+    "NLS.Articles.KdVPseudomeasures.existsUnique_sourceFamily_of_uniformCauchy_coefficients_normBound",
+    "NLS.Articles.KdVPseudomeasures.existsUnique_sourceFamily_of_uniformCauchy_lower_normBound",
+    "NLS.Articles.KdVPseudomeasures.uniformCauchy_sourceLowerDistribution_iff_coefficients"
+  ],
+  "results": [
+    "Cauchy Fourier coefficients and an eventual specified original endpoint norm bound give a unique physical weak-star limit retaining that bound. The same limit converges in every admissible lower norm, with exponents selected after the limit.",
+    "Under that eventual endpoint bound, being Cauchy in any one admissible lower finite-p norm is equivalent to being Cauchy in each Fourier coefficient and is independent of the admissible lower norm chosen.",
+    "Uniformly Cauchy Fourier tests, with one eventual endpoint bound for all testing parameters, give a unique physical limit family, pointwise weak-star convergence, and uniform convergence in every admissible lower norm. No time continuity is assumed.",
+    "Uniform Cauchy control in one admissible lower norm is equivalent to uniform Cauchy control of each Fourier mode under the same eventual endpoint bound. It also produces the unique limit family and convergence in every admissible lower norm.",
+    "The reusable uniform Cauchy existence theorem permits arbitrary nontrivial convergence filters and arbitrary testing sets in nonempty complete uniform spaces. Testing sets may be empty."
+  ],
+  "qualifications": [
+    "All real predual orders r are allowed. Bounds use the exact original FourierLebesgueSpace(2,-r,infinity) norm. Limits retain the entire original distribution, reality, zero mean and physical period one.",
+    "The convergence filter is nontrivial. Arbitrary filters and testing parameter sets are allowed; no topology on the testing set is required.",
+    "Every lower norm retains finite p>=1 and the strict threshold 1<(-r-t)*p.toReal. One common eventual bound is required across all testing parameters in the uniform-family statements.",
+    "No endpoint norm convergence, metrizability of the unbounded weak-star space, or eventual endpoint bound for arbitrary weak-star convergent nets is asserted.",
+    "Lemma B.1(i)-(iv) was already complete. These are follow-on compactness and topology tools. All five main article theorems and the uniform endpoint isospectral bound remain unproved."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "2e62fb5265c602f94910a0da74c80c1e03c87670",
+    "baseline_modules": 397,
+    "baseline_sources_verified_unchanged": true,
+    "new_modules_compiled": 2,
+    "modules_in_exact_inventory": 399,
+    "audited_declarations": 3107,
+    "theorems": 2557,
+    "definitions": 550,
+    "new_theorems": 7,
+    "new_definitions": 0,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-cauchy.log"
+  },
+  "output_sha256": {
+    "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373"
+  },
+  "canonical_checkout_written": false,
+  "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "main_theorems_verified": false,
+  "workspace_decision": "pending; all edits and compiler outputs remain private",
+  "preserved_work_in_progress": {
+    "modules": [
+      "NLS/SequenceSpaces/SobolevFamilyCompactness.lean",
+      "NLS/SequenceSpaces/GeometricTailMajorant.lean",
+      "NLS/SequenceSpaces/SobolevFamilyBudget.lean",
+      "NLS/SequenceSpaces/MultiplierCoordinateContinuity.lean",
+      "NLS/FunctionalAnalysis/CompactTailEnvelope.lean",
+      "NLS/FunctionalAnalysis/CompactThreshold.lean",
+      "NLS/ZakharovShabat/SourceGapCompactEnvelope.lean",
+      "NLS/ZakharovShabat/SourceGapCompactRecurrence.lean",
+      "NLS/ZakharovShabat/SourceGapCompactGain.lean"
+    ],
+    "status": "Existing separate compact-gain work is preserved outside this milestone and excluded from its module inventory.",
+    "pending_checker": "work/check-kdv-pseudomeasures-pending-compact-gain.py"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "source": "arXiv:1610.00278v1 actual canonical physical Hamiltonian/frequency dependencies for remaining KdV main1.1,1.3,5.9",
+  "status": "Actual normalized physical H1 KdV mode frequencies: full radial gradient, continuity through collapse, open-mode analyticity and constancy on entire native action fibers.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-normalized-mode-frequencies-map.json",
+    "actual_physical_H1_all_native_mode_circles_invariant_PROVED": true,
+    "actual_full_H1_mode_radial_gradient_relation_PROVED": true,
+    "actual_imaginary_gradient_eq_twice_coordinate_times_same_filled_slope_PROVED": true,
+    "actual_normalized_physical_H1_KdV_mode_frequencies_CONSTRUCTED": true,
+    "actual_normalized_H1_frequencies_CONTINUOUS_through_every_collapse_PROVED": true,
+    "actual_FULL_H1_energy_differential_eq_frequency_times_literal_action_differential_PROVED": true,
+    "actual_H1_frequency_analytic_at_every_noncollapsed_mode_PROVED": true,
+    "actual_H1_frequency_constant_on_ENTIRE_action_fibers_including_collapse_PROVED": true,
+    "actual_H1_frequency_invariant_under_FULL_original_Hill_isospectrality_PROVED": true,
+    "actual_H1_frequency_analytic_at_collapsed_modes_PROVED": false,
+    "actual_free_H1_frequency_2pi_n_cubed_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "RealCircleDerivative constructs the literal real unit-circle phase cos(t)+i*sin(t), proves its modulus product exactly1 and its derivative at0 exactlyi, and proves the differential of an ACTUAL circle-invariant functional annihilates the exact tangent L(i*c). ContinuousCoordinateCancellation extends coordinate-times-function identities to the ENTIRE coordinate-zero hyperplane by actual continuous limits along a transverse line. FourierRealModeVariation compares every literal native action product along two physical mode lines, with arbitrary amplitudes and every symmetric weighted Banach exponent including infinity.",
+    "OriginalHillH1CircleStationarity proves the SAME physical canonical H1 KdV Hamiltonian is exactly invariant along every actual native mode circle. Differentiating the genuine action-preserving circle gives D H(L_n(i*z_n))=0 and hence x_n*D_y H=y_n*D_x H at EVERY point. The continuous filled transverse slope and real coordinate cancellation then prove D_y H=2*y_n*S_n on the ENTIRE signed H^(3/2), including x_n=0 and collapsed modes.",
+    "OriginalHillH1ModeFrequency defines the ACTUAL normalized H1 KdV frequency omega_n as the already constructed filled slope. It is CONTINUOUS on the ENTIRE signed H^(3/2) domain, including collapsed modes. For EVERY complex mode amplitude c, the FULL actual physical energy differential satisfies D H(z)[L_n(c)]=omega_n(z)*2*Re(conjugate(z_n)*c). Thus this is the derivative of the genuine physical Hamiltonian with respect to the literal native action z_n*z_-n=x_n^2+y_n^2, with the exact factor2 and no sqrt2 or one-half action substitution. The same scalar equals D_x H/(2x) wherever x!=0 and D_y H/(2y) wherever y!=0; it is REAL ANALYTIC at EVERY noncollapsed selected mode.",
+    "OriginalHillH1FrequencyActionFibers proves actual H1 KdV frequencies are constant on ENTIRE native action-product fibers, including collapsed modes. Nonzero modes use physical energy equality along two actual radial lines and their exact derivatives, cancelling the positive actual normSq. At collapsed modes both sequences are opened by the SAME literal real coefficient, so all actions stay equal, and continuous coordinate cancellation supplies the equality at collapse. Full ORIGINAL Hill isospectrality therefore gives equality of these actual frequencies after the SAME canonical H1 coordinate map.",
+    "Main1.4 remains PROVED and freshly recompiled. Main1.1,1.3,5.1,5.9 remain UNPROVED. Actual normalized H1 frequencies, their full action-gradient identity, entire-domain continuity and action-fiber invariance are NOW PROVED. Analyticity at collapsed modes, original free (2pi*n)^3 frequency identification, rough-domain frequency extension, ACTUAL physical KdV evolution/every-smooth-approximation convergence and literal Wiener ell-one estimates remain OPEN. No original rough KdV flow is claimed. Appendix B B.1(i)-(iv) remains COMPLETE. Goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.FunctionalAnalysis.realCirclePhase",
+    "NLS.FunctionalAnalysis.realCirclePhase_mul_conj",
+    "NLS.FunctionalAnalysis.realCirclePhase_zero",
+    "NLS.FunctionalAnalysis.hasDerivAt_realCirclePhase_zero",
+    "NLS.FunctionalAnalysis.hasDerivAt_differentiable_real_line",
+    "NLS.FunctionalAnalysis.fderiv_circle_tangent_eq_zero",
+    "NLS.FunctionalAnalysis.continuous_eq_zero_of_coordinate_mul",
+    "NLS.WeightedCoeff.fourierRealModeLine_apply",
+    "NLS.WeightedCoeff.fourierRealModeLine_products",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_circle",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_circle_zero",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_radial_gradient_relation",
+    "NLS.Articles.KdVPseudomeasures.hillH1ImagModeCoordinate",
+    "NLS.Articles.KdVPseudomeasures.hillH1ImagModeCoordinate_apply",
+    "NLS.Articles.KdVPseudomeasures.hillH1ImagModeDerivative",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1ImagModeDerivative",
+    "NLS.Articles.KdVPseudomeasures.hillH1ImagModeDerivative_eq_twice_coordinate_slope",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency",
+    "NLS.Articles.KdVPseudomeasures.continuous_hillH1KdVFrequency",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_gradient",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_imag_quotient",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVFrequency_of_imag_coordinate_ne_zero",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVFrequency_of_mode_ne_zero",
+    "NLS.Articles.KdVPseudomeasures.hillH1_normSq_eq_of_products",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_common_radial_lines",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_of_products_of_mode_ne_zero",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_of_products",
+    "NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_of_original_isospectral"
+  ],
+  "files": [
+    "NLS/FunctionalAnalysis/RealCircleDerivative.lean",
+    "NLS/FunctionalAnalysis/ContinuousCoordinateCancellation.lean",
+    "NLS/SequenceSpaces/FourierRealModeVariation.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1CircleStationarity.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyActionFibers.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "610166c0d344feb25a05e15d84c4a582d01e66e8",
+    "baseline_modules": 1737,
+    "baseline_non_audit_sources_verified_unchanged": 1736,
+    "new_modules_compiled": 6,
+    "reused_canonical_modules_freshly_compiled": [],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.FourierRealModePlane",
+        "source": "NLS/SequenceSpaces/FourierRealModePlane.lean",
+        "source_sha256": "518a6ed493a44b9040b105f02f2e96439767ba93c4cd60573fde6bd6f6beb071",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.FunctionalAnalysis.HyperplaneDivision",
+        "source": "NLS/FunctionalAnalysis/HyperplaneDivision.lean",
+        "source_sha256": "8c5b3c04c94a26f7368ee7e6a62447608dd34530d1cff5cd0b27d10ccf323614",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionHamiltonian",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1ActionHamiltonian.lean",
+        "source_sha256": "cc90749a0a304f0889894f988109f722c88c2ad5e6831a0f8504b6099e10090a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeSymmetry",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeSymmetry.lean",
+        "source_sha256": "51c0240d86aeba807c619826df61eb9fb0ea6d767b49c7693145afcaf41b448a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1TransverseSlope",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1TransverseSlope.lean",
+        "source_sha256": "1964fe4674e1adacf6a875ffc1817fb4cd11a709e2c92d016032276e2f52c7a4",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1743,
+    "audited_declarations": 8729,
+    "theorems": 7353,
+    "definitions": 1376,
+    "new_theorems": 24,
+    "new_definitions": 4,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-h1-normalized-mode-frequencies.log",
+    "log_sha256": "80e296cafc435a773d7cda97a463197429a8e3bd463b22cca74b2e8179531dc5"
+  },
+  "remaining_obligations": [
+    "Establish real analyticity of the NOW CONSTRUCTED actual normalized physical H1 KdV frequencies at collapsed modes. They are already continuous on ALL signed H^(3/2), satisfy the FULL original action-gradient normalization and are constant on ENTIRE action fibers including collapse, and are analytic at EVERY noncollapsed selected mode. Identify the original free frequency (2pi*n)^3 and extend the SAME genuine frequencies to the original rough signed H^(-1/2) domain, with required uniform estimates.",
+    "Construct ACTUAL original Hminus KdV evolution with convergence from EVERY original smooth approximation and required weak-star trajectory continuity/analyticity, then prove main1.1,1.3,5.9. The actual H1 frequencies are now constructed; actual equation identification, physical evolution and rough extension remain necessary. An arbitrary frequency flow or indexed action flow is not a proof of physical KdV.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms remain necessary dependencies, not substitutes. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

@@ -1,4 +1,3 @@
-import NLS.ComplexAnalysis.RealCutConjugation
 import NLS.ZakharovShabat.SourceStandardRootAnalytic
 import NLS.ZakharovShabat.SourceStandardRootGapSideMidpoint
 
@@ -58,5 +57,12 @@ theorem exists_standardRoot_vertical_midpoint_value (t : ℂ) (d y : ℝ) (hy : 
   have he : t-(y : ℂ)*I = 2*t-(t+(y : ℂ)*I) := by ring
   rw [he,normalizedStandardRoot_reflect,hu]
   ring
+
+theorem not_mem_real_segment_of_im_ne_zero (l u : ℝ) (z : ℂ) (hz : z.im ≠ 0) :
+    z ∉ segment ℝ (l : ℂ) (u : ℂ) := by
+  rintro ⟨a,b,_,_,_,he⟩
+  have hi := congrArg Complex.im he
+  simp only [add_im,Complex.real_smul,mul_im,ofReal_re,ofReal_im,mul_zero,zero_mul,add_zero] at hi
+  exact hz hi.symm
 
 end NLS.ComplexAnalysis

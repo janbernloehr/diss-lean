@@ -1,0 +1,151 @@
+{
+  "source": "Original singular Hill spectrum and bounded physical weak-star topology dependencies of Sections2-3 and AppendixB;arXiv:1610.00278v1.",
+  "main_theorems_verified": false,
+  "source_theorem_2_2_verified": false,
+  "full_original_HminusOne_joint_resolvent_analyticity_verified": true,
+  "bounded_original_weak_star_joint_resolvent_continuity_verified": true,
+  "bounded_original_weak_star_local_actual_algebraic_count_stability_verified": true,
+  "bounded_original_weak_star_canonical_label_continuity_verified": true,
+  "full_original_isospectral_closedness_verified": false,
+  "original_finite_p_inverse_spectral_input_verified": false,
+  "modules": [
+    "NLS/KdV/SingularHillResolventFamily.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralWeakStarResolvent.lean"
+  ],
+  "declarations": [
+    "NLS.KdV.singularHillNormalizedPencil",
+    "NLS.KdV.singularHillResolventSet",
+    "NLS.KdV.mem_singularHillResolventSet_iff_isUnit",
+    "NLS.KdV.analyticAt_singularHillNormalizedPencil_joint",
+    "NLS.KdV.isOpen_singularHillJointResolvent",
+    "NLS.KdV.singularHillResolventToH1",
+    "NLS.KdV.singularHillBaseResolvent",
+    "NLS.KdV.singularHillResolventToH1_left",
+    "NLS.KdV.singularHillResolventToH1_right",
+    "NLS.KdV.analyticAt_singularHillResolventToH1_joint",
+    "NLS.KdV.analyticAt_singularHillBaseResolvent_joint",
+    "NLS.KdV.isCompactOperator_singularHillBaseResolvent",
+    "NLS.KdV.singularHillResolventToH1_endpoint",
+    "NLS.KdV.singularHillBaseResolvent_endpoint",
+    "NLS.KdV.isOpen_singularHillResolventCircle",
+    "NLS.KdV.singularHillRieszProjection",
+    "NLS.KdV.singularHillRieszProjection_endpoint",
+    "NLS.KdV.continuousOn_singularHillRieszProjection",
+    "NLS.Articles.KdVPseudomeasures.continuous_sourceHminusOne_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.source_not_mem_spectrum_iff_singular_resolvent",
+    "NLS.Articles.KdVPseudomeasures.isOpen_sourceJointResolvent_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.continuousAt_sourceResolventToH1_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.continuousAt_sourceBaseResolvent_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.isClosed_sourceSpectralValue_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection",
+    "NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection_eq_endpoint",
+    "NLS.Articles.KdVPseudomeasures.source_resolventCircle_endpoint",
+    "NLS.Articles.KdVPseudomeasures.isOpen_sourceResolventCircle_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.continuousOn_sourceWeakStarRieszProjection",
+    "NLS.Articles.KdVPseudomeasures.isIdempotentElem_sourceWeakStarRieszProjection",
+    "NLS.Articles.KdVPseudomeasures.finiteDimensional_sourceWeakStarRieszProjection_range",
+    "NLS.Articles.KdVPseudomeasures.isLocallyConstant_sourceWeakStarRieszProjection_rank",
+    "NLS.Articles.KdVPseudomeasures.eventually_sourceWeakStarRieszProjection_rank_eq",
+    "NLS.Articles.KdVPseudomeasures.finite_sourceCircleSpectrum",
+    "NLS.Articles.KdVPseudomeasures.sourceCircleSpectrum",
+    "NLS.Articles.KdVPseudomeasures.mem_sourceCircleSpectrum",
+    "NLS.Articles.KdVPseudomeasures.sourceCircleAlgebraicCount",
+    "NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection_range_eq_roots",
+    "NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection_rank_eq_count",
+    "NLS.Articles.KdVPseudomeasures.eventually_sourceCircleAlgebraicCount_eq"
+  ],
+  "results": [
+    "The shared full original H-minus-one physical pencil is normalized by the same fixed free H1-to-H-minus-one isomorphism. Its invertibility is EXACTLY physical full-domain bijectivity. Joint operator-norm analyticity uses the already-verified hminusOneMultiplicationFamily on the ENTIRE original H-minus-one potential space;no new endpoint convergence assumption is imposed.",
+    "The full original joint resolvent locus in H-minus-one times C is open. The actual H1-valued inverse and compact H-minus-one base resolvent are jointly norm analytic at every physical resolvent pair and satisfy both full-domain inverse identities,for ALL original H-minus-one data. These total inverse families agree EXACTLY with the previously verified endpoint inverses,on and off their resolvent sets.",
+    "A whole compact spectral circle remains in the full original resolvent on an OPEN set of H-minus-one potentials. The original circular Riesz projection is operator-norm continuous along every original H-minus-one continuous family with a common valid circle,and agrees literally with the verified actual endpoint projection.",
+    "On EVERY original endpoint norm-bounded physical weak-star set,the exact original H-minus-one realization is continuous. Consequently the JOINT physical source resolvent locus is weak-star-times-C open,and the full original H1-valued inverse and compact H-minus-one resolvent are norm continuous at each valid pair. Membership of each fixed actual complex spectral value is weak-star closed within the bounded set.",
+    "Validity of the ENTIRE compact physical resolvent circle is weak-star OPEN within every original endpoint norm-bounded set. The SAME ACTUAL projection varies continuously in operator norm on that full locus. It is an actual finite-rank idempotent;its rank is locally constant and both circle validity and rank persist throughout a weak-star neighborhood. No simple-eigenvalue or noncollapsed-gap assumption is imposed.",
+    "The finite ACTUAL physical spectrum inside any disk is constructed from existing full-spectrum local finiteness,without a supplied root list. The projection range is EXACTLY the sum of all enclosed original full physical algebraic root spaces. Their independence identifies projection rank with the sum of ACTUAL algebraic multiplicities,and this entire enclosed count is weak-star locally stable on bounded physical sets."
+  ],
+  "domains": {
+    "shared_potentials": "ALL original complex FourierLebesgueSpace(2,-1,2) potentials;each inverse/analyticity claim is at an ACTUAL full-domain physical resolvent pair. No nonempty-resolvent assertion for an arbitrary new potential is smuggled into the hypothesis.",
+    "shared_domain": "Unchanged full original H1 domain,original H-minus-one codomain,and fixed free physical normalization;both inverse identities apply to full original data.",
+    "source_potentials": "Original REAL,mean-zero,physically period-one WeakStarPotential(r),0<=r<1/2,on EVERY subset with an explicit bound in the exact original endpoint norm.",
+    "topology": "Original Wiener weak-star topology on bounded source parameters,ordinary complex topology on lambda,original operator norms for H1/H-minus-one inverses and base-space Riesz projections.",
+    "circle": "ANY complex center and positive radius with the ENTIRE sphere in the actual physical resolvent. Its validity persists on a weak-star open neighborhood inside the bounded original set.",
+    "count": "Finite actual enclosed sourceHillSpectrum values,each counted by the dimension of its FULL original physical algebraic root space. No simple-root,open-gap,provided-label or finite root table hypothesis.",
+    "closedness": "A FIXED actual spectral value has a relatively closed membership locus on bounded original sets. This alone is NOT claimed to prove equality-of-entire-spectrum closedness."
+  },
+  "shared_conclusions": {
+    "analyticAt_singularHillNormalizedPencil_joint": "NLS.KdV.analyticAt_singularHillNormalizedPencil_joint",
+    "isOpen_singularHillJointResolvent": "NLS.KdV.isOpen_singularHillJointResolvent",
+    "singularHillResolventToH1_left": "NLS.KdV.singularHillResolventToH1_left",
+    "singularHillResolventToH1_right": "NLS.KdV.singularHillResolventToH1_right",
+    "analyticAt_singularHillResolventToH1_joint": "NLS.KdV.analyticAt_singularHillResolventToH1_joint",
+    "analyticAt_singularHillBaseResolvent_joint": "NLS.KdV.analyticAt_singularHillBaseResolvent_joint",
+    "isOpen_singularHillResolventCircle": "NLS.KdV.isOpen_singularHillResolventCircle",
+    "continuousOn_singularHillRieszProjection": "NLS.KdV.continuousOn_singularHillRieszProjection"
+  },
+  "source_conclusions": {
+    "continuous_sourceHminusOne_on_bounded": "NLS.Articles.KdVPseudomeasures.continuous_sourceHminusOne_on_bounded",
+    "isOpen_sourceJointResolvent_on_bounded": "NLS.Articles.KdVPseudomeasures.isOpen_sourceJointResolvent_on_bounded",
+    "continuousAt_sourceResolventToH1_on_bounded": "NLS.Articles.KdVPseudomeasures.continuousAt_sourceResolventToH1_on_bounded",
+    "continuousAt_sourceBaseResolvent_on_bounded": "NLS.Articles.KdVPseudomeasures.continuousAt_sourceBaseResolvent_on_bounded",
+    "isClosed_sourceSpectralValue_on_bounded": "NLS.Articles.KdVPseudomeasures.isClosed_sourceSpectralValue_on_bounded",
+    "isOpen_sourceResolventCircle_on_bounded": "NLS.Articles.KdVPseudomeasures.isOpen_sourceResolventCircle_on_bounded",
+    "continuousOn_sourceWeakStarRieszProjection": "NLS.Articles.KdVPseudomeasures.continuousOn_sourceWeakStarRieszProjection",
+    "isLocallyConstant_sourceWeakStarRieszProjection_rank": "NLS.Articles.KdVPseudomeasures.isLocallyConstant_sourceWeakStarRieszProjection_rank",
+    "eventually_sourceWeakStarRieszProjection_rank_eq": "NLS.Articles.KdVPseudomeasures.eventually_sourceWeakStarRieszProjection_rank_eq",
+    "sourceWeakStarRieszProjection_range_eq_roots": "NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection_range_eq_roots",
+    "sourceWeakStarRieszProjection_rank_eq_count": "NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection_rank_eq_count",
+    "eventually_sourceCircleAlgebraicCount_eq": "NLS.Articles.KdVPseudomeasures.eventually_sourceCircleAlgebraicCount_eq"
+  },
+  "qualifications": [
+    "The actual source projection equals the previously verified physical endpoint projection,including its exact original normalization and range. Its rank is identified with ACTUAL enclosed physical multiplicities.",
+    "Weak-star assertions retain the original endpoint norm-bounded-set hypothesis. No global weak-star operator-norm continuity or eventual norm bound for an arbitrary weak-star net is claimed.",
+    "Individual canonical real label/gap weak-star continuity and bounded endpoint canonical fiber closedness are now PROVED in the subsequent label-continuity map. Entire original H-minus-one isospectral endpoint membership/boundedness and every MAIN theorem remain open."
+  ],
+  "remaining": [
+    "Match the newly proved FULL original H-minus-one operator spectrum/multiplicities with the shared hillHminusRadicand characteristic. First identify original H1-domain eigenvectors with the shared physical H2 Hill eigenvectors at L2 potentials,using genuine L2 elliptic regularity and exact Fourier normalization. Then use real H-minus-one L2 density,actual norm-resolvent/Riesz-rank stability and characteristic zero stability to extend the match. Shared exhaustive H-minus-one characteristic labels must not be substituted before this identification.",
+    "Full source Theorem2.2/Lemma2.21 remain unproved:construct the actual full original H-minus-one isospectral family in a suitable base endpoint/finite-p space and prove the UNIFORM bound needed by the verified endpoint bootstrap. The ORIGINAL finite-p inverse spectral regularity/isospectral compactness input[7 Cor3-4] remains missing,or requires a direct replacement. The original domain and actual physical isospectral set are now defined without assuming endpoint membership.",
+    "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform endpoint bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed fibers and all AppendixB clauses remain proved. General complex-ratio2.20 is not yet proved.",
+    "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 180,
+    "audited_declarations": 1564,
+    "theorems": 1292,
+    "definitions": 272,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "log": ".lake/article-check/logs/validation-spectral-topology.log"
+  },
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-label-continuity-map.json",
+      "results": [
+        "Reused and privately rebuilt the shared OrderedFiniteContinuity module from articles/kdv-convexity at its pinned recorded commit. Its three theorems and one definition prove continuity of finite ordered real entries from cumulative-count stability away from limiting entries,including repeated values. No source change was needed.",
+        "For the ACTUAL real original physical source spectrum,a real-diameter circle is in the full physical resolvent when its left endpoint is below the entire spectrum and its right endpoint is not spectral. The ACTUAL disk algebraic count is EXACTLY finiteLowerCount of the intrinsic canonical central prefix,including every full physical algebraic repetition. This is proved by finite double counting,not by assuming a supplied root list.",
+        "Every ACTUAL intrinsic canonical real label is now weak-star continuous on EVERY original endpoint norm-bounded physical set. The proof chooses one uniform norm-ball cutoff before the family,uses actual original spectral lower bounds,and applies the proved physical disk-count stability to the exact canonical cumulative counts. All repeated entries and closed gaps are included.",
+        "Every ACTUAL signed canonical gap is weak-star continuous on every bounded original physical set. The entire canonical label sequence and entire signed gap sequence are continuous in their product topologies. No continuity in the weighted infinity norm is asserted.",
+        "sourceCanonicalSpectralFiber prescribes the ENTIRE actual canonical spectrum with ALL algebraic repetitions. Such a fiber is relatively weak-star closed on EVERY bounded original physical set,and its intersection with each specified original endpoint norm ball is weak-star compact.",
+        "An ENTIRE original endpoint canonical spectral fiber is weak-star compact IFF it is bounded in the EXACT original endpoint norm. A globally bounded fiber is closed in the ENTIRE physical weak-star space. Actual spectrum exhaustion and all physical algebraic multiplicities are explicitly identified from the prescribed labels. Fiber membership is invariant under endpoint-order reinterpretation of the SAME entire original distribution."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-spectrum-map.json",
+      "results": [
+        "Actual multiplication by EVERY original complex H-minus-one potential is compact from the ENTIRE original H1 domain into original H-minus-one. The proof uses the already-verified continuous full H-minus-one multiplication family,the norm-closed compact-operator locus,and genuine finite-Fourier density. Each finite approximation is identified with the SAME original distribution as an r=0 endpoint input;no endpoint regularity is assumed of the limit.",
+        "For EVERY original complex H-minus-one q and EVERY complex spectral parameter,the normalized full original H1-to-H-minus-one pencil is identity plus compact and Fredholm of index ZERO. Its kernel is exactly the original full-domain eigen-equation,and injectivity implies full physical bijectivity.",
+        "The original full H-minus-one spectrum consists exactly of ACTUAL original H1 eigenvalues. The explicit form bound proves that the entire half-plane Re(z)<-singularHillLowerBoundConstant(norm(q)) lies in the full resolvent. In particular,a concrete resolvent point -singularHillLowerBoundConstant(norm(q))-1 is CONSTRUCTED for EVERY original complex H-minus-one q;nonempty resolvent is not a caller premise.",
+        "The full original operator graph and partial-linear-map realization are closed for EVERY original H-minus-one q. Actual spectral points transport to nonzero eigenvalues of the ACTUAL compact base resolvent,so every bounded complex spectral region contains only finitely many physical eigenvalues. Real original potentials have entirely REAL actual spectrum. The full spectrum agrees EXACTLY with every earlier endpoint realization.",
+        "For ALL original complex H-minus-one potentials,every finite physical root-chain level and the FULL original algebraic root space equal corresponding generalized eigenspaces of any ACTUAL compact resolvent. Full root spaces are finite dimensional,attained at a finite chain length,and stabilize. Actual algebraic multiplicity is the full physical root-space dimension and is positive EXACTLY on the physical spectrum;it agrees literally with the earlier endpoint multiplicity.",
+        "The ACTUAL Riesz projection for arbitrary original H-minus-one potentials is a compact finite-rank idempotent on original H-minus-one. Every enclosed physical eigenvector is fixed and every exterior one annihilated. For real q its range is exactly the sum of ALL enclosed full physical root spaces. A full original H-minus-one norm neighborhood,allowing arbitrary nearby COMPLEX potentials,preserves each valid circle and its ACTUAL projection rank;no endpoint membership is supplied.",
+        "The article now defines OriginalHminusOnePotential as its FULL original real,mean-zero,physically period-one H-minus-one domain,and originalIsospectralSet by equality of ALL ACTUAL physical algebraic multiplicities at every complex value. Endpoint membership is NOT built into this original type or isospectral set. The original set fixes the entire physical spectrum. For ANY two admissible endpoint orders,its endpoint realizations belong to the SAME original isospectral set IFF their ENTIRE intrinsic canonical label sequences agree."
+      ]
+    }
+  ],
+  "bounded_endpoint_canonical_fiber_closedness_verified": true
+}

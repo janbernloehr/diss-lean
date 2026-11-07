@@ -1,0 +1,79 @@
+{
+  "source": "arXiv:1610.00278v1, Appendix B, Lemma B.1 consequences",
+  "date": "2026-11-03",
+  "scope": "Continuous physical limits and compact-open completeness criteria from compactwise Cauchy Fourier tests",
+  "remaining_lemma_B1_obligations": [],
+  "modules": [
+    "NLS/FunctionalAnalysis/CompactwiseCauchyLimit.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchyTrajectories.lean"
+  ],
+  "declarations": [
+    "NLS.uniformCauchyOn_iff_subtype",
+    "NLS.exists_continuous_limit_of_compactwise_uniformCauchy",
+    "NLS.Articles.KdVPseudomeasures.existsUnique_sourceTrajectory_of_compactwiseCauchy_coefficients",
+    "NLS.Articles.KdVPseudomeasures.existsUnique_sourceTrajectory_tendsto_of_compactwiseCauchy_coefficients",
+    "NLS.Articles.KdVPseudomeasures.uniformCauchyOn_sourceLowerDistribution_iff_coefficients",
+    "NLS.Articles.KdVPseudomeasures.exists_sourceTrajectory_tendsto_iff_compactwiseCauchy_lower",
+    "NLS.Articles.KdVPseudomeasures.exists_sourceTrajectory_tendsto_iff_compactwiseCauchy_originalHminusOne"
+  ],
+  "results": [
+    "Compactwise uniformly Cauchy families with an arbitrary nontrivial index filter have one continuous limit on a locally compact domain when the approximants are eventually continuous. Every compact testing set converges to that same limit. The shared set-to-subtype Cauchy equivalence includes empty testing sets.",
+    "For physical source families with one eventual original endpoint norm bound, compactwise uniform Cauchy control of each original Fourier mode and eventual modewise continuity recover a UNIQUE continuous physical weak-star trajectory in the same endpoint ball. One limit works in EVERY admissible lower finite-p norm on EVERY compact time set.",
+    "Continuous trajectories in a fixed original endpoint norm ball converge in the compact-open weak-star topology under compactwise uniform Cauchy Fourier tests. The result holds for arbitrary nontrivial index filters, and the lower exponent and compact time set are chosen after the unique limit.",
+    "Uniform Cauchy control on any testing set in one admissible lower norm is equivalent to uniform Cauchy control of each original Fourier mode under an eventual endpoint bound on that testing set. No topology, compactness or nonemptiness of the testing set is required.",
+    "For continuous trajectories in a fixed original endpoint norm ball on a locally compact time domain, existence of a compact-open weak-star limit is EQUIVALENT to compactwise uniform Cauchy control in any one chosen admissible lower finite-p norm. In the article range this specializes to the norm of the IDENTICAL original H-minus-one distributions."
+  ],
+  "qualifications": [
+    "All source Lemma B.1(i)-(iv) obligations were already proved. These seven lemmas are follow-on continuous-trajectory completeness and topology consequences, not newly discharged source B.1 clauses.",
+    "The radius R is a bound in the exact ORIGINAL FourierLebesgueSpace(2,-r,infinity) norm. It is fixed before the approximating index and time; eventual boundedness is an explicit hypothesis, never inferred from a convergent general net.",
+    "The reconstructed limit retains the full original distribution, reality, zero mean and period-one constraints. Lower norm maps use finite Banach exponents p >= 1 and the strict threshold 1 < (-r-t)*p.toReal.",
+    "Local compactness of the time domain is explicit in compactwise limit reconstruction. In particular the statements apply on the full real time line; no global compactness of time is required. Continuity of each approximating Fourier mode may hold only eventually, with the eventual set depending on the mode.",
+    "No endpoint norm convergence, global metrizability of the weak-star space, or boundedness of arbitrary weak-star convergent nets is asserted.",
+    "These topology results do not construct an actual KdV flow or Birkhoff map. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five MAIN theorems remain unproved and the goal remains active."
+  ],
+  "main_theorems_verified": false,
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "baseline_modules": 427,
+    "baseline_sources_verified_unchanged": true,
+    "new_modules_compiled": 2,
+    "modules_in_exact_inventory": 429,
+    "audited_declarations": 3209,
+    "theorems": 2644,
+    "definitions": 565,
+    "new_theorems": 7,
+    "new_definitions": 0,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-cauchy-trajectories.log"
+  },
+  "output_sha256": {
+    "NLS/FunctionalAnalysis/CompactwiseCauchyLimit.lean": "a51f3c975f671b29719cabb72dd78a06777d67d1acf6f5441255fac221ad9b69",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchyTrajectories.lean": "7a7a4b11fcb134f9098a25a0988d99bef6105aedda6f87187379bf0c599ae5d6"
+  },
+  "canonical_checkout_written": false,
+  "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "workspace_decision": "pending; edits, compiler outputs and commit remain private",
+  "preserved_work_in_progress": [
+    "NLS/MKdV/QuasiHillL2PhysicalSource.lean",
+    "NLS/ZakharovShabat/L2InitialValueACUniqueness.lean",
+    "NLS/MKdV/QuasiHillL2WeakSolution.lean"
+  ],
+  "git_isolation": {
+    "milestone_metadata": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/appendix-b-milestones.git",
+    "base_commit": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "branch": "articles/kdv-pseudomeasures",
+    "shared_canonical_git_written": false,
+    "ordinary_private_worktree_git_link_unchanged": true,
+    "reason": "Existing private folder is a linked worktree sharing canonical metadata; milestone index, objects and branch ref are written only in this separate private metadata directory. Prior objects are read through a read-only alternate."
+  }
+}

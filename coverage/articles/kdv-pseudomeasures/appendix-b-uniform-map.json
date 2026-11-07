@@ -1,0 +1,68 @@
+{
+  "source": "arXiv:1610.00278v1, Appendix B, Lemma B.1(i)-(iv)",
+  "date": "2026-11-03",
+  "scope": "Uniform consequences of the completed Appendix B compactness and bounded-set topology results; no additional unproved source clause is claimed.",
+  "remaining_lemma_B1_obligations": [],
+  "new_modules": [
+    "NLS/FunctionalAnalysis/CompactCoordinateControl.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarUniformControl.lean"
+  ],
+  "new_theorems": [
+    "NLS.exists_finite_coordinates_control_on_compact",
+    "NLS.tendstoUniformly_observable_of_coordinates",
+    "NLS.Articles.KdVPseudomeasures.sourceCoefficients_injective",
+    "NLS.Articles.KdVPseudomeasures.exists_finite_sourceCoefficient_control_lower_norm",
+    "NLS.Articles.KdVPseudomeasures.tendstoUniformly_sourceLowerDistribution_iff_coefficients",
+    "NLS.Articles.KdVPseudomeasures.tendstoUniformly_sourceLowerDistribution_iff_coefficients_of_eventually_normBound",
+    "NLS.Articles.KdVPseudomeasures.existsUnique_sourceFamily_of_uniform_coefficients_normBound",
+    "NLS.Articles.KdVPseudomeasures.tendstoUniformly_sourceLowerDistribution_iff_other_lower",
+    "NLS.Articles.KdVPseudomeasures.exists_finite_sourceCoefficient_control_originalHminusOne",
+    "NLS.Articles.KdVPseudomeasures.tendstoUniformly_originalHminusOne_iff_coefficients"
+  ],
+  "authored_theorems": 10,
+  "authored_definitions": 0,
+  "results": [
+    "On a specified original endpoint norm ball, finitely many original Fourier coefficient tests with one positive tolerance control any admissible lower finite-p norm, uniformly for every pair of potentials in the ball.",
+    "Uniform convergence of each original Fourier coefficient is equivalent to uniform convergence in every admissible lower finite-p norm, for families with a common endpoint norm bound. The testing set, family parameter and convergence filter are arbitrary; continuity in the testing parameter is not assumed.",
+    "The uniform convergence criterion still holds with only an eventual common endpoint bound for the approximating family, with the bound also imposed on the proposed limit family.",
+    "For nontrivial filters, uniform coefficient limits of eventually endpoint-bounded families uniquely recover a family of original physical endpoint potentials with the same specified bound and all reality, zero-mean and physical period-one constraints. One recovered family converges uniformly in every admissible lower norm and pointwise weak-star.",
+    "For 0<=r<1/2 the finite Fourier control and uniform convergence equivalence specialize to the norm of the identical original H-minus-one distributions."
+  ],
+  "qualifications": [
+    "The endpoint bound uses the exact original FourierLebesgueSpace(2,-r,infinity) norm. No substituted coefficient norm or frequency convention is used.",
+    "All fixed lower exponents retain finite p>=1 and the strict threshold 1<(-r-t)*p.toReal.",
+    "Uniform convergence is tested separately for each Fourier mode. A finite set of modes is selected after the requested lower-norm tolerance, before the potentials.",
+    "The eventual bound holds for all testing parameters on one common eventual set. Separate parameter-dependent eventual bounds are not asserted to suffice.",
+    "The theorem constructing the limit requires a nontrivial filter. The equivalence theorems allow arbitrary filters.",
+    "No endpoint norm convergence, metrizability of the full unbounded weak-star space, actual KdV/Birkhoff construction or missing isospectral bound is inferred."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "a8903745a1e5443b6d89bc165cc6c2e0f9a5c49e",
+    "baseline_sources_verified_unchanged": true,
+    "new_modules_compiled": 2,
+    "modules_in_exact_inventory": 328,
+    "audited_declarations": 2655,
+    "theorems": 2155,
+    "definitions": 500,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/hminus-one-characteristic-check-20261103",
+    "log": ".lake/hminus-one-characteristic-check-20261103/logs/validation-appendix-b-uniform.log"
+  },
+  "output_sha256": {
+    "NLS/FunctionalAnalysis/CompactCoordinateControl.lean": "af01f1b64aca4712a08f61079b2c6c15f58ed247281df5adeffa30feffadba04",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarUniformControl.lean": "feb99f3ac2687a96c61c2484f005210dd37cbe798be06817de93605ea802c6c1"
+  },
+  "canonical_checkout_written": false,
+  "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "main_theorems_verified": false,
+  "preserved_work_in_progress": "Eight unrelated uncommitted Miura/Dirac modules are preserved and excluded from this increment and its exact committed inventory. Their pending checker is saved in work/check-kdv-pseudomeasures-pending-miura.py. GitHub destination approval remains pending; no push attempted."
+}

@@ -1,0 +1,151 @@
+{
+  "source": "arXiv:1610.00278v1 source3.2(ii) prerequisites; operator-family compactness part of the all-index actual original real Hill period inverse argument",
+  "status": "PROVED compact closure in FULL operator norm of the ENTIRE actual real Hill period Jacobian family, uniform operator norm bounds and arbitrary norm-convergent subsequences. Identification/invertibility of escaping-index limits, uniform FULL inverse/common complex source neighborhood/fine estimate and ALL FIVE MAIN remain OPEN.",
+  "modules": [
+    "NLS/FunctionalAnalysis/CompactApproximationTotalBounded.lean",
+    "NLS/SequenceSpaces/FiniteBlockOperatorCompact.lean",
+    "NLS/SequenceSpaces/KernelFamilyCompact.lean",
+    "NLS/SequenceSpaces/PositiveOperatorFamilyCompact.lean",
+    "NLS/SequenceSpaces/PositiveDiagonalFamilyCompact.lean",
+    "NLS/KdV/HillProductEquationUniformDiagonalUpper.lean",
+    "NLS/KdV/HillProductEquationFamilyCompact.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillPeriodFamilyCompact.lean"
+  ],
+  "declarations": [
+    "NLS.totallyBounded_of_bounded_compact_approximations",
+    "NLS.Coeff.matrixEntryCLM",
+    "NLS.Coeff.finiteBlockOperatorCLM",
+    "NLS.Coeff.finiteBlockOperatorCLM_apply",
+    "NLS.Coeff.isCompactOperator_finiteBlockOperatorCLM",
+    "NLS.Coeff.totallyBounded_operators_of_uniform_finiteBlocks",
+    "NLS.Coeff.row_bound_of_l2_kernel_entries",
+    "NLS.Coeff.norm_operator_le_of_l2_kernel_entries",
+    "NLS.Coeff.exists_uniform_finiteOutput_inputTail_of_l2_kernel_entries",
+    "NLS.Coeff.exists_uniform_finiteBlocks_of_l2_kernel_entries",
+    "NLS.Coeff.totallyBounded_operators_of_l2_kernel_entries",
+    "NLS.LpSequence.positiveSandwichOperatorCLM",
+    "NLS.LpSequence.positiveSandwich_lift_operator",
+    "NLS.LpSequence.positiveLiftOperator_entry",
+    "NLS.LpSequence.positiveLiftOperator_entry_nonpos_output",
+    "NLS.LpSequence.positiveLiftOperator_entry_nonpos_input",
+    "NLS.LpSequence.totallyBounded_positive_operators_of_l2_kernel_entries",
+    "NLS.LpSequence.totallyBounded_positive_diagonal_family",
+    "NLS.LpSequence.totallyBounded_positive_operators_of_diagonal_tail_and_kernel_entries",
+    "NLS.KdV.HillProductEquationPatch.exists_actual_real_uniform_diagonal_upper",
+    "NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_family_totallyBounded",
+    "NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_family_compact_closure",
+    "NLS.KdV.HillProductEquationPatch.exists_actual_real_uniform_operator_norm_bound",
+    "NLS.KdV.HillProductEquationPatch.exists_actual_real_sequenceJacobian_norm_convergent_subseq",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_family_compact_closure",
+    "NLS.Articles.KdVPseudomeasures.exists_original_Hill_period_Jacobian_uniform_operator_norm_bound",
+    "NLS.Articles.KdVPseudomeasures.exists_original_Hill_period_Jacobian_norm_convergent_subseq"
+  ],
+  "new_public_theorems": 24,
+  "new_public_definitions": 3,
+  "results": [
+    "A reusable functional-analytic criterion proves total boundedness of a bounded set admitting common compact linear approximations. Literal finite matrix rectangles are constructed as compact linear operators on the Banach space of bounded sequence operators, retaining their exact matrix-unit formulas.",
+    "One l2 output majorant and a fixed uniformly norm-bounded family of l2 row kernels give a common finite output cutoff and, on those finitely many rows, a common finite input cutoff for EVERY operator satisfying the entry bounds. The resulting two-sided finite matrix approximations hold in the FULL operator norm. The boundedness and total boundedness of the entire dominated operator set are proved, not assumed.",
+    "Isometric positive insertion and the literal signed-space sandwich transport this operator-family compactness back to the original positive-index l2 space. No negative physical coordinates are added to the original Hill Jacobian.",
+    "A positive-index diagonal family with a common bounded head and uniformly vanishing diagonal tails is totally bounded in operator norm. Combining it with common summable off-diagonal row kernels gives full-family operator-norm total boundedness; separate compactness of each operator alone is not used to infer family compactness.",
+    "The original filled weighted-column upper estimate and exact physical real mean-value periods give ONE upper bound for EVERY actual real Hill period Jacobian diagonal, BEFORE ALL numerator and row indices, including the exact omitted midpoint row.",
+    "At EVERY actual real native source, the ENTIRE actual Hill period Jacobian family has compact closure in FULL bounded-operator norm. This combines the proved uniform diagonal tail with the actual common gap-width row majorant and translated free interaction kernels. Every coordinate and the original weighted physical period equations are retained.",
+    "Consequently ONE operator norm bound holds BEFORE ALL positive numerator indices at every actual real source. EVERY arbitrary sequence of actual Jacobians has a subsequence converging in FULL operator norm to an actual bounded operator. The article interface retains the original physical Hminus-one potential and full inverse-index l2 data.",
+    "Eight new modules, three reused byte-identical canonical finite-block/row-kernel dependencies and the exact 5674-declaration transitive axiom audit compiled privately without warnings, tactic suggestions or added axioms. All 1002 baseline non-audit registered sources are unchanged. Canonical checkout and its shared Git metadata remain read-only.",
+    "Operator-norm compact closure does NOT assert that every escaping-index limit is invertible. Exact identification and injectivity of those limits are still required before uniform FULL inverse bounds. Source-local uniformity, a common complex source neighborhood before all actual zero sequences, fine squared-gap estimates, universal scalar normalization and ALL FIVE MAIN theorems remain OPEN; goal ACTIVE."
+  ],
+  "fidelity": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-period-family-compact-map.json",
+    "reusable_compact_linear_approximation_total_boundedness_PROVED": true,
+    "literal_finite_matrix_blocks_compact_on_operator_Banach_space_PROVED": true,
+    "common_l2_row_kernels_give_UNIFORM_TWO_SIDED_finite_blocks_in_FULL_operator_norm_PROVED": true,
+    "operator_family_compactness_transferred_to_original_positive_l2_PROVED": true,
+    "ONE_diagonal_upper_bound_BEFORE_ALL_n_m_at_EACH_actual_real_source_PROVED": true,
+    "ACTUAL_FULL_real_period_Jacobian_family_TOTAL_BOUNDED_in_operator_norm_PROVED": true,
+    "ACTUAL_FULL_real_period_Jacobian_family_COMPACT_CLOSURE_in_operator_norm_PROVED": true,
+    "ONE_actual_operator_norm_bound_BEFORE_ALL_n_at_EACH_real_source_PROVED": true,
+    "EVERY_sequence_of_actual_real_Jacobians_has_FULL_operator_norm_convergent_subsequence_PROVED": true,
+    "escaping_n_operator_limits_identified_as_full_energy_product_period_Jacobian_PROVED": false,
+    "EVERY_operator_in_actual_family_closure_invertible_PROVED": false,
+    "locally_uniform_FULL_inverse_bounds_BEFORE_ALL_n_proved": false,
+    "COMMON_complex_SOURCE_neighborhood_BEFORE_ALL_n_actual_zero_SEQUENCES_proved": false,
+    "fine_locally_uniform_ALL_index_squared_gap_over_index_bound_proved": false,
+    "universal_2_over_pi_n_product_prefactor_proved": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "all_five_main_theorems_proved": false
+  },
+  "essential_remaining": [
+    "Prove locally uniform FULL inverse bounds BEFORE ALL numerator indices for the ACTUAL real Hill period sequence Jacobians, then a COMMON complex SOURCE neighborhood for ALL actual zero SEQUENCES and the finer locally uniform ALL-index gamma_m^2/m bound. NEW: the ENTIRE actual real Jacobian family now has COMPACT CLOSURE in the FULL operator norm, ONE operator norm bound before ALL n, and norm-convergent subsequences for EVERY index sequence. Do NOT redo operator-family finite-block compactness, uniform diagonal upper/lower/tail bounds or diagonal inverses. Identify escaping-n limits as full energy-product period Jacobians and prove their injectivity/invertibility; compact closure alone does not prove all closure operators invertible. Earlier EACH-n full actual real Banach inverses and EACH-fixed-n analytic full-lp zero germs remain PROVED. Source-local uniformity/common complex source neighborhoods/gluing, fine estimates, universal product normalization, KdV coordinates/flow and all five main theorems remain essential.",
+    "Determine the universal 2/(pi*n) scalar in the ORIGINAL normalized Hill infinite product. The literal actual retained-zero product with a UNIQUE NONZERO scalar is NOW PROVED at EVERY original real H-minus-one source, with locally uniform convergence of products AND derivatives on the ENTIRE energy plane. Do NOT redo the product-up-to-scalar argument or infer the scalar from zeros/growth/analyticity plus its free value. A valid actual L2 normalization identity with a proved density transfer is one possible route. Complex-source product uniformity and exclusion of additional complex-source energy zeros are not proved. NEW: Jointly ENTIRE literal products in energy and independent inverse-index l2 data, locally UNIFORM joint cutoff convergence, actual real-source product/scalar continuity and a rigorous real L2-to-Hminus-one constant-normalization density transfer are NOW PROVED. The actual L2 identity itself remains OPEN. Do NOT redo these analytic-product/continuity/density dependencies, and do not assume the missing L2 normalization.",
+    "Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
+    "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "cce352ccaf6e500f01affd440c7d56169e63f41c",
+    "baseline_modules": 1003,
+    "baseline_non_audit_sources_verified_unchanged": 1002,
+    "new_modules_compiled": 8,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.CompactRowMajorant",
+        "source": "NLS/SequenceSpaces/CompactRowMajorant.lean",
+        "source_sha256": "7b3536548b151d52b4a9efb06152fe04b22793465c01f6772e9062c765d369e5",
+        "output_was_symlink": false
+      },
+      {
+        "module": "NLS.SequenceSpaces.FiniteBlockOperatorConvergence",
+        "source": "NLS/SequenceSpaces/FiniteBlockOperatorConvergence.lean",
+        "source_sha256": "63307a45947ef00b74d904dd797763a4bc6b7e895ef86cf66167edff0658823e",
+        "output_was_symlink": true
+      },
+      {
+        "module": "NLS.SequenceSpaces.FiniteOutputReciprocalTail",
+        "source": "NLS/SequenceSpaces/FiniteOutputReciprocalTail.lean",
+        "source_sha256": "575faa37a899df7672ab84deec8066eb21a63704e9e5c7b0c42ca48752e40436",
+        "output_was_symlink": true
+      }
+    ],
+    "modules_in_exact_inventory": 1011,
+    "audited_declarations": 5674,
+    "theorems": 4728,
+    "definitions": 946,
+    "new_theorems": 24,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-period-family-compact.log",
+    "log_sha256": "86c91d25f70a4d65afc4c2ac94fbd31a287b2fac76037ff3021a29cd9159b08b"
+  },
+  "output_sha256": {
+    "NLS/FunctionalAnalysis/CompactApproximationTotalBounded.lean": "1334ebb6fff433c4f56c115981b4046db1a5450d27f1fe0c2c966da828df9039",
+    "NLS/SequenceSpaces/FiniteBlockOperatorCompact.lean": "a8522b00450fd9cd189bc03046c6a227e12349d6b67c8cbc657bb00a757dafd2",
+    "NLS/SequenceSpaces/KernelFamilyCompact.lean": "ea7ab9d586fee27b30250fdf77b16ece0bd571be8942236f3b3c04538efb2d72",
+    "NLS/SequenceSpaces/PositiveOperatorFamilyCompact.lean": "9b7e5f0d58f82b05662b9a53a51eab018bbd08299358de6524200c6afaa06ff2",
+    "NLS/SequenceSpaces/PositiveDiagonalFamilyCompact.lean": "a1e342f72ebb15342fa28d9acc71b54439920e9e6139b5a705f015425d6c0807",
+    "NLS/KdV/HillProductEquationUniformDiagonalUpper.lean": "1456fdbf54bc492dd950e2388d280670572d4760f35723d4b8bab4c864b86200",
+    "NLS/KdV/HillProductEquationFamilyCompact.lean": "b4d9a8f199b1f24a6bb839270270b479dcf31f39edb26d6dac71c724e6704880",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillPeriodFamilyCompact.lean": "bcac77adaabe9f187cec7aa39605d1e00e3d3d9fbac25ff6359067e35a232e43"
+  },
+  "canonical_checkout_written": false,
+  "canonical_state": {
+    "head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+    "status": ""
+  },
+  "workspace_decision": "pending; all writes private",
+  "git_isolation": {
+    "metadata": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/appendix-b-milestones.git",
+    "base_commit": "cce352ccaf6e500f01affd440c7d56169e63f41c",
+    "branch": "articles/kdv-pseudomeasures",
+    "shared_canonical_git_written": false
+  },
+  "main_theorems_verified": false
+}

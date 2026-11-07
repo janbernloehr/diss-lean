@@ -12,7 +12,7 @@ def hillMiuraRealSource (u : PeriodOneRealL2) : realTypeSourceSubmodule 2 :=
 
 /-- A nonzero scalar characteristic at the translated zero frequency
 excludes zero from the actual Dirac spectrum. -/
-theorem zero_not_mem_periodicSpectrum_of_shifted_miura
+theorem zero_not_mem_periodicSpectrum_of_shifted_miura_of_radicand_ne_zero
     (q : PeriodOneHminusOne) (u : Coeff 2) (c : ℂ)
     (himage : periodOneMiura u = q+periodOneL2Inclusion (lp.single 2 0 c))
     (hc : hillHminusRadicand q (-c) ≠ 0) :

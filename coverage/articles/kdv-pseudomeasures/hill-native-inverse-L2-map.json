@@ -1,0 +1,150 @@
+{
+  "source": "arXiv:1610.00278v1 actual native KdV Birkhoff L2 scale: exact original L2/source and signed positive-half/output equivalence through the actual analytic local inverse",
+  "status": "Prove EXACT original L2/source IFF actual native signed positive-half/output regularity, by strong spatial orbit differentiation through the genuine analytic local inverse. Momentum trace, native global injectivity/closedness/properness, actualKdV and ALL MAIN statements remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-native-inverse-L2-map.json",
+    "original_physical_signed_spatial_generator_CLM_ALL_real_orders_ALL_Banach_exponents_PROVED": true,
+    "actual_physical_real_zero_mode_generator_projection_PROVED_INACTIVE": true,
+    "actual_spatial_generator_norm_bound_2_pi_PROVED": true,
+    "strong_physical_spatial_derivative_IFF_original_Fourier_generator_at_ALL_signed_modes_PROVED": true,
+    "original_Hminus_source_spatial_generator_domain_EXACTLY_L2_PROVED": true,
+    "period_two_pi_derivative_criterion_matched_to_physical_2_pi_with_EXPLICIT_half_factor_PROVED": true,
+    "actual_analytic_LOCAL_inverse_transfers_native_spatial_derivative_to_SAME_original_source_PROVED": true,
+    "actual_source_generator_norm_le_2_pi_times_ACTUAL_inverse_Jacobian_norm_times_positive_half_output_norm_PROVED": true,
+    "native_output_positive_half_IMPLIES_original_source_L2_PROVED": true,
+    "EXACT_original_L2_source_IFF_actual_native_signed_positive_half_output_PROVED": true,
+    "SAME_ENTIRE_original_distribution_L2_iff_actual_native_signed_positive_half_PROVED": true,
+    "actual_Birkhoff_spatial_phase_velocity_2_pi_i_n_PROVED": true,
+    "actual_spatial_quotient_winding_number_n_PROVED": true,
+    "actual_true_L2_scale_analytic_mapping_and_local_inverse_PROVED": false,
+    "actual_KdV_momentum_action_trace_PROVED": false,
+    "actual_native_closed_map_PROVED": false,
+    "actual_native_properness_PROVED": false,
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "SignedSobolevSpatialGenerator constructs the literal physical2*pi*i*k generator on EVERY full signed weighted scale, with norm bound2*pi and unchanged raw coefficients. FourierRealZeroSpatialGenerator constructs the full projection and actual physical real zero-mode generator, PROVES projection inactivity on the generator, and retains the SAME norm bound at every Banach exponent1 through infinity.",
+    "hasDerivAt_fourierRealZero_spatialCurve proves strong differentiation at zero of ANY actual physical curve with the exact original Fourier spatial phases and a generator in the same finite-exponent space. Its converse identifies EVERY strong derivative with the exact original2*pi*i*k generator at ALL signed coordinates. This retains negative, zero and collapsed native modes.",
+    "HillRealSpatialGeneratorL2 proves the original physical Hminus-one spatial-generator domain is EXACTLY original L2 coefficient membership. The existing source Sobolev derivative criterion has period-two pi normalization; the proof explicitly divides the actual physical2*pi generator by2. The recovered L2 sequence is the SAME ENTIRE original coefficient sequence.",
+    "exists_source_spatialGenerator_of_native_signed_half constructs a strong native spatial derivative from ANY supplied actual native positive-half output. The actual source spatial orbit is continuous and equals the PROVED analytic local inverse of that output orbit near zero time. Differentiation gives the SAME original source spatial generator in Hminus-one. Its norm is bounded by2*pi times the ACTUAL inverse-Jacobian norm at that source times the ACTUAL positive-half output norm.",
+    "exists_L2_source_of_native_signed_half proves unconditional inverse L2 regularity for ANY actual native preimage of a signed positive-half output. hillReal_source_L2_iff_native_signed_half combines it with the already proved forward regularity to give the EXACT equivalence on EVERY original physical real mean-zero Hminus-one source. No global native injection, surjection, properness, finite-gap or open-mode premise is used.",
+    "original_Hill_L2_iff_native_signed_half exports the EXACT equivalence on the ENTIRE original physical distribution domain, retaining the SAME original coefficients and SAME actual native map. Native inverse L2 regularity is NO LONGER OPEN. The actual KdV momentum-action trace, true analytic L2-scale mapping/local inverse, varying-source native properness/closedness, global native injection/surjection, actual KdV evolution and ALL FIVE MAIN THEOREMS remain UNPROVED. Goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.FunctionalAnalysis.norm_clm_apply_le_of_norm_le",
+    "NLS.Weight.signedSobolev_spatialGenerator_bound",
+    "NLS.WeightedCoeff.signedSpatialGenerator",
+    "NLS.WeightedCoeff.signedSpatialGenerator_apply",
+    "NLS.WeightedCoeff.norm_signedSpatialGenerator_le",
+    "NLS.WeightedCoeff.fourierRealZeroFullProjection",
+    "NLS.WeightedCoeff.fourierRealZeroFullProjection_inclusion",
+    "NLS.WeightedCoeff.fourierRealZeroSignedSpatialGenerator",
+    "NLS.WeightedCoeff.fourierRealZeroSignedSpatialGenerator_apply",
+    "NLS.WeightedCoeff.norm_fourierRealZeroSignedSpatialGenerator_le",
+    "NLS.WeightedCoeff.hasDerivAt_fourierRealZero_spatialCurve",
+    "NLS.WeightedCoeff.exists_fourierRealZeroSignedSpatialGenerator",
+    "NLS.WeightedCoeff.fourierRealZero_spatialGenerator_of_hasDerivAt",
+    "NLS.KdV.exists_L2_of_hillRealSpatialGenerator",
+    "NLS.KdV.hillReal_source_L2_iff_spatialGenerator",
+    "NLS.Articles.KdVPseudomeasures.exists_source_spatialGenerator_of_native_signed_half",
+    "NLS.Articles.KdVPseudomeasures.exists_L2_source_of_native_signed_half",
+    "NLS.Articles.KdVPseudomeasures.hillReal_source_L2_iff_native_signed_half",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_L2_iff_native_signed_half"
+  ],
+  "files": [
+    "NLS/FunctionalAnalysis/NormedLinearBound.lean",
+    "NLS/SequenceSpaces/SignedSobolevSpatialGenerator.lean",
+    "NLS/SequenceSpaces/FourierRealZeroSpatialGenerator.lean",
+    "NLS/KdV/HillRealSpatialGeneratorL2.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeL2Regularity.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "37f8fb1c48096b483ad3536aa98ae89b8fd829b3",
+    "baseline_modules": 1628,
+    "baseline_non_audit_sources_verified_unchanged": 1627,
+    "new_modules_compiled": 5,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.SobolevDerivative",
+        "source": "NLS/SequenceSpaces/SobolevDerivative.lean",
+        "source_sha256": "9914cfaa0a6cb724eea5acf21998fe1a03ad4059c91a9eb0c639c5b882f5937a"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.FourierRealZeroProjection",
+        "source": "NLS/SequenceSpaces/FourierRealZeroProjection.lean",
+        "source_sha256": "61a87656641343c7e3e58a291ad979151a9c595ffa324aab1399e3475000ac41",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedSpatialTranslationDerivative",
+        "source": "NLS/SequenceSpaces/WeightedSpatialTranslationDerivative.lean",
+        "source_sha256": "2bb10c5e0d078e3deb2d0b6bc513c66d224197223b1b184735bd81c1f312e802",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.FunctionalAnalysis.LinearCurveDerivative",
+        "source": "NLS/FunctionalAnalysis/LinearCurveDerivative.lean",
+        "source_sha256": "cef42e208200f1df5d28ab1dc551965e5c1e7a76907cf890d543810f1b76e00b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillRealSpatialTranslationContinuity",
+        "source": "NLS/KdV/HillRealSpatialTranslationContinuity.lean",
+        "source_sha256": "f6f9890ea43496e4e3e10f72ac8a05370d1ddd8c05fe36ca401b059c20e6e250",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillRealSpatialGenerator",
+        "source": "NLS/KdV/HillRealSpatialGenerator.lean",
+        "source_sha256": "a762b94ab5f693d4bd8b7ecd079078412ca32b0027a778f6dcec0d4c0b2da9df",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalRealInverse",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalRealInverse.lean",
+        "source_sha256": "5b5d0075ee342987fe5137d3d5050489ac034139591fbd636a3f23c43a7ba43a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillSpatialGenerator",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillSpatialGenerator.lean",
+        "source_sha256": "699bbe6b2288f575df86ed99668ea85016940ee0cfd5439aaef5d5f6f4dc3f6a",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1633,
+    "audited_declarations": 8283,
+    "theorems": 6974,
+    "definitions": 1309,
+    "new_theorems": 16,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-native-inverse-L2.log",
+    "log_sha256": "dc2ee63c2d4135787ec0e9f8016313978834f95fcf879a5169a2e55cedc80569"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED actual full real Hminus-one Hill BORG constancy for all closed gaps, mean-zero uniqueness and EXACT singleton native zero fiber. Actual native global bijectivity IFF actual closed-map property is proved, using the actual local homeomorphism and singleton zero. Actual finite-gap smoothness and global injectivity IFF actual L2/smooth/finite-gap injectivity remain proved. Complete actual indexed action flows map each original compact isoset ONTO its ENTIRE native action torus. Specified local inverse preservation of FULL infinite-support tori in SAME original isosets, local action/discriminant fiber equivalence, relative local constancy of continuous action-flow invariants and exact complete-action-flow/spatial commutation are proved. NOW PROVED FULL actual spatial covariance with EXACT exp((s*(2*pi*k))*I) at EVERY signed native coordinate and EVERY original physical mean-zero Hminus-one input, including collapsed modes. Averaging gives local source-parameter character rigidity, real-analytic uniqueness extends covariance to ALL sources, and the genuine free cosine-direction derivative fixes the original winding/frequency. Specific spatial phase/winding is NO LONGER an open obligation. NEXT prove the actual KdV momentum-action trace and genuine varying-action a-priori estimates, or actual ordinary L2 injectivity/arbitrary action realization. Actual native CLOSEDNESS/PROPERNESS/GLOBAL INJECTIVITY/SURJECTIVITY and actual KdV evolution remain UNPROVED; full sourceTheorem1.4 remains conditional only on actual native closedness. ALL FIVE MAIN remain UNPROVED; goal ACTIVE. NOW additionally PROVED the actual FULL native DF intertwines original spatial generators with exact2*pi*i*k at EVERY signed coordinate, and EVERY original physical L2 source has its SAME ENTIRE native output in literal physical real signed positive-half Hilbert space. This uses strong source spatial differentiation and a full-order signed generator norm estimate valid at every real order and every Banach exponent. Native inverse L2 regularity is NOW PROVED; the actual momentum trace remains OPEN. NOW additionally PROVED EXACT original L2/source IFF actual native signed positive-half/output regularity on EVERY original physical mean-zero Hminus source, exported for the SAME ENTIRE original distribution. Native spatial differentiation through the PROVED analytic local inverse produces the original source generator, with norm bound2*pi times actual inverse Jacobian norm times actual positive-half output norm. The original Sobolev generator criterion, with explicit physical2*pi versus period-two pi factor1/2, gives SAME-source L2 membership. This is not a global varying-source a-priori bound; analytic L2-scale mapping/local inversion and actual momentum trace remain OPEN.",
+    "FULL precise sourceTheorem1.4 is NOW declared as sourceTheorem1_4Statement and PROVED CONDITIONAL ONLY on IsClosedMap hillRealSignedMap by sourceTheorem1_4_of_native_isClosedMap. Actual endpoint inverse regularity is unconditional for ANY actual native preimage of endpoint output. Native onto/injectivity transfer to endpoints; native injectivity supplies full weak-star homeomorphism on EVERY bounded subset, including nonclosed subsets. Actual native CLOSEDNESS/PROPERNESS/GLOBALBIJECTION remains UNPROVED, so sourceTheorem1.4 remains UNPROVED. Actual native globalbijectionIFFactualclosedmap is already proved via actual localhomeomorphism+genuine singletonzero. Other nonlinear scales and actualKdV still required; ALL MAIN statements remain UNPROVED.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}

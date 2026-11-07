@@ -1,0 +1,136 @@
+{
+  "source": "arXiv:1610.00278v1 actual Miura/Dirac trace dependency; direct zero-frequency physical monodromy computation",
+  "status": "Exact actual zero-frequency diagonal Dirac monodromy trace and central-gap mean criterion on all physical real L2 lifts. Native varying-action bounds, native onto/properness and ALL FIVE MAIN remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-miura-zero-frequency-map.json",
+    "actual_classical_zero_frequency_diagonal_solution_and_monodromy_PROVED": true,
+    "EVERY_complex_L2_actual_zero_frequency_trace_eq_twice_cosh_raw_mean_PROVED": true,
+    "actual_Miura_energy_zero_trace_PROVED": true,
+    "EVERY_physical_real_L2_zero_in_actual_Dirac_spectrum_IFF_mean_zero_PROVED": true,
+    "actual_original_central_gap_collapsed_IFF_mean_zero_PROVED": true,
+    "actual_central_right_positive_IFF_mean_nonzero_PROVED": true,
+    "global_mean_zero_Riccati_lift_existence_PROVED": false,
+    "global_quasimomentum_inverse_frequency_moment_identity_PROVED": false,
+    "actual_native_varying_action_norm_coercivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false
+  },
+  "results": [
+    "ClassicalDiagonalZeroTrace constructs the genuine equal-component zero-frequency Dirac solution using cosh and sinh of the literal interval primitive. It verifies the actual differential equation and initial value, applies the previously checked uniqueness theorem, and computes the original classical monodromy trace as twice cosh of the unit-interval mean. No real-type assumption or spectral surrogate is used.",
+    "HillMiuraZeroFrequencyTrace identifies finite equal-component coefficient input with its actual physical Fourier polynomial and canonical classical discriminant. The verified period-one Fourier integral gives EXACTLY the raw coefficient a(0), without a period or 2*pi rescaling. Density of finite coefficients and continuity of the actual discriminant in the ORIGINAL complex L2 coefficient norm prove hillMiuraFrequencyTrace u 0 = 2*cosh(u(0)) for EVERY complex L2 input. The actual energy-descended Miura discriminant has the same value at energy zero.",
+    "HillMiuraCentralMean proves the zero Fourier coefficient is real on EVERY physical real L2 lift. The exact original discriminant spectrum criterion and real hyperbolic-cosine strictness prove zero belongs to the ACTUAL Dirac periodic spectrum IFF the raw mean vanishes. Full ordered original endpoints, central zero containment and actual reflection then give central right endpoint zero IFF mean zero, central pair collapsed IFF mean zero, and strictly positive central right endpoint IFF nonzero mean.",
+    "The new formulas are unconditional for the original operators and norms. They do NOT assert existence of a global mean-zero Riccati lift for every rough Hill source, a global quasimomentum moment identity, a native varying-action coercive bound, or native surjectivity/properness. ALL FIVE main statements and actual KdV evolution remain UNPROVED; goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.ZakharovShabat.diagonalZeroSolution",
+    "NLS.ZakharovShabat.hasDerivAt_diagonalZeroSolution",
+    "NLS.ZakharovShabat.classicalSolution_diagonal_zero",
+    "NLS.ZakharovShabat.classicalDiscriminant_diagonal_zero",
+    "NLS.KdV.hillMiuraDiagonal_ofFinsupp",
+    "NLS.KdV.hillMiuraFrequencyTrace_zero_ofFinsupp",
+    "NLS.KdV.hillMiuraFrequencyTrace_zero",
+    "NLS.KdV.hillMiuraL2Discriminant_zero",
+    "NLS.KdV.periodOneRealL2_zero_eq_re",
+    "NLS.KdV.hillMiuraFrequencyTrace_zero_real",
+    "NLS.KdV.hillMiura_zero_mem_spectrum_iff_mean_zero",
+    "NLS.KdV.hillMiura_central_right_zero_of_mem_spectrum",
+    "NLS.KdV.hillMiura_central_right_zero_iff_mean_zero",
+    "NLS.KdV.hillMiura_central_gap_collapsed_iff_mean_zero",
+    "NLS.KdV.hillMiura_central_right_pos_iff_mean_ne_zero"
+  ],
+  "files": [
+    "NLS/ZakharovShabat/ClassicalDiagonalZeroTrace.lean",
+    "NLS/KdV/HillMiuraZeroFrequencyTrace.lean",
+    "NLS/KdV/HillMiuraCentralMean.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "147484733b790598c18d17ce0cac457cb018264a",
+    "baseline_modules": 1673,
+    "baseline_non_audit_sources_verified_unchanged": 1672,
+    "new_modules_compiled": 3,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.ClassicalFundamentalSolution",
+        "source": "NLS/ZakharovShabat/ClassicalFundamentalSolution.lean",
+        "source_sha256": "377d2066c8320a02b91513ee3654d2eb539b94b0fc8ef79f6615e51537be3993"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceAntiDiscriminantIdentity",
+        "source": "NLS/ZakharovShabat/SourceAntiDiscriminantIdentity.lean",
+        "source_sha256": "db917f943d57c028655cf295a61bb43fd5ae48bf5ca8c6ddeb96c01c46923afc"
+      },
+      {
+        "module": "NLS.ZakharovShabat.FiniteSourceRealization",
+        "source": "NLS/ZakharovShabat/FiniteSourceRealization.lean",
+        "source_sha256": "cc1e46f0014c40265143c7df6a9d84b9c7f55d396700290f2745f7b4945d74c2"
+      },
+      {
+        "module": "NLS.Fourier.FinitePeriodOneRealization",
+        "source": "NLS/Fourier/FinitePeriodOneRealization.lean",
+        "source_sha256": "92fb4ad23901819da3a6a4f65b835a42ab6dff58a769d8f7abe8600374788044"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Fourier.PeriodOneTrigPairing",
+        "source": "NLS/Fourier/PeriodOneTrigPairing.lean",
+        "source_sha256": "e99bc1ebd9ca5413a6c6a4ce25fd59c9d263a58e2b7cc69dd29cdc2c2d4d61b2",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMiuraL2Discriminant",
+        "source": "NLS/KdV/HillMiuraL2Discriminant.lean",
+        "source_sha256": "a45830d4397b68634ccb2e5d6aed13657af2e2285fcf91cd2b419ea0cd1ae5c7",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.MiuraPeriodicReflection",
+        "source": "NLS/KdV/MiuraPeriodicReflection.lean",
+        "source_sha256": "e52ec2758e4115b41476a2472899851abe3da7cfcce22e4657dfd190262dae61",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMiuraPositiveGaps",
+        "source": "NLS/KdV/HillMiuraPositiveGaps.lean",
+        "source_sha256": "a4cb6059c96c72718942fefc28766850504e8741b9da13e114fb2d73ea52130e",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMiuraCoefficientContinuity",
+        "source": "NLS/KdV/HillMiuraCoefficientContinuity.lean",
+        "source_sha256": "16ae5e031502f7657200cd185ab8e1ae3f8adcd566c7ddd9a41d6e5a9f267230",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1676,
+    "audited_declarations": 8468,
+    "theorems": 7135,
+    "definitions": 1333,
+    "new_theorems": 14,
+    "new_definitions": 1,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-miura-zero-frequency.log",
+    "log_sha256": "01f7ef4876f75985576d9484177f79a5a8ce6efe0e5d10e8c16b7e4060d68241"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED actual L2 global REAL-ANALYTIC homeomorphism/properness, FULL native Hminus/original/endpoint injectivity and bounded literal Wiener weak-star inverse topology. NEW actual bounded-source action compactness on ENTIRE original distribution domain: ONE source realizes simultaneous limits of ALL indexed actual actions along ONE subsequence. Uniform shifted real Miura lifts, all-level Dirac higher-action coefficient continuity, central spectral separation and explicit mean normalization are VERIFIED. NEW bounded-source convergent FULL native outputs have actual preimages and the WHOLE source sequence converges STRONGLY Hminus. Native properness IFF norm-bounded preimages of EVERY compact target set is NOW PROVED. That varying-action NORM BOUND remains OPEN. Extended reference Lemma8.3 supplies it using universal action-gap min estimate + actual Hminus norm-vs-gap coercivity (Theorem2.3); BOTH estimates still require faithful Lean proofs. Native onto/closedness/properness, actual KdV and ALL FIVE MAIN remain OPEN; goal ACTIVE.",
+    "FULL sourceTheorem1.4 remains UNPROVED because actual native SURJECTIVITY and equivalent native compact-preimage norm bound remain OPEN. NEW sourceTheorem1_4_of_bounded_compact_native_preimages proves the FULL precise main conclusion CONDITIONAL on that PURE NORM obligation; sourceTheorem1_4_of_native_surjective remains proved. Full native/original/endpoint INJECTIVITY and literal physical REAL Wiener weak-star homeomorphism onto EXACT IMAGE on EVERY bounded endpoint subset (including nonclosed) and full original isospectral endpoint sets are UNCONDITIONAL. Forward analytic mapping, original norm bounds, full-isoset bounds and inverse endpoint regularity for ANY actual native preimage remain proved. Do NOT promote conditional norm-bound/surjectivity reductions to completed main statements.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+    "NEW actual exact zero-frequency diagonal Dirac formula Delta_u(0)=2*cosh(u_0) for EVERY complex L2 lift, and physical real zero-frequency spectral membership/central collapse IFF mean zero, are PROVED. A proposed direct coercivity route still requires genuine global mean-zero Riccati lift existence and actual inverse-frequency quasimomentum moment/action bounds with verified Fourier normalization. Neither is asserted by this milestone. The existing universal actual action-gap min estimate + original Hminus norm-vs-gap coercivity route also remains OPEN. Native onto/properness and ALL FIVE MAIN remain UNPROVED."
+  ]
+}

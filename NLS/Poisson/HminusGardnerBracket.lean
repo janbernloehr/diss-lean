@@ -2,14 +2,13 @@ import NLS.Poisson.GardnerBivector
 import NLS.Poisson.SobolevBivector
 import NLS.SequenceSpaces.SobolevScalarGradient
 
+/-! Actual H-minus-one differentials have unique H1 cotangents. Their
+unit-period Gardner bracket is well defined and analytic on every common
+complex analytic source domain. No coordinate canonicality is assumed. -/
 noncomputable section
-set_option autoImplicit false
 open Complex
 open scoped ENNReal
-
 namespace NLS.Poisson
-
-
 
 def hminusCotangentCLM :
     (WeightedCoeff (Weight.sobolev (-1)) 2 →L[ℂ] ℂ) →L[ℂ] WeightedCoeff (Weight.sobolev 1) 2 :=

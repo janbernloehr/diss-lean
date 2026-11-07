@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-estimates",
   "date": "2026-11-07",
-  "status": "strict_modules_and_aggregate_passed_axiom_audit_running",
+  "status": "passed_for_recorded_scope",
   "baseline": {
     "commit": "7fb1a979efaf1396053fa21160d21d0b74d8bbd5",
     "focused_modules": 1509,
@@ -150,8 +150,16 @@
   },
   "whole_paper_verified": false,
   "axiom_audit": {
-    "status": "running"
+    "status": "passed",
+    "declarations": 10237,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
   },
   "fresh_complete_focused_script_run": false,
-  "full_lake_rebuild_or_examples_run": false
+  "full_lake_rebuild_or_examples_run": false,
+  "milestone_scope": "Initial ten-module pre-main-integration proof milestone, strictly checked and audited at 903ffc9; the later global-flow integration is recorded separately.",
+  "superseded_by": "coverage/articles/kdv-estimates/flow-integration-validation.json"
 }

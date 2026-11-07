@@ -1,3 +1,4 @@
+import NLS.KdV.ClassicalHillTraceFamily
 import NLS.KdV.ClassicalSourcePrimitive
 import NLS.KdV.HillL2HighContourMoments
 import NLS.KdV.ActionHamiltonianMoments
@@ -16,23 +17,8 @@ set_option autoImplicit false
 open Set Metric Complex NLS.LinearVolterra NLS.ComplexAnalysis
 namespace NLS.KdV
 
-def classicalHillTraceFamily : TracePrimitiveFamily (Curve ℂ) where
-  trace := fun t => classicalHillDiscriminant t.2 t.1
-  analytic_trace := analyticOnNhd_classicalHillDiscriminant_joint
-  freePrimitive := classicalHillFreePrimitive
-  freeDomain := slitPlane
-  isOpen_freeDomain := isOpen_slitPlane
-  analytic_freePrimitive := analyticOnNhd_classicalHillFreePrimitive
-  free_trace := two_cosh_classicalHillFreePrimitive
-
 @[simp] theorem classicalHillTraceFamily_domain :
     classicalHillTraceFamily.continuationDomain = classicalHillContinuationDomain := rfl
-
-@[simp] theorem classicalHillTraceFamily_root :
-    classicalHillTraceFamily.root = classicalHillContinuedRoot := rfl
-
-@[simp] theorem classicalHillTraceFamily_primitive :
-    classicalHillTraceFamily.primitive = classicalHillContinuedPrimitive := rfl
 
 def hillUnitPotentialCLM : C(AddCircle (2 : ℝ), ℂ) →L[ℂ] Curve ℂ :=
   ContinuousMap.compCLM ℂ (R := ℂ)
@@ -80,7 +66,7 @@ theorem hillL2ContinuedRoot_eq_classical (Q : C(AddCircle (2 : ℝ), ℂ)) (z : 
   rw [toCoeff_hillContinuousCoefficients]
   exact hL.trans hC.symm
 
-theorem hillL2ContinuedPrimitive_eq_classical (Q : C(AddCircle (2 : ℝ), ℂ)) (z : ℂ)
+theorem hillL2ContinuedPrimitive_eq_classical_toCoeff (Q : C(AddCircle (2 : ℝ), ℂ)) (z : ℂ)
     (hz : (z,hillUnitPotentialCurve Q) ∈ classicalHillContinuationDomain) :
     hillL2ContinuedPrimitive (z,SpectralWeight.one.toCoeff (hillContinuousCoefficients Q)) =
       classicalHillContinuedPrimitive (z,hillUnitPotentialCurve Q) := by
@@ -107,8 +93,9 @@ theorem hillL2HighContourMoment_zero_eq_classicalPrimitiveAction
   apply circleIntegral.integral_congr (by positivity)
   intro z hz
   have hd := mem_hillL2ContinuationDomain_high_sphere (hillContinuousCoefficients Q)
-    (hillContinuousCoefficients_mem_even Q hQ) n hn hcut z hz
-  exact hillL2ContinuedPrimitive_eq_classical Q z ((hillL2ContinuationDomain_iff_classical Q z).mp hd)
+    (hillContinuousCoefficients_mem_even Q hQ) n hn
+      (by linarith [norm_nonneg (hillContinuousCoefficients Q)]) z hz
+  exact hillL2ContinuedPrimitive_eq_classical_toCoeff Q z ((hillL2ContinuationDomain_iff_classical Q z).mp hd)
 
 /-- The L2 Arnold period agrees with the article's indexed primitive
 normalization F_n=F+i*n*pi, with its factor -1/pi unchanged. -/
@@ -129,7 +116,8 @@ theorem hillL2HighContourMoment_zero_eq_shifted_classicalPrimitiveAction
     intro z hz
     exact (hillL2ContinuationDomain_iff_classical Q z).mp
       (mem_hillL2ContinuationDomain_high_sphere (hillContinuousCoefficients Q)
-        (hillContinuousCoefficients_mem_even Q hQ) n hn hcut z hz)
+        (hillContinuousCoefficients_mem_even Q hQ) n hn
+          (by linarith [norm_nonneg (hillContinuousCoefficients Q)]) z hz)
   exact (primitiveAction_add_const_of_analyticOnNhd _ D hF _ _ _ (by positivity) hcircle).symm
 
 end NLS.KdV

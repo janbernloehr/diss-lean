@@ -1,0 +1,167 @@
+{
+  "source": "arXiv:1610.00278v1 sourceTheorem3.1/global foundation and native isospectral part of Lemma3.5(ii); local reference kmt-kdv-birkhoff-extended.txt Lemma8.3 phase-attainability step",
+  "status": "Prove complete actual canonical-action Hamiltonian flows, exact unit-speed signed native coordinate rotations, and surjectivity of every actual native isospectral fiber onto its entire action torus. Arbitrary prescribed action realization, global injectivity/bijection, endpoint transfer, actual KdV flow and ALL FIVE MAIN THEOREMS remain UNPROVED.",
+  "main_theorems_verified": false,
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-action-flow-torus-image-map.json",
+    "actual_original_canonical_action_Hamiltonian_fields_real_zero_mean_analytic_PROVED": true,
+    "actual_canonical_action_fields_complete_from_actual_isospectral_compactness_PROVED": true,
+    "actual_action_global_flow_addition_and_full_discriminant_conservation_PROVED": true,
+    "actual_native_signed_coordinate_action_velocity_with_unit_speed_and_exact_signs_PROVED": true,
+    "actual_native_coordinate_global_action_flow_EXACT_exponential_rotation_PROVED": true,
+    "reusable_compact_coordinate_matching_ANY_index_set_PROVED": true,
+    "actual_canonical_actions_constant_on_actual_discriminant_fibers_PROVED": true,
+    "actual_native_entire_isospectral_image_EQ_entire_actual_action_torus_PROVED": true,
+    "actual_original_physical_isospectral_preimage_for_EVERY_native_torus_point_PROVED": true,
+    "entire_native_action_torus_compact_ORIGINAL_target_norm_PROVED": true,
+    "scope": "Every physical Fourier-real zero-mean Hminus-one source, including arbitrary collapsed gaps and zero. Actual original canonical-action Gardner fields, actual signedSob(-1/2) Hilbert target. Entire original discriminant/isospectral fiber maps ONTO its full actual action torus without a global inverse premise.",
+    "arbitrary_prescribed_actions_realized_PROVED": false,
+    "full_endpoint_source_Lemma3_5_ii_transfer_PROVED": false,
+    "source_action_flow_period_2pi_PROVED": false,
+    "global_source_action_flow_commutation_PROVED": false,
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "full_bounded_set_weak_star_homeomorphism_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "results": [
+    "HillActionHamiltonianField defines the ACTUAL original canonical-action Gardner vector field, not a pullback of a chosen coordinate rotation. It is analytic on the unchanged common complex action domain, physically real on EVERY physical source and has zero mean. Its correct physical real restriction is C1 in the original Hminus-one norm. The actual discriminant is conserved on every actual integral curve, using the already proved native discriminant/action Gardner involution, with all collapsed gaps included.",
+    "OriginalHillActionGlobalFlow constructs the ACTUAL complete indexed action Hamiltonian flow through EVERY physical real mean-zero Hminus-one source. Actual original discriminant fibers are norm compact, so the verified compact-invariant-vector-field continuation theorem supplies all real times. The flow has the actual original Hamiltonian derivative, exact initial value and flow addition law, and preserves the entire actual discriminant at ALL complex energies. These are indexed ACTION flows, not the still unconstructed actual KdV evolution.",
+    "OriginalHillActionRotation differentiates the EXACT actual action product I_n=z_n*z_-n on one common complex native neighborhood. The actual action Hamiltonian vector is the corresponding literal sum of the two native coordinate Hamiltonian vectors, with its actual coordinate factors. The full signed native Gardner matrix gives velocity +i*z_n at the positive selected mode, -i*z_-n at the negative selected mode and0 at EVERY other signed mode INCLUDING0. No angular speed or sign is assumed.",
+    "ScalarExponentialUniqueness proves the exact global real-time homogeneous complex ODE solution by an integrating factor, for ALL positive/negative/zero times. OriginalHillActionRotation applies it to the ACTUAL complete action flow: actual coordinate k at time t is EXACTLY exp(hillActionRotationRate(n,k)*t) times its ACTUAL initial coordinate. Every other native mode is fixed. This proves native OUTPUT rotation, not a2*pi source-flow period or global commutation of source flows.",
+    "EqualNormRotation proves ANY two complex numbers of equal norm are related by exp(i*t), including radius0 without division. CompactCoordinateMatching proves a reusable finite-coordinate matching theorem and then a FULL simultaneous matching theorem on ANY compact source, ANY index set and Hausdorff coordinate target, using continuous actual scalar coordinates and independent one-coordinate updates. Compact finite-intersection gives an actual common point; no global inverse, countability or norm density hypothesis is used.",
+    "OriginalHillNativeTorusImage proves actual canonical actions agree on EVERY actual discriminant fiber, from their exact ORIGINAL two-over-pi physical gap integrals, actual ordered spectral labels and actual discriminant. Its hillRealNativeActionTorus is defined solely by literal signed physical coordinate products equaling the ACTUAL actions; it contains no inverse-map or source-preimage data.",
+    "exists_hillReal_isospectral_preimage_of_mem_actionTorus proves EVERY point of the ENTIRE actual native action torus has an ACTUAL physical real mean-zero Hminus-one preimage in the SAME actual discriminant fiber. Equal actual actions give equal positive-coordinate radii. Complete actual action flows match one prescribed positive mode while fixing all other positive modes and staying in the actual compact fiber. CompactCoordinateMatching then matches ALL positive modes simultaneously; the EXACT physical Fourier conjugation and actual zero mode recover ALL remaining signed coordinates. All zero and collapsed coordinates are retained.",
+    "image_hillRealDiscriminant_fiber_eq_actionTorus proves the FULL native isospectral-image equality, with NO global native injectivity or surjectivity premise. isCompact_hillRealNativeActionTorus proves this entire torus is compact in the ORIGINAL native signedSob(-1/2) Hilbert norm as the continuous image of the ACTUAL norm-compact physical fiber. original_Hill_native_isospectral_preimage exports the actual preimage as an ORIGINAL physical potential in its ORIGINAL full isospectral set.",
+    "This completes the actual phase-attainability part of the reference global surjectivity argument and the native Hminus-one foundation of sourceLemma3.5(ii). It does NOT yet supply arbitrary prescribed action values, global native injectivity, source2*pi action-flow periodicity, global source-flow commutation, endpoint transfer of the full sourceLemma3.5(ii), global bijectivity, the full bounded-set weak-star homeomorphism, actual KdV flow or ANY of the FIVE MAIN THEOREMS. Those remain OPEN."
+  ],
+  "declarations": [
+    "NLS.KdV.hillHminusActionHamiltonianVector",
+    "NLS.KdV.analyticOnNhd_hillHminusActionHamiltonianVector",
+    "NLS.KdV.hillHminusActionHamiltonianVector_real",
+    "NLS.KdV.hillHminusActionHamiltonianVector_zero_mode",
+    "NLS.KdV.hillRealActionHamiltonianVector",
+    "NLS.KdV.hillRealActionHamiltonianVector_inclusion",
+    "NLS.KdV.contDiff_hillRealActionHamiltonianVector",
+    "NLS.KdV.hillRealDiscriminantData_eq_on_action_integralCurve",
+    "NLS.Articles.KdVPseudomeasures.originalHillActionHamiltonianSystem",
+    "NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow",
+    "NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_zero",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_originalHillNativeActionFlow",
+    "NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_add",
+    "NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_conserved",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_originalHillNativeActionFlow_inclusion",
+    "NLS.ComplexAnalysis.eq_exp_mul_of_hasDerivAt",
+    "NLS.Articles.KdVPseudomeasures.hillActionRotationRate",
+    "NLS.Articles.KdVPseudomeasures.hillHminusActionHamiltonianVector_eq_coordinate_product",
+    "NLS.Articles.KdVPseudomeasures.hillRealNativeCoordinate_action_velocity",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_originalHillNativeActionFlow_coordinate",
+    "NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_coordinate",
+    "NLS.Topology.exists_finite_coordinate_match",
+    "NLS.Topology.exists_compact_coordinate_match",
+    "NLS.ComplexAnalysis.exists_exp_I_mul_eq_of_norm_eq",
+    "NLS.Articles.KdVPseudomeasures.hillRealSignedMap_coordinate",
+    "NLS.Articles.KdVPseudomeasures.continuous_hillRealNativeCoordinate",
+    "NLS.Articles.KdVPseudomeasures.hillRealCanonicalAction_eq_of_discriminant_eq",
+    "NLS.Articles.KdVPseudomeasures.hillRealNativeActionTorus",
+    "NLS.Articles.KdVPseudomeasures.hillRealSignedMap_mem_actionTorus_of_discriminant_eq",
+    "NLS.Articles.KdVPseudomeasures.exists_hillReal_isospectral_preimage_of_mem_actionTorus",
+    "NLS.Articles.KdVPseudomeasures.image_hillRealDiscriminant_fiber_eq_actionTorus",
+    "NLS.Articles.KdVPseudomeasures.isCompact_hillRealNativeActionTorus",
+    "NLS.Articles.KdVPseudomeasures.original_Hill_native_isospectral_preimage"
+  ],
+  "files": [
+    "NLS/KdV/HillActionHamiltonianField.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionGlobalFlow.lean",
+    "NLS/ComplexAnalysis/ScalarExponentialUniqueness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionRotation.lean",
+    "NLS/Topology/CompactCoordinateMatching.lean",
+    "NLS/ComplexAnalysis/EqualNormRotation.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNativeTorusImage.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "d6665e5e066a6fa5664adfe605835f2c125a3e95",
+    "baseline_modules": 1573,
+    "baseline_non_audit_sources_verified_unchanged": 1572,
+    "new_modules_compiled": 7,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ComplexAnalysis.ScalarDuhamel",
+        "source": "NLS/ComplexAnalysis/ScalarDuhamel.lean",
+        "source_sha256": "e2cc9481cb19f595af0fd38566f9f76ef546912b48655f0f7f15a13c4ccede90"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Poisson.GardnerRealForm",
+        "source": "NLS/Poisson/GardnerRealForm.lean",
+        "source_sha256": "8b11befd0465bf56df0035b51741bb84fbea59843e5abdf07ce12f1338ca3d37",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillCanonicalActionIsospectral",
+        "source": "NLS/KdV/HillCanonicalActionIsospectral.lean",
+        "source_sha256": "e4187c0f64f25fb13c7d23d531e6835be00e7ff23b473b239063bf8524f96dda",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeCompactFibers",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeCompactFibers.lean",
+        "source_sha256": "370dd95993e677648896a9b5e42b07c232c36aa90d2e387d29cf198d633b55fa",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalCanonicalActions",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalCanonicalActions.lean",
+        "source_sha256": "8625b4ed0fbf9aa1934f3f27efd0f52520a8aa78193cecca6d999d314ce2d6d5",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeSignedGardner",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeSignedGardner.lean",
+        "source_sha256": "e927a0911457f1a282f3bd686cad1efbcfa6ce39df9ab8d913e28f9d298254e0",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillNativeRealSignedMap",
+        "source": "NLS/KdV/HillNativeRealSignedMap.lean",
+        "source_sha256": "fd74529ed81de2a568d8a65b85a08bc0ea64d937e948f4ce258a51fb9cb56453",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.FunctionalAnalysis.CompactInvariantGlobalCurve",
+        "source": "NLS/FunctionalAnalysis/CompactInvariantGlobalCurve.lean",
+        "source_sha256": "99d98c89a1b8aa963217a1ac3d23fe1b7b732eef43bd0c0d20699347a9f3692e",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1580,
+    "audited_declarations": 8036,
+    "theorems": 6756,
+    "definitions": 1280,
+    "new_theorems": 27,
+    "new_definitions": 6,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-native-action-flow-torus-image.log",
+    "log_sha256": "0860ff7129ade71982bb32ddeb635e4d6c3280590c1956f92f1f4a92e1a0e39e"
+  },
+  "remaining_obligations": [
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
+    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
+    "NOW PROVED: actual complex/physical-real all-source Jacobian/local inverse, native local homeomorphism/open map, direct finite-gap density/collision reduction, endpoint analyticity/local inverse/boundedness, sourceLemma3.7 and full forward bounded-set weak-star continuity. NOW ALSO actual indexed canonical-action Hamiltonian fields COMPLETE, exact native signed unit-speed rotations and ENTIRE actual native isospectral image EQUALS ENTIRE action torus, by actual compact fibers without global inverse. Global finite-gap/native injectivity and surjectivity (arbitrary action realization), remaining nonlinear scales, full weak-star homeomorphism, actual KdV evolution and all main theorems remain OPEN.",
+    "Complete source3.1/main1.4 for the ACTUAL original KdV Birkhoff map: global bijectivity, remaining nonlinear scales and inverse/full bounded-set weak-star homeomorphism. Native ENTIRE isospectral-image/action-torus equality NOW PROVED without global inverse. Endpoint transfer of sourceLemma3.5(ii) still required; source3.4 onto, global native injectivity and arbitrary prescribed action realization remain OPEN. Endpoint analyticity/exact derivative/local inverse, source3.6 norm-ball boundedness, source3.7 full sequential preservation and full forward bounded-set continuity already PROVED with exact physical signed Wiener predual.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+  ]
+}

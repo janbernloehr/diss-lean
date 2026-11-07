@@ -1,0 +1,39 @@
+{
+  "source": "1610.00278v1 Lemma 5.7, PDF page 35",
+  "status": "proved; strict aggregate and exact public axiom validation passed",
+  "scope": "Every nonnegative integer order N, entire original real physical Wiener source, one common complex neighborhood chosen before all positive mode indices and all exponents p>1. Complex source uses the natural zero-mean Fourier coefficient Banach model, with explicit original real-source and identical-distribution agreement.",
+  "remainder": "omega_n-(2*pi*n)^3, UNWEIGHTED lp",
+  "main_declaration": "NLS.Articles.KdVPseudomeasures.sourceLemma5_7",
+  "stronger_L2_declaration": "NLS.Articles.KdVPseudomeasures.sourceLemma5_7_L2",
+  "explicit_local_bound": "NLS.Articles.KdVPseudomeasures.lemma57_local_norm_bound",
+  "analytic_mode_frequencies": "NLS.Articles.KdVPseudomeasures.lemma57_mode_analytic",
+  "proof": "The original all-index centered moment estimate is dominated by squared Hilbert gap majorants convolved with the punctured reciprocal lattice, which belongs to every lp, p>1. The L2 input derivative removes the old inverse-index target weight. Scalar analytic realization gives Banach lp charts; real-centered ball overlap uniqueness glues all charts on a neighborhood chosen before p. Complexified physical Wiener inclusions pull back that common neighborhood.",
+  "files": [
+    "NLS/Articles/KdVPseudomeasures/SourceLemma57.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceLemma57Corollaries.lean",
+    "NLS/Articles/KdVPseudomeasures/Lemma57CommonNeighborhood.lean",
+    "NLS/Articles/KdVPseudomeasures/Lemma57FrequencyCharts.lean",
+    "NLS/KdV/HillL2MomentLpSequence.lean",
+    "NLS/SequenceSpaces/UnweightedPositiveMomentSeries.lean",
+    "NLS/ComplexAnalysis/CompatibleRealBallCharts.lean"
+  ],
+  "source_sha256": {
+    "NLS/Articles/KdVPseudomeasures/SourceLemma57.lean": "18ae5fd793d24a8478f703ce76d7f05a23277085c2fd5dd0436abdfc9cec6481",
+    "NLS/Articles/KdVPseudomeasures/SourceLemma57Corollaries.lean": "97335d4383640a7c46600abae300c07e43a05b6d66fee2acbd4fc094fc7dd9fd",
+    "NLS/Articles/KdVPseudomeasures/Lemma57CommonNeighborhood.lean": "328db036db47e2dbfa1d81a5b0718fddf3a1bc8f6b6099afa59d6eb0ad0ff5d3",
+    "NLS/Articles/KdVPseudomeasures/Lemma57FrequencyCharts.lean": "22907741ead289c7a787481f4e778580ec778133b6bafde52ee6b5388733673b",
+    "NLS/KdV/HillL2MomentLpSequence.lean": "b959cfafdae608036785fd59761a6fe3394486c3236fd0afe3e6825950ddedd7",
+    "NLS/SequenceSpaces/UnweightedPositiveMomentSeries.lean": "c7243dc04f17286a43004fdeaf774d597b8a920850bb1fc8f78bb607b1c6919c",
+    "NLS/ComplexAnalysis/CompatibleRealBallCharts.lean": "7c81fa5bb5e0790f688e4eac9a89596dc22bc111536008199bd890b36ee0fd22"
+  },
+  "canonical_checkout_read_only": true,
+  "flags": {
+    "no_new_axioms": true,
+    "no_proof_limit_increases": true,
+    "no_linter_suppressions": true,
+    "all_five_main_theorems_unchanged": true,
+    "all_numbered_paper_results_proved": false
+  },
+  "numbered_result_record": "coverage/articles/kdv-pseudomeasures/numbered-results.json",
+  "validation_record": "coverage/articles/kdv-pseudomeasures/numbered-validation.json"
+}

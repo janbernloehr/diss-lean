@@ -4,7 +4,9 @@
 set -euo pipefail
 project_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 reference="${DISS_LEAN_REFERENCE_CHECKOUT:?Set DISS_LEAN_REFERENCE_CHECKOUT to the pinned, prebuilt reference checkout}"
-build_root="$project_dir/.lake/build/lib/lean"
+# The merged physical-flow closure is prepared by check-kdv-pseudomeasures-merge.py.
+# An alternate already validated private build view may be selected explicitly.
+build_root="${DISS_LEAN_BUILD_ROOT:-$project_dir/.lake/pr5-merge-check/lib/lean}"
 # Replace a directory symlink by a private directory of read-only imports
 # before compiling a new shared module into that namespace.
 ensure_private_dir() {
@@ -240,6 +242,7 @@ modules+=(NLS/ComplexAnalysis/RealComplexificationIdentity NLS/KdV/HillSharpComp
 modules+=(NLS/SequenceSpaces/RealWeightedNatPairInclusion NLS/SequenceSpaces/SobolevCorollaryWeights NLS/SequenceSpaces/ConservedSobolevBootstrap NLS/KdV/HillRealWeightedInclusion NLS/KdV/HillRealSobolevSourceNorm NLS/KdV/HillRealSobolevBirkhoffTarget NLS/KdV/HillOriginalBirkhoffRealSobolevRestriction NLS/KdV/HillBirkhoffIntegerLowerNorms NLS/Articles/KdVEstimates/RealSobolevCorollary NLS/Articles/KdVEstimates/DynamicalCorollaryEstimate)
 modules+=(NLS/ComplexAnalysis/QuadraticHillKdVFlux NLS/KdV/ClassicalKdVJet NLS/KdV/SmoothPeriodicKdVJet NLS/KdV/ClassicalKdVConservation NLS/KdV/ClassicalKdVPhysicalAdapter NLS/KdV/KdVClassicalApproximation NLS/KdV/KdVWeightedApproximation NLS/Articles/KdVEstimates/DynamicalCorollary)
 modules+=(NLS/KdV/ClassicalKdVDifferenceEstimate NLS/KdV/ClassicalKdVUniqueness NLS/KdV/HillWeightedPhysicalLimit NLS/KdV/KdVFourierField NLS/KdV/SmoothKdVFourierEquation NLS/KdV/SmoothKdVWeakEquivalence NLS/KdV/KdVWeakLimit NLS/KdV/KdVPhysicalWeakSolution NLS/KdV/KdVSmoothApproximation NLS/Articles/KdVEstimates/SobolevLimitPersistence)
+modules+=(NLS/KdV/KdVOriginalSobolevModel NLS/KdV/KdVOriginalSobolevFlow)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
@@ -249,3 +252,4 @@ for module in "${modules[@]}"; do
   lean -DautoImplicit=false -DwarningAsError=true -o "$build_root/$module.olean" "$module.lean"
 done
 lean -DautoImplicit=false -DwarningAsError=true coverage/articles/kdv-estimates/CheckPrivateAxioms.lean
+lean -DautoImplicit=false -DwarningAsError=true coverage/articles/kdv-estimates/CheckFlowAxioms.lean
