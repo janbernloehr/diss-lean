@@ -1,3 +1,18 @@
+import NLS.ComplexAnalysis.AnalyticNonzeroConnected
+import NLS.SequenceSpaces.CompactLpMultiplier
+import NLS.KdV.PhysicalDiagonalFrequencySymbol
+import NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalSymbol
+import NLS.KdV.MiuraDiagonalFrequencySymbol
+import NLS.SequenceSpaces.AffinePositiveSymbolReciprocal
+import NLS.ZakharovShabat.SourceFirstWeightedActionSequence
+import NLS.ZakharovShabat.SourceUniformGapBoundaryBound
+import NLS.ZakharovShabat.SourceWeightedActionAffineRemainder
+import NLS.ZakharovShabat.SourceCauchyNormalizedActionSequence
+import NLS.ZakharovShabat.SourceOppositeSecondMomentSequence
+import NLS.ZakharovShabat.SourceRegularDiagonalSequenceBounds
+import NLS.ComplexAnalysis.AnalyticFiniteNonvanishing
+import NLS.SequenceSpaces.DenseFiniteHilbertBounds
+import NLS.ZakharovShabat.SourceComplexOpenGapDensity
 import NLS.ComplexAnalysis.ParametricSineSquareMean
 import NLS.ZakharovShabat.SourceMomentFreeFactors
 import NLS.ZakharovShabat.SourceNormalizedSecondMoment
@@ -5855,7 +5870,25 @@ private def kdvFrequencyAuditChunk25 : Array Lean.Name := #[
   `NLS.ZakharovShabat.SourceRegularDiagonalActionCancellation,
   `NLS.SequenceSpaces.CompactFiniteSymbolPacket,
   `NLS.KdV.PhysicalDiagonalActionCancellation,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalCancellation
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalCancellation,
+  `NLS.ComplexAnalysis.AnalyticNonzeroConnected,
+  `NLS.ComplexAnalysis.AnalyticFiniteNonvanishing,
+  `NLS.SequenceSpaces.DenseFiniteHilbertBounds,
+  `NLS.ZakharovShabat.SourceComplexOpenGapDensity
+]
+
+private def kdvFrequencyAuditChunk26 : Array Lean.Name := #[
+  `NLS.ZakharovShabat.SourceRegularDiagonalSequenceBounds,
+  `NLS.ZakharovShabat.SourceOppositeSecondMomentSequence,
+  `NLS.ZakharovShabat.SourceCauchyNormalizedActionSequence,
+  `NLS.ZakharovShabat.SourceWeightedActionAffineRemainder,
+  `NLS.ZakharovShabat.SourceUniformGapBoundaryBound,
+  `NLS.ZakharovShabat.SourceFirstWeightedActionSequence,
+  `NLS.SequenceSpaces.CompactLpMultiplier,
+  `NLS.SequenceSpaces.AffinePositiveSymbolReciprocal,
+  `NLS.KdV.MiuraDiagonalFrequencySymbol,
+  `NLS.KdV.PhysicalDiagonalFrequencySymbol,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalSymbol
 ]
 
 open Lean in
@@ -5887,7 +5920,8 @@ run_cmd do
     kdvFrequencyAuditChunk22,
     kdvFrequencyAuditChunk23,
     kdvFrequencyAuditChunk24,
-    kdvFrequencyAuditChunk25
+    kdvFrequencyAuditChunk25,
+    kdvFrequencyAuditChunk26
   ].flatten
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

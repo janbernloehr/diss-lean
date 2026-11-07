@@ -945,9 +945,14 @@
           "source_clause": "Exact scalar cancellation of the original +6I counterterm with the free diagonal physical moment near every original real source, on common complex normalization balls through closed gaps; full sequence compactness is not asserted",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.theorem_1_2_local_diagonal_cancellation",
           "qualification": "All regularity-dependent target clauses of Theorem 1.2(i), and the previously proved local off-diagonal ACTION compactness near every original intermediate nonnegative action, remain verified. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main rows remain OPEN. Theorem 1.2(ii) still needs locally uniform sequence estimates for the actual normalized DIAGONAL error, its descent and identification with the full global frequency map. The scalar 6I cancellation is now proved, but compactness of the full corrected derivative is not. Sharp locally uniform asymptotics, Hilbert derivative compactness, strict concavity, local inverses, PDE conclusions and the KdV2 weighted moment sums and mass-renormalized physical frequency identification remain open."
+        },
+        {
+          "source_clause": "Actual diagonal contribution to Theorem 1.2(ii): bounded analytic Hilbert symbol near EVERY real rough base, exact physical factorization by the ORIGINAL 6I term, whole complex domains and all closed gaps; action-space descent and full compactness not asserted",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.theorem_1_2_local_diagonal_symbol",
+          "qualification": "All regularity-dependent target clauses of Theorem 1.2(i), the previously proved local off-diagonal ACTION compactness near every original intermediate nonnegative action, and exact scalar diagonal cancellation remain verified. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main rows remain OPEN. Theorem 1.2(ii) still needs descent of the actual diagonal SYMBOL to the ORIGINAL action topology, including invariance at closed selected actions, original rough Arnold calibration on the relevant fibers, and identification of the combined local remainder with the full global frequency map. No compact full action derivative is asserted yet. Sharp locally uniform asymptotics, Hilbert derivative compactness, strict concavity, local inverses, PDE conclusions and the KdV2 weighted moment sums and mass-renormalized physical frequency identification remain open."
         }
       ],
-      "current_support_summary": "The exact original +6I counterterm now cancels the free DIAGONAL physical second-moment term near EVERY original real Hill source. One actual physical Miura frequency chart, one Cauchy normalization family and one complex source ball serve ALL signed moment indices. The normalized second moments and both diagonal error factors are complex analytic through arbitrary closed gaps. The article-level theorem retains the original contour actions, physical -12 frequency normalization and BOTH opposite own Dirac labels. A reusable theorem also proves compact corrected derivatives from a finite-exponent analytic diagonal symbol and a compact remainder, in the SAME original weighted ell1 norm. The required finite-exponent estimates for the ACTUAL diagonal symbol are not yet established. All regularity-dependent target clauses of Theorem 1.2(i), and the previously proved local off-diagonal ACTION compactness near every original intermediate nonnegative action, remain verified. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main rows remain OPEN. Theorem 1.2(ii) still needs locally uniform sequence estimates for the actual normalized DIAGONAL error, its descent and identification with the full global frequency map. The scalar 6I cancellation is now proved, but compactness of the full corrected derivative is not. Sharp locally uniform asymptotics, Hilbert derivative compactness, strict concavity, local inverses, PDE conclusions and the KdV2 weighted moment sums and mass-renormalized physical frequency identification remain open."
+      "current_support_summary": "The ACTUAL diagonal frequency error now has a bounded complex analytic Hilbert SYMBOL near EVERY real rough Hill source. The regular diagonal second moment, the opposite-label normalized moment and the first weighted normalized action error all have whole-vector ell2 analytic bounds on full complex neighborhoods, INCLUDING CLOSED GAPS. One common positive-frequency reciprocal then constructs the actual symbol sigma. At all original physical real sources in the germ, correction_n+6I_n=offDiagonalCorrection_n+6I_n*sigma_n, with exact original contour actions and physical -12 normalization. The actual Miura-level identity also holds at EVERY complex diagonal source in its neighborhood. The required diagonal source sequence estimate is now proved; action-space descent and full corrected derivative compactness remain separate. All regularity-dependent target clauses of Theorem 1.2(i), the previously proved local off-diagonal ACTION compactness near every original intermediate nonnegative action, and exact scalar diagonal cancellation remain verified. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main rows remain OPEN. Theorem 1.2(ii) still needs descent of the actual diagonal SYMBOL to the ORIGINAL action topology, including invariance at closed selected actions, original rough Arnold calibration on the relevant fibers, and identification of the combined local remainder with the full global frequency map. No compact full action derivative is asserted yet. Sharp locally uniform asymptotics, Hilbert derivative compactness, strict concavity, local inverses, PDE conclusions and the KdV2 weighted moment sums and mass-renormalized physical frequency identification remain open."
     },
     {
       "label": "Theorem 1.3",
@@ -44136,14 +44141,254 @@
       "scope": "The exact original +6I counterterm now cancels the free DIAGONAL physical second-moment term near EVERY original real Hill source. One actual physical Miura frequency chart, one Cauchy normalization family and one complex source ball serve ALL signed moment indices. The normalized second moments and both diagonal error factors are complex analytic through arbitrary closed gaps. The article-level theorem retains the original contour actions, physical -12 frequency normalization and BOTH opposite own Dirac labels. A reusable theorem also proves compact corrected derivatives from a finite-exponent analytic diagonal symbol and a compact remainder, in the SAME original weighted ell1 norm. The required finite-exponent estimates for the ACTUAL diagonal symbol are not yet established.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "a4f250f735925f6622755060e49666ddf5a52af45c551997b24185f5599c7d8d"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticNonzeroConnected.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "Unchanged canonical analytic nonvanishing propagation on connected complex Banach domains, used to extend actual finite-coordinate estimates through closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "917d344dcef933f9ae3d7418492484cbf97083914c005f8603c3fbc765c2ea58"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticFiniteNonvanishing.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "A finite family of analytic divisors has a dense simultaneous nonzero locus on an open connected complex Banach domain once one common witness exists. The proof uses the actual finite product and analytic uniqueness.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cfc2f7c46cbf55f0d07fabb2baa24686dcc0609f471bbd577870f8399d7d09e9"
+    },
+    {
+      "path": "NLS/SequenceSpaces/DenseFiniteHilbertBounds.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "Continuous coordinates extend whole Hilbert norm bounds from dense sets that may vary with the finite coordinate set. Bounded finite sums produce actual Hilbert membership and its original norm bound.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "69faa480e82ba6c589f6e93e509db90dc96e0bb59505d76966831fdd09649f47"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceComplexOpenGapDensity.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "Real Floquet gap-opening witnesses and analytic symmetric squared gaps prove density of simultaneous OPEN gaps in the FULL complex source neighborhood, for every finite set of signed indices.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1cefebd9679287dbcfce9d77e8d598e88c2e001d2aefa17d6873acc5433372ad"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceRegularDiagonalSequenceBounds.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The actual regular diagonal error 4*N_nn-pi is a bounded genuine complex analytic ell2 packet near every real Hilbert source. Finite coordinate bounds extend from the nonzero-gap formula to ALL complex sources, including arbitrarily many closed gaps, before sequence realization.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "001e099ac216b512ef172d20e050bd0affe1fa62d7fdb0f9b8405eadbcdce2e9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceOppositeSecondMomentSequence.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The actual opposite-label normalized second moment N_n,-n, with only slot zero set to zero, is a bounded analytic ell2 packet. A common reciprocal-index majorant controls all signed nonzero coordinates and extends through collapsed opposite gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d9f575432bc8b51d08fdabcbbeee2af2b73326687c921ce8cac85d2a00e01820"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCauchyNormalizedActionSequence.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The Cauchy normalized zeroth weighted action agrees with the canonical normalized action on one common COMPLEX ball, simultaneously for every signed index. Its regular deviation 4*W_n0-1 is a bounded analytic ell2 packet through all closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fa07b9773094c48061fa213ff601bfc401d67530af9b5a50c3b96608522bd3e4"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedActionAffineRemainder.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The first weighted normalized action is EXACTLY its midpoint times the zeroth normalized action plus the original primitive-boundary sine/cosine integral with coefficient 1/(2*pi). The integral estimate preserves a gap factor at every complex source, including collapse.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ccdff4c374df6fd13ea1702180e30e0fc3eb7075d0aa502249ed4a4a2e260ac1"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceUniformGapBoundaryBound.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "For ANY actual Cauchy primitive family near ANY real Hilbert source, one full complex neighborhood and one constant bound EVERY actual primitive gap boundary by that selected gap magnitude. Central gaps are handled with actual finite Cauchy bounds and the tail with the proved original all-gap estimates.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4a75042c4917cca7da47faf2c6e2fa42c29934977012ac88765cb49a1e7cb11e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFirstWeightedActionSequence.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The actual first weighted normalized action error 4*W_n1/n-pi, with only slot zero set to zero, is a bounded analytic ell2 packet on one full complex source neighborhood. The proof keeps the literal signed integer index, actual midpoint displacement, gap sequence and regular primitive remainder.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "606f2f247205253959148ce43dcdcc0c1859cfcb9ad859f7549b2f8f4eb23cbc"
+    },
+    {
+      "path": "NLS/SequenceSpaces/CompactLpMultiplier.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "Unchanged canonical uniformly vanishing tails of finite-exponent symbols, used to construct one reciprocal neighborhood before every positive frequency index.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "577db6bfcaa7d8b1104733516574241898d1aaa683f5ebec596f16594dcf4263"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AffinePositiveSymbolReciprocal.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "A nonzero constant plus a finite-exponent analytic packet has one actual bounded analytic reciprocal on every positive slot near a base where those slots are nonzero. Finite heads and uniformly small tails give ONE complex domain before all frequency indices; nonpositive reciprocal slots are zero.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b515dba6cfc3e5c86978a8a6cec35ed6ad451f3b5902e043997786ab2031c694"
+    },
+    {
+      "path": "NLS/KdV/MiuraDiagonalFrequencySymbol.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The actual diagonal correction plus twelve times the first weighted Dirac action factors by that same action and an analytic ell2 symbol near every real Miura base. The identity holds at ALL complex diagonal Miura sources in the germ. Actual canonical endpoint reflection and normalized-action positivity at ALL positive gaps, including closed gaps, provide the exact quotient and its common reciprocal domain.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c65751ea7504d62a6389b7b679468c4746579992361489697fbe28719364c71c"
+    },
+    {
+      "path": "NLS/KdV/PhysicalDiagonalFrequencySymbol.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "At every real rough Hill base in an actual physical chart, the same actual Miura inverse transfers the diagonal symbol to a bounded analytic ell2 map on a FULL COMPLEX rough-source neighborhood. At EVERY original real physical source in that neighborhood, the original +6I corrected contribution equals the off-diagonal correction plus 6I times that symbol, with nonpositive symbol slots zero.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "70d2a90042f59d5f01b0c3120af5b556f6ceb3159c7a702d32096f02e05c68aa"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalSymbol.lean",
+      "source_labels": [
+        "Necessary diagonal support for Theorem 1.2(ii): ACTUAL bounded analytic Hilbert diagonal symbol, exact original 6I factorization and all closed gaps; full action-space descent and corrected derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The ACTUAL diagonal frequency error now has a bounded complex analytic Hilbert SYMBOL near EVERY real rough Hill source. The regular diagonal second moment, the opposite-label normalized moment and the first weighted normalized action error all have whole-vector ell2 analytic bounds on full complex neighborhoods, INCLUDING CLOSED GAPS. One common positive-frequency reciprocal then constructs the actual symbol sigma. At all original physical real sources in the germ, correction_n+6I_n=offDiagonalCorrection_n+6I_n*sigma_n, with exact original contour actions and physical -12 normalization. The actual Miura-level identity also holds at EVERY complex diagonal source in its neighborhood. The required diagonal source sequence estimate is now proved; action-space descent and full corrected derivative compactness remain separate.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "85167fc5e098996652b4a0a74fc62e34ee200589687929af594366c99819be96"
     }
   ],
   "dependencies_needed": [
-    "The exact original +6I counterterm now cancels the free DIAGONAL physical second-moment term near EVERY original real Hill source. One actual physical Miura frequency chart, one Cauchy normalization family and one complex source ball serve ALL signed moment indices. The normalized second moments and both diagonal error factors are complex analytic through arbitrary closed gaps. The article-level theorem retains the original contour actions, physical -12 frequency normalization and BOTH opposite own Dirac labels. A reusable theorem also proves compact corrected derivatives from a finite-exponent analytic diagonal symbol and a compact remainder, in the SAME original weighted ell1 norm. The required finite-exponent estimates for the ACTUAL diagonal symbol are not yet established. All regularity-dependent target clauses of Theorem 1.2(i), and the previously proved local off-diagonal ACTION compactness near every original intermediate nonnegative action, remain verified. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main rows remain OPEN. Theorem 1.2(ii) still needs locally uniform sequence estimates for the actual normalized DIAGONAL error, its descent and identification with the full global frequency map. The scalar 6I cancellation is now proved, but compactness of the full corrected derivative is not. Sharp locally uniform asymptotics, Hilbert derivative compactness, strict concavity, local inverses, PDE conclusions and the KdV2 weighted moment sums and mass-renormalized physical frequency identification remain open.",
+    "The ACTUAL diagonal frequency error now has a bounded complex analytic Hilbert SYMBOL near EVERY real rough Hill source. The regular diagonal second moment, the opposite-label normalized moment and the first weighted normalized action error all have whole-vector ell2 analytic bounds on full complex neighborhoods, INCLUDING CLOSED GAPS. One common positive-frequency reciprocal then constructs the actual symbol sigma. At all original physical real sources in the germ, correction_n+6I_n=offDiagonalCorrection_n+6I_n*sigma_n, with exact original contour actions and physical -12 normalization. The actual Miura-level identity also holds at EVERY complex diagonal source in its neighborhood. The required diagonal source sequence estimate is now proved; action-space descent and full corrected derivative compactness remain separate. All regularity-dependent target clauses of Theorem 1.2(i), the previously proved local off-diagonal ACTION compactness near every original intermediate nonnegative action, and exact scalar diagonal cancellation remain verified. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main rows remain OPEN. Theorem 1.2(ii) still needs descent of the actual diagonal SYMBOL to the ORIGINAL action topology, including invariance at closed selected actions, original rough Arnold calibration on the relevant fibers, and identification of the combined local remainder with the full global frequency map. No compact full action derivative is asserted yet. Sharp locally uniform asymptotics, Hilbert derivative compactness, strict concavity, local inverses, PDE conclusions and the KdV2 weighted moment sums and mass-renormalized physical frequency identification remain open.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
-    "The actual KdV regularity-dependent targets of Theorem 1.2(i), local off-diagonal action compactness at every original intermediate action, and exact original scalar DIAGONAL cancellation with 6I are proved. The actual normalized diagonal error still needs locally uniform finite-exponent sequence estimates, action descent and identification with the full global frequency map. Full corrected action/Hilbert derivative compactness and sharp asymptotics remain open. KdV2 still needs actual weighted moment sums, physical frequency identification, exact mass renormalization and global analytic/asymptotic/PDE conclusions.",
+    "The actual KdV targets of Theorem 1.2(i), local off-diagonal action compactness at every original intermediate action, exact original scalar DIAGONAL cancellation with 6I, and the ACTUAL bounded analytic ell2 DIAGONAL symbol on full complex rough-source germs are proved. Remaining work includes diagonal symbol invariance and descent through closed-action fibers in the original action topology, original rough Arnold calibration and full global frequency identification, then full corrected action/Hilbert derivative compactness and sharp asymptotics. KdV2 still needs actual weighted moment sums, physical frequency identification, exact mass renormalization and global analytic/asymptotic/PDE conclusions.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
   ],
   "workspace": {
@@ -44167,8 +44412,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 25722,
-    "total_declarations_audited": 47789,
+    "candidate_declarations_audited": 25773,
+    "total_declarations_audited": 47839,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -44177,7 +44422,7 @@
     "main_theorems_verified": [
       "Theorem 1.1"
     ],
-    "selected_modules": 3324,
+    "selected_modules": 3339,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -44325,7 +44570,8 @@
       "added_NLS_names": 70
     },
     "offdiagonal_action_compact_validation_sequence": "All 3298 prior selected sources and all 50 prior provenance records remain byte-identical. Eleven new own modules and three newly selected canonical primitive/moment invariance modules were strictly rebuilt in dependency order AFTER freezing 3366 selected-source/checker/provenance/pinned-Mathlib-source hashes. The three canonical sources were already tracked and are byte-identical to canonical main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec and the previous article HEAD; their new reuse record brings provenance to 51 records. The exact new import closure consists of these fourteen modules. The fresh combined transitive axiom audit covers all 3312 selected modules and EVERY imported NLS declaration: 25637 selected and 47704 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 26 private selection chunks of at most 128 names were verified. The actual 3312-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a fourteen-module incremental rebuild retaining all prior strict evidence, not a full 3312-module rebuild.",
-    "diagonal_action_cancellation_validation_sequence": "All 3312 prior selected sources and all 51 prior provenance records remain byte-identical. Five new own modules and seven newly selected canonical normalization/free-factor modules were strictly rebuilt in dependency order AFTER freezing 3379 selected-source/checker/provenance/pinned-Mathlib-source hashes. The seven canonical source files were already tracked, remain byte-identical to canonical main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec and the previous article HEAD, and have one new reuse record, bringing provenance to 52 records. The exact new import closure is these twelve modules. The fresh combined transitive axiom audit covers all 3324 selected modules and EVERY imported NLS declaration: 25722 selected and 47789 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 26 private selection chunks of at most 128 names were verified. The actual 3324-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a twelve-module incremental rebuild retaining all prior strict evidence, not a full 3324-module rebuild."
+    "diagonal_action_cancellation_validation_sequence": "All 3312 prior selected sources and all 51 prior provenance records remain byte-identical. Five new own modules and seven newly selected canonical normalization/free-factor modules were strictly rebuilt in dependency order AFTER freezing 3379 selected-source/checker/provenance/pinned-Mathlib-source hashes. The seven canonical source files were already tracked, remain byte-identical to canonical main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec and the previous article HEAD, and have one new reuse record, bringing provenance to 52 records. The exact new import closure is these twelve modules. The fresh combined transitive axiom audit covers all 3324 selected modules and EVERY imported NLS declaration: 25722 selected and 47789 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 26 private selection chunks of at most 128 names were verified. The actual 3324-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a twelve-module incremental rebuild retaining all prior strict evidence, not a full 3324-module rebuild.",
+    "diagonal_frequency_symbol_validation_sequence": "All 3324 prior selected sources and all 52 prior provenance records remain byte-identical. Thirteen new own modules and two newly selected canonical analytic-nonvanishing/multiplier-tail modules were strictly rebuilt in dependency order AFTER freezing 3395 selected-source/checker/provenance/pinned-Mathlib-source hashes. Both canonical source files were already tracked, remain byte-identical to canonical main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec and the previous article HEAD, and have one new reuse record, bringing provenance to 53 records. The exact new import closure is these fifteen modules. The fresh combined transitive axiom audit covers all 3339 selected modules and EVERY imported NLS declaration: 25773 selected and 47839 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 27 private selection chunks of at most 128 names were verified. The actual 3339-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a fifteen-module incremental rebuild retaining all prior strict evidence, not a full 3339-module rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -45693,6 +45939,18 @@
         "All actual KdV regularity-dependent targets of Theorem 1.2(i) are proved. The paired off-diagonal physical contribution now descends to local ACTION germs near EVERY original intermediate nonnegative action, with compact derivatives into the SAME original weighted ell1 target at every complex point and exact raw original Arnold action recovery. Remaining work includes exact DIAGONAL cancellation with 6I, identification with the full global frequency map, full action/Hilbert derivative compactness and sharp locally uniform asymptotics. KdV2 still needs actual cubic-weighted second- and linear-weighted fourth-moment sums, physical frequency identification, exact mass renormalization and global analytic/asymptotic/PDE conclusions.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "857c3933e290f7b0aa8304c495483aaa130b68f9",
+      "description": "The ACTUAL diagonal frequency error now has a bounded complex analytic Hilbert SYMBOL near EVERY real rough Hill source. The regular diagonal second moment, the opposite-label normalized moment and the first weighted normalized action error all have whole-vector ell2 analytic bounds on full complex neighborhoods, INCLUDING CLOSED GAPS. One common positive-frequency reciprocal then constructs the actual symbol sigma. At all original physical real sources in the germ, correction_n+6I_n=offDiagonalCorrection_n+6I_n*sigma_n, with exact original contour actions and physical -12 normalization. The actual Miura-level identity also holds at EVERY complex diagonal source in its neighborhood. The required diagonal source sequence estimate is now proved; action-space descent and full corrected derivative compactness remain separate.",
+      "entries": [
+        "The exact original +6I counterterm now cancels the free DIAGONAL physical second-moment term near EVERY original real Hill source. One actual physical Miura frequency chart, one Cauchy normalization family and one complex source ball serve ALL signed moment indices. The normalized second moments and both diagonal error factors are complex analytic through arbitrary closed gaps. The article-level theorem retains the original contour actions, physical -12 frequency normalization and BOTH opposite own Dirac labels. A reusable theorem also proves compact corrected derivatives from a finite-exponent analytic diagonal symbol and a compact remainder, in the SAME original weighted ell1 norm. The required finite-exponent estimates for the ACTUAL diagonal symbol are not yet established. All regularity-dependent target clauses of Theorem 1.2(i), and the previously proved local off-diagonal ACTION compactness near every original intermediate nonnegative action, remain verified. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main rows remain OPEN. Theorem 1.2(ii) still needs locally uniform sequence estimates for the actual normalized DIAGONAL error, its descent and identification with the full global frequency map. The scalar 6I cancellation is now proved, but compactness of the full corrected derivative is not. Sharp locally uniform asymptotics, Hilbert derivative compactness, strict concavity, local inverses, PDE conclusions and the KdV2 weighted moment sums and mass-renormalized physical frequency identification remain open.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "The actual KdV regularity-dependent targets of Theorem 1.2(i), local off-diagonal action compactness at every original intermediate action, and exact original scalar DIAGONAL cancellation with 6I are proved. The actual normalized diagonal error still needs locally uniform finite-exponent sequence estimates, action descent and identification with the full global frequency map. Full corrected action/Hilbert derivative compactness and sharp asymptotics remain open. KdV2 still needs actual weighted moment sums, physical frequency identification, exact mass renormalization and global analytic/asymptotic/PDE conclusions.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -45794,5 +46052,6 @@
   "intermediate_kdv_targets_record": "INTERMEDIATE_KDV_TARGETS.md",
   "offdiagonal_kdv_smoothing_record": "OFFDIAGONAL_KDV_SMOOTHING.md",
   "offdiagonal_action_compact_record": "OFFDIAGONAL_ACTION_COMPACT.md",
-  "diagonal_action_cancellation_record": "DIAGONAL_ACTION_CANCELLATION.md"
+  "diagonal_action_cancellation_record": "DIAGONAL_ACTION_CANCELLATION.md",
+  "diagonal_frequency_symbol_record": "DIAGONAL_FREQUENCY_SYMBOL.md"
 }

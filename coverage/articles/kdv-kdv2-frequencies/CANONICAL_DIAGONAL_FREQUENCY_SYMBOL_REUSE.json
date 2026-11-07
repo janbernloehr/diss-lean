@@ -1,0 +1,19 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "source_branch": "main",
+  "purpose": "Unchanged canonical analytic nonvanishing propagation and finite-exponent multiplier tails needed for full complex closed-gap Hilbert normalization bounds and the actual diagonal frequency reciprocal symbol. Already tracked source bytes are newly selected, strictly rebuilt privately and transitively axiom audited.",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticNonzeroConnected.lean",
+      "source_sha256": "917d344dcef933f9ae3d7418492484cbf97083914c005f8603c3fbc765c2ea58",
+      "local_sha256": "917d344dcef933f9ae3d7418492484cbf97083914c005f8603c3fbc765c2ea58",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/CompactLpMultiplier.lean",
+      "source_sha256": "577db6bfcaa7d8b1104733516574241898d1aaa683f5ebec596f16594dcf4263",
+      "local_sha256": "577db6bfcaa7d8b1104733516574241898d1aaa683f5ebec596f16594dcf4263",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

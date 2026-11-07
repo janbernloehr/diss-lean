@@ -3333,6 +3333,21 @@ modules=(
   NLS/SequenceSpaces/CompactFiniteSymbolPacket
   NLS/KdV/PhysicalDiagonalActionCancellation
   NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalCancellation
+  NLS/ComplexAnalysis/AnalyticNonzeroConnected
+  NLS/ComplexAnalysis/AnalyticFiniteNonvanishing
+  NLS/SequenceSpaces/DenseFiniteHilbertBounds
+  NLS/ZakharovShabat/SourceComplexOpenGapDensity
+  NLS/ZakharovShabat/SourceRegularDiagonalSequenceBounds
+  NLS/ZakharovShabat/SourceOppositeSecondMomentSequence
+  NLS/ZakharovShabat/SourceCauchyNormalizedActionSequence
+  NLS/ZakharovShabat/SourceWeightedActionAffineRemainder
+  NLS/ZakharovShabat/SourceUniformGapBoundaryBound
+  NLS/ZakharovShabat/SourceFirstWeightedActionSequence
+  NLS/SequenceSpaces/CompactLpMultiplier
+  NLS/SequenceSpaces/AffinePositiveSymbolReciprocal
+  NLS/KdV/MiuraDiagonalFrequencySymbol
+  NLS/KdV/PhysicalDiagonalFrequencySymbol
+  NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalSymbol
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
