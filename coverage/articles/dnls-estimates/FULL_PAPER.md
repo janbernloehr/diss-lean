@@ -10,7 +10,7 @@ The source is the 38-page arXiv:1403.1369v2 PDF, SHA-256
 [full-paper-claims.json](full-paper-claims.json) records all 27 named results
 and 350 mechanical paragraph blocks before the references, with source line
 spans and text hashes. These blocks have not all been decomposed and reviewed
-as individual assertions. The ledger also records 50 explicitly compared
+as individual assertions. The ledger also records 70 explicitly compared
 auxiliary groups from the setup, Sections 3–6 and both appendices, with direct corrections
 and exact shared declarations. These groups are not asserted to exhaust their
 source spans. A checked theorem does not automatically certify
@@ -33,7 +33,7 @@ Full declaration names and exact qualifications are in the JSON ledger.
 | Theorem 4 | 10 | Statement checked | `theorem_four`, `exists_theorem_four_domain` |
 | Lemma 2 | 10 | Statement checked | `lemma_two_domain`, `lemma_two_joint` |
 | Lemma 3 | 12 | Statement checked | `proposition_twenty`, `lemma_three_spectral` |
-| Lemma 4 | 14 | Partial: complex domain open | `lemma_four_real`, `laurent_coefficient` |
+| Lemma 4 | 14 | Complex Laurent expansion checked; nonsmooth physical coefficients open | `complex_finiteGap_laurent`, `complex_finiteGap_smooth_hamiltonians` |
 | Theorem 5 | 15 | Statement checked | `theorem_five`, `theorem_five_spectrum` |
 | Lemma 5 | 16 | Statement checked | `lemma_five` |
 | Lemma 6 | 17 | Statement checked | `lemma_six` |
@@ -63,7 +63,7 @@ statements; no result relies on a default value of a divergent Lean sum.
 
 ## New mathematical work
 
-Eight modules extend the original [MainEstimates](../../../NLS/Articles/DNLSEstimates/MainEstimates.lean)
+Eleven modules extend the original [MainEstimates](../../../NLS/Articles/DNLSEstimates/MainEstimates.lean)
 interface:
 
 - [HigherActions](../../../NLS/Articles/DNLSEstimates/HigherActions.lean):
@@ -104,9 +104,30 @@ interface:
   The real-type premise is visible; it does not establish the printed
   all-complex finite-gap statement.
 
+- [ComplexFiniteGap](../../../NLS/Articles/DNLSEstimates/ComplexFiniteGap.lean):
+  a direct complex proof of exterior analyticity and a convergent normalized
+  Laurent expansion. Collapsed factors cancel before taking the finite product.
+  The closed-circle integral eliminates a logarithmic term, and actual collapsed
+  tail endpoint values fix the additive constant. Matching Fourier coefficients
+  identify every coefficient with the physical Riccati Hamiltonians at smooth
+  complex sources. The common neighborhoods and complex discriminant identity
+  are constructed. Nonsmooth complex Hamiltonian interpretation remains open.
+- [SpectralCurve](../../../NLS/Articles/DNLSEstimates/SpectralCurve.lean):
+  the actual affine curve in C², analytic local uniformizers at unramified and
+  simple branch points, two branches with distinct tangents at double spectral
+  points, the actual ambient Jacobian, and nonsingularity exactly when the
+  entire periodic spectrum is simple. The simple-spectrum curve has infinitely
+  many distinct regular branch points.
+- [SpectralSurface](../../../NLS/Articles/DNLSEstimates/SpectralSurface.lean):
+  an actual Mathlib `ChartedSpace` and complex analytic `IsManifold` of dimension
+  one, on the original subspace topology, for simple periodic spectrum. The
+  proof constructs open charts, both inverse identities, continuity and analytic
+  transitions. Surjectivity of the spectral projection proves noncompactness.
+  Connectedness and the topological infinite-genus assertion remain separate.
+
 These reuse established equation-specific and generic proofs. The zero-mode
-repair in `ConverseEstimate`, simultaneous endpoint continuity and normalization
-conversions are new proofs in the article layer. No existing generic analysis
+repair in `ConverseEstimate`, simultaneous endpoint continuity, complex finite-gap
+inversion and the spectral-curve geometry are new proofs in the article layer. No existing generic analysis
 module or dissertation verification record has been changed.
 
 ## Corrections and source qualifications
@@ -141,34 +162,44 @@ changed constant must remain explicit. No new refutations were added.
 
 ## Outstanding work
 
-1. **Lemma 4:** discharge the printed all-complex finite-gap scope with
-   independently meaningful physical Hamiltonians. The real smooth-realization
-   theorem is insufficient; complex finite-gap data alone do not imply smoothness.
-2. **Spectral-curve geometry on p. 9:** formulate and prove the Riemann-surface
-   and infinite-genus assertion, with multiple spectral points treated explicitly.
-   This mathematical claim has not been reclassified as historical context.
-3. **Unnumbered setup and background:** complete the exact comparisons for
-   Birkhoff dynamics, the function-space meaning of the Gevrey examples, all
-   spectral product identifications
-   and regularity assertions, retaining any necessary corrections.
+1. **Lemma 4:** interpret every Laurent coefficient as an independently
+   meaningful physical Hamiltonian at nonsmooth complex finite-gap sources.
+   The full complex normalized convergent Laurent expansion and physical
+   coefficient agreement at smooth complex sources are now checked. Complex
+   finite-gap data alone do not imply smoothness.
+2. **Spectral-curve geometry on p. 9:** prove global connectedness, infinite
+   topological genus, and the exclusion of an induced complex-surface structure
+   at multiple points. The actual nonsingular complex analytic manifold,
+   noncompactness, local double-point branches and infinite regular ramification
+   are checked. Counting branch points is not a proof of genus. This claim
+   remains mathematical scope, not historical context.
+3. **Unnumbered setup and background:** finish the remaining comparisons,
+   including the classical derivative-growth meaning of the Gevrey examples
+   and exact closed-disc and filled complex-root domains. The original oscillator
+   equations, physical action Hamiltonian and its frequency derivatives, exact
+   physical Parseval identities, Fourier derivative, analytic Sobolev inverses,
+   canonical brackets, uniform smoothing and main spectral products are now
+   explicitly compared. The groups do not exhaust every setup paragraph.
 4. **All proof passages:** finish the assertion-by-assertion semantic inventory.
    The JSON retains pending blocks explicitly, including proof-only inequalities
    that need not follow from a different proof of the named result.
 
 ## Validation and publication
 
-The current run passed all nine module compilations and the aggregate with
-zero warnings, all 7,729 existing public examples, and the transitive
-audits of 111 article declarations and
-45,357 imported NLS declarations. The 173 shared
-declaration references and all 350 source-block hashes also passed integrity
-checks. These counts do not certify complete source coverage.
+The 2026-11-07 run passed all twelve article module compilations and the
+aggregate with zero warnings, all 7,729 existing public examples,
+and the transitive audits of 181 article declarations and
+45,427 imported NLS declarations. All 222 exact shared declaration
+references and all 350 source-block hashes passed integrity checks. The ledger
+contains 70 compared auxiliary groups; its paragraph review still has
+309 blocks pending semantic review. These checks do not certify complete
+source coverage. The validation record explicitly says `full_paper_complete: false`.
 
 The new record is [full-paper-validation.json](full-paper-validation.json),
 with separate expanded [article](full-paper-axiom-audit.log) and
 [whole-NLS](full-paper-full-axiom-audit.log) audit logs. The historical
 [main-theorem validation](validation.json) and its counts remain unchanged.
-The current source imports all nine article modules in `NLS.lean` and in
+The current source imports all twelve article modules in `NLS.lean` and in
 `scripts/CheckDNLSEstimates.lean`.
 
 Validation compiles the article modules and aggregate with pinned Lean 4.33.1
@@ -181,5 +212,5 @@ to the separate article worktree. The shared validation lock serializes the
 expensive checks.
 
 Validated work is published on `articles/dnls-estimates`. The original
-main-theorem PR #2 was merged; this expansion is a later milestone. Full-paper
+main-theorem PR #2 was merged; this expansion is later work. Full-paper
 completion may only be reported after all outstanding obligations are closed.

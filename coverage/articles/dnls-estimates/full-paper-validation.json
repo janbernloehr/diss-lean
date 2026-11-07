@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "date": "2026-11-06",
-  "status": "expanded_milestone_validated",
+  "date": "2026-11-07",
+  "status": "validated_incomplete",
   "full_paper_complete": false,
   "branch": "articles/dnls-estimates",
-  "parent_commit": "9899d8911f3c27c87d2bbef19fd787bfc38b43de",
+  "parent_commit": "b457af0f7a6333150d013192effdbd49fd37dff2",
   "source_pdf_sha256": "6862e6c30dffaa55f4a73b48155576310682c78e154ffcc1dbeeaf3eb0dd277b",
   "lean_source_hashes": {
     "NLS/Articles/DNLSEstimates/MainEstimates.lean": "55170c5d842a92fcd12c03487df7e9035c9dccd35f99332dab01d1106c8a9b0b",
@@ -16,8 +16,11 @@
     "NLS/Articles/DNLSEstimates/ComplexActions.lean": "d615af5a038029eee01b0203d89ddaf6d297202c0f6bac57b6f8e18557ab62ff",
     "NLS/Articles/DNLSEstimates/ConverseEstimate.lean": "4b1bede2e2f67fabd9a3f522d71dfa34ad2be902df1bf7c429866e5995be46ad",
     "NLS/Articles/DNLSEstimates/FiniteGap.lean": "4a01e6040714fb68609c9a0ba0301df5f0106567e05f9edd63fc3d8830efdd46",
-    "NLS.lean": "b22397dfc340e87a62f56a91a4651e3ced676b52218a70e9b17512cc9100bc1d",
-    "scripts/CheckDNLSEstimates.lean": "77cc7f29a0c55c58e4a9ce02c1343a4223d4635684f5b3d4e84f9bc18efa494b",
+    "NLS/Articles/DNLSEstimates/ComplexFiniteGap.lean": "da4500834470f600a753d9ace2472d6919a200e1e839553876227faeac7b8d6c",
+    "NLS/Articles/DNLSEstimates/SpectralCurve.lean": "b48fd09779176eccbbdd3b76eb85db98b27e5eea21618040c28efd5c7185f1b8",
+    "NLS/Articles/DNLSEstimates/SpectralSurface.lean": "b1102c6f27f711d8f7450b8596ed59660eed604d9c958ac39bac35e166bed75e",
+    "NLS.lean": "faaf8f167b88cbad682522c0a14bffdad5eb8ca392f571983fd25eb453a53a0d",
+    "scripts/CheckDNLSEstimates.lean": "cbbee48ab9a4cc23704c25d8cd9e04b74d8709858073ec9ae54a2ad4618c64a2",
     "scripts/CheckExamples.lean": "15695ebb23280a57b5e9129dfc296b09f732b1ccb0b859210379ab7043dd4baa",
     "scripts/CheckAxioms.lean": "c91e63ffa25acce5cf4156d76aff8ed0610597b29d9005032ec72aa0ec0f2b9a"
   },
@@ -37,8 +40,8 @@
         "NLS/Articles/DNLSEstimates/MainEstimates.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:15.853246+00:00",
-      "elapsed_seconds": 2.475,
+      "started_utc": "2026-11-07T09:01:26.748671+00:00",
+      "elapsed_seconds": 2.31,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
@@ -53,8 +56,8 @@
         "NLS/Articles/DNLSEstimates/Hierarchy.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:18.328689+00:00",
-      "elapsed_seconds": 2.834,
+      "started_utc": "2026-11-07T09:01:29.059346+00:00",
+      "elapsed_seconds": 2.589,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
@@ -69,8 +72,8 @@
         "NLS/Articles/DNLSEstimates/HigherActions.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:21.162652+00:00",
-      "elapsed_seconds": 2.469,
+      "started_utc": "2026-11-07T09:01:31.648540+00:00",
+      "elapsed_seconds": 2.247,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
@@ -85,8 +88,8 @@
         "NLS/Articles/DNLSEstimates/SpectralEstimates.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:23.631668+00:00",
-      "elapsed_seconds": 2.619,
+      "started_utc": "2026-11-07T09:01:33.895521+00:00",
+      "elapsed_seconds": 2.358,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
@@ -101,8 +104,8 @@
         "NLS/Articles/DNLSEstimates/ActionEstimates.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:26.250852+00:00",
-      "elapsed_seconds": 2.57,
+      "started_utc": "2026-11-07T09:01:36.253530+00:00",
+      "elapsed_seconds": 2.166,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
@@ -117,8 +120,8 @@
         "NLS/Articles/DNLSEstimates/Primitive.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:28.820672+00:00",
-      "elapsed_seconds": 3.293,
+      "started_utc": "2026-11-07T09:01:38.419273+00:00",
+      "elapsed_seconds": 2.85,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
@@ -133,8 +136,8 @@
         "NLS/Articles/DNLSEstimates/ComplexActions.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:32.113969+00:00",
-      "elapsed_seconds": 2.536,
+      "started_utc": "2026-11-07T09:01:41.269651+00:00",
+      "elapsed_seconds": 2.297,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
@@ -149,8 +152,8 @@
         "NLS/Articles/DNLSEstimates/ConverseEstimate.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:34.649828+00:00",
-      "elapsed_seconds": 4.488,
+      "started_utc": "2026-11-07T09:01:43.567065+00:00",
+      "elapsed_seconds": 4.01,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
@@ -165,8 +168,56 @@
         "NLS/Articles/DNLSEstimates/FiniteGap.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:39.137666+00:00",
-      "elapsed_seconds": 2.271,
+      "started_utc": "2026-11-07T09:01:47.577261+00:00",
+      "elapsed_seconds": 2.074,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "ComplexFiniteGap",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/ComplexFiniteGap.olean",
+        "NLS/Articles/DNLSEstimates/ComplexFiniteGap.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-07T09:01:49.651560+00:00",
+      "elapsed_seconds": 2.732,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "SpectralCurve",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/SpectralCurve.olean",
+        "NLS/Articles/DNLSEstimates/SpectralCurve.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-07T09:01:52.384156+00:00",
+      "elapsed_seconds": 2.409,
+      "warnings": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_bytes": 0
+    },
+    {
+      "name": "SpectralSurface",
+      "command": [
+        "lean",
+        "-DautoImplicit=false",
+        "-o",
+        ".lake/build/lib/lean/NLS/Articles/DNLSEstimates/SpectralSurface.olean",
+        "NLS/Articles/DNLSEstimates/SpectralSurface.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-07T09:01:54.793370+00:00",
+      "elapsed_seconds": 2.205,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
@@ -181,8 +232,8 @@
         "NLS.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:41.409767+00:00",
-      "elapsed_seconds": 2.291,
+      "started_utc": "2026-11-07T09:01:56.998203+00:00",
+      "elapsed_seconds": 2.109,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
@@ -195,11 +246,11 @@
         "scripts/CheckDNLSEstimates.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:43.701251+00:00",
-      "elapsed_seconds": 3.004,
+      "started_utc": "2026-11-07T09:01:59.107679+00:00",
+      "elapsed_seconds": 2.742,
       "warnings": 0,
-      "output_sha256": "c3f5c0c0748965f1078a4f12cf1df76701a24896da08be16c89134f7e96cf603",
-      "output_bytes": 10386
+      "output_sha256": "a2fab3bdf7bcf3af891113fb48a0073b8aeb2fc35719e6d5141b1a3289234561",
+      "output_bytes": 17307
     },
     {
       "name": "full-axiom-audit",
@@ -209,10 +260,10 @@
         "scripts/CheckAxioms.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:46.712708+00:00",
-      "elapsed_seconds": 3.626,
+      "started_utc": "2026-11-07T09:02:01.850310+00:00",
+      "elapsed_seconds": 3.23,
       "warnings": 0,
-      "output_sha256": "cef360d1cb9aa71195e5aac8cce200cf6c435903fdac1d81791da9a37e53b78f",
+      "output_sha256": "2193b57da0a9f78a55f4fd2f41b1c902f8a84d98d7502b6174e824f844cd0502",
       "output_bytes": 47
     },
     {
@@ -223,50 +274,56 @@
         "scripts/CheckExamples.lean"
       ],
       "exit_code": 0,
-      "started_utc": "2026-11-06T22:15:50.338531+00:00",
-      "elapsed_seconds": 1258.241,
+      "started_utc": "2026-11-07T09:02:05.080728+00:00",
+      "elapsed_seconds": 1298.625,
       "warnings": 0,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "output_bytes": 0
     }
   ],
-  "build_method": "Direct pinned Lean compilation of all nine article modules and the updated aggregate, then the unchanged public examples and both transitive audits. Unchanged dependency oleans are imported from the canonical snapshot. This is not a fresh rebuild of all dependencies. All article and aggregate outputs are private to this worktree. No writing Lake build is used.",
+  "build_method": "Direct pinned Lean compilation of all twelve article modules and the updated aggregate, then the unchanged public examples and both transitive audits. Unchanged dependency oleans are imported from the canonical snapshot. This is not a fresh rebuild of all dependencies. All article and aggregate outputs are private to this worktree. No writing Lake build is used.",
   "shared_lock": "/tmp/diss-lean-article-build.lock",
-  "completed_utc": "2026-11-06T22:36:48.588680+00:00",
+  "completed_utc": "2026-11-07T09:23:43.715554+00:00",
   "public_examples": 7729,
-  "article_axiom_declarations": 111,
-  "all_imported_NLS_axiom_declarations": 45357,
+  "article_axiom_declarations": 181,
+  "all_imported_NLS_axiom_declarations": 45427,
   "worktree": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-dnls-estimates/outputs/dnls",
     "kind": "separate_git_worktree",
     "branch": "articles/dnls-estimates"
   },
-  "scope": "Validated expanded statement milestone; full-paper verification remains incomplete.",
+  "scope": "Kernel-checked complex finite-gap and spectral-curve continuation. Full-paper verification remains incomplete.",
   "coverage_ledger": "coverage/articles/dnls-estimates/full-paper-claims.json",
-  "coverage_ledger_sha256": "f7f441fb77660448b7ce90c6a66ff5d0c2096913a0197319408aeb191a582652",
+  "coverage_ledger_sha256": "38a934ed440fbba33ada95135bbdc4ca025bd39496449af647deae59562aa5ea",
   "named_statement_summary": {
     "exact_statements_checked": 24,
     "corrected_statements_checked": 2,
     "partially_checked": 1,
     "proof_passage_review_complete": false
   },
-  "auxiliary_group_count": 50,
+  "auxiliary_group_count": 70,
   "auxiliary_reference_check": {
-    "shared_names": 173,
+    "shared_names": 222,
     "exit_code": 0,
     "warnings": 0,
-    "generated_source_sha256": "c2af6b1bdf56f1fa4ee0d53d57e1ab4b0f6b9dbb9d57320918022694ff0e566d",
-    "output_sha256": "f43a53dbf6721c84f1d1267e79003b9ec1c93d7780eaa04c976183262d7d1c2b",
-    "method": "Generated import NLS and one #check for each exact shared reference listed in reviewed_auxiliary_assertion_groups. All references resolve against the validated aggregate. This is an integrity check, not a semantic source-completeness certificate."
+    "generated_source_sha256": "12a12321716c52a88a7ff8fbf87d85693e87dd0c82edce277ad42e52cc392b2a",
+    "output_sha256": "3b03f3551f84da44f66a58ee7975f90a41614d2e316044b4f493ff377f90765d",
+    "method": "Generated import NLS and one #check for each exact shared reference in the compared auxiliary groups. Every article reference is also checked against the transitive article audit. These integrity checks do not certify semantic completeness."
   },
   "source_inventory_integrity": {
     "named_statement_count": 27,
     "body_paragraph_blocks": 350,
     "all_block_hashes_rechecked": true,
     "inventory_complete": false,
+    "paragraph_review_summary": {
+      "reviewed_no_mathematical_assertion": 7,
+      "semantic_review_pending": 309,
+      "statement_compared": 34,
+      "all_assertions_reviewed": false
+    },
     "open_obligation_groups": 4
   },
   "main_milestone_validation_preserved": true,
   "main_milestone_validation_sha256": "1ff8647893baf2e8506f2850bfad6255618765a7bc388733eba0a0716c186968",
-  "progress_report_sha256": "dc9b2a38553a0c2c6b62279cea0d4d2be65198ee8759ddc840158a5bd8b241a5"
+  "progress_report_sha256": "f4816a4f1c0e21ef64e0a02f4e065ac3a41d28870d6bf28778a5ef10ce8a44ac"
 }

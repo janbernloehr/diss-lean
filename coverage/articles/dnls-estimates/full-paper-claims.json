@@ -119,15 +119,19 @@
       "source_page": 14,
       "source_line": 859,
       "claim": "Convergent exterior Laurent expansion of the primitive for every complex finite-gap source, with independently defined Hamiltonian coefficients.",
-      "status": "real_subcase_kernel_checked_complex_scope_open",
+      "status": "complex_laurent_and_smooth_complex_physical_coefficients_checked_nonsmooth_coefficients_open",
       "checked_article_declarations": [
         "NLS.Articles.DNLSEstimates.lemma_four_real",
-        "NLS.Articles.DNLSEstimates.laurent_coefficient"
+        "NLS.Articles.DNLSEstimates.laurent_coefficient",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_laurent",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_inversion_remainder",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_physical_domain",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_smooth_hamiltonians"
       ],
       "candidate_shared_modules": [],
       "candidate_is_not_coverage": false,
       "proof_passage_review_complete": false,
-      "remaining": "The printed complex finite-gap domain is not discharged. The current smooth physical representative and Hamiltonian Laurent construction is real-type only. No extra smoothness hypothesis may silently replace the printed complex L2 scope."
+      "remaining": "The actual convergent Laurent expansion now holds for all complex finite-gap sources on constructed common neighborhoods. Its coefficients are identified with independently defined physical Riccati Hamiltonians for every smooth complex representative with matching original Fourier coefficients. For nonsmooth complex finite-gap sources, the physical interpretation of every coefficient remains unresolved. No smoothness premise has been hidden or discharged by the finite-gap condition."
     },
     {
       "label": "Theorem 5",
@@ -403,8 +407,9 @@
       "line_start": 1,
       "line_end": 3,
       "text_sha256": "9d1e597637f0b3c09110034e245bd20dc2fd56ce626d13f122c8dd3c94ab53c8",
-      "review_status": "semantic_review_pending",
-      "page_end": 1
+      "review_status": "reviewed_no_mathematical_assertion",
+      "page_end": 1,
+      "review_note": "Title, bibliographic metadata, date, or section heading only; no mathematical assertion in this block. This does not discharge neighboring text."
     },
     {
       "id": "p01-b02",
@@ -412,8 +417,9 @@
       "line_start": 8,
       "line_end": 9,
       "text_sha256": "33f4050033fbbf8b5628887ecf5cad3fda49a517fc05b1856069fb6aadb2a8be",
-      "review_status": "semantic_review_pending",
-      "page_end": 1
+      "review_status": "reviewed_no_mathematical_assertion",
+      "page_end": 1,
+      "review_note": "Title, bibliographic metadata, date, or section heading only; no mathematical assertion in this block. This does not discharge neighboring text."
     },
     {
       "id": "p01-b03",
@@ -421,8 +427,9 @@
       "line_start": 11,
       "line_end": 11,
       "text_sha256": "43e2f5b8e6f869b27916d0997577e6ed8ea2285ec444ea07b4a67e2d5696b355",
-      "review_status": "semantic_review_pending",
-      "page_end": 1
+      "review_status": "reviewed_no_mathematical_assertion",
+      "page_end": 1,
+      "review_note": "Title, bibliographic metadata, date, or section heading only; no mathematical assertion in this block. This does not discharge neighboring text."
     },
     {
       "id": "p01-b04",
@@ -439,8 +446,9 @@
       "line_start": 24,
       "line_end": 24,
       "text_sha256": "c08e2ed49e42230ac51ee9cad2932dd254257b7845d50e671ad76e892f04ce7b",
-      "review_status": "semantic_review_pending",
-      "page_end": 1
+      "review_status": "reviewed_no_mathematical_assertion",
+      "page_end": 1,
+      "review_note": "Title, bibliographic metadata, date, or section heading only; no mathematical assertion in this block. This does not discharge neighboring text."
     },
     {
       "id": "p01-b06",
@@ -574,8 +582,15 @@
       "line_start": 93,
       "line_end": 99,
       "text_sha256": "4941e1d299e021753b1e6cd800944c13eb1cb812be0f149499e891c53a16efd4",
-      "review_status": "semantic_review_pending",
-      "page_end": 2
+      "review_status": "statement_compared",
+      "page_end": 2,
+      "related_auxiliary_groups": [
+        "SETUP-CANONICAL-COORDINATES",
+        "SETUP-BIRKHOFF-GLOBAL-INVERSE",
+        "SETUP-HIGHER-SOBOLEV-INVERSE",
+        "SETUP-PHYSICAL-ACTION-HAMILTONIAN"
+      ],
+      "review_note": "Explicit statement comparison for each assertion in this block, retaining the qualifications in the listed groups. This does not close assertions in neighboring blocks or any proof passage."
     },
     {
       "id": "p02-b11",
@@ -583,8 +598,13 @@
       "line_start": 101,
       "line_end": 101,
       "text_sha256": "52d4707f7bf99fbe3dd85e9fbd4d5e9be85c45870d85306115fc52399ea5ad58",
-      "review_status": "semantic_review_pending",
-      "page_end": 2
+      "review_status": "statement_compared",
+      "page_end": 2,
+      "related_auxiliary_groups": [
+        "SETUP-BIRKHOFF-OSCILLATORS",
+        "SETUP-PHYSICAL-ACTION-HAMILTONIAN"
+      ],
+      "review_note": "Explicit statement comparison for each assertion in this block, retaining the qualifications in the listed groups. This does not close assertions in neighboring blocks or any proof passage."
     },
     {
       "id": "p02-b12",
@@ -592,8 +612,12 @@
       "line_start": 103,
       "line_end": 105,
       "text_sha256": "d98aea6094bdd2a3bc594f989e41768460e4f3a43d4f4e48e098990d976c9d5d",
-      "review_status": "semantic_review_pending",
-      "page_end": 2
+      "review_status": "statement_compared",
+      "page_end": 2,
+      "related_auxiliary_groups": [
+        "SETUP-BIRKHOFF-FREE-DERIVATIVE"
+      ],
+      "review_note": "Explicit statement comparison for each assertion in this block, retaining the qualifications in the listed groups. This does not close assertions in neighboring blocks or any proof passage."
     },
     {
       "id": "p02-b13",
@@ -601,8 +625,12 @@
       "line_start": 107,
       "line_end": 107,
       "text_sha256": "f4b68928b36d091ccc6e3787c0960aeb205252b7a9531339872c2c2874745998",
-      "review_status": "semantic_review_pending",
-      "page_end": 2
+      "review_status": "statement_compared",
+      "page_end": 2,
+      "related_auxiliary_groups": [
+        "SETUP-PHYSICAL-PARSEVAL"
+      ],
+      "review_note": "Explicit statement comparison for each assertion in this block, retaining the qualifications in the listed groups. This does not close assertions in neighboring blocks or any proof passage."
     },
     {
       "id": "p02-b14",
@@ -1008,8 +1036,9 @@
       "line_start": 372,
       "line_end": 372,
       "text_sha256": "369f71236d84fbbbc413cd417fd93dd7a83ee3c27281079819820dcce2909943",
-      "review_status": "semantic_review_pending",
-      "page_end": 7
+      "review_status": "reviewed_no_mathematical_assertion",
+      "page_end": 7,
+      "review_note": "Title, bibliographic metadata, date, or section heading only; no mathematical assertion in this block. This does not discharge neighboring text."
     },
     {
       "id": "p07-b02",
@@ -1107,8 +1136,12 @@
       "line_start": 412,
       "line_end": 422,
       "text_sha256": "babf869f4484c2637ff8737f8e55b9d144b8b869c338658098506f76f1094b49",
-      "review_status": "semantic_review_pending",
-      "page_end": 8
+      "review_status": "statement_compared",
+      "page_end": 8,
+      "related_auxiliary_groups": [
+        "SETUP-FULL-SPECTRAL-PRODUCT"
+      ],
+      "review_note": "Explicit statement comparison for each assertion in this block, retaining the qualifications in the listed groups. This does not close assertions in neighboring blocks or any proof passage."
     },
     {
       "id": "p08-b03",
@@ -1134,8 +1167,12 @@
       "line_start": 438,
       "line_end": 439,
       "text_sha256": "724947a898818f1d31519e17ea00ce63569271d65b00b54b2572e42d4cf5435c",
-      "review_status": "semantic_review_pending",
-      "page_end": 8
+      "review_status": "statement_compared",
+      "page_end": 8,
+      "related_auxiliary_groups": [
+        "SETUP-REAL-INTERLACING"
+      ],
+      "review_note": "Explicit statement comparison for each assertion in this block, retaining the qualifications in the listed groups. This does not close assertions in neighboring blocks or any proof passage."
     },
     {
       "id": "p08-b06",
@@ -3205,8 +3242,9 @@
       "line_start": 1729,
       "line_end": 1729,
       "text_sha256": "abc4ce435b32ba9ae1388436f0f94bad7d1304a6ebff517aaee48e55979894ee",
-      "review_status": "semantic_review_pending",
-      "page_end": 26
+      "review_status": "reviewed_no_mathematical_assertion",
+      "page_end": 26,
+      "review_note": "Title, bibliographic metadata, date, or section heading only; no mathematical assertion in this block. This does not discharge neighboring text."
     },
     {
       "id": "p26-b06",
@@ -4164,8 +4202,9 @@
       "line_start": 2329,
       "line_end": 2329,
       "text_sha256": "c32e4d5ae541e90f65f80fcefaaf9b9502e95ffb7e1ddae8df8444bdf1a816d9",
-      "review_status": "semantic_review_pending",
-      "page_end": 35
+      "review_status": "reviewed_no_mathematical_assertion",
+      "page_end": 35,
+      "review_note": "Title, bibliographic metadata, date, or section heading only; no mathematical assertion in this block. This does not discharge neighboring text."
     },
     {
       "id": "p35-b05",
@@ -4581,6 +4620,11 @@
         "NLS.ZakharovShabat.SourceSection28Data.weighted_action_small_ball",
         "NLS.ZakharovShabat.SourceSection28Data.weighted_bound"
       ]
+    },
+    {
+      "page": 9,
+      "claim": "The printed affine spectral curve is stated as a subset of C.",
+      "qualification": "Use the actual ambient complex plane squared C x C. The two coordinates, Jacobian and complex manifold atlas are constructed explicitly."
     }
   ],
   "open_obligations": [
@@ -4590,8 +4634,12 @@
         14
       ],
       "claim": "Lemma 4 for every complex finite-gap source with physical Hamiltonian coefficients.",
-      "remaining": "Extend the existing real construction without adding unproved smoothness. Complex finite-gap spectral data alone do not imply smoothness, so an all-complex interpretation needs a justified Hamiltonian domain.",
-      "status": "open"
+      "remaining": "Only the all-order physical Hamiltonian interpretation at nonsmooth complex finite-gap sources remains. Exterior analyticity, the normalized convergent Laurent series, and physical coefficient agreement for smooth complex sources are now checked. Finite-gap spectral data alone do not imply complex source smoothness.",
+      "status": "open",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_laurent",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_smooth_hamiltonians"
+      ]
     },
     {
       "id": "FULL-CURVE",
@@ -4599,8 +4647,15 @@
         9
       ],
       "claim": "The spectral curve and the Riemann-surface/infinite-genus assertion.",
-      "remaining": "Supply the mathematical geometric formulation and proof, including the treatment of multiple spectral points. No existing checked article declaration discharges this.",
-      "status": "open"
+      "remaining": "Global connectedness and the topological infinite-genus assertion remain unresolved, as does the exclusion of an induced complex-surface structure at multiple points. The actual affine curve in C^2, spectral invariance, nonsingularity iff all periodic roots are simple, analytic local uniformizers, double-point branches with distinct tangents, an actual Mathlib complex analytic one-dimensional manifold structure for simple spectrum in the unchanged subspace topology, noncompactness, and infinitely many distinct regular branch points are checked. Infinite ramification has not been substituted for a proof of genus.",
+      "status": "open",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.spectralCurve_regular_iff_simple",
+        "NLS.Articles.DNLSEstimates.spectralCurve_complex_surface",
+        "NLS.Articles.DNLSEstimates.spectralCurve_not_compact",
+        "NLS.Articles.DNLSEstimates.spectralCurve_double_point",
+        "NLS.Articles.DNLSEstimates.spectralCurve_infinite_regular_branch_points"
+      ]
     },
     {
       "id": "FULL-BACKGROUND",
@@ -4616,7 +4671,7 @@
         9
       ],
       "claim": "All unnumbered setup and background assertions, including Birkhoff dynamics, weight examples, Fourier strip characterizations, and spectral products.",
-      "remaining": "Compare each independently with the existing physical construction; the main-theorem interfaces do not certify these automatically. Preserve existing norm, regularity and strip-width qualifications.",
+      "remaining": "The original oscillator equations and conserved frequencies, physical weighted-action Hamiltonian and its frequency derivatives, Hilbert and higher-Sobolev analytic inverses, canonical coordinate brackets, exact physical Parseval identities, Fourier derivative at zero, uniform smoothing, full discriminant and critical products, and local isolating comparisons have now been explicitly compared. Remaining assertions include the classical derivative-growth characterization of the Gevrey examples and the exact common closed-disc and full filled complex-root domain comparisons. The groups are not an exhaustive semantic review of all setup paragraphs.",
       "status": "open"
     },
     {
@@ -5411,9 +5466,343 @@
         "NLS.ZakharovShabat.sourceCorollaryH2_integral",
         "NLS.ZakharovShabat.sobolevOddHamiltonian_unique_continuous"
       ]
+    },
+    {
+      "id": "L4-COMPLEX-EXTERIOR",
+      "source_lines": [
+        855,
+        865
+      ],
+      "claim": "For every complex finite-gap source, the noncollapsed cuts are compact and the actual primitive is analytic on a full exterior. The continued critical-root product becomes a finite product with a holomorphic inversion germ of value -i.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_compact_cuts",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_exterior",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_continued_eq_prod",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_quotient_germ",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_primitive_derivative_germ"
+      ],
+      "checked_shared_declarations": []
+    },
+    {
+      "id": "L4-COMPLEX-NORMALIZATION",
+      "source_lines": [
+        866,
+        910
+      ],
+      "claim": "Single-valuedness kills the derivative germ linear term. Actual collapsed tail endpoint values fix the primitive constant. The resulting normalized Laurent series converges in every exterior complex direction.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_quadratic_derivative",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_inversion_remainder",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_laurent",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_domain"
+      ],
+      "checked_shared_declarations": [],
+      "qualification": "This identifies scalar analytic coefficients; it does not by itself identify nonsmooth physical Hamiltonians. The printed global principal inverse-cosh formula is replaced by the actual Floquet multiplier and the filled primitive."
+    },
+    {
+      "id": "L4-COMPLEX-PHYSICAL",
+      "source_lines": [
+        859,
+        910
+      ],
+      "claim": "For smooth complex finite-gap sources, all Laurent coefficients are independently defined physical Riccati Hamiltonians. Fourier coefficient compatibility proves the classical discriminant equality. The necessary common neighborhood and complex cosh identity are constructed.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.complex_primitive_cosh",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_physical_domain",
+        "NLS.Articles.DNLSEstimates.complex_finiteGap_smooth_hamiltonians",
+        "NLS.Articles.DNLSEstimates.laurent_coefficient"
+      ],
+      "checked_shared_declarations": [],
+      "qualification": "Smooth periodic physical representatives are explicit premises. No claim that arbitrary complex finite-gap data imply smoothness is made; nonsmooth coefficient interpretation stays open."
+    },
+    {
+      "id": "CURVE-LOCAL-UNIFORMIZERS",
+      "source_lines": [
+        466,
+        473
+      ],
+      "claim": "The curve lies in C^2. Unramified points are local analytic graphs; simple periodic roots have ramified analytic coordinates. Double spectral points have two analytic branches with distinct tangent slopes. The actual ambient Jacobian vanishes precisely when both partial derivatives vanish.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.doubleCover_unramified_graph",
+        "NLS.Articles.DNLSEstimates.doubleCover_simple_uniformizer",
+        "NLS.Articles.DNLSEstimates.doubleCover_double_branches",
+        "NLS.Articles.DNLSEstimates.doubleCover_defining_hasFDerivAt",
+        "NLS.Articles.DNLSEstimates.doubleCover_differential_zero_iff",
+        "NLS.Articles.DNLSEstimates.spectralCurve_regular_iff_simple",
+        "NLS.Articles.DNLSEstimates.spectralCurve_simple_point",
+        "NLS.Articles.DNLSEstimates.spectralCurve_double_point"
+      ],
+      "checked_shared_declarations": [],
+      "qualification": "The local equations do not alone certify the global genus or the impossibility of intrinsic charts at a multiple point."
+    },
+    {
+      "id": "CURVE-ANALYTIC-MANIFOLD",
+      "source_lines": [
+        469,
+        473
+      ],
+      "claim": "For simple full periodic spectrum, an actual Mathlib ChartedSpace and IsManifold over C of analytic order omega are constructed on the affine curve, using its original subspace topology. Both inverse chart identities, openness, continuity, and analytic transitions are checked. Projection onto C proves noncompactness.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.doubleCover_chart_of_graph",
+        "NLS.Articles.DNLSEstimates.doubleCover_exists_chart",
+        "NLS.Articles.DNLSEstimates.AnalyticDoubleCoverChart.transition_analytic",
+        "NLS.Articles.DNLSEstimates.doubleCoverChartedSpace",
+        "NLS.Articles.DNLSEstimates.doubleCover_isManifold",
+        "NLS.Articles.DNLSEstimates.spectralCurve_complex_surface",
+        "NLS.Articles.DNLSEstimates.doubleCover_projection_surjective",
+        "NLS.Articles.DNLSEstimates.spectralCurve_not_compact"
+      ],
+      "checked_shared_declarations": [],
+      "qualification": "Global connectedness and infinite topological genus are not asserted by these declarations."
+    },
+    {
+      "id": "CURVE-INFINITE-RAMIFICATION",
+      "source_lines": [
+        469,
+        473
+      ],
+      "claim": "The actual periodic spectrum is infinite. If it is simple, the affine curve has infinitely many distinct regular ramification points.",
+      "comparison_status": "compared_new_proof",
+      "checked_article_declarations": [
+        "NLS.Articles.DNLSEstimates.spectralCurve_infinite_periodic_spectrum",
+        "NLS.Articles.DNLSEstimates.spectralCurve_infinite_regular_branch_points"
+      ],
+      "checked_shared_declarations": [],
+      "qualification": "This is a branch-point theorem, not an alternative definition or proof of infinite genus."
+    },
+    {
+      "id": "SETUP-BIRKHOFF-OSCILLATORS",
+      "source_lines": [
+        93,
+        101
+      ],
+      "claim": "The original global ordinary NLS solution is carried to the actual rectangular phase trajectory and satisfies xdot=-omega*y, ydot=omega*x; the frequencies remain constant along the solution.",
+      "comparison_status": "compared_reuse",
+      "checked_article_declarations": [],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_rectangular_phase",
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_rectangular_oscillators",
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_frequency_conserved"
+      ],
+      "qualification": "These declarations apply to every actual global ordinary solution at p=2. They retain the original family and Hamiltonian signs. The separate introduction claim about an analytic Hamiltonian as a function of actions requires its own comparison."
+    },
+    {
+      "id": "SETUP-BIRKHOFF-FREE-DERIVATIVE",
+      "source_lines": [
+        103,
+        107
+      ],
+      "claim": "The derivative of the actual Birkhoff map at zero is the explicitly normalized signed Fourier transform as an equality of bounded operators.",
+      "comparison_status": "compared_reuse",
+      "checked_article_declarations": [],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_zero",
+        "NLS.ZakharovShabat.sourceBirkhoffFourier_fst",
+        "NLS.ZakharovShabat.sourceBirkhoffFourier_snd"
+      ],
+      "qualification": "The first source component uses the reflected frequency. Equality of the physical L2 norms is a separate Parseval assertion."
+    },
+    {
+      "id": "SETUP-BIRKHOFF-GLOBAL-INVERSE",
+      "source_lines": [
+        93,
+        99
+      ],
+      "claim": "The actual real Hilbert Birkhoff map has a global analytic inverse with both inverse identities and the exact inverse Jacobian.",
+      "comparison_status": "compared_reuse",
+      "checked_article_declarations": [],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceSection17OriginalData.global_inverse",
+        "NLS.ZakharovShabat.sourceSection17_original"
+      ],
+      "qualification": "This closes the unweighted p=2 global bi-analytic claim. The full physical higher-Sobolev canonical-diffeomorphism statement is not inferred merely from it."
+    },
+    {
+      "id": "SETUP-UNIFORM-SMOOTHING",
+      "source_lines": [
+        125,
+        133
+      ],
+      "claim": "One original Birkhoff family retains exact real forward and inverse Fourier remainders with one extra Sobolev order, analytic dependence, and bounds on every norm ball, for all positive integer orders.",
+      "comparison_status": "compared_reuse",
+      "checked_article_declarations": [],
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceSection23_original_one_smoothing",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_literal_coordinates",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_literal_coordinates",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_uniform_ball",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_uniform_ball"
+      ]
+    },
+    {
+      "id": "SETUP-WEIGHT-RATE-HIERARCHY",
+      "source_lines": [
+        183,
+        193
+      ],
+      "claim": "The logarithmic weights are strictly lighter than Abel weights and strictly heavier than every sublinear Gevrey exponential, including arbitrary polynomial factors; exact weight ratios tend to zero.",
+      "comparison_status": "compared_reuse",
+      "checked_article_declarations": [],
+      "checked_shared_declarations": [
+        "NLS.SpectralWeight.gevrey_div_logarithmic_tendsto_zero",
+        "NLS.SpectralWeight.logarithmic_div_abel_tendsto_zero"
+      ],
+      "qualification": "The classical derivative-growth meaning of the Gevrey classes remains a separate obligation."
+    },
+    {
+      "id": "SETUP-FULL-SPECTRAL-PRODUCT",
+      "source_lines": [
+        407,
+        423
+      ],
+      "claim": "The actual discriminant is entire, its square minus four has exactly the original periodic spectrum with the original algebraic multiplicities, and the literal signed full product converges locally uniformly with prefactor -4 and the exceptional central normalization.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceLemma8_1",
+        "NLS.ZakharovShabat.SourceLemma8_1Data.spectrum",
+        "NLS.ZakharovShabat.sourceDiscriminant_ordered_product",
+        "NLS.ZakharovShabat.canonicalPeriodicEndpoints_product"
+      ],
+      "qualification": "The source Hilbert compatibility is retained by SourceLemma8_1Data; no parity-prefactor correction from a different text is imported into this printed full-product formula."
+    },
+    {
+      "id": "SETUP-CRITICAL-PRODUCT",
+      "source_lines": [
+        425,
+        433
+      ],
+      "claim": "The ordered actual critical points exhaust the derivative zeros with their analytic multiplicities and have l2 displacement at p=2. The literal derivative product converges locally uniformly on the whole spectral plane with prefactor 2.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceLemma8_5_data",
+        "NLS.ZakharovShabat.SourceLemma8_5Data.product",
+        "NLS.ZakharovShabat.SourceLemma8_5Data.displacement",
+        "NLS.ZakharovShabat.sourceLemma8_5"
+      ]
+    },
+    {
+      "id": "SETUP-REAL-INTERLACING",
+      "source_lines": [
+        434,
+        439
+      ],
+      "claim": "For real-type sources the periodic endpoints are real and strictly separated between neighboring gaps; each gap contains its unique real critical point, including collapsed gaps.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceLemma8_2",
+        "NLS.ZakharovShabat.SourceLemma8_2Data.interlacing",
+        "NLS.ZakharovShabat.sourceLemma8_5_real",
+        "NLS.ZakharovShabat.SourceLemma8_5RealData.interlacing",
+        "NLS.ZakharovShabat.SourceLemma8_5RealData.unique_critical"
+      ]
+    },
+    {
+      "id": "SETUP-ISOLATING-DISCS",
+      "source_lines": [
+        441,
+        457
+      ],
+      "claim": "A constructed connected complex neighborhood of every real source has pairwise disjoint isolating discs containing the actual periodic/critical clusters. Shrinking gives one uniform pointwise index-distance comparison and the literal infimum-distance estimate.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.exists_local_source_connected_isolating_discs",
+        "NLS.ZakharovShabat.exists_source_shrunk_isolating_pointwise_comparison",
+        "NLS.ZakharovShabat.spectralSetDistance_comparison_of_pointwise"
+      ],
+      "qualification": "The neighborhoods are constructed before varying the source or spectral index. The exact tail-disc radius in the printed normalization is a separate field comparison, not inferred from shrinking."
+    },
+    {
+      "id": "SETUP-CANONICAL-ROOT-PRODUCT",
+      "source_lines": [
+        494,
+        506
+      ],
+      "claim": "The normalized canonical root is the convergent symmetric standard-root product with prefactor 2i and central denominator one. It squares to the actual discriminant square minus four off all closed cuts, is jointly analytic there on a common source domain, and is analytic through each collapsed-gap disc.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.tendsto_sourceCanonicalRootPartialProduct",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_sq_eq_discriminant_sq_sub_four",
+        "NLS.ZakharovShabat.sourceLemma10_7",
+        "NLS.ZakharovShabat.SourceCanonicalRootNeighborhoods.collapsed"
+      ],
+      "qualification": "The square identity here is stated on the original cut complement. This group does not silently replace that domain by the entire plane or all points of a noncollapsed cut."
+    },
+    {
+      "id": "SETUP-CANONICAL-COORDINATES",
+      "source_lines": [
+        93,
+        95
+      ],
+      "claim": "The original rectangular coordinate cotangents have the exact physical Poisson pairings {x_n,x_m}=0, {y_n,y_m}=0, {x_n,y_m}=-delta_nm, at every real source, including closed gaps.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_birkhoff_regular_canonical"
+      ],
+      "qualification": "This statement concerns the actual regular source cotangents; no simplicity condition is introduced."
+    },
+    {
+      "id": "SETUP-HIGHER-SOBOLEV-INVERSE",
+      "source_lines": [
+        95,
+        98
+      ],
+      "claim": "For every nonnegative real Sobolev order, the original native Sobolev map at p=2 is a global homeomorphism with analytic forward and inverse maps, in the exact native weighted norms.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph_analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph_symm_analytic"
+      ],
+      "qualification": "The family is the same original Birkhoff family as in the unweighted construction; canonical coordinate brackets are compared separately."
+    },
+    {
+      "id": "SETUP-PHYSICAL-ACTION-HAMILTONIAN",
+      "source_lines": [
+        98,
+        101
+      ],
+      "claim": "The full physical H1 energy is an analytic function of the actual weighted actions alone, on an open standard weighted action domain containing the nonnegative cone. Its literal coordinate derivatives agree with the retained ordinary phase frequencies.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.sourceSection21_original",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_analytic",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_domain",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_physical_identity",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_coordinate_derivative",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_ordinary"
+      ],
+      "qualification": "The standard action weight is exactly (1+|n|)^2; the equivalent physical kinetic weight keeps the factor (2*pi*n)^2. The mass correction is restored before identifying ordinary frequencies, and coefficient agreement transfers from the FL4 construction to any original Hilbert moment family."
+    },
+    {
+      "id": "SETUP-PHYSICAL-PARSEVAL",
+      "source_lines": [
+        103,
+        112
+      ],
+      "claim": "The independently defined physical nonlinear Fourier transform preserves the exact pair L2 norm. In scalar physical L2 normalization its normalized complex coefficients preserve the scalar norm and the sum of their squared moduli converges to the scalar mass.",
+      "comparison_status": "compared_reuse",
+      "checked_shared_declarations": [
+        "NLS.ZakharovShabat.intrinsicPhysicalBirkhoffMap_norm",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.intrinsicPhysicalBirkhoffMap_complex",
+        "NLS.ZakharovShabat.scalarNonlinearFourier_norm",
+        "NLS.ZakharovShabat.scalarNonlinearFourier_hasSum_norm_sq"
+      ],
+      "qualification": "Both rectangular components are retained in the pair norm. Scalar coordinates use (x-i*y)/sqrt(2); the generic product-space maximum norm is not substituted for the article Hilbert pair norm."
     }
   ],
   "auxiliary_group_policy": "These explicitly compared groups identify proved mathematical content and positive replacements for named proof steps. They are not asserted to exhaust the mathematics in their line spans. Any printed intermediates listed as not closed, and all other paragraph assertions, remain in the open proof-passage inventory.",
-  "auxiliary_assertion_group_count": 50,
-  "reference_policy": "A related auxiliary group is a navigation link and does not automatically close all assertions in an overlapping paragraph. Only the explicitly stated mathematical content and qualifications of the group have been compared."
+  "auxiliary_assertion_group_count": 70,
+  "reference_policy": "A related auxiliary group is a navigation link and does not automatically close all assertions in an overlapping paragraph. Only the explicitly stated mathematical content and qualifications of the group have been compared.",
+  "continuation_date": "2026-11-07",
+  "paragraph_review_summary": {
+    "reviewed_no_mathematical_assertion": 7,
+    "semantic_review_pending": 309,
+    "statement_compared": 34,
+    "all_assertions_reviewed": false
+  }
 }

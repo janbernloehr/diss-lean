@@ -4932,3 +4932,6 @@ import NLS.Articles.DNLSEstimates.Primitive
 import NLS.Articles.DNLSEstimates.ComplexActions
 import NLS.Articles.DNLSEstimates.ConverseEstimate
 import NLS.Articles.DNLSEstimates.FiniteGap
+import NLS.Articles.DNLSEstimates.ComplexFiniteGap
+import NLS.Articles.DNLSEstimates.SpectralCurve
+import NLS.Articles.DNLSEstimates.SpectralSurface
