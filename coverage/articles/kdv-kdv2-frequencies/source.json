@@ -971,7 +971,7 @@
           "qualification": "ActionSpace is the literal original complex ell2 space indexed by positive physical labels. Reindexing is an exact unweighted linear isometry. The same actual global weak frequency family is calibrated to native Hamiltonian frequencies and the physical Hilbert gradient on the full nonnegative cone. The corrected coefficient is +6. Complete Theorem 1.2 remains OPEN for sharp locally uniform asymptotics(iii) and its consolidated full statement."
         }
       ],
-      "current_support_summary": "For EVERY 0<t<1 and EVERY real normalized Sobolev source, the ACTUAL Abelian primitive and filled square now have UNIFORM little-o relative errors on ONE FIXED full COMPLEX source neighborhood. The neighborhood is chosen BEFORE every epsilon. The primitive bound is w_t(j)*norm(F_j-i*root_j)<=epsilon*norm(gamma_j); the filled-square bound is w_t(j)*norm(F_j^2+selectedPolynomial_j)<=epsilon*norm(gamma_j)^2. ONE tail cutoff for each epsilon precedes ALL sources in that SAME neighborhood, ALL compatible Cauchy families, ALL signed distant indices, both primitive boundary sides, and every point on each actual complex gap. Closed gaps and infinite support are included. The ACTUAL critical squared-gap quotient is analytic in the original finite-exponent sequence norm and has uniform coordinate tails after compact Sobolev decoding for EVERY t>0. These are necessary source-level diagonal dependencies of Theorem 1.2(iii); the FULL corrected-frequency uniform little-o is NOT yet proved. Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. All previously verified complete Theorem 1.2 clauses, including the original-action s>=-1/3 locally uniform O(1/n), remain unchanged. For -1<=s<-1/3 the full original-action sharp bound and POINTWISE little-o are retained. To complete Theorem 1.2(iii), propagate the new uniform relative errors through actual diagonal moments and first weighted actions, sharpen the off-diagonal estimate, and transfer the uniform result to the SAME original action frequency family. The weak endpoint t=0 (native s=-1) is still essential: positive-order compactness does not handle it. Other essential main theorem obligations remain open.",
+      "current_support_summary": "For EVERY 0<t<1 and EVERY real ORIGINAL native H^(t-1) source, the ACTUAL corrected physical DIAGONAL contribution now has a UNIFORM little-o estimate of sharp order w_(1-3t) on ONE FIXED full COMPLEX neighborhood in that ORIGINAL native norm. The physical chart and its exact Miura source are fixed BEFORE all tolerances; T is fixed BEFORE every epsilon, then ONE cutoff precedes ALL complex sources in T and ALL large positive labels. The literal diagonal remainder is actual physical correction +12*actual first weighted Dirac action -actual off-diagonal correction, with the proved original counterterm identity +12J_n1=+6I_n. Actual raw diagonal moments, first weighted actions and their cancellation have uniform relative errors retaining BOTH literal gap factors, including collapsed complex gaps. This completes a necessary diagonal dependency of Theorem 1.2(iii), not yet the FULL frequency assertion in original action topology. Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. Every previously verified complete Theorem 1.2 clause remains unchanged, including the original-action s>=-1/3 locally uniform O(1/n). The lower-range full original-action sharp bound and POINTWISE little-o remain verified. To complete the lower-range uniform frequency conclusion, sharpen the actual off-diagonal remainder, combine it with the NEW native uniform diagonal estimate for 0<t<2/3, and transfer uniform tails to the SAME global weak frequency family in the ORIGINAL action topology. The weak endpoint t=0 (native s=-1) remains essential and is not covered by positive-order compactness. The consolidated Theorem 1.2 and other essential main theorem obligations remain OPEN.",
       "verified_main_clauses": [
         {
           "source_clause": "COMPLETE Theorem 1.2(ii): for every -1<s<-1/2 and every original nonnegative action, the ACTUAL global frequency derivative plus 6Id is compact on the SAME original positive-frequency weighted ell(2s+1,1) Banach space",
@@ -1051,6 +1051,13 @@
           "lean_source": "NLS/ZakharovShabat/SourceSquareSobolevUniformLittleO.lean",
           "status": "verified",
           "qualification": "ONE full complex normalized Sobolev source neighborhood is fixed BEFORE ALL epsilon>0. For each epsilon, ONE cutoff precedes ALL complex sources there, ALL compatible actual Cauchy families, ALL distant signed labels and ALL points of their complex gap segments. The exact weighted square error is bounded by epsilon times the actual gap norm squared. The primitive analogue retains one literal gap factor and includes both boundary sides. This is a source-level diagonal dependency, not yet the full frequency claim in original action topology. The weak t=0 endpoint is not asserted."
+        },
+        {
+          "source_clause": "Theorem 1.2(iii): ACTUAL native sharp UNIFORM DIAGONAL little-o for 0<t<1 (native -1<s<0)",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.theorem_1_2_iii_native_uniform_diagonal_dependency",
+          "lean_source": "NLS/Articles/KdVKdV2Frequencies/Theorem12UniformDiagonalDecay.lean",
+          "status": "verified",
+          "qualification": "At EVERY original real native H^(t-1) source, construct ONE ACTUAL physical frequency chart. ONE full complex open neighborhood T in that ORIGINAL native norm precedes ALL epsilon>0; for each epsilon, ONE cutoff precedes ALL complex sources in the SAME T and ALL positive large n. The sharp weighted norm w_(3t-1)*norm(actual correction +12J_n1 -actual off-diagonal correction) is at most epsilon. The physical calibration +12J_n1=+6I_n is already proved; all collapsed complex gaps and infinite support are retained. Raw moment and weighted-action cancellation proofs retain TWO literal gap factors. This is the DIAGONAL contribution, not the full frequency theorem in original action topology. Weak t=0 is not asserted."
         }
       ]
     },
@@ -46226,14 +46233,126 @@
       "scope": "For EVERY 0<t<1 the ACTUAL filled-square error is uniformly little-o relative to gamma_j^2*w_(-t)(j) on ONE FIXED full complex normalized Sobolev source neighborhood, on every actual complex gap and for every compatible Cauchy family. Both literal gap factors remain at collapse.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "3846c41cc521887d5965e8fbe5233e8ab3e8da057af07218153635a551e72a2e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiSobolevUniformLittleO.lean",
+      "source_labels": [
+        "Theorem 1.2(iii) ACTUAL native sharp UNIFORM DIAGONAL dependency; FULL main clause remains OPEN"
+      ],
+      "source_pages": [
+        4,
+        27,
+        28,
+        33,
+        34
+      ],
+      "scope": "For EVERY 0<t<1 the ACTUAL filled-psi normalization quotient has uniform little-o error after multiplication by w_t on ONE FIXED full complex normalized Sobolev source neighborhood. Its cutoff precedes ALL omitted indices, signed distant selected indices and every point on each entire actual complex gap segment.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dca2ba77f03cdc87ef150dcff0f7cd70322148fe629195ca8935d8fba83ea92c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceDiagonalMomentSobolevUniformLittleO.lean",
+      "source_labels": [
+        "Theorem 1.2(iii) ACTUAL native sharp UNIFORM DIAGONAL dependency; FULL main clause remains OPEN"
+      ],
+      "source_pages": [
+        4,
+        27,
+        28,
+        33,
+        34
+      ],
+      "scope": "For EVERY 0<t<1 the ACTUAL raw diagonal second moment minus pi*gamma_k^2/4 has a uniform relative little-o bound with weight w_t and TWO literal gap factors. The complex source neighborhood is chosen BEFORE every epsilon; all collapsed gaps and infinite support are retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8cbed136f97029351ed8394a5e9a40e8262df6dc27229c733bfc67fbe246def3"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/WeightedAffineQuadraticUniformTail.lean",
+      "source_labels": [
+        "Theorem 1.2(iii) ACTUAL native sharp UNIFORM DIAGONAL dependency; FULL main clause remains OPEN"
+      ],
+      "source_pages": [
+        4,
+        27,
+        28,
+        33,
+        34
+      ],
+      "scope": "Two reusable scalar cancellation estimates RETAIN the small Sobolev weight ratio in the affine weighted-action error and opposite-index moment contribution. They apply to literal quadratic factors including zero; no gap division or asymptotic hypothesis is introduced.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b98721a040b565e7b2c32d0eb8a2ecf0521a549eef2451ea0c1198f7ed318cbe"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFirstWeightedActionSobolevUniformLittleO.lean",
+      "source_labels": [
+        "Theorem 1.2(iii) ACTUAL native sharp UNIFORM DIAGONAL dependency; FULL main clause remains OPEN"
+      ],
+      "source_pages": [
+        4,
+        27,
+        28,
+        33,
+        34
+      ],
+      "scope": "For EVERY 0<t<1 the ACTUAL first weighted action minus (pi*n)*gamma_n^2/4 has a uniform relative little-o bound with weight w_(t-1) and TWO literal gap factors, on ONE fixed full complex normalized Sobolev source neighborhood. The exact raw zeroth action estimate and retained weight ratio control the affine terms.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f72f65697f305fd84705d81be9206c0b400f92bc5b428107b545399df9ffbb9c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceDiagonalCancellationSobolevUniformLittleO.lean",
+      "source_labels": [
+        "Theorem 1.2(iii) ACTUAL native sharp UNIFORM DIAGONAL dependency; FULL main clause remains OPEN"
+      ],
+      "source_pages": [
+        4,
+        27,
+        28,
+        33,
+        34
+      ],
+      "scope": "The ACTUAL -12n*(M_nn-M_n,-n)+12J_n1 cancellation has a uniform relative little-o bound with weight w_(t-1) and TWO selected-gap factors for every 0<t<1, on ONE fixed full complex neighborhood. Actual opposite-index cubic bounds and the decaying w_(t-1) factor supply uniform vanishing; gap reflection is explicit.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dcd31c690d4d6c07a7d0b40b27221adae0e484b3a454f4daa0083c6e165647fa"
+    },
+    {
+      "path": "NLS/KdV/PhysicalUniformDiagonalCancellation.lean",
+      "source_labels": [
+        "Theorem 1.2(iii) ACTUAL native sharp UNIFORM DIAGONAL dependency; FULL main clause remains OPEN"
+      ],
+      "source_pages": [
+        4,
+        27,
+        28,
+        33,
+        34
+      ],
+      "scope": "At EVERY real point of ANY actual physical frequency parameterization and EVERY 0<t<1, ONE full complex neighborhood in its original source norm gives uniform little-o of the ACTUAL corrected diagonal remainder with sharp weight w_(3t-1). Actual Miura gap reflection, source identity, first weighted action and weighted squared-gap norm bounds are proved inputs.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9f3f7ce73c0d4d046f2c63fe3a3c570fd4b00d999cb4541f276a789574e745b6"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/Theorem12UniformDiagonalDecay.lean",
+      "source_labels": [
+        "Theorem 1.2(iii) ACTUAL native sharp UNIFORM DIAGONAL dependency; FULL main clause remains OPEN"
+      ],
+      "source_pages": [
+        4,
+        27,
+        28,
+        33,
+        34
+      ],
+      "scope": "UNCONDITIONALLY constructs the ACTUAL physical frequency chart at EVERY real ORIGINAL native H^(t-1) source for 0<t<1 and proves sharp UNIFORM DIAGONAL little-o on ONE fixed full COMPLEX neighborhood in that EXACT native norm. The original +6I counterterm is retained via the proved physical calibration. The full frequency and original-action uniform asymptotic remain separate obligations.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4b8ba1d2057163545255cca170da87b843410c51436dcfafdf6061bff54749a5"
     }
   ],
   "dependencies_needed": [
-    "For EVERY 0<t<1 and EVERY real normalized Sobolev source, the ACTUAL Abelian primitive and filled square now have UNIFORM little-o relative errors on ONE FIXED full COMPLEX source neighborhood. The neighborhood is chosen BEFORE every epsilon. The primitive bound is w_t(j)*norm(F_j-i*root_j)<=epsilon*norm(gamma_j); the filled-square bound is w_t(j)*norm(F_j^2+selectedPolynomial_j)<=epsilon*norm(gamma_j)^2. ONE tail cutoff for each epsilon precedes ALL sources in that SAME neighborhood, ALL compatible Cauchy families, ALL signed distant indices, both primitive boundary sides, and every point on each actual complex gap. Closed gaps and infinite support are included. The ACTUAL critical squared-gap quotient is analytic in the original finite-exponent sequence norm and has uniform coordinate tails after compact Sobolev decoding for EVERY t>0. These are necessary source-level diagonal dependencies of Theorem 1.2(iii); the FULL corrected-frequency uniform little-o is NOT yet proved. Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. All previously verified complete Theorem 1.2 clauses, including the original-action s>=-1/3 locally uniform O(1/n), remain unchanged. For -1<=s<-1/3 the full original-action sharp bound and POINTWISE little-o are retained. To complete Theorem 1.2(iii), propagate the new uniform relative errors through actual diagonal moments and first weighted actions, sharpen the off-diagonal estimate, and transfer the uniform result to the SAME original action frequency family. The weak endpoint t=0 (native s=-1) is still essential: positive-order compactness does not handle it. Other essential main theorem obligations remain open.",
+    "For EVERY 0<t<1 and EVERY real ORIGINAL native H^(t-1) source, the ACTUAL corrected physical DIAGONAL contribution now has a UNIFORM little-o estimate of sharp order w_(1-3t) on ONE FIXED full COMPLEX neighborhood in that ORIGINAL native norm. The physical chart and its exact Miura source are fixed BEFORE all tolerances; T is fixed BEFORE every epsilon, then ONE cutoff precedes ALL complex sources in T and ALL large positive labels. The literal diagonal remainder is actual physical correction +12*actual first weighted Dirac action -actual off-diagonal correction, with the proved original counterterm identity +12J_n1=+6I_n. Actual raw diagonal moments, first weighted actions and their cancellation have uniform relative errors retaining BOTH literal gap factors, including collapsed complex gaps. This completes a necessary diagonal dependency of Theorem 1.2(iii), not yet the FULL frequency assertion in original action topology. Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. Every previously verified complete Theorem 1.2 clause remains unchanged, including the original-action s>=-1/3 locally uniform O(1/n). The lower-range full original-action sharp bound and POINTWISE little-o remain verified. To complete the lower-range uniform frequency conclusion, sharpen the actual off-diagonal remainder, combine it with the NEW native uniform diagonal estimate for 0<t<2/3, and transfer uniform tails to the SAME global weak frequency family in the ORIGINAL action topology. The weak endpoint t=0 (native s=-1) remains essential and is not covered by positive-order compactness. The consolidated Theorem 1.2 and other essential main theorem obligations remain OPEN.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
-    "Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. All previously verified complete Theorem 1.2 clauses, including the original-action s>=-1/3 locally uniform O(1/n), remain unchanged. For -1<=s<-1/3 the full original-action sharp bound and POINTWISE little-o are retained. To complete Theorem 1.2(iii), propagate the new uniform relative errors through actual diagonal moments and first weighted actions, sharpen the off-diagonal estimate, and transfer the uniform result to the SAME original action frequency family. The weak endpoint t=0 (native s=-1) is still essential: positive-order compactness does not handle it. Other essential main theorem obligations remain open.",
+    "Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. Every previously verified complete Theorem 1.2 clause remains unchanged, including the original-action s>=-1/3 locally uniform O(1/n). The lower-range full original-action sharp bound and POINTWISE little-o remain verified. To complete the lower-range uniform frequency conclusion, sharpen the actual off-diagonal remainder, combine it with the NEW native uniform diagonal estimate for 0<t<2/3, and transfer uniform tails to the SAME global weak frequency family in the ORIGINAL action topology. The weak endpoint t=0 (native s=-1) remains essential and is not covered by positive-order compactness. The consolidated Theorem 1.2 and other essential main theorem obligations remain OPEN.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
   ],
   "workspace": {
@@ -46257,8 +46376,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 26293,
-    "total_declarations_audited": 48356,
+    "candidate_declarations_audited": 26304,
+    "total_declarations_audited": 48374,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -46268,7 +46387,7 @@
       "Theorem 1.1",
       "Corollary 1.4"
     ],
-    "selected_modules": 3454,
+    "selected_modules": 3461,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -46428,7 +46547,8 @@
     "fractional_diagonal_cancellation_validation_sequence": "All 3421 prior selected sources and all 55 prior provenance records remain byte-identical. The exact new import closure is six own modules containing nine explicit public theorems; there are NO newly imported or reused canonical modules and NO new provenance records. All six new selections were strictly rebuilt in dependency order AFTER freezing 3485 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh full transitive audit covers all 3427 selections and EVERY imported NLS declaration: 26167 selected and 48237 imported declarations. The ENTIRE audit loop, collectAxioms traversal, allowed axioms and imported-NLS scope remain byte-identical to baseline. The 3427-name bidirectional NameSet probe rejects insertion/deletion mismatches. Exact ordered selections, dependency order, reachability, 27 private chunks of at most 128 names, private fresh outputs, overlay targets, unchanged canonical main and pinned Mathlib are verified. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a six-module incremental rebuild retaining all prior strict evidence, not a full 3427-module rebuild.",
     "native_full_frequency_decay_validation_sequence": "All 3427 prior selected sources and all 55 prior provenance records remain byte-identical. The exact new import closure is eight own modules containing thirteen explicit public theorems; there are NO newly imported or reused canonical modules and NO new provenance records. All eight new selections were strictly rebuilt in dependency order AFTER freezing 3493 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh full transitive audit covers all 3435 selections and EVERY imported NLS declaration: 26201 selected and 48271 imported declarations. The ENTIRE audit loop, collectAxioms traversal, allowed axioms and imported-NLS scope remain byte-identical to baseline. The 3435-name bidirectional NameSet probe rejects insertion/deletion mismatches. Exact ordered selections, dependency order, reachability, 27 private chunks of at most 128 names, private fresh outputs, overlay targets, unchanged canonical main and pinned Mathlib are verified. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is an eight-module incremental rebuild retaining all prior strict evidence, not a full 3435-module rebuild.",
     "original_action_frequency_decay_validation_sequence": "All 3435 prior selected sources and all 55 prior provenance records remain byte-identical. The exact new import closure is twelve own modules containing fourteen explicit public theorems; there are NO newly imported or reused canonical modules and NO new provenance records. All twelve new selections were strictly rebuilt in dependency order AFTER freezing 3505 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh full transitive audit covers all 3447 selections and EVERY imported NLS declaration: 26271 selected and 48341 imported declarations. The ENTIRE audit loop, collectAxioms traversal, allowed axioms and imported-NLS scope remain byte-identical to baseline. The 3447-name bidirectional NameSet probe rejects insertion/deletion mismatches. Exact ordered selections, dependency order, reachability, 27 private chunks of at most 128 names, private fresh outputs, overlay targets, unchanged canonical main and pinned Mathlib are verified. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a twelve-module incremental rebuild retaining all prior strict evidence, not a full 3447-module rebuild.",
-    "sobolev_uniform_primitive_decay_validation_sequence": "All 3447 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is seven own modules containing nine public theorems. No canonical module or provenance record is newly selected. All seven new modules were strictly rebuilt in dependency order AFTER freezing 3512 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3454 selections and EVERY imported NLS declaration: 26293 selected declarations and 48356 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 27 private chunks of at most 128 names, and the bidirectional 3454-name set probe with insertion/deletion rejection are verified. The 3462 historical strict PASS records cover 3454 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a seven-module incremental rebuild retaining prior strict evidence, not a full rebuild."
+    "sobolev_uniform_primitive_decay_validation_sequence": "All 3447 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is seven own modules containing nine public theorems. No canonical module or provenance record is newly selected. All seven new modules were strictly rebuilt in dependency order AFTER freezing 3512 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3454 selections and EVERY imported NLS declaration: 26293 selected declarations and 48356 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 27 private chunks of at most 128 names, and the bidirectional 3454-name set probe with insertion/deletion rejection are verified. The 3462 historical strict PASS records cover 3454 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a seven-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
+    "uniform_diagonal_decay_validation_sequence": "All 3454 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is seven own modules containing eight explicit public theorems. No canonical module or provenance record is newly selected. All seven modules were strictly rebuilt in dependency order AFTER freezing 3519 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3461 selections and EVERY imported NLS declaration: 26304 selected declarations and 48374 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3461-name set probe with insertion/deletion rejection are verified. The 3469 historical strict PASS records cover 3461 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a seven-module incremental rebuild retaining prior strict evidence, not a full rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -47940,6 +48060,18 @@
         "Complete Theorem 1.1 and Corollary 1.4 remain VERIFIED; the other nine complete main rows remain OPEN. Complete source clauses Theorem 1.2(ii) and (iv), all regularity-dependent target clauses of (i), and now the COMPLETE original-action high-regularity s>=-1/3 part of (iii), remain verified. The original action-space transfer and SAME global weak-frequency calibration are now proved for the full corrected-frequency bounds at every source order. The lower range -1<=s<-1/3 has a complex locally uniform sharp big-O and POINTWISE little-o in the ORIGINAL action norm. Full Theorem 1.2(iii) still requires its exact source-uniform little-o there. A bounded ell1 majorant norm does not imply uniform vanishing tails on one fixed neighborhood. The consolidated complete Theorem1.2 remains essential. Global Hessian nonpositivity/generic uniform strict concavity, physical asymptotic sharpness, smoothing, actual PDE conclusions and KdV2 moments/renormalization/global conclusions also remain open.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "813dab409e4ad548b8b39738d9ed0a8a04d8a24f",
+      "description": "For EVERY 0<t<1 and EVERY real ORIGINAL native H^(t-1) source, the ACTUAL corrected physical DIAGONAL contribution now has a UNIFORM little-o estimate of sharp order w_(1-3t) on ONE FIXED full COMPLEX neighborhood in that ORIGINAL native norm. The physical chart and its exact Miura source are fixed BEFORE all tolerances; T is fixed BEFORE every epsilon, then ONE cutoff precedes ALL complex sources in T and ALL large positive labels. The literal diagonal remainder is actual physical correction +12*actual first weighted Dirac action -actual off-diagonal correction, with the proved original counterterm identity +12J_n1=+6I_n. Actual raw diagonal moments, first weighted actions and their cancellation have uniform relative errors retaining BOTH literal gap factors, including collapsed complex gaps. This completes a necessary diagonal dependency of Theorem 1.2(iii), not yet the FULL frequency assertion in original action topology.",
+      "entries": [
+        "For EVERY 0<t<1 and EVERY real normalized Sobolev source, the ACTUAL Abelian primitive and filled square now have UNIFORM little-o relative errors on ONE FIXED full COMPLEX source neighborhood. The neighborhood is chosen BEFORE every epsilon. The primitive bound is w_t(j)*norm(F_j-i*root_j)<=epsilon*norm(gamma_j); the filled-square bound is w_t(j)*norm(F_j^2+selectedPolynomial_j)<=epsilon*norm(gamma_j)^2. ONE tail cutoff for each epsilon precedes ALL sources in that SAME neighborhood, ALL compatible Cauchy families, ALL signed distant indices, both primitive boundary sides, and every point on each actual complex gap. Closed gaps and infinite support are included. The ACTUAL critical squared-gap quotient is analytic in the original finite-exponent sequence norm and has uniform coordinate tails after compact Sobolev decoding for EVERY t>0. These are necessary source-level diagonal dependencies of Theorem 1.2(iii); the FULL corrected-frequency uniform little-o is NOT yet proved. Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. All previously verified complete Theorem 1.2 clauses, including the original-action s>=-1/3 locally uniform O(1/n), remain unchanged. For -1<=s<-1/3 the full original-action sharp bound and POINTWISE little-o are retained. To complete Theorem 1.2(iii), propagate the new uniform relative errors through actual diagonal moments and first weighted actions, sharpen the off-diagonal estimate, and transfer the uniform result to the SAME original action frequency family. The weak endpoint t=0 (native s=-1) is still essential: positive-order compactness does not handle it. Other essential main theorem obligations remain open.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Complete main rows remain 2 VERIFIED (Theorem 1.1 and Corollary 1.4) and 9 OPEN. All previously verified complete Theorem 1.2 clauses, including the original-action s>=-1/3 locally uniform O(1/n), remain unchanged. For -1<=s<-1/3 the full original-action sharp bound and POINTWISE little-o are retained. To complete Theorem 1.2(iii), propagate the new uniform relative errors through actual diagonal moments and first weighted actions, sharpen the off-diagonal estimate, and transfer the uniform result to the SAME original action frequency family. The weak endpoint t=0 (native s=-1) is still essential: positive-order compactness does not handle it. Other essential main theorem obligations remain open.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -48053,5 +48185,6 @@
   "fractional_diagonal_cancellation_record": "FRACTIONAL_DIAGONAL_CANCELLATION.md",
   "native_full_frequency_decay_record": "NATIVE_FULL_FREQUENCY_DECAY.md",
   "original_action_frequency_decay_record": "ORIGINAL_ACTION_FREQUENCY_DECAY.md",
-  "sobolev_uniform_primitive_decay_record": "SOBOLEV_UNIFORM_PRIMITIVE_DECAY.md"
+  "sobolev_uniform_primitive_decay_record": "SOBOLEV_UNIFORM_PRIMITIVE_DECAY.md",
+  "uniform_diagonal_decay_record": "UNIFORM_DIAGONAL_DECAY.md"
 }
