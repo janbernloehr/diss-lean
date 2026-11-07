@@ -1,3 +1,15 @@
+import NLS.Articles.KdVKdV2Frequencies.DiagonalActionCompactFactory
+import NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalActionCompact
+import NLS.Articles.KdVKdV2Frequencies.DiagonalRawActionCompact
+import NLS.Articles.KdVKdV2Frequencies.DiagonalSymbolActionCharts
+import NLS.Articles.KdVKdV2Frequencies.DiagonalOriginalActionRecovery
+import NLS.Articles.KdVKdV2Frequencies.DiagonalPairActionInvariance
+import NLS.KdV.PhysicalDiagonalRoughArnold
+import NLS.Articles.KdVKdV2Frequencies.DiagonalFrequencyPairCharts
+import NLS.SequenceSpaces.RealQuadraticActionOpening
+import NLS.SequenceSpaces.RealActionNormalizedInvariance
+import NLS.KdV.PhysicalMomentIsospectral
+import NLS.KdV.PhysicalOffDiagonalLocalAnalytic
 import NLS.ComplexAnalysis.AnalyticNonzeroConnected
 import NLS.SequenceSpaces.CompactLpMultiplier
 import NLS.KdV.PhysicalDiagonalFrequencySymbol
@@ -5888,7 +5900,19 @@ private def kdvFrequencyAuditChunk26 : Array Lean.Name := #[
   `NLS.SequenceSpaces.AffinePositiveSymbolReciprocal,
   `NLS.KdV.MiuraDiagonalFrequencySymbol,
   `NLS.KdV.PhysicalDiagonalFrequencySymbol,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalSymbol
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalSymbol,
+  `NLS.SequenceSpaces.RealQuadraticActionOpening,
+  `NLS.SequenceSpaces.RealActionNormalizedInvariance,
+  `NLS.KdV.PhysicalMomentIsospectral,
+  `NLS.KdV.PhysicalOffDiagonalLocalAnalytic,
+  `NLS.KdV.PhysicalDiagonalRoughArnold,
+  `NLS.Articles.KdVKdV2Frequencies.DiagonalFrequencyPairCharts,
+  `NLS.Articles.KdVKdV2Frequencies.DiagonalPairActionInvariance,
+  `NLS.Articles.KdVKdV2Frequencies.DiagonalSymbolActionCharts,
+  `NLS.Articles.KdVKdV2Frequencies.DiagonalOriginalActionRecovery,
+  `NLS.Articles.KdVKdV2Frequencies.DiagonalRawActionCompact,
+  `NLS.Articles.KdVKdV2Frequencies.DiagonalActionCompactFactory,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalActionCompact
 ]
 
 open Lean in
