@@ -2137,6 +2137,22 @@ import NLS.SequenceSpaces.DoubledPairL1Majorant
 import NLS.SequenceSpaces.EvenWeightedTailEnvelope
 import NLS.SequenceSpaces.FiniteTailL1Bound
 import NLS.SequenceSpaces.PositiveWeightedL1Bound
+import NLS.Articles.KdVPseudomeasures.SourceLemma29CancelledNorms
+import NLS.Articles.KdVPseudomeasures.SourceLemma29Counterexample
+import NLS.Articles.KdVPseudomeasures.SourceLemma29OriginalCounterexample
+import NLS.Articles.KdVPseudomeasures.SourceLemma29QuarterCutoff
+import NLS.Articles.KdVPseudomeasures.SourceLemma29WeightedRepair
+import NLS.Articles.KdVPseudomeasures.SourceTwoModeOriginalPotential
+import NLS.Articles.KdVPseudomeasures.SourceWeightedDiagonalTransport
+import NLS.FunctionalAnalysis.NeumannSecondRemainder
+import NLS.KdV.HillTwoModeBornCoefficient
+import NLS.KdV.HillWideDiagonalOppositeNorm
+import NLS.KdV.HillWideDiagonalSecondRemainder
+import NLS.KdV.HillWideDiagonalWeightedOperatorBound
+import NLS.KdV.HillWideTwoModeOperator
+import NLS.KdV.PseudomeasureWideBilinearSymmetry
+import NLS.SequenceSpaces.TwoSymmetricInfinityModes
+import NLS.SequenceSpaces.UnitWeightedInfinityNorm
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -12376,3 +12392,40 @@ import NLS.SequenceSpaces.PositiveWeightedL1Bound
 #print axioms NLS.Coeff.exists_l1_of_uniform_prefix_and_tail
 #print axioms NLS.WeightedCoeff.exists_weighted_l1_of_uniform_prefix_and_tail
 #print axioms NLS.WeightedCoeff.positive_weighted_l1_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sobolev_negative_weight_cancels
+#print axioms NLS.Articles.KdVPseudomeasures.norm_twoModes_cancelling_weight
+#print axioms NLS.Articles.KdVPseudomeasures.endpointForgetWeight_twoSymmetricInfinityModes
+#print axioms NLS.Articles.KdVPseudomeasures.norm_twoModes_unweighted_negative
+#print axioms NLS.Articles.KdVPseudomeasures.norm_lower_of_twoMode_born_error
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_counterexample_at
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_original_counterexample
+#print axioms NLS.Articles.KdVPseudomeasures.quarter_root_ge_4096
+#print axioms NLS.Articles.KdVPseudomeasures.quarter_inverse_root_le
+#print axioms NLS.Articles.KdVPseudomeasures.twoModes_quarter_unweighted_norm_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_weighted_at
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_weighted
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTwoModeOriginalPotential
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTwoModeOriginalPotential_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTwoModeOriginalPotential_apply
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTwoModeOriginalPotential_physical
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointDiagonal_forgetWeight
+#print axioms NLS.FunctionalAnalysis.norm_neumann_second_remainder_le
+#print axioms NLS.KdV.wideHillSymbol_twoMode_center_sum
+#print axioms NLS.KdV.wideHillSymbol_twoMode_center_sum_lower
+#print axioms NLS.KdV.wideEndpointDiagonal_eq_negativeCorrectedMode
+#print axioms NLS.KdV.wideEndpointDiagonal_opNorm_le_weighted_opposite
+#print axioms NLS.KdV.wideEndpointDiagonal_second_remainder
+#print axioms NLS.KdV.wideEndpointDiagonal_opNorm_le_weighted
+#print axioms NLS.KdV.wideEndpointHillPerturbation_twoModes
+#print axioms NLS.KdV.wideEndpointHillPerturbation_twoModes_modulation_diagonal
+#print axioms NLS.KdV.wideEndpointShiftedOperatorNorm_twoModes_unit
+#print axioms NLS.KdV.norm_wideHillSymbol_center_le
+#print axioms NLS.KdV.wideEndpointHillPairing_residual
+#print axioms NLS.KdV.wideEndpointHillReduced_bilinearSymmetry
+#print axioms NLS.KdV.wideEndpointHillEffectivePotential_diagonals_eq
+#print axioms NLS.WeightedCoeff.twoSymmetricInfinityModes
+#print axioms NLS.WeightedCoeff.twoSymmetricInfinityModes_apply
+#print axioms NLS.WeightedCoeff.norm_twoSymmetricInfinityModes
+#print axioms NLS.WeightedCoeff.tsum_twoSymmetricInfinityModes_mul
+#print axioms NLS.WeightedCoeff.norm_apply_le_of_unit_values
+#print axioms NLS.WeightedCoeff.norm_le_of_unit_values

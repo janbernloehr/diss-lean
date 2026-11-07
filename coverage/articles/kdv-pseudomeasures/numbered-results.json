@@ -198,13 +198,16 @@
       "line": 749,
       "statement": "Lemma 2.9 Suppose q ∈ Fℓw,s,∞ 0,C   with −1/2 < s ⩽ 0 and w ∈ M. Then for\nany n ⩾ ns , with ns as in Corollary 2.5, the coefficients an (λ) and b±n (λ) are\nanalytic functions on the strip Sn and for any λ ∈ Sn\n\n        (i)    |an (λ)| ⩽ 2kTn (λ)kw,s,∞;±n kqks,∞ ,\n                              s\n       (ii)    w2n h2ni |b±n (λ) − q±2n | ⩽ 2kTn (λ)kw,s,∞;±n kqkw,s,∞ .           ⋊",
       "status": "partial",
-      "comparison": "Joint analyticity and the literal actual shifted-operator-norm inequalities in part (ii), for both physical couplings and all source weights, are proved on the complete printed strip above one uniform norm-ball cutoff. Earlier explicit-majorant estimates remain available. Part (i), with the arbitrary-weight operator norm but the unweighted potential norm, remains unproved; neither norm is silently replaced.",
+      "comparison": "Joint analyticity and part (ii) are fully proved with literal actual shifted operator norms on the entire printed strip. Part (i), with an unweighted potential factor, has checked real, mean-zero, period-one counterexamples in the original distribution space beyond every uniform norm-ball cutoff. A full replacement using the weighted potential norm is proved for BOTH literal opposite shifted operator norms, retaining the entire strip and a uniform cutoff before every original source weight and norm-ball potential. User selection of this repair is pending; the false printed bound is not claimed.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean",
         "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean",
         "NLS/KdV/PseudomeasureWideAnalytic.lean",
         "NLS/Articles/KdVPseudomeasures/SourceLemma29OperatorNorm.lean",
-        "NLS/KdV/PseudomeasureWideOperatorErrors.lean"
+        "NLS/KdV/PseudomeasureWideOperatorErrors.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma29WeightedRepair.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma29OriginalCounterexample.lean",
+        "NLS/KdV/HillWideDiagonalOppositeNorm.lean"
       ],
       "declarations": [
         "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_unit",
@@ -212,7 +215,9 @@
         "NLS.Articles.KdVPseudomeasures.analyticAt_sourceWeightedEndpointEntries",
         "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_ii",
         "NLS.Articles.KdVPseudomeasures.analyticAt_sourceWeightedEndpointEntries_wide",
-        "NLS.KdV.wideEndpointCouplings_opNorm_errors"
+        "NLS.KdV.wideEndpointCouplings_opNorm_errors",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_weighted",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_weighted_at"
       ],
       "source_page": 12,
       "statement_sha256": "43334f3bebe620cf97903cbb1a116accf0a511f7df9fbb937d078e30d18b398b",
@@ -221,8 +226,24 @@
         "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean": "dc7f287262a33e797f9717ddbcc7fabc8dee068b99aae811c515db6dfcb600cd",
         "NLS/KdV/PseudomeasureWideAnalytic.lean": "5e81e812e6de4d23bb10864663f44076d1c37f5ac9ac66694afd34256814cc07",
         "NLS/Articles/KdVPseudomeasures/SourceLemma29OperatorNorm.lean": "e5e4510ebd69409a8e262097f5800cf16b52e8b7a3925b3acd10d1b0bec4192a",
-        "NLS/KdV/PseudomeasureWideOperatorErrors.lean": "2500f0bbedfdff0a619d9df145a2f658746c994aa3602dd352abd0611bc4d0b3"
-      }
+        "NLS/KdV/PseudomeasureWideOperatorErrors.lean": "2500f0bbedfdff0a619d9df145a2f658746c994aa3602dd352abd0611bc4d0b3",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma29WeightedRepair.lean": "bfeacc9ba8b6cb2c7e179064214d31413376310107c4b8edda1ac9ed67305fb2",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma29OriginalCounterexample.lean": "a8dbc5407dbda75d5c4f6f4ecbcb483e20f798381cb80cfe11dad3cb29e3153e",
+        "NLS/KdV/HillWideDiagonalOppositeNorm.lean": "77fe667a10929014d553455475febd9a2743aa5b7365b8d763c2f352093609fa"
+      },
+      "printed_statement_status": "false_as_printed",
+      "printed_norm_defect": "For r=1/4, w=Sobolev(r), the total signed weight cancels to one. Take actual Fourier coefficients1 at ±(2n−2). The original weighted norm is1, the unweighted negative-order norm is at most1/4096 for n>=4096^4, both full-strip contraction requirements hold, and at lambda=pi^2*n^2 the actual diagonal strictly exceeds2 times the literal weighted shifted T norm times the unweighted potential norm. This gives a violating real mean-zero period-one original distribution beyond every uniform cutoff in the weighted unit ball.",
+      "replacement_selection": "pending user preference: adopt weighted potential norm correction or retain false printed status",
+      "counterexample_providers": [
+        "NLS/Articles/KdVPseudomeasures/SourceLemma29Counterexample.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma29OriginalCounterexample.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceTwoModeOriginalPotential.lean"
+      ],
+      "counterexample_declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_counterexample_at",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_original_counterexample",
+        "NLS.Articles.KdVPseudomeasures.sourceTwoModeOriginalPotential_physical"
+      ]
     },
     {
       "label": "Lemma 2.10",
