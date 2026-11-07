@@ -3985,6 +3985,16 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/PhysicalKdVFrequencyBridge
   NLS/Articles/KdVKdV2Frequencies/OriginalPhysicalKdVFlowMatching
   NLS/Articles/KdVKdV2Frequencies/OriginalKdVPhysicalSolutions
+  NLS/FunctionalAnalysis/CompactTubeBound
+  NLS/Dynamics/BohrAlmostPeriodic
+  NLS/Dynamics/PhaseAlmostPeriodic
+  NLS/SequenceSpaces/PhysicalWeightedPhaseBounds
+  NLS/Articles/KdVKdV2Frequencies/NativeL2PhysicalCoordinates
+  NLS/Articles/KdVKdV2Frequencies/PhysicalL2PhaseError
+  NLS/FunctionalAnalysis/LinearRemainderBound
+  NLS/Articles/KdVKdV2Frequencies/OriginalL2AiryRemainder
+  NLS/Articles/KdVKdV2Frequencies/AllTimeL2AiryBound
+  NLS/Articles/KdVKdV2Frequencies/MainCorollary17
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

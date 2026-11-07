@@ -1137,7 +1137,7 @@
       "pdf_pages": [
         6
       ],
-      "status": "open",
+      "status": "verified",
       "role": "physical KdV one-smoothing relative to Airy",
       "verified_supporting_clauses": [
         {
@@ -1223,9 +1223,37 @@
           "lean_source": "NLS/Articles/KdVKdV2Frequencies/OriginalKdVPhysicalSolutions.lean",
           "status": "verified_dependency",
           "qualification": "Physical PDE identification toward Corollary 1.7 is VERIFIED for the SAME retained original-norm KdV evolution. Its calibrated actual frequency family is constructed on one common complex neighborhood of the entire nonnegative action cone. At EVERY original H4 datum, the retained trajectory is continuous in H4 and has the literal conservative KdV vector as its H1 time derivative. At EVERY smooth datum its physical synthesis has velocity exactly -u_xxx+6*u*u_x in the uniform physical norm, with no time reversal or Fourier rescaling. At EVERY original real mean-zero L2 datum, the SAME retained evolution is an actual universal classical-limit solution and is unique in that class. The approximation quantifiers range over EVERY smooth H4 initial sequence converging in the ORIGINAL L2 norm and EVERY corresponding actual strong classical KdV curve. Arbitrary such approximants converge uniformly on EVERY compact time set, and smooth classical approximating families exist. No PDE identification, physical frequency, derivative, or approximation-existence hypothesis is postulated. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Canonical N=0 forward and inverse analytic gains and actual physical KdV solution identification are now proved. Corollary 1.7 still requires the original H1 one-smoothing comparison with Airy and its locally uniform ALL-TIME bound. The full uniform-on-bounded-subsets assertion of source (24), higher-N smoothing and a global complex inverse extension are not asserted here. Local analytic bounds are not substituted for boundedness on arbitrary whole balls. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete."
+        },
+        {
+          "source_clause": "COMPLETE main assertion: unique actual physical KdV solution, exact ORIGINAL H1 Airy difference for ALL times and strictly positive C locally uniform over ALL nearby ORIGINAL L2 data and EVERY actual solution",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.corollary_1_7",
+          "lean_source": "NLS/Articles/KdVKdV2Frequencies/MainCorollary17.lean",
+          "status": "verified_main_assertion",
+          "qualification": "COMPLETE Corollary 1.7 is VERIFIED. At EVERY original physical real mean-zero L2 initial datum the actual physical KdV solution exists and is unique in the universal classical-limit solution class, which quantifies EVERY smooth classical approximation in the ORIGINAL source norm and is independently proved nonvacuous. Its difference from the unit-period Airy group with generator -partial_x^3 has an ACTUAL physical real mean-zero H1 realization. A strictly positive C bounds that ORIGINAL H1 norm by C*(1+abs(t)) for EVERY real time. The SAME C works for ALL initial data in ONE ORIGINAL L2-open neighborhood of EVERY prescribed datum and for EVERY actual solution in that class. The actual map, calibrated frequency family, time orientation, literal Sobolev inclusion, raw Fourier coefficients and inherited original norms are retained. No flow, smoothing, physical PDE, frequency, compact-orbit or whole-ball boundedness hypothesis is assumed."
         }
       ],
-      "current_support_summary": "Physical PDE identification toward Corollary 1.7 is VERIFIED for the SAME retained original-norm KdV evolution. Its calibrated actual frequency family is constructed on one common complex neighborhood of the entire nonnegative action cone. At EVERY original H4 datum, the retained trajectory is continuous in H4 and has the literal conservative KdV vector as its H1 time derivative. At EVERY smooth datum its physical synthesis has velocity exactly -u_xxx+6*u*u_x in the uniform physical norm, with no time reversal or Fourier rescaling. At EVERY original real mean-zero L2 datum, the SAME retained evolution is an actual universal classical-limit solution and is unique in that class. The approximation quantifiers range over EVERY smooth H4 initial sequence converging in the ORIGINAL L2 norm and EVERY corresponding actual strong classical KdV curve. Arbitrary such approximants converge uniformly on EVERY compact time set, and smooth classical approximating families exist. No PDE identification, physical frequency, derivative, or approximation-existence hypothesis is postulated."
+      "current_support_summary": "COMPLETE Corollary 1.7 is VERIFIED. At EVERY original physical real mean-zero L2 initial datum the actual physical KdV solution exists and is unique in the universal classical-limit solution class, which quantifies EVERY smooth classical approximation in the ORIGINAL source norm and is independently proved nonvacuous. Its difference from the unit-period Airy group with generator -partial_x^3 has an ACTUAL physical real mean-zero H1 realization. A strictly positive C bounds that ORIGINAL H1 norm by C*(1+abs(t)) for EVERY real time. The SAME C works for ALL initial data in ONE ORIGINAL L2-open neighborhood of EVERY prescribed datum and for EVERY actual solution in that class. The actual map, calibrated frequency family, time orientation, literal Sobolev inclusion, raw Fourier coefficients and inherited original norms are retained. No flow, smoothing, physical PDE, frequency, compact-orbit or whole-ball boundedness hypothesis is assumed.",
+      "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.corollary_1_7",
+      "lean_source": "NLS/Articles/KdVKdV2Frequencies/MainCorollary17.lean",
+      "coverage_record": "COROLLARY17_COMPLETE.md",
+      "qualification": "The physical solution class is the universal limit of EVERY actual smooth classical approximation in the ORIGINAL norm, with existence and uniqueness proved from the physical PDE. Arbitrary distributional weak-solution uniqueness is not asserted. Airy has exact signed coefficient exp(i*(2*pi*j)^3*t) and generator -partial_x^3, as checked by TimeOrientation.linearKdV_unit_wave. The H1 norm is the inherited original raw w_1 norm of the literal coefficient-preserving H1-to-L2 realization.",
+      "clause_map": [
+        {
+          "source": "Unique actual KdV solution for every L2_0 initial datum",
+          "lean": "corollary_1_7.1",
+          "status": "verified"
+        },
+        {
+          "source": "H1 norm of u(t)-exp(t*(-partial_x^3))q <= C*(1+abs(t)) for EVERY real t",
+          "lean": "corollary_1_7.2: original physical real H1 realization and norm bound",
+          "status": "verified"
+        },
+        {
+          "source": "C>0 can be chosen locally uniformly for q in L2_0",
+          "lean": "corollary_1_7.2: ONE original-norm open U and C before ALL nearby p, actual solutions and times",
+          "status": "verified"
+        }
+      ]
     },
     {
       "label": "Theorem 1.9",
@@ -52768,15 +52796,136 @@
       "scope": "For the SAME retained calibrated family, prove the strong H4-to-H1 PDE, literal smooth physical KdV velocity, universal classical-limit existence/uniqueness in ORIGINAL norms and convergence of EVERY actual classical approximation uniformly on compact time sets. The family is constructed unconditionally from verified actual frequencies.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "5a46d56ed7225af94ae2a1ff538f485662779b51dbfc7f421df97a3be0244b5c"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactTubeBound.lean",
+      "source_labels": [
+        "Corollary 1.7 COMPLETE: actual physical KdV minus Airy has original H1 norm <= C*(1+abs(t)) for ALL real times, locally uniformly in original L2 data"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "A continuous normed-group-valued function is uniformly bounded on one metric tube around a compact set, without local compactness of the ambient infinite-dimensional space. A continuous target map pulls a ball back to one bounded open ORIGINAL source neighborhood.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "52fe5732621b4373587f7353aca6e1d3175aec73d557b419bd36c0071dd80c56"
+    },
+    {
+      "path": "NLS/Dynamics/BohrAlmostPeriodic.lean",
+      "source_labels": [
+        "Corollary 1.7 COMPLETE: actual physical KdV minus Airy has original H1 norm <= C*(1+abs(t)) for ALL real times, locally uniformly in original L2 data"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged canonical compact phase-box dependency, matched byte for byte to canonical main and the article baseline; see CANONICAL_COROLLARY17_PHASE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6b861c9e4c253927437fb77330e41e382e894d7ef5be4bf65dec1e094314e8e8"
+    },
+    {
+      "path": "NLS/Dynamics/PhaseAlmostPeriodic.lean",
+      "source_labels": [
+        "Corollary 1.7 COMPLETE: actual physical KdV minus Airy has original H1 norm <= C*(1+abs(t)) for ALL real times, locally uniformly in original L2 data"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged canonical compact phase-box dependency, matched byte for byte to canonical main and the article baseline; see CANONICAL_COROLLARY17_PHASE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dc4b95af5f940174d329db7d3299f6420d374756b758da6670485b24ed56e70f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalWeightedPhaseBounds.lean",
+      "source_labels": [
+        "Corollary 1.7 COMPLETE: actual physical KdV minus Airy has original H1 norm <= C*(1+abs(t)) for ALL real times, locally uniformly in original L2 data"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "One compact set in the ACTUAL physical real mean-zero weighted norm contains ALL odd physical phase rotations of a fixed target. A continuous stronger remainder is bounded uniformly over ALL times/phases of ALL nearby targets, even with data-dependent frequencies.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7f254fa76eb17a78f6eb45b62c56d518485f60a15852e077dda77df9ac5e0011"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeL2PhysicalCoordinates.lean",
+      "source_labels": [
+        "Corollary 1.7 COMPLETE: actual physical KdV minus Airy has original H1 norm <= C*(1+abs(t)) for ALL real times, locally uniformly in original L2 data"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The SAME actual native Birkhoff coordinates at original L2 agree with the retained raw native map at EVERY signed coefficient. Literal original normalization commutes with the SAME source flow, and actual coordinates obey the exact physical odd phase rotation.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "105c893a32268ab1d2b898158f03e3172b7371e14b90848d0a8f6e2db0b51f1f"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/PhysicalL2PhaseError.lean",
+      "source_labels": [
+        "Corollary 1.7 COMPLETE: actual physical KdV minus Airy has original H1 norm <= C*(1+abs(t)) for ALL real times, locally uniformly in original L2 data"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The actual phase error is realized in ORIGINAL physical real mean-zero h^(3/2), with EVERY signed coefficient equal to the exact coordinate error against Airy. Coefficient-preserving equal-order inclusion retains its bound linear in abs(t) on EVERY bounded ORIGINAL L2 set.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aa76cf9199c7486744f34c2c07e48466432c9c2f676c8519e2f5269950b4def9"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/LinearRemainderBound.lean",
+      "source_labels": [
+        "Corollary 1.7 COMPLETE: actual physical KdV minus Airy has original H1 norm <= C*(1+abs(t)) for ALL real times, locally uniformly in original L2 data"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Opaque Banach-space norm estimate for a bounded linear term plus two stronger remainders, retaining the actual operator and original norms within default checking limits.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e3c89e278f452b288d1b42f533937b3aa586534c6f2e155897cb5f88a694c34e"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/OriginalL2AiryRemainder.lean",
+      "source_labels": [
+        "Corollary 1.7 COMPLETE: actual physical KdV minus Airy has original H1 norm <= C*(1+abs(t)) for ALL real times, locally uniformly in original L2 data"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Construct the ACTUAL physical real mean-zero H1 difference between the SAME KdV trajectory and the Airy group. The TRUE inverse Fourier equivalence and SAME analytic inverse remainder give exact ALL-signed coefficients and literal Sobolev inclusion, with the original norm bound.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0db51ffd0037fc8dffeb3e8947f4598f579d7d8a41acc29817a0e151db4abd74"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/AllTimeL2AiryBound.lean",
+      "source_labels": [
+        "Corollary 1.7 COMPLETE: actual physical KdV minus Airy has original H1 norm <= C*(1+abs(t)) for ALL real times, locally uniformly in original L2 data"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Compact phase boxes and continuity of the SAME inverse remainder give ONE positive bound over ALL times and ALL nearby ORIGINAL L2 data. Combine it with the actual phase error to prove C*(1+abs(t)) in ORIGINAL H1, with no arbitrary-whole-ball boundedness assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "946cca3ca1cbe89173a987e5078c877175214c9a7141d0149a55dd754026b81a"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/MainCorollary17.lean",
+      "source_labels": [
+        "Corollary 1.7 COMPLETE: actual physical KdV minus Airy has original H1 norm <= C*(1+abs(t)) for ALL real times, locally uniformly in original L2 data"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "COMPLETE main Corollary 1.7: actual universal classical-limit KdV existence/uniqueness, exact ORIGINAL H1 realization of u(t)-Airy(t)q for EVERY real time, and a strictly positive C locally uniform in the ORIGINAL real mean-zero L2 source. No essential hypothesis is postulated.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e5d12e66489ddc0b232e523ec984875135d1786487fe7fb6a1247ea9a33c7ced"
     }
   ],
   "dependencies_needed": [
-    "Physical PDE identification toward Corollary 1.7 is VERIFIED for the SAME retained original-norm KdV evolution. Its calibrated actual frequency family is constructed on one common complex neighborhood of the entire nonnegative action cone. At EVERY original H4 datum, the retained trajectory is continuous in H4 and has the literal conservative KdV vector as its H1 time derivative. At EVERY smooth datum its physical synthesis has velocity exactly -u_xxx+6*u*u_x in the uniform physical norm, with no time reversal or Fourier rescaling. At EVERY original real mean-zero L2 datum, the SAME retained evolution is an actual universal classical-limit solution and is unique in that class. The approximation quantifiers range over EVERY smooth H4 initial sequence converging in the ORIGINAL L2 norm and EVERY corresponding actual strong classical KdV curve. Arbitrary such approximants converge uniformly on EVERY compact time set, and smooth classical approximating families exist. No PDE identification, physical frequency, derivative, or approximation-existence hypothesis is postulated. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Canonical N=0 forward and inverse analytic gains and actual physical KdV solution identification are now proved. Corollary 1.7 still requires the original H1 one-smoothing comparison with Airy and its locally uniform ALL-TIME bound. The full uniform-on-bounded-subsets assertion of source (24), higher-N smoothing and a global complex inverse extension are not asserted here. Local analytic bounds are not substituted for boundedness on arbitrary whole balls. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
-    "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
-    "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
-    "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
-    "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Canonical N=0 forward and inverse analytic gains and actual physical KdV solution identification are now proved. Corollary 1.7 still requires the original H1 one-smoothing comparison with Airy and its locally uniform ALL-TIME bound. The full uniform-on-bounded-subsets assertion of source (24), higher-N smoothing and a global complex inverse extension are not asserted here. Local analytic bounds are not substituted for boundedness on arbitrary whole balls. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
-    "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+    "COMPLETE Corollary 1.7 is VERIFIED. At EVERY original physical real mean-zero L2 initial datum the actual physical KdV solution exists and is unique in the universal classical-limit solution class, which quantifies EVERY smooth classical approximation in the ORIGINAL source norm and is independently proved nonvacuous. Its difference from the unit-period Airy group with generator -partial_x^3 has an ACTUAL physical real mean-zero H1 realization. A strictly positive C bounds that ORIGINAL H1 norm by C*(1+abs(t)) for EVERY real time. The SAME C works for ALL initial data in ONE ORIGINAL L2-open neighborhood of EVERY prescribed datum and for EVERY actual solution in that class. The actual map, calibrated frequency family, time orientation, literal Sobolev inclusion, raw Fourier coefficients and inherited original norms are retained. No flow, smoothing, physical PDE, frequency, compact-orbit or whole-ball boundedness hypothesis is assumed. Complete main rows are now 4 VERIFIED: Theorem 1.1, Corollary 1.4, ALL THREE clauses of Corollary 1.5, and COMPLETE Corollary 1.7. The remaining 7 main rows are OPEN: Theorems 1.2, 1.3, 1.9, 1.12, 3.10 and 4.12, and Corollary 1.11. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The full uniform-on-bounded-subsets assertion of source (24), higher-N coordinate smoothing and a global complex inverse extension are not asserted by this milestone; none is substituted for a required main assertion. Corollary 1.7 is proved through compact phase boxes and its exact locally uniform ALL-TIME estimate. The full all-eleven-main-theorem goal remains ACTIVE and incomplete.",
+    "Theorem 1.2: complete the ORIGINAL ACTION s=-1 locally uniform little-o remainder for the corrected frequency omega_n-(2*pi*n)^3+6*I_n, and assemble all analytic target, compact derivative and asymptotic clauses on their exact original domains. The verified non-endpoint uniform bounds and endpoint pointwise bounds are retained; no uncorrected-frequency claim is substituted.",
+    "Theorem 1.3: prove the actual renormalized physical KdV Hamiltonian global concavity input and the strictly negative Hessian bound on an open dense positive Hilbert-action set containing zero, with locally uniform positive coercivity constants. Existing verified local concavity near zero and compact derivative/local inverse results alone do not prove the full generic assertion.",
+    "Theorem 1.9 and Corollary 1.11: extend the actual ALL-selected-gap finite-gap KdV2 physical frequency/moment identities to the required infinite-gap sources and original action/sequence-valued analytic targets; prove every printed remainder, uniformity and generic inverse assertion with the physical mass and exact constants retained.",
+    "Theorem 1.12 and Theorem 4.12: prove the actual KdV2 physical solution identification, all fixed-mass wellposedness and nonuniform-continuity/low-regularity obstruction clauses, and the actual renormalized KdV2 Hamiltonian Hilbert-action extension with its printed Taylor coefficients and local Hessian bound. Verified physical mass divergence at every genuinely non-L2 source and physical finite-gap Hamiltonian vectors are retained; no abstract phase group is substituted for the PDE.",
+    "Theorem 3.10: prove full real-analytic Fourier-Lebesgue KdV wellposedness on the source range, the fixed-time nowhere-local-uniform-continuity assertion for -2/3<=s<-1/2, and the compact-time trajectory assertion for -1<s<-2/3, retaining actual physical solutions and every source topology/time quantifier. Existing actual H4 PDE and universal classical-limit solutions supply the physical starting point.",
+    "Complete main rows are now 4 VERIFIED: Theorem 1.1, Corollary 1.4, ALL THREE clauses of Corollary 1.5, and COMPLETE Corollary 1.7. The remaining 7 main rows are OPEN: Theorems 1.2, 1.3, 1.9, 1.12, 3.10 and 4.12, and Corollary 1.11. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The full uniform-on-bounded-subsets assertion of source (24), higher-N coordinate smoothing and a global complex inverse extension are not asserted by this milestone; none is substituted for a required main assertion. Corollary 1.7 is proved through compact phase boxes and its exact locally uniform ALL-TIME estimate. The full all-eleven-main-theorem goal remains ACTIVE and incomplete."
   ],
   "workspace": {
     "canonical_checkout_files_modified": false,
@@ -52799,8 +52948,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 28758,
-    "total_declarations_audited": 50828,
+    "candidate_declarations_audited": 28834,
+    "total_declarations_audited": 50904,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -52809,9 +52958,10 @@
     "main_theorems_verified": [
       "Theorem 1.1",
       "Corollary 1.4",
-      "Corollary 1.5"
+      "Corollary 1.5",
+      "Corollary 1.7"
     ],
-    "selected_modules": 3976,
+    "selected_modules": 3986,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -52991,7 +53141,8 @@
     "fixed_global_fourier_validation_sequence": "All 3816 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure is 12 own modules with 14 explicit public theorems; no new shared dependency or provenance record is needed. All 12 modules were strictly rebuilt in dependency order AFTER freezing 3894 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3828 selections and EVERY imported NLS declaration: 27943 selected declarations and 50013 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 30 private chunks of at most 128 names, and the bidirectional 3828-name set probe with insertion/deletion rejection are verified. The cumulative 3836 strict PASS records cover 3828 unique modules, retaining eight prior repeats. All prior logs are retained for this milestone, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone. The unique evidence prefix is fixed-global-fourier. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a 12-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "canonical_l2_forward_validation_sequence": "All 3828 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure is 11 own modules with 20 explicit public theorems; no new shared dependency or provenance record is needed. All 11 modules were strictly rebuilt in dependency order AFTER freezing the FINAL 3905 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh final transitive axiom audit covers all 3839 selections and EVERY imported NLS declaration: 27983 selected declarations and 50053 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 30 private chunks of at most 128 names, and the bidirectional 3839-name set probe with insertion/deletion rejection are verified. The cumulative authoritative 3847 strict PASS records cover 3839 unique modules, retaining eight prior repeats. A preliminary ten-module development run and complete audit were archived before adding explicit physical-real recovery; the FINAL eleven-module freeze/rebuild/probe/audit is authoritative. All prior published evidence is retained, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone. The unique evidence prefix is canonical-l2-forward. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. Opaque derivative/observation lemmas and a separately named original source domain keep every proof within DEFAULT kernel limits. This is an 11-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "canonical_l2_inverse_validation_sequence": "All 3839 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure is 8 own modules with 15 explicit public theorems and no private theorem; no new shared dependency or provenance record is needed. All 8 modules were strictly rebuilt in dependency order AFTER freezing 3913 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh final transitive axiom audit covers all 3847 selections and EVERY imported NLS declaration: 28013 selected declarations and 50083 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 31 private chunks of at most 128 names (capacity 3968), and the bidirectional 3847-name set probe with insertion/deletion rejection are verified. The cumulative authoritative 3855 strict PASS records cover 3847 unique modules, retaining eight prior repeats. All prior published evidence is retained, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone. The unique evidence prefix is canonical-l2-inverse. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is an 8-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
-    "retained_physical_kdv_validation_sequence": "All 3847 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure consists of 129 modules: 3 own modules with 15 explicit public theorems and no private theorem, 123 unchanged imported modules and 3 unchanged previously unselected local modules. All 126 shared dependencies match committed source 33c5fd26a567862ec039fa2b1d971c19ed058a90 on articles/kdv-convexity; the 3 retained local files also match the article baseline byte for byte. One SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json records all 126 source/local hashes and dispositions, raising provenance records from 63 to 64. The source worktree has unrelated staged changes; ONLY the specified files verified byte-identical to the named COMMITTED revision were imported. No external worktree was edited. All 129 newly selected modules were strictly rebuilt in dependency order AFTER freezing the final 4043 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh final axiom audit covers 3976 selections and EVERY imported NLS declaration: 28758 selected declarations and 50828 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the baseline. Exact ordered selection, transitive closure, dependencies, private fresh outputs, overlay targets, 32 private chunks of at most 128 names (capacity 4096), and the bidirectional 3976-name set probe with insertion/deletion rejection are verified. The cumulative authoritative 3984 strict PASS records cover 3976 unique modules, retaining eight prior repeats. Separate preliminary development logs are retained and excluded from that authoritative ledger. All prior evidence, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone, is retained. The unique FINAL evidence prefix is retained-physical-kdv; an attempted original-physical-kdv prefix was rejected before writing any historical artifact because older comparison logs already use that name. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. A separate opaque calibrated-frequency existence lemma avoids expanding a large record in the final solution theorem; no checking limit or linter setting is changed. This is a 129-module incremental rebuild retaining prior strict evidence, not a full rebuild."
+    "retained_physical_kdv_validation_sequence": "All 3847 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure consists of 129 modules: 3 own modules with 15 explicit public theorems and no private theorem, 123 unchanged imported modules and 3 unchanged previously unselected local modules. All 126 shared dependencies match committed source 33c5fd26a567862ec039fa2b1d971c19ed058a90 on articles/kdv-convexity; the 3 retained local files also match the article baseline byte for byte. One SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json records all 126 source/local hashes and dispositions, raising provenance records from 63 to 64. The source worktree has unrelated staged changes; ONLY the specified files verified byte-identical to the named COMMITTED revision were imported. No external worktree was edited. All 129 newly selected modules were strictly rebuilt in dependency order AFTER freezing the final 4043 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh final axiom audit covers 3976 selections and EVERY imported NLS declaration: 28758 selected declarations and 50828 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the baseline. Exact ordered selection, transitive closure, dependencies, private fresh outputs, overlay targets, 32 private chunks of at most 128 names (capacity 4096), and the bidirectional 3976-name set probe with insertion/deletion rejection are verified. The cumulative authoritative 3984 strict PASS records cover 3976 unique modules, retaining eight prior repeats. Separate preliminary development logs are retained and excluded from that authoritative ledger. All prior evidence, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone, is retained. The unique FINAL evidence prefix is retained-physical-kdv; an attempted original-physical-kdv prefix was rejected before writing any historical artifact because older comparison logs already use that name. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. A separate opaque calibrated-frequency existence lemma avoids expanding a large record in the final solution theorem; no checking limit or linter setting is changed. This is a 129-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
+    "corollary17_complete_validation_sequence": "All 3976 prior selected sources and all 64 prior provenance records remain byte-identical. The exact new transitive import closure is 10 modules: 8 own modules with 26 explicit public theorems and no private theorem, plus 2 unchanged previously unselected canonical phase-compactness modules. CANONICAL_COROLLARY17_PHASE_REUSE.json records both canonical/source and local hashes; they agree with commit c5bcf6344cd2e2628ae537e98b85bb9ec1849dec and the article baseline. Provenance records increase from 64 to 65. All 10 newly selected modules were strictly rebuilt in dependency order AFTER freezing the FINAL 4054 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh full axiom audit covers 3986 selections and EVERY imported NLS declaration: 28834 selected declarations and 50904 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the baseline. Exact ordered selection, transitive closure, dependencies, private fresh outputs, overlay targets, 32 private chunks of at most 128 names (capacity 4096), and the bidirectional 3986-name set probe with insertion/deletion rejection are verified. The cumulative authoritative 3994 strict PASS records cover 3986 unique modules, retaining eight prior repeats. Separate scratch/focused development checks are excluded from that final ledger. The first ten-module freeze, complete audit and probe are retained in corollary17-complete-phase1 before removing one trailing EOF blank line detected by the publication whitespace check; ALL TEN final modules, the complete audit and the exact probe were rerun after the FINAL source freeze. All prior evidence, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone, is retained. The unique FINAL evidence prefix is corollary17-complete. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. Generic norm and bounded-neighborhood lemmas with opaque Banach spaces keep native proof checking within DEFAULT limits. No checking limit or linter setting is changed. This is a 10-module incremental rebuild retaining prior strict evidence, not a full rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -54719,6 +54870,18 @@
         "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Both canonical N=0 forward and inverse analytic gains are now proved in their exact original intrinsic spaces. Identification with the unique physical PDE solution and locally uniform all-time estimates remain essential for Corollary 1.7. The full uniform-on-bounded-subsets assertion of source (24), its higher-N assertions and complex inverse extensions are NOT claimed here; local analytic bounds are not substituted for boundedness on arbitrary whole balls. No full physical Corollary 1.7 is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "34f620364dcf130c55b002b1957d425bf24281d2",
+      "description": "COMPLETE Corollary 1.7 is VERIFIED. At EVERY original physical real mean-zero L2 initial datum the actual physical KdV solution exists and is unique in the universal classical-limit solution class, which quantifies EVERY smooth classical approximation in the ORIGINAL source norm and is independently proved nonvacuous. Its difference from the unit-period Airy group with generator -partial_x^3 has an ACTUAL physical real mean-zero H1 realization. A strictly positive C bounds that ORIGINAL H1 norm by C*(1+abs(t)) for EVERY real time. The SAME C works for ALL initial data in ONE ORIGINAL L2-open neighborhood of EVERY prescribed datum and for EVERY actual solution in that class. The actual map, calibrated frequency family, time orientation, literal Sobolev inclusion, raw Fourier coefficients and inherited original norms are retained. No flow, smoothing, physical PDE, frequency, compact-orbit or whole-ball boundedness hypothesis is assumed.",
+      "entries": [
+        "Physical PDE identification toward Corollary 1.7 is VERIFIED for the SAME retained original-norm KdV evolution. Its calibrated actual frequency family is constructed on one common complex neighborhood of the entire nonnegative action cone. At EVERY original H4 datum, the retained trajectory is continuous in H4 and has the literal conservative KdV vector as its H1 time derivative. At EVERY smooth datum its physical synthesis has velocity exactly -u_xxx+6*u*u_x in the uniform physical norm, with no time reversal or Fourier rescaling. At EVERY original real mean-zero L2 datum, the SAME retained evolution is an actual universal classical-limit solution and is unique in that class. The approximation quantifiers range over EVERY smooth H4 initial sequence converging in the ORIGINAL L2 norm and EVERY corresponding actual strong classical KdV curve. Arbitrary such approximants converge uniformly on EVERY compact time set, and smooth classical approximating families exist. No PDE identification, physical frequency, derivative, or approximation-existence hypothesis is postulated. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Canonical N=0 forward and inverse analytic gains and actual physical KdV solution identification are now proved. Corollary 1.7 still requires the original H1 one-smoothing comparison with Airy and its locally uniform ALL-TIME bound. The full uniform-on-bounded-subsets assertion of source (24), higher-N smoothing and a global complex inverse extension are not asserted here. Local analytic bounds are not substituted for boundedness on arbitrary whole balls. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Canonical N=0 forward and inverse analytic gains and actual physical KdV solution identification are now proved. Corollary 1.7 still requires the original H1 one-smoothing comparison with Airy and its locally uniform ALL-TIME bound. The full uniform-on-bounded-subsets assertion of source (24), higher-N smoothing and a global complex inverse extension are not asserted here. Local analytic bounds are not substituted for boundedness on arbitrary whole balls. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -54850,5 +55013,6 @@
   "fixed_global_fourier_record": "FIXED_GLOBAL_FOURIER.md",
   "canonical_l2_forward_record": "CANONICAL_L2_FORWARD.md",
   "canonical_l2_inverse_record": "CANONICAL_L2_INVERSE.md",
-  "retained_physical_kdv_record": "RETAINED_PHYSICAL_KDV.md"
+  "retained_physical_kdv_record": "RETAINED_PHYSICAL_KDV.md",
+  "corollary17_complete_record": "COROLLARY17_COMPLETE.md"
 }

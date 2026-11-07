@@ -1,0 +1,19 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "purpose": "Exact previously unselected compact phase-box dependencies required for the original-norm ALL-TIME, locally uniform bound in Corollary 1.7.",
+  "files": [
+    {
+      "path": "NLS/Dynamics/BohrAlmostPeriodic.lean",
+      "source_sha256": "6b861c9e4c253927437fb77330e41e382e894d7ef5be4bf65dec1e094314e8e8",
+      "local_sha256": "6b861c9e4c253927437fb77330e41e382e894d7ef5be4bf65dec1e094314e8e8",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/Dynamics/PhaseAlmostPeriodic.lean",
+      "source_sha256": "dc4b95af5f940174d329db7d3299f6420d374756b758da6670485b24ed56e70f",
+      "local_sha256": "dc4b95af5f940174d329db7d3299f6420d374756b758da6670485b24ed56e70f",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

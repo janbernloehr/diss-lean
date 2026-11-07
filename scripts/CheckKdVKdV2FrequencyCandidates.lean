@@ -1,3 +1,13 @@
+import NLS.Dynamics.BohrAlmostPeriodic
+import NLS.Dynamics.PhaseAlmostPeriodic
+import NLS.Articles.KdVKdV2Frequencies.AllTimeL2AiryBound
+import NLS.Articles.KdVKdV2Frequencies.MainCorollary17
+import NLS.FunctionalAnalysis.LinearRemainderBound
+import NLS.Articles.KdVKdV2Frequencies.OriginalL2AiryRemainder
+import NLS.Articles.KdVKdV2Frequencies.PhysicalL2PhaseError
+import NLS.FunctionalAnalysis.CompactTubeBound
+import NLS.SequenceSpaces.PhysicalWeightedPhaseBounds
+import NLS.Articles.KdVKdV2Frequencies.NativeL2PhysicalCoordinates
 import NLS.Articles.KdVKdV2Frequencies.PhysicalKdVFrequencyBridge
 import NLS.Articles.KdVKdV2Frequencies.OriginalPhysicalKdVFlowMatching
 import NLS.Articles.KdVKdV2Frequencies.OriginalKdVPhysicalSolutions
@@ -7177,7 +7187,17 @@ private def kdvFrequencyAuditChunk31 : Array Lean.Name := #[
   `NLS.Articles.KdVConvexity.WeakPhysicalClassicalLimit,
   `NLS.Articles.KdVKdV2Frequencies.PhysicalKdVFrequencyBridge,
   `NLS.Articles.KdVKdV2Frequencies.OriginalPhysicalKdVFlowMatching,
-  `NLS.Articles.KdVKdV2Frequencies.OriginalKdVPhysicalSolutions
+  `NLS.Articles.KdVKdV2Frequencies.OriginalKdVPhysicalSolutions,
+  `NLS.FunctionalAnalysis.CompactTubeBound,
+  `NLS.Dynamics.BohrAlmostPeriodic,
+  `NLS.Dynamics.PhaseAlmostPeriodic,
+  `NLS.SequenceSpaces.PhysicalWeightedPhaseBounds,
+  `NLS.Articles.KdVKdV2Frequencies.NativeL2PhysicalCoordinates,
+  `NLS.Articles.KdVKdV2Frequencies.PhysicalL2PhaseError,
+  `NLS.FunctionalAnalysis.LinearRemainderBound,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalL2AiryRemainder,
+  `NLS.Articles.KdVKdV2Frequencies.AllTimeL2AiryBound,
+  `NLS.Articles.KdVKdV2Frequencies.MainCorollary17
 ]
 
 open Lean in
