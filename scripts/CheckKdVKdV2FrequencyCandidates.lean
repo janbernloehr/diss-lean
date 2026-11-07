@@ -1,3 +1,15 @@
+import NLS.Articles.KdVKdV2Frequencies.GlobalL2FixedFourierRemainder
+import NLS.SequenceSpaces.AnalyticFiniteSignCorrection
+import NLS.Articles.KdVKdV2Frequencies.ActualL2FixedFourierIdentification
+import NLS.Articles.KdVKdV2Frequencies.ActualL2RawFixedFourierRemainder
+import NLS.SequenceSpaces.WeightedAffineSigns
+import NLS.SequenceSpaces.WeightedSignChange
+import NLS.SequenceSpaces.FiniteReweighting
+import NLS.Articles.KdVKdV2Frequencies.ActualL2FourierSignTail
+import NLS.SequenceSpaces.BoundedDiagonalSignRigidity
+import NLS.ComplexAnalysis.LocallyEventualEquality
+import NLS.KdV.HillFreeAmplitudeGrowth
+import NLS.KdV.HillL2FourierSignOverlap
 import NLS.SequenceSpaces.SignedHalfOriginalFourierCore
 import NLS.Articles.KdVKdV2Frequencies.ActualL2OriginalFourierRemainder
 import NLS.Articles.KdVKdV2Frequencies.ActualL2OriginalFourierIdentification
@@ -6851,7 +6863,19 @@ private def kdvFrequencyAuditChunk29 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.ActualL2OriginalFourierRemainder,
   `NLS.Articles.KdVKdV2Frequencies.ActualL2OriginalFourierIdentification,
   `NLS.SequenceSpaces.SignedHalfOriginalFourierCore,
-  `NLS.Articles.KdVKdV2Frequencies.ActualL2RawOriginalFourierRemainder
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2RawOriginalFourierRemainder,
+  `NLS.SequenceSpaces.BoundedDiagonalSignRigidity,
+  `NLS.ComplexAnalysis.LocallyEventualEquality,
+  `NLS.KdV.HillFreeAmplitudeGrowth,
+  `NLS.SequenceSpaces.WeightedAffineSigns,
+  `NLS.KdV.HillL2FourierSignOverlap,
+  `NLS.SequenceSpaces.WeightedSignChange,
+  `NLS.SequenceSpaces.FiniteReweighting,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2FourierSignTail,
+  `NLS.SequenceSpaces.AnalyticFiniteSignCorrection,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2FixedFourierIdentification,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2RawFixedFourierRemainder,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalL2FixedFourierRemainder
 ]
 
 open Lean in

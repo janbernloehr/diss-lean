@@ -3825,6 +3825,18 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/ActualL2OriginalFourierIdentification
   NLS/SequenceSpaces/SignedHalfOriginalFourierCore
   NLS/Articles/KdVKdV2Frequencies/ActualL2RawOriginalFourierRemainder
+  NLS/SequenceSpaces/BoundedDiagonalSignRigidity
+  NLS/ComplexAnalysis/LocallyEventualEquality
+  NLS/KdV/HillFreeAmplitudeGrowth
+  NLS/SequenceSpaces/WeightedAffineSigns
+  NLS/KdV/HillL2FourierSignOverlap
+  NLS/SequenceSpaces/WeightedSignChange
+  NLS/SequenceSpaces/FiniteReweighting
+  NLS/Articles/KdVKdV2Frequencies/ActualL2FourierSignTail
+  NLS/SequenceSpaces/AnalyticFiniteSignCorrection
+  NLS/Articles/KdVKdV2Frequencies/ActualL2FixedFourierIdentification
+  NLS/Articles/KdVKdV2Frequencies/ActualL2RawFixedFourierRemainder
+  NLS/Articles/KdVKdV2Frequencies/GlobalL2FixedFourierRemainder
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

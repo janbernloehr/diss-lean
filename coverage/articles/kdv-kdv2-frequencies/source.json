@@ -1195,9 +1195,16 @@
           "lean_source": "NLS/Articles/KdVKdV2Frequencies/ActualL2RawOriginalFourierRemainder.lean",
           "status": "verified_dependency",
           "qualification": "The actual retained Miura lift is eliminated from the Fourier core toward Corollary 1.7. At EVERY real ORIGINAL L2 source, ONE common complex original-L2 neighborhood gives the SAME globally calibrated signed forward map as the inclusion of an analytic raw h^(1/2) ORIGINAL-potential Fourier core plus a uniformly locally bounded analytic raw h^(3/2) TOTAL remainder. The core has zero coefficient at 0, and at BOTH signed labels plus/minus n it is EXACTLY the ORIGINAL potential coefficient q_(plus/minus n)/sqrt(2*pi*n), multiplied by the SAME fixed physical sign stored at positive n in the base chart. All finite positive labels, closed gaps, original root witnesses and source conjugations are retained. The remainder includes all prior phase/midpoint/amplitude/own-eta/spectral errors and the actual nonlinear Miura correction. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The SAME chart now has the EXACT ORIGINAL-potential Fourier core at zero and BOTH signed halves, with a TOTAL locally bounded analytic one-derivative remainder in the ORIGINAL L2 norm. The core retains the base chart physical output signs; identifying one fixed Fourier orientation across all global charts, the full inverse one-smoothing comparison, and identification with the unique physical PDE solution remain essential for Corollary 1.7. No full physical Corollary 1.7 or globally fixed-orientation forward/inverse smoothing theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete."
+        },
+        {
+          "source_clause": "Necessary ONE fixed global physical Fourier orientation and ONE global analytic raw one-derivative forward remainder on a complex neighborhood of the ENTIRE real ORIGINAL L2 space, retaining local uniform native bounds",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_global_l2_fixed_fourier_remainder",
+          "lean_source": "NLS/Articles/KdVKdV2Frequencies/GlobalL2FixedFourierRemainder.lean",
+          "status": "verified_dependency",
+          "qualification": "The fixed global Fourier orientation and global forward one-derivative remainder are VERIFIED toward Corollary 1.7. The physical signs are chosen ONCE at the zero chart BEFORE EVERY original real L2 source. Actual overlap bounds force each real L2 chart to have those SAME signs at all sufficiently large positive labels; connectedness propagates their eventual equality from zero, and an actual finite weighted correction absorbs every remaining sign change into the h2 normalized remainder. The SAME globally calibrated signed physical forward map then admits ONE analytic raw h^(1/2) fixed ORIGINAL-potential Fourier core and ONE analytic raw h^(3/2) TOTAL remainder on ONE complex original-L2 neighborhood containing the ENTIRE real original-L2 space. The core is zero at zero and has EXACT coefficients sign_n*q_(plus/minus n)/sqrt(2*pi*n) at BOTH signed halves. Local uniform norm bounds are retained at EVERY real source. All original roots, finite labels, closed gaps, physical signs and source conjugations remain. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The fixed global Fourier orientation and one global analytic forward remainder are now proved. The inverse one-smoothing comparison, compatibility with the canonical Fourier linearization where needed, and identification with the unique physical PDE solution with locally uniform all-time estimates remain essential for Corollary 1.7. The proved global core uses one fixed diagonal physical sign sequence; no identification with a differently normalized Fourier map or actual zero differential is inferred without proof. No full physical Corollary 1.7 or full forward/inverse theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete."
         }
       ],
-      "current_support_summary": "The actual retained Miura lift is eliminated from the Fourier core toward Corollary 1.7. At EVERY real ORIGINAL L2 source, ONE common complex original-L2 neighborhood gives the SAME globally calibrated signed forward map as the inclusion of an analytic raw h^(1/2) ORIGINAL-potential Fourier core plus a uniformly locally bounded analytic raw h^(3/2) TOTAL remainder. The core has zero coefficient at 0, and at BOTH signed labels plus/minus n it is EXACTLY the ORIGINAL potential coefficient q_(plus/minus n)/sqrt(2*pi*n), multiplied by the SAME fixed physical sign stored at positive n in the base chart. All finite positive labels, closed gaps, original root witnesses and source conjugations are retained. The remainder includes all prior phase/midpoint/amplitude/own-eta/spectral errors and the actual nonlinear Miura correction."
+      "current_support_summary": "The fixed global Fourier orientation and global forward one-derivative remainder are VERIFIED toward Corollary 1.7. The physical signs are chosen ONCE at the zero chart BEFORE EVERY original real L2 source. Actual overlap bounds force each real L2 chart to have those SAME signs at all sufficiently large positive labels; connectedness propagates their eventual equality from zero, and an actual finite weighted correction absorbs every remaining sign change into the h2 normalized remainder. The SAME globally calibrated signed physical forward map then admits ONE analytic raw h^(1/2) fixed ORIGINAL-potential Fourier core and ONE analytic raw h^(3/2) TOTAL remainder on ONE complex original-L2 neighborhood containing the ENTIRE real original-L2 space. The core is zero at zero and has EXACT coefficients sign_n*q_(plus/minus n)/sqrt(2*pi*n) at BOTH signed halves. Local uniform norm bounds are retained at EVERY real source. All original roots, finite labels, closed gaps, physical signs and source conjugations remain."
     },
     {
       "label": "Theorem 1.9",
@@ -50820,14 +50827,158 @@
       "scope": "Final actual-map dependency: the SAME signed physical forward map has zero Fourier core at 0 and EXACT signed original q_(plus/minus n)/sqrt(2*pi*n) coefficients at BOTH halves, plus a TOTAL analytic raw h^(3/2) locally bounded remainder near EVERY real ORIGINAL L2 source. Fixed global Fourier orientation, inverse comparison and physical PDE identification remain.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "26a0b19f3253b86495ff33493d5d96f287c9e10f81e5a5407d8abbac2d5d191f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/BoundedDiagonalSignRigidity.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Uniform stronger diagonal error bounds on ONE ORIGINAL open norm neighborhood and unit raw-coordinate probes force two growing real sign symbols to agree eventually. A single positive radius works BEFORE every label; no rate or global cutoff is postulated.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1d0f66d77a130c00d71761c6c917bc9c2e49004f2cfcf26b878dbc87f18e8f6b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocallyEventualEquality.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Eventual equality propagates through an ENTIRE preconnected parameter space from genuine local overlap neighborhoods; a clopen eventual-equivalence class proves the result without a global cutoff assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9ef5b55c6ac1bb7b850619b14a9431b0f12a0081fa4eff17928bcb54a1a9889d"
+    },
+    {
+      "path": "NLS/KdV/HillFreeAmplitudeGrowth.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The EXACT finite-index free amplitude has an actual positive uniform lower bound (1/4), and its stronger bracket-weighted symbol tends to infinity. No asymptotic replacement of the free amplitude is made.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3832cd06b93cedaa6864be392d43f4e91fd342f16cae4fa08f610c05e6e711d8"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedAffineSigns.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Exact opaque complex affine sign algebra retains the original inverse-bracket factor, identifying the stronger diagonal error without coercion or normalization substitutions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0e63d26e462dd30c89750fd3b958caf0c14f8c21f02cb5893f628614488141f7"
+    },
+    {
+      "path": "NLS/KdV/HillL2FourierSignOverlap.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Two decompositions of the SAME ORIGINAL L2 positive map with bounded native h2 remainders have eventually identical positive physical signs, through actual raw single-coefficient probes and the original Fourier/free-amplitude normalization.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "619c140c4cbbf6b204861a1014e875d08bc84019113b201c828c9e0bca647b03"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedSignChange.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Arbitrary fixed sign changes act as literal coefficient-preserving norm isometries on EVERY original weighted Banach space, as bounded complex-linear maps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1a93094702afe5a7cd1a6db87f1aff781760c046bd6f8d1fac72d616fbdd0639"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FiniteReweighting.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Exact finite raw-coordinate transport between ANY two original weights is a bounded complex-linear map, retaining every raw amplitude and an actual operator norm.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "288dcebb0cb655c55661a1157314000bb848889a152038a980c102c49e7afc31"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2FourierSignTail.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The SAME globally calibrated physical map has chart signs eventually equal to its ONCE chosen zero-chart signs at EVERY real ORIGINAL L2 source. Actual overlaps along the entire real scalar line and connectedness provide the proof; no chart sign compatibility is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "19014875f6b389c70b23c4743a8345887caf72063e8d3a3d46ee9c2a7925b055"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticFiniteSignCorrection.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "An ACTUAL finite weighted correction absorbs every positive finite-head sign discrepancy into the analytic h2 remainder on the SAME original neighborhood, with norm bound CR+2*operatorNorm(finiteTransport)*CA; the Fourier core remains unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2edcee9883c5c64e3feb7c32527c64801b7f2b01bdf8a00319cfeda6ca38fab7"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2FixedFourierIdentification.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "ONE fixed physical Fourier sign sequence chosen at zero BEFORE all sources reconstructs the SAME actual positive forward map with its exact ORIGINAL potential core and TOTAL locally bounded analytic normalized h2 remainder.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "28e965dfa1f8908ef9d747903608bc6b2f56fb45447c57eed69464e54d08efed"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2RawFixedFourierRemainder.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The SAME actual signed physical map has an exact original-potential raw h^(1/2) Fourier core with ONE globally fixed zero-chart orientation at zero and BOTH signed halves, plus TOTAL analytic raw h^(3/2) remainder near EVERY real ORIGINAL L2 source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "28c2c076c261d830c29ff14f55dd5abb6b9ba553b68a93f7d5d47433f10d755d"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalL2FixedFourierRemainder.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ONE fixed global Fourier orientation and global analytic forward one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Final global forward dependency: ONE open complex ORIGINAL L2 neighborhood contains the ENTIRE real L2 source space, and ONE analytic fixed ORIGINAL-potential Fourier core plus ONE analytic TOTAL raw h^(3/2) remainder equals the SAME physical signed map there. Both maps agree on ENTIRE complex chart overlaps; local uniform native norm bounds are retained at EVERY real source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "04701b0525916959abf69670c3e50fa3c05ce6fa841cac3e684f464c878bae51"
     }
   ],
   "dependencies_needed": [
-    "The actual retained Miura lift is eliminated from the Fourier core toward Corollary 1.7. At EVERY real ORIGINAL L2 source, ONE common complex original-L2 neighborhood gives the SAME globally calibrated signed forward map as the inclusion of an analytic raw h^(1/2) ORIGINAL-potential Fourier core plus a uniformly locally bounded analytic raw h^(3/2) TOTAL remainder. The core has zero coefficient at 0, and at BOTH signed labels plus/minus n it is EXACTLY the ORIGINAL potential coefficient q_(plus/minus n)/sqrt(2*pi*n), multiplied by the SAME fixed physical sign stored at positive n in the base chart. All finite positive labels, closed gaps, original root witnesses and source conjugations are retained. The remainder includes all prior phase/midpoint/amplitude/own-eta/spectral errors and the actual nonlinear Miura correction. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The SAME chart now has the EXACT ORIGINAL-potential Fourier core at zero and BOTH signed halves, with a TOTAL locally bounded analytic one-derivative remainder in the ORIGINAL L2 norm. The core retains the base chart physical output signs; identifying one fixed Fourier orientation across all global charts, the full inverse one-smoothing comparison, and identification with the unique physical PDE solution remain essential for Corollary 1.7. No full physical Corollary 1.7 or globally fixed-orientation forward/inverse smoothing theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+    "The fixed global Fourier orientation and global forward one-derivative remainder are VERIFIED toward Corollary 1.7. The physical signs are chosen ONCE at the zero chart BEFORE EVERY original real L2 source. Actual overlap bounds force each real L2 chart to have those SAME signs at all sufficiently large positive labels; connectedness propagates their eventual equality from zero, and an actual finite weighted correction absorbs every remaining sign change into the h2 normalized remainder. The SAME globally calibrated signed physical forward map then admits ONE analytic raw h^(1/2) fixed ORIGINAL-potential Fourier core and ONE analytic raw h^(3/2) TOTAL remainder on ONE complex original-L2 neighborhood containing the ENTIRE real original-L2 space. The core is zero at zero and has EXACT coefficients sign_n*q_(plus/minus n)/sqrt(2*pi*n) at BOTH signed halves. Local uniform norm bounds are retained at EVERY real source. All original roots, finite labels, closed gaps, physical signs and source conjugations remain. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The fixed global Fourier orientation and one global analytic forward remainder are now proved. The inverse one-smoothing comparison, compatibility with the canonical Fourier linearization where needed, and identification with the unique physical PDE solution with locally uniform all-time estimates remain essential for Corollary 1.7. The proved global core uses one fixed diagonal physical sign sequence; no identification with a differently normalized Fourier map or actual zero differential is inferred without proof. No full physical Corollary 1.7 or full forward/inverse theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
-    "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The SAME chart now has the EXACT ORIGINAL-potential Fourier core at zero and BOTH signed halves, with a TOTAL locally bounded analytic one-derivative remainder in the ORIGINAL L2 norm. The core retains the base chart physical output signs; identifying one fixed Fourier orientation across all global charts, the full inverse one-smoothing comparison, and identification with the unique physical PDE solution remain essential for Corollary 1.7. No full physical Corollary 1.7 or globally fixed-orientation forward/inverse smoothing theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+    "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The fixed global Fourier orientation and one global analytic forward remainder are now proved. The inverse one-smoothing comparison, compatibility with the canonical Fourier linearization where needed, and identification with the unique physical PDE solution with locally uniform all-time estimates remain essential for Corollary 1.7. The proved global core uses one fixed diagonal physical sign sequence; no identification with a differently normalized Fourier map or actual zero differential is inferred without proof. No full physical Corollary 1.7 or full forward/inverse theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
   ],
   "workspace": {
@@ -50851,8 +51002,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 27909,
-    "total_declarations_audited": 49979,
+    "candidate_declarations_audited": 27943,
+    "total_declarations_audited": 50013,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -50863,7 +51014,7 @@
       "Corollary 1.4",
       "Corollary 1.5"
     ],
-    "selected_modules": 3816,
+    "selected_modules": 3828,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -51039,7 +51190,8 @@
     "eta_fourier_validation_sequence": "All 3593 prior selected sources and all 60 prior provenance records remain byte-identical. The exact new transitive import closure is 213 modules: 22 own modules with 23 explicit public theorems, three adapted verified spectral Fourier proofs, and 188 unchanged canonical spectral Fourier/WKB dependencies pinned to main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec. The adapted files change ONLY import paths and exact scalar-error/public names; their literal coefficient formulas and proof bodies are retained. Two new provenance records give 62 total. All 213 modules were strictly rebuilt in dependency order AFTER freezing 3871 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3806 selections and EVERY imported NLS declaration: 27863 selected declarations and 49926 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 30 private chunks of at most 128 names, and the bidirectional 3806-name set probe with insertion/deletion rejection are verified. The cumulative 3814 strict PASS records cover 3806 unique modules, retaining eight prior repeats. A historical evidence filename was inadvertently reused during this milestone. Its exact 31 unchanged baseline modules were recovered from the historical pinned commits and strictly rebuilt again to refresh that log. The 213 new-module strict log is retained separately under the unique retained-eta-fourier prefix. The complete transitive axiom audit was rerun after these 31 refreshed baseline outputs; both audits passed. No historical log bytes are claimed unchanged for that one refreshed log. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a 213-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "eta_fourier_refreshed_baseline_modules": 31,
     "eta_fourier_evidence_prefix": "retained-eta-fourier",
-    "original_potential_fourier_validation_sequence": "All 3806 prior selected sources and all 62 prior provenance records remain byte-identical. The exact new transitive import closure is 10 modules: nine own modules with nine explicit public theorems, and one unchanged verified shared H1 convolution module pinned to commit 334579e6fb05cfac349f0a25d87640cebf24005c. One new provenance record gives 63 total. All 10 modules were strictly rebuilt in dependency order AFTER freezing 3882 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3816 selections and EVERY imported NLS declaration: 27909 selected declarations and 49979 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 30 private chunks of at most 128 names, and the bidirectional 3816-name set probe with insertion/deletion rejection are verified. The cumulative 3824 strict PASS records cover 3816 unique modules, retaining eight prior repeats. All prior logs are retained for this milestone, including the 31 baseline checks explicitly refreshed and disclosed in the preceding retained-eta-fourier milestone. The unique evidence prefix is original-potential-fourier. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a 10-module incremental rebuild retaining prior strict evidence, not a full rebuild."
+    "original_potential_fourier_validation_sequence": "All 3806 prior selected sources and all 62 prior provenance records remain byte-identical. The exact new transitive import closure is 10 modules: nine own modules with nine explicit public theorems, and one unchanged verified shared H1 convolution module pinned to commit 334579e6fb05cfac349f0a25d87640cebf24005c. One new provenance record gives 63 total. All 10 modules were strictly rebuilt in dependency order AFTER freezing 3882 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3816 selections and EVERY imported NLS declaration: 27909 selected declarations and 49979 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 30 private chunks of at most 128 names, and the bidirectional 3816-name set probe with insertion/deletion rejection are verified. The cumulative 3824 strict PASS records cover 3816 unique modules, retaining eight prior repeats. All prior logs are retained for this milestone, including the 31 baseline checks explicitly refreshed and disclosed in the preceding retained-eta-fourier milestone. The unique evidence prefix is original-potential-fourier. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a 10-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
+    "fixed_global_fourier_validation_sequence": "All 3816 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure is 12 own modules with 14 explicit public theorems; no new shared dependency or provenance record is needed. All 12 modules were strictly rebuilt in dependency order AFTER freezing 3894 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3828 selections and EVERY imported NLS declaration: 27943 selected declarations and 50013 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 30 private chunks of at most 128 names, and the bidirectional 3828-name set probe with insertion/deletion rejection are verified. The cumulative 3836 strict PASS records cover 3828 unique modules, retaining eight prior repeats. All prior logs are retained for this milestone, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone. The unique evidence prefix is fixed-global-fourier. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a 12-module incremental rebuild retaining prior strict evidence, not a full rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -52719,6 +52871,18 @@
         "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The Dirac eta-versus-Fourier comparison is proved for the SAME retained native Miura lift. Comparing that lift with the ORIGINAL potential Fourier coefficients through its actual Miura equation, the complete forward/inverse Birkhoff-minus-original-Fourier smoothing, and identification with the unique physical PDE solution remain essential for Corollary 1.7. No full physical one-smoothing or PDE theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "4a7631423158014106bf54398a47d7e980d3753d",
+      "description": "The fixed global Fourier orientation and global forward one-derivative remainder are VERIFIED toward Corollary 1.7. The physical signs are chosen ONCE at the zero chart BEFORE EVERY original real L2 source. Actual overlap bounds force each real L2 chart to have those SAME signs at all sufficiently large positive labels; connectedness propagates their eventual equality from zero, and an actual finite weighted correction absorbs every remaining sign change into the h2 normalized remainder. The SAME globally calibrated signed physical forward map then admits ONE analytic raw h^(1/2) fixed ORIGINAL-potential Fourier core and ONE analytic raw h^(3/2) TOTAL remainder on ONE complex original-L2 neighborhood containing the ENTIRE real original-L2 space. The core is zero at zero and has EXACT coefficients sign_n*q_(plus/minus n)/sqrt(2*pi*n) at BOTH signed halves. Local uniform norm bounds are retained at EVERY real source. All original roots, finite labels, closed gaps, physical signs and source conjugations remain.",
+      "entries": [
+        "The actual retained Miura lift is eliminated from the Fourier core toward Corollary 1.7. At EVERY real ORIGINAL L2 source, ONE common complex original-L2 neighborhood gives the SAME globally calibrated signed forward map as the inclusion of an analytic raw h^(1/2) ORIGINAL-potential Fourier core plus a uniformly locally bounded analytic raw h^(3/2) TOTAL remainder. The core has zero coefficient at 0, and at BOTH signed labels plus/minus n it is EXACTLY the ORIGINAL potential coefficient q_(plus/minus n)/sqrt(2*pi*n), multiplied by the SAME fixed physical sign stored at positive n in the base chart. All finite positive labels, closed gaps, original root witnesses and source conjugations are retained. The remainder includes all prior phase/midpoint/amplitude/own-eta/spectral errors and the actual nonlinear Miura correction. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The SAME chart now has the EXACT ORIGINAL-potential Fourier core at zero and BOTH signed halves, with a TOTAL locally bounded analytic one-derivative remainder in the ORIGINAL L2 norm. The core retains the base chart physical output signs; identifying one fixed Fourier orientation across all global charts, the full inverse one-smoothing comparison, and identification with the unique physical PDE solution remain essential for Corollary 1.7. No full physical Corollary 1.7 or globally fixed-orientation forward/inverse smoothing theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The SAME chart now has the EXACT ORIGINAL-potential Fourier core at zero and BOTH signed halves, with a TOTAL locally bounded analytic one-derivative remainder in the ORIGINAL L2 norm. The core retains the base chart physical output signs; identifying one fixed Fourier orientation across all global charts, the full inverse one-smoothing comparison, and identification with the unique physical PDE solution remain essential for Corollary 1.7. No full physical Corollary 1.7 or globally fixed-orientation forward/inverse smoothing theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -52846,5 +53010,6 @@
   "action_ratio_record": "ACTION_RATIO.md",
   "amplitude_record": "AMPLITUDE.md",
   "eta_fourier_record": "ETA_FOURIER.md",
-  "original_fourier_record": "ORIGINAL_FOURIER.md"
+  "original_fourier_record": "ORIGINAL_FOURIER.md",
+  "fixed_global_fourier_record": "FIXED_GLOBAL_FOURIER.md"
 }
