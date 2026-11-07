@@ -3496,6 +3496,13 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/UncorrectedSobolevActionFrequencyDecay
   NLS/SequenceSpaces/PositiveSobolevPowerComparison
   NLS/Articles/KdVKdV2Frequencies/Corollary15Decay
+  NLS/SequenceSpaces/RealActionLocalImage
+  NLS/SequenceSpaces/LeadingActionSharpness
+  NLS/SequenceSpaces/PositiveSobolevReverseComparison
+  NLS/Articles/KdVKdV2Frequencies/NativeActionLocalImage
+  NLS/SequenceSpaces/LiteralPowerSharpness
+  NLS/Articles/KdVKdV2Frequencies/NativeFrequencySharpness
+  NLS/Articles/KdVKdV2Frequencies/Corollary15Sharpness
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -1,3 +1,10 @@
+import NLS.Articles.KdVKdV2Frequencies.Corollary15Sharpness
+import NLS.SequenceSpaces.LiteralPowerSharpness
+import NLS.Articles.KdVKdV2Frequencies.NativeFrequencySharpness
+import NLS.Articles.KdVKdV2Frequencies.NativeActionLocalImage
+import NLS.SequenceSpaces.LeadingActionSharpness
+import NLS.SequenceSpaces.PositiveSobolevReverseComparison
+import NLS.SequenceSpaces.RealActionLocalImage
 import NLS.Articles.KdVKdV2Frequencies.Corollary15Decay
 import NLS.SequenceSpaces.LeadingActionFrequencyTransfer
 import NLS.SequenceSpaces.PositiveSobolevPowerComparison
@@ -6187,7 +6194,14 @@ private def kdvFrequencyAuditChunk27 : Array Lean.Name := #[
   `NLS.SequenceSpaces.LeadingActionFrequencyTransfer,
   `NLS.Articles.KdVKdV2Frequencies.UncorrectedSobolevActionFrequencyDecay,
   `NLS.SequenceSpaces.PositiveSobolevPowerComparison,
-  `NLS.Articles.KdVKdV2Frequencies.Corollary15Decay
+  `NLS.Articles.KdVKdV2Frequencies.Corollary15Decay,
+  `NLS.SequenceSpaces.RealActionLocalImage,
+  `NLS.SequenceSpaces.LeadingActionSharpness,
+  `NLS.SequenceSpaces.PositiveSobolevReverseComparison,
+  `NLS.Articles.KdVKdV2Frequencies.NativeActionLocalImage,
+  `NLS.SequenceSpaces.LiteralPowerSharpness,
+  `NLS.Articles.KdVKdV2Frequencies.NativeFrequencySharpness,
+  `NLS.Articles.KdVKdV2Frequencies.Corollary15Sharpness
 ]
 
 open Lean in
