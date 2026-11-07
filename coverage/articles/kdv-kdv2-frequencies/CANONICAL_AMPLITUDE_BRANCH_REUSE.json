@@ -1,0 +1,12 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/UnitSquareRootComparison.lean",
+      "source_sha256": "65a7db78a02c50f966bf995c91ae71e307eace7d71645a995d44b114f431c805",
+      "local_sha256": "65a7db78a02c50f966bf995c91ae71e307eace7d71645a995d44b114f431c805",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Unchanged canonical continuous square-root branch comparison on a preconnected domain, used to control the SAME actual physical amplitude by its squared error. All newly reached dependencies are selected and strictly rebuilt; all prior local sources remain unchanged."
+}

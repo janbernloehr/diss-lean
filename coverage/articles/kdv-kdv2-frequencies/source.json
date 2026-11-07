@@ -1174,9 +1174,16 @@
           "lean_source": "NLS/KdV/HillHminusL2MiuraRatioDecay.lean",
           "status": "verified_dependency",
           "qualification": "A quantitative action-ratio dependency toward Corollary 1.7 is VERIFIED in the ORIGINAL L2 norm. For the SAME retained actual Miura lift and its supplied original Cauchy family, ONE complex original-L2 neighborhood precedes ALL sufficiently high positive labels, and (1+n)*norm((2*pi*n)*miuraActionRatio_n-1) is uniformly bounded there. This is an inverse-index RATE, stronger than qualitative near-free convergence. The actual first Cauchy moment is identified with the filled original indexed higher action on a common complex source ball, including collapsed gaps; no gap is divided out at collapse. Exact normalization recovers the actual doubled-frequency source from native H1 coordinates, and the existing actual analytic Miura germ pulls the bound back to original L2. Eight immutable sibling-branch action-moment lemmas and sixteen unchanged canonical dependencies are reused and strictly rebuilt; existing local dependencies remain unchanged. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The new quantitative theorem concerns the supplied local Miura Cauchy action ratio at high labels. Identification with the ACTUAL stored global-forward amplitude and its analytic square-root branch, finite-head completion of that amplitude error, the eta Fourier remainder, complete forward/inverse Birkhoff-minus-Fourier smoothing, and unique physical PDE identification remain essential for Corollary 1.7. The preceding signed raw phase-and-midpoint h^(3/2) remainder remains verified. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete."
+        },
+        {
+          "source_clause": "Necessary ACTUAL stored physical amplitude error at ALL positive labels and TOTAL signed raw phase/midpoint/amplitude one-derivative remainder near EVERY original real L2 source",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_actual_l2_raw_free_eta_remainder",
+          "lean_source": "NLS/Articles/KdVKdV2Frequencies/ActualL2RawFreeEtaRemainder.lean",
+          "status": "verified_dependency",
+          "qualification": "The ACTUAL stored physical amplitude contribution toward Corollary 1.7 is VERIFIED near EVERY real ORIGINAL L2 source. One common complex original-L2 neighborhood gives a bounded analytic symbol (1+n)*(actualAmplitude_n-freeAmplitude_n) before EVERY positive label, including the entire finite head and closed gaps. The EXACT free factor is sqrt(1+n)/sqrt(2*pi*n); its finite-index correction is retained. Original physical values and analytic real-form uniqueness identify the SAME stored amplitude square with the quantitative physical Miura ratio. Its actual positive branch propagates on one connected neighborhood, and the finite head is controlled by the native infinity norm. Applying this symbol to the SAME native h1 eta sequence removes the amplitude error from the actual packet. Together with the already proved phase and midpoint errors, the SAME globally calibrated signed physical forward map is the inclusion of an analytic raw h^(1/2) EXACT free-amplitude eta core plus an analytic raw h^(3/2) TOTAL remainder, with one locally uniform bound and every fixed physical output sign retained. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The actual phase, midpoint and stored amplitude contributions are now proved together in the SAME full signed raw target. The remaining eta-versus-Fourier comparison must retain the SAME original roots, exact native Miura source and original L2 normalization. Complete forward/inverse Birkhoff-minus-Fourier smoothing and identification with the unique physical PDE solution remain essential for Corollary 1.7. No full physical one-smoothing or PDE theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete."
         }
       ],
-      "current_support_summary": "A quantitative action-ratio dependency toward Corollary 1.7 is VERIFIED in the ORIGINAL L2 norm. For the SAME retained actual Miura lift and its supplied original Cauchy family, ONE complex original-L2 neighborhood precedes ALL sufficiently high positive labels, and (1+n)*norm((2*pi*n)*miuraActionRatio_n-1) is uniformly bounded there. This is an inverse-index RATE, stronger than qualitative near-free convergence. The actual first Cauchy moment is identified with the filled original indexed higher action on a common complex source ball, including collapsed gaps; no gap is divided out at collapse. Exact normalization recovers the actual doubled-frequency source from native H1 coordinates, and the existing actual analytic Miura germ pulls the bound back to original L2. Eight immutable sibling-branch action-moment lemmas and sixteen unchanged canonical dependencies are reused and strictly rebuilt; existing local dependencies remain unchanged."
+      "current_support_summary": "The ACTUAL stored physical amplitude contribution toward Corollary 1.7 is VERIFIED near EVERY real ORIGINAL L2 source. One common complex original-L2 neighborhood gives a bounded analytic symbol (1+n)*(actualAmplitude_n-freeAmplitude_n) before EVERY positive label, including the entire finite head and closed gaps. The EXACT free factor is sqrt(1+n)/sqrt(2*pi*n); its finite-index correction is retained. Original physical values and analytic real-form uniqueness identify the SAME stored amplitude square with the quantitative physical Miura ratio. Its actual positive branch propagates on one connected neighborhood, and the finite head is controlled by the native infinity norm. Applying this symbol to the SAME native h1 eta sequence removes the amplitude error from the actual packet. Together with the already proved phase and midpoint errors, the SAME globally calibrated signed physical forward map is the inclusion of an analytic raw h^(1/2) EXACT free-amplitude eta core plus an analytic raw h^(3/2) TOTAL remainder, with one locally uniform bound and every fixed physical output sign retained."
     },
     {
       "label": "Theorem 1.9",
@@ -47847,14 +47854,290 @@
       "scope": "The SAME supplied actual Miura chart and Cauchy family have quantitative (1+n)*norm((2*pi*n)*miuraActionRatio_n-1) bounded on ONE ORIGINAL complex L2 neighborhood before ALL sufficiently high positive labels, via the actual retained native H1 lift. Does not yet identify the stored global-forward amplitude.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "f9261858eb6d28e503d1a87167db3dcf14e60a00b1d4515112edeaa0056c5f2a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCauchyEnergyRatioAnalytic.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "One complex original Dirac source neighborhood gives analyticity of the SAME Cauchy energy action ratio before ALL high positive labels. The actual periodic midpoint stays nonzero on common original free-centered circles, including closed selected gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c76bfdc7357eae7731a679fd8cbef8f36a4b923939c4bc70cfb4a2cfff0683da"
+    },
+    {
+      "path": "NLS/KdV/HillHminusL2MiuraRatioAnalytic.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Combines common complex analyticity with the verified quantitative normalized Miura action-ratio decay in the ORIGINAL L2 norm, on ONE neighborhood before every high positive label.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b4502632bbbbfe08a93ff2f0fac6aa4a873985df118f3cf7f9943cbeb2f6cc10"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedPhysicalRealFormIdentity.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Analytic uniqueness on the physical real form of EVERY symmetric weighted Banach sequence space, on a connected open source domain containing an arbitrary real base point.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "25239149d9eba4ffc0a98a7fedc302841582de0a5e898e507bf589d63498b8f6"
+    },
+    {
+      "path": "NLS/KdV/HillNativeL2PhysicalSource.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Two exact source theorems: EVERY real ORIGINAL native L2 source is the original source of an actual physical Hill potential, and native conjugate-reflection fixed points give the original real rough inclusion. No density approximation is needed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bd55b42e9679d85fac81a5106015b1bcaebe1cad8e8d81beb84eb2bd302699d2"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraPhysicalRatioValue.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "ANY supplied original Cauchy family covering the actual Miura source recovers the intrinsic physical action ratio, including closed gaps, using exact physical action factorization and frequent opening only for cancellation.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c8e6ea69327ab843187f9f38a8c5b20d7501b595a47217b006e828529eb9cadf"
+    },
+    {
+      "path": "NLS/KdV/HillNativeL2PhysicalRatioDecay.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "At EVERY real ORIGINAL L2 source there are common complex analytic high-ratio representatives with quantitative inverse-index normalized error and exact physical recovery. The auxiliary Miura chart identifies intrinsic scalar data; it does not replace the stored forward coordinate chart.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "99492a314ead29fb5fb94ab74fdfe0026a4b239d600bdeb884abf7a3f6517aaa"
+    },
+    {
+      "path": "NLS/KdV/HillFreeNormalizedAmplitude.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Five exact free/physical scalar theorems: positive bounded free amplitude sqrt(1+n)/sqrt(2*pi*n), its exact square, physical Abelian prefactor square equal to the actual action ratio, and its positive real branch. Both 1+n and 2*pi*n are retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c3f9a79f31599cfa023a8e9b98470108b774cc9e4fc679a78a754d7fb6594ef1"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UnitSquareRootComparison.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "UNCHANGED canonical continuous square-root branch comparison: UnitSquareRootComparison. Exact pinned bytes in CANONICAL_AMPLITUDE_BRANCH_REUSE.json; strictly rebuilt and transitively axiom audited.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "65a7db78a02c50f966bf995c91ae71e307eace7d71645a995d44b114f431c805"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UniformAmplitudeError.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "A common quantitative squared-amplitude bound propagates the actual positive branch on ONE preconnected source domain and yields a uniform inverse-index amplitude error at ALL positive labels, with the finite head included.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "13ba4ace141de8b146f385daae9718c57bd6c654ee4f3a35b5c530d31008355a"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalNormalizedAmplitude.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The physically normalized original amplitude has EXACT square (2*pi*n)*physicalActionRatio and the actual positive branch at every positive label, including closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1a6a74aef9ec32fb59384ff45deb0b211d74f2f3494610fa32d376eb275f289b"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualPhysicalAmplitudeValue.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Two theorems identify the SAME stored physical amplitude square and positive branch at actual physical sources, retaining its original 1+n packet normalization.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "140694712a678c9a05930d6c3ccaafb828608fe2903ddd36c02367b0a9469d52"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticAmplitudeSquareError.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Physical real-form uniqueness turns exact real squared-amplitude identities into a common complex quantitative error bound in the SAME symmetric weighted original source space.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "402082d5120cc77b2c34a1813a9aa507d0d8764737c2b5ff9b66501befe695fa"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticDomainPullback.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Generic bounded-linear source pullback of Banach-valued complex analyticity on the EXACT preimage domain. Opaque source spaces avoid default kernel expansion without changing limits.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ee77559c10d87ff1ae3bd04f7dc39e695697dd84a9c990711a0444e9c023a6b4"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualNativeAmplitudeValue.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Two exact real native amplitude identities, including its normalized square against any physically matching scalar ratio and positivity of the SAME stored amplitude at EVERY original real L2 source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7d0ed25ad72dc496cc5c14c967dcd83fd463da31cd259cf6cafb4ec208ec725e"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalAmplitudeSquarePullback.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Combines an exact original source inclusion, actual physical representatives, actual amplitude values and analytic physical ratio representatives on ONE complex source neighborhood. Source Banach spaces remain opaque under default checking limits.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c155b09a301e4c0f3a63de26e889221db30b14abd3620f7cc44b0bd45041142c"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2AmplitudeSquareError.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The SAME stored amplitude square has a quantitative normalized inverse-index error on ONE ORIGINAL complex L2 neighborhood before ALL high positive labels, through exact physical values and real-form uniqueness.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "edfd573108b000ef2137742f115daaed7f273522f706c66b6289df23e44a50ae"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticUniformAmplitudeError.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "A Banach-valued analytic amplitude and its common squared-error estimate give an analytic infinity symbol for the COMPLETE weighted amplitude error, zero on nonpositive slots and exact at every positive label.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "124ae62a635ef4679313a7ae2aeb5bc1148fa3e74f6f77823db3d689c56b93b3"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticAmplitudeSourcePullback.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Pulls the preceding analytic error-symbol construction through the exact original source inclusion, retaining the amplitude domain on ONE common original-norm neighborhood.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fa2fdaf0947018c561de67517b797e59e60d90fc90d39f9adf463e3300288711"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2AmplitudeError.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The SAME stored amplitude has a bounded analytic (1+n)*(amplitude_n-freeAmplitude_n) infinity symbol on ONE ORIGINAL complex L2 neighborhood before EVERY positive label, including low and closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e4c54d1b9a0f929b21bf9c90d5b606d69724392b0b686bf5f3888cef022ff8d6"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticAmplitudePacketRemainder.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The exact weighted amplitude error applied to the SAME native h1 eta packet gives an analytic h2 error. Adds the prior h2 phase/midpoint error and retains an analytic h1 EXACT free-amplitude eta core, with exact all-slot coefficients and uniform local norm bounds.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "553e80413b8f37e244b8a59de001471a3f87c965a4cfa52dafae1d5cfb01eb3a"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2FreeEtaRemainder.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "All THREE actual coordinate factors are removed from the SAME packet: phase, midpoint and stored physical amplitude. The analytic h1 core is EXACTLY pi*freeAmplitude_n*SAMEeta_n; the total analytic h2 remainder is uniformly locally bounded, with zero nonpositive core head.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a8ecbfb07396d98508b2cc741786e37126612349e35eee64b436c84d5cf4e557"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2FreeEtaIdentification.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The SAME globally calibrated positive physical forward map is reconstructed from the exact free-amplitude eta core and total analytic one-derivative remainder, with EVERY fixed physical label sign retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ccbe151dcd79af766473da9287a0ca416c809691f84bd6ab2dd377250613dab1"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2RawFreeEtaRemainder.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL amplitude error and TOTAL signed phase/midpoint/amplitude one-derivative remainder in the ORIGINAL L2 norm"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Final actual-map theorem: at EVERY original real L2 source, the SAME global signed map is the inclusion of an analytic raw h^(1/2) free-amplitude eta core plus an analytic raw h^(3/2) TOTAL phase/midpoint/amplitude remainder, uniformly locally bounded with all original source conjugations and physical signs retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7d330a1c00051fc0c7a9b0cede568e62bc9289b211c6607faa8114e727f061ce"
     }
   ],
   "dependencies_needed": [
-    "A quantitative action-ratio dependency toward Corollary 1.7 is VERIFIED in the ORIGINAL L2 norm. For the SAME retained actual Miura lift and its supplied original Cauchy family, ONE complex original-L2 neighborhood precedes ALL sufficiently high positive labels, and (1+n)*norm((2*pi*n)*miuraActionRatio_n-1) is uniformly bounded there. This is an inverse-index RATE, stronger than qualitative near-free convergence. The actual first Cauchy moment is identified with the filled original indexed higher action on a common complex source ball, including collapsed gaps; no gap is divided out at collapse. Exact normalization recovers the actual doubled-frequency source from native H1 coordinates, and the existing actual analytic Miura germ pulls the bound back to original L2. Eight immutable sibling-branch action-moment lemmas and sixteen unchanged canonical dependencies are reused and strictly rebuilt; existing local dependencies remain unchanged. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The new quantitative theorem concerns the supplied local Miura Cauchy action ratio at high labels. Identification with the ACTUAL stored global-forward amplitude and its analytic square-root branch, finite-head completion of that amplitude error, the eta Fourier remainder, complete forward/inverse Birkhoff-minus-Fourier smoothing, and unique physical PDE identification remain essential for Corollary 1.7. The preceding signed raw phase-and-midpoint h^(3/2) remainder remains verified. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+    "The ACTUAL stored physical amplitude contribution toward Corollary 1.7 is VERIFIED near EVERY real ORIGINAL L2 source. One common complex original-L2 neighborhood gives a bounded analytic symbol (1+n)*(actualAmplitude_n-freeAmplitude_n) before EVERY positive label, including the entire finite head and closed gaps. The EXACT free factor is sqrt(1+n)/sqrt(2*pi*n); its finite-index correction is retained. Original physical values and analytic real-form uniqueness identify the SAME stored amplitude square with the quantitative physical Miura ratio. Its actual positive branch propagates on one connected neighborhood, and the finite head is controlled by the native infinity norm. Applying this symbol to the SAME native h1 eta sequence removes the amplitude error from the actual packet. Together with the already proved phase and midpoint errors, the SAME globally calibrated signed physical forward map is the inclusion of an analytic raw h^(1/2) EXACT free-amplitude eta core plus an analytic raw h^(3/2) TOTAL remainder, with one locally uniform bound and every fixed physical output sign retained. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The actual phase, midpoint and stored amplitude contributions are now proved together in the SAME full signed raw target. The remaining eta-versus-Fourier comparison must retain the SAME original roots, exact native Miura source and original L2 normalization. Complete forward/inverse Birkhoff-minus-Fourier smoothing and identification with the unique physical PDE solution remain essential for Corollary 1.7. No full physical one-smoothing or PDE theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
-    "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The new quantitative theorem concerns the supplied local Miura Cauchy action ratio at high labels. Identification with the ACTUAL stored global-forward amplitude and its analytic square-root branch, finite-head completion of that amplitude error, the eta Fourier remainder, complete forward/inverse Birkhoff-minus-Fourier smoothing, and unique physical PDE identification remain essential for Corollary 1.7. The preceding signed raw phase-and-midpoint h^(3/2) remainder remains verified. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+    "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The actual phase, midpoint and stored amplitude contributions are now proved together in the SAME full signed raw target. The remaining eta-versus-Fourier comparison must retain the SAME original roots, exact native Miura source and original L2 normalization. Complete forward/inverse Birkhoff-minus-Fourier smoothing and identification with the unique physical PDE solution remain essential for Corollary 1.7. No full physical one-smoothing or PDE theorem is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
   ],
   "workspace": {
@@ -47878,8 +48161,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 26969,
-    "total_declarations_audited": 49036,
+    "candidate_declarations_audited": 27020,
+    "total_declarations_audited": 49090,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -47890,7 +48173,7 @@
       "Corollary 1.4",
       "Corollary 1.5"
     ],
-    "selected_modules": 3570,
+    "selected_modules": 3593,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -48061,7 +48344,8 @@
     "actual_kdv_energy_validation_sequence": "All 3512 prior selected sources and all 56 provenance records remain byte-identical. The exact new import closure is four own modules with 19 explicit public theorems. No canonical module or provenance record is newly selected. All four modules were strictly rebuilt in dependency order AFTER freezing 3575 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3516 selections and EVERY imported NLS declaration: 26631 selected declarations and 48701 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3516-name set probe with insertion/deletion rejection are verified. The 3524 historical strict PASS records cover 3516 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a four-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "coordinate_phase_validation_sequence": "All 3516 prior selected sources and all 56 prior provenance records remain byte-identical. The exact new import closure is ten own modules with 16 explicit public theorems and seven UNCHANGED canonical modules. One canonical reuse record pins every reused source to main commit c5bcf6344cd2e2628ae537e98b85bb9ec1849dec, for 57 provenance records total. All seventeen modules were strictly rebuilt in dependency order AFTER freezing 3593 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3533 selections and EVERY imported NLS declaration: 26750 selected declarations and 48820 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3533-name set probe with insertion/deletion rejection are verified. The 3541 historical strict PASS records cover 3533 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a seventeen-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "midpoint_remainder_validation_sequence": "All 3533 prior selected sources and all 57 prior provenance records remain byte-identical. The exact new transitive import closure is nine own modules with 13 explicit public theorems; no canonical source or provenance record is added or changed. All nine modules were strictly rebuilt in dependency order AFTER freezing 3602 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3542 selections and EVERY imported NLS declaration: 26776 selected declarations and 48846 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3542-name set probe with insertion/deletion rejection are verified. The 3550 historical strict PASS records cover 3542 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a nine-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
-    "action_ratio_validation_sequence": "All 3542 prior selected sources and all 57 prior provenance records remain byte-identical. The exact new transitive import closure is 28 modules: four own modules with six explicit public theorems, eight unchanged sibling modules pinned to articles/mkdv-nls-hierarchies commit 334579e6fb05cfac349f0a25d87640cebf24005c, and sixteen unchanged canonical modules pinned to main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec. Two new provenance records give 59 total. All 28 modules were strictly rebuilt in dependency order AFTER freezing 3632 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3570 selections and EVERY imported NLS declaration: 26969 selected declarations and 49036 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3570-name set probe with insertion/deletion rejection are verified. The 3578 historical strict PASS records cover 3570 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a 28-module incremental rebuild retaining prior strict evidence, not a full rebuild."
+    "action_ratio_validation_sequence": "All 3542 prior selected sources and all 57 prior provenance records remain byte-identical. The exact new transitive import closure is 28 modules: four own modules with six explicit public theorems, eight unchanged sibling modules pinned to articles/mkdv-nls-hierarchies commit 334579e6fb05cfac349f0a25d87640cebf24005c, and sixteen unchanged canonical modules pinned to main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec. Two new provenance records give 59 total. All 28 modules were strictly rebuilt in dependency order AFTER freezing 3632 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3570 selections and EVERY imported NLS declaration: 26969 selected declarations and 49036 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3570-name set probe with insertion/deletion rejection are verified. The 3578 historical strict PASS records cover 3570 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a 28-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
+    "amplitude_validation_sequence": "All 3570 prior selected sources and all 59 prior provenance records remain byte-identical. The exact new transitive import closure is 23 modules: 22 own modules with 30 explicit public theorems, and one unchanged canonical square-root branch comparison pinned to main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec. One new canonical reuse record gives 60 provenance records total; no sibling sources are added. All 23 modules were strictly rebuilt in dependency order AFTER freezing 3656 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3593 selections and EVERY imported NLS declaration: 27020 selected declarations and 49090 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 29 private chunks of at most 128 names, and the bidirectional 3593-name set probe with insertion/deletion rejection are verified. The 3601 historical strict PASS records cover 3593 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a 23-module incremental rebuild retaining prior strict evidence, not a full rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -49705,6 +49989,18 @@
         "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The h^(3/2) remainder proved here accounts for coordinate phase AND midpoint normalization only. Corollary 1.7 still needs the ACTUAL amplitude and eta Fourier remainders, the complete forward/inverse Birkhoff-minus-Fourier smoothing theorem, and identification with the unique physical PDE solution. The new amplitude-eta core is not yet identified with the Fourier transform up to a smoothing term. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "7d7a1248212c1e85657246a61672f9592e9342f3",
+      "description": "The ACTUAL stored physical amplitude contribution toward Corollary 1.7 is VERIFIED near EVERY real ORIGINAL L2 source. One common complex original-L2 neighborhood gives a bounded analytic symbol (1+n)*(actualAmplitude_n-freeAmplitude_n) before EVERY positive label, including the entire finite head and closed gaps. The EXACT free factor is sqrt(1+n)/sqrt(2*pi*n); its finite-index correction is retained. Original physical values and analytic real-form uniqueness identify the SAME stored amplitude square with the quantitative physical Miura ratio. Its actual positive branch propagates on one connected neighborhood, and the finite head is controlled by the native infinity norm. Applying this symbol to the SAME native h1 eta sequence removes the amplitude error from the actual packet. Together with the already proved phase and midpoint errors, the SAME globally calibrated signed physical forward map is the inclusion of an analytic raw h^(1/2) EXACT free-amplitude eta core plus an analytic raw h^(3/2) TOTAL remainder, with one locally uniform bound and every fixed physical output sign retained.",
+      "entries": [
+        "A quantitative action-ratio dependency toward Corollary 1.7 is VERIFIED in the ORIGINAL L2 norm. For the SAME retained actual Miura lift and its supplied original Cauchy family, ONE complex original-L2 neighborhood precedes ALL sufficiently high positive labels, and (1+n)*norm((2*pi*n)*miuraActionRatio_n-1) is uniformly bounded there. This is an inverse-index RATE, stronger than qualitative near-free convergence. The actual first Cauchy moment is identified with the filled original indexed higher action on a common complex source ball, including collapsed gaps; no gap is divided out at collapse. Exact normalization recovers the actual doubled-frequency source from native H1 coordinates, and the existing actual analytic Miura germ pulls the bound back to original L2. Eight immutable sibling-branch action-moment lemmas and sixteen unchanged canonical dependencies are reused and strictly rebuilt; existing local dependencies remain unchanged. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The new quantitative theorem concerns the supplied local Miura Cauchy action ratio at high labels. Identification with the ACTUAL stored global-forward amplitude and its analytic square-root branch, finite-head completion of that amplitude error, the eta Fourier remainder, complete forward/inverse Birkhoff-minus-Fourier smoothing, and unique physical PDE identification remain essential for Corollary 1.7. The preceding signed raw phase-and-midpoint h^(3/2) remainder remains verified. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. The new quantitative theorem concerns the supplied local Miura Cauchy action ratio at high labels. Identification with the ACTUAL stored global-forward amplitude and its analytic square-root branch, finite-head completion of that amplitude error, the eta Fourier remainder, complete forward/inverse Birkhoff-minus-Fourier smoothing, and unique physical PDE identification remain essential for Corollary 1.7. The preceding signed raw phase-and-midpoint h^(3/2) remainder remains verified. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -49829,5 +50125,6 @@
   "actual_kdv_energy_record": "ACTUAL_KDV_ENERGY.md",
   "coordinate_phase_record": "COORDINATE_PHASE.md",
   "midpoint_remainder_record": "MIDPOINT_REMAINDER.md",
-  "action_ratio_record": "ACTION_RATIO.md"
+  "action_ratio_record": "ACTION_RATIO.md",
+  "amplitude_record": "AMPLITUDE.md"
 }

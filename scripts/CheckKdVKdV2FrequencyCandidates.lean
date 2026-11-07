@@ -1,3 +1,26 @@
+import NLS.SequenceSpaces.AnalyticAmplitudeSourcePullback
+import NLS.SequenceSpaces.AnalyticUniformAmplitudeError
+import NLS.SequenceSpaces.PhysicalAmplitudeSquarePullback
+import NLS.ComplexAnalysis.AnalyticDomainPullback
+import NLS.Articles.KdVKdV2Frequencies.ActualL2FreeEtaRemainder
+import NLS.Articles.KdVKdV2Frequencies.ActualL2FreeEtaIdentification
+import NLS.Articles.KdVKdV2Frequencies.ActualL2RawFreeEtaRemainder
+import NLS.Articles.KdVKdV2Frequencies.ActualNativeAmplitudeValue
+import NLS.SequenceSpaces.AnalyticAmplitudePacketRemainder
+import NLS.SequenceSpaces.AnalyticAmplitudeSquareError
+import NLS.Articles.KdVKdV2Frequencies.ActualPhysicalAmplitudeValue
+import NLS.Articles.KdVKdV2Frequencies.ActualL2AmplitudeError
+import NLS.KdV.HillPhysicalNormalizedAmplitude
+import NLS.Articles.KdVKdV2Frequencies.ActualL2AmplitudeSquareError
+import NLS.ComplexAnalysis.UniformAmplitudeError
+import NLS.KdV.HillFreeNormalizedAmplitude
+import NLS.ComplexAnalysis.UnitSquareRootComparison
+import NLS.KdV.HillMiuraPhysicalRatioValue
+import NLS.KdV.HillNativeL2PhysicalRatioDecay
+import NLS.KdV.HillHminusL2MiuraRatioAnalytic
+import NLS.SequenceSpaces.WeightedPhysicalRealFormIdentity
+import NLS.KdV.HillNativeL2PhysicalSource
+import NLS.ZakharovShabat.SourceCauchyEnergyRatioAnalytic
 import NLS.ComplexAnalysis.PolygonalEndpointIntegral
 import NLS.SequenceSpaces.WeightedReciprocalSquareDecay
 import NLS.ZakharovShabat.SourceAbelianAdmissibleIntegrals
@@ -6353,7 +6376,33 @@ private def kdvFrequencyAuditChunk27 : Array Lean.Name := #[
   `NLS.ZakharovShabat.SourceCauchyFirstMomentIdentification,
   `NLS.ZakharovShabat.SourceCauchyEnergyRatioDecay,
   `NLS.KdV.HillMiuraH1CauchyRatioDecay,
-  `NLS.KdV.HillHminusL2MiuraRatioDecay
+  `NLS.KdV.HillHminusL2MiuraRatioDecay,
+  `NLS.ZakharovShabat.SourceCauchyEnergyRatioAnalytic,
+  `NLS.KdV.HillHminusL2MiuraRatioAnalytic,
+  `NLS.SequenceSpaces.WeightedPhysicalRealFormIdentity,
+  `NLS.KdV.HillNativeL2PhysicalSource,
+  `NLS.KdV.HillMiuraPhysicalRatioValue,
+  `NLS.KdV.HillNativeL2PhysicalRatioDecay,
+  `NLS.KdV.HillFreeNormalizedAmplitude,
+  `NLS.ComplexAnalysis.UnitSquareRootComparison,
+  `NLS.ComplexAnalysis.UniformAmplitudeError,
+  `NLS.KdV.HillPhysicalNormalizedAmplitude,
+  `NLS.Articles.KdVKdV2Frequencies.ActualPhysicalAmplitudeValue,
+  `NLS.SequenceSpaces.AnalyticAmplitudeSquareError,
+  `NLS.ComplexAnalysis.AnalyticDomainPullback,
+  `NLS.Articles.KdVKdV2Frequencies.ActualNativeAmplitudeValue
+]
+
+private def kdvFrequencyAuditChunk28 : Array Lean.Name := #[
+  `NLS.SequenceSpaces.PhysicalAmplitudeSquarePullback,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2AmplitudeSquareError,
+  `NLS.SequenceSpaces.AnalyticUniformAmplitudeError,
+  `NLS.SequenceSpaces.AnalyticAmplitudeSourcePullback,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2AmplitudeError,
+  `NLS.SequenceSpaces.AnalyticAmplitudePacketRemainder,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2FreeEtaRemainder,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2FreeEtaIdentification,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2RawFreeEtaRemainder
 ]
 
 open Lean in
@@ -6387,7 +6436,8 @@ run_cmd do
     kdvFrequencyAuditChunk24,
     kdvFrequencyAuditChunk25,
     kdvFrequencyAuditChunk26,
-    kdvFrequencyAuditChunk27
+    kdvFrequencyAuditChunk27,
+    kdvFrequencyAuditChunk28
   ].flatten
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

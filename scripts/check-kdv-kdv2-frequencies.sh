@@ -3579,6 +3579,29 @@ modules=(
   NLS/ZakharovShabat/SourceCauchyEnergyRatioDecay
   NLS/KdV/HillMiuraH1CauchyRatioDecay
   NLS/KdV/HillHminusL2MiuraRatioDecay
+  NLS/ZakharovShabat/SourceCauchyEnergyRatioAnalytic
+  NLS/KdV/HillHminusL2MiuraRatioAnalytic
+  NLS/SequenceSpaces/WeightedPhysicalRealFormIdentity
+  NLS/KdV/HillNativeL2PhysicalSource
+  NLS/KdV/HillMiuraPhysicalRatioValue
+  NLS/KdV/HillNativeL2PhysicalRatioDecay
+  NLS/KdV/HillFreeNormalizedAmplitude
+  NLS/ComplexAnalysis/UnitSquareRootComparison
+  NLS/ComplexAnalysis/UniformAmplitudeError
+  NLS/KdV/HillPhysicalNormalizedAmplitude
+  NLS/Articles/KdVKdV2Frequencies/ActualPhysicalAmplitudeValue
+  NLS/SequenceSpaces/AnalyticAmplitudeSquareError
+  NLS/ComplexAnalysis/AnalyticDomainPullback
+  NLS/Articles/KdVKdV2Frequencies/ActualNativeAmplitudeValue
+  NLS/SequenceSpaces/PhysicalAmplitudeSquarePullback
+  NLS/Articles/KdVKdV2Frequencies/ActualL2AmplitudeSquareError
+  NLS/SequenceSpaces/AnalyticUniformAmplitudeError
+  NLS/SequenceSpaces/AnalyticAmplitudeSourcePullback
+  NLS/Articles/KdVKdV2Frequencies/ActualL2AmplitudeError
+  NLS/SequenceSpaces/AnalyticAmplitudePacketRemainder
+  NLS/Articles/KdVKdV2Frequencies/ActualL2FreeEtaRemainder
+  NLS/Articles/KdVKdV2Frequencies/ActualL2FreeEtaIdentification
+  NLS/Articles/KdVKdV2Frequencies/ActualL2RawFreeEtaRemainder
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
