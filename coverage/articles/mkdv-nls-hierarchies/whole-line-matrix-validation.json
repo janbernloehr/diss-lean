@@ -1,0 +1,430 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "article_parent": "241a2f8e7c44825badf0b66ee4f375335555869a",
+  "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "new_modules": [
+    "NLS/FunctionalAnalysis/FloquetPeriodUniqueness.lean",
+    "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean",
+    "NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean",
+    "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean",
+    "NLS/ZakharovShabat/ClassicalDiagonalConstantMonodromy.lean",
+    "NLS/ZakharovShabat/AppendixOperatorConvention.lean",
+    "NLS/ZakharovShabat/AppendixPhaseConventionCounterexample.lean",
+    "NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "theorem",
+      "name": "floquet_eq_of_unit_period",
+      "qualified_name": "NLS.FunctionalAnalysis.floquet_eq_of_unit_period",
+      "file": "NLS/FunctionalAnalysis/FloquetPeriodUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "componentSwapMatrix_mul",
+      "qualified_name": "NLS.ZakharovShabat.componentSwapMatrix_mul",
+      "file": "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reciprocalScalingMatrix_mul",
+      "qualified_name": "NLS.ZakharovShabat.reciprocalScalingMatrix_mul",
+      "file": "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "spatialReflectionFundamentalMatrix_floquet",
+      "qualified_name": "NLS.ZakharovShabat.spatialReflectionFundamentalMatrix_floquet",
+      "file": "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "inverse_fin_two_of_det_one",
+      "qualified_name": "NLS.ZakharovShabat.inverse_fin_two_of_det_one",
+      "file": "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "spatialReflectionFundamentalMatrix_eq_inverse",
+      "qualified_name": "NLS.ZakharovShabat.spatialReflectionFundamentalMatrix_eq_inverse",
+      "file": "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "componentSwap_spatialReflectionFundamentalMatrix_eq_inverse",
+      "qualified_name": "NLS.ZakharovShabat.componentSwap_spatialReflectionFundamentalMatrix_eq_inverse",
+      "file": "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "componentSwapMatrix_eq_conjugate",
+      "qualified_name": "NLS.ZakharovShabat.componentSwapMatrix_eq_conjugate",
+      "file": "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reciprocalScalingMatrix_eq_diagonal_conjugate",
+      "qualified_name": "NLS.ZakharovShabat.reciprocalScalingMatrix_eq_diagonal_conjugate",
+      "file": "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineFundamentalMatrix_on_unit",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineFundamentalMatrix_on_unit",
+      "file": "NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineFundamentalMatrix_add_one",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineFundamentalMatrix_add_one",
+      "file": "NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineFundamentalMatrix_sourceComponentSwap",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineFundamentalMatrix_sourceComponentSwap",
+      "file": "NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineFundamentalMatrix_sourceReciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineFundamentalMatrix_sourceReciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineFundamentalMatrix_sourceSpatialReflection",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineFundamentalMatrix_sourceSpatialReflection",
+      "file": "NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineFundamentalMatrix_sourceMidpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineFundamentalMatrix_sourceMidpointReflection",
+      "file": "NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "fundamentalPhaseGauge",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.fundamentalPhaseGauge",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fundamentalPhaseGauge_entries",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.fundamentalPhaseGauge_entries",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma13_componentSwap",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma13_componentSwap",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma13_phase",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma13_phase",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma13_phase_entries",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma13_phase_entries",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma13_reflection",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma13_reflection",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma13_reflected_monodromy",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma13_reflected_monodromy",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalDiagonalOnePotential",
+      "qualified_name": "NLS.ZakharovShabat.classicalDiagonalOnePotential",
+      "file": "NLS/ZakharovShabat/ClassicalDiagonalConstantMonodromy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiagonalOne_first_column",
+      "qualified_name": "NLS.ZakharovShabat.classicalDiagonalOne_first_column",
+      "file": "NLS/ZakharovShabat/ClassicalDiagonalConstantMonodromy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiagonalOne_second_column",
+      "qualified_name": "NLS.ZakharovShabat.classicalDiagonalOne_second_column",
+      "file": "NLS/ZakharovShabat/ClassicalDiagonalConstantMonodromy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalMonodromy_diagonalOne",
+      "qualified_name": "NLS.ZakharovShabat.classicalMonodromy_diagonalOne",
+      "file": "NLS/ZakharovShabat/ClassicalDiagonalConstantMonodromy.lean"
+    },
+    {
+      "kind": "def",
+      "name": "appendixDisplayedOperator",
+      "qualified_name": "NLS.ZakharovShabat.appendixDisplayedOperator",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendixDisplayedOperator_literal",
+      "qualified_name": "NLS.ZakharovShabat.appendixDisplayedOperator_literal",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendix_source_physical_fields",
+      "qualified_name": "NLS.ZakharovShabat.appendix_source_physical_fields",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendixDisplayedOperator_source_adapter",
+      "qualified_name": "NLS.ZakharovShabat.appendixDisplayedOperator_source_adapter",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "def",
+      "name": "appendixFundamentalMatrix",
+      "qualified_name": "NLS.ZakharovShabat.appendixFundamentalMatrix",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendixFundamentalMatrix_adapter",
+      "qualified_name": "NLS.ZakharovShabat.appendixFundamentalMatrix_adapter",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendixFundamentalMatrix_phase",
+      "qualified_name": "NLS.ZakharovShabat.appendixFundamentalMatrix_phase",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "def",
+      "name": "appendixMonodromy",
+      "qualified_name": "NLS.ZakharovShabat.appendixMonodromy",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendixFundamentalMatrix_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.appendixFundamentalMatrix_componentSwap",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendixFundamentalMatrix_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.appendixFundamentalMatrix_midpointReflection",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendixMonodromy_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.appendixMonodromy_midpointReflection",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "def",
+      "name": "appendixPeriodicLeft",
+      "qualified_name": "NLS.ZakharovShabat.appendixPeriodicLeft",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "def",
+      "name": "appendixPeriodicRight",
+      "qualified_name": "NLS.ZakharovShabat.appendixPeriodicRight",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendix_signed_endpoint_adapter",
+      "qualified_name": "NLS.ZakharovShabat.appendix_signed_endpoint_adapter",
+      "file": "NLS/ZakharovShabat/AppendixOperatorConvention.lean"
+    },
+    {
+      "kind": "def",
+      "name": "appendixRealConstantWitness",
+      "qualified_name": "NLS.ZakharovShabat.appendixRealConstantWitness",
+      "file": "NLS/ZakharovShabat/AppendixPhaseConventionCounterexample.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendixRealConstantWitness_realType",
+      "qualified_name": "NLS.ZakharovShabat.appendixRealConstantWitness_realType",
+      "file": "NLS/ZakharovShabat/AppendixPhaseConventionCounterexample.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendixRealConstantWitness_monodromy",
+      "qualified_name": "NLS.ZakharovShabat.appendixRealConstantWitness_monodromy",
+      "file": "NLS/ZakharovShabat/AppendixPhaseConventionCounterexample.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendix_printed_phase_formula_false",
+      "qualified_name": "NLS.ZakharovShabat.appendix_printed_phase_formula_false",
+      "file": "NLS/ZakharovShabat/AppendixPhaseConventionCounterexample.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendix_operator_source_adapter",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.appendix_operator_source_adapter",
+      "file": "NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendix_fundamental_spectral_adapter",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.appendix_fundamental_spectral_adapter",
+      "file": "NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendix_signed_label_adapter",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.appendix_signed_label_adapter",
+      "file": "NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma13_literal_appendix_corrected",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_corrected",
+      "file": "NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma13_literal_appendix_phase_false",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma13_literal_appendix_phase_false",
+      "file": "NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean"
+    }
+  ],
+  "new_theorems": 41,
+  "new_definitions": 8,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "ELAN_HOME and PATH use pinned tooling; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/FunctionalAnalysis/FloquetPeriodUniqueness.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/FunctionalAnalysis/FloquetPeriodUniqueness.lean",
+    "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean",
+    "NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean",
+    "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean",
+    "NLS/ZakharovShabat/ClassicalDiagonalConstantMonodromy.lean",
+    "NLS/ZakharovShabat/AppendixOperatorConvention.lean",
+    "NLS/ZakharovShabat/AppendixPhaseConventionCounterexample.lean",
+    "NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1176,
+  "article_transitive_axiom_declarations": 13481,
+  "combined_NLS_transitive_axiom_declarations": 76718,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 66,
+    "old_scopes_preserved": 3786,
+    "added_blocks": 1,
+    "added_scopes": 57,
+    "total_scopes": 3843,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 9155,
+    "scope": "All current NLS/**/*.lean, NLS.lean and the article/combined checkers. All unchanged after validation.",
+    "source_map_digest_sha256": "14f315912fc566066d796587aba082556ac6cb23382caa5529df6f22e73cb3af",
+    "private_manifest": "work/whole-line-matrix-validation-inputs.json",
+    "private_manifest_sha256": "ecb44949ae26cb11346028210d93035e96dd29f6df65284743d495b927105ae5",
+    "reused_checker_prefix_outputs": 1168,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/FunctionalAnalysis/FloquetPeriodUniqueness.lean": "8e72fd5587209f15f530d8c583e02a72f35117abd0ac96d1c8c03a6ceec5950d",
+    "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean": "ef940d86b47dc659a89fa2ad6ee2f8b0750ea7b58dddd592f94a7c6047eec85d",
+    "NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean": "2ea22be78fcec25068735ab97fcda347c2c7cb43aa909b773754f232e06bf4b7",
+    "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean": "912e01924aea0a6fe5c6ad5a7521041c3cfd807b1b9b946090f659fcfdabfb43",
+    "NLS/ZakharovShabat/ClassicalDiagonalConstantMonodromy.lean": "3faf2dc80c1bb261e0465b5be5b2150ad601301ccf5858f8970f27645c5e1398",
+    "NLS/ZakharovShabat/AppendixOperatorConvention.lean": "b681e913766279b7d77f6bdd8b979f63246ff3fa29c2df44430f0e8efc0b116e",
+    "NLS/ZakharovShabat/AppendixPhaseConventionCounterexample.lean": "94092db8c5d8c4e9e295c5b64971a4db4c534dd04f87a45b41b6c688cfa5340a",
+    "NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean": "5e45d45cca4d0ce1e97758ad598ef4b6f717797d8432e50ee71e030b1144ff45",
+    "NLS.lean": "5bffe820ed56cd031e9c2fe1f44b9755b059142a8b27691fc61b745b5829f3e4",
+    "scripts/check_mkdv_nls.py": "b2aa2b24e53eb2474eb06f3e598b135b08770578db49ad6100120825bee8db58",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "92eaf435fba4e675fdc2b32c39ce97fcac821ef2cea030e2520205261f5ba543",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/FunctionalAnalysis/FloquetPeriodUniqueness.lean": "8e652c3e3e97257adf9df412dea725bc0240c3bffc2d429590e2fbc8f9205e4b",
+    "NLS/ZakharovShabat/FundamentalMatrixGaugeAlgebra.lean": "bab178ae0355884d07d15f3a58c2ada07da753f8acd07db9a988227ed51d6a41",
+    "NLS/ZakharovShabat/SourceL2WholeLineFundamentalSymmetries.lean": "2b2aa621cd2393951f104fa8282cffbb439e22e8bed5c763193c4495192f5c1b",
+    "NLS/Articles/MKdVNLSHierarchies/FullFundamentalSymmetries.lean": "70d78b584cc80473fa1a52d272a1b949f910705c486b1ff4c18a9c56f2a46673",
+    "NLS/ZakharovShabat/ClassicalDiagonalConstantMonodromy.lean": "97ec759b76d58141e6b8439a0c2f12feb617b3e257d1052c4b3eaa22e7f019b0",
+    "NLS/ZakharovShabat/AppendixOperatorConvention.lean": "551e4d73465e4ee3fe265a808972e88c03e42c4fb9c32ec9aa849153c8a72a03",
+    "NLS/ZakharovShabat/AppendixPhaseConventionCounterexample.lean": "b28d41a956322d89e4e708dbef913a45057c7e7a7f726aecacafce60f74fa5e6",
+    "NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean": "bd62b98c582ca4cc3dd637f2ea6c7e19728e9be6a53f8e70a1e5471279b645ae"
+  },
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "head": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "validated_source_modules": 9089,
+    "validation_report": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation_report_sha256": "6f9f2757468d008417280b5ce7ec68fceff49a1447bba886ff79dadbe7a80742",
+    "private_provenance_manifest": "work/nonlocal-incoming-cache-provenance.json",
+    "manifest_sha256": "7eff8b2f05f21402a7391c21f401cc5f5145c6a70503fd11d62e5737d4a95dc2",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently.",
+    "all_source_and_output_hashes_rechecked_after_validation": true
+  },
+  "validation_scope": "Fresh strict compilation of all eight new modules and the combined aggregate; targeted and combined transitive audits. All 1,168 reused checker-prefix outputs and all 9,089 source-verified incoming compiled modules retain their hashes. This is not a fresh full repository source rebuild.",
+  "proof_scope": {
+    "completed_statement": "Lemma13 for actual normalized full fundamental matrices at every real spatial point and every original complex H0 source, including the original real-type H0 domain, with explicit correction of the local Appendix operator/phase mismatch.",
+    "actual_matrices": "Exact invertible Floquet continuation transfers the checked unit-interval identities through every positive and negative period and seam. Literal J, half-phase and PJ/reflected-time/inverse-monodromy conjugacies, their entries and the reflected endpoint monodromy are checked. No smoothness, reality or generic spectral-parameter assumption is required.",
+    "operator_adapter": "The page5/Appendix upper-phi2 operator is exactly the Section2 upper-phi1 operator at P*phi, including actual physical source fields. Its matrix adapter reflects lambda and conjugates by J; signed integer labels reverse n and exchange +/- endpoint slots.",
+    "correction_and_counterexample": "Using Section2 component order gives the printed matrix forms. Retaining the literal local Appendix operator gives the complete corrected inverse-phase form, with P/T unchanged. An actual original real-type H0 witness from smooth physical profile(1,1), at lambda0=0,x=1,alpha=pi/2, has upper-right monodromy+sinh(1), while the printed positive phase predicts-sinh(1). Both versions and the printed-statement obstruction are formal proofs.",
+    "not_claimed": [
+      "Full Lemmas2,3,10 or nonlocal Proposition11(iii), all printed proof intermediates or every background assertion.",
+      "Whole-paper semantic decomposition or full proof coverage."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "assertion_records": 120,
+    "source_passages": 241,
+    "new_complete_source_passages_reviewed": 4,
+    "new_mathematical_source_passages_reviewed": 3,
+    "new_bibliographic_metadata_passages": 1,
+    "source_passages_reviewed": [
+      "passage-234",
+      "passage-235",
+      "passage-236",
+      "passage-237"
+    ],
+    "all_assertion_line_locators_nonblank_and_page_correct": true,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f",
+  "previous_validated_progress": "invariant-primitive-validation.json"
+}

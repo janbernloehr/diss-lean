@@ -1,0 +1,473 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "article_parent": "15a17ee4f1c48c77fb96dbae8c8a6178c56234a2",
+  "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "new_modules": [
+    "NLS/FunctionalAnalysis/CurveL2IntegralGraph.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyNonlocalIntegral.lean",
+    "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean",
+    "NLS/ZakharovShabat/ClassicalHierarchyReflectionIntegral.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionNonlocal.lean",
+    "NLS/Articles/MKdVNLSHierarchies/SharpNonlocalHamiltonianReflection.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "theorem",
+      "name": "unitCurve_regular_of_L2_integral_graph",
+      "qualified_name": "NLS.FunctionalAnalysis.unitCurve_regular_of_L2_integral_graph",
+      "file": "NLS/FunctionalAnalysis/CurveL2IntegralGraph.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevNLSHierarchyContinuousGradient",
+      "qualified_name": "NLS.ZakharovShabat.sobolevNLSHierarchyContinuousGradient",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevNLSHierarchyCircleGradient",
+      "qualified_name": "NLS.ZakharovShabat.sobolevNLSHierarchyCircleGradient",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevNLSHierarchyContinuousGradient",
+      "qualified_name": "NLS.ZakharovShabat.analyticAt_sobolevNLSHierarchyContinuousGradient",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevNLSHierarchyCircleGradient",
+      "qualified_name": "NLS.ZakharovShabat.analyticAt_sobolevNLSHierarchyCircleGradient",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyContinuousGradient_eq_classical",
+      "qualified_name": "NLS.ZakharovShabat.sobolevNLSHierarchyContinuousGradient_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyCircleGradient_eq_classical",
+      "qualified_name": "NLS.ZakharovShabat.sobolevNLSHierarchyCircleGradient_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyCircleGradient_coefficients",
+      "qualified_name": "NLS.ZakharovShabat.sobolevNLSHierarchyCircleGradient_coefficients",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "circleUnitCoefficients_toLp_apply",
+      "qualified_name": "NLS.ZakharovShabat.circleUnitCoefficients_toLp_apply",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "unitL2Synthesis_circleUnitCoefficients",
+      "qualified_name": "NLS.ZakharovShabat.unitL2Synthesis_circleUnitCoefficients",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyContinuousGradient_coefficients",
+      "qualified_name": "NLS.ZakharovShabat.sobolevNLSHierarchyContinuousGradient_coefficients",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyCircleUnitRestriction",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyCircleUnitRestriction",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyUnitPotential",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyUnitPotential",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyUnitGradient",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyUnitGradient",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyRPairingCurve",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyRPairingCurve",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyNonlocalPrimitive",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyNonlocalPrimitive",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyIntegratedNonlocal",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyIntegratedNonlocal",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hierarchyUnitPotential",
+      "qualified_name": "NLS.ZakharovShabat.continuous_hierarchyUnitPotential",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hierarchyUnitGradient",
+      "qualified_name": "NLS.ZakharovShabat.continuous_hierarchyUnitGradient",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hierarchyRPairingCurve",
+      "qualified_name": "NLS.ZakharovShabat.continuous_hierarchyRPairingCurve",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hierarchyNonlocalPrimitive",
+      "qualified_name": "NLS.ZakharovShabat.continuous_hierarchyNonlocalPrimitive",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hierarchyIntegratedNonlocal",
+      "qualified_name": "NLS.ZakharovShabat.continuous_hierarchyIntegratedNonlocal",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyUnitPotential_eq_classical",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyUnitPotential_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyUnitGradient_eq_classical",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyUnitGradient_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyNonlocalPrimitive_eq_physical",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyNonlocalPrimitive_eq_physical",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyNonlocalPrimitive_eq_classical",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyNonlocalPrimitive_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyIntegratedNonlocal_eq_classical",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyIntegratedNonlocal_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "circlePrimitive_eq_of_ae_unit",
+      "qualified_name": "NLS.ZakharovShabat.circlePrimitive_eq_of_ae_unit",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyNonlocalIntegral.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchySignedReflectionProjection",
+      "qualified_name": "NLS.ZakharovShabat.hierarchySignedReflectionProjection",
+      "file": "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchySignedReflectionProjection_fixed",
+      "qualified_name": "NLS.ZakharovShabat.hierarchySignedReflectionProjection_fixed",
+      "file": "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "signedReflectedProfile",
+      "qualified_name": "NLS.ZakharovShabat.signedReflectedProfile",
+      "file": "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contDiff_signedReflectedProfile",
+      "qualified_name": "NLS.ZakharovShabat.contDiff_signedReflectedProfile",
+      "file": "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodic_signedReflectedProfile",
+      "qualified_name": "NLS.ZakharovShabat.periodic_signedReflectedProfile",
+      "file": "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "signedReflectedProfile_reflection",
+      "qualified_name": "NLS.ZakharovShabat.signedReflectedProfile_reflection",
+      "file": "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneCoefficient_signedReflectedProfile",
+      "qualified_name": "NLS.ZakharovShabat.periodOneCoefficient_signedReflectedProfile",
+      "file": "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchySignedReflectionProjection_coefficients",
+      "qualified_name": "NLS.ZakharovShabat.hierarchySignedReflectionProjection_coefficients",
+      "file": "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_classicalNLSHierarchyRPairing",
+      "qualified_name": "NLS.ZakharovShabat.continuous_classicalNLSHierarchyRPairing",
+      "file": "NLS/ZakharovShabat/ClassicalHierarchyReflectionIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHierarchyGradient_reflection_integral",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSHierarchyGradient_reflection_integral",
+      "file": "NLS/ZakharovShabat/ClassicalHierarchyReflectionIntegral.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyFTCLeft",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyFTCLeft",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyFTCRight",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyFTCRight",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hierarchyFTCLeft",
+      "qualified_name": "NLS.ZakharovShabat.continuous_hierarchyFTCLeft",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hierarchyFTCRight",
+      "qualified_name": "NLS.ZakharovShabat.continuous_hierarchyFTCRight",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyFTC_eq_of_smooth_reflection",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyFTC_eq_of_smooth_reflection",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyFTC_eq_of_reflection",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyFTC_eq_of_reflection",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyPhysicalGradient",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyPhysicalGradient",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyPhysicalGradient_represents",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyPhysicalGradient_represents",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyCircleGradient_represents",
+      "qualified_name": "NLS.ZakharovShabat.sobolevNLSHierarchyCircleGradient_represents",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyReflection_unit_regular",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyReflection_unit_regular",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyReflection_physical_hasDerivAt",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyReflection_physical_hasDerivAt",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyPhysicalPotential",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyPhysicalPotential",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionNonlocal.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyPhysicalRPairing",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyPhysicalRPairing",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionNonlocal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyNonlocalPrimitive_eq_native_physical",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyNonlocalPrimitive_eq_native_physical",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionNonlocal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyReflection_physical_nonlocal",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyReflection_physical_nonlocal",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyReflectionNonlocal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "proposition11_iii_corrected",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.proposition11_iii_corrected",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SharpNonlocalHamiltonianReflection.lean"
+    }
+  ],
+  "new_theorems": 39,
+  "new_definitions": 15,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "ELAN_HOME and PATH use pinned tooling; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/FunctionalAnalysis/CurveL2IntegralGraph.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/FunctionalAnalysis/CurveL2IntegralGraph.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyNonlocalIntegral.lean",
+    "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean",
+    "NLS/ZakharovShabat/ClassicalHierarchyReflectionIntegral.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionNonlocal.lean",
+    "NLS/Articles/MKdVNLSHierarchies/SharpNonlocalHamiltonianReflection.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1200,
+  "article_transitive_axiom_declarations": 13691,
+  "combined_NLS_transitive_axiom_declarations": 76928,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 70,
+    "old_scopes_preserved": 3933,
+    "added_blocks": 1,
+    "added_scopes": 64,
+    "total_scopes": 3997,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 9179,
+    "scope": "All current NLS/**/*.lean, NLS.lean and the article/combined checkers. All unchanged after validation.",
+    "source_map_digest_sha256": "61a6d946a19c519036be5058ffdb7d23a3f6b2d3526c1963dc173bb8a2c5b728",
+    "private_manifest": "work/sharp-nonlocal-validation-inputs.json",
+    "private_manifest_sha256": "7a5f329d08c06e9660e4d89bcbb84445facabe5b5c87c927cf499d75ce458a00",
+    "reused_checker_prefix_outputs": 1190,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/FunctionalAnalysis/CurveL2IntegralGraph.lean": "f49212e5a5bad30be9375133fbf9bf2f8518e75360a183c8bd661c58e72d2131",
+    "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean": "3f709bbe3deb31a544c4d36c50f9bbaca6e7bff17453003a519cf3c328d2c792",
+    "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean": "a327c5c733dda00980b0d8ef3337d77a170afcf04920410da952a1ba9c399838",
+    "NLS/ZakharovShabat/SobolevHierarchyNonlocalIntegral.lean": "8e976fdbe0c4d5b63c0e69b508a9b00e96b267d277b846f9335988d4332a0df7",
+    "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean": "bd87bbd4944506b77b6cdc209eaeacae70cf8d826ab43cf667b33c4d8f0a0fef",
+    "NLS/ZakharovShabat/ClassicalHierarchyReflectionIntegral.lean": "c25ac2fcc4c33af5c06a4f51991c02e2e29454d985bc7d959760792dc2d74688",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean": "01437e805dac136e88f44518e64a02182ce35daba50f940c52085f0cfd51f077",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean": "09ef9f5863e83fe627fb39efd9268c9019577bd2293dd1869cb0db4a159c25dd",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionNonlocal.lean": "61fac8dc8d1af0ee8d593b19dd5e0c7253fb18ce2293632673fa9b7ffab6dd41",
+    "NLS/Articles/MKdVNLSHierarchies/SharpNonlocalHamiltonianReflection.lean": "da0de53c0cf281a14274ac7cfcc0fffe806fc34525485afae86b4d47fcd8231d",
+    "NLS.lean": "38ce0d48de879b21bf440046b785ae3c27c2014dca9411ea3899b4b02741efd2",
+    "scripts/check_mkdv_nls.py": "8558694419510f99d6f013e370fd34ec8f8b10789f25036128ed54a9ceb58fe2",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "73eb841b0c7982ecc33a22b88e22f22b3a753716be5ec92f640f2a5ff01f656d",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/FunctionalAnalysis/CurveL2IntegralGraph.lean": "33edbb1424dc33937b7fdcdf7d97466f8d0e63faaad88f46aacf79594293e18f",
+    "NLS/ZakharovShabat/SobolevHierarchyPhysicalFields.lean": "54194719179e2806b348c0b4d8221e98459c6b0c4d1796a34ba61fabf6163775",
+    "NLS/ZakharovShabat/SobolevHierarchyNonlocalFields.lean": "1b771e05153f77d315ea8b91d01f93647d648e401f7ed45c38cd4fec15650a51",
+    "NLS/ZakharovShabat/SobolevHierarchyNonlocalIntegral.lean": "aa3b7da64aa61eae164b635ea21e567bada113028ad136d31e4728e8b096fda2",
+    "NLS/ZakharovShabat/SobolevSignedReflectionProjection.lean": "04cae84966925ce714f0a176d3b73a834954067188b6618ae7ab242e8026fb04",
+    "NLS/ZakharovShabat/ClassicalHierarchyReflectionIntegral.lean": "d9f3f243290b24b39b8b5fe8e3c51bc85cc3544624e3efc1a2ab9e61930a8c49",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionIntegral.lean": "742264526ff8370f9cc3768ab18d54761023866a65c67d1aceeb45b47ba70fbc",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionDerivative.lean": "6902dde7c071ff7ee3609e80e4d9b91edeab4ba168a121bf34b24b644ce07f80",
+    "NLS/ZakharovShabat/SobolevHierarchyReflectionNonlocal.lean": "a248497f27a82413e53fdd4ec49254ac4bc598ade18f6cba4d9ca8435daff1e2",
+    "NLS/Articles/MKdVNLSHierarchies/SharpNonlocalHamiltonianReflection.lean": "cedd6478ca1958ccb2ed58bc9400a0d860ae27706cf71c73ff6a7cb823619c6e"
+  },
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "head": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "validated_source_modules": 9089,
+    "validation_report": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation_report_sha256": "6f9f2757468d008417280b5ce7ec68fceff49a1447bba886ff79dadbe7a80742",
+    "private_provenance_manifest": "work/nonlocal-incoming-cache-provenance.json",
+    "manifest_sha256": "7eff8b2f05f21402a7391c21f401cc5f5145c6a70503fd11d62e5737d4a95dc2",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently.",
+    "all_source_and_output_hashes_rechecked_after_validation": true
+  },
+  "validation_scope": "Fresh strict compilation of all ten new modules and the combined aggregate; targeted and combined transitive audits. All 1,190 reused checker-prefix outputs and all 9,089 source-verified incoming compiled modules retain their hashes. This is not a fresh full repository source rebuild.",
+  "proof_scope": {
+    "completed_statement": "Entire corrected Proposition11 on the exact original complex Sobolev domains. Part(iii) now holds at every m>=1 and original complex H^(2m-1) source under either T*phi=+phi or T*phi=-phi, as a genuine AE identity on the physical unit period. R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).",
+    "original_gradients_and_derivatives": "The upper gradient remains the actual original Fourier/L2 gradient. The lower gradient has a proved continuous physical representative with exactly its original coefficients, AC and the actual spatial derivative AE. The primitive is the literal physical zero-initial integral. The original unconjugated gradient meaning is retained, with explicit physical L2 representation theorems for both gradients.",
+    "method": "A bounded signed-reflection projection preserves the exact constraint through smooth approximation in the unchanged original Sobolev norm. Bounded continuous fields, L2 top fields and true primitive operators pass the integral identity to every nonsmooth input. The closed L2 integral graph then gives AC and actual AE HasDerivAt. No extra smoothness, finite-gap, reality or component-proportionality hypothesis is assumed.",
+    "not_claimed": [
+      "Lemma2 native interval H2-to-AC input-space bridge, full Lemma10 including its lower-level-zero case.",
+      "All separately recorded printed proof intermediates, independent cross-mode Cartesian canonicity or every background assertion.",
+      "Whole-paper semantic decomposition or full proof coverage."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "named_statements_covered_with_recorded_corrections": 16,
+    "numbered_equations": 25,
+    "assertion_records": 128,
+    "source_passages": 241,
+    "new_complete_source_passages_reviewed": 5,
+    "source_passages_reviewed": [
+      "passage-212",
+      "passage-213",
+      "passage-214",
+      "passage-215",
+      "passage-216"
+    ],
+    "all_assertion_line_locators_nonblank_and_page_correct": true,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false,
+    "completion_gate": {
+      "exit_code": 2,
+      "open_assertion_records": 72,
+      "open_source_passages": 187
+    }
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f",
+  "previous_validated_progress": "smooth-nonlocal-validation.json"
+}

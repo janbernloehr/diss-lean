@@ -1,0 +1,437 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "article_parent": "73bf8303a316a0877a0b04b59debc3030d0060a1",
+  "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "conflict_resolution": {
+    "file": "NLS.lean",
+    "resolution": "Exact union of both parents aggregate imports, without modifying mathematical proof sources to resolve the conflict."
+  },
+  "new_modules": [
+    "NLS/ZakharovShabat/ClassicalRationalMonodromy.lean",
+    "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean",
+    "NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean",
+    "NLS/ZakharovShabat/L2PrintedNonlocalSign.lean",
+    "NLS/ZakharovShabat/SourceL2MonodromySymmetries.lean",
+    "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean",
+    "NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean",
+    "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "def",
+      "name": "classicalRationalPotential",
+      "qualified_name": "NLS.ZakharovShabat.classicalRationalPotential",
+      "file": "NLS/ZakharovShabat/ClassicalRationalMonodromy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalRational_first_column",
+      "qualified_name": "NLS.ZakharovShabat.classicalRational_first_column",
+      "file": "NLS/ZakharovShabat/ClassicalRationalMonodromy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalRational_second_column",
+      "qualified_name": "NLS.ZakharovShabat.classicalRational_second_column",
+      "file": "NLS/ZakharovShabat/ClassicalRationalMonodromy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalMonodromy_rational",
+      "qualified_name": "NLS.ZakharovShabat.classicalMonodromy_rational",
+      "file": "NLS/ZakharovShabat/ClassicalRationalMonodromy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiscriminantGradient_rational_zero",
+      "qualified_name": "NLS.ZakharovShabat.classicalDiscriminantGradient_rational_zero",
+      "file": "NLS/ZakharovShabat/ClassicalRationalMonodromy.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalDiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.classicalDiscriminantXi",
+      "file": "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalDiscriminantRPairing",
+      "qualified_name": "NLS.ZakharovShabat.classicalDiscriminantRPairing",
+      "file": "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_classicalDiscriminantRPairing",
+      "qualified_name": "NLS.ZakharovShabat.continuous_classicalDiscriminantRPairing",
+      "file": "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_classicalDiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.continuous_classicalDiscriminantXi",
+      "file": "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalDiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.hasDerivAt_classicalDiscriminantXi",
+      "file": "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalDiscriminantGradient_spatial",
+      "qualified_name": "NLS.ZakharovShabat.hasDerivAt_classicalDiscriminantGradient_spatial",
+      "file": "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiscriminantXi_zero",
+      "qualified_name": "NLS.ZakharovShabat.classicalDiscriminantXi_zero",
+      "file": "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiscriminantXi_eq_R_integral",
+      "qualified_name": "NLS.ZakharovShabat.classicalDiscriminantXi_eq_R_integral",
+      "file": "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalPrintedDiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.classicalPrintedDiscriminantXi",
+      "file": "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalPrintedDiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.hasDerivAt_classicalPrintedDiscriminantXi",
+      "file": "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiscriminantRPairing_rational_zero",
+      "qualified_name": "NLS.ZakharovShabat.classicalDiscriminantRPairing_rational_zero",
+      "file": "NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalDiscriminantXi_rational_zero",
+      "qualified_name": "NLS.ZakharovShabat.hasDerivAt_classicalDiscriminantXi_rational_zero",
+      "file": "NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalPrintedDiscriminantXi_rational_zero",
+      "qualified_name": "NLS.ZakharovShabat.hasDerivAt_classicalPrintedDiscriminantXi_rational_zero",
+      "file": "NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "printed_nonlocal_sign_not_eqOn",
+      "qualified_name": "NLS.ZakharovShabat.printed_nonlocal_sign_not_eqOn",
+      "file": "NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "printed_nonlocal_spatial_equation_false",
+      "qualified_name": "NLS.ZakharovShabat.printed_nonlocal_spatial_equation_false",
+      "file": "NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "printed_nonlocal_spatial_equation_false_ae",
+      "qualified_name": "NLS.ZakharovShabat.printed_nonlocal_spatial_equation_false_ae",
+      "file": "NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean"
+    },
+    {
+      "kind": "def",
+      "name": "l2WholeLinePrintedDiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLinePrintedDiscriminantXi",
+      "file": "NLS/ZakharovShabat/L2PrintedNonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineDiscriminantGradient_of_continuous",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_of_continuous",
+      "file": "NLS/ZakharovShabat/L2PrintedNonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLinePrintedDiscriminantXi_of_continuous",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLinePrintedDiscriminantXi_of_continuous",
+      "file": "NLS/ZakharovShabat/L2PrintedNonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "printed_nonlocal_spatial_equation_false_original_L2",
+      "qualified_name": "NLS.ZakharovShabat.printed_nonlocal_spatial_equation_false_original_L2",
+      "file": "NLS/ZakharovShabat/L2PrintedNonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_original_source_printed_nonlocal_sign_false",
+      "qualified_name": "NLS.ZakharovShabat.exists_original_source_printed_nonlocal_sign_false",
+      "file": "NLS/ZakharovShabat/L2PrintedNonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2Monodromy_sourceComponentSwap",
+      "qualified_name": "NLS.ZakharovShabat.l2Monodromy_sourceComponentSwap",
+      "file": "NLS/ZakharovShabat/SourceL2MonodromySymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2Monodromy_sourceSpatialReflection",
+      "qualified_name": "NLS.ZakharovShabat.l2Monodromy_sourceSpatialReflection",
+      "file": "NLS/ZakharovShabat/SourceL2MonodromySymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2Monodromy_sourceMidpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.l2Monodromy_sourceMidpointReflection",
+      "file": "NLS/ZakharovShabat/SourceL2MonodromySymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2Monodromy_sourceReciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.l2Monodromy_sourceReciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceL2MonodromySymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceDiscriminantBoundaryConstant",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminantBoundaryConstant",
+      "file": "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceReciprocalScaling_neg_one",
+      "qualified_name": "NLS.ZakharovShabat.sourceReciprocalScaling_neg_one",
+      "file": "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminantBoundaryConstant_neg",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminantBoundaryConstant_neg",
+      "file": "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminantBoundaryConstant_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminantBoundaryConstant_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalRoot_neg_source",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalRoot_neg_source",
+      "file": "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "source_reflection_boundary_constant_odd",
+      "qualified_name": "NLS.ZakharovShabat.source_reflection_boundary_constant_odd",
+      "file": "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "source_reflection_canonical_root_odd",
+      "qualified_name": "NLS.ZakharovShabat.source_reflection_canonical_root_odd",
+      "file": "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "source_reflection_normalized_boundary_even",
+      "qualified_name": "NLS.ZakharovShabat.source_reflection_normalized_boundary_even",
+      "file": "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "l2NormalizedDiscriminantGradient",
+      "qualified_name": "NLS.ZakharovShabat.l2NormalizedDiscriminantGradient",
+      "file": "NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "l2NormalizedDiscriminantRPairing",
+      "qualified_name": "NLS.ZakharovShabat.l2NormalizedDiscriminantRPairing",
+      "file": "NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2DiscriminantXi_div_eq_normalized_integral",
+      "qualified_name": "NLS.ZakharovShabat.l2DiscriminantXi_div_eq_normalized_integral",
+      "file": "NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_l2NormalizedDiscriminantGradient",
+      "qualified_name": "NLS.ZakharovShabat.ae_hasDerivAt_l2NormalizedDiscriminantGradient",
+      "file": "NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "l2NormalizedNonlocalResidual",
+      "qualified_name": "NLS.ZakharovShabat.l2NormalizedNonlocalResidual",
+      "file": "NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_l2NormalizedNonlocalResidual_eq_boundary",
+      "qualified_name": "NLS.ZakharovShabat.ae_l2NormalizedNonlocalResidual_eq_boundary",
+      "file": "NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "section2_operator_convention",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.section2_operator_convention",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonlocal_sign_actual_gradient_normalization",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.nonlocal_sign_actual_gradient_normalization",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_v_corrected_nonlocal_integral",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_v_printed_nonlocal_sign_false",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonlocal_sign_test_monodromy",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.nonlocal_sign_test_monodromy",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonlocal_sign_test_derivatives",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.nonlocal_sign_test_derivatives",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "corollary9_ii_corrected_normalized_discriminant_gradients",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.corollary9_ii_corrected_normalized_discriminant_gradients",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean"
+    }
+  ],
+  "new_theorems": 42,
+  "new_definitions": 9,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "ELAN_HOME and PATH use pinned tooling; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/ZakharovShabat/ClassicalRationalMonodromy.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/ZakharovShabat/ClassicalRationalMonodromy.lean",
+    "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean",
+    "NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean",
+    "NLS/ZakharovShabat/L2PrintedNonlocalSign.lean",
+    "NLS/ZakharovShabat/SourceL2MonodromySymmetries.lean",
+    "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean",
+    "NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean",
+    "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1144,
+  "article_transitive_axiom_declarations": 13250,
+  "combined_NLS_transitive_axiom_declarations": 76497,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 61,
+    "old_scopes_preserved": 3600,
+    "added_blocks": 1,
+    "added_scopes": 59,
+    "total_scopes": 3659,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 9123,
+    "scope": "All current NLS/**/*.lean, NLS.lean and the article/combined checkers. All unchanged after validation.",
+    "source_map_digest_sha256": "5a13cb42c636e8f9ac0d5864dfa0f80f3f83654f2a92e5083247abaf03553e72",
+    "private_manifest": "work/nonlocal-sign-validation-inputs.json",
+    "private_manifest_sha256": "41520974823768dc048d35204b3ecd2c8d9c30ed46bf26b175f2804f2fdffafe",
+    "reused_checker_prefix_outputs": 1136,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/ZakharovShabat/ClassicalRationalMonodromy.lean": "085df39bfa45fbdf1e9eead40fb4543f97aa80d77056f0a47fced795349281cd",
+    "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean": "e963702b4bc0ee4c57e2660356afdd4f58ba112e76f30a4301f895626a156c8d",
+    "NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean": "f74d7810d61039f00092faadbd42bb3d9f37a1443a6eb34bd3f6643c6e5c9428",
+    "NLS/ZakharovShabat/L2PrintedNonlocalSign.lean": "69aae1853cea6ada365e03a5eb10a453b966e974261fe0a24dae94527b21a71f",
+    "NLS/ZakharovShabat/SourceL2MonodromySymmetries.lean": "9956a69b82073a6562cbe8c0a7751305ca4ad4fc89b8db3c5f5a956f5f9d493a",
+    "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean": "5a28d1fee32eae8995c51eae17a0c79308bed2b88a611a0dac71f9ae27053596",
+    "NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean": "d356b69bb76cc7897138d31e61f63f919e41b8bdfa59e3443d4cc9a2c91894d4",
+    "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean": "deb0fb48d6e594509f5c97aec450c4efb34f57d3224be671726f7228c6de3e9d",
+    "NLS.lean": "f3d39de0be214bf1122b0495030077d80656722355004ce3ac36b82b7acc7488",
+    "scripts/check_mkdv_nls.py": "23a4f80cfe21a80045ade6d5ce2356fb04ca01f24b1dff857e24fdfe8a5964e7",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "de651224e25fd752ed584477048b42fa2370651906940de3d0313981d1259d65",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/ZakharovShabat/ClassicalRationalMonodromy.lean": "bbcabf2e6b4e2e84bceb23c249941aee9501b9fc94175bdb0bf4a3f64cf08cb7",
+    "NLS/ZakharovShabat/ClassicalDiscriminantXiIntegral.lean": "2e27a294685a5f86eb598f2d6e3490d3d16e36976f5d8b871c82ee164e57ef3b",
+    "NLS/ZakharovShabat/DiscriminantNonlocalSignCounterexample.lean": "664e462593dbd7f1de892946116c43f34de406d21fe2769ea80e3bd0796ea2e6",
+    "NLS/ZakharovShabat/L2PrintedNonlocalSign.lean": "0f0f3a3bf3b4c82984c0160e8e2f067e95e03a9dd19ea188f93518947c1e4dc6",
+    "NLS/ZakharovShabat/SourceL2MonodromySymmetries.lean": "52ac29316f7aa310792b78ac98f11436c1afc38d0265e7ad13c3173cb803dc2e",
+    "NLS/ZakharovShabat/SourceReflectionBoundaryConstant.lean": "9d380cd98e12235a3be5d33a8e67a5221cd826f71c5dbd47e9cca54497c37953",
+    "NLS/ZakharovShabat/L2NormalizedNonlocalGradient.lean": "81b811cc63b5d949dd4e8d71bd29d5adefd931cf799cc83a97b2337215e4b8e4",
+    "NLS/Articles/MKdVNLSHierarchies/NonlocalSign.lean": "74454d3faacf7db651fde53bc4f897f491614a9f0646668c74a43ef9b65985bc"
+  },
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "head": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "validated_source_modules": 9089,
+    "validation_report": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation_report_sha256": "6f9f2757468d008417280b5ce7ec68fceff49a1447bba886ff79dadbe7a80742",
+    "private_provenance_manifest": "work/nonlocal-incoming-cache-provenance.json",
+    "manifest_sha256": "7eff8b2f05f21402a7391c21f401cc5f5145c6a70503fd11d62e5737d4a95dc2",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently.",
+    "all_source_and_output_hashes_rechecked_after_validation": true
+  },
+  "validation_scope": "Fresh strict compilation of all eight new modules and the merged combined aggregate; targeted and combined transitive audits. Incoming compiled imports are source-hash-verified against the validated main checkout and their hashes remain unchanged. This is not a fresh full repository source rebuild.",
+  "proof_scope": {
+    "resolved": "The literal Section2 nonlocal sign is minus; an actual original complex H0 source refutes the printed plus-sign spatial equation even almost everywhere.",
+    "further_progress": [
+      "Correct typed nonlocal residual and spectral reflection for actual canonical-root-normalized discriminant gradients.",
+      "Original complex H0 full endpoint monodromy matrices under P, pure T, combined PT and arbitrary nonzero complex reciprocal scaling."
+    ],
+    "not_claimed": [
+      "The actual primitive F gradient interface on the full original cut complement.",
+      "Complete xi covariance, all-real-x Appendix fundamental-matrix source correspondence, or the separate p5/Appendix operator adapter.",
+      "Whole-paper semantic decomposition or full proof coverage."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "assertion_records": 108,
+    "source_passages": 241,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f"
+}

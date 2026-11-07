@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "mkdv-nls-hierarchies",
-  "status": "all_main_theorems_proved_with_documented_source_corrections",
+  "status": "in_progress_full_paper",
   "source": {
     "abstract_url": "https://arxiv.org/abs/1601.07580v1",
     "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
@@ -430,7 +430,33 @@
     },
     {
       "label": "Theorem 6",
-      "page": 13
+      "page": 13,
+      "status": "proved_with_minus_sign_xi_correction_in_Section2_convention",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_phase",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_endpoint_labels",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_swap",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_phase",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_swap_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_reflection_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_phase_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iv",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_gradient_agreement",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_pointwise",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_gap_segments",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_neighborhood_inside",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_root_primitive_neighborhood"
+      ],
+      "remaining": "Separate printed proof intermediates and operator adapter are tracked in the full-paper ledger."
     },
     {
       "label": "Lemma 10",
@@ -447,7 +473,13 @@
     },
     {
       "label": "Proposition 11",
-      "page": 17
+      "page": 17,
+      "status": "parts_i_and_corrected_ii_proved_part_iii_open",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.proposition11_i",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
+      ],
+      "remaining": "Full corrected typed nonlocal part(iii)."
     },
     {
       "label": "Lemma 2",
@@ -1644,7 +1676,15 @@
       "The explicit parabolic hypotheses of the terminal-release lemma are now derived at every actual open Dirichlet endpoint in MiuraOpenEndpointMonodromy.lean. The actual native profile translation is identified in MiuraNativePeriodicProfile.lean. Subsequent modules prove simultaneous interior divisors, canonical terminal generator values and the full final angle sum."
     ]
   },
-  "latest_validation": "PR3 main merge validation: fresh strict compilation of the additional main dNLS module and merged aggregate; all1113 unchanged article private outputs hash-checked. Targeted audit9615, combined audit54506, and all219 incoming main modules imported together with the merged aggregate and audited for55356 NLS declarations. All1117 frozen inputs and original pinned mathlib import hashes match. No mathematical proof source or audit scope changed. Full dependency tree not rebuilt.",
+  "latest_validation": {
+    "report": "higher-action-symmetry-validation.json",
+    "status": "passed_for_recorded_progress",
+    "whole_paper_complete": false,
+    "base_commit": "030c637652ec2e7269a2700fc0c469f613da6f87",
+    "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+    "article_audit": 13812,
+    "combined_audit": 77043
+  },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
     "declarations": [
@@ -1667,5 +1707,171 @@
       "The three documented source corrections remain: Theorem2(ii) matrix, Theorem3 positive sign and Theorem4(ii) reverse mean squared."
     ]
   },
-  "integration_validation": "merge-validation.json"
+  "integration_validation": "merge-validation.json",
+  "main_theorems_status": "all_main_theorems_proved_with_documented_source_corrections",
+  "full_paper_coverage": {
+    "ledger": "full-paper-coverage.json",
+    "status": "in_progress",
+    "semantic_inventory_complete": false,
+    "main_theorems_complete": true,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
+    "initial_semantic_assertions": 128,
+    "source_passages": 241
+  },
+  "full_paper_expansion": {
+    "date": "2026-11-06",
+    "modules": [
+      "NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean",
+      "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+      "NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean",
+      "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean"
+    ],
+    "new_public_theorems": 28,
+    "new_public_definitions": 1,
+    "certified_corrections": [
+      "Scalar focusing/defocusing cubic coefficient two, with constant-profile counterexamples.",
+      "mKdV Cartesian second equation uses x, with action preservation and a counterexample.",
+      "Lemma14 explicitly requires a nonempty real slice, with a counterexample."
+    ],
+    "certified_Theorem6_parts": "P and pure T discriminants, spectral derivatives and full Frechet cotangents on every complex finite exponent p>1. No pointwise-gradient, phase, endpoint-label, root or spatial-ODE completion is inferred.",
+    "remaining": "See full-paper-coverage.json; all pending passages remain completion obligations."
+  },
+  "whole_paper_symmetry_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 73,
+    "new_definitions": 12,
+    "source_modules": 17,
+    "new_named_clause_completion": [
+      "Proposition11(i), all original-domain P/T/phase L2-gradient identities.",
+      "Theorem6(ii), all spectral derivative identities.",
+      "Theorem6(iv), all normalized canonical-root identities."
+    ],
+    "other_proved_progress": [
+      "Arbitrary nonzero complex reciprocal scaling and all real source phases.",
+      "All signed periodic endpoint slots under P/T/phases.",
+      "Original L2 whole-line physical gradient spatial equation, scalar integral and periodicity; no monodromy-entry division.",
+      "Smooth H1 counterexample refuting the unrestricted generic upper-right monodromy-entry claim."
+    ],
+    "remaining": "Historical milestone; the later nonlocal-sign milestone resolves its sign obligation. Other open claims are in full-paper-coverage.json."
+  },
+  "whole_paper_nonlocal_sign_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 42,
+    "new_definitions": 9,
+    "source_modules": 8,
+    "correction": "xi=delta-2*i*integral(R*phi dot grad Delta) in the literal Section2 convention. Actual original H0 counterexample refutes printed plus, even almost everywhere.",
+    "further_progress": "Correct typed canonical-root-normalized actual-gradient nonlocal reflection residual and original H0 endpoint monodromy matrices.",
+    "remaining": "Historical milestone; the primitive-gradient interface and corrected Corollary9(ii) are completed by the next milestone. Full xi covariance, all-real-x fundamental symmetry and other pending claims remain open."
+  },
+  "whole_paper_primitive_nonlocal_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 9,
+    "new_definitions": 2,
+    "source_modules": 4,
+    "completed_clause": "Corrected Corollary9(ii), actual full primitive, common original complex H0 neighborhood containing every real source, entire moving cut complement.",
+    "interface": "Every original Hilbert variation, unique continuous periodic physical gradient. No extra primitive-gradient hypothesis.",
+    "remaining": "Historical milestone; the next pointwise-symmetry milestone proves Corollary9(i) and both clauses on one common source neighborhood. Corollary8, full Lemma10 and Proposition11(iii) remain open."
+  },
+  "whole_paper_pointwise_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 28,
+    "new_definitions": 6,
+    "source_modules": 8,
+    "completed_clauses": [
+      "Theorem6(iii), original H0 actual physical pointwise P/T/phase gradients, every real x.",
+      "Complete corrected physical Theorem6(v), including all xi symmetries.",
+      "Both corrected Corollary9 clauses for the same actual full primitive on one common open complex H0 neighborhood containing every real source, throughout the moving cut complement."
+    ],
+    "other_progress": "Actual full unit-interval fundamental matrices under P, PT and arbitrary nonzero complex reciprocal scaling.",
+    "remaining": [
+      "Theorem6 part(i): invariant W and explicit source gap-segment interfaces. Parts(ii), original H0 pointwise(iii), (iv), and complete corrected physical(v) are proved. The separate p5/Appendix operator adapter remains open.",
+      "Corollary8, full Lemma10 and nonlocal Proposition11(iii). Both corrected Corollary9 clauses are complete for the same actual full primitive and common original complex H0 neighborhood on the entire moving cut complement, with no extra primitive-gradient assumption.",
+      "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
+      "Lemma13 full fundamental matrices at all real spatial points and the p5/Appendix-vs-Section2 operator adapter. Full unit-interval matrices and all endpoint monodromy matrices now have original complex H0 P/PT/arbitrary-phase interfaces.",
+      "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
+      "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
+    ]
+  },
+  "whole_paper_invariant_primitive_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 53,
+    "new_definitions": 5,
+    "source_modules": 12,
+    "completed_clauses": [
+      "Complete corrected Theorem6, including invariant connected source neighborhood and explicit signed gap segments.",
+      "Corollary8 actual value symmetries throughout the original filled spectral domain, with source-gradient identities on the true open joint moving-cut complement."
+    ],
+    "domain_obstruction": "At lambda0=0 and source0 the filled fixed-source spectral domain contains lambda0, but the source slice is not a neighborhood of0. No blanket nondifferentiability or arbitrary-extension claim is made.",
+    "remaining": [
+      "Theorem6 and corrected Corollaries8-9 named statements are now complete in the literal Section2 convention, with explicit xi sign and source-gradient spectral-domain qualifications. Their separately recorded printed proof intermediates and the p5/Appendix operator adapter still require individual correspondence review.",
+      "Full Lemma10 and nonlocal Proposition11(iii), including exact higher-action gradient recurrences and original Sobolev endpoint domains. Corollaries8-9 have actual full-primitive interfaces with no assumed gradient identification.",
+      "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
+      "Lemma13 full fundamental matrices at all real spatial points and the p5/Appendix-vs-Section2 operator adapter. Full unit-interval matrices and all endpoint monodromy matrices now have original complex H0 P/PT/arbitrary-phase interfaces.",
+      "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
+      "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
+    ]
+  },
+  "whole_paper_whole_line_matrix_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 41,
+    "new_definitions": 8,
+    "source_modules": 8,
+    "completed_statement": "Lemma13 at every real spatial point on original complex H0 (hence real-type H0), with explicit component-order/phase correction and a real-type printed-statement counterexample.",
+    "convention_adapter": "Page5/Appendix upper-phi2 equals Section2 at P*phi; lambda and integer labels reflect and signed slots exchange. Either correct the local operator order or use the proved inverse phase.",
+    "remaining": [
+      "Theorem6, corrected Corollaries8-9 and corrected Lemma13 named statements are complete with explicit xi sign, source-gradient spectral-domain and Appendix component-order/phase qualifications. Their separately recorded printed proof intermediates still require individual correspondence review; the operator adapter itself is now checked.",
+      "Full Lemma10 and nonlocal Proposition11(iii), including exact higher-action gradient recurrences and original Sobolev endpoint domains. Corollaries8-9 have actual full-primitive interfaces with no assumed gradient identification.",
+      "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
+      "Remaining printed proof intermediates, including squared-Floquet-product algebra and the actual contour-change steps in symmetry proofs, unless individually matched by an existing assertion. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter are now complete.",
+      "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
+      "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
+    ]
+  },
+  "whole_paper_physical_miura_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 28,
+    "new_definitions": 6,
+    "source_modules": 5,
+    "certified": "Full original H1 physical Lemma2 matrix clauses; arbitrary AC physical eigenfunction scalar/vector intertwining; literal transformed columns and lambda^2 proof correction.",
+    "not_claimed": "Standalone native interval H2 source-space bridge, geometric Lemma3, full Lemma10, Proposition11(iii), every proof intermediate/background claim or whole-paper completion."
+  },
+  "whole_paper_geometric_multiplicity_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 10,
+    "new_definitions": 4,
+    "source_modules": 3,
+    "completed_statement": "Full named Lemma3 including actual full-domain geometric multiplicities at every positive-index endpoint, even closed gaps.",
+    "method": "Explicit linear equivalence of entire original Dirac H1 and actual Hill H2 eigenspaces; exact native Miura potential coefficients and full H2 recovery. Complex H1 sources and all nonzero frequencies included.",
+    "not_claimed": "Zero-frequency eigenspace equivalence; native interval H2-to-AC input-space bridge for Lemma2; full Lemma10 or Proposition11(iii); whole-paper completion."
+  },
+  "whole_paper_smooth_nonlocal_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 24,
+    "new_definitions": 4,
+    "source_modules": 6,
+    "certified": "All-order corrected smooth Proposition11(iii), both reflection signs, every real x. Actual physical gradients, independent coupling, exact primitive and vanishing boundary constant.",
+    "correction": "R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).",
+    "remaining": "Full original H^(2m-1) extension; no source passage is marked fully covered from this smooth-only proof."
+  },
+  "whole_paper_sharp_nonlocal_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 39,
+    "new_definitions": 15,
+    "source_modules": 10,
+    "completed_statement": "Entire corrected Proposition11, including nonlocal part(iii) at every original complex H^(2m-1) source under either T sign.",
+    "derivative_and_gradient": "Actual original L2 upper gradient; continuous lower representative with exact original coefficients, AC and genuine spatial derivative AE on the physical unit period.",
+    "method": "Bounded signed-reflection projection preserves the constraint through smooth approximation. Bounded physical primitives and the L2 integral graph pass to the full nonsmooth Sobolev domain.",
+    "correction": "R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)). Part(ii) retains its already checked correction to R=diag(i,-i).",
+    "remaining": [
+      "Theorem6, corrected Corollaries8-9 and corrected Lemma13 named statements are complete with explicit xi sign, source-gradient spectral-domain and Appendix component-order/phase qualifications. Their separately recorded printed proof intermediates still require individual correspondence review; the operator adapter itself is now checked.",
+      "Lemma2 now has full original H1 physical matrix clauses and arbitrary AC physical-eigenfunction intertwining; its native interval H2-to-AC input-space identification remains explicit. Full Lemma3, including actual original-domain geometric eigenspace multiplicities, is now proved.",
+      "Full Lemma10 higher-action gradient symmetries and local/nonlocal recurrences, including its printed lower-level-zero case. Full corrected Proposition11 is now proved on all original complex Sobolev domains; its separately recorded printed proof intermediates still require individual correspondence review.",
+      "Remaining printed proof intermediates, including squared-Floquet-product algebra and the actual contour-change steps in symmetry proofs, unless individually matched by an existing assertion. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter are now complete.",
+      "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
+      "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
+    ]
+  }
 }

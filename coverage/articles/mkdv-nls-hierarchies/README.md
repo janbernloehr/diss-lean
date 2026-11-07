@@ -1,6 +1,6 @@
 # The mKdV and NLS hierarchies revisited — verification coverage
 
-Status: **All main theorems are proved with the documented source corrections.
+Status: **Whole-paper verification is in progress. All main theorems are proved with the documented source corrections.
 Theorems 1 and 2 hold on their original complex Sobolev domains (with the
 matrix correction in Theorem2(ii)). Theorem3 holds at every order on the
 full real H^(m-1) domain, including closed actions, with the corrected
@@ -42,6 +42,376 @@ angle-sum factor is asserted. See the final milestone and validation below.
 
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
+
+
+## Whole-paper scope (2026-11-06)
+
+The completion target now includes **every mathematical assertion** in the assigned
+version: all 18 named statements, all 25 numbered equations, unnumbered setup
+and background claims, mathematical remarks, proof intermediates and both
+appendices. Citing a reference does not remove an invoked claim from this target.
+
+[`full-paper-coverage.json`](full-paper-coverage.json) captures every nonblank
+passage in the mathematical body by source lines, PDF page and hash. Its initial
+semantic inventory records named statements, numbered equations and additional
+prose/proof obligations. Passage decomposition and correspondence review are
+explicitly **incomplete**. A pending passage cannot be silently treated as proved.
+The source locator convention and exact private-source hashes are in the ledger.
+
+The main theorems remain proved with the earlier corrections, but important
+whole-paper work remains: full Lemma 10;
+the native interval H2-to-AC source bridge in Lemma 2;
+printed proof intermediates; and background claims including independent
+cross-mode mKdV Cartesian canonicity. Theorem 6, Corollaries 8–9 and Lemma 13
+now have the corrected source interfaces described in the later milestones.
+Analytic zero orders do not certify geometric multiplicities.
+
+The P and pure T clauses of Theorem 6(i)–(iii) now have source interfaces
+for the actual discriminant, spectral derivative and full Fréchet cotangent
+on every complex finite exponent p>1, including the original L2 domain.
+Pure T is implemented without component exchange. Pointwise gradient
+identification and the other Theorem 6 clauses remain separate obligations.
+
+`python3 scripts/check_mkdv_nls_coverage.py` checks the inventory structure.
+With `--source-text` it also verifies exact source passage hashes and coverage;
+with `--require-complete` it rejects any unfinished inventory. This structural
+check does not replace mathematical correspondence review or Lean checking.
+
+The current progress validation is in [`full-paper-validation.json`](full-paper-validation.json):
+28 new theorems and one definition; fresh strict compilation of all five new
+modules and the combined aggregate; targeted audit of 9,799 declarations and
+combined audit of 61,298. Imported compiled sources are hash-verified against
+the validated incoming-main checkout. No fresh full repository source rebuild
+is claimed.
+
+Additional checked corrections:
+
+- Page 2: the physical NLS energy gives `i*v_t = -v_xx +/- 2*|v|^2*v`.
+  Both printed scalar reductions omit the factor two. Constant profiles refute
+  coefficient one. `IntroductionCorrections.lean` exports the exact reductions
+  and counterexamples.
+- Page 4: the mKdV Cartesian equations are `x_dot = eta*y`,
+  `y_dot = -eta*x`. The printed second equation repeats `y`. The actual rotation
+  derivative, action preservation and a counterexample are checked.
+- Appendix B: Lemma 14 explicitly requires a nonempty real slice.
+  `AnalyticIdentity.lean` proves the general Banach-space statement and a
+  counterexample when the complex domain misses its real form.
+
+Other issues remain audit obligations: scalar nonlocal integrals subtracted from
+vector gradients in Corollary 9(ii), Lemma 10(iii) and Proposition 11(iii); the
+spectral domain in Corollary 9; high-energy Hill neighborhoods and mean shifts;
+and the separate operator-convention adapter. The nonlocal sign is resolved below.
+The generic-entry assertion
+now has a checked complex triangular counterexample and a division-free replacement.
+No corrected formula for these is counted as proved until its actual
+mathematical statement and original domain have been validated.
+
+## 2026-11-07 — Original-domain symmetries and division-free spatial equation
+
+Proposition 11(i) is now fully checked on the exact complex H^(k-1) domain,
+including pure midpoint T, for every k>=1. The Riccati recurrence proves
+`rho_n(Ta,Tb)(x) = (-1)^n*rho_n(a,b)(1-x)`; literal integral substitution,
+smooth density and the actual Frechet derivative then give the L2 gradients.
+
+Theorem 6(ii) and (iv) are complete for the original spectral functions,
+including every real phase, every complex spectral parameter and the exact
+root signs. The original signed endpoint slots are also checked under all
+three symmetries. The proof permits every nonzero complex reciprocal scaling
+and every finite source exponent p>1, so it includes the original L2 domain.
+Theorem 6 as a whole is still partial: see the detailed ledger.
+
+The actual physical L2 discriminant gradient now has its spatial equation on
+the whole real line, including negative times and all period seams. The
+actual fundamental-matrix continuation agrees with the Frechet gradient on a
+unit period. Determinant-one Floquet transport proves period-one gradient and
+scalar coefficient. The scalar integral follows from genuine absolute
+continuity, not merely an assumed a.e. derivative. No nonzero monodromy entry
+or generic spectral parameter is required.
+
+There is a checked nonzero constant smooth H1 potential `(0,1)` whose
+upper-right monodromy entry is identically zero for all spectral parameters.
+Thus the unrestricted generic-entry assertion in the page-14 proof is false.
+The replacement proof avoids it. The physical convention gives
+`xi = M11-M22 - 2*i*integral(R*phi dot grad Delta)`, with R=diag(i,-i).
+At that milestone the printed plus sign was still a source-convention review
+obligation. The following milestone resolves it; full xi covariance remains open.
+
+This increment adds 73 theorems and 12 definitions in 17 modules. Its strict
+compilation, aggregate import and transitive-audit evidence is recorded in
+[`symmetry-validation.json`](symmetry-validation.json). Whole-paper coverage
+remains **in progress**, including the unfinished passage decomposition.
+
+## 2026-11-07 — Nonlocal sign resolved on the original H0 domain
+
+For the literal Section 2 operator, the identity-normalized fundamental matrix
+and the actual unconjugated Frechet gradient G=grad Delta, the correct formula is
+
+`xi(x) = M11-M22 - 2*i*integral_0^x (R*phi dot G)`, `R=diag(i,-i)`.
+
+The minus sign is now proved and the printed plus-sign spatial equation is
+formally refuted even almost everywhere in the original complex H0 space.
+Take the periodic L2 class of `phi(x)=(-2*i,i/(1+x^2))` on [0,1], at lambda=0.
+The actual normalized ODE gives
+`M(1)=[[2,1+pi/2],[1,1+pi/4]]`.
+The actual xi derivative at zero is `2-pi`, while the printed definition gives
+`pi-2`. The proof extends the obstruction to a positive-measure set and
+transfers it through the physical/Fourier L2 equivalence. The periodic source
+is not claimed to be H1; no endpoint smoothness is assumed by Theorem 6(v).
+
+For normalized actual gradients g=G/root, the correctly typed residual is
+`Dg - 2*lambda*R*g + 2*i*J*phi*integral_0^x(R*phi dot g)`.
+It equals `(M11-M22)/root * J*phi` almost everywhere. At pure T-even or
+T-odd sources the quotient is even in lambda, proving the corrected
+Corollary 9(ii) identity for these normalized actual discriminant gradients.
+At this milestone, identifying them with the original primitive F gradients
+was still open. The next milestone closes that interface and corrected part(ii);
+full Corollary 9 and Proposition 11(iii) remain open.
+
+Actual endpoint monodromy matrix symmetries are also proved for every original
+complex H0 source under P, pure T, combined PT and all nonzero complex
+reciprocal scalings. They include arbitrary real phases and imply the exact
+boundary quotient parity used above. All-real-x fundamental-matrix symmetries
+and the separate p5/Appendix-vs-Section2 operator adapter remain open.
+
+Eight new modules add 42 theorems and 9 definitions. Current main is integrated
+with the exact union of aggregate imports. Validation is recorded in
+[`nonlocal-sign-validation.json`](nonlocal-sign-validation.json).
+The ledger has 108 assertion records and all 241 source passages; semantic
+decomposition and whole-paper coverage remain **in progress**.
+
+## 2026-11-07 — Corrected Corollary 9(ii) for the actual full primitive
+
+The constructed full Abelian primitive now has exactly the normalized physical
+field `grad F = grad Delta/root` as its actual Frechet gradient. The integral
+formula holds for every original complex Hilbert direction. A separate
+uniqueness proof shows that every continuous periodic representative of that
+cotangent equals this field pointwise, including all period seams.
+
+One common open complex H0 neighborhood contains every real source and covers
+the entire moving cut complement. At any pure T-even or T-odd source in that
+neighborhood, negating lambda preserves the complete cut complement. The
+corrected typed nonlocal reflection identity is therefore proved for both
+actual primitive gradients throughout their proper spectral domain. No
+primitive-gradient hypothesis is assumed in the final existence theorem.
+
+This completes **corrected Corollary 9(ii)**: the scalar nonlocal integral
+multiplies `J*phi` and has a positive sign on the residual's left side, and
+lambda is restricted to the domain where the primitive gradient exists.
+At that milestone, part(i) and xi covariance were still open; the next
+milestone closes both. Other ledger obligations remain open.
+Four strictly checked modules add 9 theorems and 2 definitions; validation is
+recorded in [`primitive-nonlocal-validation.json`](primitive-nonlocal-validation.json).
+The ledger now has 110 assertion records and 241 source passages. Whole-paper
+semantic decomposition and proof coverage remain **in progress**.
+
+## 2026-11-07 — Pointwise symmetries, corrected spatial statement and full Corollary 9
+
+The actual physical discriminant gradients now have every P, pure T and
+arbitrary real phase identity at every original complex H0 source, every
+complex spectral parameter and every real spatial point. These are pointwise
+fields representing the actual Frechet derivative, not only cotangent maps.
+The actual whole-line xi also has all three exact symmetries. Its checked
+periodicity, corrected minus-sign integral and spatial equation therefore
+complete corrected physical Theorem 6(v) in the literal Section 2 convention.
+Theorem 6(iii) is complete on the original H0 domain as well.
+
+Both corrected Corollary 9 clauses now hold for the same constructed full
+primitive on one common open complex H0 neighborhood containing every real
+source. The entire moving cut complement is covered, with exact spectral
+negation invariance under either source constraint. Every Hilbert direction
+identifies the actual primitive gradient; continuous periodic representatives
+are unique. Part(ii) uses the positive nonlocal residual with J*phi, and both
+parts use the spectral domain where the primitive gradient exists.
+
+The actual full fundamental matrices on the whole unit interval also have
+original H0 P/PT/reciprocal-scaling symmetries. Their all-real-x full matrix
+continuation and the separate Appendix operator adapter remain open. Other
+remaining claims include Theorem 6(i)'s invariant-neighborhood/gap interfaces,
+Corollary 8, full Lemma 10, Proposition 11(iii), Lemma 2's matrix clause,
+Lemma 3's geometric multiplicities, and the pending background assertions.
+
+Eight new modules add 28 theorems and 6 definitions. Strict aggregate and
+transitive audit evidence is in
+[`pointwise-symmetry-validation.json`](pointwise-symmetry-validation.json).
+Whole-paper coverage remains in progress, with 114 assertion records and all
+241 source passages; semantic decomposition remains incomplete.
+
+## 2026-11-07 — Complete corrected Theorem 6 and Corollary 8 with explicit domains
+
+Theorem 6's remaining gap-segment and invariant-neighborhood clauses now check.
+Literal closed segments have the exact P/T/reflected-index and phase identities.
+Inside any given open complex source neighborhood containing all real sources,
+a compact-circle phase core and its zero connected component give an open
+connected P/T/all-phase invariant neighborhood. It retains the entire real
+locus and all inherited setup properties. Actual root joint analyticity and
+full primitive differential data coexist on one such domain. This completes
+the named Theorem 6 in the literal Section 2 convention, with the documented
+minus-sign xi correction. Its separately recorded proof intermediates and the
+p5/Appendix operator adapter are still reviewed individually.
+
+Corollary 8's actual primitive-value identities now hold on the original full
+complement of noncollapsed cuts, including all collapsed spectral points.
+The proof uses the actual full joint differential, connected vertical spectral
+fibers over a connected open source neighborhood, and the actual zero-source
+normalization. No value symmetry or new logarithm branch is assumed. Spectral
+continuity extends the identities through every collapsed cut.
+
+The actual source-gradient identities hold on the full open joint complement
+of all moving cuts, in every original Hilbert direction, with a unique
+continuous periodic physical representative. This domain qualification is
+explicit: at source 0, lambda=0 is in the filled fixed-source spectral domain,
+but the fixed-lambda source slice is formally not a neighborhood of 0. Small
+diagonal constant potentials put 0 inside an open central cut. This does not
+assert nondifferentiability of every possible extension; no further gradient
+continuation through closed cuts is claimed. The larger domain is retained
+for primitive values.
+
+Twelve strictly checked modules add 53 theorems and 5 definitions. Evidence is
+in [`invariant-primitive-validation.json`](invariant-primitive-validation.json).
+The ledger has 118 assertion records and all 241 source passages. Four further
+complete source passages have explicit correspondence reviews. Whole-paper
+semantic decomposition and proof coverage remain in progress, including
+Lemmas 2,3,10,13, Proposition 11(iii), proof intermediates and background claims.
+
+## 2026-11-07 — Full real-line Lemma 13 and explicit Appendix operator correction
+
+All full fundamental-matrix identities now hold at every real spatial point,
+including negative periods and every seam, on the original complex H0 space.
+This includes the original real-type H0 domain without a smoothness or generic
+spectral-parameter hypothesis. Exact invertible Floquet transport extends the
+actual unit-interval identities. The true determinant-one inverse monodromy,
+literal J and PJ conjugacies, half-phase matrix and explicit entries are checked.
+
+The page 5 and Appendix displays put phi2 in the upper off-diagonal position;
+Section 2 puts phi1 there. Their operator is exactly the Section 2 operator at
+P*phi, with actual physical source fields. The fundamental-matrix adapter
+reflects lambda and conjugates by J; signed integer labels reverse n and
+exchange their +/- slots. Retaining the literal local Appendix operator reverses
+the phase factor, while its P and T matrix forms remain true. Both complete
+versions are proved, without silently changing operator conventions.
+
+An actual original real-type H0 witness from the smooth constant physical
+profile(1,1), at lambda=0, x=1 and alpha=pi/2, formally refutes combining the
+literal Appendix operator with the printed positive phase. Its actual
+upper-right monodromy is +sinh(1), while the printed formula predicts -sinh(1).
+Thus either the local operator component order or its phase formula must be
+corrected. All-real-x Lemma 13 and the operator convention adapter are now
+covered with that explicit correction and counterexample.
+
+Eight new strict modules add 41 theorems and 8 definitions. Exact evidence is
+in [`whole-line-matrix-validation.json`](whole-line-matrix-validation.json).
+Three complete mathematical passages and one bibliographic metadata passage
+have additional correspondence reviews. The ledger has 120 assertion records
+and all 241 source passages. Whole-paper semantic decomposition and proof
+coverage remain in progress, including Lemmas 2,3,10, Proposition 11(iii),
+printed proof intermediates and remaining background claims.
+
+## 2026-11-07 — Independent physical Miura matrices and arbitrary AC eigenfunctions
+
+Lemma 2's full physical matrix conjugacies are now proved at every original
+complex period-one H1 input, each point of the closed unit interval and every
+nonzero spectral parameter. The Hill columns come from the independent scalar
+IVP, with actual position/derivative initial data, AC position and derivative,
+the physical u'+u^2 equation and determinant one. The matrix is not defined by
+conjugating the ZS matrix. The exact printed A matrix has determinant -2*lambda,
+is invertible exactly for lambda nonzero, and is period one. Its endpoint
+conjugacy therefore uses A(0) on both sides.
+
+The scalar intertwining now holds for arbitrary componentwise absolutely
+continuous physical eigenfunctions, with no constructed-solution or periodic
+boundary assumption on f, and includes lambda=0. AC uniqueness identifies the
+actual IVP; local derivative equality transfers both the vector second-derivative
+identity and the scalar equation. The exact transformed derivatives and actual
+Y=A*M identity are checked. The proof paragraph's scalar energy lambda must be
+lambda^2; det(Y)=-2*lambda also records the precise invertible-basis restriction.
+
+Five strict modules add 28 theorems and 6 definitions. Seven more source
+passages have complete correspondence reviews. The exact native interval
+H2-to-AC input-space bridge is tracked separately: the universal physical AC
+theorem is proved, but that standalone Sobolev source-space identification is
+not claimed. The ledger retains partial status for the entire named Lemma 2
+until this bridge is certified. Whole-paper proof coverage and semantic
+decomposition remain in progress. Validation is recorded in
+[`physical-miura-validation.json`](physical-miura-validation.json).
+
+## 2026-11-07 — Full geometric eigenspace multiplicities in Lemma 3
+
+Lemma 3 is now complete, including its geometric multiplicity clause at every
+positive index and both signed endpoints. An explicit linear equivalence
+compares the entire original Dirac H1 eigenspace with the actual Hill H2
+eigenspace. The weak Miura potential is identified with the unchanged actual
+L2 potential coefficient by coefficient, and every weak eigenvector gains
+the full H2 domain. This proves dimensions and the existence of two independent
+eigenfunctions; equality of discriminant zero orders is not used as a substitute.
+
+The comparison actually holds for every complex H1 source and every nonzero
+frequency. On the original real H1 domain, strict positivity supplies the
+nonzero condition for both endpoints at every n>=1, including closed gaps
+and zero-mean sources. The existing ground endpoint, indexed square-image
+and collapse identities finish the named statement. No zero-frequency
+eigenspace equivalence is asserted.
+
+Three strict modules add 10 theorems and 4 definitions. Four further complete
+source passages, including the entire Lemma 3 proof, have correspondence
+reviews. The exact validation evidence is in
+[`geometric-multiplicity-validation.json`](geometric-multiplicity-validation.json).
+Whole-paper semantic decomposition and proof coverage remain in progress.
+
+## 2026-11-07 — Corrected nonlocal Hamiltonian recurrence at all smooth orders
+
+For every m>=1 and arbitrary smooth complex periodic profiles satisfying
+T*phi=+phi or T*phi=-phi, the actual physical Hamiltonian gradients now obey
+
+    R*grad S_(2m) = D grad S_(2m-1)
+      + 2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).
+
+The positive sign and the J*phi vector factor are forced by the independently
+constructed Riccati resolvent. Before reflection the general all-order identity
+retains a scalar boundary term c(0). Its actual derivative and genuine physical
+integral are checked. Signed spatial jet reflection and simultaneous field
+negation prove c_even(0)=0 for both printed reflection signs. The result holds
+at every real spatial point, with no finite-gap, real-type or component
+proportionality restriction. The gradients are those of the actual physical
+Hamiltonians, as proved by independent smooth periodic variations.
+
+Six strict modules add 24 theorems and 4 definitions. This is the full smooth
+all-order correction; the original H^(2m-1) extension remains open. The entire
+named Proposition 11 retains partial status, and no full original-domain source
+passage is marked complete on the basis of this smooth proof. Exact evidence
+is in [`smooth-nonlocal-validation.json`](smooth-nonlocal-validation.json).
+Whole-paper proof coverage and semantic decomposition remain in progress.
+
+## 2026-11-07 — Full sharp-domain nonlocal Hamiltonian recurrence
+
+The entire named Proposition 11 is now covered with the recorded corrections.
+Part(iii) holds at every original complex H^(2m-1) source, for every m>=1 and
+both T*phi=+phi and T*phi=-phi, as an actual AE identity on the physical unit
+period. The correction is
+
+    R*grad S_(2m) = D grad S_(2m-1)
+      + 2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).
+
+The top gradient retains its actual original L2 representative. The lower
+gradient has the proved continuous representative with exact original
+coefficients, absolute continuity and the genuine spatial derivative AE.
+The primitive is the literal physical zero-initial integral. A bounded signed
+reflection projection preserves the exact constraint through smooth
+approximation. Bounded continuous fields and physical primitive operators
+pass the integral identity to the entire original Sobolev domain; its closed
+L2 derivative graph recovers AC and actual differentiation. No extra smoothness,
+finite-gap, reality or component-proportionality hypothesis is used.
+
+Ten strict modules add 39 theorems and 15 definitions. Five complete original
+source passages, covering the full Proposition 11 statement, now have
+correspondence reviews. The printed proof intermediates remain individually
+tracked. Exact evidence is in
+[`sharp-nonlocal-validation.json`](sharp-nonlocal-validation.json).
+
+The ledger now has 128 assertion records and all 241 source passages. Sixteen
+of the eighteen named statements are covered, with recorded corrections where
+needed. The native interval H2-to-AC bridge in Lemma 2, full Lemma 10 and
+remaining proof/background assertions are still open. Whole-paper proof
+coverage and semantic decomposition remain in progress.
 
 ## Pinned source
 
@@ -114,7 +484,7 @@ Miura/Hill versus diagonal ZS discriminants), Proposition 6 (p. 12,
 `K_m=S_(2m-1)#/2` and even vanishing), Lemma 7 (p. 12, action comparison),
 Theorem 6 (pp. 13–14, discriminant symmetries), Lemma 10 (pp. 16–17,
 action-gradient identities) and Proposition 11 (pp. 17–18, hierarchy gradients).
-These are dependencies of the four main theorems, not extra completion targets.
+All of these are now independent completion targets under the expanded whole-paper scope. The prior main-theorem milestone does not certify their full statements.
 
 ## Proof-development checkpoints
 

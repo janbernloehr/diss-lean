@@ -1,0 +1,288 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "article_parent": "41bebf6c7f4cb88c783d9feac111ecbdb30af6fd",
+  "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "new_modules": [
+    "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean",
+    "NLS/DifferentialPolynomial/SignedSpatialJetReflection.lean",
+    "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean",
+    "NLS/ZakharovShabat/NLSHierarchyReflectionCoupling.lean",
+    "NLS/ZakharovShabat/NLSHierarchyReflectionNonlocal.lean",
+    "NLS/Articles/MKdVNLSHierarchies/NonlocalHamiltonianReflection.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSequence_neg_fields",
+      "qualified_name": "NLS.DifferentialPolynomial.differentialRiccatiSequence_neg_fields",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSeries_neg_fields",
+      "qualified_name": "NLS.DifferentialPolynomial.differentialRiccatiSeries_neg_fields",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "riccatiResolventDenominator_neg_fields",
+      "qualified_name": "NLS.DifferentialPolynomial.riccatiResolventDenominator_neg_fields",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "riccatiResolventCoupling_neg_fields",
+      "qualified_name": "NLS.DifferentialPolynomial.riccatiResolventCoupling_neg_fields",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "rescale_riccatiResolventDenominator",
+      "qualified_name": "NLS.DifferentialPolynomial.rescale_riccatiResolventDenominator",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "rescale_riccatiResolventInverse",
+      "qualified_name": "NLS.DifferentialPolynomial.rescale_riccatiResolventInverse",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "rescale_riccatiResolventCoupling",
+      "qualified_name": "NLS.DifferentialPolynomial.rescale_riccatiResolventCoupling",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coeff_riccatiResolventCoupling_even_neg_derivation",
+      "qualified_name": "NLS.DifferentialPolynomial.coeff_riccatiResolventCoupling_even_neg_derivation",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "signedSpatialJetReflection",
+      "qualified_name": "NLS.DifferentialPolynomial.signedSpatialJetReflection",
+      "file": "NLS/DifferentialPolynomial/SignedSpatialJetReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "signedSpatialJetReflection_C",
+      "qualified_name": "NLS.DifferentialPolynomial.signedSpatialJetReflection_C",
+      "file": "NLS/DifferentialPolynomial/SignedSpatialJetReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "signedSpatialJetReflection_X",
+      "qualified_name": "NLS.DifferentialPolynomial.signedSpatialJetReflection_X",
+      "file": "NLS/DifferentialPolynomial/SignedSpatialJetReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "signedSpatialJetReflection_spatialDerivative",
+      "qualified_name": "NLS.DifferentialPolynomial.signedSpatialJetReflection_spatialDerivative",
+      "file": "NLS/DifferentialPolynomial/SignedSpatialJetReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluate_signedSpatialJetReflection",
+      "qualified_name": "NLS.DifferentialPolynomial.evaluate_signedSpatialJetReflection",
+      "file": "NLS/DifferentialPolynomial/SignedSpatialJetReflection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "nlsResolventCoefficientCoupling",
+      "qualified_name": "NLS.ZakharovShabat.nlsResolventCoefficientCoupling",
+      "file": "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsResolventCoefficientA_succ",
+      "qualified_name": "NLS.ZakharovShabat.nlsResolventCoefficientA_succ",
+      "file": "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsResolventCoefficientB_succ",
+      "qualified_name": "NLS.ZakharovShabat.nlsResolventCoefficientB_succ",
+      "file": "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "spatialDerivative_nlsResolventCoefficientCoupling",
+      "qualified_name": "NLS.ZakharovShabat.spatialDerivative_nlsResolventCoefficientCoupling",
+      "file": "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalNLSHierarchyCoupling",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSHierarchyCoupling",
+      "file": "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalNLSHierarchyRPairing",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSHierarchyRPairing",
+      "file": "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "deriv_classicalNLSHierarchyGradient_resolvent",
+      "qualified_name": "NLS.ZakharovShabat.deriv_classicalNLSHierarchyGradient_resolvent",
+      "file": "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHierarchyGradient_coupled_recurrence",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSHierarchyGradient_coupled_recurrence",
+      "file": "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalNLSHierarchyCoupling",
+      "qualified_name": "NLS.ZakharovShabat.hasDerivAt_classicalNLSHierarchyCoupling",
+      "file": "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHierarchyCoupling_eq_integral",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSHierarchyCoupling_eq_integral",
+      "file": "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "signedSpatialJetReflection_evenCoupling",
+      "qualified_name": "NLS.ZakharovShabat.signedSpatialJetReflection_evenCoupling",
+      "file": "NLS/ZakharovShabat/NLSHierarchyReflectionCoupling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHierarchyCoupling_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSHierarchyCoupling_midpointReflection",
+      "file": "NLS/ZakharovShabat/NLSHierarchyReflectionCoupling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHierarchyCoupling_zero_of_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSHierarchyCoupling_zero_of_midpointReflection",
+      "file": "NLS/ZakharovShabat/NLSHierarchyReflectionCoupling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHierarchyGradient_reflection_nonlocal",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSHierarchyGradient_reflection_nonlocal",
+      "file": "NLS/ZakharovShabat/NLSHierarchyReflectionNonlocal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "proposition11_iii_smooth_corrected",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.proposition11_iii_smooth_corrected",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NonlocalHamiltonianReflection.lean"
+    }
+  ],
+  "new_theorems": 24,
+  "new_definitions": 4,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "ELAN_HOME and PATH use pinned tooling; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/DifferentialPolynomial/RiccatiResolventReflection.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean",
+    "NLS/DifferentialPolynomial/SignedSpatialJetReflection.lean",
+    "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean",
+    "NLS/ZakharovShabat/NLSHierarchyReflectionCoupling.lean",
+    "NLS/ZakharovShabat/NLSHierarchyReflectionNonlocal.lean",
+    "NLS/Articles/MKdVNLSHierarchies/NonlocalHamiltonianReflection.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1190,
+  "article_transitive_axiom_declarations": 13597,
+  "combined_NLS_transitive_axiom_declarations": 76832,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 69,
+    "old_scopes_preserved": 3899,
+    "added_blocks": 1,
+    "added_scopes": 34,
+    "total_scopes": 3933,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 9169,
+    "scope": "All current NLS/**/*.lean, NLS.lean and the article/combined checkers. All unchanged after validation.",
+    "source_map_digest_sha256": "a536eea79f242fe3e35c9bd490d87e05200b35f0d025a4e7c24b37bb69235923",
+    "private_manifest": "work/smooth-nonlocal-validation-inputs.json",
+    "private_manifest_sha256": "07c5b227ee7c0b08d6ae72b91aa56fa7a818f96cf698b0974f916e4837cf2b17",
+    "reused_checker_prefix_outputs": 1184,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean": "5290445bfc7792a200311443ce5df706aba64d2bb101cd28c08624e307767e23",
+    "NLS/DifferentialPolynomial/SignedSpatialJetReflection.lean": "24b1f9abf4bc3e398d933b8b16a2f27442070f0ffcd150301128ab318e9b137c",
+    "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean": "95ed319c44253bc476f3643f0dc15e3959bfe7853805a9e1158c68aaad67f4ae",
+    "NLS/ZakharovShabat/NLSHierarchyReflectionCoupling.lean": "1f57cfcf8bc3c846203b0fe8947b6439d1d21dde471d480a0d83622e95d84c5a",
+    "NLS/ZakharovShabat/NLSHierarchyReflectionNonlocal.lean": "8b168b81dc1cdecf0cd57b4a19ac45055c7817fb49e3d4ee1982bee1a355e350",
+    "NLS/Articles/MKdVNLSHierarchies/NonlocalHamiltonianReflection.lean": "506fed0298417f391b66e2f06ba47a6adb5fccc8d28d1ce8e09a36d9a55621aa",
+    "NLS.lean": "079a9ea77cab4e7fa05ac5b04db15346535afd596eb0556b0ae18b2e42a6a4c2",
+    "scripts/check_mkdv_nls.py": "aeafd9ac08193e570b948fcfd25b9ae611cdcfc62e89f91263767cec96bcb8ce",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "2f52e23679dd1cacd3ce91aa36481f094950fa1b3d8197d872d5ea66c883ada6",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/DifferentialPolynomial/RiccatiResolventReflection.lean": "d473343afb3c7cb8b6cf149cac252e0688ed0fa893711b33afb64131c1904ecf",
+    "NLS/DifferentialPolynomial/SignedSpatialJetReflection.lean": "3d0af09276cf92b1b4cb5a8afa6475080af84fddd55b9481536b2636c233ffa8",
+    "NLS/ZakharovShabat/NLSHierarchyNonlocalRecurrence.lean": "0479275894d119cac3395767b6b929dc64ad73a44a8bf8687e2e8fc491184d07",
+    "NLS/ZakharovShabat/NLSHierarchyReflectionCoupling.lean": "3a22c88c0ae754ad6ea60d1c0b27afd48c5371f6affd7a2d70688200bce37d56",
+    "NLS/ZakharovShabat/NLSHierarchyReflectionNonlocal.lean": "3b0fa47173161158323721f44628938728dd1a68aa4f33e5dd8b3bae5e9eda30",
+    "NLS/Articles/MKdVNLSHierarchies/NonlocalHamiltonianReflection.lean": "afe5164e0eebeee232c963d1d4574f266b96e174c84e402c4acfff700c0f7750"
+  },
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "head": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "validated_source_modules": 9089,
+    "validation_report": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation_report_sha256": "6f9f2757468d008417280b5ce7ec68fceff49a1447bba886ff79dadbe7a80742",
+    "private_provenance_manifest": "work/nonlocal-incoming-cache-provenance.json",
+    "manifest_sha256": "7eff8b2f05f21402a7391c21f401cc5f5145c6a70503fd11d62e5737d4a95dc2",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently.",
+    "all_source_and_output_hashes_rechecked_after_validation": true
+  },
+  "validation_scope": "Fresh strict compilation of all six new modules and the combined aggregate; targeted and combined transitive audits. All 1,184 reused checker-prefix outputs and all 9,089 source-verified incoming compiled modules retain their hashes. This is not a fresh full repository source rebuild.",
+  "proof_scope": {
+    "certified": "Corrected Proposition11(iii) at every smooth complex periodic order m>=1, under either T*phi=+phi or T*phi=-phi, at every real spatial point. The actual physical Hamiltonian gradients satisfy R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).",
+    "method": "The independently constructed canonical Riccati resolvent supplies both local spatial rows and an explicit scalar coupling. Its actual derivative gives the genuine zero-initial integral, retaining c(0) before reflection. Signed spatial jet reflection, simultaneous field negation and periodicity prove its even-order boundary value is zero for both printed reflection signs. Actual physical gradient identification comes from independent smooth periodic variations.",
+    "not_claimed": [
+      "The full original H^(2m-1) extension of Proposition11(iii). The entire named proposition retains partial status.",
+      "Any complete original-domain source-passage review based solely on the smooth result.",
+      "Native interval H2-to-AC Lemma2 bridge, full Lemma10, every proof intermediate/background claim, whole-paper semantic decomposition or proof coverage."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "assertion_records": 126,
+    "source_passages": 241,
+    "new_complete_source_passages_reviewed": 0,
+    "source_passages_reviewed": [],
+    "all_assertion_line_locators_nonblank_and_page_correct": true,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f",
+  "previous_validated_progress": "geometric-multiplicity-validation.json"
+}

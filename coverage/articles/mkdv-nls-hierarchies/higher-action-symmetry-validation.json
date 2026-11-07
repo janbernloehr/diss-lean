@@ -1,0 +1,506 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "article_parent": "030c637652ec2e7269a2700fc0c469f613da6f87",
+  "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "new_modules": [
+    "NLS/ZakharovShabat/SourcePeriodCircleSymmetries.lean",
+    "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean",
+    "NLS/ZakharovShabat/SourceWeightedPrimitiveCircleGradient.lean",
+    "NLS/ZakharovShabat/SourceHigherActionComplexGradient.lean",
+    "NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean",
+    "NLS/ZakharovShabat/L2WeightedActionGradient.lean",
+    "NLS/Fourier/UnitFourierReflection.lean",
+    "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean",
+    "NLS/Articles/MKdVNLSHierarchies/HigherActionGradientSymmetries.lean",
+    "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean",
+    "NLS/ZakharovShabat/L2LaurentReflectionGradient.lean",
+    "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "def",
+      "name": "spectralNegation",
+      "qualified_name": "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.spectralNegation",
+      "file": "NLS/ZakharovShabat/SourcePeriodCircleSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.componentSwap",
+      "file": "NLS/ZakharovShabat/SourcePeriodCircleSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.midpointReflection",
+      "file": "NLS/ZakharovShabat/SourcePeriodCircleSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourcePeriodCircleSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCriticalRootRatioJoint_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.sourceCriticalRootRatioJoint_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCriticalRootRatioJoint_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceCriticalRootRatioJoint_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCriticalRootRatioJoint_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceCriticalRootRatioJoint_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceHigherActionCircle_spectralNegation",
+      "qualified_name": "NLS.ZakharovShabat.sourceHigherActionCircle_spectralNegation",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceIndexedHigherAction_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.sourceIndexedHigherAction_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceIndexedHigherAction_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceIndexedHigherAction_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceIndexedHigherAction_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceIndexedHigherAction_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_weightedPrimitiveCircle",
+      "qualified_name": "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.fderiv_weightedPrimitiveCircle",
+      "file": "NLS/ZakharovShabat/SourceWeightedPrimitiveCircleGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_laurentPrimitiveCircle",
+      "qualified_name": "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.fderiv_laurentPrimitiveCircle",
+      "file": "NLS/ZakharovShabat/SourceWeightedPrimitiveCircleGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_complex_gradient_circle",
+      "qualified_name": "NLS.ZakharovShabat.SourceSection11ContourData.exists_complex_gradient_circle",
+      "file": "NLS/ZakharovShabat/SourceHigherActionComplexGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_sourceIndexedHigherAction_complex_gradients",
+      "qualified_name": "NLS.ZakharovShabat.exists_sourceIndexedHigherAction_complex_gradients",
+      "file": "NLS/ZakharovShabat/SourceHigherActionComplexGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodCircle_nonempty",
+      "qualified_name": "NLS.ZakharovShabat.SourceSection11ContourData.periodCircle_nonempty",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cotangent_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.SourceSection11ContourData.cotangent_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cotangent_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.SourceSection11ContourData.cotangent_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cotangent_circleRotation",
+      "qualified_name": "NLS.ZakharovShabat.SourceSection11ContourData.cotangent_circleRotation",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_sourceIndexedHigherAction_cotangent_symmetries",
+      "qualified_name": "NLS.ZakharovShabat.exists_sourceIndexedHigherAction_cotangent_symmetries",
+      "file": "NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceWeightedGradientIntegrand",
+      "qualified_name": "NLS.ZakharovShabat.sourceWeightedGradientIntegrand",
+      "file": "NLS/ZakharovShabat/L2WeightedActionGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "circleIntegrable_sourceWeightedGradientIntegrand",
+      "qualified_name": "NLS.ZakharovShabat.circleIntegrable_sourceWeightedGradientIntegrand",
+      "file": "NLS/ZakharovShabat/L2WeightedActionGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceWeightedPhysicalGradientCurve",
+      "qualified_name": "NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve",
+      "file": "NLS/ZakharovShabat/L2WeightedActionGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceWeightedPhysicalGradientCurve_pairing",
+      "qualified_name": "NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve_pairing",
+      "file": "NLS/ZakharovShabat/L2WeightedActionGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceWeightedPhysicalGradientCurve_apply",
+      "qualified_name": "NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve_apply",
+      "file": "NLS/ZakharovShabat/L2WeightedActionGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceWeightedPhysicalGradientCurve_endpoints",
+      "qualified_name": "NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve_endpoints",
+      "file": "NLS/ZakharovShabat/L2WeightedActionGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceHigherActionPhysicalGradientCurve",
+      "qualified_name": "NLS.ZakharovShabat.sourceHigherActionPhysicalGradientCurve",
+      "file": "NLS/ZakharovShabat/L2WeightedActionGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_sourceHigherActionPhysicalGradients",
+      "qualified_name": "NLS.ZakharovShabat.exists_sourceHigherActionPhysicalGradients",
+      "file": "NLS/ZakharovShabat/L2WeightedActionGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_sourceHigherActionPhysicalGradient_periodic_trace",
+      "qualified_name": "NLS.ZakharovShabat.exists_sourceHigherActionPhysicalGradient_periodic_trace",
+      "file": "NLS/ZakharovShabat/L2WeightedActionGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "wave_even_one_sub",
+      "qualified_name": "NLS.Fourier.wave_even_one_sub",
+      "file": "NLS/Fourier/UnitFourierReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "unitFourierCoefficient_one_sub",
+      "qualified_name": "NLS.Fourier.unitFourierCoefficient_one_sub",
+      "file": "NLS/Fourier/UnitFourierReflection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceFirstUnitMode",
+      "qualified_name": "NLS.ZakharovShabat.sourceFirstUnitMode",
+      "file": "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceSecondUnitMode",
+      "qualified_name": "NLS.ZakharovShabat.sourceSecondUnitMode",
+      "file": "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourcePhysicalGradientRepresents.first_mode",
+      "qualified_name": "NLS.ZakharovShabat.SourcePhysicalGradientRepresents.first_mode",
+      "file": "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourcePhysicalGradientRepresents.second_mode",
+      "qualified_name": "NLS.ZakharovShabat.SourcePhysicalGradientRepresents.second_mode",
+      "file": "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourcePhysicalGradientRepresents.componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.SourcePhysicalGradientRepresents.componentSwap",
+      "file": "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourcePhysicalGradientRepresents.midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.SourcePhysicalGradientRepresents.midpointReflection",
+      "file": "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourcePhysicalGradientRepresents.reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.SourcePhysicalGradientRepresents.reciprocalScaling",
+      "file": "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma10_i",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma10_i",
+      "file": "NLS/Articles/MKdVNLSHierarchies/HigherActionGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicReflection_of_componentSwap_scaling",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicReflection_of_componentSwap_scaling",
+      "file": "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceReciprocalScaling_negative_identity",
+      "qualified_name": "NLS.ZakharovShabat.sourceReciprocalScaling_negative_identity",
+      "file": "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicReflection_of_signed_midpoint",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicReflection_of_signed_midpoint",
+      "file": "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourcePeriodicReflection.zero_mem_central_segment",
+      "qualified_name": "NLS.ZakharovShabat.SourcePeriodicReflection.zero_mem_central_segment",
+      "file": "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceCriticalRootPeriodCircle.zero_not_mem_sphere_of_reflection",
+      "qualified_name": "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.zero_not_mem_sphere_of_reflection",
+      "file": "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceCriticalRootPeriodCircle.zero_not_mem_noncentral_disc_of_reflection",
+      "qualified_name": "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.zero_not_mem_noncentral_disc_of_reflection",
+      "file": "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceCriticalRootPeriodCircle.zero_mem_central_ball_of_reflection",
+      "qualified_name": "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.zero_mem_central_ball_of_reflection",
+      "file": "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_sourceLaurentReflection_physical_gradients",
+      "qualified_name": "NLS.ZakharovShabat.exists_sourceLaurentReflection_physical_gradients",
+      "file": "NLS/ZakharovShabat/L2LaurentReflectionGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "gradientFirstCurve",
+      "qualified_name": "NLS.ZakharovShabat.gradientFirstCurve",
+      "file": "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+    },
+    {
+      "kind": "def",
+      "name": "gradientSecondCurve",
+      "qualified_name": "NLS.ZakharovShabat.gradientSecondCurve",
+      "file": "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+    },
+    {
+      "kind": "def",
+      "name": "l2DiscriminantXiCurve",
+      "qualified_name": "NLS.ZakharovShabat.l2DiscriminantXiCurve",
+      "file": "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "absolutelyContinuous_l2DiscriminantGradient_components",
+      "qualified_name": "NLS.ZakharovShabat.absolutelyContinuous_l2DiscriminantGradient_components",
+      "file": "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "extend_gradientFirstCurve",
+      "qualified_name": "NLS.ZakharovShabat.extend_gradientFirstCurve",
+      "file": "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "extend_gradientSecondCurve",
+      "qualified_name": "NLS.ZakharovShabat.extend_gradientSecondCurve",
+      "file": "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "curve_eq_mixed_primitive_of_ac",
+      "qualified_name": "NLS.ZakharovShabat.curve_eq_mixed_primitive_of_ac",
+      "file": "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "curve_regular_of_primitive_graph",
+      "qualified_name": "NLS.ZakharovShabat.curve_regular_of_primitive_graph",
+      "file": "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2DiscriminantGradient_first_primitive_graph",
+      "qualified_name": "NLS.ZakharovShabat.l2DiscriminantGradient_first_primitive_graph",
+      "file": "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2DiscriminantGradient_second_primitive_graph",
+      "qualified_name": "NLS.ZakharovShabat.l2DiscriminantGradient_second_primitive_graph",
+      "file": "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean"
+    }
+  ],
+  "new_theorems": 45,
+  "new_definitions": 12,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "env ELAN_HOME=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/tooling/elan PATH=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/tooling/elan/bin:$PATH python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --module-only NLS/ZakharovShabat/SourcePeriodCircleSymmetries.lean --module-only NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean --module-only NLS/ZakharovShabat/SourceWeightedPrimitiveCircleGradient.lean --module-only NLS/ZakharovShabat/SourceHigherActionComplexGradient.lean --module-only NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean --module-only NLS/ZakharovShabat/L2WeightedActionGradient.lean --module-only NLS/Fourier/UnitFourierReflection.lean --module-only NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean --module-only NLS/Articles/MKdVNLSHierarchies/HigherActionGradientSymmetries.lean --module-only NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean --module-only NLS/ZakharovShabat/L2LaurentReflectionGradient.lean --module-only NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean --module-only NLS.lean --module-only scripts/CheckMKdVNLSHierarchiesAxioms.lean --module-only .lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/ZakharovShabat/SourcePeriodCircleSymmetries.lean",
+    "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean",
+    "NLS/ZakharovShabat/SourceWeightedPrimitiveCircleGradient.lean",
+    "NLS/ZakharovShabat/SourceHigherActionComplexGradient.lean",
+    "NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean",
+    "NLS/ZakharovShabat/L2WeightedActionGradient.lean",
+    "NLS/Fourier/UnitFourierReflection.lean",
+    "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean",
+    "NLS/Articles/MKdVNLSHierarchies/HigherActionGradientSymmetries.lean",
+    "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean",
+    "NLS/ZakharovShabat/L2LaurentReflectionGradient.lean",
+    "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1217,
+  "article_transitive_axiom_declarations": 13812,
+  "combined_NLS_transitive_axiom_declarations": 77043,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 72,
+    "old_scopes_preserved": 4011,
+    "added_blocks": 2,
+    "added_scopes": 69,
+    "total_scopes": 4080,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 9196,
+    "scope": "All current NLS/**/*.lean, NLS.lean and the article/combined checkers. All unchanged after validation.",
+    "source_map_digest_sha256": "4154a5388b6c88aaa0923ce14b8547f3e82eb21bb66f5d4c22de512476425575",
+    "private_manifest": "work/higher-action-symmetry-validation-inputs.json",
+    "private_manifest_sha256": "bba7623c9930062a1fac061a5df3a26f2b85515d13e4f2118789431d9d6bce85",
+    "reused_checker_prefix_outputs": 1205,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/ZakharovShabat/SourcePeriodCircleSymmetries.lean": "0ad000a0f8d184a0ebd7a1a6de85b4c4b3297e4e410cc3010c24866a585f2e4c",
+    "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean": "50a544acc9a0cc23411a25ed6df39a2b19b6afec6b0865e4edb8355b83ac2fa6",
+    "NLS/ZakharovShabat/SourceWeightedPrimitiveCircleGradient.lean": "d11e45fe449e9a09d9785cb653a66879b10fb5f9f3670168b417af705f22bd97",
+    "NLS/ZakharovShabat/SourceHigherActionComplexGradient.lean": "95233190c6a3f99c42d1785848037c464a98de09ca99875adf981b41197672ea",
+    "NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean": "9c07cfe0e0523a35f84a448252aba6b1f44d9f2241c26dea692910316ec45791",
+    "NLS/ZakharovShabat/L2WeightedActionGradient.lean": "a32db1dff82c82b8471fc57106b2d114e19447ad543534ec6b46d6137124e269",
+    "NLS/Fourier/UnitFourierReflection.lean": "72bae8eb68fd46693b4aff3a28f34cef2a24531e207d42cfc9740b996c30c1c2",
+    "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean": "c12bdd7a4ad6c0df771fec33236f57c01075b282549446682fd7572b2ced4ea4",
+    "NLS/Articles/MKdVNLSHierarchies/HigherActionGradientSymmetries.lean": "d4d5dcc379ed7e7950d21061b8f2b68657497f9f6256b755594192bcf947f498",
+    "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean": "5ef7b28d354fabd99a0f10fb895f1ecdd94db6fc8bd5b3c9def065faa149a420",
+    "NLS/ZakharovShabat/L2LaurentReflectionGradient.lean": "b8f8c9339c19e055bd12da7db1b3d12a0e846fc7737bdcb793231b43c4cda225",
+    "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean": "4c93ceb5d67c0f9ece8dd6ad5bc325f1b32ddcdc3b0ad133ca7dcf00e6ee93da",
+    "NLS.lean": "8f0231f65e1c8a6476895b997b325bd15dea6576dd1c11c8d19d56eea994ea27",
+    "scripts/check_mkdv_nls.py": "46b077a71971b688c90192c5abb4b4577d33b2625009d86c6b3ee9dac6cf272b",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "9a03347ec6065e6b5fa5c35fea2fa42e35d41a1f22ea23b28332ac2975edf7ea",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/ZakharovShabat/SourcePeriodCircleSymmetries.lean": "f136f40f5b0bb3bcbb14af0a268af327043593a7a66d51b3fc01fe4808faf6be",
+    "NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean": "e8c50386ab97e7e7e70c071ea0f4de159b79dc64cc00b17e6b948c7c4e65fbc5",
+    "NLS/ZakharovShabat/SourceWeightedPrimitiveCircleGradient.lean": "76fe729ce9a0797c3d1d9f49983d56494ab76150b452a368424d69bd6b66b975",
+    "NLS/ZakharovShabat/SourceHigherActionComplexGradient.lean": "06a57472ec8b9acdca60026e5764201a031a72ac2920fb9ddc966c3a04d07434",
+    "NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean": "4f8732075aeb7eda32b5efcf8b0b0ed7693c3218cbd959c4a37079089319ad34",
+    "NLS/ZakharovShabat/L2WeightedActionGradient.lean": "a6c3166ba9657e74f7f452258d6c4992314b58ef5d4ab540e821f3007291c309",
+    "NLS/Fourier/UnitFourierReflection.lean": "5e6c8ddfdff28fb59000d1d2adbc4bc6e8257966ee8797f1aca5051abe9bc935",
+    "NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean": "3dad32f3efdc93df00866f85e26937cc12c625b9a4e4d182f32d22623527440d",
+    "NLS/Articles/MKdVNLSHierarchies/HigherActionGradientSymmetries.lean": "2130b7d9278cd3cdb4e2473024dc52d58cabb50cd9ff623a862ab0026d4b4857",
+    "NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean": "eb37a1cf16756b748eb093def2cbdbb4b1baad5b7e65d5d5c08e5aab6795950a",
+    "NLS/ZakharovShabat/L2LaurentReflectionGradient.lean": "021b4a094b83e854ab055fb23859848c0e421f6f3d32d04d67835a082c753cb0",
+    "NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean": "d3455c1c79beff9a6a9996f2f8d259af70124a164a9524c9b908a65b538343b6"
+  },
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "head": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "validated_source_modules": 9089,
+    "validation_report": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation_report_sha256": "6f9f2757468d008417280b5ce7ec68fceff49a1447bba886ff79dadbe7a80742",
+    "private_provenance_manifest": "work/nonlocal-incoming-cache-provenance.json",
+    "manifest_sha256": "7eff8b2f05f21402a7391c21f401cc5f5145c6a70503fd11d62e5737d4a95dc2",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently.",
+    "all_source_and_output_hashes_rechecked_after_validation": true
+  },
+  "validation_scope": "Fresh strict compilation of all twelve new modules and the combined aggregate; targeted and combined transitive audits. All 1,205 reused checker-prefix outputs and all 9,089 source-verified incoming compiled modules retain their hashes. This is not a fresh full repository source rebuild.",
+  "proof_scope": {
+    "completed_statement": "Full Lemma10(i) on one P/T/all-phase invariant open connected neighborhood of the entire original real H0 source locus. All signed indices and positive printed levels are included. Natural r means printed level r+1. The actual unconjugated Frechet cotangent has a unique continuous physical representative in every Hilbert direction, with matching endpoint traces and all three pointwise symmetry identities on the closed unit period.",
+    "method": "Actual original isolating circles transport to the transformed source and opposite index, retaining other-gap separation. Negation preserves circuit orientation; its derivative gives the exact action parity. Differentiate actual values on the full complex source domain. Banach-valued gradient contours commute with each bounded L2 pairing. Single Fourier directions and physical uniqueness then prove P, pure midpoint T and real phase identities.",
+    "spatial_primitive_graph": "Both actual discriminant-gradient rows at arbitrary original interval L2 potentials are AC and satisfy exact bounded Volterra/continuous-primitive graphs. A mixed L2/continuous primitive graph reconstructs AC and the actual AE derivative. The spectral contour interchange itself remains open.",
+    "lower_level_zero": "Both original symmetry hypotheses imply reflection of every labeled endpoint pair and zero in the complex central gap. Every original isolating circle avoids zero. The central disc encloses it; noncentral discs exclude it. The actual ground-normalized full primitive defines analytic local contour functionals at every integer Laurent level, including zero, with the constructed full continuous physical gradients.",
+    "existing_declaration_reviews": [
+      "The actual diagonal discriminant is even for every complex diagonal source at finite p>1, hence the original complex H1 scalar sources.",
+      "The actual physical Hill L2 discriminant of every original complex H1 Miura source at zero energy equals 2*cosh of its literal unit-period mean."
+    ],
+    "not_claimed": [
+      "Full Lemma10(ii)-(iii): globally indexed lower-level-zero identification, spatial derivative/contour interchange and the local/corrected nonlocal recurrences.",
+      "A globally equivariant simultaneous choice of isolating disk families or a separate formal nonzero-action counterexample to the factor-free pure-T line in the printed proof.",
+      "All other separately tracked printed proof intermediates, cross-mode Cartesian canonicity, background claims, whole-paper semantic decomposition or complete proof coverage."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "named_statements_covered_with_recorded_corrections": 17,
+    "numbered_equations": 25,
+    "assertion_records": 132,
+    "source_passages": 241,
+    "new_complete_source_passages_reviewed": 4,
+    "source_passages_reviewed": [
+      "passage-137",
+      "passage-193",
+      "passage-194",
+      "passage-201"
+    ],
+    "new_certified_assertion_records": 4,
+    "all_assertion_line_locators_nonblank_and_page_correct": true,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false,
+    "completion_gate": {
+      "exit_code": 2,
+      "open_assertion_records": 65,
+      "open_source_passages": 174
+    }
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f",
+  "previous_validated_progress": "weak-interval-validation.json",
+  "new_structures": 0,
+  "validation_execution": "The queued --full-audit invocation was canceled before compilation while another worktree held the shared lock. Supported --module-only commands directly compile all twelve new modules, the combined NLS aggregate and both auditors, with the exact full checker-module import union in the combined auditor against isolated private outputs. The first aggregate check caught an existing global helper name; the all-exponent helper was uniquely renamed, the original audit entries preserved, and the entire final command rerun, including the same combined import union used by --full-audit. No checker lock rule, proof limit or linter was changed."
+}
