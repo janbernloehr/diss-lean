@@ -3430,6 +3430,12 @@ modules=(
   NLS/ZakharovShabat/SourceDiagonalMomentFractionalBound
   NLS/KdV/PhysicalFractionalDiagonalMomentBounds
   NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalMomentDecay
+  NLS/ZakharovShabat/SourceRawActionGapError
+  NLS/ComplexAnalysis/WeightedAffineQuadraticRemainder
+  NLS/ZakharovShabat/SourceFirstWeightedActionFractionalBound
+  NLS/ZakharovShabat/SourceDiagonalCancellationFractionalBound
+  NLS/KdV/PhysicalFractionalDiagonalCancellation
+  NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalCancellationDecay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
