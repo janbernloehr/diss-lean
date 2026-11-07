@@ -1,0 +1,27 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/SourceExactEtaMidpointFourierSmoothTail.lean",
+      "source_path": "NLS/ZakharovShabat/SourceEtaMidpointFourierSmoothTail.lean",
+      "source_sha256": "b58dc5e92ac9d8f52647ad1cd969fc354f9cdb4bf8aec2185804523826742a79",
+      "local_sha256": "d7c586778a295ba533e77c00f3e5685ea93dc67afe49a2e6f69a037bb21ca6db",
+      "disposition": "adapted_imports_and_exact_names"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceExactEtaMidpointFourierAnalytic.lean",
+      "source_path": "NLS/ZakharovShabat/SourceEtaMidpointFourierAnalytic.lean",
+      "source_sha256": "082e816da0fb62cc1b387683f80ccf5c06699f63e29b9081db4a8e97bd5d75a9",
+      "local_sha256": "3bffa9629022d42d125a6e3ae334da36bce13e5ffbc9db2dfb9ef17b07381836",
+      "disposition": "adapted_imports_and_exact_names"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceExactEtaSineFourierAnalytic.lean",
+      "source_path": "NLS/ZakharovShabat/SourceEtaSineFourierAnalytic.lean",
+      "source_sha256": "3fdece6f8fa8f276d6398f28d0fc0f591230e1c9b1d42cc1a4b9b1ba8c563e06",
+      "local_sha256": "13baf21effddd8186da37618b1bf494e1aabed0deb33aec1b1f02254aa878d3d",
+      "disposition": "adapted_imports_and_exact_names"
+    }
+  ],
+  "scope": "Three verified spectral Fourier remainder proofs are reused with ONLY exact scalar-error/public-name renaming and import-path substitutions to the minimal scalar error definitions. Literal coefficient formulas and all proofs are retained. No old source is changed; all newly reached dependencies are selected and strictly rebuilt and transitively audited. The original heavy Birkhoff terminal reduction is not needed for these scalar spectral errors."
+}
