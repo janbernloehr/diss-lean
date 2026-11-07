@@ -100,9 +100,45 @@ Additional checked corrections:
 Other issues remain audit obligations: scalar nonlocal integrals subtracted from
 vector gradients in Corollary 9(ii), Lemma 10(iii) and Proposition 11(iii); the
 spectral domain in Corollary 9; high-energy Hill neighborhoods and mean shifts;
-and the generic-monodromy-entry argument for complex triangular potentials.
+and the nonlocal sign/source-convention comparison. The generic-entry assertion
+now has a checked complex triangular counterexample and a division-free replacement.
 No corrected formula for these is counted as proved until its actual
 mathematical statement and original domain have been validated.
+
+## 2026-11-07 — Original-domain symmetries and division-free spatial equation
+
+Proposition 11(i) is now fully checked on the exact complex H^(k-1) domain,
+including pure midpoint T, for every k>=1. The Riccati recurrence proves
+`rho_n(Ta,Tb)(x) = (-1)^n*rho_n(a,b)(1-x)`; literal integral substitution,
+smooth density and the actual Frechet derivative then give the L2 gradients.
+
+Theorem 6(ii) and (iv) are complete for the original spectral functions,
+including every real phase, every complex spectral parameter and the exact
+root signs. The original signed endpoint slots are also checked under all
+three symmetries. The proof permits every nonzero complex reciprocal scaling
+and every finite source exponent p>1, so it includes the original L2 domain.
+Theorem 6 as a whole is still partial: see the detailed ledger.
+
+The actual physical L2 discriminant gradient now has its spatial equation on
+the whole real line, including negative times and all period seams. The
+actual fundamental-matrix continuation agrees with the Frechet gradient on a
+unit period. Determinant-one Floquet transport proves period-one gradient and
+scalar coefficient. The scalar integral follows from genuine absolute
+continuity, not merely an assumed a.e. derivative. No nonzero monodromy entry
+or generic spectral parameter is required.
+
+There is a checked nonzero constant smooth H1 potential `(0,1)` whose
+upper-right monodromy entry is identically zero for all spectral parameters.
+Thus the unrestricted generic-entry assertion in the page-14 proof is false.
+The replacement proof avoids it. The physical convention gives
+`xi = M11-M22 - 2*i*integral(R*phi dot grad Delta)`, with R=diag(i,-i).
+The printed plus sign is retained as an explicit source-convention review
+obligation; no full Theorem 6(v) source completion is claimed yet.
+
+This increment adds 73 theorems and 12 definitions in 17 modules. Its strict
+compilation, aggregate import and transitive-audit evidence is recorded in
+[`symmetry-validation.json`](symmetry-validation.json). Whole-paper coverage
+remains **in progress**, including the unfinished passage decomposition.
 
 ## Pinned source
 

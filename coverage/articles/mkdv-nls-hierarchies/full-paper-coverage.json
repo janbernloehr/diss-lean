@@ -19,7 +19,7 @@
   "scope_last_line": 1327,
   "named_statement_count": 18,
   "numbered_equation_count": 25,
-  "assertion_count": 98,
+  "assertion_count": 106,
   "passage_count": 241,
   "semantic_inventory_complete": false,
   "assertions": [
@@ -255,10 +255,19 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_swap",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_reflection",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_swap_covectors",
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_reflection_covectors"
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_reflection_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_phase",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_endpoint_labels",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_phase",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_phase_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iv",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_gradient_agreement",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral"
       ],
       "existing_details": "source-map.json",
-      "certified_part": "P and pure T discriminant identities, spectral derivatives, and full Frechet cotangents, for every complex finite source exponent p>1. Pointwise L2 gradient identification, phase and other clauses remain separate."
+      "certified_part": "All discriminant and spectral-derivative identities; all full Frechet-cotangent variants; all signed endpoint slots; complete canonical-root part(iv); physical whole-line L2 spatial core and periodic scalar coefficient with its ODE-fixed integral sign. Still open: full source pointwise gradient correspondence, invariant W/gap-segment interfaces, source nonlocal sign comparison and xi covariance."
     },
     {
       "id": "corollary-8",
@@ -304,8 +313,12 @@
       "page": 17,
       "status": "partial",
       "obligation": "All three full-source identities, including pure T in i and nonlocal T-even/T-odd recurrence in iii. Part ii uses corrected R.",
-      "declarations": [],
-      "existing_details": "source-map.json"
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.proposition11_i",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
+      ],
+      "existing_details": "source-map.json",
+      "certified_part": "Full original-domain part(i), including pure T, and corrected-R part(ii). Nonlocal part(iii) remains open."
     },
     {
       "id": "lemma-13",
@@ -929,9 +942,11 @@
       "kind": "unnumbered_or_proof_claim",
       "line": 989,
       "page": 14,
-      "status": "pending_individual_correspondence_review",
-      "obligation": "Audit assertion m2 identically zero iff potential zero: triangular complex potentials invalidate it without an additional reality restriction.",
-      "declarations": []
+      "status": "proved_correction_and_counterexample",
+      "obligation": "The printed assertion that the upper-right monodromy entry is identically zero only for the zero complex potential is false: the smooth constant lower triangular H1 potential (0,1) is nonzero and has that entry zero at every spectral parameter. The actual spatial-gradient proof now avoids that division.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.printed_generic_entry_criterion_false"
+      ]
     },
     {
       "id": "squared-eigenfunction-algebra",
@@ -947,9 +962,13 @@
       "kind": "unnumbered_or_proof_claim",
       "line": 1008,
       "page": 15,
-      "status": "pending_individual_correspondence_review",
+      "status": "partial",
       "obligation": "Actual xi integral, boundary constant, periodicity and P,T,Ralpha covariance for every real spatial point.",
-      "declarations": []
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral"
+      ],
+      "certified_part": "Whole-line original L2 periodicity and exact physical integral are proved, including negative times; source xi symmetry and sign correspondence remain open."
     },
     {
       "id": "primitive-gradient-domains",
@@ -1076,6 +1095,103 @@
         "NLS.Articles.MKdVNLSHierarchies.introduction_mKdV_cartesian_equations",
         "NLS.Articles.MKdVNLSHierarchies.introduction_mKdV_action_preserved",
         "NLS.Articles.MKdVNLSHierarchies.introduction_printed_cartesian_second_equation_false"
+      ]
+    },
+    {
+      "id": "theorem-6-i-discriminants",
+      "kind": "certified_named_clause_or_physical_core",
+      "line": 920,
+      "page": 13,
+      "status": "proved",
+      "obligation": "All three actual discriminant symmetries for P, pure T and every real phase on the full complex original domain.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_phase"
+      ]
+    },
+    {
+      "id": "theorem-6-i-endpoint-labels",
+      "kind": "certified_named_clause_or_physical_core",
+      "line": 925,
+      "page": 13,
+      "status": "proved",
+      "obligation": "Both slots of every signed periodic endpoint under P, pure T and every real phase, including collisions, on the full complex original domain.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_endpoint_labels"
+      ]
+    },
+    {
+      "id": "theorem-6-ii",
+      "kind": "certified_named_clause_or_physical_core",
+      "line": 931,
+      "page": 13,
+      "status": "proved",
+      "obligation": "All three spectral-derivative identities, every complex spectral parameter and every real phase.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_swap",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_phase"
+      ]
+    },
+    {
+      "id": "theorem-6-iii-covectors",
+      "kind": "certified_named_clause_or_physical_core",
+      "line": 933,
+      "page": 13,
+      "status": "proved",
+      "obligation": "All three actual full Frechet-cotangent identities. Pointwise gradient transformation is a separate source correspondence obligation.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_swap_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_reflection_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_phase_covectors"
+      ]
+    },
+    {
+      "id": "theorem-6-iv",
+      "kind": "certified_named_clause_or_physical_core",
+      "line": 939,
+      "page": 14,
+      "status": "proved",
+      "obligation": "All three normalized canonical-root identities, with the literal signs, on the full complex source spaces (hence on the source cut complement).",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iv"
+      ]
+    },
+    {
+      "id": "proposition-11-i",
+      "kind": "certified_named_clause_or_physical_core",
+      "line": 1193,
+      "page": 17,
+      "status": "proved",
+      "obligation": "All three actual L2 Hamiltonian-gradient symmetries on exact H^(k-1), every k>=1 and real phase, including pure midpoint T.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.proposition11_i"
+      ]
+    },
+    {
+      "id": "physical-gradient-spatial-core",
+      "kind": "certified_named_clause_or_physical_core",
+      "line": 945,
+      "page": 14,
+      "status": "proved",
+      "obligation": "Actual physical L2 Frechet gradient on a unit period, actual whole-line fundamental-matrix continuation, period-one gradient and scalar coefficient, a.e. spatial equation and exact integral for every real time, without dividing by monodromy entries.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_gradient_agreement",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral"
+      ]
+    },
+    {
+      "id": "theorem-6-v-nonlocal-sign-review",
+      "kind": "source_convention_review",
+      "line": 947,
+      "page": 14,
+      "status": "pending_source_normalization_comparison",
+      "obligation": "The actual physical ODE with R=diag(i,-i) and its unconjugated Frechet gradient gives xi=delta-2*i*integral(R*phi dot gradient), whereas the printed Theorem6(v) has plus. Compare the full source operator conventions and exhibit a formal printed-statement obstruction before marking the source clause complete.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral"
       ]
     }
   ],
@@ -2660,7 +2776,9 @@
       "last_line": 921,
       "source_sha256": "b891760cf316d2bf12ec0049ca5d84cbbced4f20a353756248b2b05ff0729e09",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "theorem-6-i-discriminants"
+      ]
     },
     {
       "id": "passage-162",
@@ -2669,7 +2787,9 @@
       "last_line": 925,
       "source_sha256": "51c1a7921706bae760db62a51215198c99c42e4a9ebb49de891b306d8224a00e",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "theorem-6-i-endpoint-labels"
+      ]
     },
     {
       "id": "passage-163",
@@ -2696,7 +2816,9 @@
       "last_line": 931,
       "source_sha256": "2c00b5437a122a31dae06ec55d2e54f99cb8686a5e60872807c511ce0264f280",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "theorem-6-ii"
+      ]
     },
     {
       "id": "passage-166",
@@ -2705,7 +2827,9 @@
       "last_line": 933,
       "source_sha256": "9b0170df36ee0007a2ccf34920accc0b3993a33451023178851ba5b5bd0f783c",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "theorem-6-iii-covectors"
+      ]
     },
     {
       "id": "passage-167",
@@ -2723,7 +2847,9 @@
       "last_line": 943,
       "source_sha256": "9c33cd304a1b545872e38582dbc9cad1cde7fa36b416e90c9af5c134a14914bc",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "theorem-6-iv"
+      ]
     },
     {
       "id": "passage-169",
@@ -2732,7 +2858,10 @@
       "last_line": 948,
       "source_sha256": "68f861d828da8a0568d4c54dc2df13cb6a2f37e1fe2748900ce33ac009f3ac9f",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "physical-gradient-spatial-core",
+        "theorem-6-v-nonlocal-sign-review"
+      ]
     },
     {
       "id": "passage-170",
@@ -3143,7 +3272,8 @@
       "source_sha256": "3052ad3807cc89f291a5c4579e7d206f55f9d4d6735789339ef929a24ce90645",
       "status": "pending_semantic_and_correspondence_review",
       "assertion_ids": [
-        "proposition-11"
+        "proposition-11",
+        "proposition-11-i"
       ]
     },
     {
@@ -3421,10 +3551,11 @@
     }
   ],
   "known_open_obligations": [
-    "Full Theorem 6, Corollaries 8 and 9, Lemma 10 and Proposition 11 beyond their already checked parts.",
-    "Literal physical Lemma 2 matrix conjugacy and Lemma 3 geometric eigenspace multiplicities.",
-    "Lemma 13 on all real spatial points and original L2 sources.",
-    "Independent mKdV Cartesian cross-mode canonicity and all background/operator/analytic setup claims.",
-    "Every source passage marked pending, including all cited mathematical facts actually invoked."
+    "Theorem6: source pointwise gradient symmetry correspondence, invariant W and gap-segment interfaces, source nonlocal sign comparison and xi covariance.",
+    "Corollaries8 and9, full Lemma10, and nonlocal Proposition11(iii). Proposition11(i) is now complete on its exact original domain; part(ii) was already proved with corrected R.",
+    "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
+    "Lemma13 at all real spatial points and original L2 sources, including all arbitrary phases.",
+    "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
+    "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
   ]
 }

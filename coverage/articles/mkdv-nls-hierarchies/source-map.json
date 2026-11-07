@@ -430,7 +430,26 @@
     },
     {
       "label": "Theorem 6",
-      "page": 13
+      "page": 13,
+      "status": "partial_original_domain_symmetry_and_physical_spatial_core",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_phase",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_i_endpoint_labels",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_swap",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_phase",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_swap_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_reflection_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_phase_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iv",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_gradient_agreement",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral"
+      ],
+      "remaining": "Theorem6: source pointwise gradient symmetry correspondence, invariant W and gap-segment interfaces, source nonlocal sign comparison and xi covariance."
     },
     {
       "label": "Lemma 10",
@@ -447,7 +466,13 @@
     },
     {
       "label": "Proposition 11",
-      "page": 17
+      "page": 17,
+      "status": "parts_i_and_corrected_ii_proved_part_iii_open",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.proposition11_i",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
+      ],
+      "remaining": "Full corrected typed nonlocal part(iii)."
     },
     {
       "label": "Lemma 2",
@@ -1645,12 +1670,12 @@
     ]
   },
   "latest_validation": {
-    "report": "full-paper-validation.json",
+    "report": "symmetry-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
-    "base_commit": "a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa",
-    "article_audit": 9799,
-    "combined_audit": 61298
+    "base_commit": "ca1c629faa62d3aea01c55e9a8a2053927cc718c",
+    "article_audit": 9923,
+    "combined_audit": 61420
   },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
@@ -1684,7 +1709,7 @@
     "named_statements": 18,
     "numbered_equations": 25,
     "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
-    "initial_semantic_assertions": 98,
+    "initial_semantic_assertions": 106,
     "source_passages": 241
   },
   "full_paper_expansion": {
@@ -1705,5 +1730,23 @@
     ],
     "certified_Theorem6_parts": "P and pure T discriminants, spectral derivatives and full Frechet cotangents on every complex finite exponent p>1. No pointwise-gradient, phase, endpoint-label, root or spatial-ODE completion is inferred.",
     "remaining": "See full-paper-coverage.json; all pending passages remain completion obligations."
+  },
+  "whole_paper_symmetry_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 73,
+    "new_definitions": 12,
+    "source_modules": 17,
+    "new_named_clause_completion": [
+      "Proposition11(i), all original-domain P/T/phase L2-gradient identities.",
+      "Theorem6(ii), all spectral derivative identities.",
+      "Theorem6(iv), all normalized canonical-root identities."
+    ],
+    "other_proved_progress": [
+      "Arbitrary nonzero complex reciprocal scaling and all real source phases.",
+      "All signed periodic endpoint slots under P/T/phases.",
+      "Original L2 whole-line physical gradient spatial equation, scalar integral and periodicity; no monodromy-entry division.",
+      "Smooth H1 counterexample refuting the unrestricted generic upper-right monodromy-entry claim."
+    ],
+    "remaining": "See full-paper-coverage.json; source normalization comparison of the spatial nonlocal sign remains open."
   }
 }

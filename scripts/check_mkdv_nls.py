@@ -1155,6 +1155,23 @@ modules = [
     'NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean',
     'NLS/ZakharovShabat/SourceMidpointReflection.lean',
     'NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean',
+    'NLS/ZakharovShabat/ClassicalReciprocalScaling.lean',
+    'NLS/ZakharovShabat/SourceReciprocalScaling.lean',
+    'NLS/ZakharovShabat/SourceDiscriminantSpectralTransport.lean',
+    'NLS/ZakharovShabat/SourceMidpointSpectralData.lean',
+    'NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean',
+    'NLS/ZakharovShabat/ClassicalNLSMidpointReflection.lean',
+    'NLS/Fourier/PeriodOneMidpointReflection.lean',
+    'NLS/ZakharovShabat/SobolevHierarchyMidpointReflection.lean',
+    'NLS/Articles/MKdVNLSHierarchies/HierarchyReflection.lean',
+    'NLS/ZakharovShabat/DiscriminantGradientStateAlgebra.lean',
+    'NLS/ZakharovShabat/L2DiscriminantSpatialEquation.lean',
+    'NLS/ZakharovShabat/L2DiscriminantXiIntegral.lean',
+    'NLS/ZakharovShabat/DiscriminantFloquetAlgebra.lean',
+    'NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean',
+    'NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean',
+    'NLS/Articles/MKdVNLSHierarchies/DiscriminantSpatialEquation.lean',
+    'NLS/Articles/MKdVNLSHierarchies/GenericEntryCorrection.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

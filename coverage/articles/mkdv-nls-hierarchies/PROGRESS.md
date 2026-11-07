@@ -3390,3 +3390,33 @@ outputs are unchanged. Cached imports were source-hash-verified against the
 validated incoming-main checkout; no fresh full dependency rebuild is claimed.
 Exact current evidence is in full-paper-validation.json. The coverage checker
 prevents the ledger from being marked complete while obligations remain open.
+
+
+## 2026-11-07 — Full phase/root symmetries and rough whole-line spatial equation
+
+Proposition11(i) is complete on its exact original complex H^(k-1) domain,
+including pure midpoint reflection T, every k>=1 and arbitrary real phase.
+Theorem6(ii) and (iv) are complete for the original spectral functions.
+All signed endpoint slots and arbitrary phase cotangent/discriminant
+identities are checked, even for every nonzero complex reciprocal scaling.
+No reality, smoothness or open-gap hypothesis is imposed on those interfaces.
+
+The original physical L2 gradient has its division-free spatial equation,
+actual whole-line continuation and period-one scalar coefficient. Its scalar
+transport integral follows from absolute continuity at every positive and
+negative real time. The physical R=diag(i,-i) convention fixes a negative
+nonlocal integral sign; comparison with the printed positive sign remains
+a source-correspondence obligation. Full xi covariance is also still open.
+A nonzero smooth H1 lower triangular potential formally refutes the paper's
+unrestricted generic upper-right monodromy-entry claim. No such division
+appears in the new spatial proof.
+
+Seventeen strictly checked modules add 73 theorems and 12 definitions.
+The combined NLS import passes; the article transitive audit passes for
+9,923 declarations and auxiliaries, and the combined audit for 61,420.
+Only propext, Classical.choice and Quot.sound are permitted. All 7,239
+frozen source/checker inputs and 1,119 reused checker-prefix output hashes
+remain unchanged. The existing real-type endpoint reflection theorem is
+preserved; the stronger complex theorem has a distinct name. Exact hashes
+and proof scope are in symmetry-validation.json. Whole-paper coverage
+remains in progress, with 106 assertion records and 241 source passages.
