@@ -1,0 +1,48 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/SequenceSpaces/ComplexPhaseSmoothing.lean",
+      "source_sha256": "d66f6fdd07f1cfe8dfe1230e070bc53b322512a18e473e437d45bf271c9536ec",
+      "local_sha256": "d66f6fdd07f1cfe8dfe1230e070bc53b322512a18e473e437d45bf271c9536ec",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PairComponentHolder.lean",
+      "source_sha256": "1c87a11e7903654184fed00d7808106319306b4639d84ad9c2aa4dd30cc788d4",
+      "local_sha256": "1c87a11e7903654184fed00d7808106319306b4639d84ad9c2aa4dd30cc788d4",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceEtaRemainderLocalGapBound.lean",
+      "source_sha256": "47fdbba77395c94c1c6e5d53c01a87ee20b1248d6436f1da13c2e89e73460353",
+      "local_sha256": "47fdbba77395c94c1c6e5d53c01a87ee20b1248d6436f1da13c2e89e73460353",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFreeResolvent.lean",
+      "source_sha256": "d455cfafbff1c93408def50a3752fc58ef24bade3c87a1856a5df7a6184ce4a8",
+      "local_sha256": "d455cfafbff1c93408def50a3752fc58ef24bade3c87a1856a5df7a6184ce4a8",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceResolvent.lean",
+      "source_sha256": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+      "local_sha256": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedGapAsymptotics.lean",
+      "source_sha256": "0d18bad6765f2aab8664e56f677331685e2e2ef819ab432ff992a3d1acd58d33",
+      "local_sha256": "0d18bad6765f2aab8664e56f677331685e2e2ef819ab432ff992a3d1acd58d33",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedGapSequence.lean",
+      "source_sha256": "df7a18528a15f6a539cee405777d1b660ca20c03c64e9f505b4b5923f37e93b5",
+      "local_sha256": "df7a18528a15f6a539cee405777d1b660ca20c03c64e9f505b4b5923f37e93b5",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Unchanged canonical spectral and analytic sequence lemmas required for actual retained Miura coordinate beta decay and the one-derivative coordinate phase error. Every newly reached dependency is selected and strictly rebuilt; full original roots and complex neighborhoods are retained."
+}

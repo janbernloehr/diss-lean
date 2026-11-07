@@ -3525,6 +3525,23 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/OriginalL2ActionTrace
   NLS/Articles/KdVKdV2Frequencies/ActualL2FlowEnergy
   NLS/Articles/KdVKdV2Frequencies/ActualKdVPhaseError
+  NLS/SequenceSpaces/PairComponentHolder
+  NLS/ZakharovShabat/SourceEtaRemainderLocalGapBound
+  NLS/ZakharovShabat/SourceFreeResolvent
+  NLS/ZakharovShabat/SourceResolvent
+  NLS/ZakharovShabat/SourceWeightedMidpointBound
+  NLS/ZakharovShabat/SourceWeightedGapAsymptotics
+  NLS/ZakharovShabat/SourceWeightedGapSequence
+  NLS/ZakharovShabat/SourceWeightedAbsoluteBetaDecay
+  NLS/KdV/HillMiuraH1AbsoluteBetaDecay
+  NLS/ComplexAnalysis/AnalyticUniformPullback
+  NLS/KdV/HillHminusL2NoncentralBetaDecay
+  NLS/SequenceSpaces/ComplexPhaseSmoothing
+  NLS/KdV/HillHminusL2CoordinatePhaseSmoothing
+  NLS/SequenceSpaces/AnalyticWeightedPhaseRemainder
+  NLS/Articles/KdVKdV2Frequencies/ActualL2CoordinatePhaseData
+  NLS/Articles/KdVKdV2Frequencies/ActualL2CoordinatePhaseRemainder
+  NLS/Articles/KdVKdV2Frequencies/ActualL2CoordinatePhaseIdentification
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

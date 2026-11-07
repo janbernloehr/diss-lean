@@ -1,3 +1,20 @@
+import NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseData
+import NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseIdentification
+import NLS.SequenceSpaces.AnalyticWeightedPhaseRemainder
+import NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseRemainder
+import NLS.ComplexAnalysis.AnalyticUniformPullback
+import NLS.KdV.HillHminusL2CoordinatePhaseSmoothing
+import NLS.SequenceSpaces.ComplexPhaseSmoothing
+import NLS.KdV.HillHminusL2NoncentralBetaDecay
+import NLS.KdV.HillMiuraH1AbsoluteBetaDecay
+import NLS.SequenceSpaces.PairComponentHolder
+import NLS.ZakharovShabat.SourceEtaRemainderLocalGapBound
+import NLS.ZakharovShabat.SourceFreeResolvent
+import NLS.ZakharovShabat.SourceResolvent
+import NLS.ZakharovShabat.SourceWeightedAbsoluteBetaDecay
+import NLS.ZakharovShabat.SourceWeightedGapAsymptotics
+import NLS.ZakharovShabat.SourceWeightedGapSequence
+import NLS.ZakharovShabat.SourceWeightedMidpointBound
 import NLS.Articles.KdVKdV2Frequencies.ActualKdVPhaseError
 import NLS.Articles.KdVKdV2Frequencies.ActualL2FlowEnergy
 import NLS.SequenceSpaces.PhysicalRealPositiveEnergy
@@ -6245,7 +6262,24 @@ private def kdvFrequencyAuditChunk27 : Array Lean.Name := #[
   `NLS.SequenceSpaces.PhysicalRealPositiveEnergy,
   `NLS.Articles.KdVKdV2Frequencies.OriginalL2ActionTrace,
   `NLS.Articles.KdVKdV2Frequencies.ActualL2FlowEnergy,
-  `NLS.Articles.KdVKdV2Frequencies.ActualKdVPhaseError
+  `NLS.Articles.KdVKdV2Frequencies.ActualKdVPhaseError,
+  `NLS.SequenceSpaces.PairComponentHolder,
+  `NLS.ZakharovShabat.SourceEtaRemainderLocalGapBound,
+  `NLS.ZakharovShabat.SourceFreeResolvent,
+  `NLS.ZakharovShabat.SourceResolvent,
+  `NLS.ZakharovShabat.SourceWeightedMidpointBound,
+  `NLS.ZakharovShabat.SourceWeightedGapAsymptotics,
+  `NLS.ZakharovShabat.SourceWeightedGapSequence,
+  `NLS.ZakharovShabat.SourceWeightedAbsoluteBetaDecay,
+  `NLS.KdV.HillMiuraH1AbsoluteBetaDecay,
+  `NLS.ComplexAnalysis.AnalyticUniformPullback,
+  `NLS.KdV.HillHminusL2NoncentralBetaDecay,
+  `NLS.SequenceSpaces.ComplexPhaseSmoothing,
+  `NLS.KdV.HillHminusL2CoordinatePhaseSmoothing,
+  `NLS.SequenceSpaces.AnalyticWeightedPhaseRemainder,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseData,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseRemainder,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseIdentification
 ]
 
 open Lean in

@@ -1153,9 +1153,16 @@
           "lean_source": "NLS/Articles/KdVKdV2Frequencies/ActualKdVPhaseError.lean",
           "status": "verified_dependency",
           "qualification": "The ACTUAL Birkhoff phase error is now a canonical h^(3/2)-valued function, with ONE constant bounding its norm by C*|time| for ALL real times and ALL sources in EVERY bounded set of ORIGINAL real mean-zero L2. Its exact inclusion is the ACTUAL evolved h^(1/2) Birkhoff target minus the Airy phase of the actual initial target. The exact quadratic physical action trace is transported to ORIGINAL L2 with norm equality, proves the ACTUAL native target norm is at most the original source norm, and gives exact ORIGINAL L2 norm conservation for the actual Birkhoff group. This strengthens the previous multiplier-only estimate to a bound on the ACTUAL phase error. ONE physically calibrated global frequency G precedes all bounded sets, sources and times. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Corollary 1.7 still requires ACTUAL forward/inverse KdV Birkhoff-minus-Fourier one-smoothing estimates and identification with the unique physical PDE solution. The phase error proved here is in Birkhoff coordinates; it does not yet give the full physical H1 error. Compactness of a derivative remainder alone does not imply one derivative of smoothing. Theorem 1.2 still lacks its ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. No additional complete main theorem is claimed. The goal remains ACTIVE and incomplete."
+        },
+        {
+          "source_clause": "Necessary analytic ONE-derivative remainder of the ACTUAL noncentral coordinate phase near EVERY original real L2 source",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_actual_l2_coordinate_phase_decomposition",
+          "lean_source": "NLS/Articles/KdVKdV2Frequencies/ActualL2CoordinatePhaseIdentification.lean",
+          "status": "verified_dependency",
+          "qualification": "A missing ACTUAL coordinate phase contribution toward Corollary 1.7 is VERIFIED near EVERY real ORIGINAL L2 source. The literal noncentral beta of the SAME retained Hill-Miura chart has inverse-index decay on ONE common complex L2 neighborhood before ALL positive labels. Its exponential minus one gives a bounded analytic weighted symbol and an exact multiplier gaining one derivative on every Banach sequence scale. Applying this to the ACTUAL Abelian packet gives analytic A in h1 and R in h2 with packet=A+R, uniformly bounded on the common original-norm neighborhood. A is exactly the original amplitude times the normalized midpoint times the SAME own-index eta sequence, with the noncentral phase removed. The final theorem reconstructs the SAME globally calibrated positive physical forward map, including its fixed sign at EVERY label. No spectral factor or physical orientation is replaced. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Corollary 1.7 still needs the remaining ACTUAL amplitude and spectral Fourier remainders, the complete forward/inverse KdV Birkhoff-minus-Fourier one-smoothing estimate, and identification with the unique physical PDE solution. The new h2 remainder is for the normalized positive packet whose native source regularity is h1; it does not by itself prove the full signed raw-target or physical H1 error. The preceding exact ORIGINAL L2 energy and actual dynamical phase-error bounds are retained. Theorem 1.2 still lacks its ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete."
         }
       ],
-      "current_support_summary": "The ACTUAL Birkhoff phase error is now a canonical h^(3/2)-valued function, with ONE constant bounding its norm by C*|time| for ALL real times and ALL sources in EVERY bounded set of ORIGINAL real mean-zero L2. Its exact inclusion is the ACTUAL evolved h^(1/2) Birkhoff target minus the Airy phase of the actual initial target. The exact quadratic physical action trace is transported to ORIGINAL L2 with norm equality, proves the ACTUAL native target norm is at most the original source norm, and gives exact ORIGINAL L2 norm conservation for the actual Birkhoff group. This strengthens the previous multiplier-only estimate to a bound on the ACTUAL phase error. ONE physically calibrated global frequency G precedes all bounded sets, sources and times."
+      "current_support_summary": "A missing ACTUAL coordinate phase contribution toward Corollary 1.7 is VERIFIED near EVERY real ORIGINAL L2 source. The literal noncentral beta of the SAME retained Hill-Miura chart has inverse-index decay on ONE common complex L2 neighborhood before ALL positive labels. Its exponential minus one gives a bounded analytic weighted symbol and an exact multiplier gaining one derivative on every Banach sequence scale. Applying this to the ACTUAL Abelian packet gives analytic A in h1 and R in h2 with packet=A+R, uniformly bounded on the common original-norm neighborhood. A is exactly the original amplitude times the normalized midpoint times the SAME own-index eta sequence, with the noncentral phase removed. The final theorem reconstructs the SAME globally calibrated positive physical forward map, including its fixed sign at EVERY label. No spectral factor or physical orientation is replaced."
     },
     {
       "label": "Theorem 1.9",
@@ -47178,14 +47185,218 @@
       "scope": "Eight results define the unique canonical h^(3/2) lift of the ACTUAL target-minus-Airy phase error, give its literal coefficient identity, prove bounds by C*|time| UNIFORMLY on EVERY bounded ORIGINAL L2 set, and choose ONE physically calibrated G for this error bound together with exact ORIGINAL L2 flow norm conservation. Physical PDE identification and coordinate smoothing remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "676b79a0208627d89858a3e2b324a3c43a85ed59d927eb6ea8d06adc18de7b60"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PairComponentHolder.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "UNCHANGED canonical dependency for the actual coordinate phase theorem: PairComponentHolder. Exact source bytes and pinned canonical commit are recorded in CANONICAL_COORDINATE_BETA_REUSE.json; strictly rebuilt and transitively axiom audited.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1c87a11e7903654184fed00d7808106319306b4639d84ad9c2aa4dd30cc788d4"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceEtaRemainderLocalGapBound.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "UNCHANGED canonical dependency for the actual coordinate phase theorem: SourceEtaRemainderLocalGapBound. Exact source bytes and pinned canonical commit are recorded in CANONICAL_COORDINATE_BETA_REUSE.json; strictly rebuilt and transitively axiom audited.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "47fdbba77395c94c1c6e5d53c01a87ee20b1248d6436f1da13c2e89e73460353"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFreeResolvent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "UNCHANGED canonical dependency for the actual coordinate phase theorem: SourceFreeResolvent. Exact source bytes and pinned canonical commit are recorded in CANONICAL_COORDINATE_BETA_REUSE.json; strictly rebuilt and transitively axiom audited.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d455cfafbff1c93408def50a3752fc58ef24bade3c87a1856a5df7a6184ce4a8"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceResolvent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "UNCHANGED canonical dependency for the actual coordinate phase theorem: SourceResolvent. Exact source bytes and pinned canonical commit are recorded in CANONICAL_COORDINATE_BETA_REUSE.json; strictly rebuilt and transitively axiom audited.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedMidpointBound.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Two direct original spectral estimates: local uniform bound of the SAME own-index eta remainder and native weighted realization of the ACTUAL Dirichlet-to-midpoint displacement, reconstructed from BOTH exact eta signs and inverse remainder phases.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aa8002b96a789eae170c9570a4bbad1484662504d1e1f540ced2a5c481a94c2e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedGapAsymptotics.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "UNCHANGED canonical dependency for the actual coordinate phase theorem: SourceWeightedGapAsymptotics. Exact source bytes and pinned canonical commit are recorded in CANONICAL_COORDINATE_BETA_REUSE.json; strictly rebuilt and transitively axiom audited.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0d18bad6765f2aab8664e56f677331685e2e2ef819ab432ff992a3d1acd58d33"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedGapSequence.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "UNCHANGED canonical dependency for the actual coordinate phase theorem: SourceWeightedGapSequence. Exact source bytes and pinned canonical commit are recorded in CANONICAL_COORDINATE_BETA_REUSE.json; strictly rebuilt and transitively axiom audited.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "df7a18528a15f6a539cee405777d1b660ca20c03c64e9f505b4b5923f37e93b5"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedAbsoluteBetaDecay.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Two original-root estimates: weighted Hilbert majorants bound the ENTIRE absolute beta series with inverse selected-index decay; every spectral weight dominating the index bracket has this decay on a common complex normalized neighborhood.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "50bfe992749d6ac7805bdf0a1740e3ff145d9c2287eaadafcea014818b391a57"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraH1AbsoluteBetaDecay.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Retains the SAME supplied original roots and transports absolute beta-series decay through the actual normalized ordinary Dirichlet Miura source on a complex H1 neighborhood, with exact half-scale spectral weights.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dada9d455278bcda1dc76a7a94e886d5bb18fa42d51c9fd658fa8077650935ed"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticUniformPullback.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Reusable exact analytic-germ pullback of a uniform scalar-family estimate, with one common open source neighborhood and coefficient diagram. This keeps actual native composition proofs within default checking limits.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a380afc331d7beff9a0efe79a92653c527431e066a6858eb976078a32b0b8732"
+    },
+    {
+      "path": "NLS/KdV/HillHminusL2NoncentralBetaDecay.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Two theorems bound the literal noncentral correction after deleting the actual central summand and transport it through the retained native Miura H1 germ to ONE ORIGINAL complex L2 neighborhood before ALL positive labels.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8a4fbed3284debf983c59d72e9e7ac80297b57382110e2a84fda4b58f0a94969"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ComplexPhaseSmoothing.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "UNCHANGED canonical dependency for the actual coordinate phase theorem: ComplexPhaseSmoothing. Exact source bytes and pinned canonical commit are recorded in CANONICAL_COORDINATE_BETA_REUSE.json; strictly rebuilt and transitively axiom audited.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d66f6fdd07f1cfe8dfe1230e070bc53b322512a18e473e437d45bf271c9536ec"
+    },
+    {
+      "path": "NLS/KdV/HillHminusL2CoordinatePhaseSmoothing.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Two theorems extend the positive actual noncentral beta to the signed index set with zero head and construct a bounded analytic weighted exponential-error symbol plus exact ONE-derivative multipliers on EVERY Banach sequence scale.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "738457b9bdf9937d1a8e26b00860919eadf5137353be50bc9ce54b970015d843"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticWeightedPhaseRemainder.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Three reusable theorems: positive-slot phase compensation including the zero/negative head, common analytic normalization data, and analytic h1/h2 packet decomposition with exact coefficients and norm bounds. The source Banach space remains opaque; no kernel limit is raised.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "12cb7e485f5a3e577a98d5f6cf498cc3d801dfc7d49f7e58acf3f71b51de281e"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2CoordinatePhaseData.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Supplies the actual original packet, bounded analytic inverse phase and weighted phase-error symbol on ONE common complex L2 neighborhood, with exact coefficient normalization and phase compensation. All data come from the SAME supplied actual Hill packet.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d3e8dca3d9b198fa52bb10cf6836707ab61fcbc89cab9deee3989d94453a5405"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2CoordinatePhaseRemainder.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Applies the proved symbol to the ACTUAL packet: analytic A in h1 and R in h2, exact packet=A+R at EVERY signed slot, and A equals literal amplitude times normalized midpoint times the SAME eta, including low and closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "641c733e56fac2fbfc994205abb69bee244e7b3b9200b01fa0b4cc740df101bb"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/ActualL2CoordinatePhaseIdentification.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary ACTUAL coordinate phase one-derivative remainder near EVERY original real L2 source"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Near EVERY real ORIGINAL L2 source, the SAME globally calibrated positive physical forward map is reconstructed from this analytic h1 core and h2 remainder with EVERY retained fixed orientation sign. This is the coordinate noncentral-phase contribution, not full physical one-smoothing.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "62dbf4ddc90ea23df5a9aceb7e7db912a15dfd1dab799efb580884d2bd9bc759"
     }
   ],
   "dependencies_needed": [
-    "The ACTUAL Birkhoff phase error is now a canonical h^(3/2)-valued function, with ONE constant bounding its norm by C*|time| for ALL real times and ALL sources in EVERY bounded set of ORIGINAL real mean-zero L2. Its exact inclusion is the ACTUAL evolved h^(1/2) Birkhoff target minus the Airy phase of the actual initial target. The exact quadratic physical action trace is transported to ORIGINAL L2 with norm equality, proves the ACTUAL native target norm is at most the original source norm, and gives exact ORIGINAL L2 norm conservation for the actual Birkhoff group. This strengthens the previous multiplier-only estimate to a bound on the ACTUAL phase error. ONE physically calibrated global frequency G precedes all bounded sets, sources and times. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Corollary 1.7 still requires ACTUAL forward/inverse KdV Birkhoff-minus-Fourier one-smoothing estimates and identification with the unique physical PDE solution. The phase error proved here is in Birkhoff coordinates; it does not yet give the full physical H1 error. Compactness of a derivative remainder alone does not imply one derivative of smoothing. Theorem 1.2 still lacks its ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. No additional complete main theorem is claimed. The goal remains ACTIVE and incomplete.",
+    "A missing ACTUAL coordinate phase contribution toward Corollary 1.7 is VERIFIED near EVERY real ORIGINAL L2 source. The literal noncentral beta of the SAME retained Hill-Miura chart has inverse-index decay on ONE common complex L2 neighborhood before ALL positive labels. Its exponential minus one gives a bounded analytic weighted symbol and an exact multiplier gaining one derivative on every Banach sequence scale. Applying this to the ACTUAL Abelian packet gives analytic A in h1 and R in h2 with packet=A+R, uniformly bounded on the common original-norm neighborhood. A is exactly the original amplitude times the normalized midpoint times the SAME own-index eta sequence, with the noncentral phase removed. The final theorem reconstructs the SAME globally calibrated positive physical forward map, including its fixed sign at EVERY label. No spectral factor or physical orientation is replaced. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Corollary 1.7 still needs the remaining ACTUAL amplitude and spectral Fourier remainders, the complete forward/inverse KdV Birkhoff-minus-Fourier one-smoothing estimate, and identification with the unique physical PDE solution. The new h2 remainder is for the normalized positive packet whose native source regularity is h1; it does not by itself prove the full signed raw-target or physical H1 error. The preceding exact ORIGINAL L2 energy and actual dynamical phase-error bounds are retained. Theorem 1.2 still lacks its ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
-    "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Corollary 1.7 still requires ACTUAL forward/inverse KdV Birkhoff-minus-Fourier one-smoothing estimates and identification with the unique physical PDE solution. The phase error proved here is in Birkhoff coordinates; it does not yet give the full physical H1 error. Compactness of a derivative remainder alone does not imply one derivative of smoothing. Theorem 1.2 still lacks its ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. No additional complete main theorem is claimed. The goal remains ACTIVE and incomplete.",
+    "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Corollary 1.7 still needs the remaining ACTUAL amplitude and spectral Fourier remainders, the complete forward/inverse KdV Birkhoff-minus-Fourier one-smoothing estimate, and identification with the unique physical PDE solution. The new h2 remainder is for the normalized positive packet whose native source regularity is h1; it does not by itself prove the full signed raw-target or physical H1 error. The preceding exact ORIGINAL L2 energy and actual dynamical phase-error bounds are retained. Theorem 1.2 still lacks its ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
   ],
   "workspace": {
@@ -47209,8 +47420,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 26631,
-    "total_declarations_audited": 48701,
+    "candidate_declarations_audited": 26750,
+    "total_declarations_audited": 48820,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -47221,7 +47432,7 @@
       "Corollary 1.4",
       "Corollary 1.5"
     ],
-    "selected_modules": 3516,
+    "selected_modules": 3533,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -47389,7 +47600,8 @@
     "corollary15_sharpness_validation_sequence": "All 3487 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is seven own modules with eight explicit public theorems. No canonical module or provenance record is newly selected. All seven modules were strictly rebuilt in dependency order AFTER freezing 3552 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3494 selections and EVERY imported NLS declaration: 26446 selected declarations and 48516 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and bidirectional 3494-name set probe with insertion/deletion rejection are verified. The 3502 historical strict PASS records cover 3494 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a seven-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "corollary15_complete_validation_sequence": "All 3494 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is nine own modules with 19 explicit public theorems. No canonical module or provenance record is newly selected. All nine modules were strictly rebuilt in dependency order AFTER freezing 3561 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3503 selections and EVERY imported NLS declaration: 26483 selected declarations and 48552 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. The exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and bidirectional 3503-name set probe with insertion/deletion rejection are verified. The 3511 historical strict PASS records cover 3503 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a nine-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "actual_kdv_phase_validation_sequence": "All 3503 prior selected sources and all 55 provenance records remain byte-identical. The exact new import closure is one unchanged canonical weighted-multiplier module and eight own modules with 46 explicit public theorems. One canonical module and one provenance record are newly selected. All nine modules were strictly rebuilt in dependency order AFTER freezing 3571 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3512 selections and EVERY imported NLS declaration: 26601 selected declarations and 48671 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3512-name set probe with insertion/deletion rejection are verified. The 3520 historical strict PASS records cover 3512 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a nine-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
-    "actual_kdv_energy_validation_sequence": "All 3512 prior selected sources and all 56 provenance records remain byte-identical. The exact new import closure is four own modules with 19 explicit public theorems. No canonical module or provenance record is newly selected. All four modules were strictly rebuilt in dependency order AFTER freezing 3575 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3516 selections and EVERY imported NLS declaration: 26631 selected declarations and 48701 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3516-name set probe with insertion/deletion rejection are verified. The 3524 historical strict PASS records cover 3516 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a four-module incremental rebuild retaining prior strict evidence, not a full rebuild."
+    "actual_kdv_energy_validation_sequence": "All 3512 prior selected sources and all 56 provenance records remain byte-identical. The exact new import closure is four own modules with 19 explicit public theorems. No canonical module or provenance record is newly selected. All four modules were strictly rebuilt in dependency order AFTER freezing 3575 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3516 selections and EVERY imported NLS declaration: 26631 selected declarations and 48701 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3516-name set probe with insertion/deletion rejection are verified. The 3524 historical strict PASS records cover 3516 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a four-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
+    "coordinate_phase_validation_sequence": "All 3516 prior selected sources and all 56 prior provenance records remain byte-identical. The exact new import closure is ten own modules with 16 explicit public theorems and seven UNCHANGED canonical modules. One canonical reuse record pins every reused source to main commit c5bcf6344cd2e2628ae537e98b85bb9ec1849dec, for 57 provenance records total. All seventeen modules were strictly rebuilt in dependency order AFTER freezing 3593 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3533 selections and EVERY imported NLS declaration: 26750 selected declarations and 48820 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 28 private chunks of at most 128 names, and the bidirectional 3533-name set probe with insertion/deletion rejection are verified. The 3541 historical strict PASS records cover 3533 unique modules, retaining eight prior repeats. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a seventeen-module incremental rebuild retaining prior strict evidence, not a full rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -48997,6 +49209,18 @@
         "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Corollary 1.7 still requires the ACTUAL forward/inverse KdV Birkhoff-minus-Fourier one-smoothing estimates and identification with the unique physical PDE solution. Compactness of a derivative remainder alone does not imply those estimates. Theorem 1.2 retains the full ORIGINAL ACTION uniform result for every s>-1, but its s=-1 UNIFORM little-o endpoint remains open. No other complete main theorem is claimed. The goal remains ACTIVE and incomplete.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "3f8bb35d70c55b982f9541021feaeac606370912",
+      "description": "A missing ACTUAL coordinate phase contribution toward Corollary 1.7 is VERIFIED near EVERY real ORIGINAL L2 source. The literal noncentral beta of the SAME retained Hill-Miura chart has inverse-index decay on ONE common complex L2 neighborhood before ALL positive labels. Its exponential minus one gives a bounded analytic weighted symbol and an exact multiplier gaining one derivative on every Banach sequence scale. Applying this to the ACTUAL Abelian packet gives analytic A in h1 and R in h2 with packet=A+R, uniformly bounded on the common original-norm neighborhood. A is exactly the original amplitude times the normalized midpoint times the SAME own-index eta sequence, with the noncentral phase removed. The final theorem reconstructs the SAME globally calibrated positive physical forward map, including its fixed sign at EVERY label. No spectral factor or physical orientation is replaced.",
+      "entries": [
+        "The ACTUAL Birkhoff phase error is now a canonical h^(3/2)-valued function, with ONE constant bounding its norm by C*|time| for ALL real times and ALL sources in EVERY bounded set of ORIGINAL real mean-zero L2. Its exact inclusion is the ACTUAL evolved h^(1/2) Birkhoff target minus the Airy phase of the actual initial target. The exact quadratic physical action trace is transported to ORIGINAL L2 with norm equality, proves the ACTUAL native target norm is at most the original source norm, and gives exact ORIGINAL L2 norm conservation for the actual Birkhoff group. This strengthens the previous multiplier-only estimate to a bound on the ACTUAL phase error. ONE physically calibrated global frequency G precedes all bounded sets, sources and times. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Corollary 1.7 still requires ACTUAL forward/inverse KdV Birkhoff-minus-Fourier one-smoothing estimates and identification with the unique physical PDE solution. The phase error proved here is in Birkhoff coordinates; it does not yet give the full physical H1 error. Compactness of a derivative remainder alone does not imply one derivative of smoothing. Theorem 1.2 still lacks its ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. No additional complete main theorem is claimed. The goal remains ACTIVE and incomplete.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and Corollary 1.5; 8 remain OPEN. Corollary 1.7 still requires ACTUAL forward/inverse KdV Birkhoff-minus-Fourier one-smoothing estimates and identification with the unique physical PDE solution. The phase error proved here is in Birkhoff coordinates; it does not yet give the full physical H1 error. Compactness of a derivative remainder alone does not imply one derivative of smoothing. Theorem 1.2 still lacks its ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. No additional complete main theorem is claimed. The goal remains ACTIVE and incomplete.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -49118,5 +49342,6 @@
   "corollary15_sharpness_record": "COROLLARY15_SHARPNESS.md",
   "corollary15_complete_record": "COROLLARY15_COMPLETE.md",
   "actual_kdv_phase_record": "ACTUAL_KDV_PHASE.md",
-  "actual_kdv_energy_record": "ACTUAL_KDV_ENERGY.md"
+  "actual_kdv_energy_record": "ACTUAL_KDV_ENERGY.md",
+  "coordinate_phase_record": "COORDINATE_PHASE.md"
 }
