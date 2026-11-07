@@ -3444,6 +3444,18 @@ modules=(
   NLS/KdV/PhysicalFrequencyDecayPullback
   NLS/KdV/PhysicalHighRegularityFrequencyDecay
   NLS/Articles/KdVKdV2Frequencies/Theorem12NativeFullFrequencyDecay
+  NLS/KdV/PhysicalRenormalizedCorrectionAnalytic
+  NLS/Articles/KdVKdV2Frequencies/NormalizedSobolevRenormalizedFrequency
+  NLS/Articles/KdVKdV2Frequencies/WeightedPairRenormalizedRecovery
+  NLS/Articles/KdVKdV2Frequencies/ComplexSobolevFrequencyAgreement
+  NLS/SequenceSpaces/QuadraticFrequencyDecayTransfer
+  NLS/KdV/PhysicalFrequencyPairPullback
+  NLS/Articles/KdVKdV2Frequencies/SobolevSharpFrequencyPairCharts
+  NLS/Articles/KdVKdV2Frequencies/SharpSobolevActionFrequencyBounds
+  NLS/SequenceSpaces/LinearFrequencyDecayPullback
+  NLS/Articles/KdVKdV2Frequencies/SharpFrequencyActionModel
+  NLS/Articles/KdVKdV2Frequencies/OriginalSharpActionFrequencyBounds
+  NLS/Articles/KdVKdV2Frequencies/Theorem12OriginalActionDecay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

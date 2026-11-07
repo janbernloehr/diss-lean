@@ -1,3 +1,15 @@
+import NLS.Articles.KdVKdV2Frequencies.SharpFrequencyActionModel
+import NLS.SequenceSpaces.LinearFrequencyDecayPullback
+import NLS.Articles.KdVKdV2Frequencies.Theorem12OriginalActionDecay
+import NLS.Articles.KdVKdV2Frequencies.OriginalSharpActionFrequencyBounds
+import NLS.Articles.KdVKdV2Frequencies.SharpSobolevActionFrequencyBounds
+import NLS.KdV.PhysicalFrequencyPairPullback
+import NLS.Articles.KdVKdV2Frequencies.SobolevSharpFrequencyPairCharts
+import NLS.Articles.KdVKdV2Frequencies.ComplexSobolevFrequencyAgreement
+import NLS.SequenceSpaces.QuadraticFrequencyDecayTransfer
+import NLS.KdV.PhysicalRenormalizedCorrectionAnalytic
+import NLS.Articles.KdVKdV2Frequencies.NormalizedSobolevRenormalizedFrequency
+import NLS.Articles.KdVKdV2Frequencies.WeightedPairRenormalizedRecovery
 import NLS.KdV.PhysicalFrequencyDecayPullback
 import NLS.KdV.PhysicalSharpOffDiagonalParameterization
 import NLS.KdV.PhysicalSharpFrequencyDecayData
@@ -6080,7 +6092,19 @@ private def kdvFrequencyAuditChunk26 : Array Lean.Name := #[
   `NLS.KdV.PhysicalSharpFrequencyDecay,
   `NLS.KdV.PhysicalFrequencyDecayPullback,
   `NLS.KdV.PhysicalHighRegularityFrequencyDecay,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12NativeFullFrequencyDecay
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12NativeFullFrequencyDecay,
+  `NLS.KdV.PhysicalRenormalizedCorrectionAnalytic,
+  `NLS.Articles.KdVKdV2Frequencies.NormalizedSobolevRenormalizedFrequency,
+  `NLS.Articles.KdVKdV2Frequencies.WeightedPairRenormalizedRecovery,
+  `NLS.Articles.KdVKdV2Frequencies.ComplexSobolevFrequencyAgreement,
+  `NLS.SequenceSpaces.QuadraticFrequencyDecayTransfer,
+  `NLS.KdV.PhysicalFrequencyPairPullback,
+  `NLS.Articles.KdVKdV2Frequencies.SobolevSharpFrequencyPairCharts,
+  `NLS.Articles.KdVKdV2Frequencies.SharpSobolevActionFrequencyBounds,
+  `NLS.SequenceSpaces.LinearFrequencyDecayPullback,
+  `NLS.Articles.KdVKdV2Frequencies.SharpFrequencyActionModel,
+  `NLS.Articles.KdVKdV2Frequencies.OriginalSharpActionFrequencyBounds,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12OriginalActionDecay
 ]
 
 open Lean in
