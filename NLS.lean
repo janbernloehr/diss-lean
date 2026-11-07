@@ -6792,3 +6792,11 @@ import NLS.ZakharovShabat.L2PhysicalGradientUniqueness
 import NLS.ZakharovShabat.L2FullAbelianGradient
 import NLS.ZakharovShabat.SourceReflectionCutDomain
 import NLS.Articles.MKdVNLSHierarchies.PrimitiveNonlocalReflection
+import NLS.ZakharovShabat.ClassicalFundamentalMatrixSymmetries
+import NLS.ZakharovShabat.DiscriminantMatrixSymmetries
+import NLS.ZakharovShabat.SourceL2UnitFundamentalSymmetries
+import NLS.ZakharovShabat.L2DiscriminantPointwiseSymmetries
+import NLS.ZakharovShabat.SourceSwapScalingConstraint
+import NLS.ZakharovShabat.L2NormalizedLocalResidual
+import NLS.Articles.MKdVNLSHierarchies.PointwiseSpectralSymmetries
+import NLS.Articles.MKdVNLSHierarchies.PrimitiveLocalReflection

@@ -197,11 +197,44 @@ primitive-gradient hypothesis is assumed in the final existence theorem.
 This completes **corrected Corollary 9(ii)**: the scalar nonlocal integral
 multiplies `J*phi` and has a positive sign on the residual's left side, and
 lambda is restricted to the domain where the primitive gradient exists.
-Part(i), full xi covariance and the remaining ledger obligations stay open.
+At that milestone, part(i) and xi covariance were still open; the next
+milestone closes both. Other ledger obligations remain open.
 Four strictly checked modules add 9 theorems and 2 definitions; validation is
 recorded in [`primitive-nonlocal-validation.json`](primitive-nonlocal-validation.json).
 The ledger now has 110 assertion records and 241 source passages. Whole-paper
 semantic decomposition and proof coverage remain **in progress**.
+
+## 2026-11-07 — Pointwise symmetries, corrected spatial statement and full Corollary 9
+
+The actual physical discriminant gradients now have every P, pure T and
+arbitrary real phase identity at every original complex H0 source, every
+complex spectral parameter and every real spatial point. These are pointwise
+fields representing the actual Frechet derivative, not only cotangent maps.
+The actual whole-line xi also has all three exact symmetries. Its checked
+periodicity, corrected minus-sign integral and spatial equation therefore
+complete corrected physical Theorem 6(v) in the literal Section 2 convention.
+Theorem 6(iii) is complete on the original H0 domain as well.
+
+Both corrected Corollary 9 clauses now hold for the same constructed full
+primitive on one common open complex H0 neighborhood containing every real
+source. The entire moving cut complement is covered, with exact spectral
+negation invariance under either source constraint. Every Hilbert direction
+identifies the actual primitive gradient; continuous periodic representatives
+are unique. Part(ii) uses the positive nonlocal residual with J*phi, and both
+parts use the spectral domain where the primitive gradient exists.
+
+The actual full fundamental matrices on the whole unit interval also have
+original H0 P/PT/reciprocal-scaling symmetries. Their all-real-x full matrix
+continuation and the separate Appendix operator adapter remain open. Other
+remaining claims include Theorem 6(i)'s invariant-neighborhood/gap interfaces,
+Corollary 8, full Lemma 10, Proposition 11(iii), Lemma 2's matrix clause,
+Lemma 3's geometric multiplicities, and the pending background assertions.
+
+Eight new modules add 28 theorems and 6 definitions. Strict aggregate and
+transitive audit evidence is in
+[`pointwise-symmetry-validation.json`](pointwise-symmetry-validation.json).
+Whole-paper coverage remains in progress, with 114 assertion records and all
+241 source passages; semantic decomposition remains incomplete.
 
 ## Pinned source
 

@@ -1184,6 +1184,14 @@ modules = [
     'NLS/ZakharovShabat/L2FullAbelianGradient.lean',
     'NLS/ZakharovShabat/SourceReflectionCutDomain.lean',
     'NLS/Articles/MKdVNLSHierarchies/PrimitiveNonlocalReflection.lean',
+    'NLS/ZakharovShabat/ClassicalFundamentalMatrixSymmetries.lean',
+    'NLS/ZakharovShabat/DiscriminantMatrixSymmetries.lean',
+    'NLS/ZakharovShabat/SourceL2UnitFundamentalSymmetries.lean',
+    'NLS/ZakharovShabat/L2DiscriminantPointwiseSymmetries.lean',
+    'NLS/ZakharovShabat/SourceSwapScalingConstraint.lean',
+    'NLS/ZakharovShabat/L2NormalizedLocalResidual.lean',
+    'NLS/Articles/MKdVNLSHierarchies/PointwiseSpectralSymmetries.lean',
+    'NLS/Articles/MKdVNLSHierarchies/PrimitiveLocalReflection.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

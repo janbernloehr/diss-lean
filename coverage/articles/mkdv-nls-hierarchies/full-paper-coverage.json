@@ -19,7 +19,7 @@
   "scope_last_line": 1327,
   "named_statement_count": 18,
   "numbered_equation_count": 25,
-  "assertion_count": 110,
+  "assertion_count": 114,
   "passage_count": 241,
   "semantic_inventory_complete": false,
   "assertions": [
@@ -266,10 +266,12 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false"
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_pointwise",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries"
       ],
       "existing_details": "source-map.json",
-      "certified_part": "All discriminant and spectral-derivative identities; all full Frechet-cotangent variants; all signed endpoint slots; complete canonical-root part(iv); physical whole-line L2 spatial core and periodic scalar coefficient with its ODE-fixed integral sign. Still open: full source pointwise gradient correspondence, invariant W/gap-segment interfaces, xi covariance. The source nonlocal sign is now corrected and its printed version refuted at original H0, in the literal Section 2 convention."
+      "certified_part": "All actual discriminant/spectral-derivative identities; original H0 pointwise P/T/phase physical gradient symmetries at every real spatial point; signed endpoint slots; canonical-root part(iv); complete corrected part(v), including original L2 whole-line spatial equation, actual normalized minus-sign integral, period-one xi and its P/T/arbitrary-phase covariance. Invariant W and explicit source gap-segment interfaces in part(i) remain open, as does the separate p5/Appendix operator adapter."
     },
     {
       "id": "corollary-8",
@@ -288,16 +290,17 @@
       "label": "Corollary 9",
       "line": 1058,
       "page": 15,
-      "status": "partial",
+      "status": "proved_correction",
       "obligation": "Both symmetry-constrained spatial primitive-gradient recurrences. Restrict spectral domain; part ii requires J*phi on the nonlocal scalar term.",
       "declarations": [
-        "NLS.Articles.MKdVNLSHierarchies.corollary9_ii_corrected_normalized_discriminant_gradients",
+        "NLS.Articles.MKdVNLSHierarchies.exists_corollary9_complete_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.corollary9_i_normalized_actual_gradients",
         "NLS.Articles.MKdVNLSHierarchies.exists_corollary9_ii_corrected",
         "NLS.ZakharovShabat.sourceFullAbelianPrimitive_fderiv_eq_physical_integral",
         "NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_unique"
       ],
       "existing_details": "source-map.json",
-      "certified_part": "Part(ii) is proved with the corrected +2*i*J*phi nonlocal residual and the necessary spectral cut-domain restriction. The actual constructed full primitive has the normalized physical gradient in every original Hilbert direction, uniquely among continuous periodic representatives. One common open complex source neighborhood contains all real sources; the entire moving cut complement is covered. Part(i) remains open."
+      "certified_part": "Both clauses hold for the same actual full primitive on one common open complex H0 neighborhood containing every real source and the entire moving cut complement. Actual gradients are represented in every original Hilbert direction and uniquely among continuous periodic representatives. Spectral negation preserves the full domain under the respective original symmetry constraint. Part(ii) uses the corrected typed +2*i*J*phi scalar-integral term on the residual left side; both parts use the necessary spectral domain restriction. The spatial equalities hold almost everywhere on the whole real line."
     },
     {
       "id": "lemma-10",
@@ -340,10 +343,13 @@
         "NLS.ZakharovShabat.l2Monodromy_sourceComponentSwap",
         "NLS.ZakharovShabat.l2Monodromy_sourceSpatialReflection",
         "NLS.ZakharovShabat.l2Monodromy_sourceMidpointReflection",
-        "NLS.ZakharovShabat.l2Monodromy_sourceReciprocalScaling"
+        "NLS.ZakharovShabat.l2Monodromy_sourceReciprocalScaling",
+        "NLS.ZakharovShabat.l2FundamentalMatrix_sourceComponentSwap",
+        "NLS.ZakharovShabat.l2FundamentalMatrix_sourceSpatialReflection",
+        "NLS.ZakharovShabat.l2FundamentalMatrix_sourceReciprocalScaling"
       ],
       "existing_details": "source-map.json",
-      "certified_part": "All actual endpoint monodromy entries under P, pure T, combined PT and every nonzero complex reciprocal scaling are proved on the original complex H0 space in the Section 2 operator convention. This includes all real phases and real-type sources. Full fundamental matrices at every real x and the separate Appendix operator convention adapter remain open."
+      "certified_part": "All actual endpoint monodromy entries under P, pure T, combined PT and every nonzero complex reciprocal scaling are proved on the original complex H0 space in the Section 2 operator convention. This includes all real phases and real-type sources. Full fundamental matrices at every real x and the separate Appendix operator convention adapter remain open. The actual full unit-interval fundamental matrices now have P, combined PT and arbitrary reciprocal scaling symmetries at original complex H0 sources; all-real-x full matrix continuation and Appendix operator matching remain open."
     },
     {
       "id": "lemma-14",
@@ -612,7 +618,7 @@
     {
       "id": "intro-mkdv-energy",
       "kind": "unnumbered_or_proof_claim",
-      "line": 29,
+      "line": 32,
       "page": 1,
       "status": "pending_individual_correspondence_review",
       "obligation": "mKdV energy variation, Gardner field and mean preservation.",
@@ -621,7 +627,7 @@
     {
       "id": "intro-mkdv-hierarchy",
       "kind": "unnumbered_or_proof_claim",
-      "line": 46,
+      "line": 48,
       "page": 1,
       "status": "pending_individual_correspondence_review",
       "obligation": "Existence, recursion, regularity and pairwise Gardner commutation of every scalar Hamiltonian.",
@@ -657,7 +663,7 @@
     {
       "id": "intro-mkdv-real-forms",
       "kind": "unnumbered_or_proof_claim",
-      "line": 114,
+      "line": 113,
       "page": 2,
       "status": "pending_individual_correspondence_review",
       "obligation": "Invariant real and imaginary diagonal subspaces of S4 and their actual scalar equations.",
@@ -783,7 +789,7 @@
     {
       "id": "miura-flow-background",
       "kind": "unnumbered_or_proof_claim",
-      "line": 383,
+      "line": 382,
       "page": 7,
       "status": "pending_individual_correspondence_review",
       "obligation": "Miura map H1 to L2, actual defocusing mKdV-to-KdV solution intertwining and required well-posedness.",
@@ -819,7 +825,7 @@
     {
       "id": "nls-spectral-background",
       "kind": "unnumbered_or_proof_claim",
-      "line": 501,
+      "line": 502,
       "page": 8,
       "status": "pending_individual_correspondence_review",
       "obligation": "Actual twice-periodic ZS operator spectrum: discreteness, algebraic labels, l2 asymptotics, gaps and reality.",
@@ -864,7 +870,7 @@
     {
       "id": "diagonal-discriminant-parity",
       "kind": "unnumbered_or_proof_claim",
-      "line": 670,
+      "line": 671,
       "page": 10,
       "status": "pending_individual_correspondence_review",
       "obligation": "Actual diagonal discriminant is even in spectral parameter.",
@@ -918,7 +924,7 @@
     {
       "id": "hill-discriminants-commute",
       "kind": "unnumbered_or_proof_claim",
-      "line": 861,
+      "line": 862,
       "page": 13,
       "status": "pending_individual_correspondence_review",
       "obligation": "Actual physical Hill discriminants commute under the Gardner bracket on their exact domains.",
@@ -976,15 +982,15 @@
       "kind": "unnumbered_or_proof_claim",
       "line": 1008,
       "page": 15,
-      "status": "partial",
+      "status": "proved_correction",
       "obligation": "Actual xi integral, boundary constant, periodicity and P,T,Ralpha covariance for every real spatial point.",
       "declarations": [
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false"
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries"
       ],
-      "certified_part": "Whole-line original L2 periodicity and exact corrected minus-sign integral are proved, including negative times, and the printed plus sign is refuted. Full source xi P/T/phase covariance remains open."
+      "certified_part": "All original L2 whole-line xi periodicity, exact corrected minus-sign integral and full P/T/arbitrary-phase covariance are proved; the printed plus sign is refuted in original H0."
     },
     {
       "id": "primitive-gradient-domains",
@@ -1025,7 +1031,7 @@
     {
       "id": "odd-recurrence-failure-remark",
       "kind": "unnumbered_or_proof_claim",
-      "line": 1209,
+      "line": 1206,
       "page": 17,
       "status": "pending_individual_correspondence_review",
       "obligation": "Construct explicit symmetry-constrained counterexamples to the stated odd-order alternatives, with the exact m>=2 range.",
@@ -1034,7 +1040,7 @@
     {
       "id": "analytic-continuation-subspaces",
       "kind": "unnumbered_or_proof_claim",
-      "line": 1221,
+      "line": 1222,
       "page": 18,
       "status": "pending_individual_correspondence_review",
       "obligation": "Justify gradient trace convergence/differentiation and analytic continuation on the P/phase and T-even/T-odd constrained complex subspaces, not only the full ambient space.",
@@ -1229,7 +1235,7 @@
     {
       "id": "original-L2-endpoint-monodromy-symmetries",
       "kind": "certified_partial_named_clause",
-      "line": 1310,
+      "line": 1305,
       "page": 19,
       "status": "proved_partial_source_interface",
       "obligation": "Original complex H0 actual full monodromy endpoint matrices under P, pure T, combined PT and nonzero complex reciprocal scaling, in the literal Section2 convention; this proves the endpoint algebra needed for the corrected boundary quotient. Full-real-x Appendix source matching remains open.",
@@ -1258,7 +1264,7 @@
     {
       "id": "primitive-F-physical-gradient",
       "kind": "certified_proof_intermediate",
-      "line": 1077,
+      "line": 1070,
       "page": 15,
       "status": "proved",
       "obligation": "The literal full primitive source cotangent is represented by G/root in all original complex H0 directions, every primitive index, every source in a common open complex neighborhood of the entire real locus and every point off its moving cuts. The normalized field is continuous, period one and uniquely determined pointwise by those physical Hilbert pairings.",
@@ -1268,6 +1274,59 @@
         "NLS.ZakharovShabat.continuous_sourceFullAbelianPhysicalGradient",
         "NLS.ZakharovShabat.periodic_sourceFullAbelianPhysicalGradient",
         "NLS.ZakharovShabat.eq_of_continuous_periodic_physical_L2_pairings"
+      ]
+    },
+    {
+      "id": "theorem-6-iii-pointwise",
+      "kind": "certified_named_clause",
+      "line": 933,
+      "page": 13,
+      "status": "proved",
+      "obligation": "All actual physical P, pure T and arbitrary real phase gradient identities at every original complex H0 source, every complex spectral parameter and every real spatial point. The actual physical gradient agrees with the Frechet gradient on the unit period.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_pointwise",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_gradient_agreement"
+      ]
+    },
+    {
+      "id": "theorem-6-v-corrected-complete",
+      "kind": "certified_named_clause_with_correction",
+      "line": 945,
+      "page": 14,
+      "status": "proved_correction",
+      "obligation": "Complete corrected physical part(v) in the literal Section2 convention: actual original L2 whole-line spatial equation almost everywhere, xi=delta-2*i*integral(R*phi dot G), period-one xi and all three exact P/T/phase symmetries at every real point. An actual original H0 counterexample refutes the printed plus sign even almost everywhere.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_gradient_agreement",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false"
+      ]
+    },
+    {
+      "id": "corollary-9-i-and-common-domain",
+      "kind": "certified_named_clause_with_domain_correction",
+      "line": 1058,
+      "page": 15,
+      "status": "proved_correction",
+      "obligation": "Corollary9(i) for the actual primitive under P phi=R_alpha phi, all real alpha, on the entire moving cut complement of one common open original complex H0 neighborhood containing every real source. The same primitive and neighborhood also support corrected part(ii). Actual gradient source correspondence is proved for every Hilbert direction.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.exists_corollary9_complete_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.corollary9_i_normalized_actual_gradients"
+      ]
+    },
+    {
+      "id": "original-L2-unit-fundamental-symmetries",
+      "kind": "certified_partial_named_clause",
+      "line": 1291,
+      "page": 19,
+      "status": "proved_partial_source_interface",
+      "obligation": "Actual normalized full fundamental matrices on the complete unit interval for original complex H0 sources: P, combined PT and arbitrary nonzero complex reciprocal scaling. This strengthens endpoint-only proofs; it does not assert all-real-x full matrix or Appendix operator-convention matching.",
+      "declarations": [
+        "NLS.ZakharovShabat.l2FundamentalMatrix_sourceComponentSwap",
+        "NLS.ZakharovShabat.l2FundamentalMatrix_sourceSpatialReflection",
+        "NLS.ZakharovShabat.l2FundamentalMatrix_sourceReciprocalScaling"
       ]
     }
   ],
@@ -1345,7 +1404,8 @@
       "source_sha256": "e8f9cf5d554b977c7f6c74497be9aaeaf4b46c26a6e6d47c254c873ad4dbfe79",
       "status": "pending_semantic_and_correspondence_review",
       "assertion_ids": [
-        "equation-1"
+        "equation-1",
+        "intro-mkdv-energy"
       ]
     },
     {
@@ -1364,7 +1424,9 @@
       "last_line": 53,
       "source_sha256": "63efc141776be73b3510eacc5c39a8c428ef39e7d4b9c1ff908f83bd4f5b8d4e",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "intro-mkdv-hierarchy"
+      ]
     },
     {
       "id": "passage-011",
@@ -1498,7 +1560,9 @@
       "last_line": 113,
       "source_sha256": "094429cb0f3a4711489e9c81527d19b7db794bc7fd318998ce15652c94f203d4",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "intro-mkdv-real-forms"
+      ]
     },
     {
       "id": "passage-024",
@@ -2060,7 +2124,9 @@
       "last_line": 382,
       "source_sha256": "456642079f73e232b2387fbb61ac93ba960f7e05247229f49c685a92c103eae5",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "miura-flow-background"
+      ]
     },
     {
       "id": "passage-082",
@@ -2220,7 +2286,9 @@
       "last_line": 510,
       "source_sha256": "b0e71149b7fb26c0656f0c7b059c1ab0efb3bbea17f17c4007761cdb48b5e224",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "nls-spectral-background"
+      ]
     },
     {
       "id": "passage-098",
@@ -2493,7 +2561,9 @@
       "last_line": 674,
       "source_sha256": "bcc34e2ea35b1d03835722d229e147dde75c9c5df1b7e11670f79e10bdf4a608",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "diagonal-discriminant-parity"
+      ]
     },
     {
       "id": "passage-126",
@@ -2772,9 +2842,7 @@
       "last_line": 861,
       "source_sha256": "0acad8fb45ab85236f1a58113549e05f2f11984c0f5aa5e26cae53f64fb423a5",
       "status": "nonmathematical_metadata",
-      "assertion_ids": [
-        "hill-discriminants-commute"
-      ]
+      "assertion_ids": []
     },
     {
       "id": "passage-154",
@@ -2783,7 +2851,9 @@
       "last_line": 870,
       "source_sha256": "cba698d8d4dd651e0133ab0f235ba9dddbdfd55315dec96f7ec4489a3b7f5373",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "hill-discriminants-commute"
+      ]
     },
     {
       "id": "passage-155",
@@ -2851,10 +2921,22 @@
       "first_line": 920,
       "last_line": 921,
       "source_sha256": "b891760cf316d2bf12ec0049ca5d84cbbced4f20a353756248b2b05ff0729e09",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "theorem-6-i-discriminants"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "theorem-6-i-discriminants"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_i_reflection",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_i_phase"
+        ],
+        "comparison": "The full displayed discriminant equalities hold on the original complex H0 domain; no restriction of spectral parameter or phase is added."
+      }
     },
     {
       "id": "passage-162",
@@ -2862,10 +2944,20 @@
       "first_line": 923,
       "last_line": 925,
       "source_sha256": "51c1a7921706bae760db62a51215198c99c42e4a9ebb49de891b306d8224a00e",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "theorem-6-i-endpoint-labels"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "theorem-6-i-endpoint-labels"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_i_endpoint_labels"
+        ],
+        "comparison": "Both displayed signed endpoint slots retain the reversed sign/order under P and T and arbitrary-phase invariance, including collisions. The subsequent gap-segment and W passages remain separate."
+      }
     },
     {
       "id": "passage-163",
@@ -2891,10 +2983,22 @@
       "first_line": 931,
       "last_line": 931,
       "source_sha256": "2c00b5437a122a31dae06ec55d2e54f99cb8686a5e60872807c511ce0264f280",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "theorem-6-ii"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "theorem-6-ii"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_swap",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_reflection",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_phase"
+        ],
+        "comparison": "All displayed actual spectral-derivative identities and signs hold for original complex H0, every spectral parameter and phase."
+      }
     },
     {
       "id": "passage-166",
@@ -2902,10 +3006,22 @@
       "first_line": 933,
       "last_line": 933,
       "source_sha256": "9b0170df36ee0007a2ccf34920accc0b3993a33451023178851ba5b5bd0f783c",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
-        "theorem-6-iii-covectors"
-      ]
+        "theorem-6-iii-covectors",
+        "theorem-6-iii-pointwise"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "theorem-6-iii-pointwise"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_pointwise",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_gradient_agreement"
+        ],
+        "comparison": "Forward P/T/phase covariance of the actual physical fields is algebraically equivalent to the printed gradient chain. The unit-period field represents the full original Frechet derivative; periodicity covers every real spatial point."
+      }
     },
     {
       "id": "passage-167",
@@ -2922,10 +3038,20 @@
       "first_line": 938,
       "last_line": 943,
       "source_sha256": "9c33cd304a1b545872e38582dbc9cad1cde7fa36b416e90c9af5c134a14914bc",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "theorem-6-iv"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "theorem-6-iv"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_iv"
+        ],
+        "comparison": "All displayed canonical root equalities have the literal negative P/T signs and positive phase sign. The checked total-product identities imply the original cut-domain claims."
+      }
     },
     {
       "id": "passage-169",
@@ -2933,11 +3059,25 @@
       "first_line": 945,
       "last_line": 948,
       "source_sha256": "68f861d828da8a0568d4c54dc2df13cb6a2f37e1fe2748900ce33ac009f3ac9f",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved_with_correction",
       "assertion_ids": [
         "physical-gradient-spatial-core",
-        "theorem-6-v-nonlocal-sign-review"
-      ]
+        "theorem-6-v-nonlocal-sign-review",
+        "theorem-6-v-corrected-complete"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "theorem-6-v-corrected-complete",
+          "theorem-6-v-nonlocal-sign-review"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false"
+        ],
+        "comparison": "The actual original complex H0 spatial equation holds almost everywhere. Its xi integral uses minus in the literal Section2 convention; the printed plus is refuted even almost everywhere by an actual original H0 source."
+      }
     },
     {
       "id": "passage-170",
@@ -2945,8 +3085,20 @@
       "first_line": 950,
       "last_line": 951,
       "source_sha256": "c3622b1cc782d6986946295efb77c183d31b36c9fa17677d5ca3a70d6b9fcb8a",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved_with_correction",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "theorem-6-v-corrected-complete",
+          "xi-spatial-periodicity"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
+          "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries"
+        ],
+        "comparison": "With the corrected actual xi integral, period one and all three exact pointwise P/T/arbitrary-phase identities hold for all real x and complex spectral parameters at original complex H0 sources."
+      }
     },
     {
       "id": "passage-171",
@@ -3100,11 +3252,23 @@
       "first_line": 1058,
       "last_line": 1058,
       "source_sha256": "369a3e9f4f73ed03e3ea38f2abbfd4bf29bb412abc9fccdd47aa83ce24ce0f86",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved_with_correction",
       "assertion_ids": [
         "corollary-9",
-        "primitive-gradient-domains"
-      ]
+        "primitive-gradient-domains",
+        "corollary-9-i-and-common-domain"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "corollary-9",
+          "corollary-9-i-and-common-domain"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.exists_corollary9_complete_corrected"
+        ],
+        "comparison": "The full part(i) source constraint is used for every real phase. Replace the printed all-C spectral domain by the full actual moving cut complement; the same constructed primitive and common open complex H0 neighborhood containing all real sources support both parts."
+      }
     },
     {
       "id": "passage-187",
@@ -3112,8 +3276,19 @@
       "first_line": 1060,
       "last_line": 1060,
       "source_sha256": "464cabe050cc75a39a53521281132c1db6dcec058998667dfddc6805f0928b55",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved_with_correction",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "corollary-9-i-and-common-domain"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.exists_corollary9_complete_corrected",
+          "NLS.Articles.MKdVNLSHierarchies.corollary9_i_normalized_actual_gradients"
+        ],
+        "comparison": "The displayed local residual equality holds for the actual primitive gradients almost everywhere on the whole real line, throughout the actual moving cut complement under the exact P/phase source constraint."
+      }
     },
     {
       "id": "passage-188",
@@ -3121,11 +3296,25 @@
       "first_line": 1062,
       "last_line": 1075,
       "source_sha256": "3d6d85d75306fe2c17667c3537fcdd7ce532a98787e6feba9d1d1c39c78ea81c",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved_with_correction",
       "assertion_ids": [
         "corrected-normalized-nonlocal-reflection",
-        "corollary-9-ii-corrected"
-      ]
+        "corollary-9-ii-corrected",
+        "primitive-F-physical-gradient"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "corollary-9-ii-corrected",
+          "primitive-F-physical-gradient",
+          "corollary-9-i-and-common-domain"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.exists_corollary9_complete_corrected",
+          "NLS.Articles.MKdVNLSHierarchies.exists_corollary9_ii_corrected"
+        ],
+        "comparison": "Part(ii) is made vector-valued by multiplying its scalar integral by J*phi, and the term has positive sign on the residual left side. Both spectral parameters lie off all moving cuts. Every Hilbert variation proves the actual F gradient G/root; its continuous periodic representative is unique. The xi oddness for part(i) and monodromy-boundary oddness for part(ii) used by the printed proof are checked by SourceSwapScalingConstraint and SourceReflectionBoundaryConstant."
+      }
     },
     {
       "id": "passage-189",
@@ -3398,7 +3587,9 @@
       "last_line": 1207,
       "source_sha256": "a83ff9de6bbe112f1b4371aad2702eec39d7f8d556afd5dd785471a59d5b414d",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "odd-recurrence-failure-remark"
+      ]
     },
     {
       "id": "passage-218",
@@ -3434,7 +3625,9 @@
       "last_line": 1231,
       "source_sha256": "5842dd0de3cca541f5df8e5a99f5351756120cff5d37bc7f5ddb8077104d258d",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "analytic-continuation-subspaces"
+      ]
     },
     {
       "id": "passage-222",
@@ -3576,7 +3769,8 @@
       "source_sha256": "9aef2726b0eda4a8070819cd1d8feae917bd06b7fce56fdac0df9fa7e04fb13d",
       "status": "pending_semantic_and_correspondence_review",
       "assertion_ids": [
-        "lemma-13"
+        "lemma-13",
+        "original-L2-unit-fundamental-symmetries"
       ]
     },
     {
@@ -3586,7 +3780,9 @@
       "last_line": 1306,
       "source_sha256": "404aee3b142da840085725bab879673f0759602640448e09d398bffc05ac2ea9",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "original-L2-endpoint-monodromy-symmetries"
+      ]
     },
     {
       "id": "passage-238",
@@ -3630,10 +3826,10 @@
     }
   ],
   "known_open_obligations": [
-    "Theorem6: source pointwise gradient symmetry correspondence, invariant W and gap-segment interfaces, and xi covariance. The literal Section2 nonlocal sign is corrected and the printed sign refuted.",
-    "Corollary8, Corollary9(i), full Lemma10 and nonlocal Proposition11(iii). Corrected Corollary9(ii) is complete for the actual full primitive on its common original complex H0 neighborhood and entire moving cut complement; it has no extra primitive-gradient assumption.",
+    "Theorem6 part(i): invariant W and explicit source gap-segment interfaces. Parts(ii), original H0 pointwise(iii), (iv), and complete corrected physical(v) are proved. The separate p5/Appendix operator adapter remains open.",
+    "Corollary8, full Lemma10 and nonlocal Proposition11(iii). Both corrected Corollary9 clauses are complete for the same actual full primitive and common original complex H0 neighborhood on the entire moving cut complement, with no extra primitive-gradient assumption.",
     "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
-    "Lemma13 fundamental matrices at all real spatial points and original L2 sources, plus the p5/Appendix-vs-Section2 operator adapter. All Section2 endpoint monodromy matrices now have original complex H0 P/T/arbitrary-phase interfaces.",
+    "Lemma13 full fundamental matrices at all real spatial points and the p5/Appendix-vs-Section2 operator adapter. Full unit-interval matrices and all endpoint monodromy matrices now have original complex H0 P/PT/arbitrary-phase interfaces.",
     "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
     "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
   ]

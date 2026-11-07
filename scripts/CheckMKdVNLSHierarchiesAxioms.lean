@@ -1,3 +1,11 @@
+import NLS.ZakharovShabat.ClassicalFundamentalMatrixSymmetries
+import NLS.ZakharovShabat.DiscriminantMatrixSymmetries
+import NLS.ZakharovShabat.SourceL2UnitFundamentalSymmetries
+import NLS.ZakharovShabat.L2DiscriminantPointwiseSymmetries
+import NLS.ZakharovShabat.SourceSwapScalingConstraint
+import NLS.ZakharovShabat.L2NormalizedLocalResidual
+import NLS.Articles.MKdVNLSHierarchies.PointwiseSpectralSymmetries
+import NLS.Articles.MKdVNLSHierarchies.PrimitiveLocalReflection
 import NLS.ZakharovShabat.L2PhysicalGradientUniqueness
 import NLS.ZakharovShabat.L2FullAbelianGradient
 import NLS.ZakharovShabat.SourceReflectionCutDomain
@@ -3977,11 +3985,91 @@ private def mkdvNLSAuditPrefixes62 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.PrimitiveNonlocalReflection,
 ]
 
+private def mkdvNLSAuditPrefixes63 : Array Lean.Name := #[
+  `NLS.ZakharovShabat.classicalFundamentalMatrix_componentSwap,
+  `NLS.ZakharovShabat.classicalFundamentalMatrix_spatialReflection,
+  `_private.NLS.ZakharovShabat.ClassicalFundamentalMatrixSymmetries,
+  `NLS.ZakharovShabat.componentSwapMatrix,
+  `NLS.ZakharovShabat.reciprocalScalingMatrix,
+  `NLS.ZakharovShabat.spatialReflectionMonodromyMatrix,
+  `NLS.ZakharovShabat.spatialReflectionFundamentalMatrix,
+  `NLS.ZakharovShabat.discriminantGradientMatrix_componentSwap,
+  `NLS.ZakharovShabat.discriminantXiMatrix_componentSwap,
+  `NLS.ZakharovShabat.discriminantGradientMatrix_reciprocalScaling,
+  `NLS.ZakharovShabat.discriminantXiMatrix_reciprocalScaling,
+  `NLS.ZakharovShabat.discriminantGradientMatrix_spatialReflection,
+  `NLS.ZakharovShabat.discriminantXiMatrix_spatialReflection,
+  `_private.NLS.ZakharovShabat.DiscriminantMatrixSymmetries,
+  `NLS.ZakharovShabat.l2FundamentalMatrix_sourceComponentSwap,
+  `NLS.ZakharovShabat.l2FundamentalMatrix_sourceReciprocalScaling,
+  `NLS.ZakharovShabat.l2FundamentalMatrix_sourceSpatialReflection,
+  `_private.NLS.ZakharovShabat.SourceL2UnitFundamentalSymmetries,
+  `NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_sourceComponentSwap,
+  `NLS.ZakharovShabat.l2WholeLineDiscriminantXi_sourceComponentSwap,
+  `NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_sourceReciprocalScaling,
+  `NLS.ZakharovShabat.l2WholeLineDiscriminantXi_sourceReciprocalScaling,
+  `NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_sourceSpatialReflection,
+  `NLS.ZakharovShabat.l2WholeLineDiscriminantXi_sourceSpatialReflection,
+  `NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_sourceMidpointReflection,
+  `NLS.ZakharovShabat.l2WholeLineDiscriminantXi_sourceMidpointReflection,
+  `_private.NLS.ZakharovShabat.L2DiscriminantPointwiseSymmetries,
+  `NLS.ZakharovShabat.sourcePeriodicReflection_of_swap_scaling,
+  `NLS.ZakharovShabat.source_swap_scaling_xi_odd,
+  `NLS.ZakharovShabat.source_swap_scaling_normalized_xi_even,
+  `_private.NLS.ZakharovShabat.SourceSwapScalingConstraint,
+  `NLS.ZakharovShabat.l2NormalizedLocalResidual,
+  `NLS.ZakharovShabat.ae_l2NormalizedLocalResidual_eq_xi,
+  `_private.NLS.ZakharovShabat.L2NormalizedLocalResidual,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_iii_pointwise,
+  `NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries,
+  `_private.NLS.Articles.MKdVNLSHierarchies.PointwiseSpectralSymmetries,
+  `NLS.Articles.MKdVNLSHierarchies.primitiveLocalResidual,
+  `NLS.Articles.MKdVNLSHierarchies.primitiveLocalResidual_eq_normalized,
+  `NLS.Articles.MKdVNLSHierarchies.corollary9_i_normalized_actual_gradients,
+  `NLS.Articles.MKdVNLSHierarchies.exists_corollary9_complete_corrected,
+  `_private.NLS.Articles.MKdVNLSHierarchies.PrimitiveLocalReflection,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.ZakharovShabat.classicalFundamentalMatrix_componentSwap,
+    ``NLS.ZakharovShabat.classicalFundamentalMatrix_spatialReflection,
+    ``NLS.ZakharovShabat.componentSwapMatrix,
+    ``NLS.ZakharovShabat.reciprocalScalingMatrix,
+    ``NLS.ZakharovShabat.spatialReflectionMonodromyMatrix,
+    ``NLS.ZakharovShabat.spatialReflectionFundamentalMatrix,
+    ``NLS.ZakharovShabat.discriminantGradientMatrix_componentSwap,
+    ``NLS.ZakharovShabat.discriminantXiMatrix_componentSwap,
+    ``NLS.ZakharovShabat.discriminantGradientMatrix_reciprocalScaling,
+    ``NLS.ZakharovShabat.discriminantXiMatrix_reciprocalScaling,
+    ``NLS.ZakharovShabat.discriminantGradientMatrix_spatialReflection,
+    ``NLS.ZakharovShabat.discriminantXiMatrix_spatialReflection,
+    ``NLS.ZakharovShabat.l2FundamentalMatrix_sourceComponentSwap,
+    ``NLS.ZakharovShabat.l2FundamentalMatrix_sourceReciprocalScaling,
+    ``NLS.ZakharovShabat.l2FundamentalMatrix_sourceSpatialReflection,
+    ``NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_sourceComponentSwap,
+    ``NLS.ZakharovShabat.l2WholeLineDiscriminantXi_sourceComponentSwap,
+    ``NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_sourceReciprocalScaling,
+    ``NLS.ZakharovShabat.l2WholeLineDiscriminantXi_sourceReciprocalScaling,
+    ``NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_sourceSpatialReflection,
+    ``NLS.ZakharovShabat.l2WholeLineDiscriminantXi_sourceSpatialReflection,
+    ``NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_sourceMidpointReflection,
+    ``NLS.ZakharovShabat.l2WholeLineDiscriminantXi_sourceMidpointReflection,
+    ``NLS.ZakharovShabat.sourcePeriodicReflection_of_swap_scaling,
+    ``NLS.ZakharovShabat.source_swap_scaling_xi_odd,
+    ``NLS.ZakharovShabat.source_swap_scaling_normalized_xi_even,
+    ``NLS.ZakharovShabat.l2NormalizedLocalResidual,
+    ``NLS.ZakharovShabat.ae_l2NormalizedLocalResidual_eq_xi,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_iii_pointwise,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries,
+    ``NLS.Articles.MKdVNLSHierarchies.primitiveLocalResidual,
+    ``NLS.Articles.MKdVNLSHierarchies.primitiveLocalResidual_eq_normalized,
+    ``NLS.Articles.MKdVNLSHierarchies.corollary9_i_normalized_actual_gradients,
+    ``NLS.Articles.MKdVNLSHierarchies.exists_corollary9_complete_corrected,
+
     ``NLS.ZakharovShabat.eq_of_continuous_periodic_physical_L2_pairings,
     ``NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient,
     ``NLS.ZakharovShabat.continuous_sourceFullAbelianPhysicalGradient,

@@ -431,7 +431,7 @@
     {
       "label": "Theorem 6",
       "page": 13,
-      "status": "partial_original_domain_symmetry_and_physical_spatial_core",
+      "status": "parts_ii_iii_iv_and_corrected_v_proved_part_i_interfaces_open",
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_i_reflection",
@@ -449,9 +449,11 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral",
         "NLS.Articles.MKdVNLSHierarchies.theorem6_v_corrected_nonlocal_integral",
-        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false"
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_printed_nonlocal_sign_false",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_pointwise",
+        "NLS.Articles.MKdVNLSHierarchies.theorem6_v_xi_symmetries"
       ],
-      "remaining": "Theorem6: source pointwise gradient symmetry correspondence, invariant W and gap-segment interfaces, and xi covariance. The literal Section2 nonlocal sign is corrected and the printed sign refuted."
+      "remaining": "Theorem6 part(i): invariant W and explicit source gap-segment interfaces. Parts(ii), original H0 pointwise(iii), (iv), and complete corrected physical(v) are proved. The separate p5/Appendix operator adapter remains open."
     },
     {
       "label": "Lemma 10",
@@ -1672,13 +1674,13 @@
     ]
   },
   "latest_validation": {
-    "report": "primitive-nonlocal-validation.json",
+    "report": "pointwise-symmetry-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
-    "base_commit": "46f31b5471eb7bffcbac544ba50aefedb0458e6b",
+    "base_commit": "a2df0885c96a095a7ed2fc14461caffd5c2b2bd9",
     "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
-    "article_audit": 13271,
-    "combined_audit": 76517
+    "article_audit": 13330,
+    "combined_audit": 76572
   },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
@@ -1712,7 +1714,7 @@
     "named_statements": 18,
     "numbered_equations": 25,
     "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
-    "initial_semantic_assertions": 110,
+    "initial_semantic_assertions": 114,
     "source_passages": 241
   },
   "full_paper_expansion": {
@@ -1768,6 +1770,26 @@
     "source_modules": 4,
     "completed_clause": "Corrected Corollary9(ii), actual full primitive, common original complex H0 neighborhood containing every real source, entire moving cut complement.",
     "interface": "Every original Hilbert variation, unique continuous periodic physical gradient. No extra primitive-gradient hypothesis.",
-    "remaining": "Corollary8, Corollary9(i), full Lemma10 and nonlocal Proposition11(iii). Corrected Corollary9(ii) is complete for the actual full primitive on its common original complex H0 neighborhood and entire moving cut complement; it has no extra primitive-gradient assumption."
+    "remaining": "Historical milestone; the next pointwise-symmetry milestone proves Corollary9(i) and both clauses on one common source neighborhood. Corollary8, full Lemma10 and Proposition11(iii) remain open."
+  },
+  "whole_paper_pointwise_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 28,
+    "new_definitions": 6,
+    "source_modules": 8,
+    "completed_clauses": [
+      "Theorem6(iii), original H0 actual physical pointwise P/T/phase gradients, every real x.",
+      "Complete corrected physical Theorem6(v), including all xi symmetries.",
+      "Both corrected Corollary9 clauses for the same actual full primitive on one common open complex H0 neighborhood containing every real source, throughout the moving cut complement."
+    ],
+    "other_progress": "Actual full unit-interval fundamental matrices under P, PT and arbitrary nonzero complex reciprocal scaling.",
+    "remaining": [
+      "Theorem6 part(i): invariant W and explicit source gap-segment interfaces. Parts(ii), original H0 pointwise(iii), (iv), and complete corrected physical(v) are proved. The separate p5/Appendix operator adapter remains open.",
+      "Corollary8, full Lemma10 and nonlocal Proposition11(iii). Both corrected Corollary9 clauses are complete for the same actual full primitive and common original complex H0 neighborhood on the entire moving cut complement, with no extra primitive-gradient assumption.",
+      "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
+      "Lemma13 full fundamental matrices at all real spatial points and the p5/Appendix-vs-Section2 operator adapter. Full unit-interval matrices and all endpoint monodromy matrices now have original complex H0 P/PT/arbitrary-phase interfaces.",
+      "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
+      "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
+    ]
   }
 }

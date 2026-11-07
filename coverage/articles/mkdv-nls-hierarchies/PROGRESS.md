@@ -3475,3 +3475,36 @@ prefix outputs and 9,089 source-verified incoming compiled modules retain
 their hashes. Exact evidence is in primitive-nonlocal-validation.json.
 Whole-paper coverage remains in progress, with 110 assertion records and
 241 source passages; semantic decomposition is incomplete.
+
+
+## 2026-11-07 — Pointwise gradient/xi symmetries and full corrected Corollary 9
+
+Theorem6(iii) now has actual original complex H0 pointwise physical gradient
+P/T/arbitrary-phase identities at every real spatial point. All three xi
+symmetries hold on the entire real line, including every negative period and
+period seam. Together with the previously proved spatial equation, corrected
+minus-sign integral and periodicity, this completes corrected physical
+Theorem6(v) in the literal Section2 convention.
+
+Both corrected Corollary9 clauses now use the same actual full primitive and
+one common open complex H0 neighborhood containing every real source, on
+the entire moving cut complement. Their exact source constraints imply
+spectral negation invariance of that full domain. Every original Hilbert
+variation identifies the actual primitive gradient, without a formal-gradient
+assumption. The physical unit-interval full fundamental matrix symmetries
+also hold for all original complex H0 sources. All-real-x full matrix and
+Appendix operator-convention matching remain open.
+
+Eight strictly checked modules add 28 theorems and 6 definitions. The merged
+NLS aggregate and both transitive audits pass: 13,330 article declarations
+and auxiliaries, and 76,572 combined NLS declarations, allowing only propext,
+Classical.choice and Quot.sound. All 9,135 frozen inputs, 1,148 reused checker
+prefix outputs and 9,089 source-verified incoming compiled modules retain
+their hashes. Limits and linters are unchanged. Exact evidence is in
+pointwise-symmetry-validation.json; no full fresh repository rebuild is claimed.
+
+Ten complete source passages have explicit correspondence reviews. Eleven
+ledger locators formerly aimed at blank lines or metadata are corrected; all
+assertion locators are nonblank and page-correct. The ledger has 114 assertion
+records and retains all 241 source passages. Whole-paper semantic decomposition
+and proof coverage remain in progress.
