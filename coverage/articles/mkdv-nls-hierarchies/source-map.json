@@ -1677,13 +1677,13 @@
     ]
   },
   "latest_validation": {
-    "report": "weak-interval-validation.json",
+    "report": "higher-action-symmetry-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
-    "base_commit": "205bab51a7a8f91275684f68456be4da2fc5dd13",
+    "base_commit": "030c637652ec2e7269a2700fc0c469f613da6f87",
     "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
-    "article_audit": 13724,
-    "combined_audit": 76961
+    "article_audit": 13812,
+    "combined_audit": 77043
   },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",

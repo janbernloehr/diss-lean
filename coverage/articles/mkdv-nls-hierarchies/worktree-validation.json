@@ -38151,10 +38151,10 @@
   },
   "merge_validation": "merge-validation.json",
   "latest_full_paper_progress": {
-    "report": "weak-interval-validation.json",
+    "report": "higher-action-symmetry-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
     "date": "2026-11-07",
-    "note": "Earlier fields are historical; current scope and validation provenance are in weak-interval-validation.json."
+    "note": "Earlier fields are historical; current scope and provenance are in higher-action-symmetry-validation.json."
   }
 }

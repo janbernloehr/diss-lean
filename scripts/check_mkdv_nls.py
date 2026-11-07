@@ -1241,6 +1241,18 @@ modules = [
     'NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalAC.lean',
     'NLS/Fourier/WeakIntervalH2.lean',
     'NLS/Articles/MKdVNLSHierarchies/WeakIntervalMiura.lean',
+    'NLS/ZakharovShabat/SourcePeriodCircleSymmetries.lean',
+    'NLS/ZakharovShabat/SourceHigherActionCircleSymmetries.lean',
+    'NLS/ZakharovShabat/SourceWeightedPrimitiveCircleGradient.lean',
+    'NLS/ZakharovShabat/SourceHigherActionComplexGradient.lean',
+    'NLS/ZakharovShabat/SourceHigherActionCotangentSymmetries.lean',
+    'NLS/ZakharovShabat/L2WeightedActionGradient.lean',
+    'NLS/Fourier/UnitFourierReflection.lean',
+    'NLS/ZakharovShabat/L2PhysicalCotangentSymmetries.lean',
+    'NLS/Articles/MKdVNLSHierarchies/HigherActionGradientSymmetries.lean',
+    'NLS/ZakharovShabat/SourceLemma10ContourGeometry.lean',
+    'NLS/ZakharovShabat/L2LaurentReflectionGradient.lean',
+    'NLS/ZakharovShabat/L2GradientPrimitiveGraph.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

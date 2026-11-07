@@ -19,7 +19,7 @@
   "scope_last_line": 1327,
   "named_statement_count": 18,
   "numbered_equation_count": 25,
-  "assertion_count": 128,
+  "assertion_count": 132,
   "passage_count": 241,
   "semantic_inventory_complete": false,
   "assertions": [
@@ -329,9 +329,13 @@
       "obligation": "All three full-source gradient identities. Partial diagonal noncentral recurrence is insufficient. Part iii needs typed nonlocal correction.",
       "declarations": [
         "NLS.MKdV.miuraLaurentActionGradient_fourier",
-        "NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.fderiv_action"
+        "NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.fderiv_action",
+        "NLS.Articles.MKdVNLSHierarchies.lemma10_i",
+        "NLS.ZakharovShabat.exists_sourceIndexedHigherAction_complex_gradients",
+        "NLS.ZakharovShabat.exists_sourceLaurentReflection_physical_gradients"
       ],
-      "existing_details": "source-map.json"
+      "existing_details": "source-map.json",
+      "certified_part": "Full part(i): original complex H0 sources in one invariant open connected neighborhood of the entire real locus, every signed mode and every positive printed level. The actual unconjugated Frechet cotangents are represented in every Hilbert direction by unique continuous physical curves with matching endpoint traces; exact P, pure T and arbitrary real phase identities hold pointwise on the closed physical unit period. Natural r means printed level r+1. Both symmetry hypotheses also force zero into the central gap. Every original circuit avoids zero; each noncentral disc excludes it and the central disc encloses it. Actual analytic local primitive contours and their full continuous physical gradients are proved at every integer Laurent level, including level zero. Both actual spatial gradient rows at arbitrary original L2 potentials now have bounded primitive graphs, with AC and actual AE derivative reconstruction. The globally indexed lower-level identification and spatial derivative/contour interchange needed for full parts(ii)-(iii) remain open."
     },
     {
       "id": "proposition-11",
@@ -591,9 +595,14 @@
       "label": "(21)",
       "line": 729,
       "page": 11,
-      "status": "pending_individual_correspondence_review",
+      "status": "proved",
       "obligation": "Actual physical Hill zero-energy discriminant equals 2*cosh(mean).",
-      "declarations": []
+      "declarations": [
+        "NLS.MKdV.unitIntervalMean_periodOneMiuraCurve",
+        "NLS.MKdV.quasiHillDiscriminant_miura_zero",
+        "NLS.MKdV.hillL2Discriminant_miura_zero"
+      ],
+      "certified_part": "Individual source correspondence review of the actual physical Hill L2 discriminant for the original weak Miura potential at energy zero. Its value is 2*cosh(a_0), where a_0 is proved equal to the literal unit-period mean. Holds for all original complex period-one H1 sources, hence the printed real H1 domain. The independently constructed physical scalar IVP discriminant is retained. Existing checked declarations; no mathematical source changed in this review."
     },
     {
       "id": "equation-22",
@@ -631,9 +640,12 @@
       "label": "(25)",
       "line": 1129,
       "page": 16,
-      "status": "pending_individual_correspondence_review",
+      "status": "proved",
       "obligation": "Full-source higher-action gradient transformations, at all positive levels and integer modes.",
-      "declarations": []
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma10_i",
+        "NLS.ZakharovShabat.exists_sourceIndexedHigherAction_cotangent_symmetries"
+      ]
     },
     {
       "id": "intro-mkdv-energy",
@@ -913,9 +925,12 @@
       "kind": "unnumbered_or_proof_claim",
       "line": 671,
       "page": 10,
-      "status": "pending_individual_correspondence_review",
+      "status": "proved",
       "obligation": "Actual diagonal discriminant is even in spectral parameter.",
-      "declarations": []
+      "declarations": [
+        "NLS.ZakharovShabat.sourceDiscriminant_even_of_diagonal"
+      ],
+      "certified_part": "Individual source correspondence review: the actual discriminant is even for every complex diagonal source at every finite exponent p>1, hence for every original complex H1 scalar source. The exact discriminant is retained; this is not merely equality of its square. Existing checked declaration; no mathematical source changed in this review."
     },
     {
       "id": "lemma3-proof-ordering",
@@ -1062,18 +1077,30 @@
       "kind": "unnumbered_or_proof_claim",
       "line": 1111,
       "page": 16,
-      "status": "pending_individual_correspondence_review",
+      "status": "proved",
       "obligation": "Reflection preserves contour orientation, yields level parity, and allows differentiating the actual source contour integrals.",
-      "declarations": []
+      "declarations": [
+        "NLS.ZakharovShabat.sourceHigherActionCircle_spectralNegation",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_componentSwap",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_midpointReflection",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_reciprocalScaling",
+        "NLS.ZakharovShabat.SourceSection11ContourData.cotangent_componentSwap",
+        "NLS.ZakharovShabat.SourceSection11ContourData.cotangent_midpointReflection",
+        "NLS.ZakharovShabat.SourceSection11ContourData.cotangent_circleRotation"
+      ],
+      "certified_part": "Transport of an actual original isolating circle to the transformed source and opposite index, with strict separation from every other actual gap; negation preserves circuit orientation and contributes its derivative minus sign. Exact polynomial-weight parity precedes full complex source differentiation. A globally equivariant simultaneous choice of all disk families in the printed proof paragraph is separately unreviewed."
     },
     {
       "id": "lemma10-proof-parity",
       "kind": "unnumbered_or_proof_claim",
       "line": 1123,
       "page": 16,
-      "status": "pending_individual_correspondence_review",
+      "status": "partial",
       "obligation": "Correct missing parity factor in the pure-T higher-action identity in the proof of part i; audit shifted indices in part ii.",
-      "declarations": []
+      "declarations": [
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_midpointReflection"
+      ],
+      "certified_part": "The exact pure-T higher-action value identity, with parity (-1)^r at printed level r+1, is proved before differentiation. The printed pure-T line omits this factor. No separate nonzero-action counterexample to the factor-free version, or certification of the part(ii) shifted-index proof, is claimed here."
     },
     {
       "id": "gardner-bracket-transfer",
@@ -1598,6 +1625,60 @@
         "NLS.ZakharovShabat.hierarchyReflection_physical_hasDerivAt",
         "NLS.ZakharovShabat.hierarchyNonlocalPrimitive_eq_native_physical",
         "NLS.FunctionalAnalysis.unitCurve_regular_of_L2_integral_graph"
+      ]
+    },
+    {
+      "id": "lemma10-i-physical-gradients",
+      "kind": "certified_named_statement_clause",
+      "line": 1093,
+      "page": 16,
+      "status": "proved",
+      "obligation": "All actual higher-action gradient symmetries at every positive printed level, every signed index and every original complex H0 source in one common invariant open connected neighborhood of the entire real locus, with exact unconjugated Frechet identification and endpoint traces.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma10_i"
+      ]
+    },
+    {
+      "id": "lemma10-complex-gradient-contours",
+      "kind": "certified_background_derivative",
+      "line": 1116,
+      "page": 16,
+      "status": "proved",
+      "obligation": "Differentiate the actual higher-action and weighted full-primitive contours on the open complex moving-cut complement, in every original source direction. Construct continuous physical higher-action gradients via Banach-valued contour integration, retaining the actual indexed action functional.",
+      "declarations": [
+        "NLS.ZakharovShabat.exists_sourceIndexedHigherAction_complex_gradients",
+        "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.fderiv_weightedPrimitiveCircle",
+        "NLS.ZakharovShabat.exists_sourceHigherActionPhysicalGradients",
+        "NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve_pairing"
+      ]
+    },
+    {
+      "id": "lemma10-level-zero-local-gradients",
+      "kind": "certified_partial_input_for_remaining_recurrences",
+      "line": 1097,
+      "page": 16,
+      "status": "proved",
+      "obligation": "Under either component-swap/phase proportionality or signed midpoint reflection, prove zero lies in the actual central gap, that every original isolating circuit avoids zero, and that noncentral discs exclude zero while the central disc encloses it. Prove actual analytic local Laurent contour functionals and full continuous physical gradients at all integer levels, including printed level zero. No globally patched indexed Laurent action or spatial recurrence is asserted.",
+      "declarations": [
+        "NLS.ZakharovShabat.sourcePeriodicReflection_of_componentSwap_scaling",
+        "NLS.ZakharovShabat.sourcePeriodicReflection_of_signed_midpoint",
+        "NLS.ZakharovShabat.SourcePeriodicReflection.zero_mem_central_segment",
+        "NLS.ZakharovShabat.exists_sourceLaurentReflection_physical_gradients"
+      ]
+    },
+    {
+      "id": "lemma10-spatial-primitive-graph",
+      "kind": "certified_partial_input_for_remaining_recurrences",
+      "line": 1097,
+      "page": 16,
+      "status": "proved",
+      "obligation": "At arbitrary actual interval L2 potentials, both actual discriminant-gradient components are AC and satisfy their exact spatial equations as bounded Volterra/continuous-primitive graphs. Conversely a mixed continuous/L2 primitive graph gives AC and the genuine AE derivative. This avoids assuming spectral uniformity of pointwise spatial exceptional sets; the remaining contour interchange itself is not asserted.",
+      "declarations": [
+        "NLS.ZakharovShabat.absolutelyContinuous_l2DiscriminantGradient_components",
+        "NLS.ZakharovShabat.curve_eq_mixed_primitive_of_ac",
+        "NLS.ZakharovShabat.curve_regular_of_primitive_graph",
+        "NLS.ZakharovShabat.l2DiscriminantGradient_first_primitive_graph",
+        "NLS.ZakharovShabat.l2DiscriminantGradient_second_primitive_graph"
       ]
     }
   ],
@@ -3234,10 +3315,22 @@
       "first_line": 729,
       "last_line": 729,
       "source_sha256": "8c0aaea2c4c4c311cb692fd688275c597d4874f7ec515a362d82e9aff2067daa",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "equation-21"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "equation-21"
+        ],
+        "declarations": [
+          "NLS.MKdV.unitIntervalMean_periodOneMiuraCurve",
+          "NLS.MKdV.quasiHillDiscriminant_miura_zero",
+          "NLS.MKdV.hillL2Discriminant_miura_zero"
+        ],
+        "comparison": "The literal actual Hill L2 zero-energy discriminant equals 2*cosh of the proved physical unit-period mean, at every original complex H1 source, hence at the printed real H1 sources."
+      }
     },
     {
       "id": "passage-138",
@@ -3967,10 +4060,21 @@
       "first_line": 1091,
       "last_line": 1091,
       "source_sha256": "bc394ae9bdbb6d7ffb05e6c8a5c03514ed5480929017e11be55674e5f9fbc4ed",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
-        "lemma-10"
-      ]
+        "lemma-10",
+        "lemma10-i-physical-gradients"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma10-i-physical-gradients"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma10_i"
+        ],
+        "comparison": "All part(i) quantifiers: one invariant connected open complex H0 neighborhood containing the entire real locus, every signed index, positive printed level and real phase. The natural level r is exactly printed level r+1."
+      }
     },
     {
       "id": "passage-194",
@@ -3978,8 +4082,20 @@
       "first_line": 1093,
       "last_line": 1093,
       "source_sha256": "21e14f8bef50f1da73b588bbd93eea2c053fe39febb7b350f4d976f6d9cc93b8",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved",
+      "assertion_ids": [
+        "lemma10-i-physical-gradients"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma10-i-physical-gradients"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma10_i"
+        ],
+        "comparison": "All three displayed pointwise physical gradient identities, including pure midpoint T. Actual full unconjugated Frechet derivatives are represented in every original Hilbert direction, with unique continuous representatives and matching endpoint traces."
+      }
     },
     {
       "id": "passage-195",
@@ -4023,11 +4139,13 @@
       "first_line": 1110,
       "last_line": 1123,
       "source_sha256": "5c1f00a8758b67951e836cdfad59c18246d79d6c9f6fd86bc1ebe0f884ddc7b5",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "partial",
       "assertion_ids": [
         "higher-action-contour-symmetries",
-        "lemma10-proof-parity"
-      ]
+        "lemma10-proof-parity",
+        "lemma10-complex-gradient-contours"
+      ],
+      "certified_part": "Actual individual circle transport, negation orientation, exact higher-action parity and full source differentiation are checked. A globally equivariant simultaneous disk-family selection in the full printed paragraph is not certified."
     },
     {
       "id": "passage-200",
@@ -4035,8 +4153,11 @@
       "first_line": 1125,
       "last_line": 1127,
       "source_sha256": "c75c5464b6928b6b4e7b85ecaec3ec274a035571c66cd8f00ba5aee4f0bb624b",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "partial",
+      "assertion_ids": [
+        "lemma10-proof-parity"
+      ],
+      "certified_part": "Correct pure-T value parity and all phase value identities are checked. The factor-free printed pure-T identity has no separate formal nonzero-action counterexample here, so this source passage remains open."
     },
     {
       "id": "passage-201",
@@ -4044,10 +4165,21 @@
       "first_line": 1129,
       "last_line": 1129,
       "source_sha256": "350477c3dc78b5104f6278f2b7a6f468699f65adfc0d3400e099661c7ad1e31e",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "equation-25"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "equation-25"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma10_i",
+          "NLS.ZakharovShabat.exists_sourceIndexedHigherAction_cotangent_symmetries"
+        ],
+        "comparison": "Both displayed P and phase gradient identities follow from exact actual contour value symmetries, full complex differentiability and physical representative uniqueness; every positive printed level is included."
+      }
     },
     {
       "id": "passage-202",
@@ -4543,8 +4675,8 @@
   "known_open_obligations": [
     "Theorem6, corrected Corollaries8-9 and corrected Lemma13 named statements are complete with explicit xi sign, source-gradient spectral-domain and Appendix component-order/phase qualifications. Their separately recorded printed proof intermediates still require individual correspondence review; the operator adapter itself is now checked.",
     "Full Lemma2 is proved on arbitrary weak interval H2 inputs without boundary conditions, including lambda=0 in the scalar clause. Full Lemma3, including actual original-domain geometric eigenspace multiplicities, is proved. Lemma2 printed proof energy and basis qualification are recorded corrections.",
-    "Full Lemma10 higher-action gradient symmetries and local/nonlocal recurrences, including its printed lower-level-zero case. Full corrected Proposition11 is now proved on all original complex Sobolev domains; its separately recorded printed proof intermediates still require individual correspondence review.",
-    "Remaining printed proof intermediates, including squared-Floquet-product algebra and the actual contour-change steps in symmetry proofs, unless individually matched by an existing assertion. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter are now complete.",
+    "Full Lemma10(ii)-(iii): globally indexed lower-level-zero identification, actual spatial derivative/contour interchange and the local/corrected nonlocal recurrences. Full Lemma10(i), actual complex higher-action gradients and every integer-level local Laurent gradient under either printed symmetry hypothesis are now proved. Full corrected Proposition11 remains proved on its original complex Sobolev domains; printed proof intermediates stay individually tracked.",
+    "Remaining printed proof intermediates, including squared-Floquet-product algebra and globally equivariant simultaneous isolating disk-family choices, unless individually matched by an existing assertion. Actual higher-action circle negation, its orientation/parity and all positive-level full gradient symmetries are now checked. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter remain complete.",
     "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
     "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
   ]

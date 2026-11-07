@@ -1,3 +1,15 @@
+import NLS.ZakharovShabat.L2GradientPrimitiveGraph
+import NLS.ZakharovShabat.SourcePeriodCircleSymmetries
+import NLS.ZakharovShabat.SourceHigherActionCircleSymmetries
+import NLS.ZakharovShabat.SourceWeightedPrimitiveCircleGradient
+import NLS.ZakharovShabat.SourceHigherActionComplexGradient
+import NLS.ZakharovShabat.SourceHigherActionCotangentSymmetries
+import NLS.ZakharovShabat.L2WeightedActionGradient
+import NLS.Fourier.UnitFourierReflection
+import NLS.ZakharovShabat.L2PhysicalCotangentSymmetries
+import NLS.Articles.MKdVNLSHierarchies.HigherActionGradientSymmetries
+import NLS.ZakharovShabat.SourceLemma10ContourGeometry
+import NLS.ZakharovShabat.L2LaurentReflectionGradient
 import NLS.FunctionalAnalysis.CompactUnitIntervalPrimitive
 import NLS.FunctionalAnalysis.WeakDerivativeUnitIntervalConstant
 import NLS.FunctionalAnalysis.WeakDerivativeUnitIntervalAC
@@ -4398,11 +4410,145 @@ private def mkdvNLSAuditPrefixes71 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.WeakIntervalMiura,
 ]
 
+private def mkdvNLSAuditPrefixes72 : Array Lean.Name := #[
+  `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.spectralNegation,
+  `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.componentSwap,
+  `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.midpointReflection,
+  `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.reciprocalScaling,
+  `_private.NLS.ZakharovShabat.SourcePeriodCircleSymmetries,
+  `NLS.ZakharovShabat.sourceCriticalRootRatioJoint_componentSwap,
+  `NLS.ZakharovShabat.sourceCriticalRootRatioJoint_midpointReflection,
+  `NLS.ZakharovShabat.sourceCriticalRootRatioJoint_reciprocalScaling,
+  `NLS.ZakharovShabat.sourceHigherActionCircle_spectralNegation,
+  `NLS.ZakharovShabat.sourceIndexedHigherAction_componentSwap,
+  `NLS.ZakharovShabat.sourceIndexedHigherAction_midpointReflection,
+  `NLS.ZakharovShabat.sourceIndexedHigherAction_reciprocalScaling,
+  `_private.NLS.ZakharovShabat.SourceHigherActionCircleSymmetries,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData.fderiv_weightedPrimitiveCircle,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData.fderiv_laurentPrimitiveCircle,
+  `_private.NLS.ZakharovShabat.SourceWeightedPrimitiveCircleGradient,
+  `NLS.ZakharovShabat.SourceSection11ContourData.exists_complex_gradient_circle,
+  `NLS.ZakharovShabat.exists_sourceIndexedHigherAction_complex_gradients,
+  `_private.NLS.ZakharovShabat.SourceHigherActionComplexGradient,
+  `NLS.ZakharovShabat.SourceSection11ContourData.periodCircle_nonempty,
+  `NLS.ZakharovShabat.SourceSection11ContourData.cotangent_componentSwap,
+  `NLS.ZakharovShabat.SourceSection11ContourData.cotangent_midpointReflection,
+  `NLS.ZakharovShabat.SourceSection11ContourData.cotangent_circleRotation,
+  `NLS.ZakharovShabat.exists_sourceIndexedHigherAction_cotangent_symmetries,
+  `_private.NLS.ZakharovShabat.SourceHigherActionCotangentSymmetries,
+  `NLS.ZakharovShabat.sourceWeightedGradientIntegrand,
+  `NLS.ZakharovShabat.circleIntegrable_sourceWeightedGradientIntegrand,
+  `NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve,
+  `NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve_pairing,
+  `NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve_apply,
+  `NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve_endpoints,
+  `NLS.ZakharovShabat.sourceHigherActionPhysicalGradientCurve,
+  `NLS.ZakharovShabat.exists_sourceHigherActionPhysicalGradients,
+  `NLS.ZakharovShabat.exists_sourceHigherActionPhysicalGradient_periodic_trace,
+  `_private.NLS.ZakharovShabat.L2WeightedActionGradient,
+  `NLS.Fourier.wave_even_one_sub,
+  `NLS.Fourier.unitFourierCoefficient_one_sub,
+  `_private.NLS.Fourier.UnitFourierReflection,
+  `NLS.ZakharovShabat.sourceFirstUnitMode,
+  `NLS.ZakharovShabat.sourceSecondUnitMode,
+  `NLS.ZakharovShabat.SourcePhysicalGradientRepresents.first_mode,
+  `NLS.ZakharovShabat.SourcePhysicalGradientRepresents.second_mode,
+  `NLS.ZakharovShabat.SourcePhysicalGradientRepresents.componentSwap,
+  `NLS.ZakharovShabat.SourcePhysicalGradientRepresents.midpointReflection,
+  `NLS.ZakharovShabat.SourcePhysicalGradientRepresents.reciprocalScaling,
+  `_private.NLS.ZakharovShabat.L2PhysicalCotangentSymmetries,
+  `NLS.Articles.MKdVNLSHierarchies.lemma10_i,
+  `_private.NLS.Articles.MKdVNLSHierarchies.HigherActionGradientSymmetries,
+  `NLS.ZakharovShabat.sourcePeriodicReflection_of_componentSwap_scaling,
+  `NLS.ZakharovShabat.sourceReciprocalScaling_negative_identity,
+  `NLS.ZakharovShabat.sourcePeriodicReflection_of_signed_midpoint,
+  `NLS.ZakharovShabat.SourcePeriodicReflection.zero_mem_central_segment,
+  `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.zero_not_mem_sphere_of_reflection,
+  `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.zero_not_mem_noncentral_disc_of_reflection,
+  `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.zero_mem_central_ball_of_reflection,
+  `_private.NLS.ZakharovShabat.SourceLemma10ContourGeometry,
+  `NLS.ZakharovShabat.exists_sourceLaurentReflection_physical_gradients,
+  `_private.NLS.ZakharovShabat.L2LaurentReflectionGradient,
+]
+
+private def mkdvNLSAuditPrefixes73 : Array Lean.Name := #[
+  `NLS.ZakharovShabat.gradientFirstCurve,
+  `NLS.ZakharovShabat.gradientSecondCurve,
+  `NLS.ZakharovShabat.l2DiscriminantXiCurve,
+  `NLS.ZakharovShabat.absolutelyContinuous_l2DiscriminantGradient_components,
+  `NLS.ZakharovShabat.extend_gradientFirstCurve,
+  `NLS.ZakharovShabat.extend_gradientSecondCurve,
+  `NLS.ZakharovShabat.curve_eq_mixed_primitive_of_ac,
+  `NLS.ZakharovShabat.curve_regular_of_primitive_graph,
+  `NLS.ZakharovShabat.l2DiscriminantGradient_first_primitive_graph,
+  `NLS.ZakharovShabat.l2DiscriminantGradient_second_primitive_graph,
+  `_private.NLS.ZakharovShabat.L2GradientPrimitiveGraph,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65, mkdvNLSAuditPrefixes66, mkdvNLSAuditPrefixes67, mkdvNLSAuditPrefixes68, mkdvNLSAuditPrefixes69, mkdvNLSAuditPrefixes70, mkdvNLSAuditPrefixes71] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65, mkdvNLSAuditPrefixes66, mkdvNLSAuditPrefixes67, mkdvNLSAuditPrefixes68, mkdvNLSAuditPrefixes69, mkdvNLSAuditPrefixes70, mkdvNLSAuditPrefixes71, mkdvNLSAuditPrefixes72, mkdvNLSAuditPrefixes73] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.ZakharovShabat.gradientFirstCurve,
+    ``NLS.ZakharovShabat.gradientSecondCurve,
+    ``NLS.ZakharovShabat.l2DiscriminantXiCurve,
+    ``NLS.ZakharovShabat.absolutelyContinuous_l2DiscriminantGradient_components,
+    ``NLS.ZakharovShabat.extend_gradientFirstCurve,
+    ``NLS.ZakharovShabat.extend_gradientSecondCurve,
+    ``NLS.ZakharovShabat.curve_eq_mixed_primitive_of_ac,
+    ``NLS.ZakharovShabat.curve_regular_of_primitive_graph,
+    ``NLS.ZakharovShabat.l2DiscriminantGradient_first_primitive_graph,
+    ``NLS.ZakharovShabat.l2DiscriminantGradient_second_primitive_graph,
+
+    ``NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.spectralNegation,
+    ``NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.componentSwap,
+    ``NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.midpointReflection,
+    ``NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.reciprocalScaling,
+    ``NLS.ZakharovShabat.sourceCriticalRootRatioJoint_componentSwap,
+    ``NLS.ZakharovShabat.sourceCriticalRootRatioJoint_midpointReflection,
+    ``NLS.ZakharovShabat.sourceCriticalRootRatioJoint_reciprocalScaling,
+    ``NLS.ZakharovShabat.sourceHigherActionCircle_spectralNegation,
+    ``NLS.ZakharovShabat.sourceIndexedHigherAction_componentSwap,
+    ``NLS.ZakharovShabat.sourceIndexedHigherAction_midpointReflection,
+    ``NLS.ZakharovShabat.sourceIndexedHigherAction_reciprocalScaling,
+    ``NLS.ZakharovShabat.SourceFullAbelianDifferentialData.fderiv_weightedPrimitiveCircle,
+    ``NLS.ZakharovShabat.SourceFullAbelianDifferentialData.fderiv_laurentPrimitiveCircle,
+    ``NLS.ZakharovShabat.SourceSection11ContourData.exists_complex_gradient_circle,
+    ``NLS.ZakharovShabat.exists_sourceIndexedHigherAction_complex_gradients,
+    ``NLS.ZakharovShabat.SourceSection11ContourData.periodCircle_nonempty,
+    ``NLS.ZakharovShabat.SourceSection11ContourData.cotangent_componentSwap,
+    ``NLS.ZakharovShabat.SourceSection11ContourData.cotangent_midpointReflection,
+    ``NLS.ZakharovShabat.SourceSection11ContourData.cotangent_circleRotation,
+    ``NLS.ZakharovShabat.exists_sourceIndexedHigherAction_cotangent_symmetries,
+    ``NLS.ZakharovShabat.sourceWeightedGradientIntegrand,
+    ``NLS.ZakharovShabat.circleIntegrable_sourceWeightedGradientIntegrand,
+    ``NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve,
+    ``NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve_pairing,
+    ``NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve_apply,
+    ``NLS.ZakharovShabat.sourceWeightedPhysicalGradientCurve_endpoints,
+    ``NLS.ZakharovShabat.sourceHigherActionPhysicalGradientCurve,
+    ``NLS.ZakharovShabat.exists_sourceHigherActionPhysicalGradients,
+    ``NLS.ZakharovShabat.exists_sourceHigherActionPhysicalGradient_periodic_trace,
+    ``NLS.Fourier.wave_even_one_sub,
+    ``NLS.Fourier.unitFourierCoefficient_one_sub,
+    ``NLS.ZakharovShabat.sourceFirstUnitMode,
+    ``NLS.ZakharovShabat.sourceSecondUnitMode,
+    ``NLS.ZakharovShabat.SourcePhysicalGradientRepresents.first_mode,
+    ``NLS.ZakharovShabat.SourcePhysicalGradientRepresents.second_mode,
+    ``NLS.ZakharovShabat.SourcePhysicalGradientRepresents.componentSwap,
+    ``NLS.ZakharovShabat.SourcePhysicalGradientRepresents.midpointReflection,
+    ``NLS.ZakharovShabat.SourcePhysicalGradientRepresents.reciprocalScaling,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma10_i,
+    ``NLS.ZakharovShabat.sourcePeriodicReflection_of_componentSwap_scaling,
+    ``NLS.ZakharovShabat.sourceReciprocalScaling_negative_identity,
+    ``NLS.ZakharovShabat.sourcePeriodicReflection_of_signed_midpoint,
+    ``NLS.ZakharovShabat.SourcePeriodicReflection.zero_mem_central_segment,
+    ``NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.zero_not_mem_sphere_of_reflection,
+    ``NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.zero_not_mem_noncentral_disc_of_reflection,
+    ``NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.zero_mem_central_ball_of_reflection,
+    ``NLS.ZakharovShabat.exists_sourceLaurentReflection_physical_gradients,
+
     ``NLS.FunctionalAnalysis.exists_compact_unitInterval_primitive,
     ``NLS.FunctionalAnalysis.ae_eq_const_on_unitInterval_of_weak_derivative_zero,
     ``NLS.FunctionalAnalysis.HasUnitIntervalWeakDerivative,

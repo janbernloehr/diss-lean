@@ -3736,3 +3736,60 @@ compiled modules retain their hashes. Only propext, Classical.choice and
 Quot.sound are allowed. Default limits and linters are unchanged. This reuses
 validated dependencies and is not a fresh whole-repository source rebuild.
 Evidence: weak-interval-validation.json.
+
+
+## 2026-11-07 — Full Lemma 10(i) and local level-zero contour gradients
+
+Full Lemma10(i) holds on one P/T/all-phase invariant open connected
+neighborhood of the entire original real H0 locus. Every complex source in
+that neighborhood, signed mode, positive printed level and real phase is
+included. Natural r denotes printed level r+1. The actual unconjugated
+Frechet derivative has its unique continuous physical representative in every
+original Hilbert direction. Its endpoint traces match, and all P, pure T and
+phase identities hold pointwise on the closed physical period.
+
+Original isolating circles transport to the transformed source and opposite
+index, retaining strict separation from every other gap. Negation preserves
+orientation and contributes its derivative minus sign. Actual action value
+parities precede full complex differentiation. Banach-valued gradient contours
+commute with bounded rough L2 pairings. Single Fourier directions and physical
+uniqueness identify both pointwise gradient components.
+
+The level-zero issue has a proved local analytic construction: both original
+symmetry hypotheses force zero into the actual complex central gap. Every
+original circuit avoids zero; noncentral discs exclude it and the central
+disc encloses it. One actual circle defines analytic local full-primitive
+contours and continuous physical gradients at every integer Laurent level,
+including zero. This does not yet identify a globally patched indexed Laurent
+action or prove the spatial recurrences in parts(ii)-(iii). Both actual spatial
+gradient rows at arbitrary L2 potentials now have bounded Volterra/continuous-
+primitive graphs; the reconstruction lemma gives AC and the actual AE derivative.
+The contour interchange remains open.
+
+Separate source reviews also certify diagonal discriminant evenness and
+Eq(21), the actual physical Hill L2 discriminant at zero equal to 2*cosh of
+the literal mean, on the full original complex H1 domain. Four additional
+whole source passages are reviewed. The factor-free pure-T proof line has
+its correct replacement identity, but stays open without a separate formal
+nonzero-action counterexample; the simultaneous disk-family selection and
+shifted-index printed proof also remain individually open.
+
+Twelve strict modules add 45 theorems and twelve definitions. Both audits pass:
+13,812 article declarations/auxiliaries and 77,043 combined NLS declarations.
+All 9,196 frozen inputs, 1,205 reused checker-prefix outputs and 9,089
+source-verified incoming compiled modules retain their hashes. All 4,011
+prior audit scopes are preserved and 69 added, for 4,080 scopes in 74 blocks;
+each block is flattened exactly once and every new public declaration is
+required by name. Only propext, Classical.choice and Quot.sound are allowed.
+Default limits and linters are unchanged. The supported module-only commands
+compile each new module, NLS.lean and both auditors, with the exact full checker-module import union in the combined auditor directly, with
+isolated private outputs, while another worktree held the global lock for its
+public examples check. The queued full-audit invocation was canceled before
+compilation; no checker or lock rule was modified. This is not a fresh full repository
+source rebuild. Evidence: higher-action-symmetry-validation.json.
+
+Seventeen of eighteen named statements remain covered: full Lemma10(ii)-(iii)
+are still required. The ledger has 132 assertion records and all 241 source
+passages. Its completion gate correctly rejects 65 open assertion records
+and 174 open passages; semantic decomposition and whole-paper proof coverage
+remain in progress.
