@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "kdv-estimates",
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "requested_scope": "Every mathematical assertion in the pinned paper, including both Corollary 1 occurrences, intermediate results, appendices, displayed equations, remarks and background facts needed by the arguments.",
   "main_theorems_verified": true,
   "whole_paper_verified": false,
@@ -41,8 +41,15 @@
       "source_page": 3,
       "source_text_line": 137,
       "scope": "Global-in-time KdV solution bound with the printed exponent and uniform constant.",
-      "status": "source_comparison_pending",
-      "declarations": []
+      "status": "partially_verified",
+      "declarations": [],
+      "proved_intermediates": [
+        "NLS.Articles.KdVEstimates.corollary1_dynamical_of_conserved_actions",
+        "NLS.Articles.KdVEstimates.corollary1_dynamical_of_conserved_target_norms",
+        "NLS.Articles.KdVEstimates.exists_original_lowerTarget_bound"
+      ],
+      "remaining": "Prove conservation of the actual physical actions for every KdV solution in the stated integer Sobolev domains. The existing conditional estimate does not establish this evolution premise.",
+      "validation": "The exact exponent m*m+m-1 and a constant uniform in time and initial data are proved for every mean-zero family conserving the actual original actions. The m=1 base uses the physical quadratic trace; higher orders use the actual lower restrictions of the same map."
     },
     {
       "id": "theorem-2",
@@ -77,8 +84,15 @@
       "source_page": 4,
       "source_text_line": 245,
       "scope": "Every real Sobolev exponent s>=0: homogeneous target membership and both polynomial bounds.",
-      "status": "source_comparison_pending",
-      "declarations": []
+      "status": "verified",
+      "declarations": [
+        "NLS.Articles.KdVEstimates.corollary1_real_sobolev"
+      ],
+      "validation": "Strict proof of both parts with one constant, exact original Fourier norm, literal fixed-map raw coordinates, complete homogeneous real-exponent target and actual action summability.",
+      "source_pages": [
+        4,
+        5
+      ]
     },
     {
       "id": "lemma-1",
@@ -582,9 +596,9 @@
     "Appendix A cutoff four versus the earlier cutoff eight: the new radius-six tail bound now gives the cutoff-four Neumann inverse, but root localization and all downstream printed constants still need exact review.",
     "Theorem 4 requires leading coefficient 2^m; the earlier C*(top+lower) estimate does not certify that statement.",
     "Lemma 8 requires leading 2^(-m) and the explicit low-action coefficient, not a generic uniform majorant.",
-    "Both Corollary 1 occurrences remain unverified; integer main theorems do not imply either without additional work."
+    "The real-exponent Corollary 1 is verified. The dynamical Corollary 1 has the exact conditional action-conserving-family bound, but action conservation for every claimed KdV solution remains unproved."
   ],
-  "validation_report": "coverage/articles/kdv-estimates/whole-paper-validation.json",
+  "validation_report": "coverage/articles/kdv-estimates/corollary-validation.json",
   "integrated_main_commit": "a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa",
   "integration_note": "PR4 was merged while this continuation was in progress. The branch was fast-forwarded to the merge commit; its source tree equals the validated baseline."
 }

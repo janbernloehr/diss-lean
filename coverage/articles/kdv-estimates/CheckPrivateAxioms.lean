@@ -1492,13 +1492,40 @@ import NLS.Articles.KdVEstimates.Lemma7
 import NLS.Articles.KdVEstimates.AppendixA3
 import NLS.Articles.KdVEstimates.AppendixD1
 
+import NLS.SequenceSpaces.RealWeightedNatPairInclusion
+import NLS.SequenceSpaces.SobolevCorollaryWeights
+import NLS.SequenceSpaces.ConservedSobolevBootstrap
+import NLS.KdV.HillRealWeightedInclusion
+import NLS.KdV.HillRealSobolevSourceNorm
+import NLS.KdV.HillRealSobolevBirkhoffTarget
+import NLS.KdV.HillOriginalBirkhoffRealSobolevRestriction
+import NLS.KdV.HillBirkhoffIntegerLowerNorms
+import NLS.Articles.KdVEstimates.RealSobolevCorollary
+import NLS.Articles.KdVEstimates.DynamicalCorollaryEstimate
+
 /-! Transitive audit of the shared KdV foundations and article adapters.
 This checks axiom dependencies; source correspondence is recorded separately. -/
 
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let shared := #[``NLS.ComplexAnalysis.RealComplexification.eqOn_zero_of_nonempty_real_slice,
+  let shared := #[``NLS.RealWeightedNatPair.normalization_norm_le,
+    ``NLS.RealWeightedNatPair.mem_normalization_of_le,
+    ``NLS.RealWeightedNatPair.inclusion,
+    ``NLS.RealWeightedNatPair.inclusion_apply,
+    ``NLS.RealWeightedNatPair.norm_inclusion_le,
+    ``NLS.RealWeightedNatPair.norm_eq_of_coordinates,
+    ``NLS.RealWeightedNatPair.norm_eq_of_pair_sq,
+    ``NLS.SpectralWeight.corollarySplit,
+    ``NLS.SpectralWeight.corollarySplit_bounds,
+    ``NLS.SpectralWeight.corollaryWeight,
+    ``NLS.SpectralWeight.corollaryWeight_le,
+    ``NLS.SpectralWeight.corollaryWeight_homogeneous,
+    ``NLS.SpectralWeight.corollary_exponent,
+    ``NLS.SpectralWeight.corollaryWeight_extension_bound,
+    ``NLS.SpectralWeight.corollaryWeight_polynomial_bound,
+    ``NLS.SequenceSpaces.conservedSobolev_bootstrap,
+    ``NLS.ComplexAnalysis.RealComplexification.eqOn_zero_of_nonempty_real_slice,
     ``NLS.FiniteSpectralDeterminant.det_prod_formula,
     ``NLS.FiniteSpectralDeterminant.determinant_shift_bound,
     ``NLS.Weight.pullback, ``NLS.Weight.pullback_apply,

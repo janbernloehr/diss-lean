@@ -23,11 +23,23 @@ Two source qualifications are recorded with formal proofs:
   `n >= 4*norm(q)`. This does not certify the literal radius-twelve statement or
   the downstream Appendix A localization constants.
 
-The exact leading coefficients in Lemma 8 and Theorem 4, both Corollary 1
-statements, the remaining named results and unnumbered claims still need source
-comparison and any missing proofs. Historical validation below concerns the
-main-theorem milestone. New proof validation is in
-[whole-paper-validation.json](whole-paper-validation.json).
+The real-exponent Corollary 1 (second occurrence, pages 4-5) is now proved
+for every real `s >= 0`. Both parts use one constant, the exact Fourier source
+norm, the exact complete homogeneous target with powers `2*s+1`, and the same
+original physical coordinate pairs. The action sum is proved convergent.
+
+The dynamical Corollary 1 (first occurrence, page 3) is partially verified.
+Its exact exponent `m*m+m-1` and the uniform estimate are proved for every
+mean-zero family conserving the actual physical actions; those actions are
+proved to conserve the required target norms. Action conservation for every
+KdV solution in the printed domain is still an explicit open obligation.
+The conditional theorem is not recorded as full coverage of the corollary.
+
+The exact leading coefficients in Lemma 8 and Theorem 4, the remaining named
+results and unnumbered claims still need source comparison and missing proofs.
+Historical validation below concerns the main-theorem milestone. New proof validation is in
+[corollary-validation.json](corollary-validation.json). The initial auxiliary
+proof milestone remains recorded in [whole-paper-validation.json](whole-paper-validation.json).
 
 ## Verified main-theorem milestone
 
@@ -101,9 +113,10 @@ axiom checks. That original theorem milestone did not include a fresh complete
 1,486-module focused-script run, full Lake rebuild, or repository examples run.
 The later integration checks are recorded below.
 
-This coverage concerns the named main Theorems 1–3. The two statements
-labelled Corollary 1 were outside that milestone and are now explicit open
-obligations in the whole-paper scope.
+That milestone concerns the named main Theorems 1–3. Both statements labelled
+Corollary 1 were outside it. Their current statuses are described above: the
+real-exponent statement is verified and the dynamical statement is partially
+verified.
 Global surjectivity on every higher weighted space is not asserted.
 The Hill operator is `-d²/dx² + q`; the missing exponent in the page-8
 display is corrected consistently with formula (2) on page 5.

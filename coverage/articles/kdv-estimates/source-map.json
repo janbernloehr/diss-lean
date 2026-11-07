@@ -8481,7 +8481,8 @@
         3
       ],
       "scope": "For integer m>=1, a global KdV solution with u(0)=u0 in H_0^m satisfies ||u(t)||_m<=alpha_m*(||u0||_m+(1+||u0||_(m-1))^(m^2+m-1)*||u0||_(m-1)) for every real t; alpha_m independent of u0,t.",
-      "status": "not_verified"
+      "status": "partially_verified",
+      "coverage_report": "coverage/articles/kdv-estimates/whole-paper.json"
     },
     {
       "label": "Corollary 1 (second occurrence)",
@@ -8490,7 +8491,8 @@
         5
       ],
       "scope": "For every real s>=0, exists c_s uniform in u in H_0^s: S_s<=c_s*(1+A_s)^max(1,s)*A_s and Q_(2*s+1)<=c_s^2*(1+A_s)^(2*max(1,s))*A_s^2, including the mapping property into h_*^s.",
-      "status": "not_verified"
+      "status": "verified",
+      "coverage_report": "coverage/articles/kdv-estimates/whole-paper.json"
     }
   ],
   "new_proved_foundation": {
@@ -19507,7 +19509,7 @@
     "hypotheses": "Theorem 1 and Theorem 2 quantify over every integer m>=1 and every real mean-zero source with original Fourier norm sum (1+|2*pi*k|)^(2m)|u_hat(k)|^2. Theorem 3 quantifies over every r in [0,1/2], every normalized symmetric monotone submultiplicative weight v, w=<k>^r*v and every real mean-zero source in H^w. The weight on real arguments is its piecewise linear extension. Raw target index k means physical n=k+1. Target norms use (2*pi*n)^(2m+1), respectively (2*pi*n)*w(2*n)^2. I_n=(x_n^2+y_n^2)/2 is the actual physical action. The main estimates assume no canonical-map, inverse or norm-comparison witness.",
     "result": "Construct the literal original real coordinates (Re Z_n,-Im Z_n), prove their complete canonical Gardner matrix at every original real mean-zero L2 source including all closed gaps, and encode them in explicit weighted real-pair Hilbert spaces. The normalization is sqrt(2*pi*n)*(x_n-i*y_n), so raw coordinate equality, norm formulas, complete target topology and both real Banach analytic directions of the original global map are proved. Weighted and homogeneous Sobolev restrictions retain literally the same raw pairs of this one global map; target membership and exact equality with the previously checked spectral sequence norms are proved. Its actions equal the original physical gap actions at every positive index. Prove summability of all integer action masses used in the main statements. Transfer the checked native integer and weighted estimates to precise main Theorems 1, 2 and both parts of Theorem 3, with one common positive constant for Theorem 3. No replacement norm-compatible map, supplied inverse, canonicality premise or action-identity premise is used.",
     "qualification": "The named main Theorems 1\u20133 are verified for the original map. Their branch was pushed and PR4 was merged. Whole-paper coverage is a separate, incomplete continuation; see whole-paper.json.",
-    "remaining": "No remaining obligation for the named main estimates. Both Corollary 1 occurrences, the remaining source statements and unnumbered claims are now in scope and remain tracked in whole-paper.json.",
+    "remaining": "Whole-paper continuation: the real-exponent Corollary 1 is now verified; the dynamical Corollary 1 still requires actual KdV action conservation. Remaining statements and audits are in whole-paper.json.",
     "proof_origin": {
       "new_modules": 11,
       "validation": "11 isolated strict module checks; all 1475 prior focused modules preserved byte for byte. No raised limits, disabled linters, sorry or new axioms."

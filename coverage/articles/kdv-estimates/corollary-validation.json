@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "article_id": "kdv-estimates",
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_scope",
+  "main_theorems_verified": true,
+  "whole_paper_verified": false,
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "raised_proof_limits": false,
+  "disabled_linters": false,
+  "sorry_or_new_axioms": false,
+  "baseline": {
+    "commit": "0194e2a6a28cbbd3e8c3863051caf59e15e5f249",
+    "focused_modules": 1491,
+    "all_focused_sources_byte_identical": true,
+    "source_hash_map_sha256": "7133c7cbefa948bfbc4597e353548d37b67391736abcad37abf9acc665c8789f",
+    "provenance": "The prior main-theorem, integration and initial whole-paper milestones retain their strict validation. Every baseline focused source was compared byte-for-byte with this commit."
+  },
+  "new_modules": [
+    {
+      "module": "NLS.SequenceSpaces.RealWeightedNatPairInclusion",
+      "source": "NLS/SequenceSpaces/RealWeightedNatPairInclusion.lean",
+      "sha256": "73e304e6ac7b9392987203ef21fa4bd0eb4c9f71149fba0dabf9262b8728a821",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.SequenceSpaces.SobolevCorollaryWeights",
+      "source": "NLS/SequenceSpaces/SobolevCorollaryWeights.lean",
+      "sha256": "b2bb20a422b6f41a14afbe4937466f923f23f17d715a07c4f737d2d974e1c8b7",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.SequenceSpaces.ConservedSobolevBootstrap",
+      "source": "NLS/SequenceSpaces/ConservedSobolevBootstrap.lean",
+      "sha256": "83050a97881cfde3d29ae6c685dcb8d495b03c3b11fbbf32022039ecb5a7122d",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.HillRealWeightedInclusion",
+      "source": "NLS/KdV/HillRealWeightedInclusion.lean",
+      "sha256": "7d92bb6ff43062be2441e81126e709628096625a3eb0ee5bfd016f6cbeab590e",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.HillRealSobolevSourceNorm",
+      "source": "NLS/KdV/HillRealSobolevSourceNorm.lean",
+      "sha256": "9731f46254dfd01f18d16a756e9dcf9654459d1ff985511f89b9879b307c4a6c",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.HillRealSobolevBirkhoffTarget",
+      "source": "NLS/KdV/HillRealSobolevBirkhoffTarget.lean",
+      "sha256": "97e5a93d0b85ef968c3e0ed2232e7682438a8a68933e6d7d18fac5d94235d96e",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.HillOriginalBirkhoffRealSobolevRestriction",
+      "source": "NLS/KdV/HillOriginalBirkhoffRealSobolevRestriction.lean",
+      "sha256": "e66c54edcf7f183bd9cc73aa4ec2b135dd9c3965c57d0496e3c3f7158c3e2846",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.HillBirkhoffIntegerLowerNorms",
+      "source": "NLS/KdV/HillBirkhoffIntegerLowerNorms.lean",
+      "sha256": "f12c7faae660f972ea3be288eac7067c5fdb232186e14316c40e75ec0ef06af5",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.Articles.KdVEstimates.RealSobolevCorollary",
+      "source": "NLS/Articles/KdVEstimates/RealSobolevCorollary.lean",
+      "sha256": "d5c0cca7f5c1a095b07f5bfee3acffedfb61b29b638160c9d50b3abe8b010504",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.Articles.KdVEstimates.DynamicalCorollaryEstimate",
+      "source": "NLS/Articles/KdVEstimates/DynamicalCorollaryEstimate.lean",
+      "sha256": "25dd8d48e6d87c19b6873edcc5af252f007bd0b2dda472a78ffc154b21cbfdf9",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "current_focused_module_count": 1501,
+  "isolated_module_check": {
+    "count": 10,
+    "exit_code": 0,
+    "command": "lean --root=STAGE -DautoImplicit=false -DwarningAsError=true -o PRIVATE_CACHE/MODULE.olean STAGE/MODULE.lean",
+    "staging_root": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-estimates/work/staged-whole-paper-corollaries",
+    "integrated_sources_equal_checked_staged_bytes": true,
+    "note": "Dependencies were compiled successfully before their consumers. All ten integrated source hashes equal those of the final isolated strict checks."
+  },
+  "aggregate": {
+    "exit_code": 0,
+    "command": "lean -DautoImplicit=false -DwarningAsError=true -o .lake/build/lib/lean/NLS.olean NLS.lean",
+    "source_sha256": "e7d5fed13ed9d4e0f02542d147242ae26f43c99a2ec5eaa93637f493c39308e5",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "transitive_axiom_audit": {
+    "exit_code": 0,
+    "declarations": 10037,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "command": "lean -DautoImplicit=false -DwarningAsError=true coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
+    "source_sha256": "0045ac41ea448a2012eacb86cd738c4c585ae679a2d508fb727c14803d77841c",
+    "log_sha256": "fc119afa2c446c12a3e279332f662a2959200f1f02c339a56f121d5b539b25b0",
+    "new_shared_seeds": [
+      "NLS.RealWeightedNatPair.normalization_norm_le",
+      "NLS.RealWeightedNatPair.mem_normalization_of_le",
+      "NLS.RealWeightedNatPair.inclusion",
+      "NLS.RealWeightedNatPair.inclusion_apply",
+      "NLS.RealWeightedNatPair.norm_inclusion_le",
+      "NLS.RealWeightedNatPair.norm_eq_of_coordinates",
+      "NLS.RealWeightedNatPair.norm_eq_of_pair_sq",
+      "NLS.SpectralWeight.corollarySplit",
+      "NLS.SpectralWeight.corollarySplit_bounds",
+      "NLS.SpectralWeight.corollaryWeight",
+      "NLS.SpectralWeight.corollaryWeight_le",
+      "NLS.SpectralWeight.corollaryWeight_homogeneous",
+      "NLS.SpectralWeight.corollary_exponent",
+      "NLS.SpectralWeight.corollaryWeight_extension_bound",
+      "NLS.SpectralWeight.corollaryWeight_polynomial_bound",
+      "NLS.SequenceSpaces.conservedSobolev_bootstrap"
+    ],
+    "scope": "All current KdV and article declarations plus the prior explicit shared seeds and every new shared weight, real-pair inclusion/norm and bootstrap declaration, each checked transitively."
+  },
+  "source_correspondence": {
+    "pdf_sha256": "b275b8c6770a650f614acd0788611044c6b0ee8da4506857294dc3ae617666dd",
+    "text_sha256": "2747cee0de2eb96928858c9228e578ac37c0c3ccca077b44c8f72d677cadd54a",
+    "visually_reviewed_pages": [
+      3,
+      4,
+      5
+    ],
+    "real_exponent_corollary": {
+      "status": "verified",
+      "declaration": "NLS.Articles.KdVEstimates.corollary1_real_sobolev",
+      "scope": "Every real s>=0; one positive c_s precedes the source and mean-zero quantifiers; both printed bounds, literal original physical coordinates and actual action summability. The exact source Fourier norm and complete homogeneous target norm are separately proved.",
+      "source_norm_declaration": "NLS.KdV.hillPeriodOne_real_sobolev_norm_sq",
+      "target_norm_declaration": "NLS.KdV.norm_HillBirkhoffRealSobolevSpace_sq",
+      "fixed_coordinate_declaration": "NLS.KdV.hillOriginalBirkhoffRealSobolevRestriction_coordinates",
+      "convergent_action_sum": "NLS.Articles.KdVEstimates.hasSum_original_real_sobolev_actions"
+    },
+    "dynamical_corollary": {
+      "status": "partially_verified",
+      "conditional_declaration": "NLS.Articles.KdVEstimates.corollary1_dynamical_of_conserved_actions",
+      "proved": "The exact m*m+m-1 growth bound with a positive constant uniform in the mean-zero family, initial data and time, conditional on conservation of the actual original physical actions. Their conservation implies the needed target-norm conservation. The m=1 lower target estimate uses the actual quadratic trace.",
+      "remaining": "Establish the evolution premise for every KdV solution in the printed integer Sobolev domains. No action-conserving-family premise is hidden inside a definition of KdV solution, and no full proof of the first corollary is claimed."
+    },
+    "source_corrections": "The existing explicit A.3 strip correction and D.1 nonempty-real-slice qualification and their formal obstructions are preserved. They are not relabelled as proofs of the unqualified printed statements."
+  },
+  "coverage_ledger": {
+    "source": "coverage/articles/kdv-estimates/whole-paper.json",
+    "sha256": "5efca98ba04648c953d36249e26393634159698cd17d8787a95c80f85cb91cdb",
+    "named_result_statuses": {
+      "verified": 5,
+      "partially_verified": 1,
+      "source_comparison_pending": 19,
+      "verified_with_explicit_correction": 2
+    },
+    "equation_and_unnumbered_claim_audits_complete": false
+  },
+  "focused_script": {
+    "syntax_exit_code": 0,
+    "source_sha256": "23f9723c356e763555538d5fb23203087e1213cf83b3d64a0d3592bd29b49629",
+    "all_ten_new_modules_registered": true,
+    "fresh_complete_focused_script_run_claimed": false
+  },
+  "limits": [
+    "No fresh complete 1501-module focused-script run, Lake rebuild, full examples run or global NLS audit is claimed. Baseline results retain their historical scope.",
+    "Whole-paper coverage remains incomplete. The real-exponent corollary is verified; the dynamical corollary remains partial, and the other pending source comparisons and equation/unnumbered audits are still open."
+  ]
+}
