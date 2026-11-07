@@ -1,0 +1,49 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "source_branch": "main",
+  "purpose": "Unchanged canonical regular second-moment normalization, sine-square means and exact free psi factors required to cancel the original physical diagonal 6I term through closed gaps. These already tracked files are newly selected, strictly rebuilt privately and included in the full transitive axiom audit.",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/ParametricSineSquareMean.lean",
+      "source_sha256": "9fa597a43d42f8d8f93fbd7b1ed5d2dafde79e4838a840a695be1bd8f7aaca96",
+      "local_sha256": "9fa597a43d42f8d8f93fbd7b1ed5d2dafde79e4838a840a695be1bd8f7aaca96",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceMomentFreeFactors.lean",
+      "source_sha256": "f8fb422882616e453ed92d24fb833b2e782ab4f67c3b01b62ca78497b98f481c",
+      "local_sha256": "f8fb422882616e453ed92d24fb833b2e782ab4f67c3b01b62ca78497b98f481c",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNormalizedSecondMoment.lean",
+      "source_sha256": "eb6fddc312179b4c2f9ab3cef64923b93f4697d585156e8352c69b12dad130c4",
+      "local_sha256": "eb6fddc312179b4c2f9ab3cef64923b93f4697d585156e8352c69b12dad130c4",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiFreeEquationFactorization.lean",
+      "source_sha256": "912de40c2a32c475016734a3124bb6391bc71346dace9b9d3f0c30ac4cfb8c1a",
+      "local_sha256": "912de40c2a32c475016734a3124bb6391bc71346dace9b9d3f0c30ac4cfb8c1a",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiFreeFrechet.lean",
+      "source_sha256": "c946d9d3391f05de575f3ee78eb14218a144164ba30ad9bdc94e1023023d7399",
+      "local_sha256": "c946d9d3391f05de575f3ee78eb14218a144164ba30ad9bdc94e1023023d7399",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiFreeOperator.lean",
+      "source_sha256": "89d51ccba75d1a6741faa76e728b96c8ba5f44a63ca6460207e6c9641daba0f8",
+      "local_sha256": "89d51ccba75d1a6741faa76e728b96c8ba5f44a63ca6460207e6c9641daba0f8",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiFreeSequence.lean",
+      "source_sha256": "6a33df29c801501c92f0a0b8c9380f8fc43794c62aa74d3def3ee0a0830b3508",
+      "local_sha256": "6a33df29c801501c92f0a0b8c9380f8fc43794c62aa74d3def3ee0a0830b3508",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

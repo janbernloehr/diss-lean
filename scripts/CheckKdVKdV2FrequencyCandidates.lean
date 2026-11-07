@@ -1,3 +1,15 @@
+import NLS.ComplexAnalysis.ParametricSineSquareMean
+import NLS.ZakharovShabat.SourceMomentFreeFactors
+import NLS.ZakharovShabat.SourceNormalizedSecondMoment
+import NLS.ZakharovShabat.SourcePsiFreeEquationFactorization
+import NLS.ZakharovShabat.SourcePsiFreeFrechet
+import NLS.ZakharovShabat.SourcePsiFreeOperator
+import NLS.ZakharovShabat.SourcePsiFreeSequence
+import NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalCancellation
+import NLS.SequenceSpaces.CompactFiniteSymbolPacket
+import NLS.KdV.PhysicalDiagonalActionCancellation
+import NLS.ZakharovShabat.SourceNormalizedSecondMomentAnalytic
+import NLS.ZakharovShabat.SourceRegularDiagonalActionCancellation
 import NLS.ZakharovShabat.SourceAbelianPrimitiveExponent
 import NLS.ZakharovShabat.SourceAbelianPrimitiveIsospectral
 import NLS.ZakharovShabat.SourceAbelianMomentIsospectral
@@ -5831,7 +5843,19 @@ private def kdvFrequencyAuditChunk25 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.OffDiagonalActionCharts,
   `NLS.Articles.KdVKdV2Frequencies.OffDiagonalRawActionCompact,
   `NLS.Articles.KdVKdV2Frequencies.OffDiagonalOriginalActionRecovery,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12OffDiagonalActionCompact
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12OffDiagonalActionCompact,
+  `NLS.ComplexAnalysis.ParametricSineSquareMean,
+  `NLS.ZakharovShabat.SourcePsiFreeSequence,
+  `NLS.ZakharovShabat.SourcePsiFreeFrechet,
+  `NLS.ZakharovShabat.SourcePsiFreeOperator,
+  `NLS.ZakharovShabat.SourcePsiFreeEquationFactorization,
+  `NLS.ZakharovShabat.SourceMomentFreeFactors,
+  `NLS.ZakharovShabat.SourceNormalizedSecondMoment,
+  `NLS.ZakharovShabat.SourceNormalizedSecondMomentAnalytic,
+  `NLS.ZakharovShabat.SourceRegularDiagonalActionCancellation,
+  `NLS.SequenceSpaces.CompactFiniteSymbolPacket,
+  `NLS.KdV.PhysicalDiagonalActionCancellation,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalCancellation
 ]
 
 open Lean in

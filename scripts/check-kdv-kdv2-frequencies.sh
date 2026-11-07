@@ -3321,6 +3321,18 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/OffDiagonalRawActionCompact
   NLS/Articles/KdVKdV2Frequencies/OffDiagonalOriginalActionRecovery
   NLS/Articles/KdVKdV2Frequencies/Theorem12OffDiagonalActionCompact
+  NLS/ComplexAnalysis/ParametricSineSquareMean
+  NLS/ZakharovShabat/SourcePsiFreeSequence
+  NLS/ZakharovShabat/SourcePsiFreeFrechet
+  NLS/ZakharovShabat/SourcePsiFreeOperator
+  NLS/ZakharovShabat/SourcePsiFreeEquationFactorization
+  NLS/ZakharovShabat/SourceMomentFreeFactors
+  NLS/ZakharovShabat/SourceNormalizedSecondMoment
+  NLS/ZakharovShabat/SourceNormalizedSecondMomentAnalytic
+  NLS/ZakharovShabat/SourceRegularDiagonalActionCancellation
+  NLS/SequenceSpaces/CompactFiniteSymbolPacket
+  NLS/KdV/PhysicalDiagonalActionCancellation
+  NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalCancellation
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
