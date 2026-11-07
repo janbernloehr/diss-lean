@@ -3298,6 +3298,15 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/IntermediateFrequencyRawTargets
   NLS/Articles/KdVKdV2Frequencies/NativeSobolevRawActions
   NLS/Articles/KdVKdV2Frequencies/Theorem12IntermediateRegularities
+  NLS/SequenceSpaces/OffDiagonalWeightedSums
+  NLS/SequenceSpaces/NegativeWeightedOffDiagonalPacket
+  NLS/ZakharovShabat/SourceOffDiagonalSecondMomentBounds
+  NLS/ZakharovShabat/SourceOffDiagonalSecondMomentSmoothing
+  NLS/SequenceSpaces/CompactSobolevInclusion
+  NLS/ZakharovShabat/SourceOffDiagonalMomentGain
+  NLS/KdV/PhysicalOffDiagonalFrequency
+  NLS/KdV/PhysicalOffDiagonalFrequencyChart
+  NLS/KdV/PhysicalOffDiagonalFrequencyCompact
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -930,9 +930,14 @@
           "source_clause": "COMPLETE -1<s<-1/2 weighted ell(2s+1,1) target range of Theorem1.2(i), original raw action AND frequency norms, common entire-cone complex domain before all actions/indices, same weak physical frequency, all-native Hamiltonian recovery and reality",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.theorem_1_2_i_intermediate_regularities",
           "qualification": "COMPLETE Theorem1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. Together with the prior s=-1 and s>=-1/2 milestones, ALL regularity-dependent target clauses of Theorem1.2(i) are now VERIFIED. The COMPLETE Theorem1.2 still requires sharp locally uniform high-index asymptotics and compact derivative corrections at EVERY appropriate action, along with its remaining clauses. Strict concavity, local inverse/PDE conclusions, and KdV2 weighted moment sums and mass-renormalized physical frequency identification remain OPEN."
+        },
+        {
+          "source_clause": "Necessary off-diagonal SOURCE smoothing contribution to Theorem 1.2(ii)-(iii), with strict weighted ell1 gain, exact physical Hill own-gap removal and compact complex native SOURCE derivatives at every base; full ACTION derivative compactness is not asserted",
+          "lean_declaration": "NLS.KdV.exists_physical_offDiagonal_raw_compact_germ",
+          "qualification": "All regularity-dependent target clauses of Theorem 1.2(i) remain verified. COMPLETE Theorem 1.1 remains verified and unchanged; the other ten COMPLETE main theorem rows remain open. To prove Theorem 1.2(ii), the off-diagonal gain must still descend in the original action topology and the diagonal term must cancel the exact 6I contribution. The full locally uniform asymptotics and Hilbert derivative compactness also remain open. Strict concavity, local inverses, PDE conclusions, and KdV2 weighted moment sums and mass-renormalized physical frequency identification remain open."
         }
       ],
-      "current_support_summary": "The ENTIRE intermediate -1<s<-1/2 target range of Theorem1.2(i) is now proved in the ORIGINAL raw ell(2s+1,1) action AND frequency norms. For EVERY such s, ONE genuine complex Banach-analytic weighted ell1 frequency map is defined near the ENTIRE original positive action cone, before ALL actions and frequency indices. Every map agrees on that cone with the SAME actual weak scalar physical frequency family through the literal coefficient-preserving weak inclusion. EVERY original real mean-zero native H1 action sequence and its independently defined Hamiltonian frequency are recovered exactly. Reality, all closed modes and arbitrary infinite support are retained. COMPLETE Theorem1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. Together with the prior s=-1 and s>=-1/2 milestones, ALL regularity-dependent target clauses of Theorem1.2(i) are now VERIFIED. The COMPLETE Theorem1.2 still requires sharp locally uniform high-index asymptotics and compact derivative corrections at EVERY appropriate action, along with its remaining clauses. Strict concavity, local inverse/PDE conclusions, and KdV2 weighted moment sums and mass-renormalized physical frequency identification remain OPEN."
+      "current_support_summary": "The actual off-diagonal physical KdV second-moment correction now has a strictly stronger weighted ell1 analytic germ at EVERY real native H^s source, -1<s<-1/2. The whole packet is bounded on a common full complex neighborhood, with exact original physical contour calibration, all closed gaps and arbitrary infinite support. Its derivative from the native SOURCE space into the ORIGINAL ell(2s+1,1) frequency target is compact at every complex point of that germ. Removing both signed own labels, n and -n, is proved to be exactly removal of the original own Hill moment. This supplies a necessary smoothing contribution to Theorem 1.2; it is not yet compactness of the full ACTION derivative. All regularity-dependent target clauses of Theorem 1.2(i) remain verified. COMPLETE Theorem 1.1 remains verified and unchanged; the other ten COMPLETE main theorem rows remain open. To prove Theorem 1.2(ii), the off-diagonal gain must still descend in the original action topology and the diagonal term must cancel the exact 6I contribution. The full locally uniform asymptotics and Hilbert derivative compactness also remain open. Strict concavity, local inverses, PDE conclusions, and KdV2 weighted moment sums and mass-renormalized physical frequency identification remain open."
     },
     {
       "label": "Theorem 1.3",
@@ -43561,14 +43566,158 @@
       "scope": "The ENTIRE intermediate -1<s<-1/2 target range of Theorem1.2(i) is now proved in the ORIGINAL raw ell(2s+1,1) action AND frequency norms. For EVERY such s, ONE genuine complex Banach-analytic weighted ell1 frequency map is defined near the ENTIRE original positive action cone, before ALL actions and frequency indices. Every map agrees on that cone with the SAME actual weak scalar physical frequency family through the literal coefficient-preserving weak inclusion. EVERY original real mean-zero native H1 action sequence and its independently defined Hamiltonian frequency are recovered exactly. Reality, all closed modes and arbitrary infinite support are retained.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "e385704788a08923aa6a4b43564098289c7f8055adf62095a4a97a90e7646517"
+    },
+    {
+      "path": "NLS/SequenceSpaces/OffDiagonalWeightedSums.lean",
+      "source_labels": [
+        "Necessary smoothing support for Theorem 1.2(ii)-(iii): actual paired off-diagonal physical moment correction has strict weighted ell1 gain and compact native SOURCE derivatives; full diagonal cancellation and ACTION derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "Absolute convergence survives removing the own signed index or BOTH opposite own labels. The paired sum is exactly the full signed weighted sum minus n*(M_nn-M_n,-n), including n=0. Zero-diagonal weighted reciprocal majorants retain the actual cubic gap factors.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ac6681d19b30c6ec55e7e93cd2591d9682696223025a50be56272d924618f29d"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NegativeWeightedOffDiagonalPacket.lean",
+      "source_labels": [
+        "Necessary smoothing support for Theorem 1.2(ii)-(iii): actual paired off-diagonal physical moment correction has strict weighted ell1 gain and compact native SOURCE derivatives; full diagonal cancellation and ACTION derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The source squared-gap weight and output weight are independent for actual zero-diagonal cubic packets. A genuine ell1 majorant and full norm bound follow from the summable reciprocal columns; no stronger source squared-gap norm is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f7a96520aef1bf93c46e3647c6438a2f81ef11b1793e69bd0e18338f357a9d8a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceOffDiagonalSecondMomentBounds.lean",
+      "source_labels": [
+        "Necessary smoothing support for Theorem 1.2(ii)-(iii): actual paired off-diagonal physical moment correction has strict weighted ell1 gain and compact native SOURCE derivatives; full diagonal cancellation and ACTION derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The ACTUAL paired off-diagonal second moments have locally uniform whole-vector ell1 bounds in a negative output weight independent of the source weight. Source squared gaps and pointwise weighted gap bounds hold on common FULL COMPLEX neighborhoods before all own and summation indices.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ef14ed4bbb3bfc9e9736d6f9061941bfd6e79e940ce4d7f76e6db70a52dac7ef"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceOffDiagonalSecondMomentSmoothing.lean",
+      "source_labels": [
+        "Necessary smoothing support for Theorem 1.2(ii)-(iii): actual paired off-diagonal physical moment correction has strict weighted ell1 gain and compact native SOURCE derivatives; full diagonal cancellation and ACTION derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "Coordinate analyticity and actual local sequence bounds give a genuine Banach-analytic paired off-diagonal moment packet near the ENTIRE normalized real source locus. Each coordinate equals the full actual weighted moment sum minus BOTH signed own contributions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "db9a8347130a9b33f067e3654fe539a3488bc3cb56840ea652df4455a3c2297c"
+    },
+    {
+      "path": "NLS/SequenceSpaces/CompactSobolevInclusion.lean",
+      "source_labels": [
+        "Necessary smoothing support for Theorem 1.2(ii)-(iii): actual paired off-diagonal physical moment correction has strict weighted ell1 gain and compact native SOURCE derivatives; full diagonal cancellation and ACTION derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "Every strict Sobolev inclusion is compact for every Banach coefficient exponent, including infinity, with raw coefficients unchanged. A finite-exponent negative-weight symbol tends uniformly to zero outside finite sets. Fully abstract analytic postcomposition and compact derivative transport retain the exact source and target models.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9dcb3bfd4b95e324b0260a74913efc07acda31927fed915b8c19c0463284195e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceOffDiagonalMomentGain.lean",
+      "source_labels": [
+        "Necessary smoothing support for Theorem 1.2(ii)-(iii): actual paired off-diagonal physical moment correction has strict weighted ell1 gain and compact native SOURCE derivatives; full diagonal cancellation and ACTION derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "For every intermediate source order, epsilon=min(t,a)/4 gives a strict output-weight gain. The exact raw paired off-diagonal sum is analytic in weighted ell1 of order -a+epsilon; inclusion into order -a gives compact derivatives at EVERY complex source point. This is a SOURCE derivative, not an action derivative.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f5509e12cbcb3ec6ba6b0d89f41419a5b05cfb66ee84ff50046335a53cff813c"
+    },
+    {
+      "path": "NLS/KdV/PhysicalOffDiagonalFrequency.lean",
+      "source_labels": [
+        "Necessary smoothing support for Theorem 1.2(ii)-(iii): actual paired off-diagonal physical moment correction has strict weighted ell1 gain and compact native SOURCE derivatives; full diagonal cancellation and ACTION derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The actual -12 off-diagonal physical correction is calibrated with the ORIGINAL Hill contour moments. Removing the signed labels n and -n is exactly subtraction of n times the own Hill moment. All original sources in the chart, including closed selected gaps, are covered.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5ff00e05ef93c8d79968ed6a974c267ba0c951cb11b72ec55fa209acd6ab02f"
+    },
+    {
+      "path": "NLS/KdV/PhysicalOffDiagonalFrequencyChart.lean",
+      "source_labels": [
+        "Necessary smoothing support for Theorem 1.2(ii)-(iii): actual paired off-diagonal physical moment correction has strict weighted ell1 gain and compact native SOURCE derivatives; full diagonal cancellation and ACTION derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "At EVERY real native intermediate Hill source, the same Miura inverse, root branch, calibrated numerator, primitive, energy shift and exact 2*z Jacobian give an actual off-diagonal frequency packet with a STRICT weighted ell1 gain. A full complex vector norm bound precedes every frequency index.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3ab4969c75eb7300e8d1185ec26de885061ddedcee40531aa4cf46e427d9ba05"
+    },
+    {
+      "path": "NLS/KdV/PhysicalOffDiagonalFrequencyCompact.lean",
+      "source_labels": [
+        "Necessary smoothing support for Theorem 1.2(ii)-(iii): actual paired off-diagonal physical moment correction has strict weighted ell1 gain and compact native SOURCE derivatives; full diagonal cancellation and ACTION derivative compactness remain open"
+      ],
+      "source_pages": [
+        4,
+        32,
+        33,
+        34,
+        35
+      ],
+      "scope": "The actual off-diagonal physical KdV second-moment correction now has a strictly stronger weighted ell1 analytic germ at EVERY real native H^s source, -1<s<-1/2. The whole packet is bounded on a common full complex neighborhood, with exact original physical contour calibration, all closed gaps and arbitrary infinite support. Its derivative from the native SOURCE space into the ORIGINAL ell(2s+1,1) frequency target is compact at every complex point of that germ. Removing both signed own labels, n and -n, is proved to be exactly removal of the original own Hill moment. This supplies a necessary smoothing contribution to Theorem 1.2; it is not yet compactness of the full ACTION derivative.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e694bfc96186665d44dd4def9e15d823be729c68067599fe144a85440acfa4c8"
     }
   ],
   "dependencies_needed": [
-    "The ENTIRE intermediate -1<s<-1/2 target range of Theorem1.2(i) is now proved in the ORIGINAL raw ell(2s+1,1) action AND frequency norms. For EVERY such s, ONE genuine complex Banach-analytic weighted ell1 frequency map is defined near the ENTIRE original positive action cone, before ALL actions and frequency indices. Every map agrees on that cone with the SAME actual weak scalar physical frequency family through the literal coefficient-preserving weak inclusion. EVERY original real mean-zero native H1 action sequence and its independently defined Hamiltonian frequency are recovered exactly. Reality, all closed modes and arbitrary infinite support are retained. COMPLETE Theorem1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. Together with the prior s=-1 and s>=-1/2 milestones, ALL regularity-dependent target clauses of Theorem1.2(i) are now VERIFIED. The COMPLETE Theorem1.2 still requires sharp locally uniform high-index asymptotics and compact derivative corrections at EVERY appropriate action, along with its remaining clauses. Strict concavity, local inverse/PDE conclusions, and KdV2 weighted moment sums and mass-renormalized physical frequency identification remain OPEN.",
+    "The actual off-diagonal physical KdV second-moment correction now has a strictly stronger weighted ell1 analytic germ at EVERY real native H^s source, -1<s<-1/2. The whole packet is bounded on a common full complex neighborhood, with exact original physical contour calibration, all closed gaps and arbitrary infinite support. Its derivative from the native SOURCE space into the ORIGINAL ell(2s+1,1) frequency target is compact at every complex point of that germ. Removing both signed own labels, n and -n, is proved to be exactly removal of the original own Hill moment. This supplies a necessary smoothing contribution to Theorem 1.2; it is not yet compactness of the full ACTION derivative. All regularity-dependent target clauses of Theorem 1.2(i) remain verified. COMPLETE Theorem 1.1 remains verified and unchanged; the other ten COMPLETE main theorem rows remain open. To prove Theorem 1.2(ii), the off-diagonal gain must still descend in the original action topology and the diagonal term must cancel the exact 6I contribution. The full locally uniform asymptotics and Hilbert derivative compactness also remain open. Strict concavity, local inverses, PDE conclusions, and KdV2 weighted moment sums and mass-renormalized physical frequency identification remain open.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
-    "ALL regularity-dependent actual KdV target clauses of Theorem1.2(i) are proved, including all intermediate negative-order weighted ell1 norms and exact full-cone weak-frequency calibration. Remaining KdV work includes sharp locally uniform asymptotics, compact derivative corrections and the other complete-main clauses. KdV2 still requires actual cubic-weighted second- and linear-weighted fourth-moment summability, physical frequency identification, exact mass renormalization and its global analytic/asymptotic/PDE conclusions.",
+    "All actual KdV regularity-dependent targets of Theorem 1.2(i) are proved. The paired off-diagonal physical contribution now has a strict weighted ell1 gain and compact SOURCE derivatives at every complex native source point. Remaining work includes action-space descent of this gain, exact diagonal cancellation with 6I, full action/Hilbert derivative compactness and sharp locally uniform asymptotics. KdV2 still needs actual cubic-weighted second- and linear-weighted fourth-moment sums, physical frequency identification, exact mass renormalization and global analytic/asymptotic/PDE conclusions.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
   ],
   "workspace": {
@@ -43592,8 +43741,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 25508,
-    "total_declarations_audited": 47577,
+    "candidate_declarations_audited": 25577,
+    "total_declarations_audited": 47647,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -43602,7 +43751,7 @@
     "main_theorems_verified": [
       "Theorem 1.1"
     ],
-    "selected_modules": 3289,
+    "selected_modules": 3298,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -43730,7 +43879,25 @@
     "weak_kdv_endpoint_validation_sequence": "All 3234 prior selected sources and all 49 prior provenance records remain byte-identical. TWELVE new own modules were strictly rebuilt in dependency order AFTER freezing 3298 selected-source/checker/provenance/pinned-Mathlib-source hashes. A fresh combined transitive axiom audit covers all 3246 selected modules and EVERY imported NLS declaration. Exact ordered selection, full selected dependency order, reachability and the EXACT twelve-module import-closure increase were verified. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Selection has 26 private chunks of at most 128 names; the actual 3246-name bidirectional NameSet probe rejects insertion/deletion mismatches. No new shared import or canonical reuse record is needed. All private outputs are fresh and correctly linked through the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a TWELVE-module incremental rebuild retaining baseline strict evidence, not a full 3246-module rebuild.",
     "sobolev_kdv_packet_validation_sequence": "All 3246 prior selected sources and all49 prior provenance records remain byte-identical. FOUR new own modules were strictly rebuilt in dependency order AFTER freezing 3303 source/checker/provenance/pinned-Mathlib-source hashes. The canonical weighted squared-gap dependency was already in the prior transitive import closure and remains unselected; it was additionally rebuilt privately and its byte identity is newly documented. The EXACT new closure contains FOUR modules. Its new provenance record verifies byte identity with canonical main, giving50 total records. A fresh combined transitive axiom audit covers all3250 selected modules and EVERY imported NLS declaration: 25203 selected and 47268 imported declarations. The entire audit loop, collectAxioms traversal, permitted axioms and imported NLS scope remain byte-identical to baseline. The exact ordered selection, dependencies, reachability and 26 selection chunks of at most128 names were checked; the actual3250-name bidirectional NameSet probe rejects insertion/deletion mismatches. All selected private outputs are fresh and correctly linked in the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are permitted. This is a FOUR-selected-module incremental rebuild retaining prior strict evidence, not a full3250-module rebuild.",
     "strong_kdv_targets_validation_sequence": "All3250 prior selected sources and all50 provenance records remain byte-identical. SIXTEEN new own modules were strictly rebuilt in dependency order AFTER freezing3319 selected-source/checker/provenance/pinned-Mathlib-source hashes. The exact new import closure contains these SAME sixteen modules; no canonical or shared source import is added. A fresh combined transitive axiom audit covers all3266 selected modules and EVERY imported NLS declaration: 25337 selected and 47406 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, selected dependencies, reachability, and26 selection chunks of at most128 names were verified. The actual3266-name bidirectional NameSet probe rejects insertion/deletion mismatches. All selected private outputs are fresh and correctly linked through the article overlay. Canonical main and pinned Mathlib remain unchanged. Lean/mathlib4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply; only propext, Classical.choice and Quot.sound are permitted. This is a SIXTEEN-module incremental rebuild retaining baseline strict evidence, not a full3266-module rebuild.",
-    "intermediate_kdv_targets_validation_sequence": "All3266 prior selected sources and all50 provenance records remain byte-identical. TWENTY-THREE new own modules were strictly rebuilt in dependency order AFTER freezing3342 selected-source/checker/provenance/pinned-Mathlib-source hashes. The exact new import closure consists of these SAME23 own modules, with no additional canonical or shared source imports. A fresh combined transitive axiom audit covers all3289 selected modules and EVERY imported NLS declaration: 25508 selected and 47577 imported declarations. The ENTIRE audit loop, collectAxioms traversal, permitted axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, selected dependencies, reachability and26 private selection chunks of at most128 names were verified. The actual3289-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness and overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a23-module incremental rebuild retaining all prior strict evidence, not a full3289-module rebuild."
+    "intermediate_kdv_targets_validation_sequence": "All3266 prior selected sources and all50 provenance records remain byte-identical. TWENTY-THREE new own modules were strictly rebuilt in dependency order AFTER freezing3342 selected-source/checker/provenance/pinned-Mathlib-source hashes. The exact new import closure consists of these SAME23 own modules, with no additional canonical or shared source imports. A fresh combined transitive axiom audit covers all3289 selected modules and EVERY imported NLS declaration: 25508 selected and 47577 imported declarations. The ENTIRE audit loop, collectAxioms traversal, permitted axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, selected dependencies, reachability and26 private selection chunks of at most128 names were verified. The actual3289-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness and overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a23-module incremental rebuild retaining all prior strict evidence, not a full3289-module rebuild.",
+    "offdiagonal_kdv_smoothing_validation_sequence": "All 3289 prior selected sources and all 50 provenance records remain byte-identical. Nine new own shared-library modules were strictly rebuilt in dependency order AFTER freezing 3351 selected-source/checker/provenance/pinned-Mathlib-source hashes. The exact new import closure consists of these same nine modules, with no additional canonical or shared source imports. The fresh combined transitive axiom audit covers all 3298 selected modules and EVERY imported NLS declaration: 25577 selected and 47647 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 26 private selection chunks of at most 128 names were verified. The actual 3298-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a nine-module incremental rebuild retaining all prior strict evidence, not a full 3298-module rebuild. A separate before/after NLS-name inventory confirms 70 new NLS declarations, all owned by the nine new modules, and no removed NLS declarations. The selected-candidate count rises by 69 because import order changes the reported owner of the generated auxiliary classicalMonodromy.eq_1 from the selected ConstantUpperSpectralBridge module to the already imported ClassicalTraceHalfPlaneBounds module. The unchanged audit guard checks EVERY imported NLS name independently of selection, so this auxiliary remains in the fresh transitive audit. Seventeen generated eq_1/congr_simp ownership changes were inventoried; only this one crosses the selection boundary.",
+    "offdiagonal_kdv_smoothing_name_inventory": {
+      "baseline_NLS_prefix_names": 46806,
+      "current_NLS_prefix_names": 46876,
+      "added_names_all_owned_by_new_modules": true,
+      "removed_names": [],
+      "selection_ownership_losses": {
+        "NLS.ZakharovShabat.classicalMonodromy.eq_1": {
+          "old": "NLS.KdV.ConstantUpperSpectralBridge",
+          "new": "NLS.ZakharovShabat.ClassicalTraceHalfPlaneBounds",
+          "old_selected": true,
+          "new_selected": false
+        }
+      },
+      "selection_ownership_gains": {},
+      "all_imported_NLS_names_still_in_fresh_axiom_audit": true,
+      "added_NLS_names": 70
+    }
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -45062,6 +45229,18 @@
         "The actual KdV signed index-weighted second-moment sums, full weak-endpoint targets, full s>=-1/2 unweighted targets and strong/weak physical compatibility are proved. Remaining KdV work includes the intermediate negative-order weighted bounds, sharp locally uniform asymptotics and compact derivative corrections. KdV2 still needs the actual infinite-gap cubic-weighted second- and linear-weighted fourth-moment sums, their physical frequency identity, exact mass-renormalized normalization, and the stated global analytic/asymptotic/PDE conclusions.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "569c8c2c55b9403c7150ffde0cfab3b38801834d",
+      "description": "The actual off-diagonal physical KdV second-moment correction now has a strictly stronger weighted ell1 analytic germ at EVERY real native H^s source, -1<s<-1/2. The whole packet is bounded on a common full complex neighborhood, with exact original physical contour calibration, all closed gaps and arbitrary infinite support. Its derivative from the native SOURCE space into the ORIGINAL ell(2s+1,1) frequency target is compact at every complex point of that germ. Removing both signed own labels, n and -n, is proved to be exactly removal of the original own Hill moment. This supplies a necessary smoothing contribution to Theorem 1.2; it is not yet compactness of the full ACTION derivative.",
+      "entries": [
+        "The ENTIRE intermediate -1<s<-1/2 target range of Theorem1.2(i) is now proved in the ORIGINAL raw ell(2s+1,1) action AND frequency norms. For EVERY such s, ONE genuine complex Banach-analytic weighted ell1 frequency map is defined near the ENTIRE original positive action cone, before ALL actions and frequency indices. Every map agrees on that cone with the SAME actual weak scalar physical frequency family through the literal coefficient-preserving weak inclusion. EVERY original real mean-zero native H1 action sequence and its independently defined Hamiltonian frequency are recovered exactly. Reality, all closed modes and arbitrary infinite support are retained. COMPLETE Theorem1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. Together with the prior s=-1 and s>=-1/2 milestones, ALL regularity-dependent target clauses of Theorem1.2(i) are now VERIFIED. The COMPLETE Theorem1.2 still requires sharp locally uniform high-index asymptotics and compact derivative corrections at EVERY appropriate action, along with its remaining clauses. Strict concavity, local inverse/PDE conclusions, and KdV2 weighted moment sums and mass-renormalized physical frequency identification remain OPEN.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "ALL regularity-dependent actual KdV target clauses of Theorem1.2(i) are proved, including all intermediate negative-order weighted ell1 norms and exact full-cone weak-frequency calibration. Remaining KdV work includes sharp locally uniform asymptotics, compact derivative corrections and the other complete-main clauses. KdV2 still requires actual cubic-weighted second- and linear-weighted fourth-moment summability, physical frequency identification, exact mass renormalization and its global analytic/asymptotic/PDE conclusions.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -45160,5 +45339,6 @@
   "weak_kdv_endpoint_record": "WEAK_KDV_ENDPOINT.md",
   "sobolev_kdv_packet_record": "SOBOLEV_KDV_PACKET.md",
   "strong_kdv_targets_record": "STRONG_KDV_TARGETS.md",
-  "intermediate_kdv_targets_record": "INTERMEDIATE_KDV_TARGETS.md"
+  "intermediate_kdv_targets_record": "INTERMEDIATE_KDV_TARGETS.md",
+  "offdiagonal_kdv_smoothing_record": "OFFDIAGONAL_KDV_SMOOTHING.md"
 }

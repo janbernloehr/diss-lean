@@ -1,3 +1,12 @@
+import NLS.KdV.PhysicalOffDiagonalFrequencyCompact
+import NLS.KdV.PhysicalOffDiagonalFrequency
+import NLS.KdV.PhysicalOffDiagonalFrequencyChart
+import NLS.ZakharovShabat.SourceOffDiagonalMomentGain
+import NLS.SequenceSpaces.CompactSobolevInclusion
+import NLS.ZakharovShabat.SourceOffDiagonalSecondMomentBounds
+import NLS.ZakharovShabat.SourceOffDiagonalSecondMomentSmoothing
+import NLS.SequenceSpaces.OffDiagonalWeightedSums
+import NLS.SequenceSpaces.NegativeWeightedOffDiagonalPacket
 import NLS.Articles.KdVKdV2Frequencies.Theorem12IntermediateRegularities
 import NLS.SequenceSpaces.AnalyticLinearPacketTransport
 import NLS.Articles.KdVKdV2Frequencies.NativeSobolevRawActions
@@ -5785,7 +5794,16 @@ private def kdvFrequencyAuditChunk25 : Array Lean.Name := #[
   `NLS.SequenceSpaces.AnalyticLinearPacketTransport,
   `NLS.Articles.KdVKdV2Frequencies.IntermediateFrequencyRawTargets,
   `NLS.Articles.KdVKdV2Frequencies.NativeSobolevRawActions,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12IntermediateRegularities
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12IntermediateRegularities,
+  `NLS.SequenceSpaces.OffDiagonalWeightedSums,
+  `NLS.SequenceSpaces.NegativeWeightedOffDiagonalPacket,
+  `NLS.ZakharovShabat.SourceOffDiagonalSecondMomentBounds,
+  `NLS.ZakharovShabat.SourceOffDiagonalSecondMomentSmoothing,
+  `NLS.SequenceSpaces.CompactSobolevInclusion,
+  `NLS.ZakharovShabat.SourceOffDiagonalMomentGain,
+  `NLS.KdV.PhysicalOffDiagonalFrequency,
+  `NLS.KdV.PhysicalOffDiagonalFrequencyChart,
+  `NLS.KdV.PhysicalOffDiagonalFrequencyCompact
 ]
 
 open Lean in
