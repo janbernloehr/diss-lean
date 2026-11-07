@@ -3423,6 +3423,13 @@ modules=(
   NLS/KdV/PhysicalNativeFrequencyParameterization
   NLS/KdV/PhysicalFractionalQuotientBounds
   NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalQuotientDecay
+  NLS/SequenceSpaces/WeightedGapErrorAlgebra
+  NLS/ZakharovShabat/SourcePrimitiveFractionalGapBound
+  NLS/ComplexAnalysis/WeightedQuadraticRemainder
+  NLS/ZakharovShabat/SourceSquareFractionalGapBound
+  NLS/ZakharovShabat/SourceDiagonalMomentFractionalBound
+  NLS/KdV/PhysicalFractionalDiagonalMomentBounds
+  NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalMomentDecay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

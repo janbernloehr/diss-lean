@@ -1,3 +1,10 @@
+import NLS.KdV.PhysicalFractionalDiagonalMomentBounds
+import NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalMomentDecay
+import NLS.ZakharovShabat.SourceDiagonalMomentFractionalBound
+import NLS.ComplexAnalysis.WeightedQuadraticRemainder
+import NLS.ZakharovShabat.SourceSquareFractionalGapBound
+import NLS.ZakharovShabat.SourcePrimitiveFractionalGapBound
+import NLS.SequenceSpaces.WeightedGapErrorAlgebra
 import NLS.ComplexAnalysis.SharpExponentialRemainder
 import NLS.ComplexAnalysis.SignedProductEstimates
 import NLS.KdV.PhysicalFractionalQuotientBounds
@@ -6038,7 +6045,14 @@ private def kdvFrequencyAuditChunk26 : Array Lean.Name := #[
   `NLS.KdV.PhysicalFrequencyParameterization,
   `NLS.KdV.PhysicalNativeFrequencyParameterization,
   `NLS.KdV.PhysicalFractionalQuotientBounds,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalQuotientDecay
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalQuotientDecay,
+  `NLS.SequenceSpaces.WeightedGapErrorAlgebra,
+  `NLS.ZakharovShabat.SourcePrimitiveFractionalGapBound,
+  `NLS.ComplexAnalysis.WeightedQuadraticRemainder,
+  `NLS.ZakharovShabat.SourceSquareFractionalGapBound,
+  `NLS.ZakharovShabat.SourceDiagonalMomentFractionalBound,
+  `NLS.KdV.PhysicalFractionalDiagonalMomentBounds,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12DiagonalMomentDecay
 ]
 
 open Lean in
