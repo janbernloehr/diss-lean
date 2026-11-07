@@ -1,0 +1,764 @@
+{
+  "source_branch": "articles/kdv-convexity",
+  "source_commit": "33c5fd26a567862ec039fa2b1d971c19ed058a90",
+  "source_worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean",
+  "purpose": "Physical KdV recovery, strong H4 to H1 PDE evolution and universal classical-approximation uniqueness for the SAME original Birkhoff data; exact original native norms and physical frequencies retained.",
+  "files": [
+    {
+      "path": "NLS/Articles/KdVConvexity/BaseFrequencyContinuation.lean",
+      "source_sha256": "4fcabcc7528d8c0ab3bad05b6b1cd98839af7f946d3c0d4224e95deafaff3095",
+      "local_sha256": "4fcabcc7528d8c0ab3bad05b6b1cd98839af7f946d3c0d4224e95deafaff3095",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BaseFrequencyTaylor.lean",
+      "source_sha256": "701a163b551cdb9b354d72eb7ea72a14347de4cd2ecec800aa96bce55969a053",
+      "local_sha256": "701a163b551cdb9b354d72eb7ea72a14347de4cd2ecec800aa96bce55969a053",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UniformScalarDerivativeBound.lean",
+      "source_sha256": "8a52ef192a1c37567c1bc7676f86ebc4b8ccdb3364055d2c6f5936faebe183b4",
+      "local_sha256": "8a52ef192a1c37567c1bc7676f86ebc4b8ccdb3364055d2c6f5936faebe183b4",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BaseFrequencyBoundObstruction.lean",
+      "source_sha256": "27688bf5b5eda258fe6f77f1be93384b4669cdb3d9cf2b678887e926089fb0cc",
+      "local_sha256": "27688bf5b5eda258fe6f77f1be93384b4669cdb3d9cf2b678887e926089fb0cc",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionHessianBounds.lean",
+      "source_sha256": "7850abf2fceb881c26ed950bc58f719e902bd97e2ba3dc78986e25433e6b4fcd",
+      "local_sha256": "7850abf2fceb881c26ed950bc58f719e902bd97e2ba3dc78986e25433e6b4fcd",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalLocalConsequences.lean",
+      "source_sha256": "981a0883e0e845318eb5b2687be3bf4ded00ed072acc1e747922f1f411308add",
+      "local_sha256": "981a0883e0e845318eb5b2687be3bf4ded00ed072acc1e747922f1f411308add",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticQuadraticRemainder.lean",
+      "source_sha256": "493094506870991bb20151ee4bae6283176fb722a02c98215be6ec31487fd29b",
+      "local_sha256": "493094506870991bb20151ee4bae6283176fb722a02c98215be6ec31487fd29b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalTaylorExpansion.lean",
+      "source_sha256": "0d2b77eca522468b3026bc5ef1e6f9c8dafd88c481b857b78a93a4fec3caf552",
+      "local_sha256": "0d2b77eca522468b3026bc5ef1e6f9c8dafd88c481b857b78a93a4fec3caf552",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BasePhysicalFrequencyExtension.lean",
+      "source_sha256": "b199dc4de2de2c62b10d9991e980ffd829e0470f9a008a34d75c286ad2ac46ff",
+      "local_sha256": "b199dc4de2de2c62b10d9991e980ffd829e0470f9a008a34d75c286ad2ac46ff",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarFamilyAffineTransport.lean",
+      "source_sha256": "b08aa8d6883827fd615db8ed97d69831c04c95f17e038e51878e4b3f73019689",
+      "local_sha256": "b08aa8d6883827fd615db8ed97d69831c04c95f17e038e51878e4b3f73019689",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedNonnegativeTransport.lean",
+      "source_sha256": "b8a85a6f0cdbde44cd457e3f124a2ced43d41a1d446464e8223f74b69b0fef51",
+      "local_sha256": "b8a85a6f0cdbde44cd457e3f124a2ced43d41a1d446464e8223f74b69b0fef51",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BasePhysicalFrequencyConstruction.lean",
+      "source_sha256": "8692cdf6aff076e9def15af5fb3da5974ece225d29eb53ae9c1dc55791b57a7c",
+      "local_sha256": "8692cdf6aff076e9def15af5fb3da5974ece225d29eb53ae9c1dc55791b57a7c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BasePhysicalFrequencyReality.lean",
+      "source_sha256": "c4bb0e727ab35a718581991293a95fbc5088dddc442e3505683de108b2d15597",
+      "local_sha256": "c4bb0e727ab35a718581991293a95fbc5088dddc442e3505683de108b2d15597",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveReciprocalExponentMembership.lean",
+      "source_sha256": "a913b1eb5714b29e4e8ee0ca1a4157167a59291040d0b2211b4942fa212db0e1",
+      "local_sha256": "a913b1eb5714b29e4e8ee0ca1a4157167a59291040d0b2211b4942fa212db0e1",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticQuadraticResolvent.lean",
+      "source_sha256": "4c71a1d37e9d7e721e7890c8b3c34f17770498d6ff9c585ecec297fb3751536a",
+      "local_sha256": "4c71a1d37e9d7e721e7890c8b3c34f17770498d6ff9c585ecec297fb3751536a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFractionalMiuraProduct.lean",
+      "source_sha256": "638f57020899cb21b6d7a26d88a38a21ad644ffa345b4f2bcaaef45f33277ff9",
+      "local_sha256": "638f57020899cb21b6d7a26d88a38a21ad644ffa345b4f2bcaaef45f33277ff9",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueMassResolvent.lean",
+      "source_sha256": "64946abc7482b7a4ecc1c7bcff141e3bf9342072278d0aef889eb1e86393cae9",
+      "local_sha256": "64946abc7482b7a4ecc1c7bcff141e3bf9342072278d0aef889eb1e86393cae9",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FourierLebesgueHilbertEmbedding.lean",
+      "source_sha256": "0ec750da964aad5180fcf0aa2e20fdf338a50a34dcfa8f449ff427dbac0cdf5a",
+      "local_sha256": "0ec750da964aad5180fcf0aa2e20fdf338a50a34dcfa8f449ff427dbac0cdf5a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraFourierLebesgueAlgebra.lean",
+      "source_sha256": "f72a96e60156dfd8ab75ebe5de39c793d90419438e5ac1599bf0af4d935aabd8",
+      "local_sha256": "f72a96e60156dfd8ab75ebe5de39c793d90419438e5ac1599bf0af4d935aabd8",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraFourierLebesgueEquivalence.lean",
+      "source_sha256": "feeb373dc1d0a33ff6447af55ecde218907af1181046b6f7dc0de5ef26a7a1fd",
+      "local_sha256": "feeb373dc1d0a33ff6447af55ecde218907af1181046b6f7dc0de5ef26a7a1fd",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraFourierLebesgueStrongBranch.lean",
+      "source_sha256": "53f6ed6809a773a55489b57c52f2c2de7914e3d65efbd058a4506422ef848bad",
+      "local_sha256": "53f6ed6809a773a55489b57c52f2c2de7914e3d65efbd058a4506422ef848bad",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraFourierLebesgueStrongCharts.lean",
+      "source_sha256": "3fda33deaaf61ffc43ab5c48ec2eb92fd151cdf2158a45d68c52af4ddf6ed33f",
+      "local_sha256": "3fda33deaaf61ffc43ab5c48ec2eb92fd151cdf2158a45d68c52af4ddf6ed33f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusFourierLebesgueMiuraCharts.lean",
+      "source_sha256": "d2f82e5a7266038939c19aae4a1429c6dc1a8d40475f1049b29d6406a88d465b",
+      "local_sha256": "d2f82e5a7266038939c19aae4a1429c6dc1a8d40475f1049b29d6406a88d465b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusMiuraFourierLebesgueRegularity.lean",
+      "source_sha256": "f5af951c757a2a1668946a6569a1e805d8f2ae0ec468e585aeaf59e4a96ccb2a",
+      "local_sha256": "f5af951c757a2a1668946a6569a1e805d8f2ae0ec468e585aeaf59e4a96ccb2a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusEtaFourierLebesgueRegularity.lean",
+      "source_sha256": "b31a227b235860c6c61a476c74b4ecb18e5548390a1083d048d7c5e9d5459ac2",
+      "local_sha256": "b31a227b235860c6c61a476c74b4ecb18e5548390a1083d048d7c5e9d5459ac2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughPacketFourierLebesgueRegularity.lean",
+      "source_sha256": "2aabb2c84d669c59b6660fe6b954c78243d0a9ecf4d0d26d367caec51cf81943",
+      "local_sha256": "2aabb2c84d669c59b6660fe6b954c78243d0a9ecf4d0d26d367caec51cf81943",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughGlobalFourierLebesgueRegularity.lean",
+      "source_sha256": "a2fb45722dc9f87bfdd3c49e399907e73c1dde2285db18733a6493f54e8afca2",
+      "local_sha256": "a2fb45722dc9f87bfdd3c49e399907e73c1dde2285db18733a6493f54e8afca2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FiniteFourierLebesgueWeakInclusion.lean",
+      "source_sha256": "a5b76db3984de3f54cbdabbd45aaa2faba2e122c2eb69360883a7111eadad082",
+      "local_sha256": "a5b76db3984de3f54cbdabbd45aaa2faba2e122c2eb69360883a7111eadad082",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedExponent.lean",
+      "source_sha256": "eab5f24bcf37510189983230276e5bea7603efb2f760fe13ca36e2b354bbd889",
+      "local_sha256": "eab5f24bcf37510189983230276e5bea7603efb2f760fe13ca36e2b354bbd889",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueBijection.lean",
+      "source_sha256": "005e40bedc7fee24be089bb38bf1939a498693dd8ca7ace0ccf24c1639db17b8",
+      "local_sha256": "005e40bedc7fee24be089bb38bf1939a498693dd8ca7ace0ccf24c1639db17b8",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueInverseCompatibility.lean",
+      "source_sha256": "f1d127befe516a488ac48800e47dbedeb5884578f2f862525c4db5875f714471",
+      "local_sha256": "f1d127befe516a488ac48800e47dbedeb5884578f2f862525c4db5875f714471",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedSignedPairActions.lean",
+      "source_sha256": "60a85f2d8bf1d36182c90a33453bd0e0285b9a2e81cffd420215f9780620bca1",
+      "local_sha256": "60a85f2d8bf1d36182c90a33453bd0e0285b9a2e81cffd420215f9780620bca1",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhysicalActions.lean",
+      "source_sha256": "51180fec18b00d9b9d518a44f3bb407849fef37866322ce1ffde604d66e318ff",
+      "local_sha256": "51180fec18b00d9b9d518a44f3bb407849fef37866322ce1ffde604d66e318ff",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SignedPositiveFrequency.lean",
+      "source_sha256": "25e508c23605a997de973ff1f7d1d5cd09a68a6ebb39bba7bc41667f463e74e8",
+      "local_sha256": "25e508c23605a997de973ff1f7d1d5cd09a68a6ebb39bba7bc41667f463e74e8",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedPhaseFlowFamily.lean",
+      "source_sha256": "6fa99ab8820088e71a352ce8c572fef72c2e97c8c8737c46f6e41ef54c35a8e0",
+      "local_sha256": "6fa99ab8820088e71a352ce8c572fef72c2e97c8c8737c46f6e41ef54c35a8e0",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroPhaseFlowExponent.lean",
+      "source_sha256": "1d080560c1c4650cc366e61c7930c55047a9eb09d6c3661fb01f142362c349d2",
+      "local_sha256": "1d080560c1c4650cc366e61c7930c55047a9eb09d6c3661fb01f142362c349d2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhysicalPhaseFlow.lean",
+      "source_sha256": "d1036976047ae20dce09ee659394bdf7e1a80be834a517efd82531a6538a2be5",
+      "local_sha256": "d1036976047ae20dce09ee659394bdf7e1a80be834a517efd82531a6538a2be5",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticGermPullback.lean",
+      "source_sha256": "d69ff11cda6c775efc701792c7985bb7d4d8d2cc73c90f98f2298f147fee0347",
+      "local_sha256": "d69ff11cda6c775efc701792c7985bb7d4d8d2cc73c90f98f2298f147fee0347",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactDerivativeComposition.lean",
+      "source_sha256": "914940615c645f855fee58fddaba2409de891dfc224c8eb9687eb61af6ee1455",
+      "local_sha256": "914940615c645f855fee58fddaba2409de891dfc224c8eb9687eb61af6ee1455",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticCompactGermPullback.lean",
+      "source_sha256": "7e73f392230aeff6ce59c4813fc4d3123bbd97470af9341d24d9a4c662668250",
+      "local_sha256": "7e73f392230aeff6ce59c4813fc4d3123bbd97470af9341d24d9a4c662668250",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraFourierLebesgueNormalizedSource.lean",
+      "source_sha256": "bee80f0a8eebf4567c2a6048c36b703bdefdc642f9e55360d396c696fbe78014",
+      "local_sha256": "bee80f0a8eebf4567c2a6048c36b703bdefdc642f9e55360d396c696fbe78014",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedEtaExponentFactorization.lean",
+      "source_sha256": "94802fe438d0befc3fd291462f419fcb5badc3b690eb00d823eea4106f434e46",
+      "local_sha256": "94802fe438d0befc3fd291462f419fcb5badc3b690eb00d823eea4106f434e46",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/BoundedAnalyticSymbolExponent.lean",
+      "source_sha256": "17a8e286079c3e0bf169dc7a18f76f831628763f4ca655620890e65ef96f6407",
+      "local_sha256": "17a8e286079c3e0bf169dc7a18f76f831628763f4ca655620890e65ef96f6407",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedEtaExponentCompactDerivative.lean",
+      "source_sha256": "c1d3a4a79205adc5ecdc7f50f0541a789eceaae0af593559333f272f1f738de9",
+      "local_sha256": "c1d3a4a79205adc5ecdc7f50f0541a789eceaae0af593559333f272f1f738de9",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraFourierLebesgueEtaCompactDerivative.lean",
+      "source_sha256": "feffae7554b25a7646c2788798a4817078e27dbec2b046cccf2a4504ddbb1ae9",
+      "local_sha256": "feffae7554b25a7646c2788798a4817078e27dbec2b046cccf2a4504ddbb1ae9",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedEtaRealExponent.lean",
+      "source_sha256": "2f58c7341b1f7e8382a465999d64e7916b62457f0c7129e133285f2e2ea50994",
+      "local_sha256": "2f58c7341b1f7e8382a465999d64e7916b62457f0c7129e133285f2e2ea50994",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraFourierLebesgueEtaCompactGerms.lean",
+      "source_sha256": "4c7300a9f24338fe2d1638e23d59c392a6f501a219cf951614df97dd3cd0fce7",
+      "local_sha256": "4c7300a9f24338fe2d1638e23d59c392a6f501a219cf951614df97dd3cd0fce7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticAffineQuadraticResolvent.lean",
+      "source_sha256": "cdc7f2c4943ac3b14e224957a374c2fa42f481c82c07f18f2bc8fb61d99dde16",
+      "local_sha256": "cdc7f2c4943ac3b14e224957a374c2fa42f481c82c07f18f2bc8fb61d99dde16",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusRetainedFourierLebesgueMiuraGerms.lean",
+      "source_sha256": "05a4461a867d0ccd481ec00d8e7a4ea772acb58bb7afcb895af2ec8a1213eae9",
+      "local_sha256": "05a4461a867d0ccd481ec00d8e7a4ea772acb58bb7afcb895af2ec8a1213eae9",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueMiuraProduct.lean",
+      "source_sha256": "2cf6ded0eb11ac3ff5ee4cb10f954c44befdcbb7c5999dd1964235eab0d76eaa",
+      "local_sha256": "2cf6ded0eb11ac3ff5ee4cb10f954c44befdcbb7c5999dd1964235eab0d76eaa",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueMiuraCompact.lean",
+      "source_sha256": "4e8e03eedcf0be15e21b4f8e81adfc3513dacbc70364b47ad608e0e5782976c9",
+      "local_sha256": "4e8e03eedcf0be15e21b4f8e81adfc3513dacbc70364b47ad608e0e5782976c9",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FourierLebesgueCompactInclusion.lean",
+      "source_sha256": "08892f0e63679901f55b094b26bc5ee5c3fc333ebd2d37301354a8cdde1343e1",
+      "local_sha256": "08892f0e63679901f55b094b26bc5ee5c3fc333ebd2d37301354a8cdde1343e1",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueFreeMassEquiv.lean",
+      "source_sha256": "0f02eb998adc8ef99aadb3653b29931a6d64e17ff6ac58bfc0fbd7ef2b67f7d3",
+      "local_sha256": "0f02eb998adc8ef99aadb3653b29931a6d64e17ff6ac58bfc0fbd7ef2b67f7d3",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueMiuraJacobian.lean",
+      "source_sha256": "0c9d18fecab9edfb55aeebda2c64bde4fbe4a96a74ead877d0dc601328c0cf6a",
+      "local_sha256": "0c9d18fecab9edfb55aeebda2c64bde4fbe4a96a74ead877d0dc601328c0cf6a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueMiuraInverseCompact.lean",
+      "source_sha256": "b49db2beb9f93618376d90bbf8407e03dfed270eabf9686a2f9e68ac356390dd",
+      "local_sha256": "b49db2beb9f93618376d90bbf8407e03dfed270eabf9686a2f9e68ac356390dd",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusFourierLebesgueMiuraCompactDerivative.lean",
+      "source_sha256": "75aeb5703db28dbc379f5b1f5e43c38573878cb86c4c714578028406ea8fc876",
+      "local_sha256": "75aeb5703db28dbc379f5b1f5e43c38573878cb86c4c714578028406ea8fc876",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusFourierLebesgueEtaCompactGerms.lean",
+      "source_sha256": "53b096a0ef49ed414aed9e154f97585fa418f0d53d4c67b40025382d3ffc4766",
+      "local_sha256": "53b096a0ef49ed414aed9e154f97585fa418f0d53d4c67b40025382d3ffc4766",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticSymbolCompactGerm.lean",
+      "source_sha256": "83685ce1ec60ee69140aff91661ac49d28f42942ec9c8c684dccbb8c1e79d760",
+      "local_sha256": "83685ce1ec60ee69140aff91661ac49d28f42942ec9c8c684dccbb8c1e79d760",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesguePositiveCompactGerms.lean",
+      "source_sha256": "90ff4140113fd1d1fc9d13302bc7f199620ea79f48a6c86cf89d56aee13e848e",
+      "local_sha256": "90ff4140113fd1d1fc9d13302bc7f199620ea79f48a6c86cf89d56aee13e848e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalPositiveCompletionExponent.lean",
+      "source_sha256": "3b28e46a11bb8fb5fc0708c7e02152df8b5b28163b7612be1b7082d78ed5a1ba",
+      "local_sha256": "3b28e46a11bb8fb5fc0708c7e02152df8b5b28163b7612be1b7082d78ed5a1ba",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalPositiveMultiplierEquiv.lean",
+      "source_sha256": "161be8510ebb87e9a3982c2236384fff6f07c62404e274b81bb8bf3a95c3326d",
+      "local_sha256": "161be8510ebb87e9a3982c2236384fff6f07c62404e274b81bb8bf3a95c3326d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesguePrincipalEquiv.lean",
+      "source_sha256": "fb902b3054f44dfe756a1c0d15bc187200bfe3e56e06977e7900ef8890088ac7",
+      "local_sha256": "fb902b3054f44dfe756a1c0d15bc187200bfe3e56e06977e7900ef8890088ac7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealCompactDerivativeTransport.lean",
+      "source_sha256": "da20c275c91efcc68480078468bac15cbbfcebd8895bfbbd403aa9c17b3fd2a7",
+      "local_sha256": "da20c275c91efcc68480078468bac15cbbfcebd8895bfbbd403aa9c17b3fd2a7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueCompactDerivative.lean",
+      "source_sha256": "6d0ed7ab04caddd20e8adbaa5eb3990878f91b7389f958f86871a1f093c6d71a",
+      "local_sha256": "6d0ed7ab04caddd20e8adbaa5eb3990878f91b7389f958f86871a1f093c6d71a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/DerivativeInjectiveRestriction.lean",
+      "source_sha256": "d06693cde7840c4fd995590d0159615811ae623866285f50f86e024761aa9e3f",
+      "local_sha256": "d06693cde7840c4fd995590d0159615811ae623866285f50f86e024761aa9e3f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/MeanZeroWeightedProjectionInjective.lean",
+      "source_sha256": "bd3e1616f1ee80c834b700c730a011ca9e79e2130de286799c1b796171540074",
+      "local_sha256": "bd3e1616f1ee80c834b700c730a011ca9e79e2130de286799c1b796171540074",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraFourierLebesgueEtaGerms.lean",
+      "source_sha256": "e115379b51978f042c2f281ad7c7669830064dd3dea846e519e435c4fd1286a2",
+      "local_sha256": "e115379b51978f042c2f281ad7c7669830064dd3dea846e519e435c4fd1286a2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusFourierLebesgueEtaGerms.lean",
+      "source_sha256": "02acc5bc378b447171573f2bb59d5c321d57e41513546f446f5a5b77c37a2d72",
+      "local_sha256": "02acc5bc378b447171573f2bb59d5c321d57e41513546f446f5a5b77c37a2d72",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesguePositiveGerms.lean",
+      "source_sha256": "66551cb35a775787cd60a36449503ccd8191a6a971116836cdae4df22cb88069",
+      "local_sha256": "66551cb35a775787cd60a36449503ccd8191a6a971116836cdae4df22cb88069",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueForwardAnalytic.lean",
+      "source_sha256": "1f161ec8881467801c1d08fec7477f9654d14ad904b846b4c27a681617e85601",
+      "local_sha256": "1f161ec8881467801c1d08fec7477f9654d14ad904b846b4c27a681617e85601",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueForwardAllExponents.lean",
+      "source_sha256": "5964405da34c1e431cc00bdd87a6d556a4fcff688790e889ec4895feaec860b0",
+      "local_sha256": "5964405da34c1e431cc00bdd87a6d556a4fcff688790e889ec4895feaec860b0",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueDerivativeInjective.lean",
+      "source_sha256": "8e160c3fa9f84e0ba5d9794277ca6c997d033f618c80708c0fd3af82653b75b5",
+      "local_sha256": "8e160c3fa9f84e0ba5d9794277ca6c997d033f618c80708c0fd3af82653b75b5",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactEquivPerturbationScalar.lean",
+      "source_sha256": "de97e627480233498dce01dac2f90bf12844273ee814fddc469287c1837bff01",
+      "local_sha256": "de97e627480233498dce01dac2f90bf12844273ee814fddc469287c1837bff01",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealAnalyticEquivInverse.lean",
+      "source_sha256": "7817556a5a66c076c34ff6a919c7fb8ad8623c9a70100aef3936ade23b894efe",
+      "local_sha256": "7817556a5a66c076c34ff6a919c7fb8ad8623c9a70100aef3936ade23b894efe",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueInverseAnalytic.lean",
+      "source_sha256": "7bc04ac648b97f9d2564f8291fa845917b0adee63905f0df09b4a74a5405e825",
+      "local_sha256": "7bc04ac648b97f9d2564f8291fa845917b0adee63905f0df09b4a74a5405e825",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueInverseAllExponents.lean",
+      "source_sha256": "551f578fdb4ce44371976affa8a5e0c174ca213aa9b69c8aec2ea02db0f89b70",
+      "local_sha256": "551f578fdb4ce44371976affa8a5e0c174ca213aa9b69c8aec2ea02db0f89b70",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueHomeomorph.lean",
+      "source_sha256": "788bcd9fbb14796de16e1d278ad3949d72bae3bd89057e909143e0f5b7d1e0c9",
+      "local_sha256": "788bcd9fbb14796de16e1d278ad3949d72bae3bd89057e909143e0f5b7d1e0c9",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Dynamics/ConjugatedContinuousEvolution.lean",
+      "source_sha256": "fb38f136385b748d383aa21067f05b7eaa30c46ffd62a2ce63941ed7e22976b2",
+      "local_sha256": "fb38f136385b748d383aa21067f05b7eaa30c46ffd62a2ce63941ed7e22976b2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhaseEvolution.lean",
+      "source_sha256": "019bc0baf4e7abf44f75c8c19ce2a30b77cd9e0c5d332400556ad233d57306dc",
+      "local_sha256": "019bc0baf4e7abf44f75c8c19ce2a30b77cd9e0c5d332400556ad233d57306dc",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFiniteSupportSmooth.lean",
+      "source_sha256": "d0387e376e8a6a91188fb1d4200a88ac5aa28cd9f48507bf1d110ebc6c3e1d8f",
+      "local_sha256": "d0387e376e8a6a91188fb1d4200a88ac5aa28cd9f48507bf1d110ebc6c3e1d8f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFiniteSupportSmooth.lean",
+      "source_sha256": "da817a07a8bc975f2ae52a2205c207f44a333df1c1f1aa5f0b63a46cf5b83774",
+      "local_sha256": "da817a07a8bc975f2ae52a2205c207f44a333df1c1f1aa5f0b63a46cf5b83774",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedTruncationExponent.lean",
+      "source_sha256": "bb9584476218a5f1b9f47c98774a64d2b97813adab6b27dee59e96eae51cae2e",
+      "local_sha256": "bb9584476218a5f1b9f47c98774a64d2b97813adab6b27dee59e96eae51cae2e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFiniteGapApproximation.lean",
+      "source_sha256": "55047fd7e3f352d9cb6dfae3f7f4f2d6796e6d1d61dc4811a7c58b5ab65b1140",
+      "local_sha256": "55047fd7e3f352d9cb6dfae3f7f4f2d6796e6d1d61dc4811a7c58b5ab65b1140",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FinitePhaseAnalytic.lean",
+      "source_sha256": "8e496aeb882bc976cc8f1644793d8b9a001069711f2a2e68e95e20582f52b016",
+      "local_sha256": "8e496aeb882bc976cc8f1644793d8b9a001069711f2a2e68e95e20582f52b016",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroPhaseAnalytic.lean",
+      "source_sha256": "9226dbff7bce552e672130af96ebbb90599594bfaa83d8fae14e4b2c7db867d4",
+      "local_sha256": "9226dbff7bce552e672130af96ebbb90599594bfaa83d8fae14e4b2c7db867d4",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFinitePhaseAnalytic.lean",
+      "source_sha256": "65b56e244119dc9536b2221a3756335cb352ed317b194f1c54e380c209d69dec",
+      "local_sha256": "65b56e244119dc9536b2221a3756335cb352ed317b194f1c54e380c209d69dec",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhaseCompatibility.lean",
+      "source_sha256": "ed26cc4a4e9427f612dd7cf551619d11f0d381047baa3e0356f6027b436e36fd",
+      "local_sha256": "ed26cc4a4e9427f612dd7cf551619d11f0d381047baa3e0356f6027b436e36fd",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhaseCoordinateDerivatives.lean",
+      "source_sha256": "85d9bed3de0673f23e8dd380a6f8a41807a0fd62ae95a52d13766eb157a64087",
+      "local_sha256": "85d9bed3de0673f23e8dd380a6f8a41807a0fd62ae95a52d13766eb157a64087",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFrequencyRecovery.lean",
+      "source_sha256": "9f8b67583d6d178e8a60a3dfeebf3d7979bab9efa947e5a816134567f136f362",
+      "local_sha256": "9f8b67583d6d178e8a60a3dfeebf3d7979bab9efa947e5a816134567f136f362",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhaseFrequencyTransport.lean",
+      "source_sha256": "9780805f6af7b3b8447f2354d0fcae4d499d1384066d4f518aae31536703422b",
+      "local_sha256": "9780805f6af7b3b8447f2354d0fcae4d499d1384066d4f518aae31536703422b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughSignedDerivativeInjective.lean",
+      "source_sha256": "5a3c12af72f02f33f15f31a5ac2e4f9b628473bc8e7a30fe3a283632f3fc565a",
+      "local_sha256": "5a3c12af72f02f33f15f31a5ac2e4f9b628473bc8e7a30fe3a283632f3fc565a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughSignedDerivativeComponents.lean",
+      "source_sha256": "22a87e6c771c9558a1501e8922e8696bd5ce6ea8a43b46c280babf3804fc329b",
+      "local_sha256": "22a87e6c771c9558a1501e8922e8696bd5ce6ea8a43b46c280babf3804fc329b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRoughHamiltonianCurveMatching.lean",
+      "source_sha256": "06b8338d1553d4fb56765793034a846580bf4bdeffa29e07435956824c910bec",
+      "local_sha256": "06b8338d1553d4fb56765793034a846580bf4bdeffa29e07435956824c910bec",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFinitePhaseHamiltonian.lean",
+      "source_sha256": "f81f2b0261db2b868ced2bac393ab25a97254aa3ea66d91ddf061e32bf942a1d",
+      "local_sha256": "f81f2b0261db2b868ced2bac393ab25a97254aa3ea66d91ddf061e32bf942a1d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFinitePhaseSmoothRealization.lean",
+      "source_sha256": "79581619170c0684a8977daafbbbc4a8185bcc441fa8b6f1be9518d6e3f5319f",
+      "local_sha256": "79581619170c0684a8977daafbbbc4a8185bcc441fa8b6f1be9518d6e3f5319f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFinitePhaseKdVCoefficients.lean",
+      "source_sha256": "cbb233fad48657ca0974b3b9691bb768dbf5693897e875b87783006c5b0dcce2",
+      "local_sha256": "cbb233fad48657ca0974b3b9691bb768dbf5693897e875b87783006c5b0dcce2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneKdVNativeVector.lean",
+      "source_sha256": "a2a1828c5f17b812ebad08f5edf0cf17e91a0e402b0b3e52496f1cc3aba53dd6",
+      "local_sha256": "a2a1828c5f17b812ebad08f5edf0cf17e91a0e402b0b3e52496f1cc3aba53dd6",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Fourier/PeriodOneDerivativePowers.lean",
+      "source_sha256": "8915805aca826c505f3f647b85d71607d113ca899216ec711439e37c505a0a8e",
+      "local_sha256": "8915805aca826c505f3f647b85d71607d113ca899216ec711439e37c505a0a8e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/PeriodOneKdVNativePhysical.lean",
+      "source_sha256": "38cc62e0ac825e6ad8e6db0bbdd6c38775b43e0b3c6b3667fd3881c75ccb0456",
+      "local_sha256": "38cc62e0ac825e6ad8e6db0bbdd6c38775b43e0b3c6b3667fd3881c75ccb0456",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FiniteSignedPositiveSupport.lean",
+      "source_sha256": "8cc9b96f700f9462d28cd245b6453db0bd34051cc5346bffdf08c1a49ce11abd",
+      "local_sha256": "8cc9b96f700f9462d28cd245b6453db0bd34051cc5346bffdf08c1a49ce11abd",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFinitePhaseStrongKdV.lean",
+      "source_sha256": "2c20828011ec709c38b9c069dcae2606071f7d931caf1e663a5ff2abb7c20718",
+      "local_sha256": "2c20828011ec709c38b9c069dcae2606071f7d931caf1e663a5ff2abb7c20718",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Dynamics/ContinuousEvolutionDerivativeLimit.lean",
+      "source_sha256": "4e8adc4e32987921115244b75a52df0d3662d29b38a8bf07c39db09a685332cf",
+      "local_sha256": "4e8adc4e32987921115244b75a52df0d3662d29b38a8bf07c39db09a685332cf",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueStrongKdV.lean",
+      "source_sha256": "c58bf63e213942e535889005d31eb070471bb8ad45f9f24a0f390b359136e775",
+      "local_sha256": "c58bf63e213942e535889005d31eb070471bb8ad45f9f24a0f390b359136e775",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueKdVCoordinateField.lean",
+      "source_sha256": "2b18f8fa9620fb6b49f1635e4f1ad508b6923cb242d3bb0ae6f0d6d368f5599c",
+      "local_sha256": "2b18f8fa9620fb6b49f1635e4f1ad508b6923cb242d3bb0ae6f0d6d368f5599c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/PeriodOneClassicalKdVCurve.lean",
+      "source_sha256": "94a9a1c34f52f9a2bfa27f76ad1e98bf6548780e57351307032619fb4e506756",
+      "local_sha256": "94a9a1c34f52f9a2bfa27f76ad1e98bf6548780e57351307032619fb4e506756",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ClassicalKdVCoordinateEvolution.lean",
+      "source_sha256": "82be99a303875ee690eec586605839ce7c10f92a4aed714bb503259463ff9bda",
+      "local_sha256": "82be99a303875ee690eec586605839ce7c10f92a4aed714bb503259463ff9bda",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/GlobalScalarEvolution.lean",
+      "source_sha256": "878c14f881166e351af981f23c848ecc467b5141d90a56c4ff00c03b3ed6e618",
+      "local_sha256": "878c14f881166e351af981f23c848ecc467b5141d90a56c4ff00c03b3ed6e618",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ClassicalKdVActionConservation.lean",
+      "source_sha256": "ca2aa092240b614540762302568f61d23807f45d2c6c929b1da610237332a6d0",
+      "local_sha256": "ca2aa092240b614540762302568f61d23807f45d2c6c929b1da610237332a6d0",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ClassicalKdVUniqueness.lean",
+      "source_sha256": "e5d8c9da9a8497bcf936423d9448ee5742f1493f0d247df0cc62f7a4d592c1d1",
+      "local_sha256": "e5d8c9da9a8497bcf936423d9448ee5742f1493f0d247df0cc62f7a4d592c1d1",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/PeriodOneClassicalKdVPhysical.lean",
+      "source_sha256": "af3196637d7753f998cd93a23581151a53e269354e1b0f1b0c4472da471a2118",
+      "local_sha256": "af3196637d7753f998cd93a23581151a53e269354e1b0f1b0c4472da471a2118",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/PeriodOneSmoothPotential.lean",
+      "source_sha256": "e7b2650c9c73e4a816bee506ba9d3f53e1add12f05e6f6032f61df4bb816230e",
+      "local_sha256": "e7b2650c9c73e4a816bee506ba9d3f53e1add12f05e6f6032f61df4bb816230e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedRawMembershipTransport.lean",
+      "source_sha256": "40bc6de5dddfc6645949aab47da93e3e49d318aeb38b6670f10cdd5015ee2a0f",
+      "local_sha256": "40bc6de5dddfc6645949aab47da93e3e49d318aeb38b6670f10cdd5015ee2a0f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalSobolevExponentInclusion.lean",
+      "source_sha256": "4f6bd9586e578faad82631ead906683f4511628b423a42b11dcb5f10b40d8c2e",
+      "local_sha256": "4f6bd9586e578faad82631ead906683f4511628b423a42b11dcb5f10b40d8c2e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhaseRegularityTransfer.lean",
+      "source_sha256": "ffd51e7d251a7dad808f4969cc70fe151378c657c7237fe29fa07dccb4a4d6ce",
+      "local_sha256": "ffd51e7d251a7dad808f4969cc70fe151378c657c7237fe29fa07dccb4a4d6ce",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ClassicalKdVSmoothEvolution.lean",
+      "source_sha256": "a97f1ed7fe319b991c11421604722e9e2e09c5517bde0cc3bbe9751b1ec1f4f5",
+      "local_sha256": "a97f1ed7fe319b991c11421604722e9e2e09c5517bde0cc3bbe9751b1ec1f4f5",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/FourierLebesgueClassicalLimitSolution.lean",
+      "source_sha256": "b0b9891015975bf09547b496b2ed01723f81a2083f3871fa0d4329792bb9f92a",
+      "local_sha256": "b0b9891015975bf09547b496b2ed01723f81a2083f3871fa0d4329792bb9f92a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueClassicalApproximation.lean",
+      "source_sha256": "fe619ea832d3b55f64a4302cda2fb28e5b2c8495469f0b1af419df03039f53f1",
+      "local_sha256": "fe619ea832d3b55f64a4302cda2fb28e5b2c8495469f0b1af419df03039f53f1",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalWeightedRawSequence.lean",
+      "source_sha256": "c1e18b7d985827c6bd29b9510f8f9a41362ac3d3f0471af9c705524a3d178abd",
+      "local_sha256": "c1e18b7d985827c6bd29b9510f8f9a41362ac3d3f0471af9c705524a3d178abd",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueSmoothDensity.lean",
+      "source_sha256": "98fb53536eb230631408cead04f94d0bee16ecaa6e7d63d83e3dea9eaa103611",
+      "local_sha256": "98fb53536eb230631408cead04f94d0bee16ecaa6e7d63d83e3dea9eaa103611",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueClassicalLimitUniqueness.lean",
+      "source_sha256": "2a598b90450bcd32cdb2dc517e13a68aff4cba4bfe02095a3335b17afcd1dc93",
+      "local_sha256": "2a598b90450bcd32cdb2dc517e13a68aff4cba4bfe02095a3335b17afcd1dc93",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealDeletedPhaseFlow.lean",
+      "source_sha256": "2f58280935cd0f4e4154a0a6d43280e11c8fc03a98a139b0316d8187141d662d",
+      "local_sha256": "2f58280935cd0f4e4154a0a6d43280e11c8fc03a98a139b0316d8187141d662d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/WeakPhysicalPhaseEvolution.lean",
+      "source_sha256": "7f58fcdafed3c86b7d77e761bd0ff55ee46268e043e57bb5bf7f2aff0cc12720",
+      "local_sha256": "7f58fcdafed3c86b7d77e761bd0ff55ee46268e043e57bb5bf7f2aff0cc12720",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/WeakPhysicalClassicalLimit.lean",
+      "source_sha256": "7f659fe96656729b53e003f779ec41c440c59e3dfcf79eec14b16c1cd389b379",
+      "local_sha256": "7f659fe96656729b53e003f779ec41c440c59e3dfcf79eec14b16c1cd389b379",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/LocalConsequences.lean",
+      "source_sha256": "35ba924320178bea8c6b3b35ef136d313a562a649b6b8c89646b886dbab8553d",
+      "local_sha256": "35ba924320178bea8c6b3b35ef136d313a562a649b6b8c89646b886dbab8553d",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertScalarConcavity.lean",
+      "source_sha256": "d623d35a1fa896f77f8872fd84f3de6e2302740e63fd96314207a46997d81b28",
+      "local_sha256": "d623d35a1fa896f77f8872fd84f3de6e2302740e63fd96314207a46997d81b28",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertStrictConcavity.lean",
+      "source_sha256": "fac6d86b0ee310739d71c0a978deeddfb68d7e52ed05ff5d7f8ae658c35f0fdd",
+      "local_sha256": "fac6d86b0ee310739d71c0a978deeddfb68d7e52ed05ff5d7f8ae658c35f0fdd",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

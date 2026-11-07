@@ -1216,9 +1216,16 @@
           "lean_source": "NLS/Articles/KdVKdV2Frequencies/OriginalL2InverseSmoothing.lean",
           "status": "verified_dependency",
           "qualification": "The canonical N=0 inverse analytic one-smoothing dependency toward Corollary 1.7 is VERIFIED for the SAME actual original native Birkhoff inverse. On the ENTIRE physical real ORIGINAL mean-zero h^(1/2) target, that inverse minus its TRUE inverse Fourier differential has a globally real analytic realization in the ORIGINAL physical real mean-zero H1 source. The actual zero differentials of the native maps at orders 0 and 1 are proved bounded linear equivalences; their printed Fourier coefficients prove compatibility with the literal original Sobolev inclusions. Every inverse Fourier coefficient is EXACTLY sqrt(2*abs(j)*pi)*z_j, including zero, and every stronger remainder coefficient is the actual inverse coefficient minus that term. At EVERY target point a strictly positive uniform remainder norm bound holds on a smaller ORIGINAL-norm open neighborhood. The SAME actual native map, inherited raw norms, physical reality and zero modes are retained throughout. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Both canonical N=0 forward and inverse analytic gains are now proved in their exact original intrinsic spaces. Identification with the unique physical PDE solution and locally uniform all-time estimates remain essential for Corollary 1.7. The full uniform-on-bounded-subsets assertion of source (24), its higher-N assertions and complex inverse extensions are NOT claimed here; local analytic bounds are not substituted for boundedness on arbitrary whole balls. No full physical Corollary 1.7 is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete."
+        },
+        {
+          "source_clause": "Necessary actual physical PDE identification: the SAME retained original-norm flow obeys the strong H4-to-H1 KdV equation and is the unique universal classical-limit solution at EVERY real mean-zero L2 datum; all smooth classical approximants and all compact time sets are quantified",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_actual_original_KdV_solution_family",
+          "lean_source": "NLS/Articles/KdVKdV2Frequencies/OriginalKdVPhysicalSolutions.lean",
+          "status": "verified_dependency",
+          "qualification": "Physical PDE identification toward Corollary 1.7 is VERIFIED for the SAME retained original-norm KdV evolution. Its calibrated actual frequency family is constructed on one common complex neighborhood of the entire nonnegative action cone. At EVERY original H4 datum, the retained trajectory is continuous in H4 and has the literal conservative KdV vector as its H1 time derivative. At EVERY smooth datum its physical synthesis has velocity exactly -u_xxx+6*u*u_x in the uniform physical norm, with no time reversal or Fourier rescaling. At EVERY original real mean-zero L2 datum, the SAME retained evolution is an actual universal classical-limit solution and is unique in that class. The approximation quantifiers range over EVERY smooth H4 initial sequence converging in the ORIGINAL L2 norm and EVERY corresponding actual strong classical KdV curve. Arbitrary such approximants converge uniformly on EVERY compact time set, and smooth classical approximating families exist. No PDE identification, physical frequency, derivative, or approximation-existence hypothesis is postulated. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Canonical N=0 forward and inverse analytic gains and actual physical KdV solution identification are now proved. Corollary 1.7 still requires the original H1 one-smoothing comparison with Airy and its locally uniform ALL-TIME bound. The full uniform-on-bounded-subsets assertion of source (24), higher-N smoothing and a global complex inverse extension are not asserted here. Local analytic bounds are not substituted for boundedness on arbitrary whole balls. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete."
         }
       ],
-      "current_support_summary": "The canonical N=0 inverse analytic one-smoothing dependency toward Corollary 1.7 is VERIFIED for the SAME actual original native Birkhoff inverse. On the ENTIRE physical real ORIGINAL mean-zero h^(1/2) target, that inverse minus its TRUE inverse Fourier differential has a globally real analytic realization in the ORIGINAL physical real mean-zero H1 source. The actual zero differentials of the native maps at orders 0 and 1 are proved bounded linear equivalences; their printed Fourier coefficients prove compatibility with the literal original Sobolev inclusions. Every inverse Fourier coefficient is EXACTLY sqrt(2*abs(j)*pi)*z_j, including zero, and every stronger remainder coefficient is the actual inverse coefficient minus that term. At EVERY target point a strictly positive uniform remainder norm bound holds on a smaller ORIGINAL-norm open neighborhood. The SAME actual native map, inherited raw norms, physical reality and zero modes are retained throughout."
+      "current_support_summary": "Physical PDE identification toward Corollary 1.7 is VERIFIED for the SAME retained original-norm KdV evolution. Its calibrated actual frequency family is constructed on one common complex neighborhood of the entire nonnegative action cone. At EVERY original H4 datum, the retained trajectory is continuous in H4 and has the literal conservative KdV vector as its H1 time derivative. At EVERY smooth datum its physical synthesis has velocity exactly -u_xxx+6*u*u_x in the uniform physical norm, with no time reversal or Fourier rescaling. At EVERY original real mean-zero L2 datum, the SAME retained evolution is an actual universal classical-limit solution and is unique in that class. The approximation quantifiers range over EVERY smooth H4 initial sequence converging in the ORIGINAL L2 norm and EVERY corresponding actual strong classical KdV curve. Arbitrary such approximants converge uniformly on EVERY compact time set, and smooth classical approximating families exist. No PDE identification, physical frequency, derivative, or approximation-existence hypothesis is postulated."
     },
     {
       "label": "Theorem 1.9",
@@ -51213,14 +51220,1562 @@
       "scope": "The SAME actual original native inverse minus its TRUE inverse Fourier differential has a globally real analytic ORIGINAL physical real mean-zero H1 realization on the ENTIRE real h0^(1/2) target, with exact coefficients and positive locally uniform bounds.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "c23b53fe4093923286f1a4c8056bdde59bbbf74c70ffbcfbc4bf9f71447501ad"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BaseFrequencyContinuation.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: BaseFrequencyContinuation. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4fcabcc7528d8c0ab3bad05b6b1cd98839af7f946d3c0d4224e95deafaff3095"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BaseFrequencyTaylor.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: BaseFrequencyTaylor. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "701a163b551cdb9b354d72eb7ea72a14347de4cd2ecec800aa96bce55969a053"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UniformScalarDerivativeBound.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: UniformScalarDerivativeBound. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8a52ef192a1c37567c1bc7676f86ebc4b8ccdb3364055d2c6f5936faebe183b4"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BaseFrequencyBoundObstruction.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: BaseFrequencyBoundObstruction. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "27688bf5b5eda258fe6f77f1be93384b4669cdb3d9cf2b678887e926089fb0cc"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertScalarConcavity.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged previously unselected retained shared dependency: HilbertScalarConcavity. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d623d35a1fa896f77f8872fd84f3de6e2302740e63fd96314207a46997d81b28"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertStrictConcavity.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged previously unselected retained shared dependency: HilbertStrictConcavity. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fac6d86b0ee310739d71c0a978deeddfb68d7e52ed05ff5d7f8ae658c35f0fdd"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionHessianBounds.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: ActionHessianBounds. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7850abf2fceb881c26ed950bc58f719e902bd97e2ba3dc78986e25433e6b4fcd"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/LocalConsequences.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged previously unselected retained shared dependency: LocalConsequences. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "35ba924320178bea8c6b3b35ef136d313a562a649b6b8c89646b886dbab8553d"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalLocalConsequences.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalLocalConsequences. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "981a0883e0e845318eb5b2687be3bf4ded00ed072acc1e747922f1f411308add"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticQuadraticRemainder.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: AnalyticQuadraticRemainder. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "493094506870991bb20151ee4bae6283176fb722a02c98215be6ec31487fd29b"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/PhysicalTaylorExpansion.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalTaylorExpansion. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0d2b77eca522468b3026bc5ef1e6f9c8dafd88c481b857b78a93a4fec3caf552"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BasePhysicalFrequencyExtension.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: BasePhysicalFrequencyExtension. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b199dc4de2de2c62b10d9991e980ffd829e0470f9a008a34d75c286ad2ac46ff"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarFamilyAffineTransport.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: ScalarFamilyAffineTransport. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b08aa8d6883827fd615db8ed97d69831c04c95f17e038e51878e4b3f73019689"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedNonnegativeTransport.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: WeightedNonnegativeTransport. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b8a85a6f0cdbde44cd457e3f124a2ced43d41a1d446464e8223f74b69b0fef51"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BasePhysicalFrequencyConstruction.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: BasePhysicalFrequencyConstruction. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8692cdf6aff076e9def15af5fb3da5974ece225d29eb53ae9c1dc55791b57a7c"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/BasePhysicalFrequencyReality.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: BasePhysicalFrequencyReality. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c4bb0e727ab35a718581991293a95fbc5088dddc442e3505683de108b2d15597"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveReciprocalExponentMembership.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PositiveReciprocalExponentMembership. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a913b1eb5714b29e4e8ee0ca1a4157167a59291040d0b2211b4942fa212db0e1"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticQuadraticResolvent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: AnalyticQuadraticResolvent. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4c71a1d37e9d7e721e7890c8b3c34f17770498d6ff9c585ecec297fb3751536a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFractionalMiuraProduct.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneFractionalMiuraProduct. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "638f57020899cb21b6d7a26d88a38a21ad644ffa345b4f2bcaaef45f33277ff9"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueMassResolvent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneFourierLebesgueMassResolvent. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "64946abc7482b7a4ecc1c7bcff141e3bf9342072278d0aef889eb1e86393cae9"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FourierLebesgueHilbertEmbedding.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueHilbertEmbedding. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0ec750da964aad5180fcf0aa2e20fdf338a50a34dcfa8f449ff427dbac0cdf5a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraFourierLebesgueAlgebra.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneMiuraFourierLebesgueAlgebra. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f72a96e60156dfd8ab75ebe5de39c793d90419438e5ac1599bf0af4d935aabd8"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraFourierLebesgueEquivalence.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneMiuraFourierLebesgueEquivalence. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "feeb373dc1d0a33ff6447af55ecde218907af1181046b6f7dc0de5ef26a7a1fd"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraFourierLebesgueStrongBranch.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneMiuraFourierLebesgueStrongBranch. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "53f6ed6809a773a55489b57c52f2c2de7914e3d65efbd058a4506422ef848bad"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraFourierLebesgueStrongCharts.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneMiuraFourierLebesgueStrongCharts. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3fda33deaaf61ffc43ab5c48ec2eb92fd151cdf2158a45d68c52af4ddf6ed33f"
+    },
+    {
+      "path": "NLS/KdV/HillHminusFourierLebesgueMiuraCharts.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillHminusFourierLebesgueMiuraCharts. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d2f82e5a7266038939c19aae4a1429c6dc1a8d40475f1049b29d6406a88d465b"
+    },
+    {
+      "path": "NLS/KdV/HillHminusMiuraFourierLebesgueRegularity.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillHminusMiuraFourierLebesgueRegularity. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f5af951c757a2a1668946a6569a1e805d8f2ae0ec468e585aeaf59e4a96ccb2a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusEtaFourierLebesgueRegularity.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillHminusEtaFourierLebesgueRegularity. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b31a227b235860c6c61a476c74b4ecb18e5548390a1083d048d7c5e9d5459ac2"
+    },
+    {
+      "path": "NLS/KdV/HillRoughPacketFourierLebesgueRegularity.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughPacketFourierLebesgueRegularity. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2aabb2c84d669c59b6660fe6b954c78243d0a9ecf4d0d26d367caec51cf81943"
+    },
+    {
+      "path": "NLS/KdV/HillRoughGlobalFourierLebesgueRegularity.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughGlobalFourierLebesgueRegularity. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a2fb45722dc9f87bfdd3c49e399907e73c1dde2285db18733a6493f54e8afca2"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FiniteFourierLebesgueWeakInclusion.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FiniteFourierLebesgueWeakInclusion. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5b76db3984de3f54cbdabbd45aaa2faba2e122c2eb69360883a7111eadad082"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedExponent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalRealMeanZeroWeightedExponent. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "eab5f24bcf37510189983230276e5bea7603efb2f760fe13ca36e2b354bbd889"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueBijection.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesgueBijection. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "005e40bedc7fee24be089bb38bf1939a498693dd8ca7ace0ccf24c1639db17b8"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueInverseCompatibility.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesgueInverseCompatibility. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f1d127befe516a488ac48800e47dbedeb5884578f2f862525c4db5875f714471"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedSignedPairActions.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: WeightedSignedPairActions. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "60a85f2d8bf1d36182c90a33453bd0e0285b9a2e81cffd420215f9780620bca1"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhysicalActions.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesguePhysicalActions. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "51180fec18b00d9b9d518a44f3bb407849fef37866322ce1ffde604d66e318ff"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SignedPositiveFrequency.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: SignedPositiveFrequency. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "25e508c23605a997de973ff1f7d1d5cd09a68a6ebb39bba7bc41667f463e74e8"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedPhaseFlowFamily.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: WeightedPhaseFlowFamily. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6fa99ab8820088e71a352ce8c572fef72c2e97c8c8737c46f6e41ef54c35a8e0"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroPhaseFlowExponent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalRealMeanZeroPhaseFlowExponent. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1d080560c1c4650cc366e61c7930c55047a9eb09d6c3661fb01f142362c349d2"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhysicalPhaseFlow.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesguePhysicalPhaseFlow. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d1036976047ae20dce09ee659394bdf7e1a80be834a517efd82531a6538a2be5"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticGermPullback.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: AnalyticGermPullback. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d69ff11cda6c775efc701792c7985bb7d4d8d2cc73c90f98f2298f147fee0347"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactDerivativeComposition.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: CompactDerivativeComposition. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "914940615c645f855fee58fddaba2409de891dfc224c8eb9687eb61af6ee1455"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticCompactGermPullback.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: AnalyticCompactGermPullback. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7e73f392230aeff6ce59c4813fc4d3123bbd97470af9341d24d9a4c662668250"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraFourierLebesgueNormalizedSource.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillMiuraFourierLebesgueNormalizedSource. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bee80f0a8eebf4567c2a6048c36b703bdefdc642f9e55360d396c696fbe78014"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedEtaExponentFactorization.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: SourceWeightedEtaExponentFactorization. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "94802fe438d0befc3fd291462f419fcb5badc3b690eb00d823eea4106f434e46"
+    },
+    {
+      "path": "NLS/SequenceSpaces/BoundedAnalyticSymbolExponent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: BoundedAnalyticSymbolExponent. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "17a8e286079c3e0bf169dc7a18f76f831628763f4ca655620890e65ef96f6407"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceWeightedEtaExponentCompactDerivative.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: SourceWeightedEtaExponentCompactDerivative. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c1d3a4a79205adc5ecdc7f50f0541a789eceaae0af593559333f272f1f738de9"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraFourierLebesgueEtaCompactDerivative.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillMiuraFourierLebesgueEtaCompactDerivative. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "feffae7554b25a7646c2788798a4817078e27dbec2b046cccf2a4504ddbb1ae9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedEtaRealExponent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: SourceGapWeightedEtaRealExponent. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2f58c7341b1f7e8382a465999d64e7916b62457f0c7129e133285f2e2ea50994"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraFourierLebesgueEtaCompactGerms.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillMiuraFourierLebesgueEtaCompactGerms. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4c7300a9f24338fe2d1638e23d59c392a6f501a219cf951614df97dd3cd0fce7"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticAffineQuadraticResolvent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: AnalyticAffineQuadraticResolvent. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cdc7f2c4943ac3b14e224957a374c2fa42f481c82c07f18f2bc8fb61d99dde16"
+    },
+    {
+      "path": "NLS/KdV/HillHminusRetainedFourierLebesgueMiuraGerms.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillHminusRetainedFourierLebesgueMiuraGerms. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "05a4461a867d0ccd481ec00d8e7a4ea772acb58bb7afcb895af2ec8a1213eae9"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueMiuraProduct.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneFourierLebesgueMiuraProduct. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2cf6ded0eb11ac3ff5ee4cb10f954c44befdcbb7c5999dd1964235eab0d76eaa"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueMiuraCompact.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneFourierLebesgueMiuraCompact. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e8e03eedcf0be15e21b4f8e81adfc3513dacbc70364b47ad608e0e5782976c9"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FourierLebesgueCompactInclusion.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueCompactInclusion. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "08892f0e63679901f55b094b26bc5ee5c3fc333ebd2d37301354a8cdde1343e1"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueFreeMassEquiv.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneFourierLebesgueFreeMassEquiv. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0f02eb998adc8ef99aadb3653b29931a6d64e17ff6ac58bfc0fbd7ef2b67f7d3"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueMiuraJacobian.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneFourierLebesgueMiuraJacobian. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0c9d18fecab9edfb55aeebda2c64bde4fbe4a96a74ead877d0dc601328c0cf6a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesgueMiuraInverseCompact.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneFourierLebesgueMiuraInverseCompact. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b49db2beb9f93618376d90bbf8407e03dfed270eabf9686a2f9e68ac356390dd"
+    },
+    {
+      "path": "NLS/KdV/HillHminusFourierLebesgueMiuraCompactDerivative.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillHminusFourierLebesgueMiuraCompactDerivative. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "75aeb5703db28dbc379f5b1f5e43c38573878cb86c4c714578028406ea8fc876"
+    },
+    {
+      "path": "NLS/KdV/HillHminusFourierLebesgueEtaCompactGerms.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillHminusFourierLebesgueEtaCompactGerms. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "53b096a0ef49ed414aed9e154f97585fa418f0d53d4c67b40025382d3ffc4766"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticSymbolCompactGerm.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: AnalyticSymbolCompactGerm. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "83685ce1ec60ee69140aff91661ac49d28f42942ec9c8c684dccbb8c1e79d760"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesguePositiveCompactGerms.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesguePositiveCompactGerms. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "90ff4140113fd1d1fc9d13302bc7f199620ea79f48a6c86cf89d56aee13e848e"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalPositiveCompletionExponent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalPositiveCompletionExponent. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3b28e46a11bb8fb5fc0708c7e02152df8b5b28163b7612be1b7082d78ed5a1ba"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalPositiveMultiplierEquiv.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalPositiveMultiplierEquiv. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "161be8510ebb87e9a3982c2236384fff6f07c62404e274b81bb8bf3a95c3326d"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneFourierLebesguePrincipalEquiv.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneFourierLebesguePrincipalEquiv. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fb902b3054f44dfe756a1c0d15bc187200bfe3e56e06977e7900ef8890088ac7"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealCompactDerivativeTransport.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: RealCompactDerivativeTransport. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "da20c275c91efcc68480078468bac15cbbfcebd8895bfbbd403aa9c17b3fd2a7"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueCompactDerivative.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesgueCompactDerivative. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6d0ed7ab04caddd20e8adbaa5eb3990878f91b7389f958f86871a1f093c6d71a"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/DerivativeInjectiveRestriction.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: DerivativeInjectiveRestriction. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d06693cde7840c4fd995590d0159615811ae623866285f50f86e024761aa9e3f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/MeanZeroWeightedProjectionInjective.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: MeanZeroWeightedProjectionInjective. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bd3e1616f1ee80c834b700c730a011ca9e79e2130de286799c1b796171540074"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraFourierLebesgueEtaGerms.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillMiuraFourierLebesgueEtaGerms. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e115379b51978f042c2f281ad7c7669830064dd3dea846e519e435c4fd1286a2"
+    },
+    {
+      "path": "NLS/KdV/HillHminusFourierLebesgueEtaGerms.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillHminusFourierLebesgueEtaGerms. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "02acc5bc378b447171573f2bb59d5c321d57e41513546f446f5a5b77c37a2d72"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesguePositiveGerms.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesguePositiveGerms. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "66551cb35a775787cd60a36449503ccd8191a6a971116836cdae4df22cb88069"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueForwardAnalytic.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesgueForwardAnalytic. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1f161ec8881467801c1d08fec7477f9654d14ad904b846b4c27a681617e85601"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueForwardAllExponents.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesgueForwardAllExponents. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5964405da34c1e431cc00bdd87a6d556a4fcff688790e889ec4895feaec860b0"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueDerivativeInjective.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesgueDerivativeInjective. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8e160c3fa9f84e0ba5d9794277ca6c997d033f618c80708c0fd3af82653b75b5"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/CompactEquivPerturbationScalar.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: CompactEquivPerturbationScalar. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "de97e627480233498dce01dac2f90bf12844273ee814fddc469287c1837bff01"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealAnalyticEquivInverse.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: RealAnalyticEquivInverse. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7817556a5a66c076c34ff6a919c7fb8ad8623c9a70100aef3936ade23b894efe"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueInverseAnalytic.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesgueInverseAnalytic. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7bc04ac648b97f9d2564f8291fa845917b0adee63905f0df09b4a74a5405e825"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueInverseAllExponents.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesgueInverseAllExponents. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "551f578fdb4ce44371976affa8a5e0c174ca213aa9b69c8aec2ea02db0f89b70"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFourierLebesgueHomeomorph.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFourierLebesgueHomeomorph. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "788bcd9fbb14796de16e1d278ad3949d72bae3bd89057e909143e0f5b7d1e0c9"
+    },
+    {
+      "path": "NLS/Dynamics/ConjugatedContinuousEvolution.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: ConjugatedContinuousEvolution. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fb38f136385b748d383aa21067f05b7eaa30c46ffd62a2ce63941ed7e22976b2"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhaseEvolution.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesguePhaseEvolution. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "019bc0baf4e7abf44f75c8c19ce2a30b77cd9e0c5d332400556ad233d57306dc"
+    },
+    {
+      "path": "NLS/KdV/HillRoughFiniteSupportSmooth.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughFiniteSupportSmooth. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d0387e376e8a6a91188fb1d4200a88ac5aa28cd9f48507bf1d110ebc6c3e1d8f"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFiniteSupportSmooth.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueFiniteSupportSmooth. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "da817a07a8bc975f2ae52a2205c207f44a333df1c1f1aa5f0b63a46cf5b83774"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroWeightedTruncationExponent.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalRealMeanZeroWeightedTruncationExponent. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bb9584476218a5f1b9f47c98774a64d2b97813adab6b27dee59e96eae51cae2e"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFiniteGapApproximation.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueFiniteGapApproximation. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "55047fd7e3f352d9cb6dfae3f7f4f2d6796e6d1d61dc4811a7c58b5ab65b1140"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FinitePhaseAnalytic.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FinitePhaseAnalytic. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8e496aeb882bc976cc8f1644793d8b9a001069711f2a2e68e95e20582f52b016"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealMeanZeroPhaseAnalytic.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalRealMeanZeroPhaseAnalytic. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9226dbff7bce552e672130af96ebbb90599594bfaa83d8fae14e4b2c7db867d4"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFinitePhaseAnalytic.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueFinitePhaseAnalytic. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "65b56e244119dc9536b2221a3756335cb352ed317b194f1c54e380c209d69dec"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhaseCompatibility.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesguePhaseCompatibility. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ed26cc4a4e9427f612dd7cf551619d11f0d381047baa3e0356f6027b436e36fd"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhaseCoordinateDerivatives.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesguePhaseCoordinateDerivatives. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "85d9bed3de0673f23e8dd380a6f8a41807a0fd62ae95a52d13766eb157a64087"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFrequencyRecovery.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueFrequencyRecovery. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9f8b67583d6d178e8a60a3dfeebf3d7979bab9efa947e5a816134567f136f362"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhaseFrequencyTransport.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesguePhaseFrequencyTransport. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9780805f6af7b3b8447f2354d0fcae4d499d1384066d4f518aae31536703422b"
+    },
+    {
+      "path": "NLS/KdV/HillRoughSignedDerivativeInjective.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughSignedDerivativeInjective. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5a3c12af72f02f33f15f31a5ac2e4f9b628473bc8e7a30fe3a283632f3fc565a"
+    },
+    {
+      "path": "NLS/KdV/HillRoughSignedDerivativeComponents.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughSignedDerivativeComponents. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "22a87e6c771c9558a1501e8922e8696bd5ce6ea8a43b46c280babf3804fc329b"
+    },
+    {
+      "path": "NLS/KdV/HillRoughHamiltonianCurveMatching.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: HillRoughHamiltonianCurveMatching. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "06b8338d1553d4fb56765793034a846580bf4bdeffa29e07435956824c910bec"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFinitePhaseHamiltonian.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueFinitePhaseHamiltonian. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f81f2b0261db2b868ced2bac393ab25a97254aa3ea66d91ddf061e32bf942a1d"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFinitePhaseSmoothRealization.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueFinitePhaseSmoothRealization. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "79581619170c0684a8977daafbbbc4a8185bcc441fa8b6f1be9518d6e3f5319f"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFinitePhaseKdVCoefficients.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueFinitePhaseKdVCoefficients. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cbb233fad48657ca0974b3b9691bb768dbf5693897e875b87783006c5b0dcce2"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneKdVNativeVector.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneKdVNativeVector. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a2a1828c5f17b812ebad08f5edf0cf17e91a0e402b0b3e52496f1cc3aba53dd6"
+    },
+    {
+      "path": "NLS/Fourier/PeriodOneDerivativePowers.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneDerivativePowers. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8915805aca826c505f3f647b85d71607d113ca899216ec711439e37c505a0a8e"
+    },
+    {
+      "path": "NLS/KdV/PeriodOneKdVNativePhysical.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneKdVNativePhysical. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "38cc62e0ac825e6ad8e6db0bbdd6c38775b43e0b3c6b3667fd3881c75ccb0456"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FiniteSignedPositiveSupport.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FiniteSignedPositiveSupport. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8cc9b96f700f9462d28cd245b6453db0bd34051cc5346bffdf08c1a49ce11abd"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueFinitePhaseStrongKdV.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueFinitePhaseStrongKdV. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2c20828011ec709c38b9c069dcae2606071f7d931caf1e663a5ff2abb7c20718"
+    },
+    {
+      "path": "NLS/Dynamics/ContinuousEvolutionDerivativeLimit.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: ContinuousEvolutionDerivativeLimit. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e8adc4e32987921115244b75a52df0d3662d29b38a8bf07c39db09a685332cf"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueStrongKdV.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueStrongKdV. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c58bf63e213942e535889005d31eb070471bb8ad45f9f24a0f390b359136e775"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueKdVCoordinateField.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueKdVCoordinateField. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2b18f8fa9620fb6b49f1635e4f1ad508b6923cb242d3bb0ae6f0d6d368f5599c"
+    },
+    {
+      "path": "NLS/KdV/PeriodOneClassicalKdVCurve.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneClassicalKdVCurve. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "94a9a1c34f52f9a2bfa27f76ad1e98bf6548780e57351307032619fb4e506756"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ClassicalKdVCoordinateEvolution.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: ClassicalKdVCoordinateEvolution. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "82be99a303875ee690eec586605839ce7c10f92a4aed714bb503259463ff9bda"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/GlobalScalarEvolution.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: GlobalScalarEvolution. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "878c14f881166e351af981f23c848ecc467b5141d90a56c4ff00c03b3ed6e618"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ClassicalKdVActionConservation.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: ClassicalKdVActionConservation. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ca2aa092240b614540762302568f61d23807f45d2c6c929b1da610237332a6d0"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ClassicalKdVUniqueness.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: ClassicalKdVUniqueness. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e5d8c9da9a8497bcf936423d9448ee5742f1493f0d247df0cc62f7a4d592c1d1"
+    },
+    {
+      "path": "NLS/KdV/PeriodOneClassicalKdVPhysical.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneClassicalKdVPhysical. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "af3196637d7753f998cd93a23581151a53e269354e1b0f1b0c4472da471a2118"
+    },
+    {
+      "path": "NLS/KdV/PeriodOneSmoothPotential.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PeriodOneSmoothPotential. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e7b2650c9c73e4a816bee506ba9d3f53e1add12f05e6f6032f61df4bb816230e"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedRawMembershipTransport.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: WeightedRawMembershipTransport. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "40bc6de5dddfc6645949aab47da93e3e49d318aeb38b6670f10cdd5015ee2a0f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalSobolevExponentInclusion.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalSobolevExponentInclusion. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4f6bd9586e578faad82631ead906683f4511628b423a42b11dcb5f10b40d8c2e"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesguePhaseRegularityTransfer.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesguePhaseRegularityTransfer. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ffd51e7d251a7dad808f4969cc70fe151378c657c7237fe29fa07dccb4a4d6ce"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ClassicalKdVSmoothEvolution.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: ClassicalKdVSmoothEvolution. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a97f1ed7fe319b991c11421604722e9e2e09c5517bde0cc3bbe9751b1ec1f4f5"
+    },
+    {
+      "path": "NLS/KdV/FourierLebesgueClassicalLimitSolution.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueClassicalLimitSolution. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b0b9891015975bf09547b496b2ed01723f81a2083f3871fa0d4329792bb9f92a"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueClassicalApproximation.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueClassicalApproximation. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fe619ea832d3b55f64a4302cda2fb28e5b2c8495469f0b1af419df03039f53f1"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalWeightedRawSequence.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalWeightedRawSequence. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c1e18b7d985827c6bd29b9510f8f9a41362ac3d3f0471af9c705524a3d178abd"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueSmoothDensity.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueSmoothDensity. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "98fb53536eb230631408cead04f94d0bee16ecaa6e7d63d83e3dea9eaa103611"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/FourierLebesgueClassicalLimitUniqueness.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: FourierLebesgueClassicalLimitUniqueness. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2a598b90450bcd32cdb2dc517e13a68aff4cba4bfe02095a3335b17afcd1dc93"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PhysicalRealDeletedPhaseFlow.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: PhysicalRealDeletedPhaseFlow. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2f58280935cd0f4e4154a0a6d43280e11c8fc03a98a139b0316d8187141d662d"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/WeakPhysicalPhaseEvolution.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: WeakPhysicalPhaseEvolution. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7f58fcdafed3c86b7d77e761bd0ff55ee46268e043e57bb5bf7f2aff0cc12720"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/WeakPhysicalClassicalLimit.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Unchanged committed shared physical KdV dependency: WeakPhysicalClassicalLimit. Part of the exact native PDE/classical-approximation recovery chain; source and local byte hashes and disposition are recorded in SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7f659fe96656729b53e003f779ec41c440c59e3dfcf79eec14b16c1cd389b379"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/PhysicalKdVFrequencyBridge.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "The SAME normalized physical quadratic actions, calibrated frequencies and weak phase evolution are identified exactly with the retained native order-zero group. A constructed physical base frequency family has the literal calibrated formula; no additional family hypothesis remains.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "01bfd9da35a513df0e319fff5af2fbc18964a77658d90401c48774f89d4c7e51"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/OriginalPhysicalKdVFlowMatching.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "Original source normalization commutes with literal native-to-weak inclusions and with the retained original-norm flow. Weak inclusion injectivity identifies the ENTIRE retained flow with the independently verified physical evolution at every s>=-1/2.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "12be3286a4048269847f64fe68d91416b88546a5c9b841360bbcf562fd0620a3"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/OriginalKdVPhysicalSolutions.lean",
+      "source_labels": [
+        "Corollary 1.7 necessary actual physical KdV PDE identification and universal classical-approximation uniqueness for the SAME retained original-norm flow"
+      ],
+      "source_pages": [
+        6
+      ],
+      "scope": "For the SAME retained calibrated family, prove the strong H4-to-H1 PDE, literal smooth physical KdV velocity, universal classical-limit existence/uniqueness in ORIGINAL norms and convergence of EVERY actual classical approximation uniformly on compact time sets. The family is constructed unconditionally from verified actual frequencies.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5a46d56ed7225af94ae2a1ff538f485662779b51dbfc7f421df97a3be0244b5c"
     }
   ],
   "dependencies_needed": [
-    "The canonical N=0 inverse analytic one-smoothing dependency toward Corollary 1.7 is VERIFIED for the SAME actual original native Birkhoff inverse. On the ENTIRE physical real ORIGINAL mean-zero h^(1/2) target, that inverse minus its TRUE inverse Fourier differential has a globally real analytic realization in the ORIGINAL physical real mean-zero H1 source. The actual zero differentials of the native maps at orders 0 and 1 are proved bounded linear equivalences; their printed Fourier coefficients prove compatibility with the literal original Sobolev inclusions. Every inverse Fourier coefficient is EXACTLY sqrt(2*abs(j)*pi)*z_j, including zero, and every stronger remainder coefficient is the actual inverse coefficient minus that term. At EVERY target point a strictly positive uniform remainder norm bound holds on a smaller ORIGINAL-norm open neighborhood. The SAME actual native map, inherited raw norms, physical reality and zero modes are retained throughout. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Both canonical N=0 forward and inverse analytic gains are now proved in their exact original intrinsic spaces. Identification with the unique physical PDE solution and locally uniform all-time estimates remain essential for Corollary 1.7. The full uniform-on-bounded-subsets assertion of source (24), its higher-N assertions and complex inverse extensions are NOT claimed here; local analytic bounds are not substituted for boundedness on arbitrary whole balls. No full physical Corollary 1.7 is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+    "Physical PDE identification toward Corollary 1.7 is VERIFIED for the SAME retained original-norm KdV evolution. Its calibrated actual frequency family is constructed on one common complex neighborhood of the entire nonnegative action cone. At EVERY original H4 datum, the retained trajectory is continuous in H4 and has the literal conservative KdV vector as its H1 time derivative. At EVERY smooth datum its physical synthesis has velocity exactly -u_xxx+6*u*u_x in the uniform physical norm, with no time reversal or Fourier rescaling. At EVERY original real mean-zero L2 datum, the SAME retained evolution is an actual universal classical-limit solution and is unique in that class. The approximation quantifiers range over EVERY smooth H4 initial sequence converging in the ORIGINAL L2 norm and EVERY corresponding actual strong classical KdV curve. Arbitrary such approximants converge uniformly on EVERY compact time set, and smooth classical approximating families exist. No PDE identification, physical frequency, derivative, or approximation-existence hypothesis is postulated. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Canonical N=0 forward and inverse analytic gains and actual physical KdV solution identification are now proved. Corollary 1.7 still requires the original H1 one-smoothing comparison with Airy and its locally uniform ALL-TIME bound. The full uniform-on-bounded-subsets assertion of source (24), higher-N smoothing and a global complex inverse extension are not asserted here. Local analytic bounds are not substituted for boundedness on arbitrary whole balls. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
-    "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Both canonical N=0 forward and inverse analytic gains are now proved in their exact original intrinsic spaces. Identification with the unique physical PDE solution and locally uniform all-time estimates remain essential for Corollary 1.7. The full uniform-on-bounded-subsets assertion of source (24), its higher-N assertions and complex inverse extensions are NOT claimed here; local analytic bounds are not substituted for boundedness on arbitrary whole balls. No full physical Corollary 1.7 is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+    "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Canonical N=0 forward and inverse analytic gains and actual physical KdV solution identification are now proved. Corollary 1.7 still requires the original H1 one-smoothing comparison with Airy and its locally uniform ALL-TIME bound. The full uniform-on-bounded-subsets assertion of source (24), higher-N smoothing and a global complex inverse extension are not asserted here. Local analytic bounds are not substituted for boundedness on arbitrary whole balls. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
   ],
   "workspace": {
@@ -51244,8 +52799,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 28013,
-    "total_declarations_audited": 50083,
+    "candidate_declarations_audited": 28758,
+    "total_declarations_audited": 50828,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -51256,7 +52811,7 @@
       "Corollary 1.4",
       "Corollary 1.5"
     ],
-    "selected_modules": 3847,
+    "selected_modules": 3976,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -51435,7 +52990,8 @@
     "original_potential_fourier_validation_sequence": "All 3806 prior selected sources and all 62 prior provenance records remain byte-identical. The exact new transitive import closure is 10 modules: nine own modules with nine explicit public theorems, and one unchanged verified shared H1 convolution module pinned to commit 334579e6fb05cfac349f0a25d87640cebf24005c. One new provenance record gives 63 total. All 10 modules were strictly rebuilt in dependency order AFTER freezing 3882 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3816 selections and EVERY imported NLS declaration: 27909 selected declarations and 49979 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 30 private chunks of at most 128 names, and the bidirectional 3816-name set probe with insertion/deletion rejection are verified. The cumulative 3824 strict PASS records cover 3816 unique modules, retaining eight prior repeats. All prior logs are retained for this milestone, including the 31 baseline checks explicitly refreshed and disclosed in the preceding retained-eta-fourier milestone. The unique evidence prefix is original-potential-fourier. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a 10-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "fixed_global_fourier_validation_sequence": "All 3816 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure is 12 own modules with 14 explicit public theorems; no new shared dependency or provenance record is needed. All 12 modules were strictly rebuilt in dependency order AFTER freezing 3894 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh transitive axiom audit covers all 3828 selections and EVERY imported NLS declaration: 27943 selected declarations and 50013 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 30 private chunks of at most 128 names, and the bidirectional 3828-name set probe with insertion/deletion rejection are verified. The cumulative 3836 strict PASS records cover 3828 unique modules, retaining eight prior repeats. All prior logs are retained for this milestone, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone. The unique evidence prefix is fixed-global-fourier. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is a 12-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
     "canonical_l2_forward_validation_sequence": "All 3828 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure is 11 own modules with 20 explicit public theorems; no new shared dependency or provenance record is needed. All 11 modules were strictly rebuilt in dependency order AFTER freezing the FINAL 3905 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh final transitive axiom audit covers all 3839 selections and EVERY imported NLS declaration: 27983 selected declarations and 50053 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 30 private chunks of at most 128 names, and the bidirectional 3839-name set probe with insertion/deletion rejection are verified. The cumulative authoritative 3847 strict PASS records cover 3839 unique modules, retaining eight prior repeats. A preliminary ten-module development run and complete audit were archived before adding explicit physical-real recovery; the FINAL eleven-module freeze/rebuild/probe/audit is authoritative. All prior published evidence is retained, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone. The unique evidence prefix is canonical-l2-forward. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. Opaque derivative/observation lemmas and a separately named original source domain keep every proof within DEFAULT kernel limits. This is an 11-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
-    "canonical_l2_inverse_validation_sequence": "All 3839 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure is 8 own modules with 15 explicit public theorems and no private theorem; no new shared dependency or provenance record is needed. All 8 modules were strictly rebuilt in dependency order AFTER freezing 3913 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh final transitive axiom audit covers all 3847 selections and EVERY imported NLS declaration: 28013 selected declarations and 50083 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 31 private chunks of at most 128 names (capacity 3968), and the bidirectional 3847-name set probe with insertion/deletion rejection are verified. The cumulative authoritative 3855 strict PASS records cover 3847 unique modules, retaining eight prior repeats. All prior published evidence is retained, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone. The unique evidence prefix is canonical-l2-inverse. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is an 8-module incremental rebuild retaining prior strict evidence, not a full rebuild."
+    "canonical_l2_inverse_validation_sequence": "All 3839 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure is 8 own modules with 15 explicit public theorems and no private theorem; no new shared dependency or provenance record is needed. All 8 modules were strictly rebuilt in dependency order AFTER freezing 3913 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh final transitive axiom audit covers all 3847 selections and EVERY imported NLS declaration: 28013 selected declarations and 50083 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the previous milestone. Exact ordered selection, dependencies, private fresh outputs, overlay targets, 31 private chunks of at most 128 names (capacity 3968), and the bidirectional 3847-name set probe with insertion/deletion rejection are verified. The cumulative authoritative 3855 strict PASS records cover 3847 unique modules, retaining eight prior repeats. All prior published evidence is retained, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone. The unique evidence prefix is canonical-l2-inverse. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. This is an 8-module incremental rebuild retaining prior strict evidence, not a full rebuild.",
+    "retained_physical_kdv_validation_sequence": "All 3847 prior selected sources and all 63 prior provenance records remain byte-identical. The exact new transitive import closure consists of 129 modules: 3 own modules with 15 explicit public theorems and no private theorem, 123 unchanged imported modules and 3 unchanged previously unselected local modules. All 126 shared dependencies match committed source 33c5fd26a567862ec039fa2b1d971c19ed058a90 on articles/kdv-convexity; the 3 retained local files also match the article baseline byte for byte. One SHARED_PHYSICAL_KDV_RECOVERY_IMPORT.json records all 126 source/local hashes and dispositions, raising provenance records from 63 to 64. The source worktree has unrelated staged changes; ONLY the specified files verified byte-identical to the named COMMITTED revision were imported. No external worktree was edited. All 129 newly selected modules were strictly rebuilt in dependency order AFTER freezing the final 4043 selected-source/checker/provenance/pinned-Mathlib-source hashes. The fresh final axiom audit covers 3976 selections and EVERY imported NLS declaration: 28758 selected declarations and 50828 imported declarations. Its ENTIRE traversal and allowed-axiom loop remain byte-identical to the baseline. Exact ordered selection, transitive closure, dependencies, private fresh outputs, overlay targets, 32 private chunks of at most 128 names (capacity 4096), and the bidirectional 3976-name set probe with insertion/deletion rejection are verified. The cumulative authoritative 3984 strict PASS records cover 3976 unique modules, retaining eight prior repeats. Separate preliminary development logs are retained and excluded from that authoritative ledger. All prior evidence, including the historical 31 baseline checks explicitly refreshed and disclosed in the retained-eta-fourier milestone, is retained. The unique FINAL evidence prefix is retained-physical-kdv; an attempted original-physical-kdv prefix was rejected before writing any historical artifact because older comparison logs already use that name. Canonical main and pinned Mathlib remain unchanged. Default heartbeat, recursion and kernel limits, autoImplicit=false and warningAsError=true apply; only propext, Classical.choice and Quot.sound are allowed. A separate opaque calibrated-frequency existence lemma avoids expanding a large record in the final solution theorem; no checking limit or linter setting is changed. This is a 129-module incremental rebuild retaining prior strict evidence, not a full rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -53151,6 +54707,18 @@
         "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Canonical Fourier alignment and the analytic N=0 forward gain for Phi-d_0 Phi are now proved, with exact intrinsic mean-zero spaces, the SAME true original domain, physical reality, and locally uniform original-norm bounds. The inverse one-smoothing comparison and identification with the unique physical PDE solution with locally uniform all-time estimates remain essential for Corollary 1.7. The full uniform-on-bounded-subsets assertion of source (24), its higher-N assertions, and a full forward/inverse theorem are NOT claimed by this milestone; local boundedness is not substituted for boundedness on arbitrary whole balls. No full physical Corollary 1.7 is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "ae6ac3c431c1b6da8f81a28a82864082ff1c6ebb",
+      "description": "Physical PDE identification toward Corollary 1.7 is VERIFIED for the SAME retained original-norm KdV evolution. Its calibrated actual frequency family is constructed on one common complex neighborhood of the entire nonnegative action cone. At EVERY original H4 datum, the retained trajectory is continuous in H4 and has the literal conservative KdV vector as its H1 time derivative. At EVERY smooth datum its physical synthesis has velocity exactly -u_xxx+6*u*u_x in the uniform physical norm, with no time reversal or Fourier rescaling. At EVERY original real mean-zero L2 datum, the SAME retained evolution is an actual universal classical-limit solution and is unique in that class. The approximation quantifiers range over EVERY smooth H4 initial sequence converging in the ORIGINAL L2 norm and EVERY corresponding actual strong classical KdV curve. Arbitrary such approximants converge uniformly on EVERY compact time set, and smooth classical approximating families exist. No PDE identification, physical frequency, derivative, or approximation-existence hypothesis is postulated.",
+      "entries": [
+        "The canonical N=0 inverse analytic one-smoothing dependency toward Corollary 1.7 is VERIFIED for the SAME actual original native Birkhoff inverse. On the ENTIRE physical real ORIGINAL mean-zero h^(1/2) target, that inverse minus its TRUE inverse Fourier differential has a globally real analytic realization in the ORIGINAL physical real mean-zero H1 source. The actual zero differentials of the native maps at orders 0 and 1 are proved bounded linear equivalences; their printed Fourier coefficients prove compatibility with the literal original Sobolev inclusions. Every inverse Fourier coefficient is EXACTLY sqrt(2*abs(j)*pi)*z_j, including zero, and every stronger remainder coefficient is the actual inverse coefficient minus that term. At EVERY target point a strictly positive uniform remainder norm bound holds on a smaller ORIGINAL-norm open neighborhood. The SAME actual native map, inherited raw norms, physical reality and zero modes are retained throughout. Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Both canonical N=0 forward and inverse analytic gains are now proved in their exact original intrinsic spaces. Identification with the unique physical PDE solution and locally uniform all-time estimates remain essential for Corollary 1.7. The full uniform-on-bounded-subsets assertion of source (24), its higher-N assertions and complex inverse extensions are NOT claimed here; local analytic bounds are not substituted for boundedness on arbitrary whole balls. No full physical Corollary 1.7 is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Complete main rows remain 3 VERIFIED: Theorem 1.1, Corollary 1.4 and ALL THREE clauses of Corollary 1.5; 8 main rows remain OPEN. Both canonical N=0 forward and inverse analytic gains are now proved in their exact original intrinsic spaces. Identification with the unique physical PDE solution and locally uniform all-time estimates remain essential for Corollary 1.7. The full uniform-on-bounded-subsets assertion of source (24), its higher-N assertions and complex inverse extensions are NOT claimed here; local analytic bounds are not substituted for boundedness on arbitrary whole balls. No full physical Corollary 1.7 is claimed. Theorem 1.2 still lacks the ORIGINAL ACTION s=-1 UNIFORM little-o endpoint. The goal remains ACTIVE and incomplete.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -53281,5 +54849,6 @@
   "original_fourier_record": "ORIGINAL_FOURIER.md",
   "fixed_global_fourier_record": "FIXED_GLOBAL_FOURIER.md",
   "canonical_l2_forward_record": "CANONICAL_L2_FORWARD.md",
-  "canonical_l2_inverse_record": "CANONICAL_L2_INVERSE.md"
+  "canonical_l2_inverse_record": "CANONICAL_L2_INVERSE.md",
+  "retained_physical_kdv_record": "RETAINED_PHYSICAL_KDV.md"
 }
