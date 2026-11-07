@@ -1,0 +1,502 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "article_parent": "334579e6fb05cfac349f0a25d87640cebf24005c",
+  "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "new_modules": [
+    "NLS/ZakharovShabat/SourceGapSymmetries.lean",
+    "NLS/ZakharovShabat/SourceSymmetryCore.lean",
+    "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean",
+    "NLS/ZakharovShabat/SourcePrimitiveGradientSymmetries.lean",
+    "NLS/Articles/MKdVNLSHierarchies/InvariantSpectralDomain.lean",
+    "NLS/FunctionalAnalysis/OpenConnectedFibers.lean",
+    "NLS/ZakharovShabat/SourcePrimitiveJointConnected.lean",
+    "NLS/ZakharovShabat/SourcePrimitiveJointCovariance.lean",
+    "NLS/ZakharovShabat/SourceAbelianPrimitiveSymmetries.lean",
+    "NLS/ZakharovShabat/SourceAbelianPrimitiveFilledSymmetries.lean",
+    "NLS/ZakharovShabat/SourcePrimitiveCollapsedDomain.lean",
+    "NLS/Articles/MKdVNLSHierarchies/PrimitiveValueSymmetries.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicSegment_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicSegment_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicSegment_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicSegment_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicSegment_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicSegment_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalRootDomain_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalRootDomain_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalRootDomain_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalRootDomain_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalRootDomain_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalRootDomain_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicGap_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicGap_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicGap_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicGap_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceOpenGapComplement_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.sourceOpenGapComplement_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceOpenGapComplement_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceOpenGapComplement_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceOpenGapComplement_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceOpenGapComplement_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceGapSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceCircleRotation",
+      "qualified_name": "NLS.ZakharovShabat.sourceCircleRotation",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCircleRotation_one",
+      "qualified_name": "NLS.ZakharovShabat.sourceCircleRotation_one",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCircleRotation_mul",
+      "qualified_name": "NLS.ZakharovShabat.sourceCircleRotation_mul",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComponentSwap_circleRotation",
+      "qualified_name": "NLS.ZakharovShabat.sourceComponentSwap_circleRotation",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceMidpointReflection_circleRotation",
+      "qualified_name": "NLS.ZakharovShabat.sourceMidpointReflection_circleRotation",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComponentSwap_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceComponentSwap_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_sourceCircleRotation",
+      "qualified_name": "NLS.ZakharovShabat.continuous_sourceCircleRotation",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceCircleCore",
+      "qualified_name": "NLS.ZakharovShabat.sourceCircleCore",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_sourceCircleCore",
+      "qualified_name": "NLS.ZakharovShabat.isOpen_sourceCircleCore",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceSymmetryCore",
+      "qualified_name": "NLS.ZakharovShabat.sourceSymmetryCore",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_sourceSymmetryCore",
+      "qualified_name": "NLS.ZakharovShabat.isOpen_sourceSymmetryCore",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceSymmetryCore_subset",
+      "qualified_name": "NLS.ZakharovShabat.sourceSymmetryCore_subset",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realTypeSourceLocus_subset_sourceSymmetryCore",
+      "qualified_name": "NLS.ZakharovShabat.realTypeSourceLocus_subset_sourceSymmetryCore",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceSymmetryCore_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.sourceSymmetryCore_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceSymmetryCore_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceSymmetryCore_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceSymmetryCore_circleRotation",
+      "qualified_name": "NLS.ZakharovShabat.sourceSymmetryCore_circleRotation",
+      "file": "NLS/ZakharovShabat/SourceSymmetryCore.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceConnectedSymmetryCore",
+      "qualified_name": "NLS.ZakharovShabat.sourceConnectedSymmetryCore",
+      "file": "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceConnectedSymmetryCore_subset",
+      "qualified_name": "NLS.ZakharovShabat.sourceConnectedSymmetryCore_subset",
+      "file": "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_sourceConnectedSymmetryCore",
+      "qualified_name": "NLS.ZakharovShabat.isOpen_sourceConnectedSymmetryCore",
+      "file": "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realTypeSourceLocus_subset_sourceConnectedSymmetryCore",
+      "qualified_name": "NLS.ZakharovShabat.realTypeSourceLocus_subset_sourceConnectedSymmetryCore",
+      "file": "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isConnected_sourceConnectedSymmetryCore",
+      "qualified_name": "NLS.ZakharovShabat.isConnected_sourceConnectedSymmetryCore",
+      "file": "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceConnectedSymmetryCore_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.sourceConnectedSymmetryCore_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceConnectedSymmetryCore_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceConnectedSymmetryCore_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceConnectedSymmetryCore_circleRotation",
+      "qualified_name": "NLS.ZakharovShabat.sourceConnectedSymmetryCore_circleRotation",
+      "file": "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_sourceInvariantPrimitiveNeighborhood",
+      "qualified_name": "NLS.ZakharovShabat.exists_sourceInvariantPrimitiveNeighborhood",
+      "file": "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFullAbelianPhysicalGradient_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_componentSwap",
+      "file": "NLS/ZakharovShabat/SourcePrimitiveGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFullAbelianPhysicalGradient_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourcePrimitiveGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFullAbelianPhysicalGradient_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourcePrimitiveGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_invariant_neighborhood_inside",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_neighborhood_inside",
+      "file": "NLS/Articles/MKdVNLSHierarchies/InvariantSpectralDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_i_gap_segments",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_i_gap_segments",
+      "file": "NLS/Articles/MKdVNLSHierarchies/InvariantSpectralDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_invariant_root_primitive_neighborhood",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_invariant_root_primitive_neighborhood",
+      "file": "NLS/Articles/MKdVNLSHierarchies/InvariantSpectralDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "corollary8_physical_gradient_symmetries",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.corollary8_physical_gradient_symmetries",
+      "file": "NLS/Articles/MKdVNLSHierarchies/InvariantSpectralDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isPreconnected_open_product_of_fibers",
+      "qualified_name": "NLS.FunctionalAnalysis.isPreconnected_open_product_of_fibers",
+      "file": "NLS/FunctionalAnalysis/OpenConnectedFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceFullAbelianDifferentialData.isConnected_jointDomain",
+      "qualified_name": "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.isConnected_jointDomain",
+      "file": "NLS/ZakharovShabat/SourcePrimitiveJointConnected.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceFullAbelianDifferentialData.primitive_covariance",
+      "qualified_name": "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_covariance",
+      "file": "NLS/ZakharovShabat/SourcePrimitiveJointCovariance.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceSignedJointMap",
+      "qualified_name": "NLS.ZakharovShabat.sourceSignedJointMap",
+      "file": "NLS/ZakharovShabat/SourceAbelianPrimitiveSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceSignedJointMap_apply",
+      "qualified_name": "NLS.ZakharovShabat.sourceSignedJointMap_apply",
+      "file": "NLS/ZakharovShabat/SourceAbelianPrimitiveSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitive_componentSwap",
+      "qualified_name": "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceAbelianPrimitiveSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitive_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceAbelianPrimitiveSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitive_circleRotation",
+      "qualified_name": "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_circleRotation",
+      "file": "NLS/ZakharovShabat/SourceAbelianPrimitiveSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitive_componentSwap_filled",
+      "qualified_name": "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_componentSwap_filled",
+      "file": "NLS/ZakharovShabat/SourceAbelianPrimitiveFilledSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitive_midpointReflection_filled",
+      "qualified_name": "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_midpointReflection_filled",
+      "file": "NLS/ZakharovShabat/SourceAbelianPrimitiveFilledSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitive_circleRotation_filled",
+      "qualified_name": "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.primitive_circleRotation_filled",
+      "file": "NLS/ZakharovShabat/SourceAbelianPrimitiveFilledSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "source_filled_primitive_zero_slice_not_nhds",
+      "qualified_name": "NLS.ZakharovShabat.source_filled_primitive_zero_slice_not_nhds",
+      "file": "NLS/ZakharovShabat/SourcePrimitiveCollapsedDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "source_filled_primitive_zero_slice_contains_zero",
+      "qualified_name": "NLS.ZakharovShabat.source_filled_primitive_zero_slice_contains_zero",
+      "file": "NLS/ZakharovShabat/SourcePrimitiveCollapsedDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_corollary8_corrected",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.exists_corollary8_corrected",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PrimitiveValueSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "corollary8_collapsed_source_domain_obstruction",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.corollary8_collapsed_source_domain_obstruction",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PrimitiveValueSymmetries.lean"
+    }
+  ],
+  "new_theorems": 53,
+  "new_definitions": 5,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "ELAN_HOME and PATH use pinned tooling; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/ZakharovShabat/SourceGapSymmetries.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/ZakharovShabat/SourceGapSymmetries.lean",
+    "NLS/ZakharovShabat/SourceSymmetryCore.lean",
+    "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean",
+    "NLS/ZakharovShabat/SourcePrimitiveGradientSymmetries.lean",
+    "NLS/Articles/MKdVNLSHierarchies/InvariantSpectralDomain.lean",
+    "NLS/FunctionalAnalysis/OpenConnectedFibers.lean",
+    "NLS/ZakharovShabat/SourcePrimitiveJointConnected.lean",
+    "NLS/ZakharovShabat/SourcePrimitiveJointCovariance.lean",
+    "NLS/ZakharovShabat/SourceAbelianPrimitiveSymmetries.lean",
+    "NLS/ZakharovShabat/SourceAbelianPrimitiveFilledSymmetries.lean",
+    "NLS/ZakharovShabat/SourcePrimitiveCollapsedDomain.lean",
+    "NLS/Articles/MKdVNLSHierarchies/PrimitiveValueSymmetries.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1168,
+  "article_transitive_axiom_declarations": 13404,
+  "combined_NLS_transitive_axiom_declarations": 76641,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 64,
+    "old_scopes_preserved": 3716,
+    "added_blocks": 2,
+    "added_scopes": 70,
+    "total_scopes": 3786,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 9147,
+    "scope": "All current NLS/**/*.lean, NLS.lean and the article/combined checkers. All unchanged after validation.",
+    "source_map_digest_sha256": "0b4d63375af624195e4bd08d621ef1eae43861abb03fee7ff4069386939c4124",
+    "private_manifest": "work/invariant-primitive-validation-inputs.json",
+    "private_manifest_sha256": "454d5ea551a8ac8cd340a454226b023d04ac91aa0eb49528b3d68d45f274ee4e",
+    "reused_checker_prefix_outputs": 1156,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/ZakharovShabat/SourceGapSymmetries.lean": "b0449de6a901cb00f2c298a4d983580be35534dc507ae448f75b877fe01bd17a",
+    "NLS/ZakharovShabat/SourceSymmetryCore.lean": "6dd6293b943936e60f9a80da61a343113fc22ac65a3c6e33b4bcff1ac093e427",
+    "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean": "eba033ae333f96c45db81b341684a26172fef893321b4996c2cf0308c2612a4e",
+    "NLS/ZakharovShabat/SourcePrimitiveGradientSymmetries.lean": "7a21cf201160149937dfe90bafc301b2655ce3556749104a6ed4389b9288d746",
+    "NLS/Articles/MKdVNLSHierarchies/InvariantSpectralDomain.lean": "efee895f66b59efe9548847018983ea45eec5e597d914f39da4b7a99002c7782",
+    "NLS/FunctionalAnalysis/OpenConnectedFibers.lean": "7f85dbd4f3d3bd157c165e9bdf5074c579de820d30372a984236e3a2ecdaca78",
+    "NLS/ZakharovShabat/SourcePrimitiveJointConnected.lean": "b89434b3f9e6f3008470fbcf87a046055a4f8a5b8537ffd82afa4e6dccfa04f5",
+    "NLS/ZakharovShabat/SourcePrimitiveJointCovariance.lean": "cefe9c798f366d041cbde2c80291bbd64bc05afe939a1335d83ebcc2a07fa867",
+    "NLS/ZakharovShabat/SourceAbelianPrimitiveSymmetries.lean": "5ebb47c3add25e1c503733aeec0526405a2bafb3a67e547c5dc4c5fcf0638769",
+    "NLS/ZakharovShabat/SourceAbelianPrimitiveFilledSymmetries.lean": "e7f2f87442887dd37332cee199fd5d5cd40a410a5314c6b1896eec31c2d7e041",
+    "NLS/ZakharovShabat/SourcePrimitiveCollapsedDomain.lean": "39d437ef37b96455384bea66d3be535be9f13e097d55ebeb1d4ea4eb6e230674",
+    "NLS/Articles/MKdVNLSHierarchies/PrimitiveValueSymmetries.lean": "000f477667c4fda23e4ef863c015129ff4d2dd7b7ab1867c7dd84ca29fe5f263",
+    "NLS.lean": "4304ec441116b36fff09237c91006ee420b017fab1bd29730ab3eab12f2bc78e",
+    "scripts/check_mkdv_nls.py": "4b405d7371fb22998d0fe30186c548c846da1e795213a9dc3f5547899650d123",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "844b2cf3fb3bb0f500c644da036da5a89e93ca0cbff07b2f25119bf247e8a1a8",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/ZakharovShabat/SourceGapSymmetries.lean": "038a142a8d19fc7211468c7de181a8c96e515df90006fb60293ad5f596e9a27b",
+    "NLS/ZakharovShabat/SourceSymmetryCore.lean": "01880202692fbf94ebeafecf073ace9c283d4bb739030e32d3e2c0958854d423",
+    "NLS/ZakharovShabat/SourceInvariantNeighborhood.lean": "dc0111b86cb975e793b373ed2ccc59cff4f82474c8de5da12855bf3a3644e9b6",
+    "NLS/ZakharovShabat/SourcePrimitiveGradientSymmetries.lean": "68e789fb429fa6a799a228bf80d27a8123370a9e2aa79121c419a27aceb12059",
+    "NLS/Articles/MKdVNLSHierarchies/InvariantSpectralDomain.lean": "5f4e28a48dc9dbaa822242ec3da10832393d23930ffb1feeb6431920616db8b5",
+    "NLS/FunctionalAnalysis/OpenConnectedFibers.lean": "20586c93a503912160a51b793a74795e2e4e67c73b7cff11d131dd426e463483",
+    "NLS/ZakharovShabat/SourcePrimitiveJointConnected.lean": "eccffa52f78d8d3a44438a0da3bcf91bef3eeba4580d43d58962f003cef266dd",
+    "NLS/ZakharovShabat/SourcePrimitiveJointCovariance.lean": "ea001e266b820f4b222c1ea6594e8124fca63229a08943415349c3e5937579fa",
+    "NLS/ZakharovShabat/SourceAbelianPrimitiveSymmetries.lean": "1d9d5141bc51157cc6c5a500ee34be9b8415654a720bb14ee2b7ed28f7f566ca",
+    "NLS/ZakharovShabat/SourceAbelianPrimitiveFilledSymmetries.lean": "cdc79cd5c821edcca1d62f7c153b2530abd701778978e36a5e7d84b64a2a36c9",
+    "NLS/ZakharovShabat/SourcePrimitiveCollapsedDomain.lean": "8150a2968f3e048ab46443eb8fe5fafab1366d0b89d8c846ec3b924dc36e28c0",
+    "NLS/Articles/MKdVNLSHierarchies/PrimitiveValueSymmetries.lean": "7882969781d3127e48bdd56493e68109e48c25be3ffe534e71a541833816fcc4"
+  },
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "head": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "validated_source_modules": 9089,
+    "validation_report": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation_report_sha256": "6f9f2757468d008417280b5ce7ec68fceff49a1447bba886ff79dadbe7a80742",
+    "private_provenance_manifest": "work/nonlocal-incoming-cache-provenance.json",
+    "manifest_sha256": "7eff8b2f05f21402a7391c21f401cc5f5145c6a70503fd11d62e5737d4a95dc2",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently.",
+    "all_source_and_output_hashes_rechecked_after_validation": true
+  },
+  "validation_scope": "Fresh strict compilation of all twelve new modules and the combined aggregate; targeted and combined transitive audits. All 1,156 reused checker-prefix outputs and all 9,089 source-verified incoming compiled modules retain their hashes. This is not a fresh full repository source rebuild.",
+  "proof_scope": {
+    "completed_named_statements": [
+      "Theorem6, complete in the literal Section2 convention with the minus-sign xi correction: all original-domain spectral, signed-label, gap-segment, invariant-neighborhood, actual pointwise gradient/root/xi and whole-line spatial clauses.",
+      "Corollary8 with an explicit source-gradient domain qualification: all actual full primitive values on the original full complement of noncollapsed cuts, including collapsed points; actual gradient identities on the full open joint moving-cut complement."
+    ],
+    "invariant_domain": "One connected open complex neighborhood of the entire original real source locus is invariant under P, pure T and every real phase. It may be shrunk inside any supplied open almost-real source domain, retaining inherited setup properties. Actual root joint analyticity and full primitive differential data coexist on one such domain.",
+    "normalization": "The actual joint derivative, connected spectral fibers and source base, and actual zero-source normalization fix all primitive-value constants. Density and spectral continuity fill all collapsed cuts. No primitive symmetry or logarithm branch is assumed.",
+    "source_domain_obstruction": "At lambda0=0 and source0 the filled fixed-source primitive spectral domain contains lambda0 but its source slice is not a neighborhood of0. This is proved using arbitrarily small diagonal constant sources and their actual central endpoints. No blanket nondifferentiability or arbitrary-extension claim is made.",
+    "not_claimed": [
+      "Individual printed proof intermediates, including the squared-Floquet algebra and root proof argument, unless separately matched in the ledger.",
+      "Full Lemmas2,3,10,13 or Proposition11(iii), the separate p5/Appendix operator adapter or every background assertion.",
+      "Whole-paper semantic decomposition or full proof coverage."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "assertion_records": 118,
+    "source_passages": 241,
+    "new_complete_source_passages_reviewed": 4,
+    "source_passages_reviewed": [
+      "passage-160",
+      "passage-163",
+      "passage-164",
+      "passage-184"
+    ],
+    "all_assertion_line_locators_nonblank_and_page_correct": true,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f",
+  "previous_validated_progress": "pointwise-symmetry-validation.json"
+}

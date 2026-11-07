@@ -3360,3 +3360,436 @@ match. This reuses validated dependencies and is not a full source rebuild.
 
 The main theorem coverage and the three documented source corrections are
 unchanged. See merge-validation.json for exact parents, hashes and scope.
+
+
+## 2026-11-06 — Whole-paper scope and first additional proofs
+
+The target now includes every mathematical claim in the assigned source,
+including background, unnumbered displays, proof intermediates and appendices.
+Main-theorem completion remains a historical milestone; whole-paper completion
+is **in progress**. The initial ledger records all 18 named statements, all 25
+numbered equations, 98 semantic assertion records and every one of 241 source
+passages. Semantic decomposition and correspondence review remain unfinished.
+
+New checked proofs establish the scalar focusing NLS reduction and its real
+form, both missing-factor-two counterexamples, the correct Cartesian rotation
+equations and action preservation, and the general Banach-space real-slice
+identity principle with its nonempty-slice counterexample. Pure midpoint
+reflection has the actual source discriminant, spectral derivative and
+Fréchet-cotangent identities, alongside component-swap cotangent covariance.
+Article interfaces export the P/T clauses of Theorem 6(i)–(iii), without
+asserting completion of its other clauses.
+
+The branch fast-forwards to main `a1d8eb8` after the previous PR was merged.
+Five new modules add 28 theorems and one definition. The combined aggregate
+compiles with strict options and default limits. The article axiom audit
+passes for 9,799 declarations and auxiliaries; the combined NLS audit passes
+for 61,298. Only propext, Classical.choice and Quot.sound are allowed. All
+7,222 frozen mathematical/checker inputs and all 1,114 reused checker prefix
+outputs are unchanged. Cached imports were source-hash-verified against the
+validated incoming-main checkout; no fresh full dependency rebuild is claimed.
+Exact current evidence is in full-paper-validation.json. The coverage checker
+prevents the ledger from being marked complete while obligations remain open.
+
+
+## 2026-11-07 — Full phase/root symmetries and rough whole-line spatial equation
+
+Proposition11(i) is complete on its exact original complex H^(k-1) domain,
+including pure midpoint reflection T, every k>=1 and arbitrary real phase.
+Theorem6(ii) and (iv) are complete for the original spectral functions.
+All signed endpoint slots and arbitrary phase cotangent/discriminant
+identities are checked, even for every nonzero complex reciprocal scaling.
+No reality, smoothness or open-gap hypothesis is imposed on those interfaces.
+
+The original physical L2 gradient has its division-free spatial equation,
+actual whole-line continuation and period-one scalar coefficient. Its scalar
+transport integral follows from absolute continuity at every positive and
+negative real time. The physical R=diag(i,-i) convention fixes a negative
+nonlocal integral sign; comparison with the printed positive sign remains
+a source-correspondence obligation. Full xi covariance is also still open.
+A nonzero smooth H1 lower triangular potential formally refutes the paper's
+unrestricted generic upper-right monodromy-entry claim. No such division
+appears in the new spatial proof.
+
+Seventeen strictly checked modules add 73 theorems and 12 definitions.
+The combined NLS import passes; the article transitive audit passes for
+9,923 declarations and auxiliaries, and the combined audit for 61,420.
+Only propext, Classical.choice and Quot.sound are permitted. All 7,239
+frozen source/checker inputs and 1,119 reused checker-prefix output hashes
+remain unchanged. The existing real-type endpoint reflection theorem is
+preserved; the stronger complex theorem has a distinct name. Exact hashes
+and proof scope are in symmetry-validation.json. Whole-paper coverage
+remains in progress, with 106 assertion records and 241 source passages.
+
+
+## 2026-11-07 — Nonlocal sign resolved; current main integrated
+
+The literal Section2 operator and actual Frechet gradient require
+`xi=delta-2*i*integral(R*phi dot grad Delta)`. The printed plus-sign spatial
+equation is formally false even almost everywhere at an original complex
+H0 source. The explicit unit-interval profile `(-2*i,i/(1+x^2))` has exact
+monodromy `[[2,1+pi/2],[1,1+pi/4]]` at zero spectral parameter. Actual xi
+has derivative `2-pi` at zero; the printed formula gives `pi-2`. Continuity
+propagates the obstruction, and the proof transfers to the original Fourier
+source space. No smooth-periodic H1 assumption is made for this counterexample.
+
+The corrected typed normalized-gradient nonlocal reflection residual is
+proved at all original H0 sources with pure T phi=+/-phi. Endpoint monodromy
+matrices have their full original H0 P/T/reciprocal-scaling symmetries. The
+primitive F gradient interface, full xi covariance, all-real-x fundamental
+symmetries and all other pending claims remain open. Whole-paper coverage
+is still in progress: 108 assertion records and 241 source passages.
+
+Current main is merged, resolving the aggregate conflict by the exact import
+union. Eight fresh modules add 42 theorems and 9 definitions. Strict Lean 4.33.1
+compilation and both transitive audits pass: 13,250 article declarations and
+76,497 combined NLS declarations, with only propext, Classical.choice and
+Quot.sound allowed. All 9,123 frozen source/checker inputs, 1,136 reused
+checker-prefix outputs, and 9,089 source-verified incoming compiled modules
+retain their hashes. No full fresh repository source rebuild is claimed.
+Exact hashes, inherited import provenance and limits are recorded in
+nonlocal-sign-validation.json.
+
+
+## 2026-11-07 — Corrected Corollary 9(ii), actual full primitive
+
+The constructed full primitive's actual Frechet derivative is represented
+by the canonical-root-normalized whole-line physical discriminant gradient
+in every original complex Hilbert direction. Continuous periodic gradient
+representatives of that cotangent are unique pointwise, including every
+period seam. No formal-gradient identification is assumed.
+
+On one common open complex H0 neighborhood containing every real source,
+every pure T-even or T-odd source has a negation-invariant full spectral cut
+complement. Corrected Corollary9(ii) follows for the actual full primitive
+gradients at every spectral point in that complement, almost everywhere on
+the entire real spatial line. The scalar nonlocal integral multiplies J*phi
+and has a positive sign on the residual left side. Corollary9(i), full xi
+covariance and the remaining source claims stay open.
+
+Four new strict modules add 9 theorems and 2 definitions. The aggregate and
+both transitive audits pass: 13,271 article declarations and auxiliaries,
+and 76,517 combined NLS declarations, with only propext, Classical.choice
+and Quot.sound permitted. All 9,127 frozen inputs, 1,144 reused checker
+prefix outputs and 9,089 source-verified incoming compiled modules retain
+their hashes. Exact evidence is in primitive-nonlocal-validation.json.
+Whole-paper coverage remains in progress, with 110 assertion records and
+241 source passages; semantic decomposition is incomplete.
+
+
+## 2026-11-07 — Pointwise gradient/xi symmetries and full corrected Corollary 9
+
+Theorem6(iii) now has actual original complex H0 pointwise physical gradient
+P/T/arbitrary-phase identities at every real spatial point. All three xi
+symmetries hold on the entire real line, including every negative period and
+period seam. Together with the previously proved spatial equation, corrected
+minus-sign integral and periodicity, this completes corrected physical
+Theorem6(v) in the literal Section2 convention.
+
+Both corrected Corollary9 clauses now use the same actual full primitive and
+one common open complex H0 neighborhood containing every real source, on
+the entire moving cut complement. Their exact source constraints imply
+spectral negation invariance of that full domain. Every original Hilbert
+variation identifies the actual primitive gradient, without a formal-gradient
+assumption. The physical unit-interval full fundamental matrix symmetries
+also hold for all original complex H0 sources. All-real-x full matrix and
+Appendix operator-convention matching remain open.
+
+Eight strictly checked modules add 28 theorems and 6 definitions. The merged
+NLS aggregate and both transitive audits pass: 13,330 article declarations
+and auxiliaries, and 76,572 combined NLS declarations, allowing only propext,
+Classical.choice and Quot.sound. All 9,135 frozen inputs, 1,148 reused checker
+prefix outputs and 9,089 source-verified incoming compiled modules retain
+their hashes. Limits and linters are unchanged. Exact evidence is in
+pointwise-symmetry-validation.json; no full fresh repository rebuild is claimed.
+
+Ten complete source passages have explicit correspondence reviews. Eleven
+ledger locators formerly aimed at blank lines or metadata are corrected; all
+assertion locators are nonblank and page-correct. The ledger has 114 assertion
+records and retains all 241 source passages. Whole-paper semantic decomposition
+and proof coverage remain in progress.
+
+
+## 2026-11-07 — Complete corrected Theorem 6 and qualified Corollary 8
+
+The literal gap-segment and invariant-neighborhood interfaces complete the
+named Theorem6 in the Section2 convention, with the documented minus-sign
+xi correction. A compact-circle phase core is open; its zero connected
+component retains the whole connected real locus. It is invariant under
+P/T/all phases, fits inside any given open almost-real source neighborhood,
+and supports the actual root and full primitive differential together.
+
+Actual full primitive values have all three P/T/phase symmetries throughout
+the original complement of noncollapsed cuts, including every collapsed
+point. The full joint derivative, connected spectral fibers over the source
+neighborhood, and actual zero-source normalization fix the value constants.
+Density and spectral continuity fill all collapsed cuts. No value symmetry
+or logarithm branch is assumed.
+
+Corollary8's gradient identities are checked on the full open joint moving
+cut complement, in every original Hilbert direction with a unique continuous
+periodic physical representative. This source-domain qualification is
+explicit: at source0, lambda0=0 is in the larger filled spectral domain, but
+its fixed-lambda source slice is formally not a neighborhood of0. Small
+diagonal constants produce the obstructing actual central gaps. No blanket
+nondifferentiability or arbitrary gradient-extension assertion is made.
+
+Twelve new strict modules add 53 theorems and 5 definitions. The aggregate
+and both transitive audits pass: 13,404 article declarations and auxiliaries;
+76,641 combined NLS declarations. Only propext, Classical.choice and
+Quot.sound are allowed. All 9,147 frozen inputs, 1,156 reused checker-prefix
+outputs and 9,089 source-verified incoming compiled modules retain their
+hashes. No limits or linters changed and no full fresh repository rebuild
+is claimed. Exact evidence is in invariant-primitive-validation.json.
+
+Four further source passages have complete correspondence reviews. The
+ledger has 118 assertion records and all 241 source passages. Whole-paper
+semantic decomposition and proof coverage remain in progress; separately
+recorded printed proof intermediates, Lemmas2,3,10,13, Proposition11(iii)
+and remaining background claims still need work.
+
+
+## 2026-11-07 — Full real-line Lemma 13 and explicit operator convention adapter
+
+All full fundamental matrices have their actual P/T/arbitrary-phase
+identities at every real spatial point, including negative periods and every
+seam, on original complex H0 and hence original real-type H0. Exact invertible
+Floquet transport extends the actual unit-interval solutions. Literal J,
+half-phase and PJ/reflected-time/true-inverse-monodromy conjugacies, explicit
+entries and the reflected endpoint monodromy are checked without a smoothness
+or generic-entry assumption.
+
+The page5/Appendix upper-phi2 operator is exactly Section2 at P*phi, including
+its actual physical source fields. The fundamental matrix reflects lambda
+and conjugates by J; signed integer labels reverse n and swap +/- slots.
+Keeping the Section2 component order gives the printed Lemma13 matrices.
+Retaining the literal local Appendix operator instead gives the complete
+corrected inverse-phase form, with P/T unchanged. An actual original
+real-type H0 witness from smooth physical profile(1,1) at lambda0=0,x=1,
+alpha=pi/2 has upper-right monodromy+sinh(1); the printed positive phase
+predicts-sinh(1). Both interpretations and this obstruction are formally proved.
+
+Eight fresh strict modules add 41 theorems and 8 definitions. Aggregate
+compilation and both transitive audits pass: 13,481 article declarations
+and auxiliaries; 76,718 combined NLS declarations. Only propext,
+Classical.choice and Quot.sound are permitted. All 9,155 frozen inputs,
+1,168 reused checker-prefix outputs and 9,089 source-verified incoming
+compiled modules retain their hashes. Limits and linters are unchanged; no
+full fresh repository rebuild is claimed. Exact evidence is recorded in
+whole-line-matrix-validation.json.
+
+Three further complete mathematical passages and one bibliographic metadata
+passage have correspondence reviews. All 120 assertion records and 241
+source passages remain in the ledger. Whole-paper semantic decomposition
+and proof coverage remain in progress, including Lemmas2,3,10,
+Proposition11(iii), proof intermediates and remaining background claims.
+
+
+## 2026-11-07 — Independent physical matrices and arbitrary AC eigenfunctions
+
+The full literal Lemma2 physical matrix conjugacies now hold on every original
+complex period-one H1 source, every closed-unit point and nonzero parameter.
+The independently constructed Hill columns retain actual position/derivative
+initial data, AC position and derivative, the physical Miura equation AE and
+determinant one. Exact A entries, determinant=-2*lambda, invertibility iff
+lambda is nonzero and period-one dependence are checked.
+
+Scalar intertwining now covers arbitrary componentwise AC physical
+eigenfunctions, without a constructed-solution or periodic boundary hypothesis
+on f, and includes lambda=0. The vector second-derivative identity, literal
+transformed derivatives, actual Y=A*M and det(Y)=-2*lambda are proved. The Y
+paragraph scalar energy must be lambda^2, correcting the printed lambda.
+The standalone native interval H2-to-AC input-space bridge is explicitly
+pending; the entire named Lemma2 therefore retains partial status.
+
+Five new strict modules add 28 theorems and 6 definitions. Both transitive
+audits pass: 13,525 article declarations and auxiliaries, 76,762 combined NLS
+declarations. Only propext, Classical.choice and Quot.sound are permitted.
+All 9,160 frozen mathematical/checker inputs, 1,176 reused checker-prefix
+outputs and 9,089 source-verified incoming compiled modules retain their
+hashes. Limits and linters are unchanged; no fresh full repository rebuild
+is claimed. Evidence is in physical-miura-validation.json.
+
+Seven more complete source passages have correspondence reviews. All 123
+assertion records and 241 source passages remain in the ledger. Whole-paper
+semantic decomposition and proof coverage remain in progress.
+
+
+## 2026-11-07 — Full geometric multiplicities in Lemma 3
+
+The entire named Lemma3 is complete. An explicit linear equivalence compares
+the full original H1 Dirac eigenspace with the actual H2 Hill eigenspace.
+The weak Miura potential is identified with the unchanged actual L2 potential
+coefficient by coefficient; full H2 regularity proves surjectivity. Both
+geometric dimensions and the existence of two independent eigenfunctions
+are proved, without treating analytic zero orders as geometric multiplicities.
+
+The result holds for all complex H1 sources and nonzero frequencies. Strict
+positivity applies it at both real endpoints for every n>=1, including closed
+gaps and zero-mean sources. Existing exact ground, indexed squared endpoint,
+gap-image and collapse identities finish the statement. No zero-frequency
+eigenspace equivalence is asserted.
+
+Three strict modules add 10 theorems and 4 definitions. Both transitive
+audits pass: 13,558 article declarations and auxiliaries; 76,795 combined NLS
+declarations. Only propext, Classical.choice and Quot.sound are permitted.
+All 9,163 frozen inputs, 1,181 reused checker-prefix outputs and 9,089
+source-verified incoming compiled modules retain their hashes. Default limits
+and linters are unchanged; no fresh full repository rebuild is claimed.
+Evidence is in geometric-multiplicity-validation.json.
+
+Four additional complete source passages, including the entire Lemma3 proof,
+have correspondence reviews. The ledger retains all 124 assertion records
+and 241 source passages. Whole-paper semantic decomposition and proof coverage
+remain in progress; the completion gate still rejects 73 open assertions
+and 192 open passages.
+
+
+## 2026-11-07 — All-order smooth nonlocal Hamiltonian correction
+
+For every m>=1 and arbitrary smooth complex periodic profiles satisfying
+T*phi=+phi or T*phi=-phi, the actual Hamiltonian gradients obey
+R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1))
+at every real spatial point. The independently constructed Riccati resolvent
+fixes both the positive sign and the J*phi vector factor. Its scalar coupling
+has the proved actual derivative and genuine zero-initial integral, with the
+boundary value retained before reflection. Signed spatial jet reflection and
+simultaneous field negation prove c_even(0)=0 for both reflection signs.
+The physical gradients are identified by independent periodic variations.
+
+Six strict modules add 24 theorems and 4 definitions. The full original
+H^(2m-1) extension remains open; the named proposition stays partial. No
+original-domain source passage is marked complete from this smooth result.
+Both audits pass: 13,597 article declarations and auxiliaries; 76,832 combined
+NLS declarations. Only propext, Classical.choice and Quot.sound are permitted.
+All 9,169 frozen inputs, 1,184 reused checker-prefix outputs and 9,089
+source-verified incoming compiled modules retain their hashes. Default limits
+and linters are unchanged; no fresh full repository rebuild is claimed.
+Evidence is in smooth-nonlocal-validation.json.
+
+All 126 assertion records and 241 source passages remain in the ledger.
+Whole-paper semantic decomposition and proof coverage remain in progress.
+
+
+## 2026-11-07 — Full original-domain corrected Proposition 11
+
+The entire named Proposition11 is covered with the recorded corrections.
+Part(iii) holds for every m>=1 and original complex H^(2m-1) source under
+either T*phi=+phi or T*phi=-phi, as a genuine AE identity on the physical unit
+period: R*grad S_(2m)=D grad S_(2m-1)+2*i*(J*phi)*integral_0^x(R*phi dot grad S_(2m-1)).
+The upper gradient retains its actual original Fourier/L2 representative.
+The lower gradient has its proved continuous representative with exact
+coefficients, AC and actual spatial derivative AE. The primitive is the
+literal physical zero-initial integral.
+
+A bounded signed-reflection projection preserves the exact constraint
+through smooth approximation in the unchanged Sobolev norm. Bounded continuous
+fields, L2 top fields and true primitive operators pass the integral graph to
+every original nonsmooth input. Its closed derivative graph recovers AC and
+actual AE HasDerivAt. No extra smoothness, finite-gap, reality or component
+proportionality restriction is used.
+
+Ten strict modules add 39 theorems and 15 definitions. Both audits pass:
+13,691 article declarations and auxiliaries; 76,928 combined NLS declarations.
+Only propext, Classical.choice and Quot.sound are permitted. All 9,179 frozen
+inputs, 1,190 reused checker-prefix outputs and 9,089 source-verified incoming
+compiled modules retain their hashes. Default limits and linters are unchanged;
+no fresh full repository rebuild is claimed. Evidence is in
+sharp-nonlocal-validation.json.
+
+Five full source passages covering the entire named Proposition11 have
+correspondence reviews; its printed proof intermediates stay individually
+tracked. The ledger retains 128 assertions and all 241 source passages.
+Sixteen of eighteen named statements are covered with recorded corrections.
+Lemma2 native interval H2-to-AC bridge, full Lemma10 and remaining proof or
+background claims stay open. The completion gate still rejects 72 assertion
+records and 187 passages; whole-paper semantic decomposition and proof
+coverage remain in progress.
+
+
+## 2026-11-07 — Lemma 2 on the full weak interval H2 input domain
+
+The native interval input is the full weak H2 graph of actual Lebesgue L2
+classes for value and its two distributional derivatives. Only compact
+interior tests occur in its definition. A zero-mean test has a compact
+interior primitive; vanishing weak derivative implies constancy AE. Subtracting
+the actual weak-derivative integral constructs continuous AC representatives
+for both the value and its first derivative class. Continuous value
+representatives agree on the closed interval. No endpoint matching or
+periodicity is assumed. The original weak ZS eigen-equation transfers to
+that constructed physical representative, giving the scalar Miura equation
+at lambda^2 including lambda=0. The independently constructed physical
+matrix identities keep their necessary nonzero-lambda condition.
+
+Full named Lemma2 is now covered. Its printed proof energy and fundamental
+basis qualifications remain recorded corrections. Nine additional source
+passages have exact-domain correspondence reviews. Seventeen of eighteen
+named statements are covered; full Lemma10 and all other remaining claims
+stay open. The completion gate correctly rejects 69 assertion records and
+178 passages; semantic decomposition and whole-paper coverage remain in progress.
+
+Five modules add seven theorems, one definition and one weak-domain structure.
+Fresh strict compilation and both transitive audits pass: 13,724 article
+declarations/auxiliaries and 76,961 combined NLS declarations. All 9,184 frozen
+inputs, 1,200 reused checker-prefix outputs and 9,089 source-verified incoming
+compiled modules retain their hashes. Only propext, Classical.choice and
+Quot.sound are allowed. Default limits and linters are unchanged. This reuses
+validated dependencies and is not a fresh whole-repository source rebuild.
+Evidence: weak-interval-validation.json.
+
+
+## 2026-11-07 — Full Lemma 10(i) and local level-zero contour gradients
+
+Full Lemma10(i) holds on one P/T/all-phase invariant open connected
+neighborhood of the entire original real H0 locus. Every complex source in
+that neighborhood, signed mode, positive printed level and real phase is
+included. Natural r denotes printed level r+1. The actual unconjugated
+Frechet derivative has its unique continuous physical representative in every
+original Hilbert direction. Its endpoint traces match, and all P, pure T and
+phase identities hold pointwise on the closed physical period.
+
+Original isolating circles transport to the transformed source and opposite
+index, retaining strict separation from every other gap. Negation preserves
+orientation and contributes its derivative minus sign. Actual action value
+parities precede full complex differentiation. Banach-valued gradient contours
+commute with bounded rough L2 pairings. Single Fourier directions and physical
+uniqueness identify both pointwise gradient components.
+
+The level-zero issue has a proved local analytic construction: both original
+symmetry hypotheses force zero into the actual complex central gap. Every
+original circuit avoids zero; noncentral discs exclude it and the central
+disc encloses it. One actual circle defines analytic local full-primitive
+contours and continuous physical gradients at every integer Laurent level,
+including zero. This does not yet identify a globally patched indexed Laurent
+action or prove the spatial recurrences in parts(ii)-(iii). Both actual spatial
+gradient rows at arbitrary L2 potentials now have bounded Volterra/continuous-
+primitive graphs; the reconstruction lemma gives AC and the actual AE derivative.
+The contour interchange remains open.
+
+Separate source reviews also certify diagonal discriminant evenness and
+Eq(21), the actual physical Hill L2 discriminant at zero equal to 2*cosh of
+the literal mean, on the full original complex H1 domain. Four additional
+whole source passages are reviewed. The factor-free pure-T proof line has
+its correct replacement identity, but stays open without a separate formal
+nonzero-action counterexample; the simultaneous disk-family selection and
+shifted-index printed proof also remain individually open.
+
+Twelve strict modules add 45 theorems and twelve definitions. Both audits pass:
+13,812 article declarations/auxiliaries and 77,043 combined NLS declarations.
+All 9,196 frozen inputs, 1,205 reused checker-prefix outputs and 9,089
+source-verified incoming compiled modules retain their hashes. All 4,011
+prior audit scopes are preserved and 69 added, for 4,080 scopes in 74 blocks;
+each block is flattened exactly once and every new public declaration is
+required by name. Only propext, Classical.choice and Quot.sound are allowed.
+Default limits and linters are unchanged. The supported module-only commands
+compile each new module, NLS.lean and both auditors, with the exact full checker-module import union in the combined auditor directly, with
+isolated private outputs, while another worktree held the global lock for its
+public examples check. The queued full-audit invocation was canceled before
+compilation; no checker or lock rule was modified. This is not a fresh full repository
+source rebuild. Evidence: higher-action-symmetry-validation.json.
+
+Seventeen of eighteen named statements remain covered: full Lemma10(ii)-(iii)
+are still required. The ledger has 132 assertion records and all 241 source
+passages. Its completion gate correctly rejects 65 open assertion records
+and 174 open passages; semantic decomposition and whole-paper proof coverage
+remain in progress.

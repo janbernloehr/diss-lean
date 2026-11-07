@@ -1,0 +1,672 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "base_commit": "ca1c629faa62d3aea01c55e9a8a2053927cc718c",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "new_modules": [
+    "NLS/ZakharovShabat/ClassicalReciprocalScaling.lean",
+    "NLS/ZakharovShabat/SourceReciprocalScaling.lean",
+    "NLS/ZakharovShabat/SourceDiscriminantSpectralTransport.lean",
+    "NLS/ZakharovShabat/SourceMidpointSpectralData.lean",
+    "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean",
+    "NLS/ZakharovShabat/ClassicalNLSMidpointReflection.lean",
+    "NLS/Fourier/PeriodOneMidpointReflection.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyMidpointReflection.lean",
+    "NLS/Articles/MKdVNLSHierarchies/HierarchyReflection.lean",
+    "NLS/ZakharovShabat/DiscriminantGradientStateAlgebra.lean",
+    "NLS/ZakharovShabat/L2DiscriminantSpatialEquation.lean",
+    "NLS/ZakharovShabat/L2DiscriminantXiIntegral.lean",
+    "NLS/ZakharovShabat/DiscriminantFloquetAlgebra.lean",
+    "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean",
+    "NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean",
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantSpatialEquation.lean",
+    "NLS/Articles/MKdVNLSHierarchies/GenericEntryCorrection.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "def",
+      "name": "classicalReciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.classicalReciprocalScaling",
+      "file": "NLS/ZakharovShabat/ClassicalReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalReciprocalScaling_apply",
+      "qualified_name": "NLS.ZakharovShabat.classicalReciprocalScaling_apply",
+      "file": "NLS/ZakharovShabat/ClassicalReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalSolution_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.classicalSolution_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/ClassicalReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalFundamentalMatrix_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.classicalFundamentalMatrix_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/ClassicalReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiscriminant_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.classicalDiscriminant_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/ClassicalReciprocalScaling.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceReciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceReciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceReciprocalScaling_fst",
+      "qualified_name": "NLS.ZakharovShabat.sourceReciprocalScaling_fst",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceReciprocalScaling_snd",
+      "qualified_name": "NLS.ZakharovShabat.sourceReciprocalScaling_snd",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceReciprocalScaling_ofFinsupp",
+      "qualified_name": "NLS.ZakharovShabat.sourceReciprocalScaling_ofFinsupp",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finiteSourceCurve_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.finiteSourceCurve_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminant_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminant_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminant_deriv_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminant_deriv_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminantCotangent_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminantCotangent_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicSpectrum_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicSpectrum_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicMultiplicity_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicMultiplicity_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalPeriodicEndpoints_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceStandardRoot_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceStandardRoot_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalRoot_reciprocalScaling",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalRoot_reciprocalScaling",
+      "file": "NLS/ZakharovShabat/SourceReciprocalScaling.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicSpectrum_eq_of_discriminant_eq",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicSpectrum_eq_of_discriminant_eq",
+      "file": "NLS/ZakharovShabat/SourceDiscriminantSpectralTransport.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicMultiplicity_eq_of_discriminant_eq",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicMultiplicity_eq_of_discriminant_eq",
+      "file": "NLS/ZakharovShabat/SourceDiscriminantSpectralTransport.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalPeriodicEndpoints_eq_of_discriminant_eq",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_eq_of_discriminant_eq",
+      "file": "NLS/ZakharovShabat/SourceDiscriminantSpectralTransport.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceStandardRoot_eq_of_discriminant_eq",
+      "qualified_name": "NLS.ZakharovShabat.sourceStandardRoot_eq_of_discriminant_eq",
+      "file": "NLS/ZakharovShabat/SourceDiscriminantSpectralTransport.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalRoot_eq_of_discriminant_eq",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalRoot_eq_of_discriminant_eq",
+      "file": "NLS/ZakharovShabat/SourceDiscriminantSpectralTransport.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalPeriodicEndpoints_spatialReflection_complex",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_spatialReflection_complex",
+      "file": "NLS/ZakharovShabat/SourceMidpointSpectralData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalPeriodicEndpoints_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceMidpointSpectralData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalRoot_spatialReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalRoot_spatialReflection",
+      "file": "NLS/ZakharovShabat/SourceMidpointSpectralData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalRoot_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sourceCanonicalRoot_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceMidpointSpectralData.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourcePhaseRotation",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.sourcePhaseRotation",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePhaseRotation_fst",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.sourcePhaseRotation_fst",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePhaseRotation_snd",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.sourcePhaseRotation_snd",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_i_phase",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_i_phase",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_ii_phase",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_phase",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_iii_phase_covectors",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_phase_covectors",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_i_endpoint_labels",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_i_endpoint_labels",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_iv",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_iv",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsRiccatiDensity_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.nlsRiccatiDensity_midpointReflection",
+      "file": "NLS/ZakharovShabat/ClassicalNLSMidpointReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHamiltonian_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSHamiltonian_midpointReflection",
+      "file": "NLS/ZakharovShabat/ClassicalNLSMidpointReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneCoefficient_midpointReflection",
+      "qualified_name": "NLS.Fourier.periodOneCoefficient_midpointReflection",
+      "file": "NLS/Fourier/PeriodOneMidpointReflection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyMidpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyMidpointReflection",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyMidpointReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyMidpointReflection_apply",
+      "qualified_name": "NLS.ZakharovShabat.hierarchyMidpointReflection_apply",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyMidpointReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHamiltonian_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sobolevNLSHamiltonian_midpointReflection",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyMidpointReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_sobolevNLSHamiltonian_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_midpointReflection",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyMidpointReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyGradient_midpointReflection",
+      "qualified_name": "NLS.ZakharovShabat.sobolevNLSHierarchyGradient_midpointReflection",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyMidpointReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "proposition11_i_reflection_gradients",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.proposition11_i_reflection_gradients",
+      "file": "NLS/Articles/MKdVNLSHierarchies/HierarchyReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "proposition11_i",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.proposition11_i",
+      "file": "NLS/Articles/MKdVNLSHierarchies/HierarchyReflection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "discriminantGradientState",
+      "qualified_name": "NLS.ZakharovShabat.discriminantGradientState",
+      "file": "NLS/ZakharovShabat/DiscriminantGradientStateAlgebra.lean"
+    },
+    {
+      "kind": "def",
+      "name": "discriminantXiState",
+      "qualified_name": "NLS.ZakharovShabat.discriminantXiState",
+      "file": "NLS/ZakharovShabat/DiscriminantGradientStateAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_discriminantGradientState",
+      "qualified_name": "NLS.ZakharovShabat.hasDerivAt_discriminantGradientState",
+      "file": "NLS/ZakharovShabat/DiscriminantGradientStateAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_discriminantXiState",
+      "qualified_name": "NLS.ZakharovShabat.hasDerivAt_discriminantXiState",
+      "file": "NLS/ZakharovShabat/DiscriminantGradientStateAlgebra.lean"
+    },
+    {
+      "kind": "def",
+      "name": "l2DiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.l2DiscriminantXi",
+      "file": "NLS/ZakharovShabat/L2DiscriminantSpatialEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2DiscriminantGradient_eq_state",
+      "qualified_name": "NLS.ZakharovShabat.l2DiscriminantGradient_eq_state",
+      "file": "NLS/ZakharovShabat/L2DiscriminantSpatialEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_l2DiscriminantGradient",
+      "qualified_name": "NLS.ZakharovShabat.ae_hasDerivAt_l2DiscriminantGradient",
+      "file": "NLS/ZakharovShabat/L2DiscriminantSpatialEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_l2DiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.ae_hasDerivAt_l2DiscriminantXi",
+      "file": "NLS/ZakharovShabat/L2DiscriminantSpatialEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2DiscriminantXi_zero",
+      "qualified_name": "NLS.ZakharovShabat.l2DiscriminantXi_zero",
+      "file": "NLS/ZakharovShabat/L2DiscriminantSpatialEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "absolutelyContinuousOnInterval_l2DiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.absolutelyContinuousOnInterval_l2DiscriminantXi",
+      "file": "NLS/ZakharovShabat/L2DiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "intervalIntegrable_l2DiscriminantXi_derivative",
+      "qualified_name": "NLS.ZakharovShabat.intervalIntegrable_l2DiscriminantXi_derivative",
+      "file": "NLS/ZakharovShabat/L2DiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2DiscriminantXi_eq_integral",
+      "qualified_name": "NLS.ZakharovShabat.l2DiscriminantXi_eq_integral",
+      "file": "NLS/ZakharovShabat/L2DiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2DiscriminantXi_eq_R_integral",
+      "qualified_name": "NLS.ZakharovShabat.l2DiscriminantXi_eq_R_integral",
+      "file": "NLS/ZakharovShabat/L2DiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "def",
+      "name": "discriminantGradientMatrix",
+      "qualified_name": "NLS.ZakharovShabat.discriminantGradientMatrix",
+      "file": "NLS/ZakharovShabat/DiscriminantFloquetAlgebra.lean"
+    },
+    {
+      "kind": "def",
+      "name": "discriminantXiMatrix",
+      "qualified_name": "NLS.ZakharovShabat.discriminantXiMatrix",
+      "file": "NLS/ZakharovShabat/DiscriminantFloquetAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "discriminantGradientMatrix_mul",
+      "qualified_name": "NLS.ZakharovShabat.discriminantGradientMatrix_mul",
+      "file": "NLS/ZakharovShabat/DiscriminantFloquetAlgebra.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "discriminantXiMatrix_mul",
+      "qualified_name": "NLS.ZakharovShabat.discriminantXiMatrix_mul",
+      "file": "NLS/ZakharovShabat/DiscriminantFloquetAlgebra.lean"
+    },
+    {
+      "kind": "def",
+      "name": "l2WholeLineDiscriminantGradient",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineDiscriminantGradient",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "l2WholeLineDiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineDiscriminantXi",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineDiscriminantGradient_eq_state",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_eq_state",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineDiscriminantXi_eq_state",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineDiscriminantXi_eq_state",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineDiscriminantGradient_on_unit",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineDiscriminantGradient_on_unit",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodic_l2WholeLineDiscriminantGradient",
+      "qualified_name": "NLS.ZakharovShabat.periodic_l2WholeLineDiscriminantGradient",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodic_l2WholeLineDiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.periodic_l2WholeLineDiscriminantXi",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_l2WholeLineDiscriminantGradient",
+      "qualified_name": "NLS.ZakharovShabat.continuous_l2WholeLineDiscriminantGradient",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_l2WholeLineDiscriminantGradient",
+      "qualified_name": "NLS.ZakharovShabat.ae_hasDerivAt_l2WholeLineDiscriminantGradient",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_l2WholeLineDiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.ae_hasDerivAt_l2WholeLineDiscriminantXi",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "absolutelyContinuousOnInterval_l2WholeLineDiscriminantXi",
+      "qualified_name": "NLS.ZakharovShabat.absolutelyContinuousOnInterval_l2WholeLineDiscriminantXi",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "intervalIntegrable_l2WholeLineDiscriminantXi_derivative",
+      "qualified_name": "NLS.ZakharovShabat.intervalIntegrable_l2WholeLineDiscriminantXi_derivative",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineDiscriminantXi_zero",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineDiscriminantXi_zero",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineDiscriminantXi_eq_integral",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineDiscriminantXi_eq_integral",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2WholeLineDiscriminantXi_eq_R_integral",
+      "qualified_name": "NLS.ZakharovShabat.l2WholeLineDiscriminantXi_eq_R_integral",
+      "file": "NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_v_physical_gradient_agreement",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_gradient_agreement",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantSpatialEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_v_physical_periodicity",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_periodicity",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantSpatialEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_v_physical_spatial_equation",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_spatial_equation",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantSpatialEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_v_physical_scalar_integral",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_v_physical_scalar_integral",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantSpatialEquation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "lowerTriangularPotential",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lowerTriangularPotential",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GenericEntryCorrection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lowerTriangular_second_column",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lowerTriangular_second_column",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GenericEntryCorrection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lowerTriangular_upper_entry_identically_zero",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lowerTriangular_upper_entry_identically_zero",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GenericEntryCorrection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "printed_generic_entry_criterion_false",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.printed_generic_entry_criterion_false",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GenericEntryCorrection.lean"
+    }
+  ],
+  "new_theorems": 73,
+  "new_definitions": 12,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "ELAN_HOME and PATH use pinned tooling; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/ZakharovShabat/ClassicalReciprocalScaling.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/ZakharovShabat/ClassicalReciprocalScaling.lean",
+    "NLS/ZakharovShabat/SourceReciprocalScaling.lean",
+    "NLS/ZakharovShabat/SourceDiscriminantSpectralTransport.lean",
+    "NLS/ZakharovShabat/SourceMidpointSpectralData.lean",
+    "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean",
+    "NLS/ZakharovShabat/ClassicalNLSMidpointReflection.lean",
+    "NLS/Fourier/PeriodOneMidpointReflection.lean",
+    "NLS/ZakharovShabat/SobolevHierarchyMidpointReflection.lean",
+    "NLS/Articles/MKdVNLSHierarchies/HierarchyReflection.lean",
+    "NLS/ZakharovShabat/DiscriminantGradientStateAlgebra.lean",
+    "NLS/ZakharovShabat/L2DiscriminantSpatialEquation.lean",
+    "NLS/ZakharovShabat/L2DiscriminantXiIntegral.lean",
+    "NLS/ZakharovShabat/DiscriminantFloquetAlgebra.lean",
+    "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean",
+    "NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean",
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantSpatialEquation.lean",
+    "NLS/Articles/MKdVNLSHierarchies/GenericEntryCorrection.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1136,
+  "article_transitive_axiom_declarations": 9923,
+  "combined_NLS_transitive_axiom_declarations": 61420,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 59,
+    "old_scopes_preserved": 3498,
+    "added_blocks": 2,
+    "added_scopes": 102,
+    "total_scopes": 3600,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 7239,
+    "scope": "All current NLS/**/*.lean, NLS.lean, scripts/check_mkdv_nls.py, scripts/CheckMKdVNLSHierarchiesAxioms.lean and scripts/CheckAxioms.lean. All unchanged after validation.",
+    "source_map_digest_sha256": "96ab5c990010539bc346a775e338010e2422ce153f3c93f816a21dd7594c1a4d",
+    "private_manifest": "work/symmetry-validation-inputs.json",
+    "private_manifest_sha256": "6bb4c16763a5b8d8ad72dcd921ea2e2e60774151540509f91ed8c03789514b5f",
+    "reused_checker_prefix_outputs": 1119,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/ZakharovShabat/ClassicalReciprocalScaling.lean": "32b350ee378645d10cdc148e60d787228389fa487bd91cacd76cb96fb90a422c",
+    "NLS/ZakharovShabat/SourceReciprocalScaling.lean": "ec2b28a954651f13710a62631ba959b67efd305e77cfbff16f902719c2e200b7",
+    "NLS/ZakharovShabat/SourceDiscriminantSpectralTransport.lean": "850df2fa236dbe67310ed84d79272ef675cf7fd7c2295f28a313a44368addc1e",
+    "NLS/ZakharovShabat/SourceMidpointSpectralData.lean": "872758e63393ee9041f9cc5a60a877f4177ce90e62daa43efebec182d8599fa7",
+    "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean": "63b294100f78a59694cc4f42d954ec9e0e3801ea0d0a7365ca7e99d02f1ef87d",
+    "NLS/ZakharovShabat/ClassicalNLSMidpointReflection.lean": "c0a390c5c30060fffc1d653371d2c1da81308fd612a140d3ddcd543ee82da5d8",
+    "NLS/Fourier/PeriodOneMidpointReflection.lean": "952bcabdbeac7744880267b9b52b8c1dead3c02be368c537235415fa1a344778",
+    "NLS/ZakharovShabat/SobolevHierarchyMidpointReflection.lean": "29bf55d60db018de98439d0a4d456e5e2c51c7697f1569a664b434f76548eb95",
+    "NLS/Articles/MKdVNLSHierarchies/HierarchyReflection.lean": "26b3a4a2055b9c6f5b7f3824d68b30e91a58afcef77ac659d7488d4ce1b18578",
+    "NLS/ZakharovShabat/DiscriminantGradientStateAlgebra.lean": "2083594a5d1daf5d7dfb4bf1f4427d4d11bb14c1da09d681969791d79edd2ae4",
+    "NLS/ZakharovShabat/L2DiscriminantSpatialEquation.lean": "b6dfb4a263af7bc3922a81cfba39b5e2496b450ef0f18ea3f58589b05addef8a",
+    "NLS/ZakharovShabat/L2DiscriminantXiIntegral.lean": "c9abc368f80565680ebae98774bf2fc70934c4e4940d7a321d0a3e8bfca58e79",
+    "NLS/ZakharovShabat/DiscriminantFloquetAlgebra.lean": "6edd23d5878376c31ad1ed1c42e97f7c3d3cda808ba45b4a22c9ea7345bd0835",
+    "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean": "c984f85188ae15766d569b92ed1a587cbbf62fbfef23b0396295fb6654c467a8",
+    "NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean": "137d9a55c40a98096cbc09eb40369ceac0d7b577910dc64e37c3cebff9f26030",
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantSpatialEquation.lean": "fa2f5e42a1ae79287dd479511917f23293f5d9509bb00d932e971796168403b1",
+    "NLS/Articles/MKdVNLSHierarchies/GenericEntryCorrection.lean": "b4089653b61a0e655aac861e3c8322835f82431b61d72a2b2eaf889de4a0ccbf",
+    "NLS.lean": "ee07f34b3890f83615f6e6e677c84bacd4a6c3f00af970d66a9746b30846f223",
+    "scripts/check_mkdv_nls.py": "80388382e2dcbcc8104dfc1e967339e13b4fd432f48dc56f10672e97ffeb0b55",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "9a653ee17ab39d9d6fa6982b1abc24d524a6f42fc24811e881ea8fec8e35c5ba",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/ZakharovShabat/ClassicalReciprocalScaling.lean": "1682b542ac6375132a2204ed3d61cf2ceea072958f3ef85bf6a3386e3f2ebdf8",
+    "NLS/ZakharovShabat/SourceReciprocalScaling.lean": "e9018b23d5a8df5bb05c3954993642507b7f9af1907952f1d97ebff88af9c152",
+    "NLS/ZakharovShabat/SourceDiscriminantSpectralTransport.lean": "56932089fced68287102d1613a417caf09972708060a7da3e76a6e45c66c4d8c",
+    "NLS/ZakharovShabat/SourceMidpointSpectralData.lean": "77e06068474adc45a4c8dd65a12585fe41d43fb2063fccfa79695ca5c0690aa8",
+    "NLS/Articles/MKdVNLSHierarchies/FullSpectralSymmetries.lean": "8179ddd95734567778928a15bd937e6ef9eb9319bbce139fa71ab67b1455d3e5",
+    "NLS/ZakharovShabat/ClassicalNLSMidpointReflection.lean": "81950f5f0e981d51c20ab4fff8786595f3d587200512a99853b79b533e837367",
+    "NLS/Fourier/PeriodOneMidpointReflection.lean": "631f1fda71559557d54b915a18929e1ad2c5471844b9f7cf2b668db957e38195",
+    "NLS/ZakharovShabat/SobolevHierarchyMidpointReflection.lean": "6f5c5914a533055c83dc6e555c0c74d10b6cb16fb82b99786d5e6c38d8237e16",
+    "NLS/Articles/MKdVNLSHierarchies/HierarchyReflection.lean": "1b531b88a96575c273bf12a920ed38012ee8beb41864dd17cae63fb9d285d9a3",
+    "NLS/ZakharovShabat/DiscriminantGradientStateAlgebra.lean": "5d8040818d773f82199617a715f7ee28442e585426f9921dd354c0c6eebb60b3",
+    "NLS/ZakharovShabat/L2DiscriminantSpatialEquation.lean": "f7591e4f22ad0bbad968ed560ea49387601da3dc3f87648c1ee1c615950a0597",
+    "NLS/ZakharovShabat/L2DiscriminantXiIntegral.lean": "03ca71484ba8d8a0ff7eeac4479b168dc975e75d98d3dc4fe4d5398ae0540982",
+    "NLS/ZakharovShabat/DiscriminantFloquetAlgebra.lean": "9aed283e944639d784c5f08ee449d9b960bc6eb61ad241776d25319e65b07dae",
+    "NLS/ZakharovShabat/L2WholeLineDiscriminantGradient.lean": "8b421a211a743a0d38397c816a24e2039873bacc95f9e68f55b0c5708128359f",
+    "NLS/ZakharovShabat/L2WholeLineDiscriminantXiIntegral.lean": "2f6cc52d4354a1ed9edc412742a305bc5b4898ee8e40c9ed7b21f30d4ebf3463",
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantSpatialEquation.lean": "88cf5f319c0d11b45b46353622f0343efbef21cced7242b1ca358c8ecdf82b19",
+    "NLS/Articles/MKdVNLSHierarchies/GenericEntryCorrection.lean": "0b90e2f04824fa06149742cb7d4b1e36c47748c21359a6a6417076ff1c3b0c11"
+  },
+  "previous_validated_imports": "full-paper-validation.json",
+  "validation_scope": "Fresh strict compilation of all 17 new modules and the combined aggregate; targeted and combined transitive axiom audits. All 1,119 reused checker-prefix output hashes are unchanged. Existing imports retain the source-hash-verified provenance recorded in full-paper-validation.json. This is not a fresh full source rebuild of the repository.",
+  "aggregate_name_collision_resolution": {
+    "existing": "NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_spatialReflection, real-type source theorem in SourceReflectionSymmetry.lean",
+    "new": "NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_spatialReflection_complex, all complex sources, proved from the actual discriminant identity",
+    "existing_declaration_modified": false
+  },
+  "proof_scope": {
+    "completed_clauses": [
+      "Proposition11(i): all original-domain P/T/phase actual L2-gradient identities.",
+      "Theorem6(ii): all actual spectral-derivative identities.",
+      "Theorem6(iv): all normalized canonical-root identities."
+    ],
+    "other_progress": [
+      "All arbitrary real phase discriminant and cotangent identities and all signed endpoint slots, via nonzero complex reciprocal ODE gauges and Fourier density.",
+      "Original physical L2 gradient spatial equation and scalar transport at all real spatial points, with genuine absolute continuity, exact normalized integral and period-one Floquet invariance.",
+      "Nonzero smooth H1 complex lower triangular counterexample to the unrestricted generic upper-right monodromy-entry criterion."
+    ],
+    "not_claimed": [
+      "Full Theorem6: pointwise gradient covariance correspondence, invariant W/gap-segment interfaces, xi covariance and source nonlocal sign comparison remain open.",
+      "The physical formula has xi=delta-2*i*integral(R*phi dot grad Delta), while the printed statement has plus. No complete corrected-source clause or printed-statement counterexample is claimed for that sign yet.",
+      "Whole-paper passage decomposition and all background claims remain in progress."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "assertion_records": 106,
+    "source_passages": 241,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f"
+}

@@ -1,0 +1,282 @@
+{
+  "date": "2026-11-06",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "base_commit": "a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "scope": "New original-domain P/T discriminant and cotangent identities, scalar NLS normalization corrections, Cartesian correction and the real-slice identity principle. Whole-paper coverage remains in progress.",
+  "toolchain": "Lean 4.33.1",
+  "lean_options": {
+    "autoImplicit": false,
+    "warningAsError": true,
+    "limits": "default"
+  },
+  "new_modules": [
+    "NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean",
+    "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+    "NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean",
+    "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "theorem",
+      "name": "classicalNLSVectorField_focusing",
+      "file": "NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSVectorField_focusing"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSVectorField_focusing_realForm",
+      "file": "NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSVectorField_focusing_realForm"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSVectorField_defocusing_constant_one",
+      "file": "NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSVectorField_defocusing_constant_one"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSVectorField_focusing_constant_one",
+      "file": "NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean",
+      "qualified_name": "NLS.ZakharovShabat.classicalNLSVectorField_focusing_constant_one"
+    },
+    {
+      "kind": "theorem",
+      "name": "introduction_defocusing_NLS_reduction",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.introduction_defocusing_NLS_reduction"
+    },
+    {
+      "kind": "theorem",
+      "name": "introduction_focusing_NLS_reduction",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.introduction_focusing_NLS_reduction"
+    },
+    {
+      "kind": "theorem",
+      "name": "introduction_defocusing_cubic_coefficient_one_false",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.introduction_defocusing_cubic_coefficient_one_false"
+    },
+    {
+      "kind": "theorem",
+      "name": "introduction_focusing_cubic_coefficient_one_false",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.introduction_focusing_cubic_coefficient_one_false"
+    },
+    {
+      "kind": "theorem",
+      "name": "introduction_mKdV_cartesian_equations",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.introduction_mKdV_cartesian_equations"
+    },
+    {
+      "kind": "theorem",
+      "name": "introduction_mKdV_action_preserved",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.introduction_mKdV_action_preserved"
+    },
+    {
+      "kind": "theorem",
+      "name": "introduction_printed_cartesian_second_equation_false",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.introduction_printed_cartesian_second_equation_false"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma14",
+      "file": "NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma14"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma14_of_real_point",
+      "file": "NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma14_of_real_point"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma14_real_slice_hypothesis_needed",
+      "file": "NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma14_real_slice_hypothesis_needed"
+    },
+    {
+      "kind": "def",
+      "name": "sourceMidpointReflection",
+      "file": "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "qualified_name": "NLS.ZakharovShabat.sourceMidpointReflection"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceMidpointReflection_fst",
+      "file": "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "qualified_name": "NLS.ZakharovShabat.sourceMidpointReflection_fst"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceMidpointReflection_snd",
+      "file": "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "qualified_name": "NLS.ZakharovShabat.sourceMidpointReflection_snd"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceMidpointReflection_involutive",
+      "file": "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "qualified_name": "NLS.ZakharovShabat.sourceMidpointReflection_involutive"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminant_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminant_midpointReflection"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminant_deriv_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminant_deriv_midpointReflection"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminantCotangent_of_linear_symmetry",
+      "file": "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminantCotangent_of_linear_symmetry"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminantCotangent_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminantCotangent_componentSwap"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminantCotangent_midpointReflection",
+      "file": "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+      "qualified_name": "NLS.ZakharovShabat.sourceDiscriminantCotangent_midpointReflection"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_i_swap",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_i_swap"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_i_reflection",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_i_reflection"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_ii_swap",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_swap"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_ii_reflection",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_ii_reflection"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_iii_swap_covectors",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_swap_covectors"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem6_iii_reflection_covectors",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.theorem6_iii_reflection_covectors"
+    }
+  ],
+  "new_theorems": 28,
+  "new_definitions": 1,
+  "strict_command": "ELAN_HOME and PATH use the pinned toolchain; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean",
+  "exit_code": 0,
+  "checker_literal_module_count": 1119,
+  "fresh_compilation": [
+    "NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean",
+    "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean",
+    "NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean",
+    "NLS/ZakharovShabat/SourceMidpointReflection.lean",
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean",
+    "NLS.lean"
+  ],
+  "article_transitive_axiom_declarations": 9799,
+  "combined_NLS_transitive_axiom_declarations": 61298,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "old_audit_blocks_preserved": 58,
+  "new_audit_blocks": 1,
+  "new_audit_scopes": 34,
+  "total_audit_scopes": 3498,
+  "validation_scope": "Fresh strict compilation of the five new source modules and the entire combined aggregate; targeted and combined transitive axiom audits. Existing sources use compiled imports after source-hash verification against the validated incoming-main checkout. This is not a fresh source rebuild of the entire repository.",
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-estimates/outputs/diss-lean",
+    "head": "a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa",
+    "validated_source_modules": 3060,
+    "validation_report": "coverage/articles/kdv-estimates/merge-validation.json",
+    "validation_report_sha256": "70512572dd4e72c8cc66fee4d0dff42123799835878e829ce6a905bac98c7041",
+    "private_provenance_manifest": "work/full-paper-incoming-cache-provenance.json",
+    "manifest_sha256": "805e000948fa1feb3fc552db9f9dc84e19fc2731d6d157823c2828f7b22e5eed",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently."
+  },
+  "frozen_inputs": {
+    "count": 7222,
+    "scope": "All current NLS/**/*.lean, NLS.lean, scripts/check_mkdv_nls.py, scripts/CheckMKdVNLSHierarchiesAxioms.lean and scripts/CheckAxioms.lean. All unchanged after validation.",
+    "source_map_digest_sha256": "d7764a35173cf69471e4e551f80c2e7760d8d533f45fb66fdbc12eb8aaac5753",
+    "private_manifest": "work/full-paper-validation-inputs.json",
+    "private_manifest_sha256": "b2d003e41654badef37792704a5f74e9691731c6493a65bb7845b02ea71465e8",
+    "reused_checker_prefix_outputs": 1114,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean": "88d301ff6543f2cd8f429f684cb8e27ce8e5896f953fb6b7c36e7eb09f5036fd",
+    "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean": "a82d26268b2be66ea774c692bb1eefa46a21288d02af50cc0b8a65ffbe88bb0b",
+    "NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean": "d40bcdbbb007f23d434854c0905bc8444309d39c7695a2b5820a8025a24e1e0a",
+    "NLS/ZakharovShabat/SourceMidpointReflection.lean": "499edc7b1f9a83369049af7c3f49ecb0c7e496066b3c7304b4d055ef455750a0",
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean": "c8c300002b0eaa3a594b7ab4c63ee9a8d4a3ba205be330cef214c77eb78d4c16",
+    "NLS.lean": "a9d2400d96c19539598ed310ae2d020873a49e06323479670d95e2e545f70081",
+    "scripts/check_mkdv_nls.py": "ed8c28ce9dd8c23dff3dfbd349e563e763d35515a501cfac1a99440ee69f0596",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "cdf9b43ab308fd971e0ac4fafe5cb5d87dfa3b20d9f1be993df1256e5a914793",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/ZakharovShabat/ClassicalNLSFocusingReduction.lean": "4f74e03b85dba396d23ef48823fbbd85012c43ca05d3a01d57fdf9f15eba07b7",
+    "NLS/Articles/MKdVNLSHierarchies/IntroductionCorrections.lean": "68def9ab112b1f7ad209af8837144de5b44fb3fbdf75c09e5457a871c44765e8",
+    "NLS/Articles/MKdVNLSHierarchies/AnalyticIdentity.lean": "0233ca2160582fe95fb64121f3fc1985c6209d903e97ff8c3bbf529b94922441",
+    "NLS/ZakharovShabat/SourceMidpointReflection.lean": "28b2a5e69b5a395ec8f3154ad5ea72023388a2d2839dc537858aa81e3414acae",
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantReflectionSymmetries.lean": "c850dd78f932af4d4b8cd9ab9cd54d31d2204e51ccb4a5a77f031cc20b5d9b25"
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "initial_semantic_assertions": 98,
+    "exhaustive_passages": 241,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false,
+    "completion_gate_negative_check": {
+      "command": "python3 scripts/check_mkdv_nls_coverage.py --require-complete",
+      "exit_code": 2,
+      "expected_rejection": true,
+      "open_assertion_records": 85,
+      "open_passages": 221
+    }
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_additional_mathlib_import": {
+    "source": "Mathlib/LinearAlgebra/Lagrange.lean",
+    "source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+    "private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f"
+  }
+}

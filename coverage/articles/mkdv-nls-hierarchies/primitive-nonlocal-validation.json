@@ -1,0 +1,175 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "article_parent": "46f31b5471eb7bffcbac544ba50aefedb0458e6b",
+  "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "new_modules": [
+    "NLS/ZakharovShabat/L2PhysicalGradientUniqueness.lean",
+    "NLS/ZakharovShabat/L2FullAbelianGradient.lean",
+    "NLS/ZakharovShabat/SourceReflectionCutDomain.lean",
+    "NLS/Articles/MKdVNLSHierarchies/PrimitiveNonlocalReflection.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "theorem",
+      "name": "eq_of_continuous_periodic_physical_L2_pairings",
+      "qualified_name": "NLS.ZakharovShabat.eq_of_continuous_periodic_physical_L2_pairings",
+      "file": "NLS/ZakharovShabat/L2PhysicalGradientUniqueness.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceFullAbelianPhysicalGradient",
+      "qualified_name": "NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient",
+      "file": "NLS/ZakharovShabat/L2FullAbelianGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_sourceFullAbelianPhysicalGradient",
+      "qualified_name": "NLS.ZakharovShabat.continuous_sourceFullAbelianPhysicalGradient",
+      "file": "NLS/ZakharovShabat/L2FullAbelianGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodic_sourceFullAbelianPhysicalGradient",
+      "qualified_name": "NLS.ZakharovShabat.periodic_sourceFullAbelianPhysicalGradient",
+      "file": "NLS/ZakharovShabat/L2FullAbelianGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFullAbelianPrimitive_fderiv_eq_physical_integral",
+      "qualified_name": "NLS.ZakharovShabat.sourceFullAbelianPrimitive_fderiv_eq_physical_integral",
+      "file": "NLS/ZakharovShabat/L2FullAbelianGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFullAbelianPhysicalGradient_unique",
+      "qualified_name": "NLS.ZakharovShabat.sourceFullAbelianPhysicalGradient_unique",
+      "file": "NLS/ZakharovShabat/L2FullAbelianGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicReflection_of_midpoint_even_or_odd",
+      "qualified_name": "NLS.ZakharovShabat.sourcePeriodicReflection_of_midpoint_even_or_odd",
+      "file": "NLS/ZakharovShabat/SourceReflectionCutDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "source_midpoint_even_or_odd_neg_mem_rootDomain_iff",
+      "qualified_name": "NLS.ZakharovShabat.source_midpoint_even_or_odd_neg_mem_rootDomain_iff",
+      "file": "NLS/ZakharovShabat/SourceReflectionCutDomain.lean"
+    },
+    {
+      "kind": "def",
+      "name": "primitiveNonlocalResidual",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.primitiveNonlocalResidual",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PrimitiveNonlocalReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitiveNonlocalResidual_eq_normalized",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.primitiveNonlocalResidual_eq_normalized",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PrimitiveNonlocalReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_corollary9_ii_corrected",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.exists_corollary9_ii_corrected",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PrimitiveNonlocalReflection.lean"
+    }
+  ],
+  "new_theorems": 9,
+  "new_definitions": 2,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "ELAN_HOME and PATH use pinned tooling; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/ZakharovShabat/L2PhysicalGradientUniqueness.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/ZakharovShabat/L2PhysicalGradientUniqueness.lean",
+    "NLS/ZakharovShabat/L2FullAbelianGradient.lean",
+    "NLS/ZakharovShabat/SourceReflectionCutDomain.lean",
+    "NLS/Articles/MKdVNLSHierarchies/PrimitiveNonlocalReflection.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1148,
+  "article_transitive_axiom_declarations": 13271,
+  "combined_NLS_transitive_axiom_declarations": 76517,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 62,
+    "old_scopes_preserved": 3659,
+    "added_blocks": 1,
+    "added_scopes": 15,
+    "total_scopes": 3674,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 9127,
+    "scope": "All current NLS/**/*.lean, NLS.lean and the article/combined checkers. All unchanged after validation.",
+    "source_map_digest_sha256": "e360377529e4e0937ed3d4751d20bcef1fb525ba65f34619416c553b01c34efe",
+    "private_manifest": "work/primitive-nonlocal-validation-inputs.json",
+    "private_manifest_sha256": "24716269cfddba1ef783657867a865f64649544f232446b4c9277afcd7484d60",
+    "reused_checker_prefix_outputs": 1144,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/ZakharovShabat/L2PhysicalGradientUniqueness.lean": "196cab8fcf9758f101f043ec0d49d0fd649b93ee9cfb154dffdb92a55c279d01",
+    "NLS/ZakharovShabat/L2FullAbelianGradient.lean": "817f587b477db71b7db89957a2891c15b4458eb634d5cea3831efe1eda70c5c6",
+    "NLS/ZakharovShabat/SourceReflectionCutDomain.lean": "9ce008bbe63bb165b2f6f2a645bc2c02870969ba521bca1bc66689cf83046440",
+    "NLS/Articles/MKdVNLSHierarchies/PrimitiveNonlocalReflection.lean": "0544acf0bd3834d9e4abf263125cd160ab5f449e757b93929ae353ceff935874",
+    "NLS.lean": "d73aa9b366f5596c2fd70057685394ab3883e914acb85574339642c75a57cf5a",
+    "scripts/check_mkdv_nls.py": "b6ec3837c6412a14939999fcaaaa01b9c19a44fec2b3bf8e94e906071c36b979",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "69018cc08bdbc2e51707dc111325fca4273e0d7bc162a32ca5dda0f502fe0625",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/ZakharovShabat/L2PhysicalGradientUniqueness.lean": "fe40996cfc5e309ccce6ed66b82eff4587b6ca190abf5fa12d707055b0c4d7eb",
+    "NLS/ZakharovShabat/L2FullAbelianGradient.lean": "9608ede47fb3c041b045ad8472f0ae273dfaa8dd004f3403b375479708d2e68f",
+    "NLS/ZakharovShabat/SourceReflectionCutDomain.lean": "c68fcf3c342c6b846b40a4531132447386d926ac9d6274cbc56c985aae029bc7",
+    "NLS/Articles/MKdVNLSHierarchies/PrimitiveNonlocalReflection.lean": "6ae22ba7e56f330767782db64c2f74f66bd6756b649255c36a7d12863ca7e924"
+  },
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "head": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "validated_source_modules": 9089,
+    "validation_report": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation_report_sha256": "6f9f2757468d008417280b5ce7ec68fceff49a1447bba886ff79dadbe7a80742",
+    "private_provenance_manifest": "work/nonlocal-incoming-cache-provenance.json",
+    "manifest_sha256": "7eff8b2f05f21402a7391c21f401cc5f5145c6a70503fd11d62e5737d4a95dc2",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently.",
+    "all_source_and_output_hashes_rechecked_after_validation": true
+  },
+  "validation_scope": "Fresh strict compilation of all four new modules and the combined aggregate; targeted and combined transitive audits. All 1,144 reused checker-prefix outputs and all 9,089 source-verified incoming compiled modules retain their hashes. This is not a fresh full repository source rebuild.",
+  "proof_scope": {
+    "completed_clause": "Corrected Corollary9(ii) for the actual full primitive, with the typed +2*i*J*phi nonlocal residual and the necessary spectral cut-domain restriction.",
+    "domain": "One common open complex original H0 neighborhood contains every real source. Every pure T-even or T-odd source in it, every spectral point off all moving cuts, and almost every spatial point on the whole real line.",
+    "actual_primitive_interface": "The constructed full primitive derivative is represented in every original Hilbert direction by G/root, uniquely among continuous periodic physical representatives. No primitive-gradient assumption is added to the final existence theorem.",
+    "not_claimed": [
+      "Corollary9(i), complete xi covariance, full Theorem6, all-real-x Appendix fundamental-matrix source matching or the p5/Appendix operator adapter.",
+      "Whole-paper semantic decomposition or full proof coverage."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "assertion_records": 110,
+    "source_passages": 241,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f",
+  "previous_validated_progress": "nonlocal-sign-validation.json"
+}

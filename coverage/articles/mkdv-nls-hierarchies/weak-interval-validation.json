@@ -1,0 +1,187 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "article_parent": "205bab51a7a8f91275684f68456be4da2fc5dd13",
+  "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "new_modules": [
+    "NLS/FunctionalAnalysis/CompactUnitIntervalPrimitive.lean",
+    "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalConstant.lean",
+    "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalAC.lean",
+    "NLS/Fourier/WeakIntervalH2.lean",
+    "NLS/Articles/MKdVNLSHierarchies/WeakIntervalMiura.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "theorem",
+      "name": "exists_compact_unitInterval_primitive",
+      "qualified_name": "NLS.FunctionalAnalysis.exists_compact_unitInterval_primitive",
+      "file": "NLS/FunctionalAnalysis/CompactUnitIntervalPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_eq_const_on_unitInterval_of_weak_derivative_zero",
+      "qualified_name": "NLS.FunctionalAnalysis.ae_eq_const_on_unitInterval_of_weak_derivative_zero",
+      "file": "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalConstant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "HasUnitIntervalWeakDerivative",
+      "qualified_name": "NLS.FunctionalAnalysis.HasUnitIntervalWeakDerivative",
+      "file": "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalAC.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_unitInterval_ac_of_weak_derivative",
+      "qualified_name": "NLS.FunctionalAnalysis.exists_unitInterval_ac_of_weak_derivative",
+      "file": "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalAC.lean"
+    },
+    {
+      "kind": "structure",
+      "name": "WeakIntervalH2",
+      "qualified_name": "NLS.Fourier.WeakIntervalH2",
+      "file": "NLS/Fourier/WeakIntervalH2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "WeakIntervalH2.exists_ac_representative",
+      "qualified_name": "NLS.Fourier.WeakIntervalH2.exists_ac_representative",
+      "file": "NLS/Fourier/WeakIntervalH2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "WeakIntervalH2.exists_ac_derivative_representative",
+      "qualified_name": "NLS.Fourier.WeakIntervalH2.exists_ac_derivative_representative",
+      "file": "NLS/Fourier/WeakIntervalH2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "WeakIntervalH2.continuous_representative_unique",
+      "qualified_name": "NLS.Fourier.WeakIntervalH2.continuous_representative_unique",
+      "file": "NLS/Fourier/WeakIntervalH2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_weak_intervalH2",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_weak_intervalH2",
+      "file": "NLS/Articles/MKdVNLSHierarchies/WeakIntervalMiura.lean"
+    }
+  ],
+  "new_theorems": 7,
+  "new_definitions": 1,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "ELAN_HOME and PATH use pinned tooling; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/FunctionalAnalysis/CompactUnitIntervalPrimitive.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/FunctionalAnalysis/CompactUnitIntervalPrimitive.lean",
+    "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalConstant.lean",
+    "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalAC.lean",
+    "NLS/Fourier/WeakIntervalH2.lean",
+    "NLS/Articles/MKdVNLSHierarchies/WeakIntervalMiura.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1205,
+  "article_transitive_axiom_declarations": 13724,
+  "combined_NLS_transitive_axiom_declarations": 76961,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 71,
+    "old_scopes_preserved": 3997,
+    "added_blocks": 1,
+    "added_scopes": 14,
+    "total_scopes": 4011,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 9184,
+    "scope": "All current NLS/**/*.lean, NLS.lean and the article/combined checkers. All unchanged after validation.",
+    "source_map_digest_sha256": "c34a8cf46d81363c9b8b89a9b64ee46948479ff1457b9cb596f975f5cb97fe5d",
+    "private_manifest": "work/weak-interval-validation-inputs.json",
+    "private_manifest_sha256": "e8d2d29c003a8c010dafcf9ac57b854f39f309e1e499de6c11cd61024871cd26",
+    "reused_checker_prefix_outputs": 1200,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/FunctionalAnalysis/CompactUnitIntervalPrimitive.lean": "c6fbe7498a5d2410625e3256836e834cf5e46d12eab2cff81e0ef204514e1ea4",
+    "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalConstant.lean": "e4f7890f61bced1d0ef8482a284d15fe39497ef0ea3eb2cb6f7f54a7bb1f8264",
+    "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalAC.lean": "c766f26c4e6c33c5bba61be2c2fe05cf0c861e268cd51150306833d5068505f5",
+    "NLS/Fourier/WeakIntervalH2.lean": "0e7c01cd6716e4aa958fe8394adf3bf43d350cf27bde9739958241fa48142d6c",
+    "NLS/Articles/MKdVNLSHierarchies/WeakIntervalMiura.lean": "7b83a5bf067c1a33184539506042afcc09a8dea5b78fdf7075f98977d9904054",
+    "NLS.lean": "61c19271a22ce6328141ac086cf327bce158470ec83f5fc3b38bd8773fc0f466",
+    "scripts/check_mkdv_nls.py": "0e437d7e31d1b8a4f921e1d8c8e61028c89cf63219c1b190aa23ed9f8acdabcb",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "10958850305dbc9c87d7244ead4a468d336908712142c161047ed66479bdcf71",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/FunctionalAnalysis/CompactUnitIntervalPrimitive.lean": "dbea9e4fa3d05e6a776a66b8ce2bf911fb55c44cc2af3c2ae1940de5d1f98962",
+    "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalConstant.lean": "2fd3ec98a11fdbfe31700898ac8613d0a23569c498d83bee9af645b804745410",
+    "NLS/FunctionalAnalysis/WeakDerivativeUnitIntervalAC.lean": "7159c3e80a143fe3d6a36494951f7261fabb58ddeacfc2439106950858f0e006",
+    "NLS/Fourier/WeakIntervalH2.lean": "7250858efb43585fc52764b5e09bc3742a23850b04efa6337df50800aa74145a",
+    "NLS/Articles/MKdVNLSHierarchies/WeakIntervalMiura.lean": "63df42a1c898901e1f88a4e49f0ac160031729ac8a654378467aa8ad23f56008"
+  },
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "head": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "validated_source_modules": 9089,
+    "validation_report": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation_report_sha256": "6f9f2757468d008417280b5ce7ec68fceff49a1447bba886ff79dadbe7a80742",
+    "private_provenance_manifest": "work/nonlocal-incoming-cache-provenance.json",
+    "manifest_sha256": "7eff8b2f05f21402a7391c21f401cc5f5145c6a70503fd11d62e5737d4a95dc2",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently.",
+    "all_source_and_output_hashes_rechecked_after_validation": true
+  },
+  "validation_scope": "Fresh strict compilation of all five new modules and the combined aggregate; targeted and combined transitive audits. All 1,200 reused checker-prefix outputs and all 9,089 source-verified incoming compiled modules retain their hashes. This is not a fresh full repository source rebuild.",
+  "proof_scope": {
+    "completed_statement": "Full named Lemma2, including the arbitrary weak interval H2 input bridge without endpoint conditions; scalar equation at lambda^2 includes lambda=0. Existing independently constructed physical matrix clauses retain lambda nonzero.",
+    "method": "A compact interior zero-mean test has a compact interior primitive. Vanishing weak derivative implies constancy AE. Subtracting the actual weak-derivative integral then constructs continuous AC representatives of the value and first derivative classes of the full L2 weak H2 graph. Continuous value representatives are unique on the closed interval. Transfer the original weak ZS eigen-equation to its constructed physical representative, then apply the actual Miura factorization.",
+    "not_claimed": [
+      "Full Lemma10, including complex higher-action gradient contour transport and the lower-level-zero case.",
+      "Other separately recorded printed proof intermediates, independent cross-mode Cartesian canonicity or every background assertion.",
+      "Whole-paper semantic decomposition or full proof coverage."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "named_statements_covered_with_recorded_corrections": 17,
+    "numbered_equations": 25,
+    "assertion_records": 128,
+    "source_passages": 241,
+    "new_complete_source_passages_reviewed": 9,
+    "source_passages_reviewed": [
+      "passage-109",
+      "passage-110",
+      "passage-111",
+      "passage-112",
+      "passage-113",
+      "passage-115",
+      "passage-117",
+      "passage-120",
+      "passage-122"
+    ],
+    "all_assertion_line_locators_nonblank_and_page_correct": true,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false,
+    "completion_gate": {
+      "exit_code": 2,
+      "open_assertion_records": 69,
+      "open_source_passages": 178
+    }
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f",
+  "previous_validated_progress": "sharp-nonlocal-validation.json",
+  "new_structures": 1
+}
