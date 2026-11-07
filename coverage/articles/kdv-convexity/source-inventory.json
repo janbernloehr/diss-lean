@@ -2917,8 +2917,9 @@
       ],
       "declaration": "NLS.Articles.KdVConvexity.theorem_1_1_corrected",
       "statement_record": "NLS.Articles.KdVConvexity.Theorem11PhysicalData",
-      "source_qualification": "The printed preamble equation (1.7), locally uniform O(1) on one common complex ell^(-1,1) neighborhood, is false for the actual physical frequencies. Coordinatewise analyticity and physical recovery on one common domain are proved without it; the estimate negation is also proved.",
-      "all_components_jointly_realized": "NLS.Articles.KdVConvexity.Theorem11PhysicalData"
+      "source_qualification": "Preamble (1.7) overstates [15]: its Theorem 1.9 (p.332) proves common-domain scalar analyticity in Hminus1; Remark 1.10 (p.333) recalls an L2 uniform o(1) estimate. The complex ell^(-1,1) local-uniform O(1) estimate is formally refuted and excluded. All displayed main Theorem 1.1 conclusions are retained.",
+      "all_components_jointly_realized": "NLS.Articles.KdVConvexity.Theorem11PhysicalData",
+      "reference_check": "reference_15_frequency_estimate_check"
     },
     {
       "label": "Theorem 1.2",
@@ -3381,7 +3382,7 @@
       "classical_solution_convention": "Continuous H4 trajectory with its actual H1 time derivative equal to the literal conservative KdV vector. No Birkhoff or phase condition occurs in the definition. Arbitrary smooth data have globally smooth spatial representatives and the literal physical time PDE in the uniform norm; all such strong classical curves are uniquely recovered."
     }
   ],
-  "completion_status": "partial_verification_actual_high_energy_pairs_multiplicities_trace_levels_and_analytic_symmetric_data_proved",
+  "completion_status": "main_theorems_verified_with_recorded_Theorem_1_1_source_correction",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean",
   "branch": "articles/kdv-convexity",
   "global_extension_progress": {
@@ -6254,10 +6255,21 @@
       "derivative_lower_bound_declaration": "NLS.Articles.KdVConvexity.physical_base_frequency_derivative_norm_lower_bound",
       "exact_norm_lower_bound": "norm(d(omega_n)(0)) >= 6*(1+n), with raw unit action norm exactly 1/(1+n).",
       "quantifiers": "No N and M give one neighborhood of zero on which all n>=N satisfy norm(omega_n(a)-8*pi^3*n^3)<=M. Only coordinatewise analyticity and physical recovery on the full original positive action cone are assumed.",
-      "main_theorem_impact": "The coordinatewise V0 construction remains open. O(1) is not an admissible construction target; no substitute upper bound is proved here. The global physical Hilbert extension, Taylor operator and local consequences remain proved.",
+      "main_theorem_impact": "The common coordinatewise analytic base family is constructed unconditionally by nonempty_basePhysicalFrequencyExtension. theorem_1_1_corrected proves every main Hamiltonian, Hilbert frequency, inverse and concavity conclusion for the same extension, excluding only the refuted preamble uniform base estimate. The external upper estimates remain bibliographic evidence, not newly formalized results.",
       "external_corroboration": "Kappeler-Molnar, Ann. I. H. Poincare AN 35 (2018), Corollary 1.5(ii), printed p.104, explicitly rules out O(1) already below H^(-1/2). External results are not imported as Lean axioms.",
       "external_source_url": "https://ems.press/content/serial-article-files/16625#page=4",
-      "correction_report": "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md"
+      "correction_report": "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md",
+      "reference_check": "reference_15_frequency_estimate_check",
+      "original_reference_locations": [
+        "[15], Theorem 1.9, printed p.332",
+        "[15], Remark 1.10, printed p.333"
+      ],
+      "genuine_uniform_estimate_locations": [
+        "Baettig-Kappeler-Mityagin (1997), Theorem 1, printed p.2",
+        "Theorem 3.5, printed p.24",
+        "equation (3.41), printed p.27"
+      ],
+      "topology_distinction": "The common scalar analytic extension uses Hminus1 topology; the genuine o(1) uniform estimate uses the stronger L2 topology, corresponding to ell^(1,1) rather than ell^(-1,1) actions."
     }
   ],
   "analytic_weighted_frequency_moment_progress": {
@@ -6478,9 +6490,10 @@
   },
   "current_main_theorem_status": {
     "Theorem_1_1": "verified_with_explicit_source_correction_to_preamble_1_7",
-    "Theorem_1_2": "not_verified",
-    "Theorem_1_3": "not_verified",
-    "all_main_theorems_complete": false
+    "Theorem_1_2": "verified",
+    "Theorem_1_3": "verified",
+    "all_main_theorems_complete": true,
+    "qualification": "Theorem 1.1 retains its documented necessary correction to preamble (1.7)."
   },
   "fourier_Lebesgue_Miura_progress": {
     "status": "actual_Fourier_Lebesgue_Miura_preparation_proved_and_strictly_validated",
@@ -6829,5 +6842,57 @@
       "NOT_used_as_an_unproved_axiom": true
     },
     "classical_solution_convention": "Continuous H4 trajectory with its actual H1 time derivative equal to the literal conservative KdV vector. No Birkhoff or phase condition occurs in the definition. Arbitrary smooth data have globally smooth spatial representatives and the literal physical time PDE in the uniform norm; all such strong classical curves are uniquely recovered."
+  },
+  "reference_15_frequency_estimate_check": {
+    "checked_date": "2026-11-07",
+    "convexity_source": {
+      "version": "1502.05857v1 pinned PDF",
+      "printed_page": 3,
+      "equation": "(1.7)",
+      "pdf_sha256": "38ee7f287ee8b790b794865accc8ad51d1083e414b82a73c4a543147a7ec4688",
+      "visually_verified_O_of_one": true,
+      "assertion": "omega_n - (2*pi*n)^3 = O(1), locally uniformly on a complex-open neighborhood of the nonnegative ell^(-1,1) action cone."
+    },
+    "original_reference_15": {
+      "citation": "Kappeler and Topalov, Global wellposedness of KdV in Hminus1(T,R), Duke Math. J. 135(2) (2006), 327-360",
+      "doi": "10.1215/S0012-7094-06-13524-X",
+      "author_uploaded_full_text": "https://www.researchgate.net/publication/278194325_Global_wellposedness_of_KdV_in_H-1TR",
+      "Theorem_1_9_page_332": "One common complex-open W in mean-zero Hminus1 contains the entire real space; each fixed scalar frequency extends analytically to W. No uniform-in-frequency-index asymptotic estimate is asserted.",
+      "Remark_1_10_page_333": "Local boundedness of the imaginary frequency sequence on W is explicitly described as unknown. The remark recalls omega_k=(2*pi*k)^3+o(1) on complex neighborhoods in L2, referring to [1], Theorem 3.5; the corresponding o(1) question at negative Sobolev regularity was described as unknown.",
+      "Lemma_3_2_pages_345_346": "The frequency index k is fixed. Uniformity in the auxiliary summation index l in the period estimates is not uniformity in k."
+    },
+    "earlier_L2_estimate": {
+      "citation": "Baettig, Kappeler and Mityagin, Pacific J. Math. 181(1) (1997), 1-55",
+      "url": "https://msp.org/pjm/1997/181-1/pjm-v181-n1-p01-s.pdf",
+      "locations": [
+        "Theorem 1, printed p.2",
+        "Theorem 3.5, printed p.24",
+        "equation (3.41), printed p.27"
+      ],
+      "quantifiers": "For each real mean-zero L2 potential q0 there exists an L2-complex neighborhood U_q0 on which omega_n-(2*pi*n)^3=o(1) uniformly in q. This is L2 local uniformity, not Hminus1 local uniformity.",
+      "title": "On the Korteweg-de Vries equation: Frequencies and initial value problem",
+      "doi": "10.2140/pjm.1997.181.1"
+    },
+    "later_confirmation": {
+      "citation": "Kappeler and Molnar, Ann. I.H. Poincare AN 35 (2018), 101-160",
+      "url": "https://ems.press/content/serial-article-files/16625",
+      "location": "Corollary 1.5(i)-(iii), printed p.104 (PDF p.4); proof printed pp.128-129 (PDF pp.28-29)",
+      "estimate": "omega_n-(2*pi*n)^3=o(n^(-2*s-1)) for -1<=s<0, and O(n^(-1)) for s=0. Locally uniform in the stated Sobolev topology.",
+      "sharpness": "The O(1) estimate does not hold locally uniformly on real H^s_0 for -1<s<-1/2. At s=-1 the displayed remainder is o(n).",
+      "doi": "10.1016/j.anihpc.2017.03.003"
+    },
+    "conclusion": "The printed attribution of (1.7) to [15] is unsupported and overstates that reference. The genuine o(1) estimate recalled in [15] concerns the stronger L2 topology. There is no evidence here of an alternative topology convention in [15] rescuing the printed ell^(-1,1) claim. Conflation of these two results is a possible explanation, not established authorial intent.",
+    "impact_on_formalization": "The existing corrected Theorem 1.1 and formal negation of local complex-base uniform boundedness are unchanged. The later real-topology sharpness statement is bibliographic evidence, not claimed as newly formalized.",
+    "report": "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md",
+    "topology_distinction": {
+      "original_extension": "Common complex-open W in mean-zero Hminus1; every fixed scalar frequency analytic; no frequency-index-uniform bound asserted.",
+      "genuine_uniform_estimate": "L2-complex neighborhoods, with a common o(1) remainder there.",
+      "action_regularities": {
+        "L2_0": "ell^(1,1)_+",
+        "Hminus1_0": "ell^(-1,1)_+"
+      },
+      "regularity_reference": "[15], Theorem 1.7, printed pp.331-332; raw actions (x_n^2+y_n^2)/2.",
+      "unsupported_transfer": "L2 local uniformity does not imply Hminus1 local uniformity or a bound on a complex ell^(-1,1) action neighborhood."
+    }
   }
 }

@@ -6336,9 +6336,10 @@
     "NLS/ZakharovShabat/SourceZeroGapMassEstimate.lean": "6b656c4b26c06b37ec752562aa81be67147fba7d3dd14cb254afd3090a3484d3",
     "NLS/ZakharovShabat/SpectralModulation.lean": "796f8382a49703dd1a3139dfd7b799d762217d71a2134f13d56ff9787e53be0e",
     "SOURCE_ERRATA.md": "c02f42ab011aaf7d1100ffb55af859ecdb448a1d8dc6db5f0b0326ebe6ad06e9",
-    "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md": "cdf1e80388bb3e0824a36caac1289a95048c5660c5245b76f45f4802cf6b893b",
+    "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md": "7b2032c8736cc8e87df0b45d8187b2476e58598ee2b00444c4481a0a47c43e83",
     "coverage/articles/kdv-convexity/CheckAxioms.lean": "47a1810febc4ceeea928dfc64158c912f8100c2bc794a30d65d7dfd091b5872b",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
+    "coverage/articles/kdv-convexity/README.md": "90872c51e12c317ac897124d85c3bf99604693fb6abc7130aba84c4ca8b9a0ff",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/action-sequence-library-reuse.json": "9126c713dd2dbd5eb3b1d902df1cea7bdd35cbbd75a6ee13e21fd9d7fd49827e",
     "coverage/articles/kdv-convexity/band-primitive-shared-imports.json": "ee14ececa4bebbb805a8d49836d86e72ab62e34a26910f7886d91d931b485ef1",
@@ -6379,10 +6380,10 @@
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
     "coverage/articles/kdv-convexity/sobolev-energy-library-reuse.json": "a5a808fd7bbc87f3979d3c913affabdb3f9550a4c3d997d63b578ef57aa7f4c7",
+    "coverage/articles/kdv-convexity/source-inventory.json": "43c64732c1f8100d5573f485912c9ae6731876e901be7bef7faa4a1b81fd8245",
     "coverage/articles/kdv-convexity/theorem11-library-reuse.json": "c9b9d87827af9a6bdd4a8462fcd25d60b4c5a890071445f5deb3e708db6dc0c3",
     "coverage/articles/kdv-convexity/weighted-moment-library-reuse.json": "7b806d2adc490c00a195c620583f8c723ae6469c3a8b614fa356d0c8b81f3605",
-    "scripts/check-kdv-convexity.sh": "a971fd0b99232252ed6a603a2107979b52f91510cb0610e9bf102157292fb85b",
-    "coverage/articles/kdv-convexity/README.md": "b3af01bc5d75939a2c414d12e1d8c57b1cac8d411d2fc886ac7397595286ce4d"
+    "scripts/check-kdv-convexity.sh": "a971fd0b99232252ed6a603a2107979b52f91510cb0610e9bf102157292fb85b"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
   "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/classical-kdv-audit.log",
@@ -9776,10 +9777,21 @@
       "derivative_lower_bound_declaration": "NLS.Articles.KdVConvexity.physical_base_frequency_derivative_norm_lower_bound",
       "exact_norm_lower_bound": "norm(d(omega_n)(0)) >= 6*(1+n), with raw unit action norm exactly 1/(1+n).",
       "quantifiers": "No N and M give one neighborhood of zero on which all n>=N satisfy norm(omega_n(a)-8*pi^3*n^3)<=M. Only coordinatewise analyticity and physical recovery on the full original positive action cone are assumed.",
-      "main_theorem_impact": "The coordinatewise V0 construction remains open. O(1) is not an admissible construction target; no substitute upper bound is proved here. The global physical Hilbert extension, Taylor operator and local consequences remain proved.",
+      "main_theorem_impact": "The common coordinatewise analytic base family is constructed unconditionally by nonempty_basePhysicalFrequencyExtension. theorem_1_1_corrected proves every main Hamiltonian, Hilbert frequency, inverse and concavity conclusion for the same extension, excluding only the refuted preamble uniform base estimate. The external upper estimates remain bibliographic evidence, not newly formalized results.",
       "external_corroboration": "Kappeler-Molnar, Ann. I. H. Poincare AN 35 (2018), Corollary 1.5(ii), printed p.104, explicitly rules out O(1) already below H^(-1/2). External results are not imported as Lean axioms.",
       "external_source_url": "https://ems.press/content/serial-article-files/16625#page=4",
-      "correction_report": "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md"
+      "correction_report": "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md",
+      "reference_check": "reference_15_frequency_estimate_check",
+      "original_reference_locations": [
+        "[15], Theorem 1.9, printed p.332",
+        "[15], Remark 1.10, printed p.333"
+      ],
+      "genuine_uniform_estimate_locations": [
+        "Baettig-Kappeler-Mityagin (1997), Theorem 1, printed p.2",
+        "Theorem 3.5, printed p.24",
+        "equation (3.41), printed p.27"
+      ],
+      "topology_distinction": "The common scalar analytic extension uses Hminus1 topology; the genuine o(1) uniform estimate uses the stronger L2 topology, corresponding to ell^(1,1) rather than ell^(-1,1) actions."
     }
   ],
   "printed_equation_1_7_locally_uniform_O1_base_frequency_bound_refuted": true,
@@ -10015,9 +10027,10 @@
   "historical_limitations_preserved_in_parent_commit": true,
   "current_main_theorem_status": {
     "Theorem_1_1": "verified_with_explicit_source_correction_to_preamble_1_7",
-    "Theorem_1_2": "not_verified",
-    "Theorem_1_3": "not_verified",
-    "all_main_theorems_complete": false
+    "Theorem_1_2": "verified",
+    "Theorem_1_3": "verified",
+    "all_main_theorems_complete": true,
+    "qualification": "Theorem 1.1 retains its documented necessary correction to preamble (1.7)."
   },
   "fourier_Lebesgue_Miura_progress": {
     "status": "actual_Fourier_Lebesgue_Miura_preparation_proved_and_strictly_validated",
@@ -10374,5 +10387,72 @@
     },
     "classical_solution_convention": "Continuous H4 trajectory with its actual H1 time derivative equal to the literal conservative KdV vector. No Birkhoff or phase condition occurs in the definition. Arbitrary smooth data have globally smooth spatial representatives and the literal physical time PDE in the uniform norm; all such strong classical curves are uniquely recovered."
   },
-  "main_theorems_verification_qualification": "Theorem 1.1 is verified with its explicitly recorded necessary source correction; Theorems 1.2 and 1.3 are verified as stated. The false locally-uniform common-complex-base interpretation of source preamble (1.7) is excluded and formally refuted."
+  "main_theorems_verification_qualification": "Theorem 1.1 is verified with its explicitly recorded necessary source correction; Theorems 1.2 and 1.3 are verified as stated. The false locally-uniform common-complex-base interpretation of source preamble (1.7) is excluded and formally refuted.",
+  "reference_15_frequency_estimate_check": {
+    "checked_date": "2026-11-07",
+    "convexity_source": {
+      "version": "1502.05857v1 pinned PDF",
+      "printed_page": 3,
+      "equation": "(1.7)",
+      "pdf_sha256": "38ee7f287ee8b790b794865accc8ad51d1083e414b82a73c4a543147a7ec4688",
+      "visually_verified_O_of_one": true,
+      "assertion": "omega_n - (2*pi*n)^3 = O(1), locally uniformly on a complex-open neighborhood of the nonnegative ell^(-1,1) action cone."
+    },
+    "original_reference_15": {
+      "citation": "Kappeler and Topalov, Global wellposedness of KdV in Hminus1(T,R), Duke Math. J. 135(2) (2006), 327-360",
+      "doi": "10.1215/S0012-7094-06-13524-X",
+      "author_uploaded_full_text": "https://www.researchgate.net/publication/278194325_Global_wellposedness_of_KdV_in_H-1TR",
+      "Theorem_1_9_page_332": "One common complex-open W in mean-zero Hminus1 contains the entire real space; each fixed scalar frequency extends analytically to W. No uniform-in-frequency-index asymptotic estimate is asserted.",
+      "Remark_1_10_page_333": "Local boundedness of the imaginary frequency sequence on W is explicitly described as unknown. The remark recalls omega_k=(2*pi*k)^3+o(1) on complex neighborhoods in L2, referring to [1], Theorem 3.5; the corresponding o(1) question at negative Sobolev regularity was described as unknown.",
+      "Lemma_3_2_pages_345_346": "The frequency index k is fixed. Uniformity in the auxiliary summation index l in the period estimates is not uniformity in k."
+    },
+    "earlier_L2_estimate": {
+      "citation": "Baettig, Kappeler and Mityagin, Pacific J. Math. 181(1) (1997), 1-55",
+      "url": "https://msp.org/pjm/1997/181-1/pjm-v181-n1-p01-s.pdf",
+      "locations": [
+        "Theorem 1, printed p.2",
+        "Theorem 3.5, printed p.24",
+        "equation (3.41), printed p.27"
+      ],
+      "quantifiers": "For each real mean-zero L2 potential q0 there exists an L2-complex neighborhood U_q0 on which omega_n-(2*pi*n)^3=o(1) uniformly in q. This is L2 local uniformity, not Hminus1 local uniformity.",
+      "title": "On the Korteweg-de Vries equation: Frequencies and initial value problem",
+      "doi": "10.2140/pjm.1997.181.1"
+    },
+    "later_confirmation": {
+      "citation": "Kappeler and Molnar, Ann. I.H. Poincare AN 35 (2018), 101-160",
+      "url": "https://ems.press/content/serial-article-files/16625",
+      "location": "Corollary 1.5(i)-(iii), printed p.104 (PDF p.4); proof printed pp.128-129 (PDF pp.28-29)",
+      "estimate": "omega_n-(2*pi*n)^3=o(n^(-2*s-1)) for -1<=s<0, and O(n^(-1)) for s=0. Locally uniform in the stated Sobolev topology.",
+      "sharpness": "The O(1) estimate does not hold locally uniformly on real H^s_0 for -1<s<-1/2. At s=-1 the displayed remainder is o(n).",
+      "doi": "10.1016/j.anihpc.2017.03.003"
+    },
+    "conclusion": "The printed attribution of (1.7) to [15] is unsupported and overstates that reference. The genuine o(1) estimate recalled in [15] concerns the stronger L2 topology. There is no evidence here of an alternative topology convention in [15] rescuing the printed ell^(-1,1) claim. Conflation of these two results is a possible explanation, not established authorial intent.",
+    "impact_on_formalization": "The existing corrected Theorem 1.1 and formal negation of local complex-base uniform boundedness are unchanged. The later real-topology sharpness statement is bibliographic evidence, not claimed as newly formalized.",
+    "report": "coverage/articles/kdv-convexity/BASE_FREQUENCY_CORRECTION.md",
+    "topology_distinction": {
+      "original_extension": "Common complex-open W in mean-zero Hminus1; every fixed scalar frequency analytic; no frequency-index-uniform bound asserted.",
+      "genuine_uniform_estimate": "L2-complex neighborhoods, with a common o(1) remainder there.",
+      "action_regularities": {
+        "L2_0": "ell^(1,1)_+",
+        "Hminus1_0": "ell^(-1,1)_+"
+      },
+      "regularity_reference": "[15], Theorem 1.7, printed pp.331-332; raw actions (x_n^2+y_n^2)/2.",
+      "unsupported_transfer": "L2 local uniformity does not imply Hminus1 local uniformity or a bound on a complex ell^(-1,1) action neighborhood."
+    }
+  },
+  "documentation_update": {
+    "date": "2026-11-07",
+    "kind": "reference_15_check_and_coverage_status_reconciliation",
+    "validated_proof_commit": "fbb4fcf990aaf73a1e24831f0cb3551ee3100b4a",
+    "Lean_sources_changed": false,
+    "new_Lean_build_or_axiom_audit_run": false,
+    "retained_axiom_audit_declarations": 20335,
+    "retained_focused_module_count": 2654,
+    "checks": [
+      "Every baseline focused Lean source is byte-identical to the validated proof commit.",
+      "Existing validation hashes checked before editing; updated documentation hashes checked afterwards.",
+      "JSON parses, theorem-status consistency, exact citation locations and relative Markdown links checked.",
+      "git diff --check passes."
+    ]
+  }
 }

@@ -93,11 +93,39 @@ All boundary points and collapsed actions belong to the positive quadrant.
 
 See `source-inventory.json` for statement domains, quantifiers and pages.
 
+## Reference [15], equation (1.7), and the topology distinction
+
+The attribution in preamble (1.7), printed p. 3, overstates reference [15].
+Kappeler–Topalov, *Duke Math. J.* 135(2) (2006), **Theorem 1.9, p. 332**,
+proves scalar analyticity of every fixed frequency on one common complex
+Hminus1 neighborhood. **Remark 1.10, p. 333**, explicitly leaves local
+boundedness of the imaginary frequency sequence unresolved. Its recalled
+uniform `omega_n-(2*pi*n)^3=o(1)` estimate concerns complex **L2** neighborhoods.
+[Author-uploaded original reference](https://www.researchgate.net/publication/278194325_Global_wellposedness_of_KdV_in_H-1TR).
+
+That L2 result is Bättig–Kappeler–Mityagin (1997), **Theorem 1, p. 2**, and
+**Theorem 3.5, p. 24**; see also **equation (3.41), p. 27** in the
+[publisher PDF](https://msp.org/pjm/1997/181-1/pjm-v181-n1-p01-s.pdf).
+The Birkhoff weights translate L2 regularity to `ell^(1,1)_+` actions and
+Hminus1 regularity to `ell^(-1,1)_+` actions; local uniformity in the stronger
+norm does not supply a bound on a neighborhood in the weaker norm.
+
+Kappeler–Molnar (2018), **Corollary 1.5, p. 104**, gives the remainder
+`o(n^(-2*s-1))` on H^s for -1<=s<0 and `O(n^-1)` at s=0, and explicitly
+rules out a locally uniform `O(1)` bound for -1<s<-1/2; the proof is on
+**pp. 128–129**. [Statement](https://ems.press/content/serial-article-files/16625#page=4),
+[proof](https://ems.press/content/serial-article-files/16625#page=28).
+These are bibliographic findings, not newly formalized upper bounds.
+The existing corrected theorem and Lean negation are unchanged. Possible
+conflation of the Hminus1 extension with the L2 estimate is an inference,
+not established authorial intent. Full citations, exact quantifiers and
+the correction's scope are in [the reference and correction report](BASE_FREQUENCY_CORRECTION.md).
+
 ## Main theorem coverage
 
 | Statement | Required content | Status |
 | --- | --- | --- |
-| Theorem 1.1, pp. 3–4 | A complex open extension around the entire nonnegative ell2 action quadrant; physical energy/frequency identities; gradient zero and full derivative -6*Id; analytic local inverse; one-radius Hessian bound for every real ell2 direction. | **Verified with explicit source correction** by `theorem_1_1_corrected` / `Theorem11PhysicalData`. All components hold jointly for the same physical extension. The preamble uniform O(1) estimate (1.7) is refuted and excluded. |
+| Theorem 1.1, pp. 3–4 | A complex open extension around the entire nonnegative ell2 action quadrant; physical energy/frequency identities; gradient zero and full derivative -6*Id; analytic local inverse; one-radius Hessian bound for every real ell2 direction. | **Verified with explicit source correction** by `theorem_1_1_corrected` / `Theorem11PhysicalData`. All components hold jointly for the same physical extension. The preamble uniform O(1) estimate (1.7) is refuted and excluded; [the reference check](BASE_FREQUENCY_CORRECTION.md) distinguishes the original Hminus1 extension from the genuine L2 uniform estimate. |
 | Theorem 1.2, p. 4 | For each -1/2<=s<=0 and finite p>=2, the same global H^-1 physical KdV Birkhoff map restricts to a real analytic diffeomorphism L_0^(s,p) -> ell_0^(s+1/2,p). | Verified by `theorem_1_2` and `theorem_1_2_global_native_analytic_diffeomorphism`: native real analyticity in BOTH original norms, full global bijection, BOTH fixed rough diagrams and all signed inverse coefficients. |
 | Theorem 1.3, p. 5 | Global C0 well-posedness of physical KdV on every such real Fourier-Lebesgue space, with the solution notion referenced by the paper. | Proved by `theorem_1_3 : Nonempty Theorem13PhysicalData`: exact article orders and finite exponents, actual classical PDE recovery, unique universal classical-limit solutions, native continuous complete trajectories and the same weak Hminus1 evolution. |
 
