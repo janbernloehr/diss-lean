@@ -1,5 +1,5 @@
 {
-  "status": "passed; partial full-paper coverage milestone",
+  "status": "passed; complete numbered-result coverage with explicit corrections",
   "validated_on": "2026-11-07",
   "baseline_head": "69dc5a6c2f9d6bafaf84730c98014c0d4f7f2e9a",
   "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -686,10 +686,10 @@
   "remarks": 6,
   "numbered_status_counts": {
     "proved": 46,
-    "proved_corrected": 6,
-    "partial": 2
+    "proved_corrected": 8
   },
-  "all_numbered_results_proved": false,
+  "all_numbered_results_proved": true,
+  "completion_basis": "All 54 numbered items are covered: 46 proved source matches and 8 explicitly corrected source matches. This completion includes the selected corrections; it does not assert the false printed statements. Original excerpts, statement hashes and checked counterexamples are retained.",
   "source_corrections": {
     "1.4": "retain the previously documented s+1/2 codomain correction",
     "2.15": "retract prior correction claim; PDF already puts beta outside parentheses",
@@ -698,8 +698,8 @@
     "Remark 1.5 comparison": "Retract invented noncompactness obligation absent from the source; literal torus/boundedness/lower-topology statement is proved.",
     "Remark 2.3 comparison": "Retract unrelated weighted ell-two requirement; actual strong noncompactness existence is proved.",
     "A.4": "printed full-ball claim refuted; user-authorized inner 2m/3 image inverse and closed half-ball coverage proved",
-    "2.9(i)": "The printed unweighted potential factor is refuted in Lean for actual real mean-zero period-one original distributions beyond every uniform weighted unit-ball cutoff. The full weighted-potential-norm replacement is proved for both literal shifted operator norms on the complete printed strip; user repair selection is pending.",
-    "strip (9)-(10)": "n=1 pole in printed 12n strip formally checked. Full 12n estimates and analytic physical reduction at n≥2 now prove Corollary 2.5 and Lemmas 2.7/2.11 with uniform N≥2. Lemma 2.4 repair preference remains pending."
+    "2.9(i)": "The printed unweighted potential factor is refuted in Lean for actual real mean-zero period-one original distributions beyond every uniform weighted unit-ball cutoff. User selected the weighted-potential-norm correction on 2026-11-07. The complete replacement is proved for both literal shifted operator norms on the full printed strip; joint analyticity and part (ii) are retained.",
+    "strip (9)-(10)": "n=1 pole in printed 12n strip formally checked. Full 12n estimates and analytic physical reduction at n≥2 now prove Corollary 2.5 and Lemmas 2.7/2.11 with uniform N≥2. User selected the full 12n strip with n≥2 correction for Lemma 2.4 on 2026-11-07; the all-n≥1 printed claim remains explicitly refuted."
   },
   "validation_scope": "NLS aggregate and all listed audits/dependency closure. Cached dependencies reused only after source/dependency fingerprint verification; no full fresh Lake/dependency/CheckExamples build claimed."
 }

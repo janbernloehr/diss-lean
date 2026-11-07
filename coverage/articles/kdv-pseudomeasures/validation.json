@@ -9722,22 +9722,24 @@
   "main_refresh_validation": "coverage/articles/kdv-pseudomeasures/refresh-validation.json",
   "current_numbered_result_audit": {
     "record": "coverage/articles/kdv-pseudomeasures/numbered-results.json",
-    "audited_on": "2026-11-06",
+    "audited_on": "2026-11-07",
     "total_numbered_results": 54,
     "formal_results": 48,
     "numbered_remarks": 6,
     "five_main_theorems_proved": true,
-    "all_numbered_results_proved": false,
+    "all_numbered_results_proved": true,
     "status_counts": {
       "proved": 46,
-      "proved_corrected": 6,
-      "partial": 2
+      "proved_corrected": 8
     },
     "historical_milestones": "Earlier *_followup, verified_*, validation and publication snapshots are historical; consult the numbered-result audit for present full-paper scope. A main-theorem completion claim is not full-paper completion.",
     "Lemma5_7": "Proved in full, including every p>1 and a common complex Wiener neighborhood; see hill-L2-Wiener-lp-frequency-map.json.",
     "LemmaA4": "User-authorized inner-ball replacement proved, retaining closed half-ball coverage; printed full-ball assertion formally refuted.",
     "validation_record": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
-    "validation": "passed; full-paper coverage incomplete"
+    "validation": "passed; complete numbered-result coverage with explicit corrections",
+    "completion_basis": "All 54 numbered items are covered: 46 proved source matches and 8 explicitly corrected source matches. This completion includes the selected corrections; it does not assert the false printed statements. Original excerpts, statement hashes and checked counterexamples are retained.",
+    "Lemma2_4": "User selected the full printed 12n strip with n≥2; corrected result proved, printed n=1 claim refuted.",
+    "Lemma2_9": "User selected weighted potential norm in part (i); full corrected lemma proved, printed unweighted factor refuted."
   },
   "Lemma2_15_visual_audit_retraction": "PDF page 20 already has beta outside parentheses in (31), multiplying both terms. The proved identity agrees with the source; older correction claims in historical snapshots are retracted. See numbered-results.json."
 }

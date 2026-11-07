@@ -5,16 +5,15 @@
   "source_pdf_sha256": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "baseline_head": "69dc5a6c2f9d6bafaf84730c98014c0d4f7f2e9a",
   "canonical_checkout_read_only": true,
-  "complete_numbered_result_proof_coverage": false,
+  "complete_numbered_result_proof_coverage": true,
   "total_numbered_results": 54,
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
     "proved": 46,
-    "proved_corrected": 6,
-    "partial": 2
+    "proved_corrected": 8
   },
-  "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
+  "validation": "passed: strict aggregate dependency closure and exact public axiom audit; complete numbered-result proof coverage with the explicitly recorded corrections. See numbered-validation.json.",
   "results": [
     {
       "label": "Theorem 1.1",
@@ -117,8 +116,8 @@
       "label": "Lemma 2.4",
       "line": 523,
       "statement": "Lemma 2.4 Let −1/2 < s ⩽ 0, w ∈ M, and n ⩾ 1 be given. For any\nq ∈ Fℓw,s,∞\n      0,C   and λ ∈ Sn ,\n\n       Tn (λ) : Fℓw,s,∞\n                  ⋆,C   → Fℓw,s,∞\n                            ⋆,C\n\nis a bounded linear operator satisfying the estimate\n                                         cs\n       kTn (λ)kw,s,∞;±n ⩽              1/2−|s|\n                                               kqkw,s,∞ ,                                                     (12)\n                                     n\nwhere cs ⩾ 1 is a constant depending only on and decreasing monotonically in\ns. In particular, cs does not depend on q nor on the weight w. ⋊",
-      "status": "partial",
-      "comparison": "Both the radius-6n/all-n≥1 version and the full printed radius-12n/n≥2 version are proved, including the same physical H1 inverse and both shifted infinity norms. The printed n=1 wide-strip inverse is formally refuted. The choice of source repair remains pending; this row does not claim the false printed all-n statement.",
+      "status": "proved_corrected",
+      "comparison": "User-selected correction: retain the full printed radius-12n strip and require n≥2. The corrected statement is proved with both actual shifted infinity norms, a weight-independent constant with the required regularity monotonicity, and the same physical H1 inverse. The false printed n=1 claim and its checked constant-mode counterexample remain recorded. The separately proved radius-6n/all-n≥1 alternative is not the selected replacement.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean",
         "NLS/Articles/KdVPseudomeasures/SourceWideStripContraction.lean",
@@ -144,6 +143,15 @@
       "counterexample_declarations": [
         "NLS.Articles.KdVPseudomeasures.printedStrip_Q1_free_kernel_counterexample",
         "NLS.Articles.KdVPseudomeasures.printedStrip_one_inverse_unbounded"
+      ],
+      "printed_statement_status": "false_as_printed",
+      "replacement_authorized_by_user": true,
+      "replacement_selected_on": "2026-11-07",
+      "replacement_selection": "Keep the printed 12n strip with n≥2.",
+      "replacement": "Replace n≥1 by n≥2, keeping S_n={λ∈ℂ: |Re λ−π²n²|≤12n}. Retain the bounded actual Hill perturbation, both shifted weighted supremum-norm bounds, a constant independent of q and w with the required regularity monotonicity, and the original physical inverse identification.",
+      "replacement_declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_wide",
+        "NLS.Articles.KdVPseudomeasures.spectralEndpointConstant_antitone"
       ]
     },
     {
@@ -197,8 +205,8 @@
       "label": "Lemma 2.9",
       "line": 749,
       "statement": "Lemma 2.9 Suppose q ∈ Fℓw,s,∞ 0,C   with −1/2 < s ⩽ 0 and w ∈ M. Then for\nany n ⩾ ns , with ns as in Corollary 2.5, the coefficients an (λ) and b±n (λ) are\nanalytic functions on the strip Sn and for any λ ∈ Sn\n\n        (i)    |an (λ)| ⩽ 2kTn (λ)kw,s,∞;±n kqks,∞ ,\n                              s\n       (ii)    w2n h2ni |b±n (λ) − q±2n | ⩽ 2kTn (λ)kw,s,∞;±n kqkw,s,∞ .           ⋊",
-      "status": "partial",
-      "comparison": "Joint analyticity and part (ii) are fully proved with literal actual shifted operator norms on the entire printed strip. Part (i), with an unweighted potential factor, has checked real, mean-zero, period-one counterexamples in the original distribution space beyond every uniform norm-ball cutoff. A full replacement using the weighted potential norm is proved for BOTH literal opposite shifted operator norms, retaining the entire strip and a uniform cutoff before every original source weight and norm-ball potential. User selection of this repair is pending; the false printed bound is not claimed.",
+      "status": "proved_corrected",
+      "comparison": "User-selected correction in part (i): use the weighted potential norm instead of the printed unweighted potential norm. The complete corrected lemma is proved in the original distribution spaces: joint analyticity, both actual opposite shifted operator-norm diagonal bounds, and both literal part (ii) coupling bounds, on the full printed radius-12n strip above one uniform norm-ball cutoff N≥2. The false printed part (i) and its checked real mean-zero period-one counterexamples beyond every uniform cutoff remain recorded.",
       "providers": [
         "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean",
         "NLS/Articles/KdVPseudomeasures/SourceWeightedSpectral.lean",
@@ -233,7 +241,7 @@
       },
       "printed_statement_status": "false_as_printed",
       "printed_norm_defect": "For r=1/4, w=Sobolev(r), the total signed weight cancels to one. Take actual Fourier coefficients1 at ±(2n−2). The original weighted norm is1, the unweighted negative-order norm is at most1/4096 for n>=4096^4, both full-strip contraction requirements hold, and at lambda=pi^2*n^2 the actual diagonal strictly exceeds2 times the literal weighted shifted T norm times the unweighted potential norm. This gives a violating real mean-zero period-one original distribution beyond every uniform cutoff in the weighted unit ball.",
-      "replacement_selection": "pending user preference: adopt weighted potential norm correction or retain false printed status",
+      "replacement_selection": "Adopt the weighted potential norm in Lemma 2.9(i).",
       "counterexample_providers": [
         "NLS/Articles/KdVPseudomeasures/SourceLemma29Counterexample.lean",
         "NLS/Articles/KdVPseudomeasures/SourceLemma29OriginalCounterexample.lean",
@@ -243,6 +251,13 @@
         "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_counterexample_at",
         "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_original_counterexample",
         "NLS.Articles.KdVPseudomeasures.sourceTwoModeOriginalPotential_physical"
+      ],
+      "replacement_authorized_by_user": true,
+      "replacement_selected_on": "2026-11-07",
+      "replacement": "In part (i), replace ‖q‖_{s,∞} by ‖q‖_{w,s,∞}: |a_n(λ)|≤2‖T_n(λ)‖_{w,s,∞;±n}‖q‖_{w,s,∞}. Retain both literal shifted operator norms, the full printed strip, joint analyticity, uniform norm-ball cutoffs N≥2, and part (ii).",
+      "replacement_declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_i_weighted",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_ii"
       ]
     },
     {
@@ -1369,5 +1384,6 @@
     }
   },
   "proof_check_command": "python3 scripts/check-kdv-pseudomeasures-merge.py (strict private output/cache; see numbered-validation.json for parameters and receipts)",
-  "record_check_command": "python3 scripts/check-kdv-pseudomeasures-numbered.py --paper-text PATH --paper-pdf PATH"
+  "record_check_command": "python3 scripts/check-kdv-pseudomeasures-numbered.py --paper-text PATH --paper-pdf PATH",
+  "completion_basis": "All 54 numbered items are covered: 46 proved source matches and 8 explicitly corrected source matches. This completion includes the selected corrections; it does not assert the false printed statements. Original excerpts, statement hashes and checked counterexamples are retained."
 }
