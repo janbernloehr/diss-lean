@@ -1,3 +1,26 @@
+import NLS.Articles.KdVKdV2Frequencies.Theorem12IntermediateRegularities
+import NLS.SequenceSpaces.AnalyticLinearPacketTransport
+import NLS.Articles.KdVKdV2Frequencies.NativeSobolevRawActions
+import NLS.Articles.KdVKdV2Frequencies.IntermediateFrequencyRawTargets
+import NLS.SequenceSpaces.FiniteConeCalibration
+import NLS.Articles.KdVKdV2Frequencies.NormalizedSobolevWeakActions
+import NLS.Articles.KdVKdV2Frequencies.NegativeWeightedWeakFrequencyCompatibility
+import NLS.Articles.KdVKdV2Frequencies.GlobalNegativeWeightedFrequencyActionCharts
+import NLS.Articles.KdVKdV2Frequencies.WeightedPairArnoldActions
+import NLS.KdV.HillWeightedPairFiniteSupport
+import NLS.Articles.KdVKdV2Frequencies.WeightedPairPhysicalRecovery
+import NLS.Articles.KdVKdV2Frequencies.NegativeWeightedFrequencyPairInvariance
+import NLS.Articles.KdVKdV2Frequencies.NegativeWeightedFrequencyPairCharts
+import NLS.ZakharovShabat.SourceRefinedCubicNormBounds
+import NLS.ZakharovShabat.SourceSobolevSquaredGapBounds
+import NLS.KdV.PhysicalNegativeWeightedFrequencyChart
+import NLS.ZakharovShabat.SourceNegativeWeightedSecondMomentPacket
+import NLS.SequenceSpaces.NonnegativeColumnMajorant
+import NLS.SequenceSpaces.NegativeWeightedCubicBounds
+import NLS.SequenceSpaces.NegativeWeightedCubicPacket
+import NLS.SequenceSpaces.NegativeWeightReciprocalColumns
+import NLS.SequenceSpaces.WeightedReciprocalKernel
+import NLS.SequenceSpaces.WeightedReciprocalColumnMajorants
 import NLS.SequenceSpaces.WeightedConeCalibrationUniqueness
 import NLS.Articles.KdVKdV2Frequencies.StrongWeakFrequencyCompatibility
 import NLS.Articles.KdVKdV2Frequencies.Theorem12StrongRegularities
@@ -5739,7 +5762,30 @@ private def kdvFrequencyAuditChunk25 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.Theorem12StrongEndpoint,
   `NLS.Articles.KdVKdV2Frequencies.Theorem12StrongRegularities,
   `NLS.SequenceSpaces.WeightedConeCalibrationUniqueness,
-  `NLS.Articles.KdVKdV2Frequencies.StrongWeakFrequencyCompatibility
+  `NLS.Articles.KdVKdV2Frequencies.StrongWeakFrequencyCompatibility,
+  `NLS.SequenceSpaces.WeightedReciprocalKernel,
+  `NLS.SequenceSpaces.WeightedReciprocalColumnMajorants,
+  `NLS.SequenceSpaces.NegativeWeightReciprocalColumns,
+  `NLS.SequenceSpaces.NonnegativeColumnMajorant,
+  `NLS.SequenceSpaces.NegativeWeightedCubicBounds,
+  `NLS.SequenceSpaces.NegativeWeightedCubicPacket,
+  `NLS.ZakharovShabat.SourceRefinedCubicNormBounds,
+  `NLS.ZakharovShabat.SourceSobolevSquaredGapBounds,
+  `NLS.ZakharovShabat.SourceNegativeWeightedSecondMomentPacket,
+  `NLS.KdV.PhysicalNegativeWeightedFrequencyChart,
+  `NLS.Articles.KdVKdV2Frequencies.NegativeWeightedFrequencyPairCharts,
+  `NLS.Articles.KdVKdV2Frequencies.WeightedPairArnoldActions,
+  `NLS.KdV.HillWeightedPairFiniteSupport,
+  `NLS.Articles.KdVKdV2Frequencies.WeightedPairPhysicalRecovery,
+  `NLS.Articles.KdVKdV2Frequencies.NegativeWeightedFrequencyPairInvariance,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalNegativeWeightedFrequencyActionCharts,
+  `NLS.SequenceSpaces.FiniteConeCalibration,
+  `NLS.Articles.KdVKdV2Frequencies.NormalizedSobolevWeakActions,
+  `NLS.Articles.KdVKdV2Frequencies.NegativeWeightedWeakFrequencyCompatibility,
+  `NLS.SequenceSpaces.AnalyticLinearPacketTransport,
+  `NLS.Articles.KdVKdV2Frequencies.IntermediateFrequencyRawTargets,
+  `NLS.Articles.KdVKdV2Frequencies.NativeSobolevRawActions,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12IntermediateRegularities
 ]
 
 open Lean in

@@ -3275,6 +3275,29 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/Theorem12StrongRegularities
   NLS/SequenceSpaces/WeightedConeCalibrationUniqueness
   NLS/Articles/KdVKdV2Frequencies/StrongWeakFrequencyCompatibility
+  NLS/SequenceSpaces/WeightedReciprocalKernel
+  NLS/SequenceSpaces/WeightedReciprocalColumnMajorants
+  NLS/SequenceSpaces/NegativeWeightReciprocalColumns
+  NLS/SequenceSpaces/NonnegativeColumnMajorant
+  NLS/SequenceSpaces/NegativeWeightedCubicBounds
+  NLS/SequenceSpaces/NegativeWeightedCubicPacket
+  NLS/ZakharovShabat/SourceRefinedCubicNormBounds
+  NLS/ZakharovShabat/SourceSobolevSquaredGapBounds
+  NLS/ZakharovShabat/SourceNegativeWeightedSecondMomentPacket
+  NLS/KdV/PhysicalNegativeWeightedFrequencyChart
+  NLS/Articles/KdVKdV2Frequencies/NegativeWeightedFrequencyPairCharts
+  NLS/Articles/KdVKdV2Frequencies/WeightedPairArnoldActions
+  NLS/KdV/HillWeightedPairFiniteSupport
+  NLS/Articles/KdVKdV2Frequencies/WeightedPairPhysicalRecovery
+  NLS/Articles/KdVKdV2Frequencies/NegativeWeightedFrequencyPairInvariance
+  NLS/Articles/KdVKdV2Frequencies/GlobalNegativeWeightedFrequencyActionCharts
+  NLS/SequenceSpaces/FiniteConeCalibration
+  NLS/Articles/KdVKdV2Frequencies/NormalizedSobolevWeakActions
+  NLS/Articles/KdVKdV2Frequencies/NegativeWeightedWeakFrequencyCompatibility
+  NLS/SequenceSpaces/AnalyticLinearPacketTransport
+  NLS/Articles/KdVKdV2Frequencies/IntermediateFrequencyRawTargets
+  NLS/Articles/KdVKdV2Frequencies/NativeSobolevRawActions
+  NLS/Articles/KdVKdV2Frequencies/Theorem12IntermediateRegularities
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
