@@ -6458,3 +6458,11 @@ import NLS.KdV.HillOriginalBirkhoffRealSobolevRestriction
 import NLS.KdV.HillBirkhoffIntegerLowerNorms
 import NLS.Articles.KdVEstimates.RealSobolevCorollary
 import NLS.Articles.KdVEstimates.DynamicalCorollaryEstimate
+import NLS.ComplexAnalysis.QuadraticHillKdVFlux
+import NLS.KdV.ClassicalKdVJet
+import NLS.KdV.SmoothPeriodicKdVJet
+import NLS.KdV.ClassicalKdVConservation
+import NLS.KdV.ClassicalKdVPhysicalAdapter
+import NLS.KdV.KdVClassicalApproximation
+import NLS.KdV.KdVWeightedApproximation
+import NLS.Articles.KdVEstimates.DynamicalCorollary

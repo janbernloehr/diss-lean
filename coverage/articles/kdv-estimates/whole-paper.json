@@ -41,15 +41,19 @@
       "source_page": 3,
       "source_text_line": 137,
       "scope": "Global-in-time KdV solution bound with the printed exponent and uniform constant.",
-      "status": "partially_verified",
-      "declarations": [],
+      "status": "verified_for_declared_solution_concept",
+      "declarations": [
+        "NLS.Articles.KdVEstimates.corollary1_dynamical",
+        "NLS.Articles.KdVEstimates.corollary1_dynamical_classical"
+      ],
       "proved_intermediates": [
         "NLS.Articles.KdVEstimates.corollary1_dynamical_of_conserved_actions",
         "NLS.Articles.KdVEstimates.corollary1_dynamical_of_conserved_target_norms",
         "NLS.Articles.KdVEstimates.exists_original_lowerTarget_bound"
       ],
-      "remaining": "Prove conservation of the actual physical actions for every KdV solution in the stated integer Sobolev domains. The existing conditional estimate does not establish this evolution premise.",
-      "validation": "The exact exponent m*m+m-1 and a constant uniform in time and initial data are proved for every mean-zero family conserving the actual original actions. The m=1 base uses the physical quadratic trace; higher orders use the actual lower restrictions of the same map."
+      "validation": "The physical PDE implies zero derivative of every actual energy discriminant via an explicit periodic local flux. Thus all physical actions and the mean are conserved. Action and mean conservation pass to locally uniform physical-L2 limits of classical PDE trajectories. The printed bound now requires only initial mean zero; no action-conservation premise remains.",
+      "solution_concept": "IsClassicalKdVTrajectory is the actual Fourier-L2 equation q_t=6*q*q_x-q_xxx with actual periodic spatial derivatives. Ordinary smooth pointwise PDE solutions with differentiable continuous-function representatives satisfy it by isClassicalKdVTrajectory_of_physical. IsKdVSolutionByClassicalApproximation requires locally uniform physical-L2 convergence of one sequence of genuine global classical PDE trajectories. Approximation in the original Sobolev norm implies that premise.",
+      "qualification": "The corollary is closed for classical trajectories and the explicitly declared classical-approximation solution class. The trajectory is typed in the stated Sobolev space throughout. Existence/uniqueness and regularity persistence of a flow for every Sobolev datum and equivalence with arbitrary distributional solution formulations are not asserted here; those remain background obligations in the whole-paper audit."
     },
     {
       "id": "theorem-2",
@@ -586,7 +590,7 @@
     ],
     "explicit_obligations": [
       "Birkhoff mapping, real analyticity, inverse, canonicality, and all claimed higher-space mapping properties.",
-      "KdV flow existence and action conservation on the corollary domains.",
+      "KdV flow existence/uniqueness and regularity persistence on the corollary domains, and equivalence between the declared classical-approximation solution concept and any other intended weak-solution formulation. Physical action and mean conservation have been proved for the declared solution class.",
       "Spectral labels, products, branch conventions, period identities, and convergence or uniformity assertions.",
       "All estimates and polynomial/interpolation steps appearing inside proofs, including the arbitrary-real-s corollary.",
       "Remarks and cited background assertions used as mathematical facts, including negative-Sobolev extensions."
@@ -596,9 +600,10 @@
     "Appendix A cutoff four versus the earlier cutoff eight: the new radius-six tail bound now gives the cutoff-four Neumann inverse, but root localization and all downstream printed constants still need exact review.",
     "Theorem 4 requires leading coefficient 2^m; the earlier C*(top+lower) estimate does not certify that statement.",
     "Lemma 8 requires leading 2^(-m) and the explicit low-action coefficient, not a generic uniform majorant.",
-    "The real-exponent Corollary 1 is verified. The dynamical Corollary 1 has the exact conditional action-conserving-family bound, but action conservation for every claimed KdV solution remains unproved."
+    "Both corollary estimates are proved: the dynamical corollary uses an explicit actual-PDE/classical-approximation solution concept and requires only initial mean zero. Flow existence/uniqueness and equivalence with other weak-solution formulations remain separate background obligations."
   ],
-  "validation_report": "coverage/articles/kdv-estimates/corollary-validation.json",
+  "validation_report": "coverage/articles/kdv-estimates/conservation-validation.json",
   "integrated_main_commit": "a1d8eb82cdbf5e39ec17f103f3901e8e24f57dfa",
-  "integration_note": "PR4 was merged while this continuation was in progress. The branch was fast-forwarded to the merge commit; its source tree equals the validated baseline."
+  "integration_note": "PR4 was merged while this continuation was in progress. The branch was fast-forwarded to the merge commit; its source tree equals the validated baseline.",
+  "dynamical_corollary_completed_for_declared_solution_concept": true
 }

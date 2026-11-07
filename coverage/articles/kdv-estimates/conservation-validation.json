@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "article_id": "kdv-estimates",
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_scope",
+  "main_theorems_verified": true,
+  "whole_paper_verified": false,
+  "dynamical_corollary_completed_for_declared_solution_concept": true,
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "raised_proof_limits": false,
+  "disabled_linters": false,
+  "sorry_or_new_axioms": false,
+  "baseline": {
+    "commit": "1fe5a570fa140d855c97d66925cba03a3b816159",
+    "focused_modules": 1501,
+    "all_focused_sources_byte_identical": true,
+    "source_hash_map_sha256": "ee95aecab3c5547e95bc006bd61631469435a9a9993536de2e7720c9b1b99a29",
+    "provenance": "The original main-theorem, integration, initial whole-paper and real-exponent corollary milestones retain their strict validation. All 1501 baseline focused source files were compared byte-for-byte with this commit."
+  },
+  "new_modules": [
+    {
+      "module": "NLS.ComplexAnalysis.QuadraticHillKdVFlux",
+      "source": "NLS/ComplexAnalysis/QuadraticHillKdVFlux.lean",
+      "sha256": "eb39caaa3e5dd0c2a7b0bcd7f72cd5daad06717cfaf8c3e389c7497af16bef99",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.ClassicalKdVJet",
+      "source": "NLS/KdV/ClassicalKdVJet.lean",
+      "sha256": "80eb038c4c6378b3197f64362299da83ce39ede2c1ae2a6e2f938d66ed844d15",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.SmoothPeriodicKdVJet",
+      "source": "NLS/KdV/SmoothPeriodicKdVJet.lean",
+      "sha256": "024cbf4fc923b386f57f6953a68f859e19d81b5cea5995f12788aca331073b86",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.ClassicalKdVConservation",
+      "source": "NLS/KdV/ClassicalKdVConservation.lean",
+      "sha256": "87a262eac2bf06189db539da44cf46b2eb5af94a702a8d69b1d80464df843e3a",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.ClassicalKdVPhysicalAdapter",
+      "source": "NLS/KdV/ClassicalKdVPhysicalAdapter.lean",
+      "sha256": "5ba70b994c3e71ec77ac8d88abecd2b17ab2d43c5351afe9a55d4ffe1acd1bf7",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVClassicalApproximation",
+      "source": "NLS/KdV/KdVClassicalApproximation.lean",
+      "sha256": "24d6f64034782fec0151a0e2e45e4234f7bfc4dbadf4fc8fb5ea5d02c34ede30",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.KdV.KdVWeightedApproximation",
+      "source": "NLS/KdV/KdVWeightedApproximation.lean",
+      "sha256": "b1cc5da6bb230db38f5db34161e6eab3981f06edbc1fe0403531f7de84320615",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NLS.Articles.KdVEstimates.DynamicalCorollary",
+      "source": "NLS/Articles/KdVEstimates/DynamicalCorollary.lean",
+      "sha256": "eb0385c14a822fcf4f82bc7765a0a5768d383eabdaef693cea64a57928e6f56a",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "current_focused_module_count": 1509,
+  "isolated_module_check": {
+    "count": 8,
+    "exit_code": 0,
+    "command": "lean --root=STAGE -DautoImplicit=false -DwarningAsError=true -o PRIVATE_CACHE/MODULE.olean STAGE/MODULE.lean",
+    "staging_root": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-estimates/work/staged-kdv-conservation",
+    "integrated_sources_equal_checked_staged_bytes": true,
+    "note": "Each dependency completed strict compilation before its consumers. Every integrated source hash matches its final successful isolated check."
+  },
+  "aggregate": {
+    "exit_code": 0,
+    "command": "lean -DautoImplicit=false -DwarningAsError=true -o .lake/build/lib/lean/NLS.olean NLS.lean",
+    "source_sha256": "6e26e390dad61fd74dd24b9c9330e18456a08b3eeaf565216e6ab6ccb4d0cec6",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "transitive_axiom_audit": {
+    "exit_code": 0,
+    "declarations": 10134,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "command": "lean -DautoImplicit=false -DwarningAsError=true coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
+    "source_sha256": "12849f3845fcd500ff55aa19a810d110088469a6641e46b5d056ebf4c490ad80",
+    "log_sha256": "d80f8a299d731ece391e9cbefe45e168158269edb90b8bb5e90fa6dcbcbaa3af",
+    "new_shared_seeds": [
+      "NLS.ComplexAnalysis.quadraticHillKdVFlux",
+      "NLS.ComplexAnalysis.quadraticHillKdVFlux_algebra",
+      "NLS.ComplexAnalysis.integral_quadraticHill_KdV_eq_zero"
+    ],
+    "scope": "Every current KdV and article declaration, the existing shared seeds and the new generic KdV flux declarations are checked transitively."
+  },
+  "proof_chain": [
+    {
+      "declaration": "NLS.ComplexAnalysis.integral_quadraticHill_KdV_eq_zero",
+      "result": "The pairing of a periodic quadratic Hill system with q_xxx-6*q*q_x is the integral of an explicitly proved periodic local flux. No nonzero-energy assumption is needed."
+    },
+    {
+      "declaration": "NLS.KdV.PeriodicKdVJet.discriminant_stationary",
+      "result": "Apply the flux to the actual Hill trace cotangent and its physical quadratic momentum."
+    },
+    {
+      "declaration": "NLS.KdV.isClassicalKdVTrajectory_of_physical",
+      "result": "Ordinary smooth one-periodic pointwise KdV with continuous-function time differentiability satisfies the physical Fourier-L2 PDE definition, retaining exact unit Fourier coefficients."
+    },
+    {
+      "declaration": "NLS.KdV.IsClassicalKdVTrajectory.discriminant_conserved",
+      "result": "The PDE implies zero time derivative of the actual discriminant at every fixed energy, hence equality at all times."
+    },
+    {
+      "declaration": "NLS.KdV.IsClassicalKdVTrajectory.physical_actions_conserved",
+      "result": "Equality of the entire discriminant fixes the original ordered spectral labels and physical gap integrals, including collapsed gaps."
+    },
+    {
+      "declaration": "NLS.KdV.IsClassicalKdVTrajectory.mean_conserved",
+      "result": "The actual KdV velocity has zero Fourier mean by its local divergence form."
+    },
+    {
+      "declaration": "NLS.KdV.IsKdVSolutionByClassicalApproximation.physical_actions_conserved",
+      "result": "Actual physical action continuity passes conservation to locally uniform physical-L2 classical-approximation solutions. Mean conservation is also passed to the limit."
+    },
+    {
+      "declaration": "NLS.KdV.isKdVSolutionByClassicalApproximation_of_weighted",
+      "result": "Locally uniform approximation in any original weighted Sobolev norm implies the physical-L2 approximation premise."
+    },
+    {
+      "declaration": "NLS.Articles.KdVEstimates.corollary1_dynamical",
+      "result": "The complete printed m*m+m-1 bound follows with a positive constant before data and time. Only initial mean zero is assumed; action and mean conservation are derived from the PDE/approximation premise."
+    }
+  ],
+  "solution_concept": {
+    "classical": "IsClassicalKdVTrajectory requires actual periodic spatial derivatives and HasDerivAt of the physical Fourier-L2 curve with velocity 6*q*q_x-q_xxx. It has no action, discriminant or target-norm invariant premise.",
+    "approximation": "IsKdVSolutionByClassicalApproximation requires a single sequence of genuine global classical trajectories converging locally uniformly in physical L2 on every compact time interval. It has no invariant premise.",
+    "corollary_source": "The trajectory is typed in the original real integer Sobolev space at every time. Initial mean zero suffices, and all raw target coordinates remain those of the same original Birkhoff map.",
+    "qualification": "Existence/uniqueness and regularity persistence of a flow for every Sobolev datum, and equivalence with arbitrary distributional solution formulations, are not asserted. These remain background obligations in the whole-paper inventory."
+  },
+  "source_corrections": {
+    "A.3": "The existing radius-six correction to the printed radius-twelve strip and its formal zero-mode obstruction are unchanged.",
+    "D.1": "The existing nonempty-real-slice qualification and its necessity proof are unchanged.",
+    "additional_source_corrections": []
+  },
+  "coverage_ledger": {
+    "source": "coverage/articles/kdv-estimates/whole-paper.json",
+    "sha256": "7a1fb9dc89d7e9a814ec72f82106d2561e8ba4d0b888062f8a1c7e882fb9bfd4",
+    "named_result_statuses": {
+      "verified": 5,
+      "verified_for_declared_solution_concept": 1,
+      "source_comparison_pending": 19,
+      "verified_with_explicit_correction": 2
+    },
+    "equation_and_unnumbered_claim_audits_complete": false
+  },
+  "focused_script": {
+    "syntax_exit_code": 0,
+    "source_sha256": "d8a3911ae28b45af181ecf158e166f05535dbe0d87242d2a0e4d5536cb45252f",
+    "all_eight_new_modules_registered": true,
+    "fresh_complete_focused_script_run_claimed": false
+  },
+  "limits": [
+    "No fresh complete 1509-module focused-script run, Lake rebuild, full examples run or global NLS audit is claimed for this additive delta. The prior validations retain their historical scopes.",
+    "The dynamical corollary is verified for the declared actual-PDE/classical-approximation solution concept. Whole-paper verification remains false, including open background flow obligations and 19 other named source comparisons."
+  ]
+}

@@ -28,16 +28,32 @@ for every real `s >= 0`. Both parts use one constant, the exact Fourier source
 norm, the exact complete homogeneous target with powers `2*s+1`, and the same
 original physical coordinate pairs. The action sum is proved convergent.
 
-The dynamical Corollary 1 (first occurrence, page 3) is partially verified.
-Its exact exponent `m*m+m-1` and the uniform estimate are proved for every
-mean-zero family conserving the actual physical actions; those actions are
-proved to conserve the required target norms. Action conservation for every
-KdV solution in the printed domain is still an explicit open obligation.
-The conditional theorem is not recorded as full coverage of the corollary.
+The dynamical Corollary 1 (first occurrence, page 3) is now proved for
+actual classical physical KdV trajectories and for the declared solution
+concept of locally uniform physical-L2 limits of classical trajectories.
+The equation is `q_t = 6*q*q_x - q_xxx`; ordinary smooth pointwise solutions
+are connected to that Fourier equation by a proved adapter. An explicit
+periodic local flux proves that the actual Hill discriminant is stationary
+at every energy, hence every original physical action is conserved. The
+mean is also proved conserved, so only initial mean zero is required.
+The corollary has the exact exponent `m*m+m-1` and no supplied action- or
+target-norm-conservation premise. Original Sobolev-norm approximation is
+proved sufficient for the physical-L2 approximation used here.
+
+This solution concept is explicit in `IsKdVSolutionByClassicalApproximation`.
+The corollary trajectory is typed in the stated Sobolev space throughout.
+Existence/uniqueness and regularity persistence for every Sobolev datum, and
+equivalence with arbitrary distributional solution formulations, are separate
+background obligations;
+they are not asserted by this milestone. This is a scope qualification,
+not an additional source correction. The A.3 and D.1 corrections above remain
+unchanged.
 
 The exact leading coefficients in Lemma 8 and Theorem 4, the remaining named
 results and unnumbered claims still need source comparison and missing proofs.
 Historical validation below concerns the main-theorem milestone. New proof validation is in
+[conservation-validation.json](conservation-validation.json). The earlier
+real-exponent and conditional dynamical milestone is recorded in
 [corollary-validation.json](corollary-validation.json). The initial auxiliary
 proof milestone remains recorded in [whole-paper-validation.json](whole-paper-validation.json).
 
@@ -115,8 +131,8 @@ The later integration checks are recorded below.
 
 That milestone concerns the named main Theorems 1–3. Both statements labelled
 Corollary 1 were outside it. Their current statuses are described above: the
-real-exponent statement is verified and the dynamical statement is partially
-verified.
+real-exponent statement is verified and the dynamical statement is verified
+for the explicitly declared solution concept.
 Global surjectivity on every higher weighted space is not asserted.
 The Hill operator is `-d²/dx² + q`; the missing exponent in the page-8
 display is corrected consistently with formula (2) on page 5.

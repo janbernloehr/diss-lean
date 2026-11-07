@@ -1503,13 +1503,25 @@ import NLS.KdV.HillBirkhoffIntegerLowerNorms
 import NLS.Articles.KdVEstimates.RealSobolevCorollary
 import NLS.Articles.KdVEstimates.DynamicalCorollaryEstimate
 
+import NLS.ComplexAnalysis.QuadraticHillKdVFlux
+import NLS.KdV.ClassicalKdVJet
+import NLS.KdV.SmoothPeriodicKdVJet
+import NLS.KdV.ClassicalKdVConservation
+import NLS.KdV.ClassicalKdVPhysicalAdapter
+import NLS.KdV.KdVClassicalApproximation
+import NLS.KdV.KdVWeightedApproximation
+import NLS.Articles.KdVEstimates.DynamicalCorollary
+
 /-! Transitive audit of the shared KdV foundations and article adapters.
 This checks axiom dependencies; source correspondence is recorded separately. -/
 
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let shared := #[``NLS.RealWeightedNatPair.normalization_norm_le,
+  let shared := #[``NLS.ComplexAnalysis.quadraticHillKdVFlux,
+    ``NLS.ComplexAnalysis.quadraticHillKdVFlux_algebra,
+    ``NLS.ComplexAnalysis.integral_quadraticHill_KdV_eq_zero,
+    ``NLS.RealWeightedNatPair.normalization_norm_le,
     ``NLS.RealWeightedNatPair.mem_normalization_of_le,
     ``NLS.RealWeightedNatPair.inclusion,
     ``NLS.RealWeightedNatPair.inclusion_apply,
