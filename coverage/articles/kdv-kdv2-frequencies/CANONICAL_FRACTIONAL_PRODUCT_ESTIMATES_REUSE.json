@@ -1,0 +1,18 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/SharpExponentialRemainder.lean",
+      "source_sha256": "4840826bcf513042636141d5b6236f7c18d54b09796fa1681ce64c7a454a2ecd",
+      "local_sha256": "4840826bcf513042636141d5b6236f7c18d54b09796fa1681ce64c7a454a2ecd",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SignedProductEstimates.lean",
+      "source_sha256": "ab5df282d2337d5f6cf58f0f1cee533cbf60fc557f10320561626cd6b572ca4e",
+      "local_sha256": "ab5df282d2337d5f6cf58f0f1cee533cbf60fc557f10320561626cd6b572ca4e",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Unchanged canonical estimates for the infinite product of 1+summable complex perturbations, with exact exponential remainder control. These are genuinely used by the fractional midpoint-product estimate. Both newly reached modules are strictly selected and rebuilt; the full imported-NLS transitive axiom audit is retained."
+}

@@ -3410,6 +3410,19 @@ modules=(
   NLS/KdV/PhysicalSharpOffDiagonalTransport
   NLS/KdV/PhysicalSharpOffDiagonalDecay
   NLS/Articles/KdVKdV2Frequencies/Theorem12OffDiagonalSharpDecay
+  NLS/SequenceSpaces/FractionalReciprocalRows
+  NLS/ComplexAnalysis/SharpExponentialRemainder
+  NLS/ComplexAnalysis/SignedProductEstimates
+  NLS/ZakharovShabat/SourceMidpointProductFractionalDecay
+  NLS/ZakharovShabat/SourceSquaredGapFractionalDecay
+  NLS/SequenceSpaces/WeightedSquareMajorants
+  NLS/ZakharovShabat/SourceQuotientFractionalDecay
+  NLS/ZakharovShabat/SourcePsiFractionalQuotientDecay
+  NLS/ZakharovShabat/SourceCriticalFractionalQuotientDecay
+  NLS/KdV/PhysicalFrequencyParameterization
+  NLS/KdV/PhysicalNativeFrequencyParameterization
+  NLS/KdV/PhysicalFractionalQuotientBounds
+  NLS/Articles/KdVKdV2Frequencies/Theorem12DiagonalQuotientDecay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
