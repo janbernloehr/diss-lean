@@ -2038,6 +2038,15 @@ import NLS.Articles.KdVPseudomeasures.SourceFrequencyDivergence
 import NLS.Articles.KdVPseudomeasures.SourceStrongFlowObstruction
 import NLS.Articles.KdVPseudomeasures.SourceAiryFlowGeneric
 import NLS.Articles.KdVPseudomeasures.SourceRemark12
+import NLS.ComplexAnalysis.CoupledQuadraticError
+import NLS.ComplexAnalysis.CoupledRootDiscs
+import NLS.ComplexAnalysis.CoupledQuadraticIsolation
+import NLS.ComplexAnalysis.CoupledRatioBounds
+import NLS.Articles.KdVPseudomeasures.SourceThreshold36Numerics
+import NLS.Articles.KdVPseudomeasures.SourceThreshold36StripBounds
+import NLS.KdV.WideStripCouplingCauchy
+import NLS.Articles.KdVPseudomeasures.SourceComplexCouplingComparison
+import NLS.Articles.KdVPseudomeasures.SourceLemma220
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -11921,3 +11930,25 @@ import NLS.Articles.KdVPseudomeasures.SourceRemark12
 #print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_2_Airy
 #print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_2_KdV
 #print axioms NLS.Articles.KdVPseudomeasures.sourceRemark1_2
+#print axioms NLS.ComplexAnalysis.coupledQuadraticError_le
+#print axioms NLS.ComplexAnalysis.coupledRootDisc_subset
+#print axioms NLS.ComplexAnalysis.coupledQuadratic_boundary_lower
+#print axioms NLS.ComplexAnalysis.analyticZeroCount_coupledQuadratic_one
+#print axioms NLS.ComplexAnalysis.exists_zero_of_analyticZeroCount_ne_zero
+#print axioms NLS.ComplexAnalysis.exists_zero_near_coupled_root
+#print axioms NLS.ComplexAnalysis.coupledQuadratic_isolated_roots
+#print axioms NLS.ComplexAnalysis.coupled_sqrt_bounds_of_ratio
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCoefficientConstant_two_le
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold36_bound
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold36_scaled_m
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold36_small
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold36_wide_small
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold36_diagonal_bound
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold36_coupling_bounds
+#print axioms NLS.Articles.KdVPseudomeasures.source_threshold36_root_bound
+#print axioms NLS.KdV.couplingCauchyDisc_subset_wide
+#print axioms NLS.KdV.wideStrip_smallDisc_variation
+#print axioms NLS.Articles.KdVPseudomeasures.source_complex_coupling_gap_comparison
+#print axioms NLS.Articles.KdVPseudomeasures.source_exists_threshold36
+#print axioms NLS.Articles.KdVPseudomeasures.SourceLemma220OmegaComparison
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_20

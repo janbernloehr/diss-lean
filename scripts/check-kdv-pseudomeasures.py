@@ -2072,6 +2072,15 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SourceStrongFlowObstruction',
     'NLS.Articles.KdVPseudomeasures.SourceAiryFlowGeneric',
     'NLS.Articles.KdVPseudomeasures.SourceRemark12',
+    'NLS.ComplexAnalysis.CoupledQuadraticError',
+    'NLS.ComplexAnalysis.CoupledRootDiscs',
+    'NLS.ComplexAnalysis.CoupledQuadraticIsolation',
+    'NLS.ComplexAnalysis.CoupledRatioBounds',
+    'NLS.Articles.KdVPseudomeasures.SourceThreshold36Numerics',
+    'NLS.Articles.KdVPseudomeasures.SourceThreshold36StripBounds',
+    'NLS.KdV.WideStripCouplingCauchy',
+    'NLS.Articles.KdVPseudomeasures.SourceComplexCouplingComparison',
+    'NLS.Articles.KdVPseudomeasures.SourceLemma220',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

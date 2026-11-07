@@ -6643,3 +6643,12 @@ import NLS.Articles.KdVPseudomeasures.SourceFrequencyDivergence
 import NLS.Articles.KdVPseudomeasures.SourceStrongFlowObstruction
 import NLS.Articles.KdVPseudomeasures.SourceAiryFlowGeneric
 import NLS.Articles.KdVPseudomeasures.SourceRemark12
+import NLS.ComplexAnalysis.CoupledQuadraticError
+import NLS.ComplexAnalysis.CoupledRootDiscs
+import NLS.ComplexAnalysis.CoupledQuadraticIsolation
+import NLS.ComplexAnalysis.CoupledRatioBounds
+import NLS.Articles.KdVPseudomeasures.SourceThreshold36Numerics
+import NLS.Articles.KdVPseudomeasures.SourceThreshold36StripBounds
+import NLS.KdV.WideStripCouplingCauchy
+import NLS.Articles.KdVPseudomeasures.SourceComplexCouplingComparison
+import NLS.Articles.KdVPseudomeasures.SourceLemma220

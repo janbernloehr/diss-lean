@@ -10,9 +10,9 @@
   "formal_results": 48,
   "remarks": 6,
   "status_counts": {
-    "proved": 41,
+    "proved": 42,
     "proved_corrected": 6,
-    "partial": 7,
+    "partial": 6,
     "not_found": 0
   },
   "validation": "passed: strict aggregate dependency closure and exact public axiom audit; see numbered-validation.json. Partial ledger rows remain unproved as complete source statements.",
@@ -445,18 +445,37 @@
       "label": "Lemma 2.20",
       "line": 1569,
       "statement": "Lemma 2.20 Let −1/2 < s ⩽ 0, m ⩾ 1, and suppose that q ∈ Bm   , r =\n (m)\nΩ (q), and n ⩾ Mm,s with Mm,s given as in (36). If\n                               1    r2n\n       r−2n 6= 0,        and     ⩽      ⩽ 9,\n                               9   r−2n\nthen\n                               2\n       |r2n r−2n | ⩽ |γn (q)| ⩽ 9|r2n r−2n |.    ⋊",
-      "status": "partial",
-      "comparison": "Only the real-source case is explicitly proved. The printed complex coupling-ratio hypothesis must not be replaced by reality.",
+      "status": "proved",
+      "comparison": "Full complex statement for the actual adapted Fourier map Omega and actual canonical lexicographic gaps. The printed nonzero lower coupling and modulus ratio 1/9..9 give both squared bounds with constants 1 and 9. A single c_s_prime>=c_s>=1 precedes every norm ball; one cutoff M_(m,s) satisfies exactly (36) at all larger modes, ensures the actual adapted-map realization, and identifies the canonical spectral slots. Full-strip Cauchy bounds and Rouche isolation prove the result without a real-potential restriction or an assumed analytic square-root branch.",
       "providers": [
-        "NLS/Articles/KdVPseudomeasures/SpectralInverseGapComparison.lean"
+        "NLS/ComplexAnalysis/CoupledQuadraticError.lean",
+        "NLS/ComplexAnalysis/CoupledRootDiscs.lean",
+        "NLS/ComplexAnalysis/CoupledQuadraticIsolation.lean",
+        "NLS/ComplexAnalysis/CoupledRatioBounds.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceThreshold36Numerics.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceThreshold36StripBounds.lean",
+        "NLS/KdV/WideStripCouplingCauchy.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceComplexCouplingComparison.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma220.lean"
       ],
       "declarations": [
-        "NLS.Articles.KdVPseudomeasures.sourceLemma2_20_real"
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_20",
+        "NLS.Articles.KdVPseudomeasures.source_complex_coupling_gap_comparison",
+        "NLS.ComplexAnalysis.coupledQuadratic_isolated_roots",
+        "NLS.KdV.wideStrip_smallDisc_variation"
       ],
       "source_page": 25,
       "statement_sha256": "10d8160239b404bc57ca8ac35925b7200e3c39e5c02b28e958caa30c67b92c82",
       "provider_sha256": {
-        "NLS/Articles/KdVPseudomeasures/SpectralInverseGapComparison.lean": "d8092ac04209c9379f76cff3b351b1080380893abb51e7d973130efcf6b31615"
+        "NLS/ComplexAnalysis/CoupledQuadraticError.lean": "d3c90dbf6b7ba9f0284334d591883b1e0588cccfc5e61968895aefe36661f968",
+        "NLS/ComplexAnalysis/CoupledRootDiscs.lean": "abe4a6f68bab4c553816d3455619fe20a43c79514907217e67aa2457d3fd3a4e",
+        "NLS/ComplexAnalysis/CoupledQuadraticIsolation.lean": "33fc6c677045fb29a91290accf4f1ba04ba0b99758c69c72ae507ea4ce3e0415",
+        "NLS/ComplexAnalysis/CoupledRatioBounds.lean": "695afcb839414e8d109d9b4948c8112a7dac03e3416679bf8a7003b155a3cfaa",
+        "NLS/Articles/KdVPseudomeasures/SourceThreshold36Numerics.lean": "85faa56ebdfaa2c922a28e12a55be36581d17ca47cfc0e272cc0780510bf480f",
+        "NLS/Articles/KdVPseudomeasures/SourceThreshold36StripBounds.lean": "d275d4d71b7bc42a389662e734f24dff3a305e58536f044eeb0818aebcaa62db",
+        "NLS/KdV/WideStripCouplingCauchy.lean": "bbcb29d965c13aec88b8ee59715225a76a353058366c4c7fa9214c8cccb2200b",
+        "NLS/Articles/KdVPseudomeasures/SourceComplexCouplingComparison.lean": "1c6433c323c5ef368d2d838772e400bf0ddd1d549620cad8566d2eaa46c4d747",
+        "NLS/Articles/KdVPseudomeasures/SourceLemma220.lean": "b12fa42c7f50efff7d3a29ee2ecf84ea237a0b6c12b5d820c46039dd2b1b7f2f"
       }
     },
     {
