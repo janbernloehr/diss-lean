@@ -1,3 +1,17 @@
+import NLS.Articles.KdVConvexity.ActionHilbertCompactTransfer
+import NLS.Articles.KdVKdV2Frequencies.HilbertFrequencyCompactFromIntermediate
+import NLS.Articles.KdVKdV2Frequencies.Theorem12HilbertCompact
+import NLS.Articles.KdVKdV2Frequencies.GlobalScalarHilbertFrequencyAgreement
+import NLS.Articles.KdVKdV2Frequencies.HilbertIntermediateActionInclusion
+import NLS.Articles.KdVConvexity.ActionHilbertGradientCoordinates
+import NLS.Articles.KdVKdV2Frequencies.IntermediateHilbertPacketAgreement
+import NLS.Articles.KdVKdV2Frequencies.PhysicalHilbertFrequencyCompact
+import NLS.Articles.KdVConvexity.ActionDifferentialSymmetry
+import NLS.SequenceSpaces.HilbertCompactActionIntertwining
+import NLS.SequenceSpaces.CompactCoordinateTails
+import NLS.SequenceSpaces.SymmetricWeightedCompactTransfer
+import NLS.SequenceSpaces.FiniteWeightedSchur
+import NLS.SequenceSpaces.WeightedSchurHilbertBound
 import NLS.Articles.KdVKdV2Frequencies.Theorem12CompactDerivative
 import NLS.Articles.KdVKdV2Frequencies.OriginalPositiveFrequencyCompact
 import NLS.SequenceSpaces.WeightedPositiveActionSpace
@@ -5938,7 +5952,21 @@ private def kdvFrequencyAuditChunk26 : Array Lean.Name := #[
   `NLS.SequenceSpaces.WeightedPositiveActionSpace,
   `NLS.SequenceSpaces.CompactCorrectedDerivativeConjugate,
   `NLS.Articles.KdVKdV2Frequencies.OriginalPositiveFrequencyCompact,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12CompactDerivative
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12CompactDerivative,
+  `NLS.SequenceSpaces.FiniteWeightedSchur,
+  `NLS.SequenceSpaces.WeightedSchurHilbertBound,
+  `NLS.SequenceSpaces.CompactCoordinateTails,
+  `NLS.SequenceSpaces.SymmetricWeightedCompactTransfer,
+  `NLS.Articles.KdVConvexity.ActionDifferentialSymmetry,
+  `NLS.SequenceSpaces.HilbertCompactActionIntertwining,
+  `NLS.Articles.KdVKdV2Frequencies.GlobalScalarHilbertFrequencyAgreement,
+  `NLS.Articles.KdVKdV2Frequencies.HilbertIntermediateActionInclusion,
+  `NLS.Articles.KdVConvexity.ActionHilbertGradientCoordinates,
+  `NLS.Articles.KdVKdV2Frequencies.IntermediateHilbertPacketAgreement,
+  `NLS.Articles.KdVConvexity.ActionHilbertCompactTransfer,
+  `NLS.Articles.KdVKdV2Frequencies.HilbertFrequencyCompactFromIntermediate,
+  `NLS.Articles.KdVKdV2Frequencies.PhysicalHilbertFrequencyCompact,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12HilbertCompact
 ]
 
 open Lean in

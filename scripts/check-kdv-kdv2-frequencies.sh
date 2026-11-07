@@ -3373,6 +3373,20 @@ modules=(
   NLS/SequenceSpaces/CompactCorrectedDerivativeConjugate
   NLS/Articles/KdVKdV2Frequencies/OriginalPositiveFrequencyCompact
   NLS/Articles/KdVKdV2Frequencies/Theorem12CompactDerivative
+  NLS/SequenceSpaces/FiniteWeightedSchur
+  NLS/SequenceSpaces/WeightedSchurHilbertBound
+  NLS/SequenceSpaces/CompactCoordinateTails
+  NLS/SequenceSpaces/SymmetricWeightedCompactTransfer
+  NLS/Articles/KdVConvexity/ActionDifferentialSymmetry
+  NLS/SequenceSpaces/HilbertCompactActionIntertwining
+  NLS/Articles/KdVKdV2Frequencies/GlobalScalarHilbertFrequencyAgreement
+  NLS/Articles/KdVKdV2Frequencies/HilbertIntermediateActionInclusion
+  NLS/Articles/KdVConvexity/ActionHilbertGradientCoordinates
+  NLS/Articles/KdVKdV2Frequencies/IntermediateHilbertPacketAgreement
+  NLS/Articles/KdVConvexity/ActionHilbertCompactTransfer
+  NLS/Articles/KdVKdV2Frequencies/HilbertFrequencyCompactFromIntermediate
+  NLS/Articles/KdVKdV2Frequencies/PhysicalHilbertFrequencyCompact
+  NLS/Articles/KdVKdV2Frequencies/Theorem12HilbertCompact
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

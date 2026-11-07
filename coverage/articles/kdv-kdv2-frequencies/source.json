@@ -962,9 +962,16 @@
           "lean_source": "NLS/Articles/KdVKdV2Frequencies/Theorem12CompactDerivative.lean",
           "status": "verified",
           "qualification": "The original sequence space indexed by positive physical frequencies is represented by the closed positive-supported weighted submodule over integers, with a proved exact norm isometry and completeness. This is the literal positive-frequency original norm; no compactness on additional unused nonpositive raw directions is asserted. The physical -12 normalization and corrected +6 identity are unchanged. Complete Theorem 1.2 remains OPEN for its other unproved clauses."
+        },
+        {
+          "source_clause": "COMPLETE Theorem 1.2(iv): the ACTUAL KdV frequency is analytic from the ENTIRE original positive ell2 action cone into SAME ell2, real there, and its derivative plus 6Id is compact at EVERY such action",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.theorem_1_2_iv",
+          "lean_source": "NLS/Articles/KdVKdV2Frequencies/Theorem12HilbertCompact.lean",
+          "status": "verified",
+          "qualification": "ActionSpace is the literal original complex ell2 space indexed by positive physical labels. Reindexing is an exact unweighted linear isometry. The same actual global weak frequency family is calibrated to native Hamiltonian frequencies and the physical Hilbert gradient on the full nonnegative cone. The corrected coefficient is +6. Complete Theorem 1.2 remains OPEN for sharp locally uniform asymptotics(iii) and its consolidated full statement."
         }
       ],
-      "current_support_summary": "The COMPLETE Theorem 1.2(ii) compact derivative clause is now proved for the ACTUAL global physical KdV frequency: for EVERY -1<s<-1/2 and EVERY nonnegative original action, d(omega-star)+6*Id is compact in the SAME original positive-frequency weighted ell(2s+1,1) source and target norm. One actual weak scalar frequency family is fixed BEFORE all regularities and all actions, with exact independently defined native Hamiltonian frequency recovery. Each regularity has ONE genuine complex analytic map near the ENTIRE original positive action cone, with literal raw frequency calibration to that same family. The diagonal and off-diagonal compact ACTION germs are combined on the SAME actual physical chart and native inverse, identified with the FULL global intermediate frequency, then extended from the nonnegative cone by holomorphic uniqueness in the proper normalized positive-frequency model. Exact norm-isometric conjugation gives the literal original weighted action space and the unchanged coefficient +6. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main theorem rows remain OPEN. Theorem 1.2(ii) is VERIFIED and all regularity-dependent target clauses of Theorem 1.2(i) remain verified. COMPLETE Theorem 1.2 still needs the sharp locally uniform high-index asymptotics of (iii), and the Hilbert target/compact derivative assertions of (iv), together with a consolidated precise full statement. Strict concavity, local inverses, PDE conclusions, and KdV2 actual weighted moments, mass-renormalized frequency identification and global conclusions remain open.",
+      "current_support_summary": "The COMPLETE Theorem 1.2(iv) Hilbert target and compact derivative clause is now proved for the ACTUAL physical KdV frequency on the ENTIRE original nonnegative ell2 action cone. Its physical Hamiltonian gradient is genuinely complex analytic into the SAME unweighted positive-index ell2 space on a full complex neighborhood of the whole cone, real on that cone, and calibrated there to ONE actual global weak scalar frequency family with exact native Hamiltonian frequency recovery. At EVERY such Hilbert action, including zero, closed modes and arbitrary infinite support, d(omega-star)+6*Id is compact in the ORIGINAL Hilbert norm. The proof uses the already verified original intermediate weighted action compactness, exact full-cone frequency identification, genuine Hamiltonian Hessian symmetry and a new proved weighted Schur/tail compactness transfer. No p4 spectral inverse or source-derivative substitution is assumed. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main theorem rows remain OPEN. Complete source clauses Theorem 1.2(ii) and (iv) are VERIFIED, and all regularity-dependent target clauses of Theorem 1.2(i) remain verified. COMPLETE Theorem 1.2 still needs the SHARP locally uniform high-index asymptotics of (iii), then a consolidated precise full statement. Strict concavity, local inverses, PDE conclusions, and KdV2 actual weighted moments, exact mass-renormalized physical frequency identification and global conclusions remain open.",
       "verified_main_clauses": [
         {
           "source_clause": "COMPLETE Theorem 1.2(ii): for every -1<s<-1/2 and every original nonnegative action, the ACTUAL global frequency derivative plus 6Id is compact on the SAME original positive-frequency weighted ell(2s+1,1) Banach space",
@@ -972,6 +979,13 @@
           "lean_source": "NLS/Articles/KdVKdV2Frequencies/Theorem12CompactDerivative.lean",
           "status": "verified",
           "qualification": "The original sequence space indexed by positive physical frequencies is represented by the closed positive-supported weighted submodule over integers, with a proved exact norm isometry and completeness. This is the literal positive-frequency original norm; no compactness on additional unused nonpositive raw directions is asserted. The physical -12 normalization and corrected +6 identity are unchanged. Complete Theorem 1.2 remains OPEN for its other unproved clauses."
+        },
+        {
+          "source_clause": "COMPLETE Theorem 1.2(iv): the ACTUAL KdV frequency is analytic from the ENTIRE original positive ell2 action cone into SAME ell2, real there, and its derivative plus 6Id is compact at EVERY such action",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.theorem_1_2_iv",
+          "lean_source": "NLS/Articles/KdVKdV2Frequencies/Theorem12HilbertCompact.lean",
+          "status": "verified",
+          "qualification": "ActionSpace is the literal original complex ell2 space indexed by positive physical labels. Reindexing is an exact unweighted linear isometry. The same actual global weak frequency family is calibrated to native Hamiltonian frequencies and the physical Hilbert gradient on the full nonnegative cone. The corrected coefficient is +6. Complete Theorem 1.2 remains OPEN for sharp locally uniform asymptotics(iii) and its consolidated full statement."
         }
       ]
     },
@@ -44802,14 +44816,196 @@
       "scope": "The COMPLETE Theorem 1.2(ii) compact derivative clause is now proved for the ACTUAL global physical KdV frequency: for EVERY -1<s<-1/2 and EVERY nonnegative original action, d(omega-star)+6*Id is compact in the SAME original positive-frequency weighted ell(2s+1,1) source and target norm. One actual weak scalar frequency family is fixed BEFORE all regularities and all actions, with exact independently defined native Hamiltonian frequency recovery. Each regularity has ONE genuine complex analytic map near the ENTIRE original positive action cone, with literal raw frequency calibration to that same family. The diagonal and off-diagonal compact ACTION germs are combined on the SAME actual physical chart and native inverse, identified with the FULL global intermediate frequency, then extended from the nonnegative cone by holomorphic uniqueness in the proper normalized positive-frequency model. Exact norm-isometric conjugation gives the literal original weighted action space and the unchanged coefficient +6.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "b348612c6ebed9e49aa7146f18a1d133572c193093fb7e454696a011a0830ef6"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FiniteWeightedSchur.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "Finite symmetric nonnegative matrices with bounded weighted column sums have the corresponding UNWEIGHTED quadratic bound. Arbitrary strictly positive weights are allowed, with no lower bound or topology-equivalence premise.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "51d8809b8e81dc3a1840ec3ffe6623cd8264543d0ae57707fbcbce07bb2e6cc9"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedSchurHilbertBound.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "Actual infinite symmetric Hilbert matrices inherit a full Hilbert operator-norm bound from weighted finite column sums. Finite truncations, genuine bilinear duality, continuous limits and polarization give the bound for arbitrary infinite vectors.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "681bdffbc251e376d111ad5b690b15cab470f97a847b75cd41954c9fa479673f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/CompactCoordinateTails.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "A compact finite-exponent operator has uniformly small output tails on ALL unit coordinate vectors, with ONE finite cutoff before all input labels. Literal two-sided complementary projection matrix entries are computed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a4824a13d682e650f98c9ef5d40da403bf9b14130aa8b0a672a7ea8d80bf4aea"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SymmetricWeightedCompactTransfer.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "A bounded symmetric Hilbert matrix is COMPACT if its actual weighted ell1 realization is compact. Uniform compact ell1 column tails and weighted Schur bounds make the high/high Hilbert block small; finite rows and columns give compact approximants. No compactness inference merely from a compact source inclusion is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "13015c3be77b8007cff90d2783d560a1e0f4b2ff68d116e2a2aa2dab21e8e321"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionDifferentialSymmetry.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "The derivative of the actual analytic positive-index Hamiltonian gradient is its genuine scalar Hessian on every basis direction, and its corrected matrix is complex bilinearly symmetric, with no real-axis, finite-support or open-gap restriction.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6f056242bd1928afed2cbb1b1bddfa2a47f320caaeae31c31a6f0b9c7caa86d1"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertCompactActionIntertwining.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "Analytic maps agreeing through the actual weighted inclusion on the FULL nonnegative Hilbert action cone have intertwined FULL corrected derivatives, including boundary actions. Exact matrix-weight identities and genuine symmetry transfer compactness from ell1 to ell2. A reusable common-open-domain lemma keeps the bounded inclusions opaque under default kernel limits.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9e4728b187185a989f658e73124be39ed32e97bcc9c241c58f6f8b4b921b584d"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/GlobalScalarHilbertFrequencyAgreement.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "EVERY globally analytic weak scalar family with exact native Hamiltonian recovery agrees with the actual physical Hilbert gradient on the ENTIRE nonnegative Hilbert cone, including nonsummable actions. Exact original physical calibration and finite-action density determine the values.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "33d4cec63731d6d6b261e19cd20b51375a8a944cb902c2ee8aab46b798533610"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/HilbertIntermediateActionInclusion.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "Original Hilbert actions include continuously in each intermediate weighted ell1 order alpha<-1/2, with the literal physical positive-label weight. The full nonnegative cone is preserved and the inclusion into original weak actions commutes coefficientwise.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9d92ee3cfc3f98060de35bbffa3bb49a173cee00848b4c7c3ff5b02266911d71"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionHilbertGradientCoordinates.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "Exact linear isometric Hilbert reindexing of the actual positive-index Hamiltonian gradient. Full corrected derivatives conjugate with the identity coefficient unchanged, the actual matrix is symmetric, and Hilbert compactness transports back to the ORIGINAL positive-index norm.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "db0621bbfbb2b4316dd2d2a9c5e6a24f61c57158fa032cd71586b429b5c9ab1c"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/IntermediateHilbertPacketAgreement.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "The ACTUAL global intermediate weighted packet intertwines with the ACTUAL physical Hilbert gradient on the ENTIRE nonnegative Hilbert cone, using the SAME original weight in source and target and exact common weak frequency calibration.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b8f8b6cf235c8d3d84d2bbdb4950e57b364ec4e1cf0ec99d5946e9abb41e53b1"
+    },
+    {
+      "path": "NLS/Articles/KdVConvexity/ActionHilbertCompactTransfer.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "An actual analytic Hamiltonian gradient inherits corrected Hilbert compactness from a calibrated compact weighted action realization. Common domains are constructed before the full cone identity argument, retaining the ORIGINAL Hilbert norm and literal +6 identity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f8d7498c3fcbdfd8733cfd15f0bef792f3455f3b9029654bdb4cf69e9072607f"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/HilbertFrequencyCompactFromIntermediate.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "For the actual physical Hamiltonian gradient, a genuinely calibrated intermediate packet with compact corrected action derivatives supplies compact corrected Hilbert derivatives at EVERY positive action, with exact common frequency values.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9fb1b54c49f82f50481510c4ed33a2f22125947abde7aebff25ec1c11285b156"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/PhysicalHilbertFrequencyCompact.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "For EVERY actual PhysicalHstarExtension and EVERY original nonnegative Hilbert action, its FULL corrected gradient derivative is COMPACT. All intermediate packets, Arnold maps and physical frequency calibrations are supplied by verified factories; no spectral branch or compactness premise is supplied by the caller.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "53639604c5c4689a2a24000d826798f2803b94550b9cb43a2893cb274e0bbbe7"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/Theorem12HilbertCompact.lean",
+      "source_labels": [
+        "COMPLETE Theorem 1.2(iv): ACTUAL global KdV frequency in ORIGINAL unweighted positive-index ell2, analytic near the ENTIRE nonnegative cone and compact d(omega-star)+6Id at EVERY action"
+      ],
+      "source_pages": [
+        4,
+        35
+      ],
+      "scope": "The COMPLETE Theorem 1.2(iv) Hilbert target and compact derivative clause is now proved for the ACTUAL physical KdV frequency on the ENTIRE original nonnegative ell2 action cone. Its physical Hamiltonian gradient is genuinely complex analytic into the SAME unweighted positive-index ell2 space on a full complex neighborhood of the whole cone, real on that cone, and calibrated there to ONE actual global weak scalar frequency family with exact native Hamiltonian frequency recovery. At EVERY such Hilbert action, including zero, closed modes and arbitrary infinite support, d(omega-star)+6*Id is compact in the ORIGINAL Hilbert norm. The proof uses the already verified original intermediate weighted action compactness, exact full-cone frequency identification, genuine Hamiltonian Hessian symmetry and a new proved weighted Schur/tail compactness transfer. No p4 spectral inverse or source-derivative substitution is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0fde2439cbdbe8811b6b39fb55f205192724af5fa3a033f85cf4f29f4be8d187"
     }
   ],
   "dependencies_needed": [
-    "The COMPLETE Theorem 1.2(ii) compact derivative clause is now proved for the ACTUAL global physical KdV frequency: for EVERY -1<s<-1/2 and EVERY nonnegative original action, d(omega-star)+6*Id is compact in the SAME original positive-frequency weighted ell(2s+1,1) source and target norm. One actual weak scalar frequency family is fixed BEFORE all regularities and all actions, with exact independently defined native Hamiltonian frequency recovery. Each regularity has ONE genuine complex analytic map near the ENTIRE original positive action cone, with literal raw frequency calibration to that same family. The diagonal and off-diagonal compact ACTION germs are combined on the SAME actual physical chart and native inverse, identified with the FULL global intermediate frequency, then extended from the nonnegative cone by holomorphic uniqueness in the proper normalized positive-frequency model. Exact norm-isometric conjugation gives the literal original weighted action space and the unchanged coefficient +6. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main theorem rows remain OPEN. Theorem 1.2(ii) is VERIFIED and all regularity-dependent target clauses of Theorem 1.2(i) remain verified. COMPLETE Theorem 1.2 still needs the sharp locally uniform high-index asymptotics of (iii), and the Hilbert target/compact derivative assertions of (iv), together with a consolidated precise full statement. Strict concavity, local inverses, PDE conclusions, and KdV2 actual weighted moments, mass-renormalized frequency identification and global conclusions remain open.",
+    "The COMPLETE Theorem 1.2(iv) Hilbert target and compact derivative clause is now proved for the ACTUAL physical KdV frequency on the ENTIRE original nonnegative ell2 action cone. Its physical Hamiltonian gradient is genuinely complex analytic into the SAME unweighted positive-index ell2 space on a full complex neighborhood of the whole cone, real on that cone, and calibrated there to ONE actual global weak scalar frequency family with exact native Hamiltonian frequency recovery. At EVERY such Hilbert action, including zero, closed modes and arbitrary infinite support, d(omega-star)+6*Id is compact in the ORIGINAL Hilbert norm. The proof uses the already verified original intermediate weighted action compactness, exact full-cone frequency identification, genuine Hamiltonian Hessian symmetry and a new proved weighted Schur/tail compactness transfer. No p4 spectral inverse or source-derivative substitution is assumed. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main theorem rows remain OPEN. Complete source clauses Theorem 1.2(ii) and (iv) are VERIFIED, and all regularity-dependent target clauses of Theorem 1.2(i) remain verified. COMPLETE Theorem 1.2 still needs the SHARP locally uniform high-index asymptotics of (iii), then a consolidated precise full statement. Strict concavity, local inverses, PDE conclusions, and KdV2 actual weighted moments, exact mass-renormalized physical frequency identification and global conclusions remain open.",
     "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
     "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
-    "The actual KdV targets of Theorem 1.2(i) and the COMPLETE Theorem 1.2(ii) compact corrected global derivative in the exact original weighted positive-frequency action norm are proved. Remaining work includes sharp locally uniform asymptotics and the Hilbert target/compact derivative clause, followed by strict concavity, local inverses and PDE conclusions. KdV2 still needs actual weighted moment sums, exact physical and mass-renormalized frequency identification, and global analytic/asymptotic/PDE conclusions.",
+    "The actual KdV targets of Theorem 1.2(i), COMPLETE original weighted compactness clause 1.2(ii), and COMPLETE original Hilbert analytic target/compactness clause 1.2(iv) are proved. Remaining work for complete Theorem 1.2 is the SHARP locally uniform asymptotics(iii) and consolidated full statement. Strict concavity, local inverses, PDE conclusions and KdV2 actual weighted moment sums, exact physical/mass renormalization and global conclusions remain open.",
     "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
   ],
   "workspace": {
@@ -44833,8 +45029,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 25902,
-    "total_declarations_audited": 47969,
+    "candidate_declarations_audited": 25957,
+    "total_declarations_audited": 48024,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -44843,7 +45039,7 @@
     "main_theorems_verified": [
       "Theorem 1.1"
     ],
-    "selected_modules": 3364,
+    "selected_modules": 3378,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -44994,7 +45190,8 @@
     "diagonal_action_cancellation_validation_sequence": "All 3312 prior selected sources and all 51 prior provenance records remain byte-identical. Five new own modules and seven newly selected canonical normalization/free-factor modules were strictly rebuilt in dependency order AFTER freezing 3379 selected-source/checker/provenance/pinned-Mathlib-source hashes. The seven canonical source files were already tracked, remain byte-identical to canonical main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec and the previous article HEAD, and have one new reuse record, bringing provenance to 52 records. The exact new import closure is these twelve modules. The fresh combined transitive axiom audit covers all 3324 selected modules and EVERY imported NLS declaration: 25722 selected and 47789 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 26 private selection chunks of at most 128 names were verified. The actual 3324-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a twelve-module incremental rebuild retaining all prior strict evidence, not a full 3324-module rebuild.",
     "diagonal_frequency_symbol_validation_sequence": "All 3324 prior selected sources and all 52 prior provenance records remain byte-identical. Thirteen new own modules and two newly selected canonical analytic-nonvanishing/multiplier-tail modules were strictly rebuilt in dependency order AFTER freezing 3395 selected-source/checker/provenance/pinned-Mathlib-source hashes. Both canonical source files were already tracked, remain byte-identical to canonical main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec and the previous article HEAD, and have one new reuse record, bringing provenance to 53 records. The exact new import closure is these fifteen modules. The fresh combined transitive axiom audit covers all 3339 selected modules and EVERY imported NLS declaration: 25773 selected and 47839 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 27 private selection chunks of at most 128 names were verified. The actual 3339-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a fifteen-module incremental rebuild retaining all prior strict evidence, not a full 3339-module rebuild.",
     "diagonal_action_compact_validation_sequence": "All 3339 prior selected sources and all 53 provenance records remain byte-identical. Twelve new own modules containing 20 explicit theorems were strictly rebuilt in dependency order AFTER freezing 3407 selected-source/checker/provenance/pinned-Mathlib-source hashes. The exact new import closure is these twelve modules; no new canonical source or provenance record was needed. The fresh full transitive axiom audit covers all 3351 selected modules and EVERY imported NLS declaration: 25853 selected and 47920 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 27 private chunks of at most 128 names were verified. The actual 3351-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a twelve-module incremental rebuild retaining all prior strict evidence, not a full 3351-module rebuild.",
-    "full_corrected_derivative_validation_sequence": "All 3351 prior selected sources and all 53 provenance records remain byte-identical. Thirteen new own modules containing 22 explicit theorems were strictly rebuilt in dependency order AFTER freezing 3420 selected-source/checker/provenance/pinned-Mathlib-source hashes. The exact new import closure is these thirteen modules; no new canonical source or provenance record was needed. The fresh full transitive axiom audit covers all 3364 selected modules and EVERY imported NLS declaration: 25902 selected and 47969 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 27 private chunks of at most 128 names were verified. The actual 3364-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a thirteen-module incremental rebuild retaining all prior strict evidence, not a full 3364-module rebuild."
+    "full_corrected_derivative_validation_sequence": "All 3351 prior selected sources and all 53 provenance records remain byte-identical. Thirteen new own modules containing 22 explicit theorems were strictly rebuilt in dependency order AFTER freezing 3420 selected-source/checker/provenance/pinned-Mathlib-source hashes. The exact new import closure is these thirteen modules; no new canonical source or provenance record was needed. The fresh full transitive axiom audit covers all 3364 selected modules and EVERY imported NLS declaration: 25902 selected and 47969 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 27 private chunks of at most 128 names were verified. The actual 3364-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a thirteen-module incremental rebuild retaining all prior strict evidence, not a full 3364-module rebuild.",
+    "hilbert_corrected_compact_validation_sequence": "All 3364 prior selected sources and all 53 provenance records remain byte-identical. Fourteen new own modules containing 28 explicit theorems were strictly rebuilt in dependency order AFTER freezing 3434 selected-source/checker/provenance/pinned-Mathlib-source hashes. The exact new import closure is these fourteen modules; no new canonical source or provenance record was needed. The fresh full transitive axiom audit covers all 3378 selected modules and EVERY imported NLS declaration: 25957 selected and 48024 imported declarations. The entire audit loop, collectAxioms traversal, allowed axioms and imported NLS scope remain byte-identical to baseline. Exact ordered selection, dependencies, reachability and 27 private chunks of at most 128 names were verified. The actual 3378-name bidirectional NameSet probe rejects insertion/deletion mismatches. Private output freshness, overlay targets, unchanged canonical main and pinned Mathlib are checked. Lean/mathlib 4.33.1, autoImplicit=false, warningAsError and DEFAULT heartbeat, recursion and kernel limits apply. Only propext, Classical.choice and Quot.sound are allowed. This is a fourteen-module incremental rebuild retaining all prior strict evidence, not a full 3378-module rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -46398,6 +46595,18 @@
         "Actual KdV target clauses of Theorem 1.2(i), local off-diagonal and diagonal compact ACTION contributions at every original intermediate action, and exact original rough +6I factorization are proved. Remaining work includes combining these actual germs and identifying the full global frequency in the proper positive-frequency action model with its exact original norm, then full corrected action/Hilbert derivative compactness and sharp asymptotics. KdV2 still needs actual weighted moment sums, physical frequency identification, exact mass renormalization and global analytic/asymptotic/PDE conclusions.",
         "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
       ]
+    },
+    {
+      "snapshot_commit": "20b0ac84813aa014e8657558beae5cda1c22e4de",
+      "description": "The COMPLETE Theorem 1.2(iv) Hilbert target and compact derivative clause is now proved for the ACTUAL physical KdV frequency on the ENTIRE original nonnegative ell2 action cone. Its physical Hamiltonian gradient is genuinely complex analytic into the SAME unweighted positive-index ell2 space on a full complex neighborhood of the whole cone, real on that cone, and calibrated there to ONE actual global weak scalar frequency family with exact native Hamiltonian frequency recovery. At EVERY such Hilbert action, including zero, closed modes and arbitrary infinite support, d(omega-star)+6*Id is compact in the ORIGINAL Hilbert norm. The proof uses the already verified original intermediate weighted action compactness, exact full-cone frequency identification, genuine Hamiltonian Hessian symmetry and a new proved weighted Schur/tail compactness transfer. No p4 spectral inverse or source-derivative substitution is assumed.",
+      "entries": [
+        "The COMPLETE Theorem 1.2(ii) compact derivative clause is now proved for the ACTUAL global physical KdV frequency: for EVERY -1<s<-1/2 and EVERY nonnegative original action, d(omega-star)+6*Id is compact in the SAME original positive-frequency weighted ell(2s+1,1) source and target norm. One actual weak scalar frequency family is fixed BEFORE all regularities and all actions, with exact independently defined native Hamiltonian frequency recovery. Each regularity has ONE genuine complex analytic map near the ENTIRE original positive action cone, with literal raw frequency calibration to that same family. The diagonal and off-diagonal compact ACTION germs are combined on the SAME actual physical chart and native inverse, identified with the FULL global intermediate frequency, then extended from the nonnegative cone by holomorphic uniqueness in the proper normalized positive-frequency model. Exact norm-isometric conjugation gives the literal original weighted action space and the unchanged coefficient +6. COMPLETE Theorem 1.1 remains verified; the other ten COMPLETE main theorem rows remain OPEN. Theorem 1.2(ii) is VERIFIED and all regularity-dependent target clauses of Theorem 1.2(i) remain verified. COMPLETE Theorem 1.2 still needs the sharp locally uniform high-index asymptotics of (iii), and the Hilbert target/compact derivative assertions of (iv), together with a consolidated precise full statement. Strict concavity, local inverses, PDE conclusions, and KdV2 actual weighted moments, mass-renormalized frequency identification and global conclusions remain open.",
+        "The rough-frequency versus original intrinsic physical moment comparison now holds at EVERY order on one common rough ball, including the orders needed by KdV2. The ACTUAL KdV2 fixed-source formula is still OPEN: prove the cubic-weighted second- and linear-weighted fourth-moment sums and identify their analytic mass-renormalized correction by the actual finite-gap limit, then obtain the full global action/sequence-valued/asymptotic/PDE conclusions.",
+        "The open-own-gap restriction is REMOVED. The ACTUAL intrinsic physical KdV/KdV2 frequencies equal the finite original Dirichlet spectral sums and the printed moment formulas at EVERY positive mode of EVERY original real mean-zero native H1/H2 spectral finite-gap source, INCLUDING CLOSED SELECTED GAPS. A proved global-inverse perturbation opens a closed mode in a stronger native topology while preserving a fixed finite spectral gap set. Actual intrinsic frequency and spectral residue/sum continuity identify the limit, with all stronger regularity discharged by finite-gap regularity. The exact coefficients -12, -160*pi^2 and 80 and physical mass term 20*(2*pi*n)*H0 are retained. Actual intrinsic frequencies at ZERO ORIGINAL ACTIONS now have the exact free values (2*pi*n)^3 and (2*pi*n)^5. COMPLETE Theorem 1.1 remains VERIFIED and byte-identical; the other ten COMPLETE main theorem rows remain OPEN. The actual finite-gap spectral-frequency/moment identification now covers ALL own modes. NEXT extend it from genuine finite-gap sources to ALL native sources via proved dense finite-support targets and match the convergent analytic rough spectral series, retaining the exact normalizations. Sharp infinite-gap summability, locally uniform asymptotics, low-regularity sequence-valued analytic target bounds, compact derivative corrections, concavity/local inverses, fixed-mass bounds and full PDE solution conclusions remain essential. The finite-gap identities and free frequency values alone do not prove any complete low-regularity extension/asymptotic main theorem or time-dependent PDE evolution.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "The actual KdV targets of Theorem 1.2(i) and the COMPLETE Theorem 1.2(ii) compact corrected global derivative in the exact original weighted positive-frequency action norm are proved. Remaining work includes sharp locally uniform asymptotics and the Hilbert target/compact derivative clause, followed by strict concavity, local inverses and PDE conclusions. KdV2 still needs actual weighted moment sums, exact physical and mass-renormalized frequency identification, and global analytic/asymptotic/PDE conclusions.",
+        "At EVERY genuinely non-L2 real mean-zero native H^s datum for s>=-1, actual smooth real mean-zero physical approximants now converge in the SAME H^s topology and the actual classical H_0 diverges. Every extension agreeing with smooth physical H_0 fails continuity even WITHIN the real mean-zero space. The exact mass contribution 20*(2*n*pi)*H_0 diverges for every positive mode. NEXT identify the ACTUAL KdV2 frequency with its physical mass plus renormalized correction, prove the correction extension/continuity on -1<s<0, and deduce the actual physical solution-map obstruction with the correct time orientation and all-smooth-approximation property. All eleven main theorem rows remain OPEN."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -46502,5 +46711,6 @@
   "diagonal_action_cancellation_record": "DIAGONAL_ACTION_CANCELLATION.md",
   "diagonal_frequency_symbol_record": "DIAGONAL_FREQUENCY_SYMBOL.md",
   "diagonal_action_compact_record": "DIAGONAL_ACTION_COMPACT.md",
-  "full_corrected_derivative_record": "FULL_CORRECTED_DERIVATIVE.md"
+  "full_corrected_derivative_record": "FULL_CORRECTED_DERIVATIVE.md",
+  "hilbert_corrected_compact_record": "HILBERT_CORRECTED_COMPACT.md"
 }
