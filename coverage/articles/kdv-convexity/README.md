@@ -1,6 +1,9 @@
 # KdV Hamiltonian convexity
 
-**Corrected Theorem 1.1 and Theorem 1.2 are proved. Theorem 1.3 remains open.**
+**Corrected Theorem 1.1 and Theorems 1.2 and 1.3 are proved.**
+
+Earlier milestone sections are historical. Their open obligations are
+superseded by the current coverage table and final theorem sections.
 `NLS.Articles.KdVConvexity.theorem_1_1_corrected` constructs the precise
 `Theorem11PhysicalData` record in `MainTheorem11.lean`, with no mathematical
 hypotheses supplied by the caller. One complex-open neighborhood of the
@@ -96,7 +99,7 @@ See `source-inventory.json` for statement domains, quantifiers and pages.
 | --- | --- | --- |
 | Theorem 1.1, pp. 3–4 | A complex open extension around the entire nonnegative ell2 action quadrant; physical energy/frequency identities; gradient zero and full derivative -6*Id; analytic local inverse; one-radius Hessian bound for every real ell2 direction. | **Verified with explicit source correction** by `theorem_1_1_corrected` / `Theorem11PhysicalData`. All components hold jointly for the same physical extension. The preamble uniform O(1) estimate (1.7) is refuted and excluded. |
 | Theorem 1.2, p. 4 | For each -1/2<=s<=0 and finite p>=2, the same global H^-1 physical KdV Birkhoff map restricts to a real analytic diffeomorphism L_0^(s,p) -> ell_0^(s+1/2,p). | Verified by `theorem_1_2` and `theorem_1_2_global_native_analytic_diffeomorphism`: native real analyticity in BOTH original norms, full global bijection, BOTH fixed rough diagrams and all signed inverse coefficients. |
-| Theorem 1.3, p. 5 | Global C0 well-posedness of physical KdV on every such real Fourier-Lebesgue space, with the solution notion referenced by the paper. | Partially proved by `theorem_1_3_global_continuous_phase_preparation`: global native continuous physical phase group, same weak normalization, and uniform compact-time approximation by orbits with actual smooth spatial representatives. Classical KdV time-PDE recovery and the universal smooth-approximation solution property remain open. |
+| Theorem 1.3, p. 5 | Global C0 well-posedness of physical KdV on every such real Fourier-Lebesgue space, with the solution notion referenced by the paper. | Proved by `theorem_1_3 : Nonempty Theorem13PhysicalData`: exact article orders and finite exponents, actual classical PDE recovery, unique universal classical-limit solutions, native continuous complete trajectories and the same weak Hminus1 evolution. |
 
 For 1.1 the complex domain must contain every nonnegative ell2 action, not
 just zero. One local radius is chosen before all actions and all real Hilbert
@@ -3625,7 +3628,7 @@ This Miura preparation is retained. The subsequent milestone below proves
 the exact physical Birkhoff criterion and full global stronger bijection.
 Native analyticity in both directions is proved by the completed
 Theorem 1.2 milestone below.
-Theorem 1.3 remains open. Corrected Theorem 1.1 is unchanged.
+Theorem 1.3 is proved in the final milestone below. Corrected Theorem 1.1 is unchanged.
 
 ## Actual Fourier-Lebesgue physical Birkhoff bijection
 
@@ -3656,7 +3659,7 @@ used in the completed native Birkhoff analyticity below.
 Corrected Theorem 1.1 remains complete. Native forward analyticity is
 proved in the subsequent milestone below. Native inverse analyticity is
 proved by the completed Theorem 1.2 milestone below.
-Theorem 1.3 remains open.
+Theorem 1.3 is proved in the final milestone below.
 
 ## Native physical Fourier-Lebesgue forward analyticity
 
@@ -3681,7 +3684,7 @@ analyticity, the full stronger bijection and compatibility with the SAME
 fixed rough inverse on the precise article range -1/2<=s<=0, finite p>=2.
 The `analytic_forward` field of `Theorem12PhysicalData` is now proved.
 The subsequent milestone below proves `analytic_inverse` and constructs
-the complete `Theorem12PhysicalData` record. Theorem 1.3 remains open.
+the complete `Theorem12PhysicalData` record. Theorem 1.3 is proved in the final milestone below.
 Corrected Theorem 1.1 is unchanged.
 
 ## Complete Theorem 1.2: native inverse analyticity
@@ -3707,45 +3710,54 @@ with the ALREADY-FIXED global inverse by global bijectivity. The endpoint
 p=2 is the SAME proved raw Hilbert inverse. No new mathematical premise,
 axiom, proof-limit override or linter override is introduced.
 
-## Theorem 1.3: actual global continuous phase preparation
+## Theorem 1.3: global C0 well-posedness
 
-`theorem_1_3_global_continuous_phase_preparation` chooses ONE actual
-physical Birkhoff map and ONE actual base frequency family before every
--1/2<=s<=0 and finite p>=2. The physical base frequencies are real on the
-ENTIRE nonnegative weighted base cone. The native action map is continuous
-in that original base norm, and each raw positive action is exactly
-z_n*z_(-n). On every H1 source the phase frequencies recover the
-independently proved intrinsic KdV Hamiltonian frequencies, including
-closed coordinates. No uniform bound on the frequency sequence is used.
+`theorem_1_3 : Nonempty Theorem13PhysicalData` chooses ONE actual physical
+Birkhoff map and ONE actual frequency extension before every
+-1/2<=s<=0 and every finite p>=2. The unique solution is the SAME global
+physical phase evolution in the ORIGINAL real mean-zero weighted lp norm.
+Complete solution trajectories depend continuously in C(R,X), with the
+compact-open topology, hence uniformly on every compact real time set.
+The fixed original Hminus1 normalization commutes for every real time.
 
-The SAME native diffeomorphism conjugates these signed phases to a global
-continuous group in the ORIGINAL real mean-zero Fourier-Lebesgue source.
-Complete trajectories depend continuously in the native compact-open
-topology; native initial-data convergence therefore gives convergence
-uniform on every compact time set. All native orders/exponents give the
-SAME raw evolved source. The original weak normalization commutes with
-the SAME globally fixed rough phase evolution for every real time.
+Classical recovery is an actual time-PDE theorem. Finite-support target
+orbits are real analytic in their entire native norms; their true rough
+derivatives equal the independently proved finite physical action Gardner
+vector. Every signed coefficient is that of the literal unit-period KdV
+PDE. The continuous native conservative vector H4->H1 is -D^3 u+3*D(u^2),
+with exact raw multiplier D=2*pi*i*n and the original infinite convolution.
+Finite-gap trajectories converge in C(R,H4); their actual derivatives
+converge locally uniformly in H1. The derivative-limit theorem therefore
+proves the KdV time equation for EVERY H4 initial potential.
 
-Literal symmetric Birkhoff truncations pulled back by the SAME inverse
-converge in the original native source norm. Finite physical Birkhoff
-support implies every higher Sobolev order by the global physical
-regularity criterion, giving an ACTUAL smooth unit-period spatial
-representative. Every point on each approximating phase orbit has this
-spatial smoothness, and the approximating trajectories converge uniformly
-on every compact time set in the original norm.
+`IsPeriodOneClassicalKdVCurve` means continuity in H4 and the actual H1
+time derivative equal to this literal vector, without any phase or
+Birkhoff assumption. Every such arbitrary classical curve preserves the
+original physical actions and frequencies. Scalar ODE uniqueness then
+identifies the entire original source curve with the SAME physical phase
+orbit. Arbitrary smooth initial potentials retain all higher Sobolev
+orders. Their spatial representatives are actual C-infinity unit-period
+functions and their time PDE holds in the uniform physical norm, with
+right side -u_xxx+6*u*u_x and every original Fourier integral retained.
+
+`IsFourierLebesgueClassicalLimitSolution` states continuity, the prescribed
+initial value, and convergence for EVERY smooth initial sequence in the
+original native norm and EVERY corresponding actual classical KdV curve.
+Smooth physical potentials are dense in every article space. The universal
+approximation property is proved uniformly on every compact time set,
+and it determines exactly one solution. This is the solution convention
+of Kappeler--Topalov, Duke Math. J. 135 (2006), p.328, Definitions 1.1-1.2:
+[author-uploaded primary text](https://www.researchgate.net/publication/278194325_Global_wellposedness_of_KdV_in_H-1TR).
+The Hminus1 identification also holds for arbitrary actual classical
+approximations converging only in the weak norm. No theorem from that
+paper has been introduced as an unproved axiom.
 
 ## Remaining essential KdV work
 
-Theorem 1.3 remains open. Spatial smoothness is not yet a proof of the
-time PDE u_t=-u_xxx+6*u*u_x. Prove that identity on the approximating
-orbits, recover every genuine classical smooth solution from the SAME
-phase formula, and prove approximation independence and uniqueness for
-EVERY smooth approximating sequence. The referenced solution definition
-is Kappeler--Topalov, Duke Math. J. 135 (2006), p.328, Definitions 1.1-1.2:
-[author-uploaded primary text](https://www.researchgate.net/publication/278194325_Global_wellposedness_of_KdV_in_H-1TR).
-It requires the genuine classical solution limit and continuous dependence
-in C(R,X) with uniform convergence on bounded time intervals. No theorem
-from that paper is introduced as an unproved axiom here.
+No essential main-theorem proof obligations remain for corrected Theorem
+1.1 and Theorems 1.2 and 1.3. The necessary source correction to preamble
+(1.7), described above, remains part of the verified result. Theorem 1.3
+is not restricted to one selected finite-gap approximation.
 
 The `kdv-estimates` branch was re-inspected through commit `05e5530`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
@@ -3802,19 +3814,19 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `98d0fd0` contains 2598 proof sources, whose
-hashes remain unchanged. All 19 new authored modules pass strict Lean
+The validated baseline at `5cdffde` contains 2617 proof sources, whose
+hashes remain unchanged. All 37 new authored modules pass strict Lean
 compilation with default proof limits and no linter or instance-priority
-overrides. Reproduction lists 2617 modules. The positive-index example,
-combined transitive audit and 3074 coverage-name checks pass.
+overrides. Reproduction lists 2654 modules. The positive-index example,
+combined transitive audit and 3148 coverage-name checks pass.
 All 2852 remaining reference imports agree byte-for-byte and were not
 rebuilt. Earlier receipts remain in the parent commit. This is incremental
 validation, not a full repository build.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 950 additional shared modules:
-20243 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 960 additional shared modules:
+20335 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

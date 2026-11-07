@@ -3147,11 +3147,8 @@
       "domain": "All real initial data in L_0^(s,p), all real times; solutions interpreted through the distributional H^-1 framework referenced by the paper.",
       "topology": "Continuity of trajectories and dependence on initial data in the Fourier-Lebesgue norm, compatible with the H^-1 solution notion.",
       "proof_note": "Presented in the introduction as an immediate application of Theorem 1.2 and the previously constructed KdV frequency/solution theory; no separately labelled proof later.",
-      "status": "not_verified",
-      "remaining": [
-        "Recover the literal time KdV PDE u_t=-u_xxx+6*u*u_x for the smooth finite-support physical phase orbits, with the exact unit-period Fourier normalization. Spatial smoothness and global phase continuity alone do not prove the PDE.",
-        "Recover every genuine classical smooth KdV solution from the SAME physical phase formula. Then prove convergence for EVERY smooth approximating sequence and uniqueness in the solution class of Kappeler--Topalov Definition 1.1, together with identification with the Hminus1 classical-limit solution. The selected finite-gap approximation is already proved uniformly on compact time intervals."
-      ],
+      "status": "verified",
+      "remaining": [],
       "verified_dependencies": [
         "NLS.Articles.KdVConvexity.theorem_1_2"
       ],
@@ -3247,10 +3244,83 @@
         "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.weakPhysicalPhaseEvolution",
         "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.continuous_weakPhysicalPhaseEvolution",
         "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_weak_commuting",
-        "NLS.Articles.KdVConvexity.theorem_1_3_global_continuous_phase_preparation"
+        "NLS.Articles.KdVConvexity.theorem_1_3_global_continuous_phase_preparation",
+        "NLS.Coeff.analyticAt_phaseFlow_of_finite_support",
+        "NLS.physicalPositiveRealLift_weightIsometry",
+        "NLS.physicalPositiveRealLift_phase_weightIsometry",
+        "NLS.analyticAt_physicalRealMeanZeroPhaseFlow_of_finite_support",
+        "NLS.Articles.KdVConvexity.BasePhysicalFrequencyExtension.analyticAt_fourierLebesguePhysicalPhaseFlow_of_finite_support",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.analyticAt_fourierLebesguePhaseEvolution_of_finite_support",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.analyticAt_fourierLebesgueFiniteGapApproximation_orbit",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.hasDerivAt_fourierLebesguePhaseEvolution_component",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_frequency",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_frequency_eq_native",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_component_zero_outside",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.hasDerivAt_fourierLebesguePhaseEvolution_component_finiteAction",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.signed_fderiv_injective_on_meanZero",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.signed_fderiv_component",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.signed_fderiv_zero_mode",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.meanZero_direction_eq_of_signed_components",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.curve_derivative_eq_finiteActionVector",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.hasDerivAt_rough_finitePhaseEvolution_hamiltonian",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_native_H1_at_finitePhaseEvolution",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.native_H1_at_finitePhaseEvolution_closed_outside",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.finitePhaseEvolution_KdV_coefficients",
+        "NLS.periodOneDerivativePower_weight_bound",
+        "NLS.periodOneSobolevDerivativePower",
+        "NLS.periodOneSobolevDerivativePower_apply",
+        "NLS.periodOneKdVThirdDerivative",
+        "NLS.periodOneKdVFluxDerivative",
+        "NLS.periodOneKdVNativeVector",
+        "NLS.analyticAt_periodOneKdVNativeVector",
+        "NLS.periodOneKdVNativeVector_apply",
+        "NLS.periodOneKdVNativeVector_zero_mode",
+        "NLS.Fourier.periodOneCoefficient_iteratedDeriv_of_smooth_periodic",
+        "NLS.KdV.kdvRHS_conservative",
+        "NLS.KdV.periodOneKdVNativeVector_coefficients",
+        "NLS.exists_finite_positive_support_of_finite_signed_support",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.hasDerivAt_finitePhaseEvolution_nativeKdV",
+        "NLS.Dynamics.hasDerivAt_of_continuous_evolution_approximation",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.hasDerivAt_fourierLebesguePhaseEvolution_nativeKdV",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.hasDerivAt_fourierLebesguePhaseEvolution_roughKdV",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.signedComponent_fderiv_nativeKdV",
+        "NLS.KdV.IsPeriodOneClassicalKdVCurve",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_isClassicalKdV",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.classicalKdV_hasDerivAt_signedComponent",
+        "NLS.ComplexAnalysis.paired_scalar_evolution_product_constant",
+        "NLS.ComplexAnalysis.global_scalar_evolution_eq_exp",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.classicalKdV_physicalActions_constant",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.classicalKdV_physicalFrequency_constant",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.classicalKdV_signedComponent_eq_phase",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.classicalKdV_eq_fourierLebesguePhaseEvolution",
+        "NLS.KdV.periodOneClassicalKdVPhysical",
+        "NLS.KdV.classicalKdV_hasDerivAt_physical_of_smooth",
+        "NLS.KdV.IsSmoothPeriodOnePotential",
+        "NLS.KdV.isSmoothPeriodOnePotential_iff_exists_smooth",
+        "NLS.weighted_mem\u2113p_of_raw_eq",
+        "NLS.physicalSobolevExponentInclusion",
+        "NLS.physicalSobolevExponentInclusion_apply",
+        "NLS.exists_physicalWeightedRelift",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_mem_higher_order",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_preserves_all_sobolev",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_smooth",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.smooth_fourierLebesguePhaseEvolution_literalKdV",
+        "NLS.KdV.IsFourierLebesgueClassicalLimitSolution",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.classicalKdV_native_inclusion_eq_phase",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.tendstoUniformlyOn_arbitrary_classicalKdV_approximation",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_isClassicalLimitSolution",
+        "NLS.physicalWeightedRawSequence",
+        "NLS.physicalWeightedRawSequence_apply",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_smooth_H4_of_smooth_coefficients",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.exists_smooth_H4_approximation",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.classicalLimitSolution_eq_fourierLebesguePhaseEvolution",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.existsUnique_fourierLebesgueClassicalLimitSolution",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.classicalKdV_weak_normalization_eq_phase",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.tendstoUniformlyOn_arbitrary_classicalKdV_weak_approximation",
+        "NLS.Articles.KdVConvexity.Theorem13PhysicalData",
+        "NLS.Articles.KdVConvexity.theorem_1_3"
       ],
       "verified_phase_preparation_declaration": "NLS.Articles.KdVConvexity.theorem_1_3_global_continuous_phase_preparation",
-      "partial_status": "global_native_continuous_physical_phase_group_with_uniform_smooth_spatial_finite_gap_approximation_proved_classical_PDE_and_universal_smooth_approximation_open",
       "referenced_solution_notion": {
         "reference": "Kappeler--Topalov, Global wellposedness of KdV in Hminus1(T,R), Duke Math. J. 135(2) (2006), 327-360",
         "doi": "10.1215/S0012-7094-06-13524-X",
@@ -3262,32 +3332,53 @@
       },
       "verified_statement_components": [
         {
-          "assertion": "The actual physical frequencies give ONE global native continuous group for every stated order/exponent; complete trajectories depend continuously on native initial data",
-          "result": "proved",
-          "declaration": "NLS.Articles.KdVConvexity.theorem_1_3_global_continuous_phase_preparation"
-        },
-        {
-          "assertion": "The same rough normalization diagram commutes, and evolutions coincide across native orders and exponents",
+          "assertion": "The original global phase orbit solves the literal H4-to-H1 KdV time equation, proved first for finite Birkhoff support and then by locally uniform convergence of actual derivatives",
           "result": "proved",
           "declarations": [
-            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_weak_commuting",
-            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_compatible"
+            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.hasDerivAt_finitePhaseEvolution_nativeKdV",
+            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.hasDerivAt_fourierLebesguePhaseEvolution_nativeKdV"
           ]
         },
         {
-          "assertion": "Actual inverse symmetric Birkhoff truncations have spatially smooth orbits and converge uniformly on compact time sets in the original native norm",
+          "assertion": "Arbitrary actual classical KdV curves preserve the physical actions and equal the SAME phase evolution; arbitrary smooth initial data have literal smooth physical PDE evolution",
           "result": "proved",
-          "declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.tendstoUniformlyOn_fourierLebesgueFiniteGapApproximation"
+          "declarations": [
+            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.classicalKdV_physicalActions_constant",
+            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.classicalKdV_eq_fourierLebesguePhaseEvolution",
+            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.smooth_fourierLebesguePhaseEvolution_literalKdV"
+          ]
         },
         {
-          "assertion": "Actual classical KdV PDE recovery and every smooth-approximation solution requirement",
-          "result": "not_verified",
-          "remaining": [
-            "Recover the literal time KdV PDE u_t=-u_xxx+6*u*u_x for the smooth finite-support physical phase orbits, with the exact unit-period Fourier normalization. Spatial smoothness and global phase continuity alone do not prove the PDE.",
-            "Recover every genuine classical smooth KdV solution from the SAME physical phase formula. Then prove convergence for EVERY smooth approximating sequence and uniqueness in the solution class of Kappeler--Topalov Definition 1.1, together with identification with the Hminus1 classical-limit solution. The selected finite-gap approximation is already proved uniformly on compact time intervals."
+          "assertion": "Every smooth initial approximation and every corresponding actual classical solution converges in the original native norm uniformly on every compact time set",
+          "result": "proved",
+          "declaration": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.tendstoUniformlyOn_arbitrary_classicalKdV_approximation"
+        },
+        {
+          "assertion": "Exactly one continuous solution exists in the universal classical-limit sense, for every -1/2<=s<=0 and every finite p>=2",
+          "result": "proved",
+          "declarations": [
+            "NLS.KdV.IsFourierLebesgueClassicalLimitSolution",
+            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.existsUnique_fourierLebesgueClassicalLimitSolution",
+            "NLS.Articles.KdVConvexity.theorem_1_3"
+          ]
+        },
+        {
+          "assertion": "Complete native trajectories depend continuously on the original initial norm in C(R,X); the SAME fixed Hminus1 normalization commutes at every time and recovers weak classical limits",
+          "result": "proved",
+          "declarations": [
+            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesgueTrajectoryMap",
+            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.fourierLebesguePhaseEvolution_weak_commuting",
+            "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.tendstoUniformlyOn_arbitrary_classicalKdV_weak_approximation"
           ]
         }
-      ]
+      ],
+      "lean_declarations": [
+        "NLS.Articles.KdVConvexity.theorem_1_3",
+        "NLS.Articles.KdVConvexity.Theorem13PhysicalData",
+        "NLS.KdV.IsFourierLebesgueClassicalLimitSolution",
+        "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.existsUnique_fourierLebesgueClassicalLimitSolution"
+      ],
+      "classical_solution_convention": "Continuous H4 trajectory with its actual H1 time derivative equal to the literal conservative KdV vector. No Birkhoff or phase condition occurs in the definition. Arbitrary smooth data have globally smooth spatial representatives and the literal physical time PDE in the uniform norm; all such strong classical curves are uniquely recovered."
     }
   ],
   "completion_status": "partial_verification_actual_high_energy_pairs_multiplicities_trace_levels_and_analytic_symmetric_data_proved",
@@ -6651,6 +6742,92 @@
       "checked_date": "2026-11-07",
       "solution_requirement": "For every sequence of smooth initial potentials converging in the original space, the corresponding genuine classical KdV solutions converge at every time to the solution curve. Global C0 well-posedness additionally requires continuous dependence in C(R,X), with the topology of uniform convergence on bounded time intervals.",
       "NOT_used_as_an_unproved_axiom": true
-    }
+    },
+    "historical_milestone_only": true
+  },
+  "classical_KdV_and_Theorem_1_3_progress": {
+    "status": "main_Theorem_1_3_verified_global_C0_wellposedness_in_universal_classical_limit_notion",
+    "main_declaration": "NLS.Articles.KdVConvexity.theorem_1_3",
+    "physical_data_record": "NLS.Articles.KdVConvexity.Theorem13PhysicalData",
+    "baseline_commit": "5cdffde5738c0be25fc55876df0b85b02f3330ad",
+    "baseline_proof_sources_preserved": 2617,
+    "new_authored_modules": [
+      "NLS.SequenceSpaces.FinitePhaseAnalytic",
+      "NLS.SequenceSpaces.PhysicalRealMeanZeroPhaseAnalytic",
+      "NLS.Articles.KdVConvexity.FourierLebesgueFinitePhaseAnalytic",
+      "NLS.Articles.KdVConvexity.FourierLebesguePhaseCoordinateDerivatives",
+      "NLS.Articles.KdVConvexity.FourierLebesguePhaseFrequencyTransport",
+      "NLS.KdV.HillRoughSignedDerivativeInjective",
+      "NLS.KdV.HillRoughSignedDerivativeComponents",
+      "NLS.KdV.HillRoughHamiltonianCurveMatching",
+      "NLS.Articles.KdVConvexity.FourierLebesgueFinitePhaseHamiltonian",
+      "NLS.Articles.KdVConvexity.FourierLebesgueFinitePhaseSmoothRealization",
+      "NLS.Articles.KdVConvexity.FourierLebesgueFinitePhaseKdVCoefficients",
+      "NLS.SequenceSpaces.PeriodOneKdVNativeVector",
+      "NLS.Fourier.PeriodOneDerivativePowers",
+      "NLS.KdV.PeriodOneKdVNativePhysical",
+      "NLS.SequenceSpaces.FiniteSignedPositiveSupport",
+      "NLS.Articles.KdVConvexity.FourierLebesgueFinitePhaseStrongKdV",
+      "NLS.Dynamics.ContinuousEvolutionDerivativeLimit",
+      "NLS.Articles.KdVConvexity.FourierLebesgueStrongKdV",
+      "NLS.Articles.KdVConvexity.FourierLebesgueKdVCoordinateField",
+      "NLS.KdV.PeriodOneClassicalKdVCurve",
+      "NLS.Articles.KdVConvexity.ClassicalKdVCoordinateEvolution",
+      "NLS.ComplexAnalysis.GlobalScalarEvolution",
+      "NLS.Articles.KdVConvexity.ClassicalKdVActionConservation",
+      "NLS.Articles.KdVConvexity.ClassicalKdVUniqueness",
+      "NLS.KdV.PeriodOneClassicalKdVPhysical",
+      "NLS.KdV.PeriodOneSmoothPotential",
+      "NLS.SequenceSpaces.WeightedRawMembershipTransport",
+      "NLS.SequenceSpaces.PhysicalSobolevExponentInclusion",
+      "NLS.Articles.KdVConvexity.FourierLebesguePhaseRegularityTransfer",
+      "NLS.Articles.KdVConvexity.ClassicalKdVSmoothEvolution",
+      "NLS.KdV.FourierLebesgueClassicalLimitSolution",
+      "NLS.Articles.KdVConvexity.FourierLebesgueClassicalApproximation",
+      "NLS.SequenceSpaces.PhysicalWeightedRawSequence",
+      "NLS.Articles.KdVConvexity.FourierLebesgueSmoothDensity",
+      "NLS.Articles.KdVConvexity.FourierLebesgueClassicalLimitUniqueness",
+      "NLS.Articles.KdVConvexity.WeakPhysicalClassicalLimit",
+      "NLS.Articles.KdVConvexity.MainTheorem13"
+    ],
+    "same_actual_physical_signed_map_retained": true,
+    "same_fixed_global_rough_inverse_retained": true,
+    "ONE_physical_map_and_frequency_family_before_ALL_article_orders_and_exponents": true,
+    "article_orders": "-1/2<=s<=0",
+    "article_exponents": "every finite p>=2",
+    "original_real_mean_zero_weighted_lp_norms_retained": true,
+    "literal_period_one_KdV_vector": "H4 -> H1: -D^3 u+3*D(u^2), raw multiplier D=2*pi*i*n",
+    "finite_support_orbits_real_analytic_in_entire_original_native_norm": true,
+    "actual_finite_support_time_KdV_PDE_proved": true,
+    "every_H4_phase_orbit_has_actual_H1_KdV_time_derivative": true,
+    "actual_periodic_physical_PDE_in_uniform_norm_for_every_smooth_initial_potential": true,
+    "arbitrary_strong_classical_KdV_solution_recovery_and_uniqueness": true,
+    "original_physical_actions_constant_on_every_classical_solution": true,
+    "all_higher_Sobolev_orders_preserved_for_smooth_initial_data": true,
+    "smooth_potentials_dense_in_every_original_article_space": true,
+    "EVERY_smooth_initial_approximation_and_EVERY_corresponding_classical_solution_converges": true,
+    "arbitrary_classical_approximation_uniform_on_every_compact_time_set": true,
+    "unique_solution_in_universal_classical_approximation_notion": true,
+    "complete_native_solution_trajectories_continuous_in_compact_open_topology": true,
+    "SAME_weak_Hminus1_normalization_commutes_for_every_time": true,
+    "arbitrary_smooth_classical_approximations_converging_only_in_weak_norm_converge_to_SAME_weak_flow": true,
+    "classical_solution_definition": "NLS.KdV.IsPeriodOneClassicalKdVCurve",
+    "solution_definition": "NLS.KdV.IsFourierLebesgueClassicalLimitSolution",
+    "smooth_physical_recovery": "NLS.Articles.KdVKdV2Frequencies.GlobalRoughAbelianForwardData.smooth_fourierLebesguePhaseEvolution_literalKdV",
+    "main_Theorem_1_1_corrected_complete": true,
+    "main_Theorem_1_2_complete": true,
+    "main_Theorem_1_3_complete": true,
+    "remaining": [],
+    "authored_heartbeat_linter_or_instance_overrides": false,
+    "referenced_solution_notion": {
+      "reference": "Kappeler--Topalov, Global wellposedness of KdV in Hminus1(T,R), Duke Math. J. 135(2) (2006), 327-360",
+      "doi": "10.1215/S0012-7094-06-13524-X",
+      "definition_location": "p.328, Definitions 1.1 and 1.2",
+      "author_uploaded_primary_text_url": "https://www.researchgate.net/publication/278194325_Global_wellposedness_of_KdV_in_H-1TR",
+      "checked_date": "2026-11-07",
+      "solution_requirement": "For every sequence of smooth initial potentials converging in the original space, the corresponding genuine classical KdV solutions converge at every time to the solution curve. Global C0 well-posedness additionally requires continuous dependence in C(R,X), with the topology of uniform convergence on bounded time intervals.",
+      "NOT_used_as_an_unproved_axiom": true
+    },
+    "classical_solution_convention": "Continuous H4 trajectory with its actual H1 time derivative equal to the literal conservative KdV vector. No Birkhoff or phase condition occurs in the definition. Arbitrary smooth data have globally smooth spatial representatives and the literal physical time PDE in the uniform norm; all such strong classical curves are uniquely recovered."
   }
 }
