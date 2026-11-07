@@ -1,0 +1,55 @@
+{
+  "source_commit": "334579e6fb05cfac349f0a25d87640cebf24005c",
+  "source_branch": "articles/mkdv-nls-hierarchies",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/SourceHigherActionOneKernel.lean",
+      "source_sha256": "586e6a62f8fd0d14611195e3a455156bb6d6b0a7fa95ae4f280c41948106b9fe",
+      "local_sha256": "586e6a62f8fd0d14611195e3a455156bb6d6b0a7fa95ae4f280c41948106b9fe",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHigherActionOneCircleQuotient.lean",
+      "source_sha256": "0627ee1ecad3125c12ba5a9c890b680456b15b7ce0444ade4aab4db2dcbec6f5",
+      "local_sha256": "0627ee1ecad3125c12ba5a9c890b680456b15b7ce0444ade4aab4db2dcbec6f5",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHigherActionOneNormalized.lean",
+      "source_sha256": "1f5db10053845376c239025ef6765d2cdf5f3e28720b42c80acff08120827b92",
+      "local_sha256": "1f5db10053845376c239025ef6765d2cdf5f3e28720b42c80acff08120827b92",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHigherActionOneUniformCircle.lean",
+      "source_sha256": "cdfb90b16385043773746b017901d647aba619b75316b2f61a0fb6a7d34da3a2",
+      "local_sha256": "cdfb90b16385043773746b017901d647aba619b75316b2f61a0fb6a7d34da3a2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCenteredActionCircleBound.lean",
+      "source_sha256": "a8e9c16d8e9c1b110c30fc250f3d803baf32330fd4da9ec67f04b391bb818fe5",
+      "local_sha256": "a8e9c16d8e9c1b110c30fc250f3d803baf32330fd4da9ec67f04b391bb818fe5",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHigherActionOneCenteredTail.lean",
+      "source_sha256": "fd40ff2b415432c9841d8a6f97c2cf63ac0b1a515996c89e501d380a9d9da3f2",
+      "local_sha256": "fd40ff2b415432c9841d8a6f97c2cf63ac0b1a515996c89e501d380a9d9da3f2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHigherActionOneSobolevRatio.lean",
+      "source_sha256": "9c10953cb2734c249e0682dc41260e2d4b632a5d26728e66598a44301b0d32eb",
+      "local_sha256": "9c10953cb2734c249e0682dc41260e2d4b632a5d26728e66598a44301b0d32eb",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHigherActionOneCommonAnalytic.lean",
+      "source_sha256": "7642dec28b7add46881c84a3b674f5586838199103725b5908559c8936edd36e",
+      "local_sha256": "7642dec28b7add46881c84a3b674f5586838199103725b5908559c8936edd36e",
+      "disposition": "imported_unchanged"
+    }
+  ],
+  "scope": "Exact filled first higher Dirac action, fixed-circle centered bound and quantitative first-order Sobolev ratio estimate. Only these eight source files are imported; existing local dependencies are retained and every newly reached dependency is strictly rebuilt and transitively axiom audited."
+}

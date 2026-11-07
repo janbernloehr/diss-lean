@@ -3551,6 +3551,34 @@ modules=(
   NLS/SequenceSpaces/SignedHalfOrderTarget
   NLS/SequenceSpaces/SignedHalfOrderDecomposition
   NLS/Articles/KdVKdV2Frequencies/ActualL2RawAmplitudeEtaRemainder
+  NLS/ZakharovShabat/SourceHigherActionOneKernel
+  NLS/ZakharovShabat/SourceHigherActionOneCircleQuotient
+  NLS/ZakharovShabat/SourceFullAbelianSymmetricAnalytic
+  NLS/ZakharovShabat/SourceIndexedHigherActionCauchy
+  NLS/ComplexAnalysis/PolygonalEndpointIntegral
+  NLS/ZakharovShabat/SourceAbelianEndpointIntegrals
+  NLS/ZakharovShabat/SourceAbelianAdmissibleIntegrals
+  NLS/ZakharovShabat/SourceAbelianGapSupremum
+  NLS/ZakharovShabat/SourceFullAbelianDifferentialData
+  NLS/ZakharovShabat/SourceSection19Domain
+  NLS/ZakharovShabat/SourceIndexedHigherActionBound
+  NLS/ZakharovShabat/SourceIndexedHigherActionReal
+  NLS/ZakharovShabat/SourceHigherActionOneNormalized
+  NLS/ZakharovShabat/SourceHigherActionOneUniformCircle
+  NLS/ZakharovShabat/SourceCenteredActionCircleBound
+  NLS/ZakharovShabat/SourceHigherActionOneCenteredTail
+  NLS/ZakharovShabat/SourceMidpointProductSobolevDecay
+  NLS/SequenceSpaces/WeightedReciprocalSquareDecay
+  NLS/ZakharovShabat/SourceSquaredGapSobolevDecay
+  NLS/ZakharovShabat/SourceCriticalOffsetSobolevMajorant
+  NLS/ZakharovShabat/SourceCriticalFactorSobolevDecay
+  NLS/ZakharovShabat/SourceNormalizedActionComplexSobolevDecay
+  NLS/ZakharovShabat/SourceHigherActionOneSobolevRatio
+  NLS/ZakharovShabat/SourceHigherActionOneCommonAnalytic
+  NLS/ZakharovShabat/SourceCauchyFirstMomentIdentification
+  NLS/ZakharovShabat/SourceCauchyEnergyRatioDecay
+  NLS/KdV/HillMiuraH1CauchyRatioDecay
+  NLS/KdV/HillHminusL2MiuraRatioDecay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -1,0 +1,102 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/PolygonalEndpointIntegral.lean",
+      "source_sha256": "5f38c00d065b4d8d2e4dd659bd5227878a754c68c9362f9658fd27e86fa5af99",
+      "local_sha256": "5f38c00d065b4d8d2e4dd659bd5227878a754c68c9362f9658fd27e86fa5af99",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedReciprocalSquareDecay.lean",
+      "source_sha256": "e04b4898db11849c348e9e971330a9e965fff1527e5588f44d0bbdd4e7bfc8ff",
+      "local_sha256": "e04b4898db11849c348e9e971330a9e965fff1527e5588f44d0bbdd4e7bfc8ff",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianAdmissibleIntegrals.lean",
+      "source_sha256": "e206eecc46b82999bb5f0073e5ea3d81d826d7da2ae58c19ed252a3de9f5d37b",
+      "local_sha256": "e206eecc46b82999bb5f0073e5ea3d81d826d7da2ae58c19ed252a3de9f5d37b",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean",
+      "source_sha256": "32bb4ef6cb929323c6dc732c4b375dd72ce16cdd95429161b27c1c28a7264301",
+      "local_sha256": "32bb4ef6cb929323c6dc732c4b375dd72ce16cdd95429161b27c1c28a7264301",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianGapSupremum.lean",
+      "source_sha256": "701f3f15cc1f6a15cf434a14f7c539dea615855ae362ffdc52ce92f9c6bbb580",
+      "local_sha256": "701f3f15cc1f6a15cf434a14f7c539dea615855ae362ffdc52ce92f9c6bbb580",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCriticalFactorSobolevDecay.lean",
+      "source_sha256": "c452c1c868bec1b64e78c0971811c087d36d96685da7d58dd136fbd3878fa8a8",
+      "local_sha256": "c452c1c868bec1b64e78c0971811c087d36d96685da7d58dd136fbd3878fa8a8",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCriticalOffsetSobolevMajorant.lean",
+      "source_sha256": "3aa33c930d83acd7a53336a69708c3f5e5b09e0b5a5f5793d3fa67dc84546efc",
+      "local_sha256": "3aa33c930d83acd7a53336a69708c3f5e5b09e0b5a5f5793d3fa67dc84546efc",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFullAbelianDifferentialData.lean",
+      "source_sha256": "f848d4c4aab0a2e2807eb0c66c52bf7f32d0f79dd26cd4ff9f0aaa6439eed99d",
+      "local_sha256": "f848d4c4aab0a2e2807eb0c66c52bf7f32d0f79dd26cd4ff9f0aaa6439eed99d",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceFullAbelianSymmetricAnalytic.lean",
+      "source_sha256": "76120e39c4cd4be3e72d8ee2614e8f6aafa542bb9357178fd68a994d7fd14ab9",
+      "local_sha256": "76120e39c4cd4be3e72d8ee2614e8f6aafa542bb9357178fd68a994d7fd14ab9",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceIndexedHigherActionBound.lean",
+      "source_sha256": "5e740440176c854df912eefa6cbcd149eb44a27e1b489de3a76411976cc63c12",
+      "local_sha256": "5e740440176c854df912eefa6cbcd149eb44a27e1b489de3a76411976cc63c12",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceIndexedHigherActionCauchy.lean",
+      "source_sha256": "a9aec63f7639e5824052893aa5aba6a8c839454dc7718cd3fbbbaf5ff103bc9d",
+      "local_sha256": "a9aec63f7639e5824052893aa5aba6a8c839454dc7718cd3fbbbaf5ff103bc9d",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceIndexedHigherActionReal.lean",
+      "source_sha256": "93a2b5ef46514beee04ca553d4f41cf9013d0d022e6dd0aa5894d64fce0f0c79",
+      "local_sha256": "93a2b5ef46514beee04ca553d4f41cf9013d0d022e6dd0aa5894d64fce0f0c79",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceMidpointProductSobolevDecay.lean",
+      "source_sha256": "743d2ee029bfbd83f628ace63458c672d3ce1157035f4e71ca6ad9bf16df4693",
+      "local_sha256": "743d2ee029bfbd83f628ace63458c672d3ce1157035f4e71ca6ad9bf16df4693",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNormalizedActionComplexSobolevDecay.lean",
+      "source_sha256": "16e26d19d6c96782367960d5c861b85727bea88d53d3eb48db5209be936ff71c",
+      "local_sha256": "16e26d19d6c96782367960d5c861b85727bea88d53d3eb48db5209be936ff71c",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSection19Domain.lean",
+      "source_sha256": "0bf0ff77f41fd5982d0d9180bc282efe239ce15b5ba21bb84339b55f8718f112",
+      "local_sha256": "0bf0ff77f41fd5982d0d9180bc282efe239ce15b5ba21bb84339b55f8718f112",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSquaredGapSobolevDecay.lean",
+      "source_sha256": "c78a54cd22dd310ca1fa71943dab1c54cd3824a6f6935f824dd717c5ae5a2af1",
+      "local_sha256": "c78a54cd22dd310ca1fa71943dab1c54cd3824a6f6935f824dd717c5ae5a2af1",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Unchanged canonical dependencies for quantitative centered first higher-action and normalized Cauchy energy-ratio decay. Every newly reached dependency is selected and strictly rebuilt; existing canonical and local sources remain unchanged."
+}

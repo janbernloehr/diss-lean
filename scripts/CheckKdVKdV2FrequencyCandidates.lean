@@ -1,3 +1,31 @@
+import NLS.ComplexAnalysis.PolygonalEndpointIntegral
+import NLS.SequenceSpaces.WeightedReciprocalSquareDecay
+import NLS.ZakharovShabat.SourceAbelianAdmissibleIntegrals
+import NLS.ZakharovShabat.SourceAbelianEndpointIntegrals
+import NLS.ZakharovShabat.SourceAbelianGapSupremum
+import NLS.ZakharovShabat.SourceCriticalFactorSobolevDecay
+import NLS.ZakharovShabat.SourceCriticalOffsetSobolevMajorant
+import NLS.ZakharovShabat.SourceFullAbelianDifferentialData
+import NLS.ZakharovShabat.SourceFullAbelianSymmetricAnalytic
+import NLS.ZakharovShabat.SourceIndexedHigherActionBound
+import NLS.ZakharovShabat.SourceIndexedHigherActionCauchy
+import NLS.ZakharovShabat.SourceIndexedHigherActionReal
+import NLS.ZakharovShabat.SourceMidpointProductSobolevDecay
+import NLS.ZakharovShabat.SourceNormalizedActionComplexSobolevDecay
+import NLS.ZakharovShabat.SourceSection19Domain
+import NLS.ZakharovShabat.SourceSquaredGapSobolevDecay
+import NLS.KdV.HillMiuraH1CauchyRatioDecay
+import NLS.KdV.HillHminusL2MiuraRatioDecay
+import NLS.ZakharovShabat.SourceCauchyEnergyRatioDecay
+import NLS.ZakharovShabat.SourceCauchyFirstMomentIdentification
+import NLS.ZakharovShabat.SourceHigherActionOneCommonAnalytic
+import NLS.ZakharovShabat.SourceHigherActionOneKernel
+import NLS.ZakharovShabat.SourceHigherActionOneCircleQuotient
+import NLS.ZakharovShabat.SourceHigherActionOneNormalized
+import NLS.ZakharovShabat.SourceHigherActionOneUniformCircle
+import NLS.ZakharovShabat.SourceCenteredActionCircleBound
+import NLS.ZakharovShabat.SourceHigherActionOneCenteredTail
+import NLS.ZakharovShabat.SourceHigherActionOneSobolevRatio
 import NLS.Articles.KdVKdV2Frequencies.ActualL2RawAmplitudeEtaRemainder
 import NLS.SequenceSpaces.SignedHalfOrderTarget
 import NLS.SequenceSpaces.SignedHalfOrderDecomposition
@@ -6297,7 +6325,35 @@ private def kdvFrequencyAuditChunk27 : Array Lean.Name := #[
   `NLS.Articles.KdVKdV2Frequencies.ActualL2AmplitudeEtaIdentification,
   `NLS.SequenceSpaces.SignedHalfOrderTarget,
   `NLS.SequenceSpaces.SignedHalfOrderDecomposition,
-  `NLS.Articles.KdVKdV2Frequencies.ActualL2RawAmplitudeEtaRemainder
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2RawAmplitudeEtaRemainder,
+  `NLS.ZakharovShabat.SourceHigherActionOneKernel,
+  `NLS.ZakharovShabat.SourceHigherActionOneCircleQuotient,
+  `NLS.ZakharovShabat.SourceFullAbelianSymmetricAnalytic,
+  `NLS.ZakharovShabat.SourceIndexedHigherActionCauchy,
+  `NLS.ComplexAnalysis.PolygonalEndpointIntegral,
+  `NLS.ZakharovShabat.SourceAbelianEndpointIntegrals,
+  `NLS.ZakharovShabat.SourceAbelianAdmissibleIntegrals,
+  `NLS.ZakharovShabat.SourceAbelianGapSupremum,
+  `NLS.ZakharovShabat.SourceFullAbelianDifferentialData,
+  `NLS.ZakharovShabat.SourceSection19Domain,
+  `NLS.ZakharovShabat.SourceIndexedHigherActionBound,
+  `NLS.ZakharovShabat.SourceIndexedHigherActionReal,
+  `NLS.ZakharovShabat.SourceHigherActionOneNormalized,
+  `NLS.ZakharovShabat.SourceHigherActionOneUniformCircle,
+  `NLS.ZakharovShabat.SourceCenteredActionCircleBound,
+  `NLS.ZakharovShabat.SourceHigherActionOneCenteredTail,
+  `NLS.ZakharovShabat.SourceMidpointProductSobolevDecay,
+  `NLS.SequenceSpaces.WeightedReciprocalSquareDecay,
+  `NLS.ZakharovShabat.SourceSquaredGapSobolevDecay,
+  `NLS.ZakharovShabat.SourceCriticalOffsetSobolevMajorant,
+  `NLS.ZakharovShabat.SourceCriticalFactorSobolevDecay,
+  `NLS.ZakharovShabat.SourceNormalizedActionComplexSobolevDecay,
+  `NLS.ZakharovShabat.SourceHigherActionOneSobolevRatio,
+  `NLS.ZakharovShabat.SourceHigherActionOneCommonAnalytic,
+  `NLS.ZakharovShabat.SourceCauchyFirstMomentIdentification,
+  `NLS.ZakharovShabat.SourceCauchyEnergyRatioDecay,
+  `NLS.KdV.HillMiuraH1CauchyRatioDecay,
+  `NLS.KdV.HillHminusL2MiuraRatioDecay
 ]
 
 open Lean in
