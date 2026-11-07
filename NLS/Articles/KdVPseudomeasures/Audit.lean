@@ -2091,6 +2091,9 @@ import NLS.ZakharovShabat.SourceWeightedSignedTerminal
 import NLS.ZakharovShabat.SourceFractionalHillTerminal
 import NLS.KdV.HillFractionalSpectralCore
 import NLS.KdV.HillFractionalNativeMap
+import NLS.SequenceSpaces.PeriodOneMiuraNegativeRegularity
+import NLS.Articles.KdVPseudomeasures.SourceFractionalInverseGap
+import NLS.Articles.KdVPseudomeasures.SourceNegativeFractionalInverseRegularity
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -12152,3 +12155,7 @@ import NLS.KdV.HillFractionalNativeMap
 #print axioms NLS.KdV.HillProductEquationPatch.fractionalNativeMap
 #print axioms NLS.KdV.HillProductEquationPatch.exists_retained_fractionalNativeMap_analytic
 #print axioms NLS.KdV.exists_hillFractionalNativeMap_analytic
+#print axioms NLS.periodOneMiura_memlp_negative_of_lift
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGaps_mem_sobolev_of_native_output
+#print axioms NLS.Articles.KdVPseudomeasures.original_negative_sobolev_of_gap
+#print axioms NLS.Articles.KdVPseudomeasures.original_negative_sobolev_of_native_output

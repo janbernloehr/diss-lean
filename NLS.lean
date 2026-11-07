@@ -6696,3 +6696,6 @@ import NLS.ZakharovShabat.SourceWeightedSignedTerminal
 import NLS.ZakharovShabat.SourceFractionalHillTerminal
 import NLS.KdV.HillFractionalSpectralCore
 import NLS.KdV.HillFractionalNativeMap
+import NLS.SequenceSpaces.PeriodOneMiuraNegativeRegularity
+import NLS.Articles.KdVPseudomeasures.SourceFractionalInverseGap
+import NLS.Articles.KdVPseudomeasures.SourceNegativeFractionalInverseRegularity

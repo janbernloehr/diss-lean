@@ -2125,6 +2125,9 @@ modules = [
     'NLS.ZakharovShabat.SourceFractionalHillTerminal',
     'NLS.KdV.HillFractionalSpectralCore',
     'NLS.KdV.HillFractionalNativeMap',
+    'NLS.SequenceSpaces.PeriodOneMiuraNegativeRegularity',
+    'NLS.Articles.KdVPseudomeasures.SourceFractionalInverseGap',
+    'NLS.Articles.KdVPseudomeasures.SourceNegativeFractionalInverseRegularity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
