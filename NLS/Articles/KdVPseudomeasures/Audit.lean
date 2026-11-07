@@ -2094,6 +2094,17 @@ import NLS.KdV.HillFractionalNativeMap
 import NLS.SequenceSpaces.PeriodOneMiuraNegativeRegularity
 import NLS.Articles.KdVPseudomeasures.SourceFractionalInverseGap
 import NLS.Articles.KdVPseudomeasures.SourceNegativeFractionalInverseRegularity
+import NLS.FunctionalAnalysis.CompactSummableBlocks
+import NLS.FunctionalAnalysis.CoordinateDerivativeCompatibility
+import NLS.KdV.HillFractionalDerivativeCompact
+import NLS.KdV.HillFractionalDerivativeCompatibility
+import NLS.KdV.HillFractionalNativeRealization
+import NLS.SequenceSpaces.FractionalBandDecay
+import NLS.SequenceSpaces.FractionalEndpointCompactness
+import NLS.SequenceSpaces.NegativeSobolevFrequencyBands
+import NLS.SequenceSpaces.SignedSobolevNegativeEquivalence
+import NLS.SequenceSpaces.WeightedFrequencyProjections
+import NLS.SequenceSpaces.WeightedHilbertInterpolation
 
 /-! Exact public API inventory, including preserved exports moved into shared providers. Only standard Lean axioms are permitted. -/
 
@@ -12159,3 +12170,45 @@ import NLS.Articles.KdVPseudomeasures.SourceNegativeFractionalInverseRegularity
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGaps_mem_sobolev_of_native_output
 #print axioms NLS.Articles.KdVPseudomeasures.original_negative_sobolev_of_gap
 #print axioms NLS.Articles.KdVPseudomeasures.original_negative_sobolev_of_native_output
+#print axioms NLS.FunctionalAnalysis.isCompactOperator_of_summable_blocks
+#print axioms NLS.FunctionalAnalysis.clm_fderiv_eq_of_compatible_coordinates
+#print axioms NLS.KdV.isCompactOperator_fractionalFourierDefect_at_l2
+#print axioms NLS.KdV.isCompactOperator_fractionalFourierDefect_fderiv
+#print axioms NLS.KdV.hillHminusFourierDefect
+#print axioms NLS.KdV.analyticAt_hillHminusFourierDefect
+#print axioms NLS.KdV.fractionalFourierDefect_fderiv_rough
+#print axioms NLS.KdV.fractionalInclusion_l2
+#print axioms NLS.KdV.fractionalFourierDefect_fderiv_l2
+#print axioms NLS.KdV.hillFractionalNativeRealization
+#print axioms NLS.KdV.hillFractionalNativeRealization_local
+#print axioms NLS.KdV.hillFractionalNativeRealization_apply
+#print axioms NLS.KdV.hillFractionalFourierDefect
+#print axioms NLS.KdV.analyticAt_hillFractionalFourierDefect
+#print axioms NLS.WeightedCoeff.norm_fractional_band_le
+#print axioms NLS.WeightedCoeff.isCompactOperator_fractional_of_endpoint_bounds
+#print axioms NLS.WeightedCoeff.frequencyBand
+#print axioms NLS.WeightedCoeff.frequencyBand_apply
+#print axioms NLS.WeightedCoeff.frequencyBand_eq_projection_sub
+#print axioms NLS.WeightedCoeff.norm_frequencyBand_zero_le
+#print axioms NLS.WeightedCoeff.norm_frequencyBand_minusOne_le
+#print axioms NLS.Weight.sobolev_negative_le_signed
+#print axioms NLS.Weight.signed_negative_le_two_rpow_sobolev
+#print axioms NLS.WeightedCoeff.signedSobolevNegativeEquiv
+#print axioms NLS.WeightedCoeff.signedSobolevNegativeEquiv_apply
+#print axioms NLS.WeightedCoeff.signedSobolevNegativeEquiv_symm_apply
+#print axioms NLS.WeightedCoeff.physicalSignedSobolevNegativeEquiv
+#print axioms NLS.WeightedCoeff.physicalSignedSobolevNegativeEquiv_apply
+#print axioms NLS.WeightedCoeff.physicalSignedSobolevNegativeEquiv_symm_apply
+#print axioms NLS.WeightedCoeff.signedOrderHalfFourierEquivOfEq
+#print axioms NLS.WeightedCoeff.signedOrderHalfFourierEquivOfEq_apply
+#print axioms NLS.WeightedCoeff.negativeSobolevHalfFourierEquiv
+#print axioms NLS.WeightedCoeff.negativeSobolevHalfFourierEquiv_apply
+#print axioms NLS.FunctionalAnalysis.isCompactOperator_conjugate
+#print axioms NLS.WeightedCoeff.frequencyProjection
+#print axioms NLS.WeightedCoeff.frequencyProjection_apply
+#print axioms NLS.WeightedCoeff.isCompactOperator_frequencyProjection
+#print axioms NLS.WeightedCoeff.tendsto_frequencyProjection
+#print axioms NLS.WeightedCoeff.tendsto_dyadicFrequencyProjection
+#print axioms NLS.WeightedCoeff.norm_le_of_weighted_coefficients
+#print axioms NLS.WeightedCoeff.norm_le_weighted_geometric
+#print axioms NLS.WeightedCoeff.norm_signedSobolev_geometric

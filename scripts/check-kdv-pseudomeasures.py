@@ -2128,6 +2128,17 @@ modules = [
     'NLS.SequenceSpaces.PeriodOneMiuraNegativeRegularity',
     'NLS.Articles.KdVPseudomeasures.SourceFractionalInverseGap',
     'NLS.Articles.KdVPseudomeasures.SourceNegativeFractionalInverseRegularity',
+    'NLS.FunctionalAnalysis.CompactSummableBlocks',
+    'NLS.FunctionalAnalysis.CoordinateDerivativeCompatibility',
+    'NLS.KdV.HillFractionalDerivativeCompact',
+    'NLS.KdV.HillFractionalDerivativeCompatibility',
+    'NLS.KdV.HillFractionalNativeRealization',
+    'NLS.SequenceSpaces.FractionalBandDecay',
+    'NLS.SequenceSpaces.FractionalEndpointCompactness',
+    'NLS.SequenceSpaces.NegativeSobolevFrequencyBands',
+    'NLS.SequenceSpaces.SignedSobolevNegativeEquivalence',
+    'NLS.SequenceSpaces.WeightedFrequencyProjections',
+    'NLS.SequenceSpaces.WeightedHilbertInterpolation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -6699,3 +6699,14 @@ import NLS.KdV.HillFractionalNativeMap
 import NLS.SequenceSpaces.PeriodOneMiuraNegativeRegularity
 import NLS.Articles.KdVPseudomeasures.SourceFractionalInverseGap
 import NLS.Articles.KdVPseudomeasures.SourceNegativeFractionalInverseRegularity
+import NLS.FunctionalAnalysis.CompactSummableBlocks
+import NLS.FunctionalAnalysis.CoordinateDerivativeCompatibility
+import NLS.KdV.HillFractionalDerivativeCompact
+import NLS.KdV.HillFractionalDerivativeCompatibility
+import NLS.KdV.HillFractionalNativeRealization
+import NLS.SequenceSpaces.FractionalBandDecay
+import NLS.SequenceSpaces.FractionalEndpointCompactness
+import NLS.SequenceSpaces.NegativeSobolevFrequencyBands
+import NLS.SequenceSpaces.SignedSobolevNegativeEquivalence
+import NLS.SequenceSpaces.WeightedFrequencyProjections
+import NLS.SequenceSpaces.WeightedHilbertInterpolation
