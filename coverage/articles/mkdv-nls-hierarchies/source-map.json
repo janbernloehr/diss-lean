@@ -1677,13 +1677,13 @@
     ]
   },
   "latest_validation": {
-    "report": "whole-line-matrix-validation.json",
+    "report": "physical-miura-validation.json",
     "status": "passed_for_recorded_progress",
     "whole_paper_complete": false,
-    "base_commit": "241a2f8e7c44825badf0b66ee4f375335555869a",
+    "base_commit": "4d096358985e43d1f20edcb53770b01831eadcd7",
     "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
-    "article_audit": 13481,
-    "combined_audit": 76718
+    "article_audit": 13525,
+    "combined_audit": 76762
   },
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
@@ -1717,7 +1717,7 @@
     "named_statements": 18,
     "numbered_equations": 25,
     "scope": "All mathematical claims, including background and proof intermediates; see ledger for pending passage review.",
-    "initial_semantic_assertions": 120,
+    "initial_semantic_assertions": 123,
     "source_passages": 241
   },
   "full_paper_expansion": {
@@ -1829,5 +1829,13 @@
       "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",
       "Every source passage marked pending, including all cited mathematical facts actually invoked. Semantic inventory decomposition is not complete."
     ]
+  },
+  "whole_paper_physical_miura_milestone": {
+    "date": "2026-11-07",
+    "new_theorems": 28,
+    "new_definitions": 6,
+    "source_modules": 5,
+    "certified": "Full original H1 physical Lemma2 matrix clauses; arbitrary AC physical eigenfunction scalar/vector intertwining; literal transformed columns and lambda^2 proof correction.",
+    "not_claimed": "Standalone native interval H2 source-space bridge, geometric Lemma3, full Lemma10, Proposition11(iii), every proof intermediate/background claim or whole-paper completion."
   }
 }

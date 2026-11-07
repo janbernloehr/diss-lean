@@ -19,7 +19,7 @@
   "scope_last_line": 1327,
   "named_statement_count": 18,
   "numbered_equation_count": 25,
-  "assertion_count": 120,
+  "assertion_count": 123,
   "passage_count": 241,
   "semantic_inventory_complete": false,
   "assertions": [
@@ -148,9 +148,13 @@
       "status": "partial",
       "obligation": "Scalar solution intertwining and literal physical fundamental-matrix gauge identity, including endpoint conjugacy for lambda nonzero.",
       "declarations": [
-        "NLS.MKdV.miura_equation_classicalSolution"
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_arbitrary_eigenfunction",
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_matrix_conjugacy",
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_endpoint_conjugacy",
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_physical_column"
       ],
-      "existing_details": "source-map.json"
+      "existing_details": "source-map.json",
+      "certified_part": "Both literal physical matrix conjugacies are now proved at every original complex period-one H1 source, every unit-interval point and nonzero spectral parameter, using independent position/derivative Hill IVP columns. Scalar intertwining now holds for arbitrary componentwise AC physical eigenfunctions, including lambda=0, with no constructed-solution or periodic-boundary hypothesis. The exact input interval H2-to-AC source-space identification is separately tracked as background, rather than silently postulated."
     },
     {
       "id": "lemma-3",
@@ -868,18 +872,32 @@
       "kind": "unnumbered_or_proof_claim",
       "line": 611,
       "page": 9,
-      "status": "pending_individual_correspondence_review",
-      "obligation": "Physical A(x,lambda,u): determinant -2*lambda, exact invertibility locus and period-one boundary identification.",
-      "declarations": []
+      "status": "proved",
+      "obligation": "Literal A(x,lambda,u) at every original complex H1 input; determinant=-2*lambda, exact invertibility iff lambda is nonzero, and period-one spatial dependence.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_entries",
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_determinant",
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_invertible_iff",
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_periodic"
+      ]
     },
     {
       "id": "lemma2-proof-identities",
       "kind": "unnumbered_or_proof_claim",
       "line": 638,
       "page": 10,
-      "status": "pending_individual_correspondence_review",
+      "status": "partial",
       "obligation": "Physical first- and second-order solution identities, transformed derivatives, normalized fundamental matrices; correct energy lambda to lambda^2.",
-      "declarations": []
+      "declarations": [
+        "NLS.MKdV.classicalSolution_eq_of_ac_physical_eigenfunction",
+        "NLS.MKdV.hasDerivAt_deriv_classicalSolution_diagonal",
+        "NLS.MKdV.hasDerivAt_deriv_of_ac_physical_eigenfunction",
+        "NLS.MKdV.deriv_classicalMiuraSolution_entries",
+        "NLS.MKdV.miuraTransformedColumns_eq_gauge_mul",
+        "NLS.MKdV.det_miuraTransformedColumns",
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_matrix_conjugacy"
+      ],
+      "certified_part": "First-order actual ZS system, exact vector second-derivative identity and scalar factorization hold for arbitrary AC physical eigenfunctions at points where u is differentiable, hence AE for original H1 u. The displayed y1/y2 derivative entries, actual transformed matrix Y=A*M, determinant=-2*lambda and both independent normalized matrix identities are checked. Correct the printed scalar energy lambda to lambda^2 in the Y paragraph; invertible transformed bases require lambda nonzero. Only the separately tracked native interval H2 source-space bridge remains."
     },
     {
       "id": "diagonal-discriminant-parity",
@@ -1442,6 +1460,42 @@
         "NLS.Articles.MKdVNLSHierarchies.appendix_signed_label_adapter",
         "NLS.ZakharovShabat.appendixRealConstantWitness_realType",
         "NLS.ZakharovShabat.appendixRealConstantWitness_monodromy"
+      ]
+    },
+    {
+      "id": "lemma2-interval-H2-AC-source-bridge",
+      "kind": "background_domain_identification",
+      "line": 621,
+      "page": 10,
+      "status": "pending_individual_correspondence_review",
+      "obligation": "Identify the paper's arbitrary native interval H2 input with its componentwise AC physical representative (no endpoint condition). The new scalar intertwining theorem uses only this weaker AC regularity and the literal physical eigen-equation, but this standalone Sobolev source-space correspondence has not yet been certified.",
+      "declarations": []
+    },
+    {
+      "id": "lemma2-physical-matrix-conjugacy",
+      "kind": "certified_named_statement_clause",
+      "line": 631,
+      "page": 10,
+      "status": "proved",
+      "obligation": "The literal physical position/derivative fundamental matrix is independently constructed and solves the original H1 Miura equation AE with exact initial conditions, AC position and derivative. Its conjugacy by the exact A matrix holds at every closed-unit point for lambda nonzero; period-one A gives the literal endpoint conjugacy. No smooth potential strengthening is used.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_matrix_conjugacy",
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_endpoint_conjugacy",
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_physical_column"
+      ]
+    },
+    {
+      "id": "lemma2-transformed-energy-correction",
+      "kind": "certified_printed_proof_correction",
+      "line": 651,
+      "page": 10,
+      "status": "proved_correction",
+      "obligation": "The actual transformed columns Y=A*M have scalar energy lambda^2, correcting the printed lambda in the Y paragraph. Their exact determinant -2*lambda records that they form an invertible basis precisely away from zero; the scalar equation itself includes zero.",
+      "declarations": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_matrix",
+        "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_determinant",
+        "NLS.MKdV.isUnit_miuraTransformedColumns_iff",
+        "NLS.MKdV.miura_equation_classicalSolution"
       ]
     }
   ],
@@ -2507,10 +2561,23 @@
       "first_line": 608,
       "last_line": 617,
       "source_sha256": "bcf9e6487cb97f3e3c6628ae1e26118a7245c1ff354749d7e607001717181107",
-      "status": "pending_semantic_and_correspondence_review",
+      "status": "proved",
       "assertion_ids": [
         "physical-gauge-matrix"
-      ]
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "physical-gauge-matrix"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_entries",
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_determinant",
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_invertible_iff",
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_periodic"
+        ],
+        "comparison": "Entire physical A paragraph: literal entries, determinant, exact invertibility locus and period-one dependence, on original complex H1."
+      }
     },
     {
       "id": "passage-108",
@@ -2529,7 +2596,8 @@
       "source_sha256": "1f90e261a334ba039f43415111e7b88af84792158ab8d66a64effdfc2ea46198",
       "status": "pending_semantic_and_correspondence_review",
       "assertion_ids": [
-        "lemma-2"
+        "lemma-2",
+        "lemma2-interval-H2-AC-source-bridge"
       ]
     },
     {
@@ -2574,8 +2642,20 @@
       "first_line": 631,
       "last_line": 631,
       "source_sha256": "6a203ee68aaf7bf24b6ed7650e22111f03b3073ecb639375102ac13722069426",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved",
+      "assertion_ids": [
+        "lemma2-physical-matrix-conjugacy"
+      ],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma2-physical-matrix-conjugacy"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_matrix_conjugacy"
+        ],
+        "comparison": "Literal independent physical position/derivative matrix conjugacy at every closed-unit spatial point for each original complex H1 source and nonzero parameter."
+      }
     },
     {
       "id": "passage-115",
@@ -2592,8 +2672,18 @@
       "first_line": 635,
       "last_line": 635,
       "source_sha256": "b6026b216ef7a41973b4dc209e6c8200ac732b0d9c3cc480f8eafb42f2279dc3",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma2-physical-matrix-conjugacy"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_endpoint_conjugacy"
+        ],
+        "comparison": "Literal endpoint conjugacy with the same A(0) on both sides, by original period-one trace equality."
+      }
     },
     {
       "id": "passage-117",
@@ -2612,8 +2702,19 @@
       "first_line": 644,
       "last_line": 647,
       "source_sha256": "ff34ea2e435e74b836dcfd4a8ff7e7d288df1ad2bd23d5414e7d9e566bdc9a30",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma2-proof-identities"
+        ],
+        "declarations": [
+          "NLS.MKdV.classicalMiuraSolution",
+          "NLS.MKdV.miuraTransformedColumns"
+        ],
+        "comparison": "The actual y1/y2 columns are exactly the stated scalar combinations of the actual normalized ZS columns; the transformed matrix definition retains their actual derivatives."
+      }
     },
     {
       "id": "passage-119",
@@ -2621,8 +2722,18 @@
       "first_line": 649,
       "last_line": 649,
       "source_sha256": "b270a56167b7533759e0143163910226da896b7765dd36c22a370af7203c59fe",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma2-proof-identities"
+        ],
+        "declarations": [
+          "NLS.MKdV.deriv_classicalMiuraSolution_entries"
+        ],
+        "comparison": "Both displayed transformed-column derivative identities hold for all closed-unit points; no differentiability of the H1 potential is needed for this first derivative."
+      }
     },
     {
       "id": "passage-120",
@@ -2631,7 +2742,9 @@
       "last_line": 651,
       "source_sha256": "7f1cf971c75acbadf5b80c0a293e854edad9b5f0187f75ae1365eddbbda36252",
       "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "assertion_ids": [
+        "lemma2-transformed-energy-correction"
+      ]
     },
     {
       "id": "passage-121",
@@ -2639,8 +2752,20 @@
       "first_line": 653,
       "last_line": 656,
       "source_sha256": "7fce91751a56a5aa3f4b67831068d24b528152d61b3fb1cc995743f77677333c",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved_with_correction",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "lemma2-transformed-energy-correction"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_matrix",
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_determinant",
+          "NLS.MKdV.miura_equation_classicalSolution"
+        ],
+        "comparison": "Y uses actual column derivatives and equals A*M. The printed scalar equation energy lambda is corrected to lambda^2; invertibility is exactly lambda nonzero."
+      }
     },
     {
       "id": "passage-122",
@@ -2657,8 +2782,22 @@
       "first_line": 665,
       "last_line": 665,
       "source_sha256": "7e7dc7c82df2fd4d54c94ec4751ce3bd1148056fdc2483636ca758786e7cb6da",
-      "status": "pending_semantic_and_correspondence_review",
-      "assertion_ids": []
+      "status": "proved",
+      "assertion_ids": [],
+      "correspondence_review": {
+        "date": "2026-11-07",
+        "assertion_ids": [
+          "physical-gauge-matrix",
+          "lemma2-physical-matrix-conjugacy"
+        ],
+        "declarations": [
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_invertible_iff",
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_periodic",
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_matrix_conjugacy",
+          "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_endpoint_conjugacy"
+        ],
+        "comparison": "Exact A(0) invertibility and period-one trace close both physical matrix identities."
+      }
     },
     {
       "id": "passage-124",
@@ -4041,7 +4180,7 @@
   ],
   "known_open_obligations": [
     "Theorem6, corrected Corollaries8-9 and corrected Lemma13 named statements are complete with explicit xi sign, source-gradient spectral-domain and Appendix component-order/phase qualifications. Their separately recorded printed proof intermediates still require individual correspondence review; the operator adapter itself is now checked.",
-    "Full Lemma10 and nonlocal Proposition11(iii), including exact higher-action gradient recurrences and original Sobolev endpoint domains. Corollaries8-9 have actual full-primitive interfaces with no assumed gradient identification.",
+    "Lemma2 now has the full original H1 physical matrix clauses and arbitrary AC physical-eigenfunction intertwining; its native interval H2-to-AC input-space identification remains explicit. Lemma3 still needs original geometric eigenspace multiplicities, not only analytic zero orders.",
     "Literal physical Lemma2 matrix conjugacy and Lemma3 geometric eigenspace multiplicities.",
     "Remaining printed proof intermediates, including squared-Floquet-product algebra and the actual contour-change steps in symmetry proofs, unless individually matched by an existing assertion. The all-real-x original L2 fundamental matrices and page5/Appendix operator adapter are now complete.",
     "Independent mKdV Cartesian cross-mode canonicity and the remaining background/operator/analytic setup assertions.",

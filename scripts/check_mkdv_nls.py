@@ -1212,6 +1212,11 @@ modules = [
     'NLS/ZakharovShabat/AppendixOperatorConvention.lean',
     'NLS/ZakharovShabat/AppendixPhaseConventionCounterexample.lean',
     'NLS/Articles/MKdVNLSHierarchies/OperatorConventionCorrections.lean',
+    'NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean',
+    'NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean',
+    'NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean',
+    'NLS/MKdV/MiuraTransformedColumns.lean',
+    'NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraEigenfunction.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

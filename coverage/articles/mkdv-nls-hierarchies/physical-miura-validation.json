@@ -1,0 +1,329 @@
+{
+  "date": "2026-11-07",
+  "status": "passed_for_recorded_progress_whole_paper_incomplete",
+  "article_parent": "4d096358985e43d1f20edcb53770b01831eadcd7",
+  "merged_main": "dfcf7fc7fd6f64cf89472aaeccde3d876546e8af",
+  "branch": "articles/mkdv-nls-hierarchies",
+  "pr": "https://github.com/janbernloehr/diss-lean/pull/6",
+  "new_modules": [
+    "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean",
+    "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean",
+    "NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean",
+    "NLS/MKdV/MiuraTransformedColumns.lean",
+    "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraEigenfunction.lean"
+  ],
+  "new_public_declarations": [
+    {
+      "kind": "def",
+      "name": "physicalMiuraFundamentalMatrix",
+      "qualified_name": "NLS.MKdV.physicalMiuraFundamentalMatrix",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPositionGauge",
+      "qualified_name": "NLS.MKdV.miuraPositionGauge",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPaperGauge",
+      "qualified_name": "NLS.MKdV.miuraPaperGauge",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPaperGauge_eq_position_mul",
+      "qualified_name": "NLS.MKdV.miuraPaperGauge_eq_position_mul",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositionGauge_neg_mul_paper",
+      "qualified_name": "NLS.MKdV.miuraPositionGauge_neg_mul_paper",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "det_miuraPositionGauge",
+      "qualified_name": "NLS.MKdV.det_miuraPositionGauge",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "det_miuraPaperGauge",
+      "qualified_name": "NLS.MKdV.det_miuraPaperGauge",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isUnit_miuraPaperGauge_iff",
+      "qualified_name": "NLS.MKdV.isUnit_miuraPaperGauge_iff",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraFundamentalMatrix_zero",
+      "qualified_name": "NLS.MKdV.physicalMiuraFundamentalMatrix_zero",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraFundamentalMatrix_eq_quasiHill",
+      "qualified_name": "NLS.MKdV.physicalMiuraFundamentalMatrix_eq_quasiHill",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraFundamentalMatrix_ZS_intertwine",
+      "qualified_name": "NLS.MKdV.physicalMiuraFundamentalMatrix_ZS_intertwine",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "det_physicalMiuraFundamentalMatrix",
+      "qualified_name": "NLS.MKdV.det_physicalMiuraFundamentalMatrix",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraFundamentalMatrix_eq_ZS_conjugate",
+      "qualified_name": "NLS.MKdV.physicalMiuraFundamentalMatrix_eq_ZS_conjugate",
+      "file": "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillFundamentalMatrix",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.hillFundamentalMatrix",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraTransferMatrix",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.miuraTransferMatrix",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_transfer_matrix_entries",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_entries",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_transfer_matrix_determinant",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_determinant",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_transfer_matrix_invertible_iff",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_invertible_iff",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_transfer_matrix_periodic",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_periodic",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_h1_matrix_conjugacy",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_matrix_conjugacy",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_h1_endpoint_conjugacy",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_endpoint_conjugacy",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_h1_physical_column",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_physical_column",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_deriv_classicalSolution_diagonal",
+      "qualified_name": "NLS.MKdV.hasDerivAt_deriv_classicalSolution_diagonal",
+      "file": "NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "deriv_classicalMiuraSolution_entries",
+      "qualified_name": "NLS.MKdV.deriv_classicalMiuraSolution_entries",
+      "file": "NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalSolution_eq_of_ac_physical_eigenfunction",
+      "qualified_name": "NLS.MKdV.classicalSolution_eq_of_ac_physical_eigenfunction",
+      "file": "NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_deriv_of_ac_physical_eigenfunction",
+      "qualified_name": "NLS.MKdV.hasDerivAt_deriv_of_ac_physical_eigenfunction",
+      "file": "NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miura_equation_of_ac_physical_eigenfunction",
+      "qualified_name": "NLS.MKdV.miura_equation_of_ac_physical_eigenfunction",
+      "file": "NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraTransformedColumns",
+      "qualified_name": "NLS.MKdV.miuraTransformedColumns",
+      "file": "NLS/MKdV/MiuraTransformedColumns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraTransformedColumns_eq_gauge_mul",
+      "qualified_name": "NLS.MKdV.miuraTransformedColumns_eq_gauge_mul",
+      "file": "NLS/MKdV/MiuraTransformedColumns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "det_miuraTransformedColumns",
+      "qualified_name": "NLS.MKdV.det_miuraTransformedColumns",
+      "file": "NLS/MKdV/MiuraTransformedColumns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isUnit_miuraTransformedColumns_iff",
+      "qualified_name": "NLS.MKdV.isUnit_miuraTransformedColumns_iff",
+      "file": "NLS/MKdV/MiuraTransformedColumns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_h1_transformed_matrix",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_matrix",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraEigenfunction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_h1_transformed_determinant",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_determinant",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraEigenfunction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma2_h1_arbitrary_eigenfunction",
+      "qualified_name": "NLS.Articles.MKdVNLSHierarchies.lemma2_h1_arbitrary_eigenfunction",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraEigenfunction.lean"
+    }
+  ],
+  "new_theorems": 28,
+  "new_definitions": 6,
+  "lean_version": "4.33.1",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "limits": "default",
+  "validation_command": "ELAN_HOME and PATH use pinned tooling; python3 scripts/check_mkdv_nls.py --imports-from /home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls --full-audit --resume-from NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean",
+  "exit_code": 0,
+  "fresh_compilation": [
+    "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean",
+    "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean",
+    "NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean",
+    "NLS/MKdV/MiuraTransformedColumns.lean",
+    "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraEigenfunction.lean",
+    "NLS.lean"
+  ],
+  "checker_literal_module_count": 1181,
+  "article_transitive_axiom_declarations": 13525,
+  "combined_NLS_transitive_axiom_declarations": 76762,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_scope": {
+    "old_blocks_preserved": 67,
+    "old_scopes_preserved": 3843,
+    "added_blocks": 1,
+    "added_scopes": 39,
+    "total_scopes": 3882,
+    "every_block_flattened_once": true,
+    "new_public_declarations_required_by_name": true
+  },
+  "frozen_inputs": {
+    "count": 9160,
+    "scope": "All current NLS/**/*.lean, NLS.lean and the article/combined checkers. All unchanged after validation.",
+    "source_map_digest_sha256": "d38c7dc673b3b74029b585e19c0b8b6223e4dc073c2bc51d823c68f0fc811b33",
+    "private_manifest": "work/physical-miura-validation-inputs.json",
+    "private_manifest_sha256": "09af5024dac2d0015d9e6cf50673ff269b2e7ed8b685ebf30686e0bc7d21f08f",
+    "reused_checker_prefix_outputs": 1176,
+    "all_reused_outputs_unchanged": true
+  },
+  "source_sha256": {
+    "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean": "0e7b54107831aa4c9e1e187808c9ec2cf4811a9520a300bd80d050d7a986b29b",
+    "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean": "09fa7f1eb291c32e87feef118de0c16feb47b27895640241e753a45120cefa5f",
+    "NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean": "5c93960db68d2df09decedd6e36344f2e4f8af03d3ca99db7f338e337e5fcf61",
+    "NLS/MKdV/MiuraTransformedColumns.lean": "5bea94f33bccadfb0d22c56bb9b173077d00291fd6a552b64b94c81cbbe49d7f",
+    "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraEigenfunction.lean": "1f4d11d1a5cb08173ddffd3c2e96ed99575d47e5b212ae130539d6c0ddecd247",
+    "NLS.lean": "e50b1989fe76536bd474e279e701ac3731986670d89ebb51e5aadeca93c29d64",
+    "scripts/check_mkdv_nls.py": "079d106c6e98025dd84a91f4edb62b453b8634c1d264df8d2d748f2e2ebff361",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "66a5d60e657553fc51c25f22d962a52dbc9a50bf6f37ccd92715c564c80308c4",
+    "scripts/check_mkdv_nls_coverage.py": "c6e759147e3af0c73f6b1c71ac83b6976a5ee8cc3467cb4550640c5b00aabbb6"
+  },
+  "output_sha256": {
+    "NLS/MKdV/PhysicalMiuraFundamentalMatrix.lean": "27cdf6a9ad6c3342c23aab37dfd9c3188951aec8b2b800a3f52b9c6061618559",
+    "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraMatrix.lean": "057c8300d75968d004afa949c16b399f09b82905a507d209c90fb7044e370b31",
+    "NLS/MKdV/MiuraAbsolutelyContinuousEigenfunction.lean": "99e3abb43ce93636178fec1aef2479b72fb815e2a93e598211cfd7f32bb71184",
+    "NLS/MKdV/MiuraTransformedColumns.lean": "e3150818b6f327d3914bebd896564b738314852370521e1eea531bf4d7c4d333",
+    "NLS/Articles/MKdVNLSHierarchies/PhysicalMiuraEigenfunction.lean": "17067bd283448fb3ae655a8e040267cc932349f7a3a63cdd80b7c1376d77bfc8"
+  },
+  "incoming_main_cache": {
+    "checkout": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "head": "34c933bee3f6089d334eea0abb959364fb342b65",
+    "validated_source_modules": 9089,
+    "validation_report": "coverage/articles/kdv-pseudomeasures/numbered-validation.json",
+    "validation_report_sha256": "6f9f2757468d008417280b5ce7ec68fceff49a1447bba886ff79dadbe7a80742",
+    "private_provenance_manifest": "work/nonlocal-incoming-cache-provenance.json",
+    "manifest_sha256": "7eff8b2f05f21402a7391c21f401cc5f5145c6a70503fd11d62e5737d4a95dc2",
+    "method": "Copy private compiled NLS outputs from the validated incoming-main checkout only after checking every corresponding source against this checkout; canonical and incoming outputs remain read-only. Fresh new modules, combined aggregate and transitive audits run subsequently.",
+    "all_source_and_output_hashes_rechecked_after_validation": true
+  },
+  "validation_scope": "Fresh strict compilation of all five new modules and the combined aggregate; targeted and combined transitive audits. All 1,176 reused checker-prefix outputs and all 9,089 source-verified incoming compiled modules retain their hashes. This is not a fresh full repository source rebuild.",
+  "proof_scope": {
+    "certified": "Full literal physical Lemma2 matrix clauses on every original complex period-one H1 source, every closed-unit spatial point and nonzero parameter. Independent physical scalar IVP columns have exact initial data, AC position and derivative, the actual H1 Miura equation AE and determinant one. Exact A entries, determinant, invertibility locus and period-one dependence are proved.",
+    "arbitrary_functions": "The scalar factorization and vector second-derivative identity hold for arbitrary componentwise AC physical eigenfunctions, without a constructed-solution or periodic boundary assumption on f; the scalar equation includes lambda=0. AC uniqueness and local derivative equality are proved.",
+    "proof_correction": "Actual transformed columns and their derivatives give Y=A*M and det(Y)=-2*lambda. The proof paragraph scalar energy is lambda^2, correcting the printed lambda.",
+    "not_claimed": [
+      "The standalone identification of the paper native interval H2 input with componentwise AC physical representatives; full Lemma2 remains partial in the ledger until this background bridge is certified.",
+      "Lemma3 geometric multiplicities, full Lemma10 or nonlocal Proposition11(iii).",
+      "Every proof intermediate/background assertion, whole-paper semantic decomposition or full proof coverage."
+    ]
+  },
+  "coverage_check": {
+    "command": "python3 scripts/check_mkdv_nls_coverage.py --source-text ../../work/source/1601.07580v1.txt",
+    "exit_code": 0,
+    "named_statements": 18,
+    "numbered_equations": 25,
+    "assertion_records": 123,
+    "source_passages": 241,
+    "new_complete_source_passages_reviewed": 7,
+    "source_passages_reviewed": [
+      "passage-107",
+      "passage-114",
+      "passage-116",
+      "passage-118",
+      "passage-119",
+      "passage-121",
+      "passage-123"
+    ],
+    "all_assertion_line_locators_nonblank_and_page_correct": true,
+    "semantic_inventory_complete": false,
+    "whole_paper_complete": false
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "canonical_sources_and_outputs_modified": false,
+  "pinned_mathlib_source_sha256": "d499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259",
+  "pinned_mathlib_private_output_sha256": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f",
+  "previous_validated_progress": "whole-line-matrix-validation.json"
+}

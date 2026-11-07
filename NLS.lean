@@ -6820,3 +6820,8 @@ import NLS.ZakharovShabat.ClassicalDiagonalConstantMonodromy
 import NLS.ZakharovShabat.AppendixOperatorConvention
 import NLS.ZakharovShabat.AppendixPhaseConventionCounterexample
 import NLS.Articles.MKdVNLSHierarchies.OperatorConventionCorrections
+import NLS.MKdV.PhysicalMiuraFundamentalMatrix
+import NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraMatrix
+import NLS.MKdV.MiuraAbsolutelyContinuousEigenfunction
+import NLS.MKdV.MiuraTransformedColumns
+import NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraEigenfunction

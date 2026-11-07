@@ -3583,3 +3583,33 @@ passage have correspondence reviews. All 120 assertion records and 241
 source passages remain in the ledger. Whole-paper semantic decomposition
 and proof coverage remain in progress, including Lemmas2,3,10,
 Proposition11(iii), proof intermediates and remaining background claims.
+
+
+## 2026-11-07 — Independent physical matrices and arbitrary AC eigenfunctions
+
+The full literal Lemma2 physical matrix conjugacies now hold on every original
+complex period-one H1 source, every closed-unit point and nonzero parameter.
+The independently constructed Hill columns retain actual position/derivative
+initial data, AC position and derivative, the physical Miura equation AE and
+determinant one. Exact A entries, determinant=-2*lambda, invertibility iff
+lambda is nonzero and period-one dependence are checked.
+
+Scalar intertwining now covers arbitrary componentwise AC physical
+eigenfunctions, without a constructed-solution or periodic boundary hypothesis
+on f, and includes lambda=0. The vector second-derivative identity, literal
+transformed derivatives, actual Y=A*M and det(Y)=-2*lambda are proved. The Y
+paragraph scalar energy must be lambda^2, correcting the printed lambda.
+The standalone native interval H2-to-AC input-space bridge is explicitly
+pending; the entire named Lemma2 therefore retains partial status.
+
+Five new strict modules add 28 theorems and 6 definitions. Both transitive
+audits pass: 13,525 article declarations and auxiliaries, 76,762 combined NLS
+declarations. Only propext, Classical.choice and Quot.sound are permitted.
+All 9,160 frozen mathematical/checker inputs, 1,176 reused checker-prefix
+outputs and 9,089 source-verified incoming compiled modules retain their
+hashes. Limits and linters are unchanged; no fresh full repository rebuild
+is claimed. Evidence is in physical-miura-validation.json.
+
+Seven more complete source passages have correspondence reviews. All 123
+assertion records and 241 source passages remain in the ledger. Whole-paper
+semantic decomposition and proof coverage remain in progress.

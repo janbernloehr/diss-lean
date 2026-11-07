@@ -1,3 +1,8 @@
+import NLS.MKdV.PhysicalMiuraFundamentalMatrix
+import NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraMatrix
+import NLS.MKdV.MiuraAbsolutelyContinuousEigenfunction
+import NLS.MKdV.MiuraTransformedColumns
+import NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraEigenfunction
 import NLS.FunctionalAnalysis.FloquetPeriodUniqueness
 import NLS.ZakharovShabat.FundamentalMatrixGaugeAlgebra
 import NLS.ZakharovShabat.SourceL2WholeLineFundamentalSymmetries
@@ -4186,11 +4191,88 @@ private def mkdvNLSAuditPrefixes66 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.OperatorConventionCorrections,
 ]
 
+private def mkdvNLSAuditPrefixes67 : Array Lean.Name := #[
+  `NLS.MKdV.physicalMiuraFundamentalMatrix,
+  `NLS.MKdV.miuraPositionGauge,
+  `NLS.MKdV.miuraPaperGauge,
+  `NLS.MKdV.miuraPaperGauge_eq_position_mul,
+  `NLS.MKdV.miuraPositionGauge_neg_mul_paper,
+  `NLS.MKdV.det_miuraPositionGauge,
+  `NLS.MKdV.det_miuraPaperGauge,
+  `NLS.MKdV.isUnit_miuraPaperGauge_iff,
+  `NLS.MKdV.physicalMiuraFundamentalMatrix_zero,
+  `NLS.MKdV.physicalMiuraFundamentalMatrix_eq_quasiHill,
+  `NLS.MKdV.physicalMiuraFundamentalMatrix_ZS_intertwine,
+  `NLS.MKdV.det_physicalMiuraFundamentalMatrix,
+  `NLS.MKdV.physicalMiuraFundamentalMatrix_eq_ZS_conjugate,
+  `_private.NLS.MKdV.PhysicalMiuraFundamentalMatrix,
+  `NLS.Articles.MKdVNLSHierarchies.hillFundamentalMatrix,
+  `NLS.Articles.MKdVNLSHierarchies.miuraTransferMatrix,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_entries,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_determinant,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_invertible_iff,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_periodic,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_h1_matrix_conjugacy,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_h1_endpoint_conjugacy,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_h1_physical_column,
+  `_private.NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraMatrix,
+  `NLS.MKdV.hasDerivAt_deriv_classicalSolution_diagonal,
+  `NLS.MKdV.deriv_classicalMiuraSolution_entries,
+  `NLS.MKdV.classicalSolution_eq_of_ac_physical_eigenfunction,
+  `NLS.MKdV.hasDerivAt_deriv_of_ac_physical_eigenfunction,
+  `NLS.MKdV.miura_equation_of_ac_physical_eigenfunction,
+  `_private.NLS.MKdV.MiuraAbsolutelyContinuousEigenfunction,
+  `NLS.MKdV.miuraTransformedColumns,
+  `NLS.MKdV.miuraTransformedColumns_eq_gauge_mul,
+  `NLS.MKdV.det_miuraTransformedColumns,
+  `NLS.MKdV.isUnit_miuraTransformedColumns_iff,
+  `_private.NLS.MKdV.MiuraTransformedColumns,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_matrix,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_determinant,
+  `NLS.Articles.MKdVNLSHierarchies.lemma2_h1_arbitrary_eigenfunction,
+  `_private.NLS.Articles.MKdVNLSHierarchies.PhysicalMiuraEigenfunction,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65, mkdvNLSAuditPrefixes66] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57, mkdvNLSAuditPrefixes58, mkdvNLSAuditPrefixes59, mkdvNLSAuditPrefixes60, mkdvNLSAuditPrefixes61, mkdvNLSAuditPrefixes62, mkdvNLSAuditPrefixes63, mkdvNLSAuditPrefixes64, mkdvNLSAuditPrefixes65, mkdvNLSAuditPrefixes66, mkdvNLSAuditPrefixes67] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.MKdV.physicalMiuraFundamentalMatrix,
+    ``NLS.MKdV.miuraPositionGauge,
+    ``NLS.MKdV.miuraPaperGauge,
+    ``NLS.MKdV.miuraPaperGauge_eq_position_mul,
+    ``NLS.MKdV.miuraPositionGauge_neg_mul_paper,
+    ``NLS.MKdV.det_miuraPositionGauge,
+    ``NLS.MKdV.det_miuraPaperGauge,
+    ``NLS.MKdV.isUnit_miuraPaperGauge_iff,
+    ``NLS.MKdV.physicalMiuraFundamentalMatrix_zero,
+    ``NLS.MKdV.physicalMiuraFundamentalMatrix_eq_quasiHill,
+    ``NLS.MKdV.physicalMiuraFundamentalMatrix_ZS_intertwine,
+    ``NLS.MKdV.det_physicalMiuraFundamentalMatrix,
+    ``NLS.MKdV.physicalMiuraFundamentalMatrix_eq_ZS_conjugate,
+    ``NLS.Articles.MKdVNLSHierarchies.hillFundamentalMatrix,
+    ``NLS.Articles.MKdVNLSHierarchies.miuraTransferMatrix,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_entries,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_determinant,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_invertible_iff,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_transfer_matrix_periodic,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_h1_matrix_conjugacy,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_h1_endpoint_conjugacy,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_h1_physical_column,
+    ``NLS.MKdV.hasDerivAt_deriv_classicalSolution_diagonal,
+    ``NLS.MKdV.deriv_classicalMiuraSolution_entries,
+    ``NLS.MKdV.classicalSolution_eq_of_ac_physical_eigenfunction,
+    ``NLS.MKdV.hasDerivAt_deriv_of_ac_physical_eigenfunction,
+    ``NLS.MKdV.miura_equation_of_ac_physical_eigenfunction,
+    ``NLS.MKdV.miuraTransformedColumns,
+    ``NLS.MKdV.miuraTransformedColumns_eq_gauge_mul,
+    ``NLS.MKdV.det_miuraTransformedColumns,
+    ``NLS.MKdV.isUnit_miuraTransformedColumns_iff,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_matrix,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_h1_transformed_determinant,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma2_h1_arbitrary_eigenfunction,
+
     ``NLS.FunctionalAnalysis.floquet_eq_of_unit_period,
     ``NLS.ZakharovShabat.componentSwapMatrix_mul,
     ``NLS.ZakharovShabat.reciprocalScalingMatrix_mul,

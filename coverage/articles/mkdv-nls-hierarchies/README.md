@@ -60,7 +60,7 @@ The source locator convention and exact private-source hashes are in the ledger.
 
 The main theorems remain proved with the earlier corrections, but important
 whole-paper work remains: full Lemma 10 and nonlocal Proposition 11(iii);
-the physical matrix clause in Lemma 2; geometric multiplicities in Lemma 3;
+the native interval H2-to-AC source bridge in Lemma 2; geometric multiplicities in Lemma 3;
 printed proof intermediates; and background claims including independent
 cross-mode mKdV Cartesian canonicity. Theorem 6, Corollaries 8–9 and Lemma 13
 now have the corrected source interfaces described in the later milestones.
@@ -305,6 +305,34 @@ have additional correspondence reviews. The ledger has 120 assertion records
 and all 241 source passages. Whole-paper semantic decomposition and proof
 coverage remain in progress, including Lemmas 2,3,10, Proposition 11(iii),
 printed proof intermediates and remaining background claims.
+
+## 2026-11-07 — Independent physical Miura matrices and arbitrary AC eigenfunctions
+
+Lemma 2's full physical matrix conjugacies are now proved at every original
+complex period-one H1 input, each point of the closed unit interval and every
+nonzero spectral parameter. The Hill columns come from the independent scalar
+IVP, with actual position/derivative initial data, AC position and derivative,
+the physical u'+u^2 equation and determinant one. The matrix is not defined by
+conjugating the ZS matrix. The exact printed A matrix has determinant -2*lambda,
+is invertible exactly for lambda nonzero, and is period one. Its endpoint
+conjugacy therefore uses A(0) on both sides.
+
+The scalar intertwining now holds for arbitrary componentwise absolutely
+continuous physical eigenfunctions, with no constructed-solution or periodic
+boundary assumption on f, and includes lambda=0. AC uniqueness identifies the
+actual IVP; local derivative equality transfers both the vector second-derivative
+identity and the scalar equation. The exact transformed derivatives and actual
+Y=A*M identity are checked. The proof paragraph's scalar energy lambda must be
+lambda^2; det(Y)=-2*lambda also records the precise invertible-basis restriction.
+
+Five strict modules add 28 theorems and 6 definitions. Seven more source
+passages have complete correspondence reviews. The exact native interval
+H2-to-AC input-space bridge is tracked separately: the universal physical AC
+theorem is proved, but that standalone Sobolev source-space identification is
+not claimed. The ledger retains partial status for the entire named Lemma 2
+until this bridge is certified. Whole-paper proof coverage and semantic
+decomposition remain in progress. Validation is recorded in
+[`physical-miura-validation.json`](physical-miura-validation.json).
 
 ## Pinned source
 
