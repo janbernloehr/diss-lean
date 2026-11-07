@@ -3542,6 +3542,15 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/ActualL2CoordinatePhaseData
   NLS/Articles/KdVKdV2Frequencies/ActualL2CoordinatePhaseRemainder
   NLS/Articles/KdVKdV2Frequencies/ActualL2CoordinatePhaseIdentification
+  NLS/KdV/HillHminusMidpointError
+  NLS/SequenceSpaces/AnalyticTwoFactorRemainder
+  NLS/KdV/HillHminusMidpointNormalization
+  NLS/SequenceSpaces/AnalyticTwoFactorPullback
+  NLS/Articles/KdVKdV2Frequencies/ActualL2AmplitudeEtaRemainder
+  NLS/Articles/KdVKdV2Frequencies/ActualL2AmplitudeEtaIdentification
+  NLS/SequenceSpaces/SignedHalfOrderTarget
+  NLS/SequenceSpaces/SignedHalfOrderDecomposition
+  NLS/Articles/KdVKdV2Frequencies/ActualL2RawAmplitudeEtaRemainder
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

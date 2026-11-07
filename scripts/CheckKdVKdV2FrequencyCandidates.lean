@@ -1,3 +1,12 @@
+import NLS.Articles.KdVKdV2Frequencies.ActualL2RawAmplitudeEtaRemainder
+import NLS.SequenceSpaces.SignedHalfOrderTarget
+import NLS.SequenceSpaces.SignedHalfOrderDecomposition
+import NLS.Articles.KdVKdV2Frequencies.ActualL2AmplitudeEtaRemainder
+import NLS.Articles.KdVKdV2Frequencies.ActualL2AmplitudeEtaIdentification
+import NLS.KdV.HillHminusMidpointNormalization
+import NLS.SequenceSpaces.AnalyticTwoFactorPullback
+import NLS.SequenceSpaces.AnalyticTwoFactorRemainder
+import NLS.KdV.HillHminusMidpointError
 import NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseData
 import NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseIdentification
 import NLS.SequenceSpaces.AnalyticWeightedPhaseRemainder
@@ -6279,7 +6288,16 @@ private def kdvFrequencyAuditChunk27 : Array Lean.Name := #[
   `NLS.SequenceSpaces.AnalyticWeightedPhaseRemainder,
   `NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseData,
   `NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseRemainder,
-  `NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseIdentification
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2CoordinatePhaseIdentification,
+  `NLS.KdV.HillHminusMidpointError,
+  `NLS.SequenceSpaces.AnalyticTwoFactorRemainder,
+  `NLS.KdV.HillHminusMidpointNormalization,
+  `NLS.SequenceSpaces.AnalyticTwoFactorPullback,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2AmplitudeEtaRemainder,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2AmplitudeEtaIdentification,
+  `NLS.SequenceSpaces.SignedHalfOrderTarget,
+  `NLS.SequenceSpaces.SignedHalfOrderDecomposition,
+  `NLS.Articles.KdVKdV2Frequencies.ActualL2RawAmplitudeEtaRemainder
 ]
 
 open Lean in
