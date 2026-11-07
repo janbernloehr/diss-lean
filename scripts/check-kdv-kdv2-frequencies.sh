@@ -3456,6 +3456,13 @@ modules=(
   NLS/Articles/KdVKdV2Frequencies/SharpFrequencyActionModel
   NLS/Articles/KdVKdV2Frequencies/OriginalSharpActionFrequencyBounds
   NLS/Articles/KdVKdV2Frequencies/Theorem12OriginalActionDecay
+  NLS/ZakharovShabat/SourceCriticalGapSequenceAnalytic
+  NLS/ZakharovShabat/NormalizedSobolevSourceCompact
+  NLS/SequenceSpaces/CompactPullbackCoordinateTails
+  NLS/ZakharovShabat/SourceSobolevCriticalQuotientUniformTail
+  NLS/SequenceSpaces/SobolevRatioTail
+  NLS/ZakharovShabat/SourcePrimitiveSobolevUniformLittleO
+  NLS/ZakharovShabat/SourceSquareSobolevUniformLittleO
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

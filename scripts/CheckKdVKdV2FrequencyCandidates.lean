@@ -1,3 +1,10 @@
+import NLS.ZakharovShabat.SourceSquareSobolevUniformLittleO
+import NLS.SequenceSpaces.SobolevRatioTail
+import NLS.ZakharovShabat.SourcePrimitiveSobolevUniformLittleO
+import NLS.SequenceSpaces.CompactPullbackCoordinateTails
+import NLS.ZakharovShabat.SourceSobolevCriticalQuotientUniformTail
+import NLS.ZakharovShabat.SourceCriticalGapSequenceAnalytic
+import NLS.ZakharovShabat.NormalizedSobolevSourceCompact
 import NLS.Articles.KdVKdV2Frequencies.SharpFrequencyActionModel
 import NLS.SequenceSpaces.LinearFrequencyDecayPullback
 import NLS.Articles.KdVKdV2Frequencies.Theorem12OriginalActionDecay
@@ -6104,7 +6111,14 @@ private def kdvFrequencyAuditChunk26 : Array Lean.Name := #[
   `NLS.SequenceSpaces.LinearFrequencyDecayPullback,
   `NLS.Articles.KdVKdV2Frequencies.SharpFrequencyActionModel,
   `NLS.Articles.KdVKdV2Frequencies.OriginalSharpActionFrequencyBounds,
-  `NLS.Articles.KdVKdV2Frequencies.Theorem12OriginalActionDecay
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12OriginalActionDecay,
+  `NLS.ZakharovShabat.SourceCriticalGapSequenceAnalytic,
+  `NLS.ZakharovShabat.NormalizedSobolevSourceCompact,
+  `NLS.SequenceSpaces.CompactPullbackCoordinateTails,
+  `NLS.ZakharovShabat.SourceSobolevCriticalQuotientUniformTail,
+  `NLS.SequenceSpaces.SobolevRatioTail,
+  `NLS.ZakharovShabat.SourcePrimitiveSobolevUniformLittleO,
+  `NLS.ZakharovShabat.SourceSquareSobolevUniformLittleO
 ]
 
 open Lean in
