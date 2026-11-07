@@ -1,0 +1,25 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "source_branch": "main",
+  "purpose": "Verified canonical primitive exponent compatibility and real isospectral invariance of endpoint-normalized primitives and Abelian moments. Newly selected and strictly rebuilt for the actual off-diagonal action-fiber invariance and compact action derivative proof. Existing tracked sources are reused byte-for-byte; canonical main and caches are not modified.",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianPrimitiveExponent.lean",
+      "source_sha256": "6859e3880093cb09f3dce761e6857197bcd3c74037e4d1f6a3c0f4eaf06b4aff",
+      "local_sha256": "6859e3880093cb09f3dce761e6857197bcd3c74037e4d1f6a3c0f4eaf06b4aff",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianPrimitiveIsospectral.lean",
+      "source_sha256": "c194de635b4651c127fcfbc97380aca3ed37089175d054fd8ce44fc79361aea9",
+      "local_sha256": "c194de635b4651c127fcfbc97380aca3ed37089175d054fd8ce44fc79361aea9",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAbelianMomentIsospectral.lean",
+      "source_sha256": "d8086e77761e9c36c009c7a7a8b254da5234b87868511c64757f0565cab603de",
+      "local_sha256": "d8086e77761e9c36c009c7a7a8b254da5234b87868511c64757f0565cab603de",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

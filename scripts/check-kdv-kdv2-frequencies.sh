@@ -3307,6 +3307,20 @@ modules=(
   NLS/KdV/PhysicalOffDiagonalFrequency
   NLS/KdV/PhysicalOffDiagonalFrequencyChart
   NLS/KdV/PhysicalOffDiagonalFrequencyCompact
+  NLS/ZakharovShabat/SourceAbelianPrimitiveExponent
+  NLS/ZakharovShabat/SourceAbelianPrimitiveIsospectral
+  NLS/ZakharovShabat/SourceAbelianMomentIsospectral
+  NLS/ZakharovShabat/SourceCalibratedMomentIsospectral
+  NLS/KdV/PhysicalOffDiagonalIsospectral
+  NLS/SequenceSpaces/SignedPairActionProducts
+  NLS/Articles/KdVKdV2Frequencies/WeightedPairDiscriminant
+  NLS/Articles/KdVKdV2Frequencies/OffDiagonalFrequencyPairCharts
+  NLS/SequenceSpaces/CompactWeightedPacketPullback
+  NLS/Articles/KdVKdV2Frequencies/OffDiagonalPairActionInvariance
+  NLS/Articles/KdVKdV2Frequencies/OffDiagonalActionCharts
+  NLS/Articles/KdVKdV2Frequencies/OffDiagonalRawActionCompact
+  NLS/Articles/KdVKdV2Frequencies/OffDiagonalOriginalActionRecovery
+  NLS/Articles/KdVKdV2Frequencies/Theorem12OffDiagonalActionCompact
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

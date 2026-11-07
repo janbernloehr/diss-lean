@@ -1,3 +1,17 @@
+import NLS.ZakharovShabat.SourceAbelianPrimitiveExponent
+import NLS.ZakharovShabat.SourceAbelianPrimitiveIsospectral
+import NLS.ZakharovShabat.SourceAbelianMomentIsospectral
+import NLS.Articles.KdVKdV2Frequencies.OffDiagonalOriginalActionRecovery
+import NLS.Articles.KdVKdV2Frequencies.Theorem12OffDiagonalActionCompact
+import NLS.SequenceSpaces.CompactWeightedPacketPullback
+import NLS.Articles.KdVKdV2Frequencies.OffDiagonalPairActionInvariance
+import NLS.Articles.KdVKdV2Frequencies.OffDiagonalActionCharts
+import NLS.Articles.KdVKdV2Frequencies.OffDiagonalRawActionCompact
+import NLS.ZakharovShabat.SourceCalibratedMomentIsospectral
+import NLS.KdV.PhysicalOffDiagonalIsospectral
+import NLS.SequenceSpaces.SignedPairActionProducts
+import NLS.Articles.KdVKdV2Frequencies.WeightedPairDiscriminant
+import NLS.Articles.KdVKdV2Frequencies.OffDiagonalFrequencyPairCharts
 import NLS.KdV.PhysicalOffDiagonalFrequencyCompact
 import NLS.KdV.PhysicalOffDiagonalFrequency
 import NLS.KdV.PhysicalOffDiagonalFrequencyChart
@@ -5803,7 +5817,21 @@ private def kdvFrequencyAuditChunk25 : Array Lean.Name := #[
   `NLS.ZakharovShabat.SourceOffDiagonalMomentGain,
   `NLS.KdV.PhysicalOffDiagonalFrequency,
   `NLS.KdV.PhysicalOffDiagonalFrequencyChart,
-  `NLS.KdV.PhysicalOffDiagonalFrequencyCompact
+  `NLS.KdV.PhysicalOffDiagonalFrequencyCompact,
+  `NLS.ZakharovShabat.SourceAbelianPrimitiveExponent,
+  `NLS.ZakharovShabat.SourceAbelianPrimitiveIsospectral,
+  `NLS.ZakharovShabat.SourceAbelianMomentIsospectral,
+  `NLS.ZakharovShabat.SourceCalibratedMomentIsospectral,
+  `NLS.KdV.PhysicalOffDiagonalIsospectral,
+  `NLS.SequenceSpaces.SignedPairActionProducts,
+  `NLS.Articles.KdVKdV2Frequencies.WeightedPairDiscriminant,
+  `NLS.Articles.KdVKdV2Frequencies.OffDiagonalFrequencyPairCharts,
+  `NLS.SequenceSpaces.CompactWeightedPacketPullback,
+  `NLS.Articles.KdVKdV2Frequencies.OffDiagonalPairActionInvariance,
+  `NLS.Articles.KdVKdV2Frequencies.OffDiagonalActionCharts,
+  `NLS.Articles.KdVKdV2Frequencies.OffDiagonalRawActionCompact,
+  `NLS.Articles.KdVKdV2Frequencies.OffDiagonalOriginalActionRecovery,
+  `NLS.Articles.KdVKdV2Frequencies.Theorem12OffDiagonalActionCompact
 ]
 
 open Lean in
